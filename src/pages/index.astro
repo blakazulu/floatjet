@@ -1,26 +1,16 @@
 ---
 // FloatJet Test Homepage
-import '@styles/global.css';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Container from '@components/layout/Container.astro';
 
 const title = 'FloatJet - Find the Best Remote Work Tools';
+const description = 'FloatJet helps remote workers and digital nomads find the best productivity tools, VPNs, and software for location-independent work.';
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  </head>
-  <body class="bg-off-white">
-    <!-- Hero Section - Testing FloatJet Theme -->
-    <section class="min-h-screen py-12 px-4 md:py-20">
-      <div class="max-w-screen-xl mx-auto">
+<BaseLayout title={title} description={description}>
+  <!-- Hero Section - Testing FloatJet Theme -->
+  <section class="min-h-screen py-12 md:py-20">
+    <Container>
 
         <!-- Heading - Testing Outfit Font & Ocean Deep Color -->
         <h1 class="text-4xl md:text-6xl font-bold text-ocean-deep mb-6">
@@ -154,10 +144,10 @@ const title = 'FloatJet - Find the Best Remote Work Tools';
         <!-- Status Message -->
         <div class="bg-sand border border-jet-stream/20 p-6 rounded-2xl">
           <h3 class="text-lg font-semibold text-ocean-deep mb-2">
-            ✅ FloatJet Theme Configured Successfully
+            ✅ FloatJet Setup Complete
           </h3>
           <p class="text-slate mb-4">
-            All custom colors, fonts, and design tokens are working correctly. The mobile-first approach is verified with responsive breakpoints.
+            All custom colors, fonts, design tokens, and layout components are working correctly. The mobile-first approach is verified with responsive breakpoints.
           </p>
           <ul class="space-y-2 text-sm text-gray">
             <li>✓ Custom colors (Ocean Deep, Jet Stream, Sky Light, Sand, Alert)</li>
@@ -166,10 +156,12 @@ const title = 'FloatJet - Find the Best Remote Work Tools';
             <li>✓ Glassmorphism utility class</li>
             <li>✓ Mobile-first responsive design (375px → 1280px)</li>
             <li>✓ TypeScript strict mode + Path aliases</li>
+            <li>✓ BaseLayout with SEO meta tags</li>
+            <li>✓ Container component with responsive padding</li>
+            <li>✓ Schema.org Organization markup</li>
           </ul>
         </div>
 
-      </div>
-    </section>
-  </body>
-</html>
+    </Container>
+  </section>
+</BaseLayout>

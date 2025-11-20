@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+
+/* FloatJet Custom Theme */
+@theme {
+  /* Custom Colors */
+  --color-ocean-deep: #0F4C5C;
+  --color-jet-stream: #38A3A5;
+  --color-sky-light: #80CED7;
+  --color-sand: #E0FBFC;
+  --color-alert: #EE6C4D;
+  --color-off-white: #F8FAFC;
+  --color-slate: #1E293B;
+  --color-gray: #64748B;
+
+  /* Font Families */
+  --font-outfit: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-jetbrains: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Breakpoints - Mobile-first */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+/* Base Typography */
+@layer base {
+  body {
+    font-family: var(--font-inter);
+    color: var(--color-slate);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-outfit);
+    font-weight: 700;
+    color: var(--color-ocean-deep);
+  }
+
+  code, pre {
+    font-family: var(--font-jetbrains);
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}

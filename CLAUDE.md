@@ -300,3 +300,6 @@ Unauthorized use, copying, modification, or distribution is strictly prohibited.
 - **docs/03-design/component-specifications.md** - Copy-paste component code
 - **docs/02-content/content-guidelines.md** - Writing standards
 - **docs/01-planning/prd.md** - Technical requirements
+- after finishing a task - always update it's progress in the task and in completed folder in docs
+- after each task - show me the git commit message and i will commit it
+- never run dev server - ask me to run it

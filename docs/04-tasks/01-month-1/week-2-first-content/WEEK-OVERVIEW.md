@@ -23,17 +23,24 @@ tracking. This week marks the transition from infrastructure to content.
 
 ---
 
-## 📋 Task List (To Be Created)
+## 📋 Task List
 
-| Task ID | Task Name                                          | Priority | Est. Hours |
-|---------|----------------------------------------------------|----------|------------|
-| FJ-006  | Write money page: Best Project Management Software | P0       | 8h         |
-| FJ-007  | Write money page: Top VPNs for Digital Nomads      | P0       | 8h         |
-| FJ-008  | Join first 3 affiliate programs                    | P1       | 2h         |
-| FJ-009  | Set up Google Search Console                       | P1       | 1h         |
-| FJ-010  | Configure PostHog analytics                        | P1       | 2h         |
+| Task ID | Task Name                                          | Priority | Est. Hours | Status      |
+|---------|----------------------------------------------------|----------|------------|-------------|
+| FJ-006  | Write money page: Best Project Management Software | P0       | 8h         | Not Started |
+| FJ-007  | Write money page: Top VPNs for Digital Nomads      | P0       | 8h         | Not Started |
+| FJ-008  | Join first 3 affiliate programs                    | P1       | 2h         | Not Started |
+| FJ-009  | Set up Google Search Console                       | P1       | 1h         | Not Started |
+| FJ-010  | Configure PostHog analytics                        | P1       | 2h         | Not Started |
 
 **Total Estimated:** 21 hours
+
+**Task Files:**
+- `task-006-pm-software-article.md`
+- `task-007-vpn-article.md`
+- `task-008-affiliate-programs.md`
+- `task-009-google-search-console.md`
+- `task-010-posthog-analytics.md`
 
 ---
 
@@ -63,5 +70,5 @@ tracking. This week marks the transition from infrastructure to content.
 
 ---
 
-**Status:** 📝 Tasks to be created
+**Status:** ✅ Tasks created, ready to start
 **Next Week:** Content blitz with 3 more money pages + supporting content

@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 const currentYear = new Date().getFullYear();
 ---
 
@@ -8,7 +10,7 @@ const currentYear = new Date().getFullYear();
       <!-- Brand -->
       <div class="col-span-1 md:col-span-1">
         <a href="/" class="flex items-center gap-2 mb-4">
-          <img src="/images/logo.webp" alt="FloatJet Logo" class="h-8 w-8 object-contain" />
+          <Image src="/images/logo.webp" alt="FloatJet Logo" width={32} height={32} class="h-8 w-8 object-contain" loading="lazy" />
           <span class="font-outfit font-bold text-xl text-ocean-deep">FloatJet</span>
         </a>
         <p class="text-slate/70 text-sm leading-relaxed">

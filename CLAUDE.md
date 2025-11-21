@@ -303,3 +303,4 @@ Unauthorized use, copying, modification, or distribution is strictly prohibited.
 - after finishing a task - always update it's progress in the task and in completed folder in docs
 - after each task - show me the git commit message and i will commit it
 - never run dev server - ask me to run it
+- after finishing a task - ask me to review and test it - once tested - only then mark it as completed and move it to completed folder then give me the git message

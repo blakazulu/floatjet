@@ -1,0 +1,122 @@
+---
+interface Props {
+  href: string;
+  text: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  program?: string;
+  fullWidth?: boolean;
+}
+
+const {
+  href,
+  text,
+  variant = 'primary',
+  program,
+  fullWidth = false
+} = Astro.props;
+
+const classes = [
+  'cta-button',
+  `cta-${variant}`,
+  fullWidth ? 'full-width' : ''
+].filter(Boolean).join(' ');
+---
+
+<a
+  href={href}
+  class={classes}
+  rel="nofollow sponsored noopener"
+  target="_blank"
+  data-program={program}
+>
+  <span>{text}</span>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+  </svg>
+</a>
+
+<style>
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+
+    padding: 0.875rem 1.75rem;
+    border-radius: 1.5rem;
+
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .cta-button.full-width {
+    width: 100%;
+  }
+
+  .cta-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.2s;
+  }
+
+  .cta-button:hover svg {
+    transform: translateX(4px);
+  }
+
+  /* Primary - Gradient */
+  .cta-primary {
+    background: linear-gradient(135deg, #0F4C5C, #38A3A5);
+    color: white;
+    box-shadow: 0 2px 8px rgba(15, 76, 92, 0.3);
+  }
+
+  .cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(15, 76, 92, 0.4);
+  }
+
+  /* Secondary - Outline */
+  .cta-secondary {
+    background: transparent;
+    color: #80CED7;
+    border: 2px solid #38A3A5;
+  }
+
+  .cta-secondary:hover {
+    background: rgba(56, 163, 165, 0.15);
+    color: white;
+    border-color: #80CED7;
+  }
+
+  /* Ghost - Text only */
+  .cta-ghost {
+    background: none;
+    padding: 0.5rem 0;
+    color: #80CED7;
+    border-radius: 0;
+  }
+
+  .cta-ghost:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .cta-ghost svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  /* Mobile - Full width for primary/secondary */
+  @media (max-width: 640px) {
+    .cta-primary,
+    .cta-secondary {
+      width: 100%;
+      padding: 1rem 1.5rem;
+    }
+  }
+</style>

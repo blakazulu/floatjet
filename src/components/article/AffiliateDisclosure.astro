@@ -1,0 +1,69 @@
+---
+// FTC-compliant affiliate disclosure box
+---
+
+<aside
+  class="affiliate-disclosure"
+  role="note"
+  aria-label="Affiliate Disclosure"
+>
+  <div class="disclosure-header">
+    <svg class="disclosure-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+    </svg>
+    <strong>Disclosure</strong>
+  </div>
+  <p>
+    Some links on this page are affiliate links, which means we may earn a
+    commission if you make a purchase. This comes at no additional cost to you
+    and helps us keep FloatJet running. We only recommend tools we've personally
+    tested or genuinely believe will help you work more efficiently.
+  </p>
+</aside>
+
+<style>
+  .affiliate-disclosure {
+    background: linear-gradient(135deg, rgba(224, 251, 252, 0.15), rgba(128, 206, 215, 0.1));
+    border: 1px solid rgba(128, 206, 215, 0.3);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin: 2rem 0;
+    backdrop-filter: blur(8px);
+  }
+
+  .disclosure-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: #80CED7;
+  }
+
+  .disclosure-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #38A3A5;
+    flex-shrink: 0;
+  }
+
+  .affiliate-disclosure p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .affiliate-disclosure {
+      padding: 1rem;
+    }
+
+    .affiliate-disclosure p {
+      font-size: 0.8125rem;
+    }
+  }
+</style>

@@ -1,0 +1,122 @@
+---
+interface Props {
+  author: string;
+  authorUrl?: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  readingTime?: number;
+}
+
+const {
+  author,
+  authorUrl,
+  pubDate,
+  updatedDate,
+  readingTime
+} = Astro.props;
+
+const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  }).format(date);
+};
+---
+
+<div class="article-metadata">
+  <span class="metadata-item">
+    By
+    {authorUrl ? (
+      <a href={authorUrl} class="author-link">{author}</a>
+    ) : (
+      <strong class="author-name">{author}</strong>
+    )}
+  </span>
+
+  <span class="separator">•</span>
+
+  {updatedDate ? (
+    <time class="metadata-item" datetime={updatedDate.toISOString()}>
+      Updated {formatDate(updatedDate)}
+    </time>
+  ) : (
+    <time class="metadata-item" datetime={pubDate.toISOString()}>
+      {formatDate(pubDate)}
+    </time>
+  )}
+
+  {readingTime && (
+    <>
+      <span class="separator">•</span>
+      <span class="metadata-item reading-time">
+        <svg class="clock-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+        </svg>
+        {readingTime} min read
+      </span>
+    </>
+  )}
+</div>
+
+<style>
+  .article-metadata {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .metadata-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .author-link {
+    color: #80CED7;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .author-link:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .author-name {
+    color: #80CED7;
+    font-weight: 500;
+  }
+
+  .separator {
+    margin: 0 0.5rem;
+    user-select: none;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .reading-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .clock-icon {
+    width: 1rem;
+    height: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (max-width: 640px) {
+    .article-metadata {
+      font-size: 0.8125rem;
+    }
+
+    .separator {
+      margin: 0 0.375rem;
+    }
+  }
+</style>

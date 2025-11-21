@@ -57,3 +57,28 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
+
+/* Custom Scrollbar - Matches Ocean Theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 76, 92, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-jet-stream), var(--color-ocean-deep));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-sky-light), var(--color-jet-stream));
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-jet-stream) rgba(15, 76, 92, 0.3);
+}

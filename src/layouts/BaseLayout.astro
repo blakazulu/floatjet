@@ -47,7 +47,7 @@ const organizationSchema = {
   />
   <body class="flex flex-col min-h-screen relative overflow-x-hidden">
     <!-- Background Image -->
-    <div class="fixed inset-0 z-[-1]">
+    <div class="fixed inset-0 z-[-1]" transition:persist="background">
       <Image
         src="/images/background.webp"
         alt=""
@@ -59,11 +59,15 @@ const organizationSchema = {
       />
     </div>
 
-    <Header />
-    <main class="flex-grow">
+    <div transition:persist="header">
+      <Header />
+    </div>
+    <main class="flex-grow" transition:animate="fade">
       <slot />
     </main>
-    <Footer />
+    <div transition:persist="footer">
+      <Footer />
+    </div>
 
     <!-- Schema.org Organization markup -->
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />

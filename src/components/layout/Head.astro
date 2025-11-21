@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 interface Props {
   title: string;
   description: string;
@@ -64,4 +66,7 @@ const canonical = canonicalUrl || Astro.url.href;
 
   <!-- Robots Meta -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <!-- View Transitions for smooth navigation -->
+  <ViewTransitions />
 </head>

@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '@components/article/Breadcrumbs.astro';
 import ArticleMetadata from '@components/article/ArticleMetadata.astro';
 import TableOfContents from '@components/article/TableOfContents.astro';
-import AffiliateDisclosure from '@components/article/AffiliateDisclosure.astro';
+import { Image } from 'astro:assets';
 
 interface Props {
   title: string;
@@ -90,14 +90,13 @@ const articleSchema = {
         <!-- Hero Image -->
         {image && (
           <div class="article-hero">
-            <img
+            <Image
               src={image}
               alt={imageAlt}
-              width="1200"
-              height="630"
+              width={1200}
+              height={630}
               class="hero-image"
               loading="eager"
-              decoding="async"
             />
           </div>
         )}
@@ -112,11 +111,6 @@ const articleSchema = {
         <div class="article-grid">
           <!-- Main Content -->
           <div class="article-content prose prose-lg">
-            <!-- Affiliate Disclosure (placed after intro via slot) -->
-            <slot name="after-intro">
-              <AffiliateDisclosure />
-            </slot>
-
             <!-- Article Content -->
             <slot />
           </div>
@@ -129,9 +123,12 @@ const articleSchema = {
       </div>
     </div>
 
-    <!-- Mobile TOC Button -->
-    <TableOfContents headings={headings} mobile />
   </article>
+
+  <!-- Mobile TOC - uses named slot for proper z-index above header -->
+  <Fragment slot="toc">
+    <TableOfContents headings={headings} mobile />
+  </Fragment>
 
   <!-- Article Schema -->
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
@@ -199,17 +196,23 @@ const articleSchema = {
     gap: 3rem;
     max-width: 1280px;
     margin: 0 auto;
+    align-items: start;
   }
 
   @media (min-width: 1024px) {
     .article-grid {
       grid-template-columns: 1fr 280px;
       gap: 4rem;
+      align-items: stretch;
     }
   }
 
   .article-content {
     max-width: 800px;
+    width: 100%;
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   /* Prose styling for article content */
@@ -304,7 +307,7 @@ const articleSchema = {
     margin: 2rem 0;
   }
 
-  /* Sidebar - hidden on mobile */
+  /* Sidebar - hidden on mobile, stretches full height on desktop */
   .article-sidebar {
     display: none;
   }
@@ -313,6 +316,7 @@ const articleSchema = {
     .article-sidebar {
       display: block;
       position: relative;
+      /* NO align-self: start here - let it stretch to full grid height */
     }
   }
 </style>

@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Article {
   title: string;
   excerpt: string;
@@ -22,12 +24,12 @@ const { articles } = Astro.props;
       {articles.map((article, index) => (
         <a href={article.href} class="article-card">
           <div class="article-image">
-            <img
+            <Image
               src={article.image}
               alt={article.imageAlt}
+              width={400}
+              height={225}
               loading="lazy"
-              width="400"
-              height="225"
             />
           </div>
           <div class="article-content">

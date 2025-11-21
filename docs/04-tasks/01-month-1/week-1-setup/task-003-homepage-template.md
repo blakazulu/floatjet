@@ -49,19 +49,19 @@ section, featured content cards, and category navigation.
 
 ### Phase 1: Hero Section (1.5 hours)
 
-- [ ] 1.1 Create hero component structure
+- [x] 1.1 Create hero component structure
     - H1 with FloatJet value proposition
     - Subheadline describing service
     - 2 CTA buttons (primary + secondary)
     - Background with Ocean Deep gradient
 
-- [ ] 1.2 Implement glassmorphism effect
+- [x] 1.2 Implement glassmorphism effect
     - `backdrop-filter: blur(12px)`
     - Semi-transparent background
     - Subtle border with rgba white
     - Reference: `/docs/03-design/design-guidelines.md`
 
-- [ ] 1.3 Make hero mobile-responsive
+- [x] 1.3 Make hero mobile-responsive
     - Full height on desktop (h-screen)
     - Auto height on mobile
     - Stack CTAs vertically on mobile
@@ -69,56 +69,56 @@ section, featured content cards, and category navigation.
 
 ### Phase 2: Featured Content Section (1.5 hours)
 
-- [ ] 2.1 Create content card component
+- [x] 2.1 Create content card component
     - Card with image (16:9 aspect ratio)
     - Title, excerpt, read time
     - Hover effects (lift + shadow)
     - Link to article
 
-- [ ] 2.2 Build 3-column grid (responsive)
+- [x] 2.2 Build 3-column grid (responsive)
     - Desktop: 3 columns
     - Tablet: 2 columns
     - Mobile: 1 column
     - Gap: 24px (lg:gap-6)
 
-- [ ] 2.3 Add placeholder content
+- [x] 2.3 Add placeholder content
     - 6 featured articles
     - Use placeholder images (Unsplash)
     - Realistic titles and excerpts
 
 ### Phase 3: Category Navigation (0.5 hours)
 
-- [ ] 3.1 Create category button grid
+- [x] 3.1 Create category button grid
     - Categories: Project Management, VPNs, Productivity, Remote Work, Tools
     - Icon + label for each
     - Glassmorphic button style
     - Hover effects
 
-- [ ] 3.2 Make categories responsive
+- [x] 3.2 Make categories responsive
     - Desktop: 5 columns
     - Tablet: 3 columns
     - Mobile: 2 columns
 
 ### Phase 4: Polish & Testing (0.5 hours)
 
-- [ ] 4.1 Add spacing and rhythm
+- [x] 4.1 Add spacing and rhythm
     - Consistent section spacing
     - Proper padding and margins
     - Visual hierarchy clear
 
-- [ ] 4.2 Test all breakpoints
+- [x] 4.2 Test all breakpoints
     - 375px (iPhone SE)
     - 768px (iPad)
     - 1024px (laptop)
     - 1280px (desktop)
 
-- [ ] 4.3 Run Lighthouse audit
+- [x] 4.3 Run Lighthouse audit
     - Performance >90
     - Accessibility >90
     - Best Practices >90
     - SEO >90
 
-- [ ] 4.4 Browser testing
+- [x] 4.4 Browser testing
     - Chrome
     - Safari (if available)
     - Mobile devices (DevTools)
@@ -132,13 +132,13 @@ section, featured content cards, and category navigation.
 
 ## Acceptance Checklist
 
-- [ ] Hero section complete and responsive
-- [ ] Featured content cards working
-- [ ] Category navigation functional
-- [ ] Matches mockup design
-- [ ] Lighthouse scores all >90
-- [ ] No console errors
-- [ ] Deployed to floatjet.com
+- [x] Hero section complete and responsive
+- [x] Featured content cards working
+- [x] Category navigation functional
+- [x] Matches mockup design
+- [x] Lighthouse scores all >90
+- [x] No console errors
+- [x] Deployed to floatjet.com
 
 ## Notes
 

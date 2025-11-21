@@ -1,5 +1,7 @@
 ---
 import Head from '@components/layout/Head.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
 import '@styles/global.css';
 
 interface Props {
@@ -42,8 +44,21 @@ const organizationSchema = {
     type={type}
     canonicalUrl={canonicalUrl}
   />
-  <body class="bg-off-white">
-    <slot />
+  <body class="flex flex-col min-h-screen relative overflow-x-hidden">
+    <!-- Background Image -->
+    <div class="fixed inset-0 z-[-1]">
+      <img
+        src="/images/background.webp"
+        alt=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
 
     <!-- Schema.org Organization markup -->
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />

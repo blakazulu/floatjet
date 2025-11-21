@@ -1,12 +1,12 @@
 ---
-import { clsx } from 'clsx';
+import {clsx} from 'clsx';
 
 interface Props {
   size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
   class?: string;
 }
 
-const { size = 'xl', class: className } = Astro.props;
+const {size = 'xl', class: className} = Astro.props;
 
 // Max-width based on size variant
 const sizeClasses = {
@@ -26,5 +26,5 @@ const containerClasses = clsx(
 ---
 
 <div class={containerClasses}>
-  <slot />
+  <slot/>
 </div>

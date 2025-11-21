@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '@components/article/Breadcrumbs.astro';
 import ArticleMetadata from '@components/article/ArticleMetadata.astro';
 import TableOfContents from '@components/article/TableOfContents.astro';
-import { Image } from 'astro:assets';
+import {Image} from 'astro:assets';
 
 interface Props {
   title: string;
@@ -37,9 +37,9 @@ const {
 
 // Build breadcrumb items
 const breadcrumbItems = [
-  { label: 'Home', href: '/' },
-  { label: category, href: `/${categorySlug}` },
-  { label: title }
+  {label: 'Home', href: '/'},
+  {label: category, href: `/${categorySlug}`},
+  {label: title}
 ];
 
 // Article Schema markup
@@ -73,32 +73,32 @@ const articleSchema = {
     <header class="article-header">
       <div class="container mx-auto px-4 md:px-6 pt-28 md:pt-32">
         <!-- Breadcrumbs -->
-        <Breadcrumbs items={breadcrumbItems} />
+        <Breadcrumbs items={breadcrumbItems}/>
 
         <!-- Title -->
         <h1 class="article-title">{title}</h1>
 
         <!-- Metadata -->
         <ArticleMetadata
-          author={author}
-          authorUrl={authorUrl}
-          pubDate={pubDate}
-          updatedDate={updatedDate}
-          readingTime={readingTime}
+            author={author}
+            authorUrl={authorUrl}
+            pubDate={pubDate}
+            updatedDate={updatedDate}
+            readingTime={readingTime}
         />
 
         <!-- Hero Image -->
         {image && (
-          <div class="article-hero">
-            <Image
-              src={image}
-              alt={imageAlt}
-              width={1200}
-              height={630}
-              class="hero-image"
-              loading="eager"
-            />
-          </div>
+            <div class="article-hero">
+              <Image
+                  src={image}
+                  alt={imageAlt}
+                  width={1200}
+                  height={630}
+                  class="hero-image"
+                  loading="eager"
+              />
+            </div>
         )}
       </div>
     </header>
@@ -112,12 +112,12 @@ const articleSchema = {
           <!-- Main Content -->
           <div class="article-content prose prose-lg">
             <!-- Article Content -->
-            <slot />
+            <slot/>
           </div>
 
           <!-- Sidebar (Desktop) -->
           <aside class="article-sidebar">
-            <TableOfContents headings={headings} />
+            <TableOfContents headings={headings}/>
           </aside>
         </div>
       </div>
@@ -127,11 +127,11 @@ const articleSchema = {
 
   <!-- Mobile TOC - uses named slot for proper z-index above header -->
   <Fragment slot="toc">
-    <TableOfContents headings={headings} mobile />
+    <TableOfContents headings={headings} mobile/>
   </Fragment>
 
   <!-- Article Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)}/>
 </BaseLayout>
 
 <style>
@@ -182,10 +182,10 @@ const articleSchema = {
     position: absolute;
     inset: 0;
     background: linear-gradient(
-      to bottom,
-      rgba(15, 76, 92, 0.85) 0%,
-      rgba(10, 50, 60, 0.92) 50%,
-      rgba(5, 30, 40, 0.95) 100%
+            to bottom,
+            rgba(15, 76, 92, 0.85) 0%,
+            rgba(10, 50, 60, 0.92) 50%,
+            rgba(5, 30, 40, 0.95) 100%
     );
     backdrop-filter: blur(8px);
     z-index: 1;

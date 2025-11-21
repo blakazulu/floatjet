@@ -28,34 +28,36 @@ const formatDate = (date: Date) => {
   <span class="metadata-item">
     By
     {authorUrl ? (
-      <a href={authorUrl} class="author-link">{author}</a>
+        <a href={authorUrl} class="author-link">{author}</a>
     ) : (
-      <strong class="author-name">{author}</strong>
+        <strong class="author-name">{author}</strong>
     )}
   </span>
 
   <span class="separator">•</span>
 
   {updatedDate ? (
-    <time class="metadata-item" datetime={updatedDate.toISOString()}>
-      Updated {formatDate(updatedDate)}
-    </time>
+      <time class="metadata-item" datetime={updatedDate.toISOString()}>
+        Updated {formatDate(updatedDate)}
+      </time>
   ) : (
-    <time class="metadata-item" datetime={pubDate.toISOString()}>
-      {formatDate(pubDate)}
-    </time>
+      <time class="metadata-item" datetime={pubDate.toISOString()}>
+        {formatDate(pubDate)}
+      </time>
   )}
 
   {readingTime && (
-    <>
-      <span class="separator">•</span>
-      <span class="metadata-item reading-time">
+      <>
+        <span class="separator">•</span>
+        <span class="metadata-item reading-time">
         <svg class="clock-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+          <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                clip-rule="evenodd"/>
         </svg>
-        {readingTime} min read
+          {readingTime} min read
       </span>
-    </>
+      </>
   )}
 </div>
 

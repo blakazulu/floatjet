@@ -10,7 +10,7 @@ interface Props {
   mobile?: boolean;
 }
 
-const { headings, mobile = false } = Astro.props;
+const {headings, mobile = false} = Astro.props;
 
 // Filter to only H2 and H3
 const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
@@ -18,54 +18,58 @@ const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 
 {mobile ? (
   <!-- Mobile Floating Button + Overlay -->
-  <div class="toc-mobile">
-    <button class="toc-toggle" aria-label="Toggle table of contents" aria-expanded="false">
-      <svg class="toc-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-      </svg>
-      <span>Contents</span>
-    </button>
+<div class="toc-mobile">
+  <button class="toc-toggle" aria-label="Toggle table of contents" aria-expanded="false">
+    <svg class="toc-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"/>
+    </svg>
+    <span>Contents</span>
+  </button>
 
-    <!-- Backdrop for closing -->
-    <div class="toc-backdrop" hidden></div>
+  <!-- Backdrop for closing -->
+  <div class="toc-backdrop" hidden></div>
 
-    <div class="toc-overlay" hidden>
-      <div class="toc-overlay-header">
-        <h2>Table of Contents</h2>
-        <button class="toc-close" aria-label="Close table of contents">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
-          </svg>
-        </button>
-      </div>
-      <nav class="toc-overlay-nav">
-        <ul>
-          {filteredHeadings.map(heading => (
+  <div class="toc-overlay" hidden>
+    <div class="toc-overlay-header">
+      <h2>Table of Contents</h2>
+      <button class="toc-close" aria-label="Close table of contents">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd"
+                d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                clip-rule="evenodd"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="toc-overlay-nav">
+      <ul>
+        {filteredHeadings.map(heading => (
             <li class={`depth-${heading.depth}`}>
               <a href={`#${heading.slug}`}>{heading.text}</a>
             </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
+        ))}
+      </ul>
+    </nav>
   </div>
-) : (
+</div>
+  ) : (
   <!-- Desktop Sidebar -->
-  <div class="toc-sidebar">
-    <div class="toc-content">
-      <h2 class="toc-title">Table of Contents</h2>
-      <nav>
-        <ul class="toc-list">
-          {filteredHeadings.map(heading => (
+<div class="toc-sidebar">
+  <div class="toc-content">
+    <h2 class="toc-title">Table of Contents</h2>
+    <nav>
+      <ul class="toc-list">
+        {filteredHeadings.map(heading => (
             <li class={`toc-item depth-${heading.depth}`}>
               <a href={`#${heading.slug}`}>{heading.text}</a>
             </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
+        ))}
+      </ul>
+    </nav>
   </div>
-)}
+</div>
+  )}
 
 <script>
   // Mobile TOC toggle functionality
@@ -122,7 +126,7 @@ const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
           }
         });
       },
-      { rootMargin: '-100px 0px -66% 0px' }
+      {rootMargin: '-100px 0px -66% 0px'}
     );
 
     headingElements.forEach(heading => observer.observe(heading));

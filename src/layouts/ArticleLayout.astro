@@ -324,8 +324,14 @@ const articleSchema = {
     .article-sidebar {
       display: block;
       position: relative;
-      /* NO align-self: start here - let it stretch to full grid height */
+      /* Allows absolute positioning of TOC when it reaches bottom */
     }
+  }
+
+  /* Ensure TOC content can be absolutely positioned within sidebar */
+  .article-sidebar :global(.toc-sidebar) {
+    position: sticky;
+    top: 100px;
   }
 
   /* Full Width Section */
@@ -349,31 +355,55 @@ const articleSchema = {
 </style>
 
 <script>
-  // Stop TOC sticky at full-width section
+  // Stop TOC sticky at end of article content
   document.addEventListener('DOMContentLoaded', () => {
     const tocSidebar = document.getElementById('toc-sidebar');
-    const fullWidthSection = document.getElementById('full-width-section');
-    const tocContent = tocSidebar?.querySelector('.toc-sidebar');
+    const articleGrid = document.querySelector('.article-grid');
+    const tocContent = tocSidebar?.querySelector('.toc-sidebar') as HTMLElement;
 
-    if (!tocSidebar || !fullWidthSection || !tocContent) return;
+    if (!tocSidebar || !articleGrid || !tocContent) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Full width section is visible, unstick the TOC
-            tocContent.style.position = 'relative';
-            tocContent.style.top = 'auto';
-          } else {
-            // Full width section is not visible, re-enable sticky
-            tocContent.style.position = 'sticky';
-            tocContent.style.top = '100px';
-          }
-        });
-      },
-      { rootMargin: '-100px 0px 0px 0px', threshold: 0 }
-    );
+    // Store the natural width of the TOC
+    let tocWidth = tocContent.offsetWidth;
 
-    observer.observe(fullWidthSection);
+    const handleScroll = () => {
+      const sidebarRect = tocSidebar.getBoundingClientRect();
+      const tocHeight = tocContent.offsetHeight;
+      const stickyTop = 100;
+
+      // Calculate where TOC would be if sticky
+      const tocBottomIfSticky = stickyTop + tocHeight;
+
+      // If the sidebar container's bottom is above where the sticky TOC bottom would be,
+      // we need to stop the sticky behavior and position at bottom
+      if (sidebarRect.bottom < tocBottomIfSticky) {
+        // Position TOC at the bottom of the sidebar with fixed width
+        tocContent.style.position = 'absolute';
+        tocContent.style.top = 'auto';
+        tocContent.style.bottom = '0';
+        tocContent.style.width = `${tocWidth}px`;
+      } else {
+        // Normal sticky behavior
+        tocContent.style.position = 'sticky';
+        tocContent.style.top = `${stickyTop}px`;
+        tocContent.style.bottom = 'auto';
+        tocContent.style.width = 'auto';
+      }
+    };
+
+    const handleResize = () => {
+      // Reset to sticky to get natural width
+      tocContent.style.position = 'sticky';
+      tocContent.style.width = 'auto';
+      tocWidth = tocContent.offsetWidth;
+      handleScroll();
+    };
+
+    // Initial check
+    handleScroll();
+
+    // Listen to scroll and resize
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
   });
 </script>

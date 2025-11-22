@@ -3,7 +3,7 @@ task_id: "FJ-009"
 title: "Set up Google Search Console"
 category: "SEO"
 priority: "P1"
-status: "not-started"
+status: "in-progress"
 created_date: "2025-11-22"
 due_date: "2025-11-28"
 estimated_hours: 1

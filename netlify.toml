@@ -8,7 +8,64 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Redirect all requests to index.html for client-side routing
+# Affiliate link redirects
+# Note: Update these with actual affiliate URLs once approved
+
+[[redirects]]
+  from = "/go/notion"
+  to = "https://www.notion.so/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/clickup"
+  to = "https://clickup.com/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/asana"
+  to = "https://asana.com/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/monday"
+  to = "https://monday.com/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/trello"
+  to = "https://trello.com/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/basecamp"
+  to = "https://basecamp.com/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/linear"
+  to = "https://linear.app/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/jira"
+  to = "https://www.atlassian.com/software/jira"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/nordvpn"
+  to = "https://nordvpn.com/"
+  status = 301
+  force = true
+
+# SPA fallback - only for routes that don't match static files
 [[redirects]]
   from = "/*"
   to = "/index.html"

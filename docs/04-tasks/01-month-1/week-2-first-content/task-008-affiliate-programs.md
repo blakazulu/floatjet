@@ -3,7 +3,7 @@ task_id: "FJ-008"
 title: "Join first 3 affiliate programs"
 category: "Affiliates"
 priority: "P1"
-status: "not-started"
+status: "in-progress"
 created_date: "2025-11-22"
 due_date: "2025-12-01"
 estimated_hours: 2
@@ -94,7 +94,7 @@ Apply to and get approved for the first 3 priority affiliate programs. These wil
 
 ### Phase 3: Configure Redirects (0.5 hours)
 
-- [ ] 3.1 Set up Netlify redirects
+- [x] 3.1 Set up Netlify redirects (Done in FJ-006, FJ-007)
     - Add to `netlify.toml`:
     ```toml
     [[redirects]]
@@ -158,6 +158,8 @@ Before marking this task complete:
 
 - ⏳ Task created
 - 📝 Subtasks defined
+- ✅ Netlify redirects already configured (from FJ-006, FJ-007)
+- ⏳ Ready to apply to affiliate programs
 
 ## Notes
 

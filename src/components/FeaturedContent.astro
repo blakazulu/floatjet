@@ -4,45 +4,45 @@ import {Image} from 'astro:assets';
 // Placeholder data for now - one article per category
 const featuredArticles = [
   {
-    title: 'Best Project Management Tools',
+    title: 'Best Project Management Software',
     excerpt: 'Boost productivity and stay organized with these essential SaaS platforms.',
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
-    slug: 'best-project-management-tools',
+    slug: 'tools/best-project-management-software',
     category: 'SaaS'
   },
   {
     title: 'Best VPNs for Digital Nomads',
     excerpt: 'Secure your connection anywhere with our top picks for privacy and speed.',
-    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80',
-    slug: 'best-vpns-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+    slug: 'tools/best-vpn-digital-nomads',
     category: 'VPN'
   },
   {
     title: 'Best Web Hosting for Remote Businesses',
     excerpt: 'Reliable hosting solutions with global reach and excellent uptime guarantees.',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
-    slug: 'best-web-hosting-remote-businesses',
+    slug: 'blog/best-web-hosting-remote-businesses',
     category: 'Hosting'
   },
   {
     title: 'Ultimate Home Office Setup',
     excerpt: 'Must-have gear to upgrade your workspace for maximum comfort and productivity.',
     image: 'https://images.unsplash.com/photo-1493934558415-9d19f0b2b4d2?auto=format&fit=crop&w=800&q=80',
-    slug: 'ultimate-home-office-setup',
+    slug: 'blog/ultimate-home-office-setup',
     category: 'Gear'
   },
   {
     title: 'Best Banking for Digital Nomads',
     excerpt: 'International banking solutions with low fees and multi-currency support.',
     image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80',
-    slug: 'best-banking-digital-nomads',
+    slug: 'blog/best-banking-digital-nomads',
     category: 'Finance'
   },
   {
     title: 'Top Travel Insurance for Remote Workers',
     excerpt: 'Comprehensive coverage designed for long-term travelers and location-independent professionals.',
     image: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=800&q=80',
-    slug: 'best-travel-insurance-remote-workers',
+    slug: 'blog/best-travel-insurance-remote-workers',
     category: 'Travel'
   }
 ];
@@ -66,7 +66,7 @@ const featuredArticles = [
             <div
                 class="absolute inset-0 bg-gradient-to-br from-white/25 via-white/5 to-transparent backdrop-blur-lg border border-white/10 border-t-white/30 border-l-white/30 rounded-3xl shadow-lg group-hover:shadow-2xl group-hover:from-white/30 group-hover:via-white/10 group-hover:to-white/5 transition-all duration-300"></div>
 
-            <a href={`/blog/${article.slug}`} class="relative block h-full z-10 flex flex-col p-4">
+            <a href={`/${article.slug}`} class="relative block h-full z-10 flex flex-col p-4">
               <!-- Card Image -->
               <div class="relative h-48 overflow-hidden rounded-2xl mb-5 shadow-md">
                 <Image

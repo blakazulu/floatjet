@@ -40,54 +40,82 @@ const description = 'Discover the best software, gear, and strategies to work ef
   </style>
 
   <script>
-    const headlines = [
-      'Work From Anywhere, Like a Pro',
-      'Your Remote Work Toolkit',
-      'Find Your Perfect Remote Setup',
-      'The Tools That Power Remote Work',
-      'Work Smarter, From Anywhere'
-    ];
+    let headlineInterval: ReturnType<typeof setInterval> | null = null;
 
-    // Shuffle array (Fisher-Yates)
-    function shuffle(array) {
-      const arr = [...array];
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+    function initHeadlineRotation() {
+      const headlines = [
+        'Work From Anywhere, Like a Pro',
+        'Your Remote Work Toolkit',
+        'Find Your Perfect Remote Setup',
+        'The Tools That Power Remote Work',
+        'Work Smarter, From Anywhere'
+      ];
+
+      // Shuffle array (Fisher-Yates)
+      function shuffle(array: string[]) {
+        const arr = [...array];
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
       }
-      return arr;
+
+      // Clear any existing interval
+      if (headlineInterval) {
+        clearInterval(headlineInterval);
+        headlineInterval = null;
+      }
+
+      const shuffled = shuffle(headlines);
+      let currentIndex = 0;
+      const element = document.getElementById('rotating-headline');
+
+      if (element) {
+        element.textContent = shuffled[0];
+        element.classList.remove('headline-exit', 'headline-enter');
+        element.classList.add('headline-visible');
+
+        headlineInterval = setInterval(() => {
+          // Exit animation - slide up + blur + fade
+          element.classList.remove('headline-visible');
+          element.classList.add('headline-exit');
+
+          setTimeout(() => {
+            // Change text and prepare for enter
+            currentIndex = (currentIndex + 1) % shuffled.length;
+            element.textContent = shuffled[currentIndex];
+            element.classList.remove('headline-exit');
+            element.classList.add('headline-enter');
+
+            // Trigger reflow for animation
+            element.offsetHeight;
+
+            // Enter animation - slide up from below + unblur + fade in
+            requestAnimationFrame(() => {
+              element.classList.remove('headline-enter');
+              element.classList.add('headline-visible');
+            });
+          }, 700);
+        }, 8000);
+      }
     }
 
-    const shuffled = shuffle(headlines);
-    let currentIndex = 0;
-    const element = document.getElementById('rotating-headline');
-
-    if (element) {
-      element.textContent = shuffled[0];
-
-      setInterval(() => {
-        // Exit animation - slide up + blur + fade
-        element.classList.remove('headline-visible');
-        element.classList.add('headline-exit');
-
-        setTimeout(() => {
-          // Change text and prepare for enter
-          currentIndex = (currentIndex + 1) % shuffled.length;
-          element.textContent = shuffled[currentIndex];
-          element.classList.remove('headline-exit');
-          element.classList.add('headline-enter');
-
-          // Trigger reflow for animation
-          element.offsetHeight;
-
-          // Enter animation - slide up from below + unblur + fade in
-          requestAnimationFrame(() => {
-            element.classList.remove('headline-enter');
-            element.classList.add('headline-visible');
-          });
-        }, 700);
-      }, 8000);
+    function cleanupHeadlineRotation() {
+      if (headlineInterval) {
+        clearInterval(headlineInterval);
+        headlineInterval = null;
+      }
     }
+
+    // Initialize on first load
+    document.addEventListener('DOMContentLoaded', initHeadlineRotation);
+
+    // Re-initialize on Astro page navigation
+    document.addEventListener('astro:page-load', initHeadlineRotation);
+
+    // Cleanup before navigating away
+    document.addEventListener('astro:before-swap', cleanupHeadlineRotation);
   </script>
   <CategorySelector/>
   <ArticleCarousel/>

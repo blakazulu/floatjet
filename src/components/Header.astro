@@ -198,7 +198,7 @@ const navItems = [
 </nav>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  function initMobileMenu() {
     const menuButton = document.getElementById('mobile-menu-button');
     const closeButton = document.getElementById('mobile-menu-close');
     const menu = document.getElementById('mobile-menu');
@@ -268,5 +268,11 @@ const navItems = [
         closeMenu();
       }
     });
-  });
+  }
+
+  // Initialize on first load
+  document.addEventListener('DOMContentLoaded', initMobileMenu);
+
+  // Re-initialize on Astro page navigation (View Transitions)
+  document.addEventListener('astro:page-load', initMobileMenu);
 </script>

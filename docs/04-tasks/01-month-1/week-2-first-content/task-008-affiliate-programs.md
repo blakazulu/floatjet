@@ -20,10 +20,10 @@ Apply to and get approved for the first 3 priority affiliate programs. These wil
 
 ## Goals
 
-- [ ] Apply to 3 high-priority affiliate programs
-- [ ] Get approved for at least 2 programs
-- [ ] Set up affiliate link redirects
-- [ ] Test all affiliate links
+- [x] Apply to 3 high-priority affiliate programs
+- [ ] Get approved for at least 2 programs (awaiting)
+- [x] Set up affiliate link redirects (placeholder URLs active)
+- [ ] Test all affiliate links (after approval)
 
 ## Success Criteria
 
@@ -63,34 +63,34 @@ Apply to and get approved for the first 3 priority affiliate programs. These wil
     - W-9 (US) or W-8BEN (International)
     - Have ready for upload
 
-- [ ] 1.3 Ensure site is ready
+- [x] 1.3 Ensure site is ready
     - Affiliate disclosure in footer ✅
-    - About page exists
-    - Contact information visible
-    - Content published (or in progress)
+    - About page exists ✅
+    - Contact page exists ✅
+    - Content published ✅ (2 money pages live)
 
 ### Phase 2: Apply to Programs (1 hour)
 
-- [ ] 2.1 Apply to Impact Radius (Notion)
+- [x] 2.1 Apply to Impact Radius (Notion)
     - URL: https://impact.com/
     - Search for Notion affiliate program
     - Complete application form
-    - Note application date
-    - Expected approval: 3-7 days
+    - Application date: 2025-11-22
+    - Status: In Review
 
-- [ ] 2.2 Apply to PartnerStack (ClickUp)
+- [x] 2.2 Apply to PartnerStack (ClickUp)
     - URL: https://partnerstack.com/
     - Search for ClickUp partner program
     - Complete application form
-    - Note application date
-    - Expected approval: 2-5 days
+    - Application date: 2025-11-22
+    - Status: In Review
 
-- [ ] 2.3 Apply to NordVPN Affiliate Program
+- [x] 2.3 Apply to NordVPN Affiliate Program
     - URL: https://nordvpn.com/affiliate/
     - Complete application form
-    - Describe content plans
-    - Note application date
-    - Expected approval: 1-3 days
+    - Selected: NordVPN + NordPass B2C
+    - Application date: 2025-11-22
+    - Status: In Review
 
 ### Phase 3: Configure Redirects (0.5 hours)
 
@@ -159,7 +159,11 @@ Before marking this task complete:
 - ⏳ Task created
 - 📝 Subtasks defined
 - ✅ Netlify redirects already configured (from FJ-006, FJ-007)
-- ⏳ Ready to apply to affiliate programs
+- ✅ Added Impact.com verification meta tag to site
+- ✅ Applied to Impact.com (for Notion) - In Review
+- ✅ Applied to PartnerStack (for ClickUp) - In Review
+- ✅ Applied to NordVPN (NordVPN + NordPass B2C) - In Review
+- ⏳ Awaiting approvals (1-7 days expected)
 
 ## Notes
 

@@ -59,9 +59,7 @@ const featuredArticles = [
 
     <!-- Cards Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {featuredArticles.map((article, index) => {
-        const isAboveFold = index < 3;
-        return (
+      {featuredArticles.map((article) => (
             <article
                 class="group relative rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1">
               <!-- Glass Card Background -->
@@ -71,25 +69,14 @@ const featuredArticles = [
               <a href={`/blog/${article.slug}`} class="relative block h-full z-10 flex flex-col p-4">
                 <!-- Card Image -->
                 <div class="relative h-48 overflow-hidden rounded-2xl mb-5 shadow-md">
-                  {isAboveFold ? (
-                      <Image
-                          src={article.image}
-                          alt={article.title}
-                          width={800}
-                          height={450}
-                          class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                          loading="eager"
-                      />
-                  ) : (
-                      <Image
-                          src={article.image}
-                          alt={article.title}
-                          width={800}
-                          height={450}
-                          class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                          loading="lazy"
-                      />
-                  )}
+                  <Image
+                      src={article.image}
+                      alt={article.title}
+                      width={800}
+                      height={450}
+                      class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                  />
                 </div>
 
                 <!-- Card Content -->
@@ -116,8 +103,7 @@ const featuredArticles = [
                 </div>
               </a>
             </article>
-        );
-      })}
+      ))}
     </div>
   </div>
 </section>

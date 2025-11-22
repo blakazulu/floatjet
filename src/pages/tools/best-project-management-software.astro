@@ -29,10 +29,10 @@ const headings = [
   { text: 'Basecamp', slug: 'basecamp', depth: 3 },
   { text: 'Linear', slug: 'linear', depth: 3 },
   { text: 'Jira', slug: 'jira', depth: 3 },
-  { text: 'Full Comparison', slug: 'full-comparison', depth: 2 },
   { text: 'How to Choose', slug: 'how-to-choose', depth: 2 },
   { text: 'FAQ', slug: 'faq', depth: 2 },
   { text: 'Conclusion', slug: 'conclusion', depth: 2 },
+  { text: 'Full Comparison', slug: 'full-comparison', depth: 2 },
 ];
 
 // Quick picks comparison table
@@ -555,15 +555,6 @@ const relatedArticles = [
     program="jira"
   />
 
-  <!-- Full Comparison Table -->
-  <h2 id="full-comparison">Complete Comparison Table</h2>
-  <p>Here's how all 8 tools compare on the features that matter most:</p>
-  <ComparisonTable
-    columns={fullComparisonColumns}
-    rows={fullComparisonRows}
-    caption="Complete comparison of project management tools"
-  />
-
   <!-- How to Choose -->
   <h2 id="how-to-choose">How to Choose the Right Tool</h2>
   <p>
@@ -635,6 +626,22 @@ const relatedArticles = [
     program="notion"
   />
 
-  <!-- Related Articles -->
-  <RelatedArticles articles={relatedArticles} />
+  <!-- Full Width Content Slot -->
+  <Fragment slot="full-width">
+    <!-- Full Comparison Table -->
+    <section class="py-8" id="full-comparison">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center font-heading">Complete Comparison Table</h2>
+        <p class="text-white/80 text-center mb-8 max-w-2xl mx-auto">Here's how all 8 tools compare on the features that matter most:</p>
+        <ComparisonTable
+          columns={fullComparisonColumns}
+          rows={fullComparisonRows}
+          caption="Complete comparison of project management tools"
+        />
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    <RelatedArticles articles={relatedArticles} />
+  </Fragment>
 </ArticleLayout>

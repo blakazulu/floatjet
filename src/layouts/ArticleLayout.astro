@@ -116,10 +116,18 @@ const articleSchema = {
           </div>
 
           <!-- Sidebar (Desktop) -->
-          <aside class="article-sidebar">
+          <aside class="article-sidebar" id="toc-sidebar">
             <TableOfContents headings={headings}/>
           </aside>
         </div>
+      </div>
+    </div>
+
+    <!-- Full Width Section (outside article grid) -->
+    <div class="full-width-section" id="full-width-section">
+      <div class="full-width-overlay"></div>
+      <div class="relative z-10">
+        <slot name="full-width"/>
       </div>
     </div>
 
@@ -319,4 +327,53 @@ const articleSchema = {
       /* NO align-self: start here - let it stretch to full grid height */
     }
   }
+
+  /* Full Width Section */
+  .full-width-section {
+    position: relative;
+    padding: 3rem 0;
+  }
+
+  .full-width-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            to bottom,
+            rgba(5, 30, 40, 0.95) 0%,
+            rgba(10, 50, 60, 0.92) 50%,
+            rgba(15, 76, 92, 0.85) 100%
+    );
+    backdrop-filter: blur(8px);
+    z-index: 1;
+  }
 </style>
+
+<script>
+  // Stop TOC sticky at full-width section
+  document.addEventListener('DOMContentLoaded', () => {
+    const tocSidebar = document.getElementById('toc-sidebar');
+    const fullWidthSection = document.getElementById('full-width-section');
+    const tocContent = tocSidebar?.querySelector('.toc-sidebar');
+
+    if (!tocSidebar || !fullWidthSection || !tocContent) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Full width section is visible, unstick the TOC
+            tocContent.style.position = 'relative';
+            tocContent.style.top = 'auto';
+          } else {
+            // Full width section is not visible, re-enable sticky
+            tocContent.style.position = 'sticky';
+            tocContent.style.top = '100px';
+          }
+        });
+      },
+      { rootMargin: '-100px 0px 0px 0px', threshold: 0 }
+    );
+
+    observer.observe(fullWidthSection);
+  });
+</script>

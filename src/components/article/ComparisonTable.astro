@@ -71,8 +71,13 @@ const {columns, rows, caption} = Astro.props;
     position: relative;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     border-radius: 0.75rem;
+  }
+
+  /* Remove margin when in full-width section */
+  :global(.full-width-section) .table-wrapper {
+    margin: 0;
   }
 
   /* Scroll hint shadow */

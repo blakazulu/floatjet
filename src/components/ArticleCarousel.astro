@@ -183,72 +183,75 @@ const categoryNames: Record<string, string> = {
                 role="tabpanel"
                 aria-labelledby={`tab-${categoryId}`}
             >
-              {articlesByCategory[categoryId as keyof typeof articlesByCategory].map((article, index) => {
-                const isFirstVisible = catIndex === 0 && index === 0;
-                return (
-                    <article
-                        data-index={index}
-                        class:list={[
-                          'carousel-slide transition-all duration-500',
-                          index === 0 ? 'block' : 'hidden'
-                        ]}
-                    >
-                      <a href={`/blog/${article.slug}`} class="block group">
-                        <div
-                            class="relative rounded-2xl overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 shadow-xl">
-                          <!-- Image -->
-                          <div class="relative h-64 md:h-96 overflow-hidden">
-                            {isFirstVisible ? (
-                                <Image
-                                    src={article.image}
-                                    alt={article.title}
-                                    width={1200}
-                                    height={600}
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                    loading="eager"
-                                />
-                            ) : (
-                                <Image
-                                    src={article.image}
-                                    alt={article.title}
-                                    width={1200}
-                                    height={600}
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                                    loading="lazy"
-                                />
-                            )}
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-ocean-deep/90 via-ocean-deep/40 to-transparent"></div>
-                          </div>
+              <!-- Slides Container -->
+              <div class="carousel-slides-container">
+                {articlesByCategory[categoryId as keyof typeof articlesByCategory].map((article, index) => {
+                  const isFirstVisible = catIndex === 0 && index === 0;
+                  return (
+                      <article
+                          data-index={index}
+                          class:list={[
+                            'carousel-slide',
+                            index === 0 ? 'active' : ''
+                          ]}
+                      >
+                        <a href={`/blog/${article.slug}`} class="block group">
+                          <div
+                              class="relative rounded-2xl overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 shadow-xl">
+                            <!-- Image -->
+                            <div class="relative h-64 md:h-96 overflow-hidden">
+                              {isFirstVisible ? (
+                                  <Image
+                                      src={article.image}
+                                      alt={article.title}
+                                      width={1200}
+                                      height={600}
+                                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                      loading="eager"
+                                  />
+                              ) : (
+                                  <Image
+                                      src={article.image}
+                                      alt={article.title}
+                                      width={1200}
+                                      height={600}
+                                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                      loading="lazy"
+                                  />
+                              )}
+                              <div
+                                  class="absolute inset-0 bg-gradient-to-t from-ocean-deep/90 via-ocean-deep/40 to-transparent"></div>
+                            </div>
 
-                          <!-- Content Overlay -->
-                          <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-                      <span
-                          class="inline-block px-3 py-1 mb-4 text-xs font-medium bg-jet-stream/90 text-white rounded-full">
-                        {categoryNames[categoryId]}
-                      </span>
-                            <h2 class="text-2xl md:text-4xl font-bold text-white mb-3 leading-tight group-hover:text-sky-light transition-colors">
-                              {article.title}
-                            </h2>
-                            <p class="text-white/80 text-base md:text-lg mb-4 line-clamp-2 max-w-3xl">
-                              {article.excerpt}
-                            </p>
-                            <div class="flex items-center gap-4 text-white/60 text-sm">
-                              <span>{article.readTime}</span>
-                              <span class="flex items-center gap-1 text-sky-light group-hover:gap-2 transition-all">
-                          Read Article
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-                               stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                          </svg>
+                            <!-- Content Overlay -->
+                            <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                        <span
+                            class="inline-block px-3 py-1 mb-4 text-xs font-medium bg-jet-stream/90 text-white rounded-full">
+                          {categoryNames[categoryId]}
                         </span>
+                              <h2 class="text-2xl md:text-4xl font-bold text-white mb-3 leading-tight group-hover:text-sky-light transition-colors">
+                                {article.title}
+                              </h2>
+                              <p class="text-white/80 text-base md:text-lg mb-4 line-clamp-2 max-w-3xl">
+                                {article.excerpt}
+                              </p>
+                              <div class="flex items-center gap-4 text-white/60 text-sm">
+                                <span>{article.readTime}</span>
+                                <span class="flex items-center gap-1 text-sky-light group-hover:gap-2 transition-all">
+                            Read Article
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                          </span>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </a>
-                    </article>
-                );
-              })}
+                        </a>
+                      </article>
+                  );
+                })}
+              </div>
 
               <!-- Dots Indicator -->
               <div class="flex justify-center gap-2 mt-6">
@@ -298,10 +301,90 @@ const categoryNames: Record<string, string> = {
   </div>
 </section>
 
+<style>
+  .carousel-slides-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-slide {
+    display: none;
+    opacity: 0;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+    pointer-events: none;
+  }
+
+  .carousel-slide.active {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+  }
+
+  .carousel-slide.animating-out {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  .carousel-slide.animating-out.to-left {
+    transform: translateX(-30%) scale(0.95);
+  }
+
+  .carousel-slide.animating-out.to-right {
+    transform: translateX(30%) scale(0.95);
+  }
+
+  .carousel-slide.animating-in {
+    display: block;
+    opacity: 1;
+    z-index: 2;
+    animation: slideIn 0.5s ease-out forwards;
+  }
+
+  .carousel-slide.animating-in.from-right {
+    animation-name: slideInFromRight;
+  }
+
+  .carousel-slide.animating-in.from-left {
+    animation-name: slideInFromLeft;
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(30%) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30%) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+</style>
+
 <script>
   // Category and carousel state
   let currentCategory = 'saas';
   let currentSlide = 0;
+  let previousSlide = 0;
+  let slideDirection: 'left' | 'right' = 'right';
+  let autoRotateInterval: ReturnType<typeof setInterval> | null = null;
+  let isAnimating = false;
 
   const categoryNames: Record<string, string> = {
     saas: 'SaaS',
@@ -323,10 +406,27 @@ const categoryNames: Record<string, string> = {
 
   // Initialize
   document.addEventListener('DOMContentLoaded', () => {
+    initializeSlides();
     setupCategoryTabs();
     setupCarouselNavigation();
     setupDotNavigation();
+    startAutoRotate();
   });
+
+  function startAutoRotate() {
+    if (autoRotateInterval) clearInterval(autoRotateInterval);
+    autoRotateInterval = setInterval(() => {
+      if (isAnimating) return;
+      previousSlide = currentSlide;
+      currentSlide = currentSlide === 2 ? 0 : currentSlide + 1;
+      slideDirection = 'right';
+      animateSlide();
+    }, 15000);
+  }
+
+  function resetAutoRotate() {
+    startAutoRotate();
+  }
 
   function setupCategoryTabs() {
     const tabs = document.querySelectorAll('.category-tab');
@@ -368,8 +468,30 @@ const categoryNames: Record<string, string> = {
     // Reset to first slide
     currentCategory = newCategory;
     currentSlide = 0;
-    updateSlide();
+    previousSlide = 0;
+
+    // Reset slides in new panel
+    const newPanel = document.querySelector(`.carousel-panel[data-category="${newCategory}"]`);
+    if (newPanel) {
+      newPanel.querySelectorAll('.carousel-slide').forEach((slide, index) => {
+        slide.classList.remove('active', 'animating-in', 'animating-out', 'from-left', 'from-right', 'to-left', 'to-right');
+        if (index === 0) {
+          slide.classList.add('active');
+        }
+      });
+      newPanel.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+        if (index === 0) {
+          dot.classList.remove('bg-white/30', 'w-2.5');
+          dot.classList.add('bg-jet-stream', 'w-8');
+        } else {
+          dot.classList.remove('bg-jet-stream', 'w-8');
+          dot.classList.add('bg-white/30', 'w-2.5');
+        }
+      });
+    }
+
     updateMoreButton();
+    resetAutoRotate();
   }
 
   function setupCarouselNavigation() {
@@ -377,40 +499,58 @@ const categoryNames: Record<string, string> = {
     const nextBtn = document.getElementById('carousel-next');
 
     prevBtn?.addEventListener('click', () => {
+      if (isAnimating) return;
+      previousSlide = currentSlide;
       currentSlide = currentSlide === 0 ? 2 : currentSlide - 1;
-      updateSlide();
+      slideDirection = 'left';
+      animateSlide();
+      resetAutoRotate();
     });
 
     nextBtn?.addEventListener('click', () => {
+      if (isAnimating) return;
+      previousSlide = currentSlide;
       currentSlide = currentSlide === 2 ? 0 : currentSlide + 1;
-      updateSlide();
+      slideDirection = 'right';
+      animateSlide();
+      resetAutoRotate();
     });
   }
 
   function setupDotNavigation() {
     document.querySelectorAll('.carousel-dot').forEach(dot => {
       dot.addEventListener('click', () => {
+        if (isAnimating) return;
         const slideIndex = parseInt(dot.getAttribute('data-slide') || '0');
+        if (slideIndex === currentSlide) return;
+        previousSlide = currentSlide;
+        slideDirection = slideIndex > currentSlide ? 'right' : 'left';
         currentSlide = slideIndex;
-        updateSlide();
+        animateSlide();
+        resetAutoRotate();
       });
     });
   }
 
-  function updateSlide() {
+  function animateSlide() {
     const currentPanel = document.querySelector(`.carousel-panel[data-category="${currentCategory}"]`);
     if (!currentPanel) return;
 
-    // Update slides
-    currentPanel.querySelectorAll('.carousel-slide').forEach((slide, index) => {
-      if (index === currentSlide) {
-        slide.classList.remove('hidden');
-        slide.classList.add('block');
-      } else {
-        slide.classList.remove('block');
-        slide.classList.add('hidden');
-      }
-    });
+    isAnimating = true;
+    const slides = currentPanel.querySelectorAll('.carousel-slide');
+    const exitSlide = slides[previousSlide];
+    const enterSlide = slides[currentSlide];
+
+    // Exit animation
+    if (exitSlide) {
+      exitSlide.classList.remove('active');
+      exitSlide.classList.add('animating-out', slideDirection === 'right' ? 'to-left' : 'to-right');
+    }
+
+    // Enter animation
+    if (enterSlide) {
+      enterSlide.classList.add('animating-in', slideDirection === 'right' ? 'from-right' : 'from-left');
+    }
 
     // Update dots
     currentPanel.querySelectorAll('.carousel-dot').forEach((dot, index) => {
@@ -421,6 +561,31 @@ const categoryNames: Record<string, string> = {
         dot.classList.remove('bg-jet-stream', 'w-8');
         dot.classList.add('bg-white/30', 'w-2.5');
       }
+    });
+
+    // Clean up after animation
+    setTimeout(() => {
+      if (exitSlide) {
+        exitSlide.classList.remove('animating-out', 'to-left', 'to-right');
+      }
+      if (enterSlide) {
+        enterSlide.classList.remove('animating-in', 'from-left', 'from-right');
+        enterSlide.classList.add('active');
+      }
+      isAnimating = false;
+    }, 500);
+  }
+
+  function initializeSlides() {
+    document.querySelectorAll('.carousel-panel').forEach(panel => {
+      panel.querySelectorAll('.carousel-slide').forEach((slide, index) => {
+        slide.classList.remove('animating-in', 'animating-out', 'from-left', 'from-right', 'to-left', 'to-right');
+        if (index === 0) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
     });
   }
 

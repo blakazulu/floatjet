@@ -1,15 +1,382 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+import ComparisonTable from '@components/article/ComparisonTable.astro';
 
-const title = 'Top CRM Software for Small Businesses | FloatJet';
-const description = 'Manage customer relationships effectively with these powerful yet affordable CRM solutions.';
+// Article metadata
+const title = 'Best CRM Software for Small Business (2025)';
+const description = 'We tested HubSpot, Pipedrive, Zoho, and more to find the best CRM for small businesses. Compare features, pricing, and ease of use to grow your customer relationships.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-23');
+const readingTime = 12;
+const image = 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Team discussing customer relationship management strategy';
+
+// Table of contents
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
+  {text: 'What to Look For', slug: 'what-to-look-for', depth: 2},
+  {text: 'Top CRMs Reviewed', slug: 'reviews', depth: 2},
+  {text: 'Best for Specific Needs', slug: 'best-for', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+];
+
+// Comparison table
+const comparisonColumns = [
+  {key: 'crm', label: 'CRM', width: '110px'},
+  {key: 'price', label: 'Starting Price'},
+  {key: 'freeplan', label: 'Free Plan'},
+  {key: 'contacts', label: 'Contacts'},
+  {key: 'bestFor', label: 'Best For'},
+];
+
+const comparisonRows = [
+  {
+    crm: '<strong>HubSpot</strong>',
+    price: '$0-$20/mo',
+    freeplan: 'Yes (generous)',
+    contacts: 'Unlimited free',
+    bestFor: 'Growing businesses'
+  },
+  {
+    crm: '<strong>Pipedrive</strong>',
+    price: '$14/mo',
+    freeplan: '14-day trial',
+    contacts: 'Unlimited',
+    bestFor: 'Sales teams'
+  },
+  {
+    crm: '<strong>Zoho CRM</strong>',
+    price: '$0-$14/mo',
+    freeplan: 'Yes (3 users)',
+    contacts: '5K-100K',
+    bestFor: 'Budget-conscious'
+  },
+  {
+    crm: '<strong>Monday Sales</strong>',
+    price: '$12/mo',
+    freeplan: '14-day trial',
+    contacts: 'Unlimited',
+    bestFor: 'Visual workflows'
+  },
+  {
+    crm: '<strong>Freshsales</strong>',
+    price: '$0-$15/mo',
+    freeplan: 'Yes (basic)',
+    contacts: 'Unlimited',
+    bestFor: 'AI features'
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'What is CRM software and why do small businesses need it?',
+    answer: '<p>CRM (Customer Relationship Management) software helps you track customer interactions, manage sales pipelines, and automate follow-ups. Small businesses need CRM because it <strong>prevents leads from falling through the cracks</strong>, helps you understand customer behavior, and scales your sales process without adding headcount.</p>'
+  },
+  {
+    question: 'Is HubSpot really free?',
+    answer: '<p>Yes, HubSpot offers a genuinely useful free tier with unlimited contacts, email tracking, meeting scheduling, and basic pipeline management. The paid tiers ($20+/month) add automation, sequences, and advanced reporting. Many small businesses operate on the free plan for years before upgrading.</p>'
+  },
+  {
+    question: 'How long does it take to implement a CRM?',
+    answer: '<p>For small businesses, basic setup takes <strong>1-2 days</strong>. You\'ll import contacts, configure your pipeline stages, and connect email. Full implementation with automations and integrations might take 1-2 weeks. Most modern CRMs offer migration tools and onboarding support.</p>'
+  },
+  {
+    question: 'Can I switch CRMs later without losing data?',
+    answer: '<p>Yes, all major CRMs support data export (usually CSV format) and most offer import tools for migrating from competitors. The bigger challenge is re-training your team and rebuilding automations. Start with a CRM that can grow with you to minimize switching.</p>'
+  },
+  {
+    question: 'Do I need a CRM if I use spreadsheets?',
+    answer: '<p>Spreadsheets work for very small operations (&lt;50 contacts), but they break down quickly. You can\'t automate follow-ups, track email opens, or get sales insights from a spreadsheet. If you\'re spending more than 30 minutes daily on contact management, a CRM will save time.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Best Project Management Software',
+    excerpt: 'Organize your work and collaborate better with the right PM tools.',
+    href: '/tools/best-project-management-software',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Project management dashboard'
+  },
+  {
+    title: 'Best Email Marketing Tools',
+    excerpt: 'Grow your list and nurture leads with email marketing.',
+    href: '/tools/best-email-marketing-tools',
+    image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Email marketing campaign'
+  },
+  {
+    title: 'Best Team Communication Tools',
+    excerpt: 'Keep your remote team connected and productive.',
+    href: '/blog/best-team-communication-tools',
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Team video call'
+  }
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <div class="container mx-auto px-4 py-20">
-    <article class="max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold text-white mb-4">Top CRM Software for Small Businesses</h1>
-      <p class="text-white/80 text-lg">Coming soon...</p>
-    </article>
-  </div>
-</BaseLayout>
+<ArticleLayout
+  title={title}
+  description={description}
+  author={author}
+  authorUrl={authorUrl}
+  pubDate={pubDate}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  category="SaaS"
+  categorySlug="tools/saas"
+  headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">Finding the Right CRM for Your Business</h2>
+  <p>
+    Your customer relationships are your business. But as you grow beyond a handful of clients,
+    tracking conversations, follow-ups, and deal stages in your head (or worse, in spreadsheets)
+    becomes impossible.
+  </p>
+  <p>
+    CRM software solves this by giving you a single source of truth for every customer interaction.
+    The right CRM helps you close more deals, provide better support, and understand what's
+    working in your sales process.
+  </p>
+  <p>
+    We tested the most popular CRMs for small businesses to help you find one that fits your
+    budget, technical comfort level, and growth plans.
+  </p>
+
+  <!-- Quick Comparison -->
+  <h2 id="quick-comparison">Quick Comparison</h2>
+
+  <ComparisonTable columns={comparisonColumns} rows={comparisonRows} />
+
+  <p>
+    <strong>Our picks:</strong> HubSpot for most small businesses (best free plan), Pipedrive
+    for sales-focused teams, Zoho for the most affordable full-featured option.
+  </p>
+
+  <!-- What to Look For -->
+  <h2 id="what-to-look-for">What to Look For in a Small Business CRM</h2>
+
+  <h3>Ease of Use</h3>
+  <p>
+    If your team won't use the CRM, it's worthless. Look for intuitive interfaces, minimal
+    training requirements, and mobile apps for on-the-go access.
+  </p>
+
+  <h3>Contact & Pipeline Management</h3>
+  <p>
+    Core CRM functionality: storing contact details, tracking deal stages, logging interactions,
+    and managing tasks. Every CRM does this—the question is how well.
+  </p>
+
+  <h3>Email Integration</h3>
+  <p>
+    Your CRM should connect to Gmail or Outlook to automatically log emails, track opens, and
+    let you email directly from contact records.
+  </p>
+
+  <h3>Automation</h3>
+  <p>
+    Automate repetitive tasks: follow-up reminders, lead assignment, email sequences. This is
+    where CRMs really save time, but often requires paid plans.
+  </p>
+
+  <h3>Reporting</h3>
+  <p>
+    Understand your sales funnel: conversion rates, deal velocity, revenue forecasts. Good
+    reporting helps you identify bottlenecks and opportunities.
+  </p>
+
+  <h3>Integrations</h3>
+  <p>
+    Connect to tools you already use: email marketing, accounting, project management, support
+    tickets. Check that your must-have integrations are supported.
+  </p>
+
+  <!-- Top CRMs Reviewed -->
+  <h2 id="reviews">Top CRMs Reviewed</h2>
+
+  <h3 id="hubspot">HubSpot CRM - Best Overall for Small Business</h3>
+  <p>
+    HubSpot pioneered the "freemium" CRM model and still offers the most generous free tier.
+    You get unlimited contacts, pipeline management, email tracking, meeting scheduling, and
+    more—genuinely free, not a limited trial.
+  </p>
+  <ul>
+    <li><strong>Ease of use:</strong> Excellent. Clean interface, great onboarding</li>
+    <li><strong>Free plan:</strong> Unlimited contacts, email tracking, pipeline, forms</li>
+    <li><strong>Paid plans:</strong> From $20/month for automation and sequences</li>
+    <li><strong>Integrations:</strong> 1,000+ including Gmail, Outlook, Slack, Zapier</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> Growing businesses that want room to scale without switching CRMs.
+  </p>
+  <p>
+    <strong>Downsides:</strong> Paid plans get expensive quickly. Some features locked behind
+    higher tiers.
+  </p>
+  <p>
+    <a href="/go/hubspot" rel="nofollow sponsored" class="text-jet-stream hover:text-sky-light">
+      Try HubSpot Free &rarr;
+    </a>
+  </p>
+
+  <h3 id="pipedrive">Pipedrive - Best for Sales Teams</h3>
+  <p>
+    Pipedrive was built by salespeople for salespeople. It's laser-focused on visual pipeline
+    management and deal tracking, with less bloat than all-in-one platforms.
+  </p>
+  <ul>
+    <li><strong>Ease of use:</strong> Very good. Drag-and-drop pipeline is intuitive</li>
+    <li><strong>Free plan:</strong> No (14-day free trial)</li>
+    <li><strong>Paid plans:</strong> From $14/user/month</li>
+    <li><strong>Integrations:</strong> 300+ including email, calendar, Zapier</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> Sales-driven businesses that want a focused, no-nonsense CRM.
+  </p>
+  <p>
+    <strong>Downsides:</strong> No free plan. Marketing features require add-ons.
+  </p>
+  <p>
+    <a href="/go/pipedrive" rel="nofollow sponsored" class="text-jet-stream hover:text-sky-light">
+      Try Pipedrive free for 14 days &rarr;
+    </a>
+  </p>
+
+  <h3 id="zoho">Zoho CRM - Best Budget Option</h3>
+  <p>
+    Zoho offers remarkable value—a free plan for up to 3 users and paid plans starting at just
+    $14/month with features that competitors charge 3-4x more for.
+  </p>
+  <ul>
+    <li><strong>Ease of use:</strong> Good, though interface feels dated</li>
+    <li><strong>Free plan:</strong> Yes (3 users, 5,000 contacts)</li>
+    <li><strong>Paid plans:</strong> From $14/user/month with full features</li>
+    <li><strong>Integrations:</strong> 500+ including Zoho suite, Google, Microsoft</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> Budget-conscious businesses that need full CRM features.
+  </p>
+  <p>
+    <strong>Downsides:</strong> UI less polished than HubSpot/Pipedrive. Learning curve.
+  </p>
+  <p>
+    <a href="/go/zoho-crm" rel="nofollow sponsored" class="text-jet-stream hover:text-sky-light">
+      Try Zoho CRM Free &rarr;
+    </a>
+  </p>
+
+  <h3 id="monday">Monday Sales CRM - Best Visual Workflows</h3>
+  <p>
+    Monday.com's CRM brings their famous visual workflow builder to sales. If you already use
+    Monday for project management, the CRM integrates seamlessly.
+  </p>
+  <ul>
+    <li><strong>Ease of use:</strong> Excellent. Familiar if you use Monday.com</li>
+    <li><strong>Free plan:</strong> No (14-day trial)</li>
+    <li><strong>Paid plans:</strong> From $12/user/month</li>
+    <li><strong>Integrations:</strong> 200+ including email, calendar, Slack</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> Teams who love visual boards and already use Monday.com.
+  </p>
+  <p>
+    <strong>Downsides:</strong> Less mature than dedicated CRMs. Fewer sales-specific features.
+  </p>
+
+  <h3 id="freshsales">Freshsales - Best AI Features</h3>
+  <p>
+    Freshsales (from Freshworks) includes AI-powered lead scoring, deal insights, and a
+    built-in phone system. Good choice if you want automation without complexity.
+  </p>
+  <ul>
+    <li><strong>Ease of use:</strong> Very good. Modern, clean interface</li>
+    <li><strong>Free plan:</strong> Yes (basic features, unlimited users)</li>
+    <li><strong>Paid plans:</strong> From $15/user/month</li>
+    <li><strong>Integrations:</strong> 100+ plus Freshworks suite</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> Businesses wanting AI assistance and built-in calling.
+  </p>
+  <p>
+    <strong>Downsides:</strong> Smaller integration ecosystem. Best features require higher tiers.
+  </p>
+
+  <!-- Best for Specific Needs -->
+  <h2 id="best-for">Best CRM for Specific Needs</h2>
+
+  <h3>Best Free CRM</h3>
+  <p>
+    <strong>HubSpot</strong> - No contest. The free plan includes features other CRMs charge for.
+    You can run a legitimate sales operation without paying a dime.
+  </p>
+
+  <h3>Best for Solopreneurs</h3>
+  <p>
+    <strong>HubSpot Free</strong> or <strong>Zoho Free</strong> - Both offer enough features
+    for one-person businesses without complexity overload.
+  </p>
+
+  <h3>Best for Growing Sales Teams</h3>
+  <p>
+    <strong>Pipedrive</strong> - Sales-focused features, excellent mobile app, scales well
+    from 2 to 50+ salespeople.
+  </p>
+
+  <h3>Best for E-commerce</h3>
+  <p>
+    <strong>HubSpot</strong> with Shopify/WooCommerce integration - Track customer purchase
+    history alongside sales interactions.
+  </p>
+
+  <h3>Best for Tight Budgets</h3>
+  <p>
+    <strong>Zoho CRM</strong> - Most features per dollar, especially for teams of 3+.
+  </p>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} />
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">Our Recommendations</h2>
+  <p>
+    For most small businesses, we recommend:
+  </p>
+  <ul>
+    <li>
+      <strong>Start with:</strong> <a href="/go/hubspot" rel="nofollow sponsored">HubSpot Free</a> -
+      grow into paid features as needed
+    </li>
+    <li>
+      <strong>Sales-focused:</strong> <a href="/go/pipedrive" rel="nofollow sponsored">Pipedrive</a> -
+      best visual pipeline and sales tools
+    </li>
+    <li>
+      <strong>Best value:</strong> <a href="/go/zoho-crm" rel="nofollow sponsored">Zoho CRM</a> -
+      full features at budget prices
+    </li>
+  </ul>
+  <p>
+    The best CRM is one your team will actually use. Most offer free trials or free plans—test
+    2-3 options with real data before committing. Your future self (and your customers) will
+    thank you.
+  </p>
+  <p>
+    Looking to improve team collaboration alongside CRM? Check out our
+    <a href="/blog/best-team-communication-tools">team communication tools guide</a>.
+  </p>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles} />
+  </Fragment>
+</ArticleLayout>

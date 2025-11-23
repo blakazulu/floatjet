@@ -1,15 +1,334 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
 
-const title = 'Essential Travel Tech for Digital Nomads | FloatJet';
-const description = 'Compact gadgets and accessories that make working from anywhere a breeze.';
+// Article metadata
+const title = 'Essential Travel Tech for Digital Nomads (2025)';
+const description = 'The must-have gadgets and accessories for working from anywhere. Compact, reliable tech that fits in a carry-on and keeps you productive on the road.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-23');
+const readingTime = 10;
+const image = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Digital nomad travel tech setup with laptop and accessories';
+
+// Table of contents
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'The Essentials', slug: 'essentials', depth: 2},
+  {text: 'Connectivity', slug: 'connectivity', depth: 2},
+  {text: 'Productivity Boosters', slug: 'productivity', depth: 2},
+  {text: 'Power Solutions', slug: 'power', depth: 2},
+  {text: 'Travel Comfort', slug: 'comfort', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'Do I need a separate mobile hotspot or is phone tethering enough?',
+    answer: '<p>Phone tethering works for backup, but dedicated hotspots like Skyroam or local SIM-based hotspots offer better battery management, can connect multiple devices, and don\'t drain your phone. If you work from cafes with unreliable WiFi, a hotspot is worth it.</p>'
+  },
+  {
+    question: 'What\'s the minimum laptop spec for remote work?',
+    answer: '<p>For most remote work (writing, coding, video calls): 8GB RAM minimum (16GB preferred), SSD storage, and a recent processor. Battery life matters more than raw power—aim for 8+ hours. MacBook Air M2/M3, ThinkPad X1 Carbon, and Dell XPS 13 are popular choices.</p>'
+  },
+  {
+    question: 'Should I bring a monitor for traveling?',
+    answer: '<p>Portable monitors (15-17") add significant productivity but also weight and bulk. Worth it for extended stays (1+ months) or if your work requires screen real estate. Skip them for fast-paced travel. The ASUS ZenScreen and Espresso Display are good lightweight options.</p>'
+  },
+  {
+    question: 'How do I keep my gear safe while traveling?',
+    answer: '<p>Never check electronics in luggage. Use a TSA-approved laptop sleeve. Consider a cable lock for cafes (though it won\'t stop determined theft). Get electronics coverage on your travel insurance. Back up to cloud constantly. The best security is never leaving gear unattended.</p>'
+  },
+  {
+    question: 'What about international adapters?',
+    answer: '<p>A universal adapter covers 99% of situations. Make sure it has USB-C and USB-A ports. GaN chargers with multiple ports can replace multiple adapters. Check your laptop charger—many support 100-240V automatically and just need a plug adapter, not a voltage converter.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Best Laptops for Remote Work',
+    excerpt: 'Find the perfect laptop for productivity on the go.',
+    href: '/tools/best-laptops-remote-work',
+    image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Laptop on desk'
+  },
+  {
+    title: 'Top Destinations for Digital Nomads',
+    excerpt: 'Cities with great WiFi, affordable living, and thriving communities.',
+    href: '/blog/top-destinations-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Digital nomad destination'
+  },
+  {
+    title: 'How to Find Reliable WiFi Anywhere',
+    excerpt: 'Tips and tools for staying connected no matter where you travel.',
+    href: '/blog/find-reliable-wifi-anywhere',
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'WiFi signal concept'
+  }
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <div class="container mx-auto px-4 py-20">
-    <article class="max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold text-white mb-4">Essential Travel Tech for Digital Nomads</h1>
-      <p class="text-white/80 text-lg">Coming soon...</p>
-    </article>
-  </div>
-</BaseLayout>
+<ArticleLayout
+  title={title}
+  description={description}
+  author={author}
+  authorUrl={authorUrl}
+  pubDate={pubDate}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  category="Travel"
+  categorySlug="guides/travel"
+  headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">Packing Light, Working Heavy</h2>
+  <p>
+    The digital nomad dream comes with a practical challenge: you need to be productive from
+    anywhere while keeping your bag light enough to actually travel. Every gram matters when
+    you're hopping flights and navigating foreign transit.
+  </p>
+  <p>
+    After years of testing gear across dozens of countries, we've distilled the essential
+    tech setup for working remotely. This isn't about having the fanciest gadgets—it's about
+    reliable, compact equipment that lets you work from a beach bar or a business center
+    equally well.
+  </p>
+
+  <!-- The Essentials -->
+  <h2 id="essentials">The Essentials (Don't Leave Home Without)</h2>
+
+  <h3>Laptop</h3>
+  <p>
+    Your laptop is your office. Prioritize: battery life (8+ hours), weight (under 1.5kg/3.3lbs),
+    reliability, and a good keyboard.
+  </p>
+  <ul>
+    <li><strong>Best overall:</strong> MacBook Air M3 - All-day battery, excellent performance, silent</li>
+    <li><strong>Best Windows:</strong> ThinkPad X1 Carbon - Business-grade build, great keyboard</li>
+    <li><strong>Budget pick:</strong> ThinkPad T14s - Excellent value, repairable</li>
+  </ul>
+  <p>
+    See our <a href="/tools/best-laptops-remote-work">full laptop comparison</a> for detailed reviews.
+  </p>
+
+  <h3>Noise-Canceling Headphones</h3>
+  <p>
+    Non-negotiable for focus in noisy environments. ANC headphones transform a loud cafe into
+    a quiet office.
+  </p>
+  <ul>
+    <li><strong>Over-ear:</strong> Sony WH-1000XM5 or Bose QuietComfort Ultra - Best noise canceling</li>
+    <li><strong>Compact:</strong> AirPods Pro 2 or Sony WF-1000XM5 - Pack smaller, still excellent</li>
+  </ul>
+  <p>
+    Over-ear sounds better; earbuds pack easier. Most nomads end up with both eventually.
+  </p>
+
+  <h3>External Mouse (Optional but Recommended)</h3>
+  <p>
+    A good mouse reduces wrist strain and improves precision. Compact travel mice strike the
+    balance between portability and ergonomics.
+  </p>
+  <ul>
+    <li><strong>Compact:</strong> Logitech MX Anywhere 3 - Best travel mouse</li>
+    <li><strong>Budget:</strong> Logitech Pebble - Cheap, silent, works great</li>
+  </ul>
+
+  <!-- Connectivity -->
+  <h2 id="connectivity">Connectivity (Your Lifeline)</h2>
+
+  <h3>Mobile Hotspot</h3>
+  <p>
+    Never rely solely on cafe WiFi. A mobile hotspot ensures you can always get online, even
+    when local internet fails.
+  </p>
+  <ul>
+    <li><strong>International roaming:</strong> Solis or Skyroam - Works in 100+ countries</li>
+    <li><strong>Local SIM:</strong> Get a local SIM with data, use phone as hotspot</li>
+    <li><strong>Best value:</strong> Buy a cheap unlocked hotspot device, swap local SIMs</li>
+  </ul>
+
+  <h3>eSIM</h3>
+  <p>
+    eSIM has revolutionized nomad connectivity. No more hunting for SIM cards at airports—download
+    data plans instantly.
+  </p>
+  <ul>
+    <li><strong>Best apps:</strong> Airalo, Holafly, Nomad eSIM</li>
+    <li><strong>Tip:</strong> Compare prices; they vary wildly by country</li>
+  </ul>
+
+  <h3>VPN Service</h3>
+  <p>
+    Essential for security on public WiFi and accessing region-locked content. Install before
+    you leave home.
+  </p>
+  <ul>
+    <li><strong>Top picks:</strong> NordVPN, ExpressVPN, or Surfshark</li>
+    <li><strong>Why:</strong> Security, privacy, and accessing home streaming services</li>
+  </ul>
+  <p>
+    See our <a href="/tools/best-vpn-digital-nomads">VPN comparison</a> for full reviews.
+  </p>
+
+  <h3>USB-C Hub</h3>
+  <p>
+    Modern laptops skimp on ports. A compact hub adds USB-A, HDMI, and SD card slots when needed.
+  </p>
+  <ul>
+    <li><strong>Minimal:</strong> Anker 5-in-1 USB-C Hub</li>
+    <li><strong>Full-featured:</strong> CalDigit USB-C SOHO Dock</li>
+  </ul>
+
+  <!-- Productivity Boosters -->
+  <h2 id="productivity">Productivity Boosters</h2>
+
+  <h3>Portable Monitor</h3>
+  <p>
+    A second screen significantly boosts productivity, especially for developers, designers,
+    and anyone doing research-heavy work.
+  </p>
+  <ul>
+    <li><strong>Lightweight:</strong> ASUS ZenScreen MB16AC (0.8kg)</li>
+    <li><strong>Premium:</strong> Espresso Display - Touchscreen, portrait mode</li>
+  </ul>
+  <p>
+    <strong>Verdict:</strong> Worth it for stays of 1+ month. Skip for fast travel.
+  </p>
+
+  <h3>Laptop Stand</h3>
+  <p>
+    Elevating your screen to eye level prevents neck strain. Crucial for long work sessions.
+  </p>
+  <ul>
+    <li><strong>Compact:</strong> Roost Laptop Stand - Folds flat, very light</li>
+    <li><strong>Budget:</strong> Nexstand K2 - Heavier but much cheaper</li>
+  </ul>
+
+  <h3>External Keyboard (Optional)</h3>
+  <p>
+    If using a laptop stand, you'll need an external keyboard. Choose compact/wireless.
+  </p>
+  <ul>
+    <li><strong>Compact:</strong> Logitech MX Keys Mini or Apple Magic Keyboard</li>
+    <li><strong>Folding:</strong> iClever BK08 - Folds to pocket size</li>
+  </ul>
+
+  <h3>Webcam Light</h3>
+  <p>
+    Video call lighting in hotels and cafes is often terrible. A small ring light improves
+    your on-camera presence dramatically.
+  </p>
+  <ul>
+    <li><strong>Compact:</strong> Lume Cube Video Conference Lighting Kit</li>
+    <li><strong>Budget:</strong> Any clip-on ring light from Amazon</li>
+  </ul>
+
+  <!-- Power Solutions -->
+  <h2 id="power">Power Solutions</h2>
+
+  <h3>GaN Charger</h3>
+  <p>
+    Gallium Nitride chargers are smaller and lighter than traditional chargers at the same
+    wattage. One multi-port charger can replace 3-4 separate adapters.
+  </p>
+  <ul>
+    <li><strong>Best value:</strong> Anker 735 (65W) - Laptop + phone + tablet from one charger</li>
+    <li><strong>Compact:</strong> Anker Nano II 65W - Smallest 65W charger</li>
+    <li><strong>High power:</strong> Anker 747 (150W) - For power-hungry setups</li>
+  </ul>
+
+  <h3>Universal Travel Adapter</h3>
+  <p>
+    One adapter that works everywhere. Make sure it includes USB ports.
+  </p>
+  <ul>
+    <li><strong>Recommended:</strong> Zendure Passport III - USB-C PD, compact</li>
+    <li><strong>Budget:</strong> EPICKA Universal Adapter - Covers most needs</li>
+  </ul>
+
+  <h3>Power Bank</h3>
+  <p>
+    For long flights, bus rides, or cafes without accessible outlets. USB-C PD for fast
+    laptop charging.
+  </p>
+  <ul>
+    <li><strong>Flight-friendly:</strong> Anker 737 (24,000mAh) - Max airline capacity</li>
+    <li><strong>Compact:</strong> Anker 621 (5,000mAh) - Phone top-ups only</li>
+  </ul>
+  <p>
+    <strong>Note:</strong> Airlines limit batteries to 100Wh for carry-on. Check capacity before flying.
+  </p>
+
+  <!-- Travel Comfort -->
+  <h2 id="comfort">Travel Comfort</h2>
+
+  <h3>Tech Organizer</h3>
+  <p>
+    Keep cables, adapters, and small gadgets organized. Saves time and prevents tangles.
+  </p>
+  <ul>
+    <li><strong>Minimal:</strong> Peak Design Tech Pouch</li>
+    <li><strong>Budget:</strong> BAGSMART Electronics Organizer</li>
+  </ul>
+
+  <h3>Cable Kit</h3>
+  <p>
+    Bring the cables you need, no more:
+  </p>
+  <ul>
+    <li>2x USB-C to USB-C (one long, one short)</li>
+    <li>1x USB-C to Lightning (if using Apple devices)</li>
+    <li>1x USB-A to USB-C (for older ports)</li>
+  </ul>
+
+  <h3>Backup Storage</h3>
+  <p>
+    Cloud storage is primary, but having local backup protects against connectivity issues.
+  </p>
+  <ul>
+    <li><strong>Compact SSD:</strong> Samsung T7 (500GB-2TB) - Fast, rugged, pocket-sized</li>
+    <li><strong>Budget:</strong> SanDisk Extreme Portable SSD</li>
+  </ul>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} />
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">The Perfect Pack</h2>
+  <p>
+    Here's our recommended kit for most digital nomads:
+  </p>
+  <ul>
+    <li><strong>Core:</strong> Laptop, noise-canceling headphones, mouse, GaN charger</li>
+    <li><strong>Connectivity:</strong> eSIM, VPN subscription, USB-C hub</li>
+    <li><strong>Comfort:</strong> Laptop stand, tech organizer, power bank</li>
+    <li><strong>Optional:</strong> Portable monitor, external keyboard, webcam light</li>
+  </ul>
+  <p>
+    Start minimal. You can always buy gear on the road (often cheaper), and you'll quickly
+    learn what you actually need versus what seemed important at home.
+  </p>
+  <p>
+    The best tech setup is one you'll actually carry and use. Prioritize reliability over
+    features, and remember: you're traveling to work and live, not to have the perfect desk setup.
+  </p>
+  <p>
+    Planning your first nomad trip? Check our <a href="/blog/top-destinations-digital-nomads">
+    destination guide</a> and make sure you have <a href="/blog/best-travel-insurance-remote-workers">
+    proper travel insurance</a>.
+  </p>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles} />
+  </Fragment>
+</ArticleLayout>

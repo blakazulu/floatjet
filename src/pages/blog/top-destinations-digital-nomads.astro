@@ -1,15 +1,378 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+import ComparisonTable from '@components/article/ComparisonTable.astro';
 
-const title = 'Top Destinations for Digital Nomads in 2024 | FloatJet';
-const description = 'Cities with great WiFi, affordable living, and thriving remote work communities.';
+// Article metadata
+const title = 'Top 10 Destinations for Digital Nomads (2025)';
+const description = 'Discover the best cities for remote work in 2025. Compare cost of living, WiFi speed, visa options, and community for digital nomads worldwide.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-23');
+const readingTime = 14;
+const image = 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Digital nomad working from tropical location';
+
+// Table of contents
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
+  {text: 'How We Ranked', slug: 'methodology', depth: 2},
+  {text: 'Top 10 Destinations', slug: 'destinations', depth: 2},
+  {text: 'Honorable Mentions', slug: 'honorable-mentions', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+];
+
+// Comparison table
+const comparisonColumns = [
+  {key: 'city', label: 'City', width: '130px'},
+  {key: 'cost', label: 'Monthly Cost'},
+  {key: 'wifi', label: 'Avg WiFi'},
+  {key: 'visa', label: 'Visa'},
+  {key: 'bestFor', label: 'Best For'},
+];
+
+const comparisonRows = [
+  {
+    city: '<strong>Lisbon</strong>',
+    cost: '$2,000-2,800',
+    wifi: '100+ Mbps',
+    visa: 'Digital Nomad',
+    bestFor: 'European base'
+  },
+  {
+    city: '<strong>Bangkok</strong>',
+    cost: '$1,200-1,800',
+    wifi: '50-100 Mbps',
+    visa: '60 days',
+    bestFor: 'Low cost'
+  },
+  {
+    city: '<strong>Mexico City</strong>',
+    cost: '$1,500-2,200',
+    wifi: '50-80 Mbps',
+    visa: '180 days',
+    bestFor: 'US time zones'
+  },
+  {
+    city: '<strong>Bali</strong>',
+    cost: '$1,400-2,000',
+    wifi: '30-50 Mbps',
+    visa: '60 days',
+    bestFor: 'Lifestyle'
+  },
+  {
+    city: '<strong>Medellín</strong>',
+    cost: '$1,200-1,800',
+    wifi: '50-80 Mbps',
+    visa: '90 days',
+    bestFor: 'Weather + value'
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'What is a digital nomad visa?',
+    answer: '<p>A digital nomad visa allows remote workers to legally live and work in a foreign country while employed by companies outside that country. Countries like Portugal, Spain, Croatia, and Costa Rica offer these visas, typically requiring proof of remote income ($2,000-4,000/month) and health insurance. They usually last 1-2 years and are renewable.</p>'
+  },
+  {
+    question: 'How much money do I need to be a digital nomad?',
+    answer: '<p>Budget varies wildly by location. Southeast Asia: $1,200-1,800/month. Latin America: $1,500-2,500/month. Europe: $2,500-4,000/month. We recommend having <strong>3-6 months of expenses saved</strong> before starting, plus emergency funds and travel insurance.</p>'
+  },
+  {
+    question: 'Is it legal to work remotely while traveling on a tourist visa?',
+    answer: '<p>Technically, most tourist visas prohibit "work." However, the intent is to prevent taking local jobs. Working remotely for a foreign employer falls into a gray area that most countries don\'t actively enforce. Digital nomad visas exist partly to clarify this—they\'re the safest legal option for long-term stays.</p>'
+  },
+  {
+    question: 'What about taxes as a digital nomad?',
+    answer: '<p>Tax obligations depend on your citizenship, tax residency, and where you earn income. US citizens owe taxes regardless of location. Others may become tax residents after 183+ days in a country. <strong>Consult a tax professional</strong> familiar with international remote work—this is not DIY territory.</p>'
+  },
+  {
+    question: 'How do I find other digital nomads?',
+    answer: '<p>Coworking spaces are the easiest way to meet people. Apps like Nomad List, Meetup, and Facebook groups for specific cities help too. Many destinations have regular nomad meetups, skill-sharing events, and social gatherings. The community is generally welcoming to newcomers.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Essential Travel Tech for Nomads',
+    excerpt: 'Compact gadgets and accessories for working from anywhere.',
+    href: '/blog/essential-travel-tech-nomads',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Travel tech setup'
+  },
+  {
+    title: 'Best Travel Insurance for Remote Workers',
+    excerpt: 'Coverage designed for long-term travelers and location-independent professionals.',
+    href: '/blog/best-travel-insurance-remote-workers',
+    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Travel planning'
+  },
+  {
+    title: 'Best VPN for Digital Nomads',
+    excerpt: 'Protect your data and access content from anywhere.',
+    href: '/tools/best-vpn-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'VPN security concept'
+  }
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <div class="container mx-auto px-4 py-20">
-    <article class="max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold text-white mb-4">Top Destinations for Digital Nomads in 2024</h1>
-      <p class="text-white/80 text-lg">Coming soon...</p>
-    </article>
-  </div>
-</BaseLayout>
+<ArticleLayout
+  title={title}
+  description={description}
+  author={author}
+  authorUrl={authorUrl}
+  pubDate={pubDate}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  category="Travel"
+  categorySlug="guides/travel"
+  headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">Finding Your Perfect Home Base</h2>
+  <p>
+    The digital nomad lifestyle has exploded. More countries than ever offer dedicated visas,
+    coworking spaces have multiplied worldwide, and remote work has become mainstream. But with
+    so many options, where should you actually go?
+  </p>
+  <p>
+    We've analyzed the most popular nomad destinations based on what actually matters for remote
+    work: reliable internet, reasonable cost of living, visa accessibility, time zones, safety,
+    and community. No paid sponsorships—just honest assessments from years of nomad experience.
+  </p>
+
+  <!-- Quick Comparison -->
+  <h2 id="quick-comparison">Quick Comparison: Top 5</h2>
+
+  <ComparisonTable columns={comparisonColumns} rows={comparisonRows} />
+
+  <p>
+    <strong>Our picks:</strong> Lisbon for those wanting a European base with strong infrastructure.
+    Mexico City for US-based remote workers. Medellín for best overall value.
+  </p>
+
+  <!-- How We Ranked -->
+  <h2 id="methodology">How We Ranked These Destinations</h2>
+  <p>
+    We evaluated each city on six factors:
+  </p>
+  <ul>
+    <li><strong>Internet quality:</strong> Speed, reliability, backup options</li>
+    <li><strong>Cost of living:</strong> Rent, food, coworking, daily expenses</li>
+    <li><strong>Visa accessibility:</strong> Length of stay, requirements, renewability</li>
+    <li><strong>Safety:</strong> Crime rates, healthcare, political stability</li>
+    <li><strong>Community:</strong> Coworking spaces, events, other nomads</li>
+    <li><strong>Quality of life:</strong> Weather, activities, food, culture</li>
+  </ul>
+
+  <!-- Top 10 Destinations -->
+  <h2 id="destinations">Top 10 Destinations for 2025</h2>
+
+  <h3>1. Lisbon, Portugal</h3>
+  <p>
+    Lisbon has become the unofficial capital of European digital nomadism. Fast fiber internet,
+    excellent coworking spaces, and Portugal's digital nomad visa make it easy to settle in.
+    The weather is mild year-round, English is widely spoken, and the food and culture are outstanding.
+  </p>
+  <ul>
+    <li><strong>Monthly budget:</strong> $2,000-2,800 (higher for central neighborhoods)</li>
+    <li><strong>WiFi speed:</strong> 100-500 Mbps (fiber widely available)</li>
+    <li><strong>Visa:</strong> 90 days tourist, up to 2 years with digital nomad visa</li>
+    <li><strong>Best neighborhoods:</strong> Príncipe Real, Alfama, Santos</li>
+    <li><strong>Coworking:</strong> Heden, Second Home, Cowork Lisboa</li>
+  </ul>
+  <p>
+    <strong>Downsides:</strong> Increasingly expensive (gentrification is real), summer crowds,
+    housing market is competitive.
+  </p>
+
+  <h3>2. Mexico City, Mexico</h3>
+  <p>
+    CDMX offers the rare combination of affordability, culture, and US time zones. The food scene
+    is world-class, neighborhoods range from bohemian to upscale, and 180-day tourist visas make
+    extended stays straightforward.
+  </p>
+  <ul>
+    <li><strong>Monthly budget:</strong> $1,500-2,200</li>
+    <li><strong>WiFi speed:</strong> 50-100 Mbps (varies by area)</li>
+    <li><strong>Visa:</strong> 180 days tourist, easily renewed</li>
+    <li><strong>Best neighborhoods:</strong> Roma Norte, Condesa, Coyoacán</li>
+    <li><strong>Coworking:</strong> WeWork, Selina, Homework</li>
+  </ul>
+  <p>
+    <strong>Downsides:</strong> Air quality issues, traffic, petty crime in some areas.
+  </p>
+
+  <h3>3. Bangkok, Thailand</h3>
+  <p>
+    Bangkok remains the gateway to Southeast Asian nomad life. Incredibly affordable, with
+    excellent food, modern infrastructure, and easy access to beaches and islands for weekend trips.
+  </p>
+  <ul>
+    <li><strong>Monthly budget:</strong> $1,200-1,800</li>
+    <li><strong>WiFi speed:</strong> 50-100 Mbps</li>
+    <li><strong>Visa:</strong> 60 days tourist, DTV (digital nomad) visa now available</li>
+    <li><strong>Best neighborhoods:</strong> Ari, Thonglor, Silom</li>
+    <li><strong>Coworking:</strong> Hubba, The Hive, Glowfish</li>
+  </ul>
+  <p>
+    <strong>Downsides:</strong> Heat and humidity, pollution, visa complexity for long stays.
+  </p>
+
+  <h3>4. Medellín, Colombia</h3>
+  <p>
+    "The city of eternal spring" offers perfect weather year-round at altitude. Medellín has
+    transformed into a modern, innovative city with a strong nomad community and excellent value.
+  </p>
+  <ul>
+    <li><strong>Monthly budget:</strong> $1,200-1,800</li>
+    <li><strong>WiFi speed:</strong> 50-100 Mbps</li>
+    <li><strong>Visa:</strong> 90 days tourist (extendable to 180)</li>
+    <li><strong>Best neighborhoods:</strong> El Poblado, Laureles, Envigado</li>
+    <li><strong>Coworking:</strong> Selina, Tinkko, Atom House</li>
+  </ul>
+  <p>
+    <strong>Downsides:</strong> Safety concerns in some areas, afternoon rain showers, limited English.
+  </p>
+
+  <h3>5. Bali, Indonesia</h3>
+  <p>
+    Bali is the poster child of the digital nomad lifestyle—beautiful scenery, spiritual vibes,
+    and a massive community of remote workers. The infrastructure is geared toward nomads, with
+    countless coworking spaces and cafes.
+  </p>
+  <ul>
+    <li><strong>Monthly budget:</strong> $1,400-2,000 (more in Canggu)</li>
+    <li><strong>WiFi speed:</strong> 30-50 Mbps (less reliable than other destinations)</li>
+    <li><strong>Visa:</strong> 60 days on arrival, extendable or B211 for 6 months</li>
+    <li><strong>Best areas:</strong> Canggu, Ubud, Sanur</li>
+    <li><strong>Coworking:</strong> Dojo, Outpost, Tropical Nomad</li>
+  </ul>
+  <p>
+    <strong>Downsides:</strong> Internet reliability, scooter-dependent transport, overtourism in some areas.
+  </p>
+
+  <h3>6. Barcelona, Spain</h3>
+  <p>
+    Beach, culture, food, and nightlife—Barcelona has it all. Spain's digital nomad visa makes
+    long-term stays legal, and the city has excellent infrastructure for remote work.
+  </p>
+  <ul>
+    <li><strong>Monthly budget:</strong> $2,500-3,500</li>
+    <li><strong>WiFi speed:</strong> 100+ Mbps</li>
+    <li><strong>Visa:</strong> Digital nomad visa (requires €2,300/month income)</li>
+    <li><strong>Best neighborhoods:</strong> Gràcia, Eixample, Poblenou</li>
+  </ul>
+  <p>
+    <strong>Downsides:</strong> Expensive, tourist crowds, rising anti-tourism sentiment.
+  </p>
+
+  <h3>7. Chiang Mai, Thailand</h3>
+  <p>
+    The original digital nomad hub remains one of the most affordable quality-of-life destinations.
+    Slower pace than Bangkok, with mountains, temples, and a tight-knit nomad community.
+  </p>
+  <ul>
+    <li><strong>Monthly budget:</strong> $1,000-1,500</li>
+    <li><strong>WiFi speed:</strong> 50-80 Mbps</li>
+    <li><strong>Visa:</strong> Same as Bangkok—60 days tourist or DTV</li>
+    <li><strong>Best areas:</strong> Nimman, Old City, Santitham</li>
+    <li><strong>Coworking:</strong> Punspace, CAMP, Yellow</li>
+  </ul>
+  <p>
+    <strong>Downsides:</strong> Burning season air quality (Feb-April), limited nightlife.
+  </p>
+
+  <h3>8. Buenos Aires, Argentina</h3>
+  <p>
+    Argentina's economic situation makes Buenos Aires incredibly affordable for those earning in
+    foreign currency. World-class food, European architecture, and passionate culture await.
+  </p>
+  <ul>
+    <li><strong>Monthly budget:</strong> $1,000-1,600 (at current exchange rates)</li>
+    <li><strong>WiFi speed:</strong> 50-100 Mbps</li>
+    <li><strong>Visa:</strong> 90 days tourist, easily extended</li>
+    <li><strong>Best neighborhoods:</strong> Palermo, Recoleta, San Telmo</li>
+  </ul>
+  <p>
+    <strong>Downsides:</strong> Economic instability, safety concerns, language barrier.
+  </p>
+
+  <h3>9. Ho Chi Minh City, Vietnam</h3>
+  <p>
+    Vietnam offers excellent value, amazing food, and a growing tech scene. HCMC is more dynamic
+    and business-focused than Hanoi, with better infrastructure for remote workers.
+  </p>
+  <ul>
+    <li><strong>Monthly budget:</strong> $1,200-1,800</li>
+    <li><strong>WiFi speed:</strong> 50-80 Mbps</li>
+    <li><strong>Visa:</strong> E-visa (90 days) or visa runs</li>
+    <li><strong>Best districts:</strong> District 1, District 2 (Thao Dien), District 7</li>
+  </ul>
+  <p>
+    <strong>Downsides:</strong> Traffic chaos, visa hassle, air pollution.
+  </p>
+
+  <h3>10. Tbilisi, Georgia</h3>
+  <p>
+    Georgia's "Remotely from Georgia" program lets citizens of 95 countries stay for a year
+    without a visa. Tbilisi is affordable, safe, and has surprisingly fast internet.
+  </p>
+  <ul>
+    <li><strong>Monthly budget:</strong> $1,200-1,800</li>
+    <li><strong>WiFi speed:</strong> 50-100 Mbps</li>
+    <li><strong>Visa:</strong> 365 days visa-free for most nationalities</li>
+    <li><strong>Best areas:</strong> Vera, Vake, Saburtalo</li>
+  </ul>
+  <p>
+    <strong>Downsides:</strong> Winter cold, limited English outside center, fewer nomads than top destinations.
+  </p>
+
+  <!-- Honorable Mentions -->
+  <h2 id="honorable-mentions">Honorable Mentions</h2>
+  <ul>
+    <li><strong>Cape Town, South Africa:</strong> Beautiful but safety concerns and load shedding</li>
+    <li><strong>Dubai, UAE:</strong> Great infrastructure but expensive and culturally restrictive</li>
+    <li><strong>Playa del Carmen, Mexico:</strong> Beach alternative to CDMX, smaller community</li>
+    <li><strong>Split, Croatia:</strong> Beautiful coastal city with EU digital nomad visa</li>
+    <li><strong>Taipei, Taiwan:</strong> Excellent infrastructure, visa complexity</li>
+  </ul>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} />
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">Choosing Your Destination</h2>
+  <p>
+    The "best" destination depends on your priorities:
+  </p>
+  <ul>
+    <li><strong>Budget first:</strong> Chiang Mai, Buenos Aires, or Medellín</li>
+    <li><strong>US time zones:</strong> Mexico City, Medellín, or Buenos Aires</li>
+    <li><strong>European base:</strong> Lisbon or Barcelona</li>
+    <li><strong>Best weather:</strong> Medellín or Bali</li>
+    <li><strong>Easiest visa:</strong> Tbilisi or Mexico</li>
+  </ul>
+  <p>
+    Start with a destination that fits your budget and timezone needs, stay at least a month to
+    really experience it, and don't be afraid to move on if it's not right. The beauty of this
+    lifestyle is the flexibility to find your perfect spot.
+  </p>
+  <p>
+    Before you go, make sure you have reliable
+    <a href="/blog/best-travel-insurance-remote-workers">travel insurance</a> and a good
+    <a href="/tools/best-vpn-digital-nomads">VPN for staying secure</a>.
+  </p>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles} />
+  </Fragment>
+</ArticleLayout>

@@ -1,15 +1,381 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+import ComparisonTable from '@components/article/ComparisonTable.astro';
 
-const title = 'Best Travel Insurance for Remote Workers | FloatJet';
-const description = 'Comprehensive coverage designed for long-term travelers and location-independent professionals.';
+// Article metadata
+const title = 'Best Travel Insurance for Remote Workers & Digital Nomads (2025)';
+const description = 'Compare SafetyWing, World Nomads, and more. Find travel insurance that covers long-term travel, electronics, and the unique needs of location-independent professionals.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-23');
+const readingTime = 11;
+const image = 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Travel planning with passport and map';
+
+// Table of contents
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
+  {text: 'What to Look For', slug: 'what-to-look-for', depth: 2},
+  {text: 'Top Providers Reviewed', slug: 'reviews', depth: 2},
+  {text: 'Coverage Deep Dive', slug: 'coverage', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+];
+
+// Comparison table
+const comparisonColumns = [
+  {key: 'provider', label: 'Provider', width: '120px'},
+  {key: 'price', label: 'Monthly Cost'},
+  {key: 'medical', label: 'Medical'},
+  {key: 'electronics', label: 'Electronics'},
+  {key: 'bestFor', label: 'Best For'},
+];
+
+const comparisonRows = [
+  {
+    provider: '<strong>SafetyWing</strong>',
+    price: '$45-70',
+    medical: '$250K',
+    electronics: 'Add-on',
+    bestFor: 'Long-term nomads'
+  },
+  {
+    provider: '<strong>World Nomads</strong>',
+    price: '$100-200',
+    medical: '$100K-1M',
+    electronics: 'Included',
+    bestFor: 'Adventure travel'
+  },
+  {
+    provider: '<strong>Genki</strong>',
+    price: '$35-60',
+    medical: '€1M+',
+    electronics: 'Add-on',
+    bestFor: 'Europe-based'
+  },
+  {
+    provider: '<strong>Passport Card</strong>',
+    price: '$150-250',
+    medical: '$1M',
+    electronics: 'Included',
+    bestFor: 'Comprehensive'
+  },
+  {
+    provider: '<strong>Insured Nomads</strong>',
+    price: '$80-150',
+    medical: '$1M+',
+    electronics: 'Add-on',
+    bestFor: 'US citizens'
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'Does travel insurance cover me if I\'m working remotely?',
+    answer: '<p>Standard travel insurance covers tourists, not workers. However, <strong>digital nomad-specific insurance</strong> like SafetyWing is designed for remote work. They don\'t require you to be on vacation—working on your laptop is covered. Always verify "remote work" is explicitly allowed in your policy.</p>'
+  },
+  {
+    question: 'What about pre-existing conditions?',
+    answer: '<p>Most travel insurance excludes pre-existing conditions from coverage. Some providers offer coverage for <strong>acute onset of pre-existing conditions</strong> (sudden worsening that requires immediate care). For ongoing conditions, you may need supplementary health insurance or an expat health plan.</p>'
+  },
+  {
+    question: 'Do I need travel insurance if I have health insurance from my home country?',
+    answer: '<p>Probably yes. Most domestic health insurance has limited or no international coverage. Even if you have some coverage abroad, travel insurance adds <strong>emergency evacuation</strong> (can cost $100K+), <strong>trip interruption</strong>, and <strong>electronics coverage</strong> that health insurance doesn\'t provide.</p>'
+  },
+  {
+    question: 'How do claims work while abroad?',
+    answer: '<p>For minor expenses, you typically pay out of pocket and submit receipts for reimbursement. For major medical issues, better providers have <strong>direct billing arrangements</strong> with hospitals—you won\'t pay anything upfront. SafetyWing and Passport Card both offer this. Always carry your policy documents and emergency contact numbers.</p>'
+  },
+  {
+    question: 'Can I buy travel insurance after I\'ve left home?',
+    answer: '<p>Yes, several nomad-focused insurers (SafetyWing, Genki) let you buy coverage while already abroad. Traditional travel insurance usually requires purchase before departure. This flexibility is essential for digital nomads with indefinite travel plans.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Top Destinations for Digital Nomads',
+    excerpt: 'Cities with great WiFi, affordable living, and thriving communities.',
+    href: '/blog/top-destinations-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Digital nomad destination'
+  },
+  {
+    title: 'Essential Travel Tech for Nomads',
+    excerpt: 'Protect your gear investment with the right insurance and accessories.',
+    href: '/blog/essential-travel-tech-nomads',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Travel tech setup'
+  },
+  {
+    title: 'Best Banking for Digital Nomads',
+    excerpt: 'Manage your finances across borders without excessive fees.',
+    href: '/blog/best-banking-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Mobile banking app'
+  }
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <div class="container mx-auto px-4 py-20">
-    <article class="max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold text-white mb-4">Top Travel Insurance for Remote Workers</h1>
-      <p class="text-white/80 text-lg">Coming soon...</p>
-    </article>
-  </div>
-</BaseLayout>
+<ArticleLayout
+  title={title}
+  description={description}
+  author={author}
+  authorUrl={authorUrl}
+  pubDate={pubDate}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  category="Travel"
+  categorySlug="guides/travel"
+  headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">Insurance for the Location-Independent</h2>
+  <p>
+    Traditional travel insurance is designed for two-week vacations, not indefinite international
+    living. It often excludes "working," has trip length limits, and requires returning to a home
+    country to renew.
+  </p>
+  <p>
+    Digital nomads need something different: insurance that covers long-term travel, allows remote
+    work, provides adequate medical coverage worldwide, and can be purchased and renewed from anywhere.
+  </p>
+  <p>
+    We've compared the leading providers to help you find coverage that actually fits the nomad lifestyle.
+  </p>
+
+  <!-- Quick Comparison -->
+  <h2 id="quick-comparison">Quick Comparison</h2>
+
+  <ComparisonTable columns={comparisonColumns} rows={comparisonRows} />
+
+  <p>
+    <strong>Our picks:</strong> SafetyWing for most nomads (best value for long-term travel),
+    World Nomads for adventure activities, Passport Card for comprehensive coverage.
+  </p>
+
+  <!-- What to Look For -->
+  <h2 id="what-to-look-for">What to Look For</h2>
+
+  <h3>Remote Work Coverage</h3>
+  <p>
+    The policy must explicitly allow you to work remotely. Standard travel insurance often
+    excludes "business activities." Nomad-specific policies are designed for this.
+  </p>
+
+  <h3>Medical Coverage Limits</h3>
+  <p>
+    Healthcare costs vary wildly. A hospital stay in the US can cost $10,000/night.
+    Look for at least $100,000 coverage—$250,000+ is better.
+  </p>
+
+  <h3>Emergency Evacuation</h3>
+  <p>
+    Medical evacuation to your home country or appropriate medical facility can cost
+    $50,000-$200,000. This coverage is essential.
+  </p>
+
+  <h3>Trip Length Flexibility</h3>
+  <p>
+    Traditional insurance caps trips at 30-90 days. Nomad insurance allows indefinite travel
+    with monthly or quarterly renewals.
+  </p>
+
+  <h3>Home Country Coverage</h3>
+  <p>
+    Some policies don't cover you in your home country. If you visit home occasionally,
+    check this limitation.
+  </p>
+
+  <h3>Electronics Coverage</h3>
+  <p>
+    Your laptop is your livelihood. Standard policies may not cover it adequately, or at all.
+    Look for specific electronics coverage or add-ons.
+  </p>
+
+  <!-- Top Providers Reviewed -->
+  <h2 id="reviews">Top Providers Reviewed</h2>
+
+  <h3 id="safetywing">SafetyWing - Best for Most Nomads</h3>
+  <p>
+    SafetyWing pioneered insurance specifically for digital nomads. Their Nomad Insurance
+    product is designed for indefinite travel with monthly auto-renewal, and you can sign
+    up while already abroad.
+  </p>
+  <ul>
+    <li><strong>Cost:</strong> ~$45/month (under 40), ~$70/month (40-49)</li>
+    <li><strong>Medical:</strong> $250,000 coverage, $250 deductible</li>
+    <li><strong>Evacuation:</strong> $100,000</li>
+    <li><strong>Home country:</strong> 30 days per 90-day period included</li>
+    <li><strong>Electronics:</strong> Not included (add separately)</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> Long-term nomads who want affordable, hassle-free coverage.
+  </p>
+  <p>
+    <strong>Downsides:</strong> Lower coverage limits than premium options. No electronics coverage
+    in base plan. US coverage is limited.
+  </p>
+  <p>
+    <a href="/go/safetywing" rel="nofollow sponsored" class="text-jet-stream hover:text-sky-light">
+      Get SafetyWing Quote &rarr;
+    </a>
+  </p>
+
+  <h3 id="worldnomads">World Nomads - Best for Adventure Travel</h3>
+  <p>
+    World Nomads covers adventure activities that other insurers exclude—skiing, scuba diving,
+    bungee jumping, and more. Great for active travelers who don't just sit in cafes.
+  </p>
+  <ul>
+    <li><strong>Cost:</strong> $100-200/month depending on plan and origin</li>
+    <li><strong>Medical:</strong> $100,000-$1,000,000 depending on plan</li>
+    <li><strong>Evacuation:</strong> $300,000-$500,000</li>
+    <li><strong>Electronics:</strong> Included ($500-$3,000 depending on plan)</li>
+    <li><strong>Activities:</strong> 200+ adventure activities covered</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> Adventure travelers, those doing activities beyond standard tourism.
+  </p>
+  <p>
+    <strong>Downsides:</strong> More expensive. Trip length limits (6-12 months).
+  </p>
+  <p>
+    <a href="/go/world-nomads" rel="nofollow sponsored" class="text-jet-stream hover:text-sky-light">
+      Get World Nomads Quote &rarr;
+    </a>
+  </p>
+
+  <h3 id="genki">Genki - Best for Europe-Based Nomads</h3>
+  <p>
+    German insurer with excellent coverage across the EU and Schengen zone. Their Resident plan
+    is designed for long-term stays and meets visa requirements for many European countries.
+  </p>
+  <ul>
+    <li><strong>Cost:</strong> €35-60/month</li>
+    <li><strong>Medical:</strong> €1M+ worldwide</li>
+    <li><strong>Evacuation:</strong> Included</li>
+    <li><strong>Visa-compliant:</strong> Meets requirements for Schengen and many digital nomad visas</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> Nomads based in or frequently visiting Europe.
+  </p>
+  <p>
+    <strong>Downsides:</strong> Europe-focused; coverage elsewhere may be secondary.
+  </p>
+
+  <h3 id="passport">Passport Card - Best Comprehensive Coverage</h3>
+  <p>
+    Premium option with high limits and comprehensive coverage including electronics and
+    dental. App-based claims make filing easy.
+  </p>
+  <ul>
+    <li><strong>Cost:</strong> $150-250/month</li>
+    <li><strong>Medical:</strong> $1M+</li>
+    <li><strong>Electronics:</strong> Up to $2,500 included</li>
+    <li><strong>Dental:</strong> Emergency dental included</li>
+    <li><strong>Direct billing:</strong> Pay-at-hospital arrangements worldwide</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> Those wanting comprehensive coverage and willing to pay for it.
+  </p>
+  <p>
+    <strong>Downsides:</strong> Most expensive option. May be overkill for healthy young travelers.
+  </p>
+
+  <h3 id="insured-nomads">Insured Nomads - Best for US Citizens</h3>
+  <p>
+    Designed with American nomads in mind, including better US coverage than most international
+    policies and compliance with ACA requirements.
+  </p>
+  <ul>
+    <li><strong>Cost:</strong> $80-150/month</li>
+    <li><strong>Medical:</strong> $1M+</li>
+    <li><strong>US coverage:</strong> Better than most nomad insurance</li>
+    <li><strong>Telemedicine:</strong> 24/7 doctor access included</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> US citizens who need coverage that works in America too.
+  </p>
+
+  <!-- Coverage Deep Dive -->
+  <h2 id="coverage">Coverage Deep Dive</h2>
+
+  <h3>Electronics Coverage</h3>
+  <p>
+    Your laptop, phone, and camera represent thousands of dollars. Coverage options:
+  </p>
+  <ul>
+    <li><strong>Included:</strong> World Nomads, Passport Card include electronics</li>
+    <li><strong>Add-on:</strong> SafetyWing offers electronics coverage separately</li>
+    <li><strong>Standalone:</strong> Consider dedicated electronics insurance (Worth Ave Group)</li>
+    <li><strong>Credit card:</strong> Some premium cards include purchase protection</li>
+  </ul>
+
+  <h3>Mental Health Coverage</h3>
+  <p>
+    Often excluded or limited. SafetyWing covers some mental health; others may not.
+    Check policy details if this matters to you.
+  </p>
+
+  <h3>COVID-19 Coverage</h3>
+  <p>
+    Most providers now cover COVID-related medical expenses. Verify quarantine costs
+    and trip interruption coverage specifically.
+  </p>
+
+  <h3>What's NOT Covered</h3>
+  <ul>
+    <li>Pre-existing conditions (usually)</li>
+    <li>Routine checkups and preventive care</li>
+    <li>Pregnancy beyond a certain week</li>
+    <li>Extreme sports (unless specifically listed)</li>
+    <li>Acts of war, terrorism (some policies exclude)</li>
+    <li>Drug/alcohol-related incidents</li>
+  </ul>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} />
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">Our Recommendations</h2>
+  <p>
+    For most digital nomads, we recommend:
+  </p>
+  <ul>
+    <li>
+      <strong>Best overall:</strong> <a href="/go/safetywing" rel="nofollow sponsored">SafetyWing</a> -
+      affordable, designed for nomads, easy to manage
+    </li>
+    <li>
+      <strong>Adventure travelers:</strong> <a href="/go/world-nomads" rel="nofollow sponsored">World Nomads</a> -
+      covers activities others exclude
+    </li>
+    <li>
+      <strong>Premium coverage:</strong> Passport Card - highest limits and comprehensive benefits
+    </li>
+    <li>
+      <strong>US citizens:</strong> Insured Nomads - better US coverage than alternatives
+    </li>
+  </ul>
+  <p>
+    Don't skip insurance to save money. A single medical emergency abroad can cost more than
+    a decade of premiums. The peace of mind alone is worth the monthly cost.
+  </p>
+  <p>
+    Planning your nomad journey? Check our <a href="/blog/top-destinations-digital-nomads">
+    destination guide</a> and learn about <a href="/blog/best-banking-digital-nomads">
+    banking for international travelers</a>.
+  </p>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles} />
+  </Fragment>
+</ArticleLayout>

@@ -406,6 +406,59 @@ from the same dashboard.
 
 ---
 
+### CRM Software
+
+| Program    | Commission          | Cookie  | Network       | Status      |
+|------------|---------------------|---------|---------------|-------------|
+| HubSpot    | 30% recurring       | 90 days | Impact Radius | Not Applied |
+| Pipedrive  | 20-30% recurring    | 60 days | Direct        | Not Applied |
+| Zoho CRM   | 15-20%              | 45 days | Direct        | Not Applied |
+| Monday.com | 100% first year     | 90 days | Direct        | Not Applied |
+| Freshsales | 15-20%              | 30 days | Direct        | Not Applied |
+
+**Used in:** best-crm-software-small-business article
+
+---
+
+### Team Communication Tools
+
+| Program   | Commission       | Cookie  | Network       | Status      |
+|-----------|------------------|---------|---------------|-------------|
+| Slack     | Varies           | 30 days | Direct        | Not Applied |
+| Zoom      | 10-15%           | 30 days | Direct        | Not Applied |
+| Loom      | 20%              | 30 days | Direct        | Not Applied |
+
+**Used in:** best-team-communication-tools article
+
+---
+
+### Travel Insurance
+
+| Program        | Commission | Cookie  | Network | Status      |
+|----------------|------------|---------|---------|-------------|
+| SafetyWing     | 10%        | 30 days | Direct  | Not Applied |
+| World Nomads   | 10-15%     | 30 days | Direct  | Not Applied |
+| Genki          | Unknown    | Unknown | Direct  | Not Applied |
+| Passport Card  | Unknown    | Unknown | Direct  | Not Applied |
+| Insured Nomads | 10-15%     | 30 days | Direct  | Not Applied |
+
+**Used in:** best-travel-insurance-remote-workers article
+
+---
+
+### Digital Banking / Finance
+
+| Program        | Commission | Cookie  | Network | Status      |
+|----------------|------------|---------|---------|-------------|
+| Wise           | £15-50/referral | 30 days | Direct  | Not Applied |
+| Revolut        | Varies by region | 30 days | Direct  | Not Applied |
+| Mercury        | Unknown    | Unknown | Direct  | Not Applied |
+| Payoneer       | $25/referral | 30 days | Direct  | Not Applied |
+
+**Used in:** best-banking-digital-nomads, crypto-friendly-banks articles
+
+---
+
 ## Alternative/Backup Programs
 
 If primary programs reject your application:
@@ -600,6 +653,88 @@ status = 301
 force = true
 ```
 
+### CRM Software
+
+```toml
+[[redirects]]
+from = "/go/hubspot"
+to = "https://hubspot.com/?affiliate=[YOUR_ID]"
+status = 301
+force = true
+
+[[redirects]]
+from = "/go/pipedrive"
+to = "https://pipedrive.com/?affiliate=[YOUR_ID]"
+status = 301
+force = true
+
+[[redirects]]
+from = "/go/zoho-crm"
+to = "https://zoho.com/crm/?affiliate=[YOUR_ID]"
+status = 301
+force = true
+```
+
+### Team Communication
+
+```toml
+[[redirects]]
+from = "/go/slack"
+to = "https://slack.com/?affiliate=[YOUR_ID]"
+status = 301
+force = true
+
+[[redirects]]
+from = "/go/zoom"
+to = "https://zoom.us/?affiliate=[YOUR_ID]"
+status = 301
+force = true
+
+[[redirects]]
+from = "/go/loom"
+to = "https://loom.com/?affiliate=[YOUR_ID]"
+status = 301
+force = true
+```
+
+### Travel Insurance
+
+```toml
+[[redirects]]
+from = "/go/safetywing"
+to = "https://safetywing.com/?referral=[YOUR_ID]"
+status = 301
+force = true
+
+[[redirects]]
+from = "/go/world-nomads"
+to = "https://worldnomads.com/?affiliate=[YOUR_ID]"
+status = 301
+force = true
+```
+
+### Digital Banking
+
+```toml
+[[redirects]]
+from = "/go/wise"
+to = "https://wise.com/invite/[YOUR_ID]"
+status = 301
+force = true
+
+[[redirects]]
+from = "/go/revolut"
+to = "https://revolut.com/referral/[YOUR_ID]"
+status = 301
+force = true
+
+[[redirects]]
+from = "/go/mercury"
+to = "https://mercury.com/?ref=[YOUR_ID]"
+status = 301
+force = true
+```
+
 ---
 
 ## Revenue Projections
@@ -644,12 +779,17 @@ Assuming modest traffic and 1% conversion:
 - [ ] ConvertKit - Best recurring commission
 - [ ] 1Password (via Impact Radius) - Already have account
 - [ ] Beehiiv - Fast approval, good commissions
+- [ ] SafetyWing - Travel insurance, nomad-focused
+- [ ] Wise - Banking, high priority for nomad content
 
 ### Next Week
 
 - [ ] FlexiSpot - Standing desk coverage
 - [ ] ActiveCampaign - Email marketing segment
 - [ ] Autonomous - Budget desk segment
+- [ ] HubSpot - CRM coverage
+- [ ] Revolut - Banking/finance content
+- [ ] World Nomads - Travel insurance alternative
 
 ### When Approved
 
@@ -709,6 +849,6 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** Applied to NordVPN, Notion, ClickUp on 2025-11-22. Awaiting approvals.
+**Last Action:** Added new affiliate program categories on 2025-11-23: CRM Software (HubSpot, Pipedrive, Zoho), Team Communication (Slack, Zoom, Loom), Travel Insurance (SafetyWing, World Nomads), Digital Banking (Wise, Revolut, Mercury). All articles written.
 
-**Next Action:** Apply to Amazon Associates and ConvertKit immediately.
+**Next Action:** Apply to priority programs: Amazon Associates, ConvertKit, SafetyWing, Wise.

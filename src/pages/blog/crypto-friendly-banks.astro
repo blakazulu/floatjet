@@ -1,15 +1,368 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+import ComparisonTable from '@components/article/ComparisonTable.astro';
 
-const title = 'Crypto-Friendly Banks for Remote Workers | FloatJet';
-const description = 'Traditional banks that play nice with cryptocurrency for the modern digital professional.';
+// Article metadata
+const title = 'Crypto-Friendly Banks for Remote Workers (2025)';
+const description = 'Find banks that won\'t freeze your account for crypto activity. Compare traditional and digital banks that support cryptocurrency transfers and exchanges.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-23');
+const readingTime = 10;
+const image = 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Bitcoin and cryptocurrency concept with digital technology';
+
+// Table of contents
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
+  {text: 'Why Banks Block Crypto', slug: 'why-banks-block', depth: 2},
+  {text: 'Best Options', slug: 'best-options', depth: 2},
+  {text: 'Best Practices', slug: 'best-practices', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+];
+
+// Comparison table
+const comparisonColumns = [
+  {key: 'bank', label: 'Bank', width: '110px'},
+  {key: 'type', label: 'Type'},
+  {key: 'crypto', label: 'Crypto Friendly'},
+  {key: 'transfers', label: 'Exchange Transfers'},
+  {key: 'notes', label: 'Notes'},
+];
+
+const comparisonRows = [
+  {
+    bank: '<strong>Revolut</strong>',
+    type: 'Digital',
+    crypto: 'Built-in',
+    transfers: 'Yes',
+    notes: 'Buy/sell crypto in-app'
+  },
+  {
+    bank: '<strong>Ally Bank</strong>',
+    type: 'Traditional',
+    crypto: 'Tolerant',
+    transfers: 'Yes',
+    notes: 'US only, no issues reported'
+  },
+  {
+    bank: '<strong>Fidelity</strong>',
+    type: 'Brokerage',
+    crypto: 'Supports',
+    transfers: 'Yes',
+    notes: 'Bitcoin in retirement accounts'
+  },
+  {
+    bank: '<strong>Mercury</strong>',
+    type: 'Business',
+    crypto: 'Business OK',
+    transfers: 'Yes',
+    notes: 'Crypto business friendly'
+  },
+  {
+    bank: '<strong>Juno</strong>',
+    type: 'Digital',
+    crypto: 'Built-in',
+    transfers: 'Yes',
+    notes: 'Crypto checking account'
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'Can my bank close my account for buying crypto?',
+    answer: '<p>Yes, some banks have closed accounts for crypto activity. This is more common with large transactions, frequent exchange transfers, or activity that looks like money laundering. Using crypto-friendly banks and following best practices (see above) minimizes this risk significantly.</p>'
+  },
+  {
+    question: 'Should I tell my bank I\'m buying cryptocurrency?',
+    answer: '<p>Generally no need to proactively disclose. Banks see transactions to exchanges like any other merchant. If asked (during a review), be honest—legitimate crypto investing is legal. Having records of your purchases helps demonstrate it\'s not money laundering.</p>'
+  },
+  {
+    question: 'What\'s the best way to convert crypto to fiat?',
+    answer: '<p>Use a reputable exchange (Coinbase, Kraken, Gemini) to sell crypto, then withdraw to your bank. Smaller, regular withdrawals raise fewer flags than large one-time transfers. Some people use crypto debit cards (Coinbase Card, Crypto.com) to spend directly without bank withdrawal.</p>'
+  },
+  {
+    question: 'Are crypto-only banks safe?',
+    answer: '<p>Be cautious with newer crypto-focused banks. Check if deposits are FDIC insured (US) or equivalent. Several crypto companies have failed—only keep funds you\'re actively using. For savings, stick with established, insured institutions.</p>'
+  },
+  {
+    question: 'Do I need to report crypto on my taxes?',
+    answer: '<p>Yes, in most countries crypto is taxable. In the US, crypto is treated as property—you owe capital gains tax when you sell, trade, or spend crypto at a profit. Keep records of all transactions. Tax software like Koinly or CoinTracker can generate reports from exchange data.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Best Banking for Digital Nomads',
+    excerpt: 'Multi-currency accounts and low-fee banking for international living.',
+    href: '/blog/best-banking-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Mobile banking app'
+  },
+  {
+    title: 'Tax Tips for Remote Workers',
+    excerpt: 'Navigate taxes including crypto reporting as a digital nomad.',
+    href: '/blog/tax-tips-remote-workers',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Tax documents'
+  },
+  {
+    title: 'Best VPN for Digital Nomads',
+    excerpt: 'Secure your crypto transactions while traveling.',
+    href: '/tools/best-vpn-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'VPN security'
+  }
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <div class="container mx-auto px-4 py-20">
-    <article class="max-w-3xl mx-auto">
-      <h1 class="text-4xl font-bold text-white mb-4">Crypto-Friendly Banks for Remote Workers</h1>
-      <p class="text-white/80 text-lg">Coming soon...</p>
-    </article>
-  </div>
-</BaseLayout>
+<ArticleLayout
+  title={title}
+  description={description}
+  author={author}
+  authorUrl={authorUrl}
+  pubDate={pubDate}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  category="Finance"
+  categorySlug="tools/finance"
+  headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">The Banking-Crypto Problem</h2>
+  <p>
+    Cryptocurrency is legal in most countries. Yet traditional banks often treat it like contraband—
+    flagging transfers to exchanges, freezing accounts, and sometimes closing them entirely.
+    For remote workers who earn, save, or invest in crypto, this creates real problems.
+  </p>
+  <p>
+    The good news: not all banks are hostile to crypto. Some traditional banks tolerate it, digital
+    banks embrace it, and a few even integrate crypto services directly. This guide helps you find
+    banking that won't punish you for participating in the crypto economy.
+  </p>
+
+  <!-- Quick Comparison -->
+  <h2 id="quick-comparison">Quick Comparison</h2>
+
+  <ComparisonTable columns={comparisonColumns} rows={comparisonRows} />
+
+  <p>
+    <strong>Our picks:</strong> Revolut for built-in crypto features, Ally Bank for traditional
+    banking with crypto tolerance, Mercury for crypto-related businesses.
+  </p>
+
+  <!-- Why Banks Block Crypto -->
+  <h2 id="why-banks-block">Why Banks Block Crypto</h2>
+
+  <h3>Regulatory Uncertainty</h3>
+  <p>
+    Banks face heavy regulation around money laundering and fraud. Crypto's pseudonymous nature
+    makes compliance officers nervous—easier to avoid the space entirely than risk regulatory issues.
+  </p>
+
+  <h3>Fraud and Scam Associations</h3>
+  <p>
+    Banks see fraud reports involving crypto exchanges. Whether the exchange was at fault or not,
+    banks become wary of any crypto-related activity.
+  </p>
+
+  <h3>Volatility Concerns</h3>
+  <p>
+    Large crypto movements can look like suspicious activity to automated systems—sudden large
+    deposits or withdrawals trigger fraud alerts.
+  </p>
+
+  <h3>Banks That Actively Block Crypto</h3>
+  <p>
+    These banks have been reported to restrict or block crypto activity:
+  </p>
+  <ul>
+    <li><strong>JPMorgan Chase:</strong> Has blocked some crypto purchases</li>
+    <li><strong>Bank of America:</strong> Restricts some exchange transfers</li>
+    <li><strong>Wells Fargo:</strong> History of crypto restrictions</li>
+    <li><strong>Citibank:</strong> Has declined some crypto transactions</li>
+  </ul>
+  <p>
+    <em>Note: Policies change frequently. Individual experiences vary.</em>
+  </p>
+
+  <!-- Best Options -->
+  <h2 id="best-options">Best Options for Crypto Users</h2>
+
+  <h3>Digital Banks with Built-In Crypto</h3>
+  <p>
+    These banks integrate cryptocurrency directly—no need for external exchanges.
+  </p>
+
+  <h4 id="revolut">Revolut</h4>
+  <p>
+    Buy, sell, and hold 100+ cryptocurrencies directly in the app. Send crypto to other Revolut
+    users instantly. Withdraw to external wallets on paid plans.
+  </p>
+  <ul>
+    <li><strong>Crypto features:</strong> Buy/sell/hold, staking on some coins</li>
+    <li><strong>External transfers:</strong> Yes (premium plans)</li>
+    <li><strong>Exchange transfers:</strong> No issues with Coinbase, Kraken, etc.</li>
+    <li><strong>Best for:</strong> All-in-one banking and crypto</li>
+  </ul>
+  <p>
+    <a href="/go/revolut" rel="nofollow sponsored" class="text-jet-stream hover:text-sky-light">
+      Open Revolut Account &rarr;
+    </a>
+  </p>
+
+  <h4 id="juno">Juno</h4>
+  <p>
+    Checking account designed for crypto users. Earn yield on stablecoins, spend with a debit card,
+    and convert between crypto and USD easily.
+  </p>
+  <ul>
+    <li><strong>Crypto features:</strong> USDC yield, easy conversion</li>
+    <li><strong>FDIC insurance:</strong> Yes (USD portion)</li>
+    <li><strong>Best for:</strong> Crypto-native users wanting fiat bridge</li>
+  </ul>
+
+  <h3>Traditional Banks That Tolerate Crypto</h3>
+  <p>
+    These banks don't offer crypto features but generally don't block exchange transfers.
+  </p>
+
+  <h4 id="ally">Ally Bank</h4>
+  <p>
+    Online bank with consistently positive reports from crypto users. No issues reported with
+    Coinbase, Kraken, or other major exchange transfers.
+  </p>
+  <ul>
+    <li><strong>Exchange transfers:</strong> Generally allowed</li>
+    <li><strong>Availability:</strong> US only</li>
+    <li><strong>Fees:</strong> No monthly fees, no minimums</li>
+    <li><strong>Best for:</strong> US crypto users wanting traditional banking</li>
+  </ul>
+
+  <h4 id="fidelity">Fidelity</h4>
+  <p>
+    Major brokerage that's actively embracing crypto. Offers Bitcoin in 401(k) plans and
+    institutional crypto custody. Generally crypto-friendly.
+  </p>
+  <ul>
+    <li><strong>Crypto features:</strong> Bitcoin 401(k), Fidelity Crypto</li>
+    <li><strong>Exchange transfers:</strong> Generally allowed</li>
+    <li><strong>Best for:</strong> Investors wanting crypto in retirement accounts</li>
+  </ul>
+
+  <h3>Business Banking for Crypto Companies</h3>
+
+  <h4 id="mercury">Mercury</h4>
+  <p>
+    Modern business banking that serves crypto and Web3 companies. If your business involves
+    crypto, Mercury is one of the few banks that won't immediately reject you.
+  </p>
+  <ul>
+    <li><strong>Accepts:</strong> Crypto businesses, Web3 startups</li>
+    <li><strong>Features:</strong> Virtual cards, team access, integrations</li>
+    <li><strong>Best for:</strong> US crypto-related businesses</li>
+  </ul>
+  <p>
+    <a href="/go/mercury" rel="nofollow sponsored" class="text-jet-stream hover:text-sky-light">
+      Open Mercury Account &rarr;
+    </a>
+  </p>
+
+  <h3>Crypto-Native Options</h3>
+  <p>
+    These aren't traditional banks but provide banking-like services for crypto users:
+  </p>
+  <ul>
+    <li><strong>Coinbase:</strong> Coinbase Card lets you spend crypto anywhere Visa is accepted</li>
+    <li><strong>Crypto.com:</strong> Metal cards with crypto rewards, exchange services</li>
+    <li><strong>Nexo:</strong> Earn interest on crypto, borrow against holdings</li>
+  </ul>
+  <p>
+    <strong>Warning:</strong> These are not FDIC insured. Only keep funds you're actively using.
+  </p>
+
+  <!-- Best Practices -->
+  <h2 id="best-practices">Best Practices</h2>
+
+  <h3>Use Reputable Exchanges</h3>
+  <p>
+    Banks are more comfortable with transfers to/from recognized exchanges like Coinbase, Kraken,
+    and Gemini. Obscure exchanges raise flags.
+  </p>
+
+  <h3>Avoid Sudden Large Transfers</h3>
+  <p>
+    Gradual activity is less suspicious than sudden large movements. If you need to move significant
+    amounts, consider splitting across multiple transactions over time.
+  </p>
+
+  <h3>Keep Records</h3>
+  <p>
+    Document your crypto activity. If your bank asks questions, having records showing legitimate
+    investment activity helps. This also helps with taxes.
+  </p>
+
+  <h3>Use Separate Accounts</h3>
+  <p>
+    Consider keeping crypto-related banking separate from your primary accounts. If an account
+    gets restricted, your main banking remains unaffected.
+  </p>
+
+  <h3>Don't Lie</h3>
+  <p>
+    If your bank asks about transactions, be honest. Legitimate crypto investing is legal. Lying
+    to your bank creates bigger problems than crypto activity ever would.
+  </p>
+
+  <h3>Have Backup Banks</h3>
+  <p>
+    Always have accounts at multiple institutions. If one bank becomes problematic, you're not
+    stranded without banking access.
+  </p>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} />
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">Our Recommendations</h2>
+  <p>
+    For crypto users, we recommend:
+  </p>
+  <ul>
+    <li>
+      <strong>Built-in crypto:</strong> <a href="/go/revolut" rel="nofollow sponsored">Revolut</a> -
+      buy, sell, and bank in one app
+    </li>
+    <li>
+      <strong>Traditional + tolerant:</strong> Ally Bank - reliable US banking without crypto hassles
+    </li>
+    <li>
+      <strong>Business banking:</strong> <a href="/go/mercury" rel="nofollow sponsored">Mercury</a> -
+      one of few banks welcoming crypto businesses
+    </li>
+    <li>
+      <strong>Keep separate:</strong> Maintain a crypto-free bank account for stability
+    </li>
+  </ul>
+  <p>
+    The banking landscape for crypto users is improving as adoption grows. More banks are learning
+    to work with crypto rather than against it. Choose banks that explicitly support or tolerate
+    crypto, follow best practices, and you'll avoid most problems.
+  </p>
+  <p>
+    For broader nomad banking needs, see our guide to
+    <a href="/blog/best-banking-digital-nomads">banking for digital nomads</a>.
+  </p>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles} />
+  </Fragment>
+</ArticleLayout>

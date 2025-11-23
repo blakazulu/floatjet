@@ -36,7 +36,12 @@ const PAGE_METADATA: Record<string, { name: string; type: SiteNode['type']; cate
   '/tools/saas': {name: 'SaaS Tools', type: 'category', category: 'saas'},
   '/tools/hosting': {name: 'Web Hosting', type: 'category', category: 'hosting'},
   '/tools/finance': {name: 'Finance', type: 'category', category: 'finance'},
-  '/guides/travel': {name: 'Travel Guides', type: 'category', category: 'travel'},
+  '/guides/travel': {name: 'Travel', type: 'category', category: 'travel'},
+  '/guides/communication': {name: 'Communication', type: 'category', category: 'communication'},
+  '/guides/productivity': {name: 'Productivity', type: 'category', category: 'productivity'},
+  '/guides/security': {name: 'Security', type: 'category', category: 'security'},
+  '/guides/setup': {name: 'Setup', type: 'category', category: 'setup'},
+  '/guides/finance': {name: 'Finance', type: 'category', category: 'finance'},
   '/gear/computers': {name: 'Computers', type: 'category', category: 'gear'},
   '/gear/furniture': {name: 'Furniture', type: 'category', category: 'gear'},
   '/gear/audio': {name: 'Audio', type: 'category', category: 'gear'},
@@ -197,6 +202,11 @@ export const SITE_STRUCTURE: SiteGraph = {
 
     // Category Pages - Guides
     {id: '/guides/travel', name: 'Travel', path: '/guides/travel', type: 'category', category: 'travel'},
+    {id: '/guides/communication', name: 'Communication', path: '/guides/communication', type: 'category', category: 'communication'},
+    {id: '/guides/productivity', name: 'Productivity', path: '/guides/productivity', type: 'category', category: 'productivity'},
+    {id: '/guides/security', name: 'Security', path: '/guides/security', type: 'category', category: 'security'},
+    {id: '/guides/setup', name: 'Setup', path: '/guides/setup', type: 'category', category: 'setup'},
+    {id: '/guides/finance', name: 'Finance', path: '/guides/finance', type: 'category', category: 'finance'},
 
     // Tool Articles
     {
@@ -434,6 +444,11 @@ export const SITE_STRUCTURE: SiteGraph = {
 
     // Category links from Guides hub
     {source: '/guides', target: '/guides/travel', type: 'parent-child'},
+    {source: '/guides', target: '/guides/communication', type: 'parent-child'},
+    {source: '/guides', target: '/guides/productivity', type: 'parent-child'},
+    {source: '/guides', target: '/guides/security', type: 'parent-child'},
+    {source: '/guides', target: '/guides/setup', type: 'parent-child'},
+    {source: '/guides', target: '/guides/finance', type: 'parent-child'},
 
     // Tool articles under Tools hub
     {source: '/tools', target: '/tools/best-project-management-software', type: 'parent-child'},
@@ -495,6 +510,9 @@ export const CATEGORY_COLORS: Record<string, string> = {
   hosting: '#8B5CF6',   // Violet
   finance: '#F59E0B',   // Amber
   travel: '#EC4899',    // Pink
+  communication: '#06B6D4', // Cyan
+  productivity: '#F97316',  // Orange
+  setup: '#84CC16',     // Lime
   page: '#64748B',      // Gray
   article: '#38A3A5',   // Jet Stream
 };

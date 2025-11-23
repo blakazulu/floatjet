@@ -1,7 +1,7 @@
 # FloatJet Site Map & Content Relationships
 
 **Last Updated:** 2025-11-23
-**Total Pages:** 45
+**Total Pages:** 50
 
 ---
 
@@ -38,7 +38,12 @@ floatjet.com/
 │   └── [3 gear articles]
 ├── /guides (Hub)
 │   ├── /guides/travel (Category)
-│   └── [5 guide articles in /blog]
+│   ├── /guides/communication (Category)
+│   ├── /guides/productivity (Category)
+│   ├── /guides/security (Category)
+│   ├── /guides/setup (Category)
+│   ├── /guides/finance (Category)
+│   └── [guide articles in /blog]
 ├── /deals (Hub)
 ├── /blog
 │   └── [16 blog articles]
@@ -137,13 +142,19 @@ floatjet.com/
 | **Description** | Expert guides for remote workers and digital nomads. |
 
 **Category Links:**
-| Category | Route | Icon |
-|----------|-------|------|
-| Travel Guides | `/guides/travel` | ✈️ |
+| Category | Route | Icon | Description |
+|----------|-------|------|-------------|
+| Travel | `/guides/travel` | ✈️ | Destinations, visas & travel tips |
+| Communication | `/guides/communication` | 💬 | Async workflows & collaboration |
+| Productivity | `/guides/productivity` | ⚡ | Time management & focus |
+| Security | `/guides/security` | 🔐 | VPNs, passwords & online safety |
+| Setup | `/guides/setup` | 🏠 | Home office & gear guides |
+| Finance | `/guides/finance` | 📊 | Taxes, banking & money |
 
-**Guides in Hub:**
+**Featured Guides in Hub (one per category):**
 | Guide | Route | Category | Read Time | Icon |
 |-------|-------|----------|-----------|------|
+| Top Destinations for Digital Nomads | `/blog/top-destinations-digital-nomads` | Travel | 20 min | ✈️ |
 | Async Communication for Remote Teams | `/blog/async-communication-remote-teams` | Communication | 12 min | 💬 |
 | Managing Time Zones in Remote Teams | `/blog/managing-time-zones-remote-teams` | Productivity | 10 min | 🌍 |
 | VPN & Public WiFi Security | `/blog/vpn-public-wifi-guide` | Security | 13 min | 🔐 |
@@ -254,6 +265,86 @@ floatjet.com/
 | Crypto-Friendly Banks | `/blog/crypto-friendly-banks` | Banking |
 | Tax Tips for Remote Workers | `/blog/tax-tips-remote-workers` | Taxes |
 | Best Travel Insurance | `/blog/best-travel-insurance-remote-workers` | Insurance |
+
+---
+
+### Communication Category (`/guides/communication`)
+
+| Property             | Value                                      |
+|----------------------|--------------------------------------------|
+| **Parent**           | `/guides`                                  |
+| **Featured Article** | Async Communication for Remote Teams       |
+| **Featured Route**   | `/blog/async-communication-remote-teams`   |
+
+**Related Guides:**
+| Guide | Route | Category |
+|-------|-------|----------|
+| Best Team Communication Tools | `/blog/best-team-communication-tools` | Tools |
+
+---
+
+### Productivity Category (`/guides/productivity`)
+
+| Property             | Value                                      |
+|----------------------|--------------------------------------------|
+| **Parent**           | `/guides`                                  |
+| **Featured Article** | Managing Time Zones in Remote Teams        |
+| **Featured Route**   | `/blog/managing-time-zones-remote-teams`   |
+
+**Related Guides:**
+| Guide | Route | Category |
+|-------|-------|----------|
+| Async Communication for Remote Teams | `/blog/async-communication-remote-teams` | Communication |
+
+---
+
+### Security Category (`/guides/security`)
+
+| Property             | Value                                      |
+|----------------------|--------------------------------------------|
+| **Parent**           | `/guides`                                  |
+| **Featured Article** | VPN & Public WiFi Security                 |
+| **Featured Route**   | `/blog/vpn-public-wifi-guide`              |
+
+**Related Guides:**
+| Guide | Route | Category |
+|-------|-------|----------|
+| VPN Speed Comparison | `/blog/vpn-speed-comparison` | Performance |
+| Best VPN for Digital Nomads | `/tools/best-vpn-digital-nomads` | Tools |
+| Best Password Managers | `/tools/best-password-manager-remote-work` | Tools |
+
+---
+
+### Setup Category (`/guides/setup`)
+
+| Property             | Value                                      |
+|----------------------|--------------------------------------------|
+| **Parent**           | `/guides`                                  |
+| **Featured Article** | Ultimate Home Office Setup                 |
+| **Featured Route**   | `/blog/ultimate-home-office-setup`         |
+
+**Related Guides:**
+| Guide | Route | Category |
+|-------|-------|----------|
+| Best Standing Desks | `/gear/best-standing-desks` | Furniture |
+| Best Laptops for Remote Work | `/gear/best-laptops-remote-work` | Hardware |
+| Best Noise-Canceling Headphones | `/gear/best-noise-canceling-headphones` | Audio |
+
+---
+
+### Finance Category (`/guides/finance`)
+
+| Property             | Value                                      |
+|----------------------|--------------------------------------------|
+| **Parent**           | `/guides`                                  |
+| **Featured Article** | Tax Tips for Remote Workers                |
+| **Featured Route**   | `/blog/tax-tips-remote-workers`            |
+
+**Related Guides:**
+| Guide | Route | Category |
+|-------|-------|----------|
+| Best Banking for Digital Nomads | `/blog/best-banking-digital-nomads` | Banking |
+| Crypto-Friendly Banks | `/blog/crypto-friendly-banks` | Crypto |
 
 ---
 
@@ -1118,9 +1209,9 @@ floatjet.com/
 
 | Metric                   | Count |
 |--------------------------|-------|
-| **Total Pages**          | 45    |
+| **Total Pages**          | 50    |
 | **Hub Pages**            | 5     |
-| **Category Pages**       | 9     |
+| **Category Pages**       | 14    |
 | **Tool Articles**        | 9     |
 | **Gear Articles**        | 3     |
 | **Blog Articles**        | 16    |

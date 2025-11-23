@@ -74,12 +74,85 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     </div>
 
     <!-- Visualization Container -->
-    <div class="max-w-7xl mx-auto">
+    <div id="sitemap-wrapper" class="max-w-7xl mx-auto transition-all duration-300">
       <div
           id="sitemap-container"
-          class="relative w-full bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl overflow-hidden"
+          class="relative w-full bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl overflow-hidden transition-all duration-300"
           style="height: 70vh; min-height: 500px;"
       >
+        <!-- Fullscreen Toggle Button -->
+        <button
+            id="btn-fullscreen"
+            class="absolute top-4 right-4 z-40 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full backdrop-blur-sm border border-white/20 transition-all duration-300 group"
+            aria-label="Toggle fullscreen"
+        >
+          <svg id="icon-expand" class="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+          </svg>
+          <svg id="icon-collapse" class="w-5 h-5 hidden transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9L4 4m0 0v4m0-4h4m7 5l5-5m0 0v4m0-4h-4M9 15l-5 5m0 0v-4m0 4h4m7-5l5 5m0 0v-4m0 4h-4"/>
+          </svg>
+        </button>
+
+        <!-- Fullscreen Controls Overlay (hidden by default) -->
+        <div id="fullscreen-controls" class="hidden absolute top-0 left-0 right-0 z-20 pt-4 pb-6 px-4 bg-gradient-to-b from-black/80 via-black/50 to-transparent">
+          <div class="flex flex-col items-center gap-4">
+            <!-- Controls -->
+            <div class="flex flex-wrap justify-center gap-3">
+              <button
+                  id="btn-reset-fs"
+                  class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm font-medium backdrop-blur-sm border border-white/20 transition-all duration-300"
+              >
+                Reset View
+              </button>
+              <button
+                  id="btn-check-links-fs"
+                  class="px-4 py-2 bg-jet-stream/80 hover:bg-jet-stream text-white rounded-full text-sm font-medium backdrop-blur-sm transition-all duration-300"
+              >
+                Check Links
+              </button>
+              <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm border border-white/20">
+                <label for="layout-select-fs" class="text-white text-sm">Layout:</label>
+                <select id="layout-select-fs" aria-label="Select visualization layout"
+                        class="bg-transparent text-white text-sm border-none outline-none cursor-pointer">
+                  <option value="force" class="text-slate-800">Force Graph</option>
+                  <option value="radial" class="text-slate-800">Radial Tree</option>
+                  <option value="tree" class="text-slate-800">Hierarchical</option>
+                </select>
+              </div>
+              <button
+                  id="btn-exit-fullscreen"
+                  class="px-4 py-2 bg-red-500/60 hover:bg-red-500/80 text-white rounded-full text-sm font-medium backdrop-blur-sm border border-red-400/30 transition-all duration-300"
+              >
+                Exit Fullscreen
+              </button>
+            </div>
+
+            <!-- Legend -->
+            <div class="flex flex-wrap justify-center gap-4">
+              <div class="flex items-center gap-2 text-sm text-white/80">
+                <span class="w-4 h-4 rounded-full bg-ocean-deep border-2 border-white/50"></span>
+                <span>Home</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-white/80">
+                <span class="w-4 h-4 rounded-full bg-jet-stream border-2 border-white/50"></span>
+                <span>Hubs</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-white/80">
+                <span class="w-4 h-4 rounded-full bg-sky-light border-2 border-white/50"></span>
+                <span>Categories</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-white/80">
+                <span class="w-4 h-4 rounded-full bg-blue-500 border-2 border-white/50"></span>
+                <span>Articles</span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-white/80">
+                <span class="w-4 h-4 rounded-full bg-slate-500 border-2 border-white/50"></span>
+                <span>Pages</span>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Loading State -->
         <div id="loading"
              class="absolute inset-0 flex items-center justify-center bg-ocean-deep/50 backdrop-blur-sm z-10">
@@ -641,24 +714,148 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       tooltip.classList.add('opacity-0');
     }
 
-    // Reset view
+    // Fullscreen state
+    let isFullscreen = false;
+    const wrapper = document.getElementById('sitemap-wrapper');
+    const fullscreenControls = document.getElementById('fullscreen-controls');
+    const iconExpand = document.getElementById('icon-expand');
+    const iconCollapse = document.getElementById('icon-collapse');
+    const layoutSelectFs = document.getElementById('layout-select-fs');
+    const layoutSelect = document.getElementById('layout-select');
+
+    function enterFullscreen() {
+      isFullscreen = true;
+
+      // Hide page content, navbar, footer, and affiliate disclosure
+      document.body.style.overflow = 'hidden';
+      const header = document.querySelector('header');
+      if (header) header.style.display = 'none';
+      const footer = document.querySelector('footer');
+      if (footer) footer.style.display = 'none';
+      const affiliateDisclosure = document.querySelector('.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure');
+      if (affiliateDisclosure) affiliateDisclosure.style.display = 'none';
+
+      // Make wrapper fullscreen with highest z-index
+      wrapper.classList.remove('max-w-7xl', 'mx-auto');
+      wrapper.classList.add('fixed', 'inset-0');
+      wrapper.style.zIndex = '9999';
+
+      // Make container fullscreen
+      container.classList.remove('rounded-3xl', 'border', 'border-white/20');
+      container.style.height = '100vh';
+      container.style.minHeight = '100vh';
+      container.style.borderRadius = '0';
+
+      // Show fullscreen controls, hide normal controls
+      fullscreenControls.classList.remove('hidden');
+      iconExpand.classList.add('hidden');
+      iconCollapse.classList.remove('hidden');
+
+      // Sync layout select
+      layoutSelectFs.value = currentLayout;
+
+      // Update dimensions and re-render
+      setTimeout(() => {
+        width = container.clientWidth;
+        height = container.clientHeight;
+        render(currentLayout);
+      }, 350);
+    }
+
+    function exitFullscreen() {
+      isFullscreen = false;
+
+      // Restore page scroll, navbar, footer, and affiliate disclosure
+      document.body.style.overflow = '';
+      const header = document.querySelector('header');
+      if (header) header.style.display = '';
+      const footer = document.querySelector('footer');
+      if (footer) footer.style.display = '';
+      const affiliateDisclosure = document.querySelector('.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure');
+      if (affiliateDisclosure) affiliateDisclosure.style.display = '';
+
+      // Restore wrapper
+      wrapper.classList.add('max-w-7xl', 'mx-auto');
+      wrapper.classList.remove('fixed', 'inset-0');
+      wrapper.style.zIndex = '';
+
+      // Restore container
+      container.classList.add('rounded-3xl', 'border', 'border-white/20');
+      container.style.height = '70vh';
+      container.style.minHeight = '500px';
+      container.style.borderRadius = '';
+
+      // Hide fullscreen controls
+      fullscreenControls.classList.add('hidden');
+      iconExpand.classList.remove('hidden');
+      iconCollapse.classList.add('hidden');
+
+      // Sync layout select
+      layoutSelect.value = currentLayout;
+
+      // Update dimensions and re-render
+      setTimeout(() => {
+        width = container.clientWidth;
+        height = container.clientHeight;
+        render(currentLayout);
+      }, 350);
+    }
+
+    // Fullscreen toggle button
+    document.getElementById('btn-fullscreen').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (isFullscreen) {
+        exitFullscreen();
+      } else {
+        enterFullscreen();
+      }
+    });
+
+    // Exit fullscreen button
+    document.getElementById('btn-exit-fullscreen').addEventListener('click', exitFullscreen);
+
+    // ESC key to exit fullscreen
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isFullscreen) {
+        exitFullscreen();
+      }
+    });
+
+    // Reset view (both normal and fullscreen)
     document.getElementById('btn-reset').addEventListener('click', () => {
       svg.transition()
         .duration(750)
         .call(zoom.transform, d3.zoomIdentity);
     });
 
-    // Layout change
+    document.getElementById('btn-reset-fs').addEventListener('click', () => {
+      svg.transition()
+        .duration(750)
+        .call(zoom.transform, d3.zoomIdentity);
+    });
+
+    // Layout change (both normal and fullscreen)
     document.getElementById('layout-select').addEventListener('change', (e) => {
       currentLayout = e.target.value;
+      layoutSelectFs.value = currentLayout;
       render(currentLayout);
     });
 
-    // Link checking
-    document.getElementById('btn-check-links').addEventListener('click', async () => {
-      const btn = document.getElementById('btn-check-links');
+    document.getElementById('layout-select-fs').addEventListener('change', (e) => {
+      currentLayout = e.target.value;
+      layoutSelect.value = currentLayout;
+      render(currentLayout);
+    });
+
+    // Link checking function
+    async function checkLinks(btn, btnFs) {
       btn.textContent = 'Checking...';
       btn.disabled = true;
+      if (btnFs) {
+        btnFs.textContent = 'Checking...';
+        btnFs.disabled = true;
+      }
 
       let healthy = 0;
       let broken = 0;
@@ -702,6 +899,10 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
       btn.textContent = 'Check Links';
       btn.disabled = false;
+      if (btnFs) {
+        btnFs.textContent = 'Check Links';
+        btnFs.disabled = false;
+      }
 
       // Show results if there are broken links
       if (results.length > 0) {
@@ -725,7 +926,14 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         contentEl.innerHTML = '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
         resultsEl.classList.remove('hidden');
       }
-    });
+    }
+
+    // Link check button handlers
+    const btnCheckLinks = document.getElementById('btn-check-links');
+    const btnCheckLinksFs = document.getElementById('btn-check-links-fs');
+
+    btnCheckLinks.addEventListener('click', () => checkLinks(btnCheckLinks, btnCheckLinksFs));
+    btnCheckLinksFs.addEventListener('click', () => checkLinks(btnCheckLinksFs, btnCheckLinks));
 
     // Update node visual status
     function updateNodeStatus(path, status) {
@@ -775,7 +983,58 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     transform: scale(1.1);
   }
 
+  #sitemap-container {
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(56, 163, 165, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 70%, rgba(128, 206, 215, 0.1) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 50%, rgba(15, 76, 92, 0.3) 0%, transparent 60%),
+      linear-gradient(180deg, #030a0d 0%, #0a1f26 30%, #0f3540 60%, #0a1f26 85%, #030a0d 100%);
+  }
+
   #sitemap-svg {
-    background: radial-gradient(ellipse at center, rgba(15, 76, 92, 0.1) 0%, transparent 70%);
+    background:
+      radial-gradient(circle at 30% 40%, rgba(56, 163, 165, 0.08) 0%, transparent 35%),
+      radial-gradient(circle at 70% 60%, rgba(128, 206, 215, 0.06) 0%, transparent 30%),
+      radial-gradient(circle at 50% 80%, rgba(15, 76, 92, 0.1) 0%, transparent 40%);
+  }
+
+  /* Animated grid pattern */
+  #sitemap-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(56, 163, 165, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56, 163, 165, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+  }
+
+  /* Subtle animated glow */
+  #sitemap-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse at center, rgba(56, 163, 165, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    animation: pulse-glow 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.5;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
   }
 </style>

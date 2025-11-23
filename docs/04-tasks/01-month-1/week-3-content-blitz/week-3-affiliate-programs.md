@@ -1,6 +1,7 @@
 # Week 3 Affiliate Programs Guide
 
 **Articles Covered:**
+- FJ-011: Best Password Managers for Remote Workers
 - FJ-012: Best Laptops for Remote Work
 - FJ-013: Best Email Marketing Tools for Creators
 - FJ-014: Best Standing Desks for Home Office
@@ -12,9 +13,14 @@
 | Program | Article(s) | Commission | Cookie | Priority | Network |
 |---------|-----------|------------|--------|----------|---------|
 | Amazon Associates | Laptops, Desks | 3-6% | 24h | **CRITICAL** | Direct |
+| NordPass | Password Managers | 30-40% | 30 days | **HIGH** | NordVPN Direct |
+| 1Password | Password Managers | 25% | 30 days | **HIGH** | Impact Radius |
 | ConvertKit | Email Marketing | $100 + 40% recurring (24mo) | 60 days | **HIGH** | Direct |
 | Beehiiv | Email Marketing | 50% recurring (12mo) | 60 days | **HIGH** | Direct |
 | FlexiSpot | Standing Desks | 8-10% | 30 days | **HIGH** | Direct |
+| Bitwarden | Password Managers | Unknown | Unknown | MEDIUM | Direct |
+| Dashlane | Password Managers | $3-5/signup | 30 days | MEDIUM | CJ Affiliate |
+| Keeper | Password Managers | 25-40% | 45 days | MEDIUM | Direct |
 | ActiveCampaign | Email Marketing | 20-30% recurring | 90 days | MEDIUM | Direct |
 | Mailchimp | Email Marketing | 20-30% first payment | 30 days | MEDIUM | Impact Radius |
 | Autonomous | Standing Desks | 10% | 30 days | MEDIUM | Direct |
@@ -104,6 +110,57 @@
 
 ---
 
+## Password Manager Programs
+
+### 5. NordPass (via NordVPN Program)
+**URL:** https://nordvpn.com/affiliate/ (same as NordVPN)
+
+**Required For:**
+- FJ-011: Best Password Managers (TOP recommendation)
+
+**Commission Structure:**
+- 30-40% commission (same as NordVPN)
+- Part of NordVPN + NordPass B2C bundle
+- 30-day cookie
+
+**Status:** ✅ Already applied (via NordVPN application on 2025-11-22)
+
+**Note:** NordPass is bundled with NordVPN affiliate program. Once approved, you get affiliate links for both products from the same dashboard.
+
+---
+
+### 6. 1Password
+**URL:** https://1password.com/affiliates/ (via Impact Radius)
+
+**Required For:**
+- FJ-011: Best Password Managers (Teams recommendation)
+
+**Commission Structure:**
+- 25% commission on first-year subscription
+- Higher rates possible for business referrals
+- 30-day cookie
+
+**Application Tips:**
+- Apply via Impact Radius marketplace
+- Highlight team/business focus
+- Mention security/remote work niche
+
+---
+
+### 7. Bitwarden
+**URL:** https://bitwarden.com/partners/
+
+**Required For:**
+- FJ-011: Best Password Managers (Free option recommendation)
+
+**Commission Structure:**
+- Partner program (commission TBD)
+- Open-source focus - may have limited affiliate program
+
+**Note:** Bitwarden's affiliate program is smaller. Consider as secondary option.
+
+---
+
 ## Medium Priority Programs
 
 ### 5. ActiveCampaign
@@ -147,6 +204,14 @@ Premium segment. Lower commission but higher price points.
 ## Alternative Programs (Backup)
 
 If primary programs reject the application:
+
+### Password Manager Alternatives
+| Program | Commission | Notes |
+|---------|------------|-------|
+| Dashlane | $3-5/signup | CJ Affiliate network |
+| Keeper | 25-40% | Direct program, 45-day cookie |
+| LastPass | 25% | CJ Affiliate network |
+| RoboForm | 30% | Direct program |
 
 ### Laptops Alternatives
 | Program | Commission | Notes |
@@ -201,6 +266,43 @@ If primary programs reject the application:
 Add to `netlify.toml` after approvals:
 
 ```toml
+# Password Managers (already configured)
+[[redirects]]
+  from = "/go/nordpass"
+  to = "https://nordpass.com?affiliate=[YOUR_ID]"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/1password"
+  to = "https://1password.com?affiliate=[YOUR_ID]"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/bitwarden"
+  to = "https://bitwarden.com?ref=[YOUR_ID]"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/dashlane"
+  to = "https://dashlane.com?affiliate=[YOUR_ID]"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/lastpass"
+  to = "https://lastpass.com?affiliate=[YOUR_ID]"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/go/keeper"
+  to = "https://keepersecurity.com?affiliate=[YOUR_ID]"
+  status = 301
+  force = true
+
 # Amazon Laptops
 [[redirects]]
   from = "/go/amazon/macbook-air-m3"
@@ -282,9 +384,11 @@ Assuming modest traffic and 1% conversion:
 |---------|----------------|------------|---------|
 | Amazon Laptops | 5 | $30 avg | $150 |
 | Amazon Desks | 3 | $25 avg | $75 |
+| NordPass | 3 | $15-25 avg | $60 |
+| 1Password | 2 | $10-15 avg | $25 |
 | ConvertKit | 2 | $100 + recurring | $200+ |
 | FlexiSpot | 2 | $50 avg | $100 |
-| **Total** | | | **$525+** |
+| **Total** | | | **$610+** |
 
 *Recurring commissions (ConvertKit, Beehiiv) compound over time!*
 
@@ -295,6 +399,11 @@ Assuming modest traffic and 1% conversion:
 | Program | Application URL |
 |---------|-----------------|
 | Amazon Associates | https://affiliate-program.amazon.com |
+| NordPass (via NordVPN) | https://nordvpn.com/affiliate/ |
+| 1Password | https://1password.com/affiliates/ (Impact Radius) |
+| Bitwarden | https://bitwarden.com/partners/ |
+| Dashlane | https://www.cj.com (search Dashlane) |
+| Keeper | https://www.keepersecurity.com/affiliates.html |
 | ConvertKit | https://convertkit.com/affiliates |
 | Beehiiv | https://www.beehiiv.com/partners |
 | FlexiSpot | https://www.flexispot.com/affiliate |
@@ -304,4 +413,4 @@ Assuming modest traffic and 1% conversion:
 
 ---
 
-**Next Step:** Apply to Amazon Associates and ConvertKit immediately (24-48 hour approval time).
+**Next Step:** Apply to Amazon Associates and ConvertKit immediately (24-48 hour approval time). NordPass already applied via NordVPN program.

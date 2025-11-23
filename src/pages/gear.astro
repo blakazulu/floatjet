@@ -4,8 +4,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const title = 'Best Remote Work Gear & Equipment | FloatJet';
 const description = 'Find the best gear for your home office or mobile setup. Reviews of standing desks, headphones, monitors, and essential remote work equipment.';
 
+// Category pages
+const categories = [
+  {name: 'Computers', href: '#', icon: '💻'},
+  {name: 'Furniture', href: '#', icon: '🪑'},
+  {name: 'Audio', href: '#', icon: '🎧'},
+  {name: 'Accessories', href: '#', icon: '🎒'}
+];
+
 // Gear articles data
 const gear = [
+  {
+    title: 'Best Laptops for Remote Work',
+    description: 'Find the perfect laptop for productivity on the go. Our top picks for every budget and work style.',
+    href: '/gear/best-laptops-remote-work',
+    category: 'Computers',
+    icon: '💻'
+  },
   {
     title: 'Best Standing Desks',
     description: 'Upgrade your workspace with an ergonomic standing desk for healthier, more productive workdays.',
@@ -21,16 +36,6 @@ const gear = [
     icon: '🎧'
   }
 ];
-
-// Coming soon gear
-const comingSoon = [
-  {title: 'Best Monitors for Remote Work', icon: '🖥️'},
-  {title: 'Best Webcams for Video Calls', icon: '📷'},
-  {title: 'Best Mechanical Keyboards', icon: '⌨️'},
-  {title: 'Best Ergonomic Chairs', icon: '💺'},
-  {title: 'Best Portable Monitors', icon: '📱'},
-  {title: 'Best Travel Backpacks', icon: '🎒'}
-];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -39,28 +44,41 @@ const comingSoon = [
     <div class="text-center mb-12">
       <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Remote Work Gear</h1>
       <p class="text-lg text-white/80 max-w-2xl mx-auto">
-        Build the perfect workspace with our expert reviews of desks, chairs, headphones, and essential remote work
-        equipment.
+        In-depth reviews and comparisons of the best hardware and equipment for remote workers, freelancers, and digital
+        nomads.
       </p>
     </div>
 
+    <!-- Category Links -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      {categories.map(cat => (
+          <a
+              href={cat.href}
+              class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-jet-stream text-white/90 hover:text-ocean-deep rounded-full text-sm font-medium transition-colors"
+          >
+            <span>{cat.icon}</span>
+            {cat.name}
+          </a>
+      ))}
+    </div>
+
     <!-- Gear Grid -->
-    <div class="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {gear.map(item => (
           <a
               href={item.href}
               class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
           >
             <div class="flex items-start gap-4">
-              <span class="text-4xl">{item.icon}</span>
+              <span class="text-3xl">{item.icon}</span>
               <div class="flex-1">
               <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded mb-2">
                 {item.category}
               </span>
-                <h2 class="text-xl font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
+                <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
                   {item.title}
                 </h2>
-                <p class="text-white/70">
+                <p class="text-white/70 text-sm">
                   {item.description}
                 </p>
               </div>
@@ -77,25 +95,13 @@ const comingSoon = [
     </div>
 
     <!-- Coming Soon Section -->
-    <div class="mt-16">
-      <h2 class="text-xl font-semibold text-white text-center mb-8">Coming Soon</h2>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
-        {comingSoon.map(item => (
-            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-lg px-4 py-3">
-              <span class="text-2xl">{item.icon}</span>
-              <span class="text-white/70">{item.title}</span>
-            </div>
-        ))}
-      </div>
-    </div>
-
-    <!-- CTA Section -->
     <div class="mt-16 text-center">
-      <p class="text-white/60 mb-4">
-        Have gear you'd like us to review?
+      <h2 class="text-xl font-semibold text-white mb-4">More Reviews Coming Soon</h2>
+      <p class="text-white/60 mb-6">
+        We're constantly testing new gear. Check back soon for reviews on monitors, webcams, keyboards, chairs, and more.
       </p>
       <a href="/contact" class="inline-flex items-center text-jet-stream hover:text-sky-light transition-colors">
-        Send us a suggestion
+        Suggest gear for us to review
         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
         </svg>

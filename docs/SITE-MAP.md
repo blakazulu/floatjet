@@ -1,7 +1,7 @@
 # FloatJet Site Map & Content Relationships
 
 **Last Updated:** 2025-11-23
-**Total Pages:** 42
+**Total Pages:** 41
 
 ---
 
@@ -82,7 +82,7 @@ floatjet.com/
 | Best VPN for Digital Nomads | `/tools/best-vpn-digital-nomads` | Security | 🔒 |
 | Best Email Marketing Tools | `/tools/best-email-marketing-tools` | SaaS | 📧 |
 | Best Password Managers | `/tools/best-password-manager-remote-work` | Security | 🔐 |
-| Best Laptops for Remote Work | `/tools/best-laptops-remote-work` | Hardware | 💻 |
+| Best Laptops for Remote Work | `/gear/best-laptops-remote-work` | Hardware | 💻 |
 | Best Web Hosting | `/tools/best-web-hosting-remote-business` | Hosting | 🌐 |
 | Best Time Tracking Software | `/tools/best-time-tracking-software` | SaaS | ⏱️ |
 | Best Online Course Platforms | `/tools/best-online-course-platforms` | SaaS | 🎓 |
@@ -343,7 +343,7 @@ floatjet.com/
 |-------|-------|
 | Best VPN for Digital Nomads | `/tools/best-vpn-digital-nomads` |
 | VPN & Public WiFi Security | `/blog/vpn-public-wifi-guide` |
-| Best Laptops for Remote Work | `/tools/best-laptops-remote-work` |
+| Best Laptops for Remote Work | `/gear/best-laptops-remote-work` |
 
 ---
 
@@ -351,7 +351,7 @@ floatjet.com/
 
 | Property              | Value                                                             |
 |-----------------------|-------------------------------------------------------------------|
-| **Route**             | `/tools/best-laptops-remote-work`                                 |
+| **Route**             | `/gear/best-laptops-remote-work`                                  |
 | **Category**          | Hardware                                                          |
 | **Category Slug**     | `gear`                                                            |
 | **Products Reviewed** | MacBook Air M3, ThinkPad X1 Carbon, Dell XPS 13, Framework Laptop |
@@ -457,7 +457,7 @@ floatjet.com/
 **Related Articles:**
 | Title | Route |
 |-------|-------|
-| Best Laptops for Remote Work | `/tools/best-laptops-remote-work` |
+| Best Laptops for Remote Work | `/gear/best-laptops-remote-work` |
 | Ultimate Home Office Setup | `/blog/ultimate-home-office-setup` |
 | Best Noise-Canceling Headphones | `/gear/best-noise-canceling-headphones` |
 
@@ -477,7 +477,7 @@ floatjet.com/
 | Title | Route |
 |-------|-------|
 | Best Standing Desks | `/gear/best-standing-desks` |
-| Best Laptops for Remote Work | `/tools/best-laptops-remote-work` |
+| Best Laptops for Remote Work | `/gear/best-laptops-remote-work` |
 | Ultimate Home Office Setup | `/blog/ultimate-home-office-setup` |
 
 ---
@@ -597,7 +597,7 @@ floatjet.com/
 **Related Articles:**
 | Title | Route |
 |-------|-------|
-| Best Laptops for Remote Work | `/tools/best-laptops-remote-work` |
+| Best Laptops for Remote Work | `/gear/best-laptops-remote-work` |
 | Top Destinations for Digital Nomads | `/blog/top-destinations-digital-nomads` |
 | Find Reliable WiFi Anywhere | `/blog/find-reliable-wifi-anywhere` |
 
@@ -790,7 +790,7 @@ floatjet.com/
 | Title | Route |
 |-------|-------|
 | Best Standing Desks | `/gear/best-standing-desks` |
-| Best Laptops for Remote Work | `/tools/best-laptops-remote-work` |
+| Best Laptops for Remote Work | `/gear/best-laptops-remote-work` |
 | Best Noise-Canceling Headphones | `/gear/best-noise-canceling-headphones` |
 
 ---
@@ -829,8 +829,8 @@ floatjet.com/
     │     │     │      └─────┘  └────┬───┘                                │
     ▼     ▼     ▼                    ▼                                    ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                           28 CONTENT ARTICLES                               │
-│  Tools: 9 articles  │  Gear: 2 articles  │  Blog: 17 articles              │
+│                           27 CONTENT ARTICLES                               │
+│  Tools: 9 articles  │  Gear: 2 articles  │  Blog: 16 articles              │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -838,65 +838,214 @@ floatjet.com/
 
 ## Affiliate Links Reference
 
-### All `/go/` Redirects
+### Complete Affiliate Inventory by Article
 
-| Redirect             | Product        | Category      | Article(s) Using It      |
-|----------------------|----------------|---------------|--------------------------|
-| `/go/nordvpn`        | NordVPN        | VPN           | VPN article, deals       |
-| `/go/expressvpn`     | ExpressVPN     | VPN           | VPN article              |
-| `/go/surfshark`      | Surfshark      | VPN           | VPN article              |
-| `/go/notion`         | Notion         | PM            | PM article, productivity |
-| `/go/clickup`        | ClickUp        | PM            | PM article               |
-| `/go/monday`         | Monday.com     | PM            | PM article               |
-| `/go/asana`          | Asana          | PM            | PM article               |
-| `/go/1password`      | 1Password      | Security      | Password article         |
-| `/go/nordpass`       | NordPass       | Security      | Password article         |
-| `/go/bitwarden`      | Bitwarden      | Security      | Password article         |
-| `/go/dashlane`       | Dashlane       | Security      | Password article         |
-| `/go/convertkit`     | ConvertKit     | Email         | Email article            |
-| `/go/beehiiv`        | Beehiiv        | Email         | Email article            |
-| `/go/mailchimp`      | Mailchimp      | Email         | Email article            |
-| `/go/activecampaign` | ActiveCampaign | Email         | Email article            |
-| `/go/toggl`          | Toggl Track    | Time          | Time tracking article    |
-| `/go/harvest`        | Harvest        | Time          | Time tracking article    |
-| `/go/clockify`       | Clockify       | Time          | Time tracking article    |
-| `/go/wpengine`       | WP Engine      | Hosting       | Hosting article          |
-| `/go/cloudways`      | Cloudways      | Hosting       | Hosting article          |
-| `/go/siteground`     | SiteGround     | Hosting       | Hosting article          |
-| `/go/kinsta`         | Kinsta         | Hosting       | Hosting article          |
-| `/go/teachable`      | Teachable      | Courses       | Courses article          |
-| `/go/thinkific`      | Thinkific      | Courses       | Courses article          |
-| `/go/kajabi`         | Kajabi         | Courses       | Courses article          |
-| `/go/flexispot`      | FlexiSpot      | Furniture     | Standing desks           |
-| `/go/uplift`         | Uplift         | Furniture     | Standing desks           |
-| `/go/autonomous`     | Autonomous     | Furniture     | Standing desks           |
-| `/go/wise`           | Wise           | Banking       | Banking article          |
-| `/go/revolut`        | Revolut        | Banking       | Banking, crypto articles |
-| `/go/mercury`        | Mercury        | Banking       | Banking, crypto articles |
-| `/go/hubspot`        | HubSpot        | CRM           | CRM article              |
-| `/go/pipedrive`      | Pipedrive      | CRM           | CRM article              |
-| `/go/zoho-crm`       | Zoho CRM       | CRM           | CRM article              |
-| `/go/slack`          | Slack          | Communication | Comm tools article       |
-| `/go/zoom`           | Zoom           | Communication | Comm tools article       |
-| `/go/loom`           | Loom           | Communication | Comm tools article       |
-| `/go/safetywing`     | SafetyWing     | Insurance     | Travel insurance         |
-| `/go/world-nomads`   | World Nomads   | Insurance     | Travel insurance         |
+#### Tools Directory
+
+| Article                               | Affiliate Links                                                                                                                                                                                                                         |
+|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **best-project-management-software**  | `/go/notion`, `/go/clickup`, `/go/asana`, `/go/monday`, `/go/trello`, `/go/basecamp`, `/go/linear`, `/go/jira`                                                                                                                          |
+| **best-vpn-digital-nomads**           | `/go/nordvpn`, `/go/expressvpn`, `/go/surfshark`, `/go/cyberghost`, `/go/protonvpn`, `/go/pia`                                                                                                                                          |
+| **best-email-marketing-tools**        | `/go/convertkit`, `/go/beehiiv`, `/go/mailchimp`, `/go/activecampaign`, `/go/mailerlite`, `/go/buttondown`, `/go/flodesk`                                                                                                               |
+| **best-laptops-remote-work**          | `/go/amazon/macbook-air-m3`, `/go/amazon/thinkpad-x1-carbon`, `/go/amazon/dell-xps-13`, `/go/amazon/framework-13`, `/go/amazon/asus-zenbook-14`, `/go/amazon/hp-spectre-x360`, `/go/amazon/surface-laptop-5`, `/go/amazon/acer-swift-3` |
+| **best-password-manager-remote-work** | `/go/nordpass`, `/go/1password`, `/go/bitwarden`, `/go/dashlane`, `/go/lastpass`, `/go/keeper`                                                                                                                                          |
+| **best-web-hosting-remote-business**  | `/go/wpengine`, `/go/cloudways`, `/go/siteground`, `/go/kinsta`, `/go/flywheel`, `/go/a2hosting`, `/go/bluehost`, `/go/digitalocean`                                                                                                    |
+| **best-online-course-platforms**      | `/go/teachable`, `/go/thinkific`, `/go/kajabi`, `/go/podia`, `/go/learnworlds`, `/go/gumroad`                                                                                                                                           |
+| **best-time-tracking-software**       | `/go/toggl`, `/go/harvest`, `/go/clockify`, `/go/timely`, `/go/rescuetime`, `/go/paymo`, `/go/hours`                                                                                                                                    |
+| **best-productivity-apps**            | `/go/notion`, `/go/todoist`, `/go/obsidian`, `/go/things-3`, `/go/ticktick`, `/go/evernote`, `/go/any-do`                                                                                                                               |
+
+#### Gear Directory
+
+| Article                             | Affiliate Links                                                                                                                                              |
+|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **best-standing-desks**             | `/go/uplift`, `/go/flexispot`, `/go/autonomous`, `/go/fully`, `/go/vari`, `/go/branch`, `/go/ikea`, `/go/flexispot-e5`, `/go/amazon/fezibo`, `/go/secretlab` |
+| **best-noise-canceling-headphones** | `/go/sony-xm5`, `/go/bose-qc-ultra`, `/go/airpods-max`, `/go/sony-xm4`, `/go/bose-700`, `/go/sennheiser-momentum-4`, `/go/jabra-evolve2-85`                  |
+
+#### Blog Directory
+
+| Article                                  | Affiliate Links                                |
+|------------------------------------------|------------------------------------------------|
+| **best-banking-digital-nomads**          | `/go/wise`, `/go/revolut`, `/go/mercury`       |
+| **crypto-friendly-banks**                | `/go/revolut`, `/go/mercury`                   |
+| **best-travel-insurance-remote-workers** | `/go/safetywing`, `/go/world-nomads`           |
+| **best-team-communication-tools**        | `/go/slack`                                    |
+| **best-crm-software-small-business**     | `/go/hubspot`, `/go/pipedrive`, `/go/zoho-crm` |
+
+---
+
+### All `/go/` Redirects (Complete Inventory)
+
+#### VPN & Security (10 links)
+
+| Redirect         | Product                 | Article(s) Using It      |
+|------------------|-------------------------|--------------------------|
+| `/go/nordvpn`    | NordVPN                 | VPN article, deals       |
+| `/go/expressvpn` | ExpressVPN              | VPN article              |
+| `/go/surfshark`  | Surfshark               | VPN article              |
+| `/go/cyberghost` | CyberGhost              | VPN article              |
+| `/go/protonvpn`  | ProtonVPN               | VPN article              |
+| `/go/pia`        | Private Internet Access | VPN article              |
+| `/go/nordpass`   | NordPass                | Password manager article |
+| `/go/1password`  | 1Password               | Password manager article |
+| `/go/bitwarden`  | Bitwarden               | Password manager article |
+| `/go/dashlane`   | Dashlane                | Password manager article |
+| `/go/lastpass`   | LastPass                | Password manager article |
+| `/go/keeper`     | Keeper                  | Password manager article |
+
+#### Project Management & Productivity (15 links)
+
+| Redirect       | Product    | Article(s) Using It              |
+|----------------|------------|----------------------------------|
+| `/go/notion`   | Notion     | PM article, productivity article |
+| `/go/clickup`  | ClickUp    | PM article                       |
+| `/go/asana`    | Asana      | PM article                       |
+| `/go/monday`   | Monday.com | PM article                       |
+| `/go/trello`   | Trello     | PM article                       |
+| `/go/basecamp` | Basecamp   | PM article                       |
+| `/go/linear`   | Linear     | PM article                       |
+| `/go/jira`     | Jira       | PM article                       |
+| `/go/todoist`  | Todoist    | Productivity apps article        |
+| `/go/obsidian` | Obsidian   | Productivity apps article        |
+| `/go/things-3` | Things 3   | Productivity apps article        |
+| `/go/ticktick` | TickTick   | Productivity apps article        |
+| `/go/evernote` | Evernote   | Productivity apps article        |
+| `/go/any-do`   | Any.do     | Productivity apps article        |
+
+#### Time Tracking (7 links)
+
+| Redirect         | Product     | Article(s) Using It   |
+|------------------|-------------|-----------------------|
+| `/go/toggl`      | Toggl Track | Time tracking article |
+| `/go/harvest`    | Harvest     | Time tracking article |
+| `/go/clockify`   | Clockify    | Time tracking article |
+| `/go/timely`     | Timely      | Time tracking article |
+| `/go/rescuetime` | RescueTime  | Time tracking article |
+| `/go/paymo`      | Paymo       | Time tracking article |
+| `/go/hours`      | Hours       | Time tracking article |
+
+#### Email Marketing (7 links)
+
+| Redirect             | Product        | Article(s) Using It |
+|----------------------|----------------|---------------------|
+| `/go/convertkit`     | ConvertKit     | Email article       |
+| `/go/beehiiv`        | Beehiiv        | Email article       |
+| `/go/mailchimp`      | Mailchimp      | Email article       |
+| `/go/activecampaign` | ActiveCampaign | Email article       |
+| `/go/mailerlite`     | MailerLite     | Email article       |
+| `/go/buttondown`     | Buttondown     | Email article       |
+| `/go/flodesk`        | Flodesk        | Email article       |
+
+#### Web Hosting (8 links)
+
+| Redirect           | Product      | Article(s) Using It |
+|--------------------|--------------|---------------------|
+| `/go/wpengine`     | WP Engine    | Hosting article     |
+| `/go/cloudways`    | Cloudways    | Hosting article     |
+| `/go/siteground`   | SiteGround   | Hosting article     |
+| `/go/kinsta`       | Kinsta       | Hosting article     |
+| `/go/flywheel`     | Flywheel     | Hosting article     |
+| `/go/a2hosting`    | A2 Hosting   | Hosting article     |
+| `/go/bluehost`     | Bluehost     | Hosting article     |
+| `/go/digitalocean` | DigitalOcean | Hosting article     |
+
+#### Online Courses (6 links)
+
+| Redirect          | Product     | Article(s) Using It |
+|-------------------|-------------|---------------------|
+| `/go/teachable`   | Teachable   | Courses article     |
+| `/go/thinkific`   | Thinkific   | Courses article     |
+| `/go/kajabi`      | Kajabi      | Courses article     |
+| `/go/podia`       | Podia       | Courses article     |
+| `/go/learnworlds` | LearnWorlds | Courses article     |
+| `/go/gumroad`     | Gumroad     | Courses article     |
+
+#### Standing Desks & Furniture (10 links)
+
+| Redirect            | Product         | Article(s) Using It |
+|---------------------|-----------------|---------------------|
+| `/go/uplift`        | Uplift Desk     | Standing desks      |
+| `/go/flexispot`     | FlexiSpot       | Standing desks      |
+| `/go/autonomous`    | Autonomous      | Standing desks      |
+| `/go/fully`         | Fully Jarvis    | Standing desks      |
+| `/go/vari`          | Vari            | Standing desks      |
+| `/go/branch`        | Branch          | Standing desks      |
+| `/go/ikea`          | IKEA            | Standing desks      |
+| `/go/flexispot-e5`  | FlexiSpot E5    | Standing desks      |
+| `/go/amazon/fezibo` | Fezibo (Amazon) | Standing desks      |
+| `/go/secretlab`     | SecretLab       | Standing desks      |
+
+#### Headphones (7 links - Amazon)
+
+| Redirect                    | Product               | Article(s) Using It |
+|-----------------------------|-----------------------|---------------------|
+| `/go/sony-xm5`              | Sony WH-1000XM5       | Headphones article  |
+| `/go/sony-xm4`              | Sony WH-1000XM4       | Headphones article  |
+| `/go/bose-qc-ultra`         | Bose QC Ultra         | Headphones article  |
+| `/go/bose-700`              | Bose 700              | Headphones article  |
+| `/go/airpods-max`           | AirPods Max           | Headphones article  |
+| `/go/sennheiser-momentum-4` | Sennheiser Momentum 4 | Headphones article  |
+| `/go/jabra-evolve2-85`      | Jabra Evolve2 85      | Headphones article  |
+
+#### Laptops (8 links - Amazon)
+
+| Redirect                        | Product            | Article(s) Using It |
+|---------------------------------|--------------------|---------------------|
+| `/go/amazon/macbook-air-m3`     | MacBook Air M3     | Laptops article     |
+| `/go/amazon/thinkpad-x1-carbon` | ThinkPad X1 Carbon | Laptops article     |
+| `/go/amazon/dell-xps-13`        | Dell XPS 13        | Laptops article     |
+| `/go/amazon/framework-13`       | Framework 13       | Laptops article     |
+| `/go/amazon/asus-zenbook-14`    | ASUS ZenBook 14    | Laptops article     |
+| `/go/amazon/hp-spectre-x360`    | HP Spectre x360    | Laptops article     |
+| `/go/amazon/surface-laptop-5`   | Surface Laptop 5   | Laptops article     |
+| `/go/amazon/acer-swift-3`       | Acer Swift 3       | Laptops article     |
+
+#### Banking & Finance (5 links)
+
+| Redirect      | Product | Article(s) Using It      |
+|---------------|---------|--------------------------|
+| `/go/wise`    | Wise    | Banking article          |
+| `/go/revolut` | Revolut | Banking, crypto articles |
+| `/go/mercury` | Mercury | Banking, crypto articles |
+
+#### CRM Software (3 links)
+
+| Redirect        | Product   | Article(s) Using It |
+|-----------------|-----------|---------------------|
+| `/go/hubspot`   | HubSpot   | CRM article         |
+| `/go/pipedrive` | Pipedrive | CRM article         |
+| `/go/zoho-crm`  | Zoho CRM  | CRM article         |
+
+#### Team Communication (3 links)
+
+| Redirect    | Product | Article(s) Using It |
+|-------------|---------|---------------------|
+| `/go/slack` | Slack   | Comm tools article  |
+| `/go/zoom`  | Zoom    | Comm tools article  |
+| `/go/loom`  | Loom    | Comm tools article  |
+
+#### Travel Insurance (2 links)
+
+| Redirect           | Product      | Article(s) Using It |
+|--------------------|--------------|---------------------|
+| `/go/safetywing`   | SafetyWing   | Travel insurance    |
+| `/go/world-nomads` | World Nomads | Travel insurance    |
 
 ---
 
 ## Statistics
 
-| Metric                | Count |
-|-----------------------|-------|
-| **Total Pages**       | 42    |
-| **Hub Pages**         | 5     |
-| **Category Pages**    | 5     |
-| **Tool Articles**     | 9     |
-| **Gear Articles**     | 2     |
-| **Blog Articles**     | 17    |
-| **Legal Pages**       | 4     |
-| **Affiliate Links**   | 39    |
-| **Products Reviewed** | 80+   |
+| Metric                   | Count |
+|--------------------------|-------|
+| **Total Pages**          | 41    |
+| **Hub Pages**            | 5     |
+| **Category Pages**       | 5     |
+| **Tool Articles**        | 9     |
+| **Gear Articles**        | 2     |
+| **Blog Articles**        | 16    |
+| **Legal Pages**          | 4     |
+| **Affiliate Links**      | 90    |
+| **Products Reviewed**    | 80+   |
+| **Affiliate Categories** | 13    |
 
 ---
 

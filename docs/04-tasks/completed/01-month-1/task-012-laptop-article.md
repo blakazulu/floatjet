@@ -148,7 +148,7 @@ status = 301
 
 ### Phase 4: Technical Implementation (0.5 hours)
 
-- [x] 4.1 Create article file at `src/pages/tools/best-laptops-remote-work.astro`
+- [x] 4.1 Create article file at `src/pages/gear/best-laptops-remote-work.astro`
 - [x] 4.2 Add schema markup via components
 - [ ] 4.3 Add affiliate redirects to netlify.toml
 - [ ] 4.4 Test and verify
@@ -165,7 +165,7 @@ status = 301
 
 - Task created
 - Affiliate programs documented
-- Article written: `src/pages/tools/best-laptops-remote-work.astro`
+- Article written: `src/pages/gear/best-laptops-remote-work.astro` (moved from tools/ to gear/ - laptops are hardware)
 - 8 laptops reviewed with detailed specs, pros/cons, and pricing
 - Quick picks and full comparison tables created
 - 8 FAQ questions with comprehensive answers

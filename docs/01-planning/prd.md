@@ -494,14 +494,16 @@ astro-app/
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "What is the best project management software?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The best project management software depends on..."
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best project management software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best project management software depends on..."
+      }
     }
-  }]
+  ]
 }
 ```
 
@@ -511,17 +513,20 @@ astro-app/
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Home",
-    "item": "https://floatjet.com"
-  }, {
-    "@type": "ListItem",
-    "position": 2,
-    "name": "Tools",
-    "item": "https://floatjet.com/tools"
-  }]
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://floatjet.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://floatjet.com/tools"
+    }
+  ]
 }
 ```
 
@@ -784,10 +789,10 @@ Sitemap: https://floatjet.com/sitemap.xml
 ```toml
 # netlify.toml
 [[redirects]]
-  from = "/go/notion"
-  to = "https://affiliate.notion.so?ref=floatjet&utm_source=floatjet&utm_medium=affiliate"
-  status = 301
-  force = true
+from = "/go/notion"
+to = "https://affiliate.notion.so?ref=floatjet&utm_source=floatjet&utm_medium=affiliate"
+status = 301
+force = true
 ```
 
 **Option B: Netlify Functions**
@@ -804,7 +809,7 @@ export async function handler(event: any) {
   const affiliateUrl = getAffiliateUrl(program);
   return {
     statusCode: 301,
-    headers: { Location: affiliateUrl }
+    headers: {Location: affiliateUrl}
   };
 }
 ```
@@ -953,7 +958,7 @@ updatedDate: 2025-12-01
 author: "FloatJet Team"
 category: "tools"
 subcategory: "project-management"
-tags: ["project-management", "remote-work", "saas"]
+tags: [ "project-management", "remote-work", "saas" ]
 featured: true
 featuredImage: "/images/best-project-management-software.jpg"
 featuredImageAlt: "Screenshot of project management software comparison"
@@ -964,7 +969,7 @@ featuredImageAlt: "Screenshot of project management software comparison"
 
 ```typescript
 // src/content/config.ts
-import { defineCollection, z } from 'astro:content';
+import {defineCollection, z} from 'astro:content';
 
 const toolsCollection = defineCollection({
   schema: z.object({
@@ -1051,36 +1056,86 @@ featuredImageAlt: "Project management software comparison"
 
 ```css
 /* Primary (Teal) */
---color-primary: #06B6D4;
---color-primary-dark: #0891B2;
---color-primary-light: #22D3EE;
+--color-primary: #06B6D4
+
+;
+--color-primary-dark: #0891B2
+
+;
+--color-primary-light: #22D3EE
+
+;
 
 /* Neutral */
---color-neutral-50: #F9FAFB;
---color-neutral-100: #F3F4F6;
---color-neutral-900: #111827;
+--color-neutral-50: #F9FAFB
+
+;
+--color-neutral-100: #F3F4F6
+
+;
+--color-neutral-900: #111827
+
+;
 
 /* Accent */
---color-accent: #3B82F6; /* Blue */
---color-success: #10B981; /* Green */
---color-warning: #F59E0B; /* Orange */
+--color-accent: #3B82F6
+
+; /* Blue */
+--color-success: #10B981
+
+; /* Green */
+--color-warning: #F59E0B
+
+; /* Orange */
 ```
 
 **Typography:**
 
 ```css
 /* Headings */
-font-family: 'Inter', -apple-system, sans-serif;
-font-weight: 700;
+font-family:
+
+'Inter'
+,
+-apple-system, sans-serif
+
+;
+font-weight:
+
+700
+;
 
 /* Body */
-font-family: 'Inter', -apple-system, sans-serif;
-font-weight: 400;
-font-size: 16px;
-line-height: 1.6;
+font-family:
+
+'Inter'
+,
+-apple-system, sans-serif
+
+;
+font-weight:
+
+400
+;
+font-size:
+
+16
+px
+
+;
+line-height:
+
+1.6
+;
 
 /* Code */
-font-family: 'Fira Code', monospace;
+font-family:
+
+'Fira Code'
+,
+monospace
+
+;
 ```
 
 **Spacing:**
@@ -1162,7 +1217,7 @@ export function trackAffiliateClick(program: string, url: string) {
 
 // Track page views
 export function trackPageView(page: string) {
-  posthog.capture('$pageview', { page });
+  posthog.capture('$pageview', {page});
 }
 ```
 
@@ -1173,7 +1228,11 @@ export function trackPageView(page: string) {
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
   gtag('js', new Date());
   gtag('config', 'G-XXXXXXXXXX');
 </script>
@@ -1425,30 +1484,30 @@ const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encod
 ```toml
 # netlify.toml
 [build]
-  command = "npm run build"
-  publish = "dist"
+command = "npm run build"
+publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "20"
+NODE_VERSION = "20"
 
 [[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
 
 [[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "/images/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
 
 [[redirects]]
-  from = "/go/notion"
-  to = "https://affiliate.notion.so?ref=floatjet"
-  status = 301
-  force = true
+from = "/go/notion"
+to = "https://affiliate.notion.so?ref=floatjet"
+status = 301
+force = true
 ```
 
 **Environment Variables:**

@@ -1,7 +1,7 @@
 # FloatJet Site Map & Content Relationships
 
 **Last Updated:** 2025-11-23
-**Total Pages:** 41
+**Total Pages:** 45
 
 ---
 
@@ -31,7 +31,11 @@ floatjet.com/
 │   ├── /tools/finance (Category)
 │   └── [9 tool articles]
 ├── /gear (Hub)
-│   └── [2 gear articles]
+│   ├── /gear/computers (Category)
+│   ├── /gear/furniture (Category)
+│   ├── /gear/audio (Category)
+│   ├── /gear/accessories (Category)
+│   └── [3 gear articles]
 ├── /guides (Hub)
 │   ├── /guides/travel (Category)
 │   └── [5 guide articles in /blog]
@@ -98,9 +102,18 @@ floatjet.com/
 | **Title**       | Best Remote Work Gear & Equipment                        |
 | **Description** | Find the best gear for your home office or mobile setup. |
 
+**Category Links:**
+| Category | Route | Icon |
+|----------|-------|------|
+| Computers | `/gear/computers` | 💻 |
+| Furniture | `/gear/furniture` | 🪑 |
+| Audio | `/gear/audio` | 🎧 |
+| Accessories | `/gear/accessories` | 🎒 |
+
 **Articles in Hub:**
 | Article | Route | Category | Icon |
 |---------|-------|----------|------|
+| Best Laptops for Remote Work | `/gear/best-laptops-remote-work` | Computers | 💻 |
 | Best Standing Desks | `/gear/best-standing-desks` | Furniture | 🪑 |
 | Best Noise-Canceling Headphones | `/gear/best-noise-canceling-headphones` | Audio | 🎧 |
 
@@ -266,6 +279,75 @@ floatjet.com/
 | Best Travel Insurance | `/blog/best-travel-insurance-remote-workers` | Insurance |
 | Find Reliable WiFi Anywhere | `/blog/find-reliable-wifi-anywhere` | Connectivity |
 | VPN & Public WiFi Security | `/blog/vpn-public-wifi-guide` | Security |
+
+---
+
+### Computers Category (`/gear/computers`)
+
+| Property             | Value                               |
+|----------------------|-------------------------------------|
+| **Parent**           | `/gear`                             |
+| **Featured Article** | Best Laptops for Remote Work (2025) |
+| **Featured Route**   | `/gear/best-laptops-remote-work`    |
+
+**Top Picks:**
+| Product | Tag |
+|---------|-----|
+| MacBook Air M3 | Best Overall |
+| ThinkPad X1 Carbon | Best for Business |
+| Dell XPS 13 | Best Windows |
+
+---
+
+### Furniture Category (`/gear/furniture`)
+
+| Property             | Value                       |
+|----------------------|-----------------------------|
+| **Parent**           | `/gear`                     |
+| **Featured Article** | Best Standing Desks (2025)  |
+| **Featured Route**   | `/gear/best-standing-desks` |
+
+**Top Picks:**
+| Product | Tag |
+|---------|-----|
+| Uplift V2 | Best Overall |
+| Flexispot E7 | Best Value |
+| Jarvis | Best Premium |
+
+---
+
+### Audio Category (`/gear/audio`)
+
+| Property             | Value                                   |
+|----------------------|-----------------------------------------|
+| **Parent**           | `/gear`                                 |
+| **Featured Article** | Best Noise-Canceling Headphones (2025)  |
+| **Featured Route**   | `/gear/best-noise-canceling-headphones` |
+
+**Top Picks:**
+| Product | Tag |
+|---------|-----|
+| Sony WH-1000XM5 | Best Overall |
+| Bose QC Ultra | Best Comfort |
+| AirPods Max | Best for Apple |
+
+---
+
+### Accessories Category (`/gear/accessories`)
+
+| Property   | Value                         |
+|------------|-------------------------------|
+| **Parent** | `/gear`                       |
+| **Status** | Coming Soon (No articles yet) |
+
+**Planned Content:**
+
+- Best Laptop Bags & Backpacks
+- Best Portable Chargers
+- Best Travel Adapters
+- Best Webcams
+- Best Keyboards
+- Best Mice
 
 ---
 
@@ -821,16 +903,16 @@ floatjet.com/
     │   /tools    │ │   /gear     │ │   /guides   │ │   /deals    │ │   /blog     │
     └──────┬──────┘ └──────┬──────┘ └──────┬──────┘ └─────────────┘ └──────┬──────┘
            │               │               │                               │
-    ┌──────┴──────┐        │        ┌──────┴──────┐                       │
-    ▼      ▼      ▼        ▼        ▼             ▼                       │
-  ┌───┐ ┌───┐ ┌───┐    ┌─────┐  ┌────────┐                               │
-  │VPN│ │SaaS│ │Host│   │2 gear│ │/travel │                               │
-  └─┬─┘ └─┬─┘ └─┬─┘    │articles│ │category│                              │
-    │     │     │      └─────┘  └────┬───┘                                │
-    ▼     ▼     ▼                    ▼                                    ▼
+    ┌──────┴──────┐ ┌──────┴──────┐ ┌──────┴──────┐                       │
+    ▼   ▼   ▼   ▼  ▼   ▼   ▼   ▼  ▼             ▼                       │
+  ┌───┬───┬───┬──┐ ┌───┬───┬───┬──┐  ┌────────┐                          │
+  │VPN│SaaS│Host│Fin│ │Comp│Furn│Audio│Acc│  │/travel │                          │
+  └─┬─┴─┬─┴─┬─┴──┘ └─┬─┴─┬─┴──┬─┴──┘  └────┬───┘                          │
+    │   │   │        │   │    │            │                              │
+    ▼   ▼   ▼        ▼   ▼    ▼            ▼                              ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                           27 CONTENT ARTICLES                               │
-│  Tools: 9 articles  │  Gear: 2 articles  │  Blog: 16 articles              │
+│                           28 CONTENT ARTICLES                               │
+│  Tools: 9 articles  │  Gear: 3 articles  │  Blog: 16 articles              │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -1036,11 +1118,11 @@ floatjet.com/
 
 | Metric                   | Count |
 |--------------------------|-------|
-| **Total Pages**          | 41    |
+| **Total Pages**          | 45    |
 | **Hub Pages**            | 5     |
-| **Category Pages**       | 5     |
+| **Category Pages**       | 9     |
 | **Tool Articles**        | 9     |
-| **Gear Articles**        | 2     |
+| **Gear Articles**        | 3     |
 | **Blog Articles**        | 16    |
 | **Legal Pages**          | 4     |
 | **Affiliate Links**      | 90    |

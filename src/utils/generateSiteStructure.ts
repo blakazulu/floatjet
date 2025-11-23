@@ -26,21 +26,25 @@ export interface SiteGraph {
 
 // Page metadata extracted from file names and paths
 const PAGE_METADATA: Record<string, { name: string; type: SiteNode['type']; category?: string }> = {
-  '/': { name: 'Home', type: 'root' },
-  '/tools': { name: 'Tools Hub', type: 'hub' },
-  '/gear': { name: 'Gear Hub', type: 'hub' },
-  '/guides': { name: 'Guides Hub', type: 'hub' },
-  '/deals': { name: 'Deals', type: 'hub' },
-  '/blog': { name: 'Blog', type: 'hub' },
-  '/tools/vpn': { name: 'VPN & Security', type: 'category', category: 'security' },
-  '/tools/saas': { name: 'SaaS Tools', type: 'category', category: 'saas' },
-  '/tools/hosting': { name: 'Web Hosting', type: 'category', category: 'hosting' },
-  '/tools/finance': { name: 'Finance', type: 'category', category: 'finance' },
-  '/guides/travel': { name: 'Travel Guides', type: 'category', category: 'travel' },
-  '/about': { name: 'About', type: 'page' },
-  '/contact': { name: 'Contact', type: 'page' },
-  '/privacy': { name: 'Privacy Policy', type: 'page' },
-  '/terms': { name: 'Terms of Service', type: 'page' },
+  '/': {name: 'Home', type: 'root'},
+  '/tools': {name: 'Tools Hub', type: 'hub'},
+  '/gear': {name: 'Gear Hub', type: 'hub'},
+  '/guides': {name: 'Guides Hub', type: 'hub'},
+  '/deals': {name: 'Deals', type: 'hub'},
+  '/blog': {name: 'Blog', type: 'hub'},
+  '/tools/vpn': {name: 'VPN & Security', type: 'category', category: 'security'},
+  '/tools/saas': {name: 'SaaS Tools', type: 'category', category: 'saas'},
+  '/tools/hosting': {name: 'Web Hosting', type: 'category', category: 'hosting'},
+  '/tools/finance': {name: 'Finance', type: 'category', category: 'finance'},
+  '/guides/travel': {name: 'Travel Guides', type: 'category', category: 'travel'},
+  '/gear/computers': {name: 'Computers', type: 'category', category: 'gear'},
+  '/gear/furniture': {name: 'Furniture', type: 'category', category: 'gear'},
+  '/gear/audio': {name: 'Audio', type: 'category', category: 'gear'},
+  '/gear/accessories': {name: 'Accessories', type: 'category', category: 'gear'},
+  '/about': {name: 'About', type: 'page'},
+  '/contact': {name: 'Contact', type: 'page'},
+  '/privacy': {name: 'Privacy Policy', type: 'page'},
+  '/terms': {name: 'Terms of Service', type: 'page'},
 };
 
 // Convert file path to route and extract metadata
@@ -131,7 +135,7 @@ export function generateSiteStructure(pageModules: Record<string, unknown>): Sit
     }
   });
 
-  return { nodes, links };
+  return {nodes, links};
 }
 
 /**
@@ -142,7 +146,7 @@ export function buildHierarchy(graph: SiteGraph): SiteNode {
 
   // Create a copy of each node with empty children array
   graph.nodes.forEach(node => {
-    nodeMap.set(node.id, { ...node, children: [] });
+    nodeMap.set(node.id, {...node, children: []});
   });
 
   // Find root
@@ -171,133 +175,309 @@ export function buildHierarchy(graph: SiteGraph): SiteNode {
 export const SITE_STRUCTURE: SiteGraph = {
   nodes: [
     // Root
-    { id: '/', name: 'FloatJet', path: '/', type: 'root' },
+    {id: '/', name: 'FloatJet', path: '/', type: 'root'},
 
     // Hubs
-    { id: '/tools', name: 'Tools', path: '/tools', type: 'hub', category: 'tools' },
-    { id: '/gear', name: 'Gear', path: '/gear', type: 'hub', category: 'gear' },
-    { id: '/guides', name: 'Guides', path: '/guides', type: 'hub', category: 'guides' },
-    { id: '/deals', name: 'Deals', path: '/deals', type: 'hub', category: 'deals' },
+    {id: '/tools', name: 'Tools', path: '/tools', type: 'hub', category: 'tools'},
+    {id: '/gear', name: 'Gear', path: '/gear', type: 'hub', category: 'gear'},
+    {id: '/guides', name: 'Guides', path: '/guides', type: 'hub', category: 'guides'},
+    {id: '/deals', name: 'Deals', path: '/deals', type: 'hub', category: 'deals'},
 
-    // Category Pages
-    { id: '/tools/vpn', name: 'VPN & Security', path: '/tools/vpn', type: 'category', category: 'security' },
-    { id: '/tools/saas', name: 'SaaS Tools', path: '/tools/saas', type: 'category', category: 'saas' },
-    { id: '/tools/hosting', name: 'Web Hosting', path: '/tools/hosting', type: 'category', category: 'hosting' },
-    { id: '/tools/finance', name: 'Finance', path: '/tools/finance', type: 'category', category: 'finance' },
-    { id: '/guides/travel', name: 'Travel', path: '/guides/travel', type: 'category', category: 'travel' },
+    // Category Pages - Tools
+    {id: '/tools/vpn', name: 'VPN & Security', path: '/tools/vpn', type: 'category', category: 'security'},
+    {id: '/tools/saas', name: 'SaaS Tools', path: '/tools/saas', type: 'category', category: 'saas'},
+    {id: '/tools/hosting', name: 'Web Hosting', path: '/tools/hosting', type: 'category', category: 'hosting'},
+    {id: '/tools/finance', name: 'Finance', path: '/tools/finance', type: 'category', category: 'finance'},
+
+    // Category Pages - Gear
+    {id: '/gear/computers', name: 'Computers', path: '/gear/computers', type: 'category', category: 'gear'},
+    {id: '/gear/furniture', name: 'Furniture', path: '/gear/furniture', type: 'category', category: 'gear'},
+    {id: '/gear/audio', name: 'Audio', path: '/gear/audio', type: 'category', category: 'gear'},
+    {id: '/gear/accessories', name: 'Accessories', path: '/gear/accessories', type: 'category', category: 'gear'},
+
+    // Category Pages - Guides
+    {id: '/guides/travel', name: 'Travel', path: '/guides/travel', type: 'category', category: 'travel'},
 
     // Tool Articles
-    { id: '/tools/best-project-management-software', name: 'Project Management', path: '/tools/best-project-management-software', type: 'article', category: 'saas' },
-    { id: '/tools/best-vpn-digital-nomads', name: 'VPN Guide', path: '/tools/best-vpn-digital-nomads', type: 'article', category: 'security' },
-    { id: '/tools/best-email-marketing-tools', name: 'Email Marketing', path: '/tools/best-email-marketing-tools', type: 'article', category: 'saas' },
-    { id: '/tools/best-password-manager-remote-work', name: 'Password Managers', path: '/tools/best-password-manager-remote-work', type: 'article', category: 'security' },
-    { id: '/tools/best-web-hosting-remote-business', name: 'Web Hosting', path: '/tools/best-web-hosting-remote-business', type: 'article', category: 'hosting' },
-    { id: '/tools/best-time-tracking-software', name: 'Time Tracking', path: '/tools/best-time-tracking-software', type: 'article', category: 'saas' },
-    { id: '/tools/best-online-course-platforms', name: 'Course Platforms', path: '/tools/best-online-course-platforms', type: 'article', category: 'saas' },
-    { id: '/tools/best-productivity-apps', name: 'Productivity Apps', path: '/tools/best-productivity-apps', type: 'article', category: 'saas' },
+    {
+      id: '/tools/best-project-management-software',
+      name: 'Project Management',
+      path: '/tools/best-project-management-software',
+      type: 'article',
+      category: 'saas'
+    },
+    {
+      id: '/tools/best-vpn-digital-nomads',
+      name: 'VPN Guide',
+      path: '/tools/best-vpn-digital-nomads',
+      type: 'article',
+      category: 'security'
+    },
+    {
+      id: '/tools/best-email-marketing-tools',
+      name: 'Email Marketing',
+      path: '/tools/best-email-marketing-tools',
+      type: 'article',
+      category: 'saas'
+    },
+    {
+      id: '/tools/best-password-manager-remote-work',
+      name: 'Password Managers',
+      path: '/tools/best-password-manager-remote-work',
+      type: 'article',
+      category: 'security'
+    },
+    {
+      id: '/tools/best-web-hosting-remote-business',
+      name: 'Web Hosting',
+      path: '/tools/best-web-hosting-remote-business',
+      type: 'article',
+      category: 'hosting'
+    },
+    {
+      id: '/tools/best-time-tracking-software',
+      name: 'Time Tracking',
+      path: '/tools/best-time-tracking-software',
+      type: 'article',
+      category: 'saas'
+    },
+    {
+      id: '/tools/best-online-course-platforms',
+      name: 'Course Platforms',
+      path: '/tools/best-online-course-platforms',
+      type: 'article',
+      category: 'saas'
+    },
+    {
+      id: '/tools/best-productivity-apps',
+      name: 'Productivity Apps',
+      path: '/tools/best-productivity-apps',
+      type: 'article',
+      category: 'saas'
+    },
 
     // Gear Articles
-    { id: '/gear/best-laptops-remote-work', name: 'Laptops', path: '/gear/best-laptops-remote-work', type: 'article', category: 'gear' },
-    { id: '/gear/best-standing-desks', name: 'Standing Desks', path: '/gear/best-standing-desks', type: 'article', category: 'gear' },
-    { id: '/gear/best-noise-canceling-headphones', name: 'Headphones', path: '/gear/best-noise-canceling-headphones', type: 'article', category: 'gear' },
+    {
+      id: '/gear/best-laptops-remote-work',
+      name: 'Laptops',
+      path: '/gear/best-laptops-remote-work',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/best-standing-desks',
+      name: 'Standing Desks',
+      path: '/gear/best-standing-desks',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/best-noise-canceling-headphones',
+      name: 'Headphones',
+      path: '/gear/best-noise-canceling-headphones',
+      type: 'article',
+      category: 'gear'
+    },
 
     // Blog Articles - Finance
-    { id: '/blog/best-banking-digital-nomads', name: 'Digital Nomad Banking', path: '/blog/best-banking-digital-nomads', type: 'article', category: 'finance' },
-    { id: '/blog/crypto-friendly-banks', name: 'Crypto Banks', path: '/blog/crypto-friendly-banks', type: 'article', category: 'finance' },
-    { id: '/blog/tax-tips-remote-workers', name: 'Tax Tips', path: '/blog/tax-tips-remote-workers', type: 'article', category: 'finance' },
+    {
+      id: '/blog/best-banking-digital-nomads',
+      name: 'Digital Nomad Banking',
+      path: '/blog/best-banking-digital-nomads',
+      type: 'article',
+      category: 'finance'
+    },
+    {
+      id: '/blog/crypto-friendly-banks',
+      name: 'Crypto Banks',
+      path: '/blog/crypto-friendly-banks',
+      type: 'article',
+      category: 'finance'
+    },
+    {
+      id: '/blog/tax-tips-remote-workers',
+      name: 'Tax Tips',
+      path: '/blog/tax-tips-remote-workers',
+      type: 'article',
+      category: 'finance'
+    },
 
     // Blog Articles - Travel
-    { id: '/blog/top-destinations-digital-nomads', name: 'Top Destinations', path: '/blog/top-destinations-digital-nomads', type: 'article', category: 'travel' },
-    { id: '/blog/best-travel-insurance-remote-workers', name: 'Travel Insurance', path: '/blog/best-travel-insurance-remote-workers', type: 'article', category: 'travel' },
-    { id: '/blog/essential-travel-tech-nomads', name: 'Travel Tech', path: '/blog/essential-travel-tech-nomads', type: 'article', category: 'travel' },
-    { id: '/blog/find-reliable-wifi-anywhere', name: 'Find WiFi', path: '/blog/find-reliable-wifi-anywhere', type: 'article', category: 'travel' },
+    {
+      id: '/blog/top-destinations-digital-nomads',
+      name: 'Top Destinations',
+      path: '/blog/top-destinations-digital-nomads',
+      type: 'article',
+      category: 'travel'
+    },
+    {
+      id: '/blog/best-travel-insurance-remote-workers',
+      name: 'Travel Insurance',
+      path: '/blog/best-travel-insurance-remote-workers',
+      type: 'article',
+      category: 'travel'
+    },
+    {
+      id: '/blog/essential-travel-tech-nomads',
+      name: 'Travel Tech',
+      path: '/blog/essential-travel-tech-nomads',
+      type: 'article',
+      category: 'travel'
+    },
+    {
+      id: '/blog/find-reliable-wifi-anywhere',
+      name: 'Find WiFi',
+      path: '/blog/find-reliable-wifi-anywhere',
+      type: 'article',
+      category: 'travel'
+    },
 
     // Blog Articles - Hosting
-    { id: '/blog/cloud-vs-traditional-hosting', name: 'Cloud vs Traditional', path: '/blog/cloud-vs-traditional-hosting', type: 'article', category: 'hosting' },
-    { id: '/blog/managed-wordpress-hosting-compared', name: 'WordPress Hosting', path: '/blog/managed-wordpress-hosting-compared', type: 'article', category: 'hosting' },
+    {
+      id: '/blog/cloud-vs-traditional-hosting',
+      name: 'Cloud vs Traditional',
+      path: '/blog/cloud-vs-traditional-hosting',
+      type: 'article',
+      category: 'hosting'
+    },
+    {
+      id: '/blog/managed-wordpress-hosting-compared',
+      name: 'WordPress Hosting',
+      path: '/blog/managed-wordpress-hosting-compared',
+      type: 'article',
+      category: 'hosting'
+    },
 
     // Blog Articles - Communication
-    { id: '/blog/best-team-communication-tools', name: 'Team Communication', path: '/blog/best-team-communication-tools', type: 'article', category: 'saas' },
-    { id: '/blog/best-crm-software-small-business', name: 'CRM Software', path: '/blog/best-crm-software-small-business', type: 'article', category: 'saas' },
-    { id: '/blog/async-communication-remote-teams', name: 'Async Communication', path: '/blog/async-communication-remote-teams', type: 'article', category: 'guides' },
-    { id: '/blog/managing-time-zones-remote-teams', name: 'Time Zones', path: '/blog/managing-time-zones-remote-teams', type: 'article', category: 'guides' },
+    {
+      id: '/blog/best-team-communication-tools',
+      name: 'Team Communication',
+      path: '/blog/best-team-communication-tools',
+      type: 'article',
+      category: 'saas'
+    },
+    {
+      id: '/blog/best-crm-software-small-business',
+      name: 'CRM Software',
+      path: '/blog/best-crm-software-small-business',
+      type: 'article',
+      category: 'saas'
+    },
+    {
+      id: '/blog/async-communication-remote-teams',
+      name: 'Async Communication',
+      path: '/blog/async-communication-remote-teams',
+      type: 'article',
+      category: 'guides'
+    },
+    {
+      id: '/blog/managing-time-zones-remote-teams',
+      name: 'Time Zones',
+      path: '/blog/managing-time-zones-remote-teams',
+      type: 'article',
+      category: 'guides'
+    },
 
     // Blog Articles - Security
-    { id: '/blog/vpn-public-wifi-guide', name: 'VPN & WiFi Security', path: '/blog/vpn-public-wifi-guide', type: 'article', category: 'security' },
-    { id: '/blog/vpn-speed-comparison', name: 'VPN Speed Test', path: '/blog/vpn-speed-comparison', type: 'article', category: 'security' },
+    {
+      id: '/blog/vpn-public-wifi-guide',
+      name: 'VPN & WiFi Security',
+      path: '/blog/vpn-public-wifi-guide',
+      type: 'article',
+      category: 'security'
+    },
+    {
+      id: '/blog/vpn-speed-comparison',
+      name: 'VPN Speed Test',
+      path: '/blog/vpn-speed-comparison',
+      type: 'article',
+      category: 'security'
+    },
 
     // Blog Articles - Setup
-    { id: '/blog/ultimate-home-office-setup', name: 'Home Office Setup', path: '/blog/ultimate-home-office-setup', type: 'article', category: 'guides' },
+    {
+      id: '/blog/ultimate-home-office-setup',
+      name: 'Home Office Setup',
+      path: '/blog/ultimate-home-office-setup',
+      type: 'article',
+      category: 'guides'
+    },
 
     // Legal/Info Pages
-    { id: '/about', name: 'About', path: '/about', type: 'page' },
-    { id: '/contact', name: 'Contact', path: '/contact', type: 'page' },
-    { id: '/privacy', name: 'Privacy', path: '/privacy', type: 'page' },
-    { id: '/terms', name: 'Terms', path: '/terms', type: 'page' },
+    {id: '/about', name: 'About', path: '/about', type: 'page'},
+    {id: '/contact', name: 'Contact', path: '/contact', type: 'page'},
+    {id: '/privacy', name: 'Privacy', path: '/privacy', type: 'page'},
+    {id: '/terms', name: 'Terms', path: '/terms', type: 'page'},
   ],
   links: [
     // Hub links from root
-    { source: '/', target: '/tools', type: 'parent-child' },
-    { source: '/', target: '/gear', type: 'parent-child' },
-    { source: '/', target: '/guides', type: 'parent-child' },
-    { source: '/', target: '/deals', type: 'parent-child' },
-    { source: '/', target: '/about', type: 'parent-child' },
-    { source: '/', target: '/contact', type: 'parent-child' },
-    { source: '/', target: '/privacy', type: 'parent-child' },
-    { source: '/', target: '/terms', type: 'parent-child' },
+    {source: '/', target: '/tools', type: 'parent-child'},
+    {source: '/', target: '/gear', type: 'parent-child'},
+    {source: '/', target: '/guides', type: 'parent-child'},
+    {source: '/', target: '/deals', type: 'parent-child'},
+    {source: '/', target: '/about', type: 'parent-child'},
+    {source: '/', target: '/contact', type: 'parent-child'},
+    {source: '/', target: '/privacy', type: 'parent-child'},
+    {source: '/', target: '/terms', type: 'parent-child'},
 
     // Category links from Tools hub
-    { source: '/tools', target: '/tools/vpn', type: 'parent-child' },
-    { source: '/tools', target: '/tools/saas', type: 'parent-child' },
-    { source: '/tools', target: '/tools/hosting', type: 'parent-child' },
-    { source: '/tools', target: '/tools/finance', type: 'parent-child' },
+    {source: '/tools', target: '/tools/vpn', type: 'parent-child'},
+    {source: '/tools', target: '/tools/saas', type: 'parent-child'},
+    {source: '/tools', target: '/tools/hosting', type: 'parent-child'},
+    {source: '/tools', target: '/tools/finance', type: 'parent-child'},
+
+    // Category links from Gear hub
+    {source: '/gear', target: '/gear/computers', type: 'parent-child'},
+    {source: '/gear', target: '/gear/furniture', type: 'parent-child'},
+    {source: '/gear', target: '/gear/audio', type: 'parent-child'},
+    {source: '/gear', target: '/gear/accessories', type: 'parent-child'},
 
     // Category links from Guides hub
-    { source: '/guides', target: '/guides/travel', type: 'parent-child' },
+    {source: '/guides', target: '/guides/travel', type: 'parent-child'},
 
     // Tool articles under Tools hub
-    { source: '/tools', target: '/tools/best-project-management-software', type: 'parent-child' },
-    { source: '/tools', target: '/tools/best-vpn-digital-nomads', type: 'parent-child' },
-    { source: '/tools', target: '/tools/best-email-marketing-tools', type: 'parent-child' },
-    { source: '/tools', target: '/tools/best-password-manager-remote-work', type: 'parent-child' },
-    { source: '/tools', target: '/tools/best-web-hosting-remote-business', type: 'parent-child' },
-    { source: '/tools', target: '/tools/best-time-tracking-software', type: 'parent-child' },
-    { source: '/tools', target: '/tools/best-online-course-platforms', type: 'parent-child' },
-    { source: '/tools', target: '/tools/best-productivity-apps', type: 'parent-child' },
+    {source: '/tools', target: '/tools/best-project-management-software', type: 'parent-child'},
+    {source: '/tools', target: '/tools/best-vpn-digital-nomads', type: 'parent-child'},
+    {source: '/tools', target: '/tools/best-email-marketing-tools', type: 'parent-child'},
+    {source: '/tools', target: '/tools/best-password-manager-remote-work', type: 'parent-child'},
+    {source: '/tools', target: '/tools/best-web-hosting-remote-business', type: 'parent-child'},
+    {source: '/tools', target: '/tools/best-time-tracking-software', type: 'parent-child'},
+    {source: '/tools', target: '/tools/best-online-course-platforms', type: 'parent-child'},
+    {source: '/tools', target: '/tools/best-productivity-apps', type: 'parent-child'},
 
     // Gear articles
-    { source: '/gear', target: '/gear/best-laptops-remote-work', type: 'parent-child' },
-    { source: '/gear', target: '/gear/best-standing-desks', type: 'parent-child' },
-    { source: '/gear', target: '/gear/best-noise-canceling-headphones', type: 'parent-child' },
+    {source: '/gear', target: '/gear/best-laptops-remote-work', type: 'parent-child'},
+    {source: '/gear', target: '/gear/best-standing-desks', type: 'parent-child'},
+    {source: '/gear', target: '/gear/best-noise-canceling-headphones', type: 'parent-child'},
 
     // Blog articles organized by logical parent
     // Finance articles -> finance category
-    { source: '/tools/finance', target: '/blog/best-banking-digital-nomads', type: 'parent-child' },
-    { source: '/tools/finance', target: '/blog/crypto-friendly-banks', type: 'parent-child' },
-    { source: '/tools/finance', target: '/blog/tax-tips-remote-workers', type: 'parent-child' },
+    {source: '/tools/finance', target: '/blog/best-banking-digital-nomads', type: 'parent-child'},
+    {source: '/tools/finance', target: '/blog/crypto-friendly-banks', type: 'parent-child'},
+    {source: '/tools/finance', target: '/blog/tax-tips-remote-workers', type: 'parent-child'},
 
     // Travel articles -> travel category
-    { source: '/guides/travel', target: '/blog/top-destinations-digital-nomads', type: 'parent-child' },
-    { source: '/guides/travel', target: '/blog/best-travel-insurance-remote-workers', type: 'parent-child' },
-    { source: '/guides/travel', target: '/blog/essential-travel-tech-nomads', type: 'parent-child' },
-    { source: '/guides/travel', target: '/blog/find-reliable-wifi-anywhere', type: 'parent-child' },
+    {source: '/guides/travel', target: '/blog/top-destinations-digital-nomads', type: 'parent-child'},
+    {source: '/guides/travel', target: '/blog/best-travel-insurance-remote-workers', type: 'parent-child'},
+    {source: '/guides/travel', target: '/blog/essential-travel-tech-nomads', type: 'parent-child'},
+    {source: '/guides/travel', target: '/blog/find-reliable-wifi-anywhere', type: 'parent-child'},
 
     // Hosting articles -> hosting category
-    { source: '/tools/hosting', target: '/blog/cloud-vs-traditional-hosting', type: 'parent-child' },
-    { source: '/tools/hosting', target: '/blog/managed-wordpress-hosting-compared', type: 'parent-child' },
+    {source: '/tools/hosting', target: '/blog/cloud-vs-traditional-hosting', type: 'parent-child'},
+    {source: '/tools/hosting', target: '/blog/managed-wordpress-hosting-compared', type: 'parent-child'},
 
     // SaaS articles -> saas category
-    { source: '/tools/saas', target: '/blog/best-team-communication-tools', type: 'parent-child' },
-    { source: '/tools/saas', target: '/blog/best-crm-software-small-business', type: 'parent-child' },
+    {source: '/tools/saas', target: '/blog/best-team-communication-tools', type: 'parent-child'},
+    {source: '/tools/saas', target: '/blog/best-crm-software-small-business', type: 'parent-child'},
 
     // Security articles -> vpn category
-    { source: '/tools/vpn', target: '/blog/vpn-public-wifi-guide', type: 'parent-child' },
-    { source: '/tools/vpn', target: '/blog/vpn-speed-comparison', type: 'parent-child' },
+    {source: '/tools/vpn', target: '/blog/vpn-public-wifi-guide', type: 'parent-child'},
+    {source: '/tools/vpn', target: '/blog/vpn-speed-comparison', type: 'parent-child'},
 
     // Guides articles -> guides hub
-    { source: '/guides', target: '/blog/async-communication-remote-teams', type: 'parent-child' },
-    { source: '/guides', target: '/blog/managing-time-zones-remote-teams', type: 'parent-child' },
-    { source: '/guides', target: '/blog/ultimate-home-office-setup', type: 'parent-child' },
+    {source: '/guides', target: '/blog/async-communication-remote-teams', type: 'parent-child'},
+    {source: '/guides', target: '/blog/managing-time-zones-remote-teams', type: 'parent-child'},
+    {source: '/guides', target: '/blog/ultimate-home-office-setup', type: 'parent-child'},
   ]
 };
 

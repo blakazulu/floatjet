@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Best Audio Gear for Remote Work | FloatJet';
+const description = 'Find the best headphones, microphones, and audio equipment for remote work. Block distractions and communicate clearly.';
+
+const mainArticle = {
+  title: 'Best Noise-Canceling Headphones (2025)',
+  description: 'We tested 20+ headphones to find the best noise-canceling options for remote workers. Compare Sony, Bose, Apple AirPods Max, and more.',
+  href: '/gear/best-noise-canceling-headphones',
+  readTime: '14 min'
+};
+
+const whyMatters = [
+  {title: 'Block Distractions', description: 'Focus deeply with active noise cancellation technology', icon: '🔇'},
+  {title: 'Clear Calls', description: 'Sound professional on video calls with quality microphones', icon: '🎙️'},
+  {title: 'All-Day Comfort', description: 'Lightweight design for hours of wear without fatigue', icon: '😌'},
+  {title: 'Work Anywhere', description: 'Tune out coffee shops, airports, and noisy environments', icon: '✈️'}
+];
+
+const topPicks = [
+  {name: 'Sony WH-1000XM5', tag: 'Best Overall', color: 'bg-blue-500/20 text-blue-400'},
+  {name: 'Bose QC Ultra', tag: 'Best Comfort', color: 'bg-green-500/20 text-green-400'},
+  {name: 'AirPods Max', tag: 'Best for Apple', color: 'bg-purple-500/20 text-purple-400'}
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="container mx-auto px-4 pt-24 md:pt-28 pb-16 md:pb-20">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <a href="/gear" class="inline-flex items-center text-white/60 hover:text-white text-sm mb-4 transition-colors">
+        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        All Gear
+      </a>
+      <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Audio Gear</h1>
+      <p class="text-lg text-white/80 max-w-2xl mx-auto">
+        Headphones and audio equipment for focused work and professional calls.
+      </p>
+    </div>
+
+    <!-- Main Article Card -->
+    <a
+        href={mainArticle.href}
+        class="block max-w-3xl mx-auto mb-16 group bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-white/20 hover:border-jet-stream/50 rounded-xl p-8 transition-all duration-300"
+    >
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-4xl">🎧</span>
+        <span class="px-3 py-1 bg-jet-stream text-ocean-deep text-xs font-bold rounded-full">Featured Guide</span>
+      </div>
+      <h2 class="text-2xl md:text-3xl font-bold text-white group-hover:text-jet-stream transition-colors mb-3">
+        {mainArticle.title}
+      </h2>
+      <p class="text-white/70 mb-4">
+        {mainArticle.description}
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-white/50 text-sm">{mainArticle.readTime} read</span>
+        <span class="text-jet-stream font-medium flex items-center">
+          Read Full Guide
+          <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+               viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- Top Picks Preview -->
+    <div class="max-w-3xl mx-auto mb-16">
+      <h2 class="text-xl font-semibold text-white text-center mb-6">Our Top Picks</h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {topPicks.map(pick => (
+            <a
+                href={`${mainArticle.href}#${pick.name.toLowerCase().replace(/ /g, '-')}`}
+                class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-4 text-center transition-colors"
+            >
+            <span class={`inline-block px-2 py-0.5 ${pick.color} text-xs font-medium rounded mb-2`}>
+              {pick.tag}
+            </span>
+              <p class="text-white font-semibold">{pick.name}</p>
+            </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Why It Matters -->
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xl font-semibold text-white text-center mb-8">Why Invest in Quality Audio?</h2>
+      <div class="grid gap-6 sm:grid-cols-2">
+        {whyMatters.map(item => (
+            <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
+              <span class="text-2xl">{item.icon}</span>
+              <div>
+                <h3 class="text-white font-semibold mb-1">{item.title}</h3>
+                <p class="text-white/60 text-sm">{item.description}</p>
+              </div>
+            </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <a
+          href={mainArticle.href}
+          class="inline-flex items-center justify-center px-6 py-3 bg-jet-stream text-ocean-deep font-semibold rounded-lg hover:bg-sky-light transition-colors"
+      >
+        View Full Headphone Comparison
+      </a>
+    </div>
+  </div>
+</BaseLayout>

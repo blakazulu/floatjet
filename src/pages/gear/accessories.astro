@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Best Remote Work Accessories | FloatJet';
+const description = 'Essential accessories for remote workers. Find the best laptop bags, chargers, cables, and travel gear for working anywhere.';
+
+const comingSoon = [
+  {
+    title: 'Best Laptop Bags & Backpacks',
+    description: 'Protect your gear while traveling light',
+    icon: '🎒',
+    status: 'Coming Soon'
+  },
+  {
+    title: 'Best Portable Chargers',
+    description: 'Never run out of battery on the go',
+    icon: '🔋',
+    status: 'Coming Soon'
+  },
+  {title: 'Best Travel Adapters', description: 'Power up anywhere in the world', icon: '🔌', status: 'Coming Soon'},
+  {title: 'Best Webcams', description: 'Look professional on video calls', icon: '📹', status: 'Coming Soon'},
+  {
+    title: 'Best Keyboards',
+    description: 'Mechanical and wireless options for productivity',
+    icon: '⌨️',
+    status: 'Coming Soon'
+  },
+  {title: 'Best Mice', description: 'Ergonomic and portable mouse options', icon: '🖱️', status: 'Coming Soon'}
+];
+
+const whyMatters = [
+  {title: 'Stay Powered Up', description: 'Portable chargers and adapters keep you working anywhere', icon: '🔋'},
+  {title: 'Travel Light', description: 'Compact accessories that fit in any bag', icon: '✈️'},
+  {title: 'Look Professional', description: 'Quality webcams and lighting for video calls', icon: '📹'},
+  {title: 'Work Comfortably', description: 'Ergonomic accessories for long work sessions', icon: '😌'}
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="container mx-auto px-4 pt-24 md:pt-28 pb-16 md:pb-20">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <a href="/gear" class="inline-flex items-center text-white/60 hover:text-white text-sm mb-4 transition-colors">
+        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        All Gear
+      </a>
+      <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Accessories</h1>
+      <p class="text-lg text-white/80 max-w-2xl mx-auto">
+        Essential accessories and travel gear for productive remote work anywhere.
+      </p>
+    </div>
+
+    <!-- Coming Soon Notice -->
+    <div class="max-w-3xl mx-auto mb-12 bg-jet-stream/10 border border-jet-stream/30 rounded-xl p-6 text-center">
+      <span class="text-3xl mb-3 block">🚧</span>
+      <h2 class="text-xl font-semibold text-white mb-2">Reviews Coming Soon</h2>
+      <p class="text-white/70">
+        We're currently testing accessories to bring you comprehensive reviews. Check back soon!
+      </p>
+    </div>
+
+    <!-- Coming Soon Grid -->
+    <div class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-xl font-semibold text-white text-center mb-8">Upcoming Reviews</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {comingSoon.map(item => (
+            <div class="bg-white/5 border border-white/10 rounded-xl p-5 opacity-75">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-2xl">{item.icon}</span>
+                <span class="px-2 py-0.5 bg-white/10 text-white/60 text-xs font-medium rounded">
+                  {item.status}
+                </span>
+              </div>
+              <h3 class="text-white font-semibold mb-1">{item.title}</h3>
+              <p class="text-white/50 text-sm">{item.description}</p>
+            </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Why It Matters -->
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xl font-semibold text-white text-center mb-8">Why Accessories Matter</h2>
+      <div class="grid gap-6 sm:grid-cols-2">
+        {whyMatters.map(item => (
+            <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
+              <span class="text-2xl">{item.icon}</span>
+              <div>
+                <h3 class="text-white font-semibold mb-1">{item.title}</h3>
+                <p class="text-white/60 text-sm">{item.description}</p>
+              </div>
+            </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-6 py-3 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors"
+      >
+        Suggest an Accessory to Review
+      </a>
+    </div>
+  </div>
+</BaseLayout>

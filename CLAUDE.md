@@ -305,3 +305,4 @@ Unauthorized use, copying, modification, or distribution is strictly prohibited.
 - never run dev server - ask me to run it
 - after finishing a task - ask me to review and test it - once tested - only then mark it as completed and move it to completed folder then give me the git message
 - always use Astro's Image component for better performance
+- when creating a new page - look at docs/new-page-creation.md for correct way to do it

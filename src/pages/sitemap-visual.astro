@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE_STRUCTURE, CATEGORY_COLORS } from '../utils/generateSiteStructure';
+import {SITE_STRUCTURE, CATEGORY_COLORS} from '../utils/generateSiteStructure';
 
 const title = 'Interactive Site Map | FloatJet';
 const description = 'Explore the FloatJet site structure with our interactive visualization. Navigate through tools, gear, guides, and articles.';
@@ -26,20 +26,21 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       <!-- Controls -->
       <div class="flex flex-wrap justify-center gap-3 mt-6">
         <button
-          id="btn-reset"
-          class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm font-medium backdrop-blur-sm border border-white/20 transition-all duration-300"
+            id="btn-reset"
+            class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm font-medium backdrop-blur-sm border border-white/20 transition-all duration-300"
         >
           Reset View
         </button>
         <button
-          id="btn-check-links"
-          class="px-4 py-2 bg-jet-stream/80 hover:bg-jet-stream text-white rounded-full text-sm font-medium backdrop-blur-sm transition-all duration-300"
+            id="btn-check-links"
+            class="px-4 py-2 bg-jet-stream/80 hover:bg-jet-stream text-white rounded-full text-sm font-medium backdrop-blur-sm transition-all duration-300"
         >
           Check Links
         </button>
         <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm border border-white/20">
           <label for="layout-select" class="text-white text-sm">Layout:</label>
-          <select id="layout-select" aria-label="Select visualization layout" class="bg-transparent text-white text-sm border-none outline-none cursor-pointer">
+          <select id="layout-select" aria-label="Select visualization layout"
+                  class="bg-transparent text-white text-sm border-none outline-none cursor-pointer">
             <option value="force" class="text-slate-800">Force Graph</option>
             <option value="radial" class="text-slate-800">Radial Tree</option>
             <option value="tree" class="text-slate-800">Hierarchical</option>
@@ -75,14 +76,16 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     <!-- Visualization Container -->
     <div class="max-w-7xl mx-auto">
       <div
-        id="sitemap-container"
-        class="relative w-full bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl overflow-hidden"
-        style="height: 70vh; min-height: 500px;"
+          id="sitemap-container"
+          class="relative w-full bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl overflow-hidden"
+          style="height: 70vh; min-height: 500px;"
       >
         <!-- Loading State -->
-        <div id="loading" class="absolute inset-0 flex items-center justify-center bg-ocean-deep/50 backdrop-blur-sm z-10">
+        <div id="loading"
+             class="absolute inset-0 flex items-center justify-center bg-ocean-deep/50 backdrop-blur-sm z-10">
           <div class="text-center">
-            <div class="w-16 h-16 border-4 border-sky-light border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <div
+                class="w-16 h-16 border-4 border-sky-light border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
             <p class="text-white font-medium">Building visualization...</p>
           </div>
         </div>
@@ -92,8 +95,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
         <!-- Tooltip -->
         <div
-          id="tooltip"
-          class="absolute pointer-events-none opacity-0 transition-opacity duration-200 z-20 px-4 py-3 bg-ocean-deep/95 backdrop-blur-md rounded-xl shadow-xl border border-white/20 text-white max-w-xs"
+            id="tooltip"
+            class="absolute pointer-events-none opacity-0 transition-opacity duration-200 z-20 px-4 py-3 bg-ocean-deep/95 backdrop-blur-md rounded-xl shadow-xl border border-white/20 text-white max-w-xs"
         >
           <div id="tooltip-name" class="font-heading font-bold text-lg mb-1"></div>
           <div id="tooltip-path" class="text-sky-light text-sm font-mono mb-2"></div>
@@ -141,7 +144,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 <!-- D3.js CDN -->
 <script is:inline src="https://d3js.org/d3.v7.min.js"></script>
 
-<script define:vars={{ siteData, colorData }}>
+<script define:vars={{siteData, colorData}}>
   // Store data globally for reinitialization
   window.__sitemapData = {
     siteData: siteData,
@@ -197,515 +200,515 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     svg.call(zoom);
 
-  // Define gradients and filters
-  const defs = svg.append('defs');
+    // Define gradients and filters
+    const defs = svg.append('defs');
 
-  // Glow filter for nodes
-  const glow = defs.append('filter')
-    .attr('id', 'glow')
-    .attr('x', '-50%')
-    .attr('y', '-50%')
-    .attr('width', '200%')
-    .attr('height', '200%');
+    // Glow filter for nodes
+    const glow = defs.append('filter')
+      .attr('id', 'glow')
+      .attr('x', '-50%')
+      .attr('y', '-50%')
+      .attr('width', '200%')
+      .attr('height', '200%');
 
-  glow.append('feGaussianBlur')
-    .attr('stdDeviation', '3')
-    .attr('result', 'coloredBlur');
+    glow.append('feGaussianBlur')
+      .attr('stdDeviation', '3')
+      .attr('result', 'coloredBlur');
 
-  const glowMerge = glow.append('feMerge');
-  glowMerge.append('feMergeNode').attr('in', 'coloredBlur');
-  glowMerge.append('feMergeNode').attr('in', 'SourceGraphic');
+    const glowMerge = glow.append('feMerge');
+    glowMerge.append('feMergeNode').attr('in', 'coloredBlur');
+    glowMerge.append('feMergeNode').attr('in', 'SourceGraphic');
 
-  // Create arrow marker for links
-  defs.append('marker')
-    .attr('id', 'arrowhead')
-    .attr('viewBox', '-0 -5 10 10')
-    .attr('refX', 20)
-    .attr('refY', 0)
-    .attr('orient', 'auto')
-    .attr('markerWidth', 6)
-    .attr('markerHeight', 6)
-    .append('path')
-    .attr('d', 'M 0,-5 L 10,0 L 0,5')
-    .attr('fill', 'rgba(128, 206, 215, 0.5)');
+    // Create arrow marker for links
+    defs.append('marker')
+      .attr('id', 'arrowhead')
+      .attr('viewBox', '-0 -5 10 10')
+      .attr('refX', 20)
+      .attr('refY', 0)
+      .attr('orient', 'auto')
+      .attr('markerWidth', 6)
+      .attr('markerHeight', 6)
+      .append('path')
+      .attr('d', 'M 0,-5 L 10,0 L 0,5')
+      .attr('fill', 'rgba(128, 206, 215, 0.5)');
 
-  // Get node color based on type and category
-  function getNodeColor(node) {
-    if (node.type === 'root') return '#0F4C5C';
-    if (node.type === 'hub') return '#38A3A5';
-    if (node.type === 'category') return '#80CED7';
-    if (node.type === 'page') return '#64748B';
+    // Get node color based on type and category
+    function getNodeColor(node) {
+      if (node.type === 'root') return '#0F4C5C';
+      if (node.type === 'hub') return '#38A3A5';
+      if (node.type === 'category') return '#80CED7';
+      if (node.type === 'page') return '#64748B';
 
-    // Article colors by category
-    const categoryColorMap = {
-      security: '#10B981',
-      saas: '#3B82F6',
-      hosting: '#8B5CF6',
-      finance: '#F59E0B',
-      travel: '#EC4899',
-      gear: '#EE6C4D',
-      guides: '#9333EA',
-      tools: '#38A3A5',
-    };
+      // Article colors by category
+      const categoryColorMap = {
+        security: '#10B981',
+        saas: '#3B82F6',
+        hosting: '#8B5CF6',
+        finance: '#F59E0B',
+        travel: '#EC4899',
+        gear: '#EE6C4D',
+        guides: '#9333EA',
+        tools: '#38A3A5',
+      };
 
-    return categoryColorMap[node.category] || '#38A3A5';
-  }
-
-  // Get node size based on type
-  function getNodeSize(node) {
-    if (node.type === 'root') return 30;
-    if (node.type === 'hub') return 20;
-    if (node.type === 'category') return 15;
-    return 10;
-  }
-
-  // Initialize force simulation
-  function createForceSimulation(nodes, links) {
-    return d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links)
-        .id(d => d.id)
-        .distance(d => {
-          const sourceType = d.source.type || 'article';
-          if (sourceType === 'root') return 150;
-          if (sourceType === 'hub') return 100;
-          return 70;
-        })
-        .strength(0.5)
-      )
-      .force('charge', d3.forceManyBody()
-        .strength(d => {
-          if (d.type === 'root') return -800;
-          if (d.type === 'hub') return -400;
-          return -150;
-        })
-      )
-      .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide().radius(d => getNodeSize(d) + 10));
-  }
-
-  // Build hierarchy from flat structure
-  function buildHierarchy() {
-    const nodeMap = new Map();
-
-    // Create node objects
-    siteStructure.nodes.forEach(n => {
-      nodeMap.set(n.id, { ...n, children: [] });
-    });
-
-    // Build parent-child relationships
-    siteStructure.links.forEach(link => {
-      const parent = nodeMap.get(link.source);
-      const child = nodeMap.get(link.target);
-      if (parent && child) {
-        parent.children.push(child);
-      }
-    });
-
-    return nodeMap.get('/');
-  }
-
-  // Render the visualization
-  function render(layout = 'force') {
-    // Clear previous content
-    g.selectAll('*').remove();
-
-    // Stop any running simulation
-    if (simulation) {
-      simulation.stop();
-      simulation = null;
+      return categoryColorMap[node.category] || '#38A3A5';
     }
 
-    // Update stats
-    document.getElementById('stat-total').textContent = siteStructure.nodes.length;
-
-    if (layout === 'force') {
-      renderForceLayout();
-    } else if (layout === 'radial') {
-      renderRadialLayout();
-    } else if (layout === 'tree') {
-      renderTreeLayout();
+    // Get node size based on type
+    function getNodeSize(node) {
+      if (node.type === 'root') return 30;
+      if (node.type === 'hub') return 20;
+      if (node.type === 'category') return 15;
+      return 10;
     }
 
-    // Remove loading state
-    loading.classList.add('hidden');
-  }
+    // Initialize force simulation
+    function createForceSimulation(nodes, links) {
+      return d3.forceSimulation(nodes)
+        .force('link', d3.forceLink(links)
+          .id(d => d.id)
+          .distance(d => {
+            const sourceType = d.source.type || 'article';
+            if (sourceType === 'root') return 150;
+            if (sourceType === 'hub') return 100;
+            return 70;
+          })
+          .strength(0.5)
+        )
+        .force('charge', d3.forceManyBody()
+          .strength(d => {
+            if (d.type === 'root') return -800;
+            if (d.type === 'hub') return -400;
+            return -150;
+          })
+        )
+        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force('collision', d3.forceCollide().radius(d => getNodeSize(d) + 10));
+    }
 
-  // Force-directed layout
-  function renderForceLayout() {
-    const nodes = siteStructure.nodes.map(d => ({...d}));
-    const links = siteStructure.links.map(d => ({
-      source: d.source,
-      target: d.target,
-      type: d.type
-    }));
+    // Build hierarchy from flat structure
+    function buildHierarchy() {
+      const nodeMap = new Map();
 
-    const link = g.append('g')
-      .attr('class', 'links')
-      .selectAll('line')
-      .data(links)
-      .enter()
-      .append('line')
-      .attr('stroke', 'rgba(128, 206, 215, 0.3)')
-      .attr('stroke-width', 1.5)
-      .attr('marker-end', 'url(#arrowhead)');
+      // Create node objects
+      siteStructure.nodes.forEach(n => {
+        nodeMap.set(n.id, {...n, children: []});
+      });
 
-    const node = g.append('g')
-      .attr('class', 'nodes')
-      .selectAll('g')
-      .data(nodes)
-      .enter()
-      .append('g')
-      .attr('class', 'node')
-      .style('cursor', 'pointer')
-      .call(d3.drag()
-        .on('start', dragstarted)
-        .on('drag', dragged)
-        .on('end', dragended)
-      );
-
-    addNodeElements(node);
-    addNodeInteractions(node, link);
-
-    simulation = createForceSimulation(nodes, links);
-
-    simulation.on('tick', () => {
-      link
-        .attr('x1', d => d.source.x)
-        .attr('y1', d => d.source.y)
-        .attr('x2', d => d.target.x)
-        .attr('y2', d => d.target.y);
-      node.attr('transform', d => `translate(${d.x},${d.y})`);
-    });
-
-    animateIn(node, link);
-    window.currentNodes = node;
-  }
-
-  // Radial tree layout
-  function renderRadialLayout() {
-    const hierarchy = buildHierarchy();
-    const root = d3.hierarchy(hierarchy);
-
-    const radius = Math.min(width, height) / 2 - 100;
-
-    const treeLayout = d3.tree()
-      .size([2 * Math.PI, radius])
-      .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
-
-    treeLayout(root);
-
-    // Create curved links
-    const link = g.append('g')
-      .attr('class', 'links')
-      .attr('transform', `translate(${width/2},${height/2})`)
-      .selectAll('path')
-      .data(root.links())
-      .enter()
-      .append('path')
-      .attr('fill', 'none')
-      .attr('stroke', 'rgba(128, 206, 215, 0.4)')
-      .attr('stroke-width', 1.5)
-      .attr('d', d3.linkRadial()
-        .angle(d => d.x)
-        .radius(d => d.y)
-      );
-
-    const node = g.append('g')
-      .attr('class', 'nodes')
-      .attr('transform', `translate(${width/2},${height/2})`)
-      .selectAll('g')
-      .data(root.descendants())
-      .enter()
-      .append('g')
-      .attr('class', 'node')
-      .style('cursor', 'pointer')
-      .attr('transform', d => `rotate(${d.x * 180 / Math.PI - 90}) translate(${d.y},0)`);
-
-    addNodeElements(node, true);
-    addNodeInteractions(node, link, true);
-
-    // Add labels with proper rotation
-    node.append('text')
-      .attr('dy', '0.31em')
-      .attr('x', d => d.x < Math.PI === !d.children ? 6 : -6)
-      .attr('text-anchor', d => d.x < Math.PI === !d.children ? 'start' : 'end')
-      .attr('transform', d => d.x >= Math.PI ? 'rotate(180)' : null)
-      .attr('fill', 'white')
-      .attr('font-size', d => d.data.type === 'root' ? '12px' : '10px')
-      .attr('font-family', 'Outfit, sans-serif')
-      .text(d => d.data.name)
-      .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)')
-      .clone(true).lower()
-      .attr('stroke', 'rgba(0,0,0,0.5)')
-      .attr('stroke-width', 3);
-
-    animateIn(node, link);
-    window.currentNodes = node;
-  }
-
-  // Hierarchical tree layout
-  function renderTreeLayout() {
-    const hierarchy = buildHierarchy();
-    const root = d3.hierarchy(hierarchy);
-
-    const treeLayout = d3.tree()
-      .size([width - 200, height - 150]);
-
-    treeLayout(root);
-
-    // Create curved links
-    const link = g.append('g')
-      .attr('class', 'links')
-      .attr('transform', 'translate(100, 50)')
-      .selectAll('path')
-      .data(root.links())
-      .enter()
-      .append('path')
-      .attr('fill', 'none')
-      .attr('stroke', 'rgba(128, 206, 215, 0.4)')
-      .attr('stroke-width', 1.5)
-      .attr('d', d3.linkVertical()
-        .x(d => d.x)
-        .y(d => d.y)
-      );
-
-    const node = g.append('g')
-      .attr('class', 'nodes')
-      .attr('transform', 'translate(100, 50)')
-      .selectAll('g')
-      .data(root.descendants())
-      .enter()
-      .append('g')
-      .attr('class', 'node')
-      .style('cursor', 'pointer')
-      .attr('transform', d => `translate(${d.x},${d.y})`);
-
-    addNodeElements(node, true);
-    addNodeInteractions(node, link, true);
-
-    // Add labels below nodes
-    node.append('text')
-      .attr('dy', d => getNodeSize(d.data || d) + 14)
-      .attr('text-anchor', 'middle')
-      .attr('fill', 'white')
-      .attr('font-size', d => (d.data || d).type === 'root' ? '11px' : '9px')
-      .attr('font-family', 'Outfit, sans-serif')
-      .text(d => (d.data || d).name)
-      .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)');
-
-    animateIn(node, link);
-    window.currentNodes = node;
-  }
-
-  // Shared function to add node visual elements
-  function addNodeElements(node, isHierarchy = false) {
-    node.append('circle')
-      .attr('r', d => getNodeSize(isHierarchy ? d.data : d))
-      .attr('fill', d => getNodeColor(isHierarchy ? d.data : d))
-      .attr('stroke', 'rgba(255, 255, 255, 0.5)')
-      .attr('stroke-width', 2)
-      .attr('filter', d => {
-        const data = isHierarchy ? d.data : d;
-        return data.type === 'root' || data.type === 'hub' ? 'url(#glow)' : null;
-      })
-      .style('transition', 'all 0.3s ease');
-
-    node.append('circle')
-      .attr('class', 'status-indicator')
-      .attr('r', 5)
-      .attr('cx', d => getNodeSize(isHierarchy ? d.data : d) - 2)
-      .attr('cy', d => -getNodeSize(isHierarchy ? d.data : d) + 2)
-      .attr('fill', 'transparent')
-      .attr('stroke', 'transparent');
-  }
-
-  // Shared function to add hover/click interactions
-  function addNodeInteractions(node, link, isHierarchy = false) {
-    node
-      .on('mouseover', function(event, d) {
-        const data = isHierarchy ? d.data : d;
-        d3.select(this).select('circle')
-          .attr('stroke', 'white')
-          .attr('stroke-width', 3);
-        showTooltip(event, data);
-
-        if (!isHierarchy) {
-          link
-            .attr('stroke', l => (l.source.id === data.id || l.target.id === data.id)
-              ? 'rgba(128, 206, 215, 0.8)' : 'rgba(128, 206, 215, 0.15)')
-            .attr('stroke-width', l => (l.source.id === data.id || l.target.id === data.id) ? 3 : 1);
-        }
-      })
-      .on('mouseout', function(event, d) {
-        d3.select(this).select('circle')
-          .attr('stroke', 'rgba(255, 255, 255, 0.5)')
-          .attr('stroke-width', 2);
-        hideTooltip();
-
-        if (!isHierarchy) {
-          link
-            .attr('stroke', 'rgba(128, 206, 215, 0.3)')
-            .attr('stroke-width', 1.5);
-        }
-      })
-      .on('click', function(event, d) {
-        const data = isHierarchy ? d.data : d;
-        if (data.path) {
-          window.location.href = data.path;
+      // Build parent-child relationships
+      siteStructure.links.forEach(link => {
+        const parent = nodeMap.get(link.source);
+        const child = nodeMap.get(link.target);
+        if (parent && child) {
+          parent.children.push(child);
         }
       });
-  }
 
-  // Animate nodes and links in
-  function animateIn(node, link) {
-    node.style('opacity', 0)
-      .transition()
-      .duration(800)
-      .delay((d, i) => i * 15)
-      .style('opacity', 1);
-
-    link.style('opacity', 0)
-      .transition()
-      .duration(800)
-      .delay(300)
-      .style('opacity', 1);
-  }
-
-  // Drag functions
-  function dragstarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-  }
-
-  function dragged(event, d) {
-    d.fx = event.x;
-    d.fy = event.y;
-  }
-
-  function dragended(event, d) {
-    if (!event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
-  }
-
-  // Tooltip functions
-  function showTooltip(event, d) {
-    const rect = container.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-
-    document.getElementById('tooltip-name').textContent = d.name;
-    document.getElementById('tooltip-path').textContent = d.path;
-    document.getElementById('tooltip-type').textContent = `${d.type}${d.category ? ' • ' + d.category : ''}`;
-
-    // Show link status if available
-    const statusEl = document.getElementById('tooltip-status');
-    const statusIconEl = document.getElementById('tooltip-status-icon');
-    const statusTextEl = document.getElementById('tooltip-status-text');
-
-    if (linkStatus.has(d.path)) {
-      const status = linkStatus.get(d.path);
-      statusEl.classList.remove('hidden');
-      if (status === 'ok') {
-        statusIconEl.textContent = '✓ ';
-        statusIconEl.className = 'text-emerald-400';
-        statusTextEl.textContent = 'Link OK';
-        statusTextEl.className = 'text-emerald-400';
-      } else if (status === 'error') {
-        statusIconEl.textContent = '✗ ';
-        statusIconEl.className = 'text-red-400';
-        statusTextEl.textContent = 'Link broken';
-        statusTextEl.className = 'text-red-400';
-      } else {
-        statusIconEl.textContent = '○ ';
-        statusIconEl.className = 'text-amber-400';
-        statusTextEl.textContent = 'Checking...';
-        statusTextEl.className = 'text-amber-400';
-      }
-    } else {
-      statusEl.classList.add('hidden');
+      return nodeMap.get('/');
     }
 
-    tooltip.style.left = `${Math.min(x + 10, width - 200)}px`;
-    tooltip.style.top = `${Math.min(y + 10, height - 100)}px`;
-    tooltip.classList.remove('opacity-0');
-    tooltip.classList.add('opacity-100');
-  }
+    // Render the visualization
+    function render(layout = 'force') {
+      // Clear previous content
+      g.selectAll('*').remove();
 
-  function hideTooltip() {
-    tooltip.classList.remove('opacity-100');
-    tooltip.classList.add('opacity-0');
-  }
-
-  // Reset view
-  document.getElementById('btn-reset').addEventListener('click', () => {
-    svg.transition()
-      .duration(750)
-      .call(zoom.transform, d3.zoomIdentity);
-  });
-
-  // Layout change
-  document.getElementById('layout-select').addEventListener('change', (e) => {
-    currentLayout = e.target.value;
-    render(currentLayout);
-  });
-
-  // Link checking
-  document.getElementById('btn-check-links').addEventListener('click', async () => {
-    const btn = document.getElementById('btn-check-links');
-    btn.textContent = 'Checking...';
-    btn.disabled = true;
-
-    let healthy = 0;
-    let broken = 0;
-    let pending = siteStructure.nodes.length;
-
-    document.getElementById('stat-pending').textContent = pending;
-    document.getElementById('stat-healthy').textContent = healthy;
-    document.getElementById('stat-broken').textContent = broken;
-
-    const results = [];
-
-    for (const node of siteStructure.nodes) {
-      try {
-        linkStatus.set(node.path, 'checking');
-        updateNodeStatus(node.path, 'checking');
-
-        const response = await fetch(node.path, { method: 'HEAD' });
-
-        if (response.ok) {
-          linkStatus.set(node.path, 'ok');
-          updateNodeStatus(node.path, 'ok');
-          healthy++;
-        } else {
-          linkStatus.set(node.path, 'error');
-          updateNodeStatus(node.path, 'error');
-          broken++;
-          results.push({ path: node.path, status: response.status, name: node.name });
-        }
-      } catch (err) {
-        linkStatus.set(node.path, 'error');
-        updateNodeStatus(node.path, 'error');
-        broken++;
-        results.push({ path: node.path, status: 'Network Error', name: node.name });
+      // Stop any running simulation
+      if (simulation) {
+        simulation.stop();
+        simulation = null;
       }
 
-      pending--;
+      // Update stats
+      document.getElementById('stat-total').textContent = siteStructure.nodes.length;
+
+      if (layout === 'force') {
+        renderForceLayout();
+      } else if (layout === 'radial') {
+        renderRadialLayout();
+      } else if (layout === 'tree') {
+        renderTreeLayout();
+      }
+
+      // Remove loading state
+      loading.classList.add('hidden');
+    }
+
+    // Force-directed layout
+    function renderForceLayout() {
+      const nodes = siteStructure.nodes.map(d => ({...d}));
+      const links = siteStructure.links.map(d => ({
+        source: d.source,
+        target: d.target,
+        type: d.type
+      }));
+
+      const link = g.append('g')
+        .attr('class', 'links')
+        .selectAll('line')
+        .data(links)
+        .enter()
+        .append('line')
+        .attr('stroke', 'rgba(128, 206, 215, 0.3)')
+        .attr('stroke-width', 1.5)
+        .attr('marker-end', 'url(#arrowhead)');
+
+      const node = g.append('g')
+        .attr('class', 'nodes')
+        .selectAll('g')
+        .data(nodes)
+        .enter()
+        .append('g')
+        .attr('class', 'node')
+        .style('cursor', 'pointer')
+        .call(d3.drag()
+          .on('start', dragstarted)
+          .on('drag', dragged)
+          .on('end', dragended)
+        );
+
+      addNodeElements(node);
+      addNodeInteractions(node, link);
+
+      simulation = createForceSimulation(nodes, links);
+
+      simulation.on('tick', () => {
+        link
+          .attr('x1', d => d.source.x)
+          .attr('y1', d => d.source.y)
+          .attr('x2', d => d.target.x)
+          .attr('y2', d => d.target.y);
+        node.attr('transform', d => `translate(${d.x},${d.y})`);
+      });
+
+      animateIn(node, link);
+      window.currentNodes = node;
+    }
+
+    // Radial tree layout
+    function renderRadialLayout() {
+      const hierarchy = buildHierarchy();
+      const root = d3.hierarchy(hierarchy);
+
+      const radius = Math.min(width, height) / 2 - 100;
+
+      const treeLayout = d3.tree()
+        .size([2 * Math.PI, radius])
+        .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
+
+      treeLayout(root);
+
+      // Create curved links
+      const link = g.append('g')
+        .attr('class', 'links')
+        .attr('transform', `translate(${width / 2},${height / 2})`)
+        .selectAll('path')
+        .data(root.links())
+        .enter()
+        .append('path')
+        .attr('fill', 'none')
+        .attr('stroke', 'rgba(128, 206, 215, 0.4)')
+        .attr('stroke-width', 1.5)
+        .attr('d', d3.linkRadial()
+          .angle(d => d.x)
+          .radius(d => d.y)
+        );
+
+      const node = g.append('g')
+        .attr('class', 'nodes')
+        .attr('transform', `translate(${width / 2},${height / 2})`)
+        .selectAll('g')
+        .data(root.descendants())
+        .enter()
+        .append('g')
+        .attr('class', 'node')
+        .style('cursor', 'pointer')
+        .attr('transform', d => `rotate(${d.x * 180 / Math.PI - 90}) translate(${d.y},0)`);
+
+      addNodeElements(node, true);
+      addNodeInteractions(node, link, true);
+
+      // Add labels with proper rotation
+      node.append('text')
+        .attr('dy', '0.31em')
+        .attr('x', d => d.x < Math.PI === !d.children ? 6 : -6)
+        .attr('text-anchor', d => d.x < Math.PI === !d.children ? 'start' : 'end')
+        .attr('transform', d => d.x >= Math.PI ? 'rotate(180)' : null)
+        .attr('fill', 'white')
+        .attr('font-size', d => d.data.type === 'root' ? '12px' : '10px')
+        .attr('font-family', 'Outfit, sans-serif')
+        .text(d => d.data.name)
+        .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)')
+        .clone(true).lower()
+        .attr('stroke', 'rgba(0,0,0,0.5)')
+        .attr('stroke-width', 3);
+
+      animateIn(node, link);
+      window.currentNodes = node;
+    }
+
+    // Hierarchical tree layout
+    function renderTreeLayout() {
+      const hierarchy = buildHierarchy();
+      const root = d3.hierarchy(hierarchy);
+
+      const treeLayout = d3.tree()
+        .size([width - 200, height - 150]);
+
+      treeLayout(root);
+
+      // Create curved links
+      const link = g.append('g')
+        .attr('class', 'links')
+        .attr('transform', 'translate(100, 50)')
+        .selectAll('path')
+        .data(root.links())
+        .enter()
+        .append('path')
+        .attr('fill', 'none')
+        .attr('stroke', 'rgba(128, 206, 215, 0.4)')
+        .attr('stroke-width', 1.5)
+        .attr('d', d3.linkVertical()
+          .x(d => d.x)
+          .y(d => d.y)
+        );
+
+      const node = g.append('g')
+        .attr('class', 'nodes')
+        .attr('transform', 'translate(100, 50)')
+        .selectAll('g')
+        .data(root.descendants())
+        .enter()
+        .append('g')
+        .attr('class', 'node')
+        .style('cursor', 'pointer')
+        .attr('transform', d => `translate(${d.x},${d.y})`);
+
+      addNodeElements(node, true);
+      addNodeInteractions(node, link, true);
+
+      // Add labels below nodes
+      node.append('text')
+        .attr('dy', d => getNodeSize(d.data || d) + 14)
+        .attr('text-anchor', 'middle')
+        .attr('fill', 'white')
+        .attr('font-size', d => (d.data || d).type === 'root' ? '11px' : '9px')
+        .attr('font-family', 'Outfit, sans-serif')
+        .text(d => (d.data || d).name)
+        .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)');
+
+      animateIn(node, link);
+      window.currentNodes = node;
+    }
+
+    // Shared function to add node visual elements
+    function addNodeElements(node, isHierarchy = false) {
+      node.append('circle')
+        .attr('r', d => getNodeSize(isHierarchy ? d.data : d))
+        .attr('fill', d => getNodeColor(isHierarchy ? d.data : d))
+        .attr('stroke', 'rgba(255, 255, 255, 0.5)')
+        .attr('stroke-width', 2)
+        .attr('filter', d => {
+          const data = isHierarchy ? d.data : d;
+          return data.type === 'root' || data.type === 'hub' ? 'url(#glow)' : null;
+        })
+        .style('transition', 'all 0.3s ease');
+
+      node.append('circle')
+        .attr('class', 'status-indicator')
+        .attr('r', 5)
+        .attr('cx', d => getNodeSize(isHierarchy ? d.data : d) - 2)
+        .attr('cy', d => -getNodeSize(isHierarchy ? d.data : d) + 2)
+        .attr('fill', 'transparent')
+        .attr('stroke', 'transparent');
+    }
+
+    // Shared function to add hover/click interactions
+    function addNodeInteractions(node, link, isHierarchy = false) {
+      node
+        .on('mouseover', function (event, d) {
+          const data = isHierarchy ? d.data : d;
+          d3.select(this).select('circle')
+            .attr('stroke', 'white')
+            .attr('stroke-width', 3);
+          showTooltip(event, data);
+
+          if (!isHierarchy) {
+            link
+              .attr('stroke', l => (l.source.id === data.id || l.target.id === data.id)
+                ? 'rgba(128, 206, 215, 0.8)' : 'rgba(128, 206, 215, 0.15)')
+              .attr('stroke-width', l => (l.source.id === data.id || l.target.id === data.id) ? 3 : 1);
+          }
+        })
+        .on('mouseout', function (event, d) {
+          d3.select(this).select('circle')
+            .attr('stroke', 'rgba(255, 255, 255, 0.5)')
+            .attr('stroke-width', 2);
+          hideTooltip();
+
+          if (!isHierarchy) {
+            link
+              .attr('stroke', 'rgba(128, 206, 215, 0.3)')
+              .attr('stroke-width', 1.5);
+          }
+        })
+        .on('click', function (event, d) {
+          const data = isHierarchy ? d.data : d;
+          if (data.path) {
+            window.location.href = data.path;
+          }
+        });
+    }
+
+    // Animate nodes and links in
+    function animateIn(node, link) {
+      node.style('opacity', 0)
+        .transition()
+        .duration(800)
+        .delay((d, i) => i * 15)
+        .style('opacity', 1);
+
+      link.style('opacity', 0)
+        .transition()
+        .duration(800)
+        .delay(300)
+        .style('opacity', 1);
+    }
+
+    // Drag functions
+    function dragstarted(event, d) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+
+    function dragged(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+
+    function dragended(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+
+    // Tooltip functions
+    function showTooltip(event, d) {
+      const rect = container.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      document.getElementById('tooltip-name').textContent = d.name;
+      document.getElementById('tooltip-path').textContent = d.path;
+      document.getElementById('tooltip-type').textContent = `${d.type}${d.category ? ' • ' + d.category : ''}`;
+
+      // Show link status if available
+      const statusEl = document.getElementById('tooltip-status');
+      const statusIconEl = document.getElementById('tooltip-status-icon');
+      const statusTextEl = document.getElementById('tooltip-status-text');
+
+      if (linkStatus.has(d.path)) {
+        const status = linkStatus.get(d.path);
+        statusEl.classList.remove('hidden');
+        if (status === 'ok') {
+          statusIconEl.textContent = '✓ ';
+          statusIconEl.className = 'text-emerald-400';
+          statusTextEl.textContent = 'Link OK';
+          statusTextEl.className = 'text-emerald-400';
+        } else if (status === 'error') {
+          statusIconEl.textContent = '✗ ';
+          statusIconEl.className = 'text-red-400';
+          statusTextEl.textContent = 'Link broken';
+          statusTextEl.className = 'text-red-400';
+        } else {
+          statusIconEl.textContent = '○ ';
+          statusIconEl.className = 'text-amber-400';
+          statusTextEl.textContent = 'Checking...';
+          statusTextEl.className = 'text-amber-400';
+        }
+      } else {
+        statusEl.classList.add('hidden');
+      }
+
+      tooltip.style.left = `${Math.min(x + 10, width - 200)}px`;
+      tooltip.style.top = `${Math.min(y + 10, height - 100)}px`;
+      tooltip.classList.remove('opacity-0');
+      tooltip.classList.add('opacity-100');
+    }
+
+    function hideTooltip() {
+      tooltip.classList.remove('opacity-100');
+      tooltip.classList.add('opacity-0');
+    }
+
+    // Reset view
+    document.getElementById('btn-reset').addEventListener('click', () => {
+      svg.transition()
+        .duration(750)
+        .call(zoom.transform, d3.zoomIdentity);
+    });
+
+    // Layout change
+    document.getElementById('layout-select').addEventListener('change', (e) => {
+      currentLayout = e.target.value;
+      render(currentLayout);
+    });
+
+    // Link checking
+    document.getElementById('btn-check-links').addEventListener('click', async () => {
+      const btn = document.getElementById('btn-check-links');
+      btn.textContent = 'Checking...';
+      btn.disabled = true;
+
+      let healthy = 0;
+      let broken = 0;
+      let pending = siteStructure.nodes.length;
+
       document.getElementById('stat-pending').textContent = pending;
       document.getElementById('stat-healthy').textContent = healthy;
       document.getElementById('stat-broken').textContent = broken;
-    }
 
-    btn.textContent = 'Check Links';
-    btn.disabled = false;
+      const results = [];
 
-    // Show results if there are broken links
-    if (results.length > 0) {
-      const resultsEl = document.getElementById('link-results');
-      const contentEl = document.getElementById('link-results-content');
+      for (const node of siteStructure.nodes) {
+        try {
+          linkStatus.set(node.path, 'checking');
+          updateNodeStatus(node.path, 'checking');
 
-      contentEl.innerHTML = results.map(r => `
+          const response = await fetch(node.path, {method: 'HEAD'});
+
+          if (response.ok) {
+            linkStatus.set(node.path, 'ok');
+            updateNodeStatus(node.path, 'ok');
+            healthy++;
+          } else {
+            linkStatus.set(node.path, 'error');
+            updateNodeStatus(node.path, 'error');
+            broken++;
+            results.push({path: node.path, status: response.status, name: node.name});
+          }
+        } catch (err) {
+          linkStatus.set(node.path, 'error');
+          updateNodeStatus(node.path, 'error');
+          broken++;
+          results.push({path: node.path, status: 'Network Error', name: node.name});
+        }
+
+        pending--;
+        document.getElementById('stat-pending').textContent = pending;
+        document.getElementById('stat-healthy').textContent = healthy;
+        document.getElementById('stat-broken').textContent = broken;
+      }
+
+      btn.textContent = 'Check Links';
+      btn.disabled = false;
+
+      // Show results if there are broken links
+      if (results.length > 0) {
+        const resultsEl = document.getElementById('link-results');
+        const contentEl = document.getElementById('link-results-content');
+
+        contentEl.innerHTML = results.map(r => `
         <div class="flex items-center justify-between p-3 bg-red-500/20 rounded-lg border border-red-500/30">
           <div>
             <div class="text-white font-medium">${r.name}</div>
@@ -715,41 +718,41 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         </div>
       `).join('');
 
-      resultsEl.classList.remove('hidden');
-    } else {
-      const resultsEl = document.getElementById('link-results');
-      const contentEl = document.getElementById('link-results-content');
-      contentEl.innerHTML = '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
-      resultsEl.classList.remove('hidden');
+        resultsEl.classList.remove('hidden');
+      } else {
+        const resultsEl = document.getElementById('link-results');
+        const contentEl = document.getElementById('link-results-content');
+        contentEl.innerHTML = '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
+        resultsEl.classList.remove('hidden');
+      }
+    });
+
+    // Update node visual status
+    function updateNodeStatus(path, status) {
+      if (!window.currentNodes) return;
+
+      window.currentNodes
+        .filter(d => d.path === path)
+        .select('.status-indicator')
+        .attr('fill', status === 'ok' ? '#10B981' : status === 'error' ? '#EF4444' : '#F59E0B')
+        .attr('stroke', 'white');
     }
-  });
 
-  // Update node visual status
-  function updateNodeStatus(path, status) {
-    if (!window.currentNodes) return;
+    // Handle resize
+    function handleResize() {
+      width = container.clientWidth;
+      height = container.clientHeight;
 
-    window.currentNodes
-      .filter(d => d.path === path)
-      .select('.status-indicator')
-      .attr('fill', status === 'ok' ? '#10B981' : status === 'error' ? '#EF4444' : '#F59E0B')
-      .attr('stroke', 'white');
-  }
-
-  // Handle resize
-  function handleResize() {
-    width = container.clientWidth;
-    height = container.clientHeight;
-
-    if (simulation) {
-      simulation.force('center', d3.forceCenter(width / 2, height / 2));
-      simulation.alpha(0.3).restart();
+      if (simulation) {
+        simulation.force('center', d3.forceCenter(width / 2, height / 2));
+        simulation.alpha(0.3).restart();
+      }
     }
-  }
 
-  window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize);
 
-  // Initial render
-  render('force');
+    // Initial render
+    render('force');
   } // End of initSitemapVisualization function
 
   // Initialize on first load

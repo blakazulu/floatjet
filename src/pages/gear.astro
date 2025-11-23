@@ -12,30 +12,82 @@ const categories = [
   {name: 'Accessories', href: '/gear/accessories', icon: '🎒', description: 'Bags, cables & travel gear'}
 ];
 
-// Gear articles data
-const gear = [
+// All gear articles data with correct reading times from articles
+const allGear = [
   {
     title: 'Best Laptops for Remote Work',
     description: 'Find the perfect laptop for productivity on the go. Our top picks for every budget and work style.',
     href: '/gear/best-laptops-remote-work',
-    category: 'Gear',
-    icon: '💻'
+    category: 'Computers',
+    icon: '💻',
+    readTime: 18
   },
   {
     title: 'Best Standing Desks',
     description: 'Upgrade your workspace with an ergonomic standing desk for healthier, more productive workdays.',
     href: '/gear/best-standing-desks',
     category: 'Furniture',
-    icon: '🪑'
+    icon: '🪑',
+    readTime: 18
   },
   {
     title: 'Best Noise-Canceling Headphones',
     description: 'Block out distractions and focus on your work with premium noise-canceling headphones.',
     href: '/gear/best-noise-canceling-headphones',
     category: 'Audio',
-    icon: '🎧'
+    icon: '🎧',
+    readTime: 18
+  },
+  {
+    title: 'Best Laptop Bags & Backpacks',
+    description: 'Protect your gear while traveling light. Top picks for digital nomads and remote workers.',
+    href: '/gear/best-laptop-bags-backpacks',
+    category: 'Accessories',
+    icon: '🎒',
+    readTime: 16
+  },
+  {
+    title: 'Best Webcams for Video Calls',
+    description: 'Look professional on every video call with these top-rated webcams for remote work.',
+    href: '/gear/best-webcams-video-calls',
+    category: 'Accessories',
+    icon: '📹',
+    readTime: 14
+  },
+  {
+    title: 'Best Portable Chargers & Power Banks',
+    description: 'Never run out of battery on the go. Compare the best power banks for travel.',
+    href: '/gear/best-portable-chargers-power-banks',
+    category: 'Accessories',
+    icon: '🔋',
+    readTime: 13
+  },
+  {
+    title: 'Best Mechanical Keyboards',
+    description: 'Type faster and more comfortably with these mechanical keyboards for remote work.',
+    href: '/gear/best-mechanical-keyboards',
+    category: 'Accessories',
+    icon: '⌨️',
+    readTime: 14
+  },
+  {
+    title: 'Best Travel Adapters',
+    description: 'Power up anywhere in the world with these universal travel adapters.',
+    href: '/gear/best-travel-adapters',
+    category: 'Accessories',
+    icon: '🔌',
+    readTime: 10
   }
 ];
+
+// Pagination settings
+const ARTICLES_PER_PAGE = 9;
+const currentPage = 1;
+const totalArticles = allGear.length;
+const totalPages = Math.ceil(totalArticles / ARTICLES_PER_PAGE);
+const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
+const endIndex = startIndex + ARTICLES_PER_PAGE;
+const paginatedGear = allGear.slice(startIndex, endIndex);
 ---
 
 <BaseLayout title={title} description={description}>
@@ -52,56 +104,87 @@ const gear = [
     <!-- Category Links -->
     <div class="grid gap-3 grid-cols-2 sm:grid-cols-4 mb-12 max-w-4xl mx-auto">
       {categories.map(cat => (
-          <a
-              href={cat.href}
-              class="group flex flex-col items-center text-center p-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-jet-stream/50 rounded-xl transition-all duration-300"
-          >
-            <span class="text-2xl mb-2">{cat.icon}</span>
-            <span class="text-white font-medium group-hover:text-jet-stream transition-colors">{cat.name}</span>
-            <span class="text-white/50 text-xs mt-1 hidden sm:block">{cat.description}</span>
-          </a>
+        <a
+          href={cat.href}
+          class="group flex flex-col items-center text-center p-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-jet-stream/50 rounded-xl transition-all duration-300"
+        >
+          <span class="text-2xl mb-2">{cat.icon}</span>
+          <span class="text-white font-medium group-hover:text-jet-stream transition-colors">{cat.name}</span>
+          <span class="text-white/50 text-xs mt-1 hidden sm:block">{cat.description}</span>
+        </a>
       ))}
     </div>
 
     <!-- Gear Grid -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {gear.map(item => (
-          <a
-              href={item.href}
-              class="group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
-          >
-            <div class="flex items-start gap-4">
-              <span class="text-3xl">{item.icon}</span>
-              <div class="flex-1">
-              <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded mb-2">
-                {item.category}
-              </span>
-                <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
-                  {item.title}
-                </h2>
-                <p class="text-white/70 text-sm">
-                  {item.description}
-                </p>
+      {paginatedGear.map(item => (
+        <a
+          href={item.href}
+          class="group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
+        >
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">{item.icon}</span>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
+                  {item.category}
+                </span>
+                <span class="text-white/40 text-xs">{item.readTime} min</span>
               </div>
+              <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
+                {item.title}
+              </h2>
+              <p class="text-white/70 text-sm">
+                {item.description}
+              </p>
             </div>
-            <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
-              Read Review
-              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-                   viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </div>
-          </a>
+          </div>
+          <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
+            Read Review
+            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                 viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
       ))}
     </div>
 
-    <!-- Coming Soon Section -->
-    <div class="mt-16 text-center">
-      <h2 class="text-xl font-semibold text-white mb-4">More Reviews Coming Soon</h2>
-      <p class="text-white/60 mb-6">
-        We're constantly testing new gear. Check back soon for reviews on monitors, webcams, keyboards, chairs, and
-        more.
+    <!-- Pagination & Article Count -->
+    <div class="mt-8 text-center">
+      <p class="text-white/50 text-sm mb-4">
+        Showing {paginatedGear.length} of {totalArticles} articles
       </p>
+
+      {/* Desktop Pagination */}
+      {totalPages > 1 && (
+        <div class="hidden sm:flex justify-center gap-2">
+          {Array.from({length: totalPages}, (_, i) => (
+            <button
+              class={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
+                i + 1 === currentPage
+                  ? 'bg-jet-stream text-ocean-deep'
+                  : 'bg-white/10 text-white hover:bg-white/20'
+              }`}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* Mobile: Load More / Show All */}
+      {totalPages > 1 && (
+        <div class="sm:hidden">
+          <button class="px-6 py-3 bg-jet-stream/20 text-jet-stream font-medium rounded-lg hover:bg-jet-stream/30 transition-colors">
+            Load More Articles
+          </button>
+        </div>
+      )}
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-12 text-center">
       <a href="/contact" class="inline-flex items-center text-jet-stream hover:text-sky-light transition-colors">
         Suggest gear for us to review
         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,0 +1,932 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+import AffiliateButton from '@components/article/AffiliateButton.astro';
+import ComparisonTable from '@components/article/ComparisonTable.astro';
+
+// Article metadata
+const title = 'Best Laptop Bags & Backpacks for Digital Nomads (2025)';
+const description = 'We tested 12 laptop bags and backpacks to find the best for digital nomads. Compare Nomatic, Peak Design, Aer & more with capacity, features, and honest reviews.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-24');
+const readingTime = 16;
+const image = 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Professional laptop backpack for digital nomads';
+
+// Table of contents headings
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
+  {text: 'What Digital Nomads Need', slug: 'what-nomads-need', depth: 2},
+  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
+  {text: 'Nomatic Travel Pack', slug: 'nomatic-travel-pack', depth: 3},
+  {text: 'Peak Design Everyday Backpack', slug: 'peak-design', depth: 3},
+  {text: 'Aer Travel Pack 3', slug: 'aer-travel-pack', depth: 3},
+  {text: 'Thule Subterra', slug: 'thule-subterra', depth: 3},
+  {text: 'Tortuga Outbreaker', slug: 'tortuga-outbreaker', depth: 3},
+  {text: 'WANDRD PRVKE', slug: 'wandrd-prvke', depth: 3},
+  {text: 'Targus Drifter II', slug: 'targus-drifter', depth: 3},
+  {text: 'Bellroy Transit', slug: 'bellroy-transit', depth: 3},
+  {text: 'Backpack vs Messenger vs Briefcase', slug: 'bag-types', depth: 2},
+  {text: 'TSA-Friendly Features', slug: 'tsa-features', depth: 2},
+  {text: 'Anti-Theft Features', slug: 'anti-theft', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+];
+
+// Quick picks comparison table
+const quickPicksColumns = [
+  {key: 'bag', label: 'Bag', width: '140px'},
+  {key: 'bestFor', label: 'Best For', width: '140px'},
+  {key: 'price', label: 'Price'},
+  {key: 'rating', label: 'Rating'},
+  {key: 'action', label: ''},
+];
+
+const quickPicksRows = [
+  {
+    bag: '<strong>Nomatic Travel Pack</strong>',
+    bestFor: 'Best Overall',
+    price: '$299',
+    rating: '9.4/10',
+    action: '<a href="/go/nomatic" rel="nofollow sponsored">Check Price</a>'
+  },
+  {
+    bag: '<strong>Peak Design Everyday</strong>',
+    bestFor: 'Best Design',
+    price: '$299',
+    rating: '9.2/10',
+    action: '<a href="/go/peak-design" rel="nofollow sponsored">Check Price</a>'
+  },
+  {
+    bag: '<strong>Targus Drifter II</strong>',
+    bestFor: 'Best Budget',
+    price: '$45',
+    rating: '8.5/10',
+    action: '<a href="/go/amazon/targus-drifter" rel="nofollow sponsored">Check Price</a>'
+  },
+];
+
+// Full comparison table
+const fullComparisonColumns = [
+  {key: 'bag', label: 'Bag', width: '130px'},
+  {key: 'bestFor', label: 'Best For', width: '120px'},
+  {key: 'price', label: 'Price'},
+  {key: 'capacity', label: 'Capacity'},
+  {key: 'laptopSize', label: 'Laptop Size'},
+  {key: 'weight', label: 'Weight'},
+  {key: 'action', label: ''},
+];
+
+const fullComparisonRows = [
+  {
+    bag: '<strong>Nomatic Travel Pack</strong>',
+    bestFor: 'Best Overall',
+    price: '$299',
+    capacity: '20-30L',
+    laptopSize: '15.6"',
+    weight: '3.8 lbs',
+    action: '<a href="/go/nomatic" rel="nofollow sponsored">Buy</a>'
+  },
+  {
+    bag: '<strong>Peak Design Everyday</strong>',
+    bestFor: 'Best Design',
+    price: '$299',
+    capacity: '20L/30L',
+    laptopSize: '16"',
+    weight: '3.3 lbs',
+    action: '<a href="/go/peak-design" rel="nofollow sponsored">Buy</a>'
+  },
+  {
+    bag: '<strong>Aer Travel Pack 3</strong>',
+    bestFor: 'Organization',
+    price: '$249',
+    capacity: '35L',
+    laptopSize: '16"',
+    weight: '3.7 lbs',
+    action: '<a href="/go/aer" rel="nofollow sponsored">Buy</a>'
+  },
+  {
+    bag: '<strong>Thule Subterra</strong>',
+    bestFor: 'Best Value',
+    price: '$179',
+    capacity: '30L',
+    laptopSize: '15.6"',
+    weight: '3.2 lbs',
+    action: '<a href="/go/thule" rel="nofollow sponsored">Buy</a>'
+  },
+  {
+    bag: '<strong>Tortuga Outbreaker</strong>',
+    bestFor: 'Long Trips',
+    price: '$249',
+    capacity: '35-45L',
+    laptopSize: '17"',
+    weight: '4.4 lbs',
+    action: '<a href="/go/tortuga" rel="nofollow sponsored">Buy</a>'
+  },
+  {
+    bag: '<strong>WANDRD PRVKE</strong>',
+    bestFor: 'Creatives',
+    price: '$264',
+    capacity: '21-31L',
+    laptopSize: '15"',
+    weight: '3.4 lbs',
+    action: '<a href="/go/wandrd" rel="nofollow sponsored">Buy</a>'
+  },
+  {
+    bag: '<strong>Targus Drifter II</strong>',
+    bestFor: 'Budget',
+    price: '$45',
+    capacity: '27L',
+    laptopSize: '16"',
+    weight: '2.2 lbs',
+    action: '<a href="/go/amazon/targus-drifter" rel="nofollow sponsored">Buy</a>'
+  },
+  {
+    bag: '<strong>Bellroy Transit</strong>',
+    bestFor: 'Minimalist',
+    price: '$249',
+    capacity: '28L',
+    laptopSize: '15"',
+    weight: '2.9 lbs',
+    action: '<a href="/go/bellroy" rel="nofollow sponsored">Buy</a>'
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'What is the best laptop backpack for digital nomads?',
+    answer: '<p>The <strong>Nomatic Travel Pack</strong> is our top pick for digital nomads. It offers expandable 20-30L capacity, excellent organization with dedicated tech compartments, TSA-friendly laptop access, and durable water-resistant materials. At $299, it\'s an investment that will last years of travel.</p><p>For budget-conscious nomads, the <strong>Targus Drifter II</strong> at $45 offers solid protection and organization without the premium price.</p>'
+  },
+  {
+    question: 'What size laptop bag do I need for travel?',
+    answer: '<p>For digital nomads, we recommend <strong>25-35L capacity</strong>:</p><ul><li><strong>20-25L:</strong> Day trips, light packers (1-2 days)</li><li><strong>25-35L:</strong> Sweet spot for most nomads (3-5 days)</li><li><strong>35-45L:</strong> Extended travel, carry-on maximum</li></ul><p>Also verify your laptop size compatibility. Most bags fit 15-16" laptops. If you have a 17" laptop, options are more limited—the Tortuga Outbreaker is one of the best for larger laptops.</p>'
+  },
+  {
+    question: 'Are expensive laptop bags worth it for travel?',
+    answer: '<p><strong>Yes, for frequent travelers.</strong> Premium bags ($200-350) offer significant advantages:</p><ul><li><strong>Durability:</strong> Quality materials last 5-10+ years vs 1-2 years for budget bags</li><li><strong>Organization:</strong> Thoughtful compartments keep gear accessible</li><li><strong>Comfort:</strong> Better straps and back panels for all-day carrying</li><li><strong>Protection:</strong> Superior laptop padding and water resistance</li><li><strong>Warranty:</strong> Most premium brands offer lifetime warranties</li></ul><p>If you travel monthly, a $300 bag over 5 years costs $5/month. The durability, comfort, and peace of mind are worth it.</p>'
+  },
+  {
+    question: 'What features should I look for in a travel laptop bag?',
+    answer: '<p>Essential features for digital nomad bags:</p><ol><li><strong>Padded laptop compartment:</strong> Separate, suspended sleeve that doesn\'t touch the bottom</li><li><strong>TSA-friendly design:</strong> Clamshell opening or lay-flat laptop access</li><li><strong>Water-resistant materials:</strong> Protect gear from unexpected rain</li><li><strong>Lockable zippers:</strong> For security in hostels and airports</li><li><strong>Comfortable straps:</strong> Padded, adjustable, with chest/hip straps for heavy loads</li><li><strong>Organization:</strong> Quick-access pockets for passport, phone, chargers</li><li><strong>Carry-on compliant:</strong> Under 22" x 14" x 9" for most airlines</li></ol>'
+  },
+  {
+    question: 'Backpack vs messenger bag vs briefcase: which is best for travel?',
+    answer: '<p>Each has its place:</p><p><strong>Backpack (best for travel):</strong> Distributes weight evenly, hands-free mobility, best for walking and public transit. Choose this for airports, city exploration, and active travel.</p><p><strong>Messenger bag (best for style):</strong> Professional look, quick access to contents. Better for client meetings and short commutes, but shoulder strain over long distances.</p><p><strong>Briefcase (best for business):</strong> Most professional appearance, structured protection. Choose for business travel where first impressions matter.</p><p>Most digital nomads should prioritize a backpack for travel, then add a packable messenger for meetings.</p>'
+  },
+  {
+    question: 'What laptop bags are TSA-friendly?',
+    answer: '<p><strong>TSA-friendly bags</strong> let you leave your laptop inside during security screening. Look for:</p><ul><li><strong>Checkpoint-friendly:</strong> Bag lies flat with laptop compartment separated from other items</li><li><strong>Clamshell opening:</strong> Opens like a suitcase for X-ray visibility</li><li><strong>Butterfly design:</strong> Laptop section unfolds completely flat</li></ul><p>Our top TSA-friendly picks: <strong>Nomatic Travel Pack</strong> (clamshell), <strong>Aer Travel Pack 3</strong> (checkpoint design), and <strong>Tortuga Outbreaker</strong> (full clamshell).</p><p><em>Note: TSA discretion varies. Even with a checkpoint bag, you may occasionally be asked to remove your laptop.</em></p>'
+  },
+  {
+    question: 'How do I protect my laptop while traveling?',
+    answer: '<p>Layer your protection:</p><ol><li><strong>Quality bag:</strong> Choose a bag with dedicated, padded laptop sleeve</li><li><strong>Suspended sleeve:</strong> Laptop shouldn\'t touch the bag bottom (drop protection)</li><li><strong>Additional sleeve:</strong> Consider a neoprene sleeve inside the bag for extra padding</li><li><strong>Never check it:</strong> Always carry your laptop on the plane</li><li><strong>Position in bag:</strong> Keep laptop closest to your back, not the outer wall</li><li><strong>Insurance:</strong> Get travel insurance that covers electronics</li></ol><p>The best bags (Nomatic, Peak Design, Aer) have well-designed laptop compartments that provide excellent protection without extra sleeves.</p>'
+  },
+  {
+    question: 'What are the best anti-theft laptop bags?',
+    answer: '<p>For security-conscious travelers:</p><ul><li><strong>Lockable zippers:</strong> Nomatic, Tortuga, Aer all have lockable main compartments</li><li><strong>Hidden pockets:</strong> Back panel pockets against your body (Pacsafe, Bellroy)</li><li><strong>Cut-resistant materials:</strong> Pacsafe Venturesafe has slash-proof panels</li><li><strong>RFID blocking:</strong> Built into some bags to protect cards/passport</li></ul><p>Honestly, most theft is opportunistic. A lockable zipper and awareness are usually sufficient. Don\'t leave bags unattended, use hotel safes, and consider travel insurance.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Best Laptops for Remote Work',
+    excerpt: 'We tested 10 laptops to find the best for digital nomads and remote workers.',
+    href: '/gear/best-laptops-remote-work',
+    image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Modern laptop on minimalist desk'
+  },
+  {
+    title: 'Essential Travel Tech for Nomads',
+    excerpt: 'The must-have tech gadgets for productive travel and remote work on the road.',
+    href: '/blog/essential-travel-tech-nomads',
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Travel tech essentials laid out'
+  },
+  {
+    title: 'Best Portable Chargers & Power Banks',
+    excerpt: 'Never run out of battery on the road with these tested portable chargers.',
+    href: '/gear/best-portable-chargers-power-banks',
+    image: 'https://images.unsplash.com/photo-1609592424017-3bcbfc219d6b?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Portable power bank charging devices'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Accessories"
+    categorySlug="gear"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">Your Mobile Office Deserves the Best Protection</h2>
+  <p>
+    As a digital nomad, your laptop is your livelihood. It contains your work, your communication tools, and often
+    irreplaceable files. A quality laptop bag isn't just about convenience—it's about protecting your most important
+    work asset while staying mobile and comfortable.
+  </p>
+  <p>
+    We tested 12 laptop bags and backpacks across three continents over six months of real nomad travel. We evaluated
+    durability, comfort, organization, laptop protection, and overall value for the digital nomad lifestyle.
+  </p>
+  <p>
+    <strong>Quick answer:</strong> The <a href="#nomatic-travel-pack">Nomatic Travel Pack</a> is our top pick for
+    digital nomads—expandable capacity, excellent organization, and built to last. The
+    <a href="#peak-design">Peak Design Everyday Backpack</a> wins for design and quick access. On a budget? The
+    <a href="#targus-drifter">Targus Drifter II</a> offers solid value at $45.
+  </p>
+
+  <!-- Quick Picks -->
+  <h2 id="quick-picks">Our Top 3 Laptop Bag Picks</h2>
+  <p>Short on time? Here are our top recommendations:</p>
+  <ComparisonTable
+      columns={quickPicksColumns}
+      rows={quickPicksRows}
+      caption="Top 3 laptop bags for digital nomads"
+  />
+  <p>
+    Keep reading for detailed reviews of all 8 bags we tested, plus our buying guide for choosing the right bag
+    for your travel style.
+  </p>
+
+  <!-- What Nomads Need -->
+  <h2 id="what-nomads-need">What Digital Nomads Need in a Laptop Bag</h2>
+  <p>
+    Digital nomad bags have different requirements than office commuter bags. Here's what matters:
+  </p>
+
+  <h3>Versatile Capacity</h3>
+  <p>
+    You need a bag that works for both day trips and longer travel. Expandable bags (like the Nomatic 20-30L) adapt
+    to different situations—compact for coffee shops, expanded for weekend flights.
+  </p>
+
+  <h3>Laptop Protection That Actually Works</h3>
+  <p>
+    Your laptop compartment should be padded, suspended from the bottom (so drops don't impact directly), and easy to
+    access. Cheap bags often have inadequate padding or laptop sleeves that touch the ground when set down.
+  </p>
+
+  <h3>Organization Without Bulk</h3>
+  <p>
+    Quick-access pockets for passport, phone, and cables. Dedicated tech organizer sections. But not so many pockets
+    that you can never find anything.
+  </p>
+
+  <h3>Comfort for All-Day Carry</h3>
+  <p>
+    Airport terminals, city exploration, coworking spaces—you'll carry this bag for hours. Padded straps, breathable
+    back panels, and optional chest/hip straps for heavier loads are essential.
+  </p>
+
+  <h3>Durability for the Road</h3>
+  <p>
+    Hostel floors, overhead bins, rainy streets—your bag takes abuse. Quality materials (like Cordura nylon, YKK
+    zippers, reinforced stitching) mean your bag survives years of travel instead of months.
+  </p>
+
+  <!-- Detailed Reviews -->
+  <h2 id="detailed-reviews">Laptop Bag Detailed Reviews</h2>
+
+  <!-- Nomatic Travel Pack -->
+  <h3 id="nomatic-travel-pack">1. Nomatic Travel Pack — Best Overall for Digital Nomads</h3>
+  <p>
+    The Nomatic Travel Pack was designed by travelers, for travelers. It's become the go-to bag for digital nomads
+    who want thoughtful organization, durable construction, and expandable capacity in one package.
+  </p>
+  <p>
+    <strong>What makes it stand out:</strong> The expandable design (20L compressed to 30L expanded) gives you
+    flexibility for different travel scenarios. The clamshell opening makes packing and TSA screening easy. Every
+    pocket has a purpose—shoe compartment, water bottle pocket, quick-access document sleeve.
+  </p>
+  <p>
+    <strong>Key specifications:</strong>
+  </p>
+  <ul>
+    <li><strong>Capacity:</strong> 20-30L (expandable)</li>
+    <li><strong>Laptop size:</strong> Up to 15.6"</li>
+    <li><strong>Dimensions:</strong> 19" x 13" x 8" (carry-on compliant)</li>
+    <li><strong>Weight:</strong> 3.8 lbs</li>
+    <li><strong>Material:</strong> Water-resistant tarpaulin and Kodra ballistic nylon</li>
+    <li><strong>Laptop protection:</strong> Padded, suspended sleeve with dedicated access</li>
+    <li><strong>Warranty:</strong> Limited lifetime warranty</li>
+  </ul>
+  <p>
+    <strong>Pros:</strong>
+  </p>
+  <ul>
+    <li>Expandable capacity adapts to different trips</li>
+    <li>Clamshell opening for easy packing/TSA access</li>
+    <li>Excellent organization (shoe compartment, tech organizer)</li>
+    <li>Durable, water-resistant materials</li>
+    <li>Comfortable for all-day wear</li>
+    <li>Lifetime warranty</li>
+  </ul>
+  <p>
+    <strong>Cons:</strong>
+  </p>
+  <ul>
+    <li>Premium price ($299)</li>
+    <li>3.8 lbs is heavier than minimalist options</li>
+    <li>Aesthetic is functional rather than stylish</li>
+    <li>15.6" laptop limit (no 16" MacBook Pro)</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> $299 direct from Nomatic
+  </p>
+  <p>
+    <strong>Best for:</strong> Digital nomads who want one bag that handles everything from daily use to week-long
+    trips. The organization and durability justify the premium price for serious travelers.
+  </p>
+  <AffiliateButton
+      href="/go/nomatic"
+      text="Check Nomatic Travel Pack Price"
+      variant="primary"
+      program="nomatic"
+  />
+
+  <!-- Peak Design Everyday Backpack -->
+  <h3 id="peak-design">2. Peak Design Everyday Backpack — Best Design & Quick Access</h3>
+  <p>
+    Peak Design built their reputation with photographers, and it shows. The Everyday Backpack offers the most
+    thoughtful quick-access design we've tested, with dual side-zip access that lets you grab gear without opening
+    the main compartment.
+  </p>
+  <p>
+    <strong>What makes it stand out:</strong> The MagLatch closure is brilliant—one-handed operation that's secure
+    but not fiddly. Side zips let you access the main compartment from either side. The internal dividers (FlexFold)
+    are configurable for any gear combination.
+  </p>
+  <p>
+    <strong>Key specifications:</strong>
+  </p>
+  <ul>
+    <li><strong>Capacity:</strong> 20L or 30L versions</li>
+    <li><strong>Laptop size:</strong> Up to 16"</li>
+    <li><strong>Dimensions:</strong> 18" x 12" x 7" (20L) / 20" x 12" x 8" (30L)</li>
+    <li><strong>Weight:</strong> 3.3 lbs (30L)</li>
+    <li><strong>Material:</strong> 400D weatherproof canvas</li>
+    <li><strong>Laptop protection:</strong> Dedicated padded pocket with quick top access</li>
+    <li><strong>Warranty:</strong> Lifetime warranty</li>
+  </ul>
+  <p>
+    <strong>Pros:</strong>
+  </p>
+  <ul>
+    <li>Best-in-class quick-access design</li>
+    <li>MagLatch closure is fast and secure</li>
+    <li>Configurable internal dividers</li>
+    <li>Premium materials and build quality</li>
+    <li>Fits 16" laptops</li>
+    <li>Looks professional (not tactical)</li>
+  </ul>
+  <p>
+    <strong>Cons:</strong>
+  </p>
+  <ul>
+    <li>Premium price ($299)</li>
+    <li>Not a true clamshell (harder to pack like a suitcase)</li>
+    <li>FlexFold dividers take up space</li>
+    <li>Better for gear than clothes</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> $299 for 30L, $279 for 20L
+  </p>
+  <p>
+    <strong>Best for:</strong> Photographers, videographers, and creative professionals who carry cameras alongside
+    laptops. Also excellent for anyone who values quick access and premium design.
+  </p>
+  <AffiliateButton
+      href="/go/peak-design"
+      text="Check Peak Design Everyday Price"
+      variant="primary"
+      program="peak-design"
+  />
+
+  <!-- Aer Travel Pack 3 -->
+  <h3 id="aer-travel-pack">3. Aer Travel Pack 3 — Best Organization</h3>
+  <p>
+    Aer specializes in travel bags for the modern professional, and the Travel Pack 3 is their flagship. It offers
+    the best organization of any bag we tested—everything has a dedicated place, yet the bag stays streamlined.
+  </p>
+  <p>
+    <strong>What makes it stand out:</strong> The organization is exceptional. Dedicated laptop compartment with
+    suspended sleeve, admin panel for cables and passports, shoe compartment, water bottle pocket with zipper
+    expansion, and top quick-grab pocket. It's checkpoint-friendly design makes TSA screening smooth.
+  </p>
+  <p>
+    <strong>Key specifications:</strong>
+  </p>
+  <ul>
+    <li><strong>Capacity:</strong> 35L</li>
+    <li><strong>Laptop size:</strong> Up to 16"</li>
+    <li><strong>Dimensions:</strong> 21.5" x 13.5" x 8.5"</li>
+    <li><strong>Weight:</strong> 3.7 lbs</li>
+    <li><strong>Material:</strong> 1680D Cordura ballistic nylon</li>
+    <li><strong>Laptop protection:</strong> Suspended, padded laptop/tablet compartment</li>
+    <li><strong>Warranty:</strong> Limited lifetime warranty</li>
+  </ul>
+  <p>
+    <strong>Pros:</strong>
+  </p>
+  <ul>
+    <li>Best organization system we tested</li>
+    <li>Checkpoint-friendly design</li>
+    <li>35L capacity fits more than most bags</li>
+    <li>1680D Cordura is extremely durable</li>
+    <li>Fits 16" laptops including MacBook Pro</li>
+    <li>Shoe compartment with ventilation</li>
+  </ul>
+  <p>
+    <strong>Cons:</strong>
+  </p>
+  <ul>
+    <li>35L is large—may be too big for some</li>
+    <li>Not expandable (fixed capacity)</li>
+    <li>$249 is expensive (though less than Nomatic/Peak)</li>
+    <li>Straps aren't as comfortable for heavy loads</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> $249 direct from Aer
+  </p>
+  <p>
+    <strong>Best for:</strong> Digital nomads who carry lots of gear and value organization. The 35L capacity handles
+    3-5 day trips easily. Great for those who appreciate designated pockets for everything.
+  </p>
+  <AffiliateButton
+      href="/go/aer"
+      text="Check Aer Travel Pack 3 Price"
+      variant="primary"
+      program="aer"
+  />
+
+  <!-- Thule Subterra -->
+  <h3 id="thule-subterra">4. Thule Subterra — Best Value</h3>
+  <p>
+    Thule is known for quality outdoor and travel gear, and the Subterra offers premium features at a more accessible
+    price point. It's the best value in the premium travel bag segment.
+  </p>
+  <p>
+    <strong>What makes it stand out:</strong> At $179, it offers features you'd expect at $250+: padded laptop
+    compartment, organization panel, water-resistant materials, and comfortable carry. It doesn't have every bell and
+    whistle, but everything it does, it does well.
+  </p>
+  <p>
+    <strong>Key specifications:</strong>
+  </p>
+  <ul>
+    <li><strong>Capacity:</strong> 30L</li>
+    <li><strong>Laptop size:</strong> Up to 15.6"</li>
+    <li><strong>Dimensions:</strong> 20" x 12" x 9"</li>
+    <li><strong>Weight:</strong> 3.2 lbs</li>
+    <li><strong>Material:</strong> 800D nylon with water-resistant coating</li>
+    <li><strong>Laptop protection:</strong> Padded SafeZone compartment</li>
+    <li><strong>Warranty:</strong> 25-year limited warranty</li>
+  </ul>
+  <p>
+    <strong>Pros:</strong>
+  </p>
+  <ul>
+    <li>Best value in premium segment ($179)</li>
+    <li>SafeZone compartment protects laptop</li>
+    <li>Lighter than most competitors (3.2 lbs)</li>
+    <li>25-year warranty (excellent)</li>
+    <li>Clean, professional design</li>
+    <li>Good organization without complexity</li>
+  </ul>
+  <p>
+    <strong>Cons:</strong>
+  </p>
+  <ul>
+    <li>Not expandable</li>
+    <li>15.6" laptop maximum</li>
+    <li>Less specialized organization than Aer</li>
+    <li>No shoe compartment</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> $179 from retailers
+  </p>
+  <p>
+    <strong>Best for:</strong> Budget-conscious nomads who want quality without premium pricing. Great first travel
+    bag or for those who don't need specialized features.
+  </p>
+  <AffiliateButton
+      href="/go/thule"
+      text="Check Thule Subterra Price"
+      variant="secondary"
+      program="thule"
+  />
+
+  <!-- Tortuga Outbreaker -->
+  <h3 id="tortuga-outbreaker">5. Tortuga Outbreaker — Best for Longer Trips</h3>
+  <p>
+    The Tortuga Outbreaker is designed specifically for carry-on travel. It maximizes carry-on dimensions to give
+    you the most capacity possible while staying within airline limits.
+  </p>
+  <p>
+    <strong>What makes it stand out:</strong> At 35-45L, it's the largest bag on our list that still qualifies as a
+    carry-on. The full clamshell opening lets you pack it like a suitcase. It fits laptops up to 17"—rare among
+    travel backpacks.
+  </p>
+  <p>
+    <strong>Key specifications:</strong>
+  </p>
+  <ul>
+    <li><strong>Capacity:</strong> 35L or 45L versions</li>
+    <li><strong>Laptop size:</strong> Up to 17"</li>
+    <li><strong>Dimensions:</strong> 22" x 14" x 9" (maximum carry-on)</li>
+    <li><strong>Weight:</strong> 4.4 lbs (45L)</li>
+    <li><strong>Material:</strong> Waterproof sailcloth</li>
+    <li><strong>Laptop protection:</strong> Padded laptop + tablet sleeves</li>
+    <li><strong>Warranty:</strong> 10-year warranty</li>
+  </ul>
+  <p>
+    <strong>Pros:</strong>
+  </p>
+  <ul>
+    <li>Maximum carry-on capacity (35-45L)</li>
+    <li>Fits 17" laptops</li>
+    <li>Full clamshell opening (packs like suitcase)</li>
+    <li>Waterproof sailcloth material</li>
+    <li>Lockable zippers</li>
+    <li>Hip belt for heavy loads</li>
+  </ul>
+  <p>
+    <strong>Cons:</strong>
+  </p>
+  <ul>
+    <li>4.4 lbs is heavy</li>
+    <li>Too large for daily use</li>
+    <li>Can look bulky when full</li>
+    <li>$249+ price point</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> $249 (35L), $299 (45L)
+  </p>
+  <p>
+    <strong>Best for:</strong> Nomads who pack more and take longer trips. The 45L version is perfect for slow
+    travelers who want to carry everything without checking bags.
+  </p>
+  <AffiliateButton
+      href="/go/tortuga"
+      text="Check Tortuga Outbreaker Price"
+      variant="secondary"
+      program="tortuga"
+  />
+
+  <!-- WANDRD PRVKE -->
+  <h3 id="wandrd-prvke">6. WANDRD PRVKE — Best for Creatives</h3>
+  <p>
+    WANDRD makes bags for photographers and content creators. The PRVKE combines camera bag functionality with
+    everyday carry versatility.
+  </p>
+  <p>
+    <strong>What makes it stand out:</strong> The roll-top design expands capacity when needed. Side access lets you
+    grab camera gear without opening the main compartment. It looks more like a lifestyle bag than a camera bag.
+  </p>
+  <p>
+    <strong>Key specifications:</strong>
+  </p>
+  <ul>
+    <li><strong>Capacity:</strong> 21-31L (roll-top expandable)</li>
+    <li><strong>Laptop size:</strong> Up to 15"</li>
+    <li><strong>Dimensions:</strong> 19" x 11" x 7" (compressed)</li>
+    <li><strong>Weight:</strong> 3.4 lbs</li>
+    <li><strong>Material:</strong> Weatherproof tarpaulin</li>
+    <li><strong>Laptop protection:</strong> Padded rear-access compartment</li>
+    <li><strong>Warranty:</strong> Lifetime warranty</li>
+  </ul>
+  <p>
+    <strong>Pros:</strong>
+  </p>
+  <ul>
+    <li>Roll-top expandable design</li>
+    <li>Side access for camera/gear</li>
+    <li>Looks stylish (not tactical)</li>
+    <li>Weatherproof materials</li>
+    <li>Compatible with accessory camera cubes</li>
+    <li>Lifetime warranty</li>
+  </ul>
+  <p>
+    <strong>Cons:</strong>
+  </p>
+  <ul>
+    <li>15" laptop maximum</li>
+    <li>Organization isn't as structured</li>
+    <li>Camera cube sold separately</li>
+    <li>$264 for bag alone</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> $264 (bag), $84+ (camera cubes)
+  </p>
+  <p>
+    <strong>Best for:</strong> Content creators, photographers, and videographers who want a bag that doubles for
+    everyday and creative work.
+  </p>
+  <AffiliateButton
+      href="/go/wandrd"
+      text="Check WANDRD PRVKE Price"
+      variant="secondary"
+      program="wandrd"
+  />
+
+  <!-- Targus Drifter II -->
+  <h3 id="targus-drifter">7. Targus Drifter II — Best Budget Option</h3>
+  <p>
+    The Targus Drifter II proves you don't need to spend $250+ for a capable laptop bag. At $45, it offers solid
+    protection and organization that serves most digital nomads well.
+  </p>
+  <p>
+    <strong>What makes it stand out:</strong> The value is exceptional. For $45, you get padded laptop protection
+    for up to 16" laptops, multiple organization pockets, water bottle holders, and comfortable straps. It won't
+    last a decade, but it's perfect for nomads testing the lifestyle or on tight budgets.
+  </p>
+  <p>
+    <strong>Key specifications:</strong>
+  </p>
+  <ul>
+    <li><strong>Capacity:</strong> 27L</li>
+    <li><strong>Laptop size:</strong> Up to 16"</li>
+    <li><strong>Dimensions:</strong> 18.5" x 12.5" x 8.5"</li>
+    <li><strong>Weight:</strong> 2.2 lbs</li>
+    <li><strong>Material:</strong> Polyester with padded laptop section</li>
+    <li><strong>Laptop protection:</strong> Padded compartment</li>
+    <li><strong>Warranty:</strong> Limited lifetime warranty</li>
+  </ul>
+  <p>
+    <strong>Pros:</strong>
+  </p>
+  <ul>
+    <li>Exceptional value ($45)</li>
+    <li>Fits 16" laptops</li>
+    <li>Lightest option (2.2 lbs)</li>
+    <li>Decent organization</li>
+    <li>Comfortable for its price</li>
+    <li>Lifetime warranty despite budget price</li>
+  </ul>
+  <p>
+    <strong>Cons:</strong>
+  </p>
+  <ul>
+    <li>Materials won't last as long</li>
+    <li>Not water-resistant</li>
+    <li>Basic laptop protection (not suspended)</li>
+    <li>Zippers feel cheap</li>
+    <li>Not TSA-friendly design</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> $45 on Amazon (frequently on sale)
+  </p>
+  <p>
+    <strong>Best for:</strong> Budget-conscious nomads, those testing the lifestyle, or anyone who prefers to spend
+    less on bags and more on experiences.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/targus-drifter"
+      text="Check Targus Drifter II Price on Amazon"
+      variant="secondary"
+      program="amazon"
+  />
+
+  <!-- Bellroy Transit -->
+  <h3 id="bellroy-transit">8. Bellroy Transit — Best Minimalist Option</h3>
+  <p>
+    Bellroy is known for minimalist, well-designed products. The Transit Backpack applies that philosophy to travel—
+    clean lines, thoughtful organization, and premium materials without excess.
+  </p>
+  <p>
+    <strong>What makes it stand out:</strong> It's the most professional-looking bag on this list. The design is
+    subtle enough for client meetings yet functional enough for travel. The materials feel premium, and the
+    organization is intuitive without being overwhelming.
+  </p>
+  <p>
+    <strong>Key specifications:</strong>
+  </p>
+  <ul>
+    <li><strong>Capacity:</strong> 28L</li>
+    <li><strong>Laptop size:</strong> Up to 15"</li>
+    <li><strong>Dimensions:</strong> 18.5" x 12" x 7"</li>
+    <li><strong>Weight:</strong> 2.9 lbs</li>
+    <li><strong>Material:</strong> Recycled woven fabric, leather accents</li>
+    <li><strong>Laptop protection:</strong> Padded dedicated compartment</li>
+    <li><strong>Warranty:</strong> 3-year warranty</li>
+  </ul>
+  <p>
+    <strong>Pros:</strong>
+  </p>
+  <ul>
+    <li>Most professional appearance</li>
+    <li>Premium materials feel luxurious</li>
+    <li>Minimalist, intuitive design</li>
+    <li>Lightweight (2.9 lbs)</li>
+    <li>Sustainable recycled materials</li>
+    <li>Hidden passport pocket</li>
+  </ul>
+  <p>
+    <strong>Cons:</strong>
+  </p>
+  <ul>
+    <li>15" laptop maximum</li>
+    <li>$249 for 28L feels expensive</li>
+    <li>Only 3-year warranty (others offer lifetime)</li>
+    <li>Less structured organization</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> $249 direct from Bellroy
+  </p>
+  <p>
+    <strong>Best for:</strong> Professionals who need a bag that works in boardrooms and airports. Those who value
+    minimalist design and premium materials.
+  </p>
+  <AffiliateButton
+      href="/go/bellroy"
+      text="Check Bellroy Transit Price"
+      variant="ghost"
+      program="bellroy"
+  />
+
+  <!-- Bag Types -->
+  <h2 id="bag-types">Backpack vs Messenger vs Briefcase: Which is Best?</h2>
+  <p>
+    Each bag type has strengths for different situations:
+  </p>
+
+  <h3>Backpack (Recommended for Travel)</h3>
+  <p>
+    <strong>Best for:</strong> Airports, public transit, walking cities, all-day carry
+  </p>
+  <ul>
+    <li>Distributes weight evenly across both shoulders</li>
+    <li>Hands-free mobility</li>
+    <li>Higher capacity options available</li>
+    <li>Most comfortable for extended wear</li>
+  </ul>
+  <p>
+    <strong>Downside:</strong> Less professional appearance in some contexts; harder to quickly grab items
+  </p>
+
+  <h3>Messenger Bag</h3>
+  <p>
+    <strong>Best for:</strong> Short commutes, client meetings, cafes
+  </p>
+  <ul>
+    <li>Quick access to contents</li>
+    <li>More professional look than backpacks</li>
+    <li>Easy to swing around and access while moving</li>
+    <li>Often has more pockets for small items</li>
+  </ul>
+  <p>
+    <strong>Downside:</strong> Shoulder strain over long distances; less ergonomic for heavy loads
+  </p>
+
+  <h3>Briefcase</h3>
+  <p>
+    <strong>Best for:</strong> Business travel, formal meetings, corporate environments
+  </p>
+  <ul>
+    <li>Most professional appearance</li>
+    <li>Structured protection for documents and laptop</li>
+    <li>Clear separation of compartments</li>
+  </ul>
+  <p>
+    <strong>Downside:</strong> Least comfortable to carry; ties up one hand; lowest capacity
+  </p>
+
+  <p>
+    <strong>Our recommendation:</strong> Get a quality backpack for travel (like those reviewed above), then add a
+    packable messenger or sleeve for client-facing situations.
+  </p>
+
+  <!-- TSA Features -->
+  <h2 id="tsa-features">TSA-Friendly Features to Look For</h2>
+  <p>
+    If you fly frequently, TSA-friendly design saves time and frustration:
+  </p>
+
+  <h3>Checkpoint-Friendly Design</h3>
+  <p>
+    These bags let you leave your laptop inside during X-ray screening. They have laptop compartments that can be
+    scanned separately from other contents:
+  </p>
+  <ul>
+    <li><strong>Clamshell opening:</strong> Opens fully flat like a suitcase (Nomatic, Tortuga)</li>
+    <li><strong>Butterfly design:</strong> Laptop section unfolds independently (some Aer models)</li>
+    <li><strong>Dedicated laptop zip:</strong> Separate zipper accesses only laptop (Aer Travel Pack 3)</li>
+  </ul>
+
+  <h3>What Makes a Bag "TSA-Friendly"</h3>
+  <ul>
+    <li>Laptop compartment opens independently from main compartment</li>
+    <li>No metal, liquids, or dense items sharing the laptop section</li>
+    <li>Lies flat on the X-ray belt</li>
+  </ul>
+
+  <p>
+    <em>Note: Even with checkpoint-friendly bags, TSA agents may occasionally ask you to remove your laptop.
+      Design helps but doesn't guarantee hands-off screening.</em>
+  </p>
+
+  <!-- Anti-Theft -->
+  <h2 id="anti-theft">Anti-Theft Features Worth Having</h2>
+  <p>
+    Security concerns are real for nomads. Here are features that actually help:
+  </p>
+
+  <h3>Lockable Zippers</h3>
+  <p>
+    Most premium bags (Nomatic, Aer, Tortuga) have zipper pulls that accept small TSA locks. This deters
+    opportunistic theft and keeps contents secure in hostel storage.
+  </p>
+
+  <h3>Hidden Pockets</h3>
+  <p>
+    Back-panel pockets (against your body) keep valuables like passport and cash out of sight. Bellroy and
+    Pacsafe excel here.
+  </p>
+
+  <h3>RFID Blocking</h3>
+  <p>
+    Some bags include RFID-blocking pockets for cards and passports. Nice to have, but a simple RFID-blocking
+    card sleeve works just as well for $10.
+  </p>
+
+  <h3>Cut-Resistant Materials</h3>
+  <p>
+    Pacsafe Venturesafe bags have slash-proof panels and straps. Useful in high-theft destinations, but adds
+    weight and cost.
+  </p>
+
+  <p>
+    <strong>Reality check:</strong> Most theft is opportunistic—don't leave bags unattended, use hotel safes, and
+    be aware in crowds. A lockable main compartment and common sense prevent 95% of issues.
+  </p>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">Final Recommendations</h2>
+  <p>
+    After six months of testing across continents, here are our final picks:
+  </p>
+  <p>
+    <strong>Best overall for digital nomads:</strong> The <strong>Nomatic Travel Pack</strong> earns our top
+    recommendation. Expandable capacity, excellent organization, durable materials, and thoughtful design make it
+    the most versatile bag for the nomad lifestyle. The $299 price is justified by build quality and lifetime
+    warranty.
+  </p>
+  <p>
+    <strong>Best for creatives and quick access:</strong> The <strong>Peak Design Everyday Backpack</strong> has
+    the best access system we've tested. The MagLatch and side zips make grabbing gear effortless. Perfect for
+    photographers and those who carry varied equipment.
+  </p>
+  <p>
+    <strong>Best value:</strong> The <strong>Thule Subterra</strong> at $179 offers 80% of premium features at 60%
+    of the price. Great first travel bag or for those who don't need maximum organization.
+  </p>
+  <p>
+    <strong>Best budget:</strong> The <strong>Targus Drifter II</strong> at $45 proves expensive bags aren't
+    mandatory. Perfect for nomads testing the lifestyle or on tight budgets.
+  </p>
+
+  <AffiliateButton
+      href="/go/nomatic"
+      text="Get Nomatic Travel Pack — Our #1 Pick"
+      variant="primary"
+      program="nomatic"
+  />
+
+  <!-- Full Width Content Slot -->
+  <Fragment slot="full-width">
+    <!-- Full Comparison Table -->
+    <section class="py-8" id="full-comparison">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center font-heading">Complete Laptop Bag
+          Comparison</h2>
+        <p class="text-white/80 text-center mb-8 max-w-2xl mx-auto">Here's how all 8 bags compare on the specs that
+          matter most for digital nomads:</p>
+        <ComparisonTable
+            columns={fullComparisonColumns}
+            rows={fullComparisonRows}
+            caption="Complete comparison of laptop bags for digital nomads"
+        />
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

@@ -14,30 +14,62 @@ const categories = [
   {name: 'Finance', href: '/guides/finance', icon: '📊', description: 'Taxes, banking & money'}
 ];
 
-// Featured guides from each category
-const guides = [
+// All guides with correct reading times from articles
+const allGuides = [
   {
     title: 'Top Destinations for Digital Nomads',
     description: 'Best places to work remotely with great WiFi, community, and cost of living.',
     href: '/blog/top-destinations-digital-nomads',
     category: 'Travel',
-    readTime: '20 min',
+    readTime: 14,
     icon: '✈️'
+  },
+  {
+    title: 'Essential Travel Tech for Nomads',
+    description: 'The tech essentials every digital nomad needs for productive travel.',
+    href: '/blog/essential-travel-tech-nomads',
+    category: 'Travel',
+    readTime: 10,
+    icon: '🎒'
+  },
+  {
+    title: 'Find Reliable WiFi Anywhere',
+    description: 'Tips and tools for finding fast, reliable internet on the road.',
+    href: '/blog/find-reliable-wifi-anywhere',
+    category: 'Travel',
+    readTime: 9,
+    icon: '📶'
+  },
+  {
+    title: 'Best Travel Insurance for Remote Workers',
+    description: 'Compare travel insurance options designed for digital nomads.',
+    href: '/blog/best-travel-insurance-remote-workers',
+    category: 'Travel',
+    readTime: 11,
+    icon: '🛡️'
   },
   {
     title: 'Async Communication for Remote Teams',
     description: 'Master asynchronous communication to boost productivity and reduce meetings.',
     href: '/blog/async-communication-remote-teams',
     category: 'Communication',
-    readTime: '12 min',
+    readTime: 12,
     icon: '💬'
+  },
+  {
+    title: 'Best Team Communication Tools',
+    description: 'Compare Slack, Teams, Discord, and more for remote team communication.',
+    href: '/blog/best-team-communication-tools',
+    category: 'Communication',
+    readTime: 11,
+    icon: '📢'
   },
   {
     title: 'Managing Time Zones in Remote Teams',
     description: 'Strategies for effective collaboration across different time zones.',
     href: '/blog/managing-time-zones-remote-teams',
     category: 'Productivity',
-    readTime: '10 min',
+    readTime: 11,
     icon: '🌍'
   },
   {
@@ -45,15 +77,23 @@ const guides = [
     description: 'Essential cybersecurity practices for working from anywhere.',
     href: '/blog/vpn-public-wifi-guide',
     category: 'Security',
-    readTime: '13 min',
+    readTime: 13,
     icon: '🔐'
+  },
+  {
+    title: 'VPN Speed Comparison',
+    description: 'Real-world speed tests of popular VPNs for remote workers.',
+    href: '/blog/vpn-speed-comparison',
+    category: 'Security',
+    readTime: 10,
+    icon: '⚡'
   },
   {
     title: 'Ultimate Home Office Setup',
     description: 'Build the perfect home office on any budget.',
     href: '/blog/ultimate-home-office-setup',
     category: 'Setup',
-    readTime: '11 min',
+    readTime: 11,
     icon: '🏠'
   },
   {
@@ -61,10 +101,59 @@ const guides = [
     description: 'Navigate taxes as a remote worker or digital nomad.',
     href: '/blog/tax-tips-remote-workers',
     category: 'Finance',
-    readTime: '14 min',
+    readTime: 12,
     icon: '📊'
+  },
+  {
+    title: 'Best Banking for Digital Nomads',
+    description: 'Compare international banking options for remote workers.',
+    href: '/blog/best-banking-digital-nomads',
+    category: 'Finance',
+    readTime: 12,
+    icon: '🏦'
+  },
+  {
+    title: 'Crypto-Friendly Banks',
+    description: 'Banks that support cryptocurrency for digital nomads.',
+    href: '/blog/crypto-friendly-banks',
+    category: 'Finance',
+    readTime: 10,
+    icon: '₿'
+  },
+  {
+    title: 'Best CRM Software for Small Business',
+    description: 'Compare HubSpot, Pipedrive, Zoho, and more CRM tools.',
+    href: '/blog/best-crm-software-small-business',
+    category: 'Productivity',
+    readTime: 12,
+    icon: '👥'
+  },
+  {
+    title: 'Cloud vs Traditional Hosting',
+    description: 'Understand the differences between cloud and traditional hosting.',
+    href: '/blog/cloud-vs-traditional-hosting',
+    category: 'Setup',
+    readTime: 9,
+    icon: '☁️'
+  },
+  {
+    title: 'Managed WordPress Hosting Compared',
+    description: 'Compare WP Engine, Kinsta, Flywheel, and other managed hosts.',
+    href: '/blog/managed-wordpress-hosting-compared',
+    category: 'Setup',
+    readTime: 11,
+    icon: '🌐'
   }
 ];
+
+// Pagination settings
+const ARTICLES_PER_PAGE = 9;
+const currentPage = 1;
+const totalArticles = allGuides.length;
+const totalPages = Math.ceil(totalArticles / ARTICLES_PER_PAGE);
+const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
+const endIndex = startIndex + ARTICLES_PER_PAGE;
+const paginatedGuides = allGuides.slice(startIndex, endIndex);
 ---
 
 <BaseLayout title={title} description={description}>
@@ -80,56 +169,87 @@ const guides = [
     <!-- Category Links -->
     <div class="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 mb-12 max-w-5xl mx-auto">
       {categories.map(cat => (
-          <a
-              href={cat.href}
-              class="group flex flex-col items-center text-center p-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-jet-stream/50 rounded-xl transition-all duration-300"
-          >
-            <span class="text-2xl mb-2">{cat.icon}</span>
-            <span class="text-white font-medium group-hover:text-jet-stream transition-colors">{cat.name}</span>
-            <span class="text-white/50 text-xs mt-1 hidden sm:block">{cat.description}</span>
-          </a>
+        <a
+          href={cat.href}
+          class="group flex flex-col items-center text-center p-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-jet-stream/50 rounded-xl transition-all duration-300"
+        >
+          <span class="text-2xl mb-2">{cat.icon}</span>
+          <span class="text-white font-medium group-hover:text-jet-stream transition-colors">{cat.name}</span>
+          <span class="text-white/50 text-xs mt-1 hidden sm:block">{cat.description}</span>
+        </a>
       ))}
     </div>
 
     <!-- Guides Grid -->
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-      {guides.map(guide => (
-          <a
-              href={guide.href}
-              class="group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300 flex flex-col"
-          >
-            <div class="flex items-center gap-3 mb-4">
-              <span class="text-3xl">{guide.icon}</span>
-              <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
-              {guide.category}
-            </span>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {paginatedGuides.map(guide => (
+        <a
+          href={guide.href}
+          class="group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
+        >
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">{guide.icon}</span>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
+                  {guide.category}
+                </span>
+                <span class="text-white/40 text-xs">{guide.readTime} min</span>
+              </div>
+              <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
+                {guide.title}
+              </h2>
+              <p class="text-white/70 text-sm">
+                {guide.description}
+              </p>
             </div>
-            <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
-              {guide.title}
-            </h2>
-            <p class="text-white/70 text-sm flex-1">
-              {guide.description}
-            </p>
-            <div class="mt-4 flex items-center justify-between">
-              <span class="text-white/50 text-sm">{guide.readTime} read</span>
-              <span class="text-jet-stream text-sm font-medium flex items-center">
-              Read Guide
-              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-                   viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </span>
-            </div>
-          </a>
+          </div>
+          <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
+            Read Guide
+            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                 viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
       ))}
     </div>
 
-    <!-- Coming Soon Section -->
-    <div class="mt-16 text-center">
-      <h2 class="text-xl font-semibold text-white mb-4">More Guides Coming Soon</h2>
-      <p class="text-white/60 mb-6 max-w-xl mx-auto">
-        We're working on guides for visa requirements, coworking spaces, and more.
+    <!-- Pagination & Article Count -->
+    <div class="mt-8 text-center">
+      <p class="text-white/50 text-sm mb-4">
+        Showing {paginatedGuides.length} of {totalArticles} guides
       </p>
+
+      {/* Desktop Pagination */}
+      {totalPages > 1 && (
+        <div class="hidden sm:flex justify-center gap-2">
+          {Array.from({length: totalPages}, (_, i) => (
+            <button
+              class={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
+                i + 1 === currentPage
+                  ? 'bg-jet-stream text-ocean-deep'
+                  : 'bg-white/10 text-white hover:bg-white/20'
+              }`}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* Mobile: Load More */}
+      {totalPages > 1 && (
+        <div class="sm:hidden">
+          <button class="px-6 py-3 bg-jet-stream/20 text-jet-stream font-medium rounded-lg hover:bg-jet-stream/30 transition-colors">
+            Load More Guides
+          </button>
+        </div>
+      )}
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-12 text-center">
       <a href="/contact" class="inline-flex items-center text-jet-stream hover:text-sky-light transition-colors">
         Request a guide topic
         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

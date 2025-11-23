@@ -266,7 +266,7 @@ export const SITE_STRUCTURE: SiteGraph = {
       category: 'saas'
     },
 
-    // Gear Articles
+    // Gear Articles - Computers
     {
       id: '/gear/best-laptops-remote-work',
       name: 'Laptops',
@@ -274,6 +274,8 @@ export const SITE_STRUCTURE: SiteGraph = {
       type: 'article',
       category: 'gear'
     },
+
+    // Gear Articles - Furniture
     {
       id: '/gear/best-standing-desks',
       name: 'Standing Desks',
@@ -281,10 +283,49 @@ export const SITE_STRUCTURE: SiteGraph = {
       type: 'article',
       category: 'gear'
     },
+
+    // Gear Articles - Audio
     {
       id: '/gear/best-noise-canceling-headphones',
       name: 'Headphones',
       path: '/gear/best-noise-canceling-headphones',
+      type: 'article',
+      category: 'gear'
+    },
+
+    // Gear Articles - Accessories
+    {
+      id: '/gear/best-laptop-bags-backpacks',
+      name: 'Laptop Bags',
+      path: '/gear/best-laptop-bags-backpacks',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/best-webcams-video-calls',
+      name: 'Webcams',
+      path: '/gear/best-webcams-video-calls',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/best-portable-chargers-power-banks',
+      name: 'Power Banks',
+      path: '/gear/best-portable-chargers-power-banks',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/best-mechanical-keyboards',
+      name: 'Keyboards',
+      path: '/gear/best-mechanical-keyboards',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/best-travel-adapters',
+      name: 'Travel Adapters',
+      path: '/gear/best-travel-adapters',
       type: 'article',
       category: 'gear'
     },
@@ -460,10 +501,17 @@ export const SITE_STRUCTURE: SiteGraph = {
     {source: '/tools', target: '/tools/best-online-course-platforms', type: 'parent-child'},
     {source: '/tools', target: '/tools/best-productivity-apps', type: 'parent-child'},
 
-    // Gear articles
-    {source: '/gear', target: '/gear/best-laptops-remote-work', type: 'parent-child'},
-    {source: '/gear', target: '/gear/best-standing-desks', type: 'parent-child'},
-    {source: '/gear', target: '/gear/best-noise-canceling-headphones', type: 'parent-child'},
+    // Gear articles - organized by category
+    {source: '/gear/computers', target: '/gear/best-laptops-remote-work', type: 'parent-child'},
+    {source: '/gear/furniture', target: '/gear/best-standing-desks', type: 'parent-child'},
+    {source: '/gear/audio', target: '/gear/best-noise-canceling-headphones', type: 'parent-child'},
+
+    // Gear articles - Accessories
+    {source: '/gear/accessories', target: '/gear/best-laptop-bags-backpacks', type: 'parent-child'},
+    {source: '/gear/accessories', target: '/gear/best-webcams-video-calls', type: 'parent-child'},
+    {source: '/gear/accessories', target: '/gear/best-portable-chargers-power-banks', type: 'parent-child'},
+    {source: '/gear/accessories', target: '/gear/best-mechanical-keyboards', type: 'parent-child'},
+    {source: '/gear/accessories', target: '/gear/best-travel-adapters', type: 'parent-child'},
 
     // Blog articles organized by logical parent
     // Finance articles -> finance category

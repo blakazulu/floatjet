@@ -1,6 +1,6 @@
 # FloatJet Affiliate Programs Master Guide
 
-**Last Updated:** 2025-11-23
+**Last Updated:** 2025-11-24
 **Purpose:** Complete reference for all affiliate programs, registration guides, and tracking
 
 ---
@@ -459,6 +459,81 @@ from the same dashboard.
 
 ---
 
+### Laptop Bags & Backpacks
+
+| Program      | Commission | Cookie  | Network | Status      |
+|--------------|------------|---------|---------|-------------|
+| Nomatic      | 10%        | 30 days | Direct  | Not Applied |
+| Peak Design  | 8%         | 30 days | Direct  | Not Applied |
+| Aer          | 8-10%      | 30 days | Direct  | Not Applied |
+| Thule        | 5-8%       | 30 days | Direct  | Not Applied |
+| Tortuga      | 10%        | 30 days | Direct  | Not Applied |
+| WANDRD       | 8-10%      | 30 days | Direct  | Not Applied |
+| Bellroy      | 8%         | 30 days | Direct  | Not Applied |
+| Amazon       | 3-4%       | 24h     | Amazon  | Not Applied |
+
+**Used in:** best-laptop-bags-backpacks article
+
+---
+
+### Webcams
+
+| Program        | Commission | Cookie  | Network | Status      |
+|----------------|------------|---------|---------|-------------|
+| Logitech       | 4-6%       | 30 days | Direct  | Not Applied |
+| Razer          | 3-5%       | 30 days | Direct  | Not Applied |
+| Elgato/Corsair | 5-8%       | 30 days | Direct  | Not Applied |
+| Amazon         | 3-4%       | 24h     | Amazon  | Not Applied |
+| B&H Photo      | 2-8%       | Unknown | Direct  | Not Applied |
+
+**Used in:** best-webcams-video-calls article
+
+---
+
+### Portable Chargers & Power Banks
+
+| Program  | Commission | Cookie  | Network | Status      |
+|----------|------------|---------|---------|-------------|
+| Anker    | Up to 4%   | 30 days | Amazon  | Not Applied |
+| Zendure  | 5-8%       | 30 days | Direct  | Not Applied |
+| Baseus   | 5%         | 30 days | Direct  | Not Applied |
+| UGREEN   | 4-6%       | 30 days | Direct  | Not Applied |
+| Mophie   | 5%         | 30 days | Direct  | Not Applied |
+| Amazon   | 3-4%       | 24h     | Amazon  | Not Applied |
+
+**Used in:** best-portable-chargers-power-banks article
+
+---
+
+### Mechanical Keyboards
+
+| Program       | Commission | Cookie  | Network | Status      |
+|---------------|------------|---------|---------|-------------|
+| Keychron      | 5%         | 30 days | Direct  | Not Applied |
+| Das Keyboard  | 10%        | 30 days | Direct  | Not Applied |
+| Logitech      | 4-6%       | 30 days | Direct  | Not Applied |
+| NuPhy         | 8%         | 30 days | Direct  | Not Applied |
+| Drop          | 5-10%      | 30 days | Direct  | Not Applied |
+| Amazon        | 3-4%       | 24h     | Amazon  | Not Applied |
+
+**Used in:** best-mechanical-keyboards article
+
+---
+
+### Travel Adapters & Chargers
+
+| Program  | Commission | Cookie  | Network | Status      |
+|----------|------------|---------|---------|-------------|
+| Anker    | Up to 4%   | 30 days | Amazon  | Not Applied |
+| Satechi  | 5-8%       | 30 days | Direct  | Not Applied |
+| HyperX   | 5%         | 30 days | Direct  | Not Applied |
+| Amazon   | 3-4%       | 24h     | Amazon  | Not Applied |
+| B&H Photo| 2-8%       | Unknown | Direct  | Not Applied |
+
+**Used in:** best-travel-adapters article
+
+---
+
 ## Alternative/Backup Programs
 
 If primary programs reject your application:
@@ -849,8 +924,6 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** Added new affiliate program categories on 2025-11-23: CRM Software (HubSpot, Pipedrive, Zoho), Team
-Communication (Slack, Zoom, Loom), Travel Insurance (SafetyWing, World Nomads), Digital Banking (Wise, Revolut,
-Mercury). All articles written.
+**Last Action:** Added new affiliate program categories on 2025-11-24: Laptop Bags & Backpacks (Nomatic, Peak Design, Aer, Thule, Tortuga, WANDRD, Bellroy), Webcams (Logitech, Razer, Elgato), Portable Chargers (Anker, Zendure, Baseus, UGREEN, Mophie), Mechanical Keyboards (Keychron, Das Keyboard, NuPhy, Drop), Travel Adapters (Anker, Satechi). Five new accessories articles written.
 
-**Next Action:** Apply to priority programs: Amazon Associates, ConvertKit, SafetyWing, Wise.
+**Next Action:** Apply to priority programs: Amazon Associates (covers all accessories), Nomatic, Peak Design, Keychron, Anker.

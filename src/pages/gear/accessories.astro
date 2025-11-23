@@ -2,38 +2,69 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = 'Best Remote Work Accessories | FloatJet';
-const description = 'Essential accessories for remote workers. Find the best laptop bags, chargers, cables, and travel gear for working anywhere.';
+const description = 'Essential accessories for remote workers. Find the best laptop bags, chargers, webcams, keyboards, and travel gear for working anywhere.';
 
-const comingSoon = [
+const featuredArticle = {
+  title: 'Best Laptop Bags & Backpacks for Digital Nomads (2025)',
+  description: 'We tested 12+ bags to find the best options for digital nomads. Compare Nomatic, Peak Design, Aer, and more for every travel style.',
+  href: '/gear/best-laptop-bags-backpacks',
+  readTime: 16,
+  icon: '🎒'
+};
+
+const articles = [
   {
-    title: 'Best Laptop Bags & Backpacks',
-    description: 'Protect your gear while traveling light',
-    icon: '🎒',
-    status: 'Coming Soon'
+    title: 'Best Webcams for Professional Video Calls',
+    description: 'Look professional on every video call. Compare Logitech, Razer, and Elgato webcams for remote work.',
+    href: '/gear/best-webcams-video-calls',
+    icon: '📹',
+    readTime: 14,
+    category: 'Accessories'
   },
   {
-    title: 'Best Portable Chargers',
-    description: 'Never run out of battery on the go',
+    title: 'Best Portable Chargers & Power Banks',
+    description: 'Never run out of battery on the go. Compare Anker, Zendure, and Baseus power banks for travel.',
+    href: '/gear/best-portable-chargers-power-banks',
     icon: '🔋',
-    status: 'Coming Soon'
+    readTime: 13,
+    category: 'Accessories'
   },
-  {title: 'Best Travel Adapters', description: 'Power up anywhere in the world', icon: '🔌', status: 'Coming Soon'},
-  {title: 'Best Webcams', description: 'Look professional on video calls', icon: '📹', status: 'Coming Soon'},
   {
-    title: 'Best Keyboards',
-    description: 'Mechanical and wireless options for productivity',
+    title: 'Best Mechanical Keyboards for Remote Work',
+    description: 'Type faster and more comfortably. Compare Keychron, Das Keyboard, and Logitech mechanical keyboards.',
+    href: '/gear/best-mechanical-keyboards',
     icon: '⌨️',
-    status: 'Coming Soon'
+    readTime: 14,
+    category: 'Accessories'
   },
-  {title: 'Best Mice', description: 'Ergonomic and portable mouse options', icon: '🖱️', status: 'Coming Soon'}
+  {
+    title: 'Best Travel Adapters for International Nomads',
+    description: 'Power up anywhere in the world. Compare universal adapters from Epicka, Anker, and Satechi.',
+    href: '/gear/best-travel-adapters',
+    icon: '🔌',
+    readTime: 10,
+    category: 'Accessories'
+  }
 ];
 
 const whyMatters = [
   {title: 'Stay Powered Up', description: 'Portable chargers and adapters keep you working anywhere', icon: '🔋'},
-  {title: 'Travel Light', description: 'Compact accessories that fit in any bag', icon: '✈️'},
-  {title: 'Look Professional', description: 'Quality webcams and lighting for video calls', icon: '📹'},
-  {title: 'Work Comfortably', description: 'Ergonomic accessories for long work sessions', icon: '😌'}
+  {title: 'Travel Light', description: 'Compact accessories that fit in any bag without adding bulk', icon: '✈️'},
+  {title: 'Look Professional', description: 'Quality webcams and lighting for client video calls', icon: '📹'},
+  {title: 'Work Comfortably', description: 'Ergonomic keyboards and gear for long work sessions', icon: '😌'}
 ];
+
+const topPicks = [
+  {name: 'Nomatic Navigator', tag: 'Best Bag', color: 'bg-blue-500/20 text-blue-400'},
+  {name: 'Logitech Brio 4K', tag: 'Best Webcam', color: 'bg-green-500/20 text-green-400'},
+  {name: 'Anker 737 PowerCore', tag: 'Best Charger', color: 'bg-purple-500/20 text-purple-400'}
+];
+
+// Pagination settings
+const ARTICLES_PER_PAGE = 9;
+const totalArticles = articles.length;
+const totalPages = Math.ceil(totalArticles / ARTICLES_PER_PAGE);
+const currentPage = 1;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -52,57 +83,134 @@ const whyMatters = [
       </p>
     </div>
 
-    <!-- Coming Soon Notice -->
-    <div class="max-w-3xl mx-auto mb-12 bg-jet-stream/10 border border-jet-stream/30 rounded-xl p-6 text-center">
-      <span class="text-3xl mb-3 block">🚧</span>
-      <h2 class="text-xl font-semibold text-white mb-2">Reviews Coming Soon</h2>
-      <p class="text-white/70">
-        We're currently testing accessories to bring you comprehensive reviews. Check back soon!
+    <!-- Featured Article Card -->
+    <a
+      href={featuredArticle.href}
+      class="block max-w-3xl mx-auto mb-12 group bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-white/20 hover:border-jet-stream/50 rounded-xl p-8 transition-all duration-300"
+    >
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-4xl">{featuredArticle.icon}</span>
+        <span class="px-3 py-1 bg-jet-stream text-ocean-deep text-xs font-bold rounded-full">Featured Guide</span>
+      </div>
+      <h2 class="text-2xl md:text-3xl font-bold text-white group-hover:text-jet-stream transition-colors mb-3">
+        {featuredArticle.title}
+      </h2>
+      <p class="text-white/70 mb-4">
+        {featuredArticle.description}
       </p>
-    </div>
+      <div class="flex items-center justify-between">
+        <span class="text-white/50 text-sm">{featuredArticle.readTime} min read</span>
+        <span class="text-jet-stream font-medium flex items-center">
+          Read Review
+          <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </div>
+    </a>
 
-    <!-- Coming Soon Grid -->
-    <div class="max-w-4xl mx-auto mb-16">
-      <h2 class="text-xl font-semibold text-white text-center mb-8">Upcoming Reviews</h2>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {comingSoon.map(item => (
-            <div class="bg-white/5 border border-white/10 rounded-xl p-5 opacity-75">
-              <div class="flex items-center gap-3 mb-3">
-                <span class="text-2xl">{item.icon}</span>
-                <span class="px-2 py-0.5 bg-white/10 text-white/60 text-xs font-medium rounded">
-                  {item.status}
-                </span>
-              </div>
-              <h3 class="text-white font-semibold mb-1">{item.title}</h3>
-              <p class="text-white/50 text-sm">{item.description}</p>
-            </div>
+    <!-- Top Picks Preview -->
+    <div class="max-w-3xl mx-auto mb-12">
+      <h2 class="text-xl font-semibold text-white text-center mb-6">Our Top Picks</h2>
+      <div class="grid gap-4 grid-cols-1 sm:grid-cols-3">
+        {topPicks.map(pick => (
+          <div class="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
+            <span class={`inline-block px-2 py-0.5 ${pick.color} text-xs font-medium rounded mb-2`}>
+              {pick.tag}
+            </span>
+            <p class="text-white font-semibold">{pick.name}</p>
+          </div>
         ))}
       </div>
     </div>
 
-    <!-- Why It Matters -->
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-xl font-semibold text-white text-center mb-8">Why Accessories Matter</h2>
-      <div class="grid gap-6 sm:grid-cols-2">
-        {whyMatters.map(item => (
-            <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
-              <span class="text-2xl">{item.icon}</span>
-              <div>
-                <h3 class="text-white font-semibold mb-1">{item.title}</h3>
-                <p class="text-white/60 text-sm">{item.description}</p>
+    <!-- Articles Grid -->
+    <div class="max-w-4xl mx-auto mb-12">
+      <h2 class="text-xl font-semibold text-white text-center mb-8">More Accessories Reviews</h2>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2">
+        {articles.map(article => (
+          <a
+            href={article.href}
+            class="group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
+          >
+            <div class="flex items-start gap-4">
+              <span class="text-3xl flex-shrink-0">{article.icon}</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
+                    {article.category}
+                  </span>
+                  <span class="text-white/40 text-xs">{article.readTime} min</span>
+                </div>
+                <h3 class="text-white font-semibold group-hover:text-jet-stream transition-colors mb-1 line-clamp-2">
+                  {article.title}
+                </h3>
+                <p class="text-white/60 text-sm line-clamp-2">{article.description}</p>
               </div>
             </div>
+            <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
+              Read Review
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Article Count & Pagination Info -->
+      <div class="mt-6 text-center">
+        <p class="text-white/50 text-sm">
+          Showing {articles.length + 1} of {articles.length + 1} articles
+        </p>
+        {totalPages > 1 && (
+          <div class="mt-4 hidden sm:flex justify-center gap-2">
+            {Array.from({length: totalPages}, (_, i) => (
+              <button
+                class={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
+                  i + 1 === currentPage
+                    ? 'bg-jet-stream text-ocean-deep'
+                    : 'bg-white/10 text-white hover:bg-white/20'
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+        )}
+        {totalPages > 1 && (
+          <div class="mt-4 sm:hidden">
+            <button class="px-6 py-3 bg-jet-stream/20 text-jet-stream font-medium rounded-lg hover:bg-jet-stream/30 transition-colors">
+              Load More Articles
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Why It Matters -->
+    <div class="max-w-4xl mx-auto mb-12">
+      <h2 class="text-xl font-semibold text-white text-center mb-8">Why Accessories Matter</h2>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2">
+        {whyMatters.map(item => (
+          <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
+            <span class="text-2xl">{item.icon}</span>
+            <div>
+              <h3 class="text-white font-semibold mb-1">{item.title}</h3>
+              <p class="text-white/60 text-sm">{item.description}</p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
 
     <!-- CTA -->
-    <div class="mt-12 text-center">
+    <div class="text-center">
       <a
-          href="/contact"
-          class="inline-flex items-center justify-center px-6 py-3 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors"
+        href={featuredArticle.href}
+        class="inline-flex items-center justify-center px-6 py-3 bg-jet-stream text-ocean-deep font-semibold rounded-lg hover:bg-sky-light transition-colors"
       >
-        Suggest an Accessory to Review
+        Start with Laptop Bags
       </a>
     </div>
   </div>

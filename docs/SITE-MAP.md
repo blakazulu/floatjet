@@ -1,7 +1,7 @@
 # FloatJet Site Map & Content Relationships
 
-**Last Updated:** 2025-11-23
-**Total Pages:** 50
+**Last Updated:** 2025-11-24
+**Total Pages:** 55
 
 ---
 
@@ -35,7 +35,7 @@ floatjet.com/
 │   ├── /gear/furniture (Category)
 │   ├── /gear/audio (Category)
 │   ├── /gear/accessories (Category)
-│   └── [3 gear articles]
+│   └── [8 gear articles]
 ├── /guides (Hub)
 │   ├── /guides/travel (Category)
 │   ├── /guides/communication (Category)
@@ -121,15 +121,18 @@ floatjet.com/
 | Best Laptops for Remote Work | `/gear/best-laptops-remote-work` | Computers | 💻 |
 | Best Standing Desks | `/gear/best-standing-desks` | Furniture | 🪑 |
 | Best Noise-Canceling Headphones | `/gear/best-noise-canceling-headphones` | Audio | 🎧 |
+| Best Laptop Bags & Backpacks | `/gear/best-laptop-bags-backpacks` | Accessories | 🎒 |
+| Best Webcams for Video Calls | `/gear/best-webcams-video-calls` | Accessories | 📹 |
+| Best Portable Chargers & Power Banks | `/gear/best-portable-chargers-power-banks` | Accessories | 🔋 |
+| Best Mechanical Keyboards | `/gear/best-mechanical-keyboards` | Accessories | ⌨️ |
+| Best Travel Adapters | `/gear/best-travel-adapters` | Accessories | 🔌 |
 
 **Coming Soon:**
 
 - Best Monitors for Remote Work
-- Best Webcams for Video Calls
-- Best Mechanical Keyboards
 - Best Ergonomic Chairs
 - Best Portable Monitors
-- Best Travel Backpacks
+- Best Mice
 
 ---
 
@@ -426,19 +429,32 @@ floatjet.com/
 
 ### Accessories Category (`/gear/accessories`)
 
-| Property   | Value                         |
-|------------|-------------------------------|
-| **Parent** | `/gear`                       |
-| **Status** | Coming Soon (No articles yet) |
+| Property             | Value                                            |
+|----------------------|--------------------------------------------------|
+| **Parent**           | `/gear`                                          |
+| **Featured Article** | Best Laptop Bags & Backpacks for Digital Nomads  |
+| **Featured Route**   | `/gear/best-laptop-bags-backpacks`               |
+
+**Top Picks:**
+| Product | Tag |
+|---------|-----|
+| Nomatic Navigator | Best Overall |
+| Logitech Brio 4K | Best Webcam |
+| Anker 737 PowerCore | Best Charger |
+
+**Articles in Category:**
+| Article | Route | Sub-Category |
+|---------|-------|--------------|
+| Best Laptop Bags & Backpacks | `/gear/best-laptop-bags-backpacks` | Bags |
+| Best Webcams for Video Calls | `/gear/best-webcams-video-calls` | Webcams |
+| Best Portable Chargers & Power Banks | `/gear/best-portable-chargers-power-banks` | Power |
+| Best Mechanical Keyboards | `/gear/best-mechanical-keyboards` | Input |
+| Best Travel Adapters | `/gear/best-travel-adapters` | Power |
 
 **Planned Content:**
 
-- Best Laptop Bags & Backpacks
-- Best Portable Chargers
-- Best Travel Adapters
-- Best Webcams
-- Best Keyboards
 - Best Mice
+- Best USB Hubs & Docks
 
 ---
 
@@ -652,6 +668,101 @@ floatjet.com/
 | Best Standing Desks | `/gear/best-standing-desks` |
 | Best Laptops for Remote Work | `/gear/best-laptops-remote-work` |
 | Ultimate Home Office Setup | `/blog/ultimate-home-office-setup` |
+
+---
+
+### 3. Best Laptop Bags & Backpacks
+
+| Property              | Value                                                                           |
+|-----------------------|---------------------------------------------------------------------------------|
+| **Route**             | `/gear/best-laptop-bags-backpacks`                                              |
+| **Category**          | Accessories                                                                     |
+| **Category Slug**     | `gear/accessories`                                                              |
+| **Products Reviewed** | Nomatic Navigator, Peak Design Travel, Aer Travel Pack 3, Thule Subterra, etc.  |
+| **Affiliate Links**   | `/go/nomatic`, `/go/peak-design`, `/go/aer`, `/go/thule`, `/go/tortuga`         |
+
+**Related Articles:**
+| Title | Route |
+|-------|-------|
+| Best Portable Chargers | `/gear/best-portable-chargers-power-banks` |
+| Best Travel Adapters | `/gear/best-travel-adapters` |
+| Best Laptops for Remote Work | `/gear/best-laptops-remote-work` |
+
+---
+
+### 4. Best Webcams for Video Calls
+
+| Property              | Value                                                                     |
+|-----------------------|---------------------------------------------------------------------------|
+| **Route**             | `/gear/best-webcams-video-calls`                                          |
+| **Category**          | Accessories                                                               |
+| **Category Slug**     | `gear/accessories`                                                        |
+| **Products Reviewed** | Logitech Brio 4K, Logitech C920s, Razer Kiyo Pro, Elgato Facecam, etc.    |
+| **Affiliate Links**   | `/go/logitech-brio`, `/go/logitech-c920`, `/go/razer-kiyo`, `/go/elgato`  |
+
+**Related Articles:**
+| Title | Route |
+|-------|-------|
+| Best Mechanical Keyboards | `/gear/best-mechanical-keyboards` |
+| Best Noise-Canceling Headphones | `/gear/best-noise-canceling-headphones` |
+| Ultimate Home Office Setup | `/blog/ultimate-home-office-setup` |
+
+---
+
+### 5. Best Portable Chargers & Power Banks
+
+| Property              | Value                                                                     |
+|-----------------------|---------------------------------------------------------------------------|
+| **Route**             | `/gear/best-portable-chargers-power-banks`                                |
+| **Category**          | Accessories                                                               |
+| **Category Slug**     | `gear/accessories`                                                        |
+| **Products Reviewed** | Anker 737 PowerCore, Anker MagGo, Zendure SuperTank Pro, Baseus Blade     |
+| **Affiliate Links**   | `/go/anker-737`, `/go/anker-maggo`, `/go/zendure`, `/go/baseus`           |
+
+**Related Articles:**
+| Title | Route |
+|-------|-------|
+| Best Travel Adapters | `/gear/best-travel-adapters` |
+| Best Laptop Bags & Backpacks | `/gear/best-laptop-bags-backpacks` |
+| Essential Travel Tech | `/blog/essential-travel-tech-nomads` |
+
+---
+
+### 6. Best Mechanical Keyboards
+
+| Property              | Value                                                                      |
+|-----------------------|----------------------------------------------------------------------------|
+| **Route**             | `/gear/best-mechanical-keyboards`                                          |
+| **Category**          | Accessories                                                                |
+| **Category Slug**     | `gear/accessories`                                                         |
+| **Products Reviewed** | Keychron K2, Das Keyboard 4, Logitech MX Mechanical, NuPhy Air75, etc.     |
+| **Affiliate Links**   | `/go/keychron`, `/go/das-keyboard`, `/go/logitech-mx`, `/go/nuphy`         |
+
+**Related Articles:**
+| Title | Route |
+|-------|-------|
+| Best Webcams for Video Calls | `/gear/best-webcams-video-calls` |
+| Best Standing Desks | `/gear/best-standing-desks` |
+| Ultimate Home Office Setup | `/blog/ultimate-home-office-setup` |
+
+---
+
+### 7. Best Travel Adapters
+
+| Property              | Value                                                                   |
+|-----------------------|-------------------------------------------------------------------------|
+| **Route**             | `/gear/best-travel-adapters`                                            |
+| **Category**          | Accessories                                                             |
+| **Category Slug**     | `gear/accessories`                                                      |
+| **Products Reviewed** | Epicka Universal, Anker 511 Charger, Satechi 145W, Ceptics World Plug   |
+| **Affiliate Links**   | `/go/epicka`, `/go/anker-511`, `/go/satechi`, `/go/ceptics`             |
+
+**Related Articles:**
+| Title | Route |
+|-------|-------|
+| Best Portable Chargers | `/gear/best-portable-chargers-power-banks` |
+| Best Laptop Bags & Backpacks | `/gear/best-laptop-bags-backpacks` |
+| Top Destinations for Digital Nomads | `/blog/top-destinations-digital-nomads` |
 
 ---
 
@@ -1002,8 +1113,8 @@ floatjet.com/
     │   │   │        │   │    │            │                              │
     ▼   ▼   ▼        ▼   ▼    ▼            ▼                              ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                           28 CONTENT ARTICLES                               │
-│  Tools: 9 articles  │  Gear: 3 articles  │  Blog: 16 articles              │
+│                           33 CONTENT ARTICLES                               │
+│  Tools: 9 articles  │  Gear: 8 articles  │  Blog: 16 articles              │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -1209,17 +1320,17 @@ floatjet.com/
 
 | Metric                   | Count |
 |--------------------------|-------|
-| **Total Pages**          | 50    |
+| **Total Pages**          | 55    |
 | **Hub Pages**            | 5     |
 | **Category Pages**       | 14    |
 | **Tool Articles**        | 9     |
-| **Gear Articles**        | 3     |
+| **Gear Articles**        | 8     |
 | **Blog Articles**        | 16    |
 | **Legal Pages**          | 4     |
-| **Affiliate Links**      | 90    |
-| **Products Reviewed**    | 80+   |
-| **Affiliate Categories** | 13    |
+| **Affiliate Links**      | 120+  |
+| **Products Reviewed**    | 120+  |
+| **Affiliate Categories** | 16    |
 
 ---
 
-*Last generated: 2025-11-23*
+*Last generated: 2025-11-24*

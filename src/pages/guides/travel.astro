@@ -17,28 +17,32 @@ const travelGuides = [
     description: 'The must-have gadgets and gear for productive travel.',
     href: '/blog/essential-travel-tech-nomads',
     icon: '🎒',
-    category: 'Gear'
+    category: 'Gear',
+    readTime: 10
   },
   {
     title: 'Best Travel Insurance',
     description: 'Protect yourself abroad with insurance built for remote workers.',
     href: '/blog/best-travel-insurance-remote-workers',
     icon: '🛡️',
-    category: 'Insurance'
+    category: 'Insurance',
+    readTime: 11
   },
   {
     title: 'Find Reliable WiFi Anywhere',
     description: 'Tips and tools for finding fast, stable internet while traveling.',
     href: '/blog/find-reliable-wifi-anywhere',
     icon: '📶',
-    category: 'Connectivity'
+    category: 'Connectivity',
+    readTime: 9
   },
   {
     title: 'VPN & Public WiFi Security',
     description: 'Stay safe on public networks with these essential security practices.',
     href: '/blog/vpn-public-wifi-guide',
     icon: '🔐',
-    category: 'Security'
+    category: 'Security',
+    readTime: 13
   }
 ];
 
@@ -124,17 +128,28 @@ const travelTips = [
         {travelGuides.map(guide => (
             <a
                 href={guide.href}
-                class="group flex items-start gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-5 transition-all duration-300"
+                class="group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-5 transition-all duration-300"
             >
-              <span class="text-3xl">{guide.icon}</span>
-              <div class="flex-1">
-              <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded mb-2">
-                {guide.category}
-              </span>
-                <h3 class="text-white font-semibold group-hover:text-jet-stream transition-colors mb-1">
-                  {guide.title}
-                </h3>
-                <p class="text-white/60 text-sm">{guide.description}</p>
+              <div class="flex items-start gap-4">
+                <span class="text-3xl">{guide.icon}</span>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
+                      {guide.category}
+                    </span>
+                    <span class="text-white/40 text-xs">{guide.readTime} min</span>
+                  </div>
+                  <h3 class="text-white font-semibold group-hover:text-jet-stream transition-colors mb-1">
+                    {guide.title}
+                  </h3>
+                  <p class="text-white/60 text-sm">{guide.description}</p>
+                </div>
+              </div>
+              <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
+                Read Guide
+                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
               </div>
             </a>
         ))}

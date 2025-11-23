@@ -4,13 +4,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const title = 'Best Remote Work Tools & Software | FloatJet';
 const description = 'Discover the best tools and software for remote workers. In-depth reviews of project management, VPNs, productivity apps, and more.';
 
+// Category pages
+const categories = [
+  { name: 'VPN & Security', href: '/tools/vpn', icon: '🔒' },
+  { name: 'SaaS Tools', href: '/tools/saas', icon: '📋' },
+  { name: 'Web Hosting', href: '/tools/hosting', icon: '🌐' },
+  { name: 'Finance', href: '/tools/finance', icon: '💰' }
+];
+
 // Tool articles data
 const tools = [
   {
     title: 'Best Project Management Software',
     description: 'Compare Notion, ClickUp, Asana, Monday.com and more for remote teams.',
     href: '/tools/best-project-management-software',
-    category: 'Productivity',
+    category: 'SaaS',
     icon: '📋'
   },
   {
@@ -24,7 +32,7 @@ const tools = [
     title: 'Best Email Marketing Tools',
     description: 'Grow your audience with the right email marketing platform.',
     href: '/tools/best-email-marketing-tools',
-    category: 'Marketing',
+    category: 'SaaS',
     icon: '📧'
   },
   {
@@ -45,34 +53,31 @@ const tools = [
     title: 'Best Web Hosting',
     description: 'Reliable hosting for your remote business or side project.',
     href: '/tools/best-web-hosting-remote-business',
-    category: 'Infrastructure',
+    category: 'Hosting',
     icon: '🌐'
   },
   {
     title: 'Best Time Tracking Software',
     description: 'Track billable hours and boost productivity.',
     href: '/tools/best-time-tracking-software',
-    category: 'Productivity',
+    category: 'SaaS',
     icon: '⏱️'
   },
   {
     title: 'Best Online Course Platforms',
     description: 'Learn new skills or create courses to share your expertise.',
     href: '/tools/best-online-course-platforms',
-    category: 'Learning',
+    category: 'SaaS',
     icon: '🎓'
   },
   {
     title: 'Best Productivity Apps',
     description: 'Apps to help you focus, organize, and get more done.',
     href: '/tools/best-productivity-apps',
-    category: 'Productivity',
+    category: 'SaaS',
     icon: '🚀'
   }
 ];
-
-// Category filters
-const categories = ['All', 'Productivity', 'Security', 'Marketing', 'Hardware', 'Infrastructure', 'Learning'];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -85,19 +90,16 @@ const categories = ['All', 'Productivity', 'Security', 'Marketing', 'Hardware', 
       </p>
     </div>
 
-    <!-- Category Filter -->
-    <div class="flex flex-wrap justify-center gap-2 mb-10">
-      {categories.map((cat, index) => (
-        <button
-          class={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-            index === 0
-              ? 'bg-jet-stream text-ocean-deep'
-              : 'bg-white/10 text-white/80 hover:bg-white/20 hover:text-white'
-          }`}
-          data-category={cat.toLowerCase()}
+    <!-- Category Links -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      {categories.map(cat => (
+        <a
+          href={cat.href}
+          class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-jet-stream text-white/90 hover:text-ocean-deep rounded-full text-sm font-medium transition-colors"
         >
-          {cat}
-        </button>
+          <span>{cat.icon}</span>
+          {cat.name}
+        </a>
       ))}
     </div>
 
@@ -107,7 +109,6 @@ const categories = ['All', 'Productivity', 'Security', 'Marketing', 'Hardware', 
         <a
           href={tool.href}
           class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
-          data-category={tool.category.toLowerCase()}
         >
           <div class="flex items-start gap-4">
             <span class="text-3xl">{tool.icon}</span>
@@ -148,41 +149,3 @@ const categories = ['All', 'Productivity', 'Security', 'Marketing', 'Hardware', 
     </div>
   </div>
 </BaseLayout>
-
-<script>
-  function initCategoryFilter() {
-    const buttons = document.querySelectorAll('[data-category]') as NodeListOf<HTMLButtonElement>;
-    const cards = document.querySelectorAll('[data-category]') as NodeListOf<HTMLElement>;
-
-    // Get only button elements
-    const filterButtons = Array.from(buttons).filter(el => el.tagName === 'BUTTON');
-    // Get only card elements (anchor tags)
-    const toolCards = Array.from(cards).filter(el => el.tagName === 'A');
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const category = button.dataset.category;
-
-        // Update button styles
-        filterButtons.forEach(btn => {
-          btn.classList.remove('bg-jet-stream', 'text-ocean-deep');
-          btn.classList.add('bg-white/10', 'text-white/80');
-        });
-        button.classList.remove('bg-white/10', 'text-white/80');
-        button.classList.add('bg-jet-stream', 'text-ocean-deep');
-
-        // Filter cards
-        toolCards.forEach(card => {
-          if (category === 'all' || card.dataset.category === category) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', initCategoryFilter);
-  document.addEventListener('astro:page-load', initCategoryFilter);
-</script>

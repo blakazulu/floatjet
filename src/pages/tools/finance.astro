@@ -1,13 +1,160 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = 'Finance Tools | FloatJet';
-const description = 'Best financial tools for digital nomads.';
+const title = 'Finance Tools for Digital Nomads & Remote Workers | FloatJet';
+const description = 'Best financial tools and guides for digital nomads. Compare international banks, learn tax strategies, and find the right travel insurance.';
+
+const mainArticle = {
+  title: 'Best Banking for Digital Nomads (2025)',
+  description: 'We compared 15+ international banking options to find the best accounts for remote workers. Low fees, multi-currency support, and global access.',
+  href: '/blog/best-banking-digital-nomads',
+  readTime: '14 min'
+};
+
+const financeGuides = [
+  {
+    title: 'Crypto-Friendly Banks',
+    description: 'Banks that work seamlessly with cryptocurrency for digital nomad finances.',
+    href: '/blog/crypto-friendly-banks',
+    icon: '₿',
+    category: 'Banking'
+  },
+  {
+    title: 'Tax Tips for Remote Workers',
+    description: 'Navigate taxes as a remote worker or digital nomad. Essential strategies and deductions.',
+    href: '/blog/tax-tips-remote-workers',
+    icon: '📊',
+    category: 'Taxes'
+  },
+  {
+    title: 'Best Travel Insurance',
+    description: 'Protect yourself abroad with the right travel insurance for remote workers.',
+    href: '/blog/best-travel-insurance-remote-workers',
+    icon: '🛡️',
+    category: 'Insurance'
+  }
+];
+
+const topPicks = [
+  { name: 'Wise', tag: 'Best Overall', color: 'bg-blue-500/20 text-blue-400' },
+  { name: 'Revolut', tag: 'Best Features', color: 'bg-green-500/20 text-green-400' },
+  { name: 'Mercury', tag: 'Best for US', color: 'bg-purple-500/20 text-purple-400' }
+];
+
+const whyFinance = [
+  { title: 'Multi-Currency Accounts', description: 'Hold and spend in multiple currencies without conversion fees', icon: '💱' },
+  { title: 'Global ATM Access', description: 'Withdraw cash anywhere with low or no fees', icon: '🏧' },
+  { title: 'Easy Transfers', description: 'Send money internationally at the best exchange rates', icon: '💸' },
+  { title: 'Tax Optimization', description: 'Legal strategies to reduce your tax burden while abroad', icon: '📋' }
+];
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="container mx-auto px-4 py-20 text-center">
-    <h1 class="text-4xl font-bold text-white mb-4">Finance Tools</h1>
-    <p class="text-white/80 text-lg">Coming soon...</p>
+  <div class="container mx-auto px-4 pt-24 md:pt-28 pb-16 md:pb-20">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <a href="/tools" class="inline-flex items-center text-white/60 hover:text-white text-sm mb-4 transition-colors">
+        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        All Tools
+      </a>
+      <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Finance & Banking</h1>
+      <p class="text-lg text-white/80 max-w-2xl mx-auto">
+        Manage your money across borders with the right banking, tax, and insurance solutions.
+      </p>
+    </div>
+
+    <!-- Main Article Card -->
+    <a
+      href={mainArticle.href}
+      class="block max-w-3xl mx-auto mb-16 group bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-white/20 hover:border-jet-stream/50 rounded-xl p-8 transition-all duration-300"
+    >
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-4xl">🏦</span>
+        <span class="px-3 py-1 bg-jet-stream text-ocean-deep text-xs font-bold rounded-full">Featured Guide</span>
+      </div>
+      <h2 class="text-2xl md:text-3xl font-bold text-white group-hover:text-jet-stream transition-colors mb-3">
+        {mainArticle.title}
+      </h2>
+      <p class="text-white/70 mb-4">
+        {mainArticle.description}
+      </p>
+      <div class="flex items-center justify-between">
+        <span class="text-white/50 text-sm">{mainArticle.readTime} read</span>
+        <span class="text-jet-stream font-medium flex items-center">
+          Read Full Guide
+          <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- Top Picks Preview -->
+    <div class="max-w-3xl mx-auto mb-16">
+      <h2 class="text-xl font-semibold text-white text-center mb-6">Top Banking Picks</h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {topPicks.map(pick => (
+          <a
+            href={`${mainArticle.href}#${pick.name.toLowerCase()}`}
+            class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-4 text-center transition-colors"
+          >
+            <span class={`inline-block px-2 py-0.5 ${pick.color} text-xs font-medium rounded mb-2`}>
+              {pick.tag}
+            </span>
+            <p class="text-white font-semibold">{pick.name}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- More Finance Guides -->
+    <div class="max-w-4xl mx-auto mb-16">
+      <h2 class="text-xl font-semibold text-white text-center mb-8">More Finance Guides</h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {financeGuides.map(guide => (
+          <a
+            href={guide.href}
+            class="group flex flex-col items-center text-center bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
+          >
+            <span class="text-4xl mb-3">{guide.icon}</span>
+            <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded mb-2">
+              {guide.category}
+            </span>
+            <h3 class="text-white font-semibold group-hover:text-jet-stream transition-colors mb-2">
+              {guide.title}
+            </h3>
+            <p class="text-white/60 text-sm">{guide.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Why Finance Matters -->
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xl font-semibold text-white text-center mb-8">Why Finance Planning Matters</h2>
+      <div class="grid gap-6 sm:grid-cols-2">
+        {whyFinance.map(item => (
+          <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
+            <span class="text-2xl">{item.icon}</span>
+            <div>
+              <h3 class="text-white font-semibold mb-1">{item.title}</h3>
+              <p class="text-white/60 text-sm">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <a
+        href={mainArticle.href}
+        class="inline-flex items-center justify-center px-6 py-3 bg-jet-stream text-ocean-deep font-semibold rounded-lg hover:bg-sky-light transition-colors"
+      >
+        Find the Right Bank
+      </a>
+    </div>
   </div>
 </BaseLayout>

@@ -36,6 +36,7 @@ tracking. This week marks the transition from infrastructure to content.
 **Total Estimated:** 21 hours
 
 **Task Files:**
+
 - `task-006-pm-software-article.md`
 - `task-007-vpn-article.md`
 - `task-008-affiliate-programs.md`

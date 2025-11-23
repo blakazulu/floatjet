@@ -7,7 +7,8 @@
 
 ## 🎯 Week Summary
 
-Major content creation week. Add 3 more money pages (total: 5) focusing on hardware and SaaS tools. Each article requires specific affiliate program applications.
+Major content creation week. Add 3 more money pages (total: 5) focusing on hardware and SaaS tools. Each article
+requires specific affiliate program applications.
 
 ---
 
@@ -15,29 +16,29 @@ Major content creation week. Add 3 more money pages (total: 5) focusing on hardw
 
 ### Articles & Programs
 
-| Article | Primary Program | Commission | Status |
-|---------|-----------------|------------|--------|
-| Best Laptops | Amazon Associates | 3% electronics | 🔴 Need to Apply |
-| Email Marketing Tools | ConvertKit | 40% recurring 24mo | 🔴 Need to Apply |
-| Standing Desks | Amazon + FlexiSpot | 4-10% | 🔴 Need to Apply |
+| Article               | Primary Program    | Commission         | Status           |
+|-----------------------|--------------------|--------------------|------------------|
+| Best Laptops          | Amazon Associates  | 3% electronics     | 🔴 Need to Apply |
+| Email Marketing Tools | ConvertKit         | 40% recurring 24mo | 🔴 Need to Apply |
+| Standing Desks        | Amazon + FlexiSpot | 4-10%              | 🔴 Need to Apply |
 
 ### Application Priority
 
 1. **Amazon Associates** - Required for 2 articles (laptops, desks)
-   - URL: https://affiliate-program.amazon.com
-   - Note: Must make 3 sales in 180 days to stay active
+    - URL: https://affiliate-program.amazon.com
+    - Note: Must make 3 sales in 180 days to stay active
 
 2. **ConvertKit** - Best email marketing commission
-   - URL: https://convertkit.com/affiliates
-   - Commission: $100 + 40% for 24 months (!)
+    - URL: https://convertkit.com/affiliates
+    - Commission: $100 + 40% for 24 months (!)
 
 3. **FlexiSpot** - Standing desk brand
-   - URL: https://www.flexispot.com/affiliate
-   - Commission: 8-10%
+    - URL: https://www.flexispot.com/affiliate
+    - Commission: 8-10%
 
 4. **Beehiiv** - Newsletter platform (bonus)
-   - URL: https://www.beehiiv.com/partners
-   - Commission: 50% for 12 months
+    - URL: https://www.beehiiv.com/partners
+    - Commission: 50% for 12 months
 
 ---
 
@@ -53,11 +54,11 @@ Major content creation week. Add 3 more money pages (total: 5) focusing on hardw
 
 ## 📋 Task List
 
-| Task ID | Task Name | Priority | Est. Hours | Status |
-|---------|-----------|----------|------------|--------|
-| FJ-012 | Best Laptops for Remote Work | P0 | 8h | Not Started |
-| FJ-013 | Best Email Marketing Tools | P0 | 8h | Not Started |
-| FJ-014 | Best Standing Desks | P0 | 8h | Not Started |
+| Task ID | Task Name                    | Priority | Est. Hours | Status      |
+|---------|------------------------------|----------|------------|-------------|
+| FJ-012  | Best Laptops for Remote Work | P0       | 8h         | Not Started |
+| FJ-013  | Best Email Marketing Tools   | P0       | 8h         | Not Started |
+| FJ-014  | Best Standing Desks          | P0       | 8h         | Not Started |
 
 **Total Estimated:** 24 hours
 
@@ -93,12 +94,14 @@ FJ-014 (Desks) ←→ FJ-012 (Laptops) - "complete home office setup"
 ## 📝 Notes
 
 **Amazon Associates Tips:**
+
 - Apply early, approval takes 24-48 hours
 - Must make 3 qualifying sales within 180 days
 - If rejected, can reapply after adding more content
 - 24-hour cookie is short - optimize for immediate purchases
 
 **ConvertKit Affiliate Tips:**
+
 - Best recurring commission in email marketing
 - They prefer affiliates who actually use the product
 - Mention creator/blogger focus in application

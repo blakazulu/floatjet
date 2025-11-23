@@ -17,7 +17,8 @@ tags: ["seo", "analytics", "week-2", "setup", "google"]
 
 ## Overview
 
-Configure Google Search Console (GSC) for floatjet.com to monitor search performance, submit sitemaps, and identify indexing issues. Essential for SEO tracking and optimization.
+Configure Google Search Console (GSC) for floatjet.com to monitor search performance, submit sitemaps, and identify
+indexing issues. Essential for SEO tracking and optimization.
 
 ## Goals
 
@@ -62,10 +63,10 @@ Configure Google Search Console (GSC) for floatjet.com to monitor search perform
 
 - [x] 1.3 Verify ownership
     - **Option A: DNS verification** (recommended)
-      - Copy TXT record provided by Google
-      - Add to Netlify DNS settings
-      - Wait for propagation (up to 24 hours)
-      - Click "Verify"
+        - Copy TXT record provided by Google
+        - Add to Netlify DNS settings
+        - Wait for propagation (up to 24 hours)
+        - Click "Verify"
 
 ### Phase 2: Submit Sitemap (15 minutes)
 
@@ -92,8 +93,8 @@ Configure Google Search Console (GSC) for floatjet.com to monitor search perform
 
 - [x] 3.3 Request indexing for key pages
     - Requested indexing for:
-      - https://floatjet.com/tools/best-project-management-software/
-      - https://floatjet.com/tools/best-vpn-digital-nomads/
+        - https://floatjet.com/tools/best-project-management-software/
+        - https://floatjet.com/tools/best-vpn-digital-nomads/
 
 ### Phase 4: Set Up Monitoring (15 minutes)
 

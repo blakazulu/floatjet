@@ -1023,45 +1023,45 @@ https://skillshare.com/r/floatjet
 
 ### Application Status
 
-| Program           | Status     | Date Applied | Date Approved | Priority | Articles |
-|-------------------|------------|--------------|---------------|----------|----------|
-| Notion            | 🟡 Pending | 2025-11-22   | -             | High     | Productivity Apps |
-| ClickUp           | 🟡 Pending | 2025-11-22   | -             | High     | PM Software |
-| NordVPN           | 🟡 Pending | 2025-11-22   | -             | High     | VPN article |
-| ConvertKit        | 🔴 Not Applied | -        | -             | **High** | Email Marketing |
-| WPEngine          | 🔴 Not Applied | -        | -             | **High** | Web Hosting |
-| **Beehiiv**       | 🔴 Not Applied | -        | -             | **High** | **Email Marketing** |
-| **Mailchimp**     | 🔴 Not Applied | -        | -             | **High** | **Email Marketing** |
-| **ActiveCampaign** | 🔴 Not Applied | -       | -             | **High** | **Email Marketing** |
-| **MailerLite**    | 🔴 Not Applied | -        | -             | **High** | **Email Marketing** |
-| **Teachable**     | 🔴 Not Applied | -        | -             | **High** | **Course Platforms** |
-| **Thinkific**     | 🔴 Not Applied | -        | -             | **High** | **Course Platforms** |
-| **Kajabi**        | 🔴 Not Applied | -        | -             | **High** | **Course Platforms** |
-| **Cloudways**     | 🔴 Not Applied | -        | -             | **High** | **Web Hosting** |
-| **SiteGround**    | 🔴 Not Applied | -        | -             | **High** | **Web Hosting** |
-| **Kinsta**        | 🔴 Not Applied | -        | -             | **High** | **Web Hosting** |
-| Todoist           | 🔴 Not Applied | -        | -             | High     | Productivity Apps |
-| Toggl             | 🔴 Not Applied | -        | -             | High     | Time Tracking |
-| Harvest           | 🔴 Not Applied | -        | -             | High     | Time Tracking |
-| Amazon Associates | 🔴 Not Applied | -        | -             | High     | Headphones, Gear |
-| Podia             | 🔴 Not Applied | -        | -             | Medium   | Course Platforms |
-| LearnWorlds       | 🔴 Not Applied | -        | -             | Medium   | Course Platforms |
-| Gumroad           | 🔴 Not Applied | -        | -             | Medium   | Course Platforms |
-| Flywheel          | 🔴 Not Applied | -        | -             | Medium   | Web Hosting |
-| A2 Hosting        | 🔴 Not Applied | -        | -             | Medium   | Web Hosting |
-| Bluehost          | 🔴 Not Applied | -        | -             | Medium   | Web Hosting |
-| DigitalOcean      | 🔴 Not Applied | -        | -             | Medium   | Web Hosting |
-| Buttondown        | 🔴 Not Applied | -        | -             | Low      | Email Marketing |
-| Flodesk           | 🔴 Not Applied | -        | -             | Low      | Email Marketing |
-| Clockify          | 🔴 Not Applied | -        | -             | Medium   | Time Tracking |
-| TickTick          | 🔴 Not Applied | -        | -             | Medium   | Productivity Apps |
-| Timely            | 🔴 Not Applied | -        | -             | Medium   | Time Tracking |
-| ShareASale        | 🟡 Pending | -            | -             | Medium   | Various |
-| CJ Affiliate      | 🟡 Pending | -            | -             | Medium   | Various |
-| RescueTime        | 🔴 Not Applied | -        | -             | Low      | Time Tracking |
-| Paymo             | 🔴 Not Applied | -        | -             | Low      | Time Tracking |
-| Evernote          | 🔴 Not Applied | -        | -             | Low      | Productivity Apps |
-| Skillshare        | 🟡 Pending | -            | -             | Low      | Learning |
+| Program            | Status         | Date Applied | Date Approved | Priority | Articles             |
+|--------------------|----------------|--------------|---------------|----------|----------------------|
+| Notion             | 🟡 Pending     | 2025-11-22   | -             | High     | Productivity Apps    |
+| ClickUp            | 🟡 Pending     | 2025-11-22   | -             | High     | PM Software          |
+| NordVPN            | 🟡 Pending     | 2025-11-22   | -             | High     | VPN article          |
+| ConvertKit         | 🔴 Not Applied | -            | -             | **High** | Email Marketing      |
+| WPEngine           | 🔴 Not Applied | -            | -             | **High** | Web Hosting          |
+| **Beehiiv**        | 🔴 Not Applied | -            | -             | **High** | **Email Marketing**  |
+| **Mailchimp**      | 🔴 Not Applied | -            | -             | **High** | **Email Marketing**  |
+| **ActiveCampaign** | 🔴 Not Applied | -            | -             | **High** | **Email Marketing**  |
+| **MailerLite**     | 🔴 Not Applied | -            | -             | **High** | **Email Marketing**  |
+| **Teachable**      | 🔴 Not Applied | -            | -             | **High** | **Course Platforms** |
+| **Thinkific**      | 🔴 Not Applied | -            | -             | **High** | **Course Platforms** |
+| **Kajabi**         | 🔴 Not Applied | -            | -             | **High** | **Course Platforms** |
+| **Cloudways**      | 🔴 Not Applied | -            | -             | **High** | **Web Hosting**      |
+| **SiteGround**     | 🔴 Not Applied | -            | -             | **High** | **Web Hosting**      |
+| **Kinsta**         | 🔴 Not Applied | -            | -             | **High** | **Web Hosting**      |
+| Todoist            | 🔴 Not Applied | -            | -             | High     | Productivity Apps    |
+| Toggl              | 🔴 Not Applied | -            | -             | High     | Time Tracking        |
+| Harvest            | 🔴 Not Applied | -            | -             | High     | Time Tracking        |
+| Amazon Associates  | 🔴 Not Applied | -            | -             | High     | Headphones, Gear     |
+| Podia              | 🔴 Not Applied | -            | -             | Medium   | Course Platforms     |
+| LearnWorlds        | 🔴 Not Applied | -            | -             | Medium   | Course Platforms     |
+| Gumroad            | 🔴 Not Applied | -            | -             | Medium   | Course Platforms     |
+| Flywheel           | 🔴 Not Applied | -            | -             | Medium   | Web Hosting          |
+| A2 Hosting         | 🔴 Not Applied | -            | -             | Medium   | Web Hosting          |
+| Bluehost           | 🔴 Not Applied | -            | -             | Medium   | Web Hosting          |
+| DigitalOcean       | 🔴 Not Applied | -            | -             | Medium   | Web Hosting          |
+| Buttondown         | 🔴 Not Applied | -            | -             | Low      | Email Marketing      |
+| Flodesk            | 🔴 Not Applied | -            | -             | Low      | Email Marketing      |
+| Clockify           | 🔴 Not Applied | -            | -             | Medium   | Time Tracking        |
+| TickTick           | 🔴 Not Applied | -            | -             | Medium   | Productivity Apps    |
+| Timely             | 🔴 Not Applied | -            | -             | Medium   | Time Tracking        |
+| ShareASale         | 🟡 Pending     | -            | -             | Medium   | Various              |
+| CJ Affiliate       | 🟡 Pending     | -            | -             | Medium   | Various              |
+| RescueTime         | 🔴 Not Applied | -            | -             | Low      | Time Tracking        |
+| Paymo              | 🔴 Not Applied | -            | -             | Low      | Time Tracking        |
+| Evernote           | 🔴 Not Applied | -            | -             | Low      | Productivity Apps    |
+| Skillshare         | 🟡 Pending     | -            | -             | Low      | Learning             |
 
 **Status Legend:**
 
@@ -1124,16 +1124,16 @@ https://floatjet.com/go/[program-name]
 ```toml
 # netlify.toml
 [[redirects]]
-  from = "/go/notion"
-  to = "https://affiliate.notion.so?ref=floatjet&utm_source=floatjet&utm_medium=affiliate"
-  status = 301
-  force = true
+from = "/go/notion"
+to = "https://affiliate.notion.so?ref=floatjet&utm_source=floatjet&utm_medium=affiliate"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/clickup"
-  to = "https://clickup.com/?fp_ref=floatjet"
-  status = 301
-  force = true
+from = "/go/clickup"
+to = "https://clickup.com/?fp_ref=floatjet"
+status = 301
+force = true
 ```
 
 **Option 2: Netlify Functions** (For tracking)
@@ -1150,7 +1150,7 @@ export async function handler(event) {
   const url = getAffiliateUrl(program);
   return {
     statusCode: 301,
-    headers: { Location: url }
+    headers: {Location: url}
   };
 }
 ```

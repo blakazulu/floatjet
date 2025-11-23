@@ -17,7 +17,8 @@ tags: ["content", "money-page", "password-manager", "security", "affiliate"]
 
 ## Overview
 
-Write a money page targeting "best password manager" keywords with focus on remote workers and digital nomads. NordPass is a priority affiliate (via NordVPN program) alongside other password manager options.
+Write a money page targeting "best password manager" keywords with focus on remote workers and digital nomads. NordPass
+is a priority affiliate (via NordVPN program) alongside other password manager options.
 
 ## Goals
 

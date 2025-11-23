@@ -16,19 +16,20 @@ tags: ["content", "money-page", "week-3", "email-marketing", "saas", "affiliate"
 
 ## Overview
 
-Write a comprehensive money page targeting "best email marketing tools" keywords. Focus on tools suitable for creators, freelancers, and small businesses with emphasis on automation, deliverability, and ease of use.
+Write a comprehensive money page targeting "best email marketing tools" keywords. Focus on tools suitable for creators,
+freelancers, and small businesses with emphasis on automation, deliverability, and ease of use.
 
 ## Affiliate Programs Required
 
 ### Primary Programs
 
-| Program | Network | Commission | Cookie | Status | Priority |
-|---------|---------|------------|--------|--------|----------|
-| ConvertKit | Direct | $100 + 40% recurring (24 mo) | 60 days | 🔴 Not Applied | HIGH |
-| Mailchimp | Impact Radius | 20-30% first payment | 30 days | 🔴 Not Applied | MEDIUM |
-| ActiveCampaign | Direct | 20-30% recurring | 90 days | 🔴 Not Applied | MEDIUM |
-| Beehiiv | Direct | 50% for 12 months | 60 days | 🔴 Not Applied | HIGH |
-| Kit (ConvertKit rebrand) | Direct | Same as ConvertKit | 60 days | 🔴 Not Applied | HIGH |
+| Program                  | Network       | Commission                   | Cookie  | Status         | Priority |
+|--------------------------|---------------|------------------------------|---------|----------------|----------|
+| ConvertKit               | Direct        | $100 + 40% recurring (24 mo) | 60 days | 🔴 Not Applied | HIGH     |
+| Mailchimp                | Impact Radius | 20-30% first payment         | 30 days | 🔴 Not Applied | MEDIUM   |
+| ActiveCampaign           | Direct        | 20-30% recurring             | 90 days | 🔴 Not Applied | MEDIUM   |
+| Beehiiv                  | Direct        | 50% for 12 months            | 60 days | 🔴 Not Applied | HIGH     |
+| Kit (ConvertKit rebrand) | Direct        | Same as ConvertKit           | 60 days | 🔴 Not Applied | HIGH     |
 
 ### Why These Programs?
 
@@ -184,15 +185,15 @@ Write a comprehensive money page targeting "best email marketing tools" keywords
 
 **Email Tools to Review:**
 
-| Tool | Price Range | Best For | Commission |
-|------|-------------|----------|------------|
-| ConvertKit | $0-59/mo | Creators | 40% recurring 24mo |
-| Beehiiv | $0-99/mo | Newsletters | 50% recurring 12mo |
-| Mailchimp | $0-350/mo | Beginners | 20-30% first payment |
-| ActiveCampaign | $29-149/mo | Automation | 20-30% recurring |
-| MailerLite | $0-21/mo | Free option | 30% recurring |
-| Buttondown | $0-29/mo | Simple | Unknown |
-| Flodesk | $38/mo flat | Design | 50% first payment |
+| Tool           | Price Range | Best For    | Commission           |
+|----------------|-------------|-------------|----------------------|
+| ConvertKit     | $0-59/mo    | Creators    | 40% recurring 24mo   |
+| Beehiiv        | $0-99/mo    | Newsletters | 50% recurring 12mo   |
+| Mailchimp      | $0-350/mo   | Beginners   | 20-30% first payment |
+| ActiveCampaign | $29-149/mo  | Automation  | 20-30% recurring     |
+| MailerLite     | $0-21/mo    | Free option | 30% recurring        |
+| Buttondown     | $0-29/mo    | Simple      | Unknown              |
+| Flodesk        | $38/mo flat | Design      | 50% first payment    |
 
 **Target Keywords:**
 

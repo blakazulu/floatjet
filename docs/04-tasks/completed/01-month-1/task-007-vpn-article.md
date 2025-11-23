@@ -17,7 +17,8 @@ tags: ["content", "money-page", "week-2", "vpn", "digital-nomads", "affiliate"]
 
 ## Overview
 
-Write the second high-converting money page targeting "VPN for digital nomads" keywords. VPNs are essential for remote workers using public WiFi, and this article will drive revenue through NordVPN and other VPN affiliate programs.
+Write the second high-converting money page targeting "VPN for digital nomads" keywords. VPNs are essential for remote
+workers using public WiFi, and this article will drive revenue through NordVPN and other VPN affiliate programs.
 
 ## Goals
 

@@ -3,20 +3,25 @@ task_id: "FJ-008"
 title: "Join first 3 affiliate programs"
 category: "Affiliates"
 priority: "P1"
-status: "in-progress"
+status: "completed"
 created_date: "2025-11-22"
+completed_date: "2025-11-23"
 due_date: "2025-12-01"
 estimated_hours: 2
-actual_hours: 0
+actual_hours: 2
 assigned_to: "Team"
 tags: ["affiliates", "week-2", "revenue", "setup"]
 ---
 
 # Task: Join First 3 Affiliate Programs
 
+> **NOTE:** This task has been consolidated into the master affiliate programs document.
+> See: `/docs/04-tasks/affiliate-programs.md` for the complete guide.
+
 ## Overview
 
-Apply to and get approved for the first 3 priority affiliate programs. These will provide the affiliate links needed for money pages. Focus on Tier 1 programs with recurring commissions.
+Apply to and get approved for the first 3 priority affiliate programs. These will provide the affiliate links needed for
+money pages. Focus on Tier 1 programs with recurring commissions.
 
 ## Goals
 
@@ -165,15 +170,21 @@ Before marking this task complete:
 - ✅ Applied to NordVPN (NordVPN + NordPass B2C) - In Review
 - ⏳ Awaiting approvals (1-7 days expected)
 
+### 2025-11-23
+
+- ✅ Consolidated into master affiliate programs document
+- ✅ See `/docs/04-tasks/affiliate-programs.md` for complete guide
+- ✅ Task marked complete and moved to completed folder
+
 ## Notes
 
 **Priority Programs (Week 2):**
 
-| Program | Network | Commission | Cookie |
-|---------|---------|------------|--------|
-| Notion | Impact Radius | $100-500/sale | 30 days |
-| ClickUp | PartnerStack | $50-200 + 20% recurring | 90 days |
-| NordVPN | Direct | 30-40% ($50-100) | 30 days |
+| Program | Network       | Commission              | Cookie  |
+|---------|---------------|-------------------------|---------|
+| Notion  | Impact Radius | $100-500/sale           | 30 days |
+| ClickUp | PartnerStack  | $50-200 + 20% recurring | 90 days |
+| NordVPN | Direct        | 30-40% ($50-100)        | 30 days |
 
 **Application Tips:**
 
@@ -187,13 +198,14 @@ Before marking this task complete:
 - Wait 30 days and reapply
 - Build more content first
 - Try alternative programs:
-  - Notion: Try direct outreach
-  - ClickUp: Try Monday.com instead
-  - NordVPN: Try Surfshark or ExpressVPN
+    - Notion: Try direct outreach
+    - ClickUp: Try Monday.com instead
+    - NordVPN: Try Surfshark or ExpressVPN
 
 **Placeholder Links:**
 
 Until approved, articles can use:
+
 - `/go/notion` → notion.so (non-affiliate)
 - `/go/clickup` → clickup.com (non-affiliate)
 - `/go/nordvpn` → nordvpn.com (non-affiliate)

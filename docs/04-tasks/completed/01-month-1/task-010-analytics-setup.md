@@ -17,7 +17,8 @@ tags: ["analytics", "week-2", "setup", "google-analytics", "tracking"]
 
 ## Overview
 
-Set up Google Analytics 4 (GA4) for traffic tracking, user behavior analysis, and conversion tracking. Combined with Google Search Console, this provides complete insight into site performance.
+Set up Google Analytics 4 (GA4) for traffic tracking, user behavior analysis, and conversion tracking. Combined with
+Google Search Console, this provides complete insight into site performance.
 
 ## Goals
 
@@ -128,6 +129,7 @@ Before marking this task complete:
 **GA4 + GSC Integration:**
 
 Linking GA4 to Search Console provides:
+
 - Search queries in GA4 reports
 - Landing page performance
 - Combined organic search data

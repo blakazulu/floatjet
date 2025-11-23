@@ -16,7 +16,8 @@ tags: ["content", "supporting", "seo", "week-4"]
 
 ## Overview
 
-Create 5 supporting articles (1,500-2,000 words each) that provide value, build topical authority, and link to money pages. These articles target informational queries and help establish FloatJet as a trusted resource.
+Create 5 supporting articles (1,500-2,000 words each) that provide value, build topical authority, and link to money
+pages. These articles target informational queries and help establish FloatJet as a trusted resource.
 
 ## Goals
 
@@ -53,7 +54,7 @@ Create 5 supporting articles (1,500-2,000 words each) that provide value, build 
 ### Phase 1: Topic Selection & Outlines (2 hours)
 
 - [ ] 1.1 Select 5 supporting topics
-    Suggested topics:
+  Suggested topics:
     - "How to Set Up a Productive Home Office on a Budget"
     - "Remote Work Security: Protecting Your Data While Working Anywhere"
     - "The Complete Guide to Async Communication for Remote Teams"

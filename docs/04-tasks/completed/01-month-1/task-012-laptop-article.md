@@ -16,15 +16,16 @@ tags: ["content", "money-page", "week-3", "laptops", "hardware", "affiliate"]
 
 ## Overview
 
-Write a comprehensive money page targeting "best laptop for remote work" keywords. Focus on laptops suitable for digital nomads, freelancers, and remote workers with emphasis on portability, battery life, and performance.
+Write a comprehensive money page targeting "best laptop for remote work" keywords. Focus on laptops suitable for digital
+nomads, freelancers, and remote workers with emphasis on portability, battery life, and performance.
 
 ## Affiliate Programs Required
 
 ### Primary Programs
 
-| Program | Network | Commission | Cookie | Status | Priority |
-|---------|---------|------------|--------|--------|----------|
-| Amazon Associates | Direct | 3% electronics | 24 hours | 🔴 Not Applied | HIGH |
+| Program           | Network | Commission     | Cookie   | Status         | Priority |
+|-------------------|---------|----------------|----------|----------------|----------|
+| Amazon Associates | Direct  | 3% electronics | 24 hours | 🔴 Not Applied | HIGH     |
 
 ### Why Amazon Associates?
 
@@ -35,13 +36,13 @@ Write a comprehensive money page targeting "best laptop for remote work" keyword
 
 ### Alternative Programs (If Amazon Rejected)
 
-| Program | Commission | Notes |
-|---------|------------|-------|
-| Best Buy Affiliate | 0.5-1% | Lower commission but good inventory |
-| Dell Affiliate | 2-4% | Direct brand program |
-| HP Affiliate | 4-6% | Direct brand program |
-| Lenovo Affiliate | 2-4% | Good for ThinkPads |
-| B&H Photo | 2-8% | Good for tech products |
+| Program            | Commission | Notes                               |
+|--------------------|------------|-------------------------------------|
+| Best Buy Affiliate | 0.5-1%     | Lower commission but good inventory |
+| Dell Affiliate     | 2-4%       | Direct brand program                |
+| HP Affiliate       | 4-6%       | Direct brand program                |
+| Lenovo Affiliate   | 2-4%       | Good for ThinkPads                  |
+| B&H Photo          | 2-8%       | Good for tech products              |
 
 ### Affiliate Links to Create
 
@@ -177,16 +178,16 @@ Write a comprehensive money page targeting "best laptop for remote work" keyword
 
 **Laptops to Review:**
 
-| Laptop | Price Range | Best For |
-|--------|-------------|----------|
-| MacBook Air M3 | $1,099-1,499 | Best overall, great battery |
-| ThinkPad X1 Carbon | $1,200-1,800 | Business, durability |
-| Dell XPS 13 | $999-1,399 | Windows ultrabook |
-| Framework 13 | $999-1,399 | Repairability, upgrades |
-| ASUS ZenBook 14 | $699-999 | Value |
-| HP Spectre x360 | $999-1,499 | 2-in-1 flexibility |
-| Surface Laptop 5 | $999-1,399 | Microsoft ecosystem |
-| Acer Swift 3 | $549-799 | Budget |
+| Laptop             | Price Range  | Best For                    |
+|--------------------|--------------|-----------------------------|
+| MacBook Air M3     | $1,099-1,499 | Best overall, great battery |
+| ThinkPad X1 Carbon | $1,200-1,800 | Business, durability        |
+| Dell XPS 13        | $999-1,399   | Windows ultrabook           |
+| Framework 13       | $999-1,399   | Repairability, upgrades     |
+| ASUS ZenBook 14    | $699-999     | Value                       |
+| HP Spectre x360    | $999-1,499   | 2-in-1 flexibility          |
+| Surface Laptop 5   | $999-1,399   | Microsoft ecosystem         |
+| Acer Swift 3       | $549-799     | Budget                      |
 
 **Target Keywords:**
 

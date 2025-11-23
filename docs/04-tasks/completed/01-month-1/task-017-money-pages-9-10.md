@@ -16,7 +16,8 @@ tags: ["content", "money-page", "affiliate", "week-4"]
 
 ## Overview
 
-Create the final two money pages to complete the initial 10-article money page goal. These target high-value affiliate programs with strong recurring commission potential.
+Create the final two money pages to complete the initial 10-article money page goal. These target high-value affiliate
+programs with strong recurring commission potential.
 
 ## Goals
 
@@ -137,21 +138,21 @@ Before marking this task complete:
 ### 2025-11-23
 
 - **Course Platforms article written** (~3,200 words)
-  - Created `src/pages/tools/best-online-course-platforms.astro`
-  - Reviews: Teachable, Thinkific, Kajabi, Podia, Skillshare, Udemy, Gumroad, LearnWorlds
-  - 8 FAQs with schema markup
-  - Quick picks + full comparison tables
+    - Created `src/pages/tools/best-online-course-platforms.astro`
+    - Reviews: Teachable, Thinkific, Kajabi, Podia, Skillshare, Udemy, Gumroad, LearnWorlds
+    - 8 FAQs with schema markup
+    - Quick picks + full comparison tables
 
 - **Web Hosting article written** (~3,000 words)
-  - Created `src/pages/tools/best-web-hosting-remote-business.astro`
-  - Reviews: WP Engine, Cloudways, SiteGround, Kinsta, Flywheel, A2 Hosting, Bluehost, DigitalOcean
-  - 8 FAQs with schema markup
-  - Quick picks + full comparison tables
-  - Migration guide section
+    - Created `src/pages/tools/best-web-hosting-remote-business.astro`
+    - Reviews: WP Engine, Cloudways, SiteGround, Kinsta, Flywheel, A2 Hosting, Bluehost, DigitalOcean
+    - 8 FAQs with schema markup
+    - Quick picks + full comparison tables
+    - Migration guide section
 
 - **14 affiliate redirects added to netlify.toml**
-  - Course platforms: teachable, thinkific, kajabi, podia, learnworlds, gumroad
-  - Web hosting: wpengine, cloudways, siteground, kinsta, flywheel, a2hosting, bluehost, digitalocean
+    - Course platforms: teachable, thinkific, kajabi, podia, learnworlds, gumroad
+    - Web hosting: wpengine, cloudways, siteground, kinsta, flywheel, a2hosting, bluehost, digitalocean
 
 - Status: Ready for review and testing
 

@@ -16,19 +16,20 @@ tags: ["content", "money-page", "week-3", "standing-desk", "office", "hardware",
 
 ## Overview
 
-Write a comprehensive money page targeting "best standing desk" keywords. Focus on desks suitable for home offices and remote workers with emphasis on ergonomics, build quality, and value.
+Write a comprehensive money page targeting "best standing desk" keywords. Focus on desks suitable for home offices and
+remote workers with emphasis on ergonomics, build quality, and value.
 
 ## Affiliate Programs Required
 
 ### Primary Programs
 
-| Program | Network | Commission | Cookie | Status | Priority |
-|---------|---------|------------|--------|--------|----------|
-| Amazon Associates | Direct | 4-6% furniture | 24 hours | 🔴 Not Applied | HIGH |
-| FlexiSpot | Direct | 8-10% | 30 days | 🔴 Not Applied | HIGH |
-| Fully (Uplift) | Direct/ShareASale | 5-8% | 30 days | 🔴 Not Applied | MEDIUM |
-| Autonomous | Direct | 10% | 30 days | 🔴 Not Applied | MEDIUM |
-| Branch Furniture | Direct | 8% | 30 days | 🔴 Not Applied | LOW |
+| Program           | Network           | Commission     | Cookie   | Status         | Priority |
+|-------------------|-------------------|----------------|----------|----------------|----------|
+| Amazon Associates | Direct            | 4-6% furniture | 24 hours | 🔴 Not Applied | HIGH     |
+| FlexiSpot         | Direct            | 8-10%          | 30 days  | 🔴 Not Applied | HIGH     |
+| Fully (Uplift)    | Direct/ShareASale | 5-8%           | 30 days  | 🔴 Not Applied | MEDIUM   |
+| Autonomous        | Direct            | 10%            | 30 days  | 🔴 Not Applied | MEDIUM   |
+| Branch Furniture  | Direct            | 8%             | 30 days  | 🔴 Not Applied | LOW      |
 
 ### Why These Programs?
 
@@ -193,18 +194,18 @@ Write a comprehensive money page targeting "best standing desk" keywords. Focus 
 
 **Standing Desks to Review:**
 
-| Desk | Price Range | Best For | Motor |
-|------|-------------|----------|-------|
-| Uplift V2 | $599-899 | Overall quality | Dual |
-| FlexiSpot E7 | $479-599 | Value | Dual |
-| Autonomous SmartDesk Pro | $399-499 | Budget | Single |
-| Fully Jarvis | $559-799 | Build quality | Dual |
-| Vari Electric | $695 | Small spaces | Dual |
-| Branch | $999 | Design | Dual |
-| IKEA BEKANT | $399-549 | IKEA fans | Single |
-| FlexiSpot E5 | $299-379 | Under $400 | Dual |
-| Fezibo | $199-299 | Budget Amazon | Single |
-| Secretlab Magnus | $449-549 | Gaming | Fixed height |
+| Desk                     | Price Range | Best For        | Motor        |
+|--------------------------|-------------|-----------------|--------------|
+| Uplift V2                | $599-899    | Overall quality | Dual         |
+| FlexiSpot E7             | $479-599    | Value           | Dual         |
+| Autonomous SmartDesk Pro | $399-499    | Budget          | Single       |
+| Fully Jarvis             | $559-799    | Build quality   | Dual         |
+| Vari Electric            | $695        | Small spaces    | Dual         |
+| Branch                   | $999        | Design          | Dual         |
+| IKEA BEKANT              | $399-549    | IKEA fans       | Single       |
+| FlexiSpot E5             | $299-379    | Under $400      | Dual         |
+| Fezibo                   | $199-299    | Budget Amazon   | Single       |
+| Secretlab Magnus         | $449-549    | Gaming          | Fixed height |
 
 **Target Keywords:**
 

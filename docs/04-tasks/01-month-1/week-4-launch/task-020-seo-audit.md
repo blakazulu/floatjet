@@ -16,7 +16,8 @@ tags: ["seo", "audit", "launch", "week-4"]
 
 ## Overview
 
-Conduct a thorough SEO audit of all 20 articles and site infrastructure before official launch. Identify and fix any issues that could impact search rankings, user experience, or conversion rates.
+Conduct a thorough SEO audit of all 20 articles and site infrastructure before official launch. Identify and fix any
+issues that could impact search rankings, user experience, or conversion rates.
 
 ## Goals
 
@@ -57,7 +58,7 @@ Conduct a thorough SEO audit of all 20 articles and site infrastructure before o
 ### Phase 1: Content SEO Audit (1.5 hours)
 
 - [ ] 1.1 Audit all money pages (10 articles)
-    For each article verify:
+  For each article verify:
     - [ ] Title tag (50-60 chars, includes keyword)
     - [ ] Meta description (150-160 chars, compelling)
     - [ ] H1 tag (one per page, includes keyword)
@@ -70,10 +71,10 @@ Conduct a thorough SEO audit of all 20 articles and site infrastructure before o
     - [ ] Schema markup implemented
 
 - [ ] 1.2 Audit all supporting content (10 articles)
-    Same checklist as money pages
+  Same checklist as money pages
 
 - [ ] 1.3 Document all issues found
-    Create spreadsheet or list of fixes needed
+  Create spreadsheet or list of fixes needed
 
 ### Phase 2: Technical SEO Audit (1 hour)
 

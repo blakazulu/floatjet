@@ -16,7 +16,8 @@ tags: ["content", "money-page", "affiliate", "week-4"]
 
 ## Overview
 
-Create three high-converting money pages targeting profitable affiliate niches. These are core revenue-generating content pieces with deep product comparisons, affiliate links, and SEO optimization for commercial intent keywords.
+Create three high-converting money pages targeting profitable affiliate niches. These are core revenue-generating
+content pieces with deep product comparisons, affiliate links, and SEO optimization for commercial intent keywords.
 
 ## Goals
 
@@ -154,14 +155,15 @@ Before marking this task complete:
 ### 2024-11-23 - 6 hours
 
 - ✅ Created Article 1: Best Noise-Canceling Headphones (`/src/pages/gear/best-noise-canceling-headphones.astro`)
-  - 7 products reviewed (Sony XM5, Bose QC Ultra, AirPods Max, Sony XM4, Bose 700, Sennheiser Momentum 4, Jabra Evolve2 85)
-  - ~3,200 words with full comparison tables, FAQ section, related articles
+    - 7 products reviewed (Sony XM5, Bose QC Ultra, AirPods Max, Sony XM4, Bose 700, Sennheiser Momentum 4, Jabra
+      Evolve2 85)
+    - ~3,200 words with full comparison tables, FAQ section, related articles
 - ✅ Created Article 2: Best Productivity Apps (`/src/pages/tools/best-productivity-apps.astro`)
-  - 7 apps reviewed (Notion, Todoist, Obsidian, Things 3, TickTick, Evernote, Any.do)
-  - ~3,000 words with comparison tables, FAQ section, related articles
+    - 7 apps reviewed (Notion, Todoist, Obsidian, Things 3, TickTick, Evernote, Any.do)
+    - ~3,000 words with comparison tables, FAQ section, related articles
 - ✅ Created Article 3: Best Time Tracking Software (`/src/pages/tools/best-time-tracking-software.astro`)
-  - 7 apps reviewed (Toggl, Harvest, Clockify, Timely, RescueTime, Paymo, Hours)
-  - ~2,800 words with comparison tables, FAQ section, related articles
+    - 7 apps reviewed (Toggl, Harvest, Clockify, Timely, RescueTime, Paymo, Hours)
+    - ~2,800 words with comparison tables, FAQ section, related articles
 - 📊 Progress: All 3 articles created, pending review and testing
 
 ### 2025-11-23 - Task Completed

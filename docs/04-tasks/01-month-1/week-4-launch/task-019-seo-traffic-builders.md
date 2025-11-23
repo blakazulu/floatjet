@@ -16,7 +16,8 @@ tags: ["content", "seo", "traffic", "week-4"]
 
 ## Overview
 
-Create 5 short-form articles (800-1,200 words) targeting question-based and comparison keywords. These articles capture search traffic and funnel readers to money pages. Quick to produce, high SEO value.
+Create 5 short-form articles (800-1,200 words) targeting question-based and comparison keywords. These articles capture
+search traffic and funnel readers to money pages. Quick to produce, high SEO value.
 
 ## Goals
 
@@ -52,7 +53,7 @@ Create 5 short-form articles (800-1,200 words) targeting question-based and comp
 ### Phase 1: Keyword Research & Topics (1 hour)
 
 - [ ] 1.1 Identify 5 question-based keywords
-    Suggested topics:
+  Suggested topics:
     - "Is [Tool] Worth It? Honest Review" (e.g., Notion, Slack)
     - "VPN vs Proxy: Which is Better for Remote Work?"
     - "How Much Does a Good Standing Desk Cost?"

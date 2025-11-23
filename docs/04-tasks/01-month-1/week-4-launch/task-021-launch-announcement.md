@@ -16,7 +16,8 @@ tags: ["marketing", "launch", "outreach", "week-4"]
 
 ## Overview
 
-Officially announce FloatJet's launch across social media platforms, submit to relevant directories, and begin initial outreach. This marks the transition from development to growth phase.
+Officially announce FloatJet's launch across social media platforms, submit to relevant directories, and begin initial
+outreach. This marks the transition from development to growth phase.
 
 ## Goals
 

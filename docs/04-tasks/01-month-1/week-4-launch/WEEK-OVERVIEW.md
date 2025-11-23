@@ -37,6 +37,7 @@ and submit to directories. FloatJet goes live officially!
 **Total Estimated:** 60 hours
 
 ### Task Files
+
 - `task-016-money-pages-6-8.md`
 - `task-017-money-pages-9-10.md`
 - `task-018-supporting-content-batch-2.md`

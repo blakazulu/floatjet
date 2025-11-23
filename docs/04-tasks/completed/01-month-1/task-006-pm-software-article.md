@@ -17,7 +17,9 @@ tags: ["content", "money-page", "week-2", "project-management", "affiliate"]
 
 ## Overview
 
-Write the first high-converting money page targeting "best project management software" keywords. This is a cornerstone article designed to rank for competitive keywords and drive affiliate revenue through Notion, ClickUp, and Monday.com recommendations.
+Write the first high-converting money page targeting "best project management software" keywords. This is a cornerstone
+article designed to rank for competitive keywords and drive affiliate revenue through Notion, ClickUp, and Monday.com
+recommendations.
 
 ## Goals
 
@@ -124,6 +126,7 @@ netlify.toml - Added 9 affiliate redirects (/go/notion, /go/clickup, etc.)
 ## Notes
 
 **Article Structure:**
+
 - Introduction with quick answer
 - Quick Picks table (top 3)
 - "What We Tested" methodology
@@ -135,6 +138,7 @@ netlify.toml - Added 9 affiliate redirects (/go/notion, /go/clickup, etc.)
 - Related articles
 
 **Affiliate Programs Featured:**
+
 1. Notion (primary - Tier 1)
 2. ClickUp (primary - Tier 1)
 3. Asana

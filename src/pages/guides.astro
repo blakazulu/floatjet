@@ -6,11 +6,24 @@ const description = 'Expert guides for remote workers and digital nomads. Learn 
 
 // Category pages
 const categories = [
-  {name: 'Travel Guides', href: '/guides/travel', icon: '✈️'}
+  {name: 'Travel', href: '/guides/travel', icon: '✈️', description: 'Destinations, visas & travel tips'},
+  {name: 'Communication', href: '/guides/communication', icon: '💬', description: 'Async workflows & collaboration'},
+  {name: 'Productivity', href: '/guides/productivity', icon: '⚡', description: 'Time management & focus'},
+  {name: 'Security', href: '/guides/security', icon: '🔐', description: 'VPNs, passwords & online safety'},
+  {name: 'Setup', href: '/guides/setup', icon: '🏠', description: 'Home office & gear guides'},
+  {name: 'Finance', href: '/guides/finance', icon: '📊', description: 'Taxes, banking & money'}
 ];
 
-// Guide articles data
+// Featured guides from each category
 const guides = [
+  {
+    title: 'Top Destinations for Digital Nomads',
+    description: 'Best places to work remotely with great WiFi, community, and cost of living.',
+    href: '/blog/top-destinations-digital-nomads',
+    category: 'Travel',
+    readTime: '20 min',
+    icon: '✈️'
+  },
   {
     title: 'Async Communication for Remote Teams',
     description: 'Master asynchronous communication to boost productivity and reduce meetings.',
@@ -65,14 +78,15 @@ const guides = [
     </div>
 
     <!-- Category Links -->
-    <div class="flex flex-wrap justify-center gap-3 mb-12">
+    <div class="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 mb-12 max-w-5xl mx-auto">
       {categories.map(cat => (
           <a
               href={cat.href}
-              class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-jet-stream text-white/90 hover:text-ocean-deep rounded-full text-sm font-medium transition-colors"
+              class="group flex flex-col items-center text-center p-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-jet-stream/50 rounded-xl transition-all duration-300"
           >
-            <span>{cat.icon}</span>
-            {cat.name}
+            <span class="text-2xl mb-2">{cat.icon}</span>
+            <span class="text-white font-medium group-hover:text-jet-stream transition-colors">{cat.name}</span>
+            <span class="text-white/50 text-xs mt-1 hidden sm:block">{cat.description}</span>
           </a>
       ))}
     </div>

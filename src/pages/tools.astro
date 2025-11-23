@@ -1,13 +1,188 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = 'Tools | FloatJet';
-const description = 'Browse the best remote work tools and software.';
+const title = 'Best Remote Work Tools & Software | FloatJet';
+const description = 'Discover the best tools and software for remote workers. In-depth reviews of project management, VPNs, productivity apps, and more.';
+
+// Tool articles data
+const tools = [
+  {
+    title: 'Best Project Management Software',
+    description: 'Compare Notion, ClickUp, Asana, Monday.com and more for remote teams.',
+    href: '/tools/best-project-management-software',
+    category: 'Productivity',
+    icon: '📋'
+  },
+  {
+    title: 'Best VPN for Digital Nomads',
+    description: 'Secure your connection while working from anywhere in the world.',
+    href: '/tools/best-vpn-digital-nomads',
+    category: 'Security',
+    icon: '🔒'
+  },
+  {
+    title: 'Best Email Marketing Tools',
+    description: 'Grow your audience with the right email marketing platform.',
+    href: '/tools/best-email-marketing-tools',
+    category: 'Marketing',
+    icon: '📧'
+  },
+  {
+    title: 'Best Password Managers',
+    description: 'Keep your accounts secure with a reliable password manager.',
+    href: '/tools/best-password-manager-remote-work',
+    category: 'Security',
+    icon: '🔐'
+  },
+  {
+    title: 'Best Laptops for Remote Work',
+    description: 'Find the perfect laptop for productivity on the go.',
+    href: '/tools/best-laptops-remote-work',
+    category: 'Hardware',
+    icon: '💻'
+  },
+  {
+    title: 'Best Web Hosting',
+    description: 'Reliable hosting for your remote business or side project.',
+    href: '/tools/best-web-hosting-remote-business',
+    category: 'Infrastructure',
+    icon: '🌐'
+  },
+  {
+    title: 'Best Time Tracking Software',
+    description: 'Track billable hours and boost productivity.',
+    href: '/tools/best-time-tracking-software',
+    category: 'Productivity',
+    icon: '⏱️'
+  },
+  {
+    title: 'Best Online Course Platforms',
+    description: 'Learn new skills or create courses to share your expertise.',
+    href: '/tools/best-online-course-platforms',
+    category: 'Learning',
+    icon: '🎓'
+  },
+  {
+    title: 'Best Productivity Apps',
+    description: 'Apps to help you focus, organize, and get more done.',
+    href: '/tools/best-productivity-apps',
+    category: 'Productivity',
+    icon: '🚀'
+  }
+];
+
+// Category filters
+const categories = ['All', 'Productivity', 'Security', 'Marketing', 'Hardware', 'Infrastructure', 'Learning'];
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="container mx-auto px-4 py-20 text-center">
-    <h1 class="text-4xl font-bold text-white mb-4">Tools</h1>
-    <p class="text-white/80 text-lg">Coming soon...</p>
+  <div class="container mx-auto px-4 pt-24 md:pt-28 pb-16 md:pb-20">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Remote Work Tools</h1>
+      <p class="text-lg text-white/80 max-w-2xl mx-auto">
+        In-depth reviews and comparisons of the best software and tools for remote workers, freelancers, and digital nomads.
+      </p>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="flex flex-wrap justify-center gap-2 mb-10">
+      {categories.map((cat, index) => (
+        <button
+          class={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+            index === 0
+              ? 'bg-jet-stream text-ocean-deep'
+              : 'bg-white/10 text-white/80 hover:bg-white/20 hover:text-white'
+          }`}
+          data-category={cat.toLowerCase()}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    <!-- Tools Grid -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {tools.map(tool => (
+        <a
+          href={tool.href}
+          class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
+          data-category={tool.category.toLowerCase()}
+        >
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">{tool.icon}</span>
+            <div class="flex-1">
+              <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded mb-2">
+                {tool.category}
+              </span>
+              <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
+                {tool.title}
+              </h2>
+              <p class="text-white/70 text-sm">
+                {tool.description}
+              </p>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
+            Read Review
+            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Coming Soon Section -->
+    <div class="mt-16 text-center">
+      <h2 class="text-xl font-semibold text-white mb-4">More Reviews Coming Soon</h2>
+      <p class="text-white/60 mb-6">
+        We're constantly testing new tools. Check back soon for reviews on communication tools, CRM software, and more.
+      </p>
+      <a href="/contact" class="inline-flex items-center text-jet-stream hover:text-sky-light transition-colors">
+        Suggest a tool for us to review
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
+    </div>
   </div>
 </BaseLayout>
+
+<script>
+  function initCategoryFilter() {
+    const buttons = document.querySelectorAll('[data-category]') as NodeListOf<HTMLButtonElement>;
+    const cards = document.querySelectorAll('[data-category]') as NodeListOf<HTMLElement>;
+
+    // Get only button elements
+    const filterButtons = Array.from(buttons).filter(el => el.tagName === 'BUTTON');
+    // Get only card elements (anchor tags)
+    const toolCards = Array.from(cards).filter(el => el.tagName === 'A');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.dataset.category;
+
+        // Update button styles
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-jet-stream', 'text-ocean-deep');
+          btn.classList.add('bg-white/10', 'text-white/80');
+        });
+        button.classList.remove('bg-white/10', 'text-white/80');
+        button.classList.add('bg-jet-stream', 'text-ocean-deep');
+
+        // Filter cards
+        toolCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initCategoryFilter);
+  document.addEventListener('astro:page-load', initCategoryFilter);
+</script>

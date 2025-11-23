@@ -1,13 +1,162 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = 'Guides | FloatJet';
-const description = 'Expert guides for remote professionals.';
+const title = 'Remote Work Guides & Tips | FloatJet';
+const description = 'Expert guides for remote workers and digital nomads. Learn best practices for async communication, time management, home office setup, and more.';
+
+// Guide articles data
+const guides = [
+  {
+    title: 'Async Communication for Remote Teams',
+    description: 'Master asynchronous communication to boost productivity and reduce meetings.',
+    href: '/blog/async-communication-remote-teams',
+    category: 'Communication',
+    readTime: '12 min',
+    icon: '💬'
+  },
+  {
+    title: 'Managing Time Zones in Remote Teams',
+    description: 'Strategies for effective collaboration across different time zones.',
+    href: '/blog/managing-time-zones-remote-teams',
+    category: 'Productivity',
+    readTime: '10 min',
+    icon: '🌍'
+  },
+  {
+    title: 'VPN & Public WiFi Security',
+    description: 'Essential cybersecurity practices for working from anywhere.',
+    href: '/blog/vpn-public-wifi-guide',
+    category: 'Security',
+    readTime: '13 min',
+    icon: '🔐'
+  },
+  {
+    title: 'Ultimate Home Office Setup',
+    description: 'Build the perfect home office on any budget.',
+    href: '/blog/ultimate-home-office-setup',
+    category: 'Setup',
+    readTime: '11 min',
+    icon: '🏠'
+  },
+  {
+    title: 'Tax Tips for Remote Workers',
+    description: 'Navigate taxes as a remote worker or digital nomad.',
+    href: '/blog/tax-tips-remote-workers',
+    category: 'Finance',
+    readTime: '14 min',
+    icon: '📊'
+  }
+];
+
+// Categories
+const categories = ['All', 'Communication', 'Productivity', 'Security', 'Setup', 'Finance'];
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="container mx-auto px-4 py-20 text-center">
-    <h1 class="text-4xl font-bold text-white mb-4">Guides</h1>
-    <p class="text-white/80 text-lg">Coming soon...</p>
+  <div class="container mx-auto px-4 pt-24 md:pt-28 pb-16 md:pb-20">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Remote Work Guides</h1>
+      <p class="text-lg text-white/80 max-w-2xl mx-auto">
+        Practical guides and tutorials to help you thrive as a remote worker, freelancer, or digital nomad.
+      </p>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="flex flex-wrap justify-center gap-2 mb-10">
+      {categories.map((cat, index) => (
+        <button
+          class={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+            index === 0
+              ? 'bg-jet-stream text-ocean-deep'
+              : 'bg-white/10 text-white/80 hover:bg-white/20 hover:text-white'
+          }`}
+          data-filter={cat.toLowerCase()}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    <!-- Guides Grid -->
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+      {guides.map(guide => (
+        <a
+          href={guide.href}
+          class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300 flex flex-col"
+          data-filter={guide.category.toLowerCase()}
+        >
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">{guide.icon}</span>
+            <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
+              {guide.category}
+            </span>
+          </div>
+          <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
+            {guide.title}
+          </h2>
+          <p class="text-white/70 text-sm flex-1">
+            {guide.description}
+          </p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-white/50 text-sm">{guide.readTime} read</span>
+            <span class="text-jet-stream text-sm font-medium flex items-center">
+              Read Guide
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Coming Soon Section -->
+    <div class="mt-16 text-center">
+      <h2 class="text-xl font-semibold text-white mb-4">More Guides Coming Soon</h2>
+      <p class="text-white/60 mb-6 max-w-xl mx-auto">
+        We're working on guides for travel planning, visa requirements, coworking spaces, and more.
+      </p>
+      <a href="/contact" class="inline-flex items-center text-jet-stream hover:text-sky-light transition-colors">
+        Request a guide topic
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
+    </div>
   </div>
 </BaseLayout>
+
+<script>
+  function initGuideFilter() {
+    const buttons = document.querySelectorAll('[data-filter]') as NodeListOf<HTMLButtonElement>;
+    const cards = document.querySelectorAll('[data-filter]') as NodeListOf<HTMLElement>;
+
+    const filterButtons = Array.from(buttons).filter(el => el.tagName === 'BUTTON');
+    const guideCards = Array.from(cards).filter(el => el.tagName === 'A');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-jet-stream', 'text-ocean-deep');
+          btn.classList.add('bg-white/10', 'text-white/80');
+        });
+        button.classList.remove('bg-white/10', 'text-white/80');
+        button.classList.add('bg-jet-stream', 'text-ocean-deep');
+
+        guideCards.forEach(card => {
+          if (filter === 'all' || card.dataset.filter === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initGuideFilter);
+  document.addEventListener('astro:page-load', initGuideFilter);
+</script>

@@ -3,7 +3,7 @@
 ## Commission Rates, Programs, and Management
 
 **Version:** 1.0
-**Last Updated:** November 20, 2025
+**Last Updated:** November 23, 2025
 **Purpose:** Central tracker for all affiliate partnerships, commission rates, and program details
 
 ---
@@ -326,9 +326,476 @@ https://floatjet.com/go/nordvpn
 
 ---
 
+### 6. Todoist (Direct Program)
+
+**Status:** 🔴 Not Applied
+
+**Commission Structure:**
+
+- Commission: 20% recurring for 12 months
+- Cookie: 30 days
+- First sale bonus: Available for high performers
+
+**Product Details:**
+
+- Price: Free / $5/user/month Pro / $8/user/month Business
+- Free tier: Yes (generous)
+- Target audience: Remote workers, productivity enthusiasts, teams
+
+**Affiliate Link Format:**
+
+```
+https://todoist.com/r/floatjet
+```
+
+**Short Link:**
+
+```
+https://floatjet.com/go/todoist
+```
+
+**Payment Terms:**
+
+- Network: Direct (in-house program)
+- Payment threshold: $50
+- Payment schedule: Monthly
+- Payment method: PayPal
+
+**Application Requirements:**
+
+- Active website with productivity content
+- Quality audience in productivity niche
+- No spam or incentivized traffic
+
+**Notes:**
+
+- 20% recurring is excellent for subscription product
+- Very popular app with high conversion potential
+- Natural fit for productivity content
+
+**Articles to Feature:**
+
+- Best Productivity Apps for Remote Workers
+- Todoist vs Things 3
+- Best GTD Apps
+
+---
+
+### 7. Toggl (Impact Radius)
+
+**Status:** 🔴 Not Applied
+
+**Commission Structure:**
+
+- Commission: 20% of first-year revenue
+- Typical payout: $20-50 per conversion
+- Cookie: 30 days
+
+**Product Details:**
+
+- Price: Free / $10/user/month Starter / $20/user/month Premium
+- Free tier: Yes (up to 5 users)
+- Target audience: Freelancers, agencies, remote teams
+
+**Affiliate Link Format:**
+
+```
+https://toggl.com/?via=floatjet
+```
+
+**Short Link:**
+
+```
+https://floatjet.com/go/toggl
+```
+
+**Payment Terms:**
+
+- Network: Impact Radius
+- Payment threshold: $50
+- Payment schedule: Net 30
+- Payment method: Direct deposit, PayPal
+
+**Application Requirements:**
+
+- Active website
+- Relevant content (freelancing, time management, productivity)
+- Apply via Impact Radius
+
+**Notes:**
+
+- Market leader in time tracking
+- High brand recognition
+- Excellent conversion rates
+
+**Articles to Feature:**
+
+- Best Time Tracking Software for Freelancers
+- Toggl vs Harvest
+- Best Tools for Freelancers
+
+---
+
+### 8. Harvest (Direct Program)
+
+**Status:** 🔴 Not Applied
+
+**Commission Structure:**
+
+- Commission: 15% recurring for 12 months
+- Typical payout: $15-30 per conversion
+- Cookie: 45 days
+
+**Product Details:**
+
+- Price: Free (1 seat, 2 projects) / $12/user/month Pro
+- Free tier: Limited
+- Target audience: Freelancers, small agencies, consultants
+
+**Affiliate Link Format:**
+
+```
+https://www.getharvest.com/?ref=floatjet
+```
+
+**Short Link:**
+
+```
+https://floatjet.com/go/harvest
+```
+
+**Payment Terms:**
+
+- Network: Direct
+- Payment threshold: $50
+- Payment schedule: Monthly
+- Payment method: PayPal
+
+**Application Requirements:**
+
+- Website with relevant content
+- Apply via Harvest partner page
+- Quality focus on freelancing/time tracking
+
+**Notes:**
+
+- Best-in-class invoicing integration
+- Strong reputation among freelancers
+- 12-month recurring is great value
+
+**Articles to Feature:**
+
+- Best Time Tracking Software for Freelancers
+- Best Invoicing Tools
+- Harvest vs Toggl
+
+---
+
+### 9. Clockify (Direct Program)
+
+**Status:** 🔴 Not Applied
+
+**Commission Structure:**
+
+- Commission: 10-20% of first-year revenue
+- Typical payout: $10-25 per conversion
+- Cookie: 30 days
+
+**Product Details:**
+
+- Price: Free (unlimited) / $5-12/user/month paid tiers
+- Free tier: Yes (very generous - unlimited everything)
+- Target audience: Budget-conscious freelancers, startups, teams
+
+**Affiliate Link Format:**
+
+```
+https://clockify.me/?ref=floatjet
+```
+
+**Short Link:**
+
+```
+https://floatjet.com/go/clockify
+```
+
+**Payment Terms:**
+
+- Network: Direct
+- Payment threshold: $50
+- Payment schedule: Monthly
+- Payment method: PayPal, Bank transfer
+
+**Application Requirements:**
+
+- Website with productivity/freelance content
+- Apply via Clockify affiliate page
+
+**Notes:**
+
+- Best free time tracker (great for conversions)
+- Lower commission but high volume potential
+- Easy sell for budget-conscious users
+
+**Articles to Feature:**
+
+- Best Time Tracking Software for Freelancers
+- Best Free Time Tracking Apps
+- Clockify vs Toggl
+
+---
+
+### 10. TickTick (Direct Program)
+
+**Status:** 🔴 Not Applied
+
+**Commission Structure:**
+
+- Commission: 30% of first-year revenue
+- Typical payout: $10-15 per conversion
+- Cookie: 30 days
+
+**Product Details:**
+
+- Price: Free / $36/year Premium
+- Free tier: Yes (generous)
+- Target audience: GTD enthusiasts, productivity seekers
+
+**Affiliate Link Format:**
+
+```
+https://ticktick.com/?ref=floatjet
+```
+
+**Short Link:**
+
+```
+https://floatjet.com/go/ticktick
+```
+
+**Payment Terms:**
+
+- Network: Direct
+- Payment threshold: $50
+- Payment schedule: Monthly
+- Payment method: PayPal
+
+**Application Requirements:**
+
+- Contact via affiliate page
+- Productivity content focus
+
+**Notes:**
+
+- 30% is excellent commission rate
+- Growing popularity as Todoist alternative
+- Built-in calendar is unique selling point
+
+**Articles to Feature:**
+
+- Best Productivity Apps for Remote Workers
+- TickTick vs Todoist
+- Best GTD Apps
+
+---
+
+### 11. Timely (PartnerStack)
+
+**Status:** 🔴 Not Applied
+
+**Commission Structure:**
+
+- Commission: 20% of first-year revenue
+- Typical payout: $25-60 per conversion
+- Cookie: 30 days
+
+**Product Details:**
+
+- Price: $11-28/user/month (no free tier)
+- Free tier: 14-day trial only
+- Target audience: Agencies, consultants, knowledge workers
+
+**Affiliate Link Format:**
+
+```
+https://timelyapp.com/?via=floatjet
+```
+
+**Short Link:**
+
+```
+https://floatjet.com/go/timely
+```
+
+**Payment Terms:**
+
+- Network: PartnerStack
+- Payment threshold: $50
+- Payment schedule: Net 30
+- Payment method: PayPal, Direct deposit
+
+**Notes:**
+
+- Automatic time tracking is unique selling point
+- Higher price point = higher commissions
+- Appeals to "forgot to track" audience
+
+**Articles to Feature:**
+
+- Best Time Tracking Software for Freelancers
+- Automatic Time Tracking Apps
+- Best Tools for Consultants
+
+---
+
+### 12. RescueTime (ShareASale)
+
+**Status:** 🔴 Not Applied
+
+**Commission Structure:**
+
+- Commission: 20% of sale
+- Typical payout: $15-30 per conversion
+- Cookie: 30 days
+
+**Product Details:**
+
+- Price: Free (limited) / $12/month Premium
+- Free tier: Yes (3-month data retention)
+- Target audience: Productivity seekers, remote workers
+
+**Affiliate Link Format:**
+
+```
+Via ShareASale merchant link
+```
+
+**Short Link:**
+
+```
+https://floatjet.com/go/rescuetime
+```
+
+**Payment Terms:**
+
+- Network: ShareASale
+- Payment threshold: $50
+- Payment schedule: Monthly
+
+**Notes:**
+
+- Focus on productivity insights (different angle)
+- Good for "understand your habits" content
+- Complements time tracking articles
+
+**Articles to Feature:**
+
+- Best Time Tracking Software for Freelancers
+- Best Productivity Apps
+- How to Audit Your Time
+
+---
+
+### 13. Paymo (Direct Program)
+
+**Status:** 🔴 Not Applied
+
+**Commission Structure:**
+
+- Commission: 20% recurring for first year
+- Typical payout: $15-30 per conversion
+- Cookie: 30 days
+
+**Product Details:**
+
+- Price: Free (1 user) / $6-12/user/month paid
+- Free tier: Yes (limited)
+- Target audience: Freelancers, small agencies
+
+**Affiliate Link Format:**
+
+```
+https://www.paymoapp.com/?ref=floatjet
+```
+
+**Short Link:**
+
+```
+https://floatjet.com/go/paymo
+```
+
+**Payment Terms:**
+
+- Network: Direct
+- Payment threshold: $50
+- Payment schedule: Monthly
+- Payment method: PayPal
+
+**Notes:**
+
+- Time tracking + project management combo
+- Good for "all-in-one" content angle
+- Lower competition than Toggl/Harvest
+
+**Articles to Feature:**
+
+- Best Time Tracking Software for Freelancers
+- Best Project Management for Freelancers
+- Paymo Review
+
+---
+
+### 14. Evernote (CJ Affiliate)
+
+**Status:** 🔴 Not Applied
+
+**Commission Structure:**
+
+- Commission: 15-20% of sale
+- Typical payout: $20-35 per conversion
+- Cookie: 30 days
+
+**Product Details:**
+
+- Price: Free (limited) / $15/month Personal / $18/month Professional
+- Free tier: Yes (limited)
+- Target audience: Note-takers, researchers, professionals
+
+**Affiliate Link Format:**
+
+```
+Via CJ Affiliate merchant link
+```
+
+**Short Link:**
+
+```
+https://floatjet.com/go/evernote
+```
+
+**Payment Terms:**
+
+- Network: CJ Affiliate
+- Payment threshold: $50
+- Payment schedule: Monthly
+
+**Notes:**
+
+- Lower priority (Notion preferred)
+- Still has loyal user base
+- Good for comparison articles
+
+**Articles to Feature:**
+
+- Best Productivity Apps for Remote Workers
+- Evernote vs Notion
+- Best Note-Taking Apps
+
+---
+
 ## Tier 2: High-Value One-Time Programs
 
-### 6. ShareASale (Multi-Merchant Network)
+### 15. ShareASale (Multi-Merchant Network)
 
 **Status:** 🟡 Pending Application
 
@@ -431,9 +898,9 @@ https://floatjet.com/go/nordvpn
 
 ---
 
-### 8. Amazon Associates
+### 16. Amazon Associates
 
-**Status:** 🟡 Pending Application
+**Status:** 🔴 Not Applied - **PRIORITY FOR GEAR ARTICLES**
 
 **Commission Structure:**
 
@@ -446,7 +913,7 @@ https://floatjet.com/go/nordvpn
 **Product Details:**
 
 - Everything on Amazon
-- Target: Physical products (laptops, desks, accessories)
+- Target: Physical products (laptops, desks, headphones, accessories)
 - Price: Varies
 
 **Affiliate Link Format:**
@@ -455,10 +922,16 @@ https://floatjet.com/go/nordvpn
 https://amazon.com/dp/[ASIN]?tag=floatjet-20
 ```
 
-**Short Link:**
+**Short Links:**
 
 ```
-https://floatjet.com/go/amazon/[product-slug]
+https://floatjet.com/go/sony-xm5
+https://floatjet.com/go/sony-xm4
+https://floatjet.com/go/bose-qc-ultra
+https://floatjet.com/go/bose-700
+https://floatjet.com/go/airpods-max
+https://floatjet.com/go/sennheiser-momentum-4
+https://floatjet.com/go/jabra-evolve2-85
 ```
 
 **Payment Terms:**
@@ -475,16 +948,18 @@ https://floatjet.com/go/amazon/[product-slug]
 
 **Notes:**
 
-- **Low priority** (low commissions, short cookie)
-- Use for physical product reviews only
-- Don't rely on Amazon for main revenue
+- **HIGH PRIORITY** - Required for all gear/physical product articles
+- Low commissions but high conversion rates
+- Essential for headphones, standing desks, laptops articles
+- Volume-based strategy (many small commissions)
 
 **Articles to Feature:**
 
+- **Best Noise-Canceling Headphones** (7 products)
 - Best Laptop for Remote Work
 - Best Standing Desk
-- Best Noise Cancelling Headphones
 - Home Office Equipment
+- Travel Gear
 
 ---
 
@@ -548,17 +1023,45 @@ https://skillshare.com/r/floatjet
 
 ### Application Status
 
-| Program           | Status     | Date Applied | Date Approved | Priority |
-|-------------------|------------|--------------|---------------|----------|
-| Notion            | 🟡 Pending | -            | -             | High     |
-| ClickUp           | 🟡 Pending | -            | -             | High     |
-| ConvertKit        | 🟡 Pending | -            | -             | High     |
-| WPEngine          | 🟡 Pending | -            | -             | High     |
-| NordVPN           | 🟡 Pending | -            | -             | High     |
-| ShareASale        | 🟡 Pending | -            | -             | Medium   |
-| CJ Affiliate      | 🟡 Pending | -            | -             | Medium   |
-| Amazon Associates | 🟡 Pending | -            | -             | Low      |
-| Skillshare        | 🟡 Pending | -            | -             | Low      |
+| Program           | Status     | Date Applied | Date Approved | Priority | Articles |
+|-------------------|------------|--------------|---------------|----------|----------|
+| Notion            | 🟡 Pending | 2025-11-22   | -             | High     | Productivity Apps |
+| ClickUp           | 🟡 Pending | 2025-11-22   | -             | High     | PM Software |
+| NordVPN           | 🟡 Pending | 2025-11-22   | -             | High     | VPN article |
+| ConvertKit        | 🔴 Not Applied | -        | -             | **High** | Email Marketing |
+| WPEngine          | 🔴 Not Applied | -        | -             | **High** | Web Hosting |
+| **Beehiiv**       | 🔴 Not Applied | -        | -             | **High** | **Email Marketing** |
+| **Mailchimp**     | 🔴 Not Applied | -        | -             | **High** | **Email Marketing** |
+| **ActiveCampaign** | 🔴 Not Applied | -       | -             | **High** | **Email Marketing** |
+| **MailerLite**    | 🔴 Not Applied | -        | -             | **High** | **Email Marketing** |
+| **Teachable**     | 🔴 Not Applied | -        | -             | **High** | **Course Platforms** |
+| **Thinkific**     | 🔴 Not Applied | -        | -             | **High** | **Course Platforms** |
+| **Kajabi**        | 🔴 Not Applied | -        | -             | **High** | **Course Platforms** |
+| **Cloudways**     | 🔴 Not Applied | -        | -             | **High** | **Web Hosting** |
+| **SiteGround**    | 🔴 Not Applied | -        | -             | **High** | **Web Hosting** |
+| **Kinsta**        | 🔴 Not Applied | -        | -             | **High** | **Web Hosting** |
+| Todoist           | 🔴 Not Applied | -        | -             | High     | Productivity Apps |
+| Toggl             | 🔴 Not Applied | -        | -             | High     | Time Tracking |
+| Harvest           | 🔴 Not Applied | -        | -             | High     | Time Tracking |
+| Amazon Associates | 🔴 Not Applied | -        | -             | High     | Headphones, Gear |
+| Podia             | 🔴 Not Applied | -        | -             | Medium   | Course Platforms |
+| LearnWorlds       | 🔴 Not Applied | -        | -             | Medium   | Course Platforms |
+| Gumroad           | 🔴 Not Applied | -        | -             | Medium   | Course Platforms |
+| Flywheel          | 🔴 Not Applied | -        | -             | Medium   | Web Hosting |
+| A2 Hosting        | 🔴 Not Applied | -        | -             | Medium   | Web Hosting |
+| Bluehost          | 🔴 Not Applied | -        | -             | Medium   | Web Hosting |
+| DigitalOcean      | 🔴 Not Applied | -        | -             | Medium   | Web Hosting |
+| Buttondown        | 🔴 Not Applied | -        | -             | Low      | Email Marketing |
+| Flodesk           | 🔴 Not Applied | -        | -             | Low      | Email Marketing |
+| Clockify          | 🔴 Not Applied | -        | -             | Medium   | Time Tracking |
+| TickTick          | 🔴 Not Applied | -        | -             | Medium   | Productivity Apps |
+| Timely            | 🔴 Not Applied | -        | -             | Medium   | Time Tracking |
+| ShareASale        | 🟡 Pending | -            | -             | Medium   | Various |
+| CJ Affiliate      | 🟡 Pending | -            | -             | Medium   | Various |
+| RescueTime        | 🔴 Not Applied | -        | -             | Low      | Time Tracking |
+| Paymo             | 🔴 Not Applied | -        | -             | Low      | Time Tracking |
+| Evernote          | 🔴 Not Applied | -        | -             | Low      | Productivity Apps |
+| Skillshare        | 🟡 Pending | -            | -             | Low      | Learning |
 
 **Status Legend:**
 
@@ -840,19 +1343,76 @@ ACTION ITEMS
 ## Quick Reference: Affiliate Link Codes
 
 ```markdown
-<!-- Tier 1 Programs -->
+<!-- Tier 1 Programs - PM/Productivity -->
 [Try Notion Free](/go/notion)
 [Try ClickUp Free](/go/clickup)
+
+<!-- Tier 1 Programs - Productivity Apps -->
+[Try Todoist Free](/go/todoist)
+[Download Obsidian](/go/obsidian)
+[Try TickTick](/go/ticktick)
+[Try Evernote](/go/evernote)
+
+<!-- Tier 1 Programs - Time Tracking -->
+[Try Toggl Track Free](/go/toggl)
+[Try Harvest Free](/go/harvest)
+[Start Clockify Free](/go/clockify)
+[Try Timely](/go/timely)
+[Try RescueTime](/go/rescuetime)
+[Try Paymo](/go/paymo)
+
+<!-- Email Marketing -->
 [Start with ConvertKit](/go/convertkit)
-[Get WPEngine](/go/wpengine)
+[Try Beehiiv Free](/go/beehiiv)
+[Try Mailchimp Free](/go/mailchimp)
+[Try ActiveCampaign](/go/activecampaign)
+[Start with MailerLite](/go/mailerlite)
+[Try Buttondown](/go/buttondown)
+[Try Flodesk](/go/flodesk)
+
+<!-- VPN -->
 [Get NordVPN](/go/nordvpn)
+[Try ExpressVPN](/go/expressvpn)
+[Get Surfshark](/go/surfshark)
+[Try CyberGhost](/go/cyberghost)
+[Get ProtonVPN](/go/protonvpn)
+[Try Private Internet Access](/go/pia)
 
-<!-- Tier 2 Programs -->
+<!-- Web Hosting -->
+[Get WPEngine](/go/wpengine)
+[Try Cloudways](/go/cloudways)
+[Get SiteGround](/go/siteground)
+[Try Kinsta](/go/kinsta)
+[Get Flywheel](/go/flywheel)
+[Try A2 Hosting](/go/a2hosting)
 [Get Bluehost](/go/bluehost)
-[Try SiteGround](/go/siteground)
-[Start with Teachable](/go/teachable)
+[Try DigitalOcean](/go/digitalocean)
 
-<!-- Amazon (use specific product links) -->
+<!-- Course Platforms -->
+[Start with Teachable](/go/teachable)
+[Try Thinkific Free](/go/thinkific)
+[Try Kajabi](/go/kajabi)
+[Start with Podia](/go/podia)
+[Try LearnWorlds](/go/learnworlds)
+[Sell on Gumroad](/go/gumroad)
+
+<!-- Standing Desks -->
+[Get Uplift Desk](/go/uplift)
+[Try FlexiSpot](/go/flexispot)
+[Get Autonomous](/go/autonomous)
+[Try Fully](/go/fully)
+[Get Vari](/go/vari)
+
+<!-- Amazon - Headphones -->
+[Check Sony WH-1000XM5 Price](/go/sony-xm5)
+[Check Sony WH-1000XM4 Price](/go/sony-xm4)
+[Check Bose QC Ultra Price](/go/bose-qc-ultra)
+[Check Bose 700 Price](/go/bose-700)
+[Check AirPods Max Price](/go/airpods-max)
+[Check Sennheiser Momentum 4 Price](/go/sennheiser-momentum-4)
+[Check Jabra Evolve2 85 Price](/go/jabra-evolve2-85)
+
+<!-- Amazon - General -->
 [Check Price on Amazon](/go/amazon/[product-slug])
 ```
 
@@ -890,6 +1450,6 @@ ACTION ITEMS
 
 ---
 
-**Last Updated:** November 20, 2025
+**Last Updated:** November 23, 2025
 
 **Maintain this document** as you add programs, track performance, and optimize your affiliate strategy!

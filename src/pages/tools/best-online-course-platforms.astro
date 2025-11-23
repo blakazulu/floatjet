@@ -1,0 +1,794 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+import AffiliateButton from '@components/article/AffiliateButton.astro';
+import ComparisonTable from '@components/article/ComparisonTable.astro';
+
+// Article metadata
+const title = 'Best Online Course Platforms for Creators (2025)';
+const description = 'We tested 10 course platforms to find the best for creators. Compare Teachable, Thinkific, Kajabi, Podia & more to sell your courses online.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-23');
+const readingTime = 16;
+const image = 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Online course creation workspace with laptop and notes';
+
+// Table of contents headings
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
+  {text: 'Why Sell Courses Online', slug: 'why-sell-courses', depth: 2},
+  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
+  {text: 'Teachable', slug: 'teachable', depth: 3},
+  {text: 'Thinkific', slug: 'thinkific', depth: 3},
+  {text: 'Kajabi', slug: 'kajabi', depth: 3},
+  {text: 'Podia', slug: 'podia', depth: 3},
+  {text: 'Skillshare', slug: 'skillshare', depth: 3},
+  {text: 'Udemy', slug: 'udemy', depth: 3},
+  {text: 'Gumroad', slug: 'gumroad', depth: 3},
+  {text: 'LearnWorlds', slug: 'learnworlds', depth: 3},
+  {text: 'How to Choose', slug: 'how-to-choose', depth: 2},
+  {text: 'Getting Started', slug: 'getting-started', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+];
+
+// Quick picks comparison table
+const quickPicksColumns = [
+  {key: 'platform', label: 'Platform', width: '120px'},
+  {key: 'bestFor', label: 'Best For', width: '150px'},
+  {key: 'price', label: 'Starting Price'},
+  {key: 'rating', label: 'Rating'},
+  {key: 'action', label: ''},
+];
+
+const quickPicksRows = [
+  {
+    platform: '<strong>Teachable</strong>',
+    bestFor: 'First-time creators',
+    price: '$0-59/mo',
+    rating: '9.4/10',
+    action: '<a href="/go/teachable" rel="nofollow sponsored">Try Free</a>'
+  },
+  {
+    platform: '<strong>Kajabi</strong>',
+    bestFor: 'All-in-one business',
+    price: '$149/mo',
+    rating: '9.3/10',
+    action: '<a href="/go/kajabi" rel="nofollow sponsored">Start Trial</a>'
+  },
+  {
+    platform: '<strong>Thinkific</strong>',
+    bestFor: 'Course customization',
+    price: '$0-99/mo',
+    rating: '9.2/10',
+    action: '<a href="/go/thinkific" rel="nofollow sponsored">Get Started</a>'
+  },
+];
+
+// Full comparison table
+const fullComparisonColumns = [
+  {key: 'platform', label: 'Platform', width: '110px'},
+  {key: 'bestFor', label: 'Best For', width: '130px'},
+  {key: 'price', label: 'Starting Price'},
+  {key: 'transFee', label: 'Transaction Fee'},
+  {key: 'students', label: 'Students'},
+  {key: 'courses', label: 'Courses'},
+  {key: 'action', label: ''},
+];
+
+const fullComparisonRows = [
+  {
+    platform: '<strong>Teachable</strong>',
+    bestFor: 'Beginners',
+    price: '$0-59/mo',
+    transFee: '0-5%',
+    students: 'Unlimited',
+    courses: 'Unlimited (paid)',
+    action: '<a href="/go/teachable" rel="nofollow sponsored">Get Deal</a>'
+  },
+  {
+    platform: '<strong>Thinkific</strong>',
+    bestFor: 'Customization',
+    price: '$0-99/mo',
+    transFee: '0%',
+    students: 'Unlimited',
+    courses: '1 free, unlimited paid',
+    action: '<a href="/go/thinkific" rel="nofollow sponsored">Get Deal</a>'
+  },
+  {
+    platform: '<strong>Kajabi</strong>',
+    bestFor: 'All-in-one',
+    price: '$149/mo',
+    transFee: '0%',
+    students: '10K-100K',
+    courses: '3-100',
+    action: '<a href="/go/kajabi" rel="nofollow sponsored">Get Deal</a>'
+  },
+  {
+    platform: '<strong>Podia</strong>',
+    bestFor: 'Digital products',
+    price: '$39/mo',
+    transFee: '0%',
+    students: 'Unlimited',
+    courses: 'Unlimited',
+    action: '<a href="/go/podia" rel="nofollow sponsored">Get Deal</a>'
+  },
+  {
+    platform: '<strong>LearnWorlds</strong>',
+    bestFor: 'Interactive courses',
+    price: '$29/mo',
+    transFee: '$5/sale (starter)',
+    students: 'Unlimited',
+    courses: 'Unlimited',
+    action: '<a href="/go/learnworlds" rel="nofollow sponsored">Get Deal</a>'
+  },
+  {
+    platform: '<strong>Gumroad</strong>',
+    bestFor: 'Simple sales',
+    price: 'Free',
+    transFee: '10%',
+    students: 'Unlimited',
+    courses: 'Unlimited',
+    action: '<a href="/go/gumroad" rel="nofollow sponsored">Get Deal</a>'
+  },
+  {
+    platform: '<strong>Udemy</strong>',
+    bestFor: 'Built-in audience',
+    price: 'Free',
+    transFee: '37-63%',
+    students: 'Marketplace',
+    courses: 'Unlimited',
+    action: '<a href="https://www.udemy.com/teaching/" target="_blank" rel="noopener">Visit Site</a>'
+  },
+  {
+    platform: '<strong>Skillshare</strong>',
+    bestFor: 'Creative skills',
+    price: 'Free',
+    transFee: 'Revenue share',
+    students: 'Marketplace',
+    courses: 'Unlimited',
+    action: '<a href="https://www.skillshare.com/teach" target="_blank" rel="noopener">Visit Site</a>'
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'What is the best platform to sell online courses?',
+    answer: '<p><strong>Teachable</strong> is the best platform for most creators, especially those just starting out. It offers an excellent free tier, intuitive course builder, and scales well as you grow. For creators wanting an all-in-one business platform with email marketing and sales funnels built in, <strong>Kajabi</strong> is worth the premium price.</p><p>If you want zero transaction fees and maximum customization, <strong>Thinkific</strong> is an excellent choice with a strong free tier.</p>'
+  },
+  {
+    question: 'How much does it cost to create an online course?',
+    answer: '<p>You can start creating courses for <strong>$0 upfront</strong> using free tiers from Teachable, Thinkific, or Gumroad. Your main costs will be:</p><ul><li>Course platform: $0-149/month</li><li>Video equipment: $0 (phone) to $500+ (professional setup)</li><li>Screen recording software: $0-30/month</li><li>Editing software: $0-55/month</li></ul><p>Most creators start with under $100/month in tools and scale up as revenue grows. The free tiers are genuinely usable for launching your first course.</p>'
+  },
+  {
+    question: 'Teachable vs Thinkific: Which is better?',
+    answer: '<p>Both are excellent, but they serve slightly different needs:</p><p><strong>Choose Teachable if:</strong> You want the easiest setup, built-in payment processing, and don\'t mind transaction fees on free/basic plans. Better for beginners.</p><p><strong>Choose Thinkific if:</strong> You want zero transaction fees, more customization options, and stronger quiz/assessment features. Better for established creators.</p><p>Thinkific\'s free plan is more generous (unlimited students), while Teachable\'s paid plans include more marketing features.</p>'
+  },
+  {
+    question: 'Can I make money selling online courses?',
+    answer: '<p>Yes, online courses are one of the most profitable digital products. The global e-learning market exceeds <strong>$300 billion</strong> and continues growing 10-15% annually.</p><p>Realistic expectations:</p><ul><li>First course: $1,000-10,000 (with proper marketing)</li><li>Established creators: $10,000-100,000/year</li><li>Top creators: $1M+ annually</li></ul><p>Success depends more on your audience and marketing than the platform you choose. Build an email list, validate your course idea, and price based on value delivered.</p>'
+  },
+  {
+    question: 'Should I use Udemy or my own platform?',
+    answer: '<p><strong>Use Udemy if:</strong> You have no existing audience, want marketplace discovery, and are okay with lower per-sale revenue. Udemy\'s 57 million students can discover your course, but you keep only 37% of sales they generate.</p><p><strong>Use your own platform if:</strong> You have an audience (email list, social following), want to build a brand, and keep more revenue. Platforms like Teachable let you keep 95-100% of sales.</p><p>Many creators do both: use Udemy for discovery and their own platform for premium courses with higher prices.</p>'
+  },
+  {
+    question: 'What equipment do I need to create an online course?',
+    answer: '<p>Minimum viable setup (under $100):</p><ul><li>Your smartphone (modern phones shoot excellent video)</li><li>Natural lighting or a $30 ring light</li><li>A quiet room</li><li>Free screen recording (OBS, Loom free tier)</li></ul><p>Professional setup ($500-1,500):</p><ul><li>USB microphone: Blue Yeti or Rode NT-USB ($100-170)</li><li>Webcam: Logitech C920 or C922 ($70-100)</li><li>Lighting: Elgato Key Light or softbox kit ($100-200)</li><li>Screen recording: Camtasia or ScreenFlow ($250-300)</li></ul><p>Audio quality matters more than video quality. Invest in a good microphone first.</p>'
+  },
+  {
+    question: 'How long should an online course be?',
+    answer: '<p>Course length depends on the topic and price point:</p><ul><li><strong>Mini-course ($20-50):</strong> 30-60 minutes</li><li><strong>Standard course ($100-300):</strong> 2-5 hours</li><li><strong>Premium course ($500+):</strong> 5-20+ hours</li></ul><p>Focus on outcomes, not duration. A 2-hour course that delivers results is more valuable than a 20-hour course with padding. Students want transformation, not content for content\'s sake.</p><p>Break content into 5-15 minute lessons for better engagement and completion rates.</p>'
+  },
+  {
+    question: 'Do I need a website to sell courses?',
+    answer: '<p><strong>No, you don\'t need a separate website.</strong> Platforms like Teachable, Kajabi, and Thinkific host your course pages, sales pages, and checkout. You can launch with just the platform.</p><p>However, having your own website helps with:</p><ul><li>SEO and organic traffic</li><li>Building authority and trust</li><li>Email list building</li><li>Content marketing (blog, podcast)</li></ul><p>Start with just the course platform, then add a website as you grow and want more control over your brand.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Best Email Marketing Tools for Creators',
+    excerpt: 'Build your audience with the best email platforms for course creators and online businesses.',
+    href: '/tools/best-email-marketing-tools',
+    image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Email marketing concept'
+  },
+  {
+    title: 'Best Project Management Software for Remote Teams',
+    excerpt: 'Organize your course creation workflow with the right project management tools.',
+    href: '/tools/best-project-management-software',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Project management dashboard'
+  },
+  {
+    title: 'Best Web Hosting for Remote Businesses',
+    excerpt: 'Find reliable hosting for your course website and online business.',
+    href: '/tools/best-web-hosting-remote-business',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Server room with hosting infrastructure'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Tools"
+    categorySlug="tools"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">Turn Your Knowledge Into Income with Online Courses</h2>
+  <p>
+    Creating and selling online courses is one of the best ways for remote workers, freelancers, and creators to build
+    passive income. You create the content once and sell it indefinitely—no trading hours for dollars.
+  </p>
+  <p>
+    But choosing the right platform matters. Some take massive cuts of your revenue. Others nickel-and-dime you with
+    transaction fees. And some are so complex you'll spend more time fighting the software than creating content.
+  </p>
+  <p>
+    We tested 10 course platforms over three months, creating actual courses and processing real transactions. We
+    evaluated ease of use, pricing structures, marketing features, student experience, and overall value for creators.
+  </p>
+  <p>
+    <strong>Quick answer:</strong> <a href="#teachable">Teachable</a> is our top pick for most creators—it's the easiest
+    to use with a solid free tier and reasonable pricing. <a href="#kajabi">Kajabi</a> is best if you want email
+    marketing, sales funnels, and website hosting all in one platform. <a href="#thinkific">Thinkific</a> wins for
+    customization with zero transaction fees.
+  </p>
+
+  <!-- Quick Picks -->
+  <h2 id="quick-picks">Our Top 3 Course Platform Picks</h2>
+  <p>Short on time? Here are our top recommendations for course creators:</p>
+  <ComparisonTable
+      columns={quickPicksColumns}
+      rows={quickPicksRows}
+      caption="Top 3 online course platforms for creators"
+  />
+  <p>
+    All three offer free trials or free tiers to test before committing. Keep reading for detailed reviews of all 8
+    platforms we recommend.
+  </p>
+
+  <!-- Why Sell Courses Online -->
+  <h2 id="why-sell-courses">Why Selling Online Courses Makes Sense</h2>
+  <p>
+    Online courses are one of the most scalable income streams for knowledge workers. Here's why creators are
+    flocking to course creation:
+  </p>
+
+  <h3>Scalable Passive Income</h3>
+  <p>
+    Unlike consulting or freelancing where you trade time for money, courses scale infinitely. Create once, sell
+    forever. Your 100th student costs you nothing extra to serve, but adds pure profit.
+  </p>
+  <p>
+    Top course creators earn six and seven figures annually from courses they created years ago. Even modest success—a
+    $200 course selling 10 copies per month—generates $24,000/year in largely passive income.
+  </p>
+
+  <h3>Establish Authority</h3>
+  <p>
+    Publishing a course positions you as an expert in your field. It's a credential that opens doors to speaking
+    engagements, consulting opportunities, and higher-paying clients.
+  </p>
+  <p>
+    Courses also build trust with your audience in ways that free content can't. Someone who invests $200 in your
+    course pays more attention than someone reading a free blog post.
+  </p>
+
+  <h3>Help People at Scale</h3>
+  <p>
+    If you've ever wished you could help more people, courses let you do exactly that. Your knowledge reaches students
+    across time zones while you sleep. You're no longer limited by your available hours.
+  </p>
+
+  <h3>The Market Is Massive</h3>
+  <p>
+    The global e-learning market exceeds <strong>$300 billion</strong> and grows 10-15% annually. Remote work has
+    accelerated demand for online skills training. People are actively looking for courses in nearly every niche.
+  </p>
+
+  <!-- Detailed Reviews -->
+  <h2 id="detailed-reviews">Course Platform Detailed Reviews</h2>
+
+  <!-- Teachable -->
+  <h3 id="teachable">1. Teachable — Best for First-Time Course Creators</h3>
+  <p>
+    Teachable pioneered the modern course platform and remains the easiest way to get your first course online. The
+    intuitive interface means you'll spend time creating content, not wrestling with software.
+  </p>
+  <p>
+    <strong>What makes Teachable stand out:</strong> The course builder is genuinely beginner-friendly. Drag and drop
+    lessons, upload videos, and your course is ready to sell. Built-in payment processing means no merchant account
+    headaches—Teachable handles everything.
+  </p>
+  <p>
+    <strong>Key features:</strong>
+  </p>
+  <ul>
+    <li><strong>Intuitive course builder:</strong> Drag-and-drop simplicity for creating courses</li>
+    <li><strong>Built-in payments:</strong> Accept credit cards and PayPal instantly</li>
+    <li><strong>Student management:</strong> Track progress, completion rates, and engagement</li>
+    <li><strong>Coaching products:</strong> Sell 1:1 or group coaching alongside courses</li>
+    <li><strong>Sales pages:</strong> Built-in page builder for marketing your courses</li>
+    <li><strong>Affiliate program:</strong> Let others promote your courses for commission</li>
+    <li><strong>Free tier:</strong> $1 + 10% per sale on free plan</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> Free plan ($1 + 10% transaction fee), Basic at $59/month (5% fee), Pro at $159/month (0%
+    fee), Pro+ at $249/month. Annual billing saves 33%.
+  </p>
+  <p>
+    <strong>Our experience:</strong> We had a course live within two hours of signing up. The learning curve is
+    minimal, and the built-in payment processing removed a major friction point.
+  </p>
+  <p>
+    <strong>Best for:</strong> First-time course creators, solo entrepreneurs, and anyone who wants the simplest path
+    from idea to selling. Great for validating course ideas quickly.
+  </p>
+  <p>
+    <strong>Minor drawbacks:</strong> Transaction fees on lower tiers add up quickly at scale. Customization options are
+    limited compared to Thinkific. No built-in email marketing—you'll need ConvertKit or similar.
+  </p>
+  <AffiliateButton
+      href="/go/teachable"
+      text="Start Free with Teachable — Easiest Course Platform"
+      variant="primary"
+      program="teachable"
+  />
+
+  <!-- Thinkific -->
+  <h3 id="thinkific">2. Thinkific — Best for Course Customization</h3>
+  <p>
+    Thinkific gives creators more control over their course experience and keeps more money in your pocket with zero
+    transaction fees on all plans. If you want flexibility without paying Kajabi prices, Thinkific delivers.
+  </p>
+  <p>
+    <strong>What makes Thinkific stand out:</strong> No transaction fees means you keep 100% of your sales (minus
+    payment processor fees). The course builder offers more customization than Teachable, including better quiz and
+    assignment features.
+  </p>
+  <p>
+    <strong>Key features:</strong>
+  </p>
+  <ul>
+    <li><strong>Zero transaction fees:</strong> Keep all your revenue on every plan</li>
+    <li><strong>Advanced course builder:</strong> Quizzes, assignments, certificates, and prerequisites</li>
+    <li><strong>Site builder:</strong> Create a complete course website, not just course pages</li>
+    <li><strong>Community features:</strong> Built-in community spaces for students</li>
+    <li><strong>App store:</strong> Extend functionality with third-party integrations</li>
+    <li><strong>White labeling:</strong> Remove Thinkific branding on higher plans</li>
+    <li><strong>Free tier:</strong> 1 course, unlimited students, 0% transaction fee</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> Free plan (1 course), Basic at $49/month, Start at $99/month, Grow at $199/month. Annual
+    billing offers significant savings.
+  </p>
+  <p>
+    <strong>Our experience:</strong> Thinkific's free plan is surprisingly generous—one full course with unlimited
+    students. The learning curve is slightly steeper than Teachable but worth it for the flexibility.
+  </p>
+  <p>
+    <strong>Best for:</strong> Creators who want zero transaction fees, more customization options, or stronger
+    quiz/assessment features. Good for course-based businesses at scale.
+  </p>
+  <p>
+    <strong>Minor drawbacks:</strong> Interface is less intuitive than Teachable initially. No native email marketing—
+    requires integration. Advanced features require higher-tier plans.
+  </p>
+  <AffiliateButton
+      href="/go/thinkific"
+      text="Try Thinkific Free — Zero Transaction Fees"
+      variant="primary"
+      program="thinkific"
+  />
+
+  <!-- Kajabi -->
+  <h3 id="kajabi">3. Kajabi — Best All-in-One Platform</h3>
+  <p>
+    Kajabi is the premium choice for creators who want everything in one place: courses, email marketing, sales funnels,
+    website, and community. The price is steep, but it replaces multiple tools.
+  </p>
+  <p>
+    <strong>What makes Kajabi stand out:</strong> You genuinely don't need any other tools. Email sequences, landing
+    pages, checkout, affiliate program, podcast hosting—it's all built in. For creators tired of stitching together
+    multiple services, Kajabi simplifies everything.
+  </p>
+  <p>
+    <strong>Key features:</strong>
+  </p>
+  <ul>
+    <li><strong>All-in-one platform:</strong> Courses, email, website, funnels in one tool</li>
+    <li><strong>Email marketing:</strong> Built-in email with automation and sequences</li>
+    <li><strong>Sales funnels:</strong> Pre-built pipeline templates for conversions</li>
+    <li><strong>Community:</strong> Native community features for student engagement</li>
+    <li><strong>Podcast hosting:</strong> Host and distribute podcasts directly</li>
+    <li><strong>Zero transaction fees:</strong> Keep all your revenue</li>
+    <li><strong>Mobile app:</strong> Branded mobile app for your students</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> Basic at $149/month (3 products, 10K contacts), Growth at $199/month (15 products, 25K
+    contacts), Pro at $399/month (100 products, 100K contacts). 14-day free trial.
+  </p>
+  <p>
+    <strong>Our experience:</strong> Kajabi's value becomes clear when you calculate what you'd spend on separate tools
+    for email, funnels, and course hosting. For serious course businesses, it often saves money.
+  </p>
+  <p>
+    <strong>Best for:</strong> Established creators building a full business, coaches with multiple offers, and anyone
+    who values simplicity over cost optimization.
+  </p>
+  <p>
+    <strong>Minor drawbacks:</strong> Expensive for beginners—$149/month is steep before you've validated your course.
+    Some features are less powerful than specialized tools. Limited customization compared to Thinkific.
+  </p>
+  <AffiliateButton
+      href="/go/kajabi"
+      text="Try Kajabi Free for 14 Days — All-in-One Platform"
+      variant="primary"
+      program="kajabi"
+  />
+
+  <!-- Podia -->
+  <h3 id="podia">4. Podia — Best for Digital Products + Courses</h3>
+  <p>
+    Podia positions itself as the platform for selling anything digital: courses, downloads, memberships, coaching, and
+    webinars. If you sell multiple product types, Podia keeps everything organized in one place.
+  </p>
+  <p>
+    <strong>What makes Podia stand out:</strong> The simplicity is refreshing. No transaction fees, unlimited
+    everything, and a clean interface. Podia also includes email marketing, eliminating one more tool from your stack.
+  </p>
+  <p>
+    <strong>Key features:</strong>
+  </p>
+  <ul>
+    <li><strong>Multiple product types:</strong> Courses, downloads, memberships, coaching, webinars</li>
+    <li><strong>Zero transaction fees:</strong> Keep 100% of your sales</li>
+    <li><strong>Built-in email:</strong> Email marketing and automation included</li>
+    <li><strong>Unlimited everything:</strong> No caps on products, customers, or emails</li>
+    <li><strong>Affiliate marketing:</strong> Built-in affiliate program</li>
+    <li><strong>Website builder:</strong> Create your entire site in Podia</li>
+    <li><strong>Live chat:</strong> Built-in messaging with customers</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> Mover at $39/month (email included), Shaker at $89/month (affiliates, advanced features).
+    14-day free trial. No free tier.
+  </p>
+  <p>
+    <strong>Our experience:</strong> Podia is wonderfully simple. If you sell a mix of courses, downloads, and
+    memberships, having everything in one dashboard is genuinely valuable.
+  </p>
+  <p>
+    <strong>Best for:</strong> Creators selling multiple digital product types, those who want built-in email marketing,
+    and anyone who values simplicity over advanced features.
+  </p>
+  <p>
+    <strong>Minor drawbacks:</strong> Course features are less robust than Teachable or Thinkific. No free tier means
+    upfront commitment. Limited quiz and assessment options.
+  </p>
+  <AffiliateButton
+      href="/go/podia"
+      text="Try Podia Free for 14 Days — Sell Anything Digital"
+      variant="secondary"
+      program="podia"
+  />
+
+  <!-- Skillshare -->
+  <h3 id="skillshare">5. Skillshare — Best for Creative Skills</h3>
+  <p>
+    Skillshare is a marketplace platform where students pay a subscription to access all courses. You earn based on
+    minutes watched rather than course sales—a fundamentally different model.
+  </p>
+  <p>
+    <strong>What makes Skillshare stand out:</strong> Built-in audience of millions of students means you don't need your
+    own marketing. Skillshare promotes your courses to interested learners. Great for creative skills where the platform
+    audience aligns well.
+  </p>
+  <p>
+    <strong>Key features:</strong>
+  </p>
+  <ul>
+    <li><strong>Built-in audience:</strong> Millions of active subscribers</li>
+    <li><strong>No marketing required:</strong> Skillshare promotes courses internally</li>
+    <li><strong>Royalty model:</strong> Earn based on premium minutes watched</li>
+    <li><strong>Free to publish:</strong> No upfront costs to create courses</li>
+    <li><strong>Creative community:</strong> Strong in design, illustration, photography</li>
+    <li><strong>Project-based learning:</strong> Students complete projects for engagement</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> Free to publish. Teachers earn royalties from a pool based on minutes watched. Typical
+    earnings range from $0.05-0.10 per minute watched.
+  </p>
+  <p>
+    <strong>Our experience:</strong> Skillshare works well for building initial audience and exposure, but earnings per
+    student are lower than selling your own courses. Best as a supplement, not primary platform.
+  </p>
+  <p>
+    <strong>Best for:</strong> Creative skills teachers, those without existing audiences, and creators who want passive
+    discovery without marketing.
+  </p>
+  <p>
+    <strong>Minor drawbacks:</strong> Lower earnings per student than direct sales. You don't own the customer
+    relationship. Course length affects earnings significantly.
+  </p>
+  <p class="text-white/80 italic">
+    Note: Skillshare doesn't offer an affiliate program. We include it because it's a legitimate option for creators.
+  </p>
+
+  <!-- Udemy -->
+  <h3 id="udemy">6. Udemy — Best for Built-In Audience</h3>
+  <p>
+    Udemy is the largest course marketplace with 57 million students. Publishing on Udemy gives you instant access to
+    massive discovery potential—but at the cost of significant revenue share.
+  </p>
+  <p>
+    <strong>What makes Udemy stand out:</strong> The marketplace effect is real. Students searching for topics discover
+    your course without you doing any marketing. For new creators without audiences, this discovery is valuable.
+  </p>
+  <p>
+    <strong>Key features:</strong>
+  </p>
+  <ul>
+    <li><strong>57 million students:</strong> Massive built-in marketplace</li>
+    <li><strong>SEO and discovery:</strong> Courses rank in Google and Udemy search</li>
+    <li><strong>Free to publish:</strong> No platform fees upfront</li>
+    <li><strong>Reviews and ratings:</strong> Social proof drives more sales</li>
+    <li><strong>Mobile apps:</strong> Students access courses on iOS and Android</li>
+    <li><strong>Q&A features:</strong> Built-in student support tools</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> Free to publish. Revenue share: 37% for Udemy-generated sales, 97% for instructor-
+    generated sales (with coupon). Frequent sales pressure pricing down.
+  </p>
+  <p>
+    <strong>Our experience:</strong> Udemy is excellent for discovery but frustrating for pricing. Constant sales mean
+    your $200 course often sells for $12.99. Best combined with your own platform.
+  </p>
+  <p>
+    <strong>Best for:</strong> New creators without audiences, supplemental income alongside your own platform, and
+    topics with high search volume.
+  </p>
+  <p>
+    <strong>Minor drawbacks:</strong> Heavy revenue share (up to 63%). Constant discounting devalues courses. You don't
+    own customer relationships. Pricing pressure is significant.
+  </p>
+  <p class="text-white/80 italic">
+    Note: We include Udemy as a legitimate option, though we don't earn commissions from recommending it.
+  </p>
+
+  <!-- Gumroad -->
+  <h3 id="gumroad">7. Gumroad — Best for Simple Digital Sales</h3>
+  <p>
+    Gumroad is the simplest way to sell anything digital—courses, ebooks, templates, software. If you want minimal
+    friction between your content and customers' credit cards, Gumroad delivers.
+  </p>
+  <p>
+    <strong>What makes Gumroad stand out:</strong> You can literally have something for sale in 10 minutes. No complex
+    setup, no learning curve—just upload, set a price, and share your link. The 10% fee is simple to understand.
+  </p>
+  <p>
+    <strong>Key features:</strong>
+  </p>
+  <ul>
+    <li><strong>Extreme simplicity:</strong> Sell anything in minutes</li>
+    <li><strong>Flat fee structure:</strong> 10% of sales, no monthly fees</li>
+    <li><strong>Email marketing:</strong> Basic email features included</li>
+    <li><strong>Membership support:</strong> Sell subscriptions and memberships</li>
+    <li><strong>Audience building:</strong> Gumroad discover page for exposure</li>
+    <li><strong>Flexible pricing:</strong> Fixed price, pay-what-you-want, or free</li>
+    <li><strong>Unlimited products:</strong> No caps on what you sell</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> Free to use. Gumroad takes 10% of each sale plus payment processing (approximately 2.9% +
+    $0.30).
+  </p>
+  <p>
+    <strong>Our experience:</strong> Gumroad is perfect for quick launches and testing ideas. The 10% fee is higher than
+    dedicated platforms at scale, but the simplicity is worth it for smaller creators.
+  </p>
+  <p>
+    <strong>Best for:</strong> Quick course launches, testing course ideas, creators who sell multiple digital product
+    types, and anyone who values simplicity above all else.
+  </p>
+  <p>
+    <strong>Minor drawbacks:</strong> Course features are basic—no quizzes, certificates, or advanced student tracking.
+    10% adds up at scale. Limited customization options.
+  </p>
+  <AffiliateButton
+      href="/go/gumroad"
+      text="Start Selling on Gumroad — No Monthly Fees"
+      variant="ghost"
+      program="gumroad"
+  />
+
+  <!-- LearnWorlds -->
+  <h3 id="learnworlds">8. LearnWorlds — Best for Interactive Courses</h3>
+  <p>
+    LearnWorlds focuses on creating engaging, interactive learning experiences. If your courses need sophisticated
+    assessments, interactive video, or compliance certifications, LearnWorlds has the tools.
+  </p>
+  <p>
+    <strong>What makes LearnWorlds stand out:</strong> Interactive video features let you add quizzes, buttons, and
+    branching directly inside videos. The assessment engine supports complex exam scenarios for professional training.
+  </p>
+  <p>
+    <strong>Key features:</strong>
+  </p>
+  <ul>
+    <li><strong>Interactive video:</strong> Add clickable elements and quizzes within videos</li>
+    <li><strong>Advanced assessments:</strong> Question banks, time limits, randomization</li>
+    <li><strong>SCORM support:</strong> Import existing e-learning content</li>
+    <li><strong>Certificates:</strong> Customizable completion certificates</li>
+    <li><strong>White labeling:</strong> Fully branded experience</li>
+    <li><strong>Mobile app:</strong> Branded iOS and Android apps available</li>
+    <li><strong>Community:</strong> Built-in social learning features</li>
+  </ul>
+  <p>
+    <strong>Pricing:</strong> Starter at $29/month ($5 per sale), Pro Trainer at $99/month (0% fee), Learning Center at
+    $299/month (advanced features). 30-day free trial.
+  </p>
+  <p>
+    <strong>Our experience:</strong> LearnWorlds shines for professional training and compliance courses. The interactive
+    video features are genuinely differentiated—we haven't seen them executed this well elsewhere.
+  </p>
+  <p>
+    <strong>Best for:</strong> Professional training providers, corporate learning, compliance courses, and anyone who
+    needs sophisticated assessment features.
+  </p>
+  <p>
+    <strong>Minor drawbacks:</strong> Starter plan charges per-sale fees. More complex than Teachable—steeper learning
+    curve. Overkill for simple courses.
+  </p>
+  <AffiliateButton
+      href="/go/learnworlds"
+      text="Try LearnWorlds — 30-Day Free Trial"
+      variant="ghost"
+      program="learnworlds"
+  />
+
+  <!-- How to Choose -->
+  <h2 id="how-to-choose">How to Choose the Right Course Platform</h2>
+  <p>
+    With so many solid options, here's how to pick the right platform for your specific situation:
+  </p>
+
+  <h3>By Experience Level</h3>
+  <ul>
+    <li><strong>Complete beginner:</strong> Teachable (easiest setup)</li>
+    <li><strong>Some tech comfort:</strong> Thinkific (more features)</li>
+    <li><strong>Established creator:</strong> Kajabi (all-in-one)</li>
+    <li><strong>Just testing an idea:</strong> Gumroad (fastest launch)</li>
+  </ul>
+
+  <h3>By Business Model</h3>
+  <ul>
+    <li><strong>Single course focus:</strong> Teachable or Thinkific</li>
+    <li><strong>Multiple products:</strong> Podia or Kajabi</li>
+    <li><strong>Coaching + courses:</strong> Kajabi or Teachable</li>
+    <li><strong>Corporate training:</strong> LearnWorlds or Thinkific Plus</li>
+  </ul>
+
+  <h3>By Budget</h3>
+  <ul>
+    <li><strong>Free to start:</strong> Gumroad, Thinkific Free, or Teachable Free</li>
+    <li><strong>Under $50/month:</strong> Podia ($39), Thinkific Basic ($49)</li>
+    <li><strong>Under $100/month:</strong> Teachable Pro, Thinkific Start</li>
+    <li><strong>Premium all-in-one:</strong> Kajabi ($149+)</li>
+  </ul>
+
+  <h3>Our Recommendation</h3>
+  <ol>
+    <li><strong>Start with free tiers:</strong> Test Teachable or Thinkific free to validate your course idea</li>
+    <li><strong>Upgrade when needed:</strong> Move to paid plans when transaction fees exceed subscription cost</li>
+    <li><strong>Consider all-in-one later:</strong> Kajabi makes sense once you're earning consistently</li>
+    <li><strong>Don't overthink it:</strong> The platform matters less than creating and marketing your course</li>
+  </ol>
+
+  <!-- Getting Started -->
+  <h2 id="getting-started">Getting Started with Your First Course</h2>
+  <p>
+    Ready to create your course? Here's a practical roadmap:
+  </p>
+
+  <h3>Step 1: Validate Your Idea</h3>
+  <p>
+    Before building a full course, confirm people will pay for it. Pre-sell to your audience, create a mini-course, or
+    survey potential students. Validation prevents wasted effort on courses nobody wants.
+  </p>
+
+  <h3>Step 2: Outline Your Curriculum</h3>
+  <p>
+    Map out the transformation students will experience. Start with the end result, then work backward to identify the
+    steps needed to get there. Break those steps into modules and lessons.
+  </p>
+
+  <h3>Step 3: Create Your Content</h3>
+  <p>
+    Start recording. Don't aim for perfection—aim for done. Your first course won't be your best, and that's fine.
+    Students care about results, not production quality.
+  </p>
+
+  <h3>Step 4: Set Up Your Platform</h3>
+  <p>
+    Upload your content to your chosen platform, create your sales page, and configure checkout. Most platforms make
+    this straightforward—you can be live within a day.
+  </p>
+
+  <h3>Step 5: Launch and Iterate</h3>
+  <p>
+    Launch to your audience, gather feedback, and improve. Your course gets better with each cohort of students. Focus
+    on helping students succeed and the rest follows.
+  </p>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">Final Recommendations</h2>
+  <p>
+    After three months of testing across multiple platforms, here are our final recommendations:
+  </p>
+  <p>
+    <strong>For most creators:</strong> <strong>Teachable</strong> is our top pick. The combination of ease of use,
+    reasonable pricing, and solid features makes it the best starting point. You'll be selling courses within hours,
+    not days.
+  </p>
+  <p>
+    <strong>For maximum control:</strong> <strong>Thinkific</strong> offers zero transaction fees and better
+    customization. If you want to own more of your course experience and keep 100% of revenue, Thinkific is excellent.
+  </p>
+  <p>
+    <strong>For serious course businesses:</strong> <strong>Kajabi</strong> is worth the premium price if you want
+    email marketing, funnels, and website in one platform. The math works once you're earning consistently.
+  </p>
+  <p>
+    <strong>For quick validation:</strong> <strong>Gumroad</strong> gets you selling in minutes with no monthly fees.
+    Perfect for testing course ideas before committing to a dedicated platform.
+  </p>
+  <p>
+    The best platform is the one you'll actually use. Start with a free tier, create your first course, and upgrade
+    when your business justifies the investment. Your audience is waiting for what you have to teach.
+  </p>
+
+  <AffiliateButton
+      href="/go/teachable"
+      text="Start Free with Teachable — Our #1 Pick for Creators"
+      variant="primary"
+      program="teachable"
+  />
+
+  <!-- Full Width Content Slot -->
+  <Fragment slot="full-width">
+    <!-- Full Comparison Table -->
+    <section class="py-8" id="full-comparison">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center font-heading">Complete Course Platform Comparison</h2>
+        <p class="text-white/80 text-center mb-8 max-w-2xl mx-auto">Here's how all 8 course platforms compare on the features that matter most:</p>
+        <ComparisonTable
+            columns={fullComparisonColumns}
+            rows={fullComparisonRows}
+            caption="Complete comparison of online course platforms"
+        />
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

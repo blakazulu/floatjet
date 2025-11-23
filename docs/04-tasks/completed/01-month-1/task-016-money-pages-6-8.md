@@ -9,7 +9,7 @@ due_date: "2024-12-14"
 estimated_hours: 24
 actual_hours: 0
 assigned_to: "Team"
-tags: ["content", "money-page", "affiliate", "week-4"]
+tags: [ "content", "money-page", "affiliate", "week-4" ]
 ---
 
 # Task: Money Pages 6-8 (Headphones, Productivity Apps, Time Tracking)

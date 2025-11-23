@@ -43,16 +43,16 @@ const travelGuides = [
 ];
 
 const topDestinations = [
-  { name: 'Lisbon', tag: 'Europe', color: 'bg-blue-500/20 text-blue-400' },
-  { name: 'Bali', tag: 'Asia', color: 'bg-green-500/20 text-green-400' },
-  { name: 'Mexico City', tag: 'Americas', color: 'bg-purple-500/20 text-purple-400' }
+  {name: 'Lisbon', tag: 'Europe', color: 'bg-blue-500/20 text-blue-400'},
+  {name: 'Bali', tag: 'Asia', color: 'bg-green-500/20 text-green-400'},
+  {name: 'Mexico City', tag: 'Americas', color: 'bg-purple-500/20 text-purple-400'}
 ];
 
 const travelTips = [
-  { title: 'Visa Research', description: 'Know entry requirements and digital nomad visa options', icon: '📄' },
-  { title: 'Cost of Living', description: 'Budget for accommodation, food, coworking, and more', icon: '💰' },
-  { title: 'Time Zone Planning', description: 'Manage client calls across different time zones', icon: '🌍' },
-  { title: 'Community Finding', description: 'Connect with other nomads and build your network', icon: '👥' }
+  {title: 'Visa Research', description: 'Know entry requirements and digital nomad visa options', icon: '📄'},
+  {title: 'Cost of Living', description: 'Budget for accommodation, food, coworking, and more', icon: '💰'},
+  {title: 'Time Zone Planning', description: 'Manage client calls across different time zones', icon: '🌍'},
+  {title: 'Community Finding', description: 'Connect with other nomads and build your network', icon: '👥'}
 ];
 ---
 
@@ -74,8 +74,8 @@ const travelTips = [
 
     <!-- Main Article Card -->
     <a
-      href={mainArticle.href}
-      class="block max-w-3xl mx-auto mb-16 group bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-white/20 hover:border-jet-stream/50 rounded-xl p-8 transition-all duration-300"
+        href={mainArticle.href}
+        class="block max-w-3xl mx-auto mb-16 group bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-white/20 hover:border-jet-stream/50 rounded-xl p-8 transition-all duration-300"
     >
       <div class="flex items-center gap-2 mb-4">
         <span class="text-4xl">✈️</span>
@@ -91,7 +91,8 @@ const travelTips = [
         <span class="text-white/50 text-sm">{mainArticle.readTime} read</span>
         <span class="text-jet-stream font-medium flex items-center">
           Read Full Guide
-          <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+               viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
           </svg>
         </span>
@@ -103,15 +104,15 @@ const travelTips = [
       <h2 class="text-xl font-semibold text-white text-center mb-6">Popular Destinations</h2>
       <div class="grid gap-4 sm:grid-cols-3">
         {topDestinations.map(dest => (
-          <a
-            href={`${mainArticle.href}#${dest.name.toLowerCase().replace(' ', '-')}`}
-            class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-4 text-center transition-colors"
-          >
+            <a
+                href={`${mainArticle.href}#${dest.name.toLowerCase().replace(' ', '-')}`}
+                class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-4 text-center transition-colors"
+            >
             <span class={`inline-block px-2 py-0.5 ${dest.color} text-xs font-medium rounded mb-2`}>
               {dest.tag}
             </span>
-            <p class="text-white font-semibold">{dest.name}</p>
-          </a>
+              <p class="text-white font-semibold">{dest.name}</p>
+            </a>
         ))}
       </div>
     </div>
@@ -121,21 +122,21 @@ const travelTips = [
       <h2 class="text-xl font-semibold text-white text-center mb-8">Essential Travel Guides</h2>
       <div class="grid gap-4 sm:grid-cols-2">
         {travelGuides.map(guide => (
-          <a
-            href={guide.href}
-            class="group flex items-start gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-5 transition-all duration-300"
-          >
-            <span class="text-3xl">{guide.icon}</span>
-            <div class="flex-1">
+            <a
+                href={guide.href}
+                class="group flex items-start gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-5 transition-all duration-300"
+            >
+              <span class="text-3xl">{guide.icon}</span>
+              <div class="flex-1">
               <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded mb-2">
                 {guide.category}
               </span>
-              <h3 class="text-white font-semibold group-hover:text-jet-stream transition-colors mb-1">
-                {guide.title}
-              </h3>
-              <p class="text-white/60 text-sm">{guide.description}</p>
-            </div>
-          </a>
+                <h3 class="text-white font-semibold group-hover:text-jet-stream transition-colors mb-1">
+                  {guide.title}
+                </h3>
+                <p class="text-white/60 text-sm">{guide.description}</p>
+              </div>
+            </a>
         ))}
       </div>
     </div>
@@ -145,13 +146,13 @@ const travelTips = [
       <h2 class="text-xl font-semibold text-white text-center mb-8">Before You Go</h2>
       <div class="grid gap-6 sm:grid-cols-2">
         {travelTips.map(tip => (
-          <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
-            <span class="text-2xl">{tip.icon}</span>
-            <div>
-              <h3 class="text-white font-semibold mb-1">{tip.title}</h3>
-              <p class="text-white/60 text-sm">{tip.description}</p>
+            <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
+              <span class="text-2xl">{tip.icon}</span>
+              <div>
+                <h3 class="text-white font-semibold mb-1">{tip.title}</h3>
+                <p class="text-white/60 text-sm">{tip.description}</p>
+              </div>
             </div>
-          </div>
         ))}
       </div>
     </div>
@@ -159,8 +160,8 @@ const travelTips = [
     <!-- CTA -->
     <div class="mt-12 text-center">
       <a
-        href={mainArticle.href}
-        class="inline-flex items-center justify-center px-6 py-3 bg-jet-stream text-ocean-deep font-semibold rounded-lg hover:bg-sky-light transition-colors"
+          href={mainArticle.href}
+          class="inline-flex items-center justify-center px-6 py-3 bg-jet-stream text-ocean-deep font-semibold rounded-lg hover:bg-sky-light transition-colors"
       >
         Explore Top Destinations
       </a>

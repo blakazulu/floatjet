@@ -9,7 +9,7 @@ due_date: "2024-12-17"
 estimated_hours: 2
 actual_hours: 0
 assigned_to: "Team"
-tags: ["marketing", "launch", "outreach", "week-4"]
+tags: [ "marketing", "launch", "outreach", "week-4" ]
 ---
 
 # Task: Launch Announcement & Outreach

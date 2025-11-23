@@ -10,7 +10,7 @@ due_date: "2025-11-23"
 estimated_hours: 6
 actual_hours: 5
 assigned_to: "Team"
-tags: ["content", "money-page", "password-manager", "security", "affiliate"]
+tags: [ "content", "money-page", "password-manager", "security", "affiliate" ]
 ---
 
 # Task: Write Money Page - Best Password Managers for Remote Workers

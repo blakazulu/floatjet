@@ -10,7 +10,7 @@ completed_date: "2025-11-22"
 estimated_hours: 8
 actual_hours: 3
 assigned_to: "Team"
-tags: ["content", "money-page", "week-2", "vpn", "digital-nomads", "affiliate"]
+tags: [ "content", "money-page", "week-2", "vpn", "digital-nomads", "affiliate" ]
 ---
 
 # Task: Write Money Page - Top VPNs for Digital Nomads

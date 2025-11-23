@@ -9,7 +9,7 @@ due_date: "2025-12-07"
 estimated_hours: 8
 actual_hours: 0
 assigned_to: "Team"
-tags: ["content", "money-page", "week-3", "email-marketing", "saas", "affiliate"]
+tags: [ "content", "money-page", "week-3", "email-marketing", "saas", "affiliate" ]
 ---
 
 # Task: Write Money Page - Best Email Marketing Tools for Creators
@@ -50,28 +50,28 @@ freelancers, and small businesses with emphasis on automation, deliverability, a
 ```toml
 # Add to netlify.toml after approvals
 [[redirects]]
-  from = "/go/convertkit"
-  to = "https://convertkit.com?lmref=floatjet"
-  status = 301
-  force = true
+from = "/go/convertkit"
+to = "https://convertkit.com?lmref=floatjet"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/beehiiv"
-  to = "https://beehiiv.com?via=floatjet"
-  status = 301
-  force = true
+from = "/go/beehiiv"
+to = "https://beehiiv.com?via=floatjet"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/mailchimp"
-  to = "https://mailchimp.com?affiliate=floatjet"
-  status = 301
-  force = true
+from = "/go/mailchimp"
+to = "https://mailchimp.com?affiliate=floatjet"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/activecampaign"
-  to = "https://activecampaign.com?affiliate=floatjet"
-  status = 301
-  force = true
+from = "/go/activecampaign"
+to = "https://activecampaign.com?affiliate=floatjet"
+status = 301
+force = true
 ```
 
 ## Goals

@@ -9,7 +9,7 @@ due_date: "2024-12-16"
 estimated_hours: 5
 actual_hours: 0
 assigned_to: "Team"
-tags: ["content", "seo", "traffic", "week-4"]
+tags: [ "content", "seo", "traffic", "week-4" ]
 ---
 
 # Task: SEO Traffic Builders (5 Short Articles)

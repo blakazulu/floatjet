@@ -10,7 +10,7 @@ completed_date: "2025-11-21"
 estimated_hours: 4
 actual_hours: 4
 assigned_to: "Team"
-tags: ["design", "homepage", "week-1", "template"]
+tags: [ "design", "homepage", "week-1", "template" ]
 ---
 
 # Task: Design homepage template

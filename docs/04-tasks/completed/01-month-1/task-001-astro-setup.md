@@ -10,7 +10,7 @@ completed_date: "2025-11-20"
 estimated_hours: 4
 actual_hours: 2
 assigned_to: "Team"
-tags: ["infrastructure", "setup", "week-1", "astro", "tailwind"]
+tags: [ "infrastructure", "setup", "week-1", "astro", "tailwind" ]
 ---
 
 # Task: Set up Astro project with Tailwind CSS
@@ -281,11 +281,21 @@ From `/docs/03-design/design-guidelines.md`:
 
 ```js
 colors: {
-  'ocean-deep': '#0F4C5C',
-  'jet-stream': '#38A3A5',
-  'sky-light': '#80CED7',
-  'sand': '#E0FBFC',
-  'alert': '#EE6C4D',
+  'ocean-deep'
+:
+  '#0F4C5C',
+    'jet-stream'
+:
+  '#38A3A5',
+    'sky-light'
+:
+  '#80CED7',
+    'sand'
+:
+  '#E0FBFC',
+    'alert'
+:
+  '#EE6C4D',
 }
 ```
 

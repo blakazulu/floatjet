@@ -9,7 +9,7 @@ due_date: "2025-12-08"
 estimated_hours: 8
 actual_hours: 4
 assigned_to: "Team"
-tags: ["content", "money-page", "week-3", "standing-desk", "office", "hardware", "affiliate"]
+tags: [ "content", "money-page", "week-3", "standing-desk", "office", "hardware", "affiliate" ]
 ---
 
 # Task: Write Money Page - Best Standing Desks for Home Office
@@ -50,28 +50,28 @@ remote workers with emphasis on ergonomics, build quality, and value.
 ```toml
 # Add to netlify.toml after approvals
 [[redirects]]
-  from = "/go/amazon/flexispot-e7"
-  to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
-  status = 301
-  force = true
+from = "/go/amazon/flexispot-e7"
+to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/flexispot"
-  to = "https://flexispot.com?affiliate=floatjet"
-  status = 301
-  force = true
+from = "/go/flexispot"
+to = "https://flexispot.com?affiliate=floatjet"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/uplift"
-  to = "https://upliftdesk.com?affiliate=floatjet"
-  status = 301
-  force = true
+from = "/go/uplift"
+to = "https://upliftdesk.com?affiliate=floatjet"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/autonomous"
-  to = "https://autonomous.ai?affiliate=floatjet"
-  status = 301
-  force = true
+from = "/go/autonomous"
+to = "https://autonomous.ai?affiliate=floatjet"
+status = 301
+force = true
 ```
 
 ## Goals

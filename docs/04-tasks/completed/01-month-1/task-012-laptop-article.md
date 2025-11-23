@@ -9,7 +9,7 @@ due_date: "2025-12-06"
 estimated_hours: 8
 actual_hours: 6
 assigned_to: "Team"
-tags: ["content", "money-page", "week-3", "laptops", "hardware", "affiliate"]
+tags: [ "content", "money-page", "week-3", "laptops", "hardware", "affiliate" ]
 ---
 
 # Task: Write Money Page - Best Laptops for Remote Work
@@ -49,14 +49,14 @@ nomads, freelancers, and remote workers with emphasis on portability, battery li
 ```toml
 # Add to netlify.toml after Amazon approval
 [[redirects]]
-  from = "/go/amazon/macbook-air-m3"
-  to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
-  status = 301
+from = "/go/amazon/macbook-air-m3"
+to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
+status = 301
 
 [[redirects]]
-  from = "/go/amazon/thinkpad-x1-carbon"
-  to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
-  status = 301
+from = "/go/amazon/thinkpad-x1-carbon"
+to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
+status = 301
 
 # Add more as needed
 ```

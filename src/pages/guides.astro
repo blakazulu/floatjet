@@ -6,7 +6,7 @@ const description = 'Expert guides for remote workers and digital nomads. Learn 
 
 // Category pages
 const categories = [
-  { name: 'Travel Guides', href: '/guides/travel', icon: '✈️' }
+  {name: 'Travel Guides', href: '/guides/travel', icon: '✈️'}
 ];
 
 // Guide articles data
@@ -67,45 +67,46 @@ const guides = [
     <!-- Category Links -->
     <div class="flex flex-wrap justify-center gap-3 mb-12">
       {categories.map(cat => (
-        <a
-          href={cat.href}
-          class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-jet-stream text-white/90 hover:text-ocean-deep rounded-full text-sm font-medium transition-colors"
-        >
-          <span>{cat.icon}</span>
-          {cat.name}
-        </a>
+          <a
+              href={cat.href}
+              class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-jet-stream text-white/90 hover:text-ocean-deep rounded-full text-sm font-medium transition-colors"
+          >
+            <span>{cat.icon}</span>
+            {cat.name}
+          </a>
       ))}
     </div>
 
     <!-- Guides Grid -->
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
       {guides.map(guide => (
-        <a
-          href={guide.href}
-          class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300 flex flex-col"
-        >
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-3xl">{guide.icon}</span>
-            <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
+          <a
+              href={guide.href}
+              class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300 flex flex-col"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-3xl">{guide.icon}</span>
+              <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
               {guide.category}
             </span>
-          </div>
-          <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
-            {guide.title}
-          </h2>
-          <p class="text-white/70 text-sm flex-1">
-            {guide.description}
-          </p>
-          <div class="mt-4 flex items-center justify-between">
-            <span class="text-white/50 text-sm">{guide.readTime} read</span>
-            <span class="text-jet-stream text-sm font-medium flex items-center">
+            </div>
+            <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
+              {guide.title}
+            </h2>
+            <p class="text-white/70 text-sm flex-1">
+              {guide.description}
+            </p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-white/50 text-sm">{guide.readTime} read</span>
+              <span class="text-jet-stream text-sm font-medium flex items-center">
               Read Guide
-              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                   viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
               </svg>
             </span>
-          </div>
-        </a>
+            </div>
+          </a>
       ))}
     </div>
 

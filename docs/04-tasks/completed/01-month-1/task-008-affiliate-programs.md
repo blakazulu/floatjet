@@ -10,7 +10,7 @@ due_date: "2025-12-01"
 estimated_hours: 2
 actual_hours: 2
 assigned_to: "Team"
-tags: ["affiliates", "week-2", "revenue", "setup"]
+tags: [ "affiliates", "week-2", "revenue", "setup" ]
 ---
 
 # Task: Join First 3 Affiliate Programs

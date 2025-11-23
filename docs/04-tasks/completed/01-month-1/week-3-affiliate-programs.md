@@ -311,110 +311,110 @@ Add to `netlify.toml` after approvals:
 ```toml
 # Password Managers (already configured)
 [[redirects]]
-  from = "/go/nordpass"
-  to = "https://nordpass.com?affiliate=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/nordpass"
+to = "https://nordpass.com?affiliate=[YOUR_ID]"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/1password"
-  to = "https://1password.com?affiliate=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/1password"
+to = "https://1password.com?affiliate=[YOUR_ID]"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/bitwarden"
-  to = "https://bitwarden.com?ref=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/bitwarden"
+to = "https://bitwarden.com?ref=[YOUR_ID]"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/dashlane"
-  to = "https://dashlane.com?affiliate=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/dashlane"
+to = "https://dashlane.com?affiliate=[YOUR_ID]"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/lastpass"
-  to = "https://lastpass.com?affiliate=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/lastpass"
+to = "https://lastpass.com?affiliate=[YOUR_ID]"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/keeper"
-  to = "https://keepersecurity.com?affiliate=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/keeper"
+to = "https://keepersecurity.com?affiliate=[YOUR_ID]"
+status = 301
+force = true
 
 # Amazon Laptops
 [[redirects]]
-  from = "/go/amazon/macbook-air-m3"
-  to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
-  status = 301
-  force = true
+from = "/go/amazon/macbook-air-m3"
+to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/amazon/thinkpad-x1"
-  to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
-  status = 301
-  force = true
+from = "/go/amazon/thinkpad-x1"
+to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
+status = 301
+force = true
 
 # Amazon Desks
 [[redirects]]
-  from = "/go/amazon/flexispot-e7"
-  to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
-  status = 301
-  force = true
+from = "/go/amazon/flexispot-e7"
+to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/amazon/fezibo-desk"
-  to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
-  status = 301
-  force = true
+from = "/go/amazon/fezibo-desk"
+to = "https://amazon.com/dp/[ASIN]?tag=floatjet-20"
+status = 301
+force = true
 
 # Email Marketing
 [[redirects]]
-  from = "/go/convertkit"
-  to = "https://convertkit.com?lmref=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/convertkit"
+to = "https://convertkit.com?lmref=[YOUR_ID]"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/beehiiv"
-  to = "https://beehiiv.com?via=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/beehiiv"
+to = "https://beehiiv.com?via=[YOUR_ID]"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/mailchimp"
-  to = "https://mailchimp.com?affiliate=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/mailchimp"
+to = "https://mailchimp.com?affiliate=[YOUR_ID]"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/activecampaign"
-  to = "https://activecampaign.com?affiliate=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/activecampaign"
+to = "https://activecampaign.com?affiliate=[YOUR_ID]"
+status = 301
+force = true
 
 # Standing Desks (Direct)
 [[redirects]]
-  from = "/go/flexispot"
-  to = "https://flexispot.com?affiliate=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/flexispot"
+to = "https://flexispot.com?affiliate=[YOUR_ID]"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/autonomous"
-  to = "https://autonomous.ai?affiliate=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/autonomous"
+to = "https://autonomous.ai?affiliate=[YOUR_ID]"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/go/uplift"
-  to = "https://upliftdesk.com?affiliate=[YOUR_ID]"
-  status = 301
-  force = true
+from = "/go/uplift"
+to = "https://upliftdesk.com?affiliate=[YOUR_ID]"
+status = 301
+force = true
 ```
 
 ---

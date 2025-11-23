@@ -10,7 +10,7 @@ completed_date: "2025-11-23"
 estimated_hours: 1
 actual_hours: 0.5
 assigned_to: "Team"
-tags: ["analytics", "week-2", "setup", "google-analytics", "tracking"]
+tags: [ "analytics", "week-2", "setup", "google-analytics", "tracking" ]
 ---
 
 # Task: Configure Google Analytics 4

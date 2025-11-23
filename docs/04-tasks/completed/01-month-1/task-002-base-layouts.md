@@ -10,7 +10,7 @@ completed_date: "2025-11-20"
 estimated_hours: 3
 actual_hours: 1.5
 assigned_to: "Team"
-tags: ["infrastructure", "layouts", "week-1", "components"]
+tags: [ "infrastructure", "layouts", "week-1", "components" ]
 ---
 
 # Task: Create base layout components

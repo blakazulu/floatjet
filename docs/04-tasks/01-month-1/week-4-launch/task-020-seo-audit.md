@@ -9,7 +9,7 @@ due_date: "2024-12-16"
 estimated_hours: 3
 actual_hours: 0
 assigned_to: "Team"
-tags: ["seo", "audit", "launch", "week-4"]
+tags: [ "seo", "audit", "launch", "week-4" ]
 ---
 
 # Task: Comprehensive SEO Audit

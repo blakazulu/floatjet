@@ -10,7 +10,7 @@ completed_date: "2025-11-22"
 estimated_hours: 1
 actual_hours: 0.5
 assigned_to: "Team"
-tags: ["seo", "analytics", "week-2", "setup", "google"]
+tags: [ "seo", "analytics", "week-2", "setup", "google" ]
 ---
 
 # Task: Set up Google Search Console

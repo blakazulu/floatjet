@@ -6,10 +6,10 @@ const description = 'Discover the best tools and software for remote workers. In
 
 // Category pages
 const categories = [
-  { name: 'VPN & Security', href: '/tools/vpn', icon: '🔒' },
-  { name: 'SaaS Tools', href: '/tools/saas', icon: '📋' },
-  { name: 'Web Hosting', href: '/tools/hosting', icon: '🌐' },
-  { name: 'Finance', href: '/tools/finance', icon: '💰' }
+  {name: 'VPN & Security', href: '/tools/vpn', icon: '🔒'},
+  {name: 'SaaS Tools', href: '/tools/saas', icon: '📋'},
+  {name: 'Web Hosting', href: '/tools/hosting', icon: '🌐'},
+  {name: 'Finance', href: '/tools/finance', icon: '💰'}
 ];
 
 // Tool articles data
@@ -86,51 +86,53 @@ const tools = [
     <div class="text-center mb-12">
       <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Remote Work Tools</h1>
       <p class="text-lg text-white/80 max-w-2xl mx-auto">
-        In-depth reviews and comparisons of the best software and tools for remote workers, freelancers, and digital nomads.
+        In-depth reviews and comparisons of the best software and tools for remote workers, freelancers, and digital
+        nomads.
       </p>
     </div>
 
     <!-- Category Links -->
     <div class="flex flex-wrap justify-center gap-3 mb-12">
       {categories.map(cat => (
-        <a
-          href={cat.href}
-          class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-jet-stream text-white/90 hover:text-ocean-deep rounded-full text-sm font-medium transition-colors"
-        >
-          <span>{cat.icon}</span>
-          {cat.name}
-        </a>
+          <a
+              href={cat.href}
+              class="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-jet-stream text-white/90 hover:text-ocean-deep rounded-full text-sm font-medium transition-colors"
+          >
+            <span>{cat.icon}</span>
+            {cat.name}
+          </a>
       ))}
     </div>
 
     <!-- Tools Grid -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {tools.map(tool => (
-        <a
-          href={tool.href}
-          class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
-        >
-          <div class="flex items-start gap-4">
-            <span class="text-3xl">{tool.icon}</span>
-            <div class="flex-1">
+          <a
+              href={tool.href}
+              class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
+          >
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">{tool.icon}</span>
+              <div class="flex-1">
               <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded mb-2">
                 {tool.category}
               </span>
-              <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
-                {tool.title}
-              </h2>
-              <p class="text-white/70 text-sm">
-                {tool.description}
-              </p>
+                <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
+                  {tool.title}
+                </h2>
+                <p class="text-white/70 text-sm">
+                  {tool.description}
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
-            Read Review
-            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
-          </div>
-        </a>
+            <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
+              Read Review
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                   viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
       ))}
     </div>
 

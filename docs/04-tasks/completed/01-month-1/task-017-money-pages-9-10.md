@@ -9,7 +9,7 @@ due_date: "2024-12-15"
 estimated_hours: 16
 actual_hours: 0
 assigned_to: "Team"
-tags: ["content", "money-page", "affiliate", "week-4"]
+tags: [ "content", "money-page", "affiliate", "week-4" ]
 ---
 
 # Task: Money Pages 9-10 (Course Platforms, Web Hosting)

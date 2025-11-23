@@ -408,13 +408,13 @@ from the same dashboard.
 
 ### CRM Software
 
-| Program    | Commission          | Cookie  | Network       | Status      |
-|------------|---------------------|---------|---------------|-------------|
-| HubSpot    | 30% recurring       | 90 days | Impact Radius | Not Applied |
-| Pipedrive  | 20-30% recurring    | 60 days | Direct        | Not Applied |
-| Zoho CRM   | 15-20%              | 45 days | Direct        | Not Applied |
-| Monday.com | 100% first year     | 90 days | Direct        | Not Applied |
-| Freshsales | 15-20%              | 30 days | Direct        | Not Applied |
+| Program    | Commission       | Cookie  | Network       | Status      |
+|------------|------------------|---------|---------------|-------------|
+| HubSpot    | 30% recurring    | 90 days | Impact Radius | Not Applied |
+| Pipedrive  | 20-30% recurring | 60 days | Direct        | Not Applied |
+| Zoho CRM   | 15-20%           | 45 days | Direct        | Not Applied |
+| Monday.com | 100% first year  | 90 days | Direct        | Not Applied |
+| Freshsales | 15-20%           | 30 days | Direct        | Not Applied |
 
 **Used in:** best-crm-software-small-business article
 
@@ -422,11 +422,11 @@ from the same dashboard.
 
 ### Team Communication Tools
 
-| Program   | Commission       | Cookie  | Network       | Status      |
-|-----------|------------------|---------|---------------|-------------|
-| Slack     | Varies           | 30 days | Direct        | Not Applied |
-| Zoom      | 10-15%           | 30 days | Direct        | Not Applied |
-| Loom      | 20%              | 30 days | Direct        | Not Applied |
+| Program | Commission | Cookie  | Network | Status      |
+|---------|------------|---------|---------|-------------|
+| Slack   | Varies     | 30 days | Direct  | Not Applied |
+| Zoom    | 10-15%     | 30 days | Direct  | Not Applied |
+| Loom    | 20%        | 30 days | Direct  | Not Applied |
 
 **Used in:** best-team-communication-tools article
 
@@ -448,12 +448,12 @@ from the same dashboard.
 
 ### Digital Banking / Finance
 
-| Program        | Commission | Cookie  | Network | Status      |
-|----------------|------------|---------|---------|-------------|
-| Wise           | £15-50/referral | 30 days | Direct  | Not Applied |
-| Revolut        | Varies by region | 30 days | Direct  | Not Applied |
-| Mercury        | Unknown    | Unknown | Direct  | Not Applied |
-| Payoneer       | $25/referral | 30 days | Direct  | Not Applied |
+| Program  | Commission       | Cookie  | Network | Status      |
+|----------|------------------|---------|---------|-------------|
+| Wise     | £15-50/referral  | 30 days | Direct  | Not Applied |
+| Revolut  | Varies by region | 30 days | Direct  | Not Applied |
+| Mercury  | Unknown          | Unknown | Direct  | Not Applied |
+| Payoneer | $25/referral     | 30 days | Direct  | Not Applied |
 
 **Used in:** best-banking-digital-nomads, crypto-friendly-banks articles
 
@@ -849,6 +849,8 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** Added new affiliate program categories on 2025-11-23: CRM Software (HubSpot, Pipedrive, Zoho), Team Communication (Slack, Zoom, Loom), Travel Insurance (SafetyWing, World Nomads), Digital Banking (Wise, Revolut, Mercury). All articles written.
+**Last Action:** Added new affiliate program categories on 2025-11-23: CRM Software (HubSpot, Pipedrive, Zoho), Team
+Communication (Slack, Zoom, Loom), Travel Insurance (SafetyWing, World Nomads), Digital Banking (Wise, Revolut,
+Mercury). All articles written.
 
 **Next Action:** Apply to priority programs: Amazon Associates, ConvertKit, SafetyWing, Wise.

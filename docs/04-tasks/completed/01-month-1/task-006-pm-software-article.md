@@ -10,7 +10,7 @@ completed_date: "2025-11-22"
 estimated_hours: 8
 actual_hours: 3
 assigned_to: "Team"
-tags: ["content", "money-page", "week-2", "project-management", "affiliate"]
+tags: [ "content", "money-page", "week-2", "project-management", "affiliate" ]
 ---
 
 # Task: Write Money Page - Best Project Management Software

@@ -1,0 +1,338 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import {FAQSection, RelatedArticles} from '../../components/article';
+
+const title = 'Complete Home Office Checklist: Everything You Need';
+const description = 'The ultimate home office checklist for remote workers. From essential furniture to tech equipment, lighting, and ergonomics—build your perfect workspace.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2024-12-15');
+const readingTime = 16;
+const image = 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Well-organized home office setup with desk, chair, and equipment';
+
+const headings = [
+  {depth: 2, slug: 'introduction', text: 'Build Your Perfect Workspace'},
+  {depth: 2, slug: 'furniture-checklist', text: 'Essential Furniture Checklist'},
+  {depth: 2, slug: 'tech-equipment', text: 'Tech Equipment Checklist'},
+  {depth: 2, slug: 'lighting-checklist', text: 'Lighting Checklist'},
+  {depth: 2, slug: 'organization-storage', text: 'Organization and Storage'},
+  {depth: 2, slug: 'comfort-ergonomics', text: 'Comfort and Ergonomics'},
+  {depth: 2, slug: 'budget-tiers', text: 'Optional Upgrades by Budget Tier'},
+  {depth: 2, slug: 'printable-checklist', text: 'Printable Checklist Summary'},
+  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+];
+
+const faqData = [
+  {
+    question: 'How much should I budget for a home office setup?',
+    answer: 'A functional home office can be set up for $500-800 with budget options. A comfortable mid-range setup runs $1,500-2,500. Premium setups with high-end ergonomic furniture and equipment can cost $3,000-5,000 or more.'
+  },
+  {
+    question: 'What\'s the most important item to invest in?',
+    answer: 'Your chair. You\'ll spend 8+ hours a day sitting, and a poor chair leads to back pain and long-term health issues. Invest in a quality ergonomic chair first, even if you save money on other items.'
+  },
+  {
+    question: 'Do I need a dedicated room for a home office?',
+    answer: 'Not necessarily. Many people work successfully from a corner of a bedroom, living room, or even a large closet. The key is having a dedicated space you can set up for work and mentally "leave" at the end of the day.'
+  },
+  {
+    question: 'Should I buy a standing desk?',
+    answer: 'Standing desks offer health benefits by allowing you to alternate between sitting and standing. They\'re not essential, but if your budget allows, a sit-stand desk is a worthwhile investment for long-term health.'
+  },
+  {
+    question: 'What monitor size is best for remote work?',
+    answer: 'For most remote workers, a 27-inch monitor hits the sweet spot. It\'s large enough for comfortable viewing and multitasking without being overwhelming. Dual monitors or an ultrawide (34"+) are great if you work with multiple applications.'
+  },
+  {
+    question: 'How important is lighting in a home office?',
+    answer: 'Very important. Poor lighting causes eye strain, headaches, and fatigue. Ideally, combine natural light with a good desk lamp. Position your desk to avoid screen glare and ensure your face is well-lit for video calls.'
+  }
+];
+
+const relatedArticles = [
+  {
+    title: 'Ultimate Home Office Setup',
+    excerpt: 'Complete guide to building your ideal remote workspace.',
+    href: '/blog/ultimate-home-office-setup',
+    image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Modern home office setup'
+  },
+  {
+    title: 'Best Standing Desks',
+    excerpt: 'Top standing desks for health and productivity.',
+    href: '/gear/best-standing-desks',
+    image: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Standing desk in home office'
+  },
+  {
+    title: 'Best Ergonomic Chairs',
+    excerpt: 'Find the perfect chair for long work sessions.',
+    href: '/gear/best-ergonomic-chairs',
+    image: 'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Ergonomic office chair'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Setup"
+    categorySlug="guides/setup"
+    headings={headings}
+>
+  <p class="lead">
+    Setting up a home office can feel overwhelming—there's furniture, tech, lighting, organization,
+    and ergonomics to consider. This comprehensive checklist covers everything you need to create
+    a productive, comfortable remote workspace.
+  </p>
+
+  <h2 id="introduction">Build Your Perfect Workspace</h2>
+
+  <p>
+    Whether you're setting up your first home office or upgrading an existing space, having a
+    clear checklist ensures you don't miss anything important. A well-designed workspace boosts
+    productivity, protects your health, and makes remote work more enjoyable.
+  </p>
+
+  <p>
+    This guide breaks down everything into categories with essential items and optional upgrades.
+    You don't need everything on day one—start with the essentials and add items as your budget allows.
+  </p>
+
+  <h2 id="furniture-checklist">Essential Furniture Checklist</h2>
+
+  <h3>The Desk</h3>
+  <p>Your desk is the foundation of your workspace. Consider:</p>
+  <ul>
+    <li><strong>Size:</strong> Minimum 48" wide for comfortable work; 60" if you use multiple monitors</li>
+    <li><strong>Height:</strong> Standard desks are 28-30" tall; adjustable is ideal</li>
+    <li><strong>Standing option:</strong> Sit-stand desks let you alternate positions throughout the day</li>
+    <li><strong>Surface:</strong> Enough depth (24"+) for monitor at proper distance</li>
+    <li><strong>Cable management:</strong> Built-in grommets or cable trays are a plus</li>
+  </ul>
+
+  <h3>The Chair</h3>
+  <p>Don't skimp on your chair—it's your most important purchase:</p>
+  <ul>
+    <li><strong>Adjustable height:</strong> Feet flat on floor, thighs parallel to ground</li>
+    <li><strong>Lumbar support:</strong> Adjustable lumbar support prevents lower back pain</li>
+    <li><strong>Armrests:</strong> Adjustable armrests that support elbows at 90 degrees</li>
+    <li><strong>Seat depth:</strong> 2-4 fingers of space between seat edge and back of knees</li>
+    <li><strong>Breathable material:</strong> Mesh backs help with temperature regulation</li>
+  </ul>
+
+  <h3>Additional Furniture</h3>
+  <ul>
+    <li><strong>Monitor stand or arm:</strong> Raises screen to eye level</li>
+    <li><strong>Footrest:</strong> If your feet don't reach the floor comfortably</li>
+    <li><strong>Filing cabinet or drawers:</strong> For document storage</li>
+    <li><strong>Bookshelf:</strong> For reference materials and supplies</li>
+  </ul>
+
+  <h2 id="tech-equipment">Tech Equipment Checklist</h2>
+
+  <h3>Computing Essentials</h3>
+  <ul>
+    <li><strong>Computer:</strong> Laptop or desktop with specs matching your work requirements</li>
+    <li><strong>External monitor:</strong> 24-27" minimum; larger or dual monitors for heavy multitasking</li>
+    <li><strong>Keyboard:</strong> External keyboard if using laptop; ergonomic or mechanical for comfort</li>
+    <li><strong>Mouse:</strong> Ergonomic mouse to prevent wrist strain</li>
+    <li><strong>Mouse pad:</strong> Large pad with wrist rest for comfort</li>
+  </ul>
+
+  <h3>Video Conferencing</h3>
+  <ul>
+    <li><strong>Webcam:</strong> 1080p minimum; 4K for professional presentations</li>
+    <li><strong>Microphone:</strong> USB mic or quality headset; laptop mics are usually poor</li>
+    <li><strong>Headphones:</strong> Noise-canceling for focus and clear calls</li>
+    <li><strong>Ring light or desk lamp:</strong> Front-facing light for video calls</li>
+  </ul>
+
+  <h3>Connectivity</h3>
+  <ul>
+    <li><strong>USB hub or dock:</strong> Expand laptop connectivity</li>
+    <li><strong>Ethernet cable:</strong> Wired connection is more reliable than WiFi</li>
+    <li><strong>Power strip with surge protection:</strong> Protect your equipment</li>
+    <li><strong>UPS (battery backup):</strong> Prevents work loss during power outages</li>
+  </ul>
+
+  <h2 id="lighting-checklist">Lighting Checklist</h2>
+
+  <h3>Natural Light</h3>
+  <ul>
+    <li><strong>Desk position:</strong> Perpendicular to windows to avoid glare</li>
+    <li><strong>Window treatments:</strong> Blinds or curtains to control brightness</li>
+    <li><strong>Avoid backlighting:</strong> Don't sit with bright window behind you for video calls</li>
+  </ul>
+
+  <h3>Artificial Lighting</h3>
+  <ul>
+    <li><strong>Desk lamp:</strong> Adjustable LED lamp with multiple brightness levels</li>
+    <li><strong>Ambient lighting:</strong> Overhead light or floor lamp to reduce contrast</li>
+    <li><strong>Task lighting:</strong> Focused light for reading documents</li>
+    <li><strong>Color temperature:</strong> 4000-5000K (neutral white) for work; warmer for evenings</li>
+    <li><strong>Video call lighting:</strong> Front-facing light at face level</li>
+  </ul>
+
+  <h2 id="organization-storage">Organization and Storage</h2>
+
+  <h3>Desk Organization</h3>
+  <ul>
+    <li><strong>Pen/pencil holder:</strong> Keep writing tools accessible</li>
+    <li><strong>Document tray:</strong> For incoming paperwork</li>
+    <li><strong>Drawer organizers:</strong> Prevent junk drawer chaos</li>
+    <li><strong>Monitor shelf:</strong> Creates storage under raised monitor</li>
+    <li><strong>Desktop organizer:</strong> For small items, sticky notes, etc.</li>
+  </ul>
+
+  <h3>Cable Management</h3>
+  <ul>
+    <li><strong>Cable clips:</strong> Keep cables routed neatly</li>
+    <li><strong>Cable sleeve:</strong> Bundle multiple cables together</li>
+    <li><strong>Under-desk tray:</strong> Hide power strips and excess cable</li>
+    <li><strong>Velcro ties:</strong> Adjustable cable bundling</li>
+  </ul>
+
+  <h3>Filing and Documents</h3>
+  <ul>
+    <li><strong>Filing cabinet:</strong> For important documents</li>
+    <li><strong>Scanner:</strong> Digitize documents to reduce paper clutter</li>
+    <li><strong>Shredder:</strong> Securely dispose of sensitive documents</li>
+    <li><strong>Label maker:</strong> Keep everything clearly labeled</li>
+  </ul>
+
+  <h2 id="comfort-ergonomics">Comfort and Ergonomics</h2>
+
+  <h3>Monitor Positioning</h3>
+  <ul>
+    <li><strong>Distance:</strong> Arm's length from your eyes (20-26 inches)</li>
+    <li><strong>Height:</strong> Top of screen at or slightly below eye level</li>
+    <li><strong>Tilt:</strong> Slight backward tilt to reduce glare</li>
+    <li><strong>Multiple monitors:</strong> Primary monitor directly ahead; secondary at slight angle</li>
+  </ul>
+
+  <h3>Keyboard and Mouse</h3>
+  <ul>
+    <li><strong>Keyboard height:</strong> Elbows at 90 degrees, wrists straight</li>
+    <li><strong>Wrist rest:</strong> Optional; use during breaks, not while typing</li>
+    <li><strong>Mouse position:</strong> Close to keyboard, same height</li>
+  </ul>
+
+  <h3>Comfort Items</h3>
+  <ul>
+    <li><strong>Footrest:</strong> If chair doesn't allow feet flat on floor</li>
+    <li><strong>Seat cushion:</strong> Additional comfort for long sessions</li>
+    <li><strong>Back support pillow:</strong> If chair lacks adequate lumbar support</li>
+    <li><strong>Anti-fatigue mat:</strong> For standing desk users</li>
+  </ul>
+
+  <h3>Environment</h3>
+  <ul>
+    <li><strong>Temperature control:</strong> Small fan or space heater if needed</li>
+    <li><strong>Plants:</strong> Improve air quality and reduce stress</li>
+    <li><strong>White noise machine:</strong> Block distracting sounds</li>
+    <li><strong>Air purifier:</strong> Especially important in small spaces</li>
+  </ul>
+
+  <h2 id="budget-tiers">Optional Upgrades by Budget Tier</h2>
+
+  <h3>Budget Tier ($500-800)</h3>
+  <p>Focus on essentials that directly impact your work and health:</p>
+  <ul>
+    <li>Basic ergonomic chair ($150-250)</li>
+    <li>Simple desk ($100-200)</li>
+    <li>External monitor ($150-200)</li>
+    <li>Keyboard and mouse ($50-100)</li>
+    <li>Desk lamp ($30-50)</li>
+  </ul>
+
+  <h3>Mid-Range Tier ($1,500-2,500)</h3>
+  <p>Better quality and more comfort features:</p>
+  <ul>
+    <li>Quality ergonomic chair ($400-600)</li>
+    <li>Electric standing desk ($400-600)</li>
+    <li>27" 4K monitor ($300-400)</li>
+    <li>Quality webcam ($100-150)</li>
+    <li>Good headset ($100-200)</li>
+    <li>Proper lighting setup ($100-150)</li>
+  </ul>
+
+  <h3>Premium Tier ($3,000-5,000+)</h3>
+  <p>Best-in-class equipment for serious remote workers:</p>
+  <ul>
+    <li>Premium ergonomic chair—Herman Miller, Steelcase ($1,000-1,500)</li>
+    <li>Motorized standing desk with memory presets ($700-1,000)</li>
+    <li>Dual monitors or ultrawide ($600-1,000)</li>
+    <li>Professional microphone setup ($200-400)</li>
+    <li>4K webcam ($200-300)</li>
+    <li>Mechanical keyboard ($150-300)</li>
+    <li>Premium peripherals and accessories ($300-500)</li>
+  </ul>
+
+  <h2 id="printable-checklist">Printable Checklist Summary</h2>
+
+  <h3>Absolute Essentials</h3>
+  <ul>
+    <li>☐ Desk (appropriate size for your work)</li>
+    <li>☐ Ergonomic chair</li>
+    <li>☐ Computer (laptop or desktop)</li>
+    <li>☐ External monitor</li>
+    <li>☐ External keyboard</li>
+    <li>☐ Mouse</li>
+    <li>☐ Desk lamp</li>
+    <li>☐ Headset or headphones</li>
+    <li>☐ Webcam</li>
+    <li>☐ Reliable internet connection</li>
+  </ul>
+
+  <h3>Highly Recommended</h3>
+  <ul>
+    <li>☐ Monitor stand or arm</li>
+    <li>☐ Cable management solution</li>
+    <li>☐ Power strip with surge protection</li>
+    <li>☐ USB hub or dock</li>
+    <li>☐ Footrest (if needed)</li>
+    <li>☐ Desk organizer</li>
+    <li>☐ Good lighting for video calls</li>
+  </ul>
+
+  <h3>Nice to Have</h3>
+  <ul>
+    <li>☐ Standing desk or desk converter</li>
+    <li>☐ Noise-canceling headphones</li>
+    <li>☐ Second monitor</li>
+    <li>☐ UPS battery backup</li>
+    <li>☐ Document scanner</li>
+    <li>☐ Plants</li>
+    <li>☐ White noise machine</li>
+  </ul>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqData}/>
+
+  <h2>Start Building Your Workspace</h2>
+
+  <p>
+    You don't need to buy everything at once. Start with the absolute essentials—a decent chair,
+    desk, and your computing equipment. Then gradually add items as you identify what would most
+    improve your workday.
+  </p>
+
+  <p>
+    Remember: the best home office is one you'll actually use comfortably for years. Invest in
+    quality where it matters most (chair, monitor, keyboard), and save on items where budget
+    options work just as well. Your future self will thank you for taking the time to set up
+    your workspace properly.
+  </p>
+
+  <RelatedArticles articles={relatedArticles}/>
+</ArticleLayout>

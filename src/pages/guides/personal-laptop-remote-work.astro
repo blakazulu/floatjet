@@ -1,0 +1,371 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import {FAQSection, RelatedArticles} from '../../components/article';
+
+const title = 'Can You Use Your Personal Laptop for Remote Work?';
+const description = 'Everything you need to know about using your personal laptop for work. Security considerations, employer policies, setup tips, and when to keep work and personal separate.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2024-12-19');
+const readingTime = 13;
+const image = 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Person working on personal laptop at home office desk';
+
+const headings = [
+  {depth: 2, slug: 'short-answer', text: 'The Short Answer'},
+  {depth: 2, slug: 'when-allowed', text: 'When Using Personal Devices is Allowed'},
+  {depth: 2, slug: 'security-concerns', text: 'Security Concerns to Address'},
+  {depth: 2, slug: 'setting-up-personal-laptop', text: 'Setting Up Your Personal Laptop for Work'},
+  {depth: 2, slug: 'separating-work-personal', text: 'Keeping Work and Personal Separate'},
+  {depth: 2, slug: 'byod-pros-cons', text: 'BYOD Pros and Cons'},
+  {depth: 2, slug: 'when-to-get-separate', text: 'When You Need a Separate Work Device'},
+  {depth: 2, slug: 'asking-employer', text: 'Asking Your Employer for Equipment'},
+  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+];
+
+const faqData = [
+  {
+    question: 'Can my employer see what I do on my personal laptop?',
+    answer: 'Generally no, unless you install company monitoring software or use their VPN/network. However, if you access work accounts, your employer can see activity within those work applications. Keep personal browsing separate from work apps.'
+  },
+  {
+    question: 'Should I let my employer install software on my personal device?',
+    answer: 'Be cautious. Some company software includes monitoring capabilities or MDM (Mobile Device Management) that gives IT control over your device. Understand exactly what the software does before installing, and consider if you\'re comfortable with that access.'
+  },
+  {
+    question: 'What if my personal laptop isn\'t powerful enough for work?',
+    answer: 'If your laptop can\'t handle work tasks, you have grounds to request company equipment. Document specific performance issues (lag during video calls, slow application loading) and present them to your manager or IT department.'
+  },
+  {
+    question: 'Who pays if my personal laptop breaks while doing work?',
+    answer: 'This depends on your agreement with your employer. Many companies provide a stipend for personal device use, which could cover repairs. Check your company policy or employment contract. If no policy exists, clarify this before using personal equipment.'
+  },
+  {
+    question: 'Can I write off my personal laptop as a work expense?',
+    answer: 'In some countries, yes. If you use your personal laptop for work and your employer doesn\'t reimburse you, you may be able to deduct a portion of the cost on your taxes. Consult a tax professional for advice specific to your situation.'
+  },
+  {
+    question: 'What happens to work data on my laptop if I leave the company?',
+    answer: 'You\'re typically required to delete all company data when you leave. If you\'ve kept work and personal data separate (using different user accounts or browsers), this is straightforward. If everything is mixed together, it\'s more complicated.'
+  }
+];
+
+const relatedArticles = [
+  {
+    title: 'Best Laptops for Remote Work',
+    excerpt: 'Top laptop picks for productivity and portability.',
+    href: '/gear/best-laptops-remote-work',
+    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Laptop on desk for remote work'
+  },
+  {
+    title: 'Best VPN for Digital Nomads',
+    excerpt: 'Secure your connection when working remotely.',
+    href: '/tools/best-vpn-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'VPN security on laptop'
+  },
+  {
+    title: 'Best Password Managers',
+    excerpt: 'Keep your accounts secure and organized.',
+    href: '/tools/best-password-manager-remote-work',
+    image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Password security concept'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Setup"
+    categorySlug="guides/setup"
+    headings={headings}
+>
+  <p class="lead">
+    Your employer says you can work remotely, but they haven't provided a laptop. Can you just use
+    your personal MacBook or Windows machine? Here's what you need to know about BYOD (Bring Your
+    Own Device) for remote work.
+  </p>
+
+  <h2 id="short-answer">The Short Answer</h2>
+
+  <p>
+    <strong>Yes, you can often use your personal laptop for remote work—but it depends on your
+      employer's policies, security requirements, and your job role.</strong>
+  </p>
+
+  <p>
+    Many companies allow or even encourage BYOD policies, especially for remote workers. However,
+    using personal devices for work creates security, privacy, and practical considerations you
+    need to address.
+  </p>
+
+  <p>
+    Before assuming it's okay, always check with your employer. Some companies have strict policies
+    requiring company-issued devices, especially in industries handling sensitive data (healthcare,
+    finance, government).
+  </p>
+
+  <h2 id="when-allowed">When Using Personal Devices is Allowed</h2>
+
+  <h3>Companies That Typically Allow BYOD</h3>
+  <ul>
+    <li><strong>Startups:</strong> Often lack budget for hardware and expect employees to have devices</li>
+    <li><strong>Tech companies:</strong> Usually flexible, trusting employees to manage their own tools</li>
+    <li><strong>Freelance/contract work:</strong> Almost always expected to provide your own equipment</li>
+    <li><strong>Small businesses:</strong> May not have IT infrastructure to manage company devices</li>
+    <li><strong>Remote-first companies:</strong> Often offer stipends for personal equipment instead</li>
+  </ul>
+
+  <h3>Companies That Usually Require Company Devices</h3>
+  <ul>
+    <li><strong>Healthcare:</strong> HIPAA compliance requires controlled devices</li>
+    <li><strong>Financial services:</strong> Strict data protection regulations</li>
+    <li><strong>Government/defense:</strong> Security clearance requirements</li>
+    <li><strong>Large enterprises:</strong> Standardized IT management needs</li>
+    <li><strong>Companies handling personal data:</strong> GDPR and privacy regulations</li>
+  </ul>
+
+  <h3>Questions to Ask Your Employer</h3>
+  <ul>
+    <li>Does the company have a BYOD policy?</li>
+    <li>Are there specific security requirements for personal devices?</li>
+    <li>Will IT need to install any software on my personal device?</li>
+    <li>Is there a stipend or reimbursement for using personal equipment?</li>
+    <li>What happens to company data on my device if I leave?</li>
+    <li>Am I liable if my personal device is lost or stolen with work data?</li>
+  </ul>
+
+  <h2 id="security-concerns">Security Concerns to Address</h2>
+
+  <p>
+    Using a personal device for work creates security responsibilities. Both you and your employer
+    have stakes in keeping data safe.
+  </p>
+
+  <h3>Your Responsibilities</h3>
+
+  <h4>Keep Your System Updated</h4>
+  <p>
+    Enable automatic updates for your operating system and all applications. Security patches fix
+    vulnerabilities that could expose company data. An unpatched personal laptop is a liability.
+  </p>
+
+  <h4>Use Strong Authentication</h4>
+  <ul>
+    <li>Set a strong login password (not just 4-digit PIN)</li>
+    <li>Enable disk encryption (FileVault on Mac, BitLocker on Windows)</li>
+    <li>Use a password manager for work accounts</li>
+    <li>Enable two-factor authentication on all work services</li>
+  </ul>
+
+  <h4>Install Security Software</h4>
+  <ul>
+    <li>Antivirus/anti-malware (Windows Defender is adequate for Windows)</li>
+    <li>Consider a VPN for public WiFi protection</li>
+    <li>Enable your system firewall</li>
+  </ul>
+
+  <h4>Be Careful with Downloads and Links</h4>
+  <p>
+    A personal device with mixed-use has more exposure to malware. Don't download sketchy software
+    or click suspicious links. Your personal browsing habits now affect your employer's security.
+  </p>
+
+  <h3>Company Requirements to Expect</h3>
+  <p>
+    Your employer may require some or all of the following:
+  </p>
+  <ul>
+    <li><strong>VPN usage:</strong> Connect through company VPN for work</li>
+    <li><strong>MDM enrollment:</strong> Mobile Device Management software for IT control</li>
+    <li><strong>Encryption verification:</strong> Proof that your disk is encrypted</li>
+    <li><strong>Antivirus requirements:</strong> Specific software or compliance checks</li>
+    <li><strong>Automatic screen lock:</strong> Device locks after brief inactivity</li>
+    <li><strong>Remote wipe capability:</strong> IT can wipe company data if device is lost</li>
+  </ul>
+
+  <h2 id="setting-up-personal-laptop">Setting Up Your Personal Laptop for Work</h2>
+
+  <h3>Basic Security Setup</h3>
+  <ol>
+    <li>Update your operating system to the latest version</li>
+    <li>Enable full disk encryption</li>
+    <li>Set a strong login password</li>
+    <li>Enable automatic screen lock (5 minutes or less)</li>
+    <li>Turn on your firewall</li>
+    <li>Install any security software your employer requires</li>
+  </ol>
+
+  <h3>Create Separation</h3>
+  <ol>
+    <li>Create a separate user account for work (optional but recommended)</li>
+    <li>Use a dedicated browser or browser profile for work</li>
+    <li>Keep work files in a specific folder or cloud service</li>
+    <li>Use separate password manager vaults for work and personal</li>
+  </ol>
+
+  <h3>Install Work Tools</h3>
+  <ol>
+    <li>Company VPN client (if required)</li>
+    <li>Communication tools (Slack, Teams, Zoom)</li>
+    <li>Work-specific software and applications</li>
+    <li>Any MDM or security software required by IT</li>
+  </ol>
+
+  <h3>Backup Your Data</h3>
+  <p>
+    Before adding work software to your personal device, back up your personal files. If something
+    goes wrong or you need to wipe the device later, you won't lose your photos and documents.
+  </p>
+
+  <h2 id="separating-work-personal">Keeping Work and Personal Separate</h2>
+
+  <p>
+    Mixing work and personal on one device is convenient but creates challenges. Here's how to
+    maintain boundaries:
+  </p>
+
+  <h3>Option 1: Separate User Accounts</h3>
+  <p>
+    Create a dedicated user account on your laptop just for work. This provides:
+  </p>
+  <ul>
+    <li>Separate browser history and bookmarks</li>
+    <li>Different installed applications (if desired)</li>
+    <li>Separate desktop and documents folders</li>
+    <li>Easy mental switching between "work mode" and "personal mode"</li>
+    <li>Cleaner offboarding—delete the work account when you leave</li>
+  </ul>
+
+  <h3>Option 2: Separate Browser Profiles</h3>
+  <p>
+    If separate user accounts feel like overkill, use browser profiles:
+  </p>
+  <ul>
+    <li>Create a "Work" profile in Chrome, Firefox, or Edge</li>
+    <li>Sign into work accounts only in the work profile</li>
+    <li>Keep personal browsing in your personal profile</li>
+    <li>Browser extensions and bookmarks stay separate</li>
+  </ul>
+
+  <h3>Option 3: Virtual Machine</h3>
+  <p>
+    For maximum separation, run work in a virtual machine:
+  </p>
+  <ul>
+    <li>Complete isolation from your personal environment</li>
+    <li>Easy to delete the entire work environment when needed</li>
+    <li>Can match IT requirements exactly</li>
+    <li>Downside: requires more RAM and can be slower</li>
+  </ul>
+
+  <h3>Cloud-Based Work</h3>
+  <p>
+    If most of your work happens in cloud apps (Google Workspace, Microsoft 365, web-based tools),
+    separation is easier. Your work data lives in the cloud, not on your local device. Just be
+    careful about what you download locally.
+  </p>
+
+  <h2 id="byod-pros-cons">BYOD Pros and Cons</h2>
+
+  <h3>Advantages of Using Personal Laptop</h3>
+  <ul>
+    <li><strong>Familiarity:</strong> You know your own device and workflow</li>
+    <li><strong>Choice:</strong> Use the OS and hardware you prefer</li>
+    <li><strong>One device:</strong> No need to carry or switch between laptops</li>
+    <li><strong>Customization:</strong> Set up your tools exactly how you like</li>
+    <li><strong>No IT restrictions:</strong> Install what you want (within policy)</li>
+    <li><strong>Immediate availability:</strong> Start working without waiting for equipment</li>
+  </ul>
+
+  <h3>Disadvantages of Using Personal Laptop</h3>
+  <ul>
+    <li><strong>Wear and tear:</strong> Work use adds to device degradation</li>
+    <li><strong>Privacy concerns:</strong> Company software may have access to personal data</li>
+    <li><strong>Repair responsibility:</strong> You may be on the hook for repairs</li>
+    <li><strong>Upgrade pressure:</strong> Work may require more powerful hardware</li>
+    <li><strong>Data mixing:</strong> Work and personal files can get tangled</li>
+    <li><strong>Off-hours temptation:</strong> Work is always accessible</li>
+    <li><strong>Liability:</strong> Lost device = lost company data</li>
+  </ul>
+
+  <h2 id="when-to-get-separate">When You Need a Separate Work Device</h2>
+
+  <p>
+    Consider requesting or buying a dedicated work device if:
+  </p>
+
+  <ul>
+    <li><strong>You handle sensitive data:</strong> Client information, financial data, health records</li>
+    <li><strong>Your employer requires invasive software:</strong> Full MDM, monitoring tools, or extensive IT control
+    </li>
+    <li><strong>Your personal laptop is inadequate:</strong> Too slow, too old, wrong OS for work tools</li>
+    <li><strong>You share your personal device:</strong> With family members who shouldn't access work</li>
+    <li><strong>Work-life balance is a struggle:</strong> Physical separation helps mental separation</li>
+    <li><strong>You're a freelancer with multiple clients:</strong> Client confidentiality may require isolation</li>
+    <li><strong>Your industry has compliance requirements:</strong> Healthcare, finance, legal</li>
+  </ul>
+
+  <h2 id="asking-employer">Asking Your Employer for Equipment</h2>
+
+  <p>
+    If using your personal device isn't ideal, here's how to approach asking for company equipment:
+  </p>
+
+  <h3>Build Your Case</h3>
+  <ul>
+    <li>Document specific limitations of your current device</li>
+    <li>Show how company equipment improves productivity</li>
+    <li>Reference security benefits of controlled devices</li>
+    <li>Note compliance requirements in your industry</li>
+    <li>Compare costs: company device vs. BYOD stipend</li>
+  </ul>
+
+  <h3>What to Ask For</h3>
+  <ul>
+    <li><strong>Option A:</strong> Company-issued laptop with full IT support</li>
+    <li><strong>Option B:</strong> Equipment stipend to buy your own device dedicated to work</li>
+    <li><strong>Option C:</strong> Reimbursement for upgrades needed for work (RAM, storage)</li>
+  </ul>
+
+  <h3>When to Ask</h3>
+  <ul>
+    <li>Before accepting a remote position (during negotiation)</li>
+    <li>During annual reviews or performance discussions</li>
+    <li>When work requirements change (new software, heavier workload)</li>
+    <li>When your current device fails or becomes inadequate</li>
+  </ul>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqData}/>
+
+  <h2>Make an Informed Decision</h2>
+
+  <p>
+    Using your personal laptop for work can be perfectly fine—millions of remote workers do it
+    successfully. The key is understanding your employer's policies, securing your device properly,
+    and maintaining appropriate separation between work and personal use.
+  </p>
+
+  <p>
+    If the arrangement feels uncomfortable—too much monitoring, too little reimbursement, or too
+    much risk—don't hesitate to discuss alternatives with your employer. A dedicated work device
+    might serve everyone's interests better in the long run.
+  </p>
+
+  <p>
+    Whatever you decide, prioritize security. A data breach on your personal device doesn't just
+    affect your employer—it affects you too.
+  </p>
+
+  <RelatedArticles articles={relatedArticles}/>
+</ArticleLayout>

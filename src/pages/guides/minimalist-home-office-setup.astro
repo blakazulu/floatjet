@@ -1,0 +1,365 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import {FAQSection, RelatedArticles} from '../../components/article';
+
+const title = 'Minimalist Home Office Setup: Less Stuff, More Focus';
+const description = 'Create a distraction-free workspace with minimal gear. Learn how to build a productive minimalist home office that helps you focus on what matters.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2024-12-16');
+const readingTime = 12;
+const image = 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Clean minimalist home office with simple desk and natural light';
+
+const headings = [
+  {depth: 2, slug: 'introduction', text: 'Why Minimalism Works for Remote Work'},
+  {depth: 2, slug: 'core-principles', text: 'Core Principles of Minimalist Workspaces'},
+  {depth: 2, slug: 'essential-items', text: 'The Essential Items List'},
+  {depth: 2, slug: 'declutter-process', text: 'How to Declutter Your Current Setup'},
+  {depth: 2, slug: 'desk-setup', text: 'The Minimalist Desk Setup'},
+  {depth: 2, slug: 'digital-minimalism', text: 'Digital Minimalism Tips'},
+  {depth: 2, slug: 'maintaining-minimalism', text: 'Maintaining Your Minimalist Space'},
+  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+];
+
+const faqData = [
+  {
+    question: 'Is minimalism just about having less stuff?',
+    answer: 'Minimalism is about intentionality, not deprivation. It means keeping only what adds value to your work and removing distractions. Some minimalist setups have more items than you\'d expect—the key is that every item serves a clear purpose.'
+  },
+  {
+    question: 'Can I be productive with just a laptop?',
+    answer: 'Absolutely. Many remote workers thrive with just a laptop, especially if it has a good screen and keyboard. However, if you work 8+ hours daily, consider adding an external monitor and keyboard for ergonomic benefits—even minimalists prioritize health.'
+  },
+  {
+    question: 'How do I deal with paperwork in a minimalist office?',
+    answer: 'Go digital whenever possible. Scan important documents and store them in cloud storage. For papers you must keep physically, use a single small filing folder rather than a cabinet. Aim to process papers immediately rather than letting them pile up.'
+  },
+  {
+    question: 'What about decorations and personal items?',
+    answer: 'A minimalist office doesn\'t have to be sterile. One or two meaningful items—a plant, a photo, a piece of art—can make the space feel personal without creating clutter. The rule is: if it doesn\'t spark joy or serve a function, it goes.'
+  },
+  {
+    question: 'Should I get a standing desk for a minimalist setup?',
+    answer: 'A simple standing desk can fit minimalist principles well—it\'s one piece of furniture that serves multiple purposes (sitting and standing). Manual desk converters are even more minimal since they transform your existing desk.'
+  },
+  {
+    question: 'How do I convince my family that I need a clean workspace?',
+    answer: 'Explain that a clutter-free workspace improves your focus and productivity, which benefits everyone. Set clear boundaries about your work area and demonstrate how the minimalist approach helps you work more efficiently and be more present outside work hours.'
+  }
+];
+
+const relatedArticles = [
+  {
+    title: 'Complete Home Office Checklist',
+    excerpt: 'Full checklist of everything you might need.',
+    href: '/guides/complete-home-office-checklist',
+    image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Well-organized home office setup'
+  },
+  {
+    title: 'Cable Management Guide',
+    excerpt: 'Keep your workspace clean and organized.',
+    href: '/guides/cable-management-guide',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Organized cables under desk'
+  },
+  {
+    title: 'Best Standing Desks',
+    excerpt: 'Top standing desks for health and productivity.',
+    href: '/gear/best-standing-desks',
+    image: 'https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Standing desk in home office'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Setup"
+    categorySlug="guides/setup"
+    headings={headings}
+>
+  <p class="lead">
+    Your workspace doesn't need to look like an Instagram influencer's setup or a tech reviewer's
+    battlestation. Sometimes the most productive workspace is the simplest one—a clean desk, the
+    right tools, and nothing else competing for your attention.
+  </p>
+
+  <h2 id="introduction">Why Minimalism Works for Remote Work</h2>
+
+  <p>
+    Clutter isn't just visually distracting—it's mentally exhausting. Every item on your desk
+    represents a tiny decision your brain has to process, even subconsciously. Research shows
+    that visual clutter competes for attention, reduces working memory, and increases stress.
+  </p>
+
+  <p>
+    For remote workers, this matters even more. Without the structure of a traditional office,
+    you're already fighting distractions from home life. A minimalist workspace creates a clear
+    mental boundary: this is where work happens.
+  </p>
+
+  <p>
+    The benefits of a minimalist home office include:
+  </p>
+
+  <ul>
+    <li><strong>Better focus:</strong> Fewer visual distractions means easier concentration</li>
+    <li><strong>Reduced decision fatigue:</strong> Less stuff to organize, find, or manage</li>
+    <li><strong>Faster setup and cleanup:</strong> Start working immediately, end cleanly</li>
+    <li><strong>Lower costs:</strong> Stop buying things you don't actually need</li>
+    <li><strong>Easier maintenance:</strong> Less to clean, dust, and organize</li>
+    <li><strong>Portability:</strong> Can work from anywhere with minimal gear</li>
+  </ul>
+
+  <h2 id="core-principles">Core Principles of Minimalist Workspaces</h2>
+
+  <h3>1. Everything Earns Its Place</h3>
+  <p>
+    Every item in your workspace should serve a clear purpose. If you can't explain why something
+    is on your desk, it doesn't belong there. This doesn't mean you can't have anything
+    personal—it means everything should be intentional.
+  </p>
+
+  <h3>2. One of Each</h3>
+  <p>
+    Do you really need three pens, two notepads, and a stack of sticky notes? Minimalism means
+    having one quality version of each item rather than multiple mediocre options. One good pen,
+    one notebook, one monitor.
+  </p>
+
+  <h3>3. Clear Surfaces, Clear Mind</h3>
+  <p>
+    Your desk surface should be mostly empty when you're not actively working. Items that aren't
+    in use go in a drawer or off the desk entirely. A clear desk signals "ready to work."
+  </p>
+
+  <h3>4. Quality Over Quantity</h3>
+  <p>
+    Invest in fewer, better items rather than accumulating cheap alternatives. A quality ergonomic
+    chair is worth more than a cheap chair plus a seat cushion plus a back support plus a footrest.
+  </p>
+
+  <h3>5. Digital Where Possible</h3>
+  <p>
+    Paper creates clutter. Where possible, go digital: notes in an app, documents in cloud storage,
+    calendar on your phone. Physical paper should be the exception, not the default.
+  </p>
+
+  <h2 id="essential-items">The Essential Items List</h2>
+
+  <p>
+    Here's what you actually need for a productive minimalist home office. Everything else is optional.
+  </p>
+
+  <h3>The Absolute Essentials</h3>
+  <ul>
+    <li><strong>Work surface:</strong> A simple desk or table (doesn't need to be fancy)</li>
+    <li><strong>Chair:</strong> One comfortable, supportive chair</li>
+    <li><strong>Computer:</strong> Laptop or desktop—one device for work</li>
+    <li><strong>Internet connection:</strong> Reliable WiFi or ethernet</li>
+    <li><strong>Light source:</strong> Natural light or one good desk lamp</li>
+  </ul>
+
+  <h3>Worth Adding (For 8+ Hour Workdays)</h3>
+  <ul>
+    <li><strong>External monitor:</strong> Easier on your eyes and neck than laptop screen</li>
+    <li><strong>External keyboard:</strong> Better ergonomics than laptop keyboard</li>
+    <li><strong>Mouse:</strong> More precise than trackpad for extended use</li>
+    <li><strong>Headphones:</strong> For calls and focus time</li>
+  </ul>
+
+  <h3>Nice to Have (But Not Required)</h3>
+  <ul>
+    <li><strong>Webcam:</strong> If laptop camera isn't sufficient</li>
+    <li><strong>One plant:</strong> Adds life without clutter</li>
+    <li><strong>Small notebook:</strong> For quick notes during calls</li>
+  </ul>
+
+  <h3>What You Don't Need</h3>
+  <ul>
+    <li>Multiple monitors (one is enough for most work)</li>
+    <li>Desk organizers full of supplies you rarely use</li>
+    <li>Printer (use digital documents or print at a local shop)</li>
+    <li>Filing cabinet (go digital)</li>
+    <li>Desk decorations that don't bring genuine joy</li>
+    <li>Gadgets you bought but don't actually use</li>
+  </ul>
+
+  <h2 id="declutter-process">How to Declutter Your Current Setup</h2>
+
+  <p>
+    If your current workspace is cluttered, here's a systematic process to minimalize it:
+  </p>
+
+  <h3>Step 1: Clear Everything</h3>
+  <p>
+    Remove every single item from your desk and surrounding area. Put it all in a box or on the
+    floor. Start with a completely empty surface.
+  </p>
+
+  <h3>Step 2: Clean the Space</h3>
+  <p>
+    Wipe down your empty desk. Vacuum or sweep. Notice how peaceful an empty workspace feels.
+    This is your baseline.
+  </p>
+
+  <h3>Step 3: Add Back Only Essentials</h3>
+  <p>
+    One by one, add back only the items you need for your core work tasks. Ask yourself: "Did I
+    use this in the last week? Will I use it tomorrow?" If not, it stays off the desk.
+  </p>
+
+  <h3>Step 4: Find Homes for Everything Else</h3>
+  <p>
+    Items you use occasionally but not daily go in a drawer or nearby shelf. Items you haven't
+    used in months get donated, sold, or discarded. Be ruthless.
+  </p>
+
+  <h3>Step 5: Implement the "One In, One Out" Rule</h3>
+  <p>
+    From now on, every new item that enters your workspace means something else must leave.
+    This prevents re-accumulation.
+  </p>
+
+  <h2 id="desk-setup">The Minimalist Desk Setup</h2>
+
+  <h3>The Ideal Arrangement</h3>
+  <p>
+    A minimalist desk setup typically looks like this during work:
+  </p>
+
+  <ul>
+    <li>Monitor centered at eye level (or laptop on a stand)</li>
+    <li>Keyboard and mouse in front of you</li>
+    <li>One item to the side (water bottle, coffee, notebook)</li>
+    <li>Everything else: off the desk or in a closed drawer</li>
+  </ul>
+
+  <h3>End-of-Day Reset</h3>
+  <p>
+    At the end of each workday, spend 2 minutes resetting your desk:
+  </p>
+
+  <ul>
+    <li>Put away any items that accumulated during the day</li>
+    <li>File or discard papers</li>
+    <li>Wipe down the surface</li>
+    <li>Leave the desk ready for tomorrow</li>
+  </ul>
+
+  <p>
+    This ritual creates a psychological boundary between work and personal time, and ensures
+    you start each day with a clean slate.
+  </p>
+
+  <h3>Cable Management</h3>
+  <p>
+    Visible cables add visual clutter. Minimize them by:
+  </p>
+
+  <ul>
+    <li>Using wireless keyboard and mouse where possible</li>
+    <li>Running cables behind the desk</li>
+    <li>Using a single USB-C cable to your laptop if using a dock</li>
+    <li>Keeping power strips hidden under or behind the desk</li>
+  </ul>
+
+  <h2 id="digital-minimalism">Digital Minimalism Tips</h2>
+
+  <p>
+    A clean physical desk means nothing if your digital workspace is chaotic. Apply minimalist
+    principles to your computer too:
+  </p>
+
+  <h3>Desktop</h3>
+  <ul>
+    <li>Keep your computer desktop empty or near-empty</li>
+    <li>Use folders for any files that must live on desktop</li>
+    <li>Hide dock/taskbar when not in use for distraction-free work</li>
+  </ul>
+
+  <h3>Browser</h3>
+  <ul>
+    <li>Limit browser tabs—close what you're not actively using</li>
+    <li>Use a bookmark system instead of keeping tabs "for later"</li>
+    <li>Install an extension to limit tab count if needed</li>
+  </ul>
+
+  <h3>Notifications</h3>
+  <ul>
+    <li>Turn off all non-essential notifications</li>
+    <li>Use "Do Not Disturb" during focus work</li>
+    <li>Check email and messages at set times, not constantly</li>
+  </ul>
+
+  <h3>Apps and Tools</h3>
+  <ul>
+    <li>Use one tool per job, not three alternatives</li>
+    <li>Delete or archive apps you don't use regularly</li>
+    <li>Resist the urge to try every new productivity app</li>
+  </ul>
+
+  <h2 id="maintaining-minimalism">Maintaining Your Minimalist Space</h2>
+
+  <h3>Daily Habits</h3>
+  <ul>
+    <li><strong>Morning review:</strong> Start with a clear desk</li>
+    <li><strong>Evening reset:</strong> Return everything to its place</li>
+    <li><strong>Process immediately:</strong> Don't let items pile up</li>
+  </ul>
+
+  <h3>Weekly Habits</h3>
+  <ul>
+    <li><strong>Quick scan:</strong> Has anything accumulated that shouldn't be here?</li>
+    <li><strong>Digital cleanup:</strong> Close old tabs, file downloads, clear desktop</li>
+    <li><strong>Wipe down:</strong> Clean surfaces to maintain freshness</li>
+  </ul>
+
+  <h3>Monthly Habits</h3>
+  <ul>
+    <li><strong>Full review:</strong> Does everything in the space still earn its place?</li>
+    <li><strong>Subscription audit:</strong> Cancel unused digital subscriptions</li>
+    <li><strong>Supply check:</strong> Restock essentials, don't overbuy</li>
+  </ul>
+
+  <h3>Common Challenges and Solutions</h3>
+
+  <p><strong>Challenge:</strong> "Things accumulate during busy periods."</p>
+  <p><strong>Solution:</strong> Schedule a 15-minute "reset session" each Friday afternoon.</p>
+
+  <p><strong>Challenge:</strong> "I need lots of reference materials."</p>
+  <p><strong>Solution:</strong> Digitize what you can. Keep physical materials in a closed cabinet, not on the desk.</p>
+
+  <p><strong>Challenge:</strong> "My family keeps leaving things in my workspace."</p>
+  <p><strong>Solution:</strong> Establish clear boundaries. Have a small basket for items others leave—relocate them
+    daily.</p>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqData}/>
+
+  <h2>Start Simple, Stay Simple</h2>
+
+  <p>
+    You don't need to achieve perfect minimalism overnight. Start by removing one unnecessary
+    item from your desk today. Tomorrow, remove another. Within a few weeks, you'll have a
+    workspace that supports focus rather than fighting it.
+  </p>
+
+  <p>
+    Remember: the goal isn't to have the least stuff possible—it's to have exactly what you
+    need and nothing more. A minimalist workspace should feel peaceful, focused, and ready for
+    your best work. If your current setup doesn't feel that way, it's time to simplify.
+  </p>
+
+  <RelatedArticles articles={relatedArticles}/>
+</ArticleLayout>

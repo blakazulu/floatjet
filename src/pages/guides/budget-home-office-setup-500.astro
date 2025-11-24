@@ -1,0 +1,404 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import {FAQSection, RelatedArticles} from '../../components/article';
+
+const title = 'Budget Home Office Setup Under $500: Everything You Need';
+const description = 'Build a complete, comfortable home office for under $500. Smart shopping tips, specific product recommendations, and a breakdown of where to spend and where to save.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2024-12-17');
+const readingTime = 14;
+const image = 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Budget-friendly home office setup with laptop and basic equipment';
+
+const headings = [
+  {depth: 2, slug: 'introduction', text: 'Yes, You Can Do This for Under $500'},
+  {depth: 2, slug: 'budget-breakdown', text: 'The Budget Breakdown'},
+  {depth: 2, slug: 'chair-options', text: 'Chair: $100-150'},
+  {depth: 2, slug: 'desk-options', text: 'Desk: $50-100'},
+  {depth: 2, slug: 'monitor-options', text: 'Monitor: $100-150'},
+  {depth: 2, slug: 'peripherals', text: 'Keyboard, Mouse, and Accessories: $50-75'},
+  {depth: 2, slug: 'lighting-audio', text: 'Lighting and Audio: $30-50'},
+  {depth: 2, slug: 'money-saving-tips', text: 'Money-Saving Tips'},
+  {depth: 2, slug: 'sample-builds', text: 'Complete Sample Builds'},
+  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+];
+
+const faqData = [
+  {
+    question: 'Can I really get a good setup for under $500?',
+    answer: 'Yes. You won\'t get premium brands, but you can get functional, comfortable equipment that serves you well. The key is knowing where to spend (chair, monitor) and where to save (desk, accessories).'
+  },
+  {
+    question: 'What should I prioritize if I can\'t afford everything at once?',
+    answer: 'Start with a chair and monitor. A good chair protects your health, and a proper monitor reduces eye and neck strain. You can use any table as a temporary desk and add peripherals later.'
+  },
+  {
+    question: 'Is used equipment worth buying?',
+    answer: 'Absolutely. Used office chairs from business liquidations are often high-quality chairs at 50-70% off retail. Monitors and desks also hold up well used. Be cautious with used keyboards/mice due to hygiene and wear.'
+  },
+  {
+    question: 'What\'s the minimum I could spend and still be productive?',
+    answer: 'With a laptop you already own, you could start with just a $50 used chair and work from your kitchen table. Add a $100 monitor when possible. Focus on your health and comfort first, aesthetics later.'
+  },
+  {
+    question: 'Should I buy everything at once or piece by piece?',
+    answer: 'If you have the budget, buying together lets you catch sales and combine shipping. But there\'s nothing wrong with starting minimal and upgrading over time—just prioritize chair and monitor first.'
+  },
+  {
+    question: 'Where are the best places to find deals?',
+    answer: 'Amazon Warehouse for open-box tech, Facebook Marketplace and Craigslist for furniture, office liquidation sales for chairs, and Prime Day/Black Friday for new items. Sign up for deal alerts on products you\'re watching.'
+  }
+];
+
+const relatedArticles = [
+  {
+    title: 'Complete Home Office Checklist',
+    excerpt: 'Full checklist of everything for your workspace.',
+    href: '/guides/complete-home-office-checklist',
+    image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Well-organized home office setup'
+  },
+  {
+    title: 'Best Ergonomic Chairs',
+    excerpt: 'Find the perfect chair for long work sessions.',
+    href: '/gear/best-ergonomic-chairs',
+    image: 'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Ergonomic office chair'
+  },
+  {
+    title: 'Best Monitors for Remote Work',
+    excerpt: 'Top monitors for productivity and comfort.',
+    href: '/gear/best-monitors-remote-work',
+    image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Computer monitor on desk'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Setup"
+    categorySlug="guides/setup"
+    headings={headings}
+>
+  <p class="lead">
+    You don't need to spend thousands on a home office. With smart shopping and the right priorities,
+    $500 gets you a comfortable, productive workspace that'll serve you for years. Here's exactly
+    how to do it.
+  </p>
+
+  <h2 id="introduction">Yes, You Can Do This for Under $500</h2>
+
+  <p>
+    The internet is full of "dream home office" setups costing $3,000-5,000 or more. That's
+    aspirational, not practical. Most remote workers don't need—or can't justify—premium
+    Herman Miller chairs and ultrawide curved monitors.
+  </p>
+
+  <p>
+    The good news: you can build a legitimate, comfortable, productive home office for under $500.
+    It won't win design awards, but it will let you do your best work without breaking the bank
+    or your back.
+  </p>
+
+  <p>
+    This guide assumes you already have a computer (laptop or desktop). If you need to factor in
+    a new computer, that's a separate budget discussion.
+  </p>
+
+  <h2 id="budget-breakdown">The Budget Breakdown</h2>
+
+  <p>
+    Here's how to allocate your $500 budget for maximum impact:
+  </p>
+
+  <ul>
+    <li><strong>Chair:</strong> $100-150 (don't skimp here)</li>
+    <li><strong>Desk:</strong> $50-100 (simple is fine)</li>
+    <li><strong>Monitor:</strong> $100-150 (worth the investment)</li>
+    <li><strong>Keyboard &amp; Mouse:</strong> $30-50 (decent basics)</li>
+    <li><strong>Accessories:</strong> $20-25 (mousepad, cable management)</li>
+    <li><strong>Lighting:</strong> $20-30 (one good desk lamp)</li>
+    <li><strong>Audio:</strong> $20-30 (basic headset)</li>
+  </ul>
+
+  <p>
+    Total: $340-535, leaving room for sales, used items, or upgrades where needed.
+  </p>
+
+  <h2 id="chair-options">Chair: $100-150</h2>
+
+  <p>
+    Your chair is the most important purchase. A bad chair leads to back pain, poor posture,
+    and decreased productivity. This is not where you save money.
+  </p>
+
+  <h3>What to Look For</h3>
+  <ul>
+    <li><strong>Adjustable height:</strong> Your feet should rest flat on the floor</li>
+    <li><strong>Lumbar support:</strong> Built-in curve or adjustable support</li>
+    <li><strong>Armrests:</strong> Adjustable height to support your elbows</li>
+    <li><strong>Breathable material:</strong> Mesh back prevents overheating</li>
+    <li><strong>Sturdy base:</strong> Five-point base with smooth-rolling casters</li>
+  </ul>
+
+  <h3>Budget Chair Recommendations</h3>
+
+  <p><strong>New Options (~$100-150):</strong></p>
+  <ul>
+    <li>HON Ignition 2.0 (~$150) - Best budget ergonomic option</li>
+    <li>Amazon Basics Mid-Back Mesh (~$100) - Solid basic choice</li>
+    <li>Flash Furniture Mid-Back (~$80-100) - Decent entry level</li>
+  </ul>
+
+  <p><strong>Used Options (~$50-100):</strong></p>
+  <ul>
+    <li>Steelcase Leap (used) - Premium chair at budget price</li>
+    <li>Herman Miller Aeron (used) - Often $200-300 used from liquidators</li>
+    <li>Any commercial-grade office chair from liquidation sales</li>
+  </ul>
+
+  <p>
+    <strong>Pro tip:</strong> Search "office furniture liquidation" in your area. Companies
+    closing or downsizing sell high-end chairs for 50-80% off retail. A used $1,000 chair
+    is almost always better than a new $150 chair.
+  </p>
+
+  <h2 id="desk-options">Desk: $50-100</h2>
+
+  <p>
+    Unlike chairs, desks are basically flat surfaces. You don't need to spend much here.
+    A basic desk works just as well as an expensive one for most remote work.
+  </p>
+
+  <h3>What to Look For</h3>
+  <ul>
+    <li><strong>Size:</strong> Minimum 48" wide × 24" deep for comfortable work</li>
+    <li><strong>Height:</strong> Standard 28-30" works for most people</li>
+    <li><strong>Stability:</strong> Shouldn't wobble when you type</li>
+    <li><strong>Surface:</strong> Smooth, easy to clean</li>
+  </ul>
+
+  <h3>Budget Desk Options</h3>
+
+  <p><strong>New (~$50-100):</strong></p>
+  <ul>
+    <li>IKEA Lagkapten tabletop + legs (~$50-70) - Mix and match</li>
+    <li>Amazon Basics Writing Desk (~$70) - Simple and functional</li>
+    <li>Walmart Mainstays desk (~$40-60) - Budget champion</li>
+    <li>Target Room Essentials desk (~$50-80) - Clean design</li>
+  </ul>
+
+  <p><strong>Used/Alternative (~$0-50):</strong></p>
+  <ul>
+    <li>Facebook Marketplace / Craigslist - Often free or $20-30</li>
+    <li>Thrift stores - Hit or miss but great deals possible</li>
+    <li>Door on sawhorses - DIY classic (seriously, it works)</li>
+    <li>Dining table you already own - Free!</li>
+  </ul>
+
+  <p>
+    <strong>Pro tip:</strong> If you're handy, IKEA countertops (~$40-100) make excellent
+    desk surfaces. Pair with cheap legs or adjustable desk legs for a semi-custom solution.
+  </p>
+
+  <h2 id="monitor-options">Monitor: $100-150</h2>
+
+  <p>
+    An external monitor dramatically improves your working experience. Your laptop screen
+    is too small and too low—you end up hunching over it all day. A proper monitor at eye
+    level reduces neck strain and increases productivity.
+  </p>
+
+  <h3>What to Look For</h3>
+  <ul>
+    <li><strong>Size:</strong> 24" minimum, 27" is the sweet spot</li>
+    <li><strong>Resolution:</strong> 1080p is fine; 1440p is nicer if budget allows</li>
+    <li><strong>Panel type:</strong> IPS for better colors and viewing angles</li>
+    <li><strong>Adjustability:</strong> Height adjustment is a plus</li>
+    <li><strong>Connections:</strong> HDMI is standard; check your laptop's ports</li>
+  </ul>
+
+  <h3>Budget Monitor Options</h3>
+
+  <p><strong>24" 1080p (~$100-130):</strong></p>
+  <ul>
+    <li>Dell SE2422HX (~$110) - Reliable brand, good quality</li>
+    <li>LG 24ML44B (~$100) - Solid IPS panel</li>
+    <li>ASUS VA24DQ (~$120) - Good features for price</li>
+  </ul>
+
+  <p><strong>27" 1080p (~$130-160):</strong></p>
+  <ul>
+    <li>Dell SE2722HX (~$140) - Bigger screen, same reliability</li>
+    <li>LG 27MQ400 (~$150) - IPS, good for most work</li>
+    <li>Samsung M5 Smart Monitor (~$150) - Bonus streaming features</li>
+  </ul>
+
+  <p>
+    <strong>Pro tip:</strong> Check Amazon Warehouse for "Used - Like New" or "Used - Very Good"
+    monitors. These are often just returns with damaged packaging, saving 15-30%.
+  </p>
+
+  <h2 id="peripherals">Keyboard, Mouse, and Accessories: $50-75</h2>
+
+  <h3>Keyboard (~$20-40)</h3>
+  <p>
+    If you're using a laptop, an external keyboard improves ergonomics significantly. You can
+    position it separately from your screen at the right height.
+  </p>
+
+  <ul>
+    <li>Logitech K120 (~$15) - Simple, reliable, cheap</li>
+    <li>Microsoft Wired Keyboard 600 (~$15) - Basic but solid</li>
+    <li>Logitech K380 (~$40) - Wireless, compact, multi-device</li>
+  </ul>
+
+  <h3>Mouse (~$15-30)</h3>
+  <ul>
+    <li>Logitech M185 (~$15) - Basic wireless mouse</li>
+    <li>Logitech M510 (~$25) - More comfortable for long use</li>
+    <li>Anker Vertical Mouse (~$20) - Ergonomic option for wrist pain</li>
+  </ul>
+
+  <h3>Accessories (~$15-25)</h3>
+  <ul>
+    <li><strong>Mouse pad:</strong> Large pad with wrist rest (~$10-15)</li>
+    <li><strong>Cable clips/ties:</strong> Keep desk tidy (~$5-10)</li>
+    <li><strong>USB hub:</strong> If laptop has limited ports (~$15-20)</li>
+    <li><strong>Laptop stand:</strong> Raises screen to eye level (~$15-25)</li>
+  </ul>
+
+  <h2 id="lighting-audio">Lighting and Audio: $30-50</h2>
+
+  <h3>Desk Lamp (~$20-30)</h3>
+  <p>
+    Good lighting reduces eye strain and improves video call quality. Natural light is best,
+    but a desk lamp fills in when needed.
+  </p>
+
+  <ul>
+    <li>LED desk lamp with adjustable brightness (~$20-30)</li>
+    <li>Look for color temperature adjustment (warm to cool)</li>
+    <li>Swing arm design for positioning flexibility</li>
+  </ul>
+
+  <h3>Headset (~$20-30)</h3>
+  <p>
+    For video calls, any headset with a microphone beats your laptop's built-in mic. You don't
+    need fancy equipment—just clear audio.
+  </p>
+
+  <ul>
+    <li>Logitech H390 (~$25) - USB headset, reliable</li>
+    <li>Mpow HC6 (~$20) - Budget-friendly, decent quality</li>
+    <li>Any earbuds with inline mic (~$15-20) - Already own some?</li>
+  </ul>
+
+  <h2 id="money-saving-tips">Money-Saving Tips</h2>
+
+  <h3>Where to Shop</h3>
+  <ul>
+    <li><strong>Amazon Warehouse:</strong> Open-box and returned items at 15-30% off</li>
+    <li><strong>Facebook Marketplace:</strong> Local pickup = no shipping cost</li>
+    <li><strong>Craigslist:</strong> Negotiate prices, inspect before buying</li>
+    <li><strong>Office liquidation sales:</strong> High-end furniture at steep discounts</li>
+    <li><strong>IKEA:</strong> Reliable budget furniture, especially desks</li>
+    <li><strong>Walmart/Target:</strong> Basic options at good prices</li>
+    <li><strong>Slickdeals.net:</strong> Deal alerts for specific products</li>
+  </ul>
+
+  <h3>Timing Your Purchases</h3>
+  <ul>
+    <li><strong>Black Friday/Cyber Monday:</strong> Best sales of the year</li>
+    <li><strong>Prime Day (July):</strong> Good tech deals</li>
+    <li><strong>Back to school (August):</strong> Office supplies and furniture</li>
+    <li><strong>End of quarter (March, June, September, December):</strong> Business liquidations</li>
+  </ul>
+
+  <h3>General Tips</h3>
+  <ul>
+    <li>Buy used furniture, new electronics (hygiene and reliability)</li>
+    <li>Skip brand names for basics (cables, mouse pads, desk accessories)</li>
+    <li>Check employer benefits—many cover home office equipment</li>
+    <li>Use what you have before buying new</li>
+    <li>Avoid "gaming" branded products—same specs, higher prices</li>
+  </ul>
+
+  <h2 id="sample-builds">Complete Sample Builds</h2>
+
+  <h3>Ultra-Budget Build (~$300)</h3>
+  <p>The absolute essentials for remote work:</p>
+  <ul>
+    <li>Used office chair (Facebook Marketplace): $50</li>
+    <li>IKEA Lagkapten table: $60</li>
+    <li>24" Dell monitor (Amazon Warehouse): $95</li>
+    <li>Logitech K120 keyboard: $15</li>
+    <li>Logitech M185 mouse: $15</li>
+    <li>Basic desk lamp: $20</li>
+    <li>USB headset: $20</li>
+    <li>Cable ties: $5</li>
+    <li><strong>Total: ~$280</strong></li>
+  </ul>
+
+  <h3>Balanced Build (~$450)</h3>
+  <p>Better comfort without breaking the bank:</p>
+  <ul>
+    <li>HON Ignition 2.0 chair: $150</li>
+    <li>Amazon Basics desk: $70</li>
+    <li>27" LG monitor: $150</li>
+    <li>Logitech K380 keyboard: $40</li>
+    <li>Logitech M510 mouse: $25</li>
+    <li>LED desk lamp with dimmer: $25</li>
+    <li>Logitech H390 headset: $25</li>
+    <li>Mouse pad + cable management: $15</li>
+    <li><strong>Total: ~$450</strong></li>
+  </ul>
+
+  <h3>Maximum Value Build (~$500)</h3>
+  <p>Best possible setup at this budget:</p>
+  <ul>
+    <li>Used Steelcase Leap (liquidation): $175</li>
+    <li>IKEA countertop + legs: $90</li>
+    <li>27" 1440p monitor (on sale): $180</li>
+    <li>Logitech K380 keyboard: $40</li>
+    <li>Logitech M510 mouse: $25</li>
+    <li>Desk lamp: $25</li>
+    <li>Laptop stand: $20</li>
+    <li>Headset + accessories: $40</li>
+    <li><strong>Total: ~$495</strong></li>
+  </ul>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqData}/>
+
+  <h2>Start Building Your Workspace</h2>
+
+  <p>
+    A $500 budget is more than enough for a comfortable, productive home office. The key is
+    prioritizing where it matters (chair, monitor) and being smart about where you can save
+    (desk, accessories).
+  </p>
+
+  <p>
+    Don't feel pressured to buy everything at once. Start with the essentials—a decent chair
+    and a proper monitor—and add other items over time. Your workspace will evolve as your
+    needs become clearer.
+  </p>
+
+  <p>
+    The best home office isn't the most expensive one—it's the one that helps you do your
+    best work. At $500, you can absolutely build that.
+  </p>
+
+  <RelatedArticles articles={relatedArticles}/>
+</ArticleLayout>

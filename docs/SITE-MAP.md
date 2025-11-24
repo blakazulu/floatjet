@@ -1,7 +1,7 @@
 # FloatJet Site Map & Content Relationships
 
 **Last Updated:** 2025-11-24
-**Total Pages:** 60
+**Total Pages:** 65
 
 ---
 
@@ -29,7 +29,7 @@ floatjet.com/
 │   ├── /tools/saas (Category)
 │   ├── /tools/hosting (Category)
 │   ├── /tools/finance (Category)
-│   └── [9 tool articles]
+│   └── [14 tool articles]
 ├── /gear (Hub)
 │   ├── /gear/computers (Category)
 │   ├── /gear/furniture (Category)
@@ -96,6 +96,11 @@ floatjet.com/
 | Best Time Tracking Software | `/tools/best-time-tracking-software` | SaaS | ⏱️ |
 | Best Online Course Platforms | `/tools/best-online-course-platforms` | SaaS | 🎓 |
 | Best Productivity Apps | `/tools/best-productivity-apps` | SaaS | 🚀 |
+| Best Video Conferencing Tools | `/tools/best-video-conferencing-tools` | SaaS | 📹 |
+| Best Cloud Storage for Remote Work | `/tools/best-cloud-storage-remote-work` | SaaS | ☁️ |
+| Best Note-Taking Apps | `/tools/best-note-taking-apps` | SaaS | 📝 |
+| Notion vs ClickUp vs Monday | `/tools/notion-vs-clickup-vs-monday` | SaaS | ⚖️ |
+| Is Notion Worth It? | `/tools/is-notion-worth-it` | SaaS | 💭 |
 
 ---
 

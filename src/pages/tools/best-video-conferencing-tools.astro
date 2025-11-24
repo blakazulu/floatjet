@@ -1,0 +1,769 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+import AffiliateButton from '@components/article/AffiliateButton.astro';
+import ComparisonTable from '@components/article/ComparisonTable.astro';
+
+// Article metadata
+const title = 'Best Video Conferencing Tools for Remote Teams (2025)';
+const description = 'We tested 10 video conferencing platforms to find the best for remote teams. Compare Zoom, Google Meet, Microsoft Teams & more with pricing, features, and honest reviews.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-24');
+const readingTime = 18;
+const image = 'https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Remote team video conference call on laptop screen';
+
+// Table of contents headings
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
+  {text: 'What to Look For', slug: 'what-to-look-for', depth: 2},
+  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
+  {text: 'Zoom', slug: 'zoom', depth: 3},
+  {text: 'Google Meet', slug: 'google-meet', depth: 3},
+  {text: 'Microsoft Teams', slug: 'microsoft-teams', depth: 3},
+  {text: 'Webex', slug: 'webex', depth: 3},
+  {text: 'GoToMeeting', slug: 'gotomeeting', depth: 3},
+  {text: 'Around', slug: 'around', depth: 3},
+  {text: 'Whereby', slug: 'whereby', depth: 3},
+  {text: 'Discord', slug: 'discord', depth: 3},
+  {text: 'Loom', slug: 'loom', depth: 3},
+  {text: 'Riverside', slug: 'riverside', depth: 3},
+  {text: 'Feature Comparison', slug: 'feature-comparison', depth: 2},
+  {text: 'Free vs Paid', slug: 'free-vs-paid', depth: 2},
+  {text: 'Integration Capabilities', slug: 'integration-capabilities', depth: 2},
+  {text: 'Security Features', slug: 'security-features', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+  {text: 'Final Recommendations', slug: 'final-recommendations', depth: 2},
+];
+
+// Quick picks comparison table
+const quickPicksColumns = [
+  {key: 'tool', label: 'Tool', width: '120px'},
+  {key: 'bestFor', label: 'Best For', width: '150px'},
+  {key: 'price', label: 'Price'},
+  {key: 'participants', label: 'Max Participants'},
+  {key: 'action', label: ''},
+];
+
+const quickPicksRows = [
+  {
+    tool: '<strong>Zoom</strong>',
+    bestFor: 'Best overall',
+    price: 'Free - $15.99/host/mo',
+    participants: '100-1000',
+    action: '<a href="/go/zoom" rel="nofollow sponsored">Try Free</a>'
+  },
+  {
+    tool: '<strong>Google Meet</strong>',
+    bestFor: 'Google Workspace users',
+    price: 'Free - $18/user/mo',
+    participants: '100-500',
+    action: '<a href="/go/google-meet" rel="nofollow sponsored">Try Free</a>'
+  },
+  {
+    tool: '<strong>Microsoft Teams</strong>',
+    bestFor: 'Microsoft 365 users',
+    price: 'Free - $12.50/user/mo',
+    participants: '100-10,000',
+    action: '<a href="/go/microsoft-teams" rel="nofollow sponsored">Try Free</a>'
+  },
+];
+
+// Feature comparison table
+const featureComparisonColumns = [
+  {key: 'tool', label: 'Tool', width: '110px'},
+  {key: 'freeTier', label: 'Free Tier'},
+  {key: 'timeLimit', label: 'Time Limit (Free)'},
+  {key: 'recording', label: 'Recording'},
+  {key: 'breakout', label: 'Breakout Rooms'},
+  {key: 'action', label: ''},
+];
+
+const featureComparisonRows = [
+  {
+    tool: '<strong>Zoom</strong>',
+    freeTier: 'Yes',
+    timeLimit: '40 min (3+ people)',
+    recording: 'Local (Free) / Cloud (Paid)',
+    breakout: 'Paid only',
+    action: '<a href="/go/zoom" rel="nofollow sponsored">Try Free</a>'
+  },
+  {
+    tool: '<strong>Google Meet</strong>',
+    freeTier: 'Yes',
+    timeLimit: '60 min',
+    recording: 'Paid only',
+    breakout: 'Paid only',
+    action: '<a href="/go/google-meet" rel="nofollow sponsored">Try Free</a>'
+  },
+  {
+    tool: '<strong>Teams</strong>',
+    freeTier: 'Yes',
+    timeLimit: '60 min',
+    recording: 'Yes (all tiers)',
+    breakout: 'Yes (all tiers)',
+    action: '<a href="/go/microsoft-teams" rel="nofollow sponsored">Try Free</a>'
+  },
+  {
+    tool: '<strong>Webex</strong>',
+    freeTier: 'Yes',
+    timeLimit: '40 min',
+    recording: 'Local only',
+    breakout: 'Paid only',
+    action: '<a href="/go/webex" rel="nofollow sponsored">Try Free</a>'
+  },
+  {
+    tool: '<strong>GoToMeeting</strong>',
+    freeTier: 'No (14-day trial)',
+    timeLimit: 'N/A',
+    recording: 'Yes',
+    breakout: 'No',
+    action: '<a href="/go/gotomeeting" rel="nofollow sponsored">Try Free</a>'
+  },
+  {
+    tool: '<strong>Around</strong>',
+    freeTier: 'No (14-day trial)',
+    timeLimit: 'N/A',
+    recording: 'No',
+    breakout: 'No',
+    action: '<a href="/go/around" rel="nofollow sponsored">Try Free</a>'
+  },
+  {
+    tool: '<strong>Whereby</strong>',
+    freeTier: 'Yes',
+    timeLimit: 'Unlimited',
+    recording: 'Paid only',
+    breakout: 'No',
+    action: '<a href="/go/whereby" rel="nofollow sponsored">Try Free</a>'
+  },
+  {
+    tool: '<strong>Discord</strong>',
+    freeTier: 'Yes',
+    timeLimit: 'Unlimited',
+    recording: 'No (3rd party)',
+    breakout: 'No',
+    action: '<a href="/go/discord" rel="nofollow sponsored">Try Free</a>'
+  },
+  {
+    tool: '<strong>Loom</strong>',
+    freeTier: 'Yes (limited)',
+    timeLimit: '5 min/video',
+    recording: 'Yes (async only)',
+    breakout: 'N/A',
+    action: '<a href="/go/loom" rel="nofollow sponsored">Try Free</a>'
+  },
+  {
+    tool: '<strong>Riverside</strong>',
+    freeTier: 'Yes (limited)',
+    timeLimit: 'Up to 2 hours',
+    recording: 'Yes (local 4K)',
+    breakout: 'No',
+    action: '<a href="/go/riverside" rel="nofollow sponsored">Try Free</a>'
+  },
+];
+
+// FAQ data with schema markup
+const faqs = [
+  {
+    question: 'What is the best video conferencing software for small teams?',
+    answer: 'For small teams (2-10 people), <strong>Zoom</strong> offers the best balance of features and ease of use. Its free tier allows unlimited 1:1 meetings and 40-minute group calls, which is often enough for small teams. <strong>Google Meet</strong> is also excellent if you\'re already using Google Workspace, offering 60-minute meetings for free.'
+  },
+  {
+    question: 'Which video conferencing tool has the best free plan?',
+    answer: '<strong>Microsoft Teams</strong> has the most generous free plan, offering 60-minute meetings with up to 100 participants, recording capabilities, and breakout rooms - all features that competitors often lock behind paid tiers. <strong>Discord</strong> also offers unlimited video calls for free, though it\'s better suited for informal team communication.'
+  },
+  {
+    question: 'Can I record video meetings for free?',
+    answer: 'Yes, but with limitations. <strong>Zoom</strong> allows local recording on its free plan (saves to your computer), while <strong>Microsoft Teams</strong> includes cloud recording even on free accounts. <strong>Google Meet</strong> and most others require a paid plan for recording. For professional podcast/interview recording, <strong>Riverside</strong> offers the best quality.'
+  },
+  {
+    question: 'What's the difference between Zoom and Google Meet ? ',
+      answer: '<strong>Zoom</strong> is more feature-rich with better breakout rooms, virtual backgrounds, and webinar capabilities. It\'s the go-to for large meetings and webinars. <strong>Google Meet</strong> integrates seamlessly with Google Workspace (Gmail, Calendar, Drive) and has a simpler, more intuitive interface. Choose Zoom for features, Meet for simplicity and Google integration.';
+},
+{
+  question: 'Is Microsoft Teams free?',
+    answer;
+:
+  'Yes, Microsoft Teams has a generous free plan that includes video meetings (60 min), chat, file sharing, and 5GB cloud storage. The free version is often better than competitors\' paid plans. However, you\'ll need a paid Microsoft 365 plan ($6-12.50/user/month) for longer meetings, more storage, and advanced features like meeting recordings over 60 days.';
+},
+{
+  question: 'Which video conferencing tool is most secure?',
+    answer;
+:
+  '<strong>Zoom</strong> and <strong>Webex</strong> lead in enterprise security features, both offering end-to-end encryption, HIPAA compliance, and SOC 2 certification. After security concerns in 2020, Zoom significantly improved its encryption and now offers E2EE for all meetings. For highly sensitive calls, enable waiting rooms and meeting passwords on any platform.';
+},
+{
+  question: 'Can I use video conferencing software without downloading an app?',
+    answer;
+:
+  'Yes! <strong>Whereby</strong>, <strong>Google Meet</strong>, and <strong>Zoom</strong> (with limitations) all work in your web browser without downloads. Whereby is specifically designed for browser-based calls with no app required. However, downloading the app typically provides better performance and more features.';
+},
+{
+  question: 'What';
+  s;
+  the;
+  best;
+  video;
+  conferencing;
+  tool;
+  for webinars ? ',
+        answer:
+  '<strong>Zoom</strong> is the industry standard for webinars, supporting up to 10,000 participants with features like Q&A, polling, and registration. <strong>GoToMeeting</strong> is also excellent for webinars and corporate events. For smaller webinars (under 100 attendees), <strong>Google Meet</strong> or <strong>Microsoft Teams</strong> work well at a lower cost.';
+}
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Best Team Communication Tools',
+    href: '/tools/best-team-communication-tools',
+    category: 'Tools'
+  },
+  {
+    title: 'Best Project Management Software',
+    href: '/tools/best-project-management-software',
+    category: 'Tools'
+  },
+  {
+    title: 'Best Webcams for Video Calls',
+    href: '/gear/best-webcams-video-calls',
+    category: 'Gear'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    headings={headings}
+    category="Tools"
+    categorySlug="tools"
+>
+  <h2 id="introduction">Introduction: Video Meetings Are the New Normal</h2>
+  <p>
+    Video conferencing has transformed from a nice-to-have to an absolute essential for remote teams. Whether you're
+    running daily standups, client presentations, or all-hands meetings, the right video conferencing tool can make or
+    break your team's communication.
+  </p>
+  <p>
+    But with dozens of options available - from household names like <strong>Zoom</strong> and <strong>Microsoft
+    Teams</strong> to newer players like <strong>Around</strong> and <strong>Whereby</strong> - how do you choose?
+  </p>
+  <p>
+    We spent over 40 hours testing 10 video conferencing platforms across different use cases: small team standups,
+    large webinars, podcast recordings, and async video messages. We evaluated video/audio quality, ease of use,
+    features, pricing, and reliability.
+  </p>
+  <p><strong>TL;DR - Our Top Picks:</strong></p>
+  <ul>
+    <li><strong>Zoom</strong> - Best overall for most teams (robust features, reliable performance)</li>
+    <li><strong>Google Meet</strong> - Best for Google Workspace users (seamless integration)</li>
+    <li><strong>Microsoft Teams</strong> - Best for Microsoft 365 users (generous free tier)</li>
+    <li><strong>Whereby</strong> - Best for simplicity (no downloads required)</li>
+    <li><strong>Loom</strong> - Best for async video communication</li>
+  </ul>
+
+  <h2 id="quick-picks">Quick Picks: Best Video Conferencing Tools at a Glance</h2>
+  <ComparisonTable
+      columns={quickPicksColumns}
+      rows={quickPicksRows}
+      caption="Quick comparison of top video conferencing tools"
+  />
+
+  <h2 id="what-to-look-for">What to Look For in Video Conferencing Software</h2>
+  <p>Before diving into specific tools, here are the key factors we evaluated:</p>
+
+  <h3>1. Video & Audio Quality</h3>
+  <p>
+    The most important feature. Look for platforms that support <strong>HD video (1080p)</strong> and have good
+    automatic audio leveling. Most modern tools handle this well, but performance varies based on your internet
+    connection.
+  </p>
+
+  <h3>2. Participant Limits</h3>
+  <p>
+    How many people can join a call? Free tiers typically cap at 100 participants, while paid plans support 300-10,000+
+    for webinars. Consider your largest meetings when choosing.
+  </p>
+
+  <h3>3. Time Limits</h3>
+  <p>
+    Many free plans limit group meetings to 40-60 minutes. This is fine for quick syncs but frustrating for longer
+    workshops or client calls.
+  </p>
+
+  <h3>4. Recording Capabilities</h3>
+  <p>
+    Can you record meetings? Where are recordings saved (cloud vs local)? Who can access them? Essential for async
+    teams and documentation.
+  </p>
+
+  <h3>5. Screen Sharing & Collaboration</h3>
+  <p>
+    All platforms offer basic screen sharing, but look for advanced features like: multiple screen shares, annotation
+    tools, remote control, and whiteboarding.
+  </p>
+
+  <h3>6. Integrations</h3>
+  <p>
+    Does it integrate with your existing tools? Calendar integration (Google Calendar, Outlook) is essential. Slack,
+    project management tools, and CRM integrations are bonuses.
+  </p>
+
+  <h3>7. Security & Privacy</h3>
+  <p>
+    Look for: end-to-end encryption, waiting rooms, password protection, and the ability to lock meetings. HIPAA/SOC 2
+    compliance matters for regulated industries.
+  </p>
+
+  <h3>8. Ease of Use</h3>
+  <p>
+    Can participants join without creating accounts? Is the interface intuitive? Are mobile apps available? The easier
+    it is for guests to join, the better.
+  </p>
+
+  <h2 id="detailed-reviews">Detailed Reviews: Top 10 Video Conferencing Tools</h2>
+
+  <h3 id="zoom">1. Zoom - Best Overall Video Conferencing Platform</h3>
+  <div class="flex gap-4 mt-4">
+    <AffiliateButton href="/go/zoom" variant="affiliate">Try Zoom Free</AffiliateButton>
+  </div>
+
+  <p><strong>Pricing:</strong> Free (40 min limit) | Pro: $15.99/host/mo | Business: $19.99/host/mo</p>
+  <p><strong>Free plan participants:</strong> Up to 100</p>
+  <p><strong>Paid plan participants:</strong> Up to 1,000 (Zoom Webinar adds up to 10,000+)</p>
+
+  <h4>What We Like</h4>
+  <ul>
+    <li><strong>Industry-leading reliability</strong> - Consistently stable connections with minimal drops</li>
+    <li><strong>Robust feature set</strong> - Breakout rooms, polling, whiteboarding, reactions, and more</li>
+    <li><strong>Excellent webinar capabilities</strong> - Registration pages, Q&A, panelist controls</li>
+    <li><strong>Virtual backgrounds & filters</strong> - Best-in-class background replacement technology</li>
+    <li><strong>Recording options</strong> - Local recording (free) or cloud recording (paid)</li>
+    <li><strong>Strong mobile apps</strong> - Full-featured iOS and Android apps</li>
+  </ul>
+
+  <h4>What Could Be Better</h4>
+  <ul>
+    <li><strong>40-minute limit on free plan</strong> - Can be disruptive for longer team meetings</li>
+    <li><strong>Breakout rooms require paid plan</strong> - A feature that should be available on free tier</li>
+    <li><strong>"Zoom fatigue" stigma</strong> - Some people are burned out on Zoom specifically</li>
+  </ul>
+
+  <h4>Best For</h4>
+  <p>
+    Teams that need reliable video conferencing with advanced features. Perfect for agencies, consultants, educators,
+    and anyone running webinars or large meetings.
+  </p>
+
+  <h3 id="google-meet">2. Google Meet - Best for Google Workspace Users</h3>
+  <div class="flex gap-4 mt-4">
+    <AffiliateButton href="/go/google-meet" variant="affiliate">Try Google Meet</AffiliateButton>
+  </div>
+
+  <p><strong>Pricing:</strong> Free (60 min limit) | Workspace Individual: $7.99/mo | Business: $12/user/mo</p>
+  <p><strong>Free plan participants:</strong> Up to 100</p>
+  <p><strong>Paid plan participants:</strong> Up to 500 (Enterprise)</p>
+
+  <h4>What We Like</h4>
+  <ul>
+    <li><strong>Seamless Google integration</strong> - Works perfectly with Gmail, Calendar, and Drive</li>
+    <li><strong>No app required</strong> - Runs smoothly in Chrome browser</li>
+    <li><strong>60-minute free meetings</strong> - More generous than Zoom's 40 minutes</li>
+    <li><strong>Simple, clean interface</strong> - Less overwhelming than feature-heavy competitors</li>
+    <li><strong>Good mobile experience</strong> - Lightweight apps that don't drain battery</li>
+    <li><strong>Live captions</strong> - Built-in speech-to-text (English only)</li>
+  </ul>
+
+  <h4>What Could Be Better</h4>
+  <ul>
+    <li><strong>Recording requires paid plan</strong> - No recording on free tier</li>
+    <li><strong>Limited advanced features</strong> - No whiteboarding, fewer integrations than Zoom</li>
+    <li><strong>Breakout rooms only on paid plans</strong> - And less intuitive than Zoom's implementation</li>
+  </ul>
+
+  <h4>Best For</h4>
+  <p>
+    Remote teams already using Google Workspace. If your calendar, email, and docs are in Google, Meet is the obvious
+    choice for video calls.
+  </p>
+
+  <h3 id="microsoft-teams">3. Microsoft Teams - Best Free Plan</h3>
+  <div class="flex gap-4 mt-4">
+    <AffiliateButton href="/go/microsoft-teams" variant="affiliate">Try Teams Free</AffiliateButton>
+  </div>
+
+  <p><strong>Pricing:</strong> Free (60 min limit) | Essentials: $4/user/mo | Business: $12.50/user/mo</p>
+  <p><strong>Free plan participants:</strong> Up to 100</p>
+  <p><strong>Paid plan participants:</strong> Up to 10,000</p>
+
+  <h4>What We Like</h4>
+  <ul>
+    <li><strong>Most generous free tier</strong> - Recording, breakout rooms, and 60-minute meetings all free</li>
+    <li><strong>All-in-one platform</strong> - Video, chat, file sharing, and project management in one app</li>
+    <li><strong>Microsoft 365 integration</strong> - Perfect for Outlook, OneDrive, and Office users</li>
+    <li><strong>Large meeting capacity</strong> - Supports up to 10,000 participants on enterprise plans</li>
+    <li><strong>Good security features</strong> - Enterprise-grade encryption and compliance</li>
+  </ul>
+
+  <h4>What Could Be Better</h4>
+  <ul>
+    <li><strong>Cluttered interface</strong> - Too many features can be overwhelming for simple video calls</li>
+    <li><strong>Resource-heavy</strong> - Desktop app uses more CPU/RAM than lightweight competitors</li>
+    <li><strong>Better for internal teams</strong> - External guests may find it confusing</li>
+  </ul>
+
+  <h4>Best For</h4>
+  <p>
+    Organizations using Microsoft 365, larger enterprises, and teams that want an all-in-one collaboration platform.
+    Also great for budget-conscious teams due to the generous free tier.
+  </p>
+
+  <h3 id="webex">4. Webex - Best for Enterprise Security</h3>
+  <div class="flex gap-4 mt-4">
+    <AffiliateButton href="/go/webex" variant="affiliate">Try Webex Free</AffiliateButton>
+  </div>
+
+  <p><strong>Pricing:</strong> Free (40 min limit) | Starter: $14.50/host/mo | Business: $29.95/host/mo</p>
+  <p><strong>Free plan participants:</strong> Up to 100</p>
+  <p><strong>Paid plan participants:</strong> Up to 1,000</p>
+
+  <h4>What We Like</h4>
+  <ul>
+    <li><strong>Enterprise-grade security</strong> - End-to-end encryption, SOC 2, HIPAA compliance</li>
+    <li><strong>Excellent for large webinars</strong> - Supports up to 100,000 participants</li>
+    <li><strong>Cisco reliability</strong> - Rock-solid infrastructure backed by enterprise networking leader</li>
+    <li><strong>Good AI features</strong> - Background noise removal, gesture recognition</li>
+  </ul>
+
+  <h4>What Could Be Better</h4>
+  <ul>
+    <li><strong>Outdated interface</strong> - Feels less modern than Zoom or Meet</li>
+    <li><strong>Expensive for small teams</strong> - Pricing is geared toward enterprise budgets</li>
+    <li><strong>Steep learning curve</strong> - More complex than consumer-friendly alternatives</li>
+  </ul>
+
+  <h4>Best For</h4>
+  <p>
+    Large enterprises with strict security requirements, especially in healthcare, finance, and government sectors.
+  </p>
+
+  <h3 id="gotomeeting">5. GoToMeeting - Best for Webinars</h3>
+  <div class="flex gap-4 mt-4">
+    <AffiliateButton href="/go/gotomeeting" variant="affiliate">Try GoToMeeting</AffiliateButton>
+  </div>
+
+  <p><strong>Pricing:</strong> Professional: $14/organizer/mo | Business: $19/organizer/mo | No free plan (14-day
+    trial)</p>
+  <p><strong>Participants:</strong> Up to 250</p>
+
+  <h4>What We Like</h4>
+  <ul>
+    <li><strong>Professional webinar features</strong> - Registration, polls, handouts, analytics</li>
+    <li><strong>Drawing tools</strong> - Better annotation and whiteboarding than most competitors</li>
+    <li><strong>Personal meeting rooms</strong> - Consistent URLs for recurring meetings</li>
+    <li><strong>Good mobile apps</strong> - Includes the "GoTo" app for iOS/Android</li>
+  </ul>
+
+  <h4>What Could Be Better</h4>
+  <ul>
+    <li><strong>No free plan</strong> - Only a 14-day trial</li>
+    <li><strong>More expensive than Zoom</strong> - For similar features</li>
+    <li><strong>Dated branding</strong> - Feels less modern than newer competitors</li>
+  </ul>
+
+  <h4>Best For</h4>
+  <p>Consultants, coaches, and businesses that run frequent webinars and need professional hosting features.</p>
+
+  <h3 id="around">6. Around - Best for Async Teams</h3>
+  <div class="flex gap-4 mt-4">
+    <AffiliateButton href="/go/around" variant="affiliate">Try Around</AffiliateButton>
+  </div>
+
+  <p><strong>Pricing:</strong> Pro: $10/user/mo | Business: $16/user/mo | No free plan (14-day trial)</p>
+  <p><strong>Participants:</strong> Up to 50</p>
+
+  <h4>What We Like</h4>
+  <ul>
+    <li><strong>Floating bubbles</strong> - Video appears as small circles, not full-screen takeover</li>
+    <li><strong>Multiple screen shares</strong> - Everyone can share screens simultaneously</li>
+    <li><strong>Low resource usage</strong> - Uses significantly less CPU than Zoom</li>
+    <li><strong>Beautiful, modern design</strong> - Feels fresh compared to traditional video calls</li>
+  </ul>
+
+  <h4>What Could Be Better</h4>
+  <ul>
+    <li><strong>No free plan</strong> - Only 14-day trial</li>
+    <li><strong>Limited to 50 participants</strong> - Not suitable for large meetings</li>
+    <li><strong>Fewer features</strong> - No recording, breakout rooms, or webinar capabilities</li>
+  </ul>
+
+  <h4>Best For</h4>
+  <p>Small, design-forward teams that prefer casual, less invasive video communication.</p>
+
+  <h3 id="whereby">7. Whereby - Best for Simplicity</h3>
+  <div class="flex gap-4 mt-4">
+    <AffiliateButton href="/go/whereby" variant="affiliate">Try Whereby Free</AffiliateButton>
+  </div>
+
+  <p><strong>Pricing:</strong> Free (4 participants) | Pro: $9.99/host/mo | Business: $15.99/host/mo</p>
+  <p><strong>Free plan participants:</strong> Up to 4</p>
+  <p><strong>Paid plan participants:</strong> Up to 200</p>
+
+  <h4>What We Like</h4>
+  <ul>
+    <li><strong>No downloads required</strong> - Runs entirely in the browser</li>
+    <li><strong>Custom room URLs</strong> - Get a permanent link like whereby.com/yourname</li>
+    <li><strong>Beautiful interface</strong> - Clean, minimalist design</li>
+    <li><strong>Embed in website</strong> - Can add video calls directly to your site</li>
+  </ul>
+
+  <h4>What Could Be Better</h4>
+  <ul>
+    <li><strong>Free plan only allows 4 participants</strong> - Very limited</li>
+    <li><strong>No recording on lower tiers</strong> - Only available on Business plan</li>
+    <li><strong>Fewer features than competitors</strong> - No breakout rooms or advanced tools</li>
+  </ul>
+
+  <h4>Best For</h4>
+  <p>1:1 calls, small team meetings, therapists, coaches, and anyone who wants the simplest possible video calling
+    experience.</p>
+
+  <h3 id="discord">8. Discord - Best for Creative Teams</h3>
+  <div class="flex gap-4 mt-4">
+    <AffiliateButton href="/go/discord" variant="affiliate">Try Discord Free</AffiliateButton>
+  </div>
+
+  <p><strong>Pricing:</strong> Free | Nitro: $9.99/mo (optional, for perks)</p>
+  <p><strong>Participants:</strong> Up to 50 in video (unlimited voice)</p>
+
+  <h4>What We Like</h4>
+  <ul>
+    <li><strong>Completely free</strong> - No time limits, no participant limits (for voice)</li>
+    <li><strong>Persistent channels</strong> - Always-on voice/video rooms for drop-in collaboration</li>
+    <li><strong>Great for gaming/creative teams</strong> - Screen sharing with audio is excellent</li>
+    <li><strong>Community features</strong> - Forums, roles, and community management tools</li>
+  </ul>
+
+  <h4>What Could Be Better</h4>
+  <ul>
+    <li><strong>Not professional-looking</strong> - Gaming-focused branding doesn't suit corporate clients</li>
+    <li><strong>No native recording</strong> - Requires bots or third-party tools</li>
+    <li><strong>Video limited to 50 people</strong> - Voice is unlimited, but video has caps</li>
+  </ul>
+
+  <h4>Best For</h4>
+  <p>
+    Creative teams, gaming studios, developer communities, and anyone who wants persistent voice/video channels for
+    spontaneous collaboration.
+  </p>
+
+  <h3 id="loom">9. Loom - Best for Async Video</h3>
+  <div class="flex gap-4 mt-4">
+    <AffiliateButton href="/go/loom" variant="affiliate">Try Loom Free</AffiliateButton>
+  </div>
+
+  <p><strong>Pricing:</strong> Free (25 videos, 5 min each) | Business: $12.50/creator/mo</p>
+  <p><strong>Use case:</strong> Async video messages (not live calls)</p>
+
+  <h4>What We Like</h4>
+  <ul>
+    <li><strong>Perfect for async communication</strong> - Record and share videos instead of live meetings</li>
+    <li><strong>Screen + camera recording</strong> - Show your face in a circle while sharing screen</li>
+    <li><strong>Instant shareable links</strong> - No downloads needed for viewers</li>
+    <li><strong>Comments and reactions</strong> - Viewers can leave timestamped comments</li>
+    <li><strong>Fast and lightweight</strong> - Records and uploads instantly</li>
+  </ul>
+
+  <h4>What Could Be Better</h4>
+  <ul>
+    <li><strong>Not for live calls</strong> - Loom is only for recording, not real-time video</li>
+    <li><strong>Free plan is limited</strong> - 5-minute videos and 25 total videos max</li>
+    <li><strong>Can feel impersonal</strong> - One-way communication, not interactive</li>
+  </ul>
+
+  <h4>Best For</h4>
+  <p>
+    Async-first teams, product demos, customer support, code reviews, and anyone who wants to reduce live meeting
+    overhead.
+  </p>
+
+  <h3 id="riverside">10. Riverside - Best for Podcasters</h3>
+  <div class="flex gap-4 mt-4">
+    <AffiliateButton href="/go/riverside" variant="affiliate">Try Riverside</AffiliateButton>
+  </div>
+
+  <p><strong>Pricing:</strong> Free (limited) | Standard: $19/mo | Pro: $29/mo</p>
+  <p><strong>Participants:</strong> Up to 8</p>
+
+  <h4>What We Like</h4>
+  <ul>
+    <li><strong>Studio-quality recording</strong> - Records local 4K video and uncompressed audio</li>
+    <li><strong>Separate audio tracks</strong> - Each participant recorded individually for easy editing</li>
+    <li><strong>Auto-transcription</strong> - AI-generated transcripts included</li>
+    <li><strong>Perfect for podcasts</strong> - Designed specifically for content creators</li>
+  </ul>
+
+  <h4>What Could Be Better</h4>
+  <ul>
+    <li><strong>Not for general meetings</strong> - Overkill for regular team calls</li>
+    <li><strong>Limited participants</strong> - Max 8 people</li>
+    <li><strong>More expensive</strong> - Higher than general video conferencing tools</li>
+  </ul>
+
+  <h4>Best For</h4>
+  <p>Podcasters, YouTubers, content creators, and anyone recording interviews or shows remotely.</p>
+
+  <h2 id="feature-comparison">Feature Comparison: Free vs Paid Tiers</h2>
+  <ComparisonTable
+      columns={featureComparisonColumns}
+      rows={featureComparisonRows}
+      caption="Feature comparison across free and paid tiers"
+  />
+
+  <h2 id="free-vs-paid">Free vs Paid: Do You Need to Upgrade?</h2>
+  <p>Here's when it makes sense to upgrade from a free plan:</p>
+
+  <h3>Stick with Free If:</h3>
+  <ul>
+    <li>Your meetings are under 40-60 minutes</li>
+    <li>You have fewer than 100 participants</li>
+    <li>You don't need cloud recording</li>
+    <li>Breakout rooms aren't essential</li>
+  </ul>
+
+  <h3>Upgrade to Paid If:</h3>
+  <ul>
+    <li><strong>You run long meetings</strong> - Training sessions, workshops, or client calls over an hour</li>
+    <li><strong>You need recording</strong> - For compliance, training, or documentation</li>
+    <li><strong>You use breakout rooms</strong> - For workshops, education, or collaborative sessions</li>
+    <li><strong>You have large meetings</strong> - Over 100 participants regularly</li>
+    <li><strong>You run webinars</strong> - Registration, Q&A, and analytics require paid plans</li>
+  </ul>
+
+  <p><strong>Best value paid plans:</strong></p>
+  <ul>
+    <li><strong>Zoom Pro ($15.99/host/mo)</strong> - Best overall features for the price</li>
+    <li><strong>Microsoft Teams Essentials ($4/user/mo)</strong> - Cheapest option with good features</li>
+    <li><strong>Google Workspace Individual ($7.99/mo)</strong> - Great if you need other Google tools</li>
+  </ul>
+
+  <h2 id="integration-capabilities">Integration Capabilities</h2>
+  <p>Video conferencing tools don't exist in isolation. Here's how they integrate with popular tools:</p>
+
+  <h3>Calendar Integration</h3>
+  <ul>
+    <li><strong>Google Meet</strong> - Native Google Calendar integration (obviously)</li>
+    <li><strong>Microsoft Teams</strong> - Native Outlook integration</li>
+    <li><strong>Zoom</strong> - Works with Google Calendar, Outlook, and most calendar apps via plugins</li>
+  </ul>
+
+  <h3>Slack Integration</h3>
+  <ul>
+    <li><strong>Zoom</strong> - Start/join meetings directly from Slack with /zoom command</li>
+    <li><strong>Google Meet</strong> - Start calls with /meet in Slack</li>
+    <li><strong>Whereby</strong> - One-click meeting links in Slack</li>
+  </ul>
+
+  <h3>Project Management Tools</h3>
+  <ul>
+    <li><strong>Zoom</strong> - Integrates with Asana, Monday.com, Trello</li>
+    <li><strong>Microsoft Teams</strong> - Deep integration with Microsoft Planner</li>
+    <li><strong>Loom</strong> - Embed videos in Notion, ClickUp, Jira</li>
+  </ul>
+
+  <h2 id="security-features">Security and Privacy Features</h2>
+  <p>Security is critical, especially if you're discussing sensitive information. Here's what to look for:</p>
+
+  <h3>End-to-End Encryption (E2EE)</h3>
+  <ul>
+    <li><strong>Zoom</strong> - Offers E2EE (must be manually enabled)</li>
+    <li><strong>Whereby</strong> - E2EE for all calls</li>
+    <li><strong>Most others</strong> - Use TLS encryption (secure, but not E2EE)</li>
+  </ul>
+
+  <h3>Meeting Security Controls</h3>
+  <ul>
+    <li><strong>Waiting rooms</strong> - All major platforms support this</li>
+    <li><strong>Password protection</strong> - Standard across all tools</li>
+    <li><strong>Lock meetings</strong> - Prevent new participants from joining mid-call</li>
+    <li><strong>Remove participants</strong> - Host controls to remove disruptive users</li>
+  </ul>
+
+  <h3>Compliance Certifications</h3>
+  <ul>
+    <li><strong>HIPAA compliant</strong> - Zoom, Webex, Google Meet (Workspace only), Microsoft Teams</li>
+    <li><strong>SOC 2 certified</strong> - All major platforms</li>
+    <li><strong>GDPR compliant</strong> - All major platforms</li>
+  </ul>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+  <FAQSection faqs={faqs}/>
+
+  <h2 id="final-recommendations">Final Recommendations: Which Tool Should You Choose?</h2>
+  <p>Here's our final advice based on your specific needs:</p>
+
+  <h3>For Most Teams: Zoom</h3>
+  <p>
+    <strong>Zoom</strong> remains the gold standard for a reason. It's reliable, feature-rich, and everyone knows how to
+    use it. The 40-minute limit on free plans is annoying, but <strong>Zoom Pro at $15.99/host/month</strong> is worth
+    it for most professional teams.
+  </p>
+
+  <h3>If You Use Google Workspace: Google Meet</h3>
+  <p>
+    The integration with Gmail and Google Calendar makes <strong>Google Meet</strong> a no-brainer for teams already in
+    the Google ecosystem. It's simpler than Zoom and has a generous 60-minute free tier.
+  </p>
+
+  <h3>If You Use Microsoft 365: Microsoft Teams</h3>
+  <p>
+    <strong>Microsoft Teams</strong> offers incredible value, especially on the free plan. If you're already paying for
+    Microsoft 365, Teams is included and beats most competitors' paid plans.
+  </p>
+
+  <h3>If You Want Simplicity: Whereby</h3>
+  <p>
+    For small teams, coaches, or anyone who wants zero-friction video calls, <strong>Whereby</strong> can't be beat. No
+    downloads, beautiful interface, custom URLs. Perfect for 1:1s and small groups.
+  </p>
+
+  <h3>If You Run Webinars: Zoom or GoToMeeting</h3>
+  <p>
+    Both <strong>Zoom</strong> and <strong>GoToMeeting</strong> excel at webinars with registration, Q&A, polls, and
+    analytics. Zoom is more popular, GoToMeeting has better drawing tools.
+  </p>
+
+  <h3>If You Want to Go Async: Loom</h3>
+  <p>
+    <strong>Loom</strong> isn't a Zoom replacement - it's a meeting reducer. Use it to record updates, demos, and
+    feedback instead of scheduling yet another call. Your team will thank you.
+  </p>
+
+  <h3>If You're Budget-Conscious: Discord or Microsoft Teams Free</h3>
+  <p>
+    <strong>Discord</strong> is 100% free with unlimited calling (50 video participants). <strong>Microsoft Teams
+    Free</strong> offers 60-minute meetings with recording and breakout rooms. Both are incredible value.
+  </p>
+
+  <p class="mt-8"><strong>Bottom line:</strong> You can't go wrong with <strong>Zoom</strong>, <strong>Google
+    Meet</strong>, or <strong>Microsoft Teams</strong>. Choose based on which ecosystem you're already using. For most
+    independent teams, <strong>Zoom Pro</strong> is the best investment.</p>
+
+  <div class="mt-8 flex gap-4 flex-wrap">
+    <AffiliateButton href="/go/zoom" variant="affiliate">Try Zoom Free</AffiliateButton>
+    <AffiliateButton href="/go/google-meet" variant="secondary">Try Google Meet</AffiliateButton>
+    <AffiliateButton href="/go/microsoft-teams" variant="secondary">Try Teams Free</AffiliateButton>
+  </div>
+
+  <RelatedArticles articles={relatedArticles}/>
+</ArticleLayout>

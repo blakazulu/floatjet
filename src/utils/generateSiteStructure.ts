@@ -277,6 +277,41 @@ export const SITE_STRUCTURE: SiteGraph = {
       type: 'article',
       category: 'saas'
     },
+    {
+      id: '/tools/best-video-conferencing-tools',
+      name: 'Video Conferencing',
+      path: '/tools/best-video-conferencing-tools',
+      type: 'article',
+      category: 'saas'
+    },
+    {
+      id: '/tools/best-cloud-storage-remote-work',
+      name: 'Cloud Storage',
+      path: '/tools/best-cloud-storage-remote-work',
+      type: 'article',
+      category: 'saas'
+    },
+    {
+      id: '/tools/best-note-taking-apps',
+      name: 'Note-Taking Apps',
+      path: '/tools/best-note-taking-apps',
+      type: 'article',
+      category: 'saas'
+    },
+    {
+      id: '/tools/notion-vs-clickup-vs-monday',
+      name: 'Notion vs ClickUp vs Monday',
+      path: '/tools/notion-vs-clickup-vs-monday',
+      type: 'article',
+      category: 'saas'
+    },
+    {
+      id: '/tools/is-notion-worth-it',
+      name: 'Is Notion Worth It',
+      path: '/tools/is-notion-worth-it',
+      type: 'article',
+      category: 'saas'
+    },
 
     // Gear Articles - Computers
     {
@@ -617,6 +652,11 @@ export const SITE_STRUCTURE: SiteGraph = {
     {source: '/tools', target: '/tools/best-time-tracking-software', type: 'parent-child'},
     {source: '/tools', target: '/tools/best-online-course-platforms', type: 'parent-child'},
     {source: '/tools', target: '/tools/best-productivity-apps', type: 'parent-child'},
+    {source: '/tools', target: '/tools/best-video-conferencing-tools', type: 'parent-child'},
+    {source: '/tools', target: '/tools/best-cloud-storage-remote-work', type: 'parent-child'},
+    {source: '/tools', target: '/tools/best-note-taking-apps', type: 'parent-child'},
+    {source: '/tools', target: '/tools/notion-vs-clickup-vs-monday', type: 'parent-child'},
+    {source: '/tools', target: '/tools/is-notion-worth-it', type: 'parent-child'},
 
     // Gear articles - organized by category
     {source: '/gear/computers', target: '/gear/best-laptops-remote-work', type: 'parent-child'},

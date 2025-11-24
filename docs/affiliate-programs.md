@@ -425,7 +425,25 @@ from the same dashboard.
 | Lenovo           | 2-4%       | Unknown | Direct  | Not Applied |
 | B&H Photo        | 2-8%       | Unknown | Direct  | Not Applied |
 
-**Used in:** FJ-012 (Laptops article)
+**Used in:** FJ-012 (Laptops article), best-budget-laptops-remote-work, macbook-vs-windows-remote-work, how-much-ram-remote-work articles
+
+---
+
+### Monitors & Displays
+
+| Program        | Commission | Cookie  | Network | Status      |
+|----------------|------------|---------|---------|-------------|
+| Dell (monitors)| 2-4%       | 30 days | Direct  | Not Applied |
+| LG             | 2-4%       | 30 days | Direct  | Not Applied |
+| Samsung        | 2-4%       | 30 days | Direct  | Not Applied |
+| BenQ           | 3-5%       | 30 days | Direct  | Not Applied |
+| ASUS           | 3-5%       | 30 days | Direct  | Not Applied |
+| ViewSonic      | 3-5%       | 30 days | Direct  | Not Applied |
+| HP (monitors)  | 4-6%       | 30 days | Direct  | Not Applied |
+| Philips        | 3-5%       | 30 days | Direct  | Not Applied |
+| Amazon         | 3-4%       | 24h     | Amazon  | Not Applied |
+
+**Used in:** best-monitors-remote-work, best-portable-monitors articles
 
 ---
 

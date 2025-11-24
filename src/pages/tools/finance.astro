@@ -75,7 +75,7 @@ const whyFinance = [
     <!-- Main Article Card -->
     <a
         href={mainArticle.href}
-        class="block max-w-3xl mx-auto mb-16 group bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-white/20 hover:border-jet-stream/50 rounded-xl p-8 transition-all duration-300"
+        class="block max-w-3xl mx-auto mb-12 group bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-white/20 hover:border-jet-stream/50 rounded-xl p-8 transition-all duration-300"
     >
       <div class="flex items-center gap-2 mb-4">
         <span class="text-4xl">🏦</span>
@@ -100,7 +100,7 @@ const whyFinance = [
     </a>
 
     <!-- Top Picks Preview -->
-    <div class="max-w-3xl mx-auto mb-16">
+    <div class="max-w-3xl mx-auto mb-12">
       <h2 class="text-xl font-semibold text-white text-center mb-6">Top Banking Picks</h2>
       <div class="grid gap-4 sm:grid-cols-3">
         {topPicks.map(pick => (
@@ -118,28 +118,30 @@ const whyFinance = [
     </div>
 
     <!-- More Finance Guides -->
-    <div class="max-w-4xl mx-auto mb-16">
+    <div class="max-w-4xl mx-auto mb-12">
       <h2 class="text-xl font-semibold text-white text-center mb-8">More Finance Guides</h2>
-      <div class="grid gap-4 sm:grid-cols-3">
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {financeGuides.map(guide => (
             <a
                 href={guide.href}
                 class="group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
             >
-              <div class="flex flex-col items-center text-center">
-                <span class="text-4xl mb-3">{guide.icon}</span>
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
-                    {guide.category}
-                  </span>
-                  <span class="text-white/40 text-xs">{guide.readTime} min</span>
+              <div class="flex items-start gap-4">
+                <span class="text-3xl flex-shrink-0">{guide.icon}</span>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
+                      {guide.category}
+                    </span>
+                    <span class="text-white/40 text-xs">{guide.readTime} min</span>
+                  </div>
+                  <h3 class="text-white font-semibold group-hover:text-jet-stream transition-colors mb-1 line-clamp-2">
+                    {guide.title}
+                  </h3>
+                  <p class="text-white/60 text-sm line-clamp-2">{guide.description}</p>
                 </div>
-                <h3 class="text-white font-semibold group-hover:text-jet-stream transition-colors mb-2">
-                  {guide.title}
-                </h3>
-                <p class="text-white/60 text-sm">{guide.description}</p>
               </div>
-              <div class="mt-4 flex items-center justify-center text-jet-stream text-sm font-medium">
+              <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
                 Read Guide
                 <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -148,10 +150,17 @@ const whyFinance = [
             </a>
         ))}
       </div>
+
+      <!-- Article Count -->
+      <div class="mt-6 text-center">
+        <p class="text-white/50 text-sm">
+          Showing {financeGuides.length + 1} of {financeGuides.length + 1} articles
+        </p>
+      </div>
     </div>
 
     <!-- Why Finance Matters -->
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-4xl mx-auto mb-12">
       <h2 class="text-xl font-semibold text-white text-center mb-8">Why Finance Planning Matters</h2>
       <div class="grid gap-6 sm:grid-cols-2">
         {whyFinance.map(item => (

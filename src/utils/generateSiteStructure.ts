@@ -274,6 +274,41 @@ export const SITE_STRUCTURE: SiteGraph = {
       type: 'article',
       category: 'gear'
     },
+    {
+      id: '/gear/best-monitors-remote-work',
+      name: 'Monitors',
+      path: '/gear/best-monitors-remote-work',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/best-portable-monitors',
+      name: 'Portable Monitors',
+      path: '/gear/best-portable-monitors',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/best-budget-laptops-remote-work',
+      name: 'Budget Laptops',
+      path: '/gear/best-budget-laptops-remote-work',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/macbook-vs-windows-remote-work',
+      name: 'MacBook vs Windows',
+      path: '/gear/macbook-vs-windows-remote-work',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/how-much-ram-remote-work',
+      name: 'RAM Guide',
+      path: '/gear/how-much-ram-remote-work',
+      type: 'article',
+      category: 'gear'
+    },
 
     // Gear Articles - Furniture
     {
@@ -573,6 +608,11 @@ export const SITE_STRUCTURE: SiteGraph = {
 
     // Gear articles - organized by category
     {source: '/gear/computers', target: '/gear/best-laptops-remote-work', type: 'parent-child'},
+    {source: '/gear/computers', target: '/gear/best-monitors-remote-work', type: 'parent-child'},
+    {source: '/gear/computers', target: '/gear/best-portable-monitors', type: 'parent-child'},
+    {source: '/gear/computers', target: '/gear/best-budget-laptops-remote-work', type: 'parent-child'},
+    {source: '/gear/computers', target: '/gear/macbook-vs-windows-remote-work', type: 'parent-child'},
+    {source: '/gear/computers', target: '/gear/how-much-ram-remote-work', type: 'parent-child'},
     {source: '/gear/furniture', target: '/gear/best-standing-desks', type: 'parent-child'},
     {source: '/gear/furniture', target: '/gear/best-ergonomic-chairs', type: 'parent-child'},
     {source: '/gear/furniture', target: '/gear/best-desk-converters', type: 'parent-child'},

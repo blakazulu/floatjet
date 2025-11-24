@@ -2,14 +2,58 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = 'Best Computers & Laptops for Remote Work | FloatJet';
-const description = 'Find the best laptops and computers for remote work. Compare top picks for performance, portability, and value.';
+const description = 'Find the best laptops, monitors, and computers for remote work. Compare top picks for performance, portability, and value.';
 
-const mainArticle = {
+const featuredArticle = {
   title: 'Best Laptops for Remote Work (2025)',
   description: 'We tested dozens of laptops to find the best options for remote workers. Compare MacBooks, ThinkPads, Dell XPS, and more for every budget.',
   href: '/gear/best-laptops-remote-work',
-  readTime: '18 min'
+  readTime: 18,
+  icon: '💻'
 };
+
+const articles = [
+  {
+    title: 'Best Monitors for Remote Work',
+    description: 'Find the best 4K, ultrawide, and budget monitors for productive home office setups.',
+    href: '/gear/best-monitors-remote-work',
+    icon: '🖥️',
+    readTime: 16,
+    category: 'Computers'
+  },
+  {
+    title: 'Best Portable Monitors',
+    description: 'Dual-screen productivity on the go for digital nomads and travelers.',
+    href: '/gear/best-portable-monitors',
+    icon: '📱',
+    readTime: 14,
+    category: 'Computers'
+  },
+  {
+    title: 'Best Budget Laptops Under $800',
+    description: 'Great remote work laptops that do not break the bank.',
+    href: '/gear/best-budget-laptops-remote-work',
+    icon: '💰',
+    readTime: 14,
+    category: 'Computers'
+  },
+  {
+    title: 'MacBook vs Windows for Remote Work',
+    description: 'The definitive comparison to help you choose the right platform.',
+    href: '/gear/macbook-vs-windows-remote-work',
+    icon: '⚖️',
+    readTime: 12,
+    category: 'Computers'
+  },
+  {
+    title: 'How Much RAM Do You Need?',
+    description: 'Is 8GB enough? Find out how much memory you really need.',
+    href: '/gear/how-much-ram-remote-work',
+    icon: '💾',
+    readTime: 8,
+    category: 'Computers'
+  }
+];
 
 const whyMatters = [
   {title: 'Portability', description: 'Work from anywhere with a lightweight, powerful machine', icon: '🎒'},
@@ -20,8 +64,8 @@ const whyMatters = [
 
 const topPicks = [
   {name: 'MacBook Air M3', tag: 'Best Overall', color: 'bg-blue-500/20 text-blue-400'},
-  {name: 'ThinkPad X1 Carbon', tag: 'Best for Business', color: 'bg-green-500/20 text-green-400'},
-  {name: 'Dell XPS 13', tag: 'Best Windows', color: 'bg-purple-500/20 text-purple-400'}
+  {name: 'Dell UltraSharp U2723QE', tag: 'Best Monitor', color: 'bg-green-500/20 text-green-400'},
+  {name: 'Acer Aspire 5', tag: 'Best Budget', color: 'bg-purple-500/20 text-purple-400'}
 ];
 ---
 
@@ -37,31 +81,30 @@ const topPicks = [
       </a>
       <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Computers & Laptops</h1>
       <p class="text-lg text-white/80 max-w-2xl mx-auto">
-        Find the perfect laptop for productive remote work anywhere in the world.
+        Find the perfect laptop, monitor, or computer for productive remote work anywhere in the world.
       </p>
     </div>
 
-    <!-- Main Article Card -->
+    <!-- Featured Article Card -->
     <a
-        href={mainArticle.href}
-        class="block max-w-3xl mx-auto mb-16 group bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-white/20 hover:border-jet-stream/50 rounded-xl p-8 transition-all duration-300"
+      href={featuredArticle.href}
+      class="block max-w-3xl mx-auto mb-12 group bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-white/20 hover:border-jet-stream/50 rounded-xl p-8 transition-all duration-300"
     >
       <div class="flex items-center gap-2 mb-4">
-        <span class="text-4xl">💻</span>
+        <span class="text-4xl">{featuredArticle.icon}</span>
         <span class="px-3 py-1 bg-jet-stream text-ocean-deep text-xs font-bold rounded-full">Featured Guide</span>
       </div>
       <h2 class="text-2xl md:text-3xl font-bold text-white group-hover:text-jet-stream transition-colors mb-3">
-        {mainArticle.title}
+        {featuredArticle.title}
       </h2>
       <p class="text-white/70 mb-4">
-        {mainArticle.description}
+        {featuredArticle.description}
       </p>
       <div class="flex items-center justify-between">
-        <span class="text-white/50 text-sm">{mainArticle.readTime} read</span>
+        <span class="text-white/50 text-sm">{featuredArticle.readTime} min read</span>
         <span class="text-jet-stream font-medium flex items-center">
           Read Full Guide
-          <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-               viewBox="0 0 24 24">
+          <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
           </svg>
         </span>
@@ -69,44 +112,83 @@ const topPicks = [
     </a>
 
     <!-- Top Picks Preview -->
-    <div class="max-w-3xl mx-auto mb-16">
+    <div class="max-w-3xl mx-auto mb-12">
       <h2 class="text-xl font-semibold text-white text-center mb-6">Our Top Picks</h2>
-      <div class="grid gap-4 sm:grid-cols-3">
+      <div class="grid gap-4 grid-cols-1 sm:grid-cols-3">
         {topPicks.map(pick => (
-            <a
-                href={`${mainArticle.href}#${pick.name.toLowerCase().replace(/ /g, '-')}`}
-                class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-4 text-center transition-colors"
-            >
+          <div class="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
             <span class={`inline-block px-2 py-0.5 ${pick.color} text-xs font-medium rounded mb-2`}>
               {pick.tag}
             </span>
-              <p class="text-white font-semibold">{pick.name}</p>
-            </a>
+            <p class="text-white font-semibold">{pick.name}</p>
+          </div>
         ))}
       </div>
     </div>
 
-    <!-- Why It Matters -->
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-xl font-semibold text-white text-center mb-8">What to Look For in a Remote Work Laptop</h2>
-      <div class="grid gap-6 sm:grid-cols-2">
-        {whyMatters.map(item => (
-            <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
-              <span class="text-2xl">{item.icon}</span>
-              <div>
-                <h3 class="text-white font-semibold mb-1">{item.title}</h3>
-                <p class="text-white/60 text-sm">{item.description}</p>
+    <!-- Articles Grid -->
+    <div class="max-w-4xl mx-auto mb-12">
+      <h2 class="text-xl font-semibold text-white text-center mb-8">More Computer Reviews</h2>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {articles.map(article => (
+          <a
+            href={article.href}
+            class="group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
+          >
+            <div class="flex items-start gap-4">
+              <span class="text-3xl flex-shrink-0">{article.icon}</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
+                    {article.category}
+                  </span>
+                  <span class="text-white/40 text-xs">{article.readTime} min</span>
+                </div>
+                <h3 class="text-white font-semibold group-hover:text-jet-stream transition-colors mb-1 line-clamp-2">
+                  {article.title}
+                </h3>
+                <p class="text-white/60 text-sm line-clamp-2">{article.description}</p>
               </div>
             </div>
+            <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
+              Read Review
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Article Count -->
+      <div class="mt-6 text-center">
+        <p class="text-white/50 text-sm">
+          Showing {articles.length + 1} of {articles.length + 1} articles
+        </p>
+      </div>
+    </div>
+
+    <!-- Why It Matters -->
+    <div class="max-w-4xl mx-auto mb-12">
+      <h2 class="text-xl font-semibold text-white text-center mb-8">What to Look For in a Remote Work Computer</h2>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2">
+        {whyMatters.map(item => (
+          <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
+            <span class="text-2xl">{item.icon}</span>
+            <div>
+              <h3 class="text-white font-semibold mb-1">{item.title}</h3>
+              <p class="text-white/60 text-sm">{item.description}</p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
 
     <!-- CTA -->
-    <div class="mt-12 text-center">
+    <div class="text-center">
       <a
-          href={mainArticle.href}
-          class="inline-flex items-center justify-center px-6 py-3 bg-jet-stream text-ocean-deep font-semibold rounded-lg hover:bg-sky-light transition-colors"
+        href={featuredArticle.href}
+        class="inline-flex items-center justify-center px-6 py-3 bg-jet-stream text-ocean-deep font-semibold rounded-lg hover:bg-sky-light transition-colors"
       >
         View Full Laptop Comparison
       </a>

@@ -1,0 +1,449 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+
+// Article metadata
+const title = 'Two-Factor Authentication Setup Guide for Remote Workers (2025)';
+const description = 'Complete guide to setting up 2FA on all your accounts. Learn about authenticator apps, hardware keys, backup codes, and best practices for remote work security.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-24');
+const readingTime = 11;
+const image = 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Smartphone showing two-factor authentication code for secure login';
+
+// Table of contents headings
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Types of 2FA', slug: 'types', depth: 2},
+  {text: 'Best Authenticator Apps', slug: 'apps', depth: 2},
+  {text: 'Setting Up 2FA', slug: 'setup', depth: 2},
+  {text: 'Hardware Security Keys', slug: 'hardware-keys', depth: 2},
+  {text: 'Backup Codes', slug: 'backup-codes', depth: 2},
+  {text: 'Lost Phone Recovery', slug: 'lost-phone', depth: 2},
+  {text: '2FA for Teams', slug: 'teams', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'What is two-factor authentication (2FA)?',
+    answer: '<p>Two-factor authentication adds a second layer of security beyond your password. Even if someone steals your password, they can\'t access your account without the second factor—usually a code from your phone or a physical key.</p><p>The two factors are typically:</p><ul><li><strong>Something you know:</strong> Your password</li><li><strong>Something you have:</strong> Your phone or security key</li></ul>'
+  },
+  {
+    question: 'Which authenticator app is best?',
+    answer: '<p>Our top recommendations:</p><ul><li><strong>Authy:</strong> Best overall—cloud backup, multi-device sync, easy recovery</li><li><strong>1Password:</strong> Best if you already use it for passwords—built-in authenticator</li><li><strong>Google Authenticator:</strong> Simple and reliable, but no cloud backup</li><li><strong>Microsoft Authenticator:</strong> Great for Microsoft/Azure environments</li></ul><p>Avoid SMS-based 2FA when possible—it\'s vulnerable to SIM swapping attacks.</p>'
+  },
+  {
+    question: 'What happens if I lose my phone?',
+    answer: '<p>This is why backup codes are critical. If you lose your phone:</p><ul><li><strong>Use backup codes:</strong> Each code works once to regain access</li><li><strong>Use backup device:</strong> If you use Authy, you can access from another synced device</li><li><strong>Contact support:</strong> Most services have account recovery processes (slow but works)</li><li><strong>Hardware key backup:</strong> If you have a second security key, use it</li></ul><p>Always store backup codes securely (password manager or printed in a safe place).</p>'
+  },
+  {
+    question: 'Is SMS 2FA better than nothing?',
+    answer: '<p><strong>Yes, SMS is better than no 2FA at all.</strong> However, it\'s the weakest form:</p><ul><li><strong>SIM swapping:</strong> Attackers can convince carriers to transfer your number</li><li><strong>SS7 vulnerabilities:</strong> Technical exploits in phone networks</li><li><strong>Phone theft:</strong> If your phone is stolen and unlocked</li></ul><p>Use SMS 2FA as a stepping stone, but upgrade to authenticator apps or hardware keys for important accounts.</p>'
+  },
+  {
+    question: 'Should I use 2FA on all accounts?',
+    answer: '<p>Enable 2FA on all accounts that support it, but prioritize:</p><ul><li><strong>Critical:</strong> Email (it\'s your recovery point), banking, password manager</li><li><strong>High priority:</strong> Work accounts, cloud storage, social media</li><li><strong>Good to have:</strong> Shopping sites, forums, any account with payment info</li></ul><p>Your email is especially important—if someone compromises your email, they can reset passwords on other accounts.</p>'
+  },
+  {
+    question: 'Are hardware security keys worth it?',
+    answer: '<p><strong>Yes, for high-value accounts.</strong> Hardware keys are the most secure form of 2FA:</p><ul><li><strong>Phishing-proof:</strong> Won\'t work on fake websites</li><li><strong>No codes to intercept:</strong> Authentication happens on the key itself</li><li><strong>Fast:</strong> Just tap or insert—no typing codes</li></ul><p>We recommend hardware keys for: email, password manager, work accounts, financial services. A YubiKey costs $25-50 and lasts years.</p>'
+  },
+  {
+    question: 'Can I use the same authenticator for work and personal accounts?',
+    answer: '<p><strong>Yes, but with considerations:</strong></p><ul><li><strong>Authy/1Password:</strong> All accounts in one app, convenient</li><li><strong>Separation:</strong> Some prefer separate apps for work vs. personal</li><li><strong>Work requirements:</strong> Your employer may mandate a specific authenticator</li></ul><p>The most important thing is using 2FA at all. Convenience that leads to adoption beats perfect security that goes unused.</p>'
+  },
+  {
+    question: 'How do I set up 2FA on accounts that don\'t obviously support it?',
+    answer: '<p>Many sites hide 2FA settings. Look for:</p><ul><li><strong>Security settings:</strong> Usually under Account → Security</li><li><strong>"Login verification":</strong> Some sites use different terminology</li><li><strong>"Two-step verification":</strong> Google\'s term for 2FA</li><li><strong>Search "[site name] 2FA":</strong> Often faster than finding it in menus</li></ul><p>The website <a href="https://2fa.directory" target="_blank" rel="noopener" class="text-jet-stream hover:text-sky-light">2fa.directory</a> lists which sites support 2FA and what methods they offer.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Best Password Manager for Remote Work',
+    excerpt: 'Secure all your passwords with the right password manager.',
+    href: '/tools/best-password-manager-remote-work',
+    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Password manager interface'
+  },
+  {
+    title: 'VPN & Public WiFi Security Guide',
+    excerpt: 'Stay safe when working from coffee shops and public networks.',
+    href: '/blog/vpn-public-wifi-guide',
+    image: 'https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Public WiFi security'
+  },
+  {
+    title: 'How to Secure Your Home WiFi Network',
+    excerpt: 'Protect your home office network from threats.',
+    href: '/guides/secure-home-wifi-network',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Home WiFi router'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Security"
+    categorySlug="guides/security"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">Why 2FA Is Non-Negotiable for Remote Workers</h2>
+  <p>
+    Passwords alone are not enough. Data breaches expose millions of passwords every year, and attackers
+    use automated tools to try stolen credentials across thousands of sites.
+  </p>
+  <p>
+    <strong>Two-factor authentication (2FA)</strong> adds a second layer of protection. Even if someone
+    has your password, they can't access your account without also having your phone or security key.
+  </p>
+  <p>
+    For remote workers, 2FA is especially critical:
+  </p>
+  <ul>
+    <li><strong>No IT department watching:</strong> You're responsible for your own security</li>
+    <li><strong>Public WiFi risks:</strong> Credentials can be intercepted on unsecured networks</li>
+    <li><strong>Work accounts at stake:</strong> A breach affects not just you but your company</li>
+    <li><strong>Target-rich environment:</strong> Remote workers often have access to sensitive systems</li>
+  </ul>
+  <p>
+    This guide shows you how to set up 2FA on all your important accounts in under an hour.
+  </p>
+
+  <!-- Types of 2FA -->
+  <h2 id="types">Types of Two-Factor Authentication</h2>
+  <p>
+    Not all 2FA is created equal. Here are the main types, from least to most secure:
+  </p>
+
+  <h3>SMS/Text Message Codes</h3>
+  <ul>
+    <li><strong>How it works:</strong> A code is texted to your phone number</li>
+    <li><strong>Pros:</strong> Easy to set up, works on any phone</li>
+    <li><strong>Cons:</strong> Vulnerable to SIM swapping, SS7 attacks, phone theft</li>
+    <li><strong>Verdict:</strong> Better than nothing, but upgrade when possible</li>
+  </ul>
+
+  <h3>Email Codes</h3>
+  <ul>
+    <li><strong>How it works:</strong> A code is emailed to you</li>
+    <li><strong>Pros:</strong> Works without a phone</li>
+    <li><strong>Cons:</strong> Only as secure as your email; if email is compromised, so is 2FA</li>
+    <li><strong>Verdict:</strong> Avoid if possible; creates circular dependency</li>
+  </ul>
+
+  <h3>Authenticator Apps (TOTP)</h3>
+  <ul>
+    <li><strong>How it works:</strong> App generates time-based codes that refresh every 30 seconds</li>
+    <li><strong>Pros:</strong> Works offline, not vulnerable to SIM swapping, free</li>
+    <li><strong>Cons:</strong> Need your phone, codes can be phished (though harder than passwords)</li>
+    <li><strong>Verdict:</strong> Recommended for most accounts</li>
+  </ul>
+
+  <h3>Push Notifications</h3>
+  <ul>
+    <li><strong>How it works:</strong> App sends a notification; you tap approve/deny</li>
+    <li><strong>Pros:</strong> Very convenient, shows login location</li>
+    <li><strong>Cons:</strong> Requires internet, can lead to "approval fatigue"</li>
+    <li><strong>Verdict:</strong> Good for convenience, watch for push notification attacks</li>
+  </ul>
+
+  <h3>Hardware Security Keys</h3>
+  <ul>
+    <li><strong>How it works:</strong> Physical USB/NFC device you tap or insert</li>
+    <li><strong>Pros:</strong> Phishing-proof, most secure, very fast</li>
+    <li><strong>Cons:</strong> Costs money, need to carry physical device</li>
+    <li><strong>Verdict:</strong> Best option for critical accounts</li>
+  </ul>
+
+  <!-- Best Authenticator Apps -->
+  <h2 id="apps">Best Authenticator Apps</h2>
+  <p>
+    An authenticator app generates time-based one-time passwords (TOTP) that change every 30 seconds.
+    Here are the best options:
+  </p>
+
+  <h3>Authy (Recommended)</h3>
+  <ul>
+    <li><strong>Best feature:</strong> Cloud backup and multi-device sync</li>
+    <li><strong>Why it matters:</strong> If you lose your phone, you can recover on a new device</li>
+    <li><strong>Platforms:</strong> iOS, Android, Desktop (Windows, Mac, Linux)</li>
+    <li><strong>Cost:</strong> Free</li>
+  </ul>
+  <p>
+    Authy is our top recommendation because recovery is built-in. With Google Authenticator, losing
+    your phone means using backup codes for every single account.
+  </p>
+
+  <h3>1Password (Built-in Authenticator)</h3>
+  <ul>
+    <li><strong>Best feature:</strong> 2FA codes alongside your passwords</li>
+    <li><strong>Why it matters:</strong> One app for everything, autofills codes</li>
+    <li><strong>Platforms:</strong> All platforms</li>
+    <li><strong>Cost:</strong> Included with 1Password subscription ($3-5/month)</li>
+  </ul>
+  <p>
+    If you already use 1Password, the built-in authenticator is incredibly convenient. Your 2FA codes
+    appear right next to your passwords and autofill on supported sites.
+  </p>
+
+  <h3>Google Authenticator</h3>
+  <ul>
+    <li><strong>Best feature:</strong> Simple, reliable, widely supported</li>
+    <li><strong>Why it matters:</strong> No account needed, just works</li>
+    <li><strong>Platforms:</strong> iOS, Android</li>
+    <li><strong>Cost:</strong> Free</li>
+  </ul>
+  <p>
+    Google Authenticator recently added cloud backup, making it more viable. However, Authy's
+    multi-device support is still more robust.
+  </p>
+
+  <h3>Microsoft Authenticator</h3>
+  <ul>
+    <li><strong>Best feature:</strong> Best for Microsoft/Azure environments</li>
+    <li><strong>Why it matters:</strong> Passwordless sign-in for Microsoft accounts</li>
+    <li><strong>Platforms:</strong> iOS, Android</li>
+    <li><strong>Cost:</strong> Free</li>
+  </ul>
+  <p>
+    If your work uses Microsoft 365/Azure, Microsoft Authenticator offers the smoothest experience
+    with push notifications and passwordless options.
+  </p>
+
+  <!-- Setting Up 2FA -->
+  <h2 id="setup">Setting Up 2FA on Common Services</h2>
+  <p>
+    Here's how to enable 2FA on the accounts that matter most:
+  </p>
+
+  <h3>Google/Gmail</h3>
+  <ol>
+    <li>Go to <strong>myaccount.google.com</strong></li>
+    <li>Click <strong>Security</strong> in the left sidebar</li>
+    <li>Under "Signing in to Google," click <strong>2-Step Verification</strong></li>
+    <li>Click <strong>Get started</strong> and follow prompts</li>
+    <li>Choose <strong>Authenticator app</strong> (recommended) or other method</li>
+    <li>Scan QR code with your authenticator app</li>
+    <li><strong>Save backup codes</strong> when prompted</li>
+  </ol>
+
+  <h3>Microsoft/Outlook</h3>
+  <ol>
+    <li>Go to <strong>account.microsoft.com</strong></li>
+    <li>Click <strong>Security</strong> → <strong>Advanced security options</strong></li>
+    <li>Under "Two-step verification," click <strong>Turn on</strong></li>
+    <li>Follow prompts to set up Microsoft Authenticator or another app</li>
+    <li>Save recovery code</li>
+  </ol>
+
+  <h3>GitHub</h3>
+  <ol>
+    <li>Click your profile picture → <strong>Settings</strong></li>
+    <li>Click <strong>Password and authentication</strong></li>
+    <li>Under "Two-factor authentication," click <strong>Enable</strong></li>
+    <li>Choose <strong>Set up using an app</strong></li>
+    <li>Scan QR code and enter verification code</li>
+    <li><strong>Download recovery codes immediately</strong></li>
+  </ol>
+
+  <h3>Slack</h3>
+  <ol>
+    <li>Click your workspace name → <strong>Profile & account</strong></li>
+    <li>Click <strong>Account settings</strong></li>
+    <li>Next to "Two-factor authentication," click <strong>Expand</strong></li>
+    <li>Click <strong>Set up two-factor authentication</strong></li>
+    <li>Choose <strong>Use an app</strong> and scan QR code</li>
+  </ol>
+
+  <h3>AWS</h3>
+  <ol>
+    <li>Sign in to <strong>AWS Console</strong></li>
+    <li>Click your account name → <strong>Security credentials</strong></li>
+    <li>Under "Multi-factor authentication (MFA)," click <strong>Assign MFA device</strong></li>
+    <li>Choose <strong>Authenticator app</strong></li>
+    <li>Scan QR code and enter two consecutive codes</li>
+  </ol>
+
+  <h3>Social Media (Twitter/X, Facebook, LinkedIn)</h3>
+  <p>
+    Each platform has 2FA in their security settings. General path:
+  </p>
+  <ul>
+    <li><strong>Settings</strong> → <strong>Security</strong> → <strong>Two-factor authentication</strong></li>
+    <li>Choose authenticator app over SMS when available</li>
+  </ul>
+
+  <!-- Hardware Security Keys -->
+  <h2 id="hardware-keys">Hardware Security Keys Explained</h2>
+  <p>
+    Hardware keys are physical devices that provide the strongest form of 2FA. They're phishing-proof
+    because they verify the website's identity, not just yours.
+  </p>
+
+  <h3>How They Work</h3>
+  <ol>
+    <li>Insert the key into your USB port (or tap via NFC)</li>
+    <li>Touch the button on the key when prompted</li>
+    <li>The key communicates with the website using public-key cryptography</li>
+    <li>Authentication is confirmed—no codes to type or intercept</li>
+  </ol>
+
+  <h3>Why They're Phishing-Proof</h3>
+  <p>
+    With authenticator apps, you could accidentally enter your code on a fake website that looks like
+    the real one. Hardware keys check the website's domain cryptographically—they simply won't work
+    on a phishing site.
+  </p>
+
+  <h3>Recommended Hardware Keys</h3>
+  <ul>
+    <li><strong>YubiKey 5 Series:</strong> Gold standard, supports all protocols ($45-70)</li>
+    <li><strong>YubiKey Security Key:</strong> Budget option, FIDO2 only ($25)</li>
+    <li><strong>Google Titan Key:</strong> Good alternative, includes USB-A and USB-C ($30-35)</li>
+    <li><strong>Thetis FIDO2:</strong> Budget option ($20-25)</li>
+  </ul>
+
+  <h3>Best Practices</h3>
+  <ul>
+    <li><strong>Buy two keys:</strong> Keep one as backup in a safe place</li>
+    <li><strong>Register both:</strong> Add both keys to each account</li>
+    <li><strong>Keep backup codes too:</strong> In case you lose both keys</li>
+    <li><strong>Start with critical accounts:</strong> Email, password manager, work accounts</li>
+  </ul>
+
+  <!-- Backup Codes -->
+  <h2 id="backup-codes">Backup Codes: Don't Skip This</h2>
+  <p>
+    When you set up 2FA, most services give you <strong>backup codes</strong>—one-time use codes for
+    emergencies. These are your safety net if you lose your phone.
+  </p>
+
+  <h3>Where to Store Backup Codes</h3>
+  <ul>
+    <li><strong>Password manager:</strong> Best option—encrypted and accessible from anywhere</li>
+    <li><strong>Printed copy:</strong> Store in a safe, safety deposit box, or secure location at home</li>
+    <li><strong>Encrypted file:</strong> On an encrypted USB drive or cloud storage</li>
+  </ul>
+  <p>
+    <strong>Don't store backup codes:</strong> In plain text on your computer, in your email, or in
+    easily accessible notes.
+  </p>
+
+  <h3>Managing Backup Codes</h3>
+  <ul>
+    <li><strong>Generate new codes</strong> if you've used some (most services allow regeneration)</li>
+    <li><strong>Test a code</strong> to make sure they work</li>
+    <li><strong>Know where they are</strong> before you need them in an emergency</li>
+    <li><strong>Update after using</strong> so you always have fresh codes available</li>
+  </ul>
+
+  <!-- Lost Phone -->
+  <h2 id="lost-phone">What to Do If You Lose Your Phone</h2>
+  <p>
+    Lost your phone and can't access 2FA codes? Here's your recovery plan:
+  </p>
+
+  <h3>If You Use Authy with Backup</h3>
+  <ol>
+    <li>Download Authy on a new device</li>
+    <li>Sign in with your phone number and Authy backup password</li>
+    <li>All your codes will sync to the new device</li>
+  </ol>
+
+  <h3>If You Have Backup Codes</h3>
+  <ol>
+    <li>Log in to the service with your password</li>
+    <li>When prompted for 2FA, look for "Use backup code" or similar</li>
+    <li>Enter one of your backup codes</li>
+    <li>Immediately set up 2FA again on your new device</li>
+    <li>Generate new backup codes</li>
+  </ol>
+
+  <h3>If You Have a Backup Hardware Key</h3>
+  <ol>
+    <li>Log in with your password</li>
+    <li>Use your backup hardware key for 2FA</li>
+    <li>Remove the lost phone as an authentication method</li>
+    <li>Set up your new phone</li>
+  </ol>
+
+  <h3>If You Have No Backup Options</h3>
+  <ol>
+    <li>Contact the service's support team</li>
+    <li>Verify your identity (may require ID, security questions, etc.)</li>
+    <li>Wait for manual account recovery (can take days to weeks)</li>
+    <li>Set up proper backups this time</li>
+  </ol>
+
+  <!-- 2FA for Teams -->
+  <h2 id="teams">2FA for Teams and Businesses</h2>
+  <p>
+    If you manage a remote team, here's how to implement 2FA organization-wide:
+  </p>
+
+  <h3>Require 2FA on All Work Accounts</h3>
+  <ul>
+    <li><strong>Google Workspace:</strong> Admin Console → Security → 2-Step Verification → Enforce</li>
+    <li><strong>Microsoft 365:</strong> Azure AD → Security → MFA → Require for all users</li>
+    <li><strong>Slack:</strong> Workspace Settings → Authentication → Require 2FA</li>
+    <li><strong>GitHub:</strong> Organization Settings → Security → Require 2FA</li>
+  </ul>
+
+  <h3>Standardize on a Solution</h3>
+  <ul>
+    <li>Choose one authenticator app for the team (easier support)</li>
+    <li>Consider hardware keys for high-security roles (admins, finance)</li>
+    <li>Provide clear setup documentation</li>
+    <li>Set a deadline with enforcement</li>
+  </ul>
+
+  <h3>Handle Recovery Properly</h3>
+  <ul>
+    <li>Establish an identity verification process for locked-out employees</li>
+    <li>Don't bypass 2FA just because someone asks nicely</li>
+    <li>Consider admin recovery options in your identity provider</li>
+    <li>Train team members on backup code storage</li>
+  </ul>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <h2>Conclusion: Enable 2FA Today</h2>
+  <p>
+    Setting up 2FA takes about 5 minutes per account. In under an hour, you can protect all your
+    critical accounts from the most common attacks.
+  </p>
+  <p>
+    <strong>Your action plan:</strong>
+  </p>
+  <ul>
+    <li><strong>Today:</strong> Download Authy, enable 2FA on your email</li>
+    <li><strong>This week:</strong> Enable 2FA on password manager, work accounts, banking</li>
+    <li><strong>This month:</strong> Enable 2FA on all remaining accounts, consider a hardware key</li>
+    <li><strong>Ongoing:</strong> Enable 2FA on every new account you create</li>
+  </ul>
+  <p>
+    Don't wait for a breach to take security seriously. The few minutes you invest now could save
+    you countless hours of damage control later.
+  </p>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

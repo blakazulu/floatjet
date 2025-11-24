@@ -1,0 +1,425 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+
+// Article metadata
+const title = 'How to Secure Your Home WiFi Network for Remote Work (2025)';
+const description = 'Complete guide to securing your home WiFi network. Learn router security settings, WPA3 encryption, guest networks, firmware updates, and VPN setup for remote workers.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-24');
+const readingTime = 11;
+const image = 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Modern WiFi router on desk in home office setup';
+
+// Table of contents headings
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Router Security Checklist', slug: 'checklist', depth: 2},
+  {text: 'Change Default Passwords', slug: 'passwords', depth: 2},
+  {text: 'WiFi Encryption', slug: 'encryption', depth: 2},
+  {text: 'Guest Network Setup', slug: 'guest-network', depth: 2},
+  {text: 'Firmware Updates', slug: 'firmware', depth: 2},
+  {text: 'Disable Risky Features', slug: 'disable-features', depth: 2},
+  {text: 'Router VPN Setup', slug: 'vpn', depth: 2},
+  {text: 'Network Segmentation', slug: 'segmentation', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'How do I access my router settings?',
+    answer: '<p>Most routers use these default addresses:</p><ul><li><strong>192.168.1.1</strong> or <strong>192.168.0.1</strong> (most common)</li><li><strong>10.0.0.1</strong> (some ISP routers)</li><li><strong>router.asus.com</strong>, <strong>routerlogin.net</strong> (brand-specific)</li></ul><p>Type the address in your browser while connected to WiFi. Default login is often admin/admin or printed on the router itself.</p>'
+  },
+  {
+    question: 'Should I hide my WiFi network name (SSID)?',
+    answer: '<p><strong>It\'s not necessary and can cause problems.</strong> Hidden networks:</p><ul><li>Still broadcast their presence (just not the name)</li><li>Can cause connection issues with some devices</li><li>Don\'t provide meaningful security</li></ul><p>Better security comes from strong encryption (WPA3/WPA2) and a good password, not hiding the network.</p>'
+  },
+  {
+    question: 'How often should I update my router firmware?',
+    answer: '<p>Check for updates at least <strong>monthly</strong>, or enable automatic updates if available:</p><ul><li><strong>Security patches:</strong> Fix newly discovered vulnerabilities</li><li><strong>Bug fixes:</strong> Improve stability and performance</li><li><strong>New features:</strong> Sometimes add WPA3 or other improvements</li></ul><p>Set a monthly reminder to check, or use a router with automatic updates (ASUS, eero, Google Nest).</p>'
+  },
+  {
+    question: 'Is my ISP-provided router secure enough?',
+    answer: '<p>ISP routers are often <strong>adequate but not optimal</strong>:</p><ul><li><strong>Pros:</strong> Maintained by ISP, automatic updates, support included</li><li><strong>Cons:</strong> Often older hardware, limited features, may have ISP backdoors</li></ul><p>For serious remote work, consider upgrading to a quality third-party router (ASUS, Netgear, TP-Link) for better security features and performance.</p>'
+  },
+  {
+    question: 'Should I use WPA3 or WPA2?',
+    answer: '<p><strong>Use WPA3 if all your devices support it.</strong> Otherwise:</p><ul><li><strong>WPA3:</strong> Latest standard, best security, may not work with older devices</li><li><strong>WPA2-Personal (AES):</strong> Still secure, broadly compatible</li><li><strong>WPA2/WPA3 Transitional:</strong> Best of both worlds—WPA3 for capable devices, WPA2 fallback for older ones</li></ul><p>Never use WEP or WPA (without the "2" or "3")—they\'re broken.</p>'
+  },
+  {
+    question: 'Do I need a separate network for smart home devices?',
+    answer: '<p><strong>Yes, ideally.</strong> Smart devices often have poor security:</p><ul><li>Many never receive security updates</li><li>Can be entry points for attackers</li><li>Some send data to unknown servers</li></ul><p>Put IoT devices on a guest network or VLAN, separate from your work devices. This way, a compromised smart bulb can\'t access your work laptop.</p>'
+  },
+  {
+    question: 'What\'s the best router for security?',
+    answer: '<p>Look for routers with:</p><ul><li><strong>Regular firmware updates:</strong> ASUS, Netgear, TP-Link are generally good</li><li><strong>WPA3 support:</strong> Current standard</li><li><strong>VLAN support:</strong> For network segmentation</li><li><strong>Built-in VPN server:</strong> For remote access</li></ul><p>Specific recommendations: ASUS RT-AX86U, Netgear Nighthawk, TP-Link Archer series. For mesh: eero Pro, ASUS ZenWiFi, Google Nest WiFi Pro.</p>'
+  },
+  {
+    question: 'Can my neighbors steal my WiFi?',
+    answer: '<p>With proper security, no. Prevent unauthorized access:</p><ul><li><strong>Strong password:</strong> 12+ characters, random</li><li><strong>WPA2 or WPA3:</strong> Uncrackable with good password</li><li><strong>Check connected devices:</strong> Router admin panel shows all connections</li><li><strong>MAC filtering:</strong> Optional additional layer (can be bypassed)</li></ul><p>If your WiFi is slow, check connected devices—you might have a freeloader.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Best VPN for Digital Nomads',
+    excerpt: 'Top VPN services to protect your connection anywhere.',
+    href: '/tools/best-vpn-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'VPN security illustration'
+  },
+  {
+    title: 'Two-Factor Authentication Guide',
+    excerpt: 'Set up 2FA on all your accounts for better security.',
+    href: '/guides/two-factor-authentication-guide',
+    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Two-factor authentication'
+  },
+  {
+    title: 'Best Password Manager for Remote Work',
+    excerpt: 'Secure all your passwords with the right tool.',
+    href: '/tools/best-password-manager-remote-work',
+    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Password manager interface'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Security"
+    categorySlug="guides/security"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">Your Home Network Is Now Your Office Network</h2>
+  <p>
+    When you work from home, your personal WiFi network becomes your corporate network. The same
+    connection your kids use for gaming and your smart TV uses for streaming is now handling
+    sensitive work data.
+  </p>
+  <p>
+    Most home networks are set up for convenience, not security. Default passwords, outdated firmware,
+    and unsecured IoT devices create vulnerabilities that attackers can exploit.
+  </p>
+  <p>
+    This guide walks you through securing your home network properly—protecting both your work and
+    personal data from common threats.
+  </p>
+
+  <!-- Router Security Checklist -->
+  <h2 id="checklist">Router Security Checklist</h2>
+  <p>
+    Here's a quick checklist of everything we'll cover. Use this to track your progress:
+  </p>
+  <ul>
+    <li>Change default router admin password</li>
+    <li>Change default WiFi network name (SSID)</li>
+    <li>Set a strong WiFi password (12+ characters)</li>
+    <li>Enable WPA3 or WPA2-AES encryption</li>
+    <li>Update router firmware to latest version</li>
+    <li>Disable WPS (WiFi Protected Setup)</li>
+    <li>Disable remote management</li>
+    <li>Set up a guest network for IoT devices</li>
+    <li>Enable firewall (usually on by default)</li>
+    <li>Consider VPN on router for extra protection</li>
+  </ul>
+  <p>
+    Let's go through each item in detail.
+  </p>
+
+  <!-- Change Default Passwords -->
+  <h2 id="passwords">Change Default Passwords</h2>
+  <p>
+    Your router has two passwords that need attention:
+  </p>
+
+  <h3>1. Router Admin Password</h3>
+  <p>
+    This is the password to access your router's settings page. Default passwords like "admin/admin"
+    are publicly known and must be changed.
+  </p>
+  <ol>
+    <li>Log into your router (usually 192.168.1.1 or 192.168.0.1)</li>
+    <li>Find <strong>Administration</strong>, <strong>System</strong>, or <strong>Management</strong> settings</li>
+    <li>Change the admin password to something unique and strong</li>
+    <li>Store this password in your password manager</li>
+  </ol>
+
+  <h3>2. WiFi Network Password</h3>
+  <p>
+    This is the password people use to connect to your WiFi. Requirements:
+  </p>
+  <ul>
+    <li><strong>Length:</strong> At least 12 characters (16+ is better)</li>
+    <li><strong>Complexity:</strong> Mix of letters, numbers, symbols</li>
+    <li><strong>Uniqueness:</strong> Don't reuse passwords from other accounts</li>
+    <li><strong>No personal info:</strong> Avoid names, addresses, birthdays</li>
+  </ul>
+  <p>
+    A passphrase like <code>correct-horse-battery-staple-42!</code> is both secure and memorable.
+  </p>
+
+  <h3>Change Default Network Name (SSID)</h3>
+  <p>
+    Default names like "NETGEAR-5G" or "linksys" reveal your router brand, making targeted attacks
+    easier. Change it to something that doesn't identify you or your equipment.
+  </p>
+
+  <!-- WiFi Encryption -->
+  <h2 id="encryption">WiFi Encryption (WPA3 vs WPA2)</h2>
+  <p>
+    Encryption prevents anyone nearby from intercepting your WiFi traffic. Here's what to use:
+  </p>
+
+  <h3>WPA3 (Best)</h3>
+  <ul>
+    <li>Latest WiFi security standard (2018+)</li>
+    <li>Stronger encryption, harder to crack</li>
+    <li>Protection against offline dictionary attacks</li>
+    <li>Forward secrecy—past traffic can't be decrypted if password is later compromised</li>
+  </ul>
+  <p>
+    <strong>Use if:</strong> Your router and all devices support it.
+  </p>
+
+  <h3>WPA2-Personal (AES)</h3>
+  <ul>
+    <li>Previous standard, still secure with strong password</li>
+    <li>Compatible with virtually all devices</li>
+    <li>AES encryption is unbroken</li>
+  </ul>
+  <p>
+    <strong>Use if:</strong> You have older devices that don't support WPA3.
+  </p>
+
+  <h3>WPA2/WPA3 Transitional Mode</h3>
+  <ul>
+    <li>Uses WPA3 for capable devices, falls back to WPA2 for older ones</li>
+    <li>Best compatibility while maximizing security</li>
+    <li>Good default choice for most homes</li>
+  </ul>
+
+  <h3>Never Use</h3>
+  <ul>
+    <li><strong>WEP:</strong> Broken, can be cracked in minutes</li>
+    <li><strong>WPA (original):</strong> Also broken, vulnerable to attacks</li>
+    <li><strong>Open networks:</strong> No encryption at all</li>
+  </ul>
+
+  <!-- Guest Network -->
+  <h2 id="guest-network">Creating a Guest Network</h2>
+  <p>
+    A guest network is a separate WiFi network that's isolated from your main network. It's essential
+    for two purposes:
+  </p>
+
+  <h3>1. Actual Guests</h3>
+  <p>
+    When visitors ask for WiFi, give them guest network access. This way:
+  </p>
+  <ul>
+    <li>They can't access your computers or network drives</li>
+    <li>If their device is infected, it can't spread to your devices</li>
+    <li>You don't have to share your main password</li>
+  </ul>
+
+  <h3>2. IoT and Smart Home Devices</h3>
+  <p>
+    Smart TVs, speakers, cameras, and other IoT devices often have poor security. Isolate them:
+  </p>
+  <ul>
+    <li>Put all smart home devices on the guest network</li>
+    <li>They can still reach the internet but can't access your work laptop</li>
+    <li>If a device is compromised, damage is contained</li>
+  </ul>
+
+  <h3>Setting Up Guest Network</h3>
+  <ol>
+    <li>Access router admin panel</li>
+    <li>Look for <strong>Guest Network</strong> or <strong>Guest WiFi</strong> settings</li>
+    <li>Enable guest network</li>
+    <li>Set a different password than your main network</li>
+    <li>Enable <strong>AP Isolation</strong> or <strong>Client Isolation</strong> if available</li>
+    <li>Consider bandwidth limits for guests</li>
+  </ol>
+
+  <!-- Firmware Updates -->
+  <h2 id="firmware">Firmware Updates</h2>
+  <p>
+    Router firmware is the software running on your router. Like any software, it needs updates to
+    fix security vulnerabilities.
+  </p>
+
+  <h3>Why Firmware Updates Matter</h3>
+  <ul>
+    <li><strong>Security patches:</strong> Fix known vulnerabilities attackers exploit</li>
+    <li><strong>Bug fixes:</strong> Improve stability and performance</li>
+    <li><strong>New features:</strong> Sometimes add WPA3, VPN support, etc.</li>
+  </ul>
+
+  <h3>How to Update</h3>
+  <ol>
+    <li>Log into router admin panel</li>
+    <li>Find <strong>Firmware Update</strong>, <strong>Software Update</strong>, or <strong>Administration</strong></li>
+    <li>Click <strong>Check for Updates</strong></li>
+    <li>If available, click <strong>Update</strong> or <strong>Install</strong></li>
+    <li>Wait for router to restart (don't unplug during update)</li>
+  </ol>
+
+  <h3>Enable Automatic Updates</h3>
+  <p>
+    Many modern routers support automatic updates. Enable this if available:
+  </p>
+  <ul>
+    <li><strong>ASUS:</strong> Administration → Firmware Upgrade → Auto Upgrade</li>
+    <li><strong>Netgear:</strong> Advanced → Administration → Firmware Update</li>
+    <li><strong>TP-Link:</strong> Advanced → System Tools → Firmware Upgrade</li>
+  </ul>
+  <p>
+    If automatic updates aren't available, set a monthly calendar reminder to check manually.
+  </p>
+
+  <!-- Disable Risky Features -->
+  <h2 id="disable-features">Disable Risky Features</h2>
+  <p>
+    Several common router features create security risks. Disable them:
+  </p>
+
+  <h3>WPS (WiFi Protected Setup)</h3>
+  <p>
+    WPS lets you connect devices by pressing a button or entering a PIN. The problem: the PIN can be
+    brute-forced in hours.
+  </p>
+  <ul>
+    <li>Find WPS settings in your router admin panel</li>
+    <li>Disable WPS completely</li>
+    <li>Use regular password authentication instead</li>
+  </ul>
+
+  <h3>Remote Management</h3>
+  <p>
+    Remote management lets you access your router from outside your home network. This is rarely needed
+    and creates attack surface.
+  </p>
+  <ul>
+    <li>Disable "Remote Management" or "Remote Administration"</li>
+    <li>Disable "Cloud Management" unless you specifically need it</li>
+    <li>If you need remote access, use VPN to your home network instead</li>
+  </ul>
+
+  <h3>UPnP (Universal Plug and Play)</h3>
+  <p>
+    UPnP lets devices automatically open firewall ports. Convenient but risky:
+  </p>
+  <ul>
+    <li>Malware can use UPnP to bypass your firewall</li>
+    <li>Consider disabling unless you need it for gaming or specific applications</li>
+    <li>If you keep it enabled, monitor what ports are open</li>
+  </ul>
+
+  <!-- Router VPN -->
+  <h2 id="vpn">Setting Up VPN on Your Router</h2>
+  <p>
+    Installing a VPN directly on your router protects all devices on your network automatically—no
+    need to install VPN apps on each device.
+  </p>
+
+  <h3>Benefits</h3>
+  <ul>
+    <li>All devices protected, including those that don't support VPN apps</li>
+    <li>One connection instead of multiple</li>
+    <li>Smart TVs, gaming consoles, IoT devices all covered</li>
+  </ul>
+
+  <h3>Considerations</h3>
+  <ul>
+    <li><strong>Speed:</strong> All traffic goes through VPN, may reduce speeds</li>
+    <li><strong>Compatibility:</strong> Not all routers support VPN client mode</li>
+    <li><strong>Streaming:</strong> Some services block VPN connections</li>
+  </ul>
+
+  <h3>How to Set Up</h3>
+  <ol>
+    <li>Ensure your router supports VPN client mode (ASUS, Netgear, DD-WRT compatible routers)</li>
+    <li>Get OpenVPN or WireGuard configuration from your VPN provider</li>
+    <li>Access router admin panel → VPN → VPN Client</li>
+    <li>Upload or enter configuration details</li>
+    <li>Enable and test the connection</li>
+  </ol>
+  <p>
+    <strong>VPN Providers with good router support:</strong> NordVPN, ExpressVPN, Surfshark, Private Internet Access
+  </p>
+
+  <!-- Network Segmentation -->
+  <h2 id="segmentation">Advanced: Network Segmentation</h2>
+  <p>
+    For serious security, consider segmenting your network into separate zones:
+  </p>
+
+  <h3>Why Segment?</h3>
+  <ul>
+    <li><strong>Containment:</strong> If one device is compromised, others are protected</li>
+    <li><strong>Privacy:</strong> Work devices can't see personal devices and vice versa</li>
+    <li><strong>Compliance:</strong> Some work policies require isolated networks</li>
+  </ul>
+
+  <h3>Basic Segmentation with VLANs</h3>
+  <p>
+    VLANs (Virtual LANs) create separate networks on one physical network:
+  </p>
+  <ul>
+    <li><strong>Work VLAN:</strong> Work laptop, work phone</li>
+    <li><strong>Personal VLAN:</strong> Personal devices</li>
+    <li><strong>IoT VLAN:</strong> Smart home devices</li>
+    <li><strong>Guest VLAN:</strong> Visitors</li>
+  </ul>
+
+  <h3>Requirements</h3>
+  <ul>
+    <li>Router with VLAN support (many prosumer routers have this)</li>
+    <li>Managed switch if you need wired VLAN separation</li>
+    <li>Time to configure properly</li>
+  </ul>
+  <p>
+    This is advanced configuration. For most remote workers, a guest network for IoT devices
+    provides 80% of the benefit with 20% of the complexity.
+  </p>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <h2>Conclusion: Secure Your Network Today</h2>
+  <p>
+    Securing your home network takes about 30 minutes and significantly reduces your risk. Start with
+    the basics and add advanced features as needed.
+  </p>
+  <p>
+    <strong>Your action plan:</strong>
+  </p>
+  <ul>
+    <li><strong>Today:</strong> Change default passwords, check encryption settings</li>
+    <li><strong>This week:</strong> Update firmware, disable WPS, set up guest network</li>
+    <li><strong>This month:</strong> Consider VPN on router, network segmentation for IoT</li>
+    <li><strong>Ongoing:</strong> Check for firmware updates monthly</li>
+  </ul>
+  <p>
+    Your home network is the foundation of your remote work security. Take the time to secure it properly.
+  </p>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

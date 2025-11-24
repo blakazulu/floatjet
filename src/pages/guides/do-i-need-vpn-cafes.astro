@@ -1,0 +1,319 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import {FAQSection, RelatedArticles} from '../../components/article';
+
+const title = 'Do I Need a VPN When Working from Cafes?';
+const description = 'Short answer: yes. Learn why VPNs are essential for cafe WiFi security, what risks you face on public networks, and how to stay safe while working remotely.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2024-12-10');
+const readingTime = 7;
+const image = 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Remote worker using laptop at coffee shop with VPN protection';
+
+const headings = [
+  {depth: 2, slug: 'quick-answer', text: 'Quick Answer: Yes, Absolutely'},
+  {depth: 2, slug: 'risks-of-public-wifi', text: 'Risks of Public WiFi'},
+  {depth: 2, slug: 'what-can-happen', text: 'What Can Happen Without VPN'},
+  {depth: 2, slug: 'how-vpn-protects', text: 'How VPN Protects You'},
+  {depth: 2, slug: 'other-security-measures', text: 'Other Security Measures'},
+  {depth: 2, slug: 'vpn-recommendations', text: 'Quick VPN Recommendations'},
+  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+];
+
+const faqData = [
+  {
+    question: 'Is cafe WiFi safe if it requires a password?',
+    answer: 'Slightly safer than completely open WiFi, but still risky. The password just limits who can connect—once on the network, other users can still potentially intercept your traffic. A VPN is still essential.'
+  },
+  {
+    question: 'Can hackers actually see what I\'m doing on cafe WiFi?',
+    answer: 'Yes. On unencrypted public WiFi, anyone with readily available tools can see unencrypted traffic, capture login credentials, or perform man-in-the-middle attacks. It\'s not theoretical—it happens regularly.'
+  },
+  {
+    question: 'Should I use mobile data instead of cafe WiFi?',
+    answer: 'Mobile data is generally more secure than public WiFi since it\'s harder to intercept. If you have unlimited data, using your phone\'s hotspot is a reasonable alternative. However, a VPN on cafe WiFi is still the most flexible option.'
+  },
+  {
+    question: 'Will a VPN slow down my work at the cafe?',
+    answer: 'Modern VPNs have minimal speed impact—usually 10-20% slower at most. For typical work tasks like email, documents, and video calls, you won\'t notice the difference. The security benefit far outweighs any slight slowdown.'
+  },
+  {
+    question: 'What if the cafe blocks VPNs?',
+    answer: 'Some networks block common VPN protocols. Try switching to a different protocol (most VPN apps let you choose) or use a VPN with obfuscation features that disguise VPN traffic. Alternatively, use your mobile hotspot.'
+  },
+  {
+    question: 'Do I need a VPN if I only visit HTTPS websites?',
+    answer: 'HTTPS encrypts data between you and websites, but doesn\'t hide which sites you visit, protect DNS queries, or secure all your apps. A VPN adds comprehensive protection beyond what HTTPS provides.'
+  }
+];
+
+const relatedArticles = [
+  {
+    title: 'Best VPN for Digital Nomads',
+    excerpt: 'Our top VPN picks for remote workers who travel.',
+    href: '/tools/best-vpn-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'VPN security shield on laptop screen'
+  },
+  {
+    title: 'VPN & Public WiFi Security Guide',
+    excerpt: 'Complete guide to staying safe on public networks.',
+    href: '/blog/vpn-public-wifi-guide',
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Public WiFi hotspot security concept'
+  },
+  {
+    title: 'Find Reliable WiFi Anywhere',
+    excerpt: 'Tips for finding good internet while traveling.',
+    href: '/blog/find-reliable-wifi-anywhere',
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Digital nomad searching for WiFi'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Security"
+    categorySlug="guides/security"
+    headings={headings}
+>
+  <p class="lead">
+    Working from your favorite coffee shop sounds great—until you realize the free WiFi
+    might be exposing your passwords, emails, and work documents to anyone who cares to
+    look. Here's why a VPN is non-negotiable for cafe work.
+  </p>
+
+  <h2 id="quick-answer">Quick Answer: Yes, Absolutely</h2>
+
+  <p>
+    <strong>Yes, you need a VPN when working from cafes.</strong> Public WiFi networks are
+    inherently insecure, and using one without protection puts your work data, login
+    credentials, and privacy at serious risk.
+  </p>
+
+  <p>
+    The good news: a VPN is simple to use and costs less than your daily latte. Install the
+    app, click connect, and you're protected. There's no reason not to use one.
+  </p>
+
+  <h2 id="risks-of-public-wifi">Risks of Public WiFi</h2>
+
+  <p>
+    Cafe WiFi networks have several security problems that make them dangerous for remote work:
+  </p>
+
+  <h3>No Encryption</h3>
+  <p>
+    Most public WiFi networks don't encrypt traffic between your device and the router.
+    This means your data travels through the air in readable form. Anyone with the right
+    tools (which are freely available) can intercept it.
+  </p>
+
+  <h3>Shared Networks</h3>
+  <p>
+    When you join cafe WiFi, you're on the same network as every other customer. This
+    proximity gives potential attackers direct access to intercept your traffic or probe
+    your device for vulnerabilities.
+  </p>
+
+  <h3>Fake Hotspots</h3>
+  <p>
+    Attackers can create a WiFi network named "CoffeeShop_Free_WiFi" that looks legitimate.
+    When you connect, all your traffic flows through their device. This "evil twin" attack
+    is surprisingly common and easy to execute.
+  </p>
+
+  <h3>No IT Oversight</h3>
+  <p>
+    Unlike your company network, no one is monitoring public WiFi for threats. The cafe
+    staff aren't security professionals—they just want to offer free internet as a customer
+    perk.
+  </p>
+
+  <h2 id="what-can-happen">What Can Happen Without VPN</h2>
+
+  <p>
+    These aren't hypothetical risks. Here's what attackers can do on unsecured public WiFi:
+  </p>
+
+  <h3>Credential Theft</h3>
+  <p>
+    If you log into a website that isn't using HTTPS (or has a compromised certificate),
+    attackers can capture your username and password in plain text. Even with HTTPS, they
+    can see which sites you're visiting.
+  </p>
+
+  <h3>Man-in-the-Middle Attacks</h3>
+  <p>
+    An attacker positions themselves between your device and the internet. They can read,
+    modify, or inject content into your communications. They might alter a bank page to
+    capture your credentials or inject malware into downloads.
+  </p>
+
+  <h3>Session Hijacking</h3>
+  <p>
+    Even if an attacker can't get your password, they may be able to steal your session
+    cookies. This lets them impersonate you on logged-in services without needing your
+    credentials.
+  </p>
+
+  <h3>Malware Distribution</h3>
+  <p>
+    Attackers can inject malware into unencrypted downloads or trick your device into
+    installing malicious software through fake update prompts or compromised captive portals.
+  </p>
+
+  <h3>Corporate Espionage</h3>
+  <p>
+    If you work with valuable data, competitors or hackers might specifically target remote
+    workers. Cafes near business districts are particularly attractive hunting grounds.
+  </p>
+
+  <h2 id="how-vpn-protects">How VPN Protects You</h2>
+
+  <p>
+    A VPN (Virtual Private Network) creates an encrypted tunnel for all your internet traffic.
+    Here's how that keeps you safe at the cafe:
+  </p>
+
+  <h3>Full Encryption</h3>
+  <p>
+    Everything between your device and the VPN server is encrypted with military-grade
+    encryption (typically AES-256). Even if someone intercepts your traffic, they see only
+    meaningless encrypted data.
+  </p>
+
+  <h3>Hidden Activity</h3>
+  <p>
+    Attackers can't see which websites you visit, what data you're sending, or what you're
+    downloading. They only see encrypted traffic going to a VPN server—nothing useful.
+  </p>
+
+  <h3>Protection from Fake Networks</h3>
+  <p>
+    Even if you accidentally connect to a malicious hotspot, your traffic remains encrypted.
+    The attacker running the fake network can't read or modify your data.
+  </p>
+
+  <h3>IP Address Masking</h3>
+  <p>
+    Websites see the VPN server's IP address, not yours. This adds a layer of privacy and
+    makes it harder to track your online activities back to your physical location.
+  </p>
+
+  <h3>Secure DNS</h3>
+  <p>
+    Your VPN handles DNS queries (the lookups that convert website names to IP addresses),
+    preventing attackers from seeing which sites you visit or redirecting you to fake sites.
+  </p>
+
+  <h2 id="other-security-measures">Other Security Measures</h2>
+
+  <p>
+    A VPN is essential, but combine it with these practices for maximum security:
+  </p>
+
+  <h3>Verify the Network</h3>
+  <p>
+    Ask cafe staff for the exact network name. Don't assume "Starbucks_WiFi" is legitimate—
+    verify it matches what the cafe actually provides.
+  </p>
+
+  <h3>Forget the Network After</h3>
+  <p>
+    Don't let your device auto-connect to cafe networks. Remove them from your saved
+    networks after your visit to prevent automatic reconnection to potentially spoofed
+    versions.
+  </p>
+
+  <h3>Enable Firewall</h3>
+  <p>
+    Keep your device's firewall active. On Windows, ensure Windows Firewall is on. On Mac,
+    enable the built-in firewall in System Preferences. This blocks unwanted incoming
+    connections.
+  </p>
+
+  <h3>Disable File Sharing</h3>
+  <p>
+    Turn off file sharing, AirDrop, and network discovery while on public WiFi. These
+    features can expose your device to other network users.
+  </p>
+
+  <h3>Use HTTPS Everywhere</h3>
+  <p>
+    Ensure websites use HTTPS (look for the padlock icon). Most browsers now warn about
+    HTTP sites. Combined with a VPN, this provides layered protection.
+  </p>
+
+  <h3>Consider Mobile Hotspot</h3>
+  <p>
+    For highly sensitive work, your phone's mobile hotspot is more secure than public WiFi.
+    You control the network, and cellular data is harder to intercept than WiFi.
+  </p>
+
+  <h2 id="vpn-recommendations">Quick VPN Recommendations</h2>
+
+  <p>
+    For cafe work and general remote work security, these VPNs are reliable choices:
+  </p>
+
+  <h3>NordVPN</h3>
+  <p>
+    Fast speeds, strong security features, and servers in 60+ countries. Their Threat
+    Protection feature blocks malware and trackers. Great all-around choice for remote
+    workers.
+  </p>
+
+  <h3>ExpressVPN</h3>
+  <p>
+    Excellent speeds and very easy to use. Works well in countries with internet restrictions.
+    Slightly more expensive but worth it for reliability.
+  </p>
+
+  <h3>Surfshark</h3>
+  <p>
+    Budget-friendly with unlimited device connections. Good speeds and solid security
+    features. Best value if you need to protect multiple devices.
+  </p>
+
+  <h3>Mullvad</h3>
+  <p>
+    Privacy-focused with anonymous payment options. Simple flat-rate pricing. Best for
+    users who prioritize privacy above all else.
+  </p>
+
+  <p>
+    All of these offer apps for Windows, Mac, iOS, and Android. Installation takes minutes,
+    and connecting is a single click.
+  </p>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqData}/>
+
+  <h2>Protect Your Work, Protect Your Livelihood</h2>
+
+  <p>
+    Working from cafes is one of the joys of remote work—new environments, good coffee,
+    and a change of scenery. But that freedom comes with responsibility. The open WiFi
+    that lets you work from anywhere is also an open invitation for data thieves.
+  </p>
+
+  <p>
+    A VPN costs less than one coffee shop visit per month and takes seconds to activate.
+    It's the simplest, most effective way to protect your work, your credentials, and your
+    professional reputation. Make it a habit: before you open your laptop at the cafe,
+    turn on your VPN. It's that simple.
+  </p>
+
+  <RelatedArticles articles={relatedArticles}/>
+</ArticleLayout>

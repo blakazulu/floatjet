@@ -1,6 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
 
 const title = 'How Much Does a Standing Desk Really Cost? (2025 Guide)';
 const description = 'Complete price breakdown for standing desks at every budget. Learn what you get at $200, $500, and $1,000+ price points and whether expensive desks are worth it.';
@@ -14,29 +14,47 @@ const image = 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto
 const imageAlt = 'Various standing desks at different price points';
 
 const headings = [
-  { text: 'Quick Answer', slug: 'quick-answer', depth: 2 },
-  { text: 'Budget Tier ($150-$400)', slug: 'budget-tier', depth: 2 },
-  { text: 'Mid-Range Tier ($400-$800)', slug: 'mid-range-tier', depth: 2 },
-  { text: 'Premium Tier ($800-$2,000)', slug: 'premium-tier', depth: 2 },
-  { text: 'Hidden Costs', slug: 'hidden-costs', depth: 2 },
-  { text: 'DIY Options', slug: 'diy-options', depth: 2 },
-  { text: 'Is It Worth It?', slug: 'worth-it', depth: 2 },
-  { text: 'Best Value Picks', slug: 'best-value', depth: 2 },
-  { text: 'Frequently Asked Questions', slug: 'faq', depth: 2 },
+  {text: 'Quick Answer', slug: 'quick-answer', depth: 2},
+  {text: 'Budget Tier ($150-$400)', slug: 'budget-tier', depth: 2},
+  {text: 'Mid-Range Tier ($400-$800)', slug: 'mid-range-tier', depth: 2},
+  {text: 'Premium Tier ($800-$2,000)', slug: 'premium-tier', depth: 2},
+  {text: 'Hidden Costs', slug: 'hidden-costs', depth: 2},
+  {text: 'DIY Options', slug: 'diy-options', depth: 2},
+  {text: 'Is It Worth It?', slug: 'worth-it', depth: 2},
+  {text: 'Best Value Picks', slug: 'best-value', depth: 2},
+  {text: 'Frequently Asked Questions', slug: 'faq', depth: 2},
 ];
 
 const tierComparisonColumns = [
-  { key: 'tier', label: 'Tier', width: '120px' },
-  { key: 'price', label: 'Price Range' },
-  { key: 'motor', label: 'Motor' },
-  { key: 'warranty', label: 'Warranty' },
-  { key: 'example', label: 'Example' },
+  {key: 'tier', label: 'Tier', width: '120px'},
+  {key: 'price', label: 'Price Range'},
+  {key: 'motor', label: 'Motor'},
+  {key: 'warranty', label: 'Warranty'},
+  {key: 'example', label: 'Example'},
 ];
 
 const tierComparisonRows = [
-  { tier: '<strong>Budget</strong>', price: '$150-400', motor: 'Single/Dual', warranty: '2-5 years', example: 'Autonomous, FEZIBO' },
-  { tier: '<strong>Mid-Range</strong>', price: '$400-800', motor: 'Dual', warranty: '5-15 years', example: 'FlexiSpot E7, Uplift V2' },
-  { tier: '<strong>Premium</strong>', price: '$800-2,000', motor: 'Dual', warranty: '10-15 years', example: 'Jarvis, Fully, Branch' },
+  {
+    tier: '<strong>Budget</strong>',
+    price: '$150-400',
+    motor: 'Single/Dual',
+    warranty: '2-5 years',
+    example: 'Autonomous, FEZIBO'
+  },
+  {
+    tier: '<strong>Mid-Range</strong>',
+    price: '$400-800',
+    motor: 'Dual',
+    warranty: '5-15 years',
+    example: 'FlexiSpot E7, Uplift V2'
+  },
+  {
+    tier: '<strong>Premium</strong>',
+    price: '$800-2,000',
+    motor: 'Dual',
+    warranty: '10-15 years',
+    example: 'Jarvis, Fully, Branch'
+  },
 ];
 
 const faqItems = [
@@ -88,33 +106,36 @@ const relatedArticles = [
 ---
 
 <ArticleLayout
-  title={title}
-  description={description}
-  pubDate={pubDate}
-  updatedDate={updatedDate}
-  author={author}
-  category={category}
-  categorySlug={categorySlug}
-  readingTime={readingTime}
-  image={image}
-  imageAlt={imageAlt}
-  headings={headings}
+    title={title}
+    description={description}
+    pubDate={pubDate}
+    updatedDate={updatedDate}
+    author={author}
+    category={category}
+    categorySlug={categorySlug}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    headings={headings}
 >
   <p class="lead">
-    Standing desks range from $150 to over $2,000. This guide breaks down exactly what you get at each price point so you can make an informed investment in your home office.
+    Standing desks range from $150 to over $2,000. This guide breaks down exactly what you get at each price point so
+    you can make an informed investment in your home office.
   </p>
 
   <h2 id="quick-answer">Quick Answer: What Should You Spend?</h2>
 
   <p>
-    <strong>Most remote workers should spend $500-700.</strong> This gets you a quality dual-motor desk with a 10-15 year warranty that will last a decade or more.
+    <strong>Most remote workers should spend $500-700.</strong> This gets you a quality dual-motor desk with a 10-15
+    year warranty that will last a decade or more.
   </p>
 
   <p>
-    Budget options ($200-400) work for occasional use or testing standing work. Premium options ($800+) add luxury features but diminishing returns for most users.
+    Budget options ($200-400) work for occasional use or testing standing work. Premium options ($800+) add luxury
+    features but diminishing returns for most users.
   </p>
 
-  <ComparisonTable columns={tierComparisonColumns} rows={tierComparisonRows} />
+  <ComparisonTable columns={tierComparisonColumns} rows={tierComparisonRows}/>
 
   <h2 id="budget-tier">Budget Tier: $150-$400</h2>
 
@@ -140,15 +161,17 @@ const relatedArticles = [
   <h3>Best Budget Options</h3>
 
   <p>
-    <strong>Autonomous SmartDesk Core ($299)</strong> - Best budget standing desk. Dual motor, 4 presets, 5-year frame warranty. Wobbly at max height but solid for the price.
+    <strong>Autonomous SmartDesk Core ($299)</strong> - Best budget standing desk. Dual motor, 4 presets, 5-year frame
+    warranty. Wobbly at max height but solid for the price.
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/autonomous" text="Check Autonomous Price" />
+    <AffiliateButton href="/go/autonomous" text="Check Autonomous Price"/>
   </div>
 
   <p>
-    <strong>FEZIBO Electric Desk ($200-250)</strong> - Amazon bestseller. Single motor but surprisingly stable. 3-year warranty. Great starter desk.
+    <strong>FEZIBO Electric Desk ($200-250)</strong> - Amazon bestseller. Single motor but surprisingly stable. 3-year
+    warranty. Great starter desk.
   </p>
 
   <p>
@@ -172,29 +195,33 @@ const relatedArticles = [
   <h3>Why Mid-Range Is the Sweet Spot</h3>
 
   <p>
-    The jump from budget to mid-range delivers the biggest quality improvement. You get 3x the warranty length, noticeably better stability, and construction designed for daily use over 10+ years.
+    The jump from budget to mid-range delivers the biggest quality improvement. You get 3x the warranty length,
+    noticeably better stability, and construction designed for daily use over 10+ years.
   </p>
 
   <h3>Best Mid-Range Options</h3>
 
   <p>
-    <strong>FlexiSpot E7 ($479-599)</strong> - Best value in the category. 15-year warranty, dual motors, 355 lb capacity. Stability rivals premium desks.
+    <strong>FlexiSpot E7 ($479-599)</strong> - Best value in the category. 15-year warranty, dual motors, 355 lb
+    capacity. Stability rivals premium desks.
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/flexispot" text="Check FlexiSpot E7 Price" />
+    <AffiliateButton href="/go/flexispot" text="Check FlexiSpot E7 Price"/>
   </div>
 
   <p>
-    <strong>Uplift V2 ($599-899)</strong> - Popular choice with extensive customization options. 15-year warranty. Slightly pricier but excellent quality.
+    <strong>Uplift V2 ($599-899)</strong> - Popular choice with extensive customization options. 15-year warranty.
+    Slightly pricier but excellent quality.
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/uplift" text="Check Uplift V2 Price" />
+    <AffiliateButton href="/go/uplift" text="Check Uplift V2 Price"/>
   </div>
 
   <p>
-    <strong>Vari Electric ($695)</strong> - Known for rock-solid stability. Clean design. 5-year warranty (shorter than competitors but well-built).
+    <strong>Vari Electric ($695)</strong> - Known for rock-solid stability. Clean design. 5-year warranty (shorter than
+    competitors but well-built).
   </p>
 
   <p>
@@ -218,7 +245,8 @@ const relatedArticles = [
   <h3>Are Premium Desks Worth It?</h3>
 
   <p>
-    For most users, premium desks offer diminishing returns. The difference between a $600 and $1,200 desk is smaller than between $300 and $600.
+    For most users, premium desks offer diminishing returns. The difference between a $600 and $1,200 desk is smaller
+    than between $300 and $600.
   </p>
 
   <p>
@@ -235,15 +263,17 @@ const relatedArticles = [
   <h3>Best Premium Options</h3>
 
   <p>
-    <strong>Fully Jarvis ($559-899 frame, $200+ for desktop)</strong> - Exceptional build quality. Bamboo desktops available. Popular in tech industry.
+    <strong>Fully Jarvis ($559-899 frame, $200+ for desktop)</strong> - Exceptional build quality. Bamboo desktops
+    available. Popular in tech industry.
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/fully" text="Check Fully Jarvis Price" />
+    <AffiliateButton href="/go/fully" text="Check Fully Jarvis Price"/>
   </div>
 
   <p>
-    <strong>Branch Standing Desk ($999)</strong> - Beautiful design, premium materials, responsive customer service. Direct-to-consumer value.
+    <strong>Branch Standing Desk ($999)</strong> - Beautiful design, premium materials, responsive customer service.
+    Direct-to-consumer value.
   </p>
 
   <p>
@@ -272,7 +302,8 @@ const relatedArticles = [
 
   <h3>Total Cost Example</h3>
   <p>
-    FlexiSpot E7 frame ($479) + desktop ($150) + anti-fatigue mat ($50) + cable management ($30) = <strong>$709 total investment</strong>
+    FlexiSpot E7 frame ($479) + desktop ($150) + anti-fatigue mat ($50) + cable management ($30) = <strong>$709 total
+    investment</strong>
   </p>
 
   <h2 id="diy-options">DIY Standing Desk Options</h2>
@@ -335,44 +366,46 @@ const relatedArticles = [
   <h3>Under $300: Autonomous SmartDesk Core</h3>
   <p>Best budget option with dual motors and reasonable warranty.</p>
   <div class="my-6">
-    <AffiliateButton href="/go/autonomous" text="Check Price" />
+    <AffiliateButton href="/go/autonomous" text="Check Price"/>
   </div>
 
   <h3>$400-600: FlexiSpot E7</h3>
   <p>Best overall value with premium-level specs at mid-range pricing.</p>
   <div class="my-6">
-    <AffiliateButton href="/go/flexispot" text="Check Price" />
+    <AffiliateButton href="/go/flexispot" text="Check Price"/>
   </div>
 
   <h3>$600-900: Uplift V2</h3>
   <p>Excellent build quality with extensive customization options.</p>
   <div class="my-6">
-    <AffiliateButton href="/go/uplift" text="Check Price" />
+    <AffiliateButton href="/go/uplift" text="Check Price"/>
   </div>
 
   <h3>$900+: Fully Jarvis Bamboo</h3>
   <p>Premium materials and construction for those who want the best.</p>
   <div class="my-6">
-    <AffiliateButton href="/go/fully" text="Check Price" />
+    <AffiliateButton href="/go/fully" text="Check Price"/>
   </div>
 
   <h2 id="faq">Frequently Asked Questions</h2>
 
-  <FAQSection faqs={faqItems} />
+  <FAQSection faqs={faqItems}/>
 
   <h2>Bottom Line</h2>
 
   <p>
-    For most remote workers, spend <strong>$500-700 on a quality mid-range desk</strong> like the FlexiSpot E7 or Uplift V2. You will get excellent build quality, long warranties, and a desk that lasts 10-15 years.
+    For most remote workers, spend <strong>$500-700 on a quality mid-range desk</strong> like the FlexiSpot E7 or Uplift
+    V2. You will get excellent build quality, long warranties, and a desk that lasts 10-15 years.
   </p>
 
   <p>
-    Budget options work for testing standing work or light use. Premium options add luxury but diminishing returns unless you need specific features.
+    Budget options work for testing standing work or light use. Premium options add luxury but diminishing returns
+    unless you need specific features.
   </p>
 
   <p>
     Remember to budget an extra $100-200 for accessories like an anti-fatigue mat and cable management.
   </p>
 
-  <RelatedArticles articles={relatedArticles} />
+  <RelatedArticles articles={relatedArticles}/>
 </ArticleLayout>

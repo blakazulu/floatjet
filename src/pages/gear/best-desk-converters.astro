@@ -1,6 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
 
 const title = 'Best Standing Desk Converters (2025)';
 const description = 'Transform your existing desk into a standing desk. We tested 8 desk converters to find the best options for every budget and workspace.';
@@ -14,55 +14,104 @@ const image = 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto
 const imageAlt = 'Standing desk converter on an office desk with dual monitors';
 
 const headings = [
-  { text: 'Why Choose a Desk Converter', slug: 'why-converter', depth: 2 },
-  { text: 'Converter vs Full Standing Desk', slug: 'converter-vs-desk', depth: 2 },
-  { text: 'Quick Comparison', slug: 'quick-comparison', depth: 2 },
-  { text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2 },
-  { text: 'FlexiSpot M2B', slug: 'flexispot-m2b', depth: 3 },
-  { text: 'VIVO Height Adjustable', slug: 'vivo-converter', depth: 3 },
-  { text: 'Varidesk Pro Plus 36', slug: 'varidesk-pro', depth: 3 },
-  { text: 'FEZIBO Converter', slug: 'fezibo-converter', depth: 3 },
-  { text: 'Mount-It! MI-7927', slug: 'mount-it-electric', depth: 3 },
-  { text: 'Ergotron WorkFit-T', slug: 'ergotron-workfit', depth: 3 },
-  { text: 'UPLIFT E7', slug: 'uplift-e7', depth: 3 },
-  { text: 'Manual vs Electric', slug: 'manual-vs-electric', depth: 2 },
-  { text: 'Frequently Asked Questions', slug: 'faq', depth: 2 },
+  {text: 'Why Choose a Desk Converter', slug: 'why-converter', depth: 2},
+  {text: 'Converter vs Full Standing Desk', slug: 'converter-vs-desk', depth: 2},
+  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
+  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
+  {text: 'FlexiSpot M2B', slug: 'flexispot-m2b', depth: 3},
+  {text: 'VIVO Height Adjustable', slug: 'vivo-converter', depth: 3},
+  {text: 'Varidesk Pro Plus 36', slug: 'varidesk-pro', depth: 3},
+  {text: 'FEZIBO Converter', slug: 'fezibo-converter', depth: 3},
+  {text: 'Mount-It! MI-7927', slug: 'mount-it-electric', depth: 3},
+  {text: 'Ergotron WorkFit-T', slug: 'ergotron-workfit', depth: 3},
+  {text: 'UPLIFT E7', slug: 'uplift-e7', depth: 3},
+  {text: 'Manual vs Electric', slug: 'manual-vs-electric', depth: 2},
+  {text: 'Frequently Asked Questions', slug: 'faq', depth: 2},
 ];
 
 const quickComparisonColumns = [
-  { key: 'converter', label: 'Converter', width: '150px' },
-  { key: 'bestFor', label: 'Best For' },
-  { key: 'type', label: 'Type' },
-  { key: 'price', label: 'Price' },
+  {key: 'converter', label: 'Converter', width: '150px'},
+  {key: 'bestFor', label: 'Best For'},
+  {key: 'type', label: 'Type'},
+  {key: 'price', label: 'Price'},
 ];
 
 const quickComparisonRows = [
-  { converter: '<strong>FlexiSpot M2B</strong>', bestFor: 'Best overall', type: 'Manual', price: '$300' },
-  { converter: '<strong>VIVO Height Adj.</strong>', bestFor: 'Best budget', type: 'Manual', price: '$140' },
-  { converter: '<strong>Varidesk Pro Plus</strong>', bestFor: 'Best premium', type: 'Manual', price: '$395' },
-  { converter: '<strong>FEZIBO</strong>', bestFor: 'Best value', type: 'Manual', price: '$180' },
-  { converter: '<strong>Mount-It! MI-7927</strong>', bestFor: 'Best electric', type: 'Electric', price: '$350' },
-  { converter: '<strong>Ergotron WorkFit-T</strong>', bestFor: 'Best ergonomics', type: 'Manual', price: '$399' },
-  { converter: '<strong>UPLIFT E7</strong>', bestFor: 'Best large surface', type: 'Manual', price: '$299' },
+  {converter: '<strong>FlexiSpot M2B</strong>', bestFor: 'Best overall', type: 'Manual', price: '$300'},
+  {converter: '<strong>VIVO Height Adj.</strong>', bestFor: 'Best budget', type: 'Manual', price: '$140'},
+  {converter: '<strong>Varidesk Pro Plus</strong>', bestFor: 'Best premium', type: 'Manual', price: '$395'},
+  {converter: '<strong>FEZIBO</strong>', bestFor: 'Best value', type: 'Manual', price: '$180'},
+  {converter: '<strong>Mount-It! MI-7927</strong>', bestFor: 'Best electric', type: 'Electric', price: '$350'},
+  {converter: '<strong>Ergotron WorkFit-T</strong>', bestFor: 'Best ergonomics', type: 'Manual', price: '$399'},
+  {converter: '<strong>UPLIFT E7</strong>', bestFor: 'Best large surface', type: 'Manual', price: '$299'},
 ];
 
 const fullComparisonColumns = [
-  { key: 'converter', label: 'Converter', width: '130px' },
-  { key: 'surface', label: 'Surface' },
-  { key: 'heightRange', label: 'Height' },
-  { key: 'weightCap', label: 'Capacity' },
-  { key: 'keyboard', label: 'Keyboard Tray' },
-  { key: 'price', label: 'Price' },
+  {key: 'converter', label: 'Converter', width: '130px'},
+  {key: 'surface', label: 'Surface'},
+  {key: 'heightRange', label: 'Height'},
+  {key: 'weightCap', label: 'Capacity'},
+  {key: 'keyboard', label: 'Keyboard Tray'},
+  {key: 'price', label: 'Price'},
 ];
 
 const fullComparisonRows = [
-  { converter: '<strong>FlexiSpot M2B</strong>', surface: '35"', heightRange: '4.7"-19.7"', weightCap: '35 lbs', keyboard: 'Yes', price: '$300' },
-  { converter: '<strong>VIVO</strong>', surface: '32"', heightRange: '6"-16"', weightCap: '33 lbs', keyboard: 'Yes', price: '$140' },
-  { converter: '<strong>Varidesk Pro</strong>', surface: '36"', heightRange: '4.5"-17.5"', weightCap: '35 lbs', keyboard: 'Yes', price: '$395' },
-  { converter: '<strong>FEZIBO</strong>', surface: '36"', heightRange: '5.9"-19.7"', weightCap: '33 lbs', keyboard: 'Yes', price: '$180' },
-  { converter: '<strong>Mount-It!</strong>', surface: '35"', heightRange: '5"-20"', weightCap: '55 lbs', keyboard: 'Yes', price: '$350' },
-  { converter: '<strong>Ergotron</strong>', surface: '35"', heightRange: '5"-18"', weightCap: '40 lbs', keyboard: 'Yes', price: '$399' },
-  { converter: '<strong>UPLIFT E7</strong>', surface: '37"', heightRange: '6"-21"', weightCap: '35 lbs', keyboard: 'Yes', price: '$299' },
+  {
+    converter: '<strong>FlexiSpot M2B</strong>',
+    surface: '35"',
+    heightRange: '4.7"-19.7"',
+    weightCap: '35 lbs',
+    keyboard: 'Yes',
+    price: '$300'
+  },
+  {
+    converter: '<strong>VIVO</strong>',
+    surface: '32"',
+    heightRange: '6"-16"',
+    weightCap: '33 lbs',
+    keyboard: 'Yes',
+    price: '$140'
+  },
+  {
+    converter: '<strong>Varidesk Pro</strong>',
+    surface: '36"',
+    heightRange: '4.5"-17.5"',
+    weightCap: '35 lbs',
+    keyboard: 'Yes',
+    price: '$395'
+  },
+  {
+    converter: '<strong>FEZIBO</strong>',
+    surface: '36"',
+    heightRange: '5.9"-19.7"',
+    weightCap: '33 lbs',
+    keyboard: 'Yes',
+    price: '$180'
+  },
+  {
+    converter: '<strong>Mount-It!</strong>',
+    surface: '35"',
+    heightRange: '5"-20"',
+    weightCap: '55 lbs',
+    keyboard: 'Yes',
+    price: '$350'
+  },
+  {
+    converter: '<strong>Ergotron</strong>',
+    surface: '35"',
+    heightRange: '5"-18"',
+    weightCap: '40 lbs',
+    keyboard: 'Yes',
+    price: '$399'
+  },
+  {
+    converter: '<strong>UPLIFT E7</strong>',
+    surface: '37"',
+    heightRange: '6"-21"',
+    weightCap: '35 lbs',
+    keyboard: 'Yes',
+    price: '$299'
+  },
 ];
 
 const faqItems = [
@@ -114,20 +163,21 @@ const relatedArticles = [
 ---
 
 <ArticleLayout
-  title={title}
-  description={description}
-  pubDate={pubDate}
-  updatedDate={updatedDate}
-  author={author}
-  category={category}
-  categorySlug={categorySlug}
-  readingTime={readingTime}
-  image={image}
-  imageAlt={imageAlt}
-  headings={headings}
+    title={title}
+    description={description}
+    pubDate={pubDate}
+    updatedDate={updatedDate}
+    author={author}
+    category={category}
+    categorySlug={categorySlug}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    headings={headings}
 >
   <p class="lead">
-    Standing desk converters let you enjoy standing benefits without replacing your existing desk. After testing 8 popular converters, we found the best options for every budget and workspace size.
+    Standing desk converters let you enjoy standing benefits without replacing your existing desk. After testing 8
+    popular converters, we found the best options for every budget and workspace size.
   </p>
 
   <h2 id="why-converter">Why Choose a Desk Converter</h2>
@@ -145,37 +195,44 @@ const relatedArticles = [
   </ul>
 
   <p>
-    The main trade-off is workspace size. Converters provide a smaller surface than full standing desks, and you lose the desk space underneath the converter when it is raised.
+    The main trade-off is workspace size. Converters provide a smaller surface than full standing desks, and you lose
+    the desk space underneath the converter when it is raised.
   </p>
 
   <h2 id="converter-vs-desk">Converter vs Full Standing Desk</h2>
 
   <p>
-    <strong>Choose a converter if:</strong> You have limited budget, cannot replace your desk, want portability, or are testing standing work.
+    <strong>Choose a converter if:</strong> You have limited budget, cannot replace your desk, want portability, or are
+    testing standing work.
   </p>
 
   <p>
-    <strong>Choose a full standing desk if:</strong> You have space for a dedicated desk, want maximum surface area, plan to stand frequently, or need precise height memory presets.
+    <strong>Choose a full standing desk if:</strong> You have space for a dedicated desk, want maximum surface area,
+    plan to stand frequently, or need precise height memory presets.
   </p>
 
   <p>
-    Most converters cost $150-400 compared to $400-800 for quality standing desks. However, converters have smaller surfaces (32-37 inches vs 48-72 inches) and limited height range.
+    Most converters cost $150-400 compared to $400-800 for quality standing desks. However, converters have smaller
+    surfaces (32-37 inches vs 48-72 inches) and limited height range.
   </p>
 
   <h2 id="quick-comparison">Quick Comparison</h2>
 
-  <ComparisonTable columns={quickComparisonColumns} rows={quickComparisonRows} />
+  <ComparisonTable columns={quickComparisonColumns} rows={quickComparisonRows}/>
 
   <h2 id="detailed-reviews">Detailed Reviews</h2>
 
   <h3 id="flexispot-m2b">FlexiSpot M2B - Best Overall</h3>
 
   <p>
-    The <strong>FlexiSpot M2B</strong> offers the best balance of features, build quality, and price. The gas spring mechanism provides smooth, effortless height adjustment with one hand. The 35-inch surface fits dual monitors comfortably.
+    The <strong>FlexiSpot M2B</strong> offers the best balance of features, build quality, and price. The gas spring
+    mechanism provides smooth, effortless height adjustment with one hand. The 35-inch surface fits dual monitors
+    comfortably.
   </p>
 
   <p>
-    <strong>Pros:</strong> Smooth gas spring lift, generous surface area, stable at all heights, included keyboard tray, 5-year warranty.
+    <strong>Pros:</strong> Smooth gas spring lift, generous surface area, stable at all heights, included keyboard tray,
+    5-year warranty.
   </p>
 
   <p>
@@ -187,13 +244,15 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/flexispot-m2b" text="Check FlexiSpot M2B Price" />
+    <AffiliateButton href="/go/flexispot-m2b" text="Check FlexiSpot M2B Price"/>
   </div>
 
   <h3 id="vivo-converter">VIVO Height Adjustable - Best Budget</h3>
 
   <p>
-    The <strong>VIVO Height Adjustable Converter</strong> proves you do not need to spend $300+ for a functional converter. At $140, it includes a keyboard tray, gas spring lift, and 32-inch surface. Build quality is good for the price.
+    The <strong>VIVO Height Adjustable Converter</strong> proves you do not need to spend $300+ for a functional
+    converter. At $140, it includes a keyboard tray, gas spring lift, and 32-inch surface. Build quality is good for the
+    price.
   </p>
 
   <p>
@@ -209,17 +268,19 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/vivo-converter" text="Check VIVO Price" />
+    <AffiliateButton href="/go/vivo-converter" text="Check VIVO Price"/>
   </div>
 
   <h3 id="varidesk-pro">Varidesk Pro Plus 36 - Best Premium</h3>
 
   <p>
-    The <strong>Varidesk Pro Plus 36</strong> is the original standing desk converter and still among the best. The spring-loaded mechanism is incredibly smooth, and the build quality is exceptional. It arrives fully assembled.
+    The <strong>Varidesk Pro Plus 36</strong> is the original standing desk converter and still among the best. The
+    spring-loaded mechanism is incredibly smooth, and the build quality is exceptional. It arrives fully assembled.
   </p>
 
   <p>
-    <strong>Pros:</strong> Premium build quality, arrives assembled, rock-solid stability, excellent customer service, 5-year warranty.
+    <strong>Pros:</strong> Premium build quality, arrives assembled, rock-solid stability, excellent customer service,
+    5-year warranty.
   </p>
 
   <p>
@@ -231,13 +292,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/varidesk" text="Check Varidesk Price" />
+    <AffiliateButton href="/go/varidesk" text="Check Varidesk Price"/>
   </div>
 
   <h3 id="fezibo-converter">FEZIBO Standing Desk Converter - Best Value</h3>
 
   <p>
-    The <strong>FEZIBO Converter</strong> offers mid-range features at a budget price. The 36-inch surface is larger than most competitors at this price, and the gas spring mechanism works smoothly. Great balance of size and cost.
+    The <strong>FEZIBO Converter</strong> offers mid-range features at a budget price. The 36-inch surface is larger
+    than most competitors at this price, and the gas spring mechanism works smoothly. Great balance of size and cost.
   </p>
 
   <p>
@@ -253,13 +315,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/fezibo-converter" text="Check FEZIBO Price" />
+    <AffiliateButton href="/go/fezibo-converter" text="Check FEZIBO Price"/>
   </div>
 
   <h3 id="mount-it-electric">Mount-It! MI-7927 - Best Electric</h3>
 
   <p>
-    The <strong>Mount-It! MI-7927</strong> is our top electric converter pick. Push a button to raise or lower your workspace smoothly. The 55 lb weight capacity handles heavy setups, and the motor is quiet enough for video calls.
+    The <strong>Mount-It! MI-7927</strong> is our top electric converter pick. Push a button to raise or lower your
+    workspace smoothly. The 55 lb weight capacity handles heavy setups, and the motor is quiet enough for video calls.
   </p>
 
   <p>
@@ -275,17 +338,20 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/mount-it-electric" text="Check Mount-It! Price" />
+    <AffiliateButton href="/go/mount-it-electric" text="Check Mount-It! Price"/>
   </div>
 
   <h3 id="ergotron-workfit">Ergotron WorkFit-T - Best Ergonomics</h3>
 
   <p>
-    <strong>Ergotron</strong> specializes in ergonomic mounting solutions, and the <strong>WorkFit-T</strong> shows their expertise. The keyboard tray positioning is more ergonomically correct than competitors, and the lift mechanism is whisper-smooth.
+    <strong>Ergotron</strong> specializes in ergonomic mounting solutions, and the <strong>WorkFit-T</strong> shows
+    their expertise. The keyboard tray positioning is more ergonomically correct than competitors, and the lift
+    mechanism is whisper-smooth.
   </p>
 
   <p>
-    <strong>Pros:</strong> Superior ergonomic design, smoothest lift mechanism, excellent build quality, 5-year warranty.
+    <strong>Pros:</strong> Superior ergonomic design, smoothest lift mechanism, excellent build quality, 5-year
+    warranty.
   </p>
 
   <p>
@@ -297,13 +363,15 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/ergotron-workfit" text="Check Ergotron Price" />
+    <AffiliateButton href="/go/ergotron-workfit" text="Check Ergotron Price"/>
   </div>
 
   <h3 id="uplift-e7">UPLIFT E7 Converter - Best Large Surface</h3>
 
   <p>
-    The <strong>UPLIFT E7</strong> offers the largest surface (37 inches) among quality converters. If you run dual large monitors or need extra workspace, this is your best option. The gas spring mechanism handles the larger size well.
+    The <strong>UPLIFT E7</strong> offers the largest surface (37 inches) among quality converters. If you run dual
+    large monitors or need extra workspace, this is your best option. The gas spring mechanism handles the larger size
+    well.
   </p>
 
   <p>
@@ -319,7 +387,7 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/uplift-converter" text="Check UPLIFT E7 Price" />
+    <AffiliateButton href="/go/uplift-converter" text="Check UPLIFT E7 Price"/>
   </div>
 
   <h2 id="manual-vs-electric">Manual vs Electric Converters</h2>
@@ -338,25 +406,28 @@ const relatedArticles = [
     <li><strong>Best for:</strong> Frequent transitions, mobility limitations, heavy setups</li>
   </ul>
 
-  <ComparisonTable columns={fullComparisonColumns} rows={fullComparisonRows} />
+  <ComparisonTable columns={fullComparisonColumns} rows={fullComparisonRows}/>
 
   <h2 id="faq">Frequently Asked Questions</h2>
 
-  <FAQSection faqs={faqItems} />
+  <FAQSection faqs={faqItems}/>
 
   <h2>Our Recommendation</h2>
 
   <p>
-    For most remote workers, the <strong>FlexiSpot M2B</strong> offers the best combination of features, stability, and value at around $300. It is smooth to operate, holds dual monitors securely, and comes with a 5-year warranty.
+    For most remote workers, the <strong>FlexiSpot M2B</strong> offers the best combination of features, stability, and
+    value at around $300. It is smooth to operate, holds dual monitors securely, and comes with a 5-year warranty.
   </p>
 
   <p>
-    On a tight budget, the <strong>VIVO Height Adjustable</strong> at $140 provides functional standing capability without breaking the bank.
+    On a tight budget, the <strong>VIVO Height Adjustable</strong> at $140 provides functional standing capability
+    without breaking the bank.
   </p>
 
   <p>
-    If you transition frequently or have mobility concerns, invest in the <strong>Mount-It! MI-7927</strong> electric converter for effortless adjustment at the push of a button.
+    If you transition frequently or have mobility concerns, invest in the <strong>Mount-It! MI-7927</strong> electric
+    converter for effortless adjustment at the push of a button.
   </p>
 
-  <RelatedArticles articles={relatedArticles} />
+  <RelatedArticles articles={relatedArticles}/>
 </ArticleLayout>

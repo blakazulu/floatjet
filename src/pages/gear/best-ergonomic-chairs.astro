@@ -1,6 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
 
 const title = 'Best Ergonomic Chairs for Home Office (2025)';
 const description = 'We tested 10+ ergonomic office chairs to find the best for home offices. Compare Herman Miller, Steelcase, Secretlab & more with honest reviews and buying advice.';
@@ -14,65 +14,135 @@ const image = 'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto
 const imageAlt = 'Modern ergonomic office chair in a home office setup';
 
 const headings = [
-  { text: 'Why Your Chair Matters', slug: 'why-chair-matters', depth: 2 },
-  { text: 'What Makes a Chair Ergonomic', slug: 'what-makes-ergonomic', depth: 2 },
-  { text: 'Quick Comparison', slug: 'quick-comparison', depth: 2 },
-  { text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2 },
-  { text: 'Herman Miller Aeron', slug: 'herman-miller-aeron', depth: 3 },
-  { text: 'Steelcase Leap', slug: 'steelcase-leap', depth: 3 },
-  { text: 'Secretlab Titan', slug: 'secretlab-titan', depth: 3 },
-  { text: 'Branch Ergonomic Chair', slug: 'branch-ergonomic', depth: 3 },
-  { text: 'HON Ignition 2.0', slug: 'hon-ignition', depth: 3 },
-  { text: 'Autonomous ErgoChair Pro', slug: 'autonomous-ergochair', depth: 3 },
-  { text: 'Humanscale Freedom', slug: 'humanscale-freedom', depth: 3 },
-  { text: 'IKEA Markus', slug: 'ikea-markus', depth: 3 },
-  { text: 'FlexiSpot C7', slug: 'flexispot-c7', depth: 3 },
-  { text: 'Sihoo M18', slug: 'sihoo-m18', depth: 3 },
-  { text: 'Mesh vs Foam vs Hybrid', slug: 'mesh-vs-foam', depth: 2 },
-  { text: 'How to Adjust Your Chair', slug: 'how-to-adjust', depth: 2 },
-  { text: 'Frequently Asked Questions', slug: 'faq', depth: 2 },
+  {text: 'Why Your Chair Matters', slug: 'why-chair-matters', depth: 2},
+  {text: 'What Makes a Chair Ergonomic', slug: 'what-makes-ergonomic', depth: 2},
+  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
+  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
+  {text: 'Herman Miller Aeron', slug: 'herman-miller-aeron', depth: 3},
+  {text: 'Steelcase Leap', slug: 'steelcase-leap', depth: 3},
+  {text: 'Secretlab Titan', slug: 'secretlab-titan', depth: 3},
+  {text: 'Branch Ergonomic Chair', slug: 'branch-ergonomic', depth: 3},
+  {text: 'HON Ignition 2.0', slug: 'hon-ignition', depth: 3},
+  {text: 'Autonomous ErgoChair Pro', slug: 'autonomous-ergochair', depth: 3},
+  {text: 'Humanscale Freedom', slug: 'humanscale-freedom', depth: 3},
+  {text: 'IKEA Markus', slug: 'ikea-markus', depth: 3},
+  {text: 'FlexiSpot C7', slug: 'flexispot-c7', depth: 3},
+  {text: 'Sihoo M18', slug: 'sihoo-m18', depth: 3},
+  {text: 'Mesh vs Foam vs Hybrid', slug: 'mesh-vs-foam', depth: 2},
+  {text: 'How to Adjust Your Chair', slug: 'how-to-adjust', depth: 2},
+  {text: 'Frequently Asked Questions', slug: 'faq', depth: 2},
 ];
 
 const quickComparisonColumns = [
-  { key: 'chair', label: 'Chair', width: '150px' },
-  { key: 'bestFor', label: 'Best For' },
-  { key: 'price', label: 'Price' },
-  { key: 'warranty', label: 'Warranty' },
+  {key: 'chair', label: 'Chair', width: '150px'},
+  {key: 'bestFor', label: 'Best For'},
+  {key: 'price', label: 'Price'},
+  {key: 'warranty', label: 'Warranty'},
 ];
 
 const quickComparisonRows = [
-  { chair: '<strong>Herman Miller Aeron</strong>', bestFor: 'Premium quality', price: '$1,395+', warranty: '12 years' },
-  { chair: '<strong>Steelcase Leap</strong>', bestFor: 'Long hours', price: '$1,199+', warranty: '12 years' },
-  { chair: '<strong>Secretlab Titan</strong>', bestFor: 'Gaming/office hybrid', price: '$519+', warranty: '5 years' },
-  { chair: '<strong>Branch Ergonomic</strong>', bestFor: 'Best value', price: '$449', warranty: '7 years' },
-  { chair: '<strong>HON Ignition 2.0</strong>', bestFor: 'Budget pick', price: '$350+', warranty: '5 years' },
-  { chair: '<strong>Autonomous ErgoChair</strong>', bestFor: 'Adjustability', price: '$349+', warranty: '2 years' },
-  { chair: '<strong>Humanscale Freedom</strong>', bestFor: 'Auto-adjustment', price: '$1,299+', warranty: '15 years' },
-  { chair: '<strong>IKEA Markus</strong>', bestFor: 'Under $200', price: '$199', warranty: '10 years' },
-  { chair: '<strong>FlexiSpot C7</strong>', bestFor: 'Mesh budget', price: '$349', warranty: '5 years' },
-  { chair: '<strong>Sihoo M18</strong>', bestFor: 'Ultra-budget', price: '$199', warranty: '3 years' },
+  {chair: '<strong>Herman Miller Aeron</strong>', bestFor: 'Premium quality', price: '$1,395+', warranty: '12 years'},
+  {chair: '<strong>Steelcase Leap</strong>', bestFor: 'Long hours', price: '$1,199+', warranty: '12 years'},
+  {chair: '<strong>Secretlab Titan</strong>', bestFor: 'Gaming/office hybrid', price: '$519+', warranty: '5 years'},
+  {chair: '<strong>Branch Ergonomic</strong>', bestFor: 'Best value', price: '$449', warranty: '7 years'},
+  {chair: '<strong>HON Ignition 2.0</strong>', bestFor: 'Budget pick', price: '$350+', warranty: '5 years'},
+  {chair: '<strong>Autonomous ErgoChair</strong>', bestFor: 'Adjustability', price: '$349+', warranty: '2 years'},
+  {chair: '<strong>Humanscale Freedom</strong>', bestFor: 'Auto-adjustment', price: '$1,299+', warranty: '15 years'},
+  {chair: '<strong>IKEA Markus</strong>', bestFor: 'Under $200', price: '$199', warranty: '10 years'},
+  {chair: '<strong>FlexiSpot C7</strong>', bestFor: 'Mesh budget', price: '$349', warranty: '5 years'},
+  {chair: '<strong>Sihoo M18</strong>', bestFor: 'Ultra-budget', price: '$199', warranty: '3 years'},
 ];
 
 const fullComparisonColumns = [
-  { key: 'chair', label: 'Chair', width: '130px' },
-  { key: 'material', label: 'Material' },
-  { key: 'lumbar', label: 'Lumbar' },
-  { key: 'armrests', label: 'Armrests' },
-  { key: 'weightCap', label: 'Weight Cap' },
-  { key: 'price', label: 'Price' },
+  {key: 'chair', label: 'Chair', width: '130px'},
+  {key: 'material', label: 'Material'},
+  {key: 'lumbar', label: 'Lumbar'},
+  {key: 'armrests', label: 'Armrests'},
+  {key: 'weightCap', label: 'Weight Cap'},
+  {key: 'price', label: 'Price'},
 ];
 
 const fullComparisonRows = [
-  { chair: '<strong>Aeron</strong>', material: 'Mesh', lumbar: 'Adjustable', armrests: '4D', weightCap: '350 lbs', price: '$1,395+' },
-  { chair: '<strong>Leap</strong>', material: 'Foam', lumbar: 'LiveBack', armrests: '4D', weightCap: '400 lbs', price: '$1,199+' },
-  { chair: '<strong>Titan</strong>', material: 'Leather/Fabric', lumbar: '4-way', armrests: '4D', weightCap: '395 lbs', price: '$519+' },
-  { chair: '<strong>Branch</strong>', material: 'Mesh', lumbar: 'Adjustable', armrests: '3D', weightCap: '300 lbs', price: '$449' },
-  { chair: '<strong>HON</strong>', material: 'Mesh/Fabric', lumbar: 'Fixed', armrests: '2D', weightCap: '300 lbs', price: '$350+' },
-  { chair: '<strong>ErgoChair</strong>', material: 'Mesh', lumbar: 'Adjustable', armrests: '4D', weightCap: '300 lbs', price: '$349+' },
-  { chair: '<strong>Freedom</strong>', material: 'Leather/Fabric', lumbar: 'Auto', armrests: 'Auto', weightCap: '300 lbs', price: '$1,299+' },
-  { chair: '<strong>Markus</strong>', material: 'Fabric', lumbar: 'Built-in', armrests: 'Fixed', weightCap: '242 lbs', price: '$199' },
-  { chair: '<strong>C7</strong>', material: 'Mesh', lumbar: 'Adjustable', armrests: '3D', weightCap: '300 lbs', price: '$349' },
-  { chair: '<strong>M18</strong>', material: 'Mesh', lumbar: 'Adjustable', armrests: '2D', weightCap: '330 lbs', price: '$199' },
+  {
+    chair: '<strong>Aeron</strong>',
+    material: 'Mesh',
+    lumbar: 'Adjustable',
+    armrests: '4D',
+    weightCap: '350 lbs',
+    price: '$1,395+'
+  },
+  {
+    chair: '<strong>Leap</strong>',
+    material: 'Foam',
+    lumbar: 'LiveBack',
+    armrests: '4D',
+    weightCap: '400 lbs',
+    price: '$1,199+'
+  },
+  {
+    chair: '<strong>Titan</strong>',
+    material: 'Leather/Fabric',
+    lumbar: '4-way',
+    armrests: '4D',
+    weightCap: '395 lbs',
+    price: '$519+'
+  },
+  {
+    chair: '<strong>Branch</strong>',
+    material: 'Mesh',
+    lumbar: 'Adjustable',
+    armrests: '3D',
+    weightCap: '300 lbs',
+    price: '$449'
+  },
+  {
+    chair: '<strong>HON</strong>',
+    material: 'Mesh/Fabric',
+    lumbar: 'Fixed',
+    armrests: '2D',
+    weightCap: '300 lbs',
+    price: '$350+'
+  },
+  {
+    chair: '<strong>ErgoChair</strong>',
+    material: 'Mesh',
+    lumbar: 'Adjustable',
+    armrests: '4D',
+    weightCap: '300 lbs',
+    price: '$349+'
+  },
+  {
+    chair: '<strong>Freedom</strong>',
+    material: 'Leather/Fabric',
+    lumbar: 'Auto',
+    armrests: 'Auto',
+    weightCap: '300 lbs',
+    price: '$1,299+'
+  },
+  {
+    chair: '<strong>Markus</strong>',
+    material: 'Fabric',
+    lumbar: 'Built-in',
+    armrests: 'Fixed',
+    weightCap: '242 lbs',
+    price: '$199'
+  },
+  {
+    chair: '<strong>C7</strong>',
+    material: 'Mesh',
+    lumbar: 'Adjustable',
+    armrests: '3D',
+    weightCap: '300 lbs',
+    price: '$349'
+  },
+  {
+    chair: '<strong>M18</strong>',
+    material: 'Mesh',
+    lumbar: 'Adjustable',
+    armrests: '2D',
+    weightCap: '330 lbs',
+    price: '$199'
+  },
 ];
 
 const faqItems = [
@@ -124,30 +194,34 @@ const relatedArticles = [
 ---
 
 <ArticleLayout
-  title={title}
-  description={description}
-  pubDate={pubDate}
-  updatedDate={updatedDate}
-  author={author}
-  category={category}
-  categorySlug={categorySlug}
-  readingTime={readingTime}
-  image={image}
-  imageAlt={imageAlt}
-  headings={headings}
+    title={title}
+    description={description}
+    pubDate={pubDate}
+    updatedDate={updatedDate}
+    author={author}
+    category={category}
+    categorySlug={categorySlug}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    headings={headings}
 >
   <p class="lead">
-    Your chair is the most important piece of furniture in your home office. After testing 10+ ergonomic chairs across every price range, we found the best options for remote workers who spend 8+ hours sitting daily.
+    Your chair is the most important piece of furniture in your home office. After testing 10+ ergonomic chairs across
+    every price range, we found the best options for remote workers who spend 8+ hours sitting daily.
   </p>
 
   <h2 id="why-chair-matters">Why Your Chair Matters More Than You Think</h2>
 
   <p>
-    Remote workers spend an average of 10 hours per day sitting. A poor chair leads to back pain, neck strain, and decreased productivity. Studies show that ergonomic seating can reduce discomfort by up to 50% and increase focus by 17%.
+    Remote workers spend an average of 10 hours per day sitting. A poor chair leads to back pain, neck strain, and
+    decreased productivity. Studies show that ergonomic seating can reduce discomfort by up to 50% and increase focus by
+    17%.
   </p>
 
   <p>
-    The right chair is an investment in your health and career. Unlike a cheap desk chair that might last 2-3 years, a quality ergonomic chair lasts 10-15 years while maintaining support and comfort throughout its lifespan.
+    The right chair is an investment in your health and career. Unlike a cheap desk chair that might last 2-3 years, a
+    quality ergonomic chair lasts 10-15 years while maintaining support and comfort throughout its lifespan.
   </p>
 
   <h2 id="what-makes-ergonomic">What Makes a Chair Truly Ergonomic</h2>
@@ -157,9 +231,13 @@ const relatedArticles = [
   </p>
 
   <ul>
-    <li><strong>Adjustable lumbar support:</strong> Your lower back needs targeted support that matches your spine's natural curve</li>
-    <li><strong>Seat height adjustment:</strong> Feet should rest flat on the floor with thighs parallel to the ground</li>
-    <li><strong>Seat depth adjustment:</strong> 2-4 fingers of space between the seat edge and the back of your knees</li>
+    <li><strong>Adjustable lumbar support:</strong> Your lower back needs targeted support that matches your spine's
+      natural curve
+    </li>
+    <li><strong>Seat height adjustment:</strong> Feet should rest flat on the floor with thighs parallel to the ground
+    </li>
+    <li><strong>Seat depth adjustment:</strong> 2-4 fingers of space between the seat edge and the back of your knees
+    </li>
     <li><strong>Armrest adjustability:</strong> At minimum, height-adjustable; ideally 3D or 4D movement</li>
     <li><strong>Recline with tension control:</strong> Allows movement while maintaining support</li>
     <li><strong>Breathable material:</strong> Prevents overheating during long work sessions</li>
@@ -167,18 +245,21 @@ const relatedArticles = [
 
   <h2 id="quick-comparison">Quick Comparison</h2>
 
-  <ComparisonTable columns={quickComparisonColumns} rows={quickComparisonRows} />
+  <ComparisonTable columns={quickComparisonColumns} rows={quickComparisonRows}/>
 
   <h2 id="detailed-reviews">Detailed Reviews</h2>
 
   <h3 id="herman-miller-aeron">Herman Miller Aeron - Best Premium Chair</h3>
 
   <p>
-    The <strong>Herman Miller Aeron</strong> is the gold standard of ergonomic office chairs. Its iconic mesh design provides exceptional breathability and support that contours to your body. The PostureFit SL lumbar support is the best we have tested.
+    The <strong>Herman Miller Aeron</strong> is the gold standard of ergonomic office chairs. Its iconic mesh design
+    provides exceptional breathability and support that contours to your body. The PostureFit SL lumbar support is the
+    best we have tested.
   </p>
 
   <p>
-    <strong>Pros:</strong> Industry-leading 12-year warranty, maintains comfort for 15+ years, excellent resale value, three sizes for different body types, fully recyclable materials.
+    <strong>Pros:</strong> Industry-leading 12-year warranty, maintains comfort for 15+ years, excellent resale value,
+    three sizes for different body types, fully recyclable materials.
   </p>
 
   <p>
@@ -190,17 +271,20 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/herman-miller-aeron" text="Check Aeron Price" />
+    <AffiliateButton href="/go/herman-miller-aeron" text="Check Aeron Price"/>
   </div>
 
   <h3 id="steelcase-leap">Steelcase Leap - Best for Long Hours</h3>
 
   <p>
-    The <strong>Steelcase Leap</strong> features LiveBack technology that flexes with your spine as you move. This makes it exceptionally comfortable for marathon work sessions. The foam seat with flexible edge provides cushioning without the "sinking" feeling.
+    The <strong>Steelcase Leap</strong> features LiveBack technology that flexes with your spine as you move. This makes
+    it exceptionally comfortable for marathon work sessions. The foam seat with flexible edge provides cushioning
+    without the "sinking" feeling.
   </p>
 
   <p>
-    <strong>Pros:</strong> LiveBack spine support, excellent for 10+ hour days, 400 lb weight capacity, natural recline movement, 12-year warranty.
+    <strong>Pros:</strong> LiveBack spine support, excellent for 10+ hour days, 400 lb weight capacity, natural recline
+    movement, 12-year warranty.
   </p>
 
   <p>
@@ -212,17 +296,20 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/steelcase-leap" text="Check Leap Price" />
+    <AffiliateButton href="/go/steelcase-leap" text="Check Leap Price"/>
   </div>
 
   <h3 id="secretlab-titan">Secretlab Titan - Best Gaming/Office Hybrid</h3>
 
   <p>
-    The <strong>Secretlab Titan</strong> bridges gaming and office aesthetics with genuine ergonomic features. The 4-way lumbar support, magnetic memory foam headrest, and cold-cure foam seat make it suitable for all-day work, not just gaming.
+    The <strong>Secretlab Titan</strong> bridges gaming and office aesthetics with genuine ergonomic features. The 4-way
+    lumbar support, magnetic memory foam headrest, and cold-cure foam seat make it suitable for all-day work, not just
+    gaming.
   </p>
 
   <p>
-    <strong>Pros:</strong> Excellent lumbar support, premium materials at mid-range price, available in professional colors, 5-year warranty, wide seat for larger users.
+    <strong>Pros:</strong> Excellent lumbar support, premium materials at mid-range price, available in professional
+    colors, 5-year warranty, wide seat for larger users.
   </p>
 
   <p>
@@ -234,21 +321,25 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/secretlab-titan" text="Check Titan Price" />
+    <AffiliateButton href="/go/secretlab-titan" text="Check Titan Price"/>
   </div>
 
   <h3 id="branch-ergonomic">Branch Ergonomic Chair - Best Value</h3>
 
   <p>
-    The <strong>Branch Ergonomic Chair</strong> offers 90% of premium chair features at 30% of the price. The mesh back provides excellent breathability, and the adjustable lumbar support rivals chairs twice the price. Direct-to-consumer pricing keeps costs low.
+    The <strong>Branch Ergonomic Chair</strong> offers 90% of premium chair features at 30% of the price. The mesh back
+    provides excellent breathability, and the adjustable lumbar support rivals chairs twice the price.
+    Direct-to-consumer pricing keeps costs low.
   </p>
 
   <p>
-    <strong>Pros:</strong> Exceptional value, 7-year warranty, clean modern design, easy assembly, responsive customer service.
+    <strong>Pros:</strong> Exceptional value, 7-year warranty, clean modern design, easy assembly, responsive customer
+    service.
   </p>
 
   <p>
-    <strong>Cons:</strong> Limited color options, armrests slightly less refined than premium chairs, 300 lb weight limit.
+    <strong>Cons:</strong> Limited color options, armrests slightly less refined than premium chairs, 300 lb weight
+    limit.
   </p>
 
   <p>
@@ -256,17 +347,20 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/branch-chair" text="Check Branch Price" />
+    <AffiliateButton href="/go/branch-chair" text="Check Branch Price"/>
   </div>
 
   <h3 id="hon-ignition">HON Ignition 2.0 - Best Budget Pick</h3>
 
   <p>
-    The <strong>HON Ignition 2.0</strong> is the best chair under $400 for daily use. It lacks some premium adjustments but nails the fundamentals: solid lumbar support, durable construction, and a 5-year warranty from a trusted office furniture manufacturer.
+    The <strong>HON Ignition 2.0</strong> is the best chair under $400 for daily use. It lacks some premium adjustments
+    but nails the fundamentals: solid lumbar support, durable construction, and a 5-year warranty from a trusted office
+    furniture manufacturer.
   </p>
 
   <p>
-    <strong>Pros:</strong> Reliable brand, great for occasional use, multiple configuration options, commercial-grade durability.
+    <strong>Pros:</strong> Reliable brand, great for occasional use, multiple configuration options, commercial-grade
+    durability.
   </p>
 
   <p>
@@ -278,13 +372,15 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/hon-ignition" text="Check HON Price" />
+    <AffiliateButton href="/go/hon-ignition" text="Check HON Price"/>
   </div>
 
   <h3 id="autonomous-ergochair">Autonomous ErgoChair Pro - Best Adjustability</h3>
 
   <p>
-    The <strong>Autonomous ErgoChair Pro</strong> offers the most adjustments in its price range. You can fine-tune lumbar height, tension, armrest position, headrest angle, and recline resistance. Great for finding your perfect configuration.
+    The <strong>Autonomous ErgoChair Pro</strong> offers the most adjustments in its price range. You can fine-tune
+    lumbar height, tension, armrest position, headrest angle, and recline resistance. Great for finding your perfect
+    configuration.
   </p>
 
   <p>
@@ -292,7 +388,8 @@ const relatedArticles = [
   </p>
 
   <p>
-    <strong>Cons:</strong> Build quality below premium chairs, 2-year warranty is short, some users report quality control issues.
+    <strong>Cons:</strong> Build quality below premium chairs, 2-year warranty is short, some users report quality
+    control issues.
   </p>
 
   <p>
@@ -300,17 +397,19 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/autonomous-ergochair" text="Check ErgoChair Price" />
+    <AffiliateButton href="/go/autonomous-ergochair" text="Check ErgoChair Price"/>
   </div>
 
   <h3 id="humanscale-freedom">Humanscale Freedom - Best Automatic Adjustment</h3>
 
   <p>
-    The <strong>Humanscale Freedom</strong> automatically adjusts to your body weight and movements. No knobs or levers to fiddle with - just sit down and the chair adapts. The recline mechanism is smooth and intuitive.
+    The <strong>Humanscale Freedom</strong> automatically adjusts to your body weight and movements. No knobs or levers
+    to fiddle with - just sit down and the chair adapts. The recline mechanism is smooth and intuitive.
   </p>
 
   <p>
-    <strong>Pros:</strong> Self-adjusting mechanism, minimal design, 15-year warranty, excellent for those who dislike manual adjustments.
+    <strong>Pros:</strong> Self-adjusting mechanism, minimal design, 15-year warranty, excellent for those who dislike
+    manual adjustments.
   </p>
 
   <p>
@@ -322,13 +421,15 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/humanscale-freedom" text="Check Freedom Price" />
+    <AffiliateButton href="/go/humanscale-freedom" text="Check Freedom Price"/>
   </div>
 
   <h3 id="ikea-markus">IKEA Markus - Best Under $200</h3>
 
   <p>
-    The <strong>IKEA Markus</strong> is the best budget chair that actually provides decent support. The high back with built-in lumbar curve works for most body types. It is not as adjustable as others, but at this price, it is hard to beat.
+    The <strong>IKEA Markus</strong> is the best budget chair that actually provides decent support. The high back with
+    built-in lumbar curve works for most body types. It is not as adjustable as others, but at this price, it is hard to
+    beat.
   </p>
 
   <p>
@@ -344,13 +445,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/ikea-markus" text="Check IKEA Markus" />
+    <AffiliateButton href="/go/ikea-markus" text="Check IKEA Markus"/>
   </div>
 
   <h3 id="flexispot-c7">FlexiSpot C7 - Best Mesh Budget Option</h3>
 
   <p>
-    The <strong>FlexiSpot C7</strong> offers full mesh construction at a budget price. The lumbar support is adjustable in height and depth, and the mesh keeps you cool during long work sessions.
+    The <strong>FlexiSpot C7</strong> offers full mesh construction at a budget price. The lumbar support is adjustable
+    in height and depth, and the mesh keeps you cool during long work sessions.
   </p>
 
   <p>
@@ -366,13 +468,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/flexispot-c7" text="Check FlexiSpot C7 Price" />
+    <AffiliateButton href="/go/flexispot-c7" text="Check FlexiSpot C7 Price"/>
   </div>
 
   <h3 id="sihoo-m18">Sihoo M18 - Best Ultra-Budget</h3>
 
   <p>
-    The <strong>Sihoo M18</strong> is the best chair under $200 on Amazon. It includes adjustable lumbar support and 2D armrests - features usually reserved for $300+ chairs. Quality is not premium, but it is a solid starter chair.
+    The <strong>Sihoo M18</strong> is the best chair under $200 on Amazon. It includes adjustable lumbar support and 2D
+    armrests - features usually reserved for $300+ chairs. Quality is not premium, but it is a solid starter chair.
   </p>
 
   <p>
@@ -380,7 +483,8 @@ const relatedArticles = [
   </p>
 
   <p>
-    <strong>Cons:</strong> Build quality reflects price, 3-year warranty, may not last more than 3-4 years with heavy use.
+    <strong>Cons:</strong> Build quality reflects price, 3-year warranty, may not last more than 3-4 years with heavy
+    use.
   </p>
 
   <p>
@@ -388,7 +492,7 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/sihoo-m18" text="Check Sihoo M18 Price" />
+    <AffiliateButton href="/go/sihoo-m18" text="Check Sihoo M18 Price"/>
   </div>
 
   <h2 id="mesh-vs-foam">Mesh vs Foam vs Hybrid</h2>
@@ -432,25 +536,28 @@ const relatedArticles = [
     Spend a few days fine-tuning these settings. Your body needs time to adapt to proper posture.
   </p>
 
-  <ComparisonTable columns={fullComparisonColumns} rows={fullComparisonRows} />
+  <ComparisonTable columns={fullComparisonColumns} rows={fullComparisonRows}/>
 
   <h2 id="faq">Frequently Asked Questions</h2>
 
-  <FAQSection faqs={faqItems} />
+  <FAQSection faqs={faqItems}/>
 
   <h2>Our Recommendation</h2>
 
   <p>
-    For most remote workers, we recommend the <strong>Branch Ergonomic Chair</strong> as the best balance of quality, features, and price. It offers genuine ergonomic support with a 7-year warranty at under $500.
+    For most remote workers, we recommend the <strong>Branch Ergonomic Chair</strong> as the best balance of quality,
+    features, and price. It offers genuine ergonomic support with a 7-year warranty at under $500.
   </p>
 
   <p>
-    If budget is not a concern, the <strong>Herman Miller Aeron</strong> remains the gold standard - its 12-year warranty and exceptional build quality make it a true buy-it-for-life purchase.
+    If budget is not a concern, the <strong>Herman Miller Aeron</strong> remains the gold standard - its 12-year
+    warranty and exceptional build quality make it a true buy-it-for-life purchase.
   </p>
 
   <p>
-    For those under $200, the <strong>IKEA Markus</strong> provides surprisingly good support and a 10-year warranty that budget competitors cannot match.
+    For those under $200, the <strong>IKEA Markus</strong> provides surprisingly good support and a 10-year warranty
+    that budget competitors cannot match.
   </p>
 
-  <RelatedArticles articles={relatedArticles} />
+  <RelatedArticles articles={relatedArticles}/>
 </ArticleLayout>

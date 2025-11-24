@@ -12,8 +12,8 @@
 
 Add 5 new computer-related articles to strengthen the Gear/Computers category.
 
-| # | Article                                          | Type        | Words       | Status       |
-|---|--------------------------------------------------|-------------|-------------|--------------|
+| # | Article                                          | Type        | Words       | Status      |
+|---|--------------------------------------------------|-------------|-------------|-------------|
 | 1 | Best Monitors for Remote Work 2025               | Money Page  | 2,800-3,200 | ✅ Completed |
 | 2 | Best Portable Monitors for Digital Nomads        | Money Page  | 2,500-2,800 | ✅ Completed |
 | 3 | Best Budget Laptops Under $800 for Remote Work   | Money Page  | 2,500-2,800 | ✅ Completed |

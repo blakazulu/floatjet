@@ -12,8 +12,8 @@
 
 Add 5 new communication-related guides to expand the Guides/Communication category.
 
-| # | Article                                       | Type        | Words       | Status       |
-|---|-----------------------------------------------|-------------|-------------|--------------|
+| # | Article                                       | Type        | Words       | Status      |
+|---|-----------------------------------------------|-------------|-------------|-------------|
 | 1 | How to Run Effective Remote Meetings          | Supporting  | 2,000-2,500 | ✅ Completed |
 | 2 | Remote Team Collaboration Best Practices      | Supporting  | 2,000-2,500 | ✅ Completed |
 | 3 | Email Etiquette for Remote Teams              | Supporting  | 1,500-1,800 | ✅ Completed |
@@ -229,9 +229,9 @@ remote work
 
 ## Progress Log
 
-| Date       | Progress    | Notes                                             |
-|------------|-------------|---------------------------------------------------|
-| 2025-11-24 | ✅ Complete | All 5 articles created and hub page updated       |
+| Date       | Progress   | Notes                                       |
+|------------|------------|---------------------------------------------|
+| 2025-11-24 | ✅ Complete | All 5 articles created and hub page updated |
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
 
 const title = 'Ergonomic Desk Setup: Complete Guide (2025)';
 const description = 'Learn how to set up your home office for maximum comfort and productivity. Step-by-step guide to proper chair, desk, monitor, and keyboard positioning.';
@@ -14,34 +14,54 @@ const image = 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto
 const imageAlt = 'Properly configured ergonomic workstation with monitor at eye level';
 
 const headings = [
-  { text: 'Why Ergonomics Matter', slug: 'why-ergonomics', depth: 2 },
-  { text: 'Chair Setup', slug: 'chair-setup', depth: 2 },
-  { text: 'Monitor Position', slug: 'monitor-position', depth: 2 },
-  { text: 'Keyboard and Mouse', slug: 'keyboard-mouse', depth: 2 },
-  { text: 'Desk Height', slug: 'desk-height', depth: 2 },
-  { text: 'Lighting', slug: 'lighting', depth: 2 },
-  { text: 'Standing Desk Ergonomics', slug: 'standing-ergonomics', depth: 2 },
-  { text: 'Common Mistakes', slug: 'common-mistakes', depth: 2 },
-  { text: 'Ergonomic Accessories', slug: 'accessories', depth: 2 },
-  { text: 'Micro-Break Schedule', slug: 'micro-breaks', depth: 2 },
-  { text: 'Setup Checklist', slug: 'checklist', depth: 2 },
-  { text: 'Frequently Asked Questions', slug: 'faq', depth: 2 },
+  {text: 'Why Ergonomics Matter', slug: 'why-ergonomics', depth: 2},
+  {text: 'Chair Setup', slug: 'chair-setup', depth: 2},
+  {text: 'Monitor Position', slug: 'monitor-position', depth: 2},
+  {text: 'Keyboard and Mouse', slug: 'keyboard-mouse', depth: 2},
+  {text: 'Desk Height', slug: 'desk-height', depth: 2},
+  {text: 'Lighting', slug: 'lighting', depth: 2},
+  {text: 'Standing Desk Ergonomics', slug: 'standing-ergonomics', depth: 2},
+  {text: 'Common Mistakes', slug: 'common-mistakes', depth: 2},
+  {text: 'Ergonomic Accessories', slug: 'accessories', depth: 2},
+  {text: 'Micro-Break Schedule', slug: 'micro-breaks', depth: 2},
+  {text: 'Setup Checklist', slug: 'checklist', depth: 2},
+  {text: 'Frequently Asked Questions', slug: 'faq', depth: 2},
 ];
 
 const accessoriesColumns = [
-  { key: 'accessory', label: 'Accessory', width: '150px' },
-  { key: 'purpose', label: 'Purpose' },
-  { key: 'priority', label: 'Priority' },
-  { key: 'price', label: 'Price Range' },
+  {key: 'accessory', label: 'Accessory', width: '150px'},
+  {key: 'purpose', label: 'Purpose'},
+  {key: 'priority', label: 'Priority'},
+  {key: 'price', label: 'Price Range'},
 ];
 
 const accessoriesRows = [
-  { accessory: '<strong>Monitor Arm</strong>', purpose: 'Proper eye height, free desk space', priority: 'High', price: '$30-150' },
-  { accessory: '<strong>Keyboard Tray</strong>', purpose: 'Correct arm angle', priority: 'Medium', price: '$40-100' },
-  { accessory: '<strong>Footrest</strong>', purpose: 'Support if feet dont reach floor', priority: 'As needed', price: '$25-60' },
-  { accessory: '<strong>Laptop Stand</strong>', purpose: 'Raise laptop screen to eye level', priority: 'High (laptops)', price: '$20-80' },
-  { accessory: '<strong>Document Holder</strong>', purpose: 'Reduce neck strain when reading', priority: 'Low', price: '$15-40' },
-  { accessory: '<strong>Wrist Rest</strong>', purpose: 'Support during typing breaks', priority: 'Low', price: '$10-30' },
+  {
+    accessory: '<strong>Monitor Arm</strong>',
+    purpose: 'Proper eye height, free desk space',
+    priority: 'High',
+    price: '$30-150'
+  },
+  {accessory: '<strong>Keyboard Tray</strong>', purpose: 'Correct arm angle', priority: 'Medium', price: '$40-100'},
+  {
+    accessory: '<strong>Footrest</strong>',
+    purpose: 'Support if feet dont reach floor',
+    priority: 'As needed',
+    price: '$25-60'
+  },
+  {
+    accessory: '<strong>Laptop Stand</strong>',
+    purpose: 'Raise laptop screen to eye level',
+    priority: 'High (laptops)',
+    price: '$20-80'
+  },
+  {
+    accessory: '<strong>Document Holder</strong>',
+    purpose: 'Reduce neck strain when reading',
+    priority: 'Low',
+    price: '$15-40'
+  },
+  {accessory: '<strong>Wrist Rest</strong>', purpose: 'Support during typing breaks', priority: 'Low', price: '$10-30'},
 ];
 
 const faqItems = [
@@ -93,26 +113,29 @@ const relatedArticles = [
 ---
 
 <ArticleLayout
-  title={title}
-  description={description}
-  pubDate={pubDate}
-  updatedDate={updatedDate}
-  author={author}
-  category={category}
-  categorySlug={categorySlug}
-  readingTime={readingTime}
-  image={image}
-  imageAlt={imageAlt}
-  headings={headings}
+    title={title}
+    description={description}
+    pubDate={pubDate}
+    updatedDate={updatedDate}
+    author={author}
+    category={category}
+    categorySlug={categorySlug}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    headings={headings}
 >
   <p class="lead">
-    Poor workstation setup causes 75% of work-related musculoskeletal problems. This guide walks you through proper positioning of every element in your home office for maximum comfort and productivity.
+    Poor workstation setup causes 75% of work-related musculoskeletal problems. This guide walks you through proper
+    positioning of every element in your home office for maximum comfort and productivity.
   </p>
 
   <h2 id="why-ergonomics">Why Ergonomics Matter for Remote Workers</h2>
 
   <p>
-    Remote workers often spend 8-12 hours at their desk without the variety of movement that office life provides (walking to meetings, visiting colleagues, commuting). This prolonged static posture amplifies the impact of poor ergonomics.
+    Remote workers often spend 8-12 hours at their desk without the variety of movement that office life provides
+    (walking to meetings, visiting colleagues, commuting). This prolonged static posture amplifies the impact of poor
+    ergonomics.
   </p>
 
   <p>
@@ -134,7 +157,8 @@ const relatedArticles = [
   <h2 id="chair-setup">Step 1: Chair Setup</h2>
 
   <p>
-    Your chair is the foundation of your ergonomic setup. Adjust it first, then build the rest of your workstation around it.
+    Your chair is the foundation of your ergonomic setup. Adjust it first, then build the rest of your workstation
+    around it.
   </p>
 
   <h3>Seat Height</h3>
@@ -211,12 +235,15 @@ const relatedArticles = [
 
   <h3>Laptop Users</h3>
   <p>
-    Laptops violate every ergonomic principle by design - the screen and keyboard cannot be positioned independently. Solutions:
+    Laptops violate every ergonomic principle by design - the screen and keyboard cannot be positioned independently.
+    Solutions:
   </p>
   <ul>
     <li><strong>Best:</strong> Use external monitor, keyboard, and mouse</li>
     <li><strong>Good:</strong> Use laptop stand plus external keyboard and mouse</li>
-    <li><strong>Acceptable:</strong> Use laptop stand and raise screen, accept non-ideal keyboard position for short sessions</li>
+    <li><strong>Acceptable:</strong> Use laptop stand and raise screen, accept non-ideal keyboard position for short
+      sessions
+    </li>
   </ul>
 
   <h2 id="keyboard-mouse">Step 3: Keyboard and Mouse Placement</h2>
@@ -326,16 +353,17 @@ const relatedArticles = [
 
   <h2 id="accessories">Ergonomic Accessories</h2>
 
-  <ComparisonTable columns={accessoriesColumns} rows={accessoriesRows} />
+  <ComparisonTable columns={accessoriesColumns} rows={accessoriesRows}/>
 
   <h3>Most Impactful Accessories</h3>
 
   <p>
-    <strong>Monitor arm:</strong> Essential if your monitor cannot reach proper height on its stand. Also frees desk space.
+    <strong>Monitor arm:</strong> Essential if your monitor cannot reach proper height on its stand. Also frees desk
+    space.
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/monitor-arm" text="Check Monitor Arm Prices" />
+    <AffiliateButton href="/go/monitor-arm" text="Check Monitor Arm Prices"/>
   </div>
 
   <p>
@@ -343,11 +371,12 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/laptop-stand" text="Check Laptop Stand Prices" />
+    <AffiliateButton href="/go/laptop-stand" text="Check Laptop Stand Prices"/>
   </div>
 
   <p>
-    <strong>External keyboard and mouse:</strong> Required with a laptop stand. Allows independent positioning of screen and input devices.
+    <strong>External keyboard and mouse:</strong> Required with a laptop stand. Allows independent positioning of screen
+    and input devices.
   </p>
 
   <h2 id="micro-breaks">Micro-Break Schedule</h2>
@@ -403,17 +432,19 @@ const relatedArticles = [
 
   <h2 id="faq">Frequently Asked Questions</h2>
 
-  <FAQSection faqs={faqItems} />
+  <FAQSection faqs={faqItems}/>
 
   <h2>Final Thoughts</h2>
 
   <p>
-    The perfect ergonomic setup is personal. Use these guidelines as a starting point, then fine-tune based on how your body feels. If something causes discomfort after proper adjustment, experiment with small changes.
+    The perfect ergonomic setup is personal. Use these guidelines as a starting point, then fine-tune based on how your
+    body feels. If something causes discomfort after proper adjustment, experiment with small changes.
   </p>
 
   <p>
-    Remember: movement matters more than any single position. The best posture is the next posture. Build breaks into your day, alternate between sitting and standing if possible, and listen to your body's signals.
+    Remember: movement matters more than any single position. The best posture is the next posture. Build breaks into
+    your day, alternate between sitting and standing if possible, and listen to your body's signals.
   </p>
 
-  <RelatedArticles articles={relatedArticles} />
+  <RelatedArticles articles={relatedArticles}/>
 </ArticleLayout>

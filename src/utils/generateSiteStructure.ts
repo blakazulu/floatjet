@@ -202,8 +202,20 @@ export const SITE_STRUCTURE: SiteGraph = {
 
     // Category Pages - Guides
     {id: '/guides/travel', name: 'Travel', path: '/guides/travel', type: 'category', category: 'travel'},
-    {id: '/guides/communication', name: 'Communication', path: '/guides/communication', type: 'category', category: 'communication'},
-    {id: '/guides/productivity', name: 'Productivity', path: '/guides/productivity', type: 'category', category: 'productivity'},
+    {
+      id: '/guides/communication',
+      name: 'Communication',
+      path: '/guides/communication',
+      type: 'category',
+      category: 'communication'
+    },
+    {
+      id: '/guides/productivity',
+      name: 'Productivity',
+      path: '/guides/productivity',
+      type: 'category',
+      category: 'productivity'
+    },
     {id: '/guides/security', name: 'Security', path: '/guides/security', type: 'category', category: 'security'},
     {id: '/guides/setup', name: 'Setup', path: '/guides/setup', type: 'category', category: 'setup'},
     {id: '/guides/finance', name: 'Finance', path: '/guides/finance', type: 'category', category: 'finance'},

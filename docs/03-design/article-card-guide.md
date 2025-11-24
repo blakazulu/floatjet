@@ -1,6 +1,7 @@
 # Article Card Design Guide
 
-This guide documents the article card component used across FloatJet category pages (e.g., `/gear`, `/tools`, `/guides`).
+This guide documents the article card component used across FloatJet category pages (e.g., `/gear`, `/tools`,
+`/guides`).
 
 ## Visual Overview
 
@@ -35,17 +36,17 @@ This guide documents the article card component used across FloatJet category pa
 >
 ```
 
-| Property | Value | Description |
-|----------|-------|-------------|
-| Element | `<a>` | Entire card is clickable link |
-| Background | `bg-black/40` | Semi-transparent black (40% opacity) |
-| Background (hover) | `hover:bg-black/50` | Slightly darker on hover (50% opacity) |
-| Border | `border border-white/10` | 1px white border at 10% opacity |
-| Border (hover) | `hover:border-white/20` | Border brightens to 20% on hover |
-| Border radius | `rounded-xl` | 12px rounded corners |
-| Padding | `p-6` | 24px padding all sides |
-| Transition | `transition-all duration-300` | Smooth 300ms transition |
-| Group | `group` | Enables child hover effects |
+| Property           | Value                         | Description                            |
+|--------------------|-------------------------------|----------------------------------------|
+| Element            | `<a>`                         | Entire card is clickable link          |
+| Background         | `bg-black/40`                 | Semi-transparent black (40% opacity)   |
+| Background (hover) | `hover:bg-black/50`           | Slightly darker on hover (50% opacity) |
+| Border             | `border border-white/10`      | 1px white border at 10% opacity        |
+| Border (hover)     | `hover:border-white/20`       | Border brightens to 20% on hover       |
+| Border radius      | `rounded-xl`                  | 12px rounded corners                   |
+| Padding            | `p-6`                         | 24px padding all sides                 |
+| Transition         | `transition-all duration-300` | Smooth 300ms transition                |
+| Group              | `group`                       | Enables child hover effects            |
 
 ## Internal Layout
 
@@ -61,11 +62,11 @@ This guide documents the article card component used across FloatJet category pa
 </div>
 ```
 
-| Property | Value | Description |
-|----------|-------|-------------|
-| Display | `flex` | Horizontal flexbox layout |
-| Alignment | `items-start` | Top-align icon with content |
-| Gap | `gap-4` | 16px gap between icon and content |
+| Property  | Value         | Description                       |
+|-----------|---------------|-----------------------------------|
+| Display   | `flex`        | Horizontal flexbox layout         |
+| Alignment | `items-start` | Top-align icon with content       |
+| Gap       | `gap-4`       | 16px gap between icon and content |
 
 ## Element Specifications
 
@@ -75,11 +76,11 @@ This guide documents the article card component used across FloatJet category pa
 <span class="text-3xl">{item.icon}</span>
 ```
 
-| Property | Value | Description |
-|----------|-------|-------------|
-| Element | `<span>` | Inline element |
-| Size | `text-3xl` | 30px (1.875rem) |
-| Content | Emoji | Category-specific emoji (💻, 🎧, 🪑, 🎒) |
+| Property | Value      | Description                              |
+|----------|------------|------------------------------------------|
+| Element  | `<span>`   | Inline element                           |
+| Size     | `text-3xl` | 30px (1.875rem)                          |
+| Content  | Emoji      | Category-specific emoji (💻, 🎧, 🪑, 🎒) |
 
 ### 2. Category Badge + Read Time Row
 
@@ -93,29 +94,32 @@ This guide documents the article card component used across FloatJet category pa
 ```
 
 #### Container
-| Property | Value | Description |
-|----------|-------|-------------|
-| Display | `flex items-center` | Horizontal, vertically centered |
-| Gap | `gap-2` | 8px between badge and time |
-| Margin | `mb-2` | 8px bottom margin |
+
+| Property | Value               | Description                     |
+|----------|---------------------|---------------------------------|
+| Display  | `flex items-center` | Horizontal, vertically centered |
+| Gap      | `gap-2`             | 8px between badge and time      |
+| Margin   | `mb-2`              | 8px bottom margin               |
 
 #### Category Badge
-| Property | Value | Description |
-|----------|-------|-------------|
-| Display | `inline-block` | Inline with block properties |
-| Padding | `px-2 py-0.5` | 8px horizontal, 2px vertical |
-| Background | `bg-jet-stream/20` | Jet-stream (#38A3A5) at 20% opacity |
-| Text color | `text-jet-stream` | Jet-stream (#38A3A5) |
-| Font size | `text-xs` | 12px (0.75rem) |
-| Font weight | `font-medium` | 500 |
-| Border radius | `rounded` | 4px |
+
+| Property      | Value              | Description                         |
+|---------------|--------------------|-------------------------------------|
+| Display       | `inline-block`     | Inline with block properties        |
+| Padding       | `px-2 py-0.5`      | 8px horizontal, 2px vertical        |
+| Background    | `bg-jet-stream/20` | Jet-stream (#38A3A5) at 20% opacity |
+| Text color    | `text-jet-stream`  | Jet-stream (#38A3A5)                |
+| Font size     | `text-xs`          | 12px (0.75rem)                      |
+| Font weight   | `font-medium`      | 500                                 |
+| Border radius | `rounded`          | 4px                                 |
 
 #### Read Time
-| Property | Value | Description |
-|----------|-------|-------------|
+
+| Property   | Value           | Description          |
+|------------|-----------------|----------------------|
 | Text color | `text-white/40` | White at 40% opacity |
-| Font size | `text-xs` | 12px (0.75rem) |
-| Format | `{X} min` | e.g., "18 min" |
+| Font size  | `text-xs`       | 12px (0.75rem)       |
+| Format     | `{X} min`       | e.g., "18 min"       |
 
 ### 3. Title
 
@@ -125,15 +129,15 @@ This guide documents the article card component used across FloatJet category pa
 </h2>
 ```
 
-| Property | Value | Description |
-|----------|-------|-------------|
-| Element | `<h2>` | Semantic heading |
-| Font size | `text-lg` | 18px (1.125rem) |
-| Font weight | `font-semibold` | 600 |
-| Text color | `text-white` | Pure white |
+| Property           | Value                         | Description                   |
+|--------------------|-------------------------------|-------------------------------|
+| Element            | `<h2>`                        | Semantic heading              |
+| Font size          | `text-lg`                     | 18px (1.125rem)               |
+| Font weight        | `font-semibold`               | 600                           |
+| Text color         | `text-white`                  | Pure white                    |
 | Text color (hover) | `group-hover:text-jet-stream` | Changes to teal on card hover |
-| Transition | `transition-colors` | Smooth color change |
-| Margin | `mb-2` | 8px bottom margin |
+| Transition         | `transition-colors`           | Smooth color change           |
+| Margin             | `mb-2`                        | 8px bottom margin             |
 
 ### 4. Description
 
@@ -143,12 +147,12 @@ This guide documents the article card component used across FloatJet category pa
 </p>
 ```
 
-| Property | Value | Description |
-|----------|-------|-------------|
-| Element | `<p>` | Paragraph |
-| Text color | `text-white/70` | White at 70% opacity |
-| Font size | `text-sm` | 14px (0.875rem) |
-| Max length | ~100 chars | Keep descriptions concise |
+| Property   | Value           | Description               |
+|------------|-----------------|---------------------------|
+| Element    | `<p>`           | Paragraph                 |
+| Text color | `text-white/70` | White at 70% opacity      |
+| Font size  | `text-sm`       | 14px (0.875rem)           |
+| Max length | ~100 chars      | Keep descriptions concise |
 
 ### 5. CTA "Read Review" Link
 
@@ -162,21 +166,23 @@ This guide documents the article card component used across FloatJet category pa
 ```
 
 #### Container
-| Property | Value | Description |
-|----------|-------|-------------|
-| Margin | `mt-4` | 16px top margin |
-| Display | `flex items-center` | Horizontal, vertically centered |
-| Text color | `text-jet-stream` | Teal accent color |
-| Font size | `text-sm` | 14px (0.875rem) |
-| Font weight | `font-medium` | 500 |
+
+| Property    | Value               | Description                     |
+|-------------|---------------------|---------------------------------|
+| Margin      | `mt-4`              | 16px top margin                 |
+| Display     | `flex items-center` | Horizontal, vertically centered |
+| Text color  | `text-jet-stream`   | Teal accent color               |
+| Font size   | `text-sm`           | 14px (0.875rem)                 |
+| Font weight | `font-medium`       | 500                             |
 
 #### Arrow Icon
-| Property | Value | Description |
-|----------|-------|-------------|
-| Size | `w-4 h-4` | 16x16px |
-| Margin | `ml-1` | 4px left margin |
-| Animation | `group-hover:translate-x-1` | Moves 4px right on card hover |
-| Transition | `transition-transform` | Smooth movement |
+
+| Property   | Value                       | Description                   |
+|------------|-----------------------------|-------------------------------|
+| Size       | `w-4 h-4`                   | 16x16px                       |
+| Margin     | `ml-1`                      | 4px left margin               |
+| Animation  | `group-hover:translate-x-1` | Moves 4px right on card hover |
+| Transition | `transition-transform`      | Smooth movement               |
 
 ## Grid Layout
 
@@ -188,11 +194,11 @@ This guide documents the article card component used across FloatJet category pa
 </div>
 ```
 
-| Breakpoint | Columns | Gap | Items Shown |
-|------------|---------|-----|-------------|
-| Mobile (default) | 1 | 24px | 3 |
-| Tablet (`sm:` 640px+) | 2 | 24px | 6 |
-| Desktop (`lg:` 1024px+) | 3 | 24px | 9 |
+| Breakpoint              | Columns | Gap  | Items Shown |
+|-------------------------|---------|------|-------------|
+| Mobile (default)        | 1       | 24px | 3           |
+| Tablet (`sm:` 640px+)   | 2       | 24px | 6           |
+| Desktop (`lg:` 1024px+) | 3       | 24px | 9           |
 
 ### Responsive Visibility Classes
 
@@ -208,11 +214,11 @@ This guide documents the article card component used across FloatJet category pa
 >
 ```
 
-| Index | Mobile | Tablet | Desktop |
-|-------|--------|--------|---------|
-| 0-2 | ✓ Visible | ✓ Visible | ✓ Visible |
-| 3-5 | ✗ Hidden | ✓ Visible | ✓ Visible |
-| 6-8 | ✗ Hidden | ✗ Hidden | ✓ Visible |
+| Index | Mobile    | Tablet    | Desktop   |
+|-------|-----------|-----------|-----------|
+| 0-2   | ✓ Visible | ✓ Visible | ✓ Visible |
+| 3-5   | ✗ Hidden  | ✓ Visible | ✓ Visible |
+| 6-8   | ✗ Hidden  | ✗ Hidden  | ✓ Visible |
 
 ## Data Structure
 
@@ -262,22 +268,23 @@ interface ArticleItem {
 
 ## Color Reference
 
-| Token | Hex | Usage |
-|-------|-----|-------|
-| `jet-stream` | `#38A3A5` | Category badge, title hover, CTA |
-| `white` | `#FFFFFF` | Title text |
-| `white/70` | `rgba(255,255,255,0.7)` | Description |
-| `white/40` | `rgba(255,255,255,0.4)` | Read time |
-| `white/20` | `rgba(255,255,255,0.2)` | Border hover |
-| `white/10` | `rgba(255,255,255,0.1)` | Border default |
-| `black/50` | `rgba(0,0,0,0.5)` | Background hover |
-| `black/40` | `rgba(0,0,0,0.4)` | Background default |
+| Token        | Hex                     | Usage                            |
+|--------------|-------------------------|----------------------------------|
+| `jet-stream` | `#38A3A5`               | Category badge, title hover, CTA |
+| `white`      | `#FFFFFF`               | Title text                       |
+| `white/70`   | `rgba(255,255,255,0.7)` | Description                      |
+| `white/40`   | `rgba(255,255,255,0.4)` | Read time                        |
+| `white/20`   | `rgba(255,255,255,0.2)` | Border hover                     |
+| `white/10`   | `rgba(255,255,255,0.1)` | Border default                   |
+| `black/50`   | `rgba(0,0,0,0.5)`       | Background hover                 |
+| `black/40`   | `rgba(0,0,0,0.4)`       | Background default               |
 
 ## Adding New Articles
 
 When adding a new article to a category page:
 
 1. **Add item to data array:**
+
 ```javascript
 const allGear = [
   // ... existing items
@@ -301,12 +308,14 @@ const allGear = [
 ## Variations by Page Type
 
 The same card pattern is used on:
+
 - `/gear` - Remote work equipment
 - `/tools` - Software tools
 - `/guides` - How-to guides
 - `/blog` - Blog articles
 
 CTA text varies by context:
+
 - Gear/Tools: "Read Review"
 - Guides: "Read Guide"
 - Blog: "Read Article"

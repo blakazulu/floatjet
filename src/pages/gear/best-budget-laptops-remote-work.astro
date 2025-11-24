@@ -1,6 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
 
 const title = 'Best Budget Laptops Under $800 for Remote Work (2025)';
 const description = 'Great remote work laptops do not require huge budgets. We tested 8 laptops under $800 to find the best options for productivity, video calls, and all-day battery life.';
@@ -14,40 +14,52 @@ const image = 'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto
 const imageAlt = 'Budget laptop on desk for remote work';
 
 const headings = [
-  { text: 'What Specs Actually Matter', slug: 'what-specs-matter', depth: 2 },
-  { text: 'Quick Comparison', slug: 'quick-comparison', depth: 2 },
-  { text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2 },
-  { text: 'Acer Aspire 5', slug: 'acer-aspire-5', depth: 3 },
-  { text: 'Lenovo IdeaPad 5', slug: 'lenovo-ideapad-5', depth: 3 },
-  { text: 'HP Pavilion 15', slug: 'hp-pavilion-15', depth: 3 },
-  { text: 'ASUS VivoBook 15', slug: 'asus-vivobook-15', depth: 3 },
-  { text: 'Dell Inspiron 15', slug: 'dell-inspiron-15', depth: 3 },
-  { text: 'Lenovo ThinkPad E-Series', slug: 'thinkpad-e-series', depth: 3 },
-  { text: 'Acer Swift 3', slug: 'acer-swift-3', depth: 3 },
-  { text: 'HP 15', slug: 'hp-15', depth: 3 },
-  { text: 'Windows vs Chromebook', slug: 'windows-vs-chromebook', depth: 2 },
-  { text: 'Finding the Best Deals', slug: 'best-deals', depth: 2 },
-  { text: 'Refurbished Guide', slug: 'refurbished-guide', depth: 2 },
-  { text: 'Frequently Asked Questions', slug: 'faq', depth: 2 },
+  {text: 'What Specs Actually Matter', slug: 'what-specs-matter', depth: 2},
+  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
+  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
+  {text: 'Acer Aspire 5', slug: 'acer-aspire-5', depth: 3},
+  {text: 'Lenovo IdeaPad 5', slug: 'lenovo-ideapad-5', depth: 3},
+  {text: 'HP Pavilion 15', slug: 'hp-pavilion-15', depth: 3},
+  {text: 'ASUS VivoBook 15', slug: 'asus-vivobook-15', depth: 3},
+  {text: 'Dell Inspiron 15', slug: 'dell-inspiron-15', depth: 3},
+  {text: 'Lenovo ThinkPad E-Series', slug: 'thinkpad-e-series', depth: 3},
+  {text: 'Acer Swift 3', slug: 'acer-swift-3', depth: 3},
+  {text: 'HP 15', slug: 'hp-15', depth: 3},
+  {text: 'Windows vs Chromebook', slug: 'windows-vs-chromebook', depth: 2},
+  {text: 'Finding the Best Deals', slug: 'best-deals', depth: 2},
+  {text: 'Refurbished Guide', slug: 'refurbished-guide', depth: 2},
+  {text: 'Frequently Asked Questions', slug: 'faq', depth: 2},
 ];
 
 const comparisonColumns = [
-  { key: 'laptop', label: 'Laptop', width: '140px' },
-  { key: 'processor', label: 'Processor' },
-  { key: 'ram', label: 'RAM' },
-  { key: 'battery', label: 'Battery' },
-  { key: 'price', label: 'Price' },
+  {key: 'laptop', label: 'Laptop', width: '140px'},
+  {key: 'processor', label: 'Processor'},
+  {key: 'ram', label: 'RAM'},
+  {key: 'battery', label: 'Battery'},
+  {key: 'price', label: 'Price'},
 ];
 
 const comparisonRows = [
-  { laptop: '<strong>Acer Aspire 5</strong>', processor: 'i5-1235U', ram: '8GB', battery: '10 hrs', price: '$550' },
-  { laptop: '<strong>Lenovo IdeaPad 5</strong>', processor: 'Ryzen 5 5500U', ram: '8GB', battery: '10 hrs', price: '$600' },
-  { laptop: '<strong>HP Pavilion 15</strong>', processor: 'i5-1235U', ram: '8GB', battery: '8 hrs', price: '$650' },
-  { laptop: '<strong>ASUS VivoBook 15</strong>', processor: 'Ryzen 5 5500U', ram: '8GB', battery: '8 hrs', price: '$500' },
-  { laptop: '<strong>Dell Inspiron 15</strong>', processor: 'i5-1235U', ram: '8GB', battery: '8 hrs', price: '$580' },
-  { laptop: '<strong>ThinkPad E14</strong>', processor: 'i5-1235U', ram: '8GB', battery: '10 hrs', price: '$750' },
-  { laptop: '<strong>Acer Swift 3</strong>', processor: 'i5-1240P', ram: '8GB', battery: '11 hrs', price: '$700' },
-  { laptop: '<strong>HP 15</strong>', processor: 'i3-1215U', ram: '8GB', battery: '7 hrs', price: '$400' },
+  {laptop: '<strong>Acer Aspire 5</strong>', processor: 'i5-1235U', ram: '8GB', battery: '10 hrs', price: '$550'},
+  {
+    laptop: '<strong>Lenovo IdeaPad 5</strong>',
+    processor: 'Ryzen 5 5500U',
+    ram: '8GB',
+    battery: '10 hrs',
+    price: '$600'
+  },
+  {laptop: '<strong>HP Pavilion 15</strong>', processor: 'i5-1235U', ram: '8GB', battery: '8 hrs', price: '$650'},
+  {
+    laptop: '<strong>ASUS VivoBook 15</strong>',
+    processor: 'Ryzen 5 5500U',
+    ram: '8GB',
+    battery: '8 hrs',
+    price: '$500'
+  },
+  {laptop: '<strong>Dell Inspiron 15</strong>', processor: 'i5-1235U', ram: '8GB', battery: '8 hrs', price: '$580'},
+  {laptop: '<strong>ThinkPad E14</strong>', processor: 'i5-1235U', ram: '8GB', battery: '10 hrs', price: '$750'},
+  {laptop: '<strong>Acer Swift 3</strong>', processor: 'i5-1240P', ram: '8GB', battery: '11 hrs', price: '$700'},
+  {laptop: '<strong>HP 15</strong>', processor: 'i3-1215U', ram: '8GB', battery: '7 hrs', price: '$400'},
 ];
 
 const faqItems = [
@@ -99,20 +111,21 @@ const relatedArticles = [
 ---
 
 <ArticleLayout
-  title={title}
-  description={description}
-  pubDate={pubDate}
-  updatedDate={updatedDate}
-  author={author}
-  category={category}
-  categorySlug={categorySlug}
-  readingTime={readingTime}
-  image={image}
-  imageAlt={imageAlt}
-  headings={headings}
+    title={title}
+    description={description}
+    pubDate={pubDate}
+    updatedDate={updatedDate}
+    author={author}
+    category={category}
+    categorySlug={categorySlug}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    headings={headings}
 >
   <p class="lead">
-    You do not need to spend $1,000+ for a productive remote work laptop. We tested 8 laptops under $800 to find the best options for video calls, documents, email, and all-day productivity.
+    You do not need to spend $1,000+ for a productive remote work laptop. We tested 8 laptops under $800 to find the
+    best options for video calls, documents, email, and all-day productivity.
   </p>
 
   <h2 id="what-specs-matter">What Specs Actually Matter for Remote Work</h2>
@@ -132,19 +145,22 @@ const relatedArticles = [
   </ul>
 
   <p>
-    <strong>What you can skip:</strong> Dedicated graphics cards, 4K displays, and high refresh rates add cost without benefiting typical remote work tasks.
+    <strong>What you can skip:</strong> Dedicated graphics cards, 4K displays, and high refresh rates add cost without
+    benefiting typical remote work tasks.
   </p>
 
   <h2 id="quick-comparison">Quick Comparison: Best Budget Laptops</h2>
 
-  <ComparisonTable columns={comparisonColumns} rows={comparisonRows} />
+  <ComparisonTable columns={comparisonColumns} rows={comparisonRows}/>
 
   <h2 id="detailed-reviews">Detailed Budget Laptop Reviews</h2>
 
   <h3 id="acer-aspire-5">1. Acer Aspire 5 - Best Overall Value</h3>
 
   <p>
-    The Acer Aspire 5 consistently delivers the best value in budget laptops. The 2024 model includes a 12th-gen Intel processor, 15.6-inch IPS display, and upgradeable RAM and storage. It handles remote work tasks smoothly without unnecessary extras.
+    The Acer Aspire 5 consistently delivers the best value in budget laptops. The 2024 model includes a 12th-gen Intel
+    processor, 15.6-inch IPS display, and upgradeable RAM and storage. It handles remote work tasks smoothly without
+    unnecessary extras.
   </p>
 
   <ul>
@@ -161,13 +177,15 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/acer-aspire-5" text="Check Acer Aspire 5 Price" />
+    <AffiliateButton href="/go/acer-aspire-5" text="Check Acer Aspire 5 Price"/>
   </div>
 
   <h3 id="lenovo-ideapad-5">2. Lenovo IdeaPad 5 - Best Display</h3>
 
   <p>
-    The Lenovo IdeaPad 5 stands out with its bright, color-accurate display. The 300-nit panel handles well in bright environments, and the slim bezels maximize screen space. AMD Ryzen processors provide excellent multitasking performance.
+    The Lenovo IdeaPad 5 stands out with its bright, color-accurate display. The 300-nit panel handles well in bright
+    environments, and the slim bezels maximize screen space. AMD Ryzen processors provide excellent multitasking
+    performance.
   </p>
 
   <ul>
@@ -184,13 +202,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/lenovo-ideapad-5" text="Check Lenovo IdeaPad 5 Price" />
+    <AffiliateButton href="/go/lenovo-ideapad-5" text="Check Lenovo IdeaPad 5 Price"/>
   </div>
 
   <h3 id="hp-pavilion-15">3. HP Pavilion 15 - Best Build Quality</h3>
 
   <p>
-    The HP Pavilion 15 feels more premium than its price suggests. The metal lid and palm rest provide durability, while the Bang & Olufsen speakers deliver surprisingly good audio for video calls and media.
+    The HP Pavilion 15 feels more premium than its price suggests. The metal lid and palm rest provide durability, while
+    the Bang & Olufsen speakers deliver surprisingly good audio for video calls and media.
   </p>
 
   <ul>
@@ -207,13 +226,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/hp-pavilion-15" text="Check HP Pavilion 15 Price" />
+    <AffiliateButton href="/go/hp-pavilion-15" text="Check HP Pavilion 15 Price"/>
   </div>
 
   <h3 id="asus-vivobook-15">4. ASUS VivoBook 15 - Best Lightweight Budget</h3>
 
   <p>
-    The ASUS VivoBook 15 is lighter than most competitors at this price. The ErgoLift hinge tilts the keyboard for more comfortable typing, and the fingerprint reader adds convenience.
+    The ASUS VivoBook 15 is lighter than most competitors at this price. The ErgoLift hinge tilts the keyboard for more
+    comfortable typing, and the fingerprint reader adds convenience.
   </p>
 
   <ul>
@@ -230,13 +250,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/asus-vivobook-15" text="Check ASUS VivoBook 15 Price" />
+    <AffiliateButton href="/go/asus-vivobook-15" text="Check ASUS VivoBook 15 Price"/>
   </div>
 
   <h3 id="dell-inspiron-15">5. Dell Inspiron 15 - Best Reliability</h3>
 
   <p>
-    Dell's Inspiron line has earned a reputation for reliability. The Inspiron 15 offers solid performance, good build quality, and Dell's customer service network. A safe choice for worry-free remote work.
+    Dell's Inspiron line has earned a reputation for reliability. The Inspiron 15 offers solid performance, good build
+    quality, and Dell's customer service network. A safe choice for worry-free remote work.
   </p>
 
   <ul>
@@ -253,13 +274,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/dell-inspiron-15" text="Check Dell Inspiron 15 Price" />
+    <AffiliateButton href="/go/dell-inspiron-15" text="Check Dell Inspiron 15 Price"/>
   </div>
 
   <h3 id="thinkpad-e-series">6. Lenovo ThinkPad E14 - Best Keyboard</h3>
 
   <p>
-    The ThinkPad E-series brings legendary ThinkPad keyboards to a budget price. If you type all day, the E14's keyboard is worth the premium. Business-grade durability and security features included.
+    The ThinkPad E-series brings legendary ThinkPad keyboards to a budget price. If you type all day, the E14's keyboard
+    is worth the premium. Business-grade durability and security features included.
   </p>
 
   <ul>
@@ -276,13 +298,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/thinkpad-e14" text="Check ThinkPad E14 Price" />
+    <AffiliateButton href="/go/thinkpad-e14" text="Check ThinkPad E14 Price"/>
   </div>
 
   <h3 id="acer-swift-3">7. Acer Swift 3 - Best Battery Life</h3>
 
   <p>
-    The Acer Swift 3 delivers excellent battery life in a sleek aluminum chassis. The 14-inch size strikes a good balance between portability and productivity. Intel's 12th-gen P-series processor provides strong performance.
+    The Acer Swift 3 delivers excellent battery life in a sleek aluminum chassis. The 14-inch size strikes a good
+    balance between portability and productivity. Intel's 12th-gen P-series processor provides strong performance.
   </p>
 
   <ul>
@@ -299,13 +322,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/acer-swift-3" text="Check Acer Swift 3 Price" />
+    <AffiliateButton href="/go/acer-swift-3" text="Check Acer Swift 3 Price"/>
   </div>
 
   <h3 id="hp-15">8. HP 15 - Best Ultra-Budget</h3>
 
   <p>
-    The HP 15 proves you can get a functional remote work laptop for $400. The Core i3 processor handles basic tasks, and 8GB RAM prevents slowdowns. Great for light work or as a backup machine.
+    The HP 15 proves you can get a functional remote work laptop for $400. The Core i3 processor handles basic tasks,
+    and 8GB RAM prevents slowdowns. Great for light work or as a backup machine.
   </p>
 
   <ul>
@@ -322,7 +346,7 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/hp-15" text="Check HP 15 Price" />
+    <AffiliateButton href="/go/hp-15" text="Check HP 15 Price"/>
   </div>
 
   <h2 id="windows-vs-chromebook">Windows vs Chromebook for Remote Work</h2>
@@ -344,7 +368,8 @@ const relatedArticles = [
   </ul>
 
   <p>
-    <strong>Our recommendation:</strong> For most remote workers, Windows provides more flexibility. Chromebooks excel for specific use cases but limit your options.
+    <strong>Our recommendation:</strong> For most remote workers, Windows provides more flexibility. Chromebooks excel
+    for specific use cases but limit your options.
   </p>
 
   <h2 id="best-deals">Finding the Best Laptop Deals</h2>
@@ -381,12 +406,13 @@ const relatedArticles = [
 
   <h2 id="faq">Frequently Asked Questions</h2>
 
-  <FAQSection faqs={faqItems} />
+  <FAQSection faqs={faqItems}/>
 
   <h2>Bottom Line</h2>
 
   <p>
-    The <strong>Acer Aspire 5</strong> offers the best overall value for remote workers. It handles everything from video calls to spreadsheets while leaving room in your budget for accessories.
+    The <strong>Acer Aspire 5</strong> offers the best overall value for remote workers. It handles everything from
+    video calls to spreadsheets while leaving room in your budget for accessories.
   </p>
 
   <p>
@@ -401,5 +427,5 @@ const relatedArticles = [
     On an extremely tight budget? The <strong>HP 15</strong> proves functional remote work is possible at $400.
   </p>
 
-  <RelatedArticles articles={relatedArticles} />
+  <RelatedArticles articles={relatedArticles}/>
 </ArticleLayout>

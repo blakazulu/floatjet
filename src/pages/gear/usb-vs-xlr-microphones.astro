@@ -1,6 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
 
 const title = 'USB vs XLR Microphones: Which Is Better for Remote Work?';
 const description = 'USB or XLR microphone? We break down the pros and cons of each type to help you choose the right microphone for your remote work setup and budget.';
@@ -14,59 +14,64 @@ const image = 'https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto
 const imageAlt = 'Professional microphone setup comparing USB and XLR connections';
 
 const headings = [
-  { text: 'Quick Comparison', slug: 'quick-comparison' },
-  { text: 'Understanding the Difference', slug: 'understanding-difference' },
-  { text: 'USB Microphones Explained', slug: 'usb-microphones' },
-  { text: 'XLR Microphones Explained', slug: 'xlr-microphones' },
-  { text: 'For Remote Work: The Verdict', slug: 'verdict' },
-  { text: 'Best USB Mics for Remote Work', slug: 'best-usb-mics' },
-  { text: 'Best XLR Mics Worth the Setup', slug: 'best-xlr-mics' },
-  { text: 'Hybrid Options: Best of Both', slug: 'hybrid-options' },
-  { text: 'Frequently Asked Questions', slug: 'faq' },
+  {text: 'Quick Comparison', slug: 'quick-comparison'},
+  {text: 'Understanding the Difference', slug: 'understanding-difference'},
+  {text: 'USB Microphones Explained', slug: 'usb-microphones'},
+  {text: 'XLR Microphones Explained', slug: 'xlr-microphones'},
+  {text: 'For Remote Work: The Verdict', slug: 'verdict'},
+  {text: 'Best USB Mics for Remote Work', slug: 'best-usb-mics'},
+  {text: 'Best XLR Mics Worth the Setup', slug: 'best-xlr-mics'},
+  {text: 'Hybrid Options: Best of Both', slug: 'hybrid-options'},
+  {text: 'Frequently Asked Questions', slug: 'faq'},
 ];
 
 const quickComparisonColumns = [
-  { key: 'feature', label: 'Feature', width: '140px' },
-  { key: 'usb', label: 'USB Microphones' },
-  { key: 'xlr', label: 'XLR Microphones' },
+  {key: 'feature', label: 'Feature', width: '140px'},
+  {key: 'usb', label: 'USB Microphones'},
+  {key: 'xlr', label: 'XLR Microphones'},
 ];
 
 const quickComparisonRows = [
-  { feature: '<strong>Setup Complexity</strong>', usb: 'Plug and play', xlr: 'Requires audio interface' },
-  { feature: '<strong>Initial Cost</strong>', usb: '$50-300', xlr: '$150-500+ with interface' },
-  { feature: '<strong>Audio Quality Ceiling</strong>', usb: 'Very good', xlr: 'Professional/broadcast' },
-  { feature: '<strong>Latency</strong>', usb: 'Minimal', xlr: 'Zero (with interface)' },
-  { feature: '<strong>Portability</strong>', usb: 'Excellent', xlr: 'Poor' },
-  { feature: '<strong>Upgrade Path</strong>', usb: 'Limited', xlr: 'Flexible' },
-  { feature: '<strong>Best For</strong>', usb: 'Remote workers, beginners', xlr: 'Content creators, podcasters' },
+  {feature: '<strong>Setup Complexity</strong>', usb: 'Plug and play', xlr: 'Requires audio interface'},
+  {feature: '<strong>Initial Cost</strong>', usb: '$50-300', xlr: '$150-500+ with interface'},
+  {feature: '<strong>Audio Quality Ceiling</strong>', usb: 'Very good', xlr: 'Professional/broadcast'},
+  {feature: '<strong>Latency</strong>', usb: 'Minimal', xlr: 'Zero (with interface)'},
+  {feature: '<strong>Portability</strong>', usb: 'Excellent', xlr: 'Poor'},
+  {feature: '<strong>Upgrade Path</strong>', usb: 'Limited', xlr: 'Flexible'},
+  {feature: '<strong>Best For</strong>', usb: 'Remote workers, beginners', xlr: 'Content creators, podcasters'},
 ];
 
 const usbRecommendationsColumns = [
-  { key: 'microphone', label: 'Microphone', width: '160px' },
-  { key: 'type', label: 'Type' },
-  { key: 'bestFor', label: 'Best For' },
-  { key: 'price', label: 'Price' },
+  {key: 'microphone', label: 'Microphone', width: '160px'},
+  {key: 'type', label: 'Type'},
+  {key: 'bestFor', label: 'Best For'},
+  {key: 'price', label: 'Price'},
 ];
 
 const usbRecommendationsRows = [
-  { microphone: '<strong>Shure MV7</strong>', type: 'Dynamic', bestFor: 'All-around best', price: '$249' },
-  { microphone: '<strong>Blue Yeti</strong>', type: 'Condenser', bestFor: 'Versatility', price: '$129' },
-  { microphone: '<strong>Rode NT-USB Mini</strong>', type: 'Condenser', bestFor: 'Compact quality', price: '$99' },
-  { microphone: '<strong>Audio-Technica AT2020USB+</strong>', type: 'Condenser', bestFor: 'Studio sound', price: '$149' },
+  {microphone: '<strong>Shure MV7</strong>', type: 'Dynamic', bestFor: 'All-around best', price: '$249'},
+  {microphone: '<strong>Blue Yeti</strong>', type: 'Condenser', bestFor: 'Versatility', price: '$129'},
+  {microphone: '<strong>Rode NT-USB Mini</strong>', type: 'Condenser', bestFor: 'Compact quality', price: '$99'},
+  {microphone: '<strong>Audio-Technica AT2020USB+</strong>', type: 'Condenser', bestFor: 'Studio sound', price: '$149'},
 ];
 
 const xlrRecommendationsColumns = [
-  { key: 'microphone', label: 'Microphone', width: '160px' },
-  { key: 'type', label: 'Type' },
-  { key: 'bestFor', label: 'Best For' },
-  { key: 'price', label: 'Price' },
+  {key: 'microphone', label: 'Microphone', width: '160px'},
+  {key: 'type', label: 'Type'},
+  {key: 'bestFor', label: 'Best For'},
+  {key: 'price', label: 'Price'},
 ];
 
 const xlrRecommendationsRows = [
-  { microphone: '<strong>Shure SM7B</strong>', type: 'Dynamic', bestFor: 'Broadcast standard', price: '$399' },
-  { microphone: '<strong>Rode PodMic</strong>', type: 'Dynamic', bestFor: 'Value podcasting', price: '$99' },
-  { microphone: '<strong>Audio-Technica AT2020</strong>', type: 'Condenser', bestFor: 'Studio recording', price: '$99' },
-  { microphone: '<strong>Electro-Voice RE20</strong>', type: 'Dynamic', bestFor: 'Professional broadcast', price: '$449' },
+  {microphone: '<strong>Shure SM7B</strong>', type: 'Dynamic', bestFor: 'Broadcast standard', price: '$399'},
+  {microphone: '<strong>Rode PodMic</strong>', type: 'Dynamic', bestFor: 'Value podcasting', price: '$99'},
+  {microphone: '<strong>Audio-Technica AT2020</strong>', type: 'Condenser', bestFor: 'Studio recording', price: '$99'},
+  {
+    microphone: '<strong>Electro-Voice RE20</strong>',
+    type: 'Dynamic',
+    bestFor: 'Professional broadcast',
+    price: '$449'
+  },
 ];
 
 const faqItems = [
@@ -118,29 +123,32 @@ const relatedArticles = [
 ---
 
 <ArticleLayout
-  title={title}
-  description={description}
-  pubDate={pubDate}
-  updatedDate={updatedDate}
-  author={author}
-  category={category}
-  categorySlug={categorySlug}
-  readingTime={readingTime}
-  image={image}
-  imageAlt={imageAlt}
-  headings={headings}
+    title={title}
+    description={description}
+    pubDate={pubDate}
+    updatedDate={updatedDate}
+    author={author}
+    category={category}
+    categorySlug={categorySlug}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    headings={headings}
 >
   <p class="lead">
-    Choosing between USB and XLR microphones comes down to one key question: <strong>How much do you want to invest in your audio setup?</strong> For most remote workers, USB microphones offer the best balance of quality, convenience, and value.
+    Choosing between USB and XLR microphones comes down to one key question: <strong>How much do you want to invest in
+    your audio setup?</strong> For most remote workers, USB microphones offer the best balance of quality, convenience,
+    and value.
   </p>
 
   <p>
-    We'll break down both types to help you make the right choice for your specific needs—whether you're upgrading from laptop audio or building a semi-professional content creation setup.
+    We'll break down both types to help you make the right choice for your specific needs—whether you're upgrading from
+    laptop audio or building a semi-professional content creation setup.
   </p>
 
   <h2 id="quick-comparison">Quick Comparison: USB vs XLR</h2>
 
-  <ComparisonTable columns={quickComparisonColumns} rows={quickComparisonRows} />
+  <ComparisonTable columns={quickComparisonColumns} rows={quickComparisonRows}/>
 
   <h2 id="understanding-difference">Understanding the Difference</h2>
 
@@ -150,12 +158,15 @@ const relatedArticles = [
 
   <h3>USB Microphones</h3>
   <p>
-    USB mics have a built-in audio interface (analog-to-digital converter). You plug them directly into your computer's USB port, and they work immediately. The mic handles all audio processing internally.
+    USB mics have a built-in audio interface (analog-to-digital converter). You plug them directly into your computer's
+    USB port, and they work immediately. The mic handles all audio processing internally.
   </p>
 
   <h3>XLR Microphones</h3>
   <p>
-    XLR mics are traditional "analog" microphones that output a raw audio signal. They require an external audio interface (a separate box) that converts the analog signal to digital for your computer. This adds cost and complexity but provides more control and better quality potential.
+    XLR mics are traditional "analog" microphones that output a raw audio signal. They require an external audio
+    interface (a separate box) that converts the analog signal to digital for your computer. This adds cost and
+    complexity but provides more control and better quality potential.
   </p>
 
   <h2 id="usb-microphones">USB Microphones: The Practical Choice</h2>
@@ -163,7 +174,9 @@ const relatedArticles = [
   <h3>Advantages</h3>
 
   <ul>
-    <li><strong>Plug and play:</strong> Connect to USB, select in settings, done. No drivers or configuration needed for most mics.</li>
+    <li><strong>Plug and play:</strong> Connect to USB, select in settings, done. No drivers or configuration needed for
+      most mics.
+    </li>
     <li><strong>All-in-one solution:</strong> No extra equipment to buy, connect, or power.</li>
     <li><strong>Portability:</strong> Easily move between computers, take to coworking spaces, or travel.</li>
     <li><strong>Cost effective:</strong> Excellent quality at $100-250. No interface purchase required.</li>
@@ -176,7 +189,9 @@ const relatedArticles = [
     <li><strong>Quality ceiling:</strong> Built-in converters can't match dedicated audio interfaces.</li>
     <li><strong>Limited upgrade path:</strong> When you outgrow the mic, you replace everything.</li>
     <li><strong>Fixed processing:</strong> Less control over gain staging and signal chain.</li>
-    <li><strong>Potential latency:</strong> Some mics have slight monitoring delay (though many offer zero-latency monitoring).</li>
+    <li><strong>Potential latency:</strong> Some mics have slight monitoring delay (though many offer zero-latency
+      monitoring).
+    </li>
   </ul>
 
   <h3>Best USB Use Cases</h3>
@@ -229,17 +244,20 @@ const relatedArticles = [
 
   <h3>Your Colleagues Can't Tell the Difference</h3>
   <p>
-    Video conferencing compresses audio significantly. The quality difference between a good USB mic and an XLR setup is largely lost after Zoom, Teams, or Google Meet processes the audio. A $150 USB mic sounds excellent on calls.
+    Video conferencing compresses audio significantly. The quality difference between a good USB mic and an XLR setup is
+    largely lost after Zoom, Teams, or Google Meet processes the audio. A $150 USB mic sounds excellent on calls.
   </p>
 
   <h3>Time Is Money</h3>
   <p>
-    USB microphones work immediately. No troubleshooting interface settings, no gain adjustments, no phantom power switches. When a surprise call comes in, you're ready.
+    USB microphones work immediately. No troubleshooting interface settings, no gain adjustments, no phantom power
+    switches. When a surprise call comes in, you're ready.
   </p>
 
   <h3>Simplicity Reduces Problems</h3>
   <p>
-    Fewer components mean fewer failure points. USB mics don't have cables that come loose, interfaces that need drivers, or gain stages that clip unexpectedly.
+    Fewer components mean fewer failure points. USB mics don't have cables that come loose, interfaces that need
+    drivers, or gain stages that clip unexpectedly.
   </p>
 
   <h3>When XLR Makes Sense for Remote Workers</h3>
@@ -255,42 +273,47 @@ const relatedArticles = [
 
   <h2 id="best-usb-mics">Best USB Microphones for Remote Work</h2>
 
-  <ComparisonTable columns={usbRecommendationsColumns} rows={usbRecommendationsRows} />
+  <ComparisonTable columns={usbRecommendationsColumns} rows={usbRecommendationsRows}/>
 
   <h3>Shure MV7 - Best Overall USB</h3>
   <p>
-    The <strong>Shure MV7</strong> is our top pick for remote work. It's a dynamic mic that rejects background noise, has both USB and XLR outputs for flexibility, and sounds broadcast-quality out of the box.
+    The <strong>Shure MV7</strong> is our top pick for remote work. It's a dynamic mic that rejects background noise,
+    has both USB and XLR outputs for flexibility, and sounds broadcast-quality out of the box.
   </p>
   <div class="my-6">
-    <AffiliateButton href="/go/shure-mv7" text="Check Price on Amazon" />
+    <AffiliateButton href="/go/shure-mv7" text="Check Price on Amazon"/>
   </div>
 
   <h3>Rode NT-USB Mini - Best Compact</h3>
   <p>
-    If desk space is limited, the <strong>Rode NT-USB Mini</strong> delivers excellent sound in a tiny package. Studio-quality audio at $99 with a built-in pop filter.
+    If desk space is limited, the <strong>Rode NT-USB Mini</strong> delivers excellent sound in a tiny package.
+    Studio-quality audio at $99 with a built-in pop filter.
   </p>
   <div class="my-6">
-    <AffiliateButton href="/go/rode-nt-usb-mini" text="Check Price on Amazon" />
+    <AffiliateButton href="/go/rode-nt-usb-mini" text="Check Price on Amazon"/>
   </div>
 
   <h2 id="best-xlr-mics">Best XLR Microphones Worth the Setup</h2>
 
-  <ComparisonTable columns={xlrRecommendationsColumns} rows={xlrRecommendationsRows} />
+  <ComparisonTable columns={xlrRecommendationsColumns} rows={xlrRecommendationsRows}/>
 
   <h3>Shure SM7B - The Industry Standard</h3>
   <p>
-    The <strong>Shure SM7B</strong> is the most popular professional podcasting mic for good reason. Exceptional noise rejection, smooth voice reproduction, and legendary durability. Requires a quality interface and potentially a preamp like the Cloudlifter.
+    The <strong>Shure SM7B</strong> is the most popular professional podcasting mic for good reason. Exceptional noise
+    rejection, smooth voice reproduction, and legendary durability. Requires a quality interface and potentially a
+    preamp like the Cloudlifter.
   </p>
   <div class="my-6">
-    <AffiliateButton href="/go/shure-sm7b" text="Check Price on Amazon" />
+    <AffiliateButton href="/go/shure-sm7b" text="Check Price on Amazon"/>
   </div>
 
   <h3>Rode PodMic - Best Value XLR</h3>
   <p>
-    The <strong>Rode PodMic</strong> delivers excellent podcast-quality audio at just $99. It's designed specifically for voice and works well with budget interfaces.
+    The <strong>Rode PodMic</strong> delivers excellent podcast-quality audio at just $99. It's designed specifically
+    for voice and works well with budget interfaces.
   </p>
   <div class="my-6">
-    <AffiliateButton href="/go/rode-podmic" text="Check Price on Amazon" />
+    <AffiliateButton href="/go/rode-podmic" text="Check Price on Amazon"/>
   </div>
 
   <h3>Recommended Audio Interfaces</h3>
@@ -312,18 +335,20 @@ const relatedArticles = [
 
   <h3>Shure MV7 (USB + XLR)</h3>
   <p>
-    Our top recommendation. Use USB for simplicity now, connect via XLR when you upgrade to an interface later. Same excellent sound either way.
+    Our top recommendation. Use USB for simplicity now, connect via XLR when you upgrade to an interface later. Same
+    excellent sound either way.
   </p>
   <div class="my-6">
-    <AffiliateButton href="/go/shure-mv7" text="Check Price" />
+    <AffiliateButton href="/go/shure-mv7" text="Check Price"/>
   </div>
 
   <h3>Samson Q2U (USB + XLR)</h3>
   <p>
-    Budget-friendly option at around $70. Dynamic mic that works well for voice with both connection types. Great for those testing the waters.
+    Budget-friendly option at around $70. Dynamic mic that works well for voice with both connection types. Great for
+    those testing the waters.
   </p>
   <div class="my-6">
-    <AffiliateButton href="/go/samson-q2u" text="Check Price" />
+    <AffiliateButton href="/go/samson-q2u" text="Check Price"/>
   </div>
 
   <h3>Audio-Technica AT2005USB (USB + XLR)</h3>
@@ -331,26 +356,31 @@ const relatedArticles = [
     Mid-range dynamic mic with handheld design. Good for those who also present or do live work.
   </p>
   <div class="my-6">
-    <AffiliateButton href="/go/at2005usb" text="Check Price" />
+    <AffiliateButton href="/go/at2005usb" text="Check Price"/>
   </div>
 
   <h2 id="faq">Frequently Asked Questions</h2>
 
-  <FAQSection faqs={faqItems} />
+  <FAQSection faqs={faqItems}/>
 
   <h2>Final Recommendation</h2>
 
   <p>
-    <strong>For remote work:</strong> Get a quality USB microphone. The <strong>Shure MV7</strong> ($249) is our top pick—it sounds professional, rejects noise well, and gives you the option to go XLR later. On a budget? The <strong>Rode NT-USB Mini</strong> ($99) punches well above its price.
+    <strong>For remote work:</strong> Get a quality USB microphone. The <strong>Shure MV7</strong> ($249) is our top
+    pick—it sounds professional, rejects noise well, and gives you the option to go XLR later. On a budget? The <strong>Rode
+    NT-USB Mini</strong> ($99) punches well above its price.
   </p>
 
   <p>
-    <strong>For content creation:</strong> If you're serious about podcasting, YouTube, or streaming, consider investing in XLR. The <strong>Rode PodMic</strong> ($99) plus a <strong>Focusrite Scarlett Solo</strong> ($110) gives you professional-grade audio for around $210.
+    <strong>For content creation:</strong> If you're serious about podcasting, YouTube, or streaming, consider investing
+    in XLR. The <strong>Rode PodMic</strong> ($99) plus a <strong>Focusrite Scarlett Solo</strong> ($110) gives you
+    professional-grade audio for around $210.
   </p>
 
   <p>
-    <strong>Not sure?</strong> Start with USB. You can always upgrade later, and you'll get great sound in the meantime. Don't let "XLR is better" messaging convince you to spend more than you need to.
+    <strong>Not sure?</strong> Start with USB. You can always upgrade later, and you'll get great sound in the meantime.
+    Don't let "XLR is better" messaging convince you to spend more than you need to.
   </p>
 
-  <RelatedArticles articles={relatedArticles} />
+  <RelatedArticles articles={relatedArticles}/>
 </ArticleLayout>

@@ -397,6 +397,7 @@ Additional info
 **Standard Disclosure (use this):**
 
 ```html
+
 <div class="affiliate-disclosure">
   <p>
     <strong>Disclosure:</strong> Some links on this page are affiliate links,
@@ -493,17 +494,17 @@ Always use `srcset` for responsive images:
 
 ```html
 <img
-  src="image-800w.webp"
-  srcset="
+    src="image-800w.webp"
+    srcset="
     image-400w.webp 400w,
     image-800w.webp 800w,
     image-1200w.webp 1200w"
-  sizes="
+    sizes="
     (max-width: 640px) 100vw,
     (max-width: 1024px) 80vw,
     1200px"
-  alt="Descriptive alt text"
-  loading="lazy"
+    alt="Descriptive alt text"
+    loading="lazy"
 />
 ```
 
@@ -708,6 +709,7 @@ for more tips.
 **1. Clean, Semantic HTML**
 
 ```html
+
 <article>
   <header>
     <h1>Article Title</h1>

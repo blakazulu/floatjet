@@ -1,6 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
 
 const title = 'Best Wireless Earbuds for Remote Work Calls (2025)';
 const description = 'Top wireless earbuds tested for video calls and remote work. We evaluated call quality, comfort for all-day wear, and noise cancellation across 10 popular models.';
@@ -14,53 +14,109 @@ const image = 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto
 const imageAlt = 'Wireless earbuds in charging case for remote work';
 
 const headings = [
-  { text: 'Quick Picks: Our Top 3', slug: 'quick-picks' },
-  { text: 'Why Earbuds for Remote Work', slug: 'why-earbuds' },
-  { text: 'What to Look For', slug: 'what-to-look-for' },
-  { text: 'Best Overall: AirPods Pro 2', slug: 'airpods-pro-2' },
-  { text: 'Best for Android: Sony WF-1000XM5', slug: 'sony-wf-1000xm5' },
-  { text: 'Best Value: Samsung Galaxy Buds2 Pro', slug: 'galaxy-buds2-pro' },
-  { text: 'Best Call Quality: Jabra Elite 85t', slug: 'jabra-elite-85t' },
-  { text: 'Best Budget: Soundcore Liberty 4', slug: 'soundcore-liberty-4' },
-  { text: 'Best Comfort: Bose QuietComfort II', slug: 'bose-qc-earbuds-ii' },
-  { text: 'Best Battery: Sony LinkBuds S', slug: 'sony-linkbuds-s' },
-  { text: 'Best Transparency: Apple AirPods 3', slug: 'airpods-3' },
-  { text: 'Full Comparison', slug: 'comparison-table' },
-  { text: 'Earbuds vs Over-Ear Headphones', slug: 'earbuds-vs-headphones' },
-  { text: 'Frequently Asked Questions', slug: 'faq' },
+  {text: 'Quick Picks: Our Top 3', slug: 'quick-picks'},
+  {text: 'Why Earbuds for Remote Work', slug: 'why-earbuds'},
+  {text: 'What to Look For', slug: 'what-to-look-for'},
+  {text: 'Best Overall: AirPods Pro 2', slug: 'airpods-pro-2'},
+  {text: 'Best for Android: Sony WF-1000XM5', slug: 'sony-wf-1000xm5'},
+  {text: 'Best Value: Samsung Galaxy Buds2 Pro', slug: 'galaxy-buds2-pro'},
+  {text: 'Best Call Quality: Jabra Elite 85t', slug: 'jabra-elite-85t'},
+  {text: 'Best Budget: Soundcore Liberty 4', slug: 'soundcore-liberty-4'},
+  {text: 'Best Comfort: Bose QuietComfort II', slug: 'bose-qc-earbuds-ii'},
+  {text: 'Best Battery: Sony LinkBuds S', slug: 'sony-linkbuds-s'},
+  {text: 'Best Transparency: Apple AirPods 3', slug: 'airpods-3'},
+  {text: 'Full Comparison', slug: 'comparison-table'},
+  {text: 'Earbuds vs Over-Ear Headphones', slug: 'earbuds-vs-headphones'},
+  {text: 'Frequently Asked Questions', slug: 'faq'},
 ];
 
 const quickPicksColumns = [
-  { key: 'earbuds', label: 'Earbuds', width: '140px' },
-  { key: 'bestFor', label: 'Best For' },
-  { key: 'price', label: 'Price' },
-  { key: 'rating', label: 'Rating' },
+  {key: 'earbuds', label: 'Earbuds', width: '140px'},
+  {key: 'bestFor', label: 'Best For'},
+  {key: 'price', label: 'Price'},
+  {key: 'rating', label: 'Rating'},
 ];
 
 const quickPicksRows = [
-  { earbuds: '<strong>AirPods Pro 2</strong>', bestFor: 'Apple Users', price: '$249', rating: '9.5/10' },
-  { earbuds: '<strong>Sony WF-1000XM5</strong>', bestFor: 'Android Users', price: '$299', rating: '9.4/10' },
-  { earbuds: '<strong>Jabra Elite 85t</strong>', bestFor: 'Call Quality', price: '$179', rating: '9.2/10' },
+  {earbuds: '<strong>AirPods Pro 2</strong>', bestFor: 'Apple Users', price: '$249', rating: '9.5/10'},
+  {earbuds: '<strong>Sony WF-1000XM5</strong>', bestFor: 'Android Users', price: '$299', rating: '9.4/10'},
+  {earbuds: '<strong>Jabra Elite 85t</strong>', bestFor: 'Call Quality', price: '$179', rating: '9.2/10'},
 ];
 
 const comparisonColumns = [
-  { key: 'earbuds', label: 'Earbuds', width: '140px' },
-  { key: 'anc', label: 'ANC' },
-  { key: 'battery', label: 'Battery (buds)' },
-  { key: 'callQuality', label: 'Call Quality' },
-  { key: 'price', label: 'Price' },
-  { key: 'rating', label: 'Rating' },
+  {key: 'earbuds', label: 'Earbuds', width: '140px'},
+  {key: 'anc', label: 'ANC'},
+  {key: 'battery', label: 'Battery (buds)'},
+  {key: 'callQuality', label: 'Call Quality'},
+  {key: 'price', label: 'Price'},
+  {key: 'rating', label: 'Rating'},
 ];
 
 const comparisonRows = [
-  { earbuds: '<strong>AirPods Pro 2</strong>', anc: 'Excellent', battery: '6 hours', callQuality: 'Excellent', price: '$249', rating: '9.5/10' },
-  { earbuds: '<strong>Sony WF-1000XM5</strong>', anc: 'Best-in-class', battery: '8 hours', callQuality: 'Excellent', price: '$299', rating: '9.4/10' },
-  { earbuds: '<strong>Galaxy Buds2 Pro</strong>', anc: 'Very Good', battery: '5 hours', callQuality: 'Very Good', price: '$179', rating: '9.1/10' },
-  { earbuds: '<strong>Jabra Elite 85t</strong>', anc: 'Very Good', battery: '5.5 hours', callQuality: 'Best-in-class', price: '$179', rating: '9.2/10' },
-  { earbuds: '<strong>Soundcore Liberty 4</strong>', anc: 'Good', battery: '9 hours', callQuality: 'Good', price: '$99', rating: '8.8/10' },
-  { earbuds: '<strong>Bose QC Earbuds II</strong>', anc: 'Excellent', battery: '6 hours', callQuality: 'Very Good', price: '$279', rating: '9.0/10' },
-  { earbuds: '<strong>Sony LinkBuds S</strong>', anc: 'Very Good', battery: '6 hours', callQuality: 'Very Good', price: '$148', rating: '8.9/10' },
-  { earbuds: '<strong>AirPods 3</strong>', anc: 'None', battery: '6 hours', callQuality: 'Very Good', price: '$169', rating: '8.7/10' },
+  {
+    earbuds: '<strong>AirPods Pro 2</strong>',
+    anc: 'Excellent',
+    battery: '6 hours',
+    callQuality: 'Excellent',
+    price: '$249',
+    rating: '9.5/10'
+  },
+  {
+    earbuds: '<strong>Sony WF-1000XM5</strong>',
+    anc: 'Best-in-class',
+    battery: '8 hours',
+    callQuality: 'Excellent',
+    price: '$299',
+    rating: '9.4/10'
+  },
+  {
+    earbuds: '<strong>Galaxy Buds2 Pro</strong>',
+    anc: 'Very Good',
+    battery: '5 hours',
+    callQuality: 'Very Good',
+    price: '$179',
+    rating: '9.1/10'
+  },
+  {
+    earbuds: '<strong>Jabra Elite 85t</strong>',
+    anc: 'Very Good',
+    battery: '5.5 hours',
+    callQuality: 'Best-in-class',
+    price: '$179',
+    rating: '9.2/10'
+  },
+  {
+    earbuds: '<strong>Soundcore Liberty 4</strong>',
+    anc: 'Good',
+    battery: '9 hours',
+    callQuality: 'Good',
+    price: '$99',
+    rating: '8.8/10'
+  },
+  {
+    earbuds: '<strong>Bose QC Earbuds II</strong>',
+    anc: 'Excellent',
+    battery: '6 hours',
+    callQuality: 'Very Good',
+    price: '$279',
+    rating: '9.0/10'
+  },
+  {
+    earbuds: '<strong>Sony LinkBuds S</strong>',
+    anc: 'Very Good',
+    battery: '6 hours',
+    callQuality: 'Very Good',
+    price: '$148',
+    rating: '8.9/10'
+  },
+  {
+    earbuds: '<strong>AirPods 3</strong>',
+    anc: 'None',
+    battery: '6 hours',
+    callQuality: 'Very Good',
+    price: '$169',
+    rating: '8.7/10'
+  },
 ];
 
 const faqItems = [
@@ -112,40 +168,47 @@ const relatedArticles = [
 ---
 
 <ArticleLayout
-  title={title}
-  description={description}
-  pubDate={pubDate}
-  updatedDate={updatedDate}
-  author={author}
-  category={category}
-  categorySlug={categorySlug}
-  readingTime={readingTime}
-  image={image}
-  imageAlt={imageAlt}
-  headings={headings}
+    title={title}
+    description={description}
+    pubDate={pubDate}
+    updatedDate={updatedDate}
+    author={author}
+    category={category}
+    categorySlug={categorySlug}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    headings={headings}
 >
   <p class="lead">
-    After testing 10 popular wireless earbuds in real remote work conditions, the <strong>AirPods Pro 2</strong> emerged as our top pick for Apple users, while the <strong>Sony WF-1000XM5</strong> takes the crown for Android. Both deliver exceptional call quality and noise cancellation.
+    After testing 10 popular wireless earbuds in real remote work conditions, the <strong>AirPods Pro 2</strong> emerged
+    as our top pick for Apple users, while the <strong>Sony WF-1000XM5</strong> takes the crown for Android. Both
+    deliver exceptional call quality and noise cancellation.
   </p>
 
   <p>
-    Wireless earbuds have become essential remote work gear. They're more discreet on video calls than bulky headphones, easier to wear for extended periods, and let you take calls while moving around your home. But not all earbuds handle work scenarios equally well.
+    Wireless earbuds have become essential remote work gear. They're more discreet on video calls than bulky headphones,
+    easier to wear for extended periods, and let you take calls while moving around your home. But not all earbuds
+    handle work scenarios equally well.
   </p>
 
   <h2 id="quick-picks">Quick Picks: Our Top 3</h2>
 
-  <ComparisonTable columns={quickPicksColumns} rows={quickPicksRows} />
+  <ComparisonTable columns={quickPicksColumns} rows={quickPicksRows}/>
 
   <h2 id="why-earbuds">Why Wireless Earbuds for Remote Work?</h2>
 
   <p>
-    Remote workers face unique audio challenges. You need to sound professional on calls, block household distractions, and stay comfortable during back-to-back meetings. Here's why earbuds often beat headphones:
+    Remote workers face unique audio challenges. You need to sound professional on calls, block household distractions,
+    and stay comfortable during back-to-back meetings. Here's why earbuds often beat headphones:
   </p>
 
   <h3>Advantages for Remote Work</h3>
 
   <ul>
-    <li><strong>Video call appearance:</strong> Earbuds look more professional and natural on camera than large headphones</li>
+    <li><strong>Video call appearance:</strong> Earbuds look more professional and natural on camera than large
+      headphones
+    </li>
     <li><strong>Mobility:</strong> Take calls while making coffee, pacing, or moving between rooms</li>
     <li><strong>All-day comfort:</strong> Less heat and pressure than over-ear headphones</li>
     <li><strong>Quick transitions:</strong> Easy to pop in for a surprise call</li>
@@ -156,38 +219,48 @@ const relatedArticles = [
 
   <h3>Call Quality (Most Important)</h3>
   <p>
-    The microphone system matters most for remote work. Look for multiple mics with beamforming technology and AI noise reduction. Test reviews specifically mentioning call quality—music performance doesn't guarantee good voice transmission.
+    The microphone system matters most for remote work. Look for multiple mics with beamforming technology and AI noise
+    reduction. Test reviews specifically mentioning call quality—music performance doesn't guarantee good voice
+    transmission.
   </p>
 
   <h3>Active Noise Cancellation</h3>
   <p>
-    ANC blocks distractions during focus time and prevents ambient noise from reaching your callers. Quality varies significantly—premium earbuds like Sony and Bose lead the pack. Adjustable ANC lets you tune isolation to your environment.
+    ANC blocks distractions during focus time and prevents ambient noise from reaching your callers. Quality varies
+    significantly—premium earbuds like Sony and Bose lead the pack. Adjustable ANC lets you tune isolation to your
+    environment.
   </p>
 
   <h3>Transparency/Awareness Mode</h3>
   <p>
-    This feature lets outside sound through when needed—answering a quick question, hearing your doorbell, or staying aware of your environment. Essential if you live with others or work in public spaces.
+    This feature lets outside sound through when needed—answering a quick question, hearing your doorbell, or staying
+    aware of your environment. Essential if you live with others or work in public spaces.
   </p>
 
   <h3>Comfort and Fit</h3>
   <p>
-    You'll wear these for hours. Look for multiple tip sizes, lightweight construction, and secure fit that doesn't cause ear fatigue. Some people find certain shapes more comfortable—trying before buying helps.
+    You'll wear these for hours. Look for multiple tip sizes, lightweight construction, and secure fit that doesn't
+    cause ear fatigue. Some people find certain shapes more comfortable—trying before buying helps.
   </p>
 
   <h3>Battery Life</h3>
   <p>
-    Minimum 5 hours on buds with 20+ total hours including case. Fast charging is crucial—you'll forget to charge sometimes, and 15 minutes for 2 hours of playback saves meetings.
+    Minimum 5 hours on buds with 20+ total hours including case. Fast charging is crucial—you'll forget to charge
+    sometimes, and 15 minutes for 2 hours of playback saves meetings.
   </p>
 
   <h2 id="airpods-pro-2">Best Overall (Apple): AirPods Pro 2</h2>
 
   <p>
-    The <strong>Apple AirPods Pro 2</strong> set the standard for true wireless earbuds in the Apple ecosystem. Exceptional ANC, crystal-clear calls, and seamless integration make them ideal for iPhone and Mac users.
+    The <strong>Apple AirPods Pro 2</strong> set the standard for true wireless earbuds in the Apple ecosystem.
+    Exceptional ANC, crystal-clear calls, and seamless integration make them ideal for iPhone and Mac users.
   </p>
 
   <h3>Why We Chose Them</h3>
   <p>
-    Apple's H2 chip delivers remarkable noise cancellation and transparency mode. The call quality is consistently excellent—colleagues hear you clearly even in noisy environments. Adaptive Transparency intelligently reduces loud sounds while letting conversation through.
+    Apple's H2 chip delivers remarkable noise cancellation and transparency mode. The call quality is consistently
+    excellent—colleagues hear you clearly even in noisy environments. Adaptive Transparency intelligently reduces loud
+    sounds while letting conversation through.
   </p>
 
   <h3>Key Features</h3>
@@ -202,22 +275,26 @@ const relatedArticles = [
 
   <h3>Who They're For</h3>
   <p>
-    Apple ecosystem users who want the best integration with iPhone, iPad, and Mac. The seamless device switching alone justifies the price if you use multiple Apple devices.
+    Apple ecosystem users who want the best integration with iPhone, iPad, and Mac. The seamless device switching alone
+    justifies the price if you use multiple Apple devices.
   </p>
 
   <div class="my-8">
-    <AffiliateButton href="/go/airpods-pro-2" text="Check Price on Amazon" />
+    <AffiliateButton href="/go/airpods-pro-2" text="Check Price on Amazon"/>
   </div>
 
   <h2 id="sony-wf-1000xm5">Best Overall (Android): Sony WF-1000XM5</h2>
 
   <p>
-    The <strong>Sony WF-1000XM5</strong> represents Sony's most refined true wireless offering—smaller, lighter, and better-sounding than its predecessor while maintaining class-leading noise cancellation.
+    The <strong>Sony WF-1000XM5</strong> represents Sony's most refined true wireless offering—smaller, lighter, and
+    better-sounding than its predecessor while maintaining class-leading noise cancellation.
   </p>
 
   <h3>Why We Chose Them</h3>
   <p>
-    Sony's noise cancellation technology is genuinely best-in-class. These block more ambient noise than any competitor we tested. The V2 processor and bone conduction sensor ensure your voice comes through clearly on calls even in challenging environments.
+    Sony's noise cancellation technology is genuinely best-in-class. These block more ambient noise than any competitor
+    we tested. The V2 processor and bone conduction sensor ensure your voice comes through clearly on calls even in
+    challenging environments.
   </p>
 
   <h3>Key Features</h3>
@@ -232,22 +309,26 @@ const relatedArticles = [
 
   <h3>Who They're For</h3>
   <p>
-    Android users who want the absolute best noise cancellation and audio quality. Audiophiles will appreciate the LDAC support and tuning options. Also works great with iPhones, just without some ecosystem features.
+    Android users who want the absolute best noise cancellation and audio quality. Audiophiles will appreciate the LDAC
+    support and tuning options. Also works great with iPhones, just without some ecosystem features.
   </p>
 
   <div class="my-8">
-    <AffiliateButton href="/go/sony-wf-1000xm5" text="Check Price on Amazon" />
+    <AffiliateButton href="/go/sony-wf-1000xm5" text="Check Price on Amazon"/>
   </div>
 
   <h2 id="galaxy-buds2-pro">Best Value: Samsung Galaxy Buds2 Pro</h2>
 
   <p>
-    The <strong>Samsung Galaxy Buds2 Pro</strong> deliver flagship-level performance at a more accessible price, especially for Samsung Galaxy users who benefit from enhanced features.
+    The <strong>Samsung Galaxy Buds2 Pro</strong> deliver flagship-level performance at a more accessible price,
+    especially for Samsung Galaxy users who benefit from enhanced features.
   </p>
 
   <h3>Why We Chose Them</h3>
   <p>
-    These punch well above their price point. The ANC effectively blocks office noise, call quality is excellent with Samsung's voice pickup optimization, and the compact design fits comfortably for hours. Regular sales drop the price even further.
+    These punch well above their price point. The ANC effectively blocks office noise, call quality is excellent with
+    Samsung's voice pickup optimization, and the compact design fits comfortably for hours. Regular sales drop the price
+    even further.
   </p>
 
   <h3>Key Features</h3>
@@ -262,22 +343,26 @@ const relatedArticles = [
 
   <h3>Who They're For</h3>
   <p>
-    Samsung Galaxy users get the most value, but anyone wanting premium features without premium pricing should consider these. The smaller size fits more ear shapes comfortably.
+    Samsung Galaxy users get the most value, but anyone wanting premium features without premium pricing should consider
+    these. The smaller size fits more ear shapes comfortably.
   </p>
 
   <div class="my-8">
-    <AffiliateButton href="/go/galaxy-buds2-pro" text="Check Price on Amazon" />
+    <AffiliateButton href="/go/galaxy-buds2-pro" text="Check Price on Amazon"/>
   </div>
 
   <h2 id="jabra-elite-85t">Best Call Quality: Jabra Elite 85t</h2>
 
   <p>
-    <strong>Jabra</strong> built their reputation on professional communication devices, and the <strong>Elite 85t</strong> shows it. If call quality is your top priority, these are hard to beat.
+    <strong>Jabra</strong> built their reputation on professional communication devices, and the <strong>Elite
+    85t</strong> shows it. If call quality is your top priority, these are hard to beat.
   </p>
 
   <h3>Why We Chose Them</h3>
   <p>
-    Jabra's 6-microphone system with advanced wind noise protection delivers the clearest calls we tested. Your voice sounds natural and present, even in windy outdoor conditions. The adjustable ANC with 11 levels lets you fine-tune your environment.
+    Jabra's 6-microphone system with advanced wind noise protection delivers the clearest calls we tested. Your voice
+    sounds natural and present, even in windy outdoor conditions. The adjustable ANC with 11 levels lets you fine-tune
+    your environment.
   </p>
 
   <h3>Key Features</h3>
@@ -292,22 +377,25 @@ const relatedArticles = [
 
   <h3>Who They're For</h3>
   <p>
-    Remote workers whose primary use is voice calls. Sales professionals, consultants, and anyone who spends hours on the phone will appreciate Jabra's communication expertise.
+    Remote workers whose primary use is voice calls. Sales professionals, consultants, and anyone who spends hours on
+    the phone will appreciate Jabra's communication expertise.
   </p>
 
   <div class="my-8">
-    <AffiliateButton href="/go/jabra-elite-85t" text="Check Price on Amazon" />
+    <AffiliateButton href="/go/jabra-elite-85t" text="Check Price on Amazon"/>
   </div>
 
   <h2 id="soundcore-liberty-4">Best Budget: Soundcore Liberty 4</h2>
 
   <p>
-    The <strong>Anker Soundcore Liberty 4</strong> proves you don't need to spend $250+ for quality wireless earbuds. These deliver impressive sound, decent ANC, and innovative features at an aggressive price point.
+    The <strong>Anker Soundcore Liberty 4</strong> proves you don't need to spend $250+ for quality wireless earbuds.
+    These deliver impressive sound, decent ANC, and innovative features at an aggressive price point.
   </p>
 
   <h3>Why We Chose Them</h3>
   <p>
-    Under $100 for earbuds with ANC, excellent battery life, and unique features like heart rate monitoring. The call quality holds up well for the price, and the customizable EQ lets you tune the sound to your preferences.
+    Under $100 for earbuds with ANC, excellent battery life, and unique features like heart rate monitoring. The call
+    quality holds up well for the price, and the customizable EQ lets you tune the sound to your preferences.
   </p>
 
   <h3>Key Features</h3>
@@ -322,22 +410,25 @@ const relatedArticles = [
 
   <h3>Who They're For</h3>
   <p>
-    Budget-conscious remote workers who want modern features without the flagship price. Also great as a backup pair or for those who frequently lose earbuds.
+    Budget-conscious remote workers who want modern features without the flagship price. Also great as a backup pair or
+    for those who frequently lose earbuds.
   </p>
 
   <div class="my-8">
-    <AffiliateButton href="/go/soundcore-liberty-4" text="Check Price on Amazon" />
+    <AffiliateButton href="/go/soundcore-liberty-4" text="Check Price on Amazon"/>
   </div>
 
   <h2 id="bose-qc-earbuds-ii">Best Comfort: Bose QuietComfort Earbuds II</h2>
 
   <p>
-    <strong>Bose</strong> designed the <strong>QuietComfort Earbuds II</strong> for extended wear. The CustomTune technology adapts to your ear shape for optimal sound and noise cancellation comfort.
+    <strong>Bose</strong> designed the <strong>QuietComfort Earbuds II</strong> for extended wear. The CustomTune
+    technology adapts to your ear shape for optimal sound and noise cancellation comfort.
   </p>
 
   <h3>Why We Chose Them</h3>
   <p>
-    Bose's focus on comfort shows. The earbuds feel lighter and more secure than competitors, even during multi-hour sessions. The noise cancellation rivals Sony's best, and the sound signature works beautifully for voice content.
+    Bose's focus on comfort shows. The earbuds feel lighter and more secure than competitors, even during multi-hour
+    sessions. The noise cancellation rivals Sony's best, and the sound signature works beautifully for voice content.
   </p>
 
   <h3>Key Features</h3>
@@ -352,22 +443,25 @@ const relatedArticles = [
 
   <h3>Who They're For</h3>
   <p>
-    Remote workers who struggle with earbud comfort or need to wear them for extended periods. If other earbuds cause ear fatigue, try Bose.
+    Remote workers who struggle with earbud comfort or need to wear them for extended periods. If other earbuds cause
+    ear fatigue, try Bose.
   </p>
 
   <div class="my-8">
-    <AffiliateButton href="/go/bose-qc-earbuds-ii" text="Check Price on Amazon" />
+    <AffiliateButton href="/go/bose-qc-earbuds-ii" text="Check Price on Amazon"/>
   </div>
 
   <h2 id="sony-linkbuds-s">Best Battery: Sony LinkBuds S</h2>
 
   <p>
-    The <strong>Sony LinkBuds S</strong> combine impressive battery life with Sony's renowned sound quality in an ultra-lightweight package that barely feels present in your ears.
+    The <strong>Sony LinkBuds S</strong> combine impressive battery life with Sony's renowned sound quality in an
+    ultra-lightweight package that barely feels present in your ears.
   </p>
 
   <h3>Why We Chose Them</h3>
   <p>
-    At just 4.8g per earbud, these are among the lightest ANC earbuds available. Despite the compact size, they deliver solid noise cancellation and excellent audio quality. The 6-hour battery with fast charging handles full workdays.
+    At just 4.8g per earbud, these are among the lightest ANC earbuds available. Despite the compact size, they deliver
+    solid noise cancellation and excellent audio quality. The 6-hour battery with fast charging handles full workdays.
   </p>
 
   <h3>Key Features</h3>
@@ -382,22 +476,25 @@ const relatedArticles = [
 
   <h3>Who They're For</h3>
   <p>
-    Remote workers who prioritize lightweight design for all-day wear. Great for those who find most earbuds too heavy or intrusive.
+    Remote workers who prioritize lightweight design for all-day wear. Great for those who find most earbuds too heavy
+    or intrusive.
   </p>
 
   <div class="my-8">
-    <AffiliateButton href="/go/sony-linkbuds-s" text="Check Price on Amazon" />
+    <AffiliateButton href="/go/sony-linkbuds-s" text="Check Price on Amazon"/>
   </div>
 
   <h2 id="airpods-3">Best Transparency: Apple AirPods (3rd Gen)</h2>
 
   <p>
-    The <strong>AirPods 3</strong> skip active noise cancellation in favor of an open design that keeps you connected to your environment while delivering clear audio and calls.
+    The <strong>AirPods 3</strong> skip active noise cancellation in favor of an open design that keeps you connected to
+    your environment while delivering clear audio and calls.
   </p>
 
   <h3>Why We Chose Them</h3>
   <p>
-    Not everyone wants isolation. The open design lets you hear your doorbell, respond to family members, and stay aware while working. The spatial audio and adaptive EQ provide excellent sound quality for music and calls.
+    Not everyone wants isolation. The open design lets you hear your doorbell, respond to family members, and stay aware
+    while working. The spatial audio and adaptive EQ provide excellent sound quality for music and calls.
   </p>
 
   <h3>Key Features</h3>
@@ -412,16 +509,17 @@ const relatedArticles = [
 
   <h3>Who They're For</h3>
   <p>
-    Remote workers who work in quiet environments and need to stay aware of their surroundings. Parents working from home often prefer these for hearing kids.
+    Remote workers who work in quiet environments and need to stay aware of their surroundings. Parents working from
+    home often prefer these for hearing kids.
   </p>
 
   <div class="my-8">
-    <AffiliateButton href="/go/airpods-3" text="Check Price on Amazon" />
+    <AffiliateButton href="/go/airpods-3" text="Check Price on Amazon"/>
   </div>
 
   <h2 id="comparison-table">Full Comparison Table</h2>
 
-  <ComparisonTable columns={comparisonColumns} rows={comparisonRows} />
+  <ComparisonTable columns={comparisonColumns} rows={comparisonRows}/>
 
   <h2 id="earbuds-vs-headphones">Earbuds vs Over-Ear Headphones for Remote Work</h2>
 
@@ -449,22 +547,27 @@ const relatedArticles = [
 
   <h3>Best Approach</h3>
   <p>
-    Many remote workers own both. Use earbuds for calls and mobile work, headphones for deep focus sessions and music enjoyment. The combination covers all scenarios.
+    Many remote workers own both. Use earbuds for calls and mobile work, headphones for deep focus sessions and music
+    enjoyment. The combination covers all scenarios.
   </p>
 
   <h2 id="faq">Frequently Asked Questions</h2>
 
-  <FAQSection faqs={faqItems} />
+  <FAQSection faqs={faqItems}/>
 
   <h2>Final Thoughts</h2>
 
   <p>
-    For Apple users, the <strong>AirPods Pro 2</strong> offer the best combination of call quality, noise cancellation, and ecosystem integration. Android users should go with the <strong>Sony WF-1000XM5</strong> for best-in-class ANC and premium sound.
+    For Apple users, the <strong>AirPods Pro 2</strong> offer the best combination of call quality, noise cancellation,
+    and ecosystem integration. Android users should go with the <strong>Sony WF-1000XM5</strong> for best-in-class ANC
+    and premium sound.
   </p>
 
   <p>
-    If call quality is your single most important factor, the <strong>Jabra Elite 85t</strong> excels at voice communication. And for budget-conscious buyers, the <strong>Soundcore Liberty 4</strong> proves you can get excellent wireless earbuds without the flagship price.
+    If call quality is your single most important factor, the <strong>Jabra Elite 85t</strong> excels at voice
+    communication. And for budget-conscious buyers, the <strong>Soundcore Liberty 4</strong> proves you can get
+    excellent wireless earbuds without the flagship price.
   </p>
 
-  <RelatedArticles articles={relatedArticles} />
+  <RelatedArticles articles={relatedArticles}/>
 </ArticleLayout>

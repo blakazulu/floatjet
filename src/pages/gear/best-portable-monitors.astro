@@ -1,6 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
 
 const title = 'Best Portable Monitors for Digital Nomads (2025)';
 const description = 'We tested 8 portable monitors to find the best for travel and remote work. Compare ASUS ZenScreen, Lepow, and more for dual-screen productivity on the go.';
@@ -14,40 +14,88 @@ const image = 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto
 const imageAlt = 'Portable monitor setup with laptop for digital nomad work';
 
 const headings = [
-  { text: 'Why Portable Monitors Matter', slug: 'why-portable-monitors', depth: 2 },
-  { text: 'What to Look For', slug: 'what-to-look-for', depth: 2 },
-  { text: 'Quick Comparison', slug: 'quick-comparison', depth: 2 },
-  { text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2 },
-  { text: 'ASUS ZenScreen MB16AC', slug: 'asus-zenscreen', depth: 3 },
-  { text: 'Lepow Z1', slug: 'lepow-z1', depth: 3 },
-  { text: 'ViewSonic VG1655', slug: 'viewsonic-vg1655', depth: 3 },
-  { text: 'INNOCN 15.6" OLED', slug: 'innocn-oled', depth: 3 },
-  { text: 'Lenovo ThinkVision M14', slug: 'lenovo-thinkvision', depth: 3 },
-  { text: 'Mobile Pixels DUEX Plus', slug: 'mobile-pixels-duex', depth: 3 },
-  { text: 'ASUS ZenScreen Touch', slug: 'asus-zenscreen-touch', depth: 3 },
-  { text: 'Espresso Display', slug: 'espresso-display', depth: 3 },
-  { text: 'USB-C vs HDMI', slug: 'usb-c-vs-hdmi', depth: 2 },
-  { text: 'Travel Tips', slug: 'travel-tips', depth: 2 },
-  { text: 'Frequently Asked Questions', slug: 'faq', depth: 2 },
+  {text: 'Why Portable Monitors Matter', slug: 'why-portable-monitors', depth: 2},
+  {text: 'What to Look For', slug: 'what-to-look-for', depth: 2},
+  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
+  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
+  {text: 'ASUS ZenScreen MB16AC', slug: 'asus-zenscreen', depth: 3},
+  {text: 'Lepow Z1', slug: 'lepow-z1', depth: 3},
+  {text: 'ViewSonic VG1655', slug: 'viewsonic-vg1655', depth: 3},
+  {text: 'INNOCN 15.6" OLED', slug: 'innocn-oled', depth: 3},
+  {text: 'Lenovo ThinkVision M14', slug: 'lenovo-thinkvision', depth: 3},
+  {text: 'Mobile Pixels DUEX Plus', slug: 'mobile-pixels-duex', depth: 3},
+  {text: 'ASUS ZenScreen Touch', slug: 'asus-zenscreen-touch', depth: 3},
+  {text: 'Espresso Display', slug: 'espresso-display', depth: 3},
+  {text: 'USB-C vs HDMI', slug: 'usb-c-vs-hdmi', depth: 2},
+  {text: 'Travel Tips', slug: 'travel-tips', depth: 2},
+  {text: 'Frequently Asked Questions', slug: 'faq', depth: 2},
 ];
 
 const comparisonColumns = [
-  { key: 'monitor', label: 'Monitor', width: '150px' },
-  { key: 'resolution', label: 'Resolution' },
-  { key: 'weight', label: 'Weight' },
-  { key: 'connection', label: 'Connection' },
-  { key: 'price', label: 'Price' },
+  {key: 'monitor', label: 'Monitor', width: '150px'},
+  {key: 'resolution', label: 'Resolution'},
+  {key: 'weight', label: 'Weight'},
+  {key: 'connection', label: 'Connection'},
+  {key: 'price', label: 'Price'},
 ];
 
 const comparisonRows = [
-  { monitor: '<strong>ASUS ZenScreen MB16AC</strong>', resolution: '1080p', weight: '1.7 lbs', connection: 'USB-C', price: '$250' },
-  { monitor: '<strong>Lepow Z1</strong>', resolution: '1080p', weight: '1.7 lbs', connection: 'USB-C/HDMI', price: '$180' },
-  { monitor: '<strong>ViewSonic VG1655</strong>', resolution: '1080p', weight: '1.5 lbs', connection: 'USB-C', price: '$220' },
-  { monitor: '<strong>INNOCN 15.6" OLED</strong>', resolution: '1080p OLED', weight: '1.2 lbs', connection: 'USB-C', price: '$350' },
-  { monitor: '<strong>Lenovo ThinkVision M14</strong>', resolution: '1080p', weight: '1.3 lbs', connection: 'USB-C', price: '$230' },
-  { monitor: '<strong>Mobile Pixels DUEX Plus</strong>', resolution: '1080p', weight: '1.5 lbs', connection: 'USB-C', price: '$280' },
-  { monitor: '<strong>ASUS ZenScreen Touch</strong>', resolution: '1080p', weight: '1.9 lbs', connection: 'USB-C', price: '$300' },
-  { monitor: '<strong>Espresso Display</strong>', resolution: '1080p/4K', weight: '1.3 lbs', connection: 'USB-C', price: '$350+' },
+  {
+    monitor: '<strong>ASUS ZenScreen MB16AC</strong>',
+    resolution: '1080p',
+    weight: '1.7 lbs',
+    connection: 'USB-C',
+    price: '$250'
+  },
+  {
+    monitor: '<strong>Lepow Z1</strong>',
+    resolution: '1080p',
+    weight: '1.7 lbs',
+    connection: 'USB-C/HDMI',
+    price: '$180'
+  },
+  {
+    monitor: '<strong>ViewSonic VG1655</strong>',
+    resolution: '1080p',
+    weight: '1.5 lbs',
+    connection: 'USB-C',
+    price: '$220'
+  },
+  {
+    monitor: '<strong>INNOCN 15.6" OLED</strong>',
+    resolution: '1080p OLED',
+    weight: '1.2 lbs',
+    connection: 'USB-C',
+    price: '$350'
+  },
+  {
+    monitor: '<strong>Lenovo ThinkVision M14</strong>',
+    resolution: '1080p',
+    weight: '1.3 lbs',
+    connection: 'USB-C',
+    price: '$230'
+  },
+  {
+    monitor: '<strong>Mobile Pixels DUEX Plus</strong>',
+    resolution: '1080p',
+    weight: '1.5 lbs',
+    connection: 'USB-C',
+    price: '$280'
+  },
+  {
+    monitor: '<strong>ASUS ZenScreen Touch</strong>',
+    resolution: '1080p',
+    weight: '1.9 lbs',
+    connection: 'USB-C',
+    price: '$300'
+  },
+  {
+    monitor: '<strong>Espresso Display</strong>',
+    resolution: '1080p/4K',
+    weight: '1.3 lbs',
+    connection: 'USB-C',
+    price: '$350+'
+  },
 ];
 
 const faqItems = [
@@ -99,26 +147,28 @@ const relatedArticles = [
 ---
 
 <ArticleLayout
-  title={title}
-  description={description}
-  pubDate={pubDate}
-  updatedDate={updatedDate}
-  author={author}
-  category={category}
-  categorySlug={categorySlug}
-  readingTime={readingTime}
-  image={image}
-  imageAlt={imageAlt}
-  headings={headings}
+    title={title}
+    description={description}
+    pubDate={pubDate}
+    updatedDate={updatedDate}
+    author={author}
+    category={category}
+    categorySlug={categorySlug}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    headings={headings}
 >
   <p class="lead">
-    Dual-screen productivity should not stop when you leave home. We tested 8 portable monitors to find the best options for digital nomads and remote workers who need extra screen space on the go.
+    Dual-screen productivity should not stop when you leave home. We tested 8 portable monitors to find the best options
+    for digital nomads and remote workers who need extra screen space on the go.
   </p>
 
   <h2 id="why-portable-monitors">Why Portable Monitors Matter for Digital Nomads</h2>
 
   <p>
-    Research shows dual monitors can increase productivity by 20-30%. For digital nomads working from cafes, co-working spaces, or hotel rooms, a portable monitor transforms any location into a productive workspace.
+    Research shows dual monitors can increase productivity by 20-30%. For digital nomads working from cafes, co-working
+    spaces, or hotel rooms, a portable monitor transforms any location into a productive workspace.
   </p>
 
   <p>
@@ -144,14 +194,16 @@ const relatedArticles = [
 
   <h2 id="quick-comparison">Quick Comparison: Best Portable Monitors</h2>
 
-  <ComparisonTable columns={comparisonColumns} rows={comparisonRows} />
+  <ComparisonTable columns={comparisonColumns} rows={comparisonRows}/>
 
   <h2 id="detailed-reviews">Detailed Portable Monitor Reviews</h2>
 
   <h3 id="asus-zenscreen">1. ASUS ZenScreen MB16AC - Best Overall</h3>
 
   <p>
-    The ASUS ZenScreen MB16AC is the gold standard for portable monitors. At just 1.7 pounds with a hybrid USB-C connection, it works with virtually any laptop. The included smart cover doubles as a stand with multiple viewing angles.
+    The ASUS ZenScreen MB16AC is the gold standard for portable monitors. At just 1.7 pounds with a hybrid USB-C
+    connection, it works with virtually any laptop. The included smart cover doubles as a stand with multiple viewing
+    angles.
   </p>
 
   <ul>
@@ -167,13 +219,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/asus-zenscreen" text="Check ASUS ZenScreen Price" />
+    <AffiliateButton href="/go/asus-zenscreen" text="Check ASUS ZenScreen Price"/>
   </div>
 
   <h3 id="lepow-z1">2. Lepow Z1 - Best Budget</h3>
 
   <p>
-    The Lepow Z1 delivers impressive value with both USB-C and mini-HDMI inputs. The IPS panel provides decent color accuracy, and the included stand cover works well. Some compromises in build quality, but excellent for the price.
+    The Lepow Z1 delivers impressive value with both USB-C and mini-HDMI inputs. The IPS panel provides decent color
+    accuracy, and the included stand cover works well. Some compromises in build quality, but excellent for the price.
   </p>
 
   <ul>
@@ -189,13 +242,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/lepow-z1" text="Check Lepow Z1 Price" />
+    <AffiliateButton href="/go/lepow-z1" text="Check Lepow Z1 Price"/>
   </div>
 
   <h3 id="viewsonic-vg1655">3. ViewSonic VG1655 - Best for Business</h3>
 
   <p>
-    The ViewSonic VG1655 targets business users with its professional design and 60W pass-through charging. Connect your laptop to the monitor, then charge through the monitor - one cable to rule them all.
+    The ViewSonic VG1655 targets business users with its professional design and 60W pass-through charging. Connect your
+    laptop to the monitor, then charge through the monitor - one cable to rule them all.
   </p>
 
   <ul>
@@ -211,13 +265,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/viewsonic-vg1655" text="Check ViewSonic VG1655 Price" />
+    <AffiliateButton href="/go/viewsonic-vg1655" text="Check ViewSonic VG1655 Price"/>
   </div>
 
   <h3 id="innocn-oled">4. INNOCN 15.6" OLED - Best Display Quality</h3>
 
   <p>
-    The INNOCN OLED portable monitor delivers stunning visuals with true blacks and vibrant colors. At 1.2 pounds, it is one of the lightest options available. Perfect for creative work or anyone who appreciates premium display quality.
+    The INNOCN OLED portable monitor delivers stunning visuals with true blacks and vibrant colors. At 1.2 pounds, it is
+    one of the lightest options available. Perfect for creative work or anyone who appreciates premium display quality.
   </p>
 
   <ul>
@@ -233,13 +288,15 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/innocn-oled" text="Check INNOCN OLED Price" />
+    <AffiliateButton href="/go/innocn-oled" text="Check INNOCN OLED Price"/>
   </div>
 
   <h3 id="lenovo-thinkvision">5. Lenovo ThinkVision M14 - Best Build Quality</h3>
 
   <p>
-    The ThinkVision M14 brings ThinkPad-level build quality to portable monitors. The all-metal construction feels premium, and the integrated kickstand is more reliable than fabric covers. Excellent for frequent travelers who need durability.
+    The ThinkVision M14 brings ThinkPad-level build quality to portable monitors. The all-metal construction feels
+    premium, and the integrated kickstand is more reliable than fabric covers. Excellent for frequent travelers who need
+    durability.
   </p>
 
   <ul>
@@ -255,13 +312,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/lenovo-thinkvision-m14" text="Check Lenovo ThinkVision M14 Price" />
+    <AffiliateButton href="/go/lenovo-thinkvision-m14" text="Check Lenovo ThinkVision M14 Price"/>
   </div>
 
   <h3 id="mobile-pixels-duex">6. Mobile Pixels DUEX Plus - Best Attachment Style</h3>
 
   <p>
-    The DUEX Plus attaches magnetically to your laptop lid and slides out when needed. No separate stand required - it becomes part of your laptop. Perfect for tight spaces like airplane tray tables.
+    The DUEX Plus attaches magnetically to your laptop lid and slides out when needed. No separate stand required - it
+    becomes part of your laptop. Perfect for tight spaces like airplane tray tables.
   </p>
 
   <ul>
@@ -277,13 +335,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/mobile-pixels-duex" text="Check Mobile Pixels DUEX Plus Price" />
+    <AffiliateButton href="/go/mobile-pixels-duex" text="Check Mobile Pixels DUEX Plus Price"/>
   </div>
 
   <h3 id="asus-zenscreen-touch">7. ASUS ZenScreen Touch MB16AMT - Best Touchscreen</h3>
 
   <p>
-    The ZenScreen Touch adds a responsive 10-point touchscreen to the proven ZenScreen formula. Built-in battery provides 4 hours of untethered use. Great for presentations, drawing, or touch-friendly workflows.
+    The ZenScreen Touch adds a responsive 10-point touchscreen to the proven ZenScreen formula. Built-in battery
+    provides 4 hours of untethered use. Great for presentations, drawing, or touch-friendly workflows.
   </p>
 
   <ul>
@@ -299,13 +358,14 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/asus-zenscreen-touch" text="Check ASUS ZenScreen Touch Price" />
+    <AffiliateButton href="/go/asus-zenscreen-touch" text="Check ASUS ZenScreen Touch Price"/>
   </div>
 
   <h3 id="espresso-display">8. Espresso Display - Best Design</h3>
 
   <p>
-    The Espresso Display is the Apple of portable monitors - beautiful design, premium materials, and attention to detail. The magnetic stand system is elegant and functional. Available in 13" 1080p and 15" 4K versions.
+    The Espresso Display is the Apple of portable monitors - beautiful design, premium materials, and attention to
+    detail. The magnetic stand system is elegant and functional. Available in 13" 1080p and 15" 4K versions.
   </p>
 
   <ul>
@@ -321,7 +381,7 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/espresso-display" text="Check Espresso Display Price" />
+    <AffiliateButton href="/go/espresso-display" text="Check Espresso Display Price"/>
   </div>
 
   <h2 id="usb-c-vs-hdmi">USB-C vs HDMI: Which Connection is Better?</h2>
@@ -341,7 +401,8 @@ const relatedArticles = [
   </ul>
 
   <p>
-    <strong>Our recommendation:</strong> Choose USB-C if your laptop supports it. The single-cable setup is worth the convenience. If you need HDMI compatibility, the Lepow Z1 offers both options.
+    <strong>Our recommendation:</strong> Choose USB-C if your laptop supports it. The single-cable setup is worth the
+    convenience. If you need HDMI compatibility, the Lepow Z1 offers both options.
   </p>
 
   <h2 id="travel-tips">Travel Tips for Portable Monitors</h2>
@@ -369,12 +430,13 @@ const relatedArticles = [
 
   <h2 id="faq">Frequently Asked Questions</h2>
 
-  <FAQSection faqs={faqItems} />
+  <FAQSection faqs={faqItems}/>
 
   <h2>Bottom Line</h2>
 
   <p>
-    For most digital nomads, the <strong>ASUS ZenScreen MB16AC</strong> is the best overall choice. It balances portability, display quality, and compatibility perfectly.
+    For most digital nomads, the <strong>ASUS ZenScreen MB16AC</strong> is the best overall choice. It balances
+    portability, display quality, and compatibility perfectly.
   </p>
 
   <p>
@@ -386,8 +448,9 @@ const relatedArticles = [
   </p>
 
   <p>
-    Need an always-ready setup? The <strong>Mobile Pixels DUEX Plus</strong> attaches to your laptop for instant dual-screen productivity.
+    Need an always-ready setup? The <strong>Mobile Pixels DUEX Plus</strong> attaches to your laptop for instant
+    dual-screen productivity.
   </p>
 
-  <RelatedArticles articles={relatedArticles} />
+  <RelatedArticles articles={relatedArticles}/>
 </ArticleLayout>

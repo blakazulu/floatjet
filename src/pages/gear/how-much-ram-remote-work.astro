@@ -1,6 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
 
 const title = 'How Much RAM Do You Really Need for Remote Work? (2025)';
 const description = 'Is 8GB RAM enough for working from home? We break down RAM requirements for video calls, browser tabs, Office apps, and more to help you choose.';
@@ -14,44 +14,59 @@ const image = 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto
 const imageAlt = 'Computer RAM memory modules';
 
 const headings = [
-  { text: 'Quick Answer', slug: 'quick-answer', depth: 2 },
-  { text: 'What RAM Actually Does', slug: 'what-ram-does', depth: 2 },
-  { text: 'RAM Usage by Task', slug: 'ram-by-task', depth: 2 },
-  { text: '8GB vs 16GB vs 32GB', slug: 'ram-comparison', depth: 2 },
-  { text: 'When to Upgrade', slug: 'when-to-upgrade', depth: 2 },
-  { text: 'Laptop Recommendations', slug: 'recommendations', depth: 2 },
-  { text: 'Frequently Asked Questions', slug: 'faq', depth: 2 },
+  {text: 'Quick Answer', slug: 'quick-answer', depth: 2},
+  {text: 'What RAM Actually Does', slug: 'what-ram-does', depth: 2},
+  {text: 'RAM Usage by Task', slug: 'ram-by-task', depth: 2},
+  {text: '8GB vs 16GB vs 32GB', slug: 'ram-comparison', depth: 2},
+  {text: 'When to Upgrade', slug: 'when-to-upgrade', depth: 2},
+  {text: 'Laptop Recommendations', slug: 'recommendations', depth: 2},
+  {text: 'Frequently Asked Questions', slug: 'faq', depth: 2},
 ];
 
 const ramUsageColumns = [
-  { key: 'task', label: 'Task', width: '180px' },
-  { key: 'usage', label: 'Typical RAM Usage' },
-  { key: 'minimum', label: 'Minimum Recommended' },
+  {key: 'task', label: 'Task', width: '180px'},
+  {key: 'usage', label: 'Typical RAM Usage'},
+  {key: 'minimum', label: 'Minimum Recommended'},
 ];
 
 const ramUsageRows = [
-  { task: '<strong>Video Call (Zoom/Teams)</strong>', usage: '0.5-1.5 GB', minimum: '8 GB' },
-  { task: '<strong>10 Chrome Tabs</strong>', usage: '2-4 GB', minimum: '8 GB' },
-  { task: '<strong>30+ Chrome Tabs</strong>', usage: '6-10 GB', minimum: '16 GB' },
-  { task: '<strong>Microsoft Office</strong>', usage: '0.5-1 GB', minimum: '8 GB' },
-  { task: '<strong>Slack/Discord</strong>', usage: '0.5-1 GB', minimum: '8 GB' },
-  { task: '<strong>Adobe Photoshop</strong>', usage: '2-8 GB', minimum: '16 GB' },
-  { task: '<strong>Video Editing</strong>', usage: '8-16+ GB', minimum: '32 GB' },
-  { task: '<strong>Web Development</strong>', usage: '4-8 GB', minimum: '16 GB' },
-  { task: '<strong>Virtual Machines</strong>', usage: '4-8 GB per VM', minimum: '32 GB' },
+  {task: '<strong>Video Call (Zoom/Teams)</strong>', usage: '0.5-1.5 GB', minimum: '8 GB'},
+  {task: '<strong>10 Chrome Tabs</strong>', usage: '2-4 GB', minimum: '8 GB'},
+  {task: '<strong>30+ Chrome Tabs</strong>', usage: '6-10 GB', minimum: '16 GB'},
+  {task: '<strong>Microsoft Office</strong>', usage: '0.5-1 GB', minimum: '8 GB'},
+  {task: '<strong>Slack/Discord</strong>', usage: '0.5-1 GB', minimum: '8 GB'},
+  {task: '<strong>Adobe Photoshop</strong>', usage: '2-8 GB', minimum: '16 GB'},
+  {task: '<strong>Video Editing</strong>', usage: '8-16+ GB', minimum: '32 GB'},
+  {task: '<strong>Web Development</strong>', usage: '4-8 GB', minimum: '16 GB'},
+  {task: '<strong>Virtual Machines</strong>', usage: '4-8 GB per VM', minimum: '32 GB'},
 ];
 
 const comparisonColumns = [
-  { key: 'ram', label: 'RAM', width: '100px' },
-  { key: 'good_for', label: 'Good For' },
-  { key: 'not_ideal', label: 'Not Ideal For' },
-  { key: 'price_impact', label: 'Price Impact' },
+  {key: 'ram', label: 'RAM', width: '100px'},
+  {key: 'good_for', label: 'Good For'},
+  {key: 'not_ideal', label: 'Not Ideal For'},
+  {key: 'price_impact', label: 'Price Impact'},
 ];
 
 const comparisonRows = [
-  { ram: '<strong>8 GB</strong>', good_for: 'Basic tasks, light browsing, email', not_ideal: 'Heavy multitasking, creative work', price_impact: 'Base price' },
-  { ram: '<strong>16 GB</strong>', good_for: 'Most remote work, moderate multitasking', not_ideal: 'Video editing, VMs', price_impact: '+$50-150' },
-  { ram: '<strong>32 GB</strong>', good_for: 'Power users, creative pros, developers', not_ideal: 'Casual users (overkill)', price_impact: '+$150-300' },
+  {
+    ram: '<strong>8 GB</strong>',
+    good_for: 'Basic tasks, light browsing, email',
+    not_ideal: 'Heavy multitasking, creative work',
+    price_impact: 'Base price'
+  },
+  {
+    ram: '<strong>16 GB</strong>',
+    good_for: 'Most remote work, moderate multitasking',
+    not_ideal: 'Video editing, VMs',
+    price_impact: '+$50-150'
+  },
+  {
+    ram: '<strong>32 GB</strong>',
+    good_for: 'Power users, creative pros, developers',
+    not_ideal: 'Casual users (overkill)',
+    price_impact: '+$150-300'
+  },
 ];
 
 const faqItems = [
@@ -103,20 +118,21 @@ const relatedArticles = [
 ---
 
 <ArticleLayout
-  title={title}
-  description={description}
-  pubDate={pubDate}
-  updatedDate={updatedDate}
-  author={author}
-  category={category}
-  categorySlug={categorySlug}
-  readingTime={readingTime}
-  image={image}
-  imageAlt={imageAlt}
-  headings={headings}
+    title={title}
+    description={description}
+    pubDate={pubDate}
+    updatedDate={updatedDate}
+    author={author}
+    category={category}
+    categorySlug={categorySlug}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    headings={headings}
 >
   <p class="lead">
-    Should you get 8GB, 16GB, or 32GB of RAM? We break down exactly how much memory common remote work tasks require to help you make the right choice.
+    Should you get 8GB, 16GB, or 32GB of RAM? We break down exactly how much memory common remote work tasks require to
+    help you make the right choice.
   </p>
 
   <h2 id="quick-answer">Quick Answer: How Much RAM Do You Need?</h2>
@@ -128,13 +144,15 @@ const relatedArticles = [
   </ul>
 
   <p>
-    <strong>Our recommendation:</strong> Get 16GB if your budget allows. It is the sweet spot for most remote workers and provides headroom for future needs.
+    <strong>Our recommendation:</strong> Get 16GB if your budget allows. It is the sweet spot for most remote workers
+    and provides headroom for future needs.
   </p>
 
   <h2 id="what-ram-does">What RAM Actually Does</h2>
 
   <p>
-    RAM (Random Access Memory) is your computer's short-term memory. When you open an app, it loads into RAM for quick access. More RAM means:
+    RAM (Random Access Memory) is your computer's short-term memory. When you open an app, it loads into RAM for quick
+    access. More RAM means:
   </p>
 
   <ul>
@@ -145,12 +163,13 @@ const relatedArticles = [
   </ul>
 
   <p>
-    When RAM fills up, your computer uses "virtual memory" - writing data to your SSD/HDD. This is dramatically slower and causes the frustrating lag you feel when multitasking.
+    When RAM fills up, your computer uses "virtual memory" - writing data to your SSD/HDD. This is dramatically slower
+    and causes the frustrating lag you feel when multitasking.
   </p>
 
   <h2 id="ram-by-task">RAM Usage by Common Remote Work Tasks</h2>
 
-  <ComparisonTable columns={ramUsageColumns} rows={ramUsageRows} />
+  <ComparisonTable columns={ramUsageColumns} rows={ramUsageRows}/>
 
   <h3>Typical Remote Work Scenario</h3>
 
@@ -168,37 +187,43 @@ const relatedArticles = [
   </ul>
 
   <p>
-    This scenario runs fine on 8GB but leaves little headroom. Opening Photoshop or another heavy app would cause slowdowns.
+    This scenario runs fine on 8GB but leaves little headroom. Opening Photoshop or another heavy app would cause
+    slowdowns.
   </p>
 
   <h2 id="ram-comparison">8GB vs 16GB vs 32GB Comparison</h2>
 
-  <ComparisonTable columns={comparisonColumns} rows={comparisonRows} />
+  <ComparisonTable columns={comparisonColumns} rows={comparisonRows}/>
 
   <h3>8GB RAM</h3>
 
   <p>
-    <strong>Best for:</strong> Light users who primarily work in a browser, check email, and attend occasional video calls.
+    <strong>Best for:</strong> Light users who primarily work in a browser, check email, and attend occasional video
+    calls.
   </p>
 
   <p>
-    <strong>Reality check:</strong> 8GB was comfortable in 2020. Modern apps, especially browsers and communication tools, have grown. You will feel constraints with heavy browser use.
+    <strong>Reality check:</strong> 8GB was comfortable in 2020. Modern apps, especially browsers and communication
+    tools, have grown. You will feel constraints with heavy browser use.
   </p>
 
   <h3>16GB RAM</h3>
 
   <p>
-    <strong>Best for:</strong> Most remote workers. Handles modern workflows comfortably with room to spare. Future-proof for 3-5 years.
+    <strong>Best for:</strong> Most remote workers. Handles modern workflows comfortably with room to spare.
+    Future-proof for 3-5 years.
   </p>
 
   <p>
-    <strong>Why it is the sweet spot:</strong> The $50-150 upgrade cost is minimal compared to laptop price. Prevents the frustration of constant memory management.
+    <strong>Why it is the sweet spot:</strong> The $50-150 upgrade cost is minimal compared to laptop price. Prevents
+    the frustration of constant memory management.
   </p>
 
   <h3>32GB RAM</h3>
 
   <p>
-    <strong>Best for:</strong> Video editors, developers running local servers and VMs, data scientists, or anyone running memory-intensive workflows.
+    <strong>Best for:</strong> Video editors, developers running local servers and VMs, data scientists, or anyone
+    running memory-intensive workflows.
   </p>
 
   <p>
@@ -235,11 +260,12 @@ const relatedArticles = [
   <h3>Best 16GB Laptops for Remote Work</h3>
 
   <p>
-    <strong>MacBook Air M3 (16GB):</strong> Excellent choice for most remote workers. Apple Silicon uses RAM efficiently.
+    <strong>MacBook Air M3 (16GB):</strong> Excellent choice for most remote workers. Apple Silicon uses RAM
+    efficiently.
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/macbook-air-m3" text="Check MacBook Air M3 Price" />
+    <AffiliateButton href="/go/macbook-air-m3" text="Check MacBook Air M3 Price"/>
   </div>
 
   <p>
@@ -247,7 +273,7 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/thinkpad-x1-carbon" text="Check ThinkPad X1 Carbon Price" />
+    <AffiliateButton href="/go/thinkpad-x1-carbon" text="Check ThinkPad X1 Carbon Price"/>
   </div>
 
   <h3>Best Value 8GB Laptops (Upgradeable)</h3>
@@ -257,7 +283,7 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/acer-aspire-5" text="Check Acer Aspire 5 Price" />
+    <AffiliateButton href="/go/acer-aspire-5" text="Check Acer Aspire 5 Price"/>
   </div>
 
   <h3>Best 32GB Laptops for Power Users</h3>
@@ -267,26 +293,29 @@ const relatedArticles = [
   </p>
 
   <div class="my-6">
-    <AffiliateButton href="/go/macbook-pro-14" text="Check MacBook Pro 14 Price" />
+    <AffiliateButton href="/go/macbook-pro-14" text="Check MacBook Pro 14 Price"/>
   </div>
 
   <h2 id="faq">Frequently Asked Questions</h2>
 
-  <FAQSection faqs={faqItems} />
+  <FAQSection faqs={faqItems}/>
 
   <h2>Bottom Line</h2>
 
   <p>
-    <strong>For most remote workers: Get 16GB.</strong> The modest upgrade cost provides comfortable multitasking and future-proofs your investment.
+    <strong>For most remote workers: Get 16GB.</strong> The modest upgrade cost provides comfortable multitasking and
+    future-proofs your investment.
   </p>
 
   <p>
-    <strong>If budget is tight:</strong> 8GB works for basic tasks, especially on laptops with upgradeable RAM. Monitor your usage and upgrade if you hit limits.
+    <strong>If budget is tight:</strong> 8GB works for basic tasks, especially on laptops with upgradeable RAM. Monitor
+    your usage and upgrade if you hit limits.
   </p>
 
   <p>
-    <strong>For creative/technical work:</strong> 32GB ensures you never wait on memory. Worth the investment if your work depends on it.
+    <strong>For creative/technical work:</strong> 32GB ensures you never wait on memory. Worth the investment if your
+    work depends on it.
   </p>
 
-  <RelatedArticles articles={relatedArticles} />
+  <RelatedArticles articles={relatedArticles}/>
 </ArticleLayout>

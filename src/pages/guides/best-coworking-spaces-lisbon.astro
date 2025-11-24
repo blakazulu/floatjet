@@ -1,0 +1,367 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import {FAQSection, RelatedArticles} from '../../components/article';
+
+const title = 'Best Coworking Spaces in Lisbon 2025: A Digital Nomad\'s Guide';
+const description = 'Discover Lisbon\'s top coworking spaces for digital nomads. Compare prices, amenities, locations, and vibes to find your perfect workspace in Portugal\'s capital.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2024-12-22');
+const readingTime = 13;
+const image = 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Modern coworking space with people working on laptops';
+
+const headings = [
+  {depth: 2, slug: 'introduction', text: 'Lisbon\'s Coworking Scene'},
+  {depth: 2, slug: 'top-coworking-spaces', text: 'Top 10 Coworking Spaces'},
+  {depth: 2, slug: 'comparison', text: 'Quick Comparison'},
+  {depth: 2, slug: 'day-pass-vs-monthly', text: 'Day Pass vs Monthly Membership'},
+  {depth: 2, slug: 'neighborhoods', text: 'Best Neighborhoods for Remote Workers'},
+  {depth: 2, slug: 'cafe-alternatives', text: 'Cafe Alternatives with Good WiFi'},
+  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+];
+
+const faqData = [
+  {
+    question: 'How much do coworking spaces cost in Lisbon?',
+    answer: 'Day passes range from €15-30. Monthly hot desk memberships cost €100-200, while dedicated desks run €200-350. Private offices start around €400-600/month for small teams. Prices vary by neighborhood and amenities.'
+  },
+  {
+    question: 'Do I need to book in advance?',
+    answer: 'For day passes, most spaces accept walk-ins but booking is recommended during busy periods. Monthly memberships usually require a tour and signup process. Some popular spaces have waitlists for dedicated desks.'
+  },
+  {
+    question: 'What\'s the WiFi speed like in Lisbon coworking spaces?',
+    answer: 'Most professional coworking spaces offer 100-500 Mbps symmetric fiber internet with backup connections. Always test the speed during a trial day before committing to a monthly plan.'
+  },
+  {
+    question: 'Can I take video calls at coworking spaces?',
+    answer: 'Yes, most spaces have phone booths or meeting rooms for calls. Hot desks in open areas are generally quiet-call friendly but not ideal for long video meetings. Some spaces have dedicated \"call zones.\"'
+  },
+  {
+    question: 'Are coworking spaces good for meeting other nomads?',
+    answer: 'Absolutely. Many Lisbon coworking spaces host events, workshops, and social activities. Some like Second Home and Heden are known for their strong communities. It\'s one of the best ways to build a network in Lisbon.'
+  },
+  {
+    question: 'What if I only need a workspace occasionally?',
+    answer: 'Day passes are perfect for occasional use. Some spaces offer punch cards (10 days for discounted rate) or part-time memberships (10-15 days/month). Cafe working is free but less reliable for long sessions.'
+  }
+];
+
+const relatedArticles = [
+  {
+    title: 'Portugal Digital Nomad Visa Guide',
+    excerpt: 'Everything you need to work legally from Lisbon.',
+    href: '/guides/digital-nomad-visa-portugal',
+    image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Lisbon Portugal cityscape'
+  },
+  {
+    title: 'Find Reliable WiFi Anywhere',
+    excerpt: 'Tips for finding fast internet while traveling.',
+    href: '/blog/find-reliable-wifi-anywhere',
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'WiFi connectivity concept'
+  },
+  {
+    title: 'Top Destinations for Digital Nomads',
+    excerpt: 'Compare Lisbon with other nomad hotspots.',
+    href: '/blog/top-destinations-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'World travel destinations'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Travel"
+    categorySlug="guides/travel"
+    headings={headings}
+>
+  <p class="lead">
+    Lisbon has become one of Europe's top digital nomad destinations, and its coworking scene
+    has exploded to match. From converted warehouses to sleek design spaces, here's your guide
+    to finding the perfect workspace in Portugal's sunny capital.
+  </p>
+
+  <h2 id="introduction">Lisbon's Coworking Scene</h2>
+
+  <p>
+    Lisbon offers dozens of coworking spaces across the city, each with its own character. Whether
+    you want a quiet professional environment, a social community hub, or something with a view,
+    there's a space for you.
+  </p>
+
+  <p>
+    Most spaces cluster in a few key neighborhoods: Chiado/Baixa (central), Santos (trendy),
+    Principe Real (upscale), and Alcântara (waterfront). Prices and vibes vary significantly—
+    a tour or day pass is worth it before committing monthly.
+  </p>
+
+  <h2 id="top-coworking-spaces">Top 10 Coworking Spaces</h2>
+
+  <h3>1. Heden</h3>
+  <p><strong>Best for:</strong> Community and networking</p>
+  <p>
+    Heden stands out for its tight-knit community of freelancers and remote workers. Regular
+    events, a rooftop terrace, and a welcoming vibe make it easy to make friends. The space
+    attracts creative professionals and startup founders.
+  </p>
+  <ul>
+    <li><strong>Location:</strong> Santos</li>
+    <li><strong>Hot desk:</strong> ~€175/month</li>
+    <li><strong>Day pass:</strong> ~€20</li>
+    <li><strong>Highlights:</strong> Rooftop, events, strong community</li>
+  </ul>
+
+  <h3>2. Second Home Lisboa</h3>
+  <p><strong>Best for:</strong> Design and aesthetics</p>
+  <p>
+    Part of the global Second Home network, this space is stunning. Plants everywhere, colorful
+    furniture, and natural light create an Instagram-worthy workspace. Higher prices reflect
+    the premium experience.
+  </p>
+  <ul>
+    <li><strong>Location:</strong> Mercado da Ribeira (Time Out Market area)</li>
+    <li><strong>Hot desk:</strong> ~€250-350/month</li>
+    <li><strong>Day pass:</strong> ~€30</li>
+    <li><strong>Highlights:</strong> Beautiful design, great location, global network access</li>
+  </ul>
+
+  <h3>3. Cowork Lisboa</h3>
+  <p><strong>Best for:</strong> Budget-conscious nomads</p>
+  <p>
+    No-frills, affordable coworking in a central location. Clean, functional spaces with
+    everything you need and nothing you don't. Great value for money if you prioritize
+    location and basics over bells and whistles.
+  </p>
+  <ul>
+    <li><strong>Location:</strong> Baixa/Chiado</li>
+    <li><strong>Hot desk:</strong> ~€100-150/month</li>
+    <li><strong>Day pass:</strong> ~€15</li>
+    <li><strong>Highlights:</strong> Central location, affordable, straightforward</li>
+  </ul>
+
+  <h3>4. Avila Spaces</h3>
+  <p><strong>Best for:</strong> River views and modern amenities</p>
+  <p>
+    Located in the Avila tower, this space offers stunning Tagus River views and modern,
+    professional facilities. Multiple floors provide options from open hot desks to private
+    suites. Popular with established businesses and serious freelancers.
+  </p>
+  <ul>
+    <li><strong>Location:</strong> Parque das Nações</li>
+    <li><strong>Hot desk:</strong> ~€150-200/month</li>
+    <li><strong>Day pass:</strong> ~€20-25</li>
+    <li><strong>Highlights:</strong> River views, modern building, parking available</li>
+  </ul>
+
+  <h3>5. Idea Hub</h3>
+  <p><strong>Best for:</strong> Startups and entrepreneurs</p>
+  <p>
+    Positioned as a startup incubator as much as coworking space, Idea Hub attracts founders
+    and early-stage companies. Good for networking with the Portuguese tech ecosystem and
+    potential investors.
+  </p>
+  <ul>
+    <li><strong>Location:</strong> Saldanha</li>
+    <li><strong>Hot desk:</strong> ~€130-180/month</li>
+    <li><strong>Day pass:</strong> ~€18</li>
+    <li><strong>Highlights:</strong> Startup focus, mentorship, investment connections</li>
+  </ul>
+
+  <h3>6. Village Underground Lisboa</h3>
+  <p><strong>Best for:</strong> Creative vibe</p>
+  <p>
+    Built from shipping containers and old buses, Village Underground is Lisbon's most unique
+    coworking space. The creative, artistic atmosphere attracts designers, artists, and anyone
+    who wants inspiration from their environment.
+  </p>
+  <ul>
+    <li><strong>Location:</strong> Alcântara</li>
+    <li><strong>Hot desk:</strong> ~€175/month</li>
+    <li><strong>Day pass:</strong> ~€22</li>
+    <li><strong>Highlights:</strong> Unique architecture, creative community, outdoor space</li>
+  </ul>
+
+  <h3>7. LACS</h3>
+  <p><strong>Best for:</strong> Central location and flexibility</p>
+  <p>
+    Multiple locations across Lisbon make LACS convenient wherever you're staying. Professional
+    environments with good facilities and flexible membership options. A safe, reliable choice.
+  </p>
+  <ul>
+    <li><strong>Location:</strong> Multiple (Conde d'Óbidos, Anjos, others)</li>
+    <li><strong>Hot desk:</strong> ~€140-200/month</li>
+    <li><strong>Day pass:</strong> ~€18-25</li>
+    <li><strong>Highlights:</strong> Multiple locations, professional, flexible plans</li>
+  </ul>
+
+  <h3>8. Sitio</h3>
+  <p><strong>Best for:</strong> Events and social activities</p>
+  <p>
+    Sitio combines coworking with an active events calendar. If you want to attend workshops,
+    talks, and social gatherings while you work, this space delivers community alongside
+    workspace.
+  </p>
+  <ul>
+    <li><strong>Location:</strong> Príncipe Real</li>
+    <li><strong>Hot desk:</strong> ~€150-190/month</li>
+    <li><strong>Day pass:</strong> ~€20</li>
+    <li><strong>Highlights:</strong> Regular events, good neighborhood, terrace</li>
+  </ul>
+
+  <h3>9. Selina Secret Garden</h3>
+  <p><strong>Best for:</strong> Coliving + coworking combo</p>
+  <p>
+    Part of the Selina network, this space offers both accommodation and coworking. Perfect
+    if you're looking for an all-in-one solution when you first arrive. The garden area
+    provides a pleasant outdoor work option.
+  </p>
+  <ul>
+    <li><strong>Location:</strong> Intendente</li>
+    <li><strong>Hot desk:</strong> ~€150/month (coworking only)</li>
+    <li><strong>Day pass:</strong> ~€20</li>
+    <li><strong>Highlights:</strong> Coliving option, garden, hostel vibe</li>
+  </ul>
+
+  <h3>10. Impact Hub Lisbon</h3>
+  <p><strong>Best for:</strong> Social impact and sustainability focus</p>
+  <p>
+    Part of the global Impact Hub network, this space attracts social entrepreneurs and
+    sustainability-focused businesses. Strong programming around impact topics and access
+    to the global Impact Hub community.
+  </p>
+  <ul>
+    <li><strong>Location:</strong> Beato</li>
+    <li><strong>Hot desk:</strong> ~€160-200/month</li>
+    <li><strong>Day pass:</strong> ~€20</li>
+    <li><strong>Highlights:</strong> Mission-driven community, global network, event space</li>
+  </ul>
+
+  <h2 id="comparison">Quick Comparison</h2>
+
+  <h3>By Price (Monthly Hot Desk)</h3>
+  <ul>
+    <li><strong>Budget (€100-150):</strong> Cowork Lisboa</li>
+    <li><strong>Mid-range (€150-200):</strong> Heden, LACS, Avila Spaces, Idea Hub, Sitio, Impact Hub</li>
+    <li><strong>Premium (€200+):</strong> Second Home, Village Underground</li>
+  </ul>
+
+  <h3>By Vibe</h3>
+  <ul>
+    <li><strong>Social/Community:</strong> Heden, Sitio, Selina</li>
+    <li><strong>Professional/Quiet:</strong> Avila Spaces, LACS</li>
+    <li><strong>Creative:</strong> Village Underground, Second Home</li>
+    <li><strong>Startup-focused:</strong> Idea Hub, Impact Hub</li>
+  </ul>
+
+  <h3>By Location</h3>
+  <ul>
+    <li><strong>Central:</strong> Cowork Lisboa, Second Home, LACS</li>
+    <li><strong>Waterfront:</strong> Avila Spaces, Village Underground</li>
+    <li><strong>Trendy neighborhoods:</strong> Heden (Santos), Sitio (Príncipe Real)</li>
+  </ul>
+
+  <h2 id="day-pass-vs-monthly">Day Pass vs Monthly Membership</h2>
+
+  <h3>When Day Passes Make Sense</h3>
+  <ul>
+    <li>You're in Lisbon for less than 2 weeks</li>
+    <li>You want to test multiple spaces before committing</li>
+    <li>You only need coworking 1-2 days per week</li>
+    <li>You're combining cafe work with occasional coworking</li>
+  </ul>
+
+  <h3>When Monthly Memberships Make Sense</h3>
+  <ul>
+    <li>You're staying for a month or longer</li>
+    <li>You need workspace most days</li>
+    <li>You want community and networking opportunities</li>
+    <li>Day passes would cost more than monthly over your stay</li>
+  </ul>
+
+  <h3>Money Math</h3>
+  <p>
+    If day passes cost €20 and monthly hot desk costs €150, the break-even is 7-8 days. If
+    you'll use coworking more than 8 days per month, monthly membership saves money.
+  </p>
+
+  <h2 id="neighborhoods">Best Neighborhoods for Remote Workers</h2>
+
+  <h3>Chiado/Baixa</h3>
+  <p>
+    Central, touristy, but convenient. Good for short stays when you want to be near everything.
+    Higher accommodation costs but walkable to many coworking spaces, restaurants, and transport.
+  </p>
+
+  <h3>Santos/Cais do Sodré</h3>
+  <p>
+    Trendy riverside area with good nightlife. Popular with nomads and young professionals.
+    Home to Heden and close to Second Home. Good balance of local and international vibes.
+  </p>
+
+  <h3>Príncipe Real</h3>
+  <p>
+    Upscale, quiet, and green. Beautiful gardens, nice cafes, slightly higher prices. Good
+    for those wanting a more residential feel while staying central.
+  </p>
+
+  <h3>Alfama/Mouraria</h3>
+  <p>
+    Historic, hilly, and charming. Fewer coworking spaces but authentic Lisbon character.
+    Good for those who prefer cafe work and don't mind walking up hills.
+  </p>
+
+  <h3>Alcântara/Belém</h3>
+  <p>
+    Waterfront area with converted industrial spaces. Home to Village Underground and LX
+    Factory (cultural hub). Slightly removed from center but excellent for creative types.
+  </p>
+
+  <h2 id="cafe-alternatives">Cafe Alternatives with Good WiFi</h2>
+
+  <p>
+    Not every day requires a coworking space. Here are reliable cafes for occasional laptop work:
+  </p>
+
+  <ul>
+    <li><strong>Copenhagen Coffee Lab:</strong> Multiple locations, great coffee, work-friendly</li>
+    <li><strong>Fábrica Coffee Roasters:</strong> Specialty coffee, outlets available, quiet mornings</li>
+    <li><strong>Hello, Kristof:</strong> Nomad favorite, good WiFi, relaxed about laptop workers</li>
+    <li><strong>Ler Devagar (LX Factory):</strong> Bookstore cafe, unique atmosphere, good for shorter sessions</li>
+    <li><strong>Wish:</strong> Healthy food, spacious, work-friendly atmosphere</li>
+  </ul>
+
+  <p>
+    <strong>Cafe etiquette:</strong> Buy something every 1-2 hours, avoid peak lunch times, and
+    be mindful of taking up tables for hours during busy periods.
+  </p>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqData}/>
+
+  <h2>Find Your Perfect Lisbon Workspace</h2>
+
+  <p>
+    Lisbon's coworking scene has something for everyone. Start with day passes at 2-3 spaces
+    that match your priorities—community, location, price, or vibe. Once you find your fit,
+    commit to a monthly membership and settle into the routine.
+  </p>
+
+  <p>
+    The best coworking space is the one you'll actually use and enjoy. In Lisbon, you're
+    spoiled for choice.
+  </p>
+
+  <RelatedArticles articles={relatedArticles}/>
+</ArticleLayout>

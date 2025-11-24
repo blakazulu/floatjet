@@ -1,0 +1,355 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+
+// Article metadata
+const title = 'How to Avoid Miscommunication in Remote Teams (2025)';
+const description = 'Prevent misunderstandings and communication breakdowns in distributed teams. Practical strategies for clear, effective remote work communication.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-24');
+const readingTime = 9;
+const image = 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Remote worker thoughtfully composing a message on laptop';
+
+// Table of contents headings
+const headings = [
+  {text: 'Why Miscommunication Happens', slug: 'why-it-happens', depth: 2},
+  {text: 'Over-Communicate by Default', slug: 'over-communicate', depth: 2},
+  {text: 'Be Explicit About Tone', slug: 'tone', depth: 2},
+  {text: 'Use Video When It Matters', slug: 'use-video', depth: 2},
+  {text: 'Confirm Understanding', slug: 'confirm', depth: 2},
+  {text: 'Create Shared Language', slug: 'shared-language', depth: 2},
+  {text: 'Know When to Call', slug: 'when-to-call', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'How do I know if my message was understood correctly?',
+    answer: '<p>Strategies to confirm understanding:</p><ul><li><strong>Ask for confirmation:</strong> "Can you summarize your understanding of the next steps?"</li><li><strong>Request acknowledgment:</strong> "Please reply to confirm you got this"</li><li><strong>Check in later:</strong> Follow up before deadlines to catch misalignment early</li><li><strong>Watch for questions:</strong> No questions sometimes means the message wasn\'t fully read</li></ul><p>For important communications, explicit confirmation beats assumptions.</p>'
+  },
+  {
+    question: 'What\'s the best way to give critical feedback remotely?',
+    answer: '<p>Critical feedback needs extra care without in-person cues:</p><ol><li><strong>Use video:</strong> Tone and facial expressions prevent misreading</li><li><strong>Lead with intent:</strong> "I\'m sharing this because I want to help you succeed"</li><li><strong>Be specific:</strong> Concrete examples, not general impressions</li><li><strong>Focus forward:</strong> What to do differently, not just what went wrong</li><li><strong>Allow response:</strong> Give space for their perspective</li></ol><p>Written feedback works for minor points; video is better for anything significant.</p>'
+  },
+  {
+    question: 'How do I handle a message that upset me?',
+    answer: '<p>Before reacting:</p><ol><li><strong>Pause:</strong> Wait at least an hour before responding</li><li><strong>Assume good intent:</strong> Written messages often sound harsher than intended</li><li><strong>Seek clarity:</strong> Ask what they meant before assuming</li><li><strong>Move to video:</strong> If confused about tone, suggest a quick call</li></ol><p>Most upsetting messages are unintentional. A quick clarifying conversation usually resolves things.</p>'
+  },
+  {
+    question: 'How can I make my written communication clearer?',
+    answer: '<p>Techniques for clearer writing:</p><ul><li><strong>Front-load the point:</strong> Key message in the first sentence</li><li><strong>Use structure:</strong> Bullet points, numbered lists, headers</li><li><strong>Define terms:</strong> Don\'t assume shared vocabulary</li><li><strong>Include context:</strong> Why you\'re asking, what you\'ll do with the answer</li><li><strong>State the ask explicitly:</strong> What you need, from whom, by when</li><li><strong>Read it aloud:</strong> Catches awkward phrasing and unclear sentences</li></ul>'
+  },
+  {
+    question: 'What if someone consistently misunderstands me?',
+    answer: '<p>Patterns suggest a systemic issue:</p><ul><li><strong>Check your communication:</strong> Are you being as clear as you think?</li><li><strong>Ask for feedback:</strong> "I notice we\'ve had some miscommunications—what could I do differently?"</li><li><strong>Try different formats:</strong> Maybe they process video better than text, or vice versa</li><li><strong>Document agreements:</strong> Written records of what was decided</li><li><strong>More frequent check-ins:</strong> Catch misalignments earlier</li></ul><p>Address patterns directly rather than letting frustration build.</p>'
+  },
+  {
+    question: 'How do I communicate across cultural differences?',
+    answer: '<p>Cultural differences affect communication styles:</p><ul><li><strong>Learn preferences:</strong> Some cultures are more direct, others more indirect</li><li><strong>Be explicit:</strong> Don\'t rely on hints or implications</li><li><strong>Confirm understanding:</strong> Especially for important messages</li><li><strong>Ask questions:</strong> "How would you prefer I communicate this?"</li><li><strong>Be patient:</strong> Non-native speakers may need more time</li></ul><p>When in doubt, over-communicate and verify understanding.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Async Communication for Remote Teams',
+    excerpt: 'Master asynchronous communication to reduce meetings and boost productivity.',
+    href: '/blog/async-communication-remote-teams',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Remote team collaborating through digital tools'
+  },
+  {
+    title: 'How to Run Effective Remote Meetings',
+    excerpt: 'Master virtual meeting best practices to boost productivity and reduce meeting fatigue.',
+    href: '/guides/how-to-run-effective-remote-meetings',
+    image: 'https://images.unsplash.com/photo-1609619385002-f40f1df9b7eb?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Remote team in productive video conference'
+  },
+  {
+    title: 'Best Team Communication Tools',
+    excerpt: 'Compare top messaging and collaboration platforms for remote teams.',
+    href: '/blog/best-team-communication-tools',
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Team using communication software'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Communication"
+    categorySlug="guides/communication"
+    headings={headings}
+>
+  <!-- Why Miscommunication Happens -->
+  <h2 id="why-it-happens">Why Miscommunication Happens More Remotely</h2>
+  <p>
+    In person, communication is rich with context: facial expressions, body language, tone of voice, and
+    the ability to immediately clarify confusion. Remote work strips away most of these cues.
+  </p>
+  <p>
+    <strong>Text-based communication is the biggest culprit.</strong> Without tone indicators, neutral messages
+    often read as cold or curt. A simple "OK" might mean enthusiastic agreement or reluctant acceptance—readers
+    fill in the blanks with their own assumptions.
+  </p>
+  <p>
+    Add time zone delays, cultural differences, and the impossibility of reading the room, and it's remarkable
+    remote teams communicate as well as they do. But with intentional practices, you can dramatically reduce
+    misunderstandings.
+  </p>
+
+  <h3>Common Causes of Remote Miscommunication</h3>
+  <ul>
+    <li><strong>Assumed context:</strong> Thinking others know what you know</li>
+    <li><strong>Tone ambiguity:</strong> Text lacking emotional cues</li>
+    <li><strong>Information gaps:</strong> Not seeing the full picture</li>
+    <li><strong>Async delays:</strong> Time between message and response allows misunderstandings to compound</li>
+    <li><strong>Cultural differences:</strong> Different communication norms and expectations</li>
+    <li><strong>Channel confusion:</strong> Important messages lost in the wrong medium</li>
+  </ul>
+
+  <!-- Over-Communicate -->
+  <h2 id="over-communicate">Over-Communicate by Default</h2>
+  <p>
+    In remote work, err on the side of too much information rather than too little. What feels redundant
+    to you might be essential context for the recipient.
+  </p>
+
+  <h3>Share Context Generously</h3>
+  <p>
+    Don't just share the what—share the why:
+  </p>
+  <ul>
+    <li><strong>Bad:</strong> "We need to change the deadline."</li>
+    <li><strong>Good:</strong> "We need to push the deadline to March 15th because the vendor delayed their API update. This gives us two weeks to integrate and test once it's available."</li>
+  </ul>
+
+  <h3>State the Obvious</h3>
+  <p>
+    What's obvious to you isn't obvious to everyone:
+  </p>
+  <ul>
+    <li>Spell out acronyms the first time</li>
+    <li>Link to relevant documents</li>
+    <li>Explain decisions even if they seem self-evident</li>
+    <li>Provide background even if you think they know it</li>
+  </ul>
+
+  <h3>Repeat Key Points</h3>
+  <p>
+    Important messages deserve repetition:
+  </p>
+  <ul>
+    <li>Summarize at the end of long messages</li>
+    <li>Follow up verbal agreements with written confirmation</li>
+    <li>Reference previous discussions when building on them</li>
+  </ul>
+
+  <!-- Be Explicit About Tone -->
+  <h2 id="tone">Be Explicit About Tone and Intent</h2>
+  <p>
+    Without facial expressions and voice inflection, tone gets lost. What you mean as friendly efficiency
+    might read as cold dismissal.
+  </p>
+
+  <h3>Add Warmth Indicators</h3>
+  <p>
+    Small additions signal friendly intent:
+  </p>
+  <ul>
+    <li>Greetings and sign-offs (even brief ones)</li>
+    <li>Acknowledgment of their work or perspective</li>
+    <li>Exclamation points (used sparingly) to show enthusiasm</li>
+    <li>Emoji where appropriate for your culture</li>
+  </ul>
+
+  <h3>State Your Intent</h3>
+  <p>
+    When the message could be misread, make your intent explicit:
+  </p>
+  <ul>
+    <li>"I'm asking because I want to help, not criticize."</li>
+    <li>"This is just a thought, not a criticism of the current approach."</li>
+    <li>"I'm pushing back here because I think we can do even better."</li>
+  </ul>
+
+  <h3>The Re-Read Test</h3>
+  <p>
+    Before sending important messages, read them as if you're the recipient in a bad mood. Does it sound
+    harsh? Add warmth. Is the ask unclear? Clarify.
+  </p>
+
+  <!-- Use Video -->
+  <h2 id="use-video">Use Video When It Matters</h2>
+  <p>
+    Text is efficient but low-bandwidth for emotional content. Some conversations need faces and voices.
+  </p>
+
+  <h3>Use Video For</h3>
+  <ul>
+    <li><strong>Complex explanations:</strong> When text would require multiple back-and-forths</li>
+    <li><strong>Sensitive topics:</strong> Feedback, concerns, disagreements</li>
+    <li><strong>Relationship building:</strong> Getting to know teammates</li>
+    <li><strong>Brainstorming:</strong> When real-time energy helps creativity</li>
+    <li><strong>Clarifying confusion:</strong> When async has gone in circles</li>
+  </ul>
+
+  <h3>Video Messages as Middle Ground</h3>
+  <p>
+    Tools like <strong>Loom</strong> let you record video messages that recipients watch on their own time.
+    You get the richness of video without requiring simultaneous availability.
+  </p>
+  <p>
+    Use video messages for:
+  </p>
+  <ul>
+    <li>Detailed explanations with screen sharing</li>
+    <li>Feedback that needs tone context</li>
+    <li>Complex updates that would be walls of text</li>
+  </ul>
+
+  <!-- Confirm Understanding -->
+  <h2 id="confirm">Confirm Understanding</h2>
+  <p>
+    Assuming understanding is how miscommunication compounds. Build confirmation into your communication habits.
+  </p>
+
+  <h3>Ask for Summaries</h3>
+  <p>
+    After important discussions, ask the other person to summarize:
+  </p>
+  <ul>
+    <li>"Can you recap your understanding of the next steps?"</li>
+    <li>"What are you taking away from this conversation?"</li>
+    <li>"Just to make sure we're aligned—what's your plan from here?"</li>
+  </ul>
+
+  <h3>Provide Summaries</h3>
+  <p>
+    After receiving information, confirm your understanding:
+  </p>
+  <ul>
+    <li>"Let me make sure I understand: you need X by Y, correct?"</li>
+    <li>"So the decision is to proceed with option B—is that right?"</li>
+  </ul>
+
+  <h3>Document Agreements</h3>
+  <p>
+    After verbal conversations, follow up with written summary:
+  </p>
+  <ul>
+    <li>"Following up on our call—here's what we agreed to..."</li>
+    <li>Email or Slack summary with key decisions and action items</li>
+    <li>Shared document for complex multi-part agreements</li>
+  </ul>
+
+  <!-- Shared Language -->
+  <h2 id="shared-language">Create Shared Language and Norms</h2>
+  <p>
+    Teams develop their own vocabulary and assumptions. Make these explicit so everyone's on the same page.
+  </p>
+
+  <h3>Define Terms</h3>
+  <p>
+    Create a team glossary for:
+  </p>
+  <ul>
+    <li>Project-specific terminology</li>
+    <li>Acronyms and abbreviations</li>
+    <li>Role titles and responsibilities</li>
+    <li>Status indicators (what does "almost done" mean?)</li>
+  </ul>
+
+  <h3>Establish Communication Norms</h3>
+  <p>
+    Document team agreements on:
+  </p>
+  <ul>
+    <li><strong>Response times:</strong> What's expected for different channels</li>
+    <li><strong>Urgency signals:</strong> How to indicate something needs fast response</li>
+    <li><strong>Channel purposes:</strong> What goes where (Slack vs email vs docs)</li>
+    <li><strong>Meeting culture:</strong> Cameras, agendas, note-taking</li>
+    <li><strong>Availability indicators:</strong> Status meanings, calendar etiquette</li>
+  </ul>
+
+  <h3>Onboard New Members Explicitly</h3>
+  <p>
+    New team members can't absorb culture by osmosis. Document norms and walk through them during onboarding.
+  </p>
+
+  <!-- When to Call -->
+  <h2 id="when-to-call">Know When to Pick Up the Phone</h2>
+  <p>
+    Sometimes text isn't working. Recognize when to switch to real-time conversation.
+  </p>
+
+  <h3>Signs You Need a Call</h3>
+  <ul>
+    <li><strong>Multiple back-and-forths:</strong> If you've gone more than 3-4 exchanges, a quick call often resolves faster</li>
+    <li><strong>Rising tension:</strong> Messages getting shorter, more pointed, or defensive</li>
+    <li><strong>Confusion persisting:</strong> Explanations aren't landing</li>
+    <li><strong>Emotion involved:</strong> Someone seems upset or frustrated</li>
+    <li><strong>High stakes:</strong> Important decisions where nuance matters</li>
+  </ul>
+
+  <h3>How to Suggest a Call</h3>
+  <p>
+    Frame it positively:
+  </p>
+  <ul>
+    <li>"This might be easier to hash out on a quick call—do you have 10 minutes?"</li>
+    <li>"I want to make sure I understand your perspective—can we jump on video?"</li>
+    <li>"Text is getting tangled—let's talk through this live."</li>
+  </ul>
+
+  <h3>After the Call</h3>
+  <p>
+    Follow up synchronous conversations with written documentation:
+  </p>
+  <ul>
+    <li>Summarize what was discussed and decided</li>
+    <li>Confirm action items and owners</li>
+    <li>Share with others who need to know</li>
+  </ul>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} />
+
+  <h2>Conclusion: Communication as Craft</h2>
+  <p>
+    Remote work demands intentional communication. What happens naturally in an office—reading body language,
+    overhearing context, clarifying in real-time—must be deliberately recreated.
+  </p>
+  <p>
+    <strong>The key principles:</strong>
+  </p>
+  <ul>
+    <li><strong>Over-communicate:</strong> More context is better than less</li>
+    <li><strong>Mind tone:</strong> Add warmth to prevent misreading</li>
+    <li><strong>Use video strategically:</strong> Some conversations need faces</li>
+    <li><strong>Confirm understanding:</strong> Don't assume alignment</li>
+    <li><strong>Build shared norms:</strong> Explicit agreements beat implicit assumptions</li>
+    <li><strong>Know when to call:</strong> Text isn't always the answer</li>
+  </ul>
+  <p>
+    Miscommunication will still happen—it's inevitable when humans interact. But with these practices,
+    you'll catch misunderstandings earlier, resolve them faster, and build the trust that makes remote
+    collaboration work.
+  </p>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles} />
+  </Fragment>
+</ArticleLayout>

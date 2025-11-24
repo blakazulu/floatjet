@@ -22,11 +22,11 @@
 
 ### Applied Programs
 
-| Program            | Network       | Applied Date | Status    | Affiliate ID | Notes           |
-|--------------------|---------------|--------------|-----------|--------------|-----------------|
-| NordVPN + NordPass | Direct        | 2025-11-22   | In Review | -            | B2C bundle      |
-| Notion             | Impact Radius | 2025-11-22   | In Review | -            | Via Impact.com  |
-| ClickUp            | PartnerStack  | 2025-11-22   | In Review | -            | Partner program |
+| Program            | Network       | Applied Date | Status     | Affiliate ID | Notes           |
+|--------------------|---------------|--------------|------------|--------------|-----------------|
+| NordVPN + NordPass | Direct        | 2025-11-22   | ✅ Approved | 135757       | B2C bundle      |
+| Notion             | Impact Radius | 2025-11-22   | In Review  | -            | Via Impact.com  |
+| ClickUp            | PartnerStack  | 2025-11-22   | In Review  | -            | Partner program |
 
 ### Pending Applications
 
@@ -126,7 +126,7 @@ Ensure your site has:
 
 ---
 
-### 2. NordVPN + NordPass (Already Applied)
+### 2. NordVPN + NordPass (✅ APPROVED)
 
 **URL:** https://nordvpn.com/affiliate/
 
@@ -141,12 +141,23 @@ Ensure your site has:
     - Promotion methods
 4. Submit and wait for approval (3-7 days)
 
-**Status:**  Applied 2025-11-22 - In Review
+**Status:** ✅ Approved 2025-11-24 | Affiliate ID: 135757
 
 **Commission:** 30-40% on both NordVPN and NordPass sales
 
-**Note:** Single application covers BOTH products. Once approved, you'll get affiliate links for NordVPN and NordPass
-from the same dashboard.
+**Tracking Links:**
+
+- NordVPN: `https://go.nordvpn.net/aff_c?offer_id=15&aff_id=135757&url_id=902`
+- NordPass: `https://go.nordpass.io/aff_c?offer_id=488&aff_id=135757&url_id=9356`
+
+**Account Manager:** Tomas (Partners Relationship Team)
+
+**Additional Products Available:**
+
+- Saily (eSIM provider) - request tracking link if interested
+- NordProtect (identity theft protection, US only) - request tracking link if interested
+
+**PPC Restrictions:** No branded keywords (NordVPN, NordPass, "Nord", variations) on Google Ads, Bing Ads.
 
 ---
 
@@ -197,7 +208,7 @@ from the same dashboard.
     - Expected referrals per month
 6. Submit and wait for ClickUp approval (3-7 days)
 
-**Status:**  Applied 2025-11-22 - In Review
+**Status:** ✅ Approved 2025-11-24 | Affiliate ID: 135757
 
 **Commission:** $50-200 + 20% recurring for 12 months
 
@@ -324,7 +335,7 @@ from the same dashboard.
 
 | Program    | Commission | Cookie  | Network | Status      |
 |------------|------------|---------|---------|-------------|
-| NordVPN    | 30-40%     | 30 days | Direct  | Applied     |
+| NordVPN    | 30-40%     | 30 days | Direct  | ✅ Approved  |
 | ExpressVPN | 35-50%     | 90 days | Direct  | Not Applied |
 | Surfshark  | 40%        | 30 days | Direct  | Not Applied |
 | CyberGhost | Unknown    | Unknown | Direct  | Not Applied |
@@ -336,14 +347,14 @@ from the same dashboard.
 
 ### Password Managers
 
-| Program   | Commission  | Cookie  | Network        | Status            |
-|-----------|-------------|---------|----------------|-------------------|
-| NordPass  | 30-40%      | 30 days | NordVPN Direct | Applied (bundled) |
-| 1Password | 25%         | 30 days | Impact Radius  | Not Applied       |
-| Bitwarden | Unknown     | Unknown | Direct         | Not Applied       |
-| Dashlane  | $3-5/signup | 30 days | CJ Affiliate   | Not Applied       |
-| Keeper    | 25-40%      | 45 days | Direct         | Not Applied       |
-| LastPass  | 25%         | 30 days | CJ Affiliate   | Not Applied       |
+| Program   | Commission  | Cookie  | Network        | Status      |
+|-----------|-------------|---------|----------------|-------------|
+| NordPass  | 30-40%      | 30 days | NordVPN Direct | ✅ Approved  |
+| 1Password | 25%         | 30 days | Impact Radius  | Not Applied |
+| Bitwarden | Unknown     | Unknown | Direct         | Not Applied |
+| Dashlane  | $3-5/signup | 30 days | CJ Affiliate   | Not Applied |
+| Keeper    | 25-40%      | 45 days | Direct         | Not Applied |
+| LastPass  | 25%         | 30 days | CJ Affiliate   | Not Applied |
 
 **Used in:** FJ-011 (Password Manager article)
 
@@ -374,22 +385,23 @@ from the same dashboard.
 | Branch         | 8%         | 30 days | Direct     | Not Applied |
 | Amazon (desks) | 4-6%       | 24h     | Amazon     | Not Applied |
 
-**Used in:** FJ-014 (Standing Desks article), best-desk-converters, best-compact-desks-small-office, ergonomic-desk-setup-guide, standing-desk-cost-guide articles
+**Used in:** FJ-014 (Standing Desks article), best-desk-converters, best-compact-desks-small-office,
+ergonomic-desk-setup-guide, standing-desk-cost-guide articles
 
 ---
 
 ### Ergonomic Chairs
 
-| Program        | Commission | Cookie  | Network    | Status      |
-|----------------|------------|---------|------------|-------------|
-| Herman Miller  | 2-4%       | 30 days | Direct     | Not Applied |
-| Steelcase      | 2-4%       | 30 days | Direct     | Not Applied |
-| Secretlab      | 5-10%      | 30 days | Direct     | Not Applied |
-| HON            | 3-5%       | 30 days | Direct     | Not Applied |
-| Humanscale     | 3-5%       | 30 days | Direct     | Not Applied |
-| IKEA           | 3-7%       | 30 days | Direct     | Not Applied |
-| Sihoo          | 5-8%       | 30 days | Direct     | Not Applied |
-| Amazon (chairs)| 4-6%       | 24h     | Amazon     | Not Applied |
+| Program         | Commission | Cookie  | Network | Status      |
+|-----------------|------------|---------|---------|-------------|
+| Herman Miller   | 2-4%       | 30 days | Direct  | Not Applied |
+| Steelcase       | 2-4%       | 30 days | Direct  | Not Applied |
+| Secretlab       | 5-10%      | 30 days | Direct  | Not Applied |
+| HON             | 3-5%       | 30 days | Direct  | Not Applied |
+| Humanscale      | 3-5%       | 30 days | Direct  | Not Applied |
+| IKEA            | 3-7%       | 30 days | Direct  | Not Applied |
+| Sihoo           | 5-8%       | 30 days | Direct  | Not Applied |
+| Amazon (chairs) | 4-6%       | 24h     | Amazon  | Not Applied |
 
 **Used in:** best-ergonomic-chairs article
 
@@ -397,18 +409,18 @@ from the same dashboard.
 
 ### Desk Converters & Compact Desks
 
-| Program     | Commission | Cookie  | Network    | Status      |
-|-------------|------------|---------|------------|-------------|
-| VIVO        | 5-8%       | 30 days | Direct     | Not Applied |
-| Varidesk    | 5-10%      | 30 days | Direct     | Not Applied |
-| FEZIBO      | 8-10%      | 30 days | Direct     | Not Applied |
-| Mount-It    | 5-8%       | 30 days | Direct     | Not Applied |
-| Ergotron    | 5-8%       | 30 days | Direct     | Not Applied |
-| Zinus       | 5-8%       | 30 days | Direct     | Not Applied |
-| Walker Edison| 5%        | 30 days | Direct     | Not Applied |
-| ApexDesk    | 5-8%       | 30 days | Direct     | Not Applied |
-| Prepac      | 5%         | 30 days | Direct     | Not Applied |
-| Amazon      | 4-6%       | 24h     | Amazon     | Not Applied |
+| Program       | Commission | Cookie  | Network | Status      |
+|---------------|------------|---------|---------|-------------|
+| VIVO          | 5-8%       | 30 days | Direct  | Not Applied |
+| Varidesk      | 5-10%      | 30 days | Direct  | Not Applied |
+| FEZIBO        | 8-10%      | 30 days | Direct  | Not Applied |
+| Mount-It      | 5-8%       | 30 days | Direct  | Not Applied |
+| Ergotron      | 5-8%       | 30 days | Direct  | Not Applied |
+| Zinus         | 5-8%       | 30 days | Direct  | Not Applied |
+| Walker Edison | 5%         | 30 days | Direct  | Not Applied |
+| ApexDesk      | 5-8%       | 30 days | Direct  | Not Applied |
+| Prepac        | 5%         | 30 days | Direct  | Not Applied |
+| Amazon        | 4-6%       | 24h     | Amazon  | Not Applied |
 
 **Used in:** best-desk-converters, best-compact-desks-small-office articles
 
@@ -425,23 +437,24 @@ from the same dashboard.
 | Lenovo           | 2-4%       | Unknown | Direct  | Not Applied |
 | B&H Photo        | 2-8%       | Unknown | Direct  | Not Applied |
 
-**Used in:** FJ-012 (Laptops article), best-budget-laptops-remote-work, macbook-vs-windows-remote-work, how-much-ram-remote-work articles
+**Used in:** FJ-012 (Laptops article), best-budget-laptops-remote-work, macbook-vs-windows-remote-work,
+how-much-ram-remote-work articles
 
 ---
 
 ### Monitors & Displays
 
-| Program        | Commission | Cookie  | Network | Status      |
-|----------------|------------|---------|---------|-------------|
-| Dell (monitors)| 2-4%       | 30 days | Direct  | Not Applied |
-| LG             | 2-4%       | 30 days | Direct  | Not Applied |
-| Samsung        | 2-4%       | 30 days | Direct  | Not Applied |
-| BenQ           | 3-5%       | 30 days | Direct  | Not Applied |
-| ASUS           | 3-5%       | 30 days | Direct  | Not Applied |
-| ViewSonic      | 3-5%       | 30 days | Direct  | Not Applied |
-| HP (monitors)  | 4-6%       | 30 days | Direct  | Not Applied |
-| Philips        | 3-5%       | 30 days | Direct  | Not Applied |
-| Amazon         | 3-4%       | 24h     | Amazon  | Not Applied |
+| Program         | Commission | Cookie  | Network | Status      |
+|-----------------|------------|---------|---------|-------------|
+| Dell (monitors) | 2-4%       | 30 days | Direct  | Not Applied |
+| LG              | 2-4%       | 30 days | Direct  | Not Applied |
+| Samsung         | 2-4%       | 30 days | Direct  | Not Applied |
+| BenQ            | 3-5%       | 30 days | Direct  | Not Applied |
+| ASUS            | 3-5%       | 30 days | Direct  | Not Applied |
+| ViewSonic       | 3-5%       | 30 days | Direct  | Not Applied |
+| HP (monitors)   | 4-6%       | 30 days | Direct  | Not Applied |
+| Philips         | 3-5%       | 30 days | Direct  | Not Applied |
+| Amazon          | 3-4%       | 24h     | Amazon  | Not Applied |
 
 **Used in:** best-monitors-remote-work, best-portable-monitors articles
 
@@ -476,13 +489,51 @@ from the same dashboard.
 
 ### Team Communication Tools
 
+| Program         | Commission | Cookie  | Network | Status      |
+|-----------------|------------|---------|---------|-------------|
+| Slack           | Varies     | 30 days | Direct  | Not Applied |
+| Zoom            | 10-15%     | 30 days | Direct  | Not Applied |
+| Loom            | 20%        | 30 days | Direct  | Not Applied |
+| Microsoft Teams | Varies     | 30 days | Direct  | Not Applied |
+| Discord Nitro   | N/A        | N/A     | N/A     | No program  |
+
+**Used in:** best-team-communication-tools, slack-vs-teams-vs-discord articles
+
+---
+
+### Meeting Productivity Tools
+
+| Program    | Commission | Cookie  | Network | Status      |
+|------------|------------|---------|---------|-------------|
+| Calendly   | 15-20%     | 30 days | Direct  | Not Applied |
+| Otter.ai   | 20-25%     | 30 days | Direct  | Not Applied |
+| Grain      | 20%        | 30 days | Direct  | Not Applied |
+| Fireflies  | 20%        | 30 days | Direct  | Not Applied |
+
+**Used in:** how-to-run-effective-remote-meetings article
+
+---
+
+### Visual Collaboration Tools
+
 | Program | Commission | Cookie  | Network | Status      |
 |---------|------------|---------|---------|-------------|
-| Slack   | Varies     | 30 days | Direct  | Not Applied |
-| Zoom    | 10-15%     | 30 days | Direct  | Not Applied |
-| Loom    | 20%        | 30 days | Direct  | Not Applied |
+| Miro    | 20-25%     | 30 days | Direct  | Not Applied |
+| FigJam  | Varies     | 30 days | Direct  | Not Applied |
+| Figma   | Varies     | 30 days | Direct  | Not Applied |
 
-**Used in:** best-team-communication-tools article
+**Used in:** remote-team-collaboration-best-practices article
+
+---
+
+### Writing & Productivity Tools
+
+| Program   | Commission | Cookie  | Network | Status      |
+|-----------|------------|---------|---------|-------------|
+| Grammarly | 20-25%     | 90 days | Direct  | Not Applied |
+| Superhuman| $5/signup  | 30 days | Direct  | Not Applied |
+
+**Used in:** email-etiquette-remote-teams article
 
 ---
 
@@ -1040,6 +1091,10 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** Added new affiliate program categories on 2025-11-24: Ergonomic Chairs (Herman Miller, Steelcase, Secretlab, HON, Humanscale, IKEA, Sihoo), Desk Converters & Compact Desks (VIVO, Varidesk, FEZIBO, Mount-It, Ergotron, Zinus, Walker Edison, ApexDesk, Prepac). Five new furniture articles written: best-ergonomic-chairs, best-desk-converters, best-compact-desks-small-office, ergonomic-desk-setup-guide, standing-desk-cost-guide.
+**Last Action:** Added new affiliate program categories on 2025-11-24: Ergonomic Chairs (Herman Miller, Steelcase,
+Secretlab, HON, Humanscale, IKEA, Sihoo), Desk Converters & Compact Desks (VIVO, Varidesk, FEZIBO, Mount-It, Ergotron,
+Zinus, Walker Edison, ApexDesk, Prepac). Five new furniture articles written: best-ergonomic-chairs,
+best-desk-converters, best-compact-desks-small-office, ergonomic-desk-setup-guide, standing-desk-cost-guide.
 
-**Next Action:** Apply to priority programs: Amazon Associates (covers all furniture), Herman Miller, Steelcase, Secretlab, FlexiSpot.
+**Next Action:** Apply to priority programs: Amazon Associates (covers all furniture), Herman Miller, Steelcase,
+Secretlab, FlexiSpot.

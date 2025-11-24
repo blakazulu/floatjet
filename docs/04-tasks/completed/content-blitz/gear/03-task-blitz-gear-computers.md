@@ -12,13 +12,13 @@
 
 Add 5 new computer-related articles to strengthen the Gear/Computers category.
 
-| # | Article                                          | Type        | Words       | Status        |
-|---|--------------------------------------------------|-------------|-------------|---------------|
-| 1 | Best Monitors for Remote Work 2025               | Money Page  | 2,800-3,200 | ⬜ Not Started |
-| 2 | Best Portable Monitors for Digital Nomads        | Money Page  | 2,500-2,800 | ⬜ Not Started |
-| 3 | Best Budget Laptops Under $800 for Remote Work   | Money Page  | 2,500-2,800 | ⬜ Not Started |
-| 4 | MacBook vs Windows Laptop for Remote Work        | Supporting  | 2,000-2,500 | ⬜ Not Started |
-| 5 | How Much RAM Do You Really Need for Remote Work? | SEO Builder | 1,000-1,200 | ⬜ Not Started |
+| # | Article                                          | Type        | Words       | Status       |
+|---|--------------------------------------------------|-------------|-------------|--------------|
+| 1 | Best Monitors for Remote Work 2025               | Money Page  | 2,800-3,200 | ✅ Completed |
+| 2 | Best Portable Monitors for Digital Nomads        | Money Page  | 2,500-2,800 | ✅ Completed |
+| 3 | Best Budget Laptops Under $800 for Remote Work   | Money Page  | 2,500-2,800 | ✅ Completed |
+| 4 | MacBook vs Windows Laptop for Remote Work        | Supporting  | 2,000-2,500 | ✅ Completed |
+| 5 | How Much RAM Do You Really Need for Remote Work? | SEO Builder | 1,000-1,200 | ✅ Completed |
 
 ---
 

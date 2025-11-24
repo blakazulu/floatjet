@@ -12,13 +12,13 @@
 
 Add 5 new furniture-related articles to strengthen the Gear/Furniture category.
 
-| # | Article                                         | Type        | Words       | Status        |
-|---|-------------------------------------------------|-------------|-------------|---------------|
-| 1 | Best Ergonomic Chairs for Home Office           | Money Page  | 3,000-3,500 | ⬜ Not Started |
-| 2 | Best Desk Converters for Standing Work          | Money Page  | 2,500-2,800 | ⬜ Not Started |
-| 3 | Best Compact Desks for Small Home Offices       | Money Page  | 2,500-2,800 | ⬜ Not Started |
-| 4 | Ergonomic Desk Setup: Complete Guide            | Supporting  | 2,000-2,500 | ⬜ Not Started |
-| 5 | How Much Does a Good Standing Desk Really Cost? | SEO Builder | 1,200-1,500 | ⬜ Not Started |
+| # | Article                                         | Type        | Words       | Status       |
+|---|-------------------------------------------------|-------------|-------------|--------------|
+| 1 | Best Ergonomic Chairs for Home Office           | Money Page  | 3,000-3,500 | ✅ Completed |
+| 2 | Best Desk Converters for Standing Work          | Money Page  | 2,500-2,800 | ✅ Completed |
+| 3 | Best Compact Desks for Small Home Offices       | Money Page  | 2,500-2,800 | ✅ Completed |
+| 4 | Ergonomic Desk Setup: Complete Guide            | Supporting  | 2,000-2,500 | ✅ Completed |
+| 5 | How Much Does a Good Standing Desk Really Cost? | SEO Builder | 1,200-1,500 | ✅ Completed |
 
 ---
 

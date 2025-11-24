@@ -1,0 +1,488 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+
+// Article metadata
+const title = 'Email Etiquette for Remote Teams: Professional Communication Guide (2025)';
+const description = 'Master professional email communication for remote work. Learn when to email, how to write clearly, and best practices for distributed teams.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-24');
+const readingTime = 10;
+const image = 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Professional working on email communication at home office';
+
+// Table of contents headings
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'When to Email vs When to Slack', slug: 'email-vs-slack', depth: 2},
+  {text: 'Subject Line Best Practices', slug: 'subject-lines', depth: 2},
+  {text: 'Clear and Concise Writing', slug: 'clear-writing', depth: 2},
+  {text: 'Response Time Expectations', slug: 'response-times', depth: 2},
+  {text: 'CC and BCC Guidelines', slug: 'cc-bcc', depth: 2},
+  {text: 'Handling Sensitive Topics', slug: 'sensitive-topics', depth: 2},
+  {text: 'Email Signatures', slug: 'signatures', depth: 2},
+  {text: 'Templates for Common Scenarios', slug: 'templates', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'How quickly should I respond to work emails?',
+    answer: '<p>Response time expectations vary by context:</p><ul><li><strong>Urgent/time-sensitive:</strong> Within a few hours (but if truly urgent, use a faster channel)</li><li><strong>Regular work emails:</strong> Within 24 hours on business days</li><li><strong>Complex requests:</strong> Acknowledge receipt quickly, provide full response within 48-72 hours</li><li><strong>CC\'d emails:</strong> Read within 24 hours, respond only if needed</li></ul><p>Set clear expectations with your team. If you\'ll be delayed, send a quick acknowledgment with an estimated response time.</p>'
+  },
+  {
+    question: 'Is it okay to send work emails outside business hours?',
+    answer: '<p>It depends on your team culture, but consider:</p><ul><li><strong>Schedule send:</strong> Use delayed delivery to send during normal hours</li><li><strong>Set expectations:</strong> Make clear in the email that no immediate response is expected</li><li><strong>Respect boundaries:</strong> Don\'t expect responses outside others\' working hours</li></ul><p>For global teams, "business hours" varies. Be explicit about urgency rather than relying on send time to convey it.</p>'
+  },
+  {
+    question: 'How do I write emails that actually get read?',
+    answer: '<p>Maximize readability with these techniques:</p><ul><li><strong>Front-load the ask:</strong> Put the request or key point in the first paragraph</li><li><strong>Use formatting:</strong> Bullet points, bold text, numbered lists</li><li><strong>Keep it short:</strong> If it\'s over 5 paragraphs, consider a meeting or document</li><li><strong>Clear subject line:</strong> Summarize the content accurately</li><li><strong>One topic per email:</strong> Multiple topics get partially addressed or ignored</li></ul>'
+  },
+  {
+    question: 'When should I reply-all vs reply to sender only?',
+    answer: '<p>Ask yourself: does everyone need this information?</p><ul><li><strong>Reply-all when:</strong> Your response is relevant to all recipients, you\'re answering a question others might have, you\'re making a decision others need to know</li><li><strong>Reply to sender when:</strong> Your response is only relevant to them, you\'re asking a clarifying question, you\'re providing feedback that shouldn\'t be public</li></ul><p>When in doubt, reply to sender only. You can always forward to the group if they confirm others need to see it.</p>'
+  },
+  {
+    question: 'How do I handle an email thread that\'s gotten out of control?',
+    answer: '<p>Long threads lose context and productivity. To fix:</p><ol><li><strong>Summarize:</strong> Start a new email with "Summary of discussion so far:"</li><li><strong>Clarify:</strong> State the specific question or decision needed</li><li><strong>Suggest a call:</strong> If async isn\'t working, propose a quick meeting</li><li><strong>Move to a document:</strong> For complex discussions, create a shared doc for structured input</li></ol><p>Don\'t let threads exceed 5-7 exchanges. If you\'re still going, the medium isn\'t working.</p>'
+  },
+  {
+    question: 'Should I use read receipts?',
+    answer: '<p>Generally, no. Read receipts:</p><ul><li>Feel like surveillance to recipients</li><li>Don\'t guarantee the email was actually read (just opened)</li><li>Create unnecessary pressure</li></ul><p>Instead, if you need confirmation, ask for it directly: "Please reply to confirm you\'ve received this" or "Let me know by Friday if you have questions."</p>'
+  },
+  {
+    question: 'How formal should work emails be?',
+    answer: '<p>Match the formality to context:</p><ul><li><strong>External/new contacts:</strong> More formal, complete sentences, professional greeting</li><li><strong>Internal/established relationships:</strong> Can be more casual, but still professional</li><li><strong>Clients/leadership:</strong> Err on the side of formality until you know preferences</li></ul><p>Avoid excessive formality that sounds stiff, but also avoid slang, excessive abbreviations, or overly casual language. When in doubt, slightly more formal is safer.</p>'
+  },
+  {
+    question: 'What\'s the best way to follow up on unanswered emails?',
+    answer: '<p>Wait an appropriate time (usually 2-3 business days), then:</p><ol><li><strong>Forward the original:</strong> "Following up on the below..."</li><li><strong>Add context:</strong> Why this matters, any new information</li><li><strong>Be specific about the ask:</strong> What you need from them</li><li><strong>Provide a deadline:</strong> "I need to finalize by Friday, so any input by Thursday would help"</li></ol><p>If still no response, try a different channel (Slack, phone). The email may have been missed or buried.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Async Communication for Remote Teams',
+    excerpt: 'Master asynchronous communication to reduce meetings and boost productivity.',
+    href: '/blog/async-communication-remote-teams',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Remote team collaborating through digital tools'
+  },
+  {
+    title: 'Best Team Communication Tools',
+    excerpt: 'Compare top messaging and collaboration platforms for remote teams.',
+    href: '/blog/best-team-communication-tools',
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Team using communication software'
+  },
+  {
+    title: 'Best Email Marketing Tools',
+    excerpt: 'Find the right email platform for your business communications and marketing.',
+    href: '/tools/best-email-marketing-tools',
+    image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Email marketing dashboard'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Communication"
+    categorySlug="guides/communication"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">Email Is Still King (Sometimes)</h2>
+  <p>
+    In a world of Slack, Teams, and endless notification badges, email might seem old-fashioned. But for remote
+    teams, email remains essential—it's the universal communication channel that works across organizations,
+    persists as a record, and doesn't demand instant attention.
+  </p>
+  <p>
+    <strong>The challenge isn't whether to use email—it's using it well.</strong> Poor email habits waste time,
+    create misunderstandings, and clog inboxes. Good email communication respects recipients' time, communicates
+    clearly, and uses the medium appropriately.
+  </p>
+  <p>
+    This guide covers email etiquette specifically for remote teams, where written communication carries extra weight.
+  </p>
+
+  <!-- Email vs Slack -->
+  <h2 id="email-vs-slack">When to Email vs When to Slack</h2>
+  <p>
+    Choosing the right channel is the first decision. Get it wrong, and your message either gets lost in the
+    noise or feels unnecessarily formal.
+  </p>
+
+  <h3>Use Email For</h3>
+  <ul>
+    <li><strong>External communication:</strong> Clients, vendors, partners</li>
+    <li><strong>Formal documentation:</strong> Decisions that need a permanent record</li>
+    <li><strong>Long-form content:</strong> Detailed explanations, proposals, reports</li>
+    <li><strong>Cross-organizational:</strong> When recipients use different tools</li>
+    <li><strong>Sensitive topics:</strong> When you need to compose carefully</li>
+    <li><strong>Non-urgent matters:</strong> When a response within 24-48 hours is fine</li>
+  </ul>
+
+  <h3>Use Slack/Teams For</h3>
+  <ul>
+    <li><strong>Quick questions:</strong> Things that need brief answers</li>
+    <li><strong>Internal updates:</strong> Status updates, FYIs, announcements</li>
+    <li><strong>Casual conversation:</strong> Team chat, social interaction</li>
+    <li><strong>Time-sensitive coordination:</strong> When you need a response soon</li>
+    <li><strong>Collaborative discussion:</strong> Back-and-forth that would clutter email</li>
+  </ul>
+
+  <h3>The Decision Framework</h3>
+  <p>Ask yourself:</p>
+  <ul>
+    <li>Is this person outside my organization? → <strong>Email</strong></li>
+    <li>Does this need to be a formal record? → <strong>Email</strong></li>
+    <li>Is this longer than 3 paragraphs? → <strong>Email (or a doc)</strong></li>
+    <li>Do I need a response in the next few hours? → <strong>Slack</strong></li>
+    <li>Will this require back-and-forth? → <strong>Slack (or a meeting)</strong></li>
+  </ul>
+
+  <!-- Subject Lines -->
+  <h2 id="subject-lines">Subject Line Best Practices</h2>
+  <p>
+    Your subject line determines whether the email gets opened, when it gets read, and whether it can be found later.
+  </p>
+
+  <h3>Be Specific and Descriptive</h3>
+  <p>
+    Vague subject lines force recipients to open the email to understand what it's about.
+  </p>
+  <ul>
+    <li><strong>Bad:</strong> "Quick question"</li>
+    <li><strong>Good:</strong> "Q: Approval needed for Q2 marketing budget"</li>
+    <li><strong>Bad:</strong> "Update"</li>
+    <li><strong>Good:</strong> "Project Alpha status: On track for March 15 launch"</li>
+    <li><strong>Bad:</strong> "FYI"</li>
+    <li><strong>Good:</strong> "FYI: New PTO policy effective January 1"</li>
+  </ul>
+
+  <h3>Use Prefixes for Quick Scanning</h3>
+  <p>
+    Standardized prefixes help recipients prioritize:
+  </p>
+  <ul>
+    <li><strong>[ACTION REQUIRED]:</strong> Recipient needs to do something</li>
+    <li><strong>[DECISION NEEDED]:</strong> Input required for a choice</li>
+    <li><strong>[FYI]:</strong> Informational, no response expected</li>
+    <li><strong>[URGENT]:</strong> Time-sensitive (use sparingly)</li>
+    <li><strong>[EOM]:</strong> End of message—the subject line is the full message</li>
+  </ul>
+
+  <h3>Keep It Searchable</h3>
+  <p>
+    Include keywords someone might search for later:
+  </p>
+  <ul>
+    <li>Project names</li>
+    <li>Client names</li>
+    <li>Key dates</li>
+    <li>Document types</li>
+  </ul>
+
+  <!-- Clear Writing -->
+  <h2 id="clear-writing">Clear and Concise Writing</h2>
+  <p>
+    In remote work, you can't rely on tone of voice or body language. Your writing carries the full communication burden.
+  </p>
+
+  <h3>Front-Load the Key Point</h3>
+  <p>
+    Busy people skim. Put the most important information first:
+  </p>
+  <ul>
+    <li>What you need from them</li>
+    <li>The decision or question</li>
+    <li>The deadline</li>
+  </ul>
+  <p>
+    Context and background come after—readers can dive deeper if needed.
+  </p>
+
+  <h3>Use Formatting for Readability</h3>
+  <ul>
+    <li><strong>Short paragraphs:</strong> 2-3 sentences max</li>
+    <li><strong>Bullet points:</strong> For lists, options, or action items</li>
+    <li><strong>Bold text:</strong> Highlight key information</li>
+    <li><strong>Numbered lists:</strong> For sequential steps or priorities</li>
+  </ul>
+
+  <h3>One Topic Per Email</h3>
+  <p>
+    Emails with multiple unrelated topics get partially addressed. If you need to cover multiple things,
+    either send separate emails or clearly number each topic with its own action required.
+  </p>
+
+  <h3>Be Explicit About the Ask</h3>
+  <ul>
+    <li><strong>Bad:</strong> "Thoughts?"</li>
+    <li><strong>Good:</strong> "Please review and reply with approval or concerns by Friday."</li>
+    <li><strong>Bad:</strong> "Let me know"</li>
+    <li><strong>Good:</strong> "Please confirm which option you prefer: A or B."</li>
+  </ul>
+
+  <h3>Read Before Sending</h3>
+  <p>
+    Quick review checklist:
+  </p>
+  <ul>
+    <li>Is the subject line accurate and specific?</li>
+    <li>Is the ask clear in the first paragraph?</li>
+    <li>Are there any ambiguous statements?</li>
+    <li>Have I included all necessary context?</li>
+    <li>Is the tone appropriate?</li>
+  </ul>
+
+  <!-- Response Times -->
+  <h2 id="response-times">Response Time Expectations</h2>
+  <p>
+    Unclear expectations around response time create anxiety for senders and pressure for recipients.
+  </p>
+
+  <h3>Set Team Norms</h3>
+  <p>
+    Agree on standard response times:
+  </p>
+  <ul>
+    <li><strong>Internal emails:</strong> Within 24 business hours</li>
+    <li><strong>External/client emails:</strong> Within 24 hours</li>
+    <li><strong>CC'd emails:</strong> Read within 24 hours, respond only if valuable</li>
+    <li><strong>Urgent matters:</strong> Define what "urgent" means and use different channels</li>
+  </ul>
+
+  <h3>Acknowledge Receipt</h3>
+  <p>
+    If you can't respond fully right away, send a quick acknowledgment:
+  </p>
+  <p>
+    "Thanks for sending this. I'll review and get back to you by [date]."
+  </p>
+  <p>
+    This sets expectations and prevents follow-up inquiries.
+  </p>
+
+  <h3>Use Deadline Language</h3>
+  <p>
+    When you need a response by a specific time, say so clearly:
+  </p>
+  <ul>
+    <li>"Please respond by Thursday at 5pm ET so I can finalize the proposal."</li>
+    <li>"I need to make a decision by Friday—any input before then is appreciated."</li>
+  </ul>
+
+  <!-- CC and BCC -->
+  <h2 id="cc-bcc">CC and BCC Guidelines</h2>
+  <p>
+    Misuse of CC and BCC creates noise and erodes trust.
+  </p>
+
+  <h3>When to CC</h3>
+  <ul>
+    <li>Someone needs to be informed but isn't the primary recipient</li>
+    <li>You're documenting that someone has been looped in</li>
+    <li>A manager or stakeholder needs visibility</li>
+  </ul>
+
+  <h3>When NOT to CC</h3>
+  <ul>
+    <li>To CYA (cover yourself)—this signals distrust</li>
+    <li>When the person doesn't need to know</li>
+    <li>To apply pressure by involving someone's boss</li>
+  </ul>
+
+  <h3>When to BCC</h3>
+  <ul>
+    <li>Large distribution lists where recipients don't need to see each other</li>
+    <li>Protecting email addresses in external communications</li>
+    <li>Forwarding yourself a copy for records</li>
+  </ul>
+
+  <h3>When NOT to BCC</h3>
+  <ul>
+    <li>To secretly loop someone in on a conversation—this destroys trust if discovered</li>
+    <li>To hide who else received the message when that matters</li>
+  </ul>
+
+  <!-- Sensitive Topics -->
+  <h2 id="sensitive-topics">Handling Sensitive Topics</h2>
+  <p>
+    Some topics require extra care in email form.
+  </p>
+
+  <h3>Consider If Email Is Right</h3>
+  <p>
+    For highly sensitive topics (performance issues, conflicts, major bad news), consider whether a video call
+    would be better. Email lacks tone cues and doesn't allow for real-time response to reactions.
+  </p>
+
+  <h3>If You Must Email</h3>
+  <ul>
+    <li><strong>Take time to compose:</strong> Write, save as draft, review later</li>
+    <li><strong>Be factual:</strong> Stick to observations, not interpretations</li>
+    <li><strong>Avoid emotion:</strong> Angry emails almost always make things worse</li>
+    <li><strong>Offer to discuss:</strong> "I'd be happy to talk through this if helpful"</li>
+    <li><strong>Check recipients carefully:</strong> Ensure you're sending to the right person</li>
+  </ul>
+
+  <h3>The 24-Hour Rule</h3>
+  <p>
+    For any email you're writing while frustrated or upset, wait 24 hours before sending. You'll almost
+    always edit it significantly or choose a different approach.
+  </p>
+
+  <!-- Signatures -->
+  <h2 id="signatures">Email Signatures for Remote Workers</h2>
+  <p>
+    Your signature is part of your professional presence.
+  </p>
+
+  <h3>Essential Elements</h3>
+  <ul>
+    <li>Full name</li>
+    <li>Title/role</li>
+    <li>Company name</li>
+    <li>Best contact method (if not email)</li>
+  </ul>
+
+  <h3>Optional Elements</h3>
+  <ul>
+    <li>Phone number (if you want calls)</li>
+    <li>Time zone (helpful for remote teams)</li>
+    <li>LinkedIn profile</li>
+    <li>Pronouns</li>
+    <li>Working hours note</li>
+  </ul>
+
+  <h3>Example Signature</h3>
+  <pre>
+Best,
+Sarah Chen
+
+Sarah Chen
+Product Manager | FloatJet
+Based in PST (UTC-8)
+calendly.com/sarah-chen
+  </pre>
+
+  <h3>What to Avoid</h3>
+  <ul>
+    <li>Inspirational quotes (unprofessional in most contexts)</li>
+    <li>Large images (often break in email clients)</li>
+    <li>Too many links or social profiles</li>
+    <li>Legal disclaimers (unless legally required)</li>
+  </ul>
+
+  <!-- Templates -->
+  <h2 id="templates">Templates for Common Scenarios</h2>
+
+  <h3>Requesting Information</h3>
+  <pre>
+Subject: [ACTION REQUIRED] Budget numbers for Q2 planning
+
+Hi [Name],
+
+I'm preparing the Q2 marketing plan and need the following from you:
+1. Final Q1 spend by category
+2. Any committed Q2 expenses
+3. New budget requests with justification
+
+Could you send this by [date]? Let me know if you have questions.
+
+Thanks,
+[Your name]
+  </pre>
+
+  <h3>Following Up</h3>
+  <pre>
+Subject: Re: [Original subject] - following up
+
+Hi [Name],
+
+Following up on my email from [date] below. I'm working on
+[context] and need your input to move forward.
+
+Could you get back to me by [date]? If you need more time
+or have questions, just let me know.
+
+Thanks,
+[Your name]
+  </pre>
+
+  <h3>Sharing a Decision</h3>
+  <pre>
+Subject: Decision: [Topic] - moving forward with Option B
+
+Hi team,
+
+After reviewing input from [names], we've decided to go with
+Option B for [topic].
+
+Key reasons:
+- [Reason 1]
+- [Reason 2]
+- [Reason 3]
+
+Next steps:
+- [Name] will [action] by [date]
+- [Name] will [action] by [date]
+
+Questions? Reply here or ping me on Slack.
+
+[Your name]
+  </pre>
+
+  <h3>Out of Office Response</h3>
+  <pre>
+Thanks for your email. I'm out of office from [date] to [date]
+with limited access to email.
+
+For urgent matters, please contact [name] at [email].
+
+I'll respond to your message when I return.
+  </pre>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs} />
+
+  <h2>Conclusion: Email as Professional Communication</h2>
+  <p>
+    Email remains a cornerstone of professional communication, especially for remote teams. Done well,
+    it respects recipients' time, communicates clearly, and creates useful documentation.
+  </p>
+  <p>
+    <strong>Key principles to remember:</strong>
+  </p>
+  <ul>
+    <li>Choose email when it's the right channel, not out of habit</li>
+    <li>Write subject lines that inform and enable prioritization</li>
+    <li>Front-load your ask and make action items explicit</li>
+    <li>Set and respect response time expectations</li>
+    <li>Use CC thoughtfully and BCC sparingly</li>
+    <li>Pause before sending emotional emails</li>
+  </ul>
+  <p>
+    Your emails represent you professionally. Take the extra minute to make them clear, concise, and respectful
+    of the reader's time.
+  </p>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles} />
+  </Fragment>
+</ArticleLayout>

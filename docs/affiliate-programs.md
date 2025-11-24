@@ -22,11 +22,12 @@
 
 ### Applied Programs
 
-| Program            | Network       | Applied Date | Status     | Affiliate ID | Notes           |
-|--------------------|---------------|--------------|------------|--------------|-----------------|
-| NordVPN + NordPass | Direct        | 2025-11-22   | ✅ Approved | 135757       | B2C bundle      |
-| Notion             | Impact Radius | 2025-11-22   | In Review  | -            | Via Impact.com  |
-| ClickUp            | PartnerStack  | 2025-11-22   | In Review  | -            | Partner program |
+| Program              | Network       | Applied Date | Status     | Affiliate ID | Notes                    |
+|----------------------|---------------|--------------|------------|--------------|--------------------------|
+| NordVPN + NordPass   | Direct        | 2025-11-22   | ✅ Approved | 135757       | B2C bundle               |
+| Notion               | Impact Radius | 2025-11-22   | In Review  | -            | Via Impact.com           |
+| ClickUp              | PartnerStack  | 2025-11-22   | In Review  | -            | Partner program          |
+| PartnerStack Network | PartnerStack  | 2025-11-24   | In Review  | -            | Unlocks marketplace apps |
 
 ### Pending Applications
 

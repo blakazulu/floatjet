@@ -1,0 +1,422 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+
+// Article metadata
+const title = 'What Internet Speed Do You Need for Remote Work? (2025 Guide)';
+const description = 'Find out exactly what internet speed you need for remote work. Speed requirements for Zoom, Teams, cloud apps, file uploads, and tips for improving your connection.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-24');
+const readingTime = 7;
+const image = 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'WiFi router and laptop representing internet speed for remote work';
+
+// Table of contents headings
+const headings = [
+  {text: 'Quick Answer', slug: 'quick-answer', depth: 2},
+  {text: 'Speed Requirements by Task', slug: 'requirements', depth: 2},
+  {text: 'Download vs Upload Speed', slug: 'download-upload', depth: 2},
+  {text: 'Bandwidth vs Latency', slug: 'bandwidth-latency', depth: 2},
+  {text: 'Multiple Users', slug: 'multiple-users', depth: 2},
+  {text: 'How to Test Your Speed', slug: 'test-speed', depth: 2},
+  {text: 'Improving Your Connection', slug: 'improve', depth: 2},
+  {text: 'Mobile Hotspot Backup', slug: 'hotspot', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'What\'s the minimum internet speed for Zoom calls?',
+    answer: '<p>Zoom\'s official requirements:</p><ul><li><strong>1:1 video calls:</strong> 600 kbps (up/down) minimum, 1.8 Mbps recommended</li><li><strong>Group video calls:</strong> 1.0 Mbps (up/down) minimum, 3.0 Mbps recommended</li><li><strong>HD video:</strong> 3.8 Mbps recommended for sending/receiving</li></ul><p>For reliable calls without quality drops, aim for at least <strong>10 Mbps download and 5 Mbps upload</strong>.</p>'
+  },
+  {
+    question: 'Why is my video call choppy even with fast internet?',
+    answer: '<p>Speed isn\'t the only factor. Common causes:</p><ul><li><strong>High latency:</strong> Over 100ms causes delay and sync issues</li><li><strong>Packet loss:</strong> Data getting lost en route</li><li><strong>WiFi interference:</strong> Other devices or neighboring networks</li><li><strong>Router issues:</strong> Old hardware or firmware</li><li><strong>ISP throttling:</strong> Some providers throttle video streaming</li></ul><p>Test with speed tests that measure latency and packet loss, not just speed.</p>'
+  },
+  {
+    question: 'Do I need fiber internet for remote work?',
+    answer: '<p>Not necessarily. Fiber is great but not required:</p><ul><li><strong>Fiber:</strong> Fastest, most reliable, symmetrical speeds—ideal if available</li><li><strong>Cable:</strong> Fast download, slower upload—works for most remote work</li><li><strong>DSL:</strong> Slower but can work with 25+ Mbps plans</li><li><strong>5G home internet:</strong> Fast but latency can vary</li></ul><p>What matters is consistent 25+ Mbps down, 10+ Mbps up, and low latency. The technology matters less than the performance.</p>'
+  },
+  {
+    question: 'How much does VPN slow down my internet?',
+    answer: '<p>VPN overhead varies but expect:</p><ul><li><strong>Speed reduction:</strong> 10-30% typical, up to 50% on poor VPN servers</li><li><strong>Latency increase:</strong> 20-50ms additional (depends on server distance)</li><li><strong>Mitigation:</strong> Choose VPN servers geographically close to you</li></ul><p>If you need 50 Mbps for your work and use a VPN, aim for 70+ Mbps base speed to account for overhead.</p>'
+  },
+  {
+    question: 'Is 5G mobile hotspot good enough for remote work?',
+    answer: '<p>5G can work well as primary or backup:</p><ul><li><strong>Speeds:</strong> 100-300+ Mbps in good coverage areas</li><li><strong>Latency:</strong> 15-30ms typically (good for video calls)</li><li><strong>Reliability:</strong> Varies by location and congestion</li><li><strong>Data caps:</strong> Major limitation—most plans have limits</li></ul><p>5G works for short-term use or backup. For all-day work, verify coverage in your area and consider unlimited plans.</p>'
+  },
+  {
+    question: 'Should I use WiFi or ethernet for remote work?',
+    answer: '<p><strong>Ethernet is better when possible:</strong></p><ul><li>More stable—no interference or dropout</li><li>Lower latency—important for video calls</li><li>Consistent speeds—WiFi fluctuates</li></ul><p>If ethernet isn\'t practical, optimize WiFi: place router centrally, use 5GHz band, minimize interference, and consider mesh systems for larger spaces.</p>'
+  },
+  {
+    question: 'How do I know if my ISP is throttling?',
+    answer: '<p>Signs of throttling and how to check:</p><ul><li><strong>Symptom:</strong> Video streaming or specific apps slow while speed test shows good results</li><li><strong>Test:</strong> Use VPN and compare speeds (VPN hides traffic type from ISP)</li><li><strong>Time patterns:</strong> Slower during peak hours (evening) suggests congestion or throttling</li></ul><p>If VPN speeds are significantly better, your ISP may be throttling specific traffic types.</p>'
+  },
+  {
+    question: 'What internet speed do I need for screen sharing?',
+    answer: '<p>Screen sharing requires more upload bandwidth than you might expect:</p><ul><li><strong>Basic sharing:</strong> 1-2 Mbps upload</li><li><strong>High-quality sharing:</strong> 3-5 Mbps upload</li><li><strong>With video simultaneously:</strong> 5-8 Mbps upload</li></ul><p>If you frequently share your screen, ensure your upload speed is at least 10 Mbps for smooth performance.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Find Reliable WiFi Anywhere',
+    excerpt: 'Tips for finding fast, secure internet connections as a remote worker or digital nomad.',
+    href: '/blog/find-reliable-wifi-anywhere',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'WiFi signal and laptop'
+  },
+  {
+    title: 'Best VPN for Digital Nomads',
+    excerpt: 'Secure your connection and access content from anywhere.',
+    href: '/tools/best-vpn-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'VPN security illustration'
+  },
+  {
+    title: 'VPN and Public WiFi Security Guide',
+    excerpt: 'Stay safe when working from coffee shops, airports, and coworking spaces.',
+    href: '/blog/vpn-public-wifi-guide',
+    image: 'https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Public WiFi security'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Productivity"
+    categorySlug="guides/productivity"
+    headings={headings}
+>
+  <!-- Quick Answer -->
+  <h2 id="quick-answer">Quick Answer: Recommended Internet Speeds</h2>
+  <p>
+    For most remote workers, here's what you need:
+  </p>
+  <div class="bg-jet-stream/20 border border-jet-stream/30 rounded-lg p-4 my-6">
+    <ul class="space-y-2 text-white">
+      <li><strong>Minimum:</strong> 25 Mbps download / 5 Mbps upload</li>
+      <li><strong>Recommended:</strong> 50 Mbps download / 10 Mbps upload</li>
+      <li><strong>Power user:</strong> 100+ Mbps download / 20+ Mbps upload</li>
+    </ul>
+  </div>
+  <p>
+    The "recommended" tier handles video calls, cloud apps, and file transfers without issues.
+    If you share your connection with others or work with large files, go higher.
+  </p>
+
+  <!-- Speed Requirements by Task -->
+  <h2 id="requirements">Speed Requirements by Task</h2>
+  <p>
+    Different remote work activities have different bandwidth needs:
+  </p>
+
+  <h3>Video Calls (Zoom, Teams, Meet)</h3>
+  <div class="overflow-x-auto my-6">
+    <table class="w-full text-sm">
+      <thead>
+      <tr class="border-b border-white/20">
+        <th class="text-left py-3 px-4 text-white font-semibold">Call Type</th>
+        <th class="text-left py-3 px-4 text-white font-semibold">Download</th>
+        <th class="text-left py-3 px-4 text-white font-semibold">Upload</th>
+      </tr>
+      </thead>
+      <tbody class="text-white/80">
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4">1:1 video call</td>
+        <td class="py-3 px-4">1.5 Mbps</td>
+        <td class="py-3 px-4">1.5 Mbps</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4">Group video (gallery view)</td>
+        <td class="py-3 px-4">3.0 Mbps</td>
+        <td class="py-3 px-4">3.0 Mbps</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4">HD video with screen share</td>
+        <td class="py-3 px-4">5.0 Mbps</td>
+        <td class="py-3 px-4">5.0 Mbps</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4">Large meeting (25+ people)</td>
+        <td class="py-3 px-4">8.0 Mbps</td>
+        <td class="py-3 px-4">5.0 Mbps</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    <strong>Tip:</strong> Always have 2-3x the minimum to handle network fluctuations.
+  </p>
+
+  <h3>Cloud Applications</h3>
+  <ul>
+    <li><strong>Google Workspace / Office 365:</strong> 5 Mbps is plenty for documents</li>
+    <li><strong>Project management (Notion, Asana):</strong> 3-5 Mbps</li>
+    <li><strong>Design tools (Figma, Canva):</strong> 10-20 Mbps for smooth experience</li>
+    <li><strong>Development (GitHub, cloud IDEs):</strong> 10-25 Mbps for code syncing</li>
+  </ul>
+
+  <h3>File Transfers</h3>
+  <p>
+    Upload speed matters most here—often your bottleneck:
+  </p>
+  <ul>
+    <li><strong>100 MB file at 5 Mbps upload:</strong> ~2.5 minutes</li>
+    <li><strong>100 MB file at 20 Mbps upload:</strong> ~40 seconds</li>
+    <li><strong>1 GB file at 5 Mbps upload:</strong> ~27 minutes</li>
+    <li><strong>1 GB file at 50 Mbps upload:</strong> ~2.5 minutes</li>
+  </ul>
+  <p>
+    If you regularly send large files, prioritize upload speed.
+  </p>
+
+  <h3>VPN Overhead</h3>
+  <p>
+    Using a VPN reduces effective speed by 10-30%. If you use VPN for work:
+  </p>
+  <ul>
+    <li>25 Mbps base → ~18-22 Mbps effective</li>
+    <li>50 Mbps base → ~35-45 Mbps effective</li>
+    <li>100 Mbps base → ~70-90 Mbps effective</li>
+  </ul>
+
+  <!-- Download vs Upload -->
+  <h2 id="download-upload">Download vs Upload Speed</h2>
+  <p>
+    Most home internet plans have <strong>asymmetric speeds</strong>—download is much faster than upload.
+    This matters for remote work.
+  </p>
+
+  <h3>When Download Speed Matters</h3>
+  <ul>
+    <li>Watching someone else's screen share</li>
+    <li>Downloading files from cloud storage</li>
+    <li>Loading web applications</li>
+    <li>Receiving video in calls</li>
+  </ul>
+
+  <h3>When Upload Speed Matters</h3>
+  <ul>
+    <li><strong>Sharing your screen</strong>—upload is critical</li>
+    <li><strong>Sending your video</strong> in calls</li>
+    <li><strong>Uploading files</strong> to cloud storage</li>
+    <li><strong>Backing up</strong> to cloud services</li>
+  </ul>
+  <p>
+    Many remote workers find <strong>upload speed is their bottleneck</strong>. Cable internet often
+    offers 100+ Mbps down but only 10-20 Mbps up. Check your upload speed specifically.
+  </p>
+
+  <!-- Bandwidth vs Latency -->
+  <h2 id="bandwidth-latency">Bandwidth vs Latency</h2>
+  <p>
+    Speed (bandwidth) isn't everything. <strong>Latency</strong> (ping) affects real-time applications.
+  </p>
+
+  <h3>What Is Latency?</h3>
+  <p>
+    Latency is the time for data to travel from you to a server and back, measured in milliseconds (ms).
+  </p>
+  <ul>
+    <li><strong>Under 50ms:</strong> Excellent—video calls feel natural</li>
+    <li><strong>50-100ms:</strong> Good—slight delays but workable</li>
+    <li><strong>100-200ms:</strong> Noticeable—talking over each other in calls</li>
+    <li><strong>Over 200ms:</strong> Problematic—significant lag in real-time communication</li>
+  </ul>
+
+  <h3>Why It Matters</h3>
+  <p>
+    You can have 1 Gbps speed but if latency is 300ms, video calls will be frustrating. The data
+    arrives fast once it starts, but there's a delay before it starts.
+  </p>
+
+  <h3>Improving Latency</h3>
+  <ul>
+    <li><strong>Use ethernet</strong> instead of WiFi</li>
+    <li><strong>Choose closer servers</strong> (for VPNs, choose nearby locations)</li>
+    <li><strong>Reduce network congestion</strong>—pause downloads during calls</li>
+    <li><strong>Quality router</strong>—cheap routers can add latency</li>
+  </ul>
+
+  <!-- Multiple Users -->
+  <h2 id="multiple-users">Multiple People in Your Household</h2>
+  <p>
+    Sharing internet with family, roommates, or a partner? Multiply your needs.
+  </p>
+
+  <h3>Household Calculation</h3>
+  <div class="overflow-x-auto my-6">
+    <table class="w-full text-sm">
+      <thead>
+      <tr class="border-b border-white/20">
+        <th class="text-left py-3 px-4 text-white font-semibold">Household Size</th>
+        <th class="text-left py-3 px-4 text-white font-semibold">Recommended Download</th>
+        <th class="text-left py-3 px-4 text-white font-semibold">Recommended Upload</th>
+      </tr>
+      </thead>
+      <tbody class="text-white/80">
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4">1 remote worker</td>
+        <td class="py-3 px-4">50 Mbps</td>
+        <td class="py-3 px-4">10 Mbps</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4">2 remote workers</td>
+        <td class="py-3 px-4">100 Mbps</td>
+        <td class="py-3 px-4">20 Mbps</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4">Family (2 workers + kids streaming)</td>
+        <td class="py-3 px-4">200 Mbps</td>
+        <td class="py-3 px-4">30 Mbps</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4">Multiple remote workers + heavy use</td>
+        <td class="py-3 px-4">300+ Mbps</td>
+        <td class="py-3 px-4">50+ Mbps</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>QoS Settings</h3>
+  <p>
+    Quality of Service (QoS) settings on your router can prioritize work traffic:
+  </p>
+  <ul>
+    <li>Prioritize video conferencing apps</li>
+    <li>Limit bandwidth for streaming/gaming during work hours</li>
+    <li>Check router settings or upgrade to a router with QoS features</li>
+  </ul>
+
+  <!-- Test Speed -->
+  <h2 id="test-speed">How to Test Your Speed</h2>
+  <p>
+    Don't trust your ISP's advertised speeds. Test regularly:
+  </p>
+
+  <h3>Recommended Speed Tests</h3>
+  <ul>
+    <li><strong>Speedtest.net:</strong> Most popular, measures download/upload/ping</li>
+    <li><strong>Fast.com:</strong> Netflix's test, good for seeing real-world streaming speeds</li>
+    <li><strong>Cloudflare Speed Test:</strong> Comprehensive, includes latency and jitter</li>
+    <li><strong>Google "speed test":</strong> Quick test right in search results</li>
+  </ul>
+
+  <h3>Testing Best Practices</h3>
+  <ul>
+    <li>Test at different times of day (peak vs. off-peak)</li>
+    <li>Test on both WiFi and ethernet to identify issues</li>
+    <li>Close other applications during tests</li>
+    <li>Test multiple times and average results</li>
+    <li>Test with and without VPN if you use one</li>
+  </ul>
+
+  <h3>What to Look For</h3>
+  <ul>
+    <li><strong>Consistency:</strong> Large variations indicate problems</li>
+    <li><strong>Upload speed:</strong> Often the bottleneck for remote work</li>
+    <li><strong>Latency:</strong> Under 50ms is ideal for video calls</li>
+    <li><strong>Jitter:</strong> Variation in latency—lower is better</li>
+  </ul>
+
+  <!-- Improving Connection -->
+  <h2 id="improve">Improving Your Connection</h2>
+  <p>
+    Before upgrading your plan, try these optimizations:
+  </p>
+
+  <h3>Hardware Improvements</h3>
+  <ul>
+    <li><strong>Use ethernet:</strong> More stable than WiFi, lower latency</li>
+    <li><strong>Upgrade router:</strong> Old routers can bottleneck fast connections</li>
+    <li><strong>Mesh WiFi system:</strong> Better coverage in larger spaces</li>
+    <li><strong>WiFi 6 (802.11ax):</strong> Better performance with multiple devices</li>
+  </ul>
+
+  <h3>WiFi Optimization</h3>
+  <ul>
+    <li><strong>Use 5GHz band:</strong> Faster than 2.4GHz, less interference</li>
+    <li><strong>Position router centrally:</strong> Minimize distance and walls</li>
+    <li><strong>Reduce interference:</strong> Away from microwaves, baby monitors, other electronics</li>
+    <li><strong>Change WiFi channel:</strong> Use apps like WiFi Analyzer to find less congested channels</li>
+  </ul>
+
+  <h3>Network Management</h3>
+  <ul>
+    <li><strong>Schedule large downloads:</strong> Outside of work hours</li>
+    <li><strong>Pause cloud backups:</strong> During video calls</li>
+    <li><strong>Limit other devices:</strong> Streaming and gaming consume bandwidth</li>
+    <li><strong>Enable QoS:</strong> Prioritize work applications in router settings</li>
+  </ul>
+
+  <!-- Mobile Hotspot -->
+  <h2 id="hotspot">Mobile Hotspot as Backup</h2>
+  <p>
+    Internet outages happen. Having a backup keeps you productive.
+  </p>
+
+  <h3>Mobile Hotspot Options</h3>
+  <ul>
+    <li><strong>Phone tethering:</strong> Use your phone's data plan via WiFi or USB</li>
+    <li><strong>Dedicated hotspot device:</strong> Separate device with its own data plan</li>
+    <li><strong>5G home internet:</strong> T-Mobile, Verizon—can serve as primary or backup</li>
+  </ul>
+
+  <h3>What to Look For</h3>
+  <ul>
+    <li><strong>Data limits:</strong> Unlimited plans may throttle after certain usage</li>
+    <li><strong>Coverage:</strong> Check signal strength in your work area</li>
+    <li><strong>Speed:</strong> 4G LTE = 10-50 Mbps typical; 5G = 50-300+ Mbps</li>
+    <li><strong>Latency:</strong> Mobile typically has higher latency than wired</li>
+  </ul>
+
+  <h3>Hotspot Best Practices</h3>
+  <ul>
+    <li>Test your hotspot before you need it</li>
+    <li>Know your data limits and usage</li>
+    <li>Position near a window for better signal</li>
+    <li>Use USB tethering for most stable connection</li>
+    <li>Keep phone plugged in—hotspot drains battery fast</li>
+  </ul>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <h2>Conclusion: Right-Size Your Connection</h2>
+  <p>
+    Don't overpay for speed you don't need, but don't underestimate your requirements either.
+  </p>
+  <p>
+    <strong>Quick recommendations:</strong>
+  </p>
+  <ul>
+    <li><strong>Solo remote worker:</strong> 50 Mbps down / 10 Mbps up</li>
+    <li><strong>Multiple remote workers:</strong> 100+ Mbps down / 20+ Mbps up</li>
+    <li><strong>Heavy file transfers:</strong> Prioritize upload speed</li>
+    <li><strong>Video call quality issues:</strong> Check latency, not just speed</li>
+  </ul>
+  <p>
+    Test your current connection, identify bottlenecks, and upgrade only if needed. A reliable
+    50 Mbps connection often beats an inconsistent 200 Mbps one.
+  </p>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

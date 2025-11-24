@@ -73,7 +73,8 @@ const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 
 <script>
   // Mobile TOC toggle functionality
-  document.addEventListener('DOMContentLoaded', () => {
+  // Use astro:page-load for ViewTransitions compatibility
+  function initTableOfContents() {
     const toggleBtn = document.querySelector('.toc-toggle');
     const closeBtn = document.querySelector('.toc-close');
     const overlay = document.querySelector('.toc-overlay');
@@ -164,7 +165,10 @@ const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 
     // Initial check
     updateActiveHeading();
-  });
+  }
+
+  // Initialize on page load and on Astro navigation (ViewTransitions)
+  document.addEventListener('astro:page-load', initTableOfContents);
 </script>
 
 <style>

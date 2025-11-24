@@ -1,0 +1,284 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+
+const title = 'How to Reduce Background Noise on Video Calls (2025)';
+const description = 'Practical tips and software solutions to eliminate background noise during remote meetings. From free apps to hardware upgrades for professional call quality.';
+const pubDate = new Date('2024-11-24');
+const updatedDate = new Date('2024-11-24');
+const author = 'FloatJet Team';
+const category = 'Audio';
+const categorySlug = 'gear';
+const readingTime = 8;
+const image = 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Person on video call with noise-canceling setup';
+
+const headings = [
+  { text: 'Quick Fixes (Free)', slug: 'quick-fixes' },
+  { text: 'Software Solutions', slug: 'software-solutions' },
+  { text: 'Hardware Upgrades', slug: 'hardware-upgrades' },
+  { text: 'Room Acoustics Tips', slug: 'room-acoustics' },
+  { text: 'Platform-Specific Settings', slug: 'platform-settings' },
+  { text: 'Frequently Asked Questions', slug: 'faq' },
+];
+
+const softwareComparisonColumns = [
+  { key: 'software', label: 'Software', width: '140px' },
+  { key: 'price', label: 'Price' },
+  { key: 'bestFor', label: 'Best For' },
+  { key: 'platform', label: 'Platform' },
+];
+
+const softwareComparisonRows = [
+  { software: '<strong>Krisp</strong>', price: '$8/mo', bestFor: 'All-around best', platform: 'Windows/Mac' },
+  { software: '<strong>NVIDIA Broadcast</strong>', price: 'Free', bestFor: 'NVIDIA GPU owners', platform: 'Windows' },
+  { software: '<strong>RTX Voice</strong>', price: 'Free', bestFor: 'Older NVIDIA cards', platform: 'Windows' },
+  { software: '<strong>Zoom Built-in</strong>', price: 'Free', bestFor: 'Zoom users', platform: 'All' },
+  { software: '<strong>Teams Built-in</strong>', price: 'Free', bestFor: 'Teams users', platform: 'All' },
+];
+
+const faqItems = [
+  {
+    question: 'Why can people hear my keyboard on calls?',
+    answer: 'Condenser microphones are highly sensitive and pick up everything, including keyboard clicks. Switch to a dynamic microphone which is less sensitive to distant sounds. Alternatively, use software noise suppression like Krisp or NVIDIA Broadcast to filter out keyboard noise.',
+  },
+  {
+    question: 'Does noise cancellation affect my voice quality?',
+    answer: 'Aggressive noise suppression can make your voice sound artificial or robotic. Quality software like Krisp preserves voice naturally while removing noise. Built-in platform noise cancellation (Zoom, Teams) varies in quality. Test recordings to find the right balance.',
+  },
+  {
+    question: 'How do I stop echo on video calls?',
+    answer: 'Echo happens when your mic picks up sound from your speakers. Use headphones to completely eliminate this. If you must use speakers, lower the volume, increase distance from your mic, or enable echo cancellation in your video platform settings.',
+  },
+  {
+    question: 'Is a quiet room better than noise cancellation software?',
+    answer: 'Yes, always address the source first. No software perfectly removes all noise. Close windows, turn off fans, find a quieter space. Software is a backup for unavoidable noise, not a replacement for good environment choices.',
+  },
+];
+
+const relatedArticles = [
+  {
+    title: 'Best Microphones for Remote Meetings',
+    excerpt: 'Upgrade your mic for clearer audio that rejects background noise.',
+    href: '/gear/best-microphones-remote-meetings',
+    image: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Professional USB microphone for remote work',
+  },
+  {
+    title: 'Best Noise-Canceling Headphones',
+    excerpt: 'Block distractions and prevent echo with quality headphones.',
+    href: '/gear/best-noise-canceling-headphones',
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Noise-canceling headphones on desk',
+  },
+  {
+    title: 'USB vs XLR Microphones',
+    excerpt: 'Understanding microphone types and which reduces noise best.',
+    href: '/gear/usb-vs-xlr-microphones',
+    image: 'https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Professional microphone setup comparing USB and XLR',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  author={author}
+  category={category}
+  categorySlug={categorySlug}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  headings={headings}
+>
+  <p class="lead">
+    Background noise on video calls is unprofessional and distracting. The good news: you can eliminate most noise with free software and simple adjustments. Here's how to sound crystal clear on every call.
+  </p>
+
+  <h2 id="quick-fixes">Quick Fixes You Can Do Right Now (Free)</h2>
+
+  <p>
+    Before spending money on gear or software, try these immediate improvements:
+  </p>
+
+  <h3>1. Get Closer to Your Microphone</h3>
+  <p>
+    The closer your mouth is to the mic, the louder your voice relative to background noise. Position your mic 4-6 inches from your mouth. This single change makes more difference than expensive equipment.
+  </p>
+
+  <h3>2. Use Headphones</h3>
+  <p>
+    Headphones prevent echo and feedback. When your mic picks up speaker audio, it creates echo that annoys everyone. Any headphones work—wireless earbuds, gaming headsets, or over-ear headphones.
+  </p>
+
+  <h3>3. Close Windows and Doors</h3>
+  <p>
+    Obvious but effective. Street noise, household sounds, and HVAC noise all reduce when you seal your space. Close the door even if you live alone—it reflects sound away from outside sources.
+  </p>
+
+  <h3>4. Turn Off Fans and Appliances</h3>
+  <p>
+    Fans, air conditioners, and humidifiers create constant low-frequency noise that microphones love to amplify. Turn them off during important calls or move them out of the room.
+  </p>
+
+  <h3>5. Mute When Not Speaking</h3>
+  <p>
+    The nuclear option. If your environment is noisy, mute yourself except when talking. Most platforms support push-to-talk or quick mute shortcuts. Learn your platform's hotkey.
+  </p>
+
+  <h2 id="software-solutions">Software Noise Suppression</h2>
+
+  <p>
+    AI-powered noise removal has improved dramatically. These tools filter out background noise in real-time while preserving your voice.
+  </p>
+
+  <ComparisonTable columns={softwareComparisonColumns} rows={softwareComparisonRows} />
+
+  <h3>Krisp - Best Overall Solution</h3>
+  <p>
+    <strong>Krisp</strong> removes background noise from both your microphone and incoming audio. It works with any video calling app and filters out dogs barking, construction, typing, and most environmental sounds.
+  </p>
+  <ul>
+    <li><strong>Price:</strong> Free tier (60 min/week) or $8/month unlimited</li>
+    <li><strong>Works with:</strong> Zoom, Teams, Google Meet, Slack, Discord, all apps</li>
+    <li><strong>Best for:</strong> Remote workers in noisy environments</li>
+  </ul>
+  <div class="my-6">
+    <AffiliateButton href="/go/krisp" text="Try Krisp Free" />
+  </div>
+
+  <h3>NVIDIA Broadcast - Free for NVIDIA Users</h3>
+  <p>
+    If you have an NVIDIA RTX graphics card, <strong>NVIDIA Broadcast</strong> offers excellent noise removal for free. It also includes background blur and auto-framing features.
+  </p>
+  <ul>
+    <li><strong>Price:</strong> Free (requires RTX 2060 or newer)</li>
+    <li><strong>Works with:</strong> Any application</li>
+    <li><strong>Best for:</strong> Gamers and creators with NVIDIA hardware</li>
+  </ul>
+
+  <h3>Platform Built-in Options</h3>
+  <p>
+    Most video platforms now include noise suppression:
+  </p>
+  <ul>
+    <li><strong>Zoom:</strong> Settings → Audio → Suppress Background Noise (set to High)</li>
+    <li><strong>Teams:</strong> Settings → Devices → Noise Suppression (High)</li>
+    <li><strong>Google Meet:</strong> Settings → Audio → Noise Cancellation (toggle on)</li>
+    <li><strong>Discord:</strong> Settings → Voice & Video → Noise Suppression</li>
+  </ul>
+
+  <h2 id="hardware-upgrades">Hardware Upgrades That Help</h2>
+
+  <p>
+    Sometimes software isn't enough. These hardware investments reduce noise at the source.
+  </p>
+
+  <h3>Dynamic Microphones</h3>
+  <p>
+    Dynamic mics are less sensitive than condenser mics, naturally rejecting sounds that aren't directly in front of them. The <strong>Shure MV7</strong> and <strong>Audio-Technica ATR2100x</strong> are excellent choices.
+  </p>
+  <div class="my-6">
+    <AffiliateButton href="/go/shure-mv7" text="Check Shure MV7 Price" />
+  </div>
+
+  <h3>Noise-Canceling Headphones</h3>
+  <p>
+    Quality noise-canceling headphones with good built-in mics can work well for calls. The <strong>Sony WH-1000XM5</strong> and <strong>Bose 700</strong> both have excellent call quality in addition to ANC.
+  </p>
+  <div class="my-6">
+    <AffiliateButton href="/go/sony-wh-1000xm5" text="Check Sony XM5 Price" />
+  </div>
+
+  <h3>Boom Arm and Shock Mount</h3>
+  <p>
+    A boom arm gets your mic close to your mouth and off your desk. A shock mount prevents vibrations (keyboard, desk bumps) from reaching the mic. Together they cost $30-60 and significantly improve audio.
+  </p>
+
+  <h3>USB Audio Interface</h3>
+  <p>
+    Audio interfaces often have better noise floors than USB mics. The <strong>Focusrite Scarlett Solo</strong> ($110) paired with an XLR mic can deliver cleaner audio with less background hiss.
+  </p>
+
+  <h2 id="room-acoustics">Improving Your Room Acoustics</h2>
+
+  <p>
+    Your room affects how noise travels. These changes reduce echo and ambient pickup.
+  </p>
+
+  <h3>Add Soft Surfaces</h3>
+  <ul>
+    <li><strong>Curtains:</strong> Heavy curtains absorb sound and block outside noise</li>
+    <li><strong>Rugs:</strong> Carpet or area rugs reduce floor reflections</li>
+    <li><strong>Bookshelves:</strong> Full shelves diffuse sound better than bare walls</li>
+    <li><strong>Couch/bed:</strong> Soft furniture absorbs mid-frequency sounds</li>
+  </ul>
+
+  <h3>Acoustic Treatment (If Needed)</h3>
+  <p>
+    For serious improvement, acoustic panels absorb echoes. You don't need expensive studio treatment—even cheap foam panels ($20-40) positioned behind your mic help. Focus on the wall you face when speaking.
+  </p>
+
+  <h3>Choose the Right Room</h3>
+  <p>
+    Smaller rooms with carpet and furniture naturally sound better than large, empty spaces. If possible, take calls in a bedroom or home office rather than a kitchen or living room.
+  </p>
+
+  <h2 id="platform-settings">Platform-Specific Settings</h2>
+
+  <h3>Zoom</h3>
+  <ol>
+    <li>Open Settings → Audio</li>
+    <li>Set "Suppress background noise" to <strong>High</strong></li>
+    <li>Enable "Automatically adjust microphone volume" (or disable if too aggressive)</li>
+    <li>Test with the "Test Mic" feature before important calls</li>
+  </ol>
+
+  <h3>Microsoft Teams</h3>
+  <ol>
+    <li>Click your profile → Settings → Devices</li>
+    <li>Set Noise suppression to <strong>High</strong></li>
+    <li>Consider "Music mode" OFF unless sharing audio</li>
+  </ol>
+
+  <h3>Google Meet</h3>
+  <ol>
+    <li>Click three dots → Settings → Audio</li>
+    <li>Enable "Noise cancellation"</li>
+    <li>Check that the correct microphone is selected</li>
+  </ol>
+
+  <h3>Slack Huddles</h3>
+  <ol>
+    <li>Click your profile → Preferences → Audio & video</li>
+    <li>Enable noise cancellation</li>
+    <li>Adjust input sensitivity if needed</li>
+  </ol>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqItems} />
+
+  <h2>Summary: Action Plan</h2>
+
+  <p>
+    Follow this order to eliminate background noise systematically:
+  </p>
+
+  <ol>
+    <li><strong>Free fixes first:</strong> Get closer to mic, use headphones, close doors</li>
+    <li><strong>Enable platform noise suppression:</strong> Zoom, Teams, Meet all have built-in options</li>
+    <li><strong>Try dedicated software:</strong> Krisp (free tier) or NVIDIA Broadcast</li>
+    <li><strong>Upgrade hardware if needed:</strong> Dynamic mic, boom arm, or better headphones</li>
+    <li><strong>Improve room acoustics:</strong> Add soft surfaces, acoustic panels if serious</li>
+  </ol>
+
+  <p>
+    Most people achieve excellent call quality with steps 1-3. Hardware and room treatment are for those who want professional-grade audio or have particularly challenging environments.
+  </p>
+
+  <RelatedArticles articles={relatedArticles} />
+</ArticleLayout>

@@ -534,6 +534,68 @@ from the same dashboard.
 
 ---
 
+### Microphones
+
+| Program         | Commission | Cookie  | Network | Status      |
+|-----------------|------------|---------|---------|-------------|
+| Shure           | 5-8%       | 30 days | Direct  | Not Applied |
+| Blue (Logitech) | 4-6%       | 30 days | Direct  | Not Applied |
+| Rode            | 5%         | 30 days | Direct  | Not Applied |
+| Audio-Technica  | 3-5%       | 30 days | Direct  | Not Applied |
+| Elgato          | 5-8%       | 30 days | Direct  | Not Applied |
+| HyperX          | 5%         | 30 days | Direct  | Not Applied |
+| Samson          | 4%         | 30 days | Amazon  | Not Applied |
+| Amazon          | 3-4%       | 24h     | Amazon  | Not Applied |
+
+**Used in:** best-microphones-remote-meetings, usb-vs-xlr-microphones articles
+
+---
+
+### Speakers
+
+| Program     | Commission | Cookie  | Network | Status      |
+|-------------|------------|---------|---------|-------------|
+| Audioengine | 5-10%      | 30 days | Direct  | Not Applied |
+| Edifier     | 5%         | 30 days | Direct  | Not Applied |
+| Creative    | 4-6%       | 30 days | Direct  | Not Applied |
+| Logitech    | 4-6%       | 30 days | Direct  | Not Applied |
+| Bose        | 4%         | 30 days | Direct  | Not Applied |
+| Klipsch     | 5%         | 30 days | Direct  | Not Applied |
+| Razer       | 5-10%      | 30 days | Direct  | Not Applied |
+| Amazon      | 3-4%       | 24h     | Amazon  | Not Applied |
+
+**Used in:** best-speakers-home-office article
+
+---
+
+### Earbuds
+
+| Program   | Commission | Cookie  | Network | Status      |
+|-----------|------------|---------|---------|-------------|
+| Apple     | 2-4%       | 30 days | Apple   | Not Applied |
+| Sony      | 4-6%       | 30 days | Direct  | Not Applied |
+| Samsung   | 3-5%       | 30 days | Direct  | Not Applied |
+| Jabra     | 5-8%       | 30 days | Direct  | Not Applied |
+| Soundcore | 5%         | 30 days | Direct  | Not Applied |
+| Bose      | 4%         | 30 days | Direct  | Not Applied |
+| Amazon    | 3-4%       | 24h     | Amazon  | Not Applied |
+
+**Used in:** best-wireless-earbuds-remote-work article
+
+---
+
+### Audio Software & Accessories
+
+| Program   | Commission | Cookie  | Network | Status      |
+|-----------|------------|---------|---------|-------------|
+| Krisp     | 20-30%     | 30 days | Direct  | Not Applied |
+| Focusrite | 5-8%       | 30 days | Direct  | Not Applied |
+| Amazon    | 3-4%       | 24h     | Amazon  | Not Applied |
+
+**Used in:** reduce-background-noise-calls, usb-vs-xlr-microphones articles
+
+---
+
 ## Alternative/Backup Programs
 
 If primary programs reject your application:

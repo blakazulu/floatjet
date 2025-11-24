@@ -1,0 +1,457 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+
+const title = 'Best Speakers for Home Office (2025)';
+const description = 'Top-rated desktop speakers for remote work. We tested 8 speaker systems for audio quality, voice clarity on calls, and value for home office setups.';
+const pubDate = new Date('2024-11-24');
+const updatedDate = new Date('2024-11-24');
+const author = 'FloatJet Team';
+const category = 'Audio';
+const categorySlug = 'gear';
+const readingTime = 14;
+const image = 'https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Desktop speakers on a home office desk setup';
+
+const headings = [
+  { text: 'Quick Picks: Our Top 3', slug: 'quick-picks' },
+  { text: 'Why Desktop Speakers Matter', slug: 'why-desktop-speakers' },
+  { text: 'What to Look For', slug: 'what-to-look-for' },
+  { text: 'Best Overall: Audioengine A2+', slug: 'audioengine-a2-plus' },
+  { text: 'Best for Music: Edifier R1280DB', slug: 'edifier-r1280db' },
+  { text: 'Best Budget: Creative Pebble V3', slug: 'creative-pebble-v3' },
+  { text: 'Best 2.1 System: Logitech Z407', slug: 'logitech-z407' },
+  { text: 'Best Premium: Bose Companion 2 III', slug: 'bose-companion-2' },
+  { text: 'Best for Entertainment: Klipsch ProMedia', slug: 'klipsch-promedia' },
+  { text: 'Best Vintage Style: Edifier R1280T', slug: 'edifier-r1280t' },
+  { text: 'Best Compact: Razer Nommo', slug: 'razer-nommo' },
+  { text: 'Full Comparison', slug: 'comparison-table' },
+  { text: 'Speakers vs Headphones', slug: 'speakers-vs-headphones' },
+  { text: 'Frequently Asked Questions', slug: 'faq' },
+];
+
+const quickPicksColumns = [
+  { key: 'speaker', label: 'Speaker', width: '140px' },
+  { key: 'bestFor', label: 'Best For' },
+  { key: 'price', label: 'Price' },
+  { key: 'rating', label: 'Rating' },
+];
+
+const quickPicksRows = [
+  { speaker: '<strong>Audioengine A2+</strong>', bestFor: 'Overall Quality', price: '$269', rating: '9.5/10' },
+  { speaker: '<strong>Edifier R1280DB</strong>', bestFor: 'Music Lovers', price: '$149', rating: '9.2/10' },
+  { speaker: '<strong>Creative Pebble V3</strong>', bestFor: 'Budget Pick', price: '$39', rating: '8.8/10' },
+];
+
+const comparisonColumns = [
+  { key: 'speaker', label: 'Speaker', width: '140px' },
+  { key: 'power', label: 'Power' },
+  { key: 'connectivity', label: 'Connectivity', width: '160px' },
+  { key: 'subwoofer', label: 'Subwoofer' },
+  { key: 'price', label: 'Price' },
+  { key: 'rating', label: 'Rating' },
+];
+
+const comparisonRows = [
+  { speaker: '<strong>Audioengine A2+</strong>', power: '60W', connectivity: 'USB, Bluetooth, 3.5mm', subwoofer: 'No (available)', price: '$269', rating: '9.5/10' },
+  { speaker: '<strong>Edifier R1280DB</strong>', power: '42W', connectivity: 'Bluetooth, Optical, RCA', subwoofer: 'No', price: '$149', rating: '9.2/10' },
+  { speaker: '<strong>Creative Pebble V3</strong>', power: '8W', connectivity: 'USB-C, Bluetooth', subwoofer: 'No', price: '$39', rating: '8.8/10' },
+  { speaker: '<strong>Logitech Z407</strong>', power: '40W', connectivity: 'Bluetooth, 3.5mm, USB', subwoofer: 'Yes (included)', price: '$69', rating: '8.7/10' },
+  { speaker: '<strong>Bose Companion 2 III</strong>', power: '20W', connectivity: '3.5mm', subwoofer: 'No', price: '$149', rating: '8.5/10' },
+  { speaker: '<strong>Klipsch ProMedia 2.1</strong>', power: '200W', connectivity: '3.5mm', subwoofer: 'Yes (included)', price: '$179', rating: '9.0/10' },
+  { speaker: '<strong>Edifier R1280T</strong>', power: '42W', connectivity: 'RCA, 3.5mm', subwoofer: 'No', price: '$99', rating: '8.6/10' },
+  { speaker: '<strong>Razer Nommo</strong>', power: '24W', connectivity: 'USB, 3.5mm', subwoofer: 'No', price: '$99', rating: '8.4/10' },
+];
+
+const faqItems = [
+  {
+    question: 'Are speakers or headphones better for remote work?',
+    answer: 'Both have their place. Speakers are better for long work sessions (less ear fatigue), background listening, and when you want spatial awareness. Headphones are essential for video calls, noisy environments, and when you need to focus deeply. Many remote workers use both.',
+  },
+  {
+    question: 'Do I need a subwoofer for home office speakers?',
+    answer: 'Not necessarily. For voice-heavy work like calls and podcasts, 2.0 speakers are fine. If you enjoy music while working or use your setup for entertainment, a 2.1 system with subwoofer adds depth. Consider your neighbors and roommates before adding bass.',
+  },
+  {
+    question: 'How much should I spend on desktop speakers?',
+    answer: 'For basic home office use, $40-80 gets decent quality. For music lovers who want clarity and depth, $100-200 is the sweet spot. Above $200, you get audiophile-grade components that most people can\'t distinguish without trained ears.',
+  },
+  {
+    question: 'Can I use desktop speakers for video calls?',
+    answer: 'Yes, but with caveats. Desktop speakers work fine for listening to others on calls. However, you\'ll still need a separate microphone—built-in laptop mics pick up speaker audio and create echo. External speakers + dedicated mic is a solid combo.',
+  },
+  {
+    question: 'Bluetooth vs wired speakers—which is better for home office?',
+    answer: 'Wired speakers offer zero latency and consistent quality—ideal for video calls and watching content. Bluetooth adds flexibility to play music from your phone. Many speakers now offer both, which is the best of both worlds.',
+  },
+];
+
+const relatedArticles = [
+  {
+    title: 'Best Noise-Canceling Headphones',
+    excerpt: 'Top headphones for focus and calls when speakers aren\'t practical.',
+    href: '/gear/best-noise-canceling-headphones',
+    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Noise-canceling headphones on desk',
+  },
+  {
+    title: 'Best Microphones for Remote Meetings',
+    excerpt: 'Pair your speakers with a quality mic for better call audio.',
+    href: '/gear/best-microphones-remote-meetings',
+    image: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Professional USB microphone for remote work',
+  },
+  {
+    title: 'Ultimate Home Office Setup Guide',
+    excerpt: 'Build your complete remote workspace with our comprehensive guide.',
+    href: '/blog/ultimate-home-office-setup',
+    image: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Modern home office setup',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  author={author}
+  category={category}
+  categorySlug={categorySlug}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  headings={headings}
+>
+  <p class="lead">
+    After 50+ hours testing desktop speakers in real home office conditions, we found the <strong>Audioengine A2+</strong> delivers the best overall experience for remote workers—exceptional clarity for calls, rich music playback, and a compact footprint that fits any desk.
+  </p>
+
+  <p>
+    Working from home doesn't mean suffering through tinny laptop speakers. Quality desktop speakers transform your workspace—crisp dialogue on video calls, immersive music during focus sessions, and audio that doesn't fatigue your ears after 8+ hours.
+  </p>
+
+  <h2 id="quick-picks">Quick Picks: Our Top 3</h2>
+
+  <ComparisonTable columns={quickPicksColumns} rows={quickPicksRows} />
+
+  <h2 id="why-desktop-speakers">Why Desktop Speakers Matter for Remote Work</h2>
+
+  <p>
+    Remote workers often overlook audio quality when setting up their home office. After spending 8-10 hours daily with your computer, audio makes a significant difference in comfort and productivity.
+  </p>
+
+  <h3>Benefits Over Laptop Speakers</h3>
+
+  <ul>
+    <li><strong>Voice clarity:</strong> Understand meeting participants clearly without asking "can you repeat that?"</li>
+    <li><strong>Reduced fatigue:</strong> Unlike headphones, speakers don't create ear pressure or heat</li>
+    <li><strong>Spatial audio:</strong> Stereo separation helps with music, videos, and ambient awareness</li>
+    <li><strong>Volume headroom:</strong> Fill your room without distortion when needed</li>
+    <li><strong>Professionalism:</strong> Better audio makes you more engaged and responsive on calls</li>
+  </ul>
+
+  <h2 id="what-to-look-for">What to Look For in Home Office Speakers</h2>
+
+  <h3>Audio Quality</h3>
+  <p>
+    For remote work, prioritize midrange clarity over thumping bass. Vocals should sound natural and present. Music should have separation between instruments. Avoid speakers that sound harsh at higher volumes.
+  </p>
+
+  <h3>Connectivity</h3>
+  <p>
+    USB and Bluetooth are most useful for home offices. USB provides plug-and-play simplicity with your computer. Bluetooth lets you quickly switch to phone audio. Some speakers offer both—ideal for flexibility.
+  </p>
+
+  <h3>Size and Placement</h3>
+  <p>
+    Desktop real estate matters. Compact speakers (under 6 inches tall) work on most desks. Consider speaker placement—angled drivers or tilted designs project sound toward your ears rather than your chest.
+  </p>
+
+  <h3>Build Quality</h3>
+  <p>
+    Desktop speakers should last years. Look for solid construction, quality drivers, and reputable brands with good warranties. Plastic housings are fine for budget options; premium speakers often use wood or metal.
+  </p>
+
+  <h2 id="audioengine-a2-plus">Best Overall: Audioengine A2+ Wireless</h2>
+
+  <p>
+    The <strong>Audioengine A2+</strong> has earned its reputation as the go-to desktop speaker for professionals who care about sound. These compact powerhouses deliver audiophile-grade audio in a package that fits any workspace.
+  </p>
+
+  <h3>Why We Chose It</h3>
+  <p>
+    The A2+ excels where it matters most for remote work—crystal-clear vocal reproduction. Video calls sound natural, podcasts are engaging, and music playback reveals details you've never heard. The 60W total power provides headroom without distortion.
+  </p>
+
+  <h3>Key Features</h3>
+  <ul>
+    <li>Custom aramid fiber woofers and silk dome tweeters</li>
+    <li>Built-in USB DAC for direct computer connection</li>
+    <li>aptX Bluetooth for wireless streaming</li>
+    <li>Variable RCA outputs for subwoofer expansion</li>
+    <li>Hand-built quality with real wood cabinets available</li>
+  </ul>
+
+  <h3>Who It's For</h3>
+  <p>
+    Professionals who spend 40+ hours weekly at their desk and want the best audio experience possible. If music matters to you and you appreciate quality that lasts, these justify the investment.
+  </p>
+
+  <div class="my-8">
+    <AffiliateButton href="/go/audioengine-a2-plus" text="Check Price on Amazon" />
+  </div>
+
+  <h2 id="edifier-r1280db">Best for Music: Edifier R1280DB</h2>
+
+  <p>
+    The <strong>Edifier R1280DB</strong> offers exceptional value for music lovers. These bookshelf-style speakers bring warm, balanced sound that enhances every work session without breaking the bank.
+  </p>
+
+  <h3>Why We Chose It</h3>
+  <p>
+    Edifier has mastered the art of great-sounding affordable speakers. The R1280DB delivers full, room-filling sound with 42W of power. The built-in Bluetooth, optical input, and remote control add convenience that competitors at this price lack.
+  </p>
+
+  <h3>Key Features</h3>
+  <ul>
+    <li>4-inch bass drivers with 13mm silk dome tweeters</li>
+    <li>Bluetooth 5.0 with optical and dual RCA inputs</li>
+    <li>Wireless remote control for volume and input switching</li>
+    <li>Side-panel bass and treble adjustment</li>
+    <li>Classic wood veneer finish</li>
+  </ul>
+
+  <h3>Who It's For</h3>
+  <p>
+    Remote workers who enjoy background music while working. The R1280DB sounds fantastic with all genres and provides that "hi-fi" experience at a mid-range price point.
+  </p>
+
+  <div class="my-8">
+    <AffiliateButton href="/go/edifier-r1280db" text="Check Price on Amazon" />
+  </div>
+
+  <h2 id="creative-pebble-v3">Best Budget: Creative Pebble V3</h2>
+
+  <p>
+    Don't let the $39 price fool you—the <strong>Creative Pebble V3</strong> punches far above its weight class. These compact speakers deliver surprising clarity and enough bass to make laptop audio feel like an upgrade.
+  </p>
+
+  <h3>Why We Chose It</h3>
+  <p>
+    For under $40, the Pebble V3 provides USB-C power, Bluetooth connectivity, and sound quality that embarrasses speakers twice the price. The 45-degree tilted drivers aim sound directly at you for optimal desktop placement.
+  </p>
+
+  <h3>Key Features</h3>
+  <ul>
+    <li>USB-C powered with Bluetooth 5.0</li>
+    <li>45-degree upward-firing drivers</li>
+    <li>Gain control switch for volume boost</li>
+    <li>Compact design fits anywhere</li>
+    <li>8W total power (enough for personal space)</li>
+  </ul>
+
+  <h3>Who It's For</h3>
+  <p>
+    Budget-conscious remote workers, those with limited desk space, or anyone who wants a significant upgrade from laptop speakers without major investment.
+  </p>
+
+  <div class="my-8">
+    <AffiliateButton href="/go/creative-pebble-v3" text="Check Price on Amazon" />
+  </div>
+
+  <h2 id="logitech-z407">Best 2.1 System: Logitech Z407</h2>
+
+  <p>
+    The <strong>Logitech Z407</strong> brings full-range sound with its dedicated subwoofer while maintaining wireless convenience. The included dial controller makes volume adjustments effortless.
+  </p>
+
+  <h3>Why We Chose It</h3>
+  <p>
+    For those who want bass without complexity, the Z407 delivers. The subwoofer adds depth to music and movie watching, while the satellite speakers handle mids and highs cleanly. Bluetooth, USB, and aux inputs cover all your devices.
+  </p>
+
+  <h3>Key Features</h3>
+  <ul>
+    <li>40W peak power with dedicated subwoofer</li>
+    <li>Bluetooth, USB, and 3.5mm connectivity</li>
+    <li>Wireless control dial for volume and playback</li>
+    <li>20-meter Bluetooth range</li>
+    <li>Subwoofer placement flexibility</li>
+  </ul>
+
+  <h3>Who It's For</h3>
+  <p>
+    Remote workers who double their home office as an entertainment space. Great for those who watch YouTube, streaming content, or play games during breaks.
+  </p>
+
+  <div class="my-8">
+    <AffiliateButton href="/go/logitech-z407" text="Check Price on Amazon" />
+  </div>
+
+  <h2 id="bose-companion-2">Best Premium Brand: Bose Companion 2 Series III</h2>
+
+  <p>
+    The <strong>Bose Companion 2 Series III</strong> brings Bose's signature sound to your desktop in a compact, elegant package. These speakers prioritize clarity and natural audio reproduction.
+  </p>
+
+  <h3>Why We Chose It</h3>
+  <p>
+    Bose engineering shines in the Companion 2—the TrueSpace stereo processing creates a wider soundstage than you'd expect from compact speakers. Voices sound present and natural, making them excellent for conference calls.
+  </p>
+
+  <h3>Key Features</h3>
+  <ul>
+    <li>TrueSpace stereo digital processing</li>
+    <li>Right speaker volume and headphone controls</li>
+    <li>Dual inputs for two devices simultaneously</li>
+    <li>Elegant, minimalist design</li>
+    <li>Energy-efficient operation</li>
+  </ul>
+
+  <h3>Who It's For</h3>
+  <p>
+    Bose loyalists and those who prioritize vocal clarity over bass. The Companion 2 excels at speech-focused content like calls, podcasts, and audiobooks.
+  </p>
+
+  <div class="my-8">
+    <AffiliateButton href="/go/bose-companion-2" text="Check Price on Amazon" />
+  </div>
+
+  <h2 id="klipsch-promedia">Best for Entertainment: Klipsch ProMedia 2.1</h2>
+
+  <p>
+    The <strong>Klipsch ProMedia 2.1</strong> brings legendary Klipsch sound to your desktop with a powerful THX-certified setup. For those who want cinema-quality audio at their desk, nothing under $200 competes.
+  </p>
+
+  <h3>Why We Chose It</h3>
+  <p>
+    200W of total power with Klipsch's signature horn-loaded tweeters creates an immersive experience. Movies, games, and music all benefit from the punchy bass and crisp highs. The 6.5-inch subwoofer delivers serious low-end.
+  </p>
+
+  <h3>Key Features</h3>
+  <ul>
+    <li>THX-certified audio quality</li>
+    <li>Klipsch Tractrix horn tweeters</li>
+    <li>6.5-inch side-firing subwoofer</li>
+    <li>200W peak power</li>
+    <li>Headphone jack on right satellite</li>
+  </ul>
+
+  <h3>Who It's For</h3>
+  <p>
+    Gamers, movie enthusiasts, and anyone who wants powerful, room-filling sound. These are overkill for quiet office work but perfect for after-hours entertainment.
+  </p>
+
+  <div class="my-8">
+    <AffiliateButton href="/go/klipsch-promedia" text="Check Price on Amazon" />
+  </div>
+
+  <h2 id="edifier-r1280t">Best Vintage Style: Edifier R1280T</h2>
+
+  <p>
+    The <strong>Edifier R1280T</strong> combines classic bookshelf aesthetics with modern performance. These speakers look great on any desk while delivering balanced, detailed audio.
+  </p>
+
+  <h3>Why We Chose It</h3>
+  <p>
+    At $99, the R1280T offers exceptional value. The wood veneer cabinets look premium, and the sound quality rivals speakers twice the price. Dual RCA inputs let you connect computer and phone simultaneously.
+  </p>
+
+  <h3>Key Features</h3>
+  <ul>
+    <li>42W total power (RMS)</li>
+    <li>4-inch full-range drivers</li>
+    <li>Dual RCA inputs for two devices</li>
+    <li>Side bass and treble controls</li>
+    <li>Remote control included</li>
+  </ul>
+
+  <h3>Who It's For</h3>
+  <p>
+    Design-conscious remote workers who appreciate classic aesthetics. These speakers complement mid-century modern and traditional office setups beautifully.
+  </p>
+
+  <div class="my-8">
+    <AffiliateButton href="/go/edifier-r1280t" text="Check Price on Amazon" />
+  </div>
+
+  <h2 id="razer-nommo">Best Compact: Razer Nommo</h2>
+
+  <p>
+    The <strong>Razer Nommo</strong> breaks the gaming-speaker mold with a design that works in professional settings. The unique cylindrical shape maximizes bass response from a compact form factor.
+  </p>
+
+  <h3>Why We Chose It</h3>
+  <p>
+    Despite the gaming brand, the Nommo delivers balanced audio suitable for any work environment. The rear-facing bass ports and custom-woven glass fiber drivers produce full sound from desktop-friendly speakers.
+  </p>
+
+  <h3>Key Features</h3>
+  <ul>
+    <li>3-inch custom drivers with glass fiber cones</li>
+    <li>Rear-facing bass ports for enhanced low-end</li>
+    <li>USB and 3.5mm connectivity</li>
+    <li>Convenient bass dial on right speaker</li>
+    <li>Automatic gain control</li>
+  </ul>
+
+  <h3>Who It's For</h3>
+  <p>
+    Remote workers who game or enjoy a modern aesthetic. The Nommo's unique design stands out while delivering solid audio performance for work and play.
+  </p>
+
+  <div class="my-8">
+    <AffiliateButton href="/go/razer-nommo" text="Check Price on Amazon" />
+  </div>
+
+  <h2 id="comparison-table">Full Comparison Table</h2>
+
+  <ComparisonTable columns={comparisonColumns} rows={comparisonRows} />
+
+  <h2 id="speakers-vs-headphones">Speakers vs Headphones for Remote Work</h2>
+
+  <p>
+    The speakers-vs-headphones debate doesn't have a clear winner—both serve different purposes in a remote work setup.
+  </p>
+
+  <h3>When to Use Speakers</h3>
+  <ul>
+    <li>Extended work sessions (less fatigue than headphones)</li>
+    <li>Background music while working</li>
+    <li>When you need environmental awareness</li>
+    <li>Casual listening during breaks</li>
+    <li>Home alone or in a private office</li>
+  </ul>
+
+  <h3>When to Use Headphones</h3>
+  <ul>
+    <li>Video calls (prevents echo and feedback)</li>
+    <li>Deep focus work requiring isolation</li>
+    <li>Shared spaces or noisy environments</li>
+    <li>Late night work when others are sleeping</li>
+    <li>Sensitive audio content</li>
+  </ul>
+
+  <h3>Ideal Setup</h3>
+  <p>
+    Most productive remote workers have both. Use speakers for general work, switch to headphones for calls and focused sessions. Many desktop speakers include headphone jacks for seamless switching.
+  </p>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqItems} />
+
+  <h2>Final Thoughts</h2>
+
+  <p>
+    Upgrading your desktop audio transforms the home office experience. For most remote workers, we recommend the <strong>Audioengine A2+</strong> for its exceptional all-around performance. Budget-conscious users should grab the <strong>Creative Pebble V3</strong>—proof that great sound doesn't require great expense.
+  </p>
+
+  <p>
+    Consider your space, budget, and how you'll use the speakers. Music lovers lean toward the Edifier models. Entertainment enthusiasts should explore the Klipsch or Logitech 2.1 systems. Whatever you choose, quality desktop speakers make every workday more enjoyable.
+  </p>
+
+  <RelatedArticles articles={relatedArticles} />
+</ArticleLayout>

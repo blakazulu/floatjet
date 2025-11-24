@@ -292,6 +292,41 @@ export const SITE_STRUCTURE: SiteGraph = {
       type: 'article',
       category: 'gear'
     },
+    {
+      id: '/gear/best-microphones-remote-meetings',
+      name: 'Microphones',
+      path: '/gear/best-microphones-remote-meetings',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/best-speakers-home-office',
+      name: 'Speakers',
+      path: '/gear/best-speakers-home-office',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/best-wireless-earbuds-remote-work',
+      name: 'Earbuds',
+      path: '/gear/best-wireless-earbuds-remote-work',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/usb-vs-xlr-microphones',
+      name: 'USB vs XLR',
+      path: '/gear/usb-vs-xlr-microphones',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/reduce-background-noise-calls',
+      name: 'Reduce Noise',
+      path: '/gear/reduce-background-noise-calls',
+      type: 'article',
+      category: 'gear'
+    },
 
     // Gear Articles - Accessories
     {
@@ -505,6 +540,11 @@ export const SITE_STRUCTURE: SiteGraph = {
     {source: '/gear/computers', target: '/gear/best-laptops-remote-work', type: 'parent-child'},
     {source: '/gear/furniture', target: '/gear/best-standing-desks', type: 'parent-child'},
     {source: '/gear/audio', target: '/gear/best-noise-canceling-headphones', type: 'parent-child'},
+    {source: '/gear/audio', target: '/gear/best-microphones-remote-meetings', type: 'parent-child'},
+    {source: '/gear/audio', target: '/gear/best-speakers-home-office', type: 'parent-child'},
+    {source: '/gear/audio', target: '/gear/best-wireless-earbuds-remote-work', type: 'parent-child'},
+    {source: '/gear/audio', target: '/gear/usb-vs-xlr-microphones', type: 'parent-child'},
+    {source: '/gear/audio', target: '/gear/reduce-background-noise-calls', type: 'parent-child'},
 
     // Gear articles - Accessories
     {source: '/gear/accessories', target: '/gear/best-laptop-bags-backpacks', type: 'parent-child'},

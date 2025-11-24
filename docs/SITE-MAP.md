@@ -1,7 +1,7 @@
 # FloatJet Site Map & Content Relationships
 
 **Last Updated:** 2025-11-24
-**Total Pages:** 55
+**Total Pages:** 60
 
 ---
 
@@ -35,7 +35,7 @@ floatjet.com/
 │   ├── /gear/furniture (Category)
 │   ├── /gear/audio (Category)
 │   ├── /gear/accessories (Category)
-│   └── [8 gear articles]
+│   └── [13 gear articles]
 ├── /guides (Hub)
 │   ├── /guides/travel (Category)
 │   ├── /guides/communication (Category)
@@ -121,6 +121,11 @@ floatjet.com/
 | Best Laptops for Remote Work | `/gear/best-laptops-remote-work` | Computers | 💻 |
 | Best Standing Desks | `/gear/best-standing-desks` | Furniture | 🪑 |
 | Best Noise-Canceling Headphones | `/gear/best-noise-canceling-headphones` | Audio | 🎧 |
+| Best Microphones for Remote Meetings | `/gear/best-microphones-remote-meetings` | Audio | 🎙️ |
+| Best Speakers for Home Office | `/gear/best-speakers-home-office` | Audio | 🔊 |
+| Best Wireless Earbuds for Remote Work | `/gear/best-wireless-earbuds-remote-work` | Audio | 🎧 |
+| USB vs XLR Microphones | `/gear/usb-vs-xlr-microphones` | Audio | 🎤 |
+| How to Reduce Background Noise | `/gear/reduce-background-noise-calls` | Audio | 🔇 |
 | Best Laptop Bags & Backpacks | `/gear/best-laptop-bags-backpacks` | Accessories | 🎒 |
 | Best Webcams for Video Calls | `/gear/best-webcams-video-calls` | Accessories | 📹 |
 | Best Portable Chargers & Power Banks | `/gear/best-portable-chargers-power-banks` | Accessories | 🔋 |
@@ -424,6 +429,16 @@ floatjet.com/
 | Sony WH-1000XM5 | Best Overall |
 | Bose QC Ultra | Best Comfort |
 | AirPods Max | Best for Apple |
+
+**Articles in Category:**
+| Article | Route | Sub-Category |
+|---------|-------|--------------|
+| Best Noise-Canceling Headphones | `/gear/best-noise-canceling-headphones` | Headphones |
+| Best Microphones for Remote Meetings | `/gear/best-microphones-remote-meetings` | Microphones |
+| Best Speakers for Home Office | `/gear/best-speakers-home-office` | Speakers |
+| Best Wireless Earbuds for Remote Work | `/gear/best-wireless-earbuds-remote-work` | Earbuds |
+| USB vs XLR Microphones | `/gear/usb-vs-xlr-microphones` | Guide |
+| How to Reduce Background Noise | `/gear/reduce-background-noise-calls` | Guide |
 
 ---
 
@@ -1320,11 +1335,11 @@ floatjet.com/
 
 | Metric                   | Count |
 |--------------------------|-------|
-| **Total Pages**          | 55    |
+| **Total Pages**          | 60    |
 | **Hub Pages**            | 5     |
 | **Category Pages**       | 14    |
 | **Tool Articles**        | 9     |
-| **Gear Articles**        | 8     |
+| **Gear Articles**        | 13    |
 | **Blog Articles**        | 16    |
 | **Legal Pages**          | 4     |
 | **Affiliate Links**      | 120+  |

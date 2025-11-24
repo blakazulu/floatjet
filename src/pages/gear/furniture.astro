@@ -4,32 +4,63 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const title = 'Best Office Furniture for Remote Work | FloatJet';
 const description = 'Find the best standing desks, chairs, and office furniture for your home office. Ergonomic picks for healthier, more productive workdays.';
 
-const mainArticle = {
+const featuredArticle = {
   title: 'Best Standing Desks (2025)',
   description: 'We tested 15+ standing desks to find the best options for home offices. Compare Uplift, Flexispot, Jarvis, and more for every budget.',
   href: '/gear/best-standing-desks',
-  readTime: '16 min'
+  readTime: '18 min',
+  icon: '🪑'
 };
+
+const articles = [
+  {
+    title: 'Best Ergonomic Chairs',
+    description: 'Top office chairs for all-day comfort. From premium Herman Miller to budget options.',
+    href: '/gear/best-ergonomic-chairs',
+    readTime: '18 min',
+    icon: '🪑'
+  },
+  {
+    title: 'Best Desk Converters',
+    description: 'Transform your existing desk into a standing desk with these top-rated converters.',
+    href: '/gear/best-desk-converters',
+    readTime: '14 min',
+    icon: '📐'
+  },
+  {
+    title: 'Best Compact Desks',
+    description: 'Space-saving desks for small home offices. Maximize productivity in tight spaces.',
+    href: '/gear/best-compact-desks-small-office',
+    readTime: '14 min',
+    icon: '🏠'
+  },
+  {
+    title: 'Ergonomic Desk Setup Guide',
+    description: 'Complete guide to setting up your workspace for maximum comfort and health.',
+    href: '/gear/ergonomic-desk-setup-guide',
+    readTime: '12 min',
+    icon: '📋'
+  },
+  {
+    title: 'Standing Desk Cost Guide',
+    description: 'How much should you spend? Price breakdown at every budget level.',
+    href: '/gear/standing-desk-cost-guide',
+    readTime: '8 min',
+    icon: '💰'
+  }
+];
 
 const whyMatters = [
   {title: 'Better Posture', description: 'Reduce back pain and improve your posture throughout the day', icon: '🧘'},
-  {
-    title: 'More Energy',
-    description: 'Standing burns calories and keeps you alert during long work sessions',
-    icon: '⚡'
-  },
-  {
-    title: 'Increased Focus',
-    description: 'Movement throughout the day improves concentration and productivity',
-    icon: '🎯'
-  },
+  {title: 'More Energy', description: 'Standing burns calories and keeps you alert during long work sessions', icon: '⚡'},
+  {title: 'Increased Focus', description: 'Movement throughout the day improves concentration and productivity', icon: '🎯'},
   {title: 'Long-term Health', description: 'Reduce risks associated with prolonged sitting', icon: '❤️'}
 ];
 
 const topPicks = [
-  {name: 'Uplift V2', tag: 'Best Overall', color: 'bg-blue-500/20 text-blue-400'},
-  {name: 'Flexispot E7', tag: 'Best Value', color: 'bg-green-500/20 text-green-400'},
-  {name: 'Jarvis', tag: 'Best Premium', color: 'bg-purple-500/20 text-purple-400'}
+  {name: 'Uplift V2', tag: 'Best Overall Desk', color: 'bg-blue-500/20 text-blue-400'},
+  {name: 'Herman Miller Aeron', tag: 'Best Chair', color: 'bg-green-500/20 text-green-400'},
+  {name: 'FlexiSpot E7', tag: 'Best Value', color: 'bg-purple-500/20 text-purple-400'}
 ];
 ---
 
@@ -45,67 +76,87 @@ const topPicks = [
       </a>
       <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Office Furniture</h1>
       <p class="text-lg text-white/80 max-w-2xl mx-auto">
-        Ergonomic desks and furniture for a healthier, more productive home office.
+        Ergonomic desks, chairs, and furniture for a healthier, more productive home office.
       </p>
     </div>
 
-    <!-- Main Article Card -->
+    <!-- Featured Article Card -->
     <a
-        href={mainArticle.href}
-        class="block max-w-3xl mx-auto mb-16 group bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-white/20 hover:border-jet-stream/50 rounded-xl p-8 transition-all duration-300"
+      href={featuredArticle.href}
+      class="block max-w-3xl mx-auto mb-12 group bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-white/20 hover:border-jet-stream/50 rounded-xl p-8 transition-all duration-300"
     >
       <div class="flex items-center gap-2 mb-4">
-        <span class="text-4xl">🪑</span>
+        <span class="text-4xl">{featuredArticle.icon}</span>
         <span class="px-3 py-1 bg-jet-stream text-ocean-deep text-xs font-bold rounded-full">Featured Guide</span>
       </div>
       <h2 class="text-2xl md:text-3xl font-bold text-white group-hover:text-jet-stream transition-colors mb-3">
-        {mainArticle.title}
+        {featuredArticle.title}
       </h2>
       <p class="text-white/70 mb-4">
-        {mainArticle.description}
+        {featuredArticle.description}
       </p>
       <div class="flex items-center justify-between">
-        <span class="text-white/50 text-sm">{mainArticle.readTime} read</span>
+        <span class="text-white/50 text-sm">{featuredArticle.readTime} read</span>
         <span class="text-jet-stream font-medium flex items-center">
           Read Full Guide
-          <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-               viewBox="0 0 24 24">
+          <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
           </svg>
         </span>
       </div>
     </a>
 
+    <!-- All Articles Grid -->
+    <div class="max-w-5xl mx-auto mb-16">
+      <h2 class="text-xl font-semibold text-white text-center mb-6">All Furniture Articles</h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {articles.map(article => (
+          <a
+            href={article.href}
+            class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-jet-stream/50 rounded-xl p-5 transition-all duration-300"
+          >
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">{article.icon}</span>
+              <div class="flex-1">
+                <h3 class="text-white font-semibold group-hover:text-jet-stream transition-colors mb-1">
+                  {article.title}
+                </h3>
+                <p class="text-white/60 text-sm mb-2">{article.description}</p>
+                <span class="text-white/40 text-xs">{article.readTime} read</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+
     <!-- Top Picks Preview -->
     <div class="max-w-3xl mx-auto mb-16">
       <h2 class="text-xl font-semibold text-white text-center mb-6">Our Top Picks</h2>
       <div class="grid gap-4 sm:grid-cols-3">
         {topPicks.map(pick => (
-            <a
-                href={`${mainArticle.href}#${pick.name.toLowerCase().replace(/ /g, '-')}`}
-                class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-4 text-center transition-colors"
-            >
+          <div class="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
             <span class={`inline-block px-2 py-0.5 ${pick.color} text-xs font-medium rounded mb-2`}>
               {pick.tag}
             </span>
-              <p class="text-white font-semibold">{pick.name}</p>
-            </a>
+            <p class="text-white font-semibold">{pick.name}</p>
+          </div>
         ))}
       </div>
     </div>
 
     <!-- Why It Matters -->
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-xl font-semibold text-white text-center mb-8">Why Use a Standing Desk?</h2>
+      <h2 class="text-xl font-semibold text-white text-center mb-8">Why Ergonomic Furniture Matters</h2>
       <div class="grid gap-6 sm:grid-cols-2">
         {whyMatters.map(item => (
-            <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
-              <span class="text-2xl">{item.icon}</span>
-              <div>
-                <h3 class="text-white font-semibold mb-1">{item.title}</h3>
-                <p class="text-white/60 text-sm">{item.description}</p>
-              </div>
+          <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
+            <span class="text-2xl">{item.icon}</span>
+            <div>
+              <h3 class="text-white font-semibold mb-1">{item.title}</h3>
+              <p class="text-white/60 text-sm">{item.description}</p>
             </div>
+          </div>
         ))}
       </div>
     </div>
@@ -113,10 +164,10 @@ const topPicks = [
     <!-- CTA -->
     <div class="mt-12 text-center">
       <a
-          href={mainArticle.href}
-          class="inline-flex items-center justify-center px-6 py-3 bg-jet-stream text-ocean-deep font-semibold rounded-lg hover:bg-sky-light transition-colors"
+        href={featuredArticle.href}
+        class="inline-flex items-center justify-center px-6 py-3 bg-jet-stream text-ocean-deep font-semibold rounded-lg hover:bg-sky-light transition-colors"
       >
-        View Full Standing Desk Comparison
+        View Standing Desk Comparison
       </a>
     </div>
   </div>

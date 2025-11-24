@@ -1,0 +1,378 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+
+const title = 'How Much Does a Standing Desk Really Cost? (2025 Guide)';
+const description = 'Complete price breakdown for standing desks at every budget. Learn what you get at $200, $500, and $1,000+ price points and whether expensive desks are worth it.';
+const pubDate = new Date('2024-11-24');
+const updatedDate = new Date('2024-11-24');
+const author = 'FloatJet Team';
+const category = 'Furniture';
+const categorySlug = 'gear';
+const readingTime = 8;
+const image = 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Various standing desks at different price points';
+
+const headings = [
+  { text: 'Quick Answer', slug: 'quick-answer', depth: 2 },
+  { text: 'Budget Tier ($150-$400)', slug: 'budget-tier', depth: 2 },
+  { text: 'Mid-Range Tier ($400-$800)', slug: 'mid-range-tier', depth: 2 },
+  { text: 'Premium Tier ($800-$2,000)', slug: 'premium-tier', depth: 2 },
+  { text: 'Hidden Costs', slug: 'hidden-costs', depth: 2 },
+  { text: 'DIY Options', slug: 'diy-options', depth: 2 },
+  { text: 'Is It Worth It?', slug: 'worth-it', depth: 2 },
+  { text: 'Best Value Picks', slug: 'best-value', depth: 2 },
+  { text: 'Frequently Asked Questions', slug: 'faq', depth: 2 },
+];
+
+const tierComparisonColumns = [
+  { key: 'tier', label: 'Tier', width: '120px' },
+  { key: 'price', label: 'Price Range' },
+  { key: 'motor', label: 'Motor' },
+  { key: 'warranty', label: 'Warranty' },
+  { key: 'example', label: 'Example' },
+];
+
+const tierComparisonRows = [
+  { tier: '<strong>Budget</strong>', price: '$150-400', motor: 'Single/Dual', warranty: '2-5 years', example: 'Autonomous, FEZIBO' },
+  { tier: '<strong>Mid-Range</strong>', price: '$400-800', motor: 'Dual', warranty: '5-15 years', example: 'FlexiSpot E7, Uplift V2' },
+  { tier: '<strong>Premium</strong>', price: '$800-2,000', motor: 'Dual', warranty: '10-15 years', example: 'Jarvis, Fully, Branch' },
+];
+
+const faqItems = [
+  {
+    question: 'Is a $200 standing desk worth buying?',
+    answer: 'For light use (2-3 years), yes. Budget desks like the Autonomous SmartDesk Core work fine for occasional standing. However, they typically have shorter warranties, single motors, and less stability than mid-range options. If you plan to use a standing desk daily for 5+ years, invest in mid-range quality.',
+  },
+  {
+    question: 'What is the sweet spot price for a standing desk?',
+    answer: 'The $500-700 range offers the best value for most users. At this price, you get dual motors, long warranties (10-15 years), good stability, and quality construction. The FlexiSpot E7 and Uplift V2 both fall in this range and outperform budget options significantly.',
+  },
+  {
+    question: 'Do expensive standing desks last longer?',
+    answer: 'Generally yes. Premium desks ($800+) use better motors, thicker steel frames, and higher-quality electronics. More importantly, they come with longer warranties (10-15 years) that manufacturers back because they expect fewer failures. A $600 desk lasting 15 years costs less per year than a $200 desk replaced every 3 years.',
+  },
+  {
+    question: 'Can I save money with a standing desk converter instead?',
+    answer: 'Desk converters cost $150-400 and sit on your existing desk. They work well for testing standing work or when you cannot replace your desk. However, they have smaller surfaces, limited height range, and take up desk space when lowered. For long-term daily use, a full standing desk is typically better value.',
+  },
+  {
+    question: 'Are there hidden costs with standing desks?',
+    answer: 'Yes. Budget for: desktop if buying frame only ($100-200), anti-fatigue mat ($40-80), cable management ($20-50), and potentially a new chair for alternating. These extras can add $200-400 to your total investment.',
+  },
+];
+
+const relatedArticles = [
+  {
+    title: 'Best Standing Desks',
+    excerpt: 'Full comparison of the top standing desks at every price point.',
+    href: '/gear/best-standing-desks',
+    image: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Modern standing desk in home office',
+  },
+  {
+    title: 'Best Desk Converters',
+    excerpt: 'Budget-friendly alternative to full standing desks.',
+    href: '/gear/best-desk-converters',
+    image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Standing desk converter on office desk',
+  },
+  {
+    title: 'Best Ergonomic Chairs',
+    excerpt: 'Pair your standing desk with a quality chair for sitting periods.',
+    href: '/gear/best-ergonomic-chairs',
+    image: 'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Ergonomic office chair',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  author={author}
+  category={category}
+  categorySlug={categorySlug}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  headings={headings}
+>
+  <p class="lead">
+    Standing desks range from $150 to over $2,000. This guide breaks down exactly what you get at each price point so you can make an informed investment in your home office.
+  </p>
+
+  <h2 id="quick-answer">Quick Answer: What Should You Spend?</h2>
+
+  <p>
+    <strong>Most remote workers should spend $500-700.</strong> This gets you a quality dual-motor desk with a 10-15 year warranty that will last a decade or more.
+  </p>
+
+  <p>
+    Budget options ($200-400) work for occasional use or testing standing work. Premium options ($800+) add luxury features but diminishing returns for most users.
+  </p>
+
+  <ComparisonTable columns={tierComparisonColumns} rows={tierComparisonRows} />
+
+  <h2 id="budget-tier">Budget Tier: $150-$400</h2>
+
+  <h3>What You Get</h3>
+  <ul>
+    <li>Single or dual motor (dual preferred)</li>
+    <li>Basic steel frame construction</li>
+    <li>2-5 year warranty (motor typically 5 years)</li>
+    <li>Programmable height presets (usually 3-4)</li>
+    <li>Weight capacity: 200-300 lbs</li>
+    <li>Height range: 28-47 inches typical</li>
+  </ul>
+
+  <h3>What You Sacrifice</h3>
+  <ul>
+    <li>Stability at higher heights (more wobble)</li>
+    <li>Slower motor speed</li>
+    <li>Noisier operation</li>
+    <li>Less precise height adjustment</li>
+    <li>Shorter overall lifespan</li>
+  </ul>
+
+  <h3>Best Budget Options</h3>
+
+  <p>
+    <strong>Autonomous SmartDesk Core ($299)</strong> - Best budget standing desk. Dual motor, 4 presets, 5-year frame warranty. Wobbly at max height but solid for the price.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/autonomous" text="Check Autonomous Price" />
+  </div>
+
+  <p>
+    <strong>FEZIBO Electric Desk ($200-250)</strong> - Amazon bestseller. Single motor but surprisingly stable. 3-year warranty. Great starter desk.
+  </p>
+
+  <p>
+    <strong>Best for:</strong> Testing standing work, light use, tight budgets, temporary setups.
+  </p>
+
+  <h2 id="mid-range-tier">Mid-Range Tier: $400-$800</h2>
+
+  <h3>What You Get</h3>
+  <ul>
+    <li>Dual motors (always at this price)</li>
+    <li>Commercial-grade frame construction</li>
+    <li>10-15 year warranty on frame and motor</li>
+    <li>Higher weight capacity (300-355 lbs)</li>
+    <li>Better stability at all heights</li>
+    <li>Quieter, faster motors</li>
+    <li>More precise height adjustment</li>
+    <li>Cable management options</li>
+  </ul>
+
+  <h3>Why Mid-Range Is the Sweet Spot</h3>
+
+  <p>
+    The jump from budget to mid-range delivers the biggest quality improvement. You get 3x the warranty length, noticeably better stability, and construction designed for daily use over 10+ years.
+  </p>
+
+  <h3>Best Mid-Range Options</h3>
+
+  <p>
+    <strong>FlexiSpot E7 ($479-599)</strong> - Best value in the category. 15-year warranty, dual motors, 355 lb capacity. Stability rivals premium desks.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/flexispot" text="Check FlexiSpot E7 Price" />
+  </div>
+
+  <p>
+    <strong>Uplift V2 ($599-899)</strong> - Popular choice with extensive customization options. 15-year warranty. Slightly pricier but excellent quality.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/uplift" text="Check Uplift V2 Price" />
+  </div>
+
+  <p>
+    <strong>Vari Electric ($695)</strong> - Known for rock-solid stability. Clean design. 5-year warranty (shorter than competitors but well-built).
+  </p>
+
+  <p>
+    <strong>Best for:</strong> Daily work-from-home use, 5+ years expected usage, anyone serious about standing work.
+  </p>
+
+  <h2 id="premium-tier">Premium Tier: $800-$2,000</h2>
+
+  <h3>What You Get</h3>
+  <ul>
+    <li>Top-tier motor and frame construction</li>
+    <li>Maximum weight capacity (355-400+ lbs)</li>
+    <li>Exceptional stability even at max height</li>
+    <li>Whisper-quiet operation</li>
+    <li>Premium desktop materials (solid wood, bamboo)</li>
+    <li>Advanced cable management built-in</li>
+    <li>Better customer service and support</li>
+    <li>Higher resale value</li>
+  </ul>
+
+  <h3>Are Premium Desks Worth It?</h3>
+
+  <p>
+    For most users, premium desks offer diminishing returns. The difference between a $600 and $1,200 desk is smaller than between $300 and $600.
+  </p>
+
+  <p>
+    Premium makes sense if you:
+  </p>
+  <ul>
+    <li>Want a solid wood or premium desktop</li>
+    <li>Need maximum weight capacity for heavy equipment</li>
+    <li>Value exceptionally quiet operation</li>
+    <li>Plan to use the desk for 15+ years</li>
+    <li>Want the desk visible on video calls and care about aesthetics</li>
+  </ul>
+
+  <h3>Best Premium Options</h3>
+
+  <p>
+    <strong>Fully Jarvis ($559-899 frame, $200+ for desktop)</strong> - Exceptional build quality. Bamboo desktops available. Popular in tech industry.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/fully" text="Check Fully Jarvis Price" />
+  </div>
+
+  <p>
+    <strong>Branch Standing Desk ($999)</strong> - Beautiful design, premium materials, responsive customer service. Direct-to-consumer value.
+  </p>
+
+  <p>
+    <strong>Herman Miller Motia ($1,295+)</strong> - Premium brand, excellent warranty, likely to outlast you.
+  </p>
+
+  <h2 id="hidden-costs">Hidden Costs to Consider</h2>
+
+  <p>
+    The desk frame and desktop are not your only expenses:
+  </p>
+
+  <h3>Required Additions</h3>
+  <ul>
+    <li><strong>Desktop (if buying frame only):</strong> $100-300 for quality options</li>
+    <li><strong>Anti-fatigue mat:</strong> $40-80 for comfortable standing</li>
+    <li><strong>Cable management:</strong> $20-50 for trays and clips</li>
+  </ul>
+
+  <h3>Recommended Additions</h3>
+  <ul>
+    <li><strong>Monitor arm:</strong> $30-150 for proper screen positioning</li>
+    <li><strong>Keyboard tray:</strong> $40-100 for ergonomic typing</li>
+    <li><strong>Upgraded power strip:</strong> $20-40 with surge protection</li>
+  </ul>
+
+  <h3>Total Cost Example</h3>
+  <p>
+    FlexiSpot E7 frame ($479) + desktop ($150) + anti-fatigue mat ($50) + cable management ($30) = <strong>$709 total investment</strong>
+  </p>
+
+  <h2 id="diy-options">DIY Standing Desk Options</h2>
+
+  <p>
+    You can save money by building your own:
+  </p>
+
+  <h3>Frame Only + Custom Desktop ($350-600)</h3>
+  <ul>
+    <li>Buy a quality frame (FlexiSpot, Uplift) without desktop</li>
+    <li>Source your own desktop from IKEA, lumber yards, or butcher block suppliers</li>
+    <li>Savings: $50-200 compared to bundled options</li>
+    <li>Bonus: Customize exact size and material</li>
+  </ul>
+
+  <h3>Manual Crank Desk ($200-400)</h3>
+  <ul>
+    <li>No motors means lower cost and nothing to break</li>
+    <li>Takes 15-30 seconds to change height</li>
+    <li>Best for occasional standing (1-2 transitions per day)</li>
+    <li>Not recommended if you switch frequently</li>
+  </ul>
+
+  <h3>IKEA Hack ($150-300)</h3>
+  <ul>
+    <li>IKEA BEKANT is their cheapest motorized option ($399-549)</li>
+    <li>IKEA SKARSTA is a budget manual crank option ($249)</li>
+    <li>Both have shorter warranties than competitors</li>
+  </ul>
+
+  <h2 id="worth-it">Is a Standing Desk Worth the Investment?</h2>
+
+  <p>
+    <strong>Yes, if you work from home regularly.</strong> Standing desks provide:
+  </p>
+
+  <ul>
+    <li>Health benefits from alternating positions</li>
+    <li>Increased energy during afternoon slumps</li>
+    <li>Better posture awareness</li>
+    <li>Flexibility to match your energy throughout the day</li>
+  </ul>
+
+  <p>
+    <strong>Calculate your cost-per-year:</strong>
+  </p>
+  <ul>
+    <li>$600 desk lasting 15 years = $40/year</li>
+    <li>$300 desk lasting 5 years = $60/year</li>
+    <li>$1,200 desk lasting 20 years = $60/year</li>
+  </ul>
+
+  <p>
+    Mid-range desks typically offer the lowest cost-per-year when accounting for expected lifespan.
+  </p>
+
+  <h2 id="best-value">Best Value Picks at Each Price Point</h2>
+
+  <h3>Under $300: Autonomous SmartDesk Core</h3>
+  <p>Best budget option with dual motors and reasonable warranty.</p>
+  <div class="my-6">
+    <AffiliateButton href="/go/autonomous" text="Check Price" />
+  </div>
+
+  <h3>$400-600: FlexiSpot E7</h3>
+  <p>Best overall value with premium-level specs at mid-range pricing.</p>
+  <div class="my-6">
+    <AffiliateButton href="/go/flexispot" text="Check Price" />
+  </div>
+
+  <h3>$600-900: Uplift V2</h3>
+  <p>Excellent build quality with extensive customization options.</p>
+  <div class="my-6">
+    <AffiliateButton href="/go/uplift" text="Check Price" />
+  </div>
+
+  <h3>$900+: Fully Jarvis Bamboo</h3>
+  <p>Premium materials and construction for those who want the best.</p>
+  <div class="my-6">
+    <AffiliateButton href="/go/fully" text="Check Price" />
+  </div>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqItems} />
+
+  <h2>Bottom Line</h2>
+
+  <p>
+    For most remote workers, spend <strong>$500-700 on a quality mid-range desk</strong> like the FlexiSpot E7 or Uplift V2. You will get excellent build quality, long warranties, and a desk that lasts 10-15 years.
+  </p>
+
+  <p>
+    Budget options work for testing standing work or light use. Premium options add luxury but diminishing returns unless you need specific features.
+  </p>
+
+  <p>
+    Remember to budget an extra $100-200 for accessories like an anti-fatigue mat and cable management.
+  </p>
+
+  <RelatedArticles articles={relatedArticles} />
+</ArticleLayout>

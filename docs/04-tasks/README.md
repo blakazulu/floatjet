@@ -294,13 +294,17 @@ git commit -m "Add task FJ-001: Astro setup"
 
 ```markdown
 # Before
+
 - [ ] 1.1 Initialize Astro project
 
 # After
+
 - [x] 1.1 Initialize Astro project
 
 # Add progress log entry
+
 ### 2025-11-20 - 1.5 hours
+
 - ✅ Completed Astro initialization
 - Created project with TypeScript strict mode
 ```
@@ -309,11 +313,14 @@ git commit -m "Add task FJ-001: Astro setup"
 
 ```markdown
 # Update frontmatter
+
 status: "completed"
 actual_hours: 4.5
 
 # Add final log entry
+
 ### 2025-11-21 - 0.5 hours
+
 - ✅ Task completed
 - All acceptance criteria met
 - Deployed successfully to production

@@ -1,0 +1,401 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { AffiliateButton, ComparisonTable, FAQSection, RelatedArticles } from '../../components/article';
+
+const title = 'Best Compact Desks for Small Home Offices (2025)';
+const description = 'Maximize your small workspace with these space-saving desks. We reviewed 8 compact desks for home offices with limited space.';
+const pubDate = new Date('2024-11-24');
+const updatedDate = new Date('2024-11-24');
+const author = 'FloatJet Team';
+const category = 'Furniture';
+const categorySlug = 'gear';
+const readingTime = 14;
+const image = 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Compact desk setup in a small home office corner';
+
+const headings = [
+  { text: 'Measure Your Space First', slug: 'measure-space', depth: 2 },
+  { text: 'Quick Comparison', slug: 'quick-comparison', depth: 2 },
+  { text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2 },
+  { text: 'Branch Duo Desk', slug: 'branch-duo', depth: 3 },
+  { text: 'IKEA MICKE', slug: 'ikea-micke', depth: 3 },
+  { text: 'Autonomous SmallDesk', slug: 'autonomous-smalldesk', depth: 3 },
+  { text: 'Zinus Jennifer', slug: 'zinus-jennifer', depth: 3 },
+  { text: 'Walker Edison Corner', slug: 'walker-edison-corner', depth: 3 },
+  { text: 'ApexDesk Elite Compact', slug: 'apexdesk-compact', depth: 3 },
+  { text: 'Prepac Floating Desk', slug: 'prepac-floating', depth: 3 },
+  { text: 'FlexiSpot E7 48"', slug: 'flexispot-compact', depth: 3 },
+  { text: 'Small Desk Types', slug: 'desk-types', depth: 2 },
+  { text: 'Cable Management Tips', slug: 'cable-management', depth: 2 },
+  { text: 'Frequently Asked Questions', slug: 'faq', depth: 2 },
+];
+
+const quickComparisonColumns = [
+  { key: 'desk', label: 'Desk', width: '150px' },
+  { key: 'bestFor', label: 'Best For' },
+  { key: 'dimensions', label: 'Dimensions' },
+  { key: 'price', label: 'Price' },
+];
+
+const quickComparisonRows = [
+  { desk: '<strong>Branch Duo</strong>', bestFor: 'Minimal design', dimensions: '48" x 24"', price: '$349' },
+  { desk: '<strong>IKEA MICKE</strong>', bestFor: 'Best budget', dimensions: '41" x 20"', price: '$89' },
+  { desk: '<strong>Autonomous SmallDesk</strong>', bestFor: 'Compact standing', dimensions: '43" x 24"', price: '$349' },
+  { desk: '<strong>Zinus Jennifer</strong>', bestFor: 'Best value', dimensions: '47" x 24"', price: '$99' },
+  { desk: '<strong>Walker Edison Corner</strong>', bestFor: 'Corner spaces', dimensions: '56" x 44"', price: '$189' },
+  { desk: '<strong>ApexDesk Elite</strong>', bestFor: 'Standing compact', dimensions: '48" x 30"', price: '$449' },
+  { desk: '<strong>Prepac Floating</strong>', bestFor: 'Wall-mounted', dimensions: '42" x 20"', price: '$199' },
+  { desk: '<strong>FlexiSpot E7 48"</strong>', bestFor: 'Standing option', dimensions: '48" x 24"', price: '$479' },
+];
+
+const fullComparisonColumns = [
+  { key: 'desk', label: 'Desk', width: '130px' },
+  { key: 'type', label: 'Type' },
+  { key: 'width', label: 'Width' },
+  { key: 'depth', label: 'Depth' },
+  { key: 'storage', label: 'Storage' },
+  { key: 'price', label: 'Price' },
+];
+
+const fullComparisonRows = [
+  { desk: '<strong>Branch Duo</strong>', type: 'Standard', width: '48"', depth: '24"', storage: 'None', price: '$349' },
+  { desk: '<strong>IKEA MICKE</strong>', type: 'Standard', width: '41"', depth: '20"', storage: 'Drawer', price: '$89' },
+  { desk: '<strong>Autonomous</strong>', type: 'Standing', width: '43"', depth: '24"', storage: 'None', price: '$349' },
+  { desk: '<strong>Zinus</strong>', type: 'Standard', width: '47"', depth: '24"', storage: 'None', price: '$99' },
+  { desk: '<strong>Walker Edison</strong>', type: 'Corner', width: '56"', depth: '44"', storage: 'Shelves', price: '$189' },
+  { desk: '<strong>ApexDesk</strong>', type: 'Standing', width: '48"', depth: '30"', storage: 'None', price: '$449' },
+  { desk: '<strong>Prepac</strong>', type: 'Floating', width: '42"', depth: '20"', storage: 'Shelves', price: '$199' },
+  { desk: '<strong>FlexiSpot</strong>', type: 'Standing', width: '48"', depth: '24"', storage: 'None', price: '$479' },
+];
+
+const faqItems = [
+  {
+    question: 'What is the minimum desk size for a home office?',
+    answer: 'For a laptop with external monitor, you need at least 40 inches wide and 20 inches deep. For dual monitors, aim for 48-55 inches wide and 24 inches deep. If you use only a laptop, you can go as small as 30 inches wide for occasional work.',
+  },
+  {
+    question: 'How do I make a small desk feel bigger?',
+    answer: 'Use monitor arms to free up surface space, mount accessories under the desk, use vertical storage solutions, keep only essentials on the desk, and choose wireless peripherals. A clean desk surface makes any desk feel more spacious.',
+  },
+  {
+    question: 'Should I get a corner desk for a small room?',
+    answer: 'Corner desks maximize unused corner space but limit placement flexibility. They work well if you have an empty corner and plan to keep the desk there permanently. Standard rectangular desks offer more flexibility if you might rearrange later.',
+  },
+  {
+    question: 'Is 24 inches deep enough for a desk?',
+    answer: 'Yes, 24 inches is sufficient for most setups. It comfortably fits a monitor at proper viewing distance (20-26 inches from eyes), keyboard, and mouse. Deeper desks (30 inches) are only necessary for very large monitors or extensive paper-based work.',
+  },
+  {
+    question: 'Are standing desks available in compact sizes?',
+    answer: 'Yes, several brands offer standing desks in 43-48 inch widths. The Autonomous SmallDesk and FlexiSpot E7 with 48-inch top are popular compact standing options. They work well in small spaces while providing full sit-stand functionality.',
+  },
+];
+
+const relatedArticles = [
+  {
+    title: 'Best Standing Desks',
+    excerpt: 'Full-size standing desks for those with more space.',
+    href: '/gear/best-standing-desks',
+    image: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Modern standing desk in home office',
+  },
+  {
+    title: 'Best Ergonomic Chairs',
+    excerpt: 'Pair your compact desk with a comfortable ergonomic chair.',
+    href: '/gear/best-ergonomic-chairs',
+    image: 'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Ergonomic office chair',
+  },
+  {
+    title: 'Ultimate Home Office Setup',
+    excerpt: 'Complete guide to building a productive home office.',
+    href: '/blog/ultimate-home-office-setup',
+    image: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Complete home office setup',
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  author={author}
+  category={category}
+  categorySlug={categorySlug}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  headings={headings}
+>
+  <p class="lead">
+    Working from home in a small space does not mean sacrificing functionality. We tested 8 compact desks that deliver big productivity in tight spaces - from budget IKEA options to space-saving standing desks.
+  </p>
+
+  <h2 id="measure-space">Measure Your Space First</h2>
+
+  <p>
+    Before shopping, measure your available space including:
+  </p>
+
+  <ul>
+    <li><strong>Floor space:</strong> Available width and depth for the desk footprint</li>
+    <li><strong>Clearance:</strong> 36+ inches behind the desk for chair movement</li>
+    <li><strong>Height:</strong> Ceiling height if considering tall storage or standing desks</li>
+    <li><strong>Corners:</strong> Corner desks need 44-56 inches along each wall</li>
+    <li><strong>Doorways:</strong> Will the desk fit through your doors during delivery?</li>
+  </ul>
+
+  <p>
+    Pro tip: Use painter's tape on the floor to visualize desk dimensions before purchasing.
+  </p>
+
+  <h2 id="quick-comparison">Quick Comparison</h2>
+
+  <ComparisonTable columns={quickComparisonColumns} rows={quickComparisonRows} />
+
+  <h2 id="detailed-reviews">Detailed Reviews</h2>
+
+  <h3 id="branch-duo">Branch Duo Desk - Best Minimal Design</h3>
+
+  <p>
+    The <strong>Branch Duo</strong> proves that compact does not mean cheap-looking. The clean, modern design fits any decor while the solid construction supports serious work. The 48" x 24" surface fits dual monitors comfortably.
+  </p>
+
+  <p>
+    <strong>Pros:</strong> Beautiful design, sturdy construction, easy assembly, 7-year warranty, direct-to-consumer pricing.
+  </p>
+
+  <p>
+    <strong>Cons:</strong> No built-in storage, limited color options, higher price for a fixed desk.
+  </p>
+
+  <p>
+    <strong>Best for:</strong> Remote workers who want a desk that looks good on video calls.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/branch-duo" text="Check Branch Duo Price" />
+  </div>
+
+  <h3 id="ikea-micke">IKEA MICKE - Best Budget</h3>
+
+  <p>
+    The <strong>IKEA MICKE</strong> is the best desk under $100 for small spaces. The 41" x 20" footprint fits in tight corners, and the built-in drawer provides essential storage. Available at any IKEA store for immediate pickup.
+  </p>
+
+  <p>
+    <strong>Pros:</strong> Incredible value, built-in storage, cable management hole, widely available.
+  </p>
+
+  <p>
+    <strong>Cons:</strong> Particle board construction, smaller surface, requires assembly.
+  </p>
+
+  <p>
+    <strong>Best for:</strong> Students and budget-conscious remote workers with limited space.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/ikea-micke" text="Check IKEA MICKE" />
+  </div>
+
+  <h3 id="autonomous-smalldesk">Autonomous SmallDesk - Best Compact Standing</h3>
+
+  <p>
+    The <strong>Autonomous SmallDesk</strong> brings sit-stand functionality to small spaces. At 43" x 24", it is one of the smallest motorized standing desks available. The dual motor provides smooth, quiet operation.
+  </p>
+
+  <p>
+    <strong>Pros:</strong> Full standing desk in compact size, programmable presets, affordable for motorized desk.
+  </p>
+
+  <p>
+    <strong>Cons:</strong> Smaller surface limits dual monitor setups, 2-year warranty is short.
+  </p>
+
+  <p>
+    <strong>Best for:</strong> Small space dwellers who want standing desk benefits.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/autonomous-smalldesk" text="Check Autonomous SmallDesk Price" />
+  </div>
+
+  <h3 id="zinus-jennifer">Zinus Jennifer - Best Value</h3>
+
+  <p>
+    The <strong>Zinus Jennifer</strong> offers remarkable value at under $100. The 47" x 24" surface is larger than most budget desks, and the metal frame provides solid stability. Simple design assembles in 15 minutes.
+  </p>
+
+  <p>
+    <strong>Pros:</strong> Large surface for the price, sturdy metal frame, easy assembly, ships fast from Amazon.
+  </p>
+
+  <p>
+    <strong>Cons:</strong> No built-in storage, basic aesthetic, limited color choices.
+  </p>
+
+  <p>
+    <strong>Best for:</strong> Those who want maximum surface area on a tight budget.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/zinus-jennifer" text="Check Zinus Jennifer Price" />
+  </div>
+
+  <h3 id="walker-edison-corner">Walker Edison Corner Desk - Best Corner Option</h3>
+
+  <p>
+    The <strong>Walker Edison Corner Desk</strong> maximizes unused corner space with an L-shaped design. The 56" x 44" footprint provides ample workspace while fitting snugly in a corner. Built-in shelving adds vertical storage.
+  </p>
+
+  <p>
+    <strong>Pros:</strong> Maximizes corner space, built-in storage shelves, affordable for L-shaped desk.
+  </p>
+
+  <p>
+    <strong>Cons:</strong> Requires corner placement, larger footprint, assembly can be challenging.
+  </p>
+
+  <p>
+    <strong>Best for:</strong> Those with unused corners who need maximum workspace in small rooms.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/walker-edison-corner" text="Check Walker Edison Price" />
+  </div>
+
+  <h3 id="apexdesk-compact">ApexDesk Elite Compact - Best Premium Standing Compact</h3>
+
+  <p>
+    The <strong>ApexDesk Elite</strong> in 48" width offers premium standing desk quality in a compact package. The dual motor lifts smoothly, the frame is rock-solid, and the 5-year warranty provides peace of mind.
+  </p>
+
+  <p>
+    <strong>Pros:</strong> Premium build quality, smooth dual motors, excellent stability, 5-year warranty.
+  </p>
+
+  <p>
+    <strong>Cons:</strong> Higher price point, 30" depth may be too much for very small spaces.
+  </p>
+
+  <p>
+    <strong>Best for:</strong> Those who want quality standing desk performance in smaller dimensions.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/apexdesk-compact" text="Check ApexDesk Price" />
+  </div>
+
+  <h3 id="prepac-floating">Prepac Floating Desk - Best Wall-Mounted</h3>
+
+  <p>
+    The <strong>Prepac Floating Desk</strong> mounts directly to your wall, freeing floor space entirely. The 42" x 20" surface folds up when not in use. Perfect for multi-purpose rooms where the desk needs to disappear.
+  </p>
+
+  <p>
+    <strong>Pros:</strong> Frees floor space, folds away when not in use, built-in storage compartments.
+  </p>
+
+  <p>
+    <strong>Cons:</strong> Requires wall mounting, fixed height, smaller surface, not for heavy equipment.
+  </p>
+
+  <p>
+    <strong>Best for:</strong> Multi-purpose rooms, studio apartments, or occasional work-from-home use.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/prepac-floating" text="Check Prepac Price" />
+  </div>
+
+  <h3 id="flexispot-compact">FlexiSpot E7 48" - Best Compact Premium Standing</h3>
+
+  <p>
+    The <strong>FlexiSpot E7</strong> with 48" desktop brings their flagship frame to smaller spaces. You get the same dual motor, 355 lb capacity, and 15-year warranty in a more compact package.
+  </p>
+
+  <p>
+    <strong>Pros:</strong> Premium frame quality, excellent warranty, programmable presets, wide height range.
+  </p>
+
+  <p>
+    <strong>Cons:</strong> Frame sold separately from top, premium price for size.
+  </p>
+
+  <p>
+    <strong>Best for:</strong> Those who want premium standing desk quality without the large footprint.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/flexispot-e7-48" text="Check FlexiSpot E7 Price" />
+  </div>
+
+  <h2 id="desk-types">Small Desk Types Explained</h2>
+
+  <h3>Standard Desks (Fixed Height)</h3>
+  <ul>
+    <li><strong>Pros:</strong> Lowest cost, simple assembly, no motors to fail</li>
+    <li><strong>Cons:</strong> No standing option, height not adjustable</li>
+    <li><strong>Best picks:</strong> Branch Duo, IKEA MICKE, Zinus Jennifer</li>
+  </ul>
+
+  <h3>Compact Standing Desks</h3>
+  <ul>
+    <li><strong>Pros:</strong> Sit-stand flexibility, health benefits, same compact footprint</li>
+    <li><strong>Cons:</strong> Higher cost, requires power outlet, heavier</li>
+    <li><strong>Best picks:</strong> Autonomous SmallDesk, FlexiSpot E7 48"</li>
+  </ul>
+
+  <h3>Corner Desks</h3>
+  <ul>
+    <li><strong>Pros:</strong> Maximizes unused corners, large surface area</li>
+    <li><strong>Cons:</strong> Limited placement options, complex assembly</li>
+    <li><strong>Best picks:</strong> Walker Edison Corner</li>
+  </ul>
+
+  <h3>Wall-Mounted/Floating Desks</h3>
+  <ul>
+    <li><strong>Pros:</strong> Frees floor space, can fold away, clean aesthetic</li>
+    <li><strong>Cons:</strong> Requires wall mounting, fixed height, lower weight capacity</li>
+    <li><strong>Best picks:</strong> Prepac Floating Desk</li>
+  </ul>
+
+  <h2 id="cable-management">Cable Management in Small Spaces</h2>
+
+  <p>
+    Cables are more noticeable in small spaces. Keep your compact desk clean with these tips:
+  </p>
+
+  <ul>
+    <li><strong>Cable trays:</strong> Mount under the desk to hide power strips and excess cable</li>
+    <li><strong>Velcro straps:</strong> Bundle cables together for a cleaner look</li>
+    <li><strong>Wireless peripherals:</strong> Eliminate mouse and keyboard cables entirely</li>
+    <li><strong>Monitor arms:</strong> Run cables through the arm instead of across the desk</li>
+    <li><strong>Power strip with USB:</strong> Reduces adapter clutter</li>
+  </ul>
+
+  <ComparisonTable columns={fullComparisonColumns} rows={fullComparisonRows} />
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqItems} />
+
+  <h2>Our Recommendation</h2>
+
+  <p>
+    For most small home offices, the <strong>Branch Duo</strong> offers the best combination of quality, design, and functionality at $349. Its clean aesthetic looks professional on video calls while providing a solid 48" x 24" work surface.
+  </p>
+
+  <p>
+    On a tight budget, the <strong>Zinus Jennifer</strong> at under $100 provides the largest surface area for the price with sturdy metal construction.
+  </p>
+
+  <p>
+    If you want standing capability in a small space, the <strong>Autonomous SmallDesk</strong> delivers full sit-stand functionality in a compact 43" x 24" footprint.
+  </p>
+
+  <RelatedArticles articles={relatedArticles} />
+</ArticleLayout>

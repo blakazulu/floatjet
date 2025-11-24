@@ -374,7 +374,43 @@ from the same dashboard.
 | Branch         | 8%         | 30 days | Direct     | Not Applied |
 | Amazon (desks) | 4-6%       | 24h     | Amazon     | Not Applied |
 
-**Used in:** FJ-014 (Standing Desks article)
+**Used in:** FJ-014 (Standing Desks article), best-desk-converters, best-compact-desks-small-office, ergonomic-desk-setup-guide, standing-desk-cost-guide articles
+
+---
+
+### Ergonomic Chairs
+
+| Program        | Commission | Cookie  | Network    | Status      |
+|----------------|------------|---------|------------|-------------|
+| Herman Miller  | 2-4%       | 30 days | Direct     | Not Applied |
+| Steelcase      | 2-4%       | 30 days | Direct     | Not Applied |
+| Secretlab      | 5-10%      | 30 days | Direct     | Not Applied |
+| HON            | 3-5%       | 30 days | Direct     | Not Applied |
+| Humanscale     | 3-5%       | 30 days | Direct     | Not Applied |
+| IKEA           | 3-7%       | 30 days | Direct     | Not Applied |
+| Sihoo          | 5-8%       | 30 days | Direct     | Not Applied |
+| Amazon (chairs)| 4-6%       | 24h     | Amazon     | Not Applied |
+
+**Used in:** best-ergonomic-chairs article
+
+---
+
+### Desk Converters & Compact Desks
+
+| Program     | Commission | Cookie  | Network    | Status      |
+|-------------|------------|---------|------------|-------------|
+| VIVO        | 5-8%       | 30 days | Direct     | Not Applied |
+| Varidesk    | 5-10%      | 30 days | Direct     | Not Applied |
+| FEZIBO      | 8-10%      | 30 days | Direct     | Not Applied |
+| Mount-It    | 5-8%       | 30 days | Direct     | Not Applied |
+| Ergotron    | 5-8%       | 30 days | Direct     | Not Applied |
+| Zinus       | 5-8%       | 30 days | Direct     | Not Applied |
+| Walker Edison| 5%        | 30 days | Direct     | Not Applied |
+| ApexDesk    | 5-8%       | 30 days | Direct     | Not Applied |
+| Prepac      | 5%         | 30 days | Direct     | Not Applied |
+| Amazon      | 4-6%       | 24h     | Amazon     | Not Applied |
+
+**Used in:** best-desk-converters, best-compact-desks-small-office articles
 
 ---
 
@@ -461,16 +497,16 @@ from the same dashboard.
 
 ### Laptop Bags & Backpacks
 
-| Program      | Commission | Cookie  | Network | Status      |
-|--------------|------------|---------|---------|-------------|
-| Nomatic      | 10%        | 30 days | Direct  | Not Applied |
-| Peak Design  | 8%         | 30 days | Direct  | Not Applied |
-| Aer          | 8-10%      | 30 days | Direct  | Not Applied |
-| Thule        | 5-8%       | 30 days | Direct  | Not Applied |
-| Tortuga      | 10%        | 30 days | Direct  | Not Applied |
-| WANDRD       | 8-10%      | 30 days | Direct  | Not Applied |
-| Bellroy      | 8%         | 30 days | Direct  | Not Applied |
-| Amazon       | 3-4%       | 24h     | Amazon  | Not Applied |
+| Program     | Commission | Cookie  | Network | Status      |
+|-------------|------------|---------|---------|-------------|
+| Nomatic     | 10%        | 30 days | Direct  | Not Applied |
+| Peak Design | 8%         | 30 days | Direct  | Not Applied |
+| Aer         | 8-10%      | 30 days | Direct  | Not Applied |
+| Thule       | 5-8%       | 30 days | Direct  | Not Applied |
+| Tortuga     | 10%        | 30 days | Direct  | Not Applied |
+| WANDRD      | 8-10%      | 30 days | Direct  | Not Applied |
+| Bellroy     | 8%         | 30 days | Direct  | Not Applied |
+| Amazon      | 3-4%       | 24h     | Amazon  | Not Applied |
 
 **Used in:** best-laptop-bags-backpacks article
 
@@ -492,14 +528,14 @@ from the same dashboard.
 
 ### Portable Chargers & Power Banks
 
-| Program  | Commission | Cookie  | Network | Status      |
-|----------|------------|---------|---------|-------------|
-| Anker    | Up to 4%   | 30 days | Amazon  | Not Applied |
-| Zendure  | 5-8%       | 30 days | Direct  | Not Applied |
-| Baseus   | 5%         | 30 days | Direct  | Not Applied |
-| UGREEN   | 4-6%       | 30 days | Direct  | Not Applied |
-| Mophie   | 5%         | 30 days | Direct  | Not Applied |
-| Amazon   | 3-4%       | 24h     | Amazon  | Not Applied |
+| Program | Commission | Cookie  | Network | Status      |
+|---------|------------|---------|---------|-------------|
+| Anker   | Up to 4%   | 30 days | Amazon  | Not Applied |
+| Zendure | 5-8%       | 30 days | Direct  | Not Applied |
+| Baseus  | 5%         | 30 days | Direct  | Not Applied |
+| UGREEN  | 4-6%       | 30 days | Direct  | Not Applied |
+| Mophie  | 5%         | 30 days | Direct  | Not Applied |
+| Amazon  | 3-4%       | 24h     | Amazon  | Not Applied |
 
 **Used in:** best-portable-chargers-power-banks article
 
@@ -507,14 +543,14 @@ from the same dashboard.
 
 ### Mechanical Keyboards
 
-| Program       | Commission | Cookie  | Network | Status      |
-|---------------|------------|---------|---------|-------------|
-| Keychron      | 5%         | 30 days | Direct  | Not Applied |
-| Das Keyboard  | 10%        | 30 days | Direct  | Not Applied |
-| Logitech      | 4-6%       | 30 days | Direct  | Not Applied |
-| NuPhy         | 8%         | 30 days | Direct  | Not Applied |
-| Drop          | 5-10%      | 30 days | Direct  | Not Applied |
-| Amazon        | 3-4%       | 24h     | Amazon  | Not Applied |
+| Program      | Commission | Cookie  | Network | Status      |
+|--------------|------------|---------|---------|-------------|
+| Keychron     | 5%         | 30 days | Direct  | Not Applied |
+| Das Keyboard | 10%        | 30 days | Direct  | Not Applied |
+| Logitech     | 4-6%       | 30 days | Direct  | Not Applied |
+| NuPhy        | 8%         | 30 days | Direct  | Not Applied |
+| Drop         | 5-10%      | 30 days | Direct  | Not Applied |
+| Amazon       | 3-4%       | 24h     | Amazon  | Not Applied |
 
 **Used in:** best-mechanical-keyboards article
 
@@ -522,13 +558,13 @@ from the same dashboard.
 
 ### Travel Adapters & Chargers
 
-| Program  | Commission | Cookie  | Network | Status      |
-|----------|------------|---------|---------|-------------|
-| Anker    | Up to 4%   | 30 days | Amazon  | Not Applied |
-| Satechi  | 5-8%       | 30 days | Direct  | Not Applied |
-| HyperX   | 5%         | 30 days | Direct  | Not Applied |
-| Amazon   | 3-4%       | 24h     | Amazon  | Not Applied |
-| B&H Photo| 2-8%       | Unknown | Direct  | Not Applied |
+| Program   | Commission | Cookie  | Network | Status      |
+|-----------|------------|---------|---------|-------------|
+| Anker     | Up to 4%   | 30 days | Amazon  | Not Applied |
+| Satechi   | 5-8%       | 30 days | Direct  | Not Applied |
+| HyperX    | 5%         | 30 days | Direct  | Not Applied |
+| Amazon    | 3-4%       | 24h     | Amazon  | Not Applied |
+| B&H Photo | 2-8%       | Unknown | Direct  | Not Applied |
 
 **Used in:** best-travel-adapters article
 
@@ -986,6 +1022,6 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** Added new affiliate program categories on 2025-11-24: Laptop Bags & Backpacks (Nomatic, Peak Design, Aer, Thule, Tortuga, WANDRD, Bellroy), Webcams (Logitech, Razer, Elgato), Portable Chargers (Anker, Zendure, Baseus, UGREEN, Mophie), Mechanical Keyboards (Keychron, Das Keyboard, NuPhy, Drop), Travel Adapters (Anker, Satechi). Five new accessories articles written.
+**Last Action:** Added new affiliate program categories on 2025-11-24: Ergonomic Chairs (Herman Miller, Steelcase, Secretlab, HON, Humanscale, IKEA, Sihoo), Desk Converters & Compact Desks (VIVO, Varidesk, FEZIBO, Mount-It, Ergotron, Zinus, Walker Edison, ApexDesk, Prepac). Five new furniture articles written: best-ergonomic-chairs, best-desk-converters, best-compact-desks-small-office, ergonomic-desk-setup-guide, standing-desk-cost-guide.
 
-**Next Action:** Apply to priority programs: Amazon Associates (covers all accessories), Nomatic, Peak Design, Keychron, Anker.
+**Next Action:** Apply to priority programs: Amazon Associates (covers all furniture), Herman Miller, Steelcase, Secretlab, FlexiSpot.

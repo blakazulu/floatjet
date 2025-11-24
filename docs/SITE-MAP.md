@@ -278,11 +278,11 @@ floatjet.com/
 
 ### Communication Category (`/guides/communication`)
 
-| Property             | Value                                      |
-|----------------------|--------------------------------------------|
-| **Parent**           | `/guides`                                  |
-| **Featured Article** | Async Communication for Remote Teams       |
-| **Featured Route**   | `/blog/async-communication-remote-teams`   |
+| Property             | Value                                    |
+|----------------------|------------------------------------------|
+| **Parent**           | `/guides`                                |
+| **Featured Article** | Async Communication for Remote Teams     |
+| **Featured Route**   | `/blog/async-communication-remote-teams` |
 
 **Related Guides:**
 | Guide | Route | Category |
@@ -293,11 +293,11 @@ floatjet.com/
 
 ### Productivity Category (`/guides/productivity`)
 
-| Property             | Value                                      |
-|----------------------|--------------------------------------------|
-| **Parent**           | `/guides`                                  |
-| **Featured Article** | Managing Time Zones in Remote Teams        |
-| **Featured Route**   | `/blog/managing-time-zones-remote-teams`   |
+| Property             | Value                                    |
+|----------------------|------------------------------------------|
+| **Parent**           | `/guides`                                |
+| **Featured Article** | Managing Time Zones in Remote Teams      |
+| **Featured Route**   | `/blog/managing-time-zones-remote-teams` |
 
 **Related Guides:**
 | Guide | Route | Category |
@@ -308,11 +308,11 @@ floatjet.com/
 
 ### Security Category (`/guides/security`)
 
-| Property             | Value                                      |
-|----------------------|--------------------------------------------|
-| **Parent**           | `/guides`                                  |
-| **Featured Article** | VPN & Public WiFi Security                 |
-| **Featured Route**   | `/blog/vpn-public-wifi-guide`              |
+| Property             | Value                         |
+|----------------------|-------------------------------|
+| **Parent**           | `/guides`                     |
+| **Featured Article** | VPN & Public WiFi Security    |
+| **Featured Route**   | `/blog/vpn-public-wifi-guide` |
 
 **Related Guides:**
 | Guide | Route | Category |
@@ -325,11 +325,11 @@ floatjet.com/
 
 ### Setup Category (`/guides/setup`)
 
-| Property             | Value                                      |
-|----------------------|--------------------------------------------|
-| **Parent**           | `/guides`                                  |
-| **Featured Article** | Ultimate Home Office Setup                 |
-| **Featured Route**   | `/blog/ultimate-home-office-setup`         |
+| Property             | Value                              |
+|----------------------|------------------------------------|
+| **Parent**           | `/guides`                          |
+| **Featured Article** | Ultimate Home Office Setup         |
+| **Featured Route**   | `/blog/ultimate-home-office-setup` |
 
 **Related Guides:**
 | Guide | Route | Category |
@@ -342,11 +342,11 @@ floatjet.com/
 
 ### Finance Category (`/guides/finance`)
 
-| Property             | Value                                      |
-|----------------------|--------------------------------------------|
-| **Parent**           | `/guides`                                  |
-| **Featured Article** | Tax Tips for Remote Workers                |
-| **Featured Route**   | `/blog/tax-tips-remote-workers`            |
+| Property             | Value                           |
+|----------------------|---------------------------------|
+| **Parent**           | `/guides`                       |
+| **Featured Article** | Tax Tips for Remote Workers     |
+| **Featured Route**   | `/blog/tax-tips-remote-workers` |
 
 **Related Guides:**
 | Guide | Route | Category |
@@ -444,11 +444,11 @@ floatjet.com/
 
 ### Accessories Category (`/gear/accessories`)
 
-| Property             | Value                                            |
-|----------------------|--------------------------------------------------|
-| **Parent**           | `/gear`                                          |
-| **Featured Article** | Best Laptop Bags & Backpacks for Digital Nomads  |
-| **Featured Route**   | `/gear/best-laptop-bags-backpacks`               |
+| Property             | Value                                           |
+|----------------------|-------------------------------------------------|
+| **Parent**           | `/gear`                                         |
+| **Featured Article** | Best Laptop Bags & Backpacks for Digital Nomads |
+| **Featured Route**   | `/gear/best-laptop-bags-backpacks`              |
 
 **Top Picks:**
 | Product | Tag |
@@ -688,13 +688,13 @@ floatjet.com/
 
 ### 3. Best Laptop Bags & Backpacks
 
-| Property              | Value                                                                           |
-|-----------------------|---------------------------------------------------------------------------------|
-| **Route**             | `/gear/best-laptop-bags-backpacks`                                              |
-| **Category**          | Accessories                                                                     |
-| **Category Slug**     | `gear/accessories`                                                              |
-| **Products Reviewed** | Nomatic Navigator, Peak Design Travel, Aer Travel Pack 3, Thule Subterra, etc.  |
-| **Affiliate Links**   | `/go/nomatic`, `/go/peak-design`, `/go/aer`, `/go/thule`, `/go/tortuga`         |
+| Property              | Value                                                                          |
+|-----------------------|--------------------------------------------------------------------------------|
+| **Route**             | `/gear/best-laptop-bags-backpacks`                                             |
+| **Category**          | Accessories                                                                    |
+| **Category Slug**     | `gear/accessories`                                                             |
+| **Products Reviewed** | Nomatic Navigator, Peak Design Travel, Aer Travel Pack 3, Thule Subterra, etc. |
+| **Affiliate Links**   | `/go/nomatic`, `/go/peak-design`, `/go/aer`, `/go/thule`, `/go/tortuga`        |
 
 **Related Articles:**
 | Title | Route |
@@ -707,13 +707,13 @@ floatjet.com/
 
 ### 4. Best Webcams for Video Calls
 
-| Property              | Value                                                                     |
-|-----------------------|---------------------------------------------------------------------------|
-| **Route**             | `/gear/best-webcams-video-calls`                                          |
-| **Category**          | Accessories                                                               |
-| **Category Slug**     | `gear/accessories`                                                        |
-| **Products Reviewed** | Logitech Brio 4K, Logitech C920s, Razer Kiyo Pro, Elgato Facecam, etc.    |
-| **Affiliate Links**   | `/go/logitech-brio`, `/go/logitech-c920`, `/go/razer-kiyo`, `/go/elgato`  |
+| Property              | Value                                                                    |
+|-----------------------|--------------------------------------------------------------------------|
+| **Route**             | `/gear/best-webcams-video-calls`                                         |
+| **Category**          | Accessories                                                              |
+| **Category Slug**     | `gear/accessories`                                                       |
+| **Products Reviewed** | Logitech Brio 4K, Logitech C920s, Razer Kiyo Pro, Elgato Facecam, etc.   |
+| **Affiliate Links**   | `/go/logitech-brio`, `/go/logitech-c920`, `/go/razer-kiyo`, `/go/elgato` |
 
 **Related Articles:**
 | Title | Route |
@@ -726,13 +726,13 @@ floatjet.com/
 
 ### 5. Best Portable Chargers & Power Banks
 
-| Property              | Value                                                                     |
-|-----------------------|---------------------------------------------------------------------------|
-| **Route**             | `/gear/best-portable-chargers-power-banks`                                |
-| **Category**          | Accessories                                                               |
-| **Category Slug**     | `gear/accessories`                                                        |
-| **Products Reviewed** | Anker 737 PowerCore, Anker MagGo, Zendure SuperTank Pro, Baseus Blade     |
-| **Affiliate Links**   | `/go/anker-737`, `/go/anker-maggo`, `/go/zendure`, `/go/baseus`           |
+| Property              | Value                                                                 |
+|-----------------------|-----------------------------------------------------------------------|
+| **Route**             | `/gear/best-portable-chargers-power-banks`                            |
+| **Category**          | Accessories                                                           |
+| **Category Slug**     | `gear/accessories`                                                    |
+| **Products Reviewed** | Anker 737 PowerCore, Anker MagGo, Zendure SuperTank Pro, Baseus Blade |
+| **Affiliate Links**   | `/go/anker-737`, `/go/anker-maggo`, `/go/zendure`, `/go/baseus`       |
 
 **Related Articles:**
 | Title | Route |
@@ -745,13 +745,13 @@ floatjet.com/
 
 ### 6. Best Mechanical Keyboards
 
-| Property              | Value                                                                      |
-|-----------------------|----------------------------------------------------------------------------|
-| **Route**             | `/gear/best-mechanical-keyboards`                                          |
-| **Category**          | Accessories                                                                |
-| **Category Slug**     | `gear/accessories`                                                         |
-| **Products Reviewed** | Keychron K2, Das Keyboard 4, Logitech MX Mechanical, NuPhy Air75, etc.     |
-| **Affiliate Links**   | `/go/keychron`, `/go/das-keyboard`, `/go/logitech-mx`, `/go/nuphy`         |
+| Property              | Value                                                                  |
+|-----------------------|------------------------------------------------------------------------|
+| **Route**             | `/gear/best-mechanical-keyboards`                                      |
+| **Category**          | Accessories                                                            |
+| **Category Slug**     | `gear/accessories`                                                     |
+| **Products Reviewed** | Keychron K2, Das Keyboard 4, Logitech MX Mechanical, NuPhy Air75, etc. |
+| **Affiliate Links**   | `/go/keychron`, `/go/das-keyboard`, `/go/logitech-mx`, `/go/nuphy`     |
 
 **Related Articles:**
 | Title | Route |
@@ -764,13 +764,13 @@ floatjet.com/
 
 ### 7. Best Travel Adapters
 
-| Property              | Value                                                                   |
-|-----------------------|-------------------------------------------------------------------------|
-| **Route**             | `/gear/best-travel-adapters`                                            |
-| **Category**          | Accessories                                                             |
-| **Category Slug**     | `gear/accessories`                                                      |
-| **Products Reviewed** | Epicka Universal, Anker 511 Charger, Satechi 145W, Ceptics World Plug   |
-| **Affiliate Links**   | `/go/epicka`, `/go/anker-511`, `/go/satechi`, `/go/ceptics`             |
+| Property              | Value                                                                 |
+|-----------------------|-----------------------------------------------------------------------|
+| **Route**             | `/gear/best-travel-adapters`                                          |
+| **Category**          | Accessories                                                           |
+| **Category Slug**     | `gear/accessories`                                                    |
+| **Products Reviewed** | Epicka Universal, Anker 511 Charger, Satechi 145W, Ceptics World Plug |
+| **Affiliate Links**   | `/go/epicka`, `/go/anker-511`, `/go/satechi`, `/go/ceptics`           |
 
 **Related Articles:**
 | Title | Route |

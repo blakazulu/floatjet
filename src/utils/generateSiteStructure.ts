@@ -283,6 +283,41 @@ export const SITE_STRUCTURE: SiteGraph = {
       type: 'article',
       category: 'gear'
     },
+    {
+      id: '/gear/best-ergonomic-chairs',
+      name: 'Ergonomic Chairs',
+      path: '/gear/best-ergonomic-chairs',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/best-desk-converters',
+      name: 'Desk Converters',
+      path: '/gear/best-desk-converters',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/best-compact-desks-small-office',
+      name: 'Compact Desks',
+      path: '/gear/best-compact-desks-small-office',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/ergonomic-desk-setup-guide',
+      name: 'Desk Setup Guide',
+      path: '/gear/ergonomic-desk-setup-guide',
+      type: 'article',
+      category: 'gear'
+    },
+    {
+      id: '/gear/standing-desk-cost-guide',
+      name: 'Standing Desk Costs',
+      path: '/gear/standing-desk-cost-guide',
+      type: 'article',
+      category: 'gear'
+    },
 
     // Gear Articles - Audio
     {
@@ -539,6 +574,11 @@ export const SITE_STRUCTURE: SiteGraph = {
     // Gear articles - organized by category
     {source: '/gear/computers', target: '/gear/best-laptops-remote-work', type: 'parent-child'},
     {source: '/gear/furniture', target: '/gear/best-standing-desks', type: 'parent-child'},
+    {source: '/gear/furniture', target: '/gear/best-ergonomic-chairs', type: 'parent-child'},
+    {source: '/gear/furniture', target: '/gear/best-desk-converters', type: 'parent-child'},
+    {source: '/gear/furniture', target: '/gear/best-compact-desks-small-office', type: 'parent-child'},
+    {source: '/gear/furniture', target: '/gear/ergonomic-desk-setup-guide', type: 'parent-child'},
+    {source: '/gear/furniture', target: '/gear/standing-desk-cost-guide', type: 'parent-child'},
     {source: '/gear/audio', target: '/gear/best-noise-canceling-headphones', type: 'parent-child'},
     {source: '/gear/audio', target: '/gear/best-microphones-remote-meetings', type: 'parent-child'},
     {source: '/gear/audio', target: '/gear/best-speakers-home-office', type: 'parent-child'},

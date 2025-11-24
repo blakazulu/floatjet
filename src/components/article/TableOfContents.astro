@@ -108,28 +108,62 @@ const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
       }
     });
 
-    // Active link tracking with IntersectionObserver
-    const headingElements = document.querySelectorAll('h2[id], h3[id]');
+    // Active link tracking - scroll-based approach for reliability
+    const headingElements = Array.from(document.querySelectorAll('h2[id], h3[id]'));
     const tocLinks = document.querySelectorAll('.toc-list a, .toc-overlay-nav a');
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            tocLinks.forEach(link => {
-              link.classList.remove('active');
-              if (link.getAttribute('href') === `#${id}`) {
-                link.classList.add('active');
-              }
-            });
-          }
-        });
-      },
-      {rootMargin: '-100px 0px -66% 0px'}
-    );
+    function setActiveLink(id) {
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${id}`) {
+          link.classList.add('active');
+        }
+      });
+    }
 
-    headingElements.forEach(heading => observer.observe(heading));
+    function updateActiveHeading() {
+      // Get the scroll position with offset for header
+      const scrollY = window.scrollY + 120;
+
+      // Find the current heading
+      let currentHeading = null;
+
+      for (const heading of headingElements) {
+        const rect = heading.getBoundingClientRect();
+        const headingTop = rect.top + window.scrollY;
+
+        if (headingTop <= scrollY) {
+          currentHeading = heading;
+        } else {
+          break;
+        }
+      }
+
+      // Set active link
+      if (currentHeading) {
+        const id = currentHeading.getAttribute('id');
+        if (id) setActiveLink(id);
+      } else if (headingElements.length > 0) {
+        // If we're above all headings, activate the first one
+        const firstId = headingElements[0].getAttribute('id');
+        if (firstId) setActiveLink(firstId);
+      }
+    }
+
+    // Throttle scroll events for performance
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateActiveHeading();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Initial check
+    updateActiveHeading();
   });
 </script>
 

@@ -1,0 +1,465 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+
+// Article metadata
+const title = 'Multi-Currency Banking for Digital Nomads (2025)';
+const description = 'Hold and manage multiple currencies with one account. Compare Wise, Revolut, Payoneer, and N26 for digital nomads who earn and spend globally.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-24');
+const readingTime = 13;
+const image = 'https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Multiple currency bills representing multi-currency banking';
+
+// Table of contents headings
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Why Traditional Banks Fail', slug: 'traditional-banks', depth: 2},
+  {text: 'Best Multi-Currency Accounts', slug: 'best-accounts', depth: 2},
+  {text: 'Feature Comparison', slug: 'comparison', depth: 2},
+  {text: 'Fees & Exchange Rates', slug: 'fees', depth: 2},
+  {text: 'Debit Cards', slug: 'debit-cards', depth: 2},
+  {text: 'Country Availability', slug: 'availability', depth: 2},
+  {text: 'Setting Up Your System', slug: 'system-setup', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'Do I need to close my home country bank account?',
+    answer: '<p><strong>No, and you probably shouldn\'t.</strong> Keep your home country account for:</p><ul><li>Tax payments and government interactions</li><li>Credit history maintenance</li><li>Emergency backup</li><li>Direct debits and subscriptions</li></ul><p>Multi-currency accounts complement—not replace—your primary banking relationship.</p>'
+  },
+  {
+    question: 'Which service has the best exchange rates?',
+    answer: '<p><strong>Wise consistently offers rates closest to the mid-market rate</strong> (the "real" exchange rate you see on Google). Their fee structure is transparent and usually totals 0.4-0.6% for major currencies.</p><p>Revolut\'s rates are comparable on weekdays, but they add a markup on weekends. Traditional banks typically charge 2-4% hidden in their exchange rates.</p>'
+  },
+  {
+    question: 'Can I receive payments from clients in multiple currencies?',
+    answer: '<p><strong>Yes, this is a key benefit.</strong> With services like Wise or Payoneer, you get local bank details in multiple countries:</p><ul><li>US clients pay to your US account (ACH)</li><li>UK clients pay to your UK account (Faster Payments)</li><li>EU clients pay to your Euro account (SEPA)</li></ul><p>Money arrives in the local currency. You choose when to convert, avoiding forced conversions at bad rates.</p>'
+  },
+  {
+    question: 'Are multi-currency accounts safe?',
+    answer: '<p>Reputable services like Wise, Revolut, and Payoneer are regulated financial institutions:</p><ul><li><strong>Wise:</strong> Authorized by financial regulators in UK, US, EU, and more. Funds held in safeguarded accounts.</li><li><strong>Revolut:</strong> EU banking license; UK and EU deposits may be protected up to €100,000.</li><li><strong>Payoneer:</strong> Licensed as money transmitter in US states; regulated in EU and UK.</li></ul><p>These aren\'t traditional banks with FDIC insurance (unless specified), but they\'re properly regulated and have strong track records.</p>'
+  },
+  {
+    question: 'How do taxes work with multiple currency accounts?',
+    answer: '<p>Tax obligations don\'t change because of where you bank:</p><ul><li>You\'re taxed based on residency, not account location</li><li>Report all worldwide income regardless of currency</li><li>US citizens: FBAR filing required if foreign accounts exceed $10,000</li><li>Convert income to your tax reporting currency using appropriate rates</li></ul><p>See our <a href="/blog/tax-tips-remote-workers">tax tips for remote workers</a> for detailed guidance.</p>'
+  },
+  {
+    question: 'What if I need to withdraw cash in a foreign country?',
+    answer: '<p>Each service handles ATM withdrawals differently:</p><ul><li><strong>Wise:</strong> Free up to £200-400/month (varies by country), 1.75% fee after</li><li><strong>Revolut:</strong> Free tier allows limited withdrawals; paid plans offer more</li><li><strong>N26:</strong> Free withdrawals in eurozone, fees elsewhere</li></ul><p>For frequent cash needs, consider a travel-friendly credit card that reimburses ATM fees.</p>'
+  },
+  {
+    question: 'Can I hold cryptocurrency in these accounts?',
+    answer: '<p>Some platforms offer crypto features:</p><ul><li><strong>Revolut:</strong> Buy, hold, and sell crypto within the app</li><li><strong>PayPal:</strong> Crypto trading available in some countries</li><li><strong>Wise & Payoneer:</strong> No crypto support</li></ul><p>For serious crypto use, dedicated exchanges (Coinbase, Kraken) typically offer better rates and features.</p>'
+  },
+  {
+    question: 'How do I choose between these services?',
+    answer: '<p>Match the service to your needs:</p><ul><li><strong>Receiving client payments:</strong> Wise or Payoneer</li><li><strong>Everyday spending:</strong> Revolut or N26</li><li><strong>Best exchange rates:</strong> Wise</li><li><strong>Most currencies:</strong> Wise (50+) or Revolut (30+)</li><li><strong>US-based:</strong> Wise or Payoneer (Revolut/N26 have limited US service)</li></ul><p>Many nomads use multiple services for different purposes.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Best Banking for Digital Nomads',
+    excerpt: 'Compare international-friendly banks and accounts for location-independent workers.',
+    href: '/blog/best-banking-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Digital banking interface'
+  },
+  {
+    title: 'Tax Tips for Remote Workers',
+    excerpt: 'Navigate taxes as a remote worker or digital nomad.',
+    href: '/blog/tax-tips-remote-workers',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Tax planning documents'
+  },
+  {
+    title: 'Best Travel Insurance for Remote Workers',
+    excerpt: 'Protect yourself abroad with the right travel and health insurance.',
+    href: '/blog/best-travel-insurance-remote-workers',
+    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Travel planning'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Finance"
+    categorySlug="guides/finance"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">One Account, Many Currencies</h2>
+  <p>
+    If you earn in USD, spend in EUR, and keep savings in GBP, traditional banking makes your life
+    unnecessarily expensive. Every conversion costs 2-4% in hidden fees, and managing multiple
+    bank accounts across countries is a headache.
+  </p>
+  <p>
+    <strong>Multi-currency accounts solve this problem.</strong> Hold 50+ currencies in one account,
+    receive payments like a local in multiple countries, and convert only when you need to—at
+    rates that don't rob you.
+  </p>
+  <p>
+    This guide compares the best multi-currency options for digital nomads and shows you how to
+    set up a system that works wherever you go.
+  </p>
+
+  <!-- Why Traditional Banks Fail -->
+  <h2 id="traditional-banks">Why Traditional Banks Fail Digital Nomads</h2>
+
+  <h3>Hidden Exchange Rate Markups</h3>
+  <p>
+    Banks advertise "no fee" international transfers—then hide their profit in the exchange rate.
+    A typical bank might offer a rate 2-4% worse than the real mid-market rate.
+  </p>
+  <p>
+    On a $5,000 transfer, that's <strong>$100-200 lost</strong> to hidden fees. Do that monthly,
+    and you're losing $1,200-2,400 per year.
+  </p>
+
+  <h3>Geographic Restrictions</h3>
+  <p>
+    Many banks:
+  </p>
+  <ul>
+    <li>Block accounts when you access from foreign IP addresses</li>
+    <li>Require in-person visits for basic tasks</li>
+    <li>Close accounts if you're abroad "too long"</li>
+    <li>Don't support international phone numbers for 2FA</li>
+  </ul>
+
+  <h3>Limited Currency Options</h3>
+  <p>
+    Traditional banks might offer accounts in 3-5 currencies if you're lucky. You're forced to
+    convert everything to your home currency, losing money on every transaction.
+  </p>
+
+  <h3>Slow, Expensive Transfers</h3>
+  <p>
+    International wire transfers through traditional banks often:
+  </p>
+  <ul>
+    <li>Cost $25-50 per transfer</li>
+    <li>Take 3-5 business days</li>
+    <li>Pass through correspondent banks that each take a cut</li>
+    <li>Arrive with "mysterious" deductions</li>
+  </ul>
+
+  <!-- Best Multi-Currency Accounts -->
+  <h2 id="best-accounts">Best Multi-Currency Accounts</h2>
+
+  <h3>Wise (Formerly TransferWise)</h3>
+  <p>
+    <strong>Best for:</strong> Receiving client payments, transparent fees, most currencies
+  </p>
+  <ul>
+    <li><strong>Currencies:</strong> Hold 50+ currencies, local details in 10+ countries</li>
+    <li><strong>Exchange rates:</strong> Mid-market rate with small transparent fee (0.4-0.6% typical)</li>
+    <li><strong>Local details:</strong> Get US, UK, EU, AUD, NZD, and more bank details</li>
+    <li><strong>Debit card:</strong> Free card, spend in any currency</li>
+    <li><strong>Best for:</strong> Freelancers receiving international payments</li>
+  </ul>
+  <p>
+    <strong>Referral bonus:</strong> Get a fee-free transfer up to $500 when signing up through a referral.
+  </p>
+
+  <h3>Revolut</h3>
+  <p>
+    <strong>Best for:</strong> Everyday spending, app experience, frequent travelers
+  </p>
+  <ul>
+    <li><strong>Currencies:</strong> Hold 30+ currencies</li>
+    <li><strong>Exchange rates:</strong> Interbank rate on weekdays (markup on weekends)</li>
+    <li><strong>Plans:</strong> Free tier available; Premium/Metal add perks</li>
+    <li><strong>Extras:</strong> Budgeting tools, crypto trading, virtual cards</li>
+    <li><strong>Best for:</strong> Daily spending and expense tracking</li>
+  </ul>
+  <p>
+    <strong>Note:</strong> Weekend exchange markup of 0.5-1% on free tier. Paid plans have higher limits.
+  </p>
+
+  <h3>N26</h3>
+  <p>
+    <strong>Best for:</strong> European-based nomads, clean app experience
+  </p>
+  <ul>
+    <li><strong>Base currency:</strong> EUR-based (not true multi-currency)</li>
+    <li><strong>Foreign transactions:</strong> No fees in eurozone, fees outside</li>
+    <li><strong>EU banking license:</strong> Deposits protected up to €100,000</li>
+    <li><strong>Best for:</strong> Nomads primarily in Europe</li>
+  </ul>
+  <p>
+    <strong>Limitation:</strong> Not available for US residents. Limited multi-currency compared to Wise/Revolut.
+  </p>
+
+  <h3>Payoneer</h3>
+  <p>
+    <strong>Best for:</strong> Receiving payments from platforms and marketplaces
+  </p>
+  <ul>
+    <li><strong>Currencies:</strong> Receive in USD, EUR, GBP, JPY, AUD, CAD, MXN</li>
+    <li><strong>Platform integration:</strong> Direct integration with Amazon, Fiverr, Upwork, etc.</li>
+    <li><strong>Withdrawals:</strong> Transfer to local bank in 150+ countries</li>
+    <li><strong>Best for:</strong> Marketplace sellers and platform-based freelancers</li>
+  </ul>
+  <p>
+    <strong>Note:</strong> Higher withdrawal fees than Wise. Best when receiving from integrated platforms.
+  </p>
+
+  <!-- Feature Comparison -->
+  <h2 id="comparison">Feature Comparison Table</h2>
+  <div class="overflow-x-auto my-6">
+    <table class="w-full text-sm">
+      <thead>
+      <tr class="border-b border-white/20">
+        <th class="text-left py-3 px-4 text-white font-semibold">Feature</th>
+        <th class="text-left py-3 px-4 text-white font-semibold">Wise</th>
+        <th class="text-left py-3 px-4 text-white font-semibold">Revolut</th>
+        <th class="text-left py-3 px-4 text-white font-semibold">N26</th>
+        <th class="text-left py-3 px-4 text-white font-semibold">Payoneer</th>
+      </tr>
+      </thead>
+      <tbody class="text-white/80">
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4 font-medium">Currencies held</td>
+        <td class="py-3 px-4">50+</td>
+        <td class="py-3 px-4">30+</td>
+        <td class="py-3 px-4">EUR only</td>
+        <td class="py-3 px-4">7</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4 font-medium">Local bank details</td>
+        <td class="py-3 px-4">10+ countries</td>
+        <td class="py-3 px-4">UK, EU, US</td>
+        <td class="py-3 px-4">Germany</td>
+        <td class="py-3 px-4">5 countries</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4 font-medium">Exchange fee</td>
+        <td class="py-3 px-4">0.4-0.6%</td>
+        <td class="py-3 px-4">0-1%*</td>
+        <td class="py-3 px-4">1.7%</td>
+        <td class="py-3 px-4">Up to 2%</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4 font-medium">Debit card</td>
+        <td class="py-3 px-4">Free</td>
+        <td class="py-3 px-4">Free</td>
+        <td class="py-3 px-4">Free</td>
+        <td class="py-3 px-4">$29.95/year</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4 font-medium">US availability</td>
+        <td class="py-3 px-4">Yes</td>
+        <td class="py-3 px-4">Limited</td>
+        <td class="py-3 px-4">No</td>
+        <td class="py-3 px-4">Yes</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4 font-medium">Best use case</td>
+        <td class="py-3 px-4">Payments</td>
+        <td class="py-3 px-4">Spending</td>
+        <td class="py-3 px-4">EU banking</td>
+        <td class="py-3 px-4">Platforms</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-sm text-white/60">*Revolut charges 0.5-1% markup on weekends and above monthly limits</p>
+
+  <!-- Fees & Exchange Rates -->
+  <h2 id="fees">Fees and Exchange Rates Explained</h2>
+
+  <h3>The Mid-Market Rate</h3>
+  <p>
+    The "mid-market rate" (or interbank rate) is the real exchange rate—the midpoint between
+    buy and sell rates that banks use when trading with each other. It's what Google shows
+    when you search "USD to EUR."
+  </p>
+  <p>
+    <strong>Traditional banks don't give you this rate.</strong> They add 2-4% markup, hidden
+    in the rate itself. A bank might show "no fees" while giving you a rate that's 3% worse
+    than mid-market.
+  </p>
+
+  <h3>How Wise Charges</h3>
+  <p>
+    Wise shows the mid-market rate and adds a transparent percentage fee:
+  </p>
+  <ul>
+    <li>USD → EUR: typically 0.41%</li>
+    <li>GBP → EUR: typically 0.35%</li>
+    <li>USD → GBP: typically 0.46%</li>
+  </ul>
+  <p>
+    You see exactly what you're paying before confirming.
+  </p>
+
+  <h3>Revolut's Model</h3>
+  <p>
+    Revolut offers the interbank rate with limits:
+  </p>
+  <ul>
+    <li><strong>Weekdays:</strong> Interbank rate up to monthly limit (varies by plan)</li>
+    <li><strong>Weekends:</strong> 0.5-1% markup (markets are closed)</li>
+    <li><strong>Over limit:</strong> 0.5-1% fee applies</li>
+  </ul>
+
+  <h3>The Bottom Line</h3>
+  <p>
+    For a $5,000 conversion:
+  </p>
+  <ul>
+    <li><strong>Traditional bank:</strong> ~$150-200 lost (3-4% markup)</li>
+    <li><strong>Wise:</strong> ~$25 (0.5% fee)</li>
+    <li><strong>Revolut (weekday, under limit):</strong> ~$0 fee</li>
+  </ul>
+
+  <!-- Debit Cards -->
+  <h2 id="debit-cards">Debit Card Comparison</h2>
+
+  <h3>Wise Card</h3>
+  <ul>
+    <li>Spend in any currency at the mid-market rate + small fee</li>
+    <li>Free ATM withdrawals up to £200/month, then 1.75%</li>
+    <li>Works anywhere Mastercard is accepted</li>
+    <li>Freeze/unfreeze instantly in app</li>
+  </ul>
+
+  <h3>Revolut Card</h3>
+  <ul>
+    <li>Spend at interbank rate (weekday limits apply)</li>
+    <li>Free ATM withdrawals vary by plan (£200-unlimited)</li>
+    <li>Virtual cards for online shopping</li>
+    <li>Disposable virtual cards for security</li>
+  </ul>
+
+  <h3>Payoneer Card</h3>
+  <ul>
+    <li>$29.95 annual fee</li>
+    <li>ATM withdrawal: $3.15 per transaction</li>
+    <li>Best for withdrawing Payoneer balance locally</li>
+  </ul>
+
+  <h3>Tips for Card Use</h3>
+  <ul>
+    <li><strong>Always pay in local currency:</strong> Decline "conversion" at terminals</li>
+    <li><strong>Notify of travel:</strong> Some cards need travel notifications</li>
+    <li><strong>Carry backup:</strong> Have at least two cards from different providers</li>
+    <li><strong>Withdraw wisely:</strong> Fewer, larger ATM withdrawals minimize fees</li>
+  </ul>
+
+  <!-- Country Availability -->
+  <h2 id="availability">Country Availability</h2>
+
+  <h3>Wise</h3>
+  <p>
+    Available to residents of 160+ countries. US, UK, EU, Australia, and most of Asia/Africa supported.
+    Some features vary by location.
+  </p>
+
+  <h3>Revolut</h3>
+  <p>
+    Strong in UK and Europe. US availability limited (basic accounts only). Not available in many
+    Asian and African countries.
+  </p>
+
+  <h3>N26</h3>
+  <p>
+    EU and EEA only. Not available in US (withdrew from market in 2022). Limited global reach.
+  </p>
+
+  <h3>Payoneer</h3>
+  <p>
+    Available in 200+ countries. Strong in markets where other services are limited (India, Pakistan,
+    Bangladesh, etc.). Good option for developing markets.
+  </p>
+
+  <!-- Setting Up Your System -->
+  <h2 id="system-setup">Setting Up Your Multi-Currency System</h2>
+
+  <h3>The Recommended Stack</h3>
+  <p>
+    Most digital nomads benefit from multiple accounts:
+  </p>
+  <ol>
+    <li><strong>Home country bank:</strong> Keep for tax payments, credit history, emergencies</li>
+    <li><strong>Wise:</strong> Primary for receiving client payments in multiple currencies</li>
+    <li><strong>Revolut or N26:</strong> Daily spending and travel</li>
+    <li><strong>Payoneer:</strong> If you use platforms that integrate with it</li>
+  </ol>
+
+  <h3>Receiving Payments</h3>
+  <p>
+    Set up local bank details in currencies you frequently receive:
+  </p>
+  <ul>
+    <li><strong>US clients:</strong> Give them your US account details (ACH transfers)</li>
+    <li><strong>UK clients:</strong> Give them UK sort code and account number</li>
+    <li><strong>EU clients:</strong> Give them SEPA-compatible IBAN</li>
+  </ul>
+  <p>
+    Clients pay local transfers (fast, free for them), money arrives in that currency.
+  </p>
+
+  <h3>Converting Currency</h3>
+  <p>
+    Don't convert automatically. Instead:
+  </p>
+  <ul>
+    <li>Hold balances in currencies you'll spend</li>
+    <li>Convert when rates are favorable (Wise shows historical charts)</li>
+    <li>Batch conversions to minimize fees on small amounts</li>
+    <li>Avoid weekend conversions on Revolut</li>
+  </ul>
+
+  <h3>Spending Strategy</h3>
+  <ul>
+    <li>Use the card linked to your balance in the local currency</li>
+    <li>When traveling in eurozone with EUR balance—spend from EUR</li>
+    <li>When you don't have local currency, the card auto-converts at good rates</li>
+    <li>Track spending by category in the app</li>
+  </ul>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <h2>Conclusion: Bank Like a Global Citizen</h2>
+  <p>
+    Traditional banking wasn't built for people who earn in one currency, spend in another, and
+    move between countries. Multi-currency accounts are.
+  </p>
+  <p>
+    <strong>Your action plan:</strong>
+  </p>
+  <ul>
+    <li>Open a Wise account for receiving payments (takes 10 minutes)</li>
+    <li>Order the free debit card</li>
+    <li>Set up local bank details in currencies you receive</li>
+    <li>Consider Revolut for daily spending if you're in Europe</li>
+    <li>Keep your home country account for backup and local obligations</li>
+  </ul>
+  <p>
+    Stop losing thousands of dollars a year to hidden bank fees. Your money should work as
+    globally as you do.
+  </p>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

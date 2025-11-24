@@ -611,8 +611,40 @@ how-much-ram-remote-work articles
 | Revolut  | Varies by region | 30 days | Direct  | Not Applied |
 | Mercury  | Unknown          | Unknown | Direct  | Not Applied |
 | Payoneer | $25/referral     | 30 days | Direct  | Not Applied |
+| N26      | €15/referral     | 30 days | Direct  | Not Applied |
 
-**Used in:** best-banking-digital-nomads, crypto-friendly-banks articles
+**Used in:** best-banking-digital-nomads, crypto-friendly-banks, multi-currency-banking-nomads articles
+
+---
+
+### Accounting & Tax Software
+
+| Program             | Commission      | Cookie   | Network      | Status      |
+|---------------------|-----------------|----------|--------------|-------------|
+| QuickBooks          | $25-100/signup  | 45 days  | CJ Affiliate | Not Applied |
+| FreshBooks          | $55-200/signup  | 120 days | ShareASale   | Not Applied |
+| Xero                | $100-150/signup | 90 days  | Direct       | Not Applied |
+| Wave                | Free product    | N/A      | N/A          | No program  |
+| TurboTax            | $10-50/signup   | 45 days  | CJ Affiliate | Not Applied |
+| Expensify           | $25/signup      | 30 days  | Direct       | Not Applied |
+| Dext (Receipt Bank) | 15-20%          | 30 days  | Direct       | Not Applied |
+
+**Used in:** freelancer-tax-deductions-guide, expense-home-office-furniture, tax-tips-remote-workers articles
+
+---
+
+### Investment & Retirement Platforms
+
+| Program     | Commission     | Cookie  | Network | Status      |
+|-------------|----------------|---------|---------|-------------|
+| Fidelity    | Varies         | 30 days | Direct  | Not Applied |
+| Vanguard    | N/A            | N/A     | N/A     | No program  |
+| Schwab      | Varies         | 30 days | Direct  | Not Applied |
+| Betterment  | $50-75/signup  | 30 days | Direct  | Not Applied |
+| Wealthfront | $50/signup     | 30 days | Direct  | Not Applied |
+| M1 Finance  | $50-100/signup | 30 days | Direct  | Not Applied |
+
+**Used in:** retirement-savings-freelancer article
 
 ---
 
@@ -1143,10 +1175,14 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** Added new affiliate program categories on 2025-11-24: Ergonomic Chairs (Herman Miller, Steelcase,
-Secretlab, HON, Humanscale, IKEA, Sihoo), Desk Converters & Compact Desks (VIVO, Varidesk, FEZIBO, Mount-It, Ergotron,
-Zinus, Walker Edison, ApexDesk, Prepac). Five new furniture articles written: best-ergonomic-chairs,
-best-desk-converters, best-compact-desks-small-office, ergonomic-desk-setup-guide, standing-desk-cost-guide.
+**Last Action:** Added new affiliate program categories on 2025-11-24: Accounting & Tax Software (QuickBooks,
+FreshBooks,
+Xero, TurboTax, Expensify, Dext), Investment & Retirement Platforms (Fidelity, Schwab, Betterment, Wealthfront, M1
+Finance).
+Updated Digital Banking with N26 and new article references. Five new finance guide articles written:
+freelancer-tax-deductions-guide,
+retirement-savings-freelancer, invoice-payment-terms-guide, multi-currency-banking-nomads,
+expense-home-office-furniture.
 
-**Next Action:** Apply to priority programs: Amazon Associates (covers all furniture), Herman Miller, Steelcase,
-Secretlab, FlexiSpot.
+**Next Action:** Apply to priority programs: Amazon Associates, QuickBooks (CJ Affiliate), FreshBooks (ShareASale),
+Wise, Revolut, Betterment.

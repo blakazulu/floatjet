@@ -1,0 +1,519 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+
+// Article metadata
+const title = 'How to Set Up Retirement Savings as a Freelancer (2025)';
+const description = 'No employer 401(k)? No problem. Learn about Solo 401(k), SEP IRA, and other retirement options for self-employed workers to build wealth and reduce taxes.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-24');
+const readingTime = 14;
+const image = 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Retirement savings jar with coins representing freelancer investing';
+
+// Table of contents headings
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Why Prioritize Retirement', slug: 'why-prioritize', depth: 2},
+  {text: 'Solo 401(k)', slug: 'solo-401k', depth: 2},
+  {text: 'SEP IRA', slug: 'sep-ira', depth: 2},
+  {text: 'SIMPLE IRA', slug: 'simple-ira', depth: 2},
+  {text: 'Traditional & Roth IRA', slug: 'ira', depth: 2},
+  {text: 'Comparison Table', slug: 'comparison', depth: 2},
+  {text: 'How to Open an Account', slug: 'how-to-open', depth: 2},
+  {text: 'Automation Strategies', slug: 'automation', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: 'What\'s the best retirement account for freelancers?',
+    answer: '<p>It depends on your income level and goals:</p><ul><li><strong>Solo 401(k):</strong> Best for high earners who want maximum contributions ($69,000 for 2024)</li><li><strong>SEP IRA:</strong> Simpler to manage, good for variable income</li><li><strong>Traditional/Roth IRA:</strong> Best as supplement, lower contribution limits ($7,000 for 2024)</li></ul><p>For most freelancers earning over $50,000, a Solo 401(k) offers the best combination of high limits and flexibility.</p>'
+  },
+  {
+    question: 'Can I have both a Solo 401(k) and an IRA?',
+    answer: '<p><strong>Yes!</strong> You can contribute to both a Solo 401(k) (or SEP IRA) AND a Traditional or Roth IRA. The contribution limits are separate.</p><p>For example, you could contribute $23,000 as employee + employer profit-sharing to your Solo 401(k), AND contribute $7,000 to a Roth IRA. This maximizes both tax-deferred and tax-free growth.</p>'
+  },
+  {
+    question: 'What happens if my income varies a lot?',
+    answer: '<p>Variable income is common for freelancers. Strategies to handle it:</p><ul><li><strong>SEP IRA:</strong> Contribute a percentage of income (up to 25%), adjusting with your earnings</li><li><strong>Solo 401(k):</strong> Use the employer contribution component (percentage-based) for variable income</li><li><strong>Wait until year-end:</strong> You can make prior-year contributions until tax filing deadline</li></ul><p>Don\'t let income variability stop you—start small and increase contributions as income stabilizes.</p>'
+  },
+  {
+    question: 'Should I choose Traditional (pre-tax) or Roth (post-tax)?',
+    answer: '<p>Consider your current vs. future tax situation:</p><ul><li><strong>Traditional:</strong> Tax deduction now, pay taxes in retirement. Best if you\'re in a higher tax bracket now than you expect in retirement.</li><li><strong>Roth:</strong> No deduction now, tax-free withdrawals later. Best if you expect higher taxes in retirement or want tax diversification.</li></ul><p>Many advisors recommend a mix of both for flexibility. If unsure, Traditional contributions provide immediate tax savings.</p>'
+  },
+  {
+    question: 'What if I miss the contribution deadline?',
+    answer: '<p>Deadlines vary by account type:</p><ul><li><strong>Solo 401(k) employee contribution:</strong> December 31 of tax year</li><li><strong>Solo 401(k) employer contribution:</strong> Tax filing deadline (including extensions)</li><li><strong>SEP IRA:</strong> Tax filing deadline (including extensions)</li><li><strong>Traditional/Roth IRA:</strong> Tax filing deadline (no extensions)</li></ul><p>If you miss a deadline, you can\'t make up the contribution—it\'s lost for that year. Set calendar reminders.</p>'
+  },
+  {
+    question: 'How do I calculate my contribution limit?',
+    answer: '<p>For self-employed individuals, it\'s based on net self-employment income:</p><ol><li>Start with Schedule C net profit</li><li>Subtract half of self-employment tax (the "employer" portion)</li><li>This is your "net self-employment income"</li><li>Apply contribution limits (25% for SEP, more complex for Solo 401k)</li></ol><p>Most accounting software or a CPA can calculate this accurately. Online calculators from Fidelity, Vanguard, or Schwab can also help.</p>'
+  },
+  {
+    question: 'What if I also have a part-time job with a 401(k)?',
+    answer: '<p>You can have both, but there are coordination rules:</p><ul><li>Total employee contributions across all 401(k)s can\'t exceed $23,000 (2024)</li><li>Employer contributions from self-employment are calculated separately</li><li>Total additions across all plans can\'t exceed $69,000</li></ul><p>Track contributions carefully to avoid exceeding limits. Excess contributions result in penalties.</p>'
+  },
+  {
+    question: 'When should I start contributing?',
+    answer: '<p><strong>As soon as possible.</strong> Compound growth makes early contributions incredibly valuable:</p><ul><li>$10,000 invested at age 25 could grow to $217,000 by 65 (7% return)</li><li>The same $10,000 at age 35 would only reach $109,000</li><li>Starting just 10 years earlier doubles your retirement savings</li></ul><p>Even small contributions ($100-200/month) make a significant difference over decades.</p>'
+  }
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Freelancer Tax Deductions Guide',
+    excerpt: 'Discover every tax deduction available to reduce your tax burden.',
+    href: '/guides/freelancer-tax-deductions-guide',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Tax deduction documents'
+  },
+  {
+    title: 'Tax Tips for Remote Workers',
+    excerpt: 'Navigate taxes as a remote worker or digital nomad.',
+    href: '/blog/tax-tips-remote-workers',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Tax planning documents'
+  },
+  {
+    title: 'Best Banking for Digital Nomads',
+    excerpt: 'Find the right international-friendly bank accounts for your freelance business.',
+    href: '/blog/best-banking-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Digital banking interface'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Finance"
+    categorySlug="guides/finance"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">No Employer Match? No Problem.</h2>
+  <p>
+    One of the biggest financial challenges for freelancers is planning for retirement without an employer
+    401(k) match. But here's what most freelancers don't realize: <strong>self-employed workers actually
+    have access to better retirement options than most employees.</strong>
+  </p>
+  <p>
+    With a Solo 401(k), you can contribute up to $69,000 per year (2024)—far more than the $23,000 employee
+    limit. You're both the employee AND the employer, which means you get to make contributions in both capacities.
+  </p>
+  <p>
+    This guide breaks down every retirement option available to freelancers, helps you choose the right one,
+    and shows you how to set it up.
+  </p>
+
+  <!-- Why Prioritize Retirement -->
+  <h2 id="why-prioritize">Why Freelancers Must Prioritize Retirement</h2>
+  <p>
+    No one is looking out for your retirement but you. Without automatic payroll deductions and employer
+    matches, it's easy to push retirement savings to "someday."
+  </p>
+
+  <h3>The Cost of Waiting</h3>
+  <p>
+    Compound growth rewards early starters exponentially:
+  </p>
+  <ul>
+    <li><strong>Starting at 25:</strong> $500/month grows to ~$1.4 million by 65 (7% return)</li>
+    <li><strong>Starting at 35:</strong> Same $500/month reaches only ~$650,000</li>
+    <li><strong>Starting at 45:</strong> Same amount reaches ~$280,000</li>
+  </ul>
+  <p>
+    Every year you delay costs tens of thousands in future wealth.
+  </p>
+
+  <h3>Tax Advantages Today</h3>
+  <p>
+    Retirement contributions provide immediate tax benefits:
+  </p>
+  <ul>
+    <li>Traditional contributions reduce your taxable income dollar-for-dollar</li>
+    <li>Self-employment tax is calculated before retirement contributions</li>
+    <li>A $20,000 contribution in the 24% bracket saves $4,800 in taxes—this year</li>
+  </ul>
+  <p>
+    For freelancers with variable income, this flexibility is powerful. High-income year? Max out
+    contributions. Slower year? Contribute less.
+  </p>
+
+  <h3>No One Else Will Do It</h3>
+  <p>
+    Employees benefit from automatic enrollment, payroll deductions, and employer matches—nudges that
+    make saving easy. Freelancers must be intentional:
+  </p>
+  <ul>
+    <li>Choose and open an account</li>
+    <li>Calculate contribution limits</li>
+    <li>Make transfers (or set up automation)</li>
+    <li>Track deadlines</li>
+  </ul>
+  <p>
+    It's more work, but the payoff is worth it: maximum flexibility and potentially higher contribution limits.
+  </p>
+
+  <!-- Solo 401(k) -->
+  <h2 id="solo-401k">Solo 401(k) Explained</h2>
+  <p>
+    The Solo 401(k)—also called Individual 401(k) or Self-Employed 401(k)—is the most powerful retirement
+    option for freelancers.
+  </p>
+
+  <h3>Contribution Limits (2024)</h3>
+  <ul>
+    <li><strong>Employee contribution:</strong> Up to $23,000 (plus $7,500 catch-up if 50+)</li>
+    <li><strong>Employer contribution:</strong> Up to 25% of net self-employment income</li>
+    <li><strong>Total maximum:</strong> $69,000 ($76,500 with catch-up)</li>
+  </ul>
+
+  <h3>Who It's For</h3>
+  <ul>
+    <li>Self-employed individuals with no full-time employees (spouse can be employed)</li>
+    <li>Freelancers earning $50,000+ who want maximum tax deferral</li>
+    <li>Those who want both Traditional (pre-tax) and Roth (post-tax) options</li>
+  </ul>
+
+  <h3>Advantages</h3>
+  <ul>
+    <li><strong>Highest contribution limits:</strong> More than any other self-employed option</li>
+    <li><strong>Roth option available:</strong> Some plans allow after-tax Roth contributions</li>
+    <li><strong>Loan provision:</strong> Some plans allow borrowing from your balance</li>
+    <li><strong>Dual contributions:</strong> Employee + employer means more flexibility</li>
+  </ul>
+
+  <h3>Considerations</h3>
+  <ul>
+    <li>Requires annual Form 5500-SF filing once balance exceeds $250,000</li>
+    <li>More complex to set up than SEP IRA</li>
+    <li>Employee contribution deadline is December 31 (not tax filing deadline)</li>
+  </ul>
+
+  <h3>Where to Open</h3>
+  <p>
+    Major brokerages offer free Solo 401(k) plans:
+  </p>
+  <ul>
+    <li><strong>Fidelity:</strong> Free setup and maintenance, excellent investment options</li>
+    <li><strong>Charles Schwab:</strong> Free, includes Roth option</li>
+    <li><strong>Vanguard:</strong> Free for most funds, trusted name</li>
+    <li><strong>E*TRADE:</strong> Good for active traders</li>
+  </ul>
+
+  <!-- SEP IRA -->
+  <h2 id="sep-ira">SEP IRA Explained</h2>
+  <p>
+    The Simplified Employee Pension (SEP) IRA is easier to administer than a Solo 401(k) while still
+    offering generous contribution limits.
+  </p>
+
+  <h3>Contribution Limits (2024)</h3>
+  <ul>
+    <li><strong>Maximum:</strong> 25% of net self-employment income, up to $69,000</li>
+    <li>No employee contribution component—all contributions are "employer" contributions</li>
+    <li>No catch-up contributions for those 50+</li>
+  </ul>
+
+  <h3>Who It's For</h3>
+  <ul>
+    <li>Freelancers who want simplicity over maximum flexibility</li>
+    <li>Those who also have employees (though this can be expensive—you must contribute same percentage for employees)
+    </li>
+    <li>Freelancers with variable income who want percentage-based contributions</li>
+  </ul>
+
+  <h3>Advantages</h3>
+  <ul>
+    <li><strong>Simple setup:</strong> Can be opened and funded in minutes</li>
+    <li><strong>No annual filing:</strong> No Form 5500 required</li>
+    <li><strong>Contribution deadline:</strong> Tax filing deadline including extensions (October 15)</li>
+    <li><strong>Flexibility:</strong> No minimum contribution required</li>
+  </ul>
+
+  <h3>Considerations</h3>
+  <ul>
+    <li>No Roth option—all contributions are pre-tax</li>
+    <li>Lower effective contribution limit at lower incomes (25% of income)</li>
+    <li>If you have employees, you must contribute same percentage for them</li>
+  </ul>
+
+  <h3>SEP IRA vs. Solo 401(k)</h3>
+  <p>
+    At higher incomes, the Solo 401(k) allows larger contributions because of the employee component.
+    For example, with $100,000 in net self-employment income:
+  </p>
+  <ul>
+    <li><strong>SEP IRA:</strong> ~$18,587 maximum (25% of adjusted income)</li>
+    <li><strong>Solo 401(k):</strong> ~$41,587 maximum ($23,000 employee + ~$18,587 employer)</li>
+  </ul>
+
+  <!-- SIMPLE IRA -->
+  <h2 id="simple-ira">SIMPLE IRA for Freelancers with Contractors</h2>
+  <p>
+    The Savings Incentive Match Plan for Employees (SIMPLE) IRA is designed for small businesses with employees,
+    including contractors you might hire.
+  </p>
+
+  <h3>Contribution Limits (2024)</h3>
+  <ul>
+    <li><strong>Employee contribution:</strong> Up to $16,000 (plus $3,500 catch-up if 50+)</li>
+    <li><strong>Employer match:</strong> Either 3% match or 2% non-elective contribution</li>
+  </ul>
+
+  <h3>Who It's For</h3>
+  <ul>
+    <li>Freelancers with 1-100 employees</li>
+    <li>Those who want employee participation without complex administration</li>
+    <li>Businesses that want to offer retirement benefits to attract talent</li>
+  </ul>
+
+  <h3>Advantages</h3>
+  <ul>
+    <li>Employees can contribute (unlike SEP where only employer contributes)</li>
+    <li>Lower administrative burden than 401(k)</li>
+    <li>Immediate vesting for employees</li>
+  </ul>
+
+  <h3>Considerations</h3>
+  <ul>
+    <li>Lower contribution limits than Solo 401(k) or SEP</li>
+    <li>25% penalty for withdrawals in first 2 years (vs. 10% for other accounts)</li>
+    <li>Can't have another retirement plan at the same business</li>
+  </ul>
+  <p>
+    For most solo freelancers, the Solo 401(k) or SEP IRA is a better choice. SIMPLE IRA makes sense
+    when you have employees who want to participate.
+  </p>
+
+  <!-- Traditional & Roth IRA -->
+  <h2 id="ira">Traditional and Roth IRA</h2>
+  <p>
+    IRAs are the simplest retirement accounts and make excellent supplements to employer-style plans.
+  </p>
+
+  <h3>Contribution Limits (2024)</h3>
+  <ul>
+    <li><strong>Maximum:</strong> $7,000 ($8,000 if 50+)</li>
+    <li>Combined limit across Traditional and Roth IRAs</li>
+  </ul>
+
+  <h3>Traditional IRA</h3>
+  <ul>
+    <li><strong>Tax benefit:</strong> Deductible contribution, taxable withdrawals</li>
+    <li><strong>Deductibility:</strong> If you have no workplace plan, fully deductible at any income</li>
+    <li><strong>Required distributions:</strong> Must begin at age 73</li>
+  </ul>
+
+  <h3>Roth IRA</h3>
+  <ul>
+    <li><strong>Tax benefit:</strong> No deduction now, tax-free withdrawals in retirement</li>
+    <li><strong>Income limits:</strong> Phase-out starts at $146,000 (single) / $230,000 (married)</li>
+    <li><strong>Flexibility:</strong> Contributions (not earnings) can be withdrawn anytime tax-free</li>
+    <li><strong>No required distributions:</strong> Can let it grow for life</li>
+  </ul>
+
+  <h3>Backdoor Roth</h3>
+  <p>
+    If your income exceeds Roth IRA limits, you can use the "backdoor" strategy:
+  </p>
+  <ol>
+    <li>Contribute to a non-deductible Traditional IRA</li>
+    <li>Convert to Roth IRA</li>
+    <li>Pay taxes only on any gains (minimal if done quickly)</li>
+  </ol>
+  <p>
+    This is legal but requires proper documentation. Consult a tax professional if you have existing
+    Traditional IRA balances (pro-rata rule applies).
+  </p>
+
+  <!-- Comparison Table -->
+  <h2 id="comparison">Comparison: Which Is Right for You?</h2>
+  <div class="overflow-x-auto my-6">
+    <table class="w-full text-sm">
+      <thead>
+      <tr class="border-b border-white/20">
+        <th class="text-left py-3 px-4 text-white font-semibold">Feature</th>
+        <th class="text-left py-3 px-4 text-white font-semibold">Solo 401(k)</th>
+        <th class="text-left py-3 px-4 text-white font-semibold">SEP IRA</th>
+        <th class="text-left py-3 px-4 text-white font-semibold">SIMPLE IRA</th>
+        <th class="text-left py-3 px-4 text-white font-semibold">IRA</th>
+      </tr>
+      </thead>
+      <tbody class="text-white/80">
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4 font-medium">2024 Max Contribution</td>
+        <td class="py-3 px-4">$69,000</td>
+        <td class="py-3 px-4">$69,000</td>
+        <td class="py-3 px-4">$19,500</td>
+        <td class="py-3 px-4">$7,000</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4 font-medium">Catch-up (50+)</td>
+        <td class="py-3 px-4">$7,500</td>
+        <td class="py-3 px-4">None</td>
+        <td class="py-3 px-4">$3,500</td>
+        <td class="py-3 px-4">$1,000</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4 font-medium">Roth Option</td>
+        <td class="py-3 px-4">Yes (some plans)</td>
+        <td class="py-3 px-4">No</td>
+        <td class="py-3 px-4">No</td>
+        <td class="py-3 px-4">Yes</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4 font-medium">Contribution Deadline</td>
+        <td class="py-3 px-4">Dec 31 / Tax filing</td>
+        <td class="py-3 px-4">Tax filing + extensions</td>
+        <td class="py-3 px-4">Dec 31</td>
+        <td class="py-3 px-4">Tax filing (no ext.)</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4 font-medium">Annual Filing</td>
+        <td class="py-3 px-4">Form 5500-SF if >$250k</td>
+        <td class="py-3 px-4">None</td>
+        <td class="py-3 px-4">None</td>
+        <td class="py-3 px-4">None</td>
+      </tr>
+      <tr class="border-b border-white/10">
+        <td class="py-3 px-4 font-medium">Best For</td>
+        <td class="py-3 px-4">High earners</td>
+        <td class="py-3 px-4">Simplicity</td>
+        <td class="py-3 px-4">Teams</td>
+        <td class="py-3 px-4">Supplement</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Quick Decision Guide</h3>
+  <ul>
+    <li><strong>Income under $50,000:</strong> Start with Traditional or Roth IRA</li>
+    <li><strong>Income $50,000-150,000:</strong> SEP IRA for simplicity, Solo 401(k) for maximum savings</li>
+    <li><strong>Income over $150,000:</strong> Solo 401(k) to maximize the $69,000 limit</li>
+    <li><strong>Have employees:</strong> SEP (simple) or SIMPLE IRA (employee participation)</li>
+    <li><strong>Want Roth option:</strong> Solo 401(k) with Roth feature or separate Roth IRA</li>
+  </ul>
+
+  <!-- How to Open -->
+  <h2 id="how-to-open">How to Open Each Account Type</h2>
+
+  <h3>Opening a Solo 401(k)</h3>
+  <ol>
+    <li>Choose a provider (Fidelity, Schwab, Vanguard recommended)</li>
+    <li>Complete plan adoption agreement (online, 15-30 minutes)</li>
+    <li>Provide EIN (or SSN for sole proprietors)</li>
+    <li>Fund the account via transfer or check</li>
+    <li>Choose investments (target date funds are simple starting point)</li>
+  </ol>
+  <p>
+    <strong>Deadline:</strong> Plan must be established by December 31 of the tax year for which you want
+    to make employee contributions.
+  </p>
+
+  <h3>Opening a SEP IRA</h3>
+  <ol>
+    <li>Choose a provider with SEP IRA option</li>
+    <li>Complete IRS Form 5305-SEP (usually done through provider)</li>
+    <li>Open the SEP IRA account</li>
+    <li>Fund and invest</li>
+  </ol>
+  <p>
+    <strong>Deadline:</strong> Can be opened and funded up to tax filing deadline including extensions.
+  </p>
+
+  <h3>Opening a Traditional or Roth IRA</h3>
+  <ol>
+    <li>Choose any brokerage (Fidelity, Schwab, Vanguard, etc.)</li>
+    <li>Open account online (10 minutes)</li>
+    <li>Link bank account</li>
+    <li>Fund and invest</li>
+  </ol>
+  <p>
+    <strong>Deadline:</strong> April 15 (tax filing deadline, no extensions) for prior year contributions.
+  </p>
+
+  <!-- Automation -->
+  <h2 id="automation">Automation Strategies</h2>
+  <p>
+    The best retirement plan is one you actually follow. Automation removes willpower from the equation.
+  </p>
+
+  <h3>Percentage of Income</h3>
+  <p>
+    Commit to saving a percentage of every payment:
+  </p>
+  <ul>
+    <li><strong>Minimum:</strong> 10-15% of gross income</li>
+    <li><strong>Ideal:</strong> 20-25% if you started late or want to retire early</li>
+    <li>Transfer the percentage immediately when paid, before spending</li>
+  </ul>
+
+  <h3>Automated Transfers</h3>
+  <ul>
+    <li>Set up automatic monthly transfers from checking to retirement account</li>
+    <li>If income varies, use a conservative base amount and top up manually</li>
+    <li>Some brokerages allow percentage-based or recurring transfers</li>
+  </ul>
+
+  <h3>Pay Yourself First</h3>
+  <p>
+    Structure your finances so retirement contributions happen first:
+  </p>
+  <ol>
+    <li>Client pays you</li>
+    <li>Retirement contribution transfers automatically</li>
+    <li>Taxes set aside (25-30%)</li>
+    <li>Remaining goes to operating/personal accounts</li>
+  </ol>
+
+  <h3>Quarterly True-Up</h3>
+  <p>
+    Review contributions quarterly:
+  </p>
+  <ul>
+    <li>Calculate year-to-date income</li>
+    <li>Project full-year income</li>
+    <li>Adjust contributions to maximize limits without over-contributing</li>
+  </ul>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <h2>Conclusion: Start Today</h2>
+  <p>
+    The best time to start saving for retirement was years ago. The second best time is today.
+  </p>
+  <p>
+    <strong>Your action plan:</strong>
+  </p>
+  <ul>
+    <li>Choose an account type based on your income (Solo 401(k) for most earning $50k+)</li>
+    <li>Open an account this week (Fidelity, Schwab, or Vanguard—all free)</li>
+    <li>Set up automatic contributions (start with what's comfortable)</li>
+    <li>Increase contributions when income grows</li>
+  </ul>
+  <p>
+    Your future self is counting on the decisions you make today. Don't let the freedom of freelancing
+    become a liability in retirement—let it become the vehicle that builds real wealth.
+  </p>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

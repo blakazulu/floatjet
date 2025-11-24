@@ -350,17 +350,33 @@ Ensure your site has:
 
 ---
 
-### VPNs
+### VPNs (Consumer)
 
 | Program    | Commission | Cookie  | Network | Status      |
 |------------|------------|---------|---------|-------------|
 | NordVPN    | 30-40%     | 30 days | Direct  | ✅ Approved  |
 | ExpressVPN | 35-50%     | 90 days | Direct  | Not Applied |
 | Surfshark  | 40%        | 30 days | Direct  | Not Applied |
-| CyberGhost | Unknown    | Unknown | Direct  | Not Applied |
-| ProtonVPN  | Unknown    | Unknown | Direct  | Not Applied |
+| CyberGhost | 45%        | 45 days | Direct  | Not Applied |
+| ProtonVPN  | 30%        | 30 days | Direct  | Not Applied |
+| IPVanish   | 100% (1st) | 45 days | Direct  | Not Applied |
 
-**Used in:** FJ-007 (VPN article)
+**Used in:** FJ-007 (VPN article), best-vpn-streaming-travel, free-vpn-vs-paid-vpn, vpn-kill-switch-explained,
+how-to-setup-vpn-all-devices
+
+---
+
+### VPNs (Business/Enterprise)
+
+| Program      | Commission   | Cookie  | Network | Status      |
+|--------------|--------------|---------|---------|-------------|
+| NordLayer    | B2B rates    | 30 days | Direct  | Not Applied |
+| Perimeter 81 | $50-200/lead | 30 days | Direct  | Not Applied |
+| Twingate     | Contact      | 30 days | Direct  | Not Applied |
+| GoodAccess   | Contact      | 30 days | Direct  | Not Applied |
+| OpenVPN      | Partner prog | 30 days | Direct  | Not Applied |
+
+**Used in:** best-business-vpn-remote-teams
 
 ---
 

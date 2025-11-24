@@ -1,0 +1,447 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+import AffiliateButton from '@components/article/AffiliateButton.astro';
+
+// Article metadata
+const title = 'How to Migrate Your Website Without Downtime (2025)';
+const description = 'Step-by-step guide to migrating your website to a new host without downtime. Covers backups, DNS changes, testing, and common migration mistakes.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-24');
+const readingTime = 12;
+const image = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Website migration and data transfer concept';
+
+// Table of contents headings
+const headings = [
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Pre-Migration Checklist', slug: 'pre-migration-checklist', depth: 2},
+  {text: 'Step 1: Backup Everything', slug: 'backup-everything', depth: 2},
+  {text: 'Step 2: Set Up New Hosting', slug: 'setup-new-hosting', depth: 2},
+  {text: 'Step 3: Transfer Files and Database', slug: 'transfer-files', depth: 2},
+  {text: 'Step 4: Test on Temporary URL', slug: 'test-temporary-url', depth: 2},
+  {text: 'Step 5: Update DNS Settings', slug: 'update-dns', depth: 2},
+  {text: 'Step 6: Monitor After Migration', slug: 'monitor-after', depth: 2},
+  {text: 'Common Migration Mistakes', slug: 'common-mistakes', depth: 2},
+  {text: 'When to Hire a Professional', slug: 'hire-professional', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+];
+
+// FAQ data
+const faqItems = [
+  {
+    question: 'How long does a website migration take?',
+    answer: 'A simple WordPress site can be migrated in 1-2 hours. Complex e-commerce sites with large databases may take 4-8 hours. DNS propagation (the time for your domain to point to the new server) can take up to 48 hours, though it is usually much faster.'
+  },
+  {
+    question: 'Will my website go down during migration?',
+    answer: 'Not if done correctly. By testing on a temporary URL before updating DNS, and keeping your old hosting active during DNS propagation, you can achieve zero downtime. The technique is called "parallel hosting."'
+  },
+  {
+    question: 'Do I need to re-install WordPress after migrating?',
+    answer: 'No. Migration involves copying your existing WordPress installation (files + database) to the new server. Everything transfers including themes, plugins, settings, and content. You should not need to reinstall anything.'
+  },
+  {
+    question: 'What happens to my email during migration?',
+    answer: 'If your email is hosted with your web hosting, you will need to migrate email accounts too. Consider using dedicated email hosting (Google Workspace, Microsoft 365) to keep email separate from web hosting and avoid this complexity.'
+  },
+  {
+    question: 'Should I cancel my old hosting immediately after migration?',
+    answer: 'No. Keep your old hosting active for at least 1-2 weeks after migration. This ensures you have a backup if something goes wrong and allows DNS to fully propagate. Cancel only after confirming everything works correctly.'
+  },
+  {
+    question: 'Will migration affect my SEO rankings?',
+    answer: 'A properly executed migration should not affect SEO. Ensure all URLs remain the same, 301 redirects are in place for any changed URLs, your sitemap is updated, and you resubmit to Google Search Console. Temporary minor fluctuations are normal.'
+  },
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Best Web Hosting for Remote Businesses',
+    excerpt: 'Found a better host? Compare the best options for your migration.',
+    href: '/tools/best-web-hosting-remote-business',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=80',
+    imageAlt: 'Server room infrastructure'
+  },
+  {
+    title: 'Best VPS Hosting for Remote Businesses',
+    excerpt: 'Upgrading to VPS? Here are the best options to migrate to.',
+    href: '/tools/best-vps-hosting-remote-business',
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=400&q=80',
+    imageAlt: 'VPS server infrastructure'
+  },
+  {
+    title: 'Website Speed Optimization Guide',
+    excerpt: 'After migration, optimize your new site for maximum speed.',
+    href: '/tools/website-speed-optimization-guide',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80',
+    imageAlt: 'Website performance dashboard'
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    headings={headings}
+    category="Hosting"
+    categorySlug="tools/hosting"
+>
+  <!-- Introduction -->
+  <section id="introduction">
+    <p class="lead">
+      Migrating your website to a new host can seem scary, but it does not have to be. With the right approach, you can
+      move your site with zero downtime and zero data loss.
+    </p>
+    <p>
+      This guide walks you through every step of a website migration, from backing up your files to monitoring your new
+      setup. Whether you are moving a simple blog or a complex WooCommerce store, these steps ensure a smooth
+      transition.
+    </p>
+  </section>
+
+  <!-- Pre-Migration Checklist -->
+  <section id="pre-migration-checklist">
+    <h2>Pre-Migration Checklist</h2>
+    <p>Before starting your migration, complete this checklist:</p>
+
+    <div class="bg-white/5 border border-white/10 rounded-lg p-6 my-6">
+      <ul class="text-white/70 space-y-3">
+        <li class="flex items-start">
+          <span class="text-jet-stream mr-2">[ ]</span>
+          <span><strong>Document your current setup:</strong> PHP version, plugins, themes, any custom configurations</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-jet-stream mr-2">[ ]</span>
+          <span><strong>Check new host compatibility:</strong> Same or higher PHP version, required extensions, enough storage</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-jet-stream mr-2">[ ]</span>
+          <span><strong>Know your DNS provider:</strong> Login credentials for Cloudflare, your registrar, or whoever manages DNS</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-jet-stream mr-2">[ ]</span>
+          <span><strong>Plan the timing:</strong> Choose a low-traffic period (late night or weekend)</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-jet-stream mr-2">[ ]</span>
+          <span><strong>Disable caching plugins temporarily:</strong> They can cause issues during migration</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-jet-stream mr-2">[ ]</span>
+          <span><strong>Note active subscriptions:</strong> SSL certificates, CDN, email hosting tied to old server</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Step 1: Backup Everything -->
+  <section id="backup-everything">
+    <h2>Step 1: Backup Everything</h2>
+    <p>
+      Create complete backups of both your files and database. This is your safety net if anything goes wrong.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">For WordPress Sites</h3>
+    <div class="space-y-4 my-6">
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Option 1: Use a Plugin (Easiest)</h4>
+        <p class="text-white/70 text-sm mt-2">Install UpdraftPlus or All-in-One WP Migration. Create a complete backup
+          and download to your computer. These plugins can also restore directly to your new server.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Option 2: Manual Backup</h4>
+        <p class="text-white/70 text-sm mt-2">Download all files via FTP/SFTP (or use File Manager in cPanel). Export
+          your database using phpMyAdmin. Store both in a safe location.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Option 3: Use Host's Backup</h4>
+        <p class="text-white/70 text-sm mt-2">Many hosts provide one-click backups. Download the backup file - do not
+          rely on their storage alone.</p>
+      </div>
+    </div>
+
+    <div class="bg-jet-stream/20 border border-jet-stream/40 rounded-lg p-4 my-6">
+      <h4 class="text-white font-semibold">Important</h4>
+      <p class="text-white/70 text-sm mt-2">Verify your backup by checking file sizes and that the database export is
+        complete. A corrupted backup is useless when you need it.</p>
+    </div>
+  </section>
+
+  <!-- Step 2: Set Up New Hosting -->
+  <section id="setup-new-hosting">
+    <h2>Step 2: Set Up New Hosting</h2>
+    <p>
+      Prepare your new hosting environment before transferring any files.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Setup Checklist</h3>
+    <ul class="text-white/80 space-y-2 ml-4">
+      <li><strong>Create a hosting account</strong> if you have not already</li>
+      <li><strong>Add your domain</strong> to the new host (do not change DNS yet)</li>
+      <li><strong>Create a database</strong> with the same name, user, and password as your old one (or note the new
+        credentials)
+      </li>
+      <li><strong>Match PHP version</strong> to your current setup (or upgrade if compatible)</li>
+      <li><strong>Get temporary URL</strong> for testing (many hosts provide this automatically)</li>
+    </ul>
+
+    <p class="mt-4">
+      Most quality hosts offer free migration assistance. Before doing it yourself, check if your new host will handle
+      the migration for you.
+    </p>
+
+    <div class="mt-6">
+      <AffiliateButton
+          href="/go/siteground"
+          text="SiteGround: Free Migration Included"
+          subtext="Expert team handles your move"
+      />
+    </div>
+  </section>
+
+  <!-- Step 3: Transfer Files and Database -->
+  <section id="transfer-files">
+    <h2>Step 3: Transfer Files and Database</h2>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Transfer Files</h3>
+    <div class="space-y-4 my-6">
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Using FTP/SFTP</h4>
+        <p class="text-white/70 text-sm mt-2">Connect to your new server using FileZilla or similar. Upload all files to
+          the public_html (or www) directory. This can take hours for large sites.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Using File Manager</h4>
+        <p class="text-white/70 text-sm mt-2">Upload your backup ZIP file through cPanel's File Manager, then extract
+          it. Faster than FTP for most connections.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Using Migration Plugin</h4>
+        <p class="text-white/70 text-sm mt-2">Install WordPress on the new server, then use All-in-One WP Migration or
+          UpdraftPlus to import your backup. Often the easiest method.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Import Database</h3>
+    <ol class="text-white/80 space-y-2 ml-4 list-decimal">
+      <li>Access phpMyAdmin on your new server</li>
+      <li>Select your new database</li>
+      <li>Click "Import" and choose your database backup file (.sql)</li>
+      <li>Click "Go" and wait for import to complete</li>
+    </ol>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Update Configuration</h3>
+    <p>
+      For WordPress, edit wp-config.php to update database credentials if they changed:
+    </p>
+    <div class="bg-white/5 border border-white/10 rounded-lg p-4 my-4 font-mono text-sm text-white/70">
+      define('DB_NAME', 'new_database_name');<br/>
+      define('DB_USER', 'new_database_user');<br/>
+      define('DB_PASSWORD', 'new_password');<br/>
+      define('DB_HOST', 'localhost');
+    </div>
+  </section>
+
+  <!-- Step 4: Test on Temporary URL -->
+  <section id="test-temporary-url">
+    <h2>Step 4: Test on Temporary URL</h2>
+    <p>
+      Before changing DNS, thoroughly test your site on the new server using a temporary URL or hosts file modification.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Testing Methods</h3>
+    <div class="space-y-4 my-6">
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Temporary URL (Easiest)</h4>
+        <p class="text-white/70 text-sm mt-2">Most hosts provide a temporary URL like yoursite.tempurl.host. Use this to
+          browse your migrated site before going live.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Hosts File Method</h4>
+        <p class="text-white/70 text-sm mt-2">Edit your computer's hosts file to point your domain to the new server IP.
+          This lets you test with your actual domain without affecting anyone else.</p>
+      </div>
+    </div>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">What to Test</h3>
+    <ul class="text-white/80 space-y-2 ml-4">
+      <li>[ ] Homepage loads correctly</li>
+      <li>[ ] All pages/posts are accessible</li>
+      <li>[ ] Images and media display properly</li>
+      <li>[ ] Forms work (contact forms, search)</li>
+      <li>[ ] Login/admin access works</li>
+      <li>[ ] E-commerce checkout process (if applicable)</li>
+      <li>[ ] SSL certificate is active</li>
+      <li>[ ] No broken links</li>
+    </ul>
+  </section>
+
+  <!-- Step 5: Update DNS Settings -->
+  <section id="update-dns">
+    <h2>Step 5: Update DNS Settings</h2>
+    <p>
+      Once testing is complete, update your DNS to point to the new server. This is when the switch happens.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">How to Update DNS</h3>
+    <ol class="text-white/80 space-y-2 ml-4 list-decimal">
+      <li>Log into your DNS provider (registrar or Cloudflare)</li>
+      <li>Find your domain's DNS records</li>
+      <li>Update the A record to your new server's IP address</li>
+      <li>Update any CNAME records if needed</li>
+      <li>Lower TTL to 300 seconds before migration (speeds up propagation)</li>
+      <li>Save changes and wait for propagation</li>
+    </ol>
+
+    <div class="bg-jet-stream/20 border border-jet-stream/40 rounded-lg p-4 my-6">
+      <h4 class="text-white font-semibold">DNS Propagation</h4>
+      <p class="text-white/70 text-sm mt-2">DNS changes can take up to 48 hours to propagate globally, though it is
+        usually 1-4 hours. During this time, some visitors may see the old site while others see the new one. This is
+        normal.</p>
+    </div>
+
+    <p>
+      Use <a href="https://dnschecker.org" target="_blank" rel="noopener" class="text-jet-stream hover:underline">dnschecker.org</a>
+      to monitor propagation progress globally.
+    </p>
+  </section>
+
+  <!-- Step 6: Monitor After Migration -->
+  <section id="monitor-after">
+    <h2>Step 6: Monitor After Migration</h2>
+    <p>
+      Your job is not done after DNS updates. Monitor closely for the first few days.
+    </p>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Post-Migration Checklist</h3>
+    <ul class="text-white/80 space-y-2 ml-4">
+      <li>[ ] Verify SSL certificate is active on the new server</li>
+      <li>[ ] Check Google Search Console for crawl errors</li>
+      <li>[ ] Monitor uptime with a tool like UptimeRobot</li>
+      <li>[ ] Test all critical functionality again</li>
+      <li>[ ] Check email delivery if hosted with web hosting</li>
+      <li>[ ] Update any hardcoded URLs in content</li>
+      <li>[ ] Re-enable caching plugins</li>
+      <li>[ ] Clear all caches (server, CDN, browser)</li>
+    </ul>
+
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Keep Old Hosting Active</h3>
+    <p>
+      Keep your old hosting account active for 1-2 weeks after migration. This provides a safety net and ensures DNS has
+      fully propagated before you lose access to the old server.
+    </p>
+  </section>
+
+  <!-- Common Migration Mistakes -->
+  <section id="common-mistakes">
+    <h2>Common Migration Mistakes</h2>
+    <p>Avoid these frequent errors that cause migration failures:</p>
+
+    <div class="space-y-4 my-6">
+      <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Not Creating a Backup First</h4>
+        <p class="text-white/70 text-sm mt-2">Never start migration without a verified backup. If something goes wrong,
+          you need a way to restore your site.</p>
+      </div>
+      <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Changing DNS Before Testing</h4>
+        <p class="text-white/70 text-sm mt-2">Always test on a temporary URL first. Switching DNS to a broken site means
+          downtime for all visitors.</p>
+      </div>
+      <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Forgetting to Update wp-config.php</h4>
+        <p class="text-white/70 text-sm mt-2">Database credentials often change. Update wp-config.php with the new
+          database name, user, and password.</p>
+      </div>
+      <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Canceling Old Hosting Too Soon</h4>
+        <p class="text-white/70 text-sm mt-2">DNS propagation takes time. Keep old hosting active for at least 2 weeks
+          to avoid any disruption.</p>
+      </div>
+      <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Forgetting About Email</h4>
+        <p class="text-white/70 text-sm mt-2">If email is hosted with your web hosting, you need to migrate email
+          accounts and update MX records. Consider moving to dedicated email hosting to avoid this in future
+          migrations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- When to Hire a Professional -->
+  <section id="hire-professional">
+    <h2>When to Hire a Professional</h2>
+    <p>
+      Consider hiring migration help if:
+    </p>
+
+    <ul class="text-white/80 space-y-2 ml-4 my-4">
+      <li>Your site is large (10GB+ files or 1GB+ database)</li>
+      <li>You run a complex e-commerce store with active orders</li>
+      <li>You have custom server configurations</li>
+      <li>Downtime would cost significant revenue</li>
+      <li>You are not comfortable with FTP and databases</li>
+    </ul>
+
+    <p>
+      Many hosting companies offer free migration. If yours does not, professional migration services typically cost
+      $50-200 for standard WordPress sites.
+    </p>
+
+    <div class="mt-6">
+      <AffiliateButton
+          href="/go/cloudways"
+          text="Cloudways: Free Expert Migration"
+          subtext="Their team handles everything"
+      />
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <FAQSection faqs={faqItems}/>
+  </section>
+
+  <!-- Conclusion -->
+  <section id="conclusion">
+    <h2>Conclusion</h2>
+    <p>
+      Website migration does not have to be stressful. The key is preparation: backup everything, test before switching
+      DNS, and keep your old hosting active during the transition.
+    </p>
+    <p>
+      If you follow this guide step by step, you can migrate your website with zero downtime and zero data loss. Take
+      your time with testing, and do not hesitate to use your new host's migration assistance if available.
+    </p>
+    <p>
+      Once migrated, do not forget to optimize your new setup. A fresh start on better hosting is the perfect
+      opportunity to implement speed optimizations.
+    </p>
+
+    <div class="bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-jet-stream/30 rounded-xl p-6 mt-6">
+      <p class="text-white font-semibold">Ready to Migrate?</p>
+      <p class="text-white/70 text-sm mt-2">SiteGround offers free professional migration with every hosting plan.</p>
+      <div class="mt-4">
+        <AffiliateButton
+            href="/go/siteground"
+            text="Get Free Migration"
+            subtext="Plus 83% off hosting"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <RelatedArticles articles={relatedArticles}/>
+</ArticleLayout>

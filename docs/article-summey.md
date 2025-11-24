@@ -2,7 +2,7 @@
 
 This document contains a comprehensive list of all articles on the FloatJet website.
 
-**Total Articles:** 92 (excluding index/category pages)
+**Total Articles:** 97 (excluding index/category pages)
 
 ---
 
@@ -102,6 +102,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 090 | Is Notion Worth It? Honest Review for Remote Workers (2025)                | SaaS          | Tools    | /tools/is-notion-worth-it                        |             |
 | 091 | Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)                | SaaS          | Tools    | /tools/notion-vs-clickup-vs-monday               |             |
 | 092 | Best VPNs for Digital Nomads & Remote Workers (2025)                       | VPN           | Tools    | /tools/best-vpn-digital-nomads                   |             |
+| 093 | Best VPN for Streaming While Traveling (2025)                              | VPN           | Tools    | /tools/best-vpn-streaming-travel                 |             |
+| 094 | Best Business VPN Solutions for Remote Teams (2025)                        | VPN           | Tools    | /tools/best-business-vpn-remote-teams            |             |
+| 095 | Free VPN vs Paid VPN: What Remote Workers Need to Know (2025)              | VPN           | Tools    | /tools/free-vpn-vs-paid-vpn                      |             |
+| 096 | How to Set Up a VPN on All Your Devices (2025)                             | VPN           | Tools    | /tools/how-to-setup-vpn-all-devices              |             |
+| 097 | VPN Kill Switch Explained: Why Remote Workers Need It (2025)               | VPN           | Tools    | /tools/vpn-kill-switch-explained                 |             |
 
 ---
 
@@ -112,8 +117,8 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | Blog      | 16     |
 | Gear      | 23     |
 | Guides    | 30     |
-| Tools     | 23     |
-| **Total** | **92** |
+| Tools     | 28     |
+| **Total** | **97** |
 
 ## Summary by Sub-Category
 
@@ -127,7 +132,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | Setup         | 6     |
 | Hosting       | 7     |
 | SaaS          | 13    |
-| VPN           | 1     |
+| VPN           | 6     |
 | Audio         | 7     |
 | Furniture     | 6     |
 | Computers     | 6     |

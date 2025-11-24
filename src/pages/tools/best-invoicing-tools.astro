@@ -1,0 +1,504 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import {FAQSection, RelatedArticles} from '../../components/article';
+
+const title = 'Best Invoicing Tools for Remote Professionals in 2025';
+const description = 'Compare the top invoicing software for freelancers and remote workers. Get paid faster with professional invoices, automatic reminders, and online payments.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2024-12-25');
+const readingTime = 15;
+const image = 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Invoice documents and payment processing';
+
+const headings = [
+  {depth: 2, slug: 'why-invoicing-software', text: 'Why You Need Invoicing Software'},
+  {depth: 2, slug: 'essential-features', text: 'Essential Invoicing Features'},
+  {depth: 2, slug: 'top-picks', text: 'Top 8 Invoicing Tools'},
+  {depth: 2, slug: 'comparison-table', text: 'Feature Comparison'},
+  {depth: 2, slug: 'payment-gateways', text: 'Payment Gateway Integrations'},
+  {depth: 2, slug: 'automation-features', text: 'Automation Features'},
+  {depth: 2, slug: 'multi-currency', text: 'Multi-Currency Support'},
+  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+];
+
+const faqData = [
+  {
+    question: 'What\'s the best free invoicing software?',
+    answer: 'Wave and Invoice Ninja are the best free options. Wave offers unlimited free invoicing with payment processing fees only when accepting online payments. Invoice Ninja is open-source and free forever, with a paid hosted version available for convenience.'
+  },
+  {
+    question: 'How do automatic payment reminders work?',
+    answer: 'You set up rules like "send reminder 3 days before due date" and "send follow-up 7 days after due date." The software automatically emails clients with your customized message. Most tools let you customize reminder frequency, tone, and whether to include late fees.'
+  },
+  {
+    question: 'Should invoicing software integrate with my accounting software?',
+    answer: 'Yes, if you use separate tools. Integration eliminates double-entry and keeps your books accurate. If you use an all-in-one solution like FreshBooks or QuickBooks, integration is built-in. For standalone invoicing tools, check for your accounting software in their integrations list.'
+  },
+  {
+    question: 'What payment methods should I offer on invoices?',
+    answer: 'At minimum: credit/debit card and bank transfer (ACH). These cover 95% of clients. Add PayPal if clients prefer it. For international clients, offer Wise or multi-currency options. More payment options = faster payment, so enable whatever your invoicing tool supports.'
+  },
+  {
+    question: 'How can I get clients to pay faster?',
+    answer: 'Enable online payments (cards pay 2x faster than checks). Send invoices immediately upon project completion. Use automatic reminders before and after due dates. Offer early payment discounts (2% net 10). Make sure invoices are clear with obvious payment buttons.'
+  },
+  {
+    question: 'What should be included on a professional invoice?',
+    answer: 'Required: Your business name and contact info, client name and contact, unique invoice number, invoice date and due date, itemized services with descriptions and amounts, total amount due, and payment instructions. Recommended: Payment terms, late fee policy, and thank you note.'
+  }
+];
+
+const relatedArticles = [
+  {
+    title: 'Best Accounting Software for Freelancers',
+    excerpt: 'Complete guide to bookkeeping tools for the self-employed.',
+    href: '/tools/best-accounting-software-freelancers',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Calculator and financial documents'
+  },
+  {
+    title: 'How to Accept International Payments',
+    excerpt: 'Get paid from clients anywhere in the world.',
+    href: '/tools/accept-international-payments-freelancer',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'International currency and payments'
+  },
+  {
+    title: 'Invoice Payment Terms Guide',
+    excerpt: 'Set the right payment terms to get paid on time.',
+    href: '/guides/invoice-payment-terms-guide',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Payment terms documentation'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Finance"
+    categorySlug="tools/finance"
+    headings={headings}
+>
+  <p class="lead">
+    Getting paid shouldn't be the hardest part of freelancing. Professional invoicing
+    software helps you send polished invoices, accept payments online, and chase down
+    late payers automatically—so you can focus on the work instead of the paperwork.
+  </p>
+
+  <h2 id="why-invoicing-software">Why You Need Invoicing Software</h2>
+
+  <p>
+    Still sending invoices from Word documents or spreadsheets? Here's what you're missing:
+  </p>
+
+  <ul>
+    <li><strong>Faster payments:</strong> Online payment buttons get you paid 2x faster than "mail a check"</li>
+    <li><strong>Professional image:</strong> Branded invoices build trust and credibility</li>
+    <li><strong>Automatic reminders:</strong> Stop awkwardly chasing payments manually</li>
+    <li><strong>Payment tracking:</strong> Know instantly who owes you and when</li>
+    <li><strong>Time tracking integration:</strong> Bill hourly work accurately</li>
+    <li><strong>Tax preparation:</strong> All income documented and organized</li>
+  </ul>
+
+  <p>
+    The right invoicing tool pays for itself by reducing late payments and saving hours
+    of administrative work each month.
+  </p>
+
+  <h2 id="essential-features">Essential Invoicing Features</h2>
+
+  <h3>Must-Have Features</h3>
+  <ul>
+    <li><strong>Online payments:</strong> Accept credit cards and bank transfers</li>
+    <li><strong>Automatic reminders:</strong> Before and after due dates</li>
+    <li><strong>Invoice templates:</strong> Professional, customizable designs</li>
+    <li><strong>Recurring invoices:</strong> For retainer clients</li>
+    <li><strong>Expense tracking:</strong> Attach billable expenses to invoices</li>
+    <li><strong>Mobile app:</strong> Create and send invoices anywhere</li>
+  </ul>
+
+  <h3>Nice-to-Have Features</h3>
+  <ul>
+    <li><strong>Time tracking:</strong> Track and bill hours automatically</li>
+    <li><strong>Client portal:</strong> Clients view invoice history and pay</li>
+    <li><strong>Proposals and estimates:</strong> Convert to invoices with one click</li>
+    <li><strong>Multi-currency:</strong> Bill international clients in their currency</li>
+    <li><strong>Late fees:</strong> Automatically add late payment charges</li>
+    <li><strong>Deposits:</strong> Request upfront payment on estimates</li>
+  </ul>
+
+  <h2 id="top-picks">Top 8 Invoicing Tools</h2>
+
+  <h3>1. FreshBooks — Best Overall</h3>
+  <p>
+    FreshBooks sets the standard for invoicing software. Originally built for invoicing
+    (before expanding into accounting), it remains the best tool for getting paid quickly
+    and professionally.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Beautiful, customizable invoice templates</li>
+    <li>Automatic late payment reminders</li>
+    <li>Built-in time tracking</li>
+    <li>Client portal for viewing and paying invoices</li>
+    <li>Deposits and retainers on proposals</li>
+    <li>Multiple payment options (card, bank, PayPal)</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> $17/month (5 clients), $30/month (50 clients), $55/month (unlimited)</p>
+
+  <p><strong>Best For:</strong> Service-based freelancers who value professional presentation</p>
+
+  <h3>2. Invoice Ninja — Best Free/Open-Source</h3>
+  <p>
+    Invoice Ninja is completely free and open-source. You can self-host or use their
+    hosted version. It's feature-rich despite being free, making it the best choice
+    for budget-conscious freelancers.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Unlimited invoices and clients—free</li>
+    <li>Proposals, quotes, and recurring invoices</li>
+    <li>Multiple payment gateway support</li>
+    <li>Time tracking and project management</li>
+    <li>Client portal</li>
+    <li>Custom invoice designs with HTML/CSS</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> Free (self-hosted or basic hosted), $10/month (Ninja Pro), $14/month (Enterprise)</p>
+
+  <p><strong>Best For:</strong> Developers or anyone who wants free, full-featured invoicing</p>
+
+  <h3>3. Bonsai — Best for Contracts + Invoices</h3>
+  <p>
+    Bonsai combines contracts, proposals, and invoicing in one freelance-focused platform.
+    If you need to send contracts before you send invoices, Bonsai streamlines the entire flow.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Contract templates with e-signatures</li>
+    <li>Proposals that convert to contracts and invoices</li>
+    <li>Automatic payment reminders</li>
+    <li>Time tracking integrated with invoicing</li>
+    <li>Tax estimates based on your income</li>
+    <li>Client management and CRM features</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> $21/month (Starter), $32/month (Professional), $52/month (Business)</p>
+
+  <p><strong>Best For:</strong> Freelancers who need contracts and invoices in one place</p>
+
+  <h3>4. HoneyBook — Best for Client Management</h3>
+  <p>
+    HoneyBook is a client management platform with excellent invoicing built in. It's
+    popular with creatives who want to manage the entire client relationship, from
+    inquiry to final payment.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Beautiful proposals with service packages</li>
+    <li>Contracts with e-signatures</li>
+    <li>Invoicing with payment plans</li>
+    <li>Scheduling and client questionnaires</li>
+    <li>Workflow automation</li>
+    <li>Mobile app for client communication</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> $16/month (Starter), $32/month (Essentials), $66/month (Premium)</p>
+
+  <p><strong>Best For:</strong> Photographers, designers, and creatives managing client relationships</p>
+
+  <h3>5. PayPal Invoicing — Best for Simplicity</h3>
+  <p>
+    If you already have a PayPal Business account, PayPal Invoicing is free and dead
+    simple. It's not as feature-rich as dedicated tools, but it works for basic needs
+    without adding another subscription.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Simple invoice creation</li>
+    <li>Automatic payment reminders</li>
+    <li>Accept PayPal and card payments</li>
+    <li>No monthly fee (just transaction fees)</li>
+    <li>Mobile invoice creation</li>
+    <li>Invoice tracking and status updates</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> Free (2.99% + $0.49 per transaction)</p>
+
+  <p><strong>Best For:</strong> Freelancers with simple invoicing needs who already use PayPal</p>
+
+  <h3>6. Square Invoices — Best for In-Person + Online</h3>
+  <p>
+    Square Invoices is free and integrates with Square's point-of-sale system. If you
+    do any in-person work alongside remote freelancing, Square handles both seamlessly.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Free invoicing software</li>
+    <li>Accept cards, bank transfers, Cash App</li>
+    <li>Recurring invoices</li>
+    <li>Contracts with e-signatures (Plus plan)</li>
+    <li>POS integration for in-person payments</li>
+    <li>Customer directory</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> Free (2.9% + $0.30 per transaction), $20/month (Plus)</p>
+
+  <p><strong>Best For:</strong> Freelancers who mix remote and in-person work</p>
+
+  <h3>7. Zoho Invoice — Best Value</h3>
+  <p>
+    Zoho Invoice offers professional invoicing at very competitive prices. It's part of
+    the larger Zoho ecosystem, so it integrates well if you use other Zoho products.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Professional invoice templates</li>
+    <li>Time tracking and project billing</li>
+    <li>Multiple payment gateways</li>
+    <li>Client portal</li>
+    <li>Multi-currency and multi-language</li>
+    <li>Workflow automation rules</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> Free (limited), $9/month (Basic), $19/month (Standard), $29/month (Professional)</p>
+
+  <p><strong>Best For:</strong> Budget-conscious freelancers wanting professional features</p>
+
+  <h3>8. Harvest — Best for Time Tracking + Invoicing</h3>
+  <p>
+    Harvest is primarily a time tracking tool with excellent invoicing built in. If
+    you bill hourly and time tracking is critical to your workflow, Harvest excels at
+    turning tracked time into invoices.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Excellent time tracking with timers</li>
+    <li>Turn time entries into invoices automatically</li>
+    <li>Team time tracking (for agencies)</li>
+    <li>Expense tracking with receipts</li>
+    <li>Detailed project reports</li>
+    <li>Integrations with 50+ tools</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> Free (1 seat, 2 projects), $12/seat/month (Pro)</p>
+
+  <p><strong>Best For:</strong> Hourly freelancers who need tight time tracking integration</p>
+
+  <h2 id="comparison-table">Feature Comparison</h2>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full">
+      <thead>
+      <tr>
+        <th>Tool</th>
+        <th>Starting Price</th>
+        <th>Time Tracking</th>
+        <th>Contracts</th>
+        <th>Client Portal</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><strong>FreshBooks</strong></td>
+        <td>$17/mo</td>
+        <td>Yes</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><strong>Invoice Ninja</strong></td>
+        <td>Free</td>
+        <td>Yes</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><strong>Bonsai</strong></td>
+        <td>$21/mo</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><strong>HoneyBook</strong></td>
+        <td>$16/mo</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><strong>PayPal</strong></td>
+        <td>Free</td>
+        <td>No</td>
+        <td>No</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td><strong>Square</strong></td>
+        <td>Free</td>
+        <td>No</td>
+        <td>Plus only</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td><strong>Zoho Invoice</strong></td>
+        <td>Free</td>
+        <td>Yes</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><strong>Harvest</strong></td>
+        <td>Free</td>
+        <td>Yes</td>
+        <td>No</td>
+        <td>No</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="payment-gateways">Payment Gateway Integrations</h2>
+
+  <p>
+    The payment methods you offer directly impact how fast you get paid. Here's what
+    each tool supports:
+  </p>
+
+  <h3>Payment Methods by Platform</h3>
+  <ul>
+    <li><strong>FreshBooks:</strong> Stripe, PayPal, cards, bank transfer (ACH)</li>
+    <li><strong>Invoice Ninja:</strong> Stripe, PayPal, Authorize.net, Braintree, and 40+ gateways</li>
+    <li><strong>Bonsai:</strong> Stripe, PayPal, ACH</li>
+    <li><strong>HoneyBook:</strong> Stripe (built-in), bank transfer</li>
+    <li><strong>PayPal:</strong> PayPal, cards (via PayPal)</li>
+    <li><strong>Square:</strong> Square, Cash App, Afterpay</li>
+    <li><strong>Zoho Invoice:</strong> PayPal, Stripe, Authorize.net, and more</li>
+    <li><strong>Harvest:</strong> Stripe, PayPal</li>
+  </ul>
+
+  <h3>Transaction Fee Comparison</h3>
+  <div class="overflow-x-auto">
+    <table class="min-w-full">
+      <thead>
+      <tr>
+        <th>Gateway</th>
+        <th>Card Fee</th>
+        <th>ACH/Bank Fee</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><strong>Stripe</strong></td>
+        <td>2.9% + $0.30</td>
+        <td>0.8% (max $5)</td>
+      </tr>
+      <tr>
+        <td><strong>PayPal</strong></td>
+        <td>2.99% + $0.49</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <td><strong>Square</strong></td>
+        <td>2.9% + $0.30</td>
+        <td>1% (min $1)</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="automation-features">Automation Features</h2>
+
+  <h3>Automatic Payment Reminders</h3>
+  <p>
+    Set it and forget it. The best tools send reminders without your intervention:
+  </p>
+  <ul>
+    <li><strong>Before due date:</strong> "Your invoice is due in 3 days"</li>
+    <li><strong>On due date:</strong> "Your payment is due today"</li>
+    <li><strong>After due date:</strong> "Your invoice is 7 days overdue"</li>
+    <li><strong>Escalation:</strong> Increasingly firm reminders over time</li>
+  </ul>
+
+  <h3>Recurring Invoices</h3>
+  <p>
+    Perfect for retainer clients or subscription services. Create once, sends automatically:
+  </p>
+  <ul>
+    <li>Set frequency (weekly, monthly, quarterly)</li>
+    <li>Choose number of occurrences or ongoing</li>
+    <li>Auto-charge saved payment methods (some tools)</li>
+  </ul>
+
+  <h3>Late Fee Automation</h3>
+  <p>
+    Some tools automatically add late fees based on your policies:
+  </p>
+  <ul>
+    <li>Percentage-based (1.5% per month)</li>
+    <li>Flat fee ($25 late fee)</li>
+    <li>Automatic application to overdue invoices</li>
+  </ul>
+
+  <h2 id="multi-currency">Multi-Currency Support</h2>
+
+  <p>
+    Working with international clients? Multi-currency invoicing is essential:
+  </p>
+
+  <h3>Best Multi-Currency Support</h3>
+  <ul>
+    <li><strong>Invoice Ninja:</strong> 90+ currencies, automatic exchange rates</li>
+    <li><strong>Zoho Invoice:</strong> 180+ currencies, multi-currency reports</li>
+    <li><strong>FreshBooks:</strong> Bill in any currency, client-specific defaults</li>
+    <li><strong>Xero:</strong> Advanced multi-currency accounting</li>
+  </ul>
+
+  <h3>Key Multi-Currency Features</h3>
+  <ul>
+    <li>Invoice in client's local currency</li>
+    <li>Receive payment in your preferred currency</li>
+    <li>Automatic exchange rate updates</li>
+    <li>Track realized gains/losses (for accounting)</li>
+  </ul>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqData}/>
+
+  <h2>Our Recommendations</h2>
+
+  <ul>
+    <li><strong>Best Overall:</strong> FreshBooks — Professional, fast payments, great UX</li>
+    <li><strong>Best Free:</strong> Invoice Ninja — Full features, no cost</li>
+    <li><strong>Best for Contracts:</strong> Bonsai — Contracts, proposals, and invoicing together</li>
+    <li><strong>Best for Creatives:</strong> HoneyBook — Beautiful client experience</li>
+    <li><strong>Best for Hourly:</strong> Harvest — Time tracking built for invoicing</li>
+  </ul>
+
+  <p>
+    Choose based on your primary need: FreshBooks for professional invoicing, Bonsai if
+    contracts matter, HoneyBook for client relationships, or Harvest if time tracking
+    is central to your workflow.
+  </p>
+
+  <RelatedArticles articles={relatedArticles}/>
+</ArticleLayout>

@@ -1,0 +1,401 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import {FAQSection, RelatedArticles} from '../../components/article';
+
+const title = 'Wise vs PayPal vs Payoneer: Which Is Best for Remote Workers? (2025)';
+const description = 'Compare Wise, PayPal, and Payoneer for international payments. We break down fees, exchange rates, speed, and features to help freelancers choose the right platform.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2024-12-25');
+const readingTime = 10;
+const image = 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'International payment platforms comparison';
+
+const headings = [
+  {depth: 2, slug: 'quick-answer', text: 'Quick Answer: Which Should You Use?'},
+  {depth: 2, slug: 'wise-overview', text: 'Wise Overview'},
+  {depth: 2, slug: 'paypal-overview', text: 'PayPal Overview'},
+  {depth: 2, slug: 'payoneer-overview', text: 'Payoneer Overview'},
+  {depth: 2, slug: 'fee-comparison', text: 'Head-to-Head Fee Comparison'},
+  {depth: 2, slug: 'currency-support', text: 'Currency Support'},
+  {depth: 2, slug: 'transfer-speed', text: 'Speed of Transfers'},
+  {depth: 2, slug: 'best-use-cases', text: 'Best Use Cases'},
+  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+];
+
+const faqData = [
+  {
+    question: 'Which platform has the lowest fees overall?',
+    answer: 'Wise has the lowest fees for most currency conversions (0.35-1%). PayPal is the most expensive (4-6% total with conversion). Payoneer falls in the middle (1-3%). For receiving payments without conversion, Wise and Payoneer are both free.'
+  },
+  {
+    question: 'Can I use multiple platforms at once?',
+    answer: 'Yes, and you probably should. Use Wise for best exchange rates, offer PayPal for client convenience, and Payoneer if it integrates with your freelance platforms. Each has strengths in different scenarios.'
+  },
+  {
+    question: 'Which is safest for large payments?',
+    answer: 'All three are regulated financial institutions and safe for large payments. Wise is UK-regulated, PayPal is US-regulated, and Payoneer is US-regulated. For very large amounts, some freelancers prefer traditional bank wires for the paper trail.'
+  },
+  {
+    question: 'Which works best with freelance platforms like Upwork?',
+    answer: 'Payoneer has direct integrations with Upwork, Fiverr, Airbnb, and many other platforms. PayPal is also widely supported. Wise is less commonly integrated but works via bank transfer withdrawal.'
+  },
+  {
+    question: 'Can I hold multiple currencies in these accounts?',
+    answer: 'Wise: Yes, 50+ currencies with local bank details for many. PayPal: Limited multi-currency (can hold balances in some currencies). Payoneer: Yes, major currencies with receiving accounts.'
+  },
+  {
+    question: 'Which has the best mobile app?',
+    answer: 'All three have solid mobile apps. PayPal\'s is most polished and feature-complete. Wise\'s is clean and easy to use. Payoneer\'s is functional but less refined. For day-to-day use, all work well.'
+  }
+];
+
+const relatedArticles = [
+  {
+    title: 'How to Accept International Payments',
+    excerpt: 'Complete guide to getting paid by international clients.',
+    href: '/tools/accept-international-payments-freelancer',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'International currency and payments'
+  },
+  {
+    title: 'Best Banking for Digital Nomads',
+    excerpt: 'Compare banking options for remote workers.',
+    href: '/blog/best-banking-digital-nomads',
+    image: 'https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Digital banking on mobile device'
+  },
+  {
+    title: 'Crypto-Friendly Banks',
+    excerpt: 'Banks that work with cryptocurrency for digital nomads.',
+    href: '/blog/crypto-friendly-banks',
+    image: 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Cryptocurrency and banking'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Finance"
+    categorySlug="tools/finance"
+    headings={headings}
+>
+  <p class="lead">
+    Wise, PayPal, and Payoneer are the three giants of international payments for freelancers.
+    Each has different strengths—and vastly different fees. Here's a straight comparison to
+    help you choose.
+  </p>
+
+  <h2 id="quick-answer">Quick Answer: Which Should You Use?</h2>
+
+  <ul>
+    <li><strong>Use Wise if:</strong> You want the best exchange rates and lowest fees</li>
+    <li><strong>Use PayPal if:</strong> Clients prefer it and convenience matters more than cost</li>
+    <li><strong>Use Payoneer if:</strong> You work on freelance platforms that integrate with it</li>
+  </ul>
+
+  <p>
+    <strong>Our recommendation:</strong> Set up all three. Use Wise as your default for best
+    rates, offer PayPal for clients who prefer it, and Payoneer for platform-based work.
+  </p>
+
+  <h2 id="wise-overview">Wise Overview</h2>
+
+  <h3>What Is Wise?</h3>
+  <p>
+    Wise (formerly TransferWise) is a UK-based fintech that offers the mid-market exchange
+    rate with transparent, low fees. It's built specifically for international transfers
+    and multi-currency management.
+  </p>
+
+  <h3>Pros</h3>
+  <ul>
+    <li><strong>Best exchange rates:</strong> Uses real mid-market rate</li>
+    <li><strong>Transparent fees:</strong> See exact cost before sending</li>
+    <li><strong>Multi-currency accounts:</strong> Hold 50+ currencies</li>
+    <li><strong>Local bank details:</strong> Get local account numbers in 10+ countries</li>
+    <li><strong>Wise card:</strong> Spend in any currency at interbank rates</li>
+    <li><strong>Fast transfers:</strong> Most arrive in 1-2 days</li>
+  </ul>
+
+  <h3>Cons</h3>
+  <ul>
+    <li><strong>Less recognized:</strong> Some clients don't know Wise</li>
+    <li><strong>No buyer protection:</strong> Unlike PayPal for disputes</li>
+    <li><strong>Limited integrations:</strong> Not built into many platforms</li>
+    <li><strong>Verification required:</strong> ID verification for all users</li>
+  </ul>
+
+  <h3>Fees</h3>
+  <ul>
+    <li><strong>Currency conversion:</strong> 0.35-1.0% (varies by currency)</li>
+    <li><strong>Receiving money:</strong> Free for most currencies</li>
+    <li><strong>Sending money:</strong> Small fee + conversion fee</li>
+    <li><strong>Debit card:</strong> Free up to limits, small fees after</li>
+  </ul>
+
+  <h2 id="paypal-overview">PayPal Overview</h2>
+
+  <h3>What Is PayPal?</h3>
+  <p>
+    PayPal is the world's most recognized online payment platform. Nearly everyone has an
+    account, making it the easiest way to receive payments—but that convenience comes at a cost.
+  </p>
+
+  <h3>Pros</h3>
+  <ul>
+    <li><strong>Universal recognition:</strong> Clients already have accounts</li>
+    <li><strong>Instant payments:</strong> Money available immediately</li>
+    <li><strong>Buyer/seller protection:</strong> Dispute resolution</li>
+    <li><strong>Pay by email:</strong> Just need recipient's email</li>
+    <li><strong>Invoicing built-in:</strong> Create and send invoices free</li>
+    <li><strong>Business features:</strong> Checkout buttons, subscriptions</li>
+  </ul>
+
+  <h3>Cons</h3>
+  <ul>
+    <li><strong>High fees:</strong> 4-6% total on international payments</li>
+    <li><strong>Poor exchange rates:</strong> 3-4% markup on conversions</li>
+    <li><strong>Account limitations:</strong> Can freeze funds during disputes</li>
+    <li><strong>Withdrawal delays:</strong> Standard withdrawal takes days</li>
+    <li><strong>Fee complexity:</strong> Hard to know exact cost upfront</li>
+  </ul>
+
+  <h3>Fees</h3>
+  <ul>
+    <li><strong>Receiving (international):</strong> 4.4% + fixed fee</li>
+    <li><strong>Currency conversion:</strong> 3-4% above mid-market rate</li>
+    <li><strong>Withdrawal to bank:</strong> Free (standard) or 1% (instant)</li>
+    <li><strong>Invoicing:</strong> Free to create, standard fees to receive</li>
+  </ul>
+
+  <h2 id="payoneer-overview">Payoneer Overview</h2>
+
+  <h3>What Is Payoneer?</h3>
+  <p>
+    Payoneer is a payment platform focused on freelancers and marketplaces. It's the preferred
+    withdrawal method for many platforms like Upwork, Fiverr, Amazon, and Airbnb.
+  </p>
+
+  <h3>Pros</h3>
+  <ul>
+    <li><strong>Platform integrations:</strong> Direct withdrawal from Upwork, Fiverr, etc.</li>
+    <li><strong>Receiving accounts:</strong> Get local bank details in multiple currencies</li>
+    <li><strong>Reasonable fees:</strong> Lower than PayPal for most uses</li>
+    <li><strong>Prepaid Mastercard:</strong> Spend balance worldwide</li>
+    <li><strong>Request payments:</strong> Request from clients without integration</li>
+    <li><strong>Mass payments:</strong> Pay multiple people at once</li>
+  </ul>
+
+  <h3>Cons</h3>
+  <ul>
+    <li><strong>Higher conversion fees than Wise:</strong> Up to 2% markup</li>
+    <li><strong>Withdrawal fees:</strong> $1.50-3 per withdrawal</li>
+    <li><strong>Annual fee possible:</strong> If account inactive</li>
+    <li><strong>Less intuitive:</strong> Interface isn't as polished</li>
+    <li><strong>Slower transfers:</strong> 2-5 days typical</li>
+  </ul>
+
+  <h3>Fees</h3>
+  <ul>
+    <li><strong>Receiving (bank transfer):</strong> Free</li>
+    <li><strong>Receiving (credit card):</strong> 3%</li>
+    <li><strong>Currency conversion:</strong> Up to 2%</li>
+    <li><strong>Withdrawal to bank:</strong> $1.50-3.00</li>
+    <li><strong>Payoneer card:</strong> Free, ATM fees apply</li>
+  </ul>
+
+  <h2 id="fee-comparison">Head-to-Head Fee Comparison</h2>
+
+  <p>
+    For a $1,000 USD payment from a US client to a UK freelancer wanting GBP:
+  </p>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full">
+      <thead>
+      <tr>
+        <th>Platform</th>
+        <th>Receiving Fee</th>
+        <th>Conversion Fee</th>
+        <th>Total Cost</th>
+        <th>You Receive</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="bg-green-500/10">
+        <td><strong>Wise</strong></td>
+        <td>$0</td>
+        <td>~$5 (0.5%)</td>
+        <td><strong>~$5</strong></td>
+        <td><strong>~£790</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Payoneer</strong></td>
+        <td>$0</td>
+        <td>~$20 (2%)</td>
+        <td>~$22</td>
+        <td>~£778</td>
+      </tr>
+      <tr>
+        <td><strong>PayPal</strong></td>
+        <td>$44 (4.4%)</td>
+        <td>~$30 (3%)</td>
+        <td>~$74</td>
+        <td>~£737</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="text-sm text-white/60">
+    *Based on approximate exchange rate of £1 = $1.26. Green row indicates best value.
+  </p>
+
+  <p>
+    <strong>The difference:</strong> On $1,000, you receive £53 more with Wise than PayPal.
+    Over a year with $50,000 in international payments, that's over £2,600 saved.
+  </p>
+
+  <h2 id="currency-support">Currency Support</h2>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full">
+      <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Wise</th>
+        <th>PayPal</th>
+        <th>Payoneer</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Currencies Supported</td>
+        <td>50+</td>
+        <td>25+</td>
+        <td>150+</td>
+      </tr>
+      <tr>
+        <td>Multi-Currency Balance</td>
+        <td>Yes (50+)</td>
+        <td>Limited</td>
+        <td>Yes (8)</td>
+      </tr>
+      <tr>
+        <td>Local Bank Details</td>
+        <td>10+ countries</td>
+        <td>No</td>
+        <td>4+ countries</td>
+      </tr>
+      <tr>
+        <td>Exchange Rate Quality</td>
+        <td>Excellent</td>
+        <td>Poor</td>
+        <td>Good</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="transfer-speed">Speed of Transfers</h2>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full">
+      <thead>
+      <tr>
+        <th>Platform</th>
+        <th>Payment to Account</th>
+        <th>Withdrawal to Bank</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><strong>PayPal</strong></td>
+        <td>Instant</td>
+        <td>3-5 days (standard) / instant for 1%</td>
+      </tr>
+      <tr>
+        <td><strong>Wise</strong></td>
+        <td>1-2 days</td>
+        <td>Same day to 2 days</td>
+      </tr>
+      <tr>
+        <td><strong>Payoneer</strong></td>
+        <td>1-3 days</td>
+        <td>2-5 days</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    PayPal wins on instant availability. Wise is fastest for total time from payment to
+    your bank. Payoneer is slowest overall.
+  </p>
+
+  <h2 id="best-use-cases">Best Use Cases</h2>
+
+  <h3>Use Wise When:</h3>
+  <ul>
+    <li>You want the best exchange rates (always)</li>
+    <li>Receiving regular payments from international clients</li>
+    <li>You need to hold multiple currencies</li>
+    <li>Making international payments yourself</li>
+    <li>You travel and need a multi-currency card</li>
+  </ul>
+
+  <h3>Use PayPal When:</h3>
+  <ul>
+    <li>Client strongly prefers PayPal</li>
+    <li>One-time, smaller payments where convenience matters</li>
+    <li>You need buyer/seller protection</li>
+    <li>Selling products with checkout buttons</li>
+    <li>Clients in countries with limited Wise coverage</li>
+  </ul>
+
+  <h3>Use Payoneer When:</h3>
+  <ul>
+    <li>Working on Upwork, Fiverr, or integrated platforms</li>
+    <li>Need to request payments from clients</li>
+    <li>Want receiving accounts in multiple currencies</li>
+    <li>Making mass payments to contractors</li>
+    <li>Need a prepaid card for expenses</li>
+  </ul>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqData}/>
+
+  <h2>Final Verdict</h2>
+
+  <p>
+    <strong>For most freelancers, Wise is the best primary platform.</strong> The exchange
+    rates alone justify using it over PayPal for any significant amount of international work.
+  </p>
+
+  <p>
+    That said, a smart strategy is using all three:
+  </p>
+
+  <ul>
+    <li><strong>Wise:</strong> Default payment method, provide local bank details to clients</li>
+    <li><strong>PayPal:</strong> Alternative for clients who prefer it, build fees into rates</li>
+    <li><strong>Payoneer:</strong> Withdraw earnings from freelance platforms</li>
+  </ul>
+
+  <p>
+    This combination gives you the best rates when possible while accommodating client
+    preferences and platform requirements.
+  </p>
+
+  <RelatedArticles articles={relatedArticles}/>
+</ArticleLayout>

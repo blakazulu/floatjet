@@ -1,0 +1,462 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import {FAQSection, RelatedArticles} from '../../components/article';
+
+const title = 'Best Expense Tracking Apps for Digital Nomads in 2025';
+const description = 'Compare the top expense tracking apps for freelancers and digital nomads. Track expenses, scan receipts, and maximize tax deductions with the right tool.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2024-12-25');
+const readingTime = 14;
+const image = 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=1200&q=80';
+const imageAlt = 'Receipt and expense tracking on mobile device';
+
+const headings = [
+  {depth: 2, slug: 'why-expense-tracking', text: 'Why Expense Tracking Matters'},
+  {depth: 2, slug: 'what-to-look-for', text: 'What to Look For'},
+  {depth: 2, slug: 'top-picks', text: 'Top 8 Expense Tracking Apps'},
+  {depth: 2, slug: 'comparison-table', text: 'Feature Comparison'},
+  {depth: 2, slug: 'receipt-scanning', text: 'Receipt Scanning Accuracy'},
+  {depth: 2, slug: 'multi-currency', text: 'Multi-Currency for Nomads'},
+  {depth: 2, slug: 'integrations', text: 'Accounting Software Integrations'},
+  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+];
+
+const faqData = [
+  {
+    question: 'What expenses can freelancers deduct?',
+    answer: 'Common deductible expenses include: home office (rent/mortgage portion, utilities), equipment (computer, desk, chair), software subscriptions, internet and phone, professional development, travel for business, health insurance premiums, and business meals (50%). Keep receipts for everything over $75 and track all business expenses regardless of amount.'
+  },
+  {
+    question: 'Do I need to keep physical receipts?',
+    answer: 'The IRS accepts digital copies of receipts if they\'re legible and complete. Most expense apps create IRS-compliant digital records. Keep digital copies organized by year and category. For expenses over $75, you need documentation showing the amount, date, vendor, and business purpose.'
+  },
+  {
+    question: 'How do I handle expenses in foreign currencies?',
+    answer: 'Record expenses in the local currency when they occur, then convert to your home currency for tax reporting. Most expense apps handle this automatically using the exchange rate from the transaction date. Keep receipts showing both currencies if available.'
+  },
+  {
+    question: 'Should I use a separate credit card for business expenses?',
+    answer: 'Absolutely. Separating business and personal expenses makes tracking much easier, simplifies tax preparation, and provides a clear paper trail if audited. Use a dedicated business card or at minimum, one personal card exclusively for business.'
+  },
+  {
+    question: 'How far back should I keep expense records?',
+    answer: 'Keep records for at least 3 years from the date you file your return (or the due date, whichever is later). If you underreported income by more than 25%, the IRS can audit 6 years back. For assets like computers, keep records until 3 years after you dispose of them.'
+  },
+  {
+    question: 'What\'s the best expense tracker for digital nomads specifically?',
+    answer: 'Expensify or QuickBooks Self-Employed. Both handle multi-currency well, have reliable receipt scanning, and work offline. Expensify is better standalone; QuickBooks is better if you want integrated accounting and tax estimates.'
+  }
+];
+
+const relatedArticles = [
+  {
+    title: 'Best Accounting Software for Freelancers',
+    excerpt: 'Complete guide to bookkeeping tools for self-employed.',
+    href: '/tools/best-accounting-software-freelancers',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Accounting and financial documents'
+  },
+  {
+    title: 'Tax Tips for Remote Workers',
+    excerpt: 'Maximize deductions as a remote worker or digital nomad.',
+    href: '/blog/tax-tips-remote-workers',
+    image: 'https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Tax forms and calculator'
+  },
+  {
+    title: 'Multi-Currency Banking for Digital Nomads',
+    excerpt: 'Manage money across borders without losing to fees.',
+    href: '/guides/multi-currency-banking-nomads',
+    image: 'https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'International currency and banking'
+  }
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Finance"
+    categorySlug="tools/finance"
+    headings={headings}
+>
+  <p class="lead">
+    Every receipt you lose is money left on the table at tax time. Good expense tracking
+    turns scattered receipts into organized deductions—critical when you're working across
+    countries and currencies as a digital nomad.
+  </p>
+
+  <h2 id="why-expense-tracking">Why Expense Tracking Matters</h2>
+
+  <p>
+    As a freelancer or digital nomad, you're leaving money behind if you don't track expenses:
+  </p>
+
+  <ul>
+    <li><strong>Tax deductions:</strong> The average freelancer misses $3,000-5,000 in legitimate deductions annually
+    </li>
+    <li><strong>Business visibility:</strong> Know your true profit after expenses</li>
+    <li><strong>Client billing:</strong> Track reimbursable expenses accurately</li>
+    <li><strong>Audit protection:</strong> Documentation if the IRS comes calling</li>
+    <li><strong>Budget planning:</strong> Understand where your money goes</li>
+  </ul>
+
+  <p>
+    For digital nomads, tracking is even more important. Multi-currency spending, travel
+    costs, coworking memberships, and international tools all add up—and all may be deductible.
+  </p>
+
+  <h2 id="what-to-look-for">What to Look For</h2>
+
+  <h3>Essential Features</h3>
+  <ul>
+    <li><strong>Receipt scanning:</strong> Photograph receipts and extract data automatically</li>
+    <li><strong>Bank connection:</strong> Import transactions from cards and accounts</li>
+    <li><strong>Category management:</strong> Organize by expense type (travel, software, meals)</li>
+    <li><strong>Reports:</strong> Export for tax preparation</li>
+    <li><strong>Mobile app:</strong> Capture expenses anywhere</li>
+  </ul>
+
+  <h3>Digital Nomad Must-Haves</h3>
+  <ul>
+    <li><strong>Multi-currency:</strong> Track spending in any currency</li>
+    <li><strong>Offline mode:</strong> Works without internet</li>
+    <li><strong>Cloud sync:</strong> Access from any device</li>
+    <li><strong>Mileage tracking:</strong> For ground transportation</li>
+    <li><strong>OCR in multiple languages:</strong> Read receipts from different countries</li>
+  </ul>
+
+  <h2 id="top-picks">Top 8 Expense Tracking Apps</h2>
+
+  <h3>1. Expensify — Best Overall</h3>
+  <p>
+    Expensify is the gold standard for expense tracking. Its SmartScan technology reads
+    receipts accurately, and the app works seamlessly across personal and business use.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>SmartScan receipt capture (human-verified accuracy)</li>
+    <li>Automatic expense categorization</li>
+    <li>Credit card import and reconciliation</li>
+    <li>Multi-currency with automatic conversion</li>
+    <li>Mileage tracking with GPS</li>
+    <li>Integrations with QuickBooks, Xero, NetSuite</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> Free (10 SmartScans/month), $5/month (Collect), $9/month (Control)</p>
+
+  <p><strong>Best For:</strong> Freelancers who want best-in-class receipt scanning</p>
+
+  <h3>2. QuickBooks Self-Employed — Best for Tax Tracking</h3>
+  <p>
+    QuickBooks Self-Employed combines expense tracking with tax preparation. It automatically
+    categorizes expenses and calculates quarterly tax estimates—perfect for US freelancers.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Swipe to categorize personal vs business</li>
+    <li>Automatic expense categorization</li>
+    <li>Receipt capture with OCR</li>
+    <li>Quarterly tax estimates</li>
+    <li>Mileage tracking</li>
+    <li>Direct TurboTax integration</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> $15/month (Self-Employed), $25/month (Tax Bundle with TurboTax)</p>
+
+  <p><strong>Best For:</strong> US freelancers focused on tax optimization</p>
+
+  <h3>3. Wave — Best Free Option</h3>
+  <p>
+    Wave offers free expense tracking as part of its free accounting software. No limits,
+    no trial period—genuinely free for basic expense management.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Unlimited expense tracking—free</li>
+    <li>Bank and credit card connections</li>
+    <li>Receipt scanning via mobile app</li>
+    <li>Expense reports</li>
+    <li>Integration with Wave invoicing and accounting</li>
+    <li>Multi-currency support</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> Free</p>
+
+  <p><strong>Best For:</strong> Budget-conscious freelancers with basic needs</p>
+
+  <h3>4. YNAB (You Need A Budget) — Best for Budgeting</h3>
+  <p>
+    YNAB is a budgeting app first, expense tracker second. If you want to control spending
+    and plan finances—not just track after the fact—YNAB's methodology is transformative.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Zero-based budgeting methodology</li>
+    <li>Real-time bank sync</li>
+    <li>Goal tracking and planning</li>
+    <li>Expense reports by category</li>
+    <li>Multi-currency accounts</li>
+    <li>Educational resources and workshops</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> $14.99/month (or $99/year)</p>
+
+  <p><strong>Best For:</strong> Freelancers who want to budget proactively, not just track</p>
+
+  <h3>5. Zoho Expense — Best for Teams</h3>
+  <p>
+    Zoho Expense handles personal expense tracking well but shines for small teams with
+    approval workflows and policy enforcement. Part of the Zoho ecosystem.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Receipt scanning with OCR</li>
+    <li>Expense policies and approval workflows</li>
+    <li>Corporate card integration</li>
+    <li>Mileage tracking</li>
+    <li>Multi-currency support</li>
+    <li>Integration with Zoho Books and other accounting tools</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> Free (3 users), $4/user/month (Standard), $7/user/month (Premium)</p>
+
+  <p><strong>Best For:</strong> Small agencies or teams needing expense approval</p>
+
+  <h3>6. Shoeboxed — Best Receipt Scanning</h3>
+  <p>
+    Shoeboxed is obsessed with receipts. If you have a shoebox of paper receipts (we've
+    all been there), Shoeboxed will digitize, categorize, and make them tax-ready.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Mail-in service for physical receipts</li>
+    <li>Mobile app scanning</li>
+    <li>Human verification option for accuracy</li>
+    <li>IRS-accepted digital records</li>
+    <li>Export to accounting software</li>
+    <li>Receipt forwarding via email</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> $18/month (Startup), $36/month (Professional), $66/month (Business)</p>
+
+  <p><strong>Best For:</strong> Freelancers with lots of paper receipts to digitize</p>
+
+  <h3>7. Rydoo — Best for Travel Expenses</h3>
+  <p>
+    Rydoo is built for travel and expense management. It excels at per diem calculations,
+    mileage tracking, and multi-currency travel spending—ideal for digital nomads.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>AI-powered receipt scanning</li>
+    <li>Per diem calculations by country</li>
+    <li>Mileage tracking with maps</li>
+    <li>Multi-currency automatic conversion</li>
+    <li>Credit card integration</li>
+    <li>Compliance and policy settings</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> $10/user/month (Essentials), custom pricing (Enterprise)</p>
+
+  <p><strong>Best For:</strong> Digital nomads with heavy travel expenses</p>
+
+  <h3>8. Mint — Best Personal Finance Overview</h3>
+  <p>
+    Mint is free personal finance software that tracks all spending automatically. It's
+    not built for business, but works for freelancers who mix personal and business or
+    want a complete financial picture.
+  </p>
+
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Automatic bank account sync</li>
+    <li>Expense categorization</li>
+    <li>Budget creation and tracking</li>
+    <li>Bill reminders</li>
+    <li>Credit score monitoring</li>
+    <li>Free—completely</li>
+  </ul>
+
+  <p><strong>Pricing:</strong> Free</p>
+
+  <p><strong>Best For:</strong> Freelancers wanting complete personal + business overview</p>
+
+  <p><strong>Note:</strong> Intuit announced Mint will be discontinued in early 2024. Consider
+    Credit Karma or transitioning to YNAB as alternatives.</p>
+
+  <h2 id="comparison-table">Feature Comparison</h2>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full">
+      <thead>
+      <tr>
+        <th>App</th>
+        <th>Price</th>
+        <th>Receipt Scan</th>
+        <th>Multi-Currency</th>
+        <th>Bank Sync</th>
+        <th>Mileage</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><strong>Expensify</strong></td>
+        <td>Free/$5+</td>
+        <td>Excellent</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><strong>QuickBooks SE</strong></td>
+        <td>$15/mo</td>
+        <td>Good</td>
+        <td>Limited</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><strong>Wave</strong></td>
+        <td>Free</td>
+        <td>Good</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td><strong>YNAB</strong></td>
+        <td>$15/mo</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td><strong>Zoho Expense</strong></td>
+        <td>Free/$4+</td>
+        <td>Good</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><strong>Shoeboxed</strong></td>
+        <td>$18/mo</td>
+        <td>Excellent</td>
+        <td>Yes</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td><strong>Rydoo</strong></td>
+        <td>$10/mo</td>
+        <td>Excellent</td>
+        <td>Excellent</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="receipt-scanning">Receipt Scanning Accuracy</h2>
+
+  <p>
+    Receipt scanning uses OCR (Optical Character Recognition) to extract data. Quality varies:
+  </p>
+
+  <h3>Best Receipt Scanning</h3>
+  <ul>
+    <li><strong>Expensify SmartScan:</strong> Human-verified for accuracy, handles handwritten receipts</li>
+    <li><strong>Shoeboxed:</strong> Optional human verification, excellent for faded receipts</li>
+    <li><strong>Rydoo:</strong> AI-powered, handles multiple languages well</li>
+  </ul>
+
+  <h3>Tips for Better Scans</h3>
+  <ul>
+    <li>Photograph in good lighting with receipt flat</li>
+    <li>Capture the entire receipt including date and total</li>
+    <li>Scan immediately—thermal paper fades quickly</li>
+    <li>Add notes for unclear items while you remember</li>
+  </ul>
+
+  <h2 id="multi-currency">Multi-Currency for Nomads</h2>
+
+  <p>
+    Digital nomads deal with multiple currencies constantly. The best expense apps handle this:
+  </p>
+
+  <h3>Automatic Currency Conversion</h3>
+  <ul>
+    <li><strong>Expensify:</strong> Converts at date-of-purchase exchange rate</li>
+    <li><strong>Rydoo:</strong> Real-time rates with automatic conversion</li>
+    <li><strong>Wave:</strong> Multi-currency accounts and transactions</li>
+    <li><strong>YNAB:</strong> Multi-currency budgets and tracking</li>
+  </ul>
+
+  <h3>Tax Reporting in Home Currency</h3>
+  <p>
+    You'll need to report all income and expenses in your home currency for taxes. Make sure
+    your app can export reports in a single currency with proper exchange rate documentation.
+  </p>
+
+  <h2 id="integrations">Accounting Software Integrations</h2>
+
+  <p>
+    Your expense tracker should sync with your accounting software to avoid double entry:
+  </p>
+
+  <h3>QuickBooks Integration</h3>
+  <ul>
+    <li>Expensify, Zoho Expense, Shoeboxed all sync directly</li>
+    <li>QuickBooks Self-Employed is built-in</li>
+  </ul>
+
+  <h3>Xero Integration</h3>
+  <ul>
+    <li>Expensify, Zoho Expense, Rydoo all integrate</li>
+    <li>Receipt Bank (Dext) is popular with Xero users</li>
+  </ul>
+
+  <h3>FreshBooks Integration</h3>
+  <ul>
+    <li>Built-in expense tracking is solid</li>
+    <li>Expensify integration available</li>
+  </ul>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <FAQSection faqs={faqData}/>
+
+  <h2>Our Recommendations</h2>
+
+  <ul>
+    <li><strong>Best Overall:</strong> Expensify — Best receipt scanning, multi-currency, integrations</li>
+    <li><strong>Best for Tax:</strong> QuickBooks Self-Employed — Expense tracking + tax estimates</li>
+    <li><strong>Best Free:</strong> Wave — Full features at no cost</li>
+    <li><strong>Best for Nomads:</strong> Rydoo — Multi-currency, travel-focused, per diems</li>
+    <li><strong>Best for Budgeting:</strong> YNAB — Control spending, not just track it</li>
+  </ul>
+
+  <p>
+    Start tracking today. Every expense you capture is a potential tax deduction—the savings
+    compound throughout the year.
+  </p>
+
+  <RelatedArticles articles={relatedArticles}/>
+</ArticleLayout>

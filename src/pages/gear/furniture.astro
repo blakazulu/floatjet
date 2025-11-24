@@ -127,9 +127,9 @@ const topPicks = [
     </div>
 
     <!-- Articles Grid -->
-    <div class="max-w-4xl mx-auto mb-12">
+    <div class="mb-12">
       <h2 class="text-xl font-semibold text-white text-center mb-8">More Furniture Reviews</h2>
-      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {articles.map(article => (
           <a
             href={article.href}
@@ -144,10 +144,10 @@ const topPicks = [
                   </span>
                   <span class="text-white/40 text-xs">{article.readTime} min</span>
                 </div>
-                <h3 class="text-white font-semibold group-hover:text-jet-stream transition-colors mb-1 line-clamp-2">
+                <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
                   {article.title}
-                </h3>
-                <p class="text-white/60 text-sm line-clamp-2">{article.description}</p>
+                </h2>
+                <p class="text-white/70 text-sm">{article.description}</p>
               </div>
             </div>
             <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">

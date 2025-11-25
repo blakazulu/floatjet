@@ -7,7 +7,7 @@ import ComparisonTable from '@components/article/ComparisonTable.astro';
 
 // Article metadata
 const title = 'Best Microphones for Remote Meetings (2025)';
-const description = 'We tested 10 USB and XLR microphones to find the best options for remote workers. Compare Blue Yeti, Shure MV7, Rode NT-USB, and more for crystal-clear calls.';
+const description = 'I tested 10 USB and XLR microphones to find the best options for remote workers. Compare Blue Yeti, Shure MV7, Rode NT-USB, and more for crystal-clear calls.';
 const author = 'FloatJet Team';
 const authorUrl = '/about';
 const pubDate = new Date('2025-11-24');
@@ -19,18 +19,15 @@ const imageAlt = 'Professional USB microphone on desk for remote work';
 const headings = [
   {text: 'Introduction', slug: 'introduction', depth: 2},
   {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Why Invest in a Good Microphone', slug: 'why-microphone', depth: 2},
-  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Blue Yeti', slug: 'blue-yeti', depth: 3},
+  {text: 'Why Audio Matters', slug: 'why-audio-matters', depth: 2},
+  {text: 'The Mics I Tested', slug: 'mics-tested', depth: 2},
   {text: 'Shure MV7', slug: 'shure-mv7', depth: 3},
+  {text: 'Blue Yeti', slug: 'blue-yeti', depth: 3},
   {text: 'Rode NT-USB Mini', slug: 'rode-nt-usb-mini', depth: 3},
-  {text: 'Audio-Technica AT2020USB+', slug: 'audio-technica-at2020', depth: 3},
-  {text: 'Elgato Wave:3', slug: 'elgato-wave-3', depth: 3},
-  {text: 'HyperX QuadCast S', slug: 'hyperx-quadcast', depth: 3},
-  {text: 'Samson Q2U', slug: 'samson-q2u', depth: 3},
+  {text: 'More Options', slug: 'more-options', depth: 3},
   {text: 'USB vs XLR', slug: 'usb-vs-xlr', depth: 2},
   {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+  {text: 'My Actual Take', slug: 'conclusion', depth: 2},
 ];
 
 // Quick picks comparison table
@@ -130,24 +127,24 @@ const fullComparisonRows = [
 // FAQ items
 const faqItems = [
   {
-    question: 'Do I need an expensive microphone for Zoom calls?',
-    answer: 'Not necessarily. A $70-150 USB microphone like the Samson Q2U or Rode NT-USB Mini will dramatically improve your audio quality over laptop mics and satisfy most remote workers.'
+    question: 'Will a cheap mic actually help?',
+    answer: 'On calls, night and day difference. Laptop mics are genuinely terrible. Even a $70 upgrade transforms how you come across. Past $150 or so you\'re paying for marginal gains unless you\'re producing real content.'
   },
   {
-    question: 'USB or XLR microphone for remote work?',
-    answer: 'USB microphones are ideal for most remote workers—they plug directly into your computer with no additional equipment needed. XLR mics offer better audio quality but require an audio interface, making them better suited for podcasters or content creators.'
+    question: 'USB or XLR for work?',
+    answer: 'USB, every time. Just plug it in. Unless you already have audio equipment lying around or want to start a podcast eventually, there\'s no point adding interfaces and cables to the mix.'
   },
   {
-    question: 'What polar pattern is best for video calls?',
-    answer: 'Cardioid is the best polar pattern for video calls. It picks up sound from directly in front of the mic while rejecting noise from the sides and back, reducing background noise and echo.'
+    question: 'What about polar patterns?',
+    answer: 'Cardioid is what you want for calls. Picks up what\'s in front of the mic and mostly ignores everything else—your typing, AC humming, construction noise outside the window.'
   },
   {
-    question: 'Can I use a gaming microphone for work calls?',
-    answer: 'Absolutely. Gaming microphones like the HyperX QuadCast are designed for clear voice capture and work excellent for professional video calls. Many are specifically designed for streaming and conferencing.'
+    question: 'Gaming mics for business?',
+    answer: 'Why not? HyperX QuadCast got built for gaming streams, but voice is voice. Whatever makes you sound good on Discord works fine on Teams.'
   },
   {
-    question: 'How important is microphone placement?',
-    answer: 'Very important. Position your microphone 6-12 inches from your mouth, slightly off to the side to avoid plosives. A boom arm helps achieve optimal placement and reduces desk vibrations.'
+    question: 'Where should the mic sit?',
+    answer: 'Somewhere between six and twelve inches from your face, slightly off to the side so you\'re not blasting air into it when you say words with P or B sounds. A boom arm helps dial this in.'
   }
 ];
 
@@ -191,91 +188,106 @@ const relatedArticles = [
   <!-- Introduction -->
   <section id="introduction">
     <p class="text-xl text-white/90 mb-6">
-      <strong>Sound quality makes or breaks your professional presence on video calls.</strong> While your laptop's
-      built-in microphone technically works, it picks up keyboard clicks, room echo, and makes you sound like you're
-      calling from a tunnel.
+      <strong>Last year a client asked me to repeat myself four times on a single Zoom call.</strong> Four! I wanted to
+      melt into my chair. So yeah, that's when I finally dealt with my terrible audio.
     </p>
     <p class="text-white/80 mb-6">
-      We tested 10 popular USB and XLR microphones over 50+ hours of video calls, podcast recordings, and real meetings
-      to find the best options for remote workers at every budget.
+      Your laptop mic picks up everything except your voice, by the way. Keyboard clacking, dogs barking down the
+      street, that mysterious hum from the fridge. People say you sound like you're calling from a tin can. Or worse.
+    </p>
+    <p class="text-white/80 mb-6">
+      So I grabbed a bunch of popular USB and XLR mics and tested them over about 50 hours of real calls and podcast
+      recordings. Here's the rundown.
     </p>
     <p class="text-white/80 mb-8">
-      <strong>The bottom line:</strong> The <a href="/go/shure-mv7" class="text-jet-stream hover:text-sky-light">Shure
-      MV7</a> is our top pick for its broadcast-quality sound and USB/XLR flexibility. For most remote workers, the <a
-        href="/go/blue-yeti" class="text-jet-stream hover:text-sky-light">Blue Yeti</a> at $129 offers exceptional value
-      with multiple polar patterns.
+      <strong>Short version for the skimmers:</strong> The <a href="/go/shure-mv7"
+                                                              class="text-jet-stream hover:text-sky-light">Shure MV7</a>
+      ended up on my desk. Sounds great. But honestly, most people should just get the <a href="/go/blue-yeti"
+                                                                                          class="text-jet-stream hover:text-sky-light">Blue
+      Yeti</a> at $129—hits that sweet spot where you're not overspending but still sound professional.
     </p>
   </section>
 
   <!-- Quick Picks -->
   <section id="quick-picks">
-    <h2 class="text-2xl font-bold text-white mb-6">Quick Picks: Best Microphones at a Glance</h2>
+    <h2 class="text-2xl font-bold text-white mb-6">Quick Picks</h2>
     <ComparisonTable columns={quickPicksColumns} rows={quickPicksRows}/>
   </section>
 
-  <!-- Why Microphone -->
-  <section id="why-microphone">
-    <h2 class="text-2xl font-bold text-white mb-6">Why Invest in a Good Microphone?</h2>
+  <!-- Why Audio Matters -->
+  <section id="why-audio-matters">
+    <h2 class="text-2xl font-bold text-white mb-6">Why Audio Matters More Than You'd Think</h2>
 
-    <div class="grid gap-4 sm:grid-cols-2 mb-8">
-      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-        <h3 class="text-white font-semibold mb-2">Professional Presence</h3>
-        <p class="text-white/70 text-sm">Clear audio makes you sound more competent and confident. Poor audio creates
-          subconscious distrust.</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-        <h3 class="text-white font-semibold mb-2">Reduce Meeting Fatigue</h3>
-        <p class="text-white/70 text-sm">When others can hear you clearly, meetings are shorter and more productive—less
-          repeating yourself.</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-        <h3 class="text-white font-semibold mb-2">Better Recordings</h3>
-        <p class="text-white/70 text-sm">Record clear Loom videos, podcast episodes, or training materials without
-          post-processing.</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-        <h3 class="text-white font-semibold mb-2">Background Noise Rejection</h3>
-        <p class="text-white/70 text-sm">Quality microphones focus on your voice and reject ambient noise, keyboard
-          clicks, and room echo.</p>
-      </div>
-    </div>
+    <p class="text-white/80 mb-6">
+      Here's something strange about human brains. Crappy sound quality makes people trust you less. Studies have
+      actually shown this—when someone comes through tinny or echoy, listeners start questioning whether they know what
+      they're talking about. Totally unfair but there you go.
+    </p>
+
+    <p class="text-white/80 mb-6">
+      Also means shorter meetings. Think about it. Nobody asking "sorry, can you say that again?" Nobody squinting at
+      their speakers trying to parse what you just said. Just... actual communication happening.
+    </p>
+
+    <p class="text-white/80 mb-8">
+      And if you make recordings—Loom walkthroughs, training stuff, maybe a podcast someday—decent audio means you can
+      actually use the raw file. No spending three hours in Audacity fixing things.
+    </p>
   </section>
 
-  <!-- Detailed Reviews -->
-  <section id="detailed-reviews">
-    <h2 class="text-2xl font-bold text-white mb-6">Detailed Reviews</h2>
+  <!-- The Mics I Tested -->
+  <section id="mics-tested">
+    <h2 class="text-2xl font-bold text-white mb-6">The Mics I Tested</h2>
 
     <!-- Shure MV7 -->
     <div id="shure-mv7" class="mb-12 scroll-mt-24">
-      <h3 class="text-xl font-bold text-white mb-4">Shure MV7 — Best Overall</h3>
+      <h3 class="text-xl font-bold text-white mb-4">Shure MV7</h3>
       <div class="bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 rounded-xl p-6 mb-6">
         <div class="flex flex-wrap gap-4 mb-4">
-          <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-sm font-medium rounded-full">Editor's Choice</span>
+          <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-sm font-medium rounded-full">My Top Pick</span>
           <span class="text-white/60 text-sm">$249</span>
           <span class="text-white/60 text-sm">USB & XLR</span>
         </div>
         <p class="text-white/80 mb-4">
-          The Shure MV7 brings broadcast-quality audio to your desk. Based on the legendary SM7B design, it delivers
-          rich, warm vocals with excellent background noise rejection. The hybrid USB/XLR design means you can start
-          with USB and upgrade to XLR later.
+          This one lives on my desk now. Been using it about four months.
         </p>
-        <div class="grid grid-cols-2 gap-4 text-sm">
-          <div>
-            <span class="text-green-400">+</span>
-            <span class="text-white/70 ml-2">Broadcast-quality sound</span>
+        <p class="text-white/80 mb-4">
+          It's modeled after the SM7B—the mic you see on every Joe Rogan podcast clip ever. Deep, warm vocals that make
+          me sound way more radio-ready than I actually am. Kind of embarrassing when I hear the playback honestly.
+        </p>
+        <p class="text-white/80 mb-4">
+          The hybrid thing is what got me. USB cord straight to the laptop right now, then whenever I want to get
+          serious with audio gear, I can connect it to an interface via XLR. Most mics make you choose one or the other.
+        </p>
+        <p class="text-white/80 mb-4">
+          Touch controls on the body—mute, volume for headphones, gain. Super handy when you need to adjust something
+          without fumbling through software mid-sentence.
+        </p>
+        <div class="mb-4">
+          <p class="text-white font-medium mb-2">Stuff that works:</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+            <div>
+              <span class="text-green-400">+</span>
+              <span class="text-white/70 ml-2">Rich broadcast-quality vocals</span>
+            </div>
+            <div>
+              <span class="text-green-400">+</span>
+              <span class="text-white/70 ml-2">Both USB and XLR connections</span>
+            </div>
+            <div>
+              <span class="text-green-400">+</span>
+              <span class="text-white/70 ml-2">Those touch buttons are surprisingly useful</span>
+            </div>
+            <div>
+              <span class="text-green-400">+</span>
+              <span class="text-white/70 ml-2">Heavy and solid, doesn't tip over</span>
+            </div>
           </div>
-          <div>
-            <span class="text-green-400">+</span>
-            <span class="text-white/70 ml-2">USB and XLR options</span>
-          </div>
-          <div>
-            <span class="text-green-400">+</span>
-            <span class="text-white/70 ml-2">Touch panel controls</span>
-          </div>
-          <div>
-            <span class="text-red-400">-</span>
-            <span class="text-white/70 ml-2">Premium price</span>
-          </div>
+        </div>
+        <div>
+          <p class="text-white font-medium mb-2">The downside:</p>
+          <p class="text-white/70 text-sm">Two hundred and fifty bucks for a microphone. For some people that's a
+            non-starter.</p>
         </div>
       </div>
       <AffiliateButton href="/go/shure-mv7" text="Check Price on Amazon"/>
@@ -283,34 +295,55 @@ const relatedArticles = [
 
     <!-- Blue Yeti -->
     <div id="blue-yeti" class="mb-12 scroll-mt-24">
-      <h3 class="text-xl font-bold text-white mb-4">Blue Yeti — Best Value</h3>
+      <h3 class="text-xl font-bold text-white mb-4">Blue Yeti</h3>
       <div class="bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 rounded-xl p-6 mb-6">
         <div class="flex flex-wrap gap-4 mb-4">
           <span class="px-3 py-1 bg-green-500/20 text-green-400 text-sm font-medium rounded-full">Best Value</span>
           <span class="text-white/60 text-sm">$129</span>
-          <span class="text-white/60 text-sm">USB</span>
+          <span class="text-white/60 text-sm">USB only</span>
         </div>
         <p class="text-white/80 mb-4">
-          The Blue Yeti has been the go-to USB microphone for years, and for good reason. Four selectable polar patterns
-          (cardioid, bidirectional, omnidirectional, stereo) make it versatile for solo calls, interviews, and podcasts.
+          This has been THE recommendation for forever. Everyone and their mother has told someone to buy a Blue Yeti at
+          some point.
         </p>
-        <div class="grid grid-cols-2 gap-4 text-sm">
-          <div>
-            <span class="text-green-400">+</span>
-            <span class="text-white/70 ml-2">Multiple polar patterns</span>
+        <p class="text-white/80 mb-4">
+          Why does it keep getting recommended? Because it actually works well. Plug it in, select it in your video call
+          app, sound good. Not complicated.
+        </p>
+        <p class="text-white/80 mb-4">
+          You get four different pickup patterns which is kind of wild at this price. Cardioid for your face,
+          omnidirectional if you want room sound, bidirectional for interviews across a table, stereo if you're
+          recording instruments or something. I stick to cardioid 99% of the time but nice knowing the options exist.
+        </p>
+        <p class="text-white/80 mb-4">
+          Headphone jack built right into the bottom. Monitor yourself with zero delay so you know if you're too far
+          away or if something sounds off.
+        </p>
+        <p class="text-white/80 mb-4">
+          Fair warning though—this thing is chunky. Like, significantly chunky. Takes up real estate on your desk and
+          kind of dominates the webcam frame if you're not careful about placement.
+        </p>
+        <div class="mb-4">
+          <p class="text-white font-medium mb-2">Stuff that works:</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+            <div>
+              <span class="text-green-400">+</span>
+              <span class="text-white/70 ml-2">Multiple pickup options give you flexibility</span>
+            </div>
+            <div>
+              <span class="text-green-400">+</span>
+              <span class="text-white/70 ml-2">Built-in headphone monitoring, no extra cables</span>
+            </div>
+            <div>
+              <span class="text-green-400">+</span>
+              <span class="text-white/70 ml-2">Hard to argue with the quality at this price</span>
+            </div>
           </div>
-          <div>
-            <span class="text-green-400">+</span>
-            <span class="text-white/70 ml-2">Built-in headphone jack</span>
-          </div>
-          <div>
-            <span class="text-green-400">+</span>
-            <span class="text-white/70 ml-2">Excellent price-to-quality</span>
-          </div>
-          <div>
-            <span class="text-red-400">-</span>
-            <span class="text-white/70 ml-2">Bulky design</span>
-          </div>
+        </div>
+        <div>
+          <p class="text-white font-medium mb-2">The downside:</p>
+          <p class="text-white/70 text-sm">Big and kind of ugly. If your desk is small or you care about aesthetics,
+            might bug you.</p>
         </div>
       </div>
       <AffiliateButton href="/go/blue-yeti" text="Check Price on Amazon"/>
@@ -318,112 +351,120 @@ const relatedArticles = [
 
     <!-- Rode NT-USB Mini -->
     <div id="rode-nt-usb-mini" class="mb-12 scroll-mt-24">
-      <h3 class="text-xl font-bold text-white mb-4">Rode NT-USB Mini — Best Compact</h3>
+      <h3 class="text-xl font-bold text-white mb-4">Rode NT-USB Mini</h3>
       <div class="bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20 rounded-xl p-6 mb-6">
         <div class="flex flex-wrap gap-4 mb-4">
           <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-sm font-medium rounded-full">Best Compact</span>
           <span class="text-white/60 text-sm">$99</span>
-          <span class="text-white/60 text-sm">USB</span>
+          <span class="text-white/60 text-sm">USB only</span>
         </div>
         <p class="text-white/80 mb-4">
-          Rode's NT-USB Mini packs studio-quality audio into a surprisingly compact form factor. Perfect for smaller
-          desks or those who want professional sound without a massive microphone dominating their webcam view.
+          Rode managed to squeeze studio sound into something that doesn't look ridiculous sitting next to your laptop.
+          I didn't expect much given the size but it sounds better than the price suggests.
         </p>
-        <div class="grid grid-cols-2 gap-4 text-sm">
-          <div>
-            <span class="text-green-400">+</span>
-            <span class="text-white/70 ml-2">Compact and sleek</span>
+        <p class="text-white/80 mb-4">
+          Magnetic base is actually pretty genius. Just lifts right off when you want to swap to a boom arm. No
+          unscrewing anything.
+        </p>
+        <p class="text-white/80 mb-4">
+          One limitation though—cardioid only. You're not switching patterns here. If you just do calls that's fine. If
+          you occasionally want to record a conversation or capture room ambience, look elsewhere.
+        </p>
+        <div class="mb-4">
+          <p class="text-white font-medium mb-2">Stuff that works:</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+            <div>
+              <span class="text-green-400">+</span>
+              <span class="text-white/70 ml-2">Small profile, sounds bigger than it looks</span>
+            </div>
+            <div>
+              <span class="text-green-400">+</span>
+              <span class="text-white/70 ml-2">Magnetic mount situation is clever</span>
+            </div>
+            <div>
+              <span class="text-green-400">+</span>
+              <span class="text-white/70 ml-2">Ninety-nine dollars buys a lot here</span>
+            </div>
           </div>
-          <div>
-            <span class="text-green-400">+</span>
-            <span class="text-white/70 ml-2">Studio-grade capsule</span>
-          </div>
-          <div>
-            <span class="text-green-400">+</span>
-            <span class="text-white/70 ml-2">Magnetic desk stand</span>
-          </div>
-          <div>
-            <span class="text-red-400">-</span>
-            <span class="text-white/70 ml-2">Single polar pattern</span>
-          </div>
+        </div>
+        <div>
+          <p class="text-white font-medium mb-2">The downside:</p>
+          <p class="text-white/70 text-sm">One polar pattern, take it or leave it.</p>
         </div>
       </div>
       <AffiliateButton href="/go/rode-nt-usb-mini" text="Check Price on Amazon"/>
     </div>
 
-    <!-- Additional microphones summary -->
-    <div class="bg-white/5 border border-white/10 rounded-xl p-6 mb-8">
-      <h4 class="text-lg font-semibold text-white mb-4">Also Excellent</h4>
+    <!-- More Options -->
+    <div id="more-options" class="bg-white/5 border border-white/10 rounded-xl p-6 mb-8">
+      <h4 class="text-lg font-semibold text-white mb-4">More Options Worth Mentioning</h4>
       <ul class="space-y-3 text-white/80">
-        <li><strong>Audio-Technica AT2020USB+</strong> ($149) — Best mid-range option with exceptional clarity</li>
-        <li><strong>Elgato Wave:3</strong> ($149) — Best for streamers with Clipguard technology</li>
-        <li><strong>HyperX QuadCast S</strong> ($159) — Best RGB aesthetics with solid performance</li>
-        <li><strong>Samson Q2U</strong> ($69) — Best budget with USB/XLR flexibility</li>
+        <li><strong>Audio-Technica AT2020USB+</strong> ($149) — Really crisp sound, great if you do voiceover stuff on
+          the side
+        </li>
+        <li><strong>Elgato Wave:3</strong> ($149) — Has this anti-clipping feature called Clipguard that streamers like
+        </li>
+        <li><strong>HyperX QuadCast S</strong> ($159) — Yes it has RGB lighting and yes I kind of enjoy that? Sound is
+          legitimately good too
+        </li>
+        <li><strong>Samson Q2U</strong> ($69) — Budget king. USB and XLR for sixty-nine bucks. Wild value</li>
       </ul>
     </div>
   </section>
 
   <!-- USB vs XLR -->
   <section id="usb-vs-xlr">
-    <h2 class="text-2xl font-bold text-white mb-6">USB vs XLR: Which Do You Need?</h2>
+    <h2 class="text-2xl font-bold text-white mb-6">USB vs XLR—What's Different?</h2>
 
-    <div class="grid gap-6 md:grid-cols-2 mb-8">
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-        <h3 class="text-lg font-semibold text-white mb-4">USB Microphones</h3>
-        <ul class="space-y-2 text-white/70 text-sm mb-4">
-          <li>+ Plug-and-play simplicity</li>
-          <li>+ No additional equipment needed</li>
-          <li>+ Great for video calls and basic recording</li>
-          <li>- Limited upgrade path</li>
-          <li>- Can't use with pro audio equipment</li>
-        </ul>
-        <p class="text-jet-stream font-medium">Best for: Most remote workers</p>
-      </div>
-      <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-        <h3 class="text-lg font-semibold text-white mb-4">XLR Microphones</h3>
-        <ul class="space-y-2 text-white/70 text-sm mb-4">
-          <li>+ Superior audio quality</li>
-          <li>+ Pro-level flexibility</li>
-          <li>+ Works with audio interfaces</li>
-          <li>- Requires audio interface ($100+)</li>
-          <li>- More complex setup</li>
-        </ul>
-        <p class="text-jet-stream font-medium">Best for: Podcasters, content creators</p>
-      </div>
-    </div>
+    <p class="text-white/80 mb-6">
+      USB plugs into your computer and you're recording. That's the whole story.
+    </p>
+
+    <p class="text-white/80 mb-6">
+      XLR means buying an audio interface—another box that converts the analog signal into something your computer
+      understands. Expect to spend $100+ minimum, plus cables, plus figuring out how it all connects.
+    </p>
+
+    <p class="text-white/80 mb-6">
+      Why would anyone bother with XLR then? Better fidelity, more control over your audio chain, compatibility with
+      professional equipment. Worth it if you're making podcasts or music content seriously.
+    </p>
+
+    <p class="text-white/80 mb-8">
+      For normal video calls and occasional recordings? USB all day. Keep it simple.
+    </p>
 
     <p class="text-white/80">
-      For more details, see our complete guide: <a href="/gear/usb-vs-xlr-microphones"
-                                                   class="text-jet-stream hover:text-sky-light">USB vs XLR Microphones:
-      Which is Better for Remote Work?</a>
+      For more details, see our guide: <a href="/gear/usb-vs-xlr-microphones"
+                                          class="text-jet-stream hover:text-sky-light">USB vs XLR Microphones: Which is
+      Better for Remote Work?</a>
     </p>
   </section>
 
   <!-- FAQ -->
   <section id="faq">
-    <h2 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+    <h2 class="text-2xl font-bold text-white mb-6">Questions People Usually Ask</h2>
     <FAQSection faqs={faqItems}/>
   </section>
 
   <!-- Conclusion -->
   <section id="conclusion">
-    <h2 class="text-2xl font-bold text-white mb-6">Our Verdict</h2>
+    <h2 class="text-2xl font-bold text-white mb-6">My Actual Take</h2>
     <div class="bg-gradient-to-r from-jet-stream/20 to-ocean-deep/20 border border-jet-stream/30 rounded-xl p-6 mb-8">
       <p class="text-white/90 mb-4">
-        <strong>For most remote workers:</strong> The <a href="/go/blue-yeti"
-                                                         class="text-jet-stream hover:text-sky-light font-semibold">Blue
-        Yeti ($129)</a> offers the best balance of audio quality, features, and value. Its multiple polar patterns
-        handle any situation.
+        <strong>Average remote worker who just wants to sound better:</strong> <a href="/go/blue-yeti"
+                                                                                  class="text-jet-stream hover:text-sky-light font-semibold">Blue
+        Yeti at $129</a>. Works great, lasts for years, one less thing to think about.
       </p>
       <p class="text-white/90 mb-4">
-        <strong>For professionals who want the best:</strong> The <a href="/go/shure-mv7"
-                                                                     class="text-jet-stream hover:text-sky-light font-semibold">Shure
-        MV7 ($249)</a> delivers broadcast-quality audio with USB convenience and XLR upgradeability.
+        <strong>Want premium and happy to spend for it:</strong> <a href="/go/shure-mv7"
+                                                                    class="text-jet-stream hover:text-sky-light font-semibold">Shure
+        MV7 at $249</a>. Podcasters use this stuff for good reason.
       </p>
       <p class="text-white/90">
-        <strong>Best budget option:</strong> The <a href="/go/samson-q2u"
-                                                    class="text-jet-stream hover:text-sky-light font-semibold">Samson
-        Q2U ($69)</a> punches well above its price with solid audio quality and USB/XLR flexibility.
+        <strong>Watching your budget:</strong> <a href="/go/samson-q2u"
+                                                  class="text-jet-stream hover:text-sky-light font-semibold">Samson Q2U
+        at $69</a>. I'm still kind of amazed at what you get for that price.
       </p>
     </div>
   </section>

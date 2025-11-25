@@ -18,7 +18,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 006 | Cloud vs Traditional Hosting: What Actually Matters (2025)                 | Hosting       | Blog     | /blog/cloud-vs-traditional-hosting               | 750        | true              |
 | 007 | Managed WordPress Hosting: Who's Actually Worth It (2025)                  | Hosting       | Blog     | /blog/managed-wordpress-hosting-compared         | 650        | true              |
 | 008 | Time Zones Are Killing Your Remote Team (Here's the Fix)                   | Productivity  | Blog     | /blog/managing-time-zones-remote-teams           | 750        | true              |
-| 009 | Best CRM Software for Small Business (2025)                                | SaaS          | Blog     | /blog/best-crm-software-small-business           | 1666       | false             |
+| 009 | I Lost a $15K Client Because of a Spreadsheet                              | SaaS          | Blog     | /blog/best-crm-software-small-business           | 650        | true              |
 | 010 | VPN Speed Comparison: We Tested 10 VPNs to Find the Fastest (2025)         | Security      | Blog     | /blog/vpn-speed-comparison                       | 1645       | false             |
 | 011 | Remote Work Security: Protecting Your Data While Working Anywhere (2025)   | Security      | Blog     | /blog/vpn-public-wifi-guide                      | 2701       | false             |
 | 012 | How to Set Up a Productive Home Office on Any Budget (2025)                | Setup         | Blog     | /blog/ultimate-home-office-setup                 | 2569       | false             |

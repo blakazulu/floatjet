@@ -6,23 +6,23 @@ import ComparisonTable from '@components/article/ComparisonTable.astro';
 
 // Article metadata
 const title = 'Best Banking for Digital Nomads: Multi-Currency Accounts (2025)';
-const description = 'Compare Wise, Revolut, Mercury, and more. Find the best banking solutions for remote workers with low fees, multi-currency support, and international access.';
+const description = 'Traditional banks weren\'t built for people like us. Here\'s how to stop bleeding money on fees.';
 const author = 'FloatJet Team';
 const authorUrl = '/about';
 const pubDate = new Date('2025-11-23');
-const readingTime = 12;
+const readingTime = 4;
 const image = 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1200&q=80';
 const imageAlt = 'Mobile banking app on smartphone with credit cards';
 
 // Table of contents
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'Why This Matters', slug: 'introduction', depth: 2},
   {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
-  {text: 'What to Look For', slug: 'what-to-look-for', depth: 2},
-  {text: 'Top Accounts Reviewed', slug: 'reviews', depth: 2},
-  {text: 'Banking Strategies', slug: 'strategies', depth: 2},
+  {text: 'What Actually Matters', slug: 'what-to-look-for', depth: 2},
+  {text: 'The Accounts', slug: 'reviews', depth: 2},
+  {text: 'My Stack', slug: 'strategies', depth: 2},
   {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+  {text: 'Bottom Line', slug: 'conclusion', depth: 2},
 ];
 
 // Comparison table
@@ -75,24 +75,24 @@ const comparisonRows = [
 // FAQ data
 const faqs = [
   {
-    question: 'Can I open a bank account if I don\'t have a fixed address?',
-    answer: '<p>Fintech banks like Wise and Revolut don\'t require a physical address to open—just ID verification. Traditional banks typically need an address. Many nomads use a family member\'s address or virtual mailbox service (like Traveling Mailbox) as their "permanent" address.</p>'
+    question: 'No fixed address—can I open these?',
+    answer: '<p>Wise and Revolut just need ID verification. Traditional banks want addresses. Use a family member\'s or a virtual mailbox.</p>'
   },
   {
-    question: 'Will my home country bank close my account if I move abroad?',
-    answer: '<p>Some banks close accounts of non-residents; others don\'t care. US banks are generally fine with customers living abroad. UK and EU banks vary—check your bank\'s terms. It\'s wise to keep your home country bank active with occasional transactions.</p>'
+    question: 'Will my home bank close my account?',
+    answer: '<p>Maybe. US banks generally don\'t care. UK and EU vary. Keep it active with occasional transactions.</p>'
   },
   {
-    question: 'How do I receive payments from international clients?',
-    answer: '<p>Wise and Payoneer give you local bank details in multiple countries—clients pay to local accounts, you receive in your preferred currency. This avoids international wire fees for both parties. Invoice in the client\'s local currency when possible.</p>'
+    question: 'How do I receive international payments?',
+    answer: '<p>Wise and Payoneer give you local bank details. Clients pay locally, you receive in your currency. No wire fees.</p>'
   },
   {
-    question: 'What about emergency access to cash?',
-    answer: '<p>Always have multiple ways to get cash: debit card, credit card with cash advance, and some USD/EUR cash in reserve. Wise and Revolut cards work at most ATMs worldwide. Charles Schwab refunds all ATM fees globally—invaluable for emergencies.</p>'
+    question: 'Emergency cash access?',
+    answer: '<p>Multiple cards from different providers. Charles Schwab for unlimited ATM. Keep some USD/EUR cash.</p>'
   },
   {
-    question: 'Do I need a business account as a freelancer?',
-    answer: '<p>Not legally required in most cases, but recommended. Business accounts separate personal and business finances (important for taxes), look more professional to clients, and often have higher limits. Mercury and Wise Business are good options for freelancers.</p>'
+    question: 'Do I need a business account?',
+    answer: '<p>Not legally required. But it separates finances for taxes, looks professional, and often has higher limits.</p>'
   }
 ];
 
@@ -136,20 +136,17 @@ const relatedArticles = [
     headings={headings}
 >
   <!-- Introduction -->
-  <h2 id="introduction">Banking Without Borders</h2>
+  <h2 id="introduction">Why This Matters</h2>
   <p>
-    Traditional banking wasn't designed for people who earn in multiple currencies, spend across
-    continents, and don't have a "home" address. The fees alone—foreign transaction charges,
-    ATM fees, poor exchange rates—can cost hundreds or thousands per year.
+    Traditional banks hate nomads. Earn in dollars, spend in euros, get paid in pounds? That'll be
+    a 3% fee. ATM in Thailand? Another $5. Convert currency? Enjoy our terrible exchange rate.
   </p>
   <p>
-    Modern fintech has solved most of these problems. Multi-currency accounts let you hold, send,
-    and spend money in dozens of currencies at real exchange rates. The right banking setup saves
-    money and eliminates the friction of managing finances across borders.
+    I was losing hundreds a year before I figured this out.
   </p>
   <p>
-    We've compared the best banking options for digital nomads and remote workers to help you
-    build a financial toolkit that works globally.
+    Fintech fixed most of it. Multi-currency accounts let you hold, spend, and convert at actual
+    exchange rates. No mystery fees. The right setup saves real money.
   </p>
 
   <!-- Quick Comparison -->
@@ -158,70 +155,59 @@ const relatedArticles = [
   <ComparisonTable columns={comparisonColumns} rows={comparisonRows}/>
 
   <p>
-    <strong>Our picks:</strong> Wise for best exchange rates and multi-currency needs, Revolut
-    for all-in-one features, Charles Schwab for US citizens wanting unlimited ATM refunds.
+    <strong>My picks:</strong> Wise for exchange rates. Revolut for everything in one app. Charles
+    Schwab if you're American and want free ATMs everywhere.
   </p>
 
   <!-- What to Look For -->
-  <h2 id="what-to-look-for">What to Look For</h2>
+  <h2 id="what-to-look-for">What Actually Matters</h2>
 
-  <h3>Exchange Rates</h3>
   <p>
-    The mid-market rate is the "real" exchange rate. Traditional banks mark up 2-4% on exchanges;
-    Wise and Revolut use the mid-market rate plus a small transparent fee (0.3-0.6%).
+    <strong>Exchange Rates:</strong> The mid-market rate is the real rate. Banks mark up 2-4%.
+    Wise and Revolut? Mid-market plus a tiny fee (0.3-0.6%). That difference adds up fast.
   </p>
 
-  <h3>Foreign Transaction Fees</h3>
   <p>
-    Many cards charge 1-3% on all foreign transactions. The best nomad cards charge 0%.
-    This adds up fast when every purchase is "foreign."
+    <strong>Foreign Transaction Fees:</strong> Most cards charge 1-3% on "foreign" purchases. When
+    every purchase is foreign, that's brutal. Get a 0% fee card.
   </p>
 
-  <h3>ATM Access</h3>
   <p>
-    Free ATM withdrawals vary by account and plan. Check limits—some offer $200-400/month free,
-    others charge per transaction. Charles Schwab refunds all ATM fees worldwide.
+    <strong>ATM Access:</strong> Some accounts give $200-400/month free. Others charge per withdrawal.
+    Charles Schwab? Unlimited refunds worldwide. That's the one.
   </p>
 
-  <h3>Multi-Currency Support</h3>
   <p>
-    Holding balances in multiple currencies avoids repeated conversions. Look for accounts that
-    let you receive and hold USD, EUR, GBP, and other currencies you use.
+    <strong>Multi-Currency:</strong> Hold balances in USD, EUR, GBP without converting back and forth.
+    Saves on repeated conversions.
   </p>
 
-  <h3>International Transfers</h3>
   <p>
-    Sending money internationally through traditional banks costs $25-50 plus poor exchange rates.
-    Wise and similar services charge a fraction of that with better rates.
+    <strong>International Transfers:</strong> Banks charge $25-50 to send money internationally.
+    Plus terrible rates. Wise charges a fraction.
   </p>
 
-  <h3>Card Security</h3>
   <p>
-    Virtual cards, instant card freezing, and transaction notifications are essential for travel
-    security. Most fintech apps offer these; traditional banks often don't.
+    <strong>Card Security:</strong> Virtual cards, instant freezing, transaction alerts. Fintech
+    apps have this. Traditional banks usually don't.
   </p>
 
   <!-- Top Accounts Reviewed -->
-  <h2 id="reviews">Top Accounts Reviewed</h2>
+  <h2 id="reviews">The Accounts</h2>
 
-  <h3 id="wise">Wise - Best for Currency Exchange</h3>
+  <h3 id="wise">Wise</h3>
   <p>
-    Formerly TransferWise, Wise pioneered transparent currency exchange. Their multi-currency
-    account holds 40+ currencies with local bank details in 10+ countries—essential for receiving
-    international payments.
-  </p>
-  <ul>
-    <li><strong>Currencies:</strong> 40+ currencies, hold and convert freely</li>
-    <li><strong>Exchange rate:</strong> Mid-market rate + 0.3-0.6% fee</li>
-    <li><strong>Card fees:</strong> No foreign transaction fees</li>
-    <li><strong>ATM:</strong> $100-200 free per month depending on region</li>
-    <li><strong>Account fee:</strong> $0 for personal, $0-31 for business</li>
-  </ul>
-  <p>
-    <strong>Best for:</strong> Anyone receiving or sending money internationally, multi-currency needs.
+    This is what I use for currency stuff. 40+ currencies. Local bank details in 10+ countries so
+    clients can pay me without wire fees.
   </p>
   <p>
-    <strong>Downsides:</strong> Not a full bank (no overdraft, limited interest on balances).
+    Mid-market exchange rate plus 0.3-0.6%. No monthly fee. $100-200 free ATM per month.
+  </p>
+  <p>
+    <strong>What I like:</strong> Real exchange rates. Local receiving accounts. Just works.
+  </p>
+  <p>
+    <strong>What's annoying:</strong> Not a real bank. No overdraft. Limited interest.
   </p>
   <p>
     <a href="/go/wise" rel="nofollow sponsored" class="text-jet-stream hover:text-sky-light">
@@ -229,23 +215,20 @@ const relatedArticles = [
     </a>
   </p>
 
-  <h3 id="revolut">Revolut - Best All-in-One</h3>
+  <h3 id="revolut">Revolut</h3>
   <p>
-    Revolut combines banking, currency exchange, investing, and crypto in one app. The free tier
-    is solid; premium tiers add travel insurance and higher limits.
-  </p>
-  <ul>
-    <li><strong>Currencies:</strong> 30+ currencies</li>
-    <li><strong>Exchange rate:</strong> Mid-market on weekdays (small markup on weekends)</li>
-    <li><strong>Card fees:</strong> No foreign transaction fees</li>
-    <li><strong>ATM:</strong> $200/month (free), $400/month (premium)</li>
-    <li><strong>Account fee:</strong> $0 (Standard), $8/month (Plus), $13/month (Premium)</li>
-  </ul>
-  <p>
-    <strong>Best for:</strong> Those wanting banking, investing, and crypto in one place.
+    Banking, investing, crypto—all in one app. Free tier is solid. Premium adds travel insurance
+    and higher ATM limits.
   </p>
   <p>
-    <strong>Downsides:</strong> Customer support can be slow. Weekend exchange rate markup.
+    30+ currencies. Mid-market rates on weekdays (small markup on weekends). Free tier is $0,
+    Premium is $13/month.
+  </p>
+  <p>
+    <strong>What I like:</strong> Everything in one place. Good app.
+  </p>
+  <p>
+    <strong>What's annoying:</strong> Support can be slow. Weekend exchange rates aren't great.
   </p>
   <p>
     <a href="/go/revolut" rel="nofollow sponsored" class="text-jet-stream hover:text-sky-light">
@@ -253,24 +236,18 @@ const relatedArticles = [
     </a>
   </p>
 
-  <h3 id="mercury">Mercury - Best for US Business</h3>
+  <h3 id="mercury">Mercury</h3>
   <p>
-    Mercury is a modern business banking platform designed for startups and freelancers. US-only,
-    but excellent for American remote workers and businesses.
-  </p>
-  <ul>
-    <li><strong>Currencies:</strong> USD only</li>
-    <li><strong>Account type:</strong> Business checking and savings</li>
-    <li><strong>Card fees:</strong> No foreign transaction fees</li>
-    <li><strong>ATM:</strong> Free at 55,000+ ATMs in US</li>
-    <li><strong>Account fee:</strong> $0</li>
-    <li><strong>Features:</strong> Virtual cards, team access, accounting integrations</li>
-  </ul>
-  <p>
-    <strong>Best for:</strong> US-based freelancers and small businesses.
+    Modern business banking. US only, but if you're American and freelancing, this is it.
   </p>
   <p>
-    <strong>Downsides:</strong> US-only, USD-only. Not ideal for multi-currency needs.
+    No monthly fee. Virtual cards. Accounting integrations. Clean interface.
+  </p>
+  <p>
+    <strong>What I like:</strong> Finally, business banking that doesn't feel like 2003.
+  </p>
+  <p>
+    <strong>What's annoying:</strong> US only. USD only.
   </p>
   <p>
     <a href="/go/mercury" rel="nofollow sponsored" class="text-jet-stream hover:text-sky-light">
@@ -278,123 +255,89 @@ const relatedArticles = [
     </a>
   </p>
 
-  <h3 id="payoneer">Payoneer - Best for Freelance Payments</h3>
+  <h3 id="payoneer">Payoneer</h3>
   <p>
-    Payoneer specializes in receiving payments from clients and marketplaces (Upwork, Fiverr,
-    Amazon, etc.). Great for getting paid, less ideal as a primary bank.
-  </p>
-  <ul>
-    <li><strong>Currencies:</strong> USD, EUR, GBP, JPY receiving accounts</li>
-    <li><strong>Best feature:</strong> Local receiving accounts for client payments</li>
-    <li><strong>Card fees:</strong> $3.15 ATM fee</li>
-    <li><strong>Account fee:</strong> $0 (fees on transactions)</li>
-    <li><strong>Withdrawal:</strong> 2% fee to bank, better with Payoneer card</li>
-  </ul>
-  <p>
-    <strong>Best for:</strong> Freelancers receiving payments from international clients and platforms.
+    Built for receiving payments from Upwork, Fiverr, Amazon, clients. You get local bank details
+    so people can pay you locally.
   </p>
   <p>
-    <strong>Downsides:</strong> Higher fees than Wise for withdrawals. Limited currencies.
+    <strong>What I like:</strong> Easy to receive international payments.
+  </p>
+  <p>
+    <strong>What's annoying:</strong> 2% withdrawal fee. Higher fees than Wise overall.
   </p>
 
-  <h3 id="schwab">Charles Schwab - Best for US Citizens</h3>
+  <h3 id="schwab">Charles Schwab</h3>
   <p>
-    The Schwab High Yield Investor Checking account offers something rare: unlimited ATM fee
-    rebates worldwide. Pair it with their brokerage account for complete financial management.
-  </p>
-  <ul>
-    <li><strong>ATM fees:</strong> All fees refunded globally—truly unlimited</li>
-    <li><strong>Foreign transaction fee:</strong> 0%</li>
-    <li><strong>Account fee:</strong> $0</li>
-    <li><strong>Requirement:</strong> Must open brokerage account (can leave empty)</li>
-    <li><strong>Currency:</strong> USD only</li>
-  </ul>
-  <p>
-    <strong>Best for:</strong> US citizens who want unlimited ATM access worldwide.
+    The unlimited ATM hack. Every ATM fee worldwide, refunded. No foreign transaction fees. $0
+    monthly.
   </p>
   <p>
-    <strong>Downsides:</strong> US citizens/residents only. USD only. No multi-currency features.
+    Catch: You need to open a brokerage account too (can leave it empty).
+  </p>
+  <p>
+    <strong>What I like:</strong> Never worry about ATM fees again.
+  </p>
+  <p>
+    <strong>What's annoying:</strong> US citizens only. USD only. No multi-currency.
   </p>
 
   <!-- Banking Strategies -->
-  <h2 id="strategies">Banking Strategies for Nomads</h2>
+  <h2 id="strategies">My Stack</h2>
 
-  <h3>The Recommended Stack</h3>
-  <p>
-    Most nomads end up with 2-3 accounts for different purposes:
-  </p>
+  <p>Most nomads end up with 2-3 accounts:</p>
   <ul>
-    <li><strong>Primary spending:</strong> Wise or Revolut card for daily purchases</li>
-    <li><strong>ATM backup:</strong> Charles Schwab (US) or another fee-free option</li>
-    <li><strong>Home country bank:</strong> Keep active for tax, government, and emergency purposes</li>
-    <li><strong>Business account:</strong> Mercury or Wise Business if self-employed</li>
+    <li><strong>Daily spending:</strong> Wise or Revolut card</li>
+    <li><strong>ATM backup:</strong> Charles Schwab (US) or similar</li>
+    <li><strong>Home bank:</strong> Keep it active for taxes, government stuff</li>
+    <li><strong>Business:</strong> Mercury or Wise Business if freelancing</li>
   </ul>
 
-  <h3>Receiving International Payments</h3>
-  <p>
-    Use Wise or Payoneer's local bank details to receive payments:
-  </p>
+  <h3>Getting Paid Internationally</h3>
+  <p>Use Wise or Payoneer's local bank details:</p>
   <ul>
-    <li>US clients pay to your US account details (no international wire fees)</li>
-    <li>EU clients pay to your EUR account details</li>
-    <li>Convert to your preferred currency at mid-market rates</li>
+    <li>US clients pay to your US account (no wire fees for them)</li>
+    <li>EU clients pay to your EUR account</li>
+    <li>Convert at mid-market when you need to</li>
   </ul>
 
-  <h3>Minimizing Fees</h3>
+  <h3>Saving on Fees</h3>
   <ul>
-    <li><strong>Always pay in local currency:</strong> When given a choice, decline "pay in your currency"</li>
-    <li><strong>Batch currency conversions:</strong> Convert larger amounts less frequently</li>
-    <li><strong>Use the right card:</strong> Match card to currency when possible</li>
-    <li><strong>Avoid airport exchanges:</strong> Terrible rates; use ATMs or convert before travel</li>
+    <li>Always pay in local currency (decline "pay in your currency")</li>
+    <li>Batch conversions—fewer, larger amounts</li>
+    <li>Match card to currency when possible</li>
+    <li>Never use airport exchanges. Ever.</li>
   </ul>
 
-  <h3>Emergency Preparedness</h3>
-  <p>
-    Cards get lost, stolen, or frozen. Always have backups:
-  </p>
+  <h3>Emergency Backup</h3>
+  <p>Cards get lost. Stolen. Frozen for "suspicious activity" while you're abroad.</p>
+  <p>Always have:</p>
   <ul>
-    <li>Minimum 2 debit cards from different providers</li>
-    <li>One credit card for emergencies</li>
-    <li>$200-500 cash in USD/EUR as ultimate backup</li>
-    <li>Virtual cards for online purchases (disposable numbers)</li>
+    <li>Two debit cards from different providers</li>
+    <li>One credit card</li>
+    <li>$200-500 cash in USD/EUR</li>
+    <li>Virtual cards for online stuff</li>
   </ul>
 
   <!-- FAQ Section -->
   <FAQSection faqs={faqs}/>
 
   <!-- Conclusion -->
-  <h2 id="conclusion">Our Recommendations</h2>
+  <h2 id="conclusion">Bottom Line</h2>
   <p>
-    For most digital nomads, we recommend starting with:
-  </p>
-  <ul>
-    <li>
-      <strong>Must-have:</strong> <a href="/go/wise" rel="nofollow sponsored">Wise</a> -
-      best exchange rates and multi-currency account
-    </li>
-    <li>
-      <strong>All-in-one:</strong> <a href="/go/revolut" rel="nofollow sponsored">Revolut</a> -
-      banking, investing, and crypto combined
-    </li>
-    <li>
-      <strong>US citizens:</strong> Charles Schwab - unlimited ATM fee refunds worldwide
-    </li>
-    <li>
-      <strong>US business:</strong> <a href="/go/mercury" rel="nofollow sponsored">Mercury</a> -
-      modern business banking for freelancers
-    </li>
-  </ul>
-  <p>
-    Open accounts before you leave home—verification is easier with a stable address and local
-    phone number. Most accounts take 1-3 days to verify and receive cards.
+    <a href="/go/wise" rel="nofollow sponsored">Wise</a> for exchange rates.
+    <a href="/go/revolut" rel="nofollow sponsored">Revolut</a> if you want everything in one app.
+    Charles Schwab if you're American and hate ATM fees.
   </p>
   <p>
-    Managing finances as a nomad takes some setup, but the right accounts save hundreds in fees
-    and make international life seamless. Your future self will thank you.
+    Open accounts before you leave. Verification is easier with a stable address and phone number.
   </p>
   <p>
-    Also check our guides on <a href="/blog/tax-tips-remote-workers">taxes for remote workers</a>
-    and <a href="/blog/crypto-friendly-banks">crypto-friendly banks</a>.
+    Takes some setup. But the right accounts save hundreds and make international life way smoother.
+  </p>
+  <p>
+    Also check: <a href="/blog/tax-tips-remote-workers">taxes for remote workers</a> and
+    <a href="/blog/crypto-friendly-banks">crypto-friendly banks</a>.
   </p>
 
   <!-- Related Articles -->

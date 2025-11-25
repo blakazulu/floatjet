@@ -7,6 +7,9 @@ const navItems = [
   {name: 'Guides', href: '/guides'},
   {name: 'Blog', href: '/blog'},
 ];
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => currentPath === href || currentPath.startsWith(href + '/');
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
@@ -25,7 +28,11 @@ const navItems = [
         {navItems.map(item => (
             <a
                 href={item.href}
-                class="text-sm font-medium text-white/90 hover:text-white transition-colors"
+                class:list={[
+                  'text-sm font-medium transition-colors',
+                  isActive(item.href) ? 'text-jet-stream' : 'text-white/90 hover:text-white'
+                ]}
+                aria-current={isActive(item.href) ? 'page' : undefined}
             >
               {item.name}
             </a>
@@ -100,7 +107,11 @@ const navItems = [
       <ul class="space-y-1 px-4">
         <li>
           <a href="/"
-             class="mobile-menu-link flex items-center gap-3 px-4 py-3 rounded-xl text-white/90 hover:text-white hover:bg-white/10 transition-all">
+             class:list={[
+               'mobile-menu-link flex items-center gap-3 px-4 py-3 rounded-xl transition-all',
+               currentPath === '/' ? 'text-jet-stream bg-white/10' : 'text-white/90 hover:text-white hover:bg-white/10'
+             ]}
+             aria-current={currentPath === '/' ? 'page' : undefined}>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -112,7 +123,11 @@ const navItems = [
         {navItems.map(item => (
             <li>
               <a href={item.href}
-                 class="mobile-menu-link flex items-center gap-3 px-4 py-3 rounded-xl text-white/90 hover:text-white hover:bg-white/10 transition-all">
+                 class:list={[
+                   'mobile-menu-link flex items-center gap-3 px-4 py-3 rounded-xl transition-all',
+                   isActive(item.href) ? 'text-jet-stream bg-white/10' : 'text-white/90 hover:text-white hover:bg-white/10'
+                 ]}
+                 aria-current={isActive(item.href) ? 'page' : undefined}>
                 {item.name === 'Tools' && (
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
@@ -189,6 +204,46 @@ const navItems = [
 </nav>
 
 <script>
+  function updateActiveNav() {
+    const currentPath = window.location.pathname;
+    const isActive = (href: string) => currentPath === href || currentPath.startsWith(href + '/');
+
+    // Desktop nav links
+    const desktopLinks = document.querySelectorAll('nav[aria-label="Main navigation"] a');
+    desktopLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href) {
+        if (isActive(href)) {
+          link.classList.remove('text-white/90', 'hover:text-white');
+          link.classList.add('text-jet-stream');
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.classList.remove('text-jet-stream');
+          link.classList.add('text-white/90', 'hover:text-white');
+          link.removeAttribute('aria-current');
+        }
+      }
+    });
+
+    // Mobile nav links
+    const mobileLinks = document.querySelectorAll('#mobile-menu .mobile-menu-link');
+    mobileLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href) {
+        const active = href === '/' ? currentPath === '/' : isActive(href);
+        if (active) {
+          link.classList.remove('text-white/90', 'text-white/70', 'hover:text-white');
+          link.classList.add('text-jet-stream', 'bg-white/10');
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.classList.remove('text-jet-stream', 'bg-white/10');
+          link.classList.add('text-white/90', 'hover:text-white');
+          link.removeAttribute('aria-current');
+        }
+      }
+    });
+  }
+
   function initMobileMenu() {
     const menuButton = document.getElementById('mobile-menu-button');
     const closeButton = document.getElementById('mobile-menu-close');
@@ -262,8 +317,14 @@ const navItems = [
   }
 
   // Initialize on first load
-  document.addEventListener('DOMContentLoaded', initMobileMenu);
+  document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
+    updateActiveNav();
+  });
 
   // Re-initialize on Astro page navigation (View Transitions)
-  document.addEventListener('astro:page-load', initMobileMenu);
+  document.addEventListener('astro:page-load', () => {
+    initMobileMenu();
+    updateActiveNav();
+  });
 </script>

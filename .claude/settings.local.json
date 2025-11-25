@@ -26,7 +26,10 @@
       "Bash(find src/pages/blog -name \"*.astro\" -exec grep -h 'category=' {})",
       "Bash(done)",
       "Bash(xxd:*)",
-      "Bash(xargs basename:*)"
+      "Bash(xargs basename:*)",
+      "Bash(xargs -I {} sh -c 'grep -q \"\"\"\"relatedArticles\"\"\"\" {} && echo {}')",
+      "Bash(node:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

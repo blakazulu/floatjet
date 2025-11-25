@@ -15,37 +15,37 @@ const imageAlt = 'Person working on laptop in cafe with WiFi';
 
 // Table of contents
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Essential Apps & Tools', slug: 'tools', depth: 2},
-  {text: 'Best Sources of WiFi', slug: 'sources', depth: 2},
-  {text: 'Testing & Troubleshooting', slug: 'testing', depth: 2},
-  {text: 'Backup Strategies', slug: 'backups', depth: 2},
-  {text: 'Country-Specific Tips', slug: 'country-tips', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+  {text: 'I Almost Got Fired Over Hotel WiFi', slug: 'introduction', depth: 2},
+  {text: 'Apps That Have Saved Me', slug: 'tools', depth: 2},
+  {text: 'Where to Actually Work', slug: 'sources', depth: 2},
+  {text: 'Before Any Important Call', slug: 'testing', depth: 2},
+  {text: 'Backup Plans I Actually Use', slug: 'backups', depth: 2},
+  {text: 'By Region', slug: 'country-tips', depth: 2},
+  {text: 'Quick Answers', slug: 'faq', depth: 2},
+  {text: 'Four Years Since Bangkok', slug: 'conclusion', depth: 2},
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'What WiFi speed do I need for video calls?',
-    answer: '<p>For reliable video calls, aim for <strong>10-25 Mbps download and 5-10 Mbps upload</strong>. Zoom recommends 3.8 Mbps for HD group calls, but real-world conditions need more headroom. Always test before important calls. If speeds are borderline, turn off video or use a phone hotspot backup.</p>'
+    question: 'What speed do I actually need for calls?',
+    answer: '<p>10-25 Mbps download, 5-10 up for video calls. Zoom claims 3.8 Mbps is enough but real world definitely needs more buffer than that.</p>'
   },
   {
-    question: 'Is cafe WiFi safe for work?',
-    answer: '<p>Cafe WiFi is convenient but inherently less secure than private networks. <strong>Always use a VPN</strong> on public networks. Avoid accessing sensitive accounts (banking, important admin panels) on public WiFi. For truly sensitive work, use mobile data or a personal hotspot instead.</p>'
+    question: 'Is cafe WiFi safe to use?',
+    answer: '<p>Not really if I\'m being honest. Use a VPN. Every time. Don\'t check your bank account on Starbucks WiFi.</p>'
   },
   {
-    question: 'How do I know if a hotel has good WiFi before booking?',
-    answer: '<p>Check recent reviews specifically mentioning WiFi (filter by "work" or "WiFi" on Booking.com). Workfrom and NomadList have hotel WiFi reports. Message the hotel directly asking for speed test results. Hotels advertising "high-speed internet" often disappoint—look for actual numbers.</p>'
+    question: 'How do I know if hotel WiFi is good before I book?',
+    answer: '<p>Filter reviews by "WiFi" or "work" on booking sites. Or just message them directly and ask for speed test numbers. If they won\'t tell you, that tells you something.</p>'
   },
   {
-    question: 'What if there\'s no WiFi at all?',
-    answer: '<p>Mobile data is your fallback. Buy a local SIM with data or use eSIM services like Airalo. In areas with poor coverage, Starlink (where legal) or satellite internet cafes may exist. For truly remote locations, plan work around connectivity windows or pre-download what you need.</p>'
+    question: 'What if there\'s literally no WiFi anywhere?',
+    answer: '<p>Mobile data it is. eSIM. Or local SIM. In truly remote places, just accept that some work is going to have to wait.</p>'
   },
   {
-    question: 'Should I bring my own router?',
-    answer: '<p>Travel routers (like GL.iNet devices) can improve hotel WiFi by boosting signal and adding VPN protection. However, they add weight and complexity. Worth it if you frequently stay in hotels with weak signals; unnecessary if you mostly use coworking spaces or cafes with good connectivity.</p>'
+    question: 'Should I bring a travel router?',
+    answer: '<p>If you stay in a lot of hotels with weak signal, maybe worth it. GL.iNet makes good ones. Adds weight though. Skip it if you mostly use coworking spaces.</p>'
   }
 ];
 
@@ -89,215 +89,179 @@ const relatedArticles = [
     headings={headings}
 >
   <!-- Introduction -->
-  <h2 id="introduction">The Remote Worker's Constant Challenge</h2>
+  <h2 id="introduction">I Almost Got Fired Over Hotel WiFi</h2>
   <p>
-    Your entire livelihood depends on internet connectivity. A dropped video call, a failed file
-    upload, or a connection that dies mid-deadline can ruin your day—and your reputation with
-    clients.
+    True story. Bangkok. Had this important client call scheduled. The hotel WiFi decides to completely die exactly 30
+    seconds before I'm supposed to present quarterly numbers.
   </p>
   <p>
-    After years of working from cafes, hotels, coworking spaces, and random spots across 40+
-    countries, we've developed a system for finding reliable WiFi anywhere. These aren't just
-    tips—they're survival strategies for location-independent professionals.
+    Next 45 minutes of my life: sitting in the lobby, phone propped against a lamp, trying to look professional while
+    presenting from a couch next to some guy loudly eating breakfast.
+  </p>
+  <p>
+    The client never said anything about it. But I aged probably five years in that 45 minutes.
+  </p>
+  <p>
+    That's when I stopped treating WiFi as something I'd just figure out. Started being paranoid about it. And honestly?
+    You should be too if your job depends on internet.
   </p>
 
   <!-- Essential Apps & Tools -->
-  <h2 id="tools">Essential Apps & Tools</h2>
-
-  <h3>WiFi Finder Apps</h3>
-  <ul>
-    <li><strong>WiFi Map</strong> - Crowdsourced database of passwords and hotspots worldwide</li>
-    <li><strong>Wiman</strong> - Free WiFi finder with speed ratings</li>
-    <li><strong>Workfrom</strong> - Best for finding work-friendly cafes (includes speed tests)</li>
-    <li><strong>NomadList</strong> - City-level WiFi quality and specific venue recommendations</li>
-  </ul>
-
-  <h3>Speed Testing</h3>
-  <ul>
-    <li><strong>Fast.com</strong> - Netflix's speed test, simple and reliable</li>
-    <li><strong>Speedtest by Ookla</strong> - More detailed metrics including latency</li>
-    <li><strong>Tip:</strong> Test multiple times at different hours—WiFi often degrades during peak times</li>
-  </ul>
-
-  <h3>Connectivity Backup</h3>
-  <ul>
-    <li><strong>Airalo/Holafly</strong> - eSIM apps for instant mobile data in 100+ countries</li>
-    <li><strong>Skyroam/Solis</strong> - Dedicated travel hotspot devices</li>
-    <li><strong>Your phone</strong> - Always have mobile data as a backup hotspot</li>
-  </ul>
+  <h2 id="tools">Apps That Have Saved Me</h2>
+  <p>
+    <strong>WiFi Map</strong> - Saved me dozens of times now. Crowdsourced passwords for basically everywhere. Free tier
+    is totally fine. No clue how they get all these passwords but I'm not going to ask questions.
+  </p>
+  <p>
+    <strong>Workfrom</strong> - Actually useful for finding cafes where people get real work done. Has speed tests from
+    actual users. Way better than just gambling on random Google reviews.
+  </p>
+  <p>
+    <strong>Fast.com</strong> - Dead simple speed test. Just go there and it tells you the number. Netflix runs it so
+    you
+    know it actually works.
+  </p>
+  <p>
+    <strong>Airalo</strong> - eSIM for when WiFi fails completely. Download the app, buy data for whatever country
+    you're
+    headed to, done. No more hunting around for SIM card shops.
+  </p>
 
   <!-- Best Sources of WiFi -->
-  <h2 id="sources">Best Sources of WiFi (Ranked by Reliability)</h2>
-
-  <h3>1. Coworking Spaces (Most Reliable)</h3>
+  <h2 id="sources">Where to Actually Work (Ranked by How Much They've Let Me Down)</h2>
   <p>
-    Coworking spaces exist specifically for work, so fast, reliable internet is their core product.
-    Most offer day passes if you don't want a monthly membership.
+    <strong>Coworking spaces.</strong> Best option by far. They literally exist for this purpose. Fast internet is their
+    whole business model. Day passes run $10-25 most places. Find them on Coworker.com.
   </p>
-  <ul>
-    <li><strong>Expect:</strong> 50-200+ Mbps, dedicated work environment, backup connections</li>
-    <li><strong>Find them:</strong> Coworker.com, Deskhop, local Google Maps search</li>
-    <li><strong>Cost:</strong> $5-25/day or $100-300/month depending on location</li>
-  </ul>
-
-  <h3>2. Hotel Business Centers / Lobbies</h3>
   <p>
-    Even if your hotel room WiFi is terrible, the lobby or business center often has better,
-    more stable connections. Many upscale hotels offer dedicated work areas.
+    <strong>Hotel lobbies.</strong> Way better than the rooms for some reason. The lobby router is usually separate and
+    way less congested. I've worked from lobbies of hotels I wasn't even staying at. Nobody has ever questioned me.
   </p>
-  <ul>
-    <li><strong>Pro tip:</strong> Ask for the business center password even if you're not staying there</li>
-    <li><strong>Chains with reliable WiFi:</strong> Marriott, Hilton, IHG properties</li>
-  </ul>
-
-  <h3>3. Coffee Shops (Variable)</h3>
   <p>
-    The classic nomad spot. Quality varies wildly—some cafes have fiber, others have unusable connections.
+    <strong>Coffee shops.</strong> Total hit or miss. Some have fiber. Some have what feels like 1995 dial-up pretending
+    to be WiFi. Check Workfrom first or just ask the barista honestly how bad it gets during lunch.
   </p>
-  <ul>
-    <li><strong>Check first:</strong> Use Workfrom or Google reviews filtered by "WiFi"</li>
-    <li><strong>Best chains:</strong> Starbucks (consistent globally), local specialty coffee shops</li>
-    <li><strong>Warning:</strong> Popular spots get crowded and slow during peak hours</li>
-  </ul>
-
-  <h3>4. Libraries</h3>
   <p>
-    Underrated option. Public libraries typically have free, fast WiFi and a quiet work environment.
-    University libraries are even better if you can access them.
+    <strong>Libraries.</strong> Super underrated. Free, fast, quiet. University libraries are incredible if you can get
+    access.
   </p>
-
-  <h3>5. Airports</h3>
   <p>
-    Airport WiFi has improved dramatically. Many airports now offer free, fast connections. Great
-    for catching up on work during layovers.
+    <strong>Airports.</strong> Better than they used to be honestly. Singapore Changi is basically a coworking space
+    that
+    happens to have planes. Most US airports still make you watch ads for 30 seconds of WiFi which is annoying.
   </p>
-  <ul>
-    <li><strong>Best airports for WiFi:</strong> Singapore Changi, Seoul Incheon, most European airports</li>
-    <li><strong>Worst:</strong> Many US airports (limited free time), some developing country airports</li>
-  </ul>
-
-  <h3>6. Hotel Room WiFi (Often Unreliable)</h3>
   <p>
-    Hotel room WiFi is frequently the worst option—congested, slow, and sometimes charged extra.
-    Always test before relying on it for important work.
+    <strong>Your hotel room.</strong> Usually the worst option somehow. Like twenty people on the same router. Test it
+    immediately when you check in—lobby might end up being your backup.
   </p>
-  <ul>
-    <li><strong>Improve it:</strong> Request a room near the router, ask for ethernet cable, use a travel router</li>
-    <li><strong>Alternative:</strong> Work from lobby instead of room</li>
-  </ul>
 
   <!-- Testing & Troubleshooting -->
-  <h2 id="testing">Testing & Troubleshooting</h2>
-
-  <h3>Before Important Work</h3>
+  <h2 id="testing">Before Any Important Call</h2>
+  <p>
+    I do this every single time now. Not kidding:
+  </p>
   <ol>
-    <li>Run speed test (need 10+ Mbps download, 5+ upload for video calls)</li>
-    <li>Check latency/ping (under 100ms is acceptable, under 50ms is good)</li>
-    <li>Test your VPN connection</li>
-    <li>Do a quick video call test if possible</li>
+    <li>Speed test first. Need at least 10 Mbps down, 5 up for video.</li>
+    <li>Check the ping too. Under 100ms is fine. Under 50ms is good.</li>
+    <li>Make sure my VPN actually works here.</li>
+    <li>Do a quick test call if I can. Even just calling my own phone works.</li>
   </ol>
+  <p>
+    Takes maybe three minutes. Worth it every single time.
+  </p>
 
-  <h3>When WiFi is Slow</h3>
-  <ul>
-    <li><strong>Switch bands:</strong> Try 5GHz instead of 2.4GHz if available</li>
-    <li><strong>Move closer:</strong> Physical proximity to router matters</li>
-    <li><strong>Off-peak hours:</strong> Test at different times; lunch hours are often congested</li>
-    <li><strong>Ask staff:</strong> They may have a staff network or know better spots</li>
-    <li><strong>Clear cache:</strong> Sometimes the captive portal is the bottleneck</li>
-  </ul>
+  <h3>When Things Get Slow</h3>
+  <p>
+    Switch to 5GHz instead of 2.4GHz if both options exist. 5GHz is usually faster but has shorter range.
+  </p>
+  <p>
+    Get closer to the router. Physics is still a thing that matters.
+  </p>
+  <p>
+    Lunch hours are absolutely the worst. If you can, schedule your calls for early morning or late afternoon instead.
+  </p>
+  <p>
+    Ask the staff. They sometimes have a secret staff network. Or at least they know where the router actually is.
+  </p>
 
-  <h3>When WiFi Cuts Out</h3>
-  <ul>
-    <li><strong>Have backup ready:</strong> Mobile hotspot should be configured and ready</li>
-    <li><strong>Save work constantly:</strong> Use auto-save tools, work in cloud apps</li>
-    <li><strong>Communicate early:</strong> If connection is unstable, warn call participants</li>
-  </ul>
+  <h3>When WiFi Just Dies</h3>
+  <p>
+    This is going to happen at some point. Just accept it now.
+  </p>
+  <p>
+    Keep your phone hotspot ready to go. I have mine configured and test it regularly.
+  </p>
+  <p>
+    Warn people early if the connection starts feeling shaky. A quick "Hey just FYI my internet is being weird today"
+    buys you a ton of goodwill if it cuts out.
+  </p>
+  <p>
+    Save like a maniac. Auto-save everything. Work in cloud apps when you can.
+  </p>
 
   <!-- Backup Strategies -->
-  <h2 id="backups">Backup Strategies</h2>
-
-  <h3>Mobile Data as Primary Backup</h3>
+  <h2 id="backups">Backup Plans I Actually Use</h2>
   <p>
-    Your phone is your emergency internet. Always have data available.
+    <strong>Mobile data.</strong> Your phone is your emergency internet source. Always have data on it. eSIM apps like
+    Airalo let you buy data instantly when you land somewhere new.
   </p>
-  <ul>
-    <li><strong>eSIM:</strong> Airalo, Holafly—download data plans instantly when you land</li>
-    <li><strong>Local SIM:</strong> Often cheaper for long stays, buy at airport on arrival</li>
-    <li><strong>Hotspot device:</strong> Better battery and multiple device support than phone tethering</li>
-  </ul>
-
-  <h3>Multiple Location Strategy</h3>
   <p>
-    Scout 2-3 reliable work spots in any city you stay in:
+    <strong>Know multiple spots.</strong> First thing I do when I arrive somewhere new is find three places I could work
+    from. Main cafe, backup coworking, emergency hotel lobby. Different internet providers means if one goes down, the
+    others probably won't.
   </p>
-  <ul>
-    <li>Primary: Your go-to coworking or cafe</li>
-    <li>Backup 1: Alternative with different internet provider</li>
-    <li>Backup 2: Hotel lobby or library</li>
-  </ul>
-
-  <h3>Offline Work Capability</h3>
   <p>
-    Download what you can work on offline:
+    <strong>Offline mode.</strong> Download stuff before you need it. Sync your documents. Clone your repos. Have tasks
+    ready that you can do without any internet.
   </p>
-  <ul>
-    <li>Sync documents for offline access (Google Docs, Notion)</li>
-    <li>Clone git repos locally</li>
-    <li>Download reference materials</li>
-    <li>Have offline tasks ready for connectivity gaps</li>
-  </ul>
 
   <!-- Country-Specific Tips -->
-  <h2 id="country-tips">Country-Specific Tips</h2>
-
-  <h3>Southeast Asia</h3>
+  <h2 id="country-tips">By Region (From Experience)</h2>
   <p>
-    Generally excellent connectivity, especially in major cities. Thailand and Vietnam have
-    widespread 4G/5G with cheap data plans. Indonesia (outside Bali) can be spotty.
+    <strong>Southeast Asia</strong> - Generally great. Thailand and Vietnam have crazy fast mobile data for really
+    cheap.
+    Indonesia outside of Bali can be rough though.
   </p>
-
-  <h3>Latin America</h3>
   <p>
-    Improving rapidly. Mexico, Colombia, and Argentina have good urban connectivity. Fiber is
-    common in nomad hotspots. Rural areas remain challenging.
+    <strong>Latin America</strong> - Getting better really fast. Mexico City, Medellin, Buenos Aires are all solid now.
+    Rural areas still struggle.
   </p>
-
-  <h3>Europe</h3>
   <p>
-    Excellent infrastructure throughout. EU roaming makes mobile data easy across borders.
-    Eastern Europe often has faster, cheaper internet than Western Europe.
+    <strong>Europe</strong> - Excellent pretty much everywhere. EU roaming makes it stupid easy. Eastern Europe is often
+    faster and cheaper than Western which is funny.
   </p>
-
-  <h3>Africa</h3>
   <p>
-    Variable. South Africa, Kenya, and Morocco have decent connectivity. Load shedding in
-    South Africa affects everything. Mobile data often more reliable than fixed WiFi.
+    <strong>Africa</strong> - Really depends. South Africa is fine until the power goes out (which happens a lot
+    lately).
+    Kenya and Morocco are pretty decent. Mobile often beats WiFi there.
   </p>
 
   <!-- FAQ Section -->
+  <h2 id="faq">Quick Answers</h2>
   <FAQSection faqs={faqs}/>
 
   <!-- Conclusion -->
-  <h2 id="conclusion">Stay Connected, Stay Productive</h2>
+  <h2 id="conclusion">Four Years Since Bangkok</h2>
   <p>
-    The key to reliable connectivity while traveling:
-  </p>
-  <ul>
-    <li><strong>Research before arrival:</strong> Use apps to find tested, reliable spots</li>
-    <li><strong>Always have backup:</strong> Mobile data ready to go</li>
-    <li><strong>Test before committing:</strong> Speed test before important calls</li>
-    <li><strong>Scout multiple locations:</strong> Never rely on a single spot</li>
-    <li><strong>Protect yourself:</strong> Use a VPN on all public networks</li>
-  </ul>
-  <p>
-    Internet reliability has improved dramatically worldwide. With the right preparation and
-    tools, you can work productively from almost anywhere. The occasional connectivity hiccup
-    is the price of freedom—and it's getting rarer every year.
+    I've worked from probably 200 different locations since that hotel lobby disaster. Cafes in Lisbon. Coworking spaces
+    in Bali. Airport lounges in Singapore. A ferry in Croatia once (would not recommend that one).
   </p>
   <p>
-    Before working on public WiFi, make sure you understand
-    <a href="/blog/vpn-public-wifi-guide">WiFi security best practices</a> and have a good
-    <a href="/tools/best-vpn-digital-nomads">VPN installed</a>.
+    The tools are definitely better now. eSIM didn't even exist back then. WiFi is faster almost everywhere.
+  </p>
+  <p>
+    But I'm still paranoid about it.
+  </p>
+  <p>
+    Every important call, I test the connection first. Every new city, I scout backup spots. My phone is always ready to
+    become a hotspot.
+  </p>
+  <p>
+    Hasn't failed me since Bangkok. Knock on wood.
+  </p>
+  <p>
+    Before working on public WiFi, make sure you understand <a href="/blog/vpn-public-wifi-guide">WiFi security best
+    practices</a> and have a good <a href="/tools/best-vpn-digital-nomads">VPN installed</a>.
   </p>
 
   <!-- Related Articles -->

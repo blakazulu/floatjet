@@ -11,7 +11,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | #   | Name                                                                       | Sub-Category  | Category | Link                                             | Word Count | Humanized content |
 |-----|----------------------------------------------------------------------------|---------------|----------|--------------------------------------------------|------------|-------------------|
 | 001 | Best Team Communication Tools for Remote Work (2025)                       | Communication | Blog     | /blog/best-team-communication-tools              | 650        | true              |
-| 002 | The Complete Guide to Async Communication for Remote Teams (2025)          | Communication | Blog     | /blog/async-communication-remote-teams           | 2547       | false             |
+| 002 | The Complete Guide to Async Communication for Remote Teams (2025)          | Communication | Blog     | /blog/async-communication-remote-teams           | 700        | true              |
 | 003 | Best Banking for Digital Nomads: Multi-Currency Accounts (2025)            | Finance       | Blog     | /blog/best-banking-digital-nomads                | 1789       | false             |
 | 004 | Crypto-Friendly Banks for Remote Workers (2025)                            | Finance       | Blog     | /blog/crypto-friendly-banks                      | 1556       | false             |
 | 005 | Remote Work Tax Basics: What Digital Nomads Need to Know (2025)            | Finance       | Blog     | /blog/tax-tips-remote-workers                    | 3116       | false             |

@@ -114,12 +114,12 @@ Stop processing this article, continue to next.
 
 **If `fakePercentage > 8`:**
 
-1. Report: "Article #XXX: AI detected at X.X% (target: ≤8%) - Re-humanizing..."
-2. Focus on the flagged sentences from response
-3. Apply more aggressive humanization to those sections
-4. Re-test with API
-5. Repeat up to 5 attempts total
-6. Use the response to improve our `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md`
+1. Use the response to improve our `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md`
+2. Report: "Article #XXX: AI detected at X.X% (target: ≤8%) - Re-humanizing..."
+3. Focus on the flagged sentences from response
+4. Apply more aggressive humanization to those sections
+5. Re-test with API
+6. Repeat up to 5 attempts total
 
 **If max attempts reached without success:**
 
@@ -130,6 +130,7 @@ Manual review recommended.
 
 **If `fakePercentage ≤ 8`:**
 
+1. Use the response to improve our `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md`
 ```
 ✅ Article #XXX: PASSED at X.X%
 ```

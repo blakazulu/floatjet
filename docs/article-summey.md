@@ -28,7 +28,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 016 | Top 10 Destinations for Digital Nomads (2025)                              | Travel        | Blog     | /blog/top-destinations-digital-nomads            | 2100       | true              |
 | 017 | Best Laptop Bags & Backpacks for Digital Nomads (2025)                     | Accessories   | Gear     | /gear/best-laptop-bags-backpacks                 | 1850       | true              |
 | 018 | Best Mechanical Keyboards for Remote Work (2025)                           | Accessories   | Gear     | /gear/best-mechanical-keyboards                  | 1763       | true              |
-| 019 | Best Portable Chargers & Power Banks for Travel (2025)                     | Accessories   | Gear     | /gear/best-portable-chargers-power-banks         | 3343       | false             |
+| 019 | Best Portable Chargers & Power Banks for Travel (2025)                     | Accessories   | Gear     | /gear/best-portable-chargers-power-banks         | 3250       | true              |
 | 020 | Best Webcams for Professional Video Calls (2025)                           | Accessories   | Gear     | /gear/best-webcams-video-calls                   | 3893       | false             |
 | 021 | Best Travel Adapters for International Nomads (2025)                       | Accessories   | Gear     | /gear/best-travel-adapters                       | 2530       | false             |
 | 022 | Best Microphones for Remote Meetings (2025)                                | Audio         | Gear     | /gear/best-microphones-remote-meetings           | 1846       | false             |

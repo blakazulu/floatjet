@@ -147,6 +147,8 @@ Edit `/mnt/c/My Stuff/floatjet/docs/article-summey.md`:
 1. Find the article row by number
 2. Update `Word Count` to new count
 3. Change `Humanized content` from `false` to `true`
+4. Update `### Word Count Summary`
+5. Update `### Word Count Summary for Non-Humanized Content`
 
 ### Step 8: Final Report
 

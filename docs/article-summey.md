@@ -14,7 +14,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 002 | The Complete Guide to Async Communication for Remote Teams (2025)          | Communication | Blog     | /blog/async-communication-remote-teams           | 700        | true              |
 | 003 | Best Banking for Digital Nomads: Multi-Currency Accounts (2025)            | Finance       | Blog     | /blog/best-banking-digital-nomads                | 700        | true              |
 | 004 | Crypto-Friendly Banks for Remote Workers (2025)                            | Finance       | Blog     | /blog/crypto-friendly-banks                      | 600        | true              |
-| 005 | Remote Work Tax Basics: What Digital Nomads Need to Know (2025)            | Finance       | Blog     | /blog/tax-tips-remote-workers                    | 3116       | false             |
+| 005 | Remote Work Taxes: The No-BS Guide (2025)                                  | Finance       | Blog     | /blog/tax-tips-remote-workers                    | 800        | true              |
 | 006 | Cloud Hosting vs Traditional Hosting: Which Should You Choose? (2025)      | Hosting       | Blog     | /blog/cloud-vs-traditional-hosting               | 1612       | false             |
 | 007 | Best Managed WordPress Hosting Compared (2025)                             | Hosting       | Blog     | /blog/managed-wordpress-hosting-compared         | 1559       | false             |
 | 008 | Managing Time Zones: Tools and Tips for Global Remote Teams (2025)         | Productivity  | Blog     | /blog/managing-time-zones-remote-teams           | 2393       | false             |

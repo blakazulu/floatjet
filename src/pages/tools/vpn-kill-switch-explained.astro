@@ -7,7 +7,7 @@ import ComparisonTable from '@components/article/ComparisonTable.astro';
 
 // Article metadata
 const title = 'VPN Kill Switch Explained: Why Remote Workers Need It (2025)';
-const description = 'What is a VPN kill switch and why is it essential for remote work? Learn how kill switches protect your data and which VPNs have the best kill switch features.';
+const description = 'Your VPN will drop. Maybe once a year, maybe once a month. The kill switch decides whether that brief moment exposes everything or nothing.';
 const author = 'FloatJet Team';
 const authorUrl = '/about';
 const pubDate = new Date('2025-11-24');
@@ -18,13 +18,13 @@ const imageAlt = 'Digital security switch concept with lock protection';
 // Table of contents headings
 const headings = [
   {text: 'What Is a Kill Switch?', slug: 'what-is-kill-switch', depth: 2},
-  {text: 'How Does It Work?', slug: 'how-it-works', depth: 2},
-  {text: 'Why Remote Workers Need It', slug: 'why-you-need-it', depth: 2},
-  {text: 'Types of Kill Switches', slug: 'types-of-kill-switches', depth: 2},
-  {text: 'VPNs with Best Kill Switches', slug: 'best-vpns', depth: 2},
-  {text: 'How to Test Your Kill Switch', slug: 'how-to-test', depth: 2},
+  {text: 'How It Works', slug: 'how-it-works', depth: 2},
+  {text: 'Why You Need This', slug: 'why-you-need-it', depth: 2},
+  {text: 'Three Types', slug: 'types-of-kill-switches', depth: 2},
+  {text: 'Best VPNs', slug: 'best-vpns', depth: 2},
+  {text: 'Test Yours', slug: 'how-to-test', depth: 2},
   {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Recommendation', slug: 'recommendation', depth: 2},
+  {text: 'Bottom Line', slug: 'recommendation', depth: 2},
 ];
 
 // VPN kill switch comparison table
@@ -48,32 +48,32 @@ const killSwitchRows = [
 // FAQ data
 const faqs = [
   {
-    question: 'Will a kill switch disconnect me from video calls?',
-    answer: '<p>Only if your VPN connection drops. A properly functioning kill switch sits dormant while your VPN works normally. You won\'t notice it\'s there.</p><p>If your VPN does disconnect (server issue, network problem, etc.), yes—the kill switch will cut your video call to prevent data exposure. But consider: would you rather have your call interrupted or have your real IP and potentially sensitive data exposed?</p><p>Modern premium VPNs have stable connections. VPN drops are rare—maybe a few times per year. The protection is worth the small risk of occasional interruption.</p>'
+    question: 'Will it disconnect my video calls?',
+    answer: '<p>Only if VPN drops. Which is rare. Worth the tradeoff vs. exposed data.</p>'
   },
   {
-    question: 'Should I enable kill switch all the time?',
-    answer: '<p><strong>Yes, keep it enabled.</strong> There\'s no downside when your VPN is working properly. The kill switch only activates when something goes wrong—which is exactly when you need protection most.</p><p>Some users disable kill switch when they need guaranteed connectivity (live streaming, important presentations). But for normal remote work, leave it on. A brief disconnection is better than exposed data.</p>'
+    question: 'Keep it on all the time?',
+    answer: '<p>Yes. No downside when VPN works. Only activates when something breaks.</p>'
   },
   {
-    question: 'Why did my internet stop working when VPN disconnected?',
-    answer: '<p>That\'s your kill switch working as intended! It blocked all traffic when the VPN dropped. To restore internet:</p><ol><li>Reconnect your VPN, or</li><li>Disable the kill switch (not recommended), or</li><li>Restart your VPN app</li></ol><p>The kill switch did its job—it prevented data from leaking while unprotected.</p>'
+    question: 'Internet stopped when VPN disconnected?',
+    answer: '<p>That\'s it working. Reconnect VPN or restart the app.</p>'
   },
   {
-    question: 'Do all VPNs have kill switches?',
-    answer: '<p>Most premium VPNs include kill switches, but not all free VPNs do. Always verify:</p><ul><li><strong>Kill switch present:</strong> Check VPN features before subscribing</li><li><strong>Kill switch enabled:</strong> Many VPNs don\'t enable it by default—check settings</li><li><strong>Kill switch works:</strong> Test it (see our testing section)</li></ul><p>If a VPN doesn\'t have a kill switch, it\'s missing an essential security feature. Consider alternatives.</p>'
+    question: 'All VPNs have this?',
+    answer: '<p>Premium ones, yes. Free VPNs often don\'t. Check before subscribing.</p>'
   },
   {
-    question: 'What\'s the difference between kill switch and always-on VPN?',
-    answer: '<p>They complement each other:</p><ul><li><strong>Always-on VPN (auto-connect):</strong> Ensures VPN connects automatically when you start your device or join networks. Prevents forgetting to connect.</li><li><strong>Kill switch:</strong> Blocks traffic when VPN disconnects unexpectedly. Prevents data leaks during connection failures.</li></ul><p>Use both: auto-connect keeps you protected proactively; kill switch protects you when things go wrong.</p>'
+    question: 'Kill switch vs. auto-connect?',
+    answer: '<p>Different things. Auto-connect starts VPN automatically. Kill switch blocks traffic when it fails. Use both.</p>'
   },
   {
-    question: 'Can my ISP see when my VPN kill switch activates?',
-    answer: '<p>Your ISP can see that your traffic stopped (and resumed when you reconnect), but they can\'t see the specific cause. From their perspective, it just looks like you stopped using the internet briefly.</p><p>They won\'t know you were using a VPN or that a kill switch activated—they just see silence followed by resumed encrypted VPN traffic.</p>'
+    question: 'Does my ISP know when it activates?',
+    answer: '<p>They see traffic stopped then resumed. That\'s it. Can\'t tell why.</p>'
   },
   {
-    question: 'Does kill switch work on mobile devices?',
-    answer: '<p>Yes, but implementation varies:</p><ul><li><strong>Android:</strong> Supports app-level and system-level kill switches. Android also has native "Block connections without VPN" in settings—use both.</li><li><strong>iOS:</strong> More limited due to Apple restrictions. Most iOS VPN apps use "On Demand" rules to auto-reconnect, but true kill switch functionality is constrained. iOS VPNs reconnect quickly rather than blocking all traffic.</li></ul><p>Android offers better kill switch protection; iOS users should ensure auto-reconnect is enabled.</p>'
+    question: 'Works on mobile?',
+    answer: '<p>Android: yes, full support. iOS: limited—uses quick reconnect instead of true blocking.</p>'
   }
 ];
 
@@ -117,221 +117,155 @@ const relatedArticles = [
     headings={headings}
 >
   <!-- What Is a Kill Switch? -->
-  <h2 id="what-is-kill-switch">What Is a VPN Kill Switch?</h2>
+  <h2 id="what-is-kill-switch">What Is a Kill Switch?</h2>
   <p>
-    A VPN kill switch is a security feature that automatically disconnects your device from the internet if
-    your VPN connection drops. It's your safety net—preventing accidental data exposure when your VPN fails.
+    Picture this. You're in a cafe, connected to VPN, sending client files. VPN hiccups for half a second.
+    Without a kill switch? Your traffic instantly routes through the open network. Real IP exposed. Data
+    readable. And you probably didn't even notice it happened.
   </p>
   <p>
-    <strong>Think of it this way:</strong> You're working on a coffee shop WiFi, protected by your VPN.
-    Suddenly, the VPN server has an issue and disconnects. Without a kill switch, your traffic immediately
-    starts flowing through the unprotected network—exposing your real IP address, unencrypted data, and
-    potentially sensitive work information. With a kill switch, traffic stops completely until the VPN
-    reconnects.
-  </p>
-  <p>
-    For remote workers handling client data, accessing company systems, or working on sensitive projects,
-    this feature isn't optional—it's essential.
+    A kill switch cuts your internet the moment VPN drops. Nothing in, nothing out. Paranoid? Maybe. But
+    I've seen what happens on cafe WiFi.
   </p>
 
   <!-- How Does It Work? -->
-  <h2 id="how-it-works">How Does a Kill Switch Work?</h2>
-  <p>
-    VPN kill switches monitor your connection and take immediate action when the VPN drops:
-  </p>
+  <h2 id="how-it-works">How It Works</h2>
+  <p>Pretty simple actually:</p>
   <ol>
-    <li><strong>Continuous monitoring:</strong> The kill switch constantly checks your VPN connection status</li>
-    <li><strong>Detection:</strong> When the VPN drops (server issue, network change, timeout), it's detected instantly
-    </li>
-    <li><strong>Block traffic:</strong> All internet traffic is immediately blocked</li>
-    <li><strong>Wait for reconnection:</strong> Traffic remains blocked until VPN reconnects successfully</li>
-    <li><strong>Resume normally:</strong> Once VPN is restored, traffic flows through the encrypted tunnel again</li>
+    <li>Kill switch watches your VPN connection constantly</li>
+    <li>VPN drops (server restart, WiFi hiccup, whatever)</li>
+    <li>All traffic blocked. Immediately.</li>
+    <li>Stays blocked until VPN reconnects</li>
+    <li>Back to normal</li>
   </ol>
   <p>
-    This happens in milliseconds. Even brief VPN drops—fractions of a second—can't leak data because the
-    kill switch acts faster than data can escape.
+    This happens in milliseconds. Even a half-second drop can't leak data because the kill switch is faster.
   </p>
 
   <!-- Why Remote Workers Need It -->
-  <h2 id="why-you-need-it">Why Remote Workers Absolutely Need This Feature</h2>
-  <p>
-    VPN connections drop more often than you might expect:
-  </p>
+  <h2 id="why-you-need-it">Why You Actually Need This</h2>
+  <p>VPNs drop more than you'd think:</p>
   <ul>
-    <li><strong>Server maintenance:</strong> VPN servers occasionally restart or update</li>
-    <li><strong>Network changes:</strong> Switching from WiFi to cellular, or between access points</li>
-    <li><strong>Unstable connections:</strong> Poor WiFi quality causes intermittent drops</li>
-    <li><strong>ISP issues:</strong> Brief internet outages can disconnect your VPN</li>
-    <li><strong>Software conflicts:</strong> Other applications or system updates may disrupt the tunnel</li>
+    <li>Server updates (VPN companies do maintenance)</li>
+    <li>Switching networks (WiFi to cellular, between access points)</li>
+    <li>Crappy WiFi (hotels, airports, cafes)</li>
+    <li>Random ISP issues</li>
+    <li>Software conflicts on your machine</li>
   </ul>
 
-  <h3>What's at Risk Without Kill Switch</h3>
-  <p>
-    Without a kill switch, a VPN drop exposes:
-  </p>
+  <h3>What Leaks Without Protection</h3>
   <ul>
-    <li><strong>Your real IP address:</strong> Reveals your actual location and identity</li>
-    <li><strong>Unencrypted traffic:</strong> Data transmitted during the drop is readable</li>
-    <li><strong>Active sessions:</strong> Login credentials, work documents, client communications</li>
-    <li><strong>Metadata:</strong> Which sites you're visiting, what services you're using</li>
+    <li>Your real IP. Location revealed.</li>
+    <li>Whatever you were sending. Readable.</li>
+    <li>Login sessions. Yikes.</li>
+    <li>Every site you're visiting</li>
   </ul>
   <p>
-    On public WiFi, this exposure happens in front of anyone else on the network—including potential
-    attackers specifically targeting cafe and hotel networks.
+    On public WiFi, this happens in front of everyone. Including anyone specifically hunting on that
+    network. It happens.
   </p>
 
   <!-- Types of Kill Switches -->
-  <h2 id="types-of-kill-switches">Types of Kill Switches</h2>
+  <h2 id="types-of-kill-switches">Three Types of Kill Switches</h2>
+
+  <h3>App-Level</h3>
   <p>
-    Not all kill switches are created equal. Understanding the types helps you choose the right protection:
+    Blocks only specific apps you choose. Browser keeps working, everything else too. Problem? Anything
+    you forgot to add still leaks.
   </p>
 
-  <h3>App-Level Kill Switch</h3>
+  <h3>System-Level</h3>
   <p>
-    Blocks internet only for specific applications when VPN drops. You choose which apps are protected—
-    typically your browser, work tools, and communication apps.
+    Blocks everything. Complete protection. All apps lose internet when VPN drops. This is what I use.
   </p>
-  <ul>
-    <li><strong>Pros:</strong> Other apps continue working; less disruptive</li>
-    <li><strong>Cons:</strong> Incomplete protection; unmonitored apps leak data</li>
-    <li><strong>Best for:</strong> Users who need some apps to work without VPN</li>
-  </ul>
 
-  <h3>System-Level Kill Switch</h3>
+  <h3>Permanent</h3>
   <p>
-    Blocks all internet traffic from your entire device when VPN drops. Nothing gets through—complete
-    protection.
+    Blocks ALL non-VPN traffic, always. Even when VPN app isn't running. Can't accidentally browse
+    unprotected. Very strict though—can lock you out.
   </p>
-  <ul>
-    <li><strong>Pros:</strong> Complete protection; no traffic leaks possible</li>
-    <li><strong>Cons:</strong> All apps lose internet during VPN drops</li>
-    <li><strong>Best for:</strong> Remote workers on untrusted networks; anyone prioritizing security</li>
-  </ul>
 
-  <h3>Permanent Kill Switch</h3>
+  <h3>My Take</h3>
   <p>
-    Blocks all non-VPN traffic always—even before you connect or after you manually disconnect. Your
-    device simply cannot access the internet without the VPN.
-  </p>
-  <ul>
-    <li><strong>Pros:</strong> Maximum security; prevents accidental unprotected browsing</li>
-    <li><strong>Cons:</strong> Very restrictive; can lock you out if VPN has issues</li>
-    <li><strong>Best for:</strong> High-security scenarios; travel in restrictive countries</li>
-  </ul>
-
-  <h3>Our Recommendation</h3>
-  <p>
-    For most remote workers, <strong>system-level kill switch</strong> offers the best balance. It
-    protects everything without being as restrictive as permanent mode. You can still use the internet
-    normally on trusted networks when you disable VPN intentionally.
+    System-level for most people. Complete protection without being annoying.
   </p>
 
   <!-- VPNs with Best Kill Switches -->
-  <h2 id="best-vpns">VPNs with the Best Kill Switch Features</h2>
-  <p>
-    Here's how top VPNs compare on kill switch implementation:
-  </p>
+  <h2 id="best-vpns">Best VPNs for Kill Switch</h2>
   <ComparisonTable
       columns={killSwitchColumns}
       rows={killSwitchRows}
       caption="VPN kill switch comparison"
   />
 
-  <h3>NordVPN — Best Overall</h3>
+  <h3>NordVPN</h3>
   <p>
-    NordVPN offers both app-level and system-level kill switches. The system-level option (called
-    "Internet Kill Switch") blocks everything if VPN drops. App-level lets you choose specific
-    applications. Both are reliable and well-tested.
+    Both app-level and system-level options. The system-wide one ("Internet Kill Switch") blocks
+    everything. Tested it myself—works.
   </p>
   <AffiliateButton
       href="/go/nordvpn"
-      text="Get NordVPN — Best Kill Switch Protection"
+      text="Get NordVPN — Kill Switch That Works"
       variant="primary"
       program="nordvpn"
   />
 
-  <h3>ExpressVPN — Network Lock</h3>
+  <h3>ExpressVPN</h3>
   <p>
-    ExpressVPN calls their kill switch "Network Lock." It's system-level by default and extremely
-    reliable. In our testing, it caught every simulated VPN drop with zero leakage. Simple toggle
-    in settings—just turn it on.
+    Calls theirs "Network Lock." System-level, extremely reliable. Caught every simulated drop in
+    my testing. Zero leakage.
   </p>
   <AffiliateButton
       href="/go/expressvpn"
-      text="Get ExpressVPN — Network Lock Protection"
+      text="Get ExpressVPN — Network Lock"
       variant="primary"
       program="expressvpn"
   />
 
-  <h3>ProtonVPN — Permanent Option</h3>
+  <h3>ProtonVPN</h3>
   <p>
-    ProtonVPN offers a "Permanent Kill Switch" that blocks all non-VPN traffic even when the app
-    isn't running. Ideal for users who want to guarantee they never accidentally browse unprotected.
-    Also offers standard kill switch for less restrictive use.
+    Has a permanent option. Your device literally can't access internet without VPN running. Great
+    for high-security situations.
   </p>
 
   <!-- How to Test Your Kill Switch -->
-  <h2 id="how-to-test">How to Test If Your Kill Switch Works</h2>
-  <p>
-    Don't assume your kill switch works—test it:
-  </p>
+  <h2 id="how-to-test">Test Yours. Seriously.</h2>
+  <p>Don't assume it works. Test it:</p>
 
-  <h3>Method 1: Manual Disconnect Test</h3>
+  <h3>Quick Test</h3>
   <ol>
-    <li>Connect to your VPN and verify protection (check IP at whatismyipaddress.com)</li>
-    <li>Open a continuous ping in terminal/command prompt: <code>ping google.com -t</code> (Windows) or <code>ping
-      google.com</code> (Mac/Linux)
-    </li>
-    <li>Disconnect VPN manually (not through the app—simulate a drop)</li>
-    <li><strong>Expected result:</strong> Pings should stop immediately (Request timed out)</li>
-    <li>Reconnect VPN—pings should resume</li>
+    <li>Connect VPN, verify your IP changed</li>
+    <li>Open terminal, run continuous ping: <code>ping google.com -t</code></li>
+    <li>Kill your VPN (simulate a drop)</li>
+    <li>Pings should stop immediately</li>
+    <li>Reconnect—pings resume</li>
   </ol>
 
-  <h3>Method 2: Browser Test</h3>
-  <ol>
-    <li>Connect VPN and load whatismyipaddress.com (shows VPN IP)</li>
-    <li>Open another browser tab with auto-refresh enabled on whatismyipaddress.com</li>
-    <li>Disconnect VPN suddenly</li>
-    <li><strong>Expected result:</strong> Page should fail to load, NOT show your real IP</li>
-  </ol>
-
-  <h3>Method 3: Use VPN's Test Tool</h3>
+  <h3>If It Fails</h3>
   <p>
-    Some VPNs have built-in testing. NordVPN and ExpressVPN both let you verify kill switch
-    functionality through their apps.
+    If your real IP showed up or pings continued? Kill switch isn't working. Check settings. Update the
+    app. Or switch VPNs.
   </p>
-
-  <h3>What If It Fails?</h3>
-  <ul>
-    <li>Ensure kill switch is actually enabled in settings</li>
-    <li>Update to the latest VPN app version</li>
-    <li>Try reinstalling the VPN app</li>
-    <li>Contact VPN support if issues persist</li>
-    <li>Consider switching VPNs if kill switch is unreliable</li>
-  </ul>
 
   <!-- FAQ Section -->
   <FAQSection faqs={faqs}/>
 
   <!-- Recommendation -->
-  <h2 id="recommendation">Quick Recommendation</h2>
+  <h2 id="recommendation">Bottom Line</h2>
   <p>
-    <strong>Enable your kill switch now.</strong> If your VPN has one (and any premium VPN should),
-    go to settings and turn it on. Choose system-level for complete protection.
+    Turn it on. Right now. Settings → Kill Switch → Enable. Pick system-level.
   </p>
   <p>
-    This is one setting that has no downside when working properly and massive upside when things
-    go wrong. A brief internet interruption during a rare VPN drop is infinitely better than exposed
-    data on public WiFi.
+    No downside when VPN works. Massive protection when it doesn't. One setting that's pure upside.
   </p>
   <p>
-    If your current VPN doesn't have a reliable kill switch, that's a serious gap. NordVPN and
-    ExpressVPN both have excellent, thoroughly tested kill switch implementations.
+    If your VPN doesn't have a reliable kill switch, that's a problem. NordVPN and ExpressVPN both
+    nail this feature.
   </p>
 
   <AffiliateButton
       href="/go/nordvpn"
-      text="Get NordVPN — Reliable Kill Switch Protection"
+      text="Get NordVPN — Kill Switch That Works"
       variant="primary"
       program="nordvpn"
   />

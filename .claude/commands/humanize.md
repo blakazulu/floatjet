@@ -119,6 +119,7 @@ Stop processing this article, continue to next.
 3. Apply more aggressive humanization to those sections
 4. Re-test with API
 5. Repeat up to 5 attempts total
+6. Use the response to improve our `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md`
 
 **If max attempts reached without success:**
 

@@ -32,7 +32,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 020 | Best Webcams for Professional Video Calls (2025)                           | Accessories   | Gear     | /gear/best-webcams-video-calls                   | 2266       | true              |
 | 021 | Best Travel Adapters for International Nomads (2025)                       | Accessories   | Gear     | /gear/best-travel-adapters                       | 1542       | true              |
 | 022 | Best Microphones for Remote Meetings (2025)                                | Audio         | Gear     | /gear/best-microphones-remote-meetings           | 1168       | true              |
-| 023 | How to Reduce Background Noise on Video Calls (2025)                       | Audio         | Gear     | /gear/reduce-background-noise-calls              | 1457       | false             |
+| 023 | How to Reduce Background Noise on Video Calls (2025)                       | Audio         | Gear     | /gear/reduce-background-noise-calls              | 704        | true              |
 | 024 | Best Wireless Earbuds for Remote Work Calls (2025)                         | Audio         | Gear     | /gear/best-wireless-earbuds-remote-work          | 2611       | false             |
 | 025 | USB vs XLR Microphones: Which Is Better for Remote Work?                   | Audio         | Gear     | /gear/usb-vs-xlr-microphones                     | 1861       | false             |
 | 026 | Best Noise-Canceling Headphones for Remote Work (2025)                     | Audio         | Gear     | /gear/best-noise-canceling-headphones            | 4240       | false             |
@@ -113,24 +113,24 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | Category  | Articles | Words       |
 |-----------|----------|-------------|
 | Blog      | 16       | 14,776      |
-| Gear      | 23       | 54,726      |
+| Gear      | 23       | 53,973      |
 | Guides    | 30       | 65,619      |
 | Tools     | 28       | 74,329      |
-| **Total** | **97**   | **209,450** |
+| **Total** | **97**   | **208,697** |
 
-**Average words per article:** ~2,159
+**Average words per article:** ~2,152
 
 ### Word Count Summary for Non-Humanized Content
 
 | Category  | Articles | Words       |
 |-----------|----------|-------------|
 | Blog      | 0        | 0           |
-| Gear      | 19       | 48,578      |
+| Gear      | 18       | 47,121      |
 | Guides    | 30       | 65,619      |
 | Tools     | 22       | 66,386      |
-| **Total** | **71**   | **180,583** |
+| **Total** | **70**   | **179,126** |
 
-**Average words per article:** ~2,544
+**Average words per article:** ~2,559
 
 ---
 

@@ -100,7 +100,17 @@ Read `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md` and apply these rule
     - `data.feedback` - human/AI classification
    - `data.h` - flagged sentences array (focus re-humanization on these)
 
-### Step 5: Handle Results
+### Step 5: Handle Results & Learn from API Response
+
+**Understanding the API Response:**
+
+The ZeroGPT API returns valuable data we can learn from:
+
+- `data.h` - Array of sentences flagged as AI-generated (AVOID these patterns)
+- `data.hi` - Array of sentences flagged as human (REPLICATE these patterns)
+- `data.specialSentences` - Sentences with special markers (often pass as human)
+- `data.fakePercentage` - Overall AI detection percentage
+- `data.feedback` - Classification result
 
 **If API Error:**
 
@@ -114,10 +124,10 @@ Stop processing this article, continue to next.
 
 **If `fakePercentage > 8`:**
 
-1. Use the response to improve our `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md`
-2. Report: "Article #XXX: AI detected at X.X% (target: ≤8%) - Re-humanizing..."
-3. Focus on the flagged sentences from response
-4. Apply more aggressive humanization to those sections
+1. Report: "Article #XXX: AI detected at X.X% (target: ≤8%) - Re-humanizing..."
+2. Analyze `data.h` (AI-flagged sentences) for patterns to avoid
+3. Focus re-humanization on those specific flagged sentences
+4. Apply more aggressive humanization techniques
 5. Re-test with API
 6. Repeat up to 5 attempts total
 
@@ -130,10 +140,54 @@ Manual review recommended.
 
 **If `fakePercentage ≤ 8`:**
 
-1. Use the response to improve our `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md`
 ```
 ✅ Article #XXX: PASSED at X.X%
 ```
+
+### Step 5.5: Update Writing Style Guide (REQUIRED)
+
+After EVERY API response (pass or fail), analyze the results and update
+`/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md`:
+
+**What to analyze:**
+
+1. **From `data.h` (AI-flagged sentences):**
+   - Identify common patterns that get flagged
+   - Look for word choices, sentence structures, or phrases that trigger detection
+   - Add these patterns to the "Words to Avoid" or "AI Detection Patterns to Eliminate" sections
+
+2. **From `data.specialSentences` and sentences NOT in `data.h`:**
+   - These passed as human - identify what makes them work
+   - Short fragments? Casual language? Questions? Specific details?
+   - Add successful patterns to the "Human Writing Patterns to Add" section
+
+3. **Pattern Analysis Examples:**
+   - If many flagged sentences start the same way → add to "vary sentence starts"
+   - If formal transitions get flagged → add to "words to avoid"
+   - If short punchy sentences pass → reinforce in style guide
+   - If personal anecdotes pass → emphasize adding more
+
+**How to update the style guide:**
+
+1. Read the current `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md`
+2. Find the relevant section (e.g., "Words to Avoid", "Sentence Structure", etc.)
+3. Add new insights discovered from the API response
+4. Include concrete examples from the actual flagged/passed sentences
+5. Keep the guide organized - don't duplicate existing advice
+
+**Example updates:**
+
+If API flagged: "The hybrid USB/XLR design means you can start with USB and upgrade to XLR later."
+
+- Pattern identified: Formal explanatory structure
+- Add to guide: "Avoid 'X means you can Y' explanatory patterns - use casual phrasing instead"
+
+If API passed: "Four!" or "The downside:"
+
+- Pattern identified: Short exclamations and casual headers work
+- Reinforce in guide: "Single-word sentences and fragments consistently pass detection"
+
+**IMPORTANT:** Only add genuinely new insights. Don't bloat the guide with redundant advice.
 
 ### Step 6: Apply Changes
 

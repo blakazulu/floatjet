@@ -101,12 +101,24 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 089 | Best Video Conferencing Tools for Remote Teams (2025)                      | SaaS          | Tools    | /tools/best-video-conferencing-tools             | 3823       | false             |
 | 090 | Is Notion Worth It? Honest Review for Remote Workers (2025)                | SaaS          | Tools    | /tools/is-notion-worth-it                        | 2250       | false             |
 | 091 | Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)                | SaaS          | Tools    | /tools/notion-vs-clickup-vs-monday               | 2621       | false             |
-| 092 | Best VPNs for Digital Nomads & Remote Workers (2025)                       | VPN           | Tools    | /tools/best-vpn-digital-nomads                   | 3916       | false             |
+| 092 | Best VPNs for Digital Nomads & Remote Workers (2025)                       | VPN           | Tools    | /tools/best-vpn-digital-nomads                   | 1743       | true              |
 | 093 | Best VPN for Streaming While Traveling (2025)                              | VPN           | Tools    | /tools/best-vpn-streaming-travel                 | 3402       | false             |
 | 094 | Best Business VPN Solutions for Remote Teams (2025)                        | VPN           | Tools    | /tools/best-business-vpn-remote-teams            | 3709       | false             |
 | 095 | Free VPN vs Paid VPN: What Remote Workers Need to Know (2025)              | VPN           | Tools    | /tools/free-vpn-vs-paid-vpn                      | 3146       | false             |
 | 096 | How to Set Up a VPN on All Your Devices (2025)                             | VPN           | Tools    | /tools/how-to-setup-vpn-all-devices              | 2624       | false             |
 | 097 | VPN Kill Switch Explained: Why Remote Workers Need It (2025)               | VPN           | Tools    | /tools/vpn-kill-switch-explained                 | 2013       | false             |
+
+### Word Count Summary
+
+| Category  | Articles | Words       |
+|-----------|----------|-------------|
+| Blog      | 16       | 31,396      |
+| Gear      | 23       | 60,378      |
+| Guides    | 30       | 65,619      |
+| Tools     | 28       | 83,023      |
+| **Total** | **97**   | **240,416** |
+
+**Average words per article:** ~2,478
 
 ---
 
@@ -140,4 +152,4 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 
 ---
 
-*Last updated: 2025-11-24*
+*Last updated: 2025-11-25*

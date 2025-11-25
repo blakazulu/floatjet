@@ -15,7 +15,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 003 | Best Banking for Digital Nomads: Multi-Currency Accounts (2025)            | Finance       | Blog     | /blog/best-banking-digital-nomads                | 700        | true              |
 | 004 | Crypto-Friendly Banks for Remote Workers (2025)                            | Finance       | Blog     | /blog/crypto-friendly-banks                      | 600        | true              |
 | 005 | Remote Work Taxes: The No-BS Guide (2025)                                  | Finance       | Blog     | /blog/tax-tips-remote-workers                    | 800        | true              |
-| 006 | Cloud Hosting vs Traditional Hosting: Which Should You Choose? (2025)      | Hosting       | Blog     | /blog/cloud-vs-traditional-hosting               | 1612       | false             |
+| 006 | Cloud vs Traditional Hosting: What Actually Matters (2025)                 | Hosting       | Blog     | /blog/cloud-vs-traditional-hosting               | 750        | true              |
 | 007 | Best Managed WordPress Hosting Compared (2025)                             | Hosting       | Blog     | /blog/managed-wordpress-hosting-compared         | 1559       | false             |
 | 008 | Managing Time Zones: Tools and Tips for Global Remote Teams (2025)         | Productivity  | Blog     | /blog/managing-time-zones-remote-teams           | 2393       | false             |
 | 009 | Best CRM Software for Small Business (2025)                                | SaaS          | Blog     | /blog/best-crm-software-small-business           | 1666       | false             |

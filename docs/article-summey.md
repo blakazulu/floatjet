@@ -25,7 +25,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 013 | How to Find Reliable WiFi Anywhere in the World (2025)                     | Travel        | Blog     | /blog/find-reliable-wifi-anywhere                | 1087       | true              |
 | 014 | Essential Travel Tech for Digital Nomads (2025)                            | Travel        | Blog     | /blog/essential-travel-tech-nomads               | 1450       | true              |
 | 015 | Best Travel Insurance for Remote Workers & Digital Nomads (2025)           | Travel        | Blog     | /blog/best-travel-insurance-remote-workers       | 1420       | true              |
-| 016 | Top 10 Destinations for Digital Nomads (2025)                              | Travel        | Blog     | /blog/top-destinations-digital-nomads            | 1756       | false             |
+| 016 | Top 10 Destinations for Digital Nomads (2025)                              | Travel        | Blog     | /blog/top-destinations-digital-nomads            | 2100       | true              |
 | 017 | Best Laptop Bags & Backpacks for Digital Nomads (2025)                     | Accessories   | Gear     | /gear/best-laptop-bags-backpacks                 | 4209       | false             |
 | 018 | Best Mechanical Keyboards for Remote Work (2025)                           | Accessories   | Gear     | /gear/best-mechanical-keyboards                  | 3017       | false             |
 | 019 | Best Portable Chargers & Power Banks for Travel (2025)                     | Accessories   | Gear     | /gear/best-portable-chargers-power-banks         | 3343       | false             |

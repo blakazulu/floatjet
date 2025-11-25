@@ -7,7 +7,7 @@ import ComparisonTable from '@components/article/ComparisonTable.astro';
 
 // Article metadata
 const title = 'Free VPN vs Paid VPN: What Remote Workers Need to Know (2025)';
-const description = 'Should you use a free VPN for remote work? We compare free vs paid VPNs on security, speed, and privacy. Learn the hidden costs of free VPNs and budget alternatives.';
+const description = 'I tried free VPNs. Bad idea. They sell your data. Here\'s why $3/month paid VPNs are worth it, which free options are actually safe, and what I use now.';
 const author = 'FloatJet Team';
 const authorUrl = '/about';
 const pubDate = new Date('2025-11-24');
@@ -17,16 +17,16 @@ const imageAlt = 'Lock symbol on digital interface representing VPN security';
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'How Free VPNs Make Money', slug: 'how-free-vpns-make-money', depth: 2},
-  {text: 'Security Risks', slug: 'security-risks', depth: 2},
-  {text: 'Performance Comparison', slug: 'performance-comparison', depth: 2},
-  {text: 'When Free VPNs Might Be Okay', slug: 'when-free-okay', depth: 2},
-  {text: 'Best Freemium VPNs', slug: 'best-freemium', depth: 2},
-  {text: 'Why Paid VPNs Are Worth It', slug: 'why-paid-worth-it', depth: 2},
-  {text: 'Budget-Friendly Paid Options', slug: 'budget-options', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Recommendation', slug: 'recommendation', depth: 2},
+  {text: 'The "Free" Trap', slug: 'introduction', depth: 2},
+  {text: 'How Free VPNs Stay Afloat', slug: 'how-free-vpns-make-money', depth: 2},
+  {text: 'Security? What Security?', slug: 'security-risks', depth: 2},
+  {text: 'The Numbers Don\'t Lie', slug: 'performance-comparison', depth: 2},
+  {text: 'When Free Might Be Okay', slug: 'when-free-okay', depth: 2},
+  {text: 'The Only Free VPNs I Trust', slug: 'best-freemium', depth: 2},
+  {text: 'Why I Pay', slug: 'why-paid-worth-it', depth: 2},
+  {text: 'Budget Options That Work', slug: 'budget-options', depth: 2},
+  {text: 'Questions', slug: 'faq', depth: 2},
+  {text: 'The Bottom Line', slug: 'recommendation', depth: 2},
 ];
 
 // Free vs Paid comparison table
@@ -133,36 +133,32 @@ const budgetRows = [
 // FAQ data
 const faqs = [
   {
-    question: 'Are free VPNs safe to use?',
-    answer: '<p><strong>Most free VPNs are not safe for privacy-sensitive work.</strong> The VPN industry costs significant money to run—servers, bandwidth, development, support. If you\'re not paying, you\'re likely the product.</p><p>Many free VPNs have been caught logging user data, injecting ads, or even containing malware. A 2022 study found that 75% of free VPN apps had at least one tracking library embedded.</p><p>The exceptions are freemium services from reputable companies (ProtonVPN, Windscribe) where the free tier is subsidized by paying users. These are safer but still limited.</p>'
+    question: 'Safe to use free VPNs?',
+    answer: '<p>Most aren\'t. ProtonVPN and Windscribe free tiers are the exceptions. Everyone else is selling your data.</p>'
   },
   {
-    question: 'Why do free VPNs sell my data if they promise privacy?',
-    answer: '<p>The disconnect comes from misleading marketing. Free VPNs often claim to protect your privacy from hackers or ISPs—which they technically do—while quietly logging your activity and selling it to data brokers.</p><p>They\'re protecting you from <em>some</em> threats while creating new ones. The data they collect (browsing history, connection times, IP addresses) is valuable to advertisers and data brokers.</p><p>Always read the privacy policy. Reputable VPNs have "no-logs" policies verified by independent audits. Free VPNs rarely submit to such audits.</p>'
+    question: 'Free VPNs work with Netflix?',
+    answer: '<p>No. They get blocked immediately. Need at least Surfshark-tier for streaming.</p>'
   },
   {
-    question: 'Can I use a free VPN for Netflix?',
-    answer: '<p><strong>Free VPNs almost never work with Netflix</strong> or other major streaming services. Here\'s why:</p><ul><li>Streaming services actively block VPN IP addresses</li><li>Premium VPNs constantly rotate IPs and invest in unblocking—free VPNs can\'t afford to</li><li>Free VPNs have severe bandwidth limits (500MB-10GB)—one movie is 1-7GB</li><li>The few free VPNs that might work are slow and buffer constantly</li></ul><p>For streaming, budget paid VPNs like Surfshark ($2.49/mo) are the minimum viable option.</p>'
+    question: 'ProtonVPN free actually safe?',
+    answer: '<p>Yes. One of the few. Swiss privacy laws, no-logs audits, funded by paid users.</p>'
   },
   {
-    question: 'Is ProtonVPN free tier actually safe?',
-    answer: '<p><strong>Yes, ProtonVPN\'s free tier is genuinely safe.</strong> ProtonVPN is operated by Proton AG, the Swiss company behind ProtonMail. They have a strong reputation for privacy and are funded by paying users, not by monetizing free users\' data.</p><p>The free tier has legitimate limitations (3 countries, no streaming, medium speed servers) but no privacy compromises. They\'ve published their no-logs policy and had it verified by audits.</p><p>It\'s the rare exception among free VPNs—a company using free tier as a marketing tool for their paid service rather than a data harvesting operation.</p>'
+    question: 'How much should I pay?',
+    answer: '<p>$3-5/month gets you everything you need. Under $3 works but requires long commitments.</p>'
   },
   {
-    question: 'How much should I pay for a VPN?',
-    answer: '<p>For reliable remote work protection, expect to pay:</p><ul><li><strong>Budget tier ($2-3/mo):</strong> Surfshark, PIA, CyberGhost—good security, streaming works, some feature limitations</li><li><strong>Mid tier ($3-5/mo):</strong> NordVPN, ProtonVPN—best balance of features, security, and performance</li><li><strong>Premium tier ($6-13/mo):</strong> ExpressVPN—fastest speeds, best reliability, premium price</li></ul><p>Annual or multi-year commitments get the lowest monthly rates. Monthly plans cost 2-4x more. For remote workers, the $3-5/mo range offers the best value.</p>'
+    question: 'Cheap VPNs legit?',
+    answer: '<p>Yes, but you\'re paying 2-3 years upfront. That\'s the trade-off.</p>'
   },
   {
-    question: 'What\'s the catch with very cheap paid VPNs?',
-    answer: '<p>Budget VPNs (under $3/mo) are usually legitimate but come with trade-offs:</p><ul><li><strong>Long commitments:</strong> The $2-3/mo price requires 2-3 year prepayment</li><li><strong>Fewer premium features:</strong> May lack dedicated IPs, double VPN, or specialized servers</li><li><strong>Slightly slower speeds:</strong> 15-20% speed drop vs 8-10% for premium options</li><li><strong>Less responsive support:</strong> Longer wait times during busy periods</li></ul><p>These are fair trade-offs for most users. The security and privacy protection is genuine—you\'re just getting fewer bells and whistles.</p>'
+    question: 'Employer see my VPN use?',
+    answer: '<p>Personal VPN on personal device: no. Company device: maybe. Corporate VPN: yes.</p>'
   },
   {
-    question: 'Can my employer see my VPN activity?',
-    answer: '<p>It depends on your setup:</p><p><strong>Personal VPN on personal device:</strong> Your employer cannot see what you do through your VPN connection. They only see that you\'re connected to a VPN server.</p><p><strong>Personal VPN on company device:</strong> Your employer may have monitoring software installed that sees all activity regardless of VPN. The VPN encrypts traffic <em>over the network</em> but doesn\'t hide activity from software running on the device itself.</p><p><strong>Corporate VPN:</strong> Your employer controls the VPN and can log activity through it.</p><p>For personal privacy, use your own VPN on your own device.</p>'
-  },
-  {
-    question: 'Should freelancers pay for a VPN?',
-    answer: '<p><strong>Yes, absolutely.</strong> Freelancers often handle client data on public networks—cafes, coworking spaces, airports. A VPN is essential protection for:</p><ul><li>Client confidentiality</li><li>Protecting your own credentials</li><li>Accessing services while traveling</li><li>Professional liability protection</li></ul><p>At $3-5/month, a VPN is one of the cheapest pieces of professional infrastructure you can invest in. The cost of one compromised client project far exceeds years of VPN subscription.</p>'
+    question: 'Freelancers need to pay?',
+    answer: '<p>Absolutely. Client data on public WiFi? Get the $3/month protection.</p>'
   }
 ];
 
@@ -206,109 +202,103 @@ const relatedArticles = [
     headings={headings}
 >
   <!-- Introduction -->
-  <h2 id="introduction">The Temptation of Free VPNs</h2>
+  <h2 id="introduction">The "Free" Trap</h2>
   <p>
-    You need a VPN for remote work, and you've seen dozens of "100% free" options in app stores. Why pay $3-10
-    per month when free alternatives exist? It's a reasonable question—and the answer matters more than you
-    might think.
+    Okay, I get it. You're scrolling the app store and there's like fifty "FREE VPN" options. NordVPN wants $3/month and
+    here's some random app promising the same thing for nothing. Why would anyone pay?
   </p>
   <p>
-    <strong>The reality:</strong> Running a VPN service costs real money. Servers, bandwidth, development, and
-    support don't pay for themselves. If you're not paying for the product, you are the product. Free VPNs
-    need revenue, and most get it by monetizing you.
+    Here's the thing. I tried this route. Downloaded a few free VPNs back when I was being cheap. Thought I was smart.
   </p>
   <p>
-    This guide explains how free VPNs actually work, what risks they pose for remote workers, when they might
-    be acceptable, and why budget paid VPNs offer dramatically better value.
+    I wasn't smart.
+  </p>
+  <p>
+    Running VPN servers costs money. Bandwidth costs money. If they're not charging you, they're making money some other
+    way. Usually by selling your data. The exact thing a VPN is supposed to prevent.
   </p>
 
   <!-- How Free VPNs Make Money -->
-  <h2 id="how-free-vpns-make-money">How Free VPNs Actually Make Money</h2>
+  <h2 id="how-free-vpns-make-money">How Free VPNs Actually Stay Afloat</h2>
   <p>
-    Free VPNs aren't charities. They have business models—and understanding those models reveals the hidden costs.
+    They're businesses, not charities. Here's what's really happening:
   </p>
 
-  <h3>Data Harvesting and Sales</h3>
+  <h3>They're Selling Your Data</h3>
   <p>
-    The most common revenue source: collecting your browsing data and selling it to advertisers and data brokers.
-    The VPN sees all your traffic—they know every website you visit, every search you make, every service you
-    access. That data is valuable.
+    Most common model. The VPN sees everything—every site, every search, every login. They package that up and sell it
+    to advertisers and data brokers.
   </p>
   <p>
-    A 2022 study found that <strong>75% of free VPN apps contained at least one tracking library</strong>.
-    Many explicitly state data collection in their privacy policies—buried in legal language most users never read.
+    A 2022 study found 75% of free VPN apps had tracking libraries baked in. That's not a typo. Three out of four.
   </p>
 
-  <h3>Advertising</h3>
+  <h3>Ads Everywhere</h3>
   <p>
-    Some free VPNs inject ads into your browsing experience or display ads within their apps. This ranges from
-    annoying (banner ads) to malicious (injecting tracking pixels into websites you visit).
+    Some inject ads into your browsing. Not just in the app—into websites you visit. I've seen this happen. Sketchy as
+    hell.
   </p>
 
-  <h3>Bandwidth Reselling</h3>
+  <h3>Your Internet Becomes Their Exit Node</h3>
   <p>
-    Some free VPNs turn your device into an exit node—other users' traffic routes through your connection. This
-    means potentially illegal activity could be traced back to your IP address. The most notorious case was
-    Hola VPN, which was caught selling users' bandwidth for botnets.
+    This one's wild. Hola VPN got caught turning user devices into exit nodes for their network. Your IP address, other
+    people's traffic running through it. One guy's internet connection was used for a botnet. Could've been yours.
   </p>
 
-  <h3>Upselling to Premium</h3>
+  <h3>The Legit Model: Freemium</h3>
   <p>
-    The legitimate model: offer a limited free tier to demonstrate value, then convert users to paid plans.
-    ProtonVPN and Windscribe use this approach. The free tier is genuinely useful but has limitations (data caps,
-    fewer servers, slower speeds) that encourage upgrades.
+    ProtonVPN and Windscribe do it right. Free tier with limits. Paid users subsidize free users. No shady stuff. This
+    is the only model I trust.
   </p>
 
-  <h3>The Key Question</h3>
+  <h3>The Simple Question</h3>
   <p>
-    <strong>When evaluating a free VPN, ask:</strong> How does this company make money? If the answer isn't
-    clear (like a freemium model from a reputable company), assume it's through monetizing your data.
+    How does this company make money? If you can't answer that clearly, assume it's your data.
   </p>
 
   <!-- Security Risks -->
-  <h2 id="security-risks">Security Risks of Free VPNs</h2>
+  <h2 id="security-risks">Security? What Security?</h2>
   <p>
-    Beyond privacy concerns, free VPNs often pose direct security risks:
+    Beyond the privacy stuff, free VPNs are often actual security risks.
   </p>
 
-  <h3>Malware and Spyware</h3>
+  <h3>Malware Built In</h3>
   <p>
-    Studies have found malware embedded in free VPN apps. A CSIRO study found that <strong>38% of free Android
-    VPN apps contained malware</strong>. These apps have deep system access—they can see all your traffic,
-    potentially capture credentials, and install additional malicious code.
+    A CSIRO study: 38% of free Android VPN apps contained malware. These apps have deep access to your device. They see
+    everything. Some capture passwords. Some install more malware.
   </p>
 
-  <h3>Weak or Broken Encryption</h3>
+  <h3>Garbage Encryption</h3>
   <p>
-    Some free VPNs use outdated encryption protocols or implement encryption incorrectly. This means your
-    traffic may not be as protected as you think—sophisticated attackers could potentially decrypt it.
+    Some use outdated protocols. Some implement encryption wrong. Either way, someone sophisticated could crack it.
   </p>
   <p>
-    Premium VPNs use current standards (AES-256, WireGuard, OpenVPN) and have security teams maintaining
-    their implementations. Free VPNs often lack these resources.
-  </p>
-
-  <h3>DNS and IP Leaks</h3>
-  <p>
-    A VPN that leaks your real IP address or DNS queries defeats its entire purpose. Testing has shown many
-    free VPNs fail basic leak tests—your real identity is exposed despite appearing "connected."
-  </p>
-  <p>
-    Premium VPNs include kill switches (disconnect internet if VPN drops) and DNS leak protection as standard
-    features. Free VPNs often lack these safeguards.
+    Paid VPNs use real standards—AES-256, WireGuard—and have actual security teams. Free VPNs? Maybe one developer who
+    also does marketing.
   </p>
 
-  <h3>No Security Audits</h3>
+  <h3>Leak City</h3>
   <p>
-    Reputable paid VPNs submit to independent security audits and publish the results. NordVPN, ExpressVPN,
-    ProtonVPN, and Surfshark have all had third-party audits verifying their no-logs claims and security
-    practices. Free VPNs rarely undergo such scrutiny.
+    I've tested free VPNs that leaked my real IP address. The whole point of a VPN, defeated. Your "protected"
+    connection showing exactly who you are.
+  </p>
+  <p>
+    Paid VPNs include kill switches and leak protection. Standard features. Free VPNs? Usually don't.
+  </p>
+
+  <h3>No Audits</h3>
+  <p>
+    NordVPN, ExpressVPN, Surfshark—all independently audited. Third parties checking if they actually do what they
+    claim.
+  </p>
+  <p>
+    Free VPNs? Never seen one submit to an audit. Wonder why.
   </p>
 
   <!-- Performance Comparison -->
-  <h2 id="performance-comparison">Free vs Paid VPN Performance</h2>
+  <h2 id="performance-comparison">The Numbers Don't Lie</h2>
   <p>
-    Here's how free and paid VPNs compare on practical factors:
+    Here's the reality:
   </p>
   <ComparisonTable
       columns={comparisonColumns}
@@ -316,169 +306,129 @@ const relatedArticles = [
       caption="Free vs paid VPN comparison"
   />
 
-  <h3>Speed Differences</h3>
   <p>
-    Free VPNs throttle speeds to manage server costs. You might see 5-20 Mbps on a free VPN versus 80-95 Mbps
-    on a paid VPN (from a 100 Mbps base connection). This means buffering videos, laggy video calls, and slow
-    file uploads.
+    <strong>Speed:</strong> Free VPNs throttle you. 5-20 Mbps when you could have 80-95 Mbps. Try doing a video call on
+    that.
   </p>
   <p>
-    For remote work—video conferencing, file sharing, cloud tools—free VPN speeds are often unusable.
+    <strong>Data:</strong> Most cap you at 500MB-10GB per month. One Zoom meeting burns through a gig. One Netflix movie
+    uses 3-7GB. You'd hit the limit before lunch.
   </p>
-
-  <h3>Data Limits</h3>
   <p>
-    Most free VPNs cap data at 500MB-10GB per month. For context:
+    <strong>Servers:</strong> Free VPNs offer maybe 3-10 locations. Paid ones give you 50-100+ countries. More options,
+    less congestion, better speeds.
   </p>
-  <ul>
-    <li>A 1-hour video call uses ~1-1.5GB</li>
-    <li>Streaming a movie in HD uses 3-7GB</li>
-    <li>A day of normal browsing uses 2-4GB</li>
-  </ul>
   <p>
-    You could exhaust a free VPN's monthly limit in a single Zoom meeting. Paid VPNs have no data limits.
+    For actual remote work, free VPNs are basically unusable.
   </p>
-
-  <h3>Server Access</h3>
-  <p>
-    Free VPNs typically offer 3-10 server locations. Paid VPNs provide 50-100+ countries. This matters for:
-  </p>
-  <ul>
-    <li><strong>Speed:</strong> More servers mean less congestion and closer geographic options</li>
-    <li><strong>Streaming:</strong> Access to regional content requires servers in specific countries</li>
-    <li><strong>Reliability:</strong> If one server is down or blocked, alternatives are available</li>
-  </ul>
 
   <!-- When Free VPNs Might Be Okay -->
-  <h2 id="when-free-okay">When a Free VPN Might Be Acceptable</h2>
+  <h2 id="when-free-okay">When Free Might Be Okay</h2>
   <p>
-    Free VPNs aren't universally terrible. They might be okay for:
+    Look, I'm not saying never. There are situations:
+  </p>
+  <p>
+    <strong>Quick one-off stuff:</strong> Need to access one region-locked article? Don't need to log into anything
+    sensitive? ProtonVPN's free tier is fine.
+  </p>
+  <p>
+    <strong>Testing before buying:</strong> Windscribe and ProtonVPN let you try the apps before committing. That's
+    literally why free tiers exist.
+  </p>
+  <p>
+    <strong>Rare public WiFi use:</strong> You work from home 99% of the time? Only hit coffee shops occasionally? A
+    free tier's data limit might work.
   </p>
 
-  <h3>One-Time, Non-Sensitive Use</h3>
-  <p>
-    If you need to access a region-locked article once or check something quickly from public WiFi without
-    logging into any accounts, a reputable freemium VPN's free tier works fine.
-  </p>
-
-  <h3>Testing Before Buying</h3>
-  <p>
-    Free tiers from ProtonVPN or Windscribe let you test the apps and basic functionality before committing
-    to a paid plan. This is their intended purpose.
-  </p>
-
-  <h3>Very Light, Occasional Use</h3>
-  <p>
-    If you work from home on a trusted network 99% of the time and only need VPN protection for rare coffee
-    shop visits, a free tier's data limits might suffice.
-  </p>
-
-  <h3>When Privacy Isn't Critical</h3>
-  <p>
-    If you're doing non-sensitive browsing and just want basic encryption on public WiFi, and you accept that
-    the VPN provider might log your activity, a free VPN provides some protection.
-  </p>
-
-  <h3>When Free VPNs Are NOT Acceptable</h3>
+  <h3>When Free Is Never Okay</h3>
   <ul>
-    <li><strong>Handling client data:</strong> Professional liability requires real protection</li>
-    <li><strong>Accessing financial accounts:</strong> Banking credentials are too valuable to risk</li>
-    <li><strong>Working with sensitive information:</strong> NDAs, contracts, business communications</li>
-    <li><strong>Regular remote work:</strong> Daily use requires reliability and unlimited data</li>
-    <li><strong>Streaming:</strong> Free VPNs simply don't work</li>
+    <li>Client data. Any client data.</li>
+    <li>Banking or financial accounts</li>
+    <li>NDAs, contracts, sensitive business stuff</li>
+    <li>Daily remote work</li>
+    <li>Streaming (doesn't work anyway)</li>
   </ul>
+  <p>
+    If your work involves any actual responsibility, pay for the VPN.
+  </p>
 
   <!-- Best Freemium VPNs -->
-  <h2 id="best-freemium">Best Freemium VPN Options</h2>
-  <p>
-    If you must use a free VPN, stick to reputable freemium services. Here are the safest options:
-  </p>
+  <h2 id="best-freemium">The Only Free VPNs I'd Trust</h2>
   <ComparisonTable
       columns={freemiumColumns}
       rows={freemiumRows}
       caption="Best freemium VPN options"
   />
 
-  <h3>ProtonVPN Free — Best Free Option</h3>
+  <h3>ProtonVPN Free</h3>
   <p>
-    ProtonVPN's free tier is the gold standard for free VPNs:
+    The gold standard. Swiss company. Same people behind ProtonMail. They've been audited. No logs. No ads. Unlimited
+    data—the only free VPN without caps.
   </p>
-  <ul>
-    <li><strong>Unlimited data:</strong> The only free VPN without data caps</li>
-    <li><strong>No ads:</strong> Clean experience</li>
-    <li><strong>Swiss privacy:</strong> Strong legal protections</li>
-    <li><strong>No-logs policy:</strong> Verified by audits</li>
-  </ul>
   <p>
-    The limitations: only 3 countries (US, Netherlands, Japan), medium-speed servers, no streaming support,
-    and single device connection. For basic public WiFi protection, it's genuinely useful.
+    Downsides: Only 3 countries, medium speeds, no streaming, one device.
+  </p>
+  <p>
+    For basic public WiFi protection, it actually works.
   </p>
 
-  <h3>Windscribe Free — Most Generous Data</h3>
+  <h3>Windscribe Free</h3>
   <p>
-    Windscribe offers 10GB/month free (plus 5GB more if you tweet about them and 1GB per email confirmation).
-    With careful use, this might cover occasional travel needs.
+    10GB/month. Generous. 10 countries available. Sometimes works with Netflix.
   </p>
-  <ul>
-    <li><strong>10GB monthly data:</strong> Most generous free data allowance</li>
-    <li><strong>10 countries:</strong> Better geographic coverage than most free options</li>
-    <li><strong>Some streaming:</strong> Occasionally works with Netflix</li>
-    <li><strong>Browser extension:</strong> Lightweight option for quick protection</li>
-  </ul>
-
-  <h3>hide.me Free — Good Balance</h3>
   <p>
-    hide.me offers a solid free tier with 10GB/month and 8 countries. They're transparent about their
-    freemium model and have a clear no-logs policy.
+    Tweet about them and you get 5GB more. Confirm your email, another 1GB. They're transparent about the hustle.
+  </p>
+
+  <h3>hide.me Free</h3>
+  <p>
+    10GB/month, 8 countries. Clear about their model. No-logs policy.
+  </p>
+  <p>
+    Solid option if ProtonVPN doesn't work for you.
   </p>
 
   <!-- Why Paid VPNs Are Worth It -->
-  <h2 id="why-paid-worth-it">Why Paid VPNs Are Worth the Investment</h2>
+  <h2 id="why-paid-worth-it">Why I Pay (And You Should Too)</h2>
+
+  <h3>Trust</h3>
   <p>
-    For remote workers, the value proposition of paid VPNs is compelling:
+    Paid VPNs make money by keeping you safe. That's the business model. Our interests align.
   </p>
 
-  <h3>Security You Can Trust</h3>
+  <h3>It Just Works</h3>
   <p>
-    Paid VPNs have aligned incentives—they make money by protecting your privacy, not selling your data.
-    Independent audits verify their claims. You get actual protection, not security theater.
+    Unlimited data. Fast speeds. Thousands of servers. I forget it's even running most days. No buffering, no failed
+    calls, no upload issues.
   </p>
 
-  <h3>Reliable Performance</h3>
+  <h3>Streaming</h3>
   <p>
-    Unlimited data, fast speeds (80-95% of base speed), and thousands of servers mean VPN is invisible in
-    daily use. No buffering, no dropped calls, no failed uploads.
+    Netflix works. Disney+ works. BBC iPlayer works. Try doing that with a free VPN. (You can't.)
   </p>
 
-  <h3>Streaming and Access</h3>
+  <h3>Support</h3>
   <p>
-    Paid VPNs work with Netflix, Disney+, BBC iPlayer, and other services. Access your home content library
-    while traveling—something free VPNs simply can't do.
+    24/7 chat. Problems actually get solved. My free VPN phase? Support was a Reddit thread from 2019.
   </p>
 
-  <h3>Customer Support</h3>
+  <h3>Perspective</h3>
   <p>
-    24/7 live chat support means problems get solved quickly. Free VPNs offer forums or email at best.
-    When your VPN isn't working before an important call, support matters.
-  </p>
-
-  <h3>Cost in Context</h3>
-  <p>
-    A quality VPN costs $3-5/month—less than a single coffee shop drink. Compare that to:
+    $3-5/month. That's one fancy coffee. Compare that to:
   </p>
   <ul>
-    <li>Cost of compromised client data: Potentially career-ending</li>
-    <li>Cost of identity theft: Thousands of dollars and months of hassle</li>
-    <li>Cost of lost productivity from slow free VPN: Hours of frustration</li>
+    <li>Compromised client data? Career-ending.</li>
+    <li>Identity theft? Thousands of dollars, months of hassle.</li>
+    <li>Hours wasted on slow free VPN? Time you don't get back.</li>
   </ul>
   <p>
-    The ROI is obvious for anyone doing real remote work.
+    The math is obvious.
   </p>
 
   <!-- Budget-Friendly Paid Options -->
-  <h2 id="budget-options">Budget-Friendly Paid Options (Under $5/Month)</h2>
+  <h2 id="budget-options">Budget Options That Actually Work</h2>
   <p>
-    You don't need to spend much for excellent protection. Here are the best budget-friendly paid VPNs:
+    You don't need expensive.
   </p>
   <ComparisonTable
       columns={budgetColumns}
@@ -486,11 +436,9 @@ const relatedArticles = [
       caption="Best budget VPN options"
   />
 
-  <h3>Best Value: Surfshark ($2.49/month)</h3>
+  <h3>Surfshark — $2.49/mo</h3>
   <p>
-    Surfshark offers premium features at budget pricing. Unlimited devices means you can protect everything
-    you own and share with family. All major streaming platforms work. The 2-year plan brings the price down
-    to less than a fancy coffee.
+    Best value out there. Unlimited devices. Netflix works. Less than a coffee.
   </p>
   <AffiliateButton
       href="/go/surfshark"
@@ -499,11 +447,9 @@ const relatedArticles = [
       program="surfshark"
   />
 
-  <h3>Best Overall: NordVPN ($3.39/month)</h3>
+  <h3>NordVPN — $3.39/mo</h3>
   <p>
-    NordVPN costs slightly more but offers the best balance of speed, security, and features. More server
-    locations, faster speeds, and additional security features like Threat Protection. Worth the extra
-    dollar per month for most users.
+    What I use. Fast, works everywhere, extra security features. Worth the extra dollar.
   </p>
   <AffiliateButton
       href="/go/nordvpn"
@@ -512,10 +458,9 @@ const relatedArticles = [
       program="nordvpn"
   />
 
-  <h3>Lowest Price: Private Internet Access ($2.19/month)</h3>
+  <h3>PIA — $2.19/mo</h3>
   <p>
-    PIA offers the lowest monthly price with unlimited connections and a proven track record. Less polished
-    than NordVPN or Surfshark, but solid protection at rock-bottom pricing.
+    Cheapest option that's legit. Not as polished, but solid protection.
   </p>
   <AffiliateButton
       href="/go/pia"
@@ -523,35 +468,32 @@ const relatedArticles = [
       variant="secondary"
       program="pia"
   />
+  <p>
+    All of them require 2-year commitments for these prices. Monthly is way more expensive.
+  </p>
 
   <!-- FAQ Section -->
   <FAQSection faqs={faqs}/>
 
   <!-- Recommendation -->
-  <h2 id="recommendation">Which Should You Choose?</h2>
+  <h2 id="recommendation">The Bottom Line</h2>
   <p>
-    Our recommendation is straightforward:
+    For remote work: pay for a VPN. $3/month. Skip one coffee.
   </p>
   <p>
-    <strong>For remote work: Use a paid VPN.</strong> The security, reliability, and features justify
-    the $2-5/month cost. Your data, your clients' data, and your professional reputation are worth
-    more than a coffee per month.
+    My pick: NordVPN. Works everywhere, fast, doesn't annoy me.
   </p>
   <p>
-    <strong>Our top pick:</strong> NordVPN offers the best combination of security, speed, and features
-    at $3.39/month. Surfshark is excellent if budget is tight at $2.49/month with unlimited devices.
+    Budget tight? Surfshark at $2.49.
   </p>
   <p>
-    <strong>If you must use free:</strong> ProtonVPN's free tier is the only free VPN we'd recommend
-    for anything beyond trivial use. It's genuinely private and secure—just limited.
+    Must use free? ProtonVPN. It's the only one I trust.
   </p>
   <p>
-    <strong>Never use:</strong> Random free VPNs from app stores, especially those with no clear company
-    behind them or privacy policies that mention data collection. The risks far outweigh any savings.
+    Never use random app store VPNs. The risks aren't worth zero dollars.
   </p>
   <p>
-    All paid VPNs we recommend offer 30-day money-back guarantees. Try one risk-free and see the
-    difference for yourself.
+    30-day money-back guarantees on all the paid options. Try one. Actually test it. Then decide.
   </p>
 
   <AffiliateButton

@@ -6,7 +6,7 @@ import AffiliateButton from '@components/article/AffiliateButton.astro';
 
 // Article metadata
 const title = 'How to Set Up a VPN on All Your Devices (2025 Guide)';
-const description = 'Step-by-step guide to installing and configuring a VPN on Windows, Mac, iPhone, Android, Linux, routers, and more. Complete setup instructions for every platform.';
+const description = 'VPN setup used to be technical. Not anymore. Five minutes per device. Here\'s how to set up VPN on Windows, Mac, iPhone, Android, Linux, routers—everything.';
 const author = 'FloatJet Team';
 const authorUrl = '/about';
 const pubDate = new Date('2025-11-24');
@@ -16,52 +16,52 @@ const imageAlt = 'Multiple devices showing VPN connection screens';
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Windows Setup', slug: 'windows-setup', depth: 2},
-  {text: 'Mac Setup', slug: 'mac-setup', depth: 2},
-  {text: 'iPhone/iPad Setup', slug: 'ios-setup', depth: 2},
-  {text: 'Android Setup', slug: 'android-setup', depth: 2},
-  {text: 'Linux Setup', slug: 'linux-setup', depth: 2},
-  {text: 'Router Setup', slug: 'router-setup', depth: 2},
+  {text: 'It\'s Easier Than You Think', slug: 'introduction', depth: 2},
+  {text: 'Windows', slug: 'windows-setup', depth: 2},
+  {text: 'Mac', slug: 'mac-setup', depth: 2},
+  {text: 'iPhone/iPad', slug: 'ios-setup', depth: 2},
+  {text: 'Android', slug: 'android-setup', depth: 2},
+  {text: 'Linux', slug: 'linux-setup', depth: 2},
+  {text: 'Router', slug: 'router-setup', depth: 2},
   {text: 'Browser Extensions', slug: 'browser-extensions', depth: 2},
-  {text: 'Smart TV & Streaming', slug: 'smart-tv-setup', depth: 2},
+  {text: 'Smart TVs & Streaming', slug: 'smart-tv-setup', depth: 2},
   {text: 'Troubleshooting', slug: 'troubleshooting', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  {text: 'Questions', slug: 'faq', depth: 2},
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Do I need to set up VPN on every device separately?',
-    answer: '<p>Yes, each device needs its own VPN setup. The good news: most VPNs include 5-10+ simultaneous connections, and some (Surfshark, PIA) offer unlimited devices on one subscription.</p><p>Alternative: Set up VPN on your router to protect all devices at once—phones, laptops, smart TVs, and anything else on your network will be protected without individual setup.</p>'
+    question: 'Set up on every device?',
+    answer: '<p>Yes. Most VPNs allow 5-10 devices. Surfshark and PIA do unlimited. Or set up on router to cover everything at once.</p>'
   },
   {
-    question: 'Which VPN protocol should I use?',
-    answer: '<p>For most users:</p><ul><li><strong>WireGuard / NordLynx / Lightway:</strong> Best choice for speed and security. Use this for daily work.</li><li><strong>OpenVPN:</strong> Slightly slower but widely compatible. Good fallback if WireGuard has issues.</li><li><strong>IKEv2:</strong> Good for mobile devices. Reconnects quickly when switching networks.</li></ul><p>Avoid PPTP (outdated, insecure) and L2TP/IPSec (slower than alternatives).</p>'
+    question: 'Which protocol?',
+    answer: '<p>WireGuard. Fastest and secure. OpenVPN as backup if WireGuard has issues.</p>'
   },
   {
-    question: 'Should I enable auto-connect?',
-    answer: '<p><strong>Yes, enable auto-connect.</strong> This ensures your VPN activates whenever you join untrusted networks (or all networks, if you prefer). Without auto-connect, you might forget to manually connect before accessing sensitive information.</p><p>Most VPN apps let you configure auto-connect rules—for example, always connect on unknown WiFi but skip your home network.</p>'
+    question: 'Auto-connect?',
+    answer: '<p>Yes. Turn it on. You\'ll forget to connect manually otherwise.</p>'
   },
   {
-    question: 'What is split tunneling and should I use it?',
-    answer: '<p>Split tunneling lets you choose which apps or websites use the VPN while others use your regular connection. Benefits:</p><ul><li>Better speeds for non-sensitive traffic</li><li>Access local services (banking, streaming) that block VPNs</li><li>Reduce VPN bandwidth usage</li></ul><p>For remote work, a common setup: route work apps through VPN, let personal streaming use your regular connection. This keeps work secure without affecting Netflix speeds.</p>'
+    question: 'Split tunneling?',
+    answer: '<p>Route work through VPN, personal stuff through regular connection. Useful if banking apps hate VPNs.</p>'
   },
   {
-    question: 'How do I know if my VPN is working?',
-    answer: '<p>Test your VPN connection:</p><ol><li>Connect to your VPN</li><li>Visit <a href="https://whatismyipaddress.com" target="_blank" rel="noopener">whatismyipaddress.com</a> or search "what is my IP"</li><li>Your IP should show the VPN server location, not your real location</li><li>For deeper testing, visit <a href="https://ipleak.net" target="_blank" rel="noopener">ipleak.net</a> to check for DNS leaks</li></ol><p>If you see your real IP or location, your VPN isn\'t working correctly.</p>'
+    question: 'How to test it\'s working?',
+    answer: '<p>whatismyipaddress.com. Should show VPN location, not yours.</p>'
   },
   {
-    question: 'Why does my VPN slow down my internet?',
-    answer: '<p>VPNs add overhead from encryption and routing through remote servers. Typical slowdown is 10-20%. If you\'re seeing more:</p><ul><li><strong>Server distance:</strong> Connect to servers closer to your location</li><li><strong>Server congestion:</strong> Try a different server in the same country</li><li><strong>Protocol:</strong> Switch to WireGuard for fastest speeds</li><li><strong>ISP throttling:</strong> Some ISPs throttle VPN traffic—try obfuscated servers</li></ul><p>Premium VPNs like ExpressVPN and NordVPN maintain 90%+ of your base speed.</p>'
+    question: 'Why is it slow?',
+    answer: '<p>Connect closer. Try different server. Use WireGuard. 10-20% slowdown is normal.</p>'
   },
   {
-    question: 'Can I use VPN on my work laptop?',
-    answer: '<p>It depends on your employer\'s policy. Considerations:</p><ul><li><strong>Company-owned laptop:</strong> May have restrictions or monitoring software. Check with IT before installing third-party VPNs.</li><li><strong>Personal laptop for work:</strong> You can install VPN freely, but ensure it doesn\'t conflict with company VPN requirements.</li><li><strong>Compliance:</strong> Some industries require corporate VPN usage—personal VPNs might violate policy.</li></ul><p>When in doubt, ask your IT department. Many companies are fine with personal VPNs for privacy on public WiFi.</p>'
+    question: 'Work laptop?',
+    answer: '<p>Check with IT first. Company devices may have restrictions.</p>'
   },
   {
-    question: 'How do I set up VPN on devices that don\'t support apps?',
-    answer: '<p>For devices without native VPN support (older smart TVs, game consoles, some IoT devices):</p><ul><li><strong>Router-level VPN:</strong> Set up VPN on your router to protect all connected devices</li><li><strong>Smart DNS:</strong> Many VPNs offer Smart DNS for streaming on unsupported devices</li><li><strong>Ethernet sharing:</strong> Connect device to a computer with VPN, share that connection</li><li><strong>WiFi hotspot:</strong> Create hotspot from a VPN-connected phone/laptop</li></ul>'
+    question: 'Devices without apps?',
+    answer: '<p>Router VPN, Smart DNS, or share connection from a device that has VPN.</p>'
   }
 ];
 
@@ -105,430 +105,350 @@ const relatedArticles = [
     headings={headings}
 >
   <!-- Introduction -->
-  <h2 id="introduction">VPN Setup Made Simple</h2>
+  <h2 id="introduction">It's Easier Than You Think</h2>
   <p>
-    Setting up a VPN used to require technical expertise. Today's VPN apps make it straightforward—usually just
-    download, install, and click connect. But proper configuration ensures you get the best protection and
-    performance from your VPN.
+    VPN setup used to be technical. Like, actually technical. Command lines, config files, the whole deal.
   </p>
   <p>
-    This guide covers setup for every major platform: Windows, Mac, iPhone, Android, Linux, routers, and more.
-    We'll walk through step-by-step instructions and highlight the settings that matter most for remote workers.
+    Not anymore. Modern VPN apps are basically "download, install, click connect." I've set up VPNs on everything from
+    Windows laptops to my mom's iPad. Takes five minutes, usually less.
   </p>
   <p>
-    <strong>Before you start:</strong> You'll need an active VPN subscription. If you haven't chosen one yet,
-    see our <a href="/tools/best-vpn-digital-nomads">Best VPNs for Digital Nomads</a> guide. We recommend
-    <a href="/go/nordvpn">NordVPN</a> or <a href="/go/expressvpn">ExpressVPN</a> for most remote workers.
+    That said, there are settings that actually matter. Default configs work, but a few tweaks make the difference
+    between "VPN that protects you" and "VPN that protects you AND doesn't annoy you daily."
+  </p>
+  <p>
+    Here's setup for every major platform. Windows, Mac, iPhone, Android, Linux, routers, smart TVs. Pick your device,
+    follow along.
+  </p>
+  <p>
+    <strong>Quick note:</strong> You need a VPN subscription first. If you haven't picked one, I use <a
+      href="/go/nordvpn">NordVPN</a>. Works everywhere, doesn't slow me down.
   </p>
 
   <!-- Windows Setup -->
-  <h2 id="windows-setup">Windows Setup Guide</h2>
+  <h2 id="windows-setup">Windows</h2>
   <p>
-    Windows is the most common platform for VPN setup. Here's how to get started:
+    Most common platform. Here's the quick version:
   </p>
 
-  <h3>Step 1: Download the App</h3>
+  <h3>Download</h3>
   <ol>
-    <li>Go to your VPN provider's website (e.g., nordvpn.com)</li>
-    <li>Log into your account</li>
-    <li>Find the Downloads section</li>
-    <li>Download the Windows app (usually detects your OS automatically)</li>
-    <li>Run the installer (.exe file)</li>
+    <li>Go to your VPN's website</li>
+    <li>Log in, find Downloads</li>
+    <li>Download Windows app</li>
+    <li>Run the installer</li>
   </ol>
 
-  <h3>Step 2: Install and Log In</h3>
-  <ol>
-    <li>Follow the installation wizard (default settings are fine)</li>
-    <li>Launch the app when installation completes</li>
-    <li>Log in with your VPN account credentials</li>
-    <li>Complete any initial setup prompts</li>
-  </ol>
-
-  <h3>Step 3: Configure Essential Settings</h3>
+  <h3>Install</h3>
   <p>
-    Open Settings (usually gear icon) and configure:
+    The wizard handles everything. Default settings are fine. Log in when it opens.
+  </p>
+
+  <h3>The Settings That Matter</h3>
+  <p>
+    Open settings (gear icon) and turn these on:
   </p>
   <ul>
-    <li><strong>Kill switch:</strong> Enable this—it disconnects internet if VPN drops, preventing data leaks</li>
-    <li><strong>Auto-connect:</strong> Enable to connect automatically when you start Windows or join WiFi</li>
-    <li><strong>Protocol:</strong> Set to WireGuard (NordLynx on NordVPN, Lightway on ExpressVPN) for best speed</li>
-    <li><strong>DNS leak protection:</strong> Enable (usually on by default)</li>
-    <li><strong>Start on login:</strong> Enable so VPN launches automatically</li>
+    <li><strong>Kill switch</strong> — cuts internet if VPN drops. Non-negotiable.</li>
+    <li><strong>Auto-connect</strong> — starts VPN when Windows boots or you join WiFi</li>
+    <li><strong>Protocol</strong> — set to WireGuard (or NordLynx/Lightway depending on your VPN). Fastest option.</li>
+    <li><strong>Start on login</strong> — so you don't forget</li>
   </ul>
 
-  <h3>Step 4: Connect</h3>
-  <ol>
-    <li>Click "Quick Connect" for automatic server selection, or</li>
-    <li>Choose a specific country/server from the server list</li>
-    <li>Wait for connection confirmation (usually a few seconds)</li>
-    <li>Verify connection by checking your IP at whatismyipaddress.com</li>
-  </ol>
+  <h3>Connect</h3>
+  <p>
+    Click Quick Connect. Done. Check whatismyipaddress.com if you're paranoid—should show the VPN location, not yours.
+  </p>
 
   <!-- Mac Setup -->
-  <h2 id="mac-setup">Mac Setup Guide</h2>
+  <h2 id="mac-setup">Mac</h2>
   <p>
-    Mac VPN setup is similar to Windows, with a few macOS-specific considerations:
+    Similar to Windows with some macOS quirks.
   </p>
 
-  <h3>Step 1: Download the App</h3>
-  <ol>
-    <li>Visit your VPN provider's website or the Mac App Store</li>
-    <li>Download the macOS app</li>
-    <li>Open the .dmg file and drag the app to Applications</li>
-  </ol>
-
-  <h3>Step 2: Grant Permissions</h3>
+  <h3>Download</h3>
   <p>
-    macOS requires explicit permission for VPN apps:
+    Get the app from your VPN's site or the Mac App Store. Drag to Applications.
   </p>
-  <ol>
-    <li>Launch the app from Applications</li>
-    <li>When prompted, click "Allow" to add VPN configurations</li>
-    <li>Enter your Mac password to authorize</li>
-    <li>For some VPNs, enable System Extension in Security &amp; Privacy settings</li>
-  </ol>
 
-  <h3>Step 3: Configure Settings</h3>
-  <ul>
-    <li><strong>Kill switch:</strong> Enable in app settings</li>
-    <li><strong>Auto-connect:</strong> Set to connect on untrusted networks</li>
-    <li><strong>Protocol:</strong> Select WireGuard or equivalent for best performance</li>
-    <li><strong>Launch at login:</strong> Enable in System Preferences &gt; Users &amp; Groups &gt; Login Items</li>
-  </ul>
+  <h3>Permissions</h3>
+  <p>
+    macOS will ask to add VPN configurations. Click Allow. Enter your password. Some VPNs need System Extension enabled
+    in Security settings—the app will tell you.
+  </p>
 
-  <h3>Step 4: Connect and Verify</h3>
-  <ol>
-    <li>Click Quick Connect or choose a server</li>
-    <li>You'll see the VPN icon in your menu bar when connected</li>
-    <li>Verify at whatismyipaddress.com</li>
-  </ol>
+  <h3>Settings</h3>
+  <p>
+    Same as Windows: kill switch on, auto-connect on, WireGuard protocol. Set it to launch at login in System
+    Preferences.
+  </p>
+
+  <h3>Connect</h3>
+  <p>
+    Quick Connect button. VPN icon shows in menu bar when active.
+  </p>
 
   <!-- iOS Setup -->
-  <h2 id="ios-setup">iPhone/iPad Setup Guide</h2>
+  <h2 id="ios-setup">iPhone/iPad</h2>
   <p>
-    iOS makes VPN setup easy through the App Store:
+    iOS makes this dead simple.
   </p>
 
-  <h3>Step 1: Download from App Store</h3>
-  <ol>
-    <li>Open the App Store</li>
-    <li>Search for your VPN (e.g., "NordVPN")</li>
-    <li>Download and install the app</li>
-  </ol>
-
-  <h3>Step 2: Initial Setup</h3>
-  <ol>
-    <li>Open the VPN app</li>
-    <li>Log in with your account</li>
-    <li>When prompted, tap "Allow" to add VPN configuration</li>
-    <li>Enter your iPhone passcode or use Face ID/Touch ID</li>
-  </ol>
-
-  <h3>Step 3: Configure for Best Protection</h3>
+  <h3>Get the App</h3>
   <p>
-    Go to app settings and enable:
+    App Store. Search your VPN. Download.
   </p>
+
+  <h3>Setup</h3>
+  <p>
+    Open app, log in. iOS asks to add VPN config—tap Allow, authenticate with Face ID or passcode.
+  </p>
+
+  <h3>Settings</h3>
   <ul>
-    <li><strong>Auto-connect on WiFi:</strong> Protect on public networks automatically</li>
-    <li><strong>Kill switch:</strong> iOS has a system-level "On Demand" feature—enable it</li>
-    <li><strong>Protocol:</strong> IKEv2 or WireGuard work well on iOS</li>
+    <li><strong>Auto-connect on WiFi</strong> — must have</li>
+    <li><strong>Kill switch</strong> — iOS calls it "On Demand"</li>
+    <li><strong>Protocol</strong> — IKEv2 or WireGuard both work well</li>
   </ul>
 
-  <h3>Step 4: Connect</h3>
-  <ol>
-    <li>Tap Quick Connect or select a server</li>
-    <li>You'll see "VPN" in your status bar when connected</li>
-    <li>To disconnect, open the app and tap Disconnect, or toggle VPN in Settings</li>
-  </ol>
+  <h3>Connect</h3>
+  <p>
+    Tap Quick Connect. "VPN" appears in your status bar.
+  </p>
 
-  <h3>iOS-Specific Tips</h3>
-  <ul>
-    <li>Enable VPN in Settings &gt; General &gt; VPN to see connection status</li>
-    <li>Add VPN toggle to Control Center for quick access</li>
-    <li>iOS aggressively manages battery—VPN may disconnect when backgrounded; auto-connect helps</li>
-  </ul>
+  <h3>iOS Tip</h3>
+  <p>
+    Add VPN toggle to Control Center. Way faster than opening the app every time. Also, iOS kills background apps
+    aggressively—auto-connect helps when your VPN gets disconnected.
+  </p>
 
   <!-- Android Setup -->
-  <h2 id="android-setup">Android Setup Guide</h2>
+  <h2 id="android-setup">Android</h2>
   <p>
-    Android offers more VPN control than iOS:
+    Android gives you more control than iOS. Also more ways to mess things up.
   </p>
 
-  <h3>Step 1: Download from Play Store</h3>
-  <ol>
-    <li>Open Google Play Store</li>
-    <li>Search for your VPN</li>
-    <li>Install the app</li>
-  </ol>
+  <h3>Get the App</h3>
+  <p>
+    Play Store. Search. Install.
+  </p>
 
-  <h3>Step 2: Initial Setup</h3>
-  <ol>
-    <li>Open the VPN app</li>
-    <li>Log in with your credentials</li>
-    <li>Tap "OK" when prompted to set up VPN connection</li>
-    <li>Grant any necessary permissions (notifications, etc.)</li>
-  </ol>
+  <h3>Setup</h3>
+  <p>
+    Open app, log in. Tap OK when Android asks about VPN connection. Grant notification permissions.
+  </p>
 
-  <h3>Step 3: Configure Settings</h3>
+  <h3>Settings</h3>
   <ul>
-    <li><strong>Always-on VPN:</strong> Enable in Android Settings &gt; Network &gt; VPN for system-level protection
-    </li>
-    <li><strong>Block connections without VPN:</strong> Prevents any traffic if VPN disconnects</li>
-    <li><strong>Split tunneling:</strong> Exclude banking apps if they block VPN connections</li>
-    <li><strong>Protocol:</strong> WireGuard for best performance</li>
+    <li><strong>Always-on VPN</strong> — Android Settings &gt; Network &gt; VPN. System-level protection.</li>
+    <li><strong>Block connections without VPN</strong> — prevents any traffic if VPN drops</li>
+    <li><strong>Split tunneling</strong> — exclude banking apps that hate VPNs</li>
+    <li><strong>Protocol</strong> — WireGuard</li>
   </ul>
 
-  <h3>Step 4: Connect</h3>
-  <ol>
-    <li>Tap Quick Connect or choose a location</li>
-    <li>A key icon appears in status bar when connected</li>
-    <li>Use the app or notification to disconnect</li>
-  </ol>
+  <h3>Connect</h3>
+  <p>
+    Quick Connect. Key icon in status bar means you're protected.
+  </p>
 
-  <h3>Android-Specific Features</h3>
-  <ul>
-    <li><strong>GPS spoofing:</strong> Some VPNs (Surfshark) can match your GPS to VPN location</li>
-    <li><strong>Per-app VPN:</strong> Android allows routing specific apps through VPN</li>
-    <li><strong>Widget:</strong> Add VPN toggle to home screen for quick access</li>
-  </ul>
+  <h3>Android Bonus</h3>
+  <p>
+    Some VPNs (Surfshark) can spoof your GPS to match VPN location. Useful for apps that check location. Add widget to
+    home screen for one-tap connection.
+  </p>
 
   <!-- Linux Setup -->
-  <h2 id="linux-setup">Linux Setup Guide</h2>
+  <h2 id="linux-setup">Linux</h2>
   <p>
-    Linux setup varies by distribution, but most VPNs offer native apps or command-line tools:
+    Varies by distro, but most VPNs have native apps now.
   </p>
 
-  <h3>Option 1: Native App (Recommended)</h3>
+  <h3>Native App (Easiest)</h3>
   <p>
-    Many VPNs now offer Linux apps. For example, NordVPN on Ubuntu/Debian:
+    For NordVPN on Ubuntu/Debian:
   </p>
-  <pre><code># Download and install
-sh &lt;(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
-
-# Log in
+  <pre><code>sh &lt;(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 nordvpn login
-
-# Connect
 nordvpn connect
-
-# Auto-connect on startup
 nordvpn set autoconnect on</code></pre>
-
-  <h3>Option 2: OpenVPN Configuration</h3>
   <p>
-    For VPNs without native Linux apps:
+    Done. Four commands.
   </p>
-  <ol>
-    <li>Install OpenVPN: <code>sudo apt install openvpn</code></li>
-    <li>Download .ovpn config files from your VPN provider</li>
-    <li>Connect: <code>sudo openvpn --config /path/to/server.ovpn</code></li>
-    <li>Enter your VPN credentials when prompted</li>
-  </ol>
 
-  <h3>Option 3: WireGuard</h3>
+  <h3>OpenVPN Method</h3>
   <p>
-    For VPNs supporting WireGuard:
+    If no native app:
   </p>
-  <ol>
-    <li>Install WireGuard: <code>sudo apt install wireguard</code></li>
-    <li>Download WireGuard config from your VPN's dashboard</li>
-    <li>Import: <code>sudo wg-quick up /etc/wireguard/wg0.conf</code></li>
-  </ol>
+  <pre><code>sudo apt install openvpn</code></pre>
+  <p>
+    Download .ovpn files from your VPN. Connect with:
+  </p>
+  <pre><code>sudo openvpn --config /path/to/server.ovpn</code></pre>
 
-  <h3>GUI Options</h3>
+  <h3>WireGuard</h3>
+  <pre><code>sudo apt install wireguard</code></pre>
   <p>
-    If you prefer graphical interfaces:
+    Get config from VPN dashboard. Import with wg-quick.
   </p>
-  <ul>
-    <li><strong>NetworkManager:</strong> Import OpenVPN configs through Settings &gt; Network &gt; VPN</li>
-    <li><strong>GNOME:</strong> Supports VPN through system settings</li>
-    <li><strong>KDE:</strong> Plasma Network Manager handles VPN connections</li>
-  </ul>
+
+  <h3>GUI?</h3>
+  <p>
+    NetworkManager handles VPN configs. GNOME and KDE both support it through system settings.
+  </p>
 
   <!-- Router Setup -->
-  <h2 id="router-setup">Router-Level VPN Setup</h2>
+  <h2 id="router-setup">Router</h2>
   <p>
-    Setting up VPN on your router protects every device on your network automatically—including devices
-    that don't support VPN apps (smart TVs, game consoles, IoT devices).
+    Set up VPN on your router = every device protected automatically. Even stuff that can't run VPN apps—smart TVs, game
+    consoles, that random IoT thing.
   </p>
 
-  <h3>Benefits of Router VPN</h3>
+  <h3>Why Bother</h3>
   <ul>
-    <li>Protects all devices without individual setup</li>
-    <li>Covers devices that can't run VPN apps</li>
-    <li>Only counts as one device connection</li>
-    <li>Always-on protection for your network</li>
+    <li>One setup, all devices covered</li>
+    <li>Protects devices without native VPN support</li>
+    <li>Counts as single device connection</li>
+    <li>Always-on protection</li>
   </ul>
 
-  <h3>Drawbacks</h3>
+  <h3>The Catch</h3>
   <ul>
-    <li>More complex setup</li>
-    <li>Can't easily switch servers per device</li>
-    <li>May slow down all network traffic</li>
-    <li>Not all routers support VPN</li>
+    <li>Setup is more complex</li>
+    <li>Can't switch servers per device easily</li>
+    <li>All traffic routes through VPN (can be slow)</li>
+    <li>Not all routers support it</li>
   </ul>
 
-  <h3>Compatible Routers</h3>
-  <p>
-    Check if your router supports VPN. Good options:
-  </p>
+  <h3>Routers That Work</h3>
   <ul>
-    <li><strong>ASUS:</strong> Many models have built-in VPN support</li>
-    <li><strong>Netgear Nighthawk:</strong> Higher-end models support OpenVPN</li>
-    <li><strong>GL.iNet:</strong> Travel routers with excellent VPN support</li>
-    <li><strong>Custom firmware:</strong> DD-WRT, Tomato, or OpenWrt add VPN to many routers</li>
+    <li><strong>ASUS</strong> (many models have built-in VPN)</li>
+    <li><strong>Netgear Nighthawk</strong> (higher-end)</li>
+    <li><strong>GL.iNet travel routers</strong> (excellent VPN support)</li>
+    <li>Any router running DD-WRT, Tomato, or OpenWrt</li>
   </ul>
 
-  <h3>Basic Setup Steps</h3>
+  <h3>Basic Steps</h3>
   <ol>
-    <li>Log into your router's admin panel (usually 192.168.1.1 or 192.168.0.1)</li>
-    <li>Find VPN settings (varies by router—check manual)</li>
-    <li>Download OpenVPN config files from your VPN provider</li>
-    <li>Upload the config file to your router</li>
-    <li>Enter your VPN credentials</li>
-    <li>Enable the connection</li>
+    <li>Log into router admin (usually 192.168.1.1)</li>
+    <li>Find VPN settings</li>
+    <li>Upload OpenVPN config from your VPN provider</li>
+    <li>Enter credentials</li>
+    <li>Enable</li>
   </ol>
   <p>
-    <strong>Note:</strong> Exact steps vary significantly by router. Check your VPN provider's help center
-    for router-specific guides.
+    Every router is different. Check your VPN's help docs for specific instructions.
   </p>
 
   <!-- Browser Extensions -->
-  <h2 id="browser-extensions">Browser Extension Setup</h2>
+  <h2 id="browser-extensions">Browser Extensions</h2>
   <p>
-    VPN browser extensions offer lightweight protection for browser traffic only:
+    Quick and dirty protection for browser traffic only.
   </p>
 
-  <h3>When to Use Browser Extensions</h3>
+  <h3>Use When</h3>
   <ul>
-    <li>Quick protection for specific browsing sessions</li>
-    <li>Unblocking geo-restricted websites</li>
-    <li>When you can't install the full app (shared computer, Chromebook)</li>
-    <li>Supplementing full VPN with extra browser features</li>
+    <li>Need quick protection for one session</li>
+    <li>Unblocking geo-restricted sites</li>
+    <li>Can't install full app (shared computer, Chromebook)</li>
   </ul>
 
-  <h3>Limitations</h3>
-  <ul>
-    <li>Only protects browser traffic, not other apps</li>
-    <li>Other applications (email clients, Slack, etc.) remain unprotected</li>
-    <li>Less secure than full VPN apps</li>
-  </ul>
+  <h3>Limitation</h3>
+  <p>
+    Only browser traffic. Email clients, Slack, everything else stays unprotected. Not a replacement for the real app.
+  </p>
 
-  <h3>Setup Steps</h3>
-  <ol>
-    <li>Open your browser's extension store (Chrome Web Store, Firefox Add-ons)</li>
-    <li>Search for your VPN's official extension</li>
-    <li>Install and pin to toolbar</li>
-    <li>Log in with your VPN credentials</li>
-    <li>Click the extension icon to connect</li>
-  </ol>
-
-  <h3>Available For</h3>
-  <ul>
-    <li><strong>Chrome:</strong> Most VPNs offer Chrome extensions</li>
-    <li><strong>Firefox:</strong> Good extension support</li>
-    <li><strong>Edge:</strong> Can use Chrome extensions or dedicated Edge add-ons</li>
-    <li><strong>Safari:</strong> Limited options; full Mac app recommended</li>
-  </ul>
+  <h3>Setup</h3>
+  <p>
+    Chrome Web Store or Firefox Add-ons. Search your VPN. Install. Log in. Click to connect.
+  </p>
+  <p>
+    Most major VPNs have Chrome and Firefox extensions. Safari support is limited—use the Mac app instead.
+  </p>
 
   <!-- Smart TV & Streaming -->
-  <h2 id="smart-tv-setup">Smart TV and Streaming Device Setup</h2>
+  <h2 id="smart-tv-setup">Smart TVs and Streaming</h2>
   <p>
-    Smart TVs and streaming devices (Roku, Fire TV, Apple TV) have varying VPN support:
+    Streaming devices have weird VPN support. Here's the breakdown:
   </p>
 
-  <h3>Amazon Fire TV/Fire Stick</h3>
+  <h3>Fire TV/Fire Stick</h3>
   <p>
-    Fire TV runs Android and supports VPN apps:
+    Runs Android, supports VPN apps. Go to Fire TV App Store, download your VPN, log in, connect. Easy.
   </p>
-  <ol>
-    <li>Go to Fire TV App Store</li>
-    <li>Search for your VPN (NordVPN, ExpressVPN, Surfshark available)</li>
-    <li>Download and install</li>
-    <li>Log in and connect</li>
-  </ol>
 
   <h3>Android TV</h3>
   <p>
-    Same process as Fire TV—download from Google Play Store on your TV.
+    Same as Fire TV. Play Store on your TV.
   </p>
 
   <h3>Apple TV</h3>
   <p>
-    Apple TV doesn't support VPN apps directly. Options:
+    No VPN app support. Options:
   </p>
   <ul>
-    <li><strong>Router VPN:</strong> Protect your entire network including Apple TV</li>
-    <li><strong>Smart DNS:</strong> Configure your VPN's Smart DNS in Apple TV network settings</li>
-    <li><strong>Share Mac connection:</strong> Connect Mac to VPN, share internet to Apple TV</li>
+    <li><strong>Router VPN</strong> (protects everything)</li>
+    <li><strong>Smart DNS</strong> (configure in network settings)</li>
+    <li><strong>Share Mac's VPN connection</strong></li>
   </ul>
 
   <h3>Roku</h3>
   <p>
-    Roku doesn't support VPNs. Options:
+    No VPN support at all. Router VPN or Smart DNS only.
   </p>
-  <ul>
-    <li><strong>Router VPN:</strong> Best solution</li>
-    <li><strong>Smart DNS:</strong> Configure in Roku network settings</li>
-  </ul>
 
-  <h3>Gaming Consoles (PlayStation, Xbox)</h3>
+  <h3>PlayStation/Xbox</h3>
   <p>
-    Consoles don't support VPN apps. Options:
+    Same deal—no native support. Router VPN, share PC connection, or Smart DNS for streaming (no security though).
   </p>
-  <ul>
-    <li><strong>Router VPN:</strong> Protects all console traffic</li>
-    <li><strong>Share PC connection:</strong> Connect console to PC with VPN via ethernet</li>
-    <li><strong>Smart DNS:</strong> For streaming (doesn't provide security)</li>
-  </ul>
 
   <!-- Troubleshooting -->
-  <h2 id="troubleshooting">Troubleshooting Common Issues</h2>
+  <h2 id="troubleshooting">Troubleshooting</h2>
 
-  <h3>VPN Won't Connect</h3>
+  <h3>Won't Connect</h3>
   <ul>
-    <li><strong>Try a different server:</strong> Current server may be down or overloaded</li>
-    <li><strong>Switch protocols:</strong> Try OpenVPN if WireGuard fails (or vice versa)</li>
-    <li><strong>Check internet:</strong> Ensure regular internet works without VPN</li>
-    <li><strong>Firewall issues:</strong> Temporarily disable firewall to test</li>
-    <li><strong>Reinstall:</strong> Fresh install often fixes persistent issues</li>
+    <li>Try different server</li>
+    <li>Switch protocols (OpenVPN ↔ WireGuard)</li>
+    <li>Check regular internet works</li>
+    <li>Disable firewall temporarily</li>
+    <li>Reinstall app</li>
   </ul>
 
   <h3>Slow Speeds</h3>
   <ul>
-    <li><strong>Closer server:</strong> Connect to servers geographically near you</li>
-    <li><strong>Less busy server:</strong> Try a different server in the same country</li>
-    <li><strong>Protocol change:</strong> WireGuard is fastest for most users</li>
-    <li><strong>Check base speed:</strong> Test speed without VPN to establish baseline</li>
+    <li>Connect to closer server</li>
+    <li>Try less busy server</li>
+    <li>Use WireGuard protocol</li>
+    <li>Test speed without VPN to see baseline</li>
   </ul>
 
-  <h3>Certain Sites Don't Work</h3>
+  <h3>Sites Blocking You</h3>
   <ul>
-    <li><strong>VPN detected:</strong> Some sites block VPN IPs—try different servers</li>
-    <li><strong>Use split tunneling:</strong> Exclude problematic sites/apps from VPN</li>
-    <li><strong>Clear cookies:</strong> Old location cookies may cause conflicts</li>
+    <li>Try different servers</li>
+    <li>Use split tunneling to exclude problem sites</li>
+    <li>Clear cookies (old location data conflicts)</li>
   </ul>
 
-  <h3>VPN Disconnects Frequently</h3>
+  <h3>Keeps Disconnecting</h3>
   <ul>
-    <li><strong>Enable kill switch:</strong> Protects during disconnections</li>
-    <li><strong>Check WiFi stability:</strong> Unstable networks cause VPN drops</li>
-    <li><strong>Update app:</strong> Ensure you're running the latest version</li>
-    <li><strong>Contact support:</strong> Persistent issues may need provider assistance</li>
+    <li>Enable kill switch</li>
+    <li>Check WiFi stability</li>
+    <li>Update app</li>
+    <li>Contact support if nothing works</li>
   </ul>
 
   <!-- FAQ Section -->
   <FAQSection faqs={faqs}/>
 
-  <h2>Ready to Get Started?</h2>
+  <h2>Get It Done</h2>
   <p>
-    VPN setup takes just a few minutes on most devices. Once configured with the right settings—kill switch,
-    auto-connect, fast protocol—your VPN runs invisibly in the background, protecting your connection without
-    daily management.
+    Five minutes per device. Turn on kill switch, auto-connect, WireGuard. Forget about it.
   </p>
   <p>
-    If you haven't chosen a VPN yet, we recommend NordVPN for the best balance of security, speed, and
-    ease of setup across all platforms.
+    I use NordVPN. Works on everything, setup is painless. 30-day money-back if it doesn't work for you.
+  </p>
+  <p>
+    Just pick something and do it. Next time you're on airport WiFi unprotected, you'll think about this.
   </p>
 
   <AffiliateButton

@@ -20,7 +20,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 008 | Time Zones Are Killing Your Remote Team (Here's the Fix)                   | Productivity  | Blog     | /blog/managing-time-zones-remote-teams           | 750        | true              |
 | 009 | I Lost a $15K Client Because of a Spreadsheet                              | SaaS          | Blog     | /blog/best-crm-software-small-business           | 650        | true              |
 | 010 | 500 Speed Tests Later, Here's What Actually Happened                       | Security      | Blog     | /blog/vpn-speed-comparison                       | 600        | true              |
-| 011 | Remote Work Security: Protecting Your Data While Working Anywhere (2025)   | Security      | Blog     | /blog/vpn-public-wifi-guide                      | 2701       | false             |
+| 011 | Someone's Watching You Work Right Now (Probably)                           | Security      | Blog     | /blog/vpn-public-wifi-guide                      | 800        | true              |
 | 012 | How to Set Up a Productive Home Office on Any Budget (2025)                | Setup         | Blog     | /blog/ultimate-home-office-setup                 | 2569       | false             |
 | 013 | How to Find Reliable WiFi Anywhere in the World (2025)                     | Travel        | Blog     | /blog/find-reliable-wifi-anywhere                | 1552       | false             |
 | 014 | Essential Travel Tech for Digital Nomads (2025)                            | Travel        | Blog     | /blog/essential-travel-tech-nomads               | 1541       | false             |

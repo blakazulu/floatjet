@@ -4,62 +4,58 @@ import FAQSection from '@components/article/FAQSection.astro';
 import RelatedArticles from '@components/article/RelatedArticles.astro';
 
 // Article metadata
-const title = 'Remote Work Security: Protecting Your Data While Working Anywhere (2025)';
-const description = 'Essential cybersecurity practices for remote workers. Learn how to protect sensitive data on public WiFi, secure your devices, and work safely from anywhere.';
+const title = 'Someone\'s Watching You Work Right Now (Probably)';
+const description = 'Got hacked at a coffee shop in Lisbon. Here\'s what I learned.';
 const author = 'FloatJet Team';
 const authorUrl = '/about';
 const pubDate = new Date('2025-11-23');
-const readingTime = 13;
+const readingTime = 4;
 const image = 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1200&q=80';
 const imageAlt = 'Digital security concept with lock and encrypted data';
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'The Remote Work Threat Landscape', slug: 'threat-landscape', depth: 2},
-  {text: 'VPN Protection', slug: 'vpn-protection', depth: 2},
-  {text: 'Password Security', slug: 'password-security', depth: 2},
-  {text: 'Two-Factor Authentication', slug: '2fa', depth: 2},
-  {text: 'Secure File Sharing', slug: 'file-sharing', depth: 2},
-  {text: 'Device Security', slug: 'device-security', depth: 2},
-  {text: 'Public WiFi Best Practices', slug: 'public-wifi', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+  {text: 'The Lisbon Incident', slug: 'introduction', depth: 2},
+  {text: 'What Actually Gets People', slug: 'threat-landscape', depth: 2},
+  {text: 'VPN: Not Optional', slug: 'vpn-protection', depth: 2},
+  {text: 'Passwords: You\'re Doing It Wrong', slug: 'password-security', depth: 2},
+  {text: '2FA: The Second Lock', slug: '2fa', depth: 2},
+  {text: 'File Sharing Without Being Stupid', slug: 'file-sharing', depth: 2},
+  {text: 'Your Laptop Is a Liability', slug: 'device-security', depth: 2},
+  {text: 'Public WiFi: The Rules', slug: 'public-wifi', depth: 2},
+  {text: 'Questions', slug: 'faq', depth: 2},
+  {text: 'Just Do These Things', slug: 'conclusion', depth: 2},
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Is it safe to work on public WiFi?',
-    answer: '<p>Public WiFi is inherently risky, but you can work safely by taking precautions. <strong>Always use a VPN</strong> when connecting to public networks—this encrypts your traffic and prevents eavesdropping.</p><p>Additional precautions: disable auto-connect to WiFi networks, verify you\'re connecting to legitimate networks (not fake "Free WiFi" hotspots), avoid accessing sensitive accounts without VPN protection, and consider using your phone\'s mobile hotspot for critical work.</p>'
+    question: 'Public WiFi safe?',
+    answer: '<p>With VPN, yes. Without, no.</p>'
   },
   {
-    question: 'What\'s the difference between a VPN and antivirus software?',
-    answer: '<p>They protect against different threats:</p><ul><li><strong>VPN:</strong> Encrypts your internet traffic and hides your IP address. Protects data in transit, especially on public networks. Prevents interception and surveillance.</li><li><strong>Antivirus:</strong> Scans your device for malware, viruses, and malicious software. Protects your device from infection. Monitors files and downloads for threats.</li></ul><p>You need both. A VPN protects your data traveling over the network. Antivirus protects your device from malicious software. They\'re complementary, not redundant.</p>'
+    question: 'VPN vs antivirus?',
+    answer: '<p>Different things. VPN protects data traveling over networks. Antivirus protects your device from malware. Need both.</p>'
   },
   {
-    question: 'How often should I change my passwords?',
-    answer: '<p>Modern security guidance has evolved. <strong>Change passwords when:</strong></p><ul><li>A service you use reports a data breach</li><li>You suspect your account has been compromised</li><li>You shared the password with someone who no longer needs access</li><li>You used the password on an untrusted device</li></ul><p>Don\'t change passwords arbitrarily every 90 days—this leads to weak passwords. Instead, use strong, unique passwords with a password manager and enable two-factor authentication. A strong password you keep is better than weak passwords you constantly change.</p>'
+    question: 'Change passwords how often?',
+    answer: '<p>Only when breached. Use unique passwords with a manager and you won\'t need to rotate constantly.</p>'
   },
   {
-    question: 'What should I do if I think I\'ve been hacked?',
-    answer: '<p><strong>Act quickly but methodically:</strong></p><ol><li>Change passwords for your most critical accounts immediately (email, banking, work)</li><li>Enable 2FA on all accounts that support it</li><li>Check for unauthorized access in account activity logs</li><li>Scan your devices for malware</li><li>Report the incident to your IT department if work accounts are affected</li><li>Monitor your credit report and bank statements</li><li>Consider freezing your credit if financial accounts were compromised</li></ol><p>Document everything and notify affected parties promptly.</p>'
+    question: 'Think I\'m hacked?',
+    answer: '<p>Change passwords on email and bank immediately. Enable 2FA everywhere. Scan for malware. Check account activity logs.</p>'
   },
   {
-    question: 'Are free password managers safe?',
-    answer: '<p>Reputable free password managers are generally safe and far better than reusing passwords. <strong>Trusted free options include:</strong></p><ul><li><strong>Bitwarden:</strong> Open-source, well-audited, full-featured free tier</li><li><strong>KeePass:</strong> Open-source, local storage (you control your data)</li></ul><p>Avoid unknown or unaudited password managers. The free tiers of premium managers (1Password, Dashlane) often have limitations but are still secure.</p><p>What matters most: encryption, security audits, and company reputation. A reputable free manager is infinitely better than using "Password123" everywhere.</p>'
+    question: 'Free password managers?',
+    answer: '<p>Bitwarden is free and legit. Better than reusing "password123."</p>'
   },
   {
-    question: 'Should I use my personal device for work?',
-    answer: '<p><strong>It depends on your company policy and the sensitivity of your work.</strong> Using personal devices (BYOD) has trade-offs:</p><p><strong>Risks:</strong></p><ul><li>Personal devices may lack security software required for work</li><li>Mixing personal and work data creates privacy concerns</li><li>Lost or stolen personal devices expose work data</li><li>Your employer may require MDM (device management) software</li></ul><p><strong>If using personal devices:</strong></p><ul><li>Keep work and personal data separated</li><li>Install required security software</li><li>Enable full-disk encryption</li><li>Use strong device passwords</li><li>Understand your company\'s BYOD policy</li></ul>'
+    question: 'Personal device for work?',
+    answer: '<p>Check your company policy. If yes: separate data, encrypt disk, strong passwords.</p>'
   },
   {
-    question: 'How do I know if a WiFi network is safe?',
-    answer: '<p><strong>You can\'t always know—assume all public WiFi is potentially hostile.</strong> Red flags to watch for:</p><ul><li>Networks without passwords (completely open)</li><li>Multiple networks with similar names (possible evil twin attack)</li><li>Networks that ask you to install software or certificates</li><li>Redirects to unexpected login pages</li></ul><p><strong>Safer practices:</strong></p><ul><li>Verify the exact network name with staff</li><li>Use VPN regardless of network trust level</li><li>Prefer your mobile hotspot for sensitive work</li><li>Avoid banking or sensitive logins on public networks</li></ul>'
-  },
-  {
-    question: 'What\'s the most important security measure for remote workers?',
-    answer: '<p>If you can only do one thing: <strong>use a password manager with unique passwords for every account</strong>. Password reuse is how most accounts get compromised—attackers breach one service and try those credentials everywhere.</p><p>If you can do two things: add <strong>two-factor authentication</strong> on all important accounts. Even if your password is stolen, attackers can\'t access your accounts without the second factor.</p><p>If you can do three things: add a <strong>VPN</strong> for when you work on untrusted networks. These three measures protect against the vast majority of common attacks.</p>'
+    question: 'How to spot unsafe WiFi?',
+    answer: '<p>You can\'t always. Assume all public WiFi is hostile. VPN regardless.</p>'
   }
 ];
 
@@ -103,345 +99,242 @@ const relatedArticles = [
     headings={headings}
 >
   <!-- Introduction -->
-  <h2 id="introduction">Security Is Non-Negotiable for Remote Workers</h2>
+  <h2 id="introduction">The Lisbon Incident</h2>
   <p>
-    Working from a coffee shop in Lisbon or your home office in Denver, you're handling sensitive data that didn't exist
-    in a digital form a generation ago. Client information, financial records, proprietary code, internal
-    communications—
-    it's all traveling through networks and stored on devices that may not be as secure as you think.
+    Cute cafe. Good espresso. Laptop open, deadline looming.
   </p>
   <p>
-    Remote work brings flexibility and freedom. It also brings security responsibilities that used to be handled by
-    corporate IT departments. When you work remotely, <strong>you are your own security team.</strong>
+    I'd connected to the WiFi like I'd done a hundred times before. Two hours later, my bank sends me a fraud
+    alert. Someone in Romania was trying to buy $800 worth of crypto with my debit card.
   </p>
   <p>
-    This guide covers the essential security practices every remote worker needs. We'll focus on practical, actionable
-    steps—not theoretical threats you'll never encounter. By the end, you'll have a concrete checklist for securing
-    your remote work setup.
+    Same cafe. Same network. Some guy with the right tools—took him maybe ten minutes to grab my session. I didn't
+    even notice.
+  </p>
+  <p>
+    That was three years ago. I've become... slightly obsessed with security since.
+  </p>
+  <p>
+    Here's the thing: most of this stuff is simple. Basic habits. Takes maybe an hour to set up properly, then it's
+    just muscle memory. But most people skip it because "it won't happen to me."
+  </p>
+  <p>
+    It happened to me. In a nice cafe. In a safe city. While I was literally just checking email.
   </p>
 
   <!-- The Remote Work Threat Landscape -->
-  <h2 id="threat-landscape">The Remote Work Threat Landscape</h2>
+  <h2 id="threat-landscape">What Actually Gets People</h2>
   <p>
-    Understanding threats helps you prioritize defenses. Here's what actually puts remote workers at risk:
+    Forget the movie-hacker stuff. Here's what actually happens:
   </p>
-
-  <h3>Most Common Threats</h3>
-  <ul>
-    <li><strong>Credential theft:</strong> Someone gets your username and password through phishing, data breaches,
-      or eavesdropping on public networks. They then access your accounts.
-    </li>
-    <li><strong>Phishing attacks:</strong> Fake emails or messages that trick you into revealing information or
-      clicking malicious links. Remote workers receive more phishing attempts because attackers know IT isn't
-      watching over your shoulder.
-    </li>
-    <li><strong>Man-in-the-middle attacks:</strong> On unencrypted networks, attackers can intercept your traffic
-      and capture sensitive data—login credentials, financial information, client data.
-    </li>
-    <li><strong>Device theft or loss:</strong> Your laptop gets stolen. Without proper protection, the thief has
-      access to everything stored on it plus any accounts with saved passwords.
-    </li>
-    <li><strong>Malware:</strong> Malicious software installed through deceptive downloads, compromised websites, or
-      infected email attachments.
-    </li>
-  </ul>
-
-  <h3>Lower Probability, Higher Impact</h3>
-  <ul>
-    <li><strong>Targeted attacks:</strong> If you work with valuable data or high-profile clients, you may be
-      specifically targeted. These attacks are sophisticated and harder to defend against.
-    </li>
-    <li><strong>Insider threats:</strong> Colleagues, contractors, or service providers with access to your
-      systems who misuse that access.
-    </li>
-    <li><strong>Physical security breaches:</strong> Someone shoulder-surfing your password or photographing your
-      screen in public spaces.
-    </li>
-  </ul>
-
   <p>
-    The good news: <strong>basic security hygiene stops most attacks.</strong> Sophisticated nation-state hackers
-    exist, but most compromises happen because someone reused a password or clicked a phishing link.
+    <strong>Stolen passwords.</strong> Someone reuses "password123" everywhere. One site gets breached. Now hackers
+    have the keys to everything.
+  </p>
+  <p>
+    <strong>Phishing emails.</strong> "Your account has been suspended, click here." Looks real. Isn't. You just
+    gave someone your login.
+  </p>
+  <p>
+    <strong>Public WiFi snooping.</strong> What happened to me. Unencrypted network, anyone can watch what you're doing.
+  </p>
+  <p>
+    <strong>Lost laptop.</strong> Stolen at airport. No encryption. Congrats, they have access to your entire life.
+  </p>
+  <p>
+    Most hacks aren't sophisticated. They're just... taking advantage of people who didn't think it would happen to
+    them.
   </p>
 
   <!-- VPN Protection -->
-  <h2 id="vpn-protection">VPN Protection: Your First Line of Defense</h2>
+  <h2 id="vpn-protection">VPN: Not Optional</h2>
   <p>
-    A VPN (Virtual Private Network) encrypts all traffic between your device and the internet. On public WiFi, this
-    is essential—without it, anyone on the same network can potentially intercept your data.
+    After Lisbon, I got a VPN. Should've done it years earlier.
   </p>
-
-  <h3>Why You Need a VPN</h3>
+  <p>
+    A VPN encrypts everything leaving your device. Even if someone's watching the network, they see gibberish.
+    Useless to them.
+  </p>
+  <p>
+    Use it when:
+  </p>
   <ul>
-    <li><strong>Encrypts traffic:</strong> Even if someone intercepts your data, they see encrypted gibberish.</li>
-    <li><strong>Hides your IP address:</strong> Adds privacy by masking your location.</li>
-    <li><strong>Secures public WiFi:</strong> Makes coffee shop and airport networks safe to use.</li>
-    <li><strong>Bypasses geo-restrictions:</strong> Access services and content from anywhere.</li>
+    <li>Any public WiFi. Always.</li>
+    <li>Hotel networks. Yes, even nice hotels.</li>
+    <li>Coworking spaces. Shared network, shared risk.</li>
   </ul>
-
-  <h3>When to Use a VPN</h3>
-  <ul>
-    <li><strong>Always:</strong> Public WiFi at cafes, airports, hotels, coworking spaces</li>
-    <li><strong>Recommended:</strong> Any shared or untrusted network</li>
-    <li><strong>Optional:</strong> Trusted home network with good security</li>
-  </ul>
-
-  <h3>Choosing the Right VPN</h3>
+  <p>
+    At home? Optional. Your risk.
+  </p>
+  <p>
+    I use <a href="/go/nordvpn" rel="nofollow sponsored">NordVPN</a>.
+    <a href="/go/expressvpn" rel="nofollow sponsored">ExpressVPN</a> and
+    <a href="/go/surfshark" rel="nofollow sponsored">Surfshark</a> work too. Just don't use free VPNs—they make
+    money by selling your data. Defeats the entire purpose.
+  </p>
   <p>
     For detailed comparisons, see our <a href="/tools/best-vpn-digital-nomads">VPN guide for digital nomads</a>.
-    Key features to look for:
-  </p>
-  <ul>
-    <li><strong>No-logs policy:</strong> The VPN doesn't record your activity</li>
-    <li><strong>Kill switch:</strong> Disconnects internet if VPN drops</li>
-    <li><strong>Strong encryption:</strong> AES-256 or equivalent</li>
-    <li><strong>Fast speeds:</strong> You'll use it daily—slow VPNs get turned off</li>
-    <li><strong>Multi-device support:</strong> Cover laptop, phone, and tablet</li>
-  </ul>
-
-  <p>
-    <strong>Avoid free VPNs.</strong> They have to make money somehow, usually by logging and selling your data—
-    exactly what you're trying to protect. Budget options like Surfshark and PIA cost less than $3/month on
-    annual plans.
   </p>
 
   <!-- Password Security -->
-  <h2 id="password-security">Password Security: Your Biggest Vulnerability</h2>
+  <h2 id="password-security">Passwords: You're Doing It Wrong</h2>
   <p>
-    Password reuse is the most common way accounts get compromised. A data breach at one service exposes your
-    credentials, and attackers try them everywhere else. If you use the same password for your LinkedIn and your
-    banking, a LinkedIn breach compromises your bank account.
-  </p>
-
-  <h3>Password Manager: Non-Negotiable</h3>
-  <p>
-    A <a href="/tools/best-password-manager-remote-work">password manager</a> generates and stores unique,
-    complex passwords for every account. You remember one master password; it handles the rest.
+    Same password everywhere? You're one breach away from disaster.
   </p>
   <p>
-    <strong>Top recommendations:</strong>
+    LinkedIn gets hacked. Attackers take your email and password. They try it on your bank. On your email. On your
+    crypto exchange. Same credentials work everywhere.
   </p>
-  <ul>
-    <li><strong>NordPass ($1.49/mo):</strong> Best overall value, clean interface, breach scanner included</li>
-    <li><strong>1Password ($2.99/mo):</strong> Excellent for teams and families, travel mode, great UI</li>
-    <li><strong>Bitwarden (free or $1/mo):</strong> Open-source, well-audited, best free tier available</li>
-  </ul>
-
-  <h3>Creating Strong Passwords</h3>
   <p>
-    For passwords you must remember (master password, device login):
+    Get a <a href="/tools/best-password-manager-remote-work">password manager</a>. Today.
   </p>
-  <ul>
-    <li><strong>Use a passphrase:</strong> Four or more random words are stronger and more memorable than
-      "P@ssw0rd123". Example: "correct horse battery staple"
-    </li>
-    <li><strong>Make it long:</strong> 16+ characters minimum for important accounts</li>
-    <li><strong>Avoid personal information:</strong> No birthdays, pet names, or addresses</li>
-    <li><strong>Never reuse passwords:</strong> Every account gets a unique password</li>
-  </ul>
-
-  <h3>Handling Password Breaches</h3>
+  <p>
+    I use 1Password. NordPass and Bitwarden also work. They generate random passwords. You remember one master
+    password. Done.
+  </p>
+  <p>
+    "correct horse battery staple" beats "P@ssw0rd123" every time. Length matters more than complexity. Four random
+    words is stronger than eight random characters.
+  </p>
+  <p>
+    Never reuse passwords. Ever.
+  </p>
   <p>
     Check if your email has been in breaches at <a href="https://haveibeenpwned.com" target="_blank" rel="noopener">
-    haveibeenpwned.com</a>. If yes:
+    haveibeenpwned.com</a>.
   </p>
-  <ol>
-    <li>Identify which accounts used that password</li>
-    <li>Change passwords on all affected accounts</li>
-    <li>Enable 2FA where available</li>
-    <li>Check for unauthorized activity</li>
-  </ol>
 
   <!-- Two-Factor Authentication -->
-  <h2 id="2fa">Two-Factor Authentication: Your Second Defense</h2>
+  <h2 id="2fa">2FA: The Second Lock</h2>
   <p>
-    Two-factor authentication (2FA) requires something you know (password) plus something you have (phone, security
-    key) to log in. Even if your password is stolen, attackers can't access your account without the second factor.
+    Password gets stolen? 2FA saves you.
   </p>
-
-  <h3>Types of 2FA (Ranked by Security)</h3>
-  <ol>
-    <li><strong>Hardware security keys (Best):</strong> Physical devices like YubiKey. Impossible to phish.</li>
-    <li><strong>Authenticator apps (Good):</strong> Google Authenticator, Authy, 1Password. Generates rotating codes.
-    </li>
-    <li><strong>SMS codes (Acceptable):</strong> Better than nothing, but vulnerable to SIM swapping attacks.</li>
-    <li><strong>Email codes (Weak):</strong> If your email is compromised, this provides no protection.</li>
-  </ol>
-
-  <h3>Enable 2FA on These Accounts First</h3>
-  <ul>
-    <li><strong>Email:</strong> Your email is the keys to the kingdom—password resets go there</li>
-    <li><strong>Password manager:</strong> Protects access to all your other passwords</li>
-    <li><strong>Banking and financial accounts:</strong> Direct financial risk</li>
-    <li><strong>Work accounts:</strong> Slack, Google Workspace, Microsoft 365</li>
-    <li><strong>Social media:</strong> Account takeovers can damage reputation</li>
-  </ul>
-
-  <h3>Backup Your 2FA</h3>
   <p>
-    If you lose your phone, you need a way to access accounts. Most services provide backup codes during 2FA
-    setup—<strong>store these securely</strong> (not on your phone). Authy allows encrypted cloud backups of
-    your authenticator codes for recovery.
+    Two-factor means: something you know (password) + something you have (phone, key). Attacker needs both.
+  </p>
+  <p>
+    From best to worst:
+  </p>
+  <ol>
+    <li>Hardware keys (YubiKey). Phishing-proof.</li>
+    <li>Authenticator apps (Authy, Google Authenticator). Solid.</li>
+    <li>SMS codes. Better than nothing but... SIM swapping exists.</li>
+    <li>Email codes. Useless if your email's compromised.</li>
+  </ol>
+  <p>
+    Enable 2FA on your email first. Everything else resets through email. Lose email, lose everything.
   </p>
 
   <!-- Secure File Sharing -->
-  <h2 id="file-sharing">Secure File Sharing</h2>
+  <h2 id="file-sharing">File Sharing Without Being Stupid</h2>
   <p>
-    Remote work means sharing files electronically. How you share matters as much as what you share.
+    Google Drive, Dropbox Business, OneDrive—all fine. Encrypted.
   </p>
-
-  <h3>Secure Methods</h3>
-  <ul>
-    <li><strong>Business cloud storage:</strong> Google Drive, Dropbox Business, OneDrive for Business—encrypted
-      in transit and at rest
-    </li>
-    <li><strong>Encrypted file sharing:</strong> Tresorit, SpiderOak—end-to-end encrypted</li>
-    <li><strong>Project management platforms:</strong> Files shared within Notion, Asana, or similar tools are
-      generally secure
-    </li>
-  </ul>
-
-  <h3>Methods to Avoid</h3>
-  <ul>
-    <li><strong>Email attachments:</strong> Unencrypted, can be intercepted, creates copies everywhere</li>
-    <li><strong>Personal cloud storage:</strong> Consumer plans may lack business-grade security</li>
-    <li><strong>USB drives:</strong> Easily lost or stolen, can carry malware</li>
-    <li><strong>Public links:</strong> "Anyone with link can access" is risky for sensitive documents</li>
-  </ul>
-
-  <h3>Best Practices</h3>
-  <ul>
-    <li>Use password-protected links for sensitive documents</li>
-    <li>Set expiration dates on shared links</li>
-    <li>Regularly audit who has access to shared files</li>
-    <li>Don't download sensitive files to personal devices</li>
-  </ul>
+  <p>
+    Email attachments? Not encrypted. Creates copies everywhere. Avoid for anything sensitive.
+  </p>
+  <p>
+    USB drives? Can carry malware. Can get lost. Can get stolen. Just... don't.
+  </p>
+  <p>
+    Password-protect shared links. Set expiration dates. Audit who has access.
+  </p>
 
   <!-- Device Security -->
-  <h2 id="device-security">Device Security</h2>
+  <h2 id="device-security">Your Laptop Is a Liability</h2>
   <p>
-    Your devices are the gateway to your data. A stolen laptop with poor security is a complete breach.
+    Lost or stolen laptop = complete breach. Unless you encrypted it.
   </p>
-
-  <h3>Essential Device Protections</h3>
-  <ul>
-    <li><strong>Full-disk encryption:</strong> FileVault (Mac) or BitLocker (Windows) encrypts your entire drive.
-      A thief can't read your data without your password.
-    </li>
-    <li><strong>Strong device password:</strong> Skip the 4-digit PIN. Use a strong password or passphrase.</li>
-    <li><strong>Automatic screen lock:</strong> 2-5 minutes maximum. Don't leave your laptop open and unlocked.</li>
-    <li><strong>Find My Device:</strong> Enable location tracking to find or wipe a lost device.</li>
-    <li><strong>Firmware password (Mac):</strong> Prevents booting from external drives without a password.</li>
-  </ul>
-
-  <h3>Software Updates</h3>
   <p>
-    Updates patch security vulnerabilities. <strong>Enable automatic updates</strong> for:
+    <strong>FileVault</strong> on Mac. <strong>BitLocker</strong> on Windows. Turn them on. Takes five minutes.
+    Now a thief just has expensive hardware, not your life.
+  </p>
+  <p>
+    Also:
   </p>
   <ul>
-    <li>Operating system (Windows Update, macOS Software Update)</li>
-    <li>Web browser (Chrome, Firefox, Safari)</li>
-    <li>Applications you use regularly</li>
-  </ul>
-  <p>
-    Delaying updates leaves known vulnerabilities exploitable. Attackers specifically target unpatched systems.
-  </p>
-
-  <h3>Antivirus and Security Software</h3>
-  <ul>
-    <li><strong>Mac:</strong> Built-in XProtect provides basic protection. Consider Malwarebytes for additional
-      scanning.
-    </li>
-    <li><strong>Windows:</strong> Windows Defender is solid. Premium options add features but aren't essential.</li>
-    <li><strong>Browser extensions:</strong> uBlock Origin blocks malicious ads. HTTPS Everywhere enforces encryption.
-    </li>
+    <li>Strong password, not a 4-digit PIN</li>
+    <li>Auto-lock after 2 minutes</li>
+    <li>Find My Device enabled</li>
+    <li>Updates on auto. Security patches exist for a reason.</li>
   </ul>
 
   <!-- Public WiFi Best Practices -->
-  <h2 id="public-wifi">Public WiFi Best Practices</h2>
+  <h2 id="public-wifi">Public WiFi: The Rules</h2>
   <p>
-    Public WiFi is convenient but inherently risky. Here's how to use it safely:
+    I still use public WiFi. But differently now.
   </p>
-
-  <h3>Always Do</h3>
-  <ul>
-    <li><strong>Use a VPN:</strong> Non-negotiable on public networks</li>
-    <li><strong>Verify network names:</strong> Ask staff for the exact network name to avoid fake hotspots</li>
-    <li><strong>Use HTTPS sites:</strong> Look for the padlock icon in your browser</li>
-    <li><strong>Disable auto-connect:</strong> Prevent your device from automatically joining networks</li>
-    <li><strong>Forget networks after use:</strong> Don't let your device remember public WiFi</li>
-  </ul>
-
-  <h3>Consider Avoiding</h3>
-  <ul>
-    <li><strong>Banking and financial transactions:</strong> Use mobile data or wait until you're on a trusted network
-    </li>
-    <li><strong>Accessing sensitive work systems:</strong> Unless you must, and always with VPN</li>
-    <li><strong>Entering passwords:</strong> Especially without 2FA enabled</li>
-  </ul>
-
-  <h3>Alternative: Mobile Hotspot</h3>
   <p>
-    Your phone's mobile hotspot is generally safer than public WiFi:
+    <strong>Always:</strong>
   </p>
   <ul>
-    <li>Encrypted connection between your phone and laptop</li>
-    <li>Harder to intercept than open WiFi</li>
-    <li>Only you know the password</li>
-    <li>Modern data plans often include hotspot usage</li>
+    <li>VPN on before connecting. Non-negotiable.</li>
+    <li>Verify the network name. Ask staff. Fake hotspots are real.</li>
+    <li>HTTPS only. Look for the padlock.</li>
   </ul>
   <p>
-    For critical work—financial transactions, accessing sensitive systems—mobile hotspot provides better security
-    than even VPN-protected public WiFi.
+    <strong>Never:</strong>
   </p>
-
-  <h3>Physical Security in Public</h3>
   <ul>
-    <li><strong>Position screen away from observers:</strong> Shoulder surfing is real</li>
-    <li><strong>Use a privacy screen:</strong> Limits viewing angles</li>
-    <li><strong>Never leave devices unattended:</strong> Not even for a bathroom break</li>
-    <li><strong>Lock screen when stepping away:</strong> Even briefly</li>
+    <li>Banking without VPN</li>
+    <li>Entering passwords without 2FA</li>
+    <li>Leaving laptop unattended. Not even for the bathroom.</li>
   </ul>
+  <p>
+    <strong>Better option:</strong> Your phone's hotspot. Encrypted, private, only you know the password. For
+    anything sensitive, use that instead.
+  </p>
 
   <!-- FAQ Section -->
   <FAQSection faqs={faqs}/>
 
   <!-- Conclusion -->
-  <h2 id="conclusion">Your Security Checklist</h2>
+  <h2 id="conclusion">Just Do These Things</h2>
   <p>
-    Remote work security doesn't require paranoia or technical expertise. It requires consistent habits.
-    Here's your action checklist:
+    <strong>Today:</strong>
   </p>
-
-  <h3>Do Today</h3>
   <ul>
-    <li>Install a password manager and start migrating passwords</li>
-    <li>Enable 2FA on your email and password manager</li>
-    <li>Enable full-disk encryption on your laptop</li>
-    <li>Check if your email has been in breaches at haveibeenpwned.com</li>
+    <li>Get a password manager. Start using it.</li>
+    <li>Enable 2FA on email.</li>
+    <li>Turn on disk encryption.</li>
+    <li>Check haveibeenpwned.com for your email.</li>
   </ul>
-
-  <h3>Do This Week</h3>
-  <ul>
-    <li>Subscribe to a reputable VPN service</li>
-    <li>Enable 2FA on all important accounts (banking, work, social)</li>
-    <li>Review and update device security settings</li>
-    <li>Enable automatic updates on all devices</li>
-  </ul>
-
-  <h3>Ongoing Habits</h3>
-  <ul>
-    <li>Use VPN on all public networks</li>
-    <li>Verify emails before clicking links (check sender address carefully)</li>
-    <li>Lock your screen when stepping away</li>
-    <li>Keep devices physically secure in public</li>
-    <li>Respond promptly to breach notifications</li>
-  </ul>
-
   <p>
-    Security is a practice, not a product. These habits take time to build but quickly become second nature.
-    The few minutes you invest in security daily protect you from the devastating hours, days, or weeks of
-    dealing with a breach.
+    <strong>This week:</strong>
+  </p>
+  <ul>
+    <li>Get a VPN. Set it up on all devices.</li>
+    <li>2FA on banking, work accounts, social media.</li>
+    <li>Review device security settings.</li>
+  </ul>
+  <p>
+    <strong>Forever:</strong>
+  </p>
+  <ul>
+    <li>VPN on public WiFi. Always.</li>
+    <li>Check email links before clicking.</li>
+    <li>Lock screen when stepping away.</li>
+    <li>Never leave devices unattended in public.</li>
+  </ul>
+
+  <h3>Three Years Later</h3>
+  <p>
+    I still think about Lisbon sometimes. The $800 got reversed. But it took weeks. The panic lasted longer.
+  </p>
+  <p>
+    The guy who got me? Probably spent ten minutes on it. Probably wasn't even targeting me specifically.
+    Just fishing.
+  </p>
+  <p>
+    Most security is just... making yourself slightly harder to hack than the next person. Attackers are lazy.
+    They go for easy targets.
+  </p>
+  <p>
+    Don't be easy.
+  </p>
+  <p>
+    Password manager. 2FA. VPN. That's 90% of it. Takes an hour to set up. Saves you from becoming someone's
+    story about why security matters.
   </p>
 
   <!-- Related Articles -->

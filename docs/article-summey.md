@@ -113,24 +113,24 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | Category  | Articles | Words       |
 |-----------|----------|-------------|
 | Blog      | 16       | 14,776      |
-| Gear      | 23       | 60,378      |
+| Gear      | 23       | 58,019      |
 | Guides    | 30       | 65,619      |
 | Tools     | 28       | 74,329      |
-| **Total** | **97**   | **215,102** |
+| **Total** | **97**   | **212,743** |
 
-**Average words per article:** ~2,218
+**Average words per article:** ~2,193
 
 ### Word Count Summary for Non-Humanized Content
 
 | Category  | Articles | Words       |
 |-----------|----------|-------------|
 | Blog      | 0        | 0           |
-| Gear      | 23       | 60,378      |
+| Gear      | 22       | 56,169      |
 | Guides    | 30       | 65,619      |
 | Tools     | 22       | 66,386      |
-| **Total** | **75**   | **192,383** |
+| **Total** | **74**   | **188,174** |
 
-**Average words per article:** ~2,565
+**Average words per article:** ~2,543
 
 ---
 

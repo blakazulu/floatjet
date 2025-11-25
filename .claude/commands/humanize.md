@@ -87,14 +87,18 @@ Read `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md` and apply these rule
 
 ### Step 4: Test with ZeroGPT API
 
-1. Read the curl template from `/mnt/c/My Stuff/floatjet/docs/05-humanizer/cURL_bash.txt`
+1. Save the humanized article text (content only, no Astro code) to a temp file:
+   `/mnt/c/My Stuff/floatjet/docs/human/temp-humanize-test.txt`
 
-2. Execute the curl command with the humanized article text as `input_text`
+2. Run the ZeroGPT detection script:
+   ```bash
+   node "/mnt/c/My Stuff/floatjet/scripts/zerogpt-detect.js" --file "/mnt/c/My Stuff/floatjet/docs/human/temp-humanize-test.txt" --debug
+   ```
 
-3. Parse the JSON response for:
+3. Parse the output for:
     - `data.fakePercentage` - the AI detection percentage
     - `data.feedback` - human/AI classification
-    - `data.sentences` - flagged sentences (if any)
+   - `data.h` - flagged sentences array (focus re-humanization on these)
 
 ### Step 5: Handle Results
 
@@ -169,5 +173,7 @@ article-summey.md updated ✓
 - NEVER skip the API verification step
 - ALWAYS preserve Astro components and structure
 - If unsure about a section, err on the side of more human-sounding
-- The curl command has authentication built in - use it as-is
+- The detection script is at: `scripts/zerogpt-detect.js`
+- API key is embedded in the script - no additional auth needed
 - Word count changes are normal (±10% typical)
+- Delete temp file after processing: `docs/human/temp-humanize-test.txt`

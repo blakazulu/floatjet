@@ -16,51 +16,51 @@ const imageAlt = 'Tax documents and calculator for freelancer deductions';
 // Table of contents headings
 const headings = [
   {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Home Office Deduction', slug: 'home-office', depth: 2},
-  {text: 'Equipment & Technology', slug: 'equipment', depth: 2},
-  {text: 'Software & Subscriptions', slug: 'software', depth: 2},
-  {text: 'Travel & Transportation', slug: 'travel', depth: 2},
-  {text: 'Professional Development', slug: 'professional-development', depth: 2},
-  {text: 'Health Insurance', slug: 'health-insurance', depth: 2},
-  {text: 'Retirement Contributions', slug: 'retirement', depth: 2},
-  {text: 'Record-Keeping Best Practices', slug: 'record-keeping', depth: 2},
-  {text: 'When to Hire a Pro', slug: 'hire-professional', depth: 2},
+  {text: 'That Confusing Home Office Thing', slug: 'home-office', depth: 2},
+  {text: 'Your Gear and Tech Stuff', slug: 'equipment', depth: 2},
+  {text: 'All Those Monthly Services', slug: 'software', depth: 2},
+  {text: 'Getting Around for Work', slug: 'travel', depth: 2},
+  {text: 'Learning and Growing', slug: 'professional-development', depth: 2},
+  {text: 'Covering Your Health', slug: 'health-insurance', depth: 2},
+  {text: 'Stashing Money for Later', slug: 'retirement', depth: 2},
+  {text: 'Keeping Track of Everything', slug: 'record-keeping', depth: 2},
+  {text: 'Getting Professional Help', slug: 'hire-professional', depth: 2},
   {text: 'FAQ', slug: 'faq', depth: 2},
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'What percentage of my home can I deduct for a home office?',
-    answer: '<p>Calculate the percentage of your home used exclusively for business. Two methods:</p><ul><li><strong>Simplified method:</strong> $5 per square foot, up to 300 sq ft ($1,500 max)</li><li><strong>Regular method:</strong> Divide office square footage by total home square footage (e.g., 150 sq ft office / 1,500 sq ft home = 10%)</li></ul><p>The regular method often yields higher deductions but requires tracking actual expenses like rent, utilities, insurance, and repairs.</p>'
+    question: 'How much of my place actually counts?',
+    answer: '<p>Figure out the portion where only work happens. Two options:</p><ul><li><strong>Quick method:</strong> Five dollars per square foot, capping at 300 feet</li><li><strong>Detailed method:</strong> Compare your workspace against total area — say 150 sq ft from a 1,500 sq ft apartment gives you 10% of qualified expenses</li></ul><p>The detailed approach usually yields more but demands tracking actual expenses like rent, utilities, insurance, and repairs.</p>'
   },
   {
-    question: 'Can I deduct a laptop I also use for personal stuff?',
-    answer: '<p>Yes, but only the <strong>business-use percentage</strong>. If you use your laptop 80% for work and 20% for personal, you can deduct 80% of the cost. Keep a log of usage to support your percentage if audited.</p><p>For items used 100% for business, you can deduct the full cost using Section 179 or depreciate over several years.</p>'
+    question: 'My laptop handles personal stuff too — still deductible?',
+    answer: '<p>Partially. Match the deduction to actual work use. If 80% of screen time serves business purposes, write off 80%. Keep some kind of log in case questions come up during a review.</p><p>Devices used exclusively for work? Grab the whole amount through Section 179.</p>'
   },
   {
-    question: 'Are meals with clients deductible?',
-    answer: '<p>Business meals are <strong>50% deductible</strong> when you discuss business with a client, prospect, or business associate. Requirements:</p><ul><li>You or an employee must be present</li><li>Food isn\'t lavish or extravagant</li><li>Document who attended, business discussed, and date</li></ul><p>Meals while traveling for business are also 50% deductible. Groceries for your home office are generally not deductible.</p>'
+    question: 'What about buying lunch for clients?',
+    answer: '<p>Half the tab when real business gets discussed. A few requirements:</p><ul><li>Either you or an employee has to show up</li><li>Nothing ridiculous or extravagant</li><li>Record who attended and what topics came up</li></ul><p>Meals while traveling for work also hit 50%. Regular groceries at home? Different story entirely.</p>'
   },
   {
-    question: 'How do I deduct my car for business?',
-    answer: '<p>Two methods for vehicle deductions:</p><ul><li><strong>Standard mileage:</strong> 67 cents per mile (2024). Track business miles with an app like MileIQ.</li><li><strong>Actual expenses:</strong> Deduct business percentage of gas, insurance, repairs, depreciation. More record-keeping but potentially higher deduction.</li></ul><p>Commuting from home to a regular workplace is never deductible. But travel from your home office to client sites or a secondary location is business mileage.</p>'
+    question: 'Writing off my car?',
+    answer: '<p>Two ways to handle this:</p><ul><li><strong>Standard mileage:</strong> 67 cents per mile currently. Track every work-related trip.</li><li><strong>Actual expenses:</strong> Tally up fuel, insurance, repairs, depreciation — then apply whatever percentage represents business driving. More math but sometimes bigger.</li></ul><p>Commutes to an office never count. But heading from your home workspace to meet clients? That mileage qualifies.</p>'
   },
   {
-    question: 'What if I don\'t have receipts for some expenses?',
-    answer: '<p>For expenses under $75, you can use other documentation:</p><ul><li>Bank or credit card statements</li><li>Calendar entries showing business purpose</li><li>Written log of the expense</li></ul><p>For larger expenses, try to obtain duplicate receipts from vendors. Going forward, use a receipt-scanning app like Expensify or Dext to capture receipts immediately.</p>'
+    question: 'Missing receipts from earlier purchases?',
+    answer: '<p>Under 75 bucks, lean on bank statements and calendar notes and written descriptions.</p><p>Larger amounts mean hunting down replacements from wherever you bought stuff. Going forward, just scan everything the moment you get it. Phone apps take three seconds.</p>'
   },
   {
-    question: 'Can I deduct my health insurance premiums?',
-    answer: '<p><strong>Yes, if you\'re self-employed</strong> and not eligible for employer-subsidized health coverage (including through a spouse). You can deduct 100% of premiums for yourself, spouse, and dependents.</p><p>This is an "above-the-line" deduction, meaning it reduces your adjusted gross income directly. It\'s one of the most valuable deductions for freelancers.</p>'
+    question: 'Does health insurance qualify?',
+    answer: '<p><strong>Working for yourself with no access to coverage elsewhere</strong> — including through anyone you\'re married to — means you can deduct everything. Full premiums for yourself and dependents.</p><p>This comes off above the line, which directly shrinks your AGI. Makes a huge difference.</p>'
   },
   {
-    question: 'What\'s the difference between a deduction and a credit?',
-    answer: '<p>They reduce your taxes differently:</p><ul><li><strong>Deductions</strong> reduce your taxable income. A $1,000 deduction saves you $220-370 (depending on tax bracket).</li><li><strong>Credits</strong> reduce your tax bill directly. A $1,000 credit saves you $1,000.</li></ul><p>Most freelancer expenses are deductions. Common credits include the health insurance premium tax credit, retirement saver\'s credit, and child tax credit.</p>'
+    question: 'Deductions versus credits — what\'s the actual difference?',
+    answer: '<p>They work differently:</p><ul><li><strong>Deductions</strong> shrink how much income gets taxed. Knocking a thousand off your taxable amount saves maybe 200-400 depending where you fall.</li><li><strong>Credits</strong> attack your actual bill directly. A thousand dollar credit means a thousand dollars less owed.</li></ul><p>Most freelancer expenses work as deductions rather than credits.</p>'
   },
   {
-    question: 'How long should I keep tax records?',
-    answer: '<p>The IRS recommends keeping records for <strong>at least 3 years</strong> from filing date. However:</p><ul><li>Keep records for <strong>6 years</strong> if you underreported income by 25%+ (even accidentally)</li><li>Keep records for <strong>7 years</strong> if you claimed a loss from worthless securities or bad debt</li><li>Keep records <strong>indefinitely</strong> if you didn\'t file or filed a fraudulent return</li></ul><p>When in doubt, keep records for 7 years. Digital storage makes this easy.</p>'
+    question: 'Years I should hold onto records?',
+    answer: '<p>IRS officially says <strong>3 years</strong> from when you filed. However:</p><ul><li>Bump to <strong>6 years</strong> if there\'s any chance you underreported — even accidentally</li><li><strong>7 years</strong> for situations involving worthless investments or debts going bad</li><li><strong>Forever</strong> if you never filed or something fraudulent happened</li></ul><p>Personally I keep everything 7 years minimum. Storage costs basically nothing anymore.</p>'
   }
 ];
 
@@ -104,417 +104,361 @@ const relatedArticles = [
     headings={headings}
 >
   <!-- Introduction -->
-  <h2 id="introduction">Keep More of What You Earn</h2>
+  <h2 id="introduction">How I Stopped Leaving Money on the Table</h2>
   <p>
-    As a freelancer, every dollar you deduct is money that stays in your pocket instead of going to the IRS.
-    The self-employed have access to dozens of deductions that employees can't claim—but only if you know
-    what they are and document them properly.
+    Look, every buck you write off stays in your pocket. Everyone knows that. Yet I watch freelancers leave thousands
+    behind every single year. They either have no clue what qualifies or they just... don't track stuff.
   </p>
   <p>
-    <strong>The average freelancer leaves thousands of dollars on the table each year</strong> by missing
-    legitimate deductions. This guide covers every major deduction available to self-employed workers, from
-    the well-known (home office) to the often-overlooked (retirement contributions that can save you both
-    income tax and self-employment tax).
+    Guilty as charged. My first two years? I threw my laptop on the Schedule C and figured that was enough. Then I sat
+    down with this CPA who works exclusively with self-employed folks. Pretty sure she needed a minute to recover after
+    looking at my return.
   </p>
   <p>
-    <strong>Important:</strong> This guide provides general tax information, not professional advice. Tax
-    laws change, and individual situations vary. Consult a qualified tax professional for advice specific
-    to your circumstances.
+    So here's what I've picked up since then.
+  </p>
+  <p>
+    <strong>Fair warning though.</strong> I'm not your accountant. Rules shift constantly. Your situation probably looks
+    nothing like mine. Talk to somebody who actually knows your numbers before making moves.
   </p>
 
   <!-- Home Office Deduction -->
-  <h2 id="home-office">Home Office Deduction Explained</h2>
+  <h2 id="home-office">That Confusing Home Office Thing</h2>
   <p>
-    The home office deduction is one of the most valuable—and most misunderstood—deductions for freelancers.
-    Done right, it can save you hundreds or thousands of dollars.
+    People overthink this one. They've heard scary audit stories so they just skip it entirely. Totally fair game though
+    — you just gotta do it correctly.
   </p>
 
-  <h3>Qualification Requirements</h3>
+  <h3>The Two Requirements</h3>
   <p>
-    To claim a home office deduction, your workspace must meet two criteria:
+    First one — you actually work there consistently. Not whenever you remember.
   </p>
-  <ul>
-    <li><strong>Regular use:</strong> You use the space regularly for business (not just occasionally)</li>
-    <li><strong>Exclusive use:</strong> The space is used only for business (not also as a guest room or playroom)</li>
-  </ul>
   <p>
-    A dedicated room is ideal, but a clearly defined area (corner of a room, separated by furniture) can
-    qualify if used exclusively for work.
+    Second — nothing else happens in that spot. Your guest bedroom where Aunt Linda crashes twice a year? Nope. That
+    desk shoved in the corner that nobody touches except you? Yep, that works.
   </p>
-
-  <h3>Two Methods to Calculate</h3>
   <p>
-    <strong>Simplified Method:</strong>
-  </p>
-  <ul>
-    <li>Deduct $5 per square foot of office space</li>
-    <li>Maximum 300 square feet ($1,500 deduction)</li>
-    <li>Minimal record-keeping required</li>
-    <li>Best for small spaces or if you want simplicity</li>
-  </ul>
-  <p>
-    <strong>Regular Method:</strong>
-  </p>
-  <ul>
-    <li>Calculate percentage of home used for business (office sq ft ÷ total sq ft)</li>
-    <li>Deduct that percentage of actual expenses: rent/mortgage interest, utilities, insurance, repairs, depreciation
-    </li>
-    <li>No dollar cap—can be significantly more than $1,500</li>
-    <li>Requires tracking actual expenses</li>
-  </ul>
-  <p>
-    Calculate both ways and use whichever gives you the larger deduction.
+    Having a whole separate room makes things cleaner. A dedicated corner you can point to works fine though.
   </p>
 
-  <h3>What You Can Deduct</h3>
+  <h3>Calculating What You Get Back</h3>
   <p>
-    Under the regular method, deduct the business percentage of:
+    <strong>Option A keeps things stupid simple.</strong> Five bucks for every square foot you use, capping at 300 feet.
+    Tops out at fifteen hundred dollars. Quick math, barely any paperwork.
   </p>
-  <ul>
-    <li>Rent or mortgage interest (not principal)</li>
-    <li>Property taxes</li>
-    <li>Utilities (electricity, gas, water, internet)</li>
-    <li>Homeowner's or renter's insurance</li>
-    <li>Repairs and maintenance (painting, HVAC service)</li>
-    <li>Depreciation (for owned homes)</li>
-  </ul>
+  <p>
+    <strong>Option B takes more effort.</strong> What chunk of your place serves as workspace? Take your office square
+    footage and divide by the whole home. Whatever percentage you land on, apply that to rent, power bills, insurance,
+    repairs — the actual costs.
+  </p>
+  <p>
+    Personally I crunch both versions each spring and grab the bigger number.
+  </p>
+
+  <h3>Expenses That Qualify With Option B</h3>
+  <p>
+    Mortgage interest works. Just the interest piece, skip the principal. Property taxes make the list. Your electric
+    and gas and water bills, plus internet obviously. Homeowner's insurance counts. Any repairs or upkeep you've done.
+    And if you own the place, you can factor in depreciation too.
+  </p>
 
   <!-- Equipment & Technology -->
-  <h2 id="equipment">Equipment and Technology Deductions</h2>
+  <h2 id="equipment">Your Gear and Tech Stuff</h2>
   <p>
-    The tools you need to do your job are deductible business expenses.
+    Pretty much anything you need for the actual work gets written off.
   </p>
 
-  <h3>Computers and Devices</h3>
-  <ul>
-    <li><a href="/gear/best-laptops-remote-work">Laptops and desktop computers</a></li>
-    <li><a href="/gear/best-monitors-remote-work">Monitors</a> (including <a href="/gear/best-portable-monitors">portable
-      monitors</a>)
-    </li>
-    <li>Tablets and smartphones (business use percentage)</li>
-    <li>External hard drives and storage</li>
-    <li>Printers, scanners, webcams</li>
-  </ul>
+  <h3>Computer Hardware</h3>
+  <p>
+    Your <a href="/gear/best-laptops-remote-work">laptop</a> or desktop obviously. <a
+      href="/gear/best-monitors-remote-work">Monitors</a> — including that <a href="/gear/best-portable-monitors">travel
+    one</a> I haul around. Tablets and phones qualify partially based on how much you actually use them for work. Backup
+    drives and storage. Printing equipment and scanners and cameras for video calls.
+  </p>
 
-  <h3>Office Furniture</h3>
-  <ul>
-    <li><a href="/gear/best-standing-desks">Standing desks</a> and <a href="/gear/best-compact-desks-small-office">compact
-      desks</a></li>
-    <li><a href="/gear/best-ergonomic-chairs">Ergonomic chairs</a></li>
-    <li>Filing cabinets and storage</li>
-    <li>Lighting (especially if ergonomically necessary)</li>
-  </ul>
+  <h3>Where You Park Yourself</h3>
+  <p>
+    That <a href="/gear/best-standing-desks">standing desk</a> setup. A decent <a href="/gear/best-ergonomic-chairs">chair</a>
+    — my spine would file a complaint otherwise. File storage if you still deal with paper. Proper lighting matters more
+    than people realize, especially when you're staring at screens all day.
+  </p>
   <p>
     See our <a href="/guides/expense-home-office-furniture">complete guide to deducting home office furniture</a>.
   </p>
 
-  <h3>Peripherals and Accessories</h3>
-  <ul>
-    <li><a href="/gear/best-mechanical-keyboards">Keyboards</a> and mice</li>
-    <li><a href="/gear/best-noise-canceling-headphones">Headphones</a> and <a
-        href="/gear/best-microphones-remote-meetings">microphones</a></li>
-    <li><a href="/gear/best-webcams-video-calls">Webcams</a></li>
-    <li><a href="/gear/best-laptop-bags-backpacks">Laptop bags and cases</a></li>
-    <li>Cables, adapters, and docks</li>
-  </ul>
-
-  <h3>Section 179 vs. Depreciation</h3>
+  <h3>The Little Accessories</h3>
   <p>
-    For equipment over $2,500, you have options:
+    <a href="/gear/best-mechanical-keyboards">Keyboards</a> and pointing devices. <a
+      href="/gear/best-noise-canceling-headphones">Headsets</a> and <a href="/gear/best-microphones-remote-meetings">mics</a>
+    for calls. External <a href="/gear/best-webcams-video-calls">webcams</a> beyond the garbage built into laptops. <a
+      href="/gear/best-laptop-bags-backpacks">Bags</a> for carrying your stuff. Every cable and dongle you've
+    accumulated.
   </p>
-  <ul>
-    <li><strong>Section 179:</strong> Deduct the full cost in the year of purchase (up to $1.16 million for 2024)</li>
-    <li><strong>Depreciation:</strong> Spread the deduction over the asset's useful life (typically 5-7 years for
-      computers and furniture)
-    </li>
-  </ul>
+
+  <h3>Deducting Big Purchases All at Once vs Slowly</h3>
   <p>
-    Section 179 is usually better—an immediate deduction is worth more than the same amount spread over years.
+    For anything north of twenty-five hundred bucks, you've got choices.
+  </p>
+  <p>
+    <strong>Section 179</strong> basically says write the whole thing off this year. The ceiling sits around 1.16
+    million for 2024 — pretty sure that covers your monitor purchase.
+  </p>
+  <p>
+    Or spread it across five to seven years through standard depreciation.
+  </p>
+  <p>
+    I almost always take the immediate hit. Getting money back now beats waiting around.
   </p>
 
   <!-- Software & Subscriptions -->
-  <h2 id="software">Software and Subscription Deductions</h2>
+  <h2 id="software">All Those Monthly Services</h2>
   <p>
-    Software is an ordinary and necessary business expense for most freelancers.
+    If you're paying for it regularly, it probably qualifies.
   </p>
 
-  <h3>Productivity and Business Software</h3>
-  <ul>
-    <li><a href="/tools/best-project-management-software">Project management</a> (Asana, ClickUp, Monday.com)</li>
-    <li><a href="/tools/best-time-tracking-software">Time tracking</a> (Toggl, Harvest, Clockify)</li>
-    <li>Accounting software (QuickBooks, FreshBooks, Wave)</li>
-    <li>Invoicing and payment processing</li>
-    <li>Note-taking and documentation (Notion, Obsidian)</li>
-  </ul>
+  <h3>Work-Related Apps</h3>
+  <p>
+    <a href="/tools/best-project-management-software">Project trackers</a> and planning tools. Whatever you use to <a
+      href="/tools/best-time-tracking-software">log hours</a>. Bookkeeping platforms like QuickBooks or FreshBooks.
+    Billing and invoice generators. Note-taking subscriptions like Notion or Obsidian.
+  </p>
 
-  <h3>Communication Tools</h3>
-  <ul>
-    <li>Video conferencing (Zoom paid plans)</li>
-    <li>Team communication (Slack paid plans)</li>
-    <li><a href="/tools/best-email-marketing-tools">Email marketing</a> platforms</li>
-    <li><a href="/tools/best-vpn-digital-nomads">VPN subscriptions</a> for secure work</li>
-  </ul>
+  <h3>Staying Connected</h3>
+  <p>
+    Video call services — the paid Zoom tiers. Team messaging like the premium Slack plans. <a
+      href="/tools/best-email-marketing-tools">Newsletter and email tools</a>. <a href="/tools/best-vpn-digital-nomads">VPN
+    access</a> for working securely on weird networks.
+  </p>
 
-  <h3>Industry-Specific Software</h3>
-  <ul>
-    <li>Design tools (Adobe Creative Cloud, Figma)</li>
-    <li>Development tools (GitHub, hosting services)</li>
-    <li>Writing tools (Grammarly, Hemingway)</li>
-    <li>Marketing tools (SEO software, analytics)</li>
-  </ul>
+  <h3>Stuff Specific to What You Do</h3>
+  <p>
+    Creative software packages like Adobe or Figma. Developer platforms and code hosting. Writing assistants and grammar
+    checkers. Marketing and SEO research tools.
+  </p>
 
-  <h3>Cloud Storage and Hosting</h3>
-  <ul>
-    <li>Google Workspace or Microsoft 365</li>
-    <li>Dropbox, iCloud, or other cloud storage</li>
-    <li><a href="/tools/best-web-hosting-remote-business">Web hosting</a> for portfolio or business website</li>
-    <li>Domain registration fees</li>
-  </ul>
+  <h3>Files in the Cloud</h3>
+  <p>
+    Business versions of the big productivity suites like Google Workspace or Microsoft 365. Online storage through
+    various providers like Dropbox or iCloud. <a href="/tools/best-web-hosting-remote-business">Hosting</a> for your
+    website. Domain renewals every year.
+  </p>
 
   <!-- Travel & Transportation -->
-  <h2 id="travel">Travel and Transportation</h2>
+  <h2 id="travel">Getting Around for Work</h2>
   <p>
-    Business travel is deductible, but personal travel is not. The distinction matters.
+    Here's the deal — trips that count as business travel get written off. Vacation vibes don't qualify no matter how
+    much you check email.
   </p>
 
-  <h3>What Qualifies as Business Travel</h3>
-  <ul>
-    <li>Travel to meet clients or prospects</li>
-    <li>Industry conferences and events</li>
-    <li>Training and professional development</li>
-    <li>Temporary work assignments away from your tax home</li>
-  </ul>
+  <h3>What Actually Qualifies</h3>
   <p>
-    <strong>What doesn't qualify:</strong> Your regular nomad lifestyle of moving between cities for personal
-    preference is not deductible, even if you work while traveling.
+    Heading somewhere to meet clients or chase leads. Attending conferences in your field. Courses and training sessions
+    you travel for. Temporary gigs that pull you away from home base.
   </p>
 
-  <h3>Deductible Travel Expenses</h3>
-  <ul>
-    <li>Airfare, train, and bus tickets</li>
-    <li>Hotel and lodging</li>
-    <li>Rental cars or rideshares for business</li>
-    <li>50% of meals during business travel</li>
-    <li>Tips for service workers</li>
-    <li>Baggage fees</li>
-    <li>Travel insurance for business trips</li>
-  </ul>
-
-  <h3>Vehicle Deduction Options</h3>
+  <h3>What Definitely Doesn't</h3>
   <p>
-    If you use your personal vehicle for business:
+    Bouncing between cities because you got restless and wanted a change of scenery. Doesn't matter that you kept
+    working from Lisbon cafes. Trust me, I had this argument with my CPA already. Lifestyle choices aren't business
+    expenses.
   </p>
-  <ul>
-    <li><strong>Standard mileage rate:</strong> 67 cents per mile (2024). Track every business mile.</li>
-    <li><strong>Actual expense method:</strong> Track gas, insurance, repairs, depreciation—deduct business percentage.
-    </li>
-  </ul>
+
+  <h3>The Actual Travel Costs</h3>
   <p>
-    Use an app like MileIQ or Everlance to automatically track business mileage.
+    Plane tickets and train fares and bus rides. Accommodations wherever you're staying. Rental vehicles and rideshares
+    when they're for work purposes. Half of what you spend on food during the trip. Gratuities add up too. Checked bag
+    fees. Coverage for the journey itself.
+  </p>
+
+  <h3>Driving Your Own Car</h3>
+  <p>
+    When your personal vehicle does business duty:
+  </p>
+  <p>
+    You can log miles at sixty-seven cents each for 2024. Every single business trip needs tracking.
+  </p>
+  <p>
+    Or tally up the real numbers — fuel, coverage, maintenance, wear on the vehicle — then figure what percentage came
+    from work trips.
+  </p>
+  <p>
+    Downloaded MileIQ after about two weeks of failing miserably at manual logging.
   </p>
 
   <!-- Professional Development -->
-  <h2 id="professional-development">Professional Development</h2>
+  <h2 id="professional-development">Learning and Growing</h2>
   <p>
-    Investing in your skills is a deductible business expense.
+    Putting cash toward skills you need? Write it off.
   </p>
 
-  <h3>Education and Training</h3>
-  <ul>
-    <li><a href="/tools/best-online-course-platforms">Online courses</a> related to your work</li>
-    <li>Professional certifications</li>
-    <li>Industry conferences (registration, travel, lodging)</li>
-    <li>Workshops and seminars</li>
-    <li>Coaching and consulting services</li>
-  </ul>
+  <h3>Courses and Credentials</h3>
   <p>
-    The education must maintain or improve skills for your current business—not qualify you for a new profession.
+    Classes and programs tied to what you actually do. Professional certificates and licenses. <a
+      href="/tools/best-online-course-platforms">Online courses</a> that sharpen your edge. Sign-up costs for
+    conferences plus the travel and room. Intensive workshops in your area. Sessions with coaches or consultants.
+  </p>
+  <p>
+    One wrinkle though — needs to sharpen or refresh abilities for your existing gig. Pursuing a law degree while
+    running a design business won't fly.
   </p>
 
-  <h3>Professional Memberships and Subscriptions</h3>
-  <ul>
-    <li>Professional association dues</li>
-    <li>Industry publication subscriptions</li>
-    <li>Trade organization memberships</li>
-    <li>Networking group fees</li>
-  </ul>
+  <h3>Professional Memberships</h3>
+  <p>
+    Dues for industry associations. Subscriptions to trade publications. Belonging to relevant organizations. Fees for
+    networking communities.
+  </p>
 
-  <h3>Books and Research Materials</h3>
-  <ul>
-    <li>Business and professional books</li>
-    <li>Research subscriptions and databases</li>
-    <li>Industry reports</li>
-  </ul>
+  <h3>Staying Informed</h3>
+  <p>
+    Books related to your work. Database and research subscriptions. Reports and analysis from your sector.
+  </p>
 
   <!-- Health Insurance -->
-  <h2 id="health-insurance">Health Insurance Deduction</h2>
+  <h2 id="health-insurance">Covering Your Health</h2>
   <p>
-    Self-employed health insurance is one of the most valuable deductions available.
+    This one hits different. Probably the single biggest write-off available to people like us.
   </p>
 
-  <h3>What You Can Deduct</h3>
-  <ul>
-    <li>Health insurance premiums for yourself, spouse, and dependents</li>
-    <li>Dental insurance premiums</li>
-    <li>Vision insurance premiums</li>
-    <li>Long-term care insurance (with age-based limits)</li>
-  </ul>
-
-  <h3>Eligibility Requirements</h3>
+  <h3>What Gets Deducted</h3>
   <p>
-    You can claim this deduction if:
+    Monthly premiums covering yourself and your family. Dental plans. Vision coverage. Long-term care policies have some
+    restrictions based on age but generally work.
   </p>
-  <ul>
-    <li>You had a net profit from self-employment</li>
-    <li>You weren't eligible for employer-subsidized health coverage (including through a spouse's employer)</li>
-    <li>You weren't covered under Medicare</li>
-  </ul>
 
-  <h3>Why It's So Valuable</h3>
+  <h3>Making Sure You're Eligible</h3>
   <p>
-    This is an "above-the-line" deduction, meaning it reduces your Adjusted Gross Income (AGI) directly.
-    A lower AGI can:
+    You turned a profit from your self-employed work. Nobody else offered you coverage — not even through a spouse's
+    job. Medicare wasn't in the picture either.
   </p>
-  <ul>
-    <li>Reduce your overall tax bracket</li>
-    <li>Qualify you for other tax benefits</li>
-    <li>Lower your self-employment tax calculation</li>
-  </ul>
+
+  <h3>Why This Matters So Much</h3>
   <p>
-    If you're paying $12,000/year for health insurance, this deduction alone saves $2,600-4,400 depending
-    on your tax bracket.
+    Slices directly off your AGI. That happens before tons of other calculations kick in. Smaller AGI leads to smaller
+    tax bills, potentially unlocks other benefits, and chops down self-employment taxes too.
+  </p>
+  <p>
+    Paying twelve grand annually on health coverage? This single deduction shaves somewhere between twenty-six hundred
+    and forty-four hundred off your liability. Where you land depends on your tax bracket.
   </p>
 
   <!-- Retirement Contributions -->
-  <h2 id="retirement">Retirement Contribution Deductions</h2>
+  <h2 id="retirement">Stashing Money for Later</h2>
   <p>
-    Retirement contributions do double duty: they reduce your current taxes while building future wealth.
+    These pull double duty — lowering what you owe now while growing wealth for down the road.
     See our complete <a href="/guides/retirement-savings-freelancer">guide to retirement savings for freelancers</a>.
   </p>
 
-  <h3>Solo 401(k)</h3>
-  <ul>
-    <li>Contribute up to $23,000 as employee (2024) plus 25% of net self-employment income as employer</li>
-    <li>Total contribution limit: $69,000 (2024)</li>
-    <li>Best for high earners with no employees</li>
-  </ul>
-
-  <h3>SEP IRA</h3>
-  <ul>
-    <li>Contribute up to 25% of net self-employment income</li>
-    <li>Maximum $69,000 (2024)</li>
-    <li>Simple to set up and administer</li>
-    <li>Good option if you also have employees</li>
-  </ul>
-
-  <h3>Traditional IRA</h3>
-  <ul>
-    <li>Contribute up to $7,000 (2024), plus $1,000 catch-up if 50+</li>
-    <li>Deductible regardless of income if you have no employer plan</li>
-    <li>Can be in addition to Solo 401(k) or SEP IRA</li>
-  </ul>
-
-  <h3>The Tax Savings</h3>
+  <h3>The Solo 401k Route</h3>
   <p>
-    A $50,000 contribution to a Solo 401(k) at a 24% tax bracket saves you $12,000 in taxes—immediately.
-    That's money that can now grow tax-deferred for decades.
+    Employee portion maxes at twenty-three thousand. Then you add another chunk as the "employer" — up to a quarter of
+    your net self-employment earnings. Combined ceiling hits sixty-nine grand for 2024. Works great when you're earning
+    well and flying without employees.
+  </p>
+
+  <h3>Going the SEP IRA Path</h3>
+  <p>
+    Cap sits at twenty-five percent of net earnings. Same sixty-nine thousand dollar maximum. Setup takes almost no
+    effort. Actually works even when you've brought on staff.
+  </p>
+
+  <h3>Old School Traditional IRA</h3>
+  <p>
+    Seven thousand dollar limit with an extra thousand if you've hit fifty. Fully deductible when you've got no employer
+    plan in the mix. Stack this on top of the other options if you want.
+  </p>
+
+  <h3>Running the Numbers</h3>
+  <p>
+    Stashing fifty grand in a solo 401k while sitting in the twenty-four percent bracket? Twelve thousand dollars stays
+    in your pocket immediately. Then the whole pile compounds without taxes eating away at gains for decades.
   </p>
 
   <!-- Record-Keeping -->
-  <h2 id="record-keeping">Record-Keeping Best Practices</h2>
+  <h2 id="record-keeping">Keeping Track of Everything</h2>
   <p>
-    Good records are the foundation of maximizing deductions. Without documentation, you can't defend
-    deductions if audited.
+    This trips people up constantly. Doesn't matter what you actually spent if you can't prove it later. Auditors don't
+    accept "trust me."
   </p>
 
-  <h3>What to Track</h3>
-  <ul>
-    <li><strong>Income:</strong> All payments received, 1099s, invoices</li>
-    <li><strong>Expenses:</strong> Receipts for every business purchase</li>
-    <li><strong>Mileage:</strong> Date, destination, purpose, miles for each business trip</li>
-    <li><strong>Home office:</strong> Square footage, photos of dedicated space, utility bills</li>
-    <li><strong>Travel:</strong> Itineraries, business purpose documentation</li>
-  </ul>
+  <h3>Everything You Should Document</h3>
+  <p>
+    All the money coming in — client payments, those 1099 forms, billing records. All the money going out — save proof
+    of every business purchase. Driving logs with dates and destinations and reasons and distances. Your home office
+    setup with measurements, pictures, copies of utility statements. Work trips with full itineraries and notes on the
+    business purpose.
+  </p>
 
-  <h3>Tools for Organization</h3>
-  <ul>
-    <li><strong>Receipt scanning:</strong> Expensify, Dext, or phone camera to cloud folder</li>
-    <li><strong>Accounting software:</strong> QuickBooks, FreshBooks, Wave (free)</li>
-    <li><strong>Mileage tracking:</strong> MileIQ, Everlance, Stride</li>
-    <li><strong>Bank feeds:</strong> Connect accounts to accounting software for automatic categorization</li>
-  </ul>
+  <h3>Apps and Services That Make This Bearable</h3>
+  <p>
+    For receipts, grab something like Expensify or Dext — or honestly just snap photos straight to a cloud folder.
+    Bookkeeping through QuickBooks or FreshBooks handles most of it. Wave costs nothing if you're watching cash. Mile
+    trackers like MileIQ or Everlance or Stride run in the background automatically. Link your bank accounts for
+    auto-categorization once you set things up.
+  </p>
 
-  <h3>System Setup</h3>
-  <ol>
-    <li><strong>Separate bank accounts:</strong> Use a dedicated business account for all business transactions</li>
-    <li><strong>Weekly habit:</strong> Spend 15 minutes each week categorizing transactions and scanning receipts</li>
-    <li><strong>Monthly review:</strong> Reconcile accounts and check for missing documentation</li>
-    <li><strong>Quarterly estimates:</strong> Calculate and pay estimated taxes to avoid penalties</li>
-  </ol>
+  <h3>My Personal Approach</h3>
+  <p>
+    First thing — completely separate checking account for all business stuff. Not optional. I spend maybe fifteen
+    minutes each week sorting and scanning things. Reconcile monthly before transactions blur together. Send quarterly
+    estimates so April doesn't wreck me with penalties.
+  </p>
 
   <!-- When to Hire a Professional -->
-  <h2 id="hire-professional">When to Hire a Tax Professional</h2>
+  <h2 id="hire-professional">Getting Professional Help</h2>
   <p>
-    DIY tax prep works for simple situations. But freelancers often benefit from professional help.
+    Handling this solo works when things stay straightforward. Freelancing rarely stays straightforward.
   </p>
 
-  <h3>Consider a Professional If:</h3>
-  <ul>
-    <li>Your income exceeds $75,000</li>
-    <li>You have multiple income streams</li>
-    <li>You're considering an S-corp election</li>
-    <li>You have international clients or work abroad</li>
-    <li>You made large equipment purchases</li>
-    <li>You're behind on estimated payments</li>
-    <li>This is your first year freelancing</li>
-  </ul>
-
-  <h3>What to Look For</h3>
-  <ul>
-    <li><strong>Experience with self-employed clients:</strong> Not all CPAs understand Schedule C</li>
-    <li><strong>Proactive planning:</strong> A good professional helps you plan, not just file</li>
-    <li><strong>Year-round availability:</strong> Not just at tax time</li>
-    <li><strong>Clear pricing:</strong> Know what you'll pay before engaging</li>
-  </ul>
-
-  <h3>Types of Professionals</h3>
-  <ul>
-    <li><strong>Enrolled Agents (EAs):</strong> IRS-licensed, often specialize in individual and small business taxes
-    </li>
-    <li><strong>CPAs:</strong> Broader accounting expertise, good for growing businesses</li>
-    <li><strong>Tax attorneys:</strong> For complex situations, audits, or tax disputes</li>
-  </ul>
-
-  <h3>Expected Costs</h3>
-  <ul>
-    <li>Simple self-employed return: $300-500</li>
-    <li>Complex return with multiple schedules: $500-1,000</li>
-    <li>Tax planning and quarterly review: $1,000-3,000/year</li>
-  </ul>
+  <h3>Signs You Probably Need Someone</h3>
   <p>
-    The cost usually pays for itself in deductions found and penalties avoided.
+    Earnings climbing past seventy-five thousand. Revenue flowing from multiple different sources. Mulling over that
+    S-corp election people mention. Clients in other countries or working abroad yourself. Major equipment buys
+    happening. Fallen behind on those quarterly payments. Brand new to all of this.
+  </p>
+
+  <h3>Finding the Right Person</h3>
+  <p>
+    They should actually understand self-employed returns — plenty of accountants glaze over at Schedule C stuff. You
+    want someone thinking ahead about strategy rather than just punching numbers once a year. Reachable outside of
+    crunch season, not vanishing until March. Upfront about costs before you commit.
+  </p>
+
+  <h3>Different Types of Tax People</h3>
+  <p>
+    Enrolled Agents carry IRS credentials and often specialize in individuals and smaller operations. CPAs bring wider
+    expertise and handle more complexity as you grow. Tax attorneys step in for messy situations — audits,
+    disagreements, serious complications.
+  </p>
+
+  <h3>Ballpark Pricing</h3>
+  <p>
+    Straightforward self-employed filing runs around three to five hundred. More moving pieces bumps that to five
+    hundred through a thousand. Year-round relationship with quarterly check-ins lands somewhere between one and three
+    thousand.
+  </p>
+  <p>
+    Generally pays for itself through catches and avoided mistakes.
   </p>
 
   <!-- FAQ Section -->
   <FAQSection faqs={faqs}/>
 
-  <h2>Conclusion: Take Action Now</h2>
+  <h2>Getting Started Today</h2>
   <p>
-    Every deduction you claim is money that stays in your business instead of going to taxes. The key
-    is consistent documentation throughout the year—not scrambling at tax time.
+    Captured write-offs mean captured money. Everything hinges on tracking consistently throughout the year instead of
+    panicking come spring.
   </p>
   <p>
-    <strong>Your next steps:</strong>
+    <strong>What I'd do immediately:</strong>
   </p>
-  <ul>
-    <li>Set up a receipt-scanning system today</li>
-    <li>Open a dedicated business bank account if you haven't</li>
-    <li>Review this list quarterly to ensure you're capturing all deductions</li>
-    <li>Consider professional help if your situation is complex</li>
-  </ul>
   <p>
-    The freelance lifestyle has many benefits—keeping more of your hard-earned money through smart
-    deductions should be one of them.
+    Pick a receipt capture method and start using it tonight. Get a dedicated bank account going if that's still on your
+    someday list. Come back to this stuff every few months as a reminder. Bring in help when your situation has too many
+    angles to manage alone.
+  </p>
+  <p>
+    Working for yourself comes with real advantages. Holding onto more of your earnings through legitimate deductions
+    should absolutely rank among them.
   </p>
 
   <!-- Related Articles -->

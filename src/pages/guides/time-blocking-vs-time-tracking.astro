@@ -16,49 +16,48 @@ const imageAlt = 'Calendar and timer representing time blocking and time trackin
 // Table of contents headings
 const headings = [
   {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Time Blocking Explained', slug: 'time-blocking', depth: 2},
-  {text: 'Time Tracking Explained', slug: 'time-tracking', depth: 2},
-  {text: 'When Time Blocking Works Best', slug: 'blocking-best', depth: 2},
-  {text: 'When Time Tracking Works Best', slug: 'tracking-best', depth: 2},
-  {text: 'Combining Both Methods', slug: 'combining', depth: 2},
-  {text: 'Best Tools', slug: 'tools', depth: 2},
-  {text: 'Personality Fit', slug: 'personality', depth: 2},
+  {text: 'So What Even Is Time Blocking?', slug: 'time-blocking', depth: 2},
+  {text: 'And Time Tracking — That\'s Different How?', slug: 'time-tracking', depth: 2},
+  {text: 'Where Each Approach Clicks', slug: 'approach-fit', depth: 2},
+  {text: 'Here\'s the Thing: Run Both', slug: 'combining', depth: 2},
+  {text: 'Tools Worth Mentioning', slug: 'tools', depth: 2},
+  {text: 'Personality Alignment', slug: 'personality', depth: 2},
   {text: 'FAQ', slug: 'faq', depth: 2},
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Should I track billable time or all time?',
-    answer: '<p>It depends on your goals:</p><ul><li><strong>Freelancers billing hourly:</strong> Track billable time precisely for client invoices</li><li><strong>Self-improvement focus:</strong> Track all time to understand where hours actually go</li><li><strong>Productivity optimization:</strong> Track both productive and unproductive time to find patterns</li></ul><p>For most remote workers, tracking all work time (not just billable) provides the most valuable insights.</p>'
+    question: 'Should I track billable time or everything?',
+    answer: '<p>For hourly invoicing, track client time precisely. For self-understanding, track everything. Most remote workers get more insight from tracking all work time, billable or not.</p>'
   },
   {
-    question: 'How strict should time blocks be?',
-    answer: '<p>Strict enough to be useful, flexible enough to be realistic:</p><ul><li><strong>Theme blocks:</strong> "Morning = deep work" is flexible yet structured</li><li><strong>Time ranges:</strong> "Deep work 9-11:30am" allows some flexibility</li><li><strong>Buffer blocks:</strong> Schedule 15-30 min buffers between blocks for overflow</li><li><strong>Replanning:</strong> It\'s okay to adjust blocks during the day—the plan is a guide, not a prison</li></ul><p>Rigidity creates stress. The goal is intentionality, not perfection.</p>'
+    question: 'How rigid should blocks be?',
+    answer: '<p>Rigid enough to matter, flexible enough to survive real life. Theme blocks like "morning deep work" bend easier than "nine to eleven thirty exactly." Buffers absorb overflow. Adjusting mid-day isn\'t failure — blocks guide rather than imprison.</p>'
   },
   {
     question: 'What\'s the minimum time worth blocking or tracking?',
-    answer: '<p>General guidelines:</p><ul><li><strong>Time blocking:</strong> Minimum 30 minutes per block (shorter blocks create too much context-switching)</li><li><strong>Time tracking:</strong> Track activities 5+ minutes; ignore micro-tasks under 5 minutes</li><li><strong>Batching:</strong> Group small tasks into "admin" blocks rather than tracking individually</li></ul><p>Over-granularity creates overhead that outweighs benefits.</p>'
+    answer: '<p>Blocks under thirty minutes fragment attention too much. Tracking makes sense above five minutes. Tiny tasks get lumped into "admin" batches rather than tracked individually.</p>'
   },
   {
-    question: 'How do I handle interruptions with time blocking?',
-    answer: '<p>Plan for interruptions rather than being derailed by them:</p><ul><li><strong>Buffer blocks:</strong> Schedule unallocated time for unexpected needs</li><li><strong>Interrupt log:</strong> Note interruptions to understand patterns</li><li><strong>Block protection:</strong> Communicate your focus blocks to colleagues</li><li><strong>Reschedule:</strong> If a block is disrupted, move its task to your buffer block</li></ul><p>The block system helps you return to your plan after interruptions.</p>'
+    question: 'Interruptions keep wrecking my blocks — now what?',
+    answer: '<p>Plan for them. Buffer blocks absorb surprises. Log interruptions to spot patterns. Tell teammates about focus blocks. If a block gets demolished, shift that task to buffer time.</p>'
   },
   {
-    question: 'Is time tracking micromanagement?',
-    answer: '<p>It depends on implementation:</p><ul><li><strong>Self-tracking:</strong> Empowering—you control the data and insights</li><li><strong>Manager-mandated:</strong> Can feel like surveillance if not handled well</li><li><strong>The key:</strong> Use tracking data for self-improvement, not punishment</li></ul><p>When you track your own time to improve, it\'s a tool. When someone else tracks you to control, it\'s micromanagement. Context matters.</p>'
+    question: 'Isn\'t tracking just micromanagement?',
+    answer: '<p>Tracking yourself for growth is a tool. Being tracked by others for control is surveillance. Who\'s running the data matters.</p>'
   },
   {
-    question: 'How long should I try a method before switching?',
-    answer: '<p>Give each method a fair trial:</p><ul><li><strong>Minimum:</strong> 2-3 weeks of consistent use</li><li><strong>Ideal:</strong> 4-6 weeks to establish habit and see patterns</li><li><strong>Evaluation:</strong> Compare your output, stress levels, and satisfaction</li></ul><p>Don\'t abandon a method after 3 days because it felt hard. Initial friction is normal. Give systems time to work.</p>'
+    question: 'How long before I should switch methods?',
+    answer: '<p>At least two weeks of honest effort. A month is better for seeing patterns. Quitting after three days because it felt weird doesn\'t count — new systems always feel weird initially.</p>'
   },
   {
-    question: 'Can I use these methods for personal time too?',
-    answer: '<p>Yes, but with lighter touch:</p><ul><li><strong>Time blocking:</strong> Block personal priorities (exercise, family time) to protect them</li><li><strong>Time tracking:</strong> Track personal projects if you want to ensure progress</li><li><strong>Balance:</strong> Don\'t over-optimize leisure—some spontaneity is healthy</li></ul><p>The methods work for personal goals, but avoid making life feel like a productivity spreadsheet.</p>'
+    question: 'Can these work for personal life too?',
+    answer: '<p>Sure, lighter touch though. Block exercise and family time to defend them. Track personal projects for accountability. But avoid turning leisure into another spreadsheet. Spontaneity matters.</p>'
   },
   {
     question: 'What if I hate both methods?',
-    answer: '<p>Try lighter alternatives:</p><ul><li><strong>Daily highlights:</strong> Just identify 1-3 priorities each morning</li><li><strong>Time boxing:</strong> Set timers for specific tasks without full calendar blocking</li><li><strong>Weekly review:</strong> Reflect on where time went without daily tracking</li><li><strong>Energy management:</strong> Focus on matching tasks to energy levels rather than strict scheduling</li></ul><p>Not everyone needs formal time systems. Find what creates awareness without adding stress.</p>'
+    answer: '<p>Go gentler. Daily highlights — just name one to three priorities each morning. Time boxing — set timers without calendar-blocking everything. Weekly reviews instead of daily obsession. Energy management — match tasks to how you feel rather than arbitrary schedules. Formal systems aren\'t mandatory.</p>'
   }
 ];
 
@@ -102,388 +101,244 @@ const relatedArticles = [
     headings={headings}
 >
   <!-- Introduction -->
-  <h2 id="introduction">Two Approaches to Time Management</h2>
+  <h2 id="introduction">The Time Management Debate That Never Ends</h2>
   <p>
-    Ask a productivity expert how to manage your time, and you'll get one of two answers:
-    <strong>"Block your calendar"</strong> or <strong>"Track where your time goes."</strong>
+    Every productivity conversation eventually lands on the same fork in the road. Block your calendar
+    in advance, or track what actually happened afterward? Time blockers swear by planning every hour
+    before the day starts. Time trackers obsess over data after the fact.
   </p>
   <p>
-    Both approaches have passionate advocates. Time blocking disciples plan every hour in advance.
-    Time tracking evangelists measure every minute after the fact. Both claim their method is superior.
-  </p>
-  <p>
-    The truth? <strong>Neither method is universally better.</strong> They solve different problems,
-    suit different work styles, and shine in different situations.
-  </p>
-  <p>
-    This guide breaks down both methods, explains when each works best, and shows you how to combine
-    them for maximum effectiveness.
+    Both camps act like they've figured it all out. They haven't. Different approaches click for
+    different people — what rescues one person's focus destroys another's sanity. Finding your fit
+    matters more than following the latest guru.
   </p>
 
   <!-- Time Blocking Explained -->
-  <h2 id="time-blocking">Time Blocking Explained</h2>
+  <h2 id="time-blocking">So What Even Is Time Blocking?</h2>
   <p>
-    Time blocking is <strong>proactive scheduling</strong>—you decide in advance what you'll work on
-    during specific time periods.
+    Picture this: Sunday night or Monday morning, you sit down and carve up your week into chunks.
+    Nine to eleven goes to that report you've been avoiding. Eleven to noon is meetings because who
+    wants meetings scattered randomly? You get the idea.
+  </p>
+  <p>
+    Basically you're reviewing your task list, claiming specific hours for specific work, defending
+    those hours from interruption like a territorial dog, doing only that one thing during its assigned
+    window, then reflecting on what went sideways.
   </p>
 
-  <h3>How It Works</h3>
-  <ol>
-    <li>Review your tasks and priorities</li>
-    <li>Assign specific time slots to specific work</li>
-    <li>Protect those blocks from interruptions</li>
-    <li>Work on only that task during its block</li>
-    <li>Review and adjust at the end of each day/week</li>
-  </ol>
+  <h3>Block Types</h3>
+  <p>
+    Not all blocks work the same way either. Task blocks nail down exactly what you're doing —
+    "proposal draft from nine to eleven, no excuses." Theme blocks stay looser — "mornings are for
+    thinking, afternoons are for talking." Batch blocks cluster similar stuff — checking email at
+    ten and three instead of constantly. Buffer blocks are empty space you leave because nothing
+    ever takes as long as you think. Or it takes way longer. Either way.
+  </p>
 
-  <h3>Types of Time Blocks</h3>
-  <ul>
-    <li><strong>Task blocks:</strong> Specific task assigned to specific time ("Write report 9-11am")</li>
-    <li><strong>Theme blocks:</strong> Category of work ("Deep work mornings, meetings afternoons")</li>
-    <li><strong>Batch blocks:</strong> Similar tasks grouped together ("Email 10-10:30am and 3-3:30pm")</li>
-    <li><strong>Buffer blocks:</strong> Unscheduled time for overflow and unexpected needs</li>
-  </ul>
+  <h3>Why People Love Blocking</h3>
+  <p>
+    Your priorities run the show instead of whoever emails loudest. The calendar becomes an excuse
+    to ignore people — politely, of course. You skip that exhausting "what should I do now" decision
+    because past-you already decided. And you start seeing how long things really take versus how
+    long you imagine.
+  </p>
+  <p>
+    Personal time gets protection too. Put "dinner with family" on the calendar and suddenly work has to wait.
+  </p>
 
-  <h3>Benefits</h3>
-  <ul>
-    <li><strong>Intentionality:</strong> You decide your priorities, not your inbox</li>
-    <li><strong>Focus protection:</strong> Blocks give you permission to ignore distractions</li>
-    <li><strong>Reduced decision fatigue:</strong> You know what to work on without deciding in the moment</li>
-    <li><strong>Time awareness:</strong> Forces realistic estimation of how long tasks take</li>
-    <li><strong>Work-life boundaries:</strong> Personal time can be blocked and protected</li>
-  </ul>
-
-  <h3>Drawbacks</h3>
-  <ul>
-    <li><strong>Rigidity:</strong> Plans rarely survive contact with reality</li>
-    <li><strong>Setup time:</strong> Requires daily/weekly planning effort</li>
-    <li><strong>Guilt:</strong> Missing blocks can feel like failure</li>
-    <li><strong>Not for all roles:</strong> Reactive jobs (support, management) are hard to block</li>
-  </ul>
+  <h3>Why Blocking Drives People Crazy</h3>
+  <p>
+    Plans fall apart. That immaculate schedule? Reality destroys it by ten-thirty. Building the blocks
+    takes real effort — you can't just show up and wing it. Missing your own blocks feels like failure
+    even when interruptions were completely reasonable. And some jobs just don't block. Support roles,
+    management, anything where fires appear randomly — good luck scheduling around chaos.
+  </p>
 
   <!-- Time Tracking Explained -->
-  <h2 id="time-tracking">Time Tracking Explained</h2>
+  <h2 id="time-tracking">And Time Tracking — That's Different How?</h2>
   <p>
-    Time tracking is <strong>retrospective measurement</strong>—you record where your time actually
-    went, then use that data to improve.
+    Opposite direction. Rather than deciding ahead of time, you observe what actually happens.
+    Timer starts when you start something. Timer stops when you stop. You label what you worked on.
+    Eventually you analyze the data and go "huh, that's where my time went."
   </p>
 
-  <h3>How It Works</h3>
-  <ol>
-    <li>Start a timer when you begin a task</li>
-    <li>Stop when you finish or switch tasks</li>
-    <li>Categorize time spent (project, client, task type)</li>
-    <li>Review data weekly/monthly to spot patterns</li>
-    <li>Use insights to adjust behavior</li>
-  </ol>
-
-  <h3>Types of Time Tracking</h3>
-  <ul>
-    <li><strong>Manual tracking:</strong> Start/stop timers manually (Toggl, Harvest)</li>
-    <li><strong>Automatic tracking:</strong> Software records app/website usage (RescueTime, Timing)</li>
-    <li><strong>Project tracking:</strong> Time allocated to specific projects for billing or reporting</li>
-    <li><strong>Category tracking:</strong> Time grouped by activity type (deep work, meetings, admin)</li>
-  </ul>
-
-  <h3>Benefits</h3>
-  <ul>
-    <li><strong>Reality check:</strong> Shows where time actually goes (often surprising)</li>
-    <li><strong>Pattern recognition:</strong> Reveals productive times, time sinks, and habits</li>
-    <li><strong>Billing accuracy:</strong> Essential for freelancers charging hourly</li>
-    <li><strong>Accountability:</strong> Hard to fool yourself when data is staring at you</li>
-    <li><strong>Estimation improvement:</strong> Historical data improves future estimates</li>
-  </ul>
-
-  <h3>Drawbacks</h3>
-  <ul>
-    <li><strong>Overhead:</strong> Tracking takes time and mental energy</li>
-    <li><strong>Reactive:</strong> Tracks what happened, doesn't plan what should happen</li>
-    <li><strong>Judgment-prone:</strong> Easy to feel bad about "unproductive" time</li>
-    <li><strong>Privacy concerns:</strong> Some people dislike surveillance (even self-surveillance)</li>
-  </ul>
-
-  <!-- When Time Blocking Works Best -->
-  <h2 id="blocking-best">When Time Blocking Works Best</h2>
+  <h3>Tracking Flavors</h3>
   <p>
-    Time blocking shines in certain situations:
+    Tracking shows up in different flavors. Manual means pressing buttons yourself. Automatic means
+    software silently watching your apps and tabs. Project tracking captures hours for specific
+    clients or deliverables. Category tracking buckets everything by type — creative work, meetings,
+    administrative garbage.
   </p>
 
-  <h3>Deep Work Requirements</h3>
+  <h3>The Good Stuff About Tracking</h3>
   <p>
-    If your job requires extended concentration (writing, coding, design, analysis), time blocking
-    protects focus time from meeting creep and interruptions.
+    Ever think "I only spend an hour on email"? Tracking destroys that comfortable delusion.
+    Patterns emerge — your productive hours, your time sinks, how long your "quick fifteen minute
+    task" actually takes.
+  </p>
+  <p>
+    Freelancers charging hourly need this. Can't invoice what you didn't track.
+  </p>
+  <p>
+    There's also that accountability factor. Lying to yourself about Twitter time gets harder when
+    the data shows three hours yesterday.
   </p>
 
-  <h3>Competing Priorities</h3>
+  <h3>The Annoying Stuff About Tracking</h3>
   <p>
-    When everything feels urgent, blocking forces you to decide what actually gets your time. The
-    calendar becomes a constraint that clarifies priorities.
+    Running the timer constantly eats attention. You're documenting what happened instead of steering
+    what happens. Seeing "unproductive" time logged in black and white stings. And plenty of people
+    despise feeling watched — even by themselves.
   </p>
 
-  <h3>Procrastination Tendencies</h3>
+  <!-- Where Each Approach Clicks -->
+  <h2 id="approach-fit">Where Each Approach Clicks</h2>
+
+  <h3>When Blocking Rescues You</h3>
   <p>
-    Time blocking creates external structure. "I said I'd work on the proposal from 9-11am" is
-    more compelling than "I should work on the proposal sometime."
+    Blocking rescues jobs requiring deep concentration. If your real work needs three uninterrupted
+    hours — writing, coding, designing, analyzing — blocking shields that time from meeting invasion.
+  </p>
+  <p>
+    Constant urgency? Blocking forces choices. The calendar has limited space, so something has to
+    lose. Chronic procrastinator? External structure helps. "I blocked this at nine" holds more
+    weight than "I should probably do this sometime."
+  </p>
+  <p>
+    Remote workers who can't disconnect benefit from blocking personal stuff. Exercise goes on the
+    calendar and email learns to wait.
   </p>
 
-  <h3>Work-Life Boundary Issues</h3>
+  <h3>When Tracking Serves You Better</h3>
   <p>
-    Remote workers who struggle to stop working benefit from blocking personal time. When "family
-    dinner" is on the calendar, work has to wait.
+    Tracking works better for hourly billers — obviously. But also for anyone mystified about where
+    days vanish. That "wait, it's five already?" confusion gets answered by actual data.
   </p>
-
-  <h3>Predictable Schedules</h3>
   <p>
-    If your days are mostly self-directed without constant interruptions, blocking works well.
-    The more control you have over your time, the more blocking helps.
+    Reactive jobs — support, operations, management — can't really block anything meaningful. But
+    tracking still captures whatever chaos unfolded, planned or not.
   </p>
-
-  <!-- When Time Tracking Works Best -->
-  <h2 id="tracking-best">When Time Tracking Works Best</h2>
   <p>
-    Time tracking excels in different contexts:
-  </p>
-
-  <h3>Hourly Billing</h3>
-  <p>
-    Freelancers and consultants who bill by the hour need accurate tracking for invoicing. This
-    isn't optional—it's how you get paid correctly.
-  </p>
-
-  <h3>Time Blindness</h3>
-  <p>
-    If you regularly wonder "where did the day go?" or consistently underestimate how long tasks
-    take, tracking provides the reality check you need.
-  </p>
-
-  <h3>Optimization Goals</h3>
-  <p>
-    Before you can improve, you need to understand current state. Tracking shows exactly how
-    much time goes to meetings, email, and actual productive work.
-  </p>
-
-  <h3>Reactive Roles</h3>
-  <p>
-    Jobs with constant interruptions (support, management, operations) make blocking impractical.
-    Tracking still works—you record what happened regardless of whether it was planned.
-  </p>
-
-  <h3>Team Reporting</h3>
-  <p>
-    When you need to report where time went (for clients, managers, or project tracking), tracking
-    provides the data.
+    Need to report hours to clients or bosses? Tracking provides the receipts.
   </p>
 
   <!-- Combining Both Methods -->
-  <h2 id="combining">Combining Both Methods</h2>
+  <h2 id="combining">Here's the Thing: Run Both</h2>
   <p>
-    Here's the secret: <strong>the methods aren't mutually exclusive</strong>. The most effective
-    approach often combines both.
+    Productivity obsessives eventually land on this — blocking and tracking aren't enemies.
+  </p>
+  <p>
+    Block your ideal day. Track your actual day. Compare them. Where'd things diverge? Maybe Slack
+    ate ninety minutes you blocked for focus work. Maybe that meeting always runs over. Whatever.
+    Take that data and build smarter blocks for next week.
+  </p>
+  <p>
+    After a month or so, your blocks stop being fantasy and start reflecting reality.
   </p>
 
-  <h3>The Hybrid Approach</h3>
-  <ol>
-    <li><strong>Block first:</strong> Plan your ideal day with time blocks</li>
-    <li><strong>Track second:</strong> Record what actually happened</li>
-    <li><strong>Compare:</strong> How did reality differ from plan?</li>
-    <li><strong>Adjust:</strong> Use tracking data to create better blocks</li>
-  </ol>
+  <h3>Getting Started Without Overthinking</h3>
   <p>
-    Over time, your blocks become more realistic because they're informed by actual data.
+    First couple weeks, just track. Change nothing about how you work — only record where time goes.
+    You're gathering intel.
+  </p>
+  <p>
+    Weeks three and four, review what tracking revealed. Where's time disappearing? What do you wish
+    looked different? Start building blocks informed by real data instead of hope.
+  </p>
+  <p>
+    Week five onward, run the combo. Track whether you're hitting your blocks. Adjust blocks when
+    tracking shows they're unrealistic.
   </p>
 
-  <h3>Implementation Strategy</h3>
-
-  <h4>Week 1-2: Track Only</h4>
+  <h3>Monday Through the Lens</h3>
   <p>
-    Track your time without changing behavior. Establish baseline data on where time currently goes.
+    <strong>You block:</strong> proposal work nine to eleven, email at eleven, team meeting eleven-thirty,
+    code review one-thirty to three, more email, admin until five. Neat and pretty.
   </p>
-
-  <h4>Week 3-4: Analyze and Block</h4>
   <p>
-    Review tracking data. Where do you want time to go differently? Create time blocks based on
-    insights.
+    <strong>Tracking shows:</strong> forty-five minutes of proposal before Slack pulled you away, thirty
+    minutes of unplanned Slack spiral, finished the proposal eventually, email ran fifteen over, meeting
+    also ran over, code review got squeezed and interrupted by more Slack, admin stretched into overtime.
   </p>
-
-  <h4>Week 5+: Block and Track</h4>
   <p>
-    Run both systems. Track to see if you're following your blocks. Adjust blocks based on reality.
-  </p>
-
-  <h3>Practical Example</h3>
-  <div class="bg-white/5 border border-white/10 rounded-lg p-4 my-6">
-    <p class="text-white/80 mb-4"><strong>Monday Planning (Time Blocking):</strong></p>
-    <ul class="text-white/70 mb-4">
-      <li>9:00-11:00 — Deep work: write client proposal</li>
-      <li>11:00-11:30 — Email batch</li>
-      <li>11:30-12:30 — Team meeting</li>
-      <li>1:30-3:00 — Deep work: code review</li>
-      <li>3:00-3:30 — Email batch</li>
-      <li>3:30-5:00 — Admin and planning</li>
-    </ul>
-    <p class="text-white/80 mb-4"><strong>Monday Reality (Time Tracking):</strong></p>
-    <ul class="text-white/70">
-      <li>9:00-9:45 — Proposal writing (interrupted by Slack)</li>
-      <li>9:45-10:15 — Slack discussions (unplanned)</li>
-      <li>10:15-11:00 — Proposal writing (completed)</li>
-      <li>11:00-11:45 — Email (ran over)</li>
-      <li>11:45-12:45 — Team meeting (ran over)</li>
-      <li>1:45-2:45 — Code review (started late)</li>
-      <li>2:45-3:30 — More Slack (unplanned)</li>
-      <li>3:30-5:30 — Admin (overtime)</li>
-    </ul>
-  </div>
-  <p>
-    <strong>Insight:</strong> Slack takes more time than expected. Next week, either block "Slack time"
-    or use stricter notification management during deep work.
+    Slack's eating your lunch. Either block "Slack time" specifically next week or murder your
+    notifications during deep work blocks.
   </p>
 
   <!-- Best Tools -->
-  <h2 id="tools">Best Tools for Each Approach</h2>
+  <h2 id="tools">Tools Worth Mentioning</h2>
 
-  <h3>Time Blocking Tools</h3>
+  <h3>For Blocking</h3>
+  <p>
+    Google Calendar or Outlook handles blocking fine. Color-code your block types, share your focus
+    time so colleagues see it, set alerts when blocks are switching. Free.
+  </p>
+  <p>
+    Calendly shields your blocks from meeting requests — people only see the gaps you left open.
+    Also free.
+  </p>
+  <p>
+    Sunsama was built for this — daily planning combined with task management. Runs about twenty
+    bucks monthly.
+  </p>
 
-  <h4>Google Calendar / Outlook</h4>
-  <ul>
-    <li>Color-code different block types</li>
-    <li>Share blocks so colleagues see your focus time</li>
-    <li>Set reminders for block transitions</li>
-    <li>Free</li>
-  </ul>
-
-  <h4>Calendly</h4>
-  <ul>
-    <li>Protects blocks from meeting requests</li>
-    <li>Others can only book during non-blocked time</li>
-    <li>Free tier available</li>
-  </ul>
-
-  <h4>Sunsama</h4>
-  <ul>
-    <li>Dedicated time blocking + task management</li>
-    <li>Daily planning workflow built-in</li>
-    <li>$20/month</li>
-  </ul>
-
-  <h4>Notion / Todoist</h4>
-  <ul>
-    <li>Task management with calendar views</li>
-    <li>Flexible blocking approaches</li>
-    <li>Free tiers available</li>
-  </ul>
-
-  <h3>Time Tracking Tools</h3>
-
-  <h4>Toggl Track</h4>
-  <ul>
-    <li>Simple manual tracking with one-click timers</li>
-    <li>Excellent reporting and visualizations</li>
-    <li>Free for individuals</li>
-  </ul>
-
-  <h4>Harvest</h4>
-  <ul>
-    <li>Time tracking + invoicing for freelancers</li>
-    <li>Project budgeting features</li>
-    <li>Free for one person, $10.80/user/month for teams</li>
-  </ul>
-
-  <h4>RescueTime</h4>
-  <ul>
-    <li>Automatic tracking—runs in background</li>
-    <li>Shows productive vs. distracting time</li>
-    <li>Free basic, $12/month premium</li>
-  </ul>
-
-  <h4>Clockify</h4>
-  <ul>
-    <li>Full-featured free time tracking</li>
-    <li>Manual and timer-based tracking</li>
-    <li>Team features available</li>
-  </ul>
-
-  <h3>Hybrid Tools</h3>
-
-  <h4>Timing (Mac)</h4>
-  <ul>
-    <li>Automatic tracking + manual project assignment</li>
-    <li>See where time went without constant timer management</li>
-    <li>$8/month or one-time purchase</li>
-  </ul>
-
-  <h4>Rize</h4>
-  <ul>
-    <li>AI-powered time tracking with focus coaching</li>
-    <li>Combines tracking with productivity insights</li>
-    <li>$16.99/month or $99.99/year</li>
-  </ul>
+  <h3>For Tracking</h3>
+  <p>
+    <a href="/tools/best-time-tracking-software">Toggl Track</a> gives you dead-simple timers with
+    decent reports. Free for individuals.
+  </p>
+  <p>
+    Harvest merges tracking with invoicing — handy for freelancers. Free solo, around eleven bucks
+    per person for teams.
+  </p>
+  <p>
+    RescueTime watches silently in the background and categorizes your screen time automatically.
+    Free basic tier, twelve monthly for premium.
+  </p>
+  <p>
+    Clockify is fully free and surprisingly robust for basic needs.
+  </p>
 
   <!-- Personality Fit -->
-  <h2 id="personality">Which Suits Your Personality?</h2>
+  <h2 id="personality">Personality Alignment</h2>
   <p>
-    Your work style and personality influence which method feels natural.
+    Blocking clicks with planners. If structure settles your brain, if you like knowing what's ahead,
+    if external commitments motivate you — blocking probably fits.
   </p>
-
-  <h3>Time Blocking Suits You If...</h3>
-  <ul>
-    <li>You enjoy planning and organization</li>
-    <li>Structure helps you focus</li>
-    <li>You prefer knowing what's coming next</li>
-    <li>You have control over your schedule</li>
-    <li>You struggle with procrastination</li>
-    <li>You work best with external commitments</li>
-  </ul>
-
-  <h3>Time Tracking Suits You If...</h3>
-  <ul>
-    <li>You're curious about where time goes</li>
-    <li>You're data-driven and like optimization</li>
-    <li>Your work is reactive or unpredictable</li>
-    <li>You bill clients for time</li>
-    <li>You want freedom during the day with accountability after</li>
-    <li>Planning feels restrictive or anxiety-inducing</li>
-  </ul>
-
-  <h3>The Hybrid Approach Suits You If...</h3>
-  <ul>
-    <li>You want both planning and measurement</li>
-    <li>You have a mix of predictable and reactive work</li>
-    <li>You want to improve your time estimation</li>
-    <li>You're willing to invest in system setup</li>
-    <li>You enjoy continuous improvement</li>
-  </ul>
-
-  <h3>Neither Suits You If...</h3>
   <p>
-    Some people genuinely don't need formal time systems. You might be fine with simpler approaches if:
+    Tracking clicks with the curious. Data nerds. People whose work stays unpredictable. Anyone wanting
+    flexibility during hours but accountability afterward. Especially folks who find rigid planning
+    suffocating.
   </p>
-  <ul>
-    <li>You naturally focus well without structure</li>
-    <li>Your work output is more important than hours logged</li>
-    <li>Time management isn't a current problem for you</li>
-    <li>Formal systems create more stress than they solve</li>
-  </ul>
+  <p>
+    The combo clicks if you crave both structure and measurement, if your work swings between predictable
+    and chaotic, if you want better time estimates, if you'll actually maintain two systems.
+  </p>
+  <p>
+    Neither clicks for some people. That's fine too. If focus comes naturally, if output trumps hours
+    logged, if time management genuinely isn't your problem — formal systems might create stress
+    instead of solving it.
+  </p>
 
   <!-- FAQ Section -->
   <FAQSection faqs={faqs}/>
 
-  <h2>Conclusion: Try, Measure, Adapt</h2>
+  <h2>Just Try Something</h2>
   <p>
-    There's no universally "better" method. The right choice depends on your role, personality, and
-    what problem you're solving.
+    Neither method magically works better for everyone. What fits depends on your job, your brain,
+    and whatever problem you're actually solving.
   </p>
   <p>
-    <strong>Your action plan:</strong>
+    Pick one. Whichever sounds more survivable based on what you just read. Use it honestly for a
+    few weeks — don't ditch it after day two because it felt clunky. New habits feel clunky. Give it time.
   </p>
-  <ul>
-    <li><strong>This week:</strong> Pick one method based on this guide's recommendations</li>
-    <li><strong>Next 2-3 weeks:</strong> Use it consistently—don't abandon it after 3 days</li>
-    <li><strong>Week 4:</strong> Evaluate. Are you more focused? More aware? Less stressed?</li>
-    <li><strong>Ongoing:</strong> Adjust or try the hybrid approach based on what you learn</li>
-  </ul>
   <p>
-    The goal isn't perfect time management—it's <strong>intentional time use</strong>. Both methods
-    serve that goal. Choose the one that helps you show up more fully for work that matters.
+    After a month, take stock. More focused? More aware? Less frazzled?
+  </p>
+  <p>
+    Adjust from there. Hybrid approach, different method entirely, whatever makes sense. Perfect time
+    management doesn't exist anyway. Intentional time use does. Both methods push in that direction.
+    Choose the one that helps you actually do work worth doing.
   </p>
 
   <!-- Related Articles -->

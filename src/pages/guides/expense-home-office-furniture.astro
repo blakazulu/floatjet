@@ -15,49 +15,50 @@ const imageAlt = 'Home office setup with desk and chair for tax deduction';
 
 // Table of contents headings
 const headings = [
-  {text: 'Quick Answer', slug: 'quick-answer', depth: 2},
-  {text: 'What Furniture Qualifies', slug: 'what-qualifies', depth: 2},
-  {text: 'Deduction Methods', slug: 'deduction-methods', depth: 2},
-  {text: 'Depreciation Explained', slug: 'depreciation', depth: 2},
-  {text: 'Documentation Requirements', slug: 'documentation', depth: 2},
-  {text: 'Employee vs Self-Employed', slug: 'employee-vs-self-employed', depth: 2},
-  {text: 'Limits and Caps', slug: 'limits', depth: 2},
+  {text: 'Introduction', slug: 'introduction', depth: 2},
+  {text: 'The Basics Before We Dive In', slug: 'basics', depth: 2},
+  {text: 'Stuff That Counts (And Stuff That Doesn\'t)', slug: 'what-qualifies', depth: 2},
+  {text: 'Writing It Off: Now vs Later', slug: 'deduction-methods', depth: 2},
+  {text: 'That Depreciation Rabbit Hole', slug: 'depreciation', depth: 2},
+  {text: 'Keeping the IRS Happy', slug: 'documentation', depth: 2},
+  {text: 'Employees vs Everyone Else', slug: 'employee-vs-self-employed', depth: 2},
+  {text: 'The Limits Nobody Hits', slug: 'limits', depth: 2},
   {text: 'FAQ', slug: 'faq', depth: 2},
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Can I deduct a desk I also use for personal stuff?',
-    answer: '<p>If your desk is in a <strong>dedicated home office space</strong> used exclusively for work, you can generally deduct it fully, even if you occasionally check personal email there.</p><p>However, if the desk is in a shared space (living room, bedroom) that\'s not a dedicated office, you can only deduct the <strong>business-use percentage</strong>. A desk used 80% for work and 20% for personal would be 80% deductible.</p>'
+    question: 'My desk gets used for personal stuff too — can I still deduct it?',
+    answer: '<p>If your desk lives in a <strong>dedicated home office</strong> used exclusively for work, full deduction — even if you occasionally check personal stuff there. In a shared space like the living room? Only deduct the percentage you actually use for work. Eighty percent work use equals eighty percent deductible.</p>'
   },
   {
-    question: 'What if I buy furniture for multiple rooms?',
-    answer: '<p>Only furniture in your dedicated home office qualifies for the home office deduction. A chair in your living room—even if you work there sometimes—typically doesn\'t qualify.</p><p>The key test: <strong>Is the space used regularly and exclusively for business?</strong> If yes, furniture in that space is deductible.</p>'
+    question: 'What about furniture in multiple rooms?',
+    answer: '<p>Only furniture in your dedicated office counts. That chair in the living room where you sometimes take calls doesn\'t qualify. The test: is this space used regularly and exclusively for business?</p>'
   },
   {
-    question: 'Do I need to save the receipt forever?',
-    answer: '<p>Keep receipts for <strong>at least 7 years</strong> from the purchase date (or longer for depreciated items). The IRS can audit returns up to 6 years back in some cases.</p><p>Digital records work: take a photo of the receipt and store it in cloud storage like Google Drive or a dedicated app like Expensify. Keep the original if possible, but digital copies are accepted.</p>'
+    question: 'How long do I keep receipts?',
+    answer: '<p>Keep them <strong>seven years minimum</strong>. IRS can audit six years back in some situations. Digital copies work fine — photo the receipt, toss it in cloud storage. Apps like Expensify help too.</p>'
   },
   {
-    question: 'Can employees deduct home office furniture?',
-    answer: '<p><strong>Generally no</strong> at the federal level. The 2017 Tax Cuts and Jobs Act eliminated the home office deduction for employees through 2025.</p><p>However, some states (like California, New York, and Pennsylvania) still allow unreimbursed employee expense deductions. Check your state\'s rules.</p><p>If you\'re self-employed or have 1099 income, you can deduct furniture used for that work.</p>'
+    question: 'Can employees deduct anything?',
+    answer: '<p><strong>Not at the federal level</strong> through 2025. Some states still allow it — California, New York, and Pennsylvania among them. Self-employed or have 1099 income? You can deduct for that work.</p>'
   },
   {
-    question: 'Is an ergonomic chair tax deductible?',
-    answer: '<p><strong>Yes, if used for business.</strong> Ergonomic furniture (chairs, standing desks, monitor arms) is deductible like any other office furniture. If prescribed by a doctor for a medical condition, it may also qualify for medical expense deduction.</p><p>See our guide to <a href="/gear/best-ergonomic-chairs">best ergonomic chairs</a> for recommendations.</p>'
+    question: 'What about ergonomic stuff specifically?',
+    answer: '<p>Yep, same as any office furniture. <a href="/gear/best-ergonomic-chairs">Ergonomic chairs</a>, standing desks, monitor arms — all deductible if used for business. Doctor prescribed it for medical reasons? Might also qualify as a medical expense.</p>'
   },
   {
     question: 'Can I deduct furniture I already owned?',
-    answer: '<p>If you start using existing personal furniture for business, you can begin depreciating it based on <strong>fair market value</strong> at the time of conversion—not original purchase price.</p><p>This is complex to calculate and document. It\'s often simpler to buy new furniture and deduct it directly.</p>'
+    answer: '<p>You can depreciate it based on fair market value when you convert it to business use — not what you originally paid. This gets complicated. Buying new and deducting straight is usually simpler.</p>'
   },
   {
-    question: 'What\'s better: Section 179 or depreciation?',
-    answer: '<p>For most freelancers, <strong>Section 179 (immediate deduction)</strong> is better because:</p><ul><li>Full deduction in the year of purchase</li><li>Immediate tax savings</li><li>Simpler record-keeping</li></ul><p>Depreciation spreads the deduction over 5-7 years, which might be preferable if you\'re in a low tax bracket now but expect higher income later.</p>'
+    question: 'Section 179 versus depreciation — which is better?',
+    answer: '<p><strong>Section 179 for most people.</strong> Immediate tax savings, simpler records, and you probably need the deduction more now than years from now. Depreciation only makes sense if you\'re low income now but expect way higher taxes later.</p>'
   },
   {
-    question: 'Do I need a separate room for a home office?',
-    answer: '<p>Not necessarily. A clearly defined workspace within a room can qualify—for example:</p><ul><li>A dedicated corner with a desk</li><li>A partitioned area</li><li>A closet converted to office space</li></ul><p>The space must be used <strong>regularly and exclusively</strong> for business. A kitchen table where you also eat doesn\'t qualify.</p>'
+    question: 'Do I need a separate room for this?',
+    answer: '<p>Not necessarily. A dedicated corner with a desk works. A partitioned area. A closet converted to workspace. Just has to be <strong>regular and exclusive business use</strong>. Kitchen table where you eat dinner? Doesn\'t count.</p>'
   }
 ];
 
@@ -100,268 +101,209 @@ const relatedArticles = [
     categorySlug="guides/finance"
     headings={headings}
 >
-  <!-- Quick Answer -->
-  <h2 id="quick-answer">Quick Answer: Yes, With the Right Documentation</h2>
+  <!-- Introduction -->
+  <h2 id="introduction">Deducting That Desk You Just Bought</h2>
   <p>
-    <strong>Yes, home office furniture is tax deductible</strong>—if you're self-employed or have
-    freelance income and use the furniture in a dedicated workspace for business.
+    Short answer? Absolutely — if you're freelancing or running your own thing and actually using
+    the furniture for work. The catch is documentation. Nobody at the IRS cares about your nice
+    new standing desk until they do, and then they want receipts.
   </p>
   <p>
-    You can deduct the full cost immediately using Section 179, or depreciate it over several years.
-    The key requirements:
+    Here's what you need to know so your furniture actually saves you money on taxes.
+  </p>
+
+  <!-- Basics -->
+  <h2 id="basics">The Basics Before We Dive In</h2>
+  <p>
+    Self-employed and your desk sits in a dedicated work spot? Deductible. You can write off the
+    whole thing immediately through Section 179, or spread it across multiple years if that makes
+    more sense for your situation.
+  </p>
+  <p>
+    But there are rules:
   </p>
   <ul>
-    <li>You must be self-employed (employees generally can't deduct at federal level)</li>
-    <li>The furniture must be used for business purposes</li>
-    <li>You need proper documentation (receipts, photos)</li>
-    <li>The home office must meet IRS requirements (regular and exclusive use)</li>
+    <li>You've gotta be self-employed — W-2 folks can't touch this deduction at the federal level anymore</li>
+    <li>The furniture has to actually serve a business purpose</li>
+    <li>Keep your receipts and maybe snap some photos</li>
+    <li>And that home office needs to pass the IRS test for regular and exclusive use</li>
   </ul>
   <p>
-    Read on for the details on what qualifies, how to document it, and common mistakes to avoid.
+    Let's break down what actually qualifies and where people mess this up.
   </p>
 
   <!-- What Furniture Qualifies -->
-  <h2 id="what-qualifies">What Furniture Qualifies for Deduction</h2>
-
-  <h3>Commonly Deductible Items</h3>
-  <ul>
-    <li><strong>Desks:</strong> <a href="/gear/best-standing-desks">Standing desks</a>, <a
-        href="/gear/best-compact-desks-small-office">compact desks</a>, traditional desks
-    </li>
-    <li><strong>Chairs:</strong> <a href="/gear/best-ergonomic-chairs">Ergonomic chairs</a>, task chairs, kneeling
-      chairs
-    </li>
-    <li><strong>Storage:</strong> Filing cabinets, bookcases, shelving</li>
-    <li><strong>Lighting:</strong> Desk lamps, floor lamps (especially if task-specific)</li>
-    <li><strong>Accessories:</strong> Monitor stands, keyboard trays, cable management</li>
-  </ul>
-
-  <h3>What Doesn't Qualify</h3>
-  <ul>
-    <li><strong>Decorative items:</strong> Art, plants (unless integral to business)</li>
-    <li><strong>Personal furniture:</strong> Items in shared spaces not exclusively for work</li>
-    <li><strong>Kitchen items:</strong> Coffee maker, refrigerator (unless in dedicated office)</li>
-    <li><strong>General home improvement:</strong> Painting, flooring (unless prorated for office)</li>
-  </ul>
-
-  <h3>The Business Use Test</h3>
+  <h2 id="what-qualifies">Stuff That Counts (And Stuff That Doesn't)</h2>
   <p>
-    Ask yourself: "Would I have purchased this item if I didn't work from home?"
+    Pretty much any furniture that helps you work counts. <a href="/gear/best-standing-desks">Standing desks</a>,
+    <a href="/gear/best-compact-desks-small-office">compact desks</a>, traditional desks — whatever style you prefer.
+    <a href="/gear/best-ergonomic-chairs">Ergonomic chairs</a>, task chairs, kneeling chairs. Filing cabinets,
+    bookcases, shelving units. Desk lamps and floor lamps that help you see your work. Even monitor stands and
+    keyboard trays if you want to get specific about it.
   </p>
-  <ul>
-    <li>If yes → It's a personal expense, not deductible</li>
-    <li>If no → It's likely a business expense</li>
-  </ul>
+
+  <h3>What Doesn't Fly</h3>
   <p>
-    A $1,500 ergonomic chair specifically for long work hours? Business expense. A comfortable
-    couch where you sometimes answer emails? Personal expense.
+    Decorations and plants unless they're somehow essential to your business (good luck arguing that one).
+    That coffee maker in the kitchen. The couch where you sometimes scroll through Slack. General house stuff
+    like painting or new floors — though you might prorate the office portion.
+  </p>
+
+  <h3>The Quick Test</h3>
+  <p>
+    Here's my quick test: Would you have bought this thing if you never worked from home?
+  </p>
+  <p>
+    A fifteen hundred dollar ergonomic chair because your back screams after eight hours of work? Business expense.
+    A comfy couch where you occasionally reply to emails? That's just a couch.
   </p>
 
   <!-- Deduction Methods -->
-  <h2 id="deduction-methods">Two Ways to Deduct: Immediate vs. Over Time</h2>
-
-  <h3>Section 179: Immediate Deduction</h3>
+  <h2 id="deduction-methods">Writing It Off: Now vs Later</h2>
   <p>
-    Section 179 lets you deduct the <strong>full cost of business equipment</strong> in the year
-    you buy it, rather than spreading it out over years.
-  </p>
-  <ul>
-    <li><strong>2024 limit:</strong> Up to $1,160,000 in total Section 179 deductions</li>
-    <li><strong>Per item:</strong> No per-item limit for most furniture</li>
-    <li><strong>When to use:</strong> When you want the full tax benefit now</li>
-  </ul>
-  <p>
-    <strong>Example:</strong> You buy a $800 standing desk and $500 ergonomic chair in 2024.
-    With Section 179, you deduct the full $1,300 on your 2024 taxes.
+    Two paths here, and most people overthink this.
   </p>
 
-  <h3>Depreciation: Spread Over Years</h3>
+  <h3>Section 179: Everything Now</h3>
   <p>
-    Instead of deducting everything at once, you can depreciate furniture over its
-    "useful life" (typically 5-7 years for office furniture).
+    Section 179 lets you deduct everything you paid in the year you bought it. Boom, done.
+    The 2024 limit is over a million bucks, so unless you're furnishing a WeWork-sized space, you're fine.
   </p>
-  <ul>
-    <li><strong>Furniture depreciation period:</strong> 7 years (MACRS)</li>
-    <li><strong>Annual deduction:</strong> Roughly 14% of cost per year</li>
-    <li><strong>When to use:</strong> If you expect higher income in future years</li>
-  </ul>
   <p>
-    <strong>Example:</strong> A $700 desk depreciated over 7 years = ~$100 deduction per year.
+    Buy an eight hundred dollar standing desk and a five hundred dollar chair this year,
+    deduct thirteen hundred on your 2024 taxes.
   </p>
 
-  <h3>Which Should You Choose?</h3>
+  <h3>Depreciation: Spread It Out</h3>
   <p>
-    <strong>Most freelancers should use Section 179</strong> because:
+    The alternative is depreciation. Office furniture technically has a seven-year useful life,
+    so you'd deduct roughly fourteen percent annually. That same desk spread over seven years
+    gets you about a hundred bucks a year in deductions.
   </p>
-  <ul>
-    <li>Immediate tax savings are worth more than future savings (time value of money)</li>
-    <li>Simpler record-keeping</li>
-    <li>You likely need the deduction more now than later</li>
-  </ul>
+
+  <h3>Which to Pick?</h3>
   <p>
-    Choose depreciation if you have a low-income year and expect higher taxes later.
+    Most freelancers should grab Section 179. Money now beats money later — that's just how
+    time value works. Plus less tracking over the years.
+  </p>
+  <p>
+    Only go depreciation if you're having a low income year and expect to earn way more down the road.
   </p>
 
   <!-- Depreciation Explained -->
-  <h2 id="depreciation">How Depreciation Works</h2>
-
-  <h3>MACRS Depreciation</h3>
+  <h2 id="depreciation">That Depreciation Rabbit Hole</h2>
   <p>
-    The Modified Accelerated Cost Recovery System (MACRS) is the IRS method for depreciating
-    business property. Office furniture is classified as 7-year property.
+    If you do go the depreciation route, the IRS uses something called MACRS. Modified Accelerated
+    Cost Recovery System — catchy name, right?
   </p>
   <p>
-    With MACRS, you don't deduct an even amount each year. The percentages are:
+    The percentages aren't even splits. Year one gives you about fourteen percent, year two jumps
+    to almost twenty-five percent, then it tapers down. By year seven and eight you're getting
+    single digits. The math works out to a full write-off over time.
   </p>
-  <ul>
-    <li>Year 1: 14.29%</li>
-    <li>Year 2: 24.49%</li>
-    <li>Year 3: 17.49%</li>
-    <li>Year 4: 12.49%</li>
-    <li>Year 5: 8.93%</li>
-    <li>Year 6: 8.92%</li>
-    <li>Year 7: 8.93%</li>
-    <li>Year 8: 4.46%</li>
-  </ul>
 
   <h3>Bonus Depreciation</h3>
   <p>
-    In addition to MACRS, "bonus depreciation" allows deducting a large percentage upfront:
-  </p>
-  <ul>
-    <li><strong>2024:</strong> 60% bonus depreciation</li>
-    <li><strong>2025:</strong> 40% bonus depreciation</li>
-    <li><strong>2026:</strong> 20% bonus depreciation</li>
-  </ul>
-  <p>
-    This phases out by 2027. For most freelancers, Section 179 is simpler and achieves
-    the same result (full immediate deduction).
+    There's also bonus depreciation — sixty percent for 2024, forty percent for 2025, twenty percent
+    for 2026, then it phases out completely. But honestly, Section 179 does basically the same thing
+    with less headache for furniture purchases.
   </p>
 
   <!-- Documentation Requirements -->
-  <h2 id="documentation">Documentation Requirements</h2>
-
-  <h3>What to Keep</h3>
+  <h2 id="documentation">Keeping the IRS Happy</h2>
   <p>
-    For every furniture purchase you want to deduct:
+    Documentation sounds boring because it is. But the alternative is losing your deductions
+    during an audit, and that's worse boring.
   </p>
-  <ul>
-    <li><strong>Receipt or invoice:</strong> Shows item, date, amount paid</li>
-    <li><strong>Proof of payment:</strong> Credit card statement, bank record</li>
-    <li><strong>Photos:</strong> Picture of item in your home office</li>
-    <li><strong>Business purpose:</strong> Brief note on why you needed it</li>
-  </ul>
 
-  <h3>Home Office Documentation</h3>
+  <h3>What to Keep for Every Purchase</h3>
   <p>
-    You also need to document your home office itself:
+    For every piece of furniture: save the receipt showing what you bought and when, keep proof
+    you actually paid (credit card statement works), take a photo of the thing sitting in your
+    office, and jot a quick note about why you needed it.
   </p>
-  <ul>
-    <li><strong>Square footage:</strong> Measure your office space and total home</li>
-    <li><strong>Photos:</strong> Show the dedicated workspace</li>
-    <li><strong>Floor plan:</strong> Optional but helpful—sketch showing office location</li>
-  </ul>
 
-  <h3>How Long to Keep Records</h3>
+  <h3>Your Home Office Itself</h3>
   <p>
-    The IRS recommends keeping records for:
+    For the office itself: measure the square footage and know your home's total. Take pictures
+    showing your dedicated workspace. A quick floor plan sketch showing where the office sits
+    doesn't hurt.
   </p>
-  <ul>
-    <li><strong>At least 3 years</strong> from filing date</li>
-    <li><strong>7 years</strong> if you claimed a loss or underreported income</li>
-    <li><strong>Life of the asset + 3 years</strong> for depreciated items</li>
-  </ul>
+
+  <h3>How Long to Keep Everything</h3>
   <p>
-    <strong>Pro tip:</strong> Use cloud storage (Google Drive, Dropbox) to keep digital copies.
-    Create a folder for each tax year with subfolders for receipts.
+    How long to keep this stuff? At least three years from when you filed, but seven years is safer.
+    For anything you're depreciating, keep records until the depreciation finishes plus three more years.
+  </p>
+  <p>
+    Just dump it all in a Google Drive folder organized by tax year and forget about it.
   </p>
 
   <!-- Employee vs Self-Employed -->
-  <h2 id="employee-vs-self-employed">Employee vs Self-Employed: Key Differences</h2>
+  <h2 id="employee-vs-self-employed">Employees vs Everyone Else</h2>
+  <p>
+    Here's where things get frustrating for a lot of people.
+  </p>
 
-  <h3>Self-Employed (1099, Freelance, Business Owner)</h3>
-  <ul>
-    <li><strong>Can deduct:</strong> Home office expenses including furniture</li>
-    <li><strong>Form:</strong> Schedule C (sole proprietor) or business return</li>
-    <li><strong>Requirements:</strong> Regular and exclusive business use of space</li>
-  </ul>
+  <h3>Self-Employed Folks</h3>
+  <p>
+    Self-employed folks — freelancers, 1099 contractors, business owners — get the full deduction.
+    File it on Schedule C or your business return. Just need that regular and exclusive use situation.
+  </p>
 
   <h3>W-2 Employees</h3>
-  <ul>
-    <li><strong>Federal deduction:</strong> Not available (suspended 2018-2025)</li>
-    <li><strong>State deductions:</strong> Some states still allow (check local rules)</li>
-    <li><strong>Employer reimbursement:</strong> Can ask employer to reimburse (tax-free to you)</li>
-  </ul>
-
-  <h3>Hybrid Situation</h3>
   <p>
-    If you're an employee AND have side freelance income:
+    W-2 employees? Basically nothing at the federal level. The 2017 tax overhaul killed that deduction
+    through 2025. Some states still allow it — California, New York, and Pennsylvania among them — so
+    check your local rules. Or ask your employer to reimburse you, which is tax-free on your end.
   </p>
-  <ul>
-    <li>You can deduct home office expenses only for the freelance portion</li>
-    <li>Prorate furniture based on hours spent on each activity</li>
-    <li>Example: 20 hours/week freelance, 40 hours employee = 33% of furniture deductible</li>
-  </ul>
+
+  <h3>Got Both?</h3>
+  <p>
+    Got both? Like you're employed full-time but also freelance on the side? You can only deduct
+    the freelance portion. Twenty hours freelancing plus forty hours at your day job means you can
+    deduct a third of that furniture cost against your freelance income.
+  </p>
 
   <!-- Limits and Caps -->
-  <h2 id="limits">Limits and Caps</h2>
-
-  <h3>Section 179 Limits</h3>
-  <ul>
-    <li><strong>Total deduction limit:</strong> $1,160,000 (2024)</li>
-    <li><strong>Phase-out threshold:</strong> Begins at $2,890,000 in purchases</li>
-    <li><strong>Business income limit:</strong> Can't exceed your net business income</li>
-  </ul>
+  <h2 id="limits">The Limits Nobody Hits</h2>
   <p>
-    For most freelancers, these limits are far above what you'd spend on furniture.
-    They're more relevant for businesses buying vehicles and equipment.
+    Section 179 caps at over a million bucks for 2024. Unless you're outfitting an actual office
+    building, you're nowhere near that.
   </p>
 
-  <h3>Home Office Deduction Limits</h3>
+  <h3>Home Office Method Limits</h3>
   <p>
-    If using the simplified home office method ($5/sq ft, max 300 sq ft):
+    The simplified home office method — five bucks per square foot, maxing at three hundred square
+    feet — caps at fifteen hundred total. But furniture gets deducted separately, not counted in that cap.
   </p>
-  <ul>
-    <li>Maximum deduction: $1,500</li>
-    <li>Furniture is deducted separately (not included in $1,500)</li>
-  </ul>
   <p>
-    If using the regular method (actual expenses):
+    Regular method? No ceiling on furniture specifically, though your total home office deduction
+    can't exceed what you made from the business. Any excess rolls forward to next year.
   </p>
-  <ul>
-    <li>No cap on furniture deductions</li>
-    <li>Total home office deduction can't exceed business income</li>
-    <li>Excess can be carried forward to future years</li>
-  </ul>
 
-  <h3>Practical Limits</h3>
+  <h3>The Practical Reality</h3>
   <p>
-    While there's no hard cap on furniture deductions, unreasonably expensive items
-    might raise audit flags. A $10,000 desk when you earn $50,000 might get questioned.
-    Document the business necessity for high-cost items.
+    Practical reality: unreasonably expensive stuff might invite questions. A ten thousand dollar
+    desk when you're pulling fifty grand a year might raise eyebrows. Just document why you needed
+    it if you're going high-end.
   </p>
 
   <!-- FAQ Section -->
   <FAQSection faqs={faqs}/>
 
-  <h2>Conclusion: Deduct What You Deserve</h2>
+  <h2>Get Your Deduction Already</h2>
   <p>
-    Home office furniture is a legitimate business expense that reduces your taxes. The process
-    is straightforward if you document properly.
+    Your home office furniture is a legitimate write-off that puts actual money back in your pocket.
+    Not complicated if you just stay organized.
   </p>
   <p>
-    <strong>Your action checklist:</strong>
+    Quick checklist: photograph your setup, measure the space, save your receipts digitally, note
+    why you bought each thing, use Section 179 for the immediate win, and get a tax pro involved
+    if your situation has layers.
   </p>
-  <ul>
-    <li>Take photos of your home office setup</li>
-    <li>Measure and record square footage</li>
-    <li>Save receipts for all furniture purchases (digital is fine)</li>
-    <li>Note the business purpose for each item</li>
-    <li>Use Section 179 for immediate deduction</li>
-    <li>Consult a tax professional if your situation is complex</li>
-  </ul>
   <p>
-    Invest in a comfortable, productive workspace—and let the tax deduction make it more affordable.
+    Build yourself a comfortable workspace — and let the tax savings make it easier to justify.
   </p>
 
   <!-- Related Articles -->

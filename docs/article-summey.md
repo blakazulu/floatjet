@@ -55,11 +55,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 043 | Email Etiquette for Remote Teams: Professional Communication Guide (2025)  | Communication | Guides   | /guides/email-etiquette-remote-teams             | 1786       | true              |
 | 044 | Remote Team Collaboration Best Practices: The Complete Guide (2025)        | Communication | Guides   | /guides/remote-team-collaboration-best-practices | 1873       | true              |
 | 045 | Invoice Payment Terms: Net 30 vs Net 15 vs Due on Receipt (2025)           | Finance       | Guides   | /guides/invoice-payment-terms-guide              | 1620       | true              |
-| 046 | How to Set Up Retirement Savings as a Freelancer (2025)                    | Finance       | Guides   | /guides/retirement-savings-freelancer            | 2551       | false             |
-| 047 | Freelancer Tax Deductions: Complete Guide (2025)                           | Finance       | Guides   | /guides/freelancer-tax-deductions-guide          | 2532       | false             |
-| 048 | Multi-Currency Banking for Digital Nomads (2025)                           | Finance       | Guides   | /guides/multi-currency-banking-nomads            | 2206       | false             |
-| 049 | How to Expense Home Office Furniture: Complete Guide (2025)                | Finance       | Guides   | /guides/expense-home-office-furniture            | 1923       | false             |
-| 050 | Time Blocking vs Time Tracking: Which Method Works Better? (2025)          | Productivity  | Guides   | /guides/time-blocking-vs-time-tracking           | 2353       | false             |
+| 046 | How to Set Up Retirement Savings as a Freelancer (2025)                    | Finance       | Guides   | /guides/retirement-savings-freelancer            | 2551       | true              |
+| 047 | Freelancer Tax Deductions: Complete Guide (2025)                           | Finance       | Guides   | /guides/freelancer-tax-deductions-guide          | 2238       | true              |
+| 048 | Multi-Currency Banking for Digital Nomads (2025)                           | Finance       | Guides   | /guides/multi-currency-banking-nomads            | 2038       | true              |
+| 049 | How to Expense Home Office Furniture: Complete Guide (2025)                | Finance       | Guides   | /guides/expense-home-office-furniture            | 1923       | true              |
+| 050 | Time Blocking vs Time Tracking: Which Method Works Better? (2025)          | Productivity  | Guides   | /guides/time-blocking-vs-time-tracking           | 2353       | true              |
 | 051 | What Internet Speed Do You Need for Remote Work? (2025 Guide)              | Productivity  | Guides   | /guides/internet-speed-remote-work               | 2058       | false             |
 | 052 | How to Stay Focused Working from Home: Proven Strategies (2025)            | Productivity  | Guides   | /guides/how-to-stay-focused-working-from-home    | 3148       | false             |
 | 053 | Building a Morning Routine for Remote Work: Complete Guide (2025)          | Productivity  | Guides   | /guides/morning-routine-remote-work              | 2924       | false             |

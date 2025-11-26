@@ -70,11 +70,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 058 | How to Secure Your Home WiFi Network for Remote Work (2025)                | Security      | Guides   | /guides/secure-home-wifi-network                 | 1889       | true              |
 | 059 | VPN vs Proxy: Which is Better for Remote Work?                             | Security      | Guides   | /guides/vpn-vs-proxy-remote-work                 | 1623       | true              |
 | 060 | Minimalist Home Office Setup: Less Stuff, More Focus                       | Setup         | Guides   | /guides/minimalist-home-office-setup             | 1602       | true              |
-| 061 | Home Office Cable Management: Tame the Wire Chaos                          | Setup         | Guides   | /guides/cable-management-guide                   | 1988       | false             |
-| 062 | Can You Use Your Personal Laptop for Remote Work?                          | Setup         | Guides   | /guides/personal-laptop-remote-work              | 1953       | false             |
-| 063 | Budget Home Office Setup Under $500: Everything You Need                   | Setup         | Guides   | /guides/budget-home-office-setup-500             | 1904       | false             |
-| 064 | Complete Home Office Checklist: Everything You Need                        | Setup         | Guides   | /guides/complete-home-office-checklist           | 1591       | false             |
-| 065 | Can You Work Remotely from Another Country? A Legal Guide                  | Travel        | Guides   | /guides/can-you-work-remotely-another-country    | 1801       | false             |
+| 061 | Home Office Cable Management: Tame the Wire Chaos                          | Setup         | Guides   | /guides/cable-management-guide                   | 1507       | true              |
+| 062 | Can You Use Your Personal Laptop for Remote Work?                          | Setup         | Guides   | /guides/personal-laptop-remote-work              | 1199       | true              |
+| 063 | Budget Home Office Setup Under $500: Everything You Need                   | Setup         | Guides   | /guides/budget-home-office-setup-500             | 1668       | true              |
+| 064 | Complete Home Office Checklist: Everything You Need                        | Setup         | Guides   | /guides/complete-home-office-checklist           | 1281       | true              |
+| 065 | Can You Work Remotely from Another Country? A Legal Guide                  | Travel        | Guides   | /guides/can-you-work-remotely-another-country    | 1300       | true              |
 | 066 | How to Work Remotely from Different Time Zones: A Complete Guide           | Travel        | Guides   | /guides/work-remotely-different-time-zones       | 1772       | false             |
 | 067 | Best Coworking Spaces in Lisbon 2025: A Digital Nomad's Guide              | Travel        | Guides   | /guides/best-coworking-spaces-lisbon             | 1712       | false             |
 | 068 | Spain Digital Nomad Visa Guide 2025: Requirements & Application            | Travel        | Guides   | /guides/digital-nomad-visa-spain                 | 1746       | false             |

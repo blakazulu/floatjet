@@ -12,40 +12,71 @@ const image = '/images/unsplash/photo-1436491865332-7a61a109cc05-1200w.webp';
 const imageAlt = 'Airplane wing over clouds representing international travel';
 
 const headings = [
-  {depth: 2, slug: 'quick-answer', text: 'Quick Answer: It Depends'},
-  {depth: 2, slug: 'visa-requirements', text: 'Visa Requirements Overview'},
-  {depth: 2, slug: 'tax-implications', text: 'Tax Implications'},
-  {depth: 2, slug: 'digital-nomad-visas', text: 'Countries with Digital Nomad Visas'},
-  {depth: 2, slug: 'countries-to-avoid', text: 'Countries to Be Careful With'},
-  {depth: 2, slug: 'asking-employer', text: 'How to Ask Your Employer'},
-  {depth: 2, slug: 'common-scenarios', text: 'Common Scenarios Explained'},
-  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+  {depth: 2, slug: 'quick-answer', text: 'Quick Answer'},
+  {depth: 2, slug: 'visa-requirements', text: 'Visa Basics'},
+  {depth: 2, slug: 'tax-implications', text: 'Tax Headaches'},
+  {depth: 2, slug: 'digital-nomad-visas', text: 'Countries That Want You'},
+  {depth: 2, slug: 'countries-to-avoid', text: 'Countries to Watch Out For'},
+  {depth: 2, slug: 'asking-employer', text: 'Talking to Your Boss'},
+  {depth: 2, slug: 'common-scenarios', text: 'What It Looks Like in Practice'},
+  {depth: 2, slug: 'faq', text: 'Questions'}
 ];
 
 const faqData = [
   {
-    question: 'Can I work remotely from another country on a tourist visa?',
-    answer: 'Technically, many tourist visas prohibit "work." However, remote work for a foreign employer in a gray area. Short stays (2-4 weeks) are generally low-risk. Longer stays may require proper visas. Always check specific country rules.'
+    question: 'Can I work remotely on a tourist visa?',
+    answer: 'Lots of tourist visas technically say no work. But remote work for a foreign employer is gray area. Couple weeks is pretty safe. Longer stays probably need actual visas. Check rules for wherever you\\'
+    re going.
+    '
   },
   {
-    question: 'Will my employer know if I work from another country?',
-    answer: 'Possibly. VPN connections, login locations, and payment data can reveal your location. More importantly, working abroad without disclosure can be grounds for termination and creates legal/tax risks for both you and your employer.'
+    question: 'Will my employer find out?',
+    answer: 'Maybe. VPN logs and login locations can give you away. Payment info too. Bigger problem is working abroad secretly can get you fired and creates headaches for everyone involved.'
   },
   {
-    question: 'Do I need to pay taxes in both countries?',
-    answer: 'It depends on tax residency rules and tax treaties between countries. Short trips usually don\'t trigger tax obligations abroad. Longer stays (typically 183+ days/year) often establish tax residency. Consult a tax professional for your situation.'
+    question: 'Do I owe taxes in two places?',
+    answer: 'Depends. Tax treaties and residency rules matter. Quick trips usually don\\'
+    t change
+    anything
+    . Stay
+    over one
+    hundred eighty
+    three days in a
+    year and
+    you might
+    become tax
+    resident there.Ask
+    someone who
+    knows this
+    stuff
+    .'
   },
   {
-    question: 'Can my employer fire me for working from another country?',
-    answer: 'Yes, if it violates company policy or your employment contract. Many employers have specific rules about work locations due to tax, legal, and compliance reasons. Always get explicit approval before relocating.'
+    question: 'Can I get fired for this?',
+    answer: 'If you\\'
+    re breaking
+    company policy
+    or your
+    contract then
+    yes
+    . Plenty
+    of companies
+    have specific
+    rules about
+    where you
+    can work.Get
+    approval before
+    you go
+    anywhere
+    .'
   },
   {
-    question: 'What if I\'m a freelancer, not an employee?',
-    answer: 'Freelancers have more flexibility but still face visa and tax obligations. You still need legal right to be in a country, and tax rules apply based on where you perform work and where you\'re tax resident.'
+    question: 'What about freelancers?',
+    answer: 'More flexibility but same visa and tax obligations. You still need legal permission to be somewhere and taxes follow where you work and where you officially live.'
   },
   {
-    question: 'How long can I work from another country without issues?',
-    answer: 'Short trips (1-4 weeks) within tourist visa allowances are generally low-risk. Beyond that, consider digital nomad visas or proper work permits. The "safe" duration varies by country and your specific situation.'
+    question: 'How long is safe?',
+    answer: 'One to four weeks within tourist visa limits is low risk. Past that think about nomad visas or work permits. Depends on the country and your situation.'
   }
 ];
 
@@ -88,286 +119,204 @@ const relatedArticles = [
     headings={headings}
 >
   <p class="lead">
-    You've got a remote job, a laptop, and dreams of working from a beach in Thailand. But
-    is it actually legal? The short answer: it's complicated. Here's what you need to know
-    before packing your bags.
+    Got a remote job and a laptop. Dreaming about answering emails from a beach in Bali. Is it actually legal though?
+    Honest answer. It's messy.
   </p>
 
-  <h2 id="quick-answer">Quick Answer: It Depends</h2>
+  <h2 id="quick-answer">Quick Answer</h2>
 
   <p>
-    <strong>Can you technically work remotely from another country?</strong> Usually yes, with
-    proper planning.
+    Can you work remotely from another country? Usually yes if you plan it right.
   </p>
 
   <p>
-    <strong>Is it always straightforward?</strong> No. You need to consider:
-  </p>
-
-  <ul>
-    <li><strong>Visa requirements:</strong> Do you have legal right to be there?</li>
-    <li><strong>Work authorization:</strong> Does your visa allow work activities?</li>
-    <li><strong>Tax implications:</strong> Where do you owe taxes?</li>
-    <li><strong>Employer policy:</strong> Does your company allow it?</li>
-    <li><strong>Duration:</strong> Short trip vs. extended stay matters</li>
-  </ul>
-
-  <p>
-    Many digital nomads work internationally without problems. But understanding the legal
-    landscape helps you make informed decisions and avoid potential issues.
-  </p>
-
-  <h2 id="visa-requirements">Visa Requirements Overview</h2>
-
-  <h3>Tourist Visas and Remote Work</h3>
-  <p>
-    Most tourist visas officially prohibit "work." However, the definition of work typically
-    means employment with local companies or conducting local business. Remote work for
-    foreign employers exists in a gray area.
+    Is it simple? Nope. You gotta think about visa stuff. Do you have legal right to be there? Does your visa let you
+    work? Tax headaches. Where do you owe money to? Your company's rules. Do they allow it? How long you're staying. Two
+    weeks is different from six months.
   </p>
 
   <p>
-    <strong>The reality:</strong> Many countries tolerate short-term remote work by tourists.
-    You're spending money locally, not taking local jobs, and usually staying a few weeks.
-    Immigration rarely investigates laptop usage.
+    Tons of people do this without any problems. Knowing the rules just helps you not screw up.
+  </p>
+
+  <h2 id="visa-requirements">Visa Basics</h2>
+
+  <h3>Tourist Visas</h3>
+  <p>
+    Most tourist visas say no working. But they usually mean no taking jobs from locals or running a business in that
+    country. Working on your laptop for a company back home falls into weird territory.
   </p>
 
   <p>
-    <strong>The risk:</strong> You're technically violating visa terms in many countries.
-    If questioned, you could face deportation or visa denial. The longer you stay, the
-    higher the risk.
+    What actually happens is most countries don't care if tourists type on laptops for a few weeks. You're bringing
+    money in not taking jobs. Border agents aren't checking your Slack messages.
   </p>
 
-  <h3>Digital Nomad Visas</h3>
   <p>
-    Many countries now offer specific visas for remote workers. These provide legal clarity
-    and peace of mind. Requirements typically include:
+    What could go wrong is you're technically breaking the rules in a lot of places. Get asked the wrong question and
+    you could get deported or banned. Stay longer and risk goes up.
   </p>
-  <ul>
-    <li>Proof of remote employment or freelance income</li>
-    <li>Minimum income threshold</li>
-    <li>Health insurance</li>
-    <li>Clean criminal record</li>
-  </ul>
+
+  <h3>Nomad Visas</h3>
+  <p>
+    Bunch of countries now have visas made specifically for remote workers. Way less stressful. You typically need proof
+    of remote work or freelance income. Some minimum salary. Health insurance. No criminal record.
+  </p>
 
   <h3>Work Permits</h3>
   <p>
-    Traditional work permits are designed for local employment. They're usually unnecessary
-    for remote workers unless you're working for local clients or spending significant time
-    in one country.
+    Old school work permits are for people taking local jobs. If you're working remotely for a company abroad you
+    usually don't need one. Unless you're staying forever or picking up local clients.
   </p>
 
-  <h2 id="tax-implications">Tax Implications</h2>
+  <h2 id="tax-implications">Tax Headaches</h2>
 
-  <h3>Tax Residency</h3>
+  <h3>Where You're a Tax Resident</h3>
   <p>
-    Your tax obligations depend on where you're considered a "tax resident." Common factors:
+    Your tax situation depends on where governments consider you to live. Common factors. How many days you're
+    physically somewhere. Most countries use one hundred eighty three days as the cutoff. Where your permanent home is.
+    Where your family and life connections are. Your passport since some countries like the US tax their citizens
+    everywhere.
   </p>
-  <ul>
-    <li><strong>Physical presence:</strong> Many countries use a 183-day rule</li>
-    <li><strong>Permanent home:</strong> Where is your primary residence?</li>
-    <li><strong>Center of vital interests:</strong> Family, economic ties, social connections</li>
-    <li><strong>Nationality:</strong> Some countries (like the US) tax citizens regardless of residence</li>
-  </ul>
 
-  <h3>Short Stays</h3>
+  <h3>Short Trips</h3>
   <p>
-    Brief trips (a few weeks to a couple months) typically don't trigger foreign tax
-    obligations. You remain tax resident in your home country and pay taxes there.
+    Few weeks or a couple months usually changes nothing. You stay tax resident back home and file there like normal.
   </p>
 
-  <h3>Extended Stays</h3>
+  <h3>Long Stays</h3>
   <p>
-    Spending significant time in another country may establish tax residency there. This
-    could mean:
+    Stick around somewhere long enough and that country might want a piece of your income. Could mean filing there.
+    Possibly paying taxes twice though treaties usually help. More paperwork than you want.
   </p>
-  <ul>
-    <li>Filing taxes in the new country</li>
-    <li>Possible double taxation (reduced by tax treaties)</li>
-    <li>Complex compliance requirements</li>
-  </ul>
-
-  <h3>Get Professional Advice</h3>
-  <p>
-    Tax law is complex and varies by country. If you're planning extended international work,
-    consult a tax professional familiar with expat taxation.
-  </p>
-
-  <h2 id="digital-nomad-visas">Countries with Digital Nomad Visas</h2>
 
   <p>
-    As of 2025, 50+ countries offer some form of digital nomad or remote work visa:
+    Talk to a professional if you're planning anything beyond a vacation. Tax law gets complicated fast.
   </p>
 
-  <h3>Europe</h3>
-  <ul>
-    <li><strong>Portugal:</strong> Digital Nomad Visa and D7 Visa options</li>
-    <li><strong>Spain:</strong> Digital Nomad Visa with Beckham Law tax benefits</li>
-    <li><strong>Germany:</strong> Freelancer Visa for self-employed</li>
-    <li><strong>Croatia:</strong> Digital Nomad Visa (1 year)</li>
-    <li><strong>Estonia:</strong> Digital Nomad Visa (e-Residency separate)</li>
-    <li><strong>Greece:</strong> Digital Nomad Visa</li>
-    <li><strong>Malta:</strong> Nomad Residence Permit</li>
-    <li><strong>Czech Republic:</strong> Zivno Visa for freelancers</li>
-  </ul>
-
-  <h3>Americas</h3>
-  <ul>
-    <li><strong>Mexico:</strong> Temporary Resident Visa (relatively easy)</li>
-    <li><strong>Costa Rica:</strong> Digital Nomad Visa (Rentista)</li>
-    <li><strong>Colombia:</strong> Digital Nomad Visa</li>
-    <li><strong>Brazil:</strong> Digital Nomad Visa</li>
-    <li><strong>Argentina:</strong> Digital Nomad Visa</li>
-  </ul>
-
-  <h3>Asia & Caribbean</h3>
-  <ul>
-    <li><strong>Thailand:</strong> Long-Term Resident Visa (LTR)</li>
-    <li><strong>Indonesia (Bali):</strong> Second Home Visa</li>
-    <li><strong>UAE (Dubai):</strong> Virtual Working Program</li>
-    <li><strong>Barbados:</strong> Welcome Stamp</li>
-    <li><strong>Bermuda:</strong> Work from Bermuda Certificate</li>
-  </ul>
-
-  <h2 id="countries-to-avoid">Countries to Be Careful With</h2>
+  <h2 id="digital-nomad-visas">Countries That Want You</h2>
 
   <p>
-    Some countries are stricter about remote work on tourist visas or have complicated rules:
+    Over fifty countries now have some kind of nomad visa.
   </p>
 
-  <ul>
-    <li><strong>United States:</strong> Working on tourist visa (B1/B2) is technically prohibited</li>
-    <li><strong>United Kingdom:</strong> Standard Visitor Visa doesn't allow remote work for UK employer</li>
-    <li><strong>Australia:</strong> Strict visa enforcement; tourist work violations taken seriously</li>
-    <li><strong>Japan:</strong> Conservative interpretation of tourist visa work restrictions</li>
-    <li><strong>Singapore:</strong> Strict work visa requirements</li>
-  </ul>
-
   <p>
-    This doesn't mean you can't visit—just be aware of rules, keep stays short, and consider
-    proper visas for longer periods.
+    In Europe you've got Portugal with their Digital Nomad Visa and D7 options. Spain has one with nice tax breaks
+    called Beckham Law. Germany has a freelancer visa. Croatia gives you a year. Estonia has one plus their e-Residency
+    thing. Greece Malta and Czech Republic have options too.
   </p>
 
-  <h2 id="asking-employer">How to Ask Your Employer</h2>
-
-  <h3>Check Existing Policy</h3>
   <p>
-    Review your employee handbook or ask HR about remote work location policies. Some companies
-    already have frameworks for international work.
+    Americas has Mexico with a pretty easy temporary resident visa. Costa Rica has their Rentista. Colombia Brazil and
+    Argentina all jumped on board.
   </p>
 
-  <h3>Prepare Your Case</h3>
-  <ul>
-    <li>Explain how you'll maintain productivity and availability</li>
-    <li>Propose specific dates and locations</li>
-    <li>Address time zone overlap concerns</li>
-    <li>Show you've researched visa and tax implications</li>
-    <li>Offer a trial period</li>
-  </ul>
-
-  <h3>Address Employer Concerns</h3>
   <p>
-    Employers worry about:
-  </p>
-  <ul>
-    <li><strong>Legal/tax liability:</strong> Could this create obligations for the company?</li>
-    <li><strong>Data security:</strong> Is your work location secure?</li>
-    <li><strong>Availability:</strong> Will you be reachable when needed?</li>
-    <li><strong>Productivity:</strong> Will work quality suffer?</li>
-  </ul>
-
-  <h3>Start Small</h3>
-  <p>
-    Request a short trip (2-4 weeks) initially. Prove it works, then propose longer periods.
-    Building trust gradually is easier than asking for permission to work from Bali for a year.
+    Asia and Caribbean has Thailand with their LTR visa. Bali has Second Home. Dubai has a remote work program. Barbados
+    has Welcome Stamp. Bermuda too.
   </p>
 
-  <h2 id="common-scenarios">Common Scenarios Explained</h2>
+  <h2 id="countries-to-avoid">Countries to Watch Out For</h2>
 
-  <h3>Scenario 1: Two-Week Trip to Portugal</h3>
   <p>
-    <strong>Situation:</strong> US-based remote worker wants to work from Lisbon for 2 weeks
-    while on vacation.
-  </p>
-  <p>
-    <strong>Assessment:</strong> Low risk. You can enter Portugal visa-free for 90 days. Short
-    stay, foreign employer, spending money locally. Unlikely to trigger tax issues. Most employers
-    are fine with occasional travel if you maintain availability.
-  </p>
-  <p>
-    <strong>Recommendation:</strong> Inform employer, ensure good WiFi, maintain normal work hours
-    with time zone adjustment.
+    Some places are stricter or pickier about this stuff.
   </p>
 
-  <h3>Scenario 2: Three Months in Thailand</h3>
   <p>
-    <strong>Situation:</strong> Remote worker wants to spend winter in Thailand (3 months).
-  </p>
-  <p>
-    <strong>Assessment:</strong> Moderate complexity. Thailand allows 30-60 day tourist stays
-    (depending on nationality). You'd need visa extensions or runs. Remote work on tourist visa
-    is gray area but common. No tax issues for 3 months. Employer approval needed.
-  </p>
-  <p>
-    <strong>Recommendation:</strong> Check visa requirements for your nationality. Consider
-    Thailand's LTR visa if you meet income requirements. Get employer approval for extended
-    remote work.
+    US. Working on a tourist visa is technically not allowed.
   </p>
 
-  <h3>Scenario 3: Full-Time Nomad Lifestyle</h3>
   <p>
-    <strong>Situation:</strong> You want to move around continuously, spending 1-3 months in
-    various countries.
-  </p>
-  <p>
-    <strong>Assessment:</strong> Complex. You need to understand visa requirements for each
-    country, manage tax residency carefully (maintain clear ties to home country or establish
-    new tax residence), and have explicit employer support or freelance flexibility.
-  </p>
-  <p>
-    <strong>Recommendation:</strong> Consult an international tax advisor. Consider establishing
-    formal digital nomad visa in one country as a base. Use proper visas rather than relying
-    on tourist status long-term.
+    UK. Visitor visa doesn't cover remote work for UK companies.
   </p>
 
-  <h3>Scenario 4: Moving to Spain Permanently</h3>
   <p>
-    <strong>Situation:</strong> You want to relocate to Barcelona and work remotely full-time.
-  </p>
-  <p>
-    <strong>Assessment:</strong> Requires proper visa. Spain's digital nomad visa is designed
-    for this. You'll become Spanish tax resident but can benefit from Beckham Law. Employer
-    must be okay with permanent international employee.
-  </p>
-  <p>
-    <strong>Recommendation:</strong> Apply for Spain's digital nomad visa. Understand tax
-    implications. Some employers can't legally employ you in Spain—you may need to become
-    a contractor or use an Employer of Record service.
+    Australia. They enforce visa rules hard. Don't mess around.
   </p>
 
-  <h2 id="faq">Frequently Asked Questions</h2>
+  <p>
+    Japan. Conservative about what counts as working.
+  </p>
+
+  <p>
+    Singapore. Strict about work visas.
+  </p>
+
+  <p>
+    Doesn't mean skip these places. Just keep visits short and get proper visas if staying longer.
+  </p>
+
+  <h2 id="asking-employer">Talking to Your Boss</h2>
+
+  <p>
+    First check if a policy already exists. HR might have something about remote work locations.
+  </p>
+
+  <p>
+    Make your pitch. Tell them how you'll stay productive and available. Give specific dates and places. Talk about time
+    zone overlap. Show you've looked into visa and tax issues. Offer to try it for just a few weeks first.
+  </p>
+
+  <p>
+    Know what worries them. They're thinking about whether your location creates tax problems for the company. Whether
+    your data stays secure. If you'll be around when needed. If work quality might drop.
+  </p>
+
+  <p>
+    Start with something small. Ask for two to four weeks somewhere first. Show it works. Then ask for more. Way easier
+    than asking to relocate to Thailand for a year right out the gate.
+  </p>
+
+  <h2 id="common-scenarios">What It Looks Like in Practice</h2>
+
+  <p>
+    Two weeks working from Lisbon. US worker wants to combine vacation with remote work. Low risk situation. Portugal
+    lets Americans stay ninety days no visa. Short stay spending money locally won't trigger tax stuff. Most employers
+    shrug at occasional travel if you're available. Just tell your boss ensure you've got decent internet and adjust for
+    time zones.
+  </p>
+
+  <p>
+    Three months in Thailand. Want to escape winter somewhere warm. Gets more complicated. Thailand gives thirty to
+    sixty days depending on your passport. Need extensions or border runs. Working remotely on tourist visa happens
+    constantly but it's technically gray. Three months won't create tax issues. But your employer needs to say yes.
+    Check what visa you need. Look into Thailand's LTR if you qualify. Clear it with work first.
+  </p>
+
+  <p>
+    Bouncing around full time. You want to be everywhere spending a month or three in different countries all year. Most
+    complicated setup. You need to track visa rules everywhere you go. Watch your tax residency carefully. Keep ties to
+    home country or set up residence somewhere intentionally. Need either employer buy-in or freelance freedom. Hire a
+    tax advisor. Maybe get a nomad visa somewhere as your base. Don't rely on tourist status forever.
+  </p>
+
+  <p>
+    Moving to Barcelona for good. You want to actually relocate permanently and keep your remote job. Needs a proper
+    visa. Spain's nomad visa is built for this. You become Spanish tax resident but can use Beckham Law benefits.
+    Employer has to be okay with having you there long term. Some companies can't legally employ you in Spain so you
+    might need to switch to contractor or use an EOR.
+  </p>
+
+  <h2 id="faq">Questions</h2>
 
   <FAQSection faqs={faqData}/>
 
-  <h2>Make Informed Decisions</h2>
+  <h2>Final Take</h2>
 
   <p>
-    Working remotely from another country is possible and increasingly common. The key is
-    understanding the legal landscape and making informed decisions rather than hoping no
-    one notices.
+    Working from other countries is doable and lots of people do it. Just understand what you're getting into instead of
+    hoping nobody notices.
   </p>
 
   <p>
-    For short trips, the practical risks are usually low. For extended stays, proper visas
-    provide peace of mind and legal clarity. And always be transparent with your employer—
-    the consequences of getting caught working secretly abroad are worse than having an
-    honest conversation upfront.
+    Short trips usually aren't risky. Longer stays are cleaner with proper visas. And tell your employer. Getting caught
+    working secretly from abroad is way worse than just asking first.
   </p>
 
   <p>
-    When in doubt, consult professionals: immigration lawyers for visa questions, tax advisors
-    for financial implications, and HR for employer policies. The cost of advice is worth
-    avoiding potential legal problems.
+    If you're not sure what the rules are talk to people who do this for a living. Immigration lawyers for visa
+    questions. Tax advisors for money stuff. HR for company policy. Better to pay for advice than deal with legal
+    problems later.
   </p>
 
   <RelatedArticles articles={relatedArticles}/>

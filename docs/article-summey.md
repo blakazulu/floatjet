@@ -113,54 +113,54 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | Category  | Articles | Words       |
 |-----------|----------|-------------|
 | Blog      | 16       | 14,776      |
-| Gear      | 23       | 53,042      |
-| Guides    | 30       | 65,619      |
+| Gear      | 23       | 38,861      |
+| Guides    | 30       | 61,605      |
 | Tools     | 28       | 74,329      |
-| **Total** | **97**   | **207,766** |
+| **Total** | **97**   | **189,571** |
 
-**Average words per article:** ~2,142
+**Average words per article:** ~1,954
 
 ### Word Count Summary for Non-Humanized Content
 
 | Category  | Articles | Words       |
 |-----------|----------|-------------|
 | Blog      | 0        | 0           |
-| Gear      | 13       | 34,210      |
-| Guides    | 29       | 63,814      |
+| Gear      | 0        | 0           |
+| Guides    | 19       | 39,807      |
 | Tools     | 22       | 66,386      |
-| **Total** | **64**   | **164,410** |
+| **Total** | **41**   | **106,193** |
 
-**Average words per article:** ~2,569
+**Average words per article:** ~2,590
 
 ---
 
 ## Summary by Category
 
-| Category | Count |
-|-----------|--------|------|
-| Blog | 16 |
-| Gear | 23 |
-| Guides | 30 |
-| Tools | 28 |
+| Category  | Count  |
+|-----------|--------|
+| Blog      | 16     |
+| Gear      | 23     |
+| Guides    | 30     |
+| Tools     | 28     |
 | **Total** | **97** |
 
 ## Summary by Sub-Category
 
-| Sub-Category | Count |
-|---------------|-------|------|
-| Finance | 12 |
-| Communication | 6 |
-| Travel | 8 |
-| Security | 7 |
-| Productivity | 6 |
-| Setup | 6 |
-| Hosting | 7 |
-| SaaS | 13 |
-| VPN | 6 |
-| Audio | 7 |
-| Furniture | 6 |
-| Computers | 6 |
-| Accessories | 6 |
+| Sub-Category  | Count |
+|---------------|-------|
+| Finance       | 13    |
+| Communication | 7     |
+| Travel        | 9     |
+| Security      | 7     |
+| Productivity  | 6     |
+| Setup         | 6     |
+| Hosting       | 8     |
+| SaaS          | 12    |
+| VPN           | 6     |
+| Audio         | 6     |
+| Furniture     | 6     |
+| Computers     | 6     |
+| Accessories   | 5     |
 
 ---
 

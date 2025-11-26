@@ -41,76 +41,110 @@ Convert link path to file path:
 
 Read the `.astro` file and identify the main article content sections.
 
-### Step 3: Humanize Using Style Guide
+### Step 3: Extract Text to Temp File
 
-Read `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md` and apply these rules:
+**BEFORE humanizing**, extract the article text content:
 
-**Voice Changes:**
+1. Extract only the readable text content (no Astro code, components, or frontmatter)
+2. Save to temp file: `/mnt/c/My Stuff/floatjet/docs/human/humanized.txt`
+3. This becomes the working file for humanization
 
-- Use "I" not "we" - first person, conversational
-- Add specific real experiences, locations, scenarios
-- State clear opinions, don't hedge everything
-- Include self-deprecating humor, casual asides
+**What to extract:**
 
-**Sentence Structure:**
+- All paragraph text
+- Headings
+- List items
+- FAQ questions and answers
 
-- Vary lengths wildly (3 words to 25 words)
-- Use intentional fragments: "Pure value." "No complaints."
-- Start sentences with And, But, So, Okay
-- Add rhetorical questions: "Living the dream, right?"
+**What NOT to extract:**
 
-**Words to Replace:**
+- Astro imports and frontmatter
+- Component tags (`<ComparisonTable>`, etc.)
+- HTML attributes
+- Code blocks (preserve as-is)
 
-- comprehensive → solid, thorough
-- exceptional → really good, great
-- optimal → best, ideal
-- utilize → use
-- robust → strong, solid
-- seamless → smooth, easy
-- furthermore → also, plus
-- additionally → and, also
+### Step 4: Humanize Using Style Guide
 
-**Structure Changes:**
+Read and apply ALL rules from `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md` to the temp file.
 
-- Vary paragraph lengths (some 1 sentence, some 5+)
-- Use casual headers ("What's annoying:" not "Cons:")
-- Unbalanced pros/cons (reflect reality)
-- Short FAQ answers (1-3 sentences max)
+The style guide is the single source of truth for humanization rules. It contains:
+
+- Voice and tone guidelines
+- Sentence structure patterns
+- Words to avoid and replacements
+- Learned patterns from previous API testing
+
+**IMPORTANT:** Always read the latest version of the style guide before humanizing. It is updated after every API call
+with new learnings.
 
 **Must Preserve:**
 
 - All affiliate links and CTAs
-- Product names, prices, specs
-- Astro component structure (`<ComparisonTable>`, etc.)
-- Frontmatter and imports
+- Product names, prices, specs (accuracy matters)
 - Technical accuracy
 
-### Step 4: Test with ZeroGPT API
+### Step 5: Test & Learn Loop
 
-1. Save the humanized article text (content only, no Astro code) to a temp file:
-   `/mnt/c/My Stuff/floatjet/docs/human/temp-humanize-test.txt`
+This is an iterative loop. For each API call (pass OR fail), learn and update the style guide.
 
-2. Run the ZeroGPT detection script:
-   ```bash
-   node "/mnt/c/My Stuff/floatjet/scripts/zerogpt-detect.js" --file "/mnt/c/My Stuff/floatjet/docs/human/temp-humanize-test.txt" --debug
-   ```
+#### 5a: Test with ZeroGPT API
 
-3. Parse the output for:
-    - `data.fakePercentage` - the AI detection percentage
-    - `data.feedback` - human/AI classification
-   - `data.h` - flagged sentences array (focus re-humanization on these)
+Run the detection script on the temp file:
 
-### Step 5: Handle Results & Learn from API Response
+```bash
+node "/mnt/c/My Stuff/floatjet/scripts/zerogpt-detect.js" --file "/mnt/c/My Stuff/floatjet/docs/human/humanized.txt"
+```
+
+Parse the output for:
+
+- `fakePercentage` - the AI detection percentage
+- `h` - array of sentences flagged as AI (CRITICAL for learning)
+
+#### 5b: Learn & Update Style Guide (AFTER EVERY API CALL)
+
+**IMPORTANT:** This happens after EVERY API call, not just failures. Both passes and fails contain valuable learning.
 
 **Understanding the API Response:**
 
-The ZeroGPT API returns valuable data we can learn from:
-
 - `data.h` - Array of sentences flagged as AI-generated (AVOID these patterns)
-- `data.hi` - Array of sentences flagged as human (REPLICATE these patterns)
-- `data.specialSentences` - Sentences with special markers (often pass as human)
 - `data.fakePercentage` - Overall AI detection percentage
-- `data.feedback` - Classification result
+
+**What to analyze:**
+
+1. **From flagged sentences (`data.h`):**
+   - Identify common patterns that get flagged
+   - Look for word choices, sentence structures, or phrases that trigger detection
+   - Add these patterns to the style guide
+
+2. **From sentences NOT flagged:**
+   - These passed as human - identify what makes them work
+   - Short fragments? Casual language? Questions? Specific details?
+   - Reinforce successful patterns in the style guide
+
+**How to update:**
+
+1. Read `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md`
+2. Find the "Part 8: Learned Patterns from API Testing" section
+3. Add new insights with concrete examples from the actual flagged/passed sentences
+4. Only add genuinely NEW insights - don't duplicate existing advice
+
+**Example learning from a PASS (3.2% AI):**
+
+```
+Article passed but 2 sentences still flagged:
+- "Here's how to get started." → Pattern: "Here's how to" gets flagged
+- Add to guide: Replace "Here's how to" with "Let me show you"
+```
+
+**Example learning from a FAIL (15% AI):**
+
+```
+12 sentences flagged, pattern identified:
+- ALL-CAPS headers consistently flagged
+- Add to guide: Never use ALL-CAPS headers, use mixed-case casual headers
+```
+
+#### 5c: Handle Results
 
 **If API Error:**
 
@@ -125,11 +159,13 @@ Stop processing this article, continue to next.
 **If `fakePercentage > 8`:**
 
 1. Report: "Article #XXX: AI detected at X.X% (target: ≤8%) - Re-humanizing..."
-2. Analyze `data.h` (AI-flagged sentences) for patterns to avoid
-3. Focus re-humanization on those specific flagged sentences
-4. Apply more aggressive humanization techniques
-5. Re-test with API
-6. Repeat up to 5 attempts total
+2. **IMPORTANT:** Re-humanize the CURRENT temp file content (`docs/human/humanized.txt`)
+   - Do NOT re-extract from the original article
+   - Only fix the specific flagged sentences from `data.h`
+   - Keep all other content that already passed
+3. Save the updated content back to the temp file
+4. Go back to Step 5a (re-test)
+5. Maximum 5 attempts total
 
 **If max attempts reached without success:**
 
@@ -144,57 +180,19 @@ Manual review recommended.
 ✅ Article #XXX: PASSED at X.X%
 ```
 
-### Step 5.5: Update Writing Style Guide (REQUIRED)
+Proceed to Step 6.
 
-After EVERY API response (pass or fail), analyze the results and update
-`/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md`:
-
-**What to analyze:**
-
-1. **From `data.h` (AI-flagged sentences):**
-   - Identify common patterns that get flagged
-   - Look for word choices, sentence structures, or phrases that trigger detection
-   - Add these patterns to the "Words to Avoid" or "AI Detection Patterns to Eliminate" sections
-
-2. **From `data.specialSentences` and sentences NOT in `data.h`:**
-   - These passed as human - identify what makes them work
-   - Short fragments? Casual language? Questions? Specific details?
-   - Add successful patterns to the "Human Writing Patterns to Add" section
-
-3. **Pattern Analysis Examples:**
-   - If many flagged sentences start the same way → add to "vary sentence starts"
-   - If formal transitions get flagged → add to "words to avoid"
-   - If short punchy sentences pass → reinforce in style guide
-   - If personal anecdotes pass → emphasize adding more
-
-**How to update the style guide:**
-
-1. Read the current `/mnt/c/My Stuff/floatjet/docs/writing_style_guide.md`
-2. Find the relevant section (e.g., "Words to Avoid", "Sentence Structure", etc.)
-3. Add new insights discovered from the API response
-4. Include concrete examples from the actual flagged/passed sentences
-5. Keep the guide organized - don't duplicate existing advice
-
-**Example updates:**
-
-If API flagged: "The hybrid USB/XLR design means you can start with USB and upgrade to XLR later."
-
-- Pattern identified: Formal explanatory structure
-- Add to guide: "Avoid 'X means you can Y' explanatory patterns - use casual phrasing instead"
-
-If API passed: "Four!" or "The downside:"
-
-- Pattern identified: Short exclamations and casual headers work
-- Reinforce in guide: "Single-word sentences and fragments consistently pass detection"
-
-**IMPORTANT:** Only add genuinely new insights. Don't bloat the guide with redundant advice.
-
-### Step 6: Apply Changes
+### Step 6: Apply Changes to Article
 
 Once passed (≤8%):
 
-1. Write the humanized content back to the `.astro` file
-2. Count words in the new content
+1. Read the humanized content from temp file (`docs/human/humanized.txt`)
+2. Apply the humanized text back to the original `.astro` file
+3. Preserve all Astro structure:
+   - Frontmatter and imports
+   - Component tags and props
+   - HTML structure
+4. Count words in the new content
 
 ### Step 7: Update Article Summary
 
@@ -217,25 +215,25 @@ After all articles processed, show detailed summary with API call tracking:
 
 📄 Article #012: Home Office Setup
    ├─ API Calls: 3
-   │  ├─ Attempt 1: 24.3% ❌
-   │  ├─ Attempt 2: 12.1% ❌
-   │  └─ Attempt 3: 6.2% ✅
+   │  ├─ Attempt 1: 24.3% ❌ → Learned: ALL-CAPS headers flagged
+   │  ├─ Attempt 2: 12.1% ❌ → Learned: "Here's how" pattern flagged
+   │  └─ Attempt 3: 6.2% ✅ → Learned: Question-based format passes
    ├─ Final Result: PASSED at 6.2%
    └─ Words: 2,569 → 2,487
 
 📄 Article #013: Find Reliable WiFi
    ├─ API Calls: 1
-   │  └─ Attempt 1: 4.8% ✅
+   │  └─ Attempt 1: 4.8% ✅ → Learned: Short fragments pass well
    ├─ Final Result: PASSED at 4.8%
    └─ Words: 1,552 → 1,621
 
 📄 Article #014: Travel Tech
    ├─ API Calls: 5
-   │  ├─ Attempt 1: 31.2% ❌
-   │  ├─ Attempt 2: 22.4% ❌
-   │  ├─ Attempt 3: 15.8% ❌
-   │  ├─ Attempt 4: 11.3% ❌
-   │  └─ Attempt 5: 9.1% ❌
+   │  ├─ Attempt 1: 31.2% ❌ → Learned: Parallel structures flagged
+   │  ├─ Attempt 2: 22.4% ❌ → Learned: Generic dialogue flagged
+   │  ├─ Attempt 3: 15.8% ❌ → Learned: Clean tech statements flagged
+   │  ├─ Attempt 4: 11.3% ❌ → Learned: Repeated patterns flagged
+   │  └─ Attempt 5: 9.1% ❌ → Learned: Formal labels still triggering
    ├─ Final Result: NEEDS REVIEW (best: 9.1%)
    └─ Words: 1,450 → 1,512
 
@@ -249,6 +247,7 @@ Needs Review:       1
 Errors:             0
 
 article-summey.md updated ✓
+writing_style_guide.md updated with 8 new patterns ✓
 ════════════════════════════════════════════════════════════════════════
 ```
 
@@ -259,6 +258,7 @@ For each article, maintain a running log of:
 1. Attempt number (1-5)
 2. AI percentage returned from each API call
 3. Pass/fail status for each attempt (✅ if ≤8%, ❌ if >8%)
+4. Key learning from that API response
 
 Display this information in the tree structure shown above after processing completes.
 
@@ -267,9 +267,11 @@ Display this information in the tree structure shown above after processing comp
 ## Important Notes
 
 - NEVER skip the API verification step
-- ALWAYS preserve Astro components and structure
+- ALWAYS learn from EVERY API call (pass or fail)
+- ALWAYS preserve Astro components and structure when applying back
 - If unsure about a section, err on the side of more human-sounding
+- **Re-humanization:** Always work on the temp file content, NEVER re-extract from original article
 - The detection script is at: `scripts/zerogpt-detect.js`
 - API key is embedded in the script - no additional auth needed
 - Word count changes are normal (±10% typical)
-- Delete temp file after processing: `docs/human/temp-humanize-test.txt`
+- Working file: `docs/human/humanized.txt`

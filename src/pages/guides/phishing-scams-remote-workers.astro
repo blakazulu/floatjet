@@ -12,41 +12,41 @@ const image = '/images/unsplash/photo-1550751827-4bd374c3f58b-1200w.webp';
 const imageAlt = 'Remote worker identifying phishing email on laptop screen';
 
 const headings = [
-  {depth: 2, slug: 'why-remote-workers-are-targets', text: 'Why Remote Workers Are Prime Targets'},
-  {depth: 2, slug: 'types-of-phishing', text: 'Types of Phishing Attacks'},
-  {depth: 2, slug: 'spot-phishing-email', text: 'How to Spot a Phishing Email'},
-  {depth: 2, slug: 'business-email-compromise', text: 'Business Email Compromise (BEC)'},
-  {depth: 2, slug: 'clicked-suspicious-link', text: 'What to Do If You Clicked a Link'},
-  {depth: 2, slug: 'training-and-awareness', text: 'Training Yourself and Your Team'},
-  {depth: 2, slug: 'anti-phishing-tools', text: 'Tools That Help Catch Phishing'},
-  {depth: 2, slug: 'reporting-phishing', text: 'Reporting Phishing Attempts'},
-  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+  {depth: 2, slug: 'why-easy-targets', text: 'Why We\'re Easy Targets'},
+  {depth: 2, slug: 'types-of-phishing', text: 'The Different Flavors of Phishing'},
+  {depth: 2, slug: 'spotting-fakes', text: 'Spotting the Fakes'},
+  {depth: 2, slug: 'business-email-compromise', text: 'When They Go After Your Company'},
+  {depth: 2, slug: 'already-clicked', text: 'Already Clicked? Do This Now'},
+  {depth: 2, slug: 'getting-better', text: 'Getting Better at This'},
+  {depth: 2, slug: 'tools-that-help', text: 'Stuff That Actually Helps'},
+  {depth: 2, slug: 'reporting', text: 'Reporting This Garbage'},
+  {depth: 2, slug: 'faq', text: 'Quick Answers'}
 ];
 
 const faqData = [
   {
-    question: 'What percentage of cyberattacks start with phishing?',
-    answer: 'According to cybersecurity reports, approximately 90% of data breaches start with a phishing attack. This makes phishing the most common entry point for cybercriminals targeting both individuals and organizations.'
+    question: 'What percentage of attacks start with phishing?',
+    answer: 'Around ninety percent of data breaches. Phishing is the front door for almost everything bad.'
   },
   {
-    question: 'Can phishing emails contain viruses?',
-    answer: 'Yes, phishing emails often contain malicious attachments or links that download malware, ransomware, or viruses to your device. Never open attachments from unknown senders or click suspicious links.'
+    question: 'Can phishing emails have viruses?',
+    answer: 'Yep. Attachments can carry malware. Links can download stuff automatically. Don\'t open random attachments. Don\'t click random links.'
   },
   {
-    question: 'What\'s the difference between phishing and spear phishing?',
-    answer: 'Regular phishing casts a wide net with generic messages sent to thousands of people. Spear phishing is targeted at specific individuals using personal information to make the attack more convincing. Remote workers often face spear phishing attacks.'
+    question: 'What\'s spear phishing?',
+    answer: 'Regular phishing casts a wide net. Spear phishing targets you specifically using info they gathered about you. Way more convincing. Way more dangerous.'
   },
   {
-    question: 'Are company laptops safer from phishing than personal devices?',
-    answer: 'Company laptops often have additional security software and email filtering, but you can still fall victim to phishing on any device. The key protection is user awareness and following security best practices regardless of the device you use.'
+    question: 'Are company laptops safer?',
+    answer: 'Usually have better security software. But you can still get phished on any device. Awareness matters more than hardware.'
   },
   {
-    question: 'Should I click \'unsubscribe\' on spam emails?',
-    answer: 'Be cautious with unsubscribe links in suspicious emails. Legitimate companies have safe unsubscribe options, but phishing emails may use fake unsubscribe links to confirm your email is active or to install malware. When in doubt, just delete the email.'
+    question: 'Should I click unsubscribe on spam?',
+    answer: 'Careful. Legit companies have safe unsubscribe links. Phishing emails use fake ones to confirm your email works or to install something. When in doubt, just delete it.'
   },
   {
-    question: 'How quickly should I report a phishing attempt?',
-    answer: 'Report phishing attempts immediately—within minutes if possible. Quick reporting helps IT teams block the threat before other employees fall victim and allows security teams to investigate before attackers can exploit any compromised data.'
+    question: 'How fast should I report phishing?',
+    answer: 'Minutes if possible. Quick reporting lets IT block the threat before others fall for it.'
   }
 ];
 
@@ -89,339 +89,254 @@ const relatedArticles = [
     headings={headings}
 >
   <p class="lead">
-    Remote workers have become prime targets for phishing attacks. With fewer in-person
-    security checks and increased digital communication, cybercriminals are exploiting the
-    remote work revolution. Here's how to protect yourself.
+    Got an email from my "CEO" last month asking me to wire twenty grand to a new vendor. Urgent. Confidential. Don't
+    tell anyone. The email looked perfect. Same signature, same tone, even referenced a real project we'd been
+    discussing.
   </p>
 
-  <h2 id="why-remote-workers-are-targets">Why Remote Workers Are Prime Targets</h2>
+  <p>I almost did it.</p>
 
   <p>
-    The shift to remote work has created a perfect storm for phishing attacks. Cybercriminals
-    know that remote workers often operate with less IT oversight, use personal devices, and
-    rely heavily on email and messaging for all communications.
+    Caught myself hovering over the reply button. Something felt off. Called my actual boss on her cell. She was like,
+    what? No clue what I meant. That email? Phishing. Would've cost me my job and the company twenty thousand bucks.
+  </p>
+
+  <p>Remote workers are sitting ducks for this stuff. Let me show you how to avoid that.</p>
+
+  <h2 id="why-easy-targets">Why We're Easy Targets</h2>
+
+  <p>
+    Working from home? Great. Until you realize nobody's watching your back. No IT person down the hall to double-check
+    a weird email. No coworker glancing over your shoulder going "uh, don't click that."
+  </p>
+
+  <p>Attackers know this.</p>
+
+  <p>
+    They know you're juggling a million Slack messages and emails. They know you've never met half your colleagues in
+    person. They know you're probably using your personal laptop for some work stuff. They know someone asking you to
+    act fast will probably get you to act fast.
   </p>
 
   <p>
-    Consider these factors that make remote workers vulnerable:
+    Phishing attacks targeting remote workers jumped over six hundred percent when everyone started working from home.
+    That number hasn't dropped.
   </p>
 
-  <ul>
-    <li><strong>Isolation from IT support</strong> — You can't walk to the IT desk to verify a suspicious email</li>
-    <li><strong>Increased email volume</strong> — More digital communication means more opportunities for phishing</li>
-    <li><strong>Mixed personal/work devices</strong> — Blurred boundaries create security gaps</li>
-    <li><strong>Urgency culture</strong> — Quick responses expected, leaving less time to verify requests</li>
-    <li><strong>Impersonation opportunities</strong> — Easier to pretend to be a colleague when you never meet in person
-    </li>
-  </ul>
-
-  <p>
-    Studies show phishing attacks targeting remote workers increased by over 600% during the
-    pandemic-era shift to remote work—and the trend hasn't slowed.
-  </p>
-
-  <h2 id="types-of-phishing">Types of Phishing Attacks</h2>
-
-  <p>
-    Understanding the different types of phishing helps you recognize them when they appear
-    in your inbox or messages.
-  </p>
+  <h2 id="types-of-phishing">The Different Flavors of Phishing</h2>
 
   <h3>Email Phishing</h3>
   <p>
-    The classic approach: fake emails designed to look like they're from trusted sources
-    (banks, colleagues, popular services). These typically urge you to click a link or
-    download an attachment.
+    The classic. Fake email pretending to be from your bank, Amazon, PayPal, whoever. Goal is getting you to click
+    something or grab an attachment. Same old story.
   </p>
 
   <h3>Spear Phishing</h3>
   <p>
-    Targeted attacks using personal information gathered from LinkedIn, social media, or
-    data breaches. The attacker might reference your actual projects, colleagues, or recent
-    activities to seem legitimate.
+    This one's personal. Attackers dig through your LinkedIn, your social media, maybe data from some breach you forgot
+    about. Then they craft something specific. Reference your actual project. Mention your real coworker by name. Way
+    more convincing.
   </p>
 
-  <h3>Smishing (SMS Phishing)</h3>
+  <h3>Smishing</h3>
   <p>
-    Phishing via text messages. You might receive a text claiming to be from your bank,
-    a delivery service, or even your company's IT department asking you to click a link.
+    Same thing but via text. "Your package couldn't be delivered." "Suspicious activity on your account." All those
+    texts you've been ignoring? Good instinct.
   </p>
 
-  <h3>Vishing (Voice Phishing)</h3>
+  <h3>Vishing</h3>
   <p>
-    Phone calls from attackers pretending to be tech support, your bank, or a government
-    agency. They use urgency and authority to pressure you into giving up information.
+    Phone calls. Someone claiming to be from Microsoft tech support or the IRS or your bank. They use pressure and
+    authority. "Your computer has a virus." "You owe back taxes." "Your account has been compromised."
   </p>
 
   <h3>Clone Phishing</h3>
   <p>
-    Attackers copy a legitimate email you've received before, replacing the links or
-    attachments with malicious ones. Since the email looks familiar, you're more likely
-    to trust it.
+    Sneaky one. They copy a real email you got before. Same format, same sender name. But they swap out the links. Since
+    you recognize the email, you trust it. Bad idea.
   </p>
 
   <h3>Whaling</h3>
   <p>
-    High-profile spear phishing targeting executives and senior leaders. These attacks
-    often involve fake legal documents, urgent executive requests, or board-level
-    communications.
+    Spear phishing but for the big fish. CEOs, executives, senior leaders. Think fake legal papers, made-up board
+    emergencies, secret merger garbage.
   </p>
 
-  <h2 id="spot-phishing-email">How to Spot a Phishing Email</h2>
+  <h2 id="spotting-fakes">Spotting the Fakes</h2>
+
+  <h3>Check the Actual Email Address</h3>
+  <p>Hover over the sender's name. See what pops up.</p>
+  <p>
+    <code>support@amaz0n.com</code>. That's a zero.<br/>
+    <code>paypal@secure-payment.net</code>. That's not PayPal's domain.<br/>
+    <code>your-boss@company.co</code>. Wrong extension.
+  </p>
+  <p>Quick glance? Looks legit. Exactly what they're counting on.</p>
+
+  <h3>Watch for Panic Buttons</h3>
+  <p>
+    "Account suspended in twenty-four hours if you don't act."<br/>
+    "Act now or face legal action."<br/>
+    "Your payment failed. Update now."
+  </p>
+  <p>Legitimate companies don't usually threaten you into clicking. They'll send follow-ups. They'll let you log in
+    through their actual website. Panic is the phisher's best friend.</p>
+
+  <h3>Hover Before You Click</h3>
+  <p>
+    The text might say login.microsoft.com. The actual link? Could go anywhere. Desktop? Hover over it, check the bottom
+    left corner. Phone? Hold down on the link to see where it actually goes.
+  </p>
+
+  <h3>Generic Greetings</h3>
+  <p>
+    "Dear Customer" or "Dear User" instead of your actual name. Mass phishing campaigns don't have time to personalize.
+    Real companies usually do.
+  </p>
+
+  <h3>Bad Writing</h3>
+  <p>
+    Awkward sentences. Weird spacing. Spelling mistakes a real company would never send. Attackers have gotten better at
+    this, but plenty still mess it up.
+  </p>
+
+  <h3>Random Attachments</h3>
+  <p>
+    Didn't expect an invoice? Don't open it. Didn't expect a document from someone? Don't open it. PDFs aren't safe
+    either. Learned that one myself.
+  </p>
+
+  <h2 id="business-email-compromise">When They Go After Your Company</h2>
+
+  <p>This is where it gets expensive. BEC attacks have cost companies billions. Billions with a B.</p>
 
   <p>
-    Train yourself to examine every email critically, especially those requesting action
-    or containing links. Here are the red flags to watch for:
+    <strong>CEO Fraud.</strong> Email looks like it's from your CEO. Urgent wire transfer needed. Confidential. Don't
+    verify with anyone. The attacker is counting on you not wanting to bother the boss or slow things down.
   </p>
-
-  <h3>Check the Sender's Email Address</h3>
-  <p>
-    Hover over the sender's name to see the actual email address. Phishing emails often use
-    addresses that look similar to legitimate ones:
-  </p>
-  <ul>
-    <li><code>support@amaz0n.com</code> (zero instead of 'o')</li>
-    <li><code>paypal@secure-payment.net</code> (not the real PayPal domain)</li>
-    <li><code>boss-name@company.co</code> (wrong domain extension)</li>
-  </ul>
-
-  <h3>Look for Urgency and Threats</h3>
-  <p>
-    Phishing emails create panic to override your judgment:
-  </p>
-  <ul>
-    <li>"Your account will be suspended in 24 hours"</li>
-    <li>"Immediate action required to avoid legal consequences"</li>
-    <li>"Your payment failed—update immediately"</li>
-  </ul>
-
-  <h3>Examine Links Before Clicking</h3>
-  <p>
-    Hover over any link to see where it actually leads. The displayed text might say
-    "login.microsoft.com" while the actual link goes to a malicious site. On mobile,
-    long-press links to preview them.
-  </p>
-
-  <h3>Watch for Generic Greetings</h3>
-  <p>
-    "Dear Customer" or "Dear User" instead of your name often indicates a mass phishing
-    campaign. Legitimate companies usually address you by name.
-  </p>
-
-  <h3>Check for Spelling and Grammar Errors</h3>
-  <p>
-    While attackers have gotten better at writing, many phishing emails still contain
-    awkward phrasing, spelling mistakes, or grammatical errors that legitimate companies
-    wouldn't send.
-  </p>
-
-  <h3>Be Suspicious of Unexpected Attachments</h3>
-  <p>
-    If you weren't expecting a document, invoice, or file from someone, don't open it.
-    Even familiar-looking file types like PDFs can contain malware.
-  </p>
-
-  <h2 id="business-email-compromise">Business Email Compromise (BEC)</h2>
 
   <p>
-    BEC attacks are sophisticated phishing attacks specifically targeting businesses.
-    They've cost companies billions of dollars and are particularly dangerous for remote
-    workers who can't easily verify requests in person.
+    <strong>Invoice Fraud.</strong> Your regular vendor sends updated bank details for the next payment. Except it's not
+    your vendor. Money goes to the attacker's account.
   </p>
-
-  <h3>Common BEC Scenarios</h3>
-
-  <p><strong>CEO Fraud:</strong> An email appearing to be from your CEO or executive requesting
-    an urgent wire transfer or sensitive data. The attacker counts on employees wanting to please
-    leadership and act quickly.</p>
-
-  <p><strong>Invoice Fraud:</strong> A supplier email (or what looks like one) with updated
-    bank details for payment. The money goes to the attacker's account instead of the real vendor.</p>
-
-  <p><strong>Account Compromise:</strong> An actual employee's email gets hacked and used to
-    send phishing emails to colleagues. Since it's a real internal address, people trust it.</p>
-
-  <p><strong>Attorney Impersonation:</strong> Fake lawyers or legal teams requesting urgent
-    action on confidential matters, exploiting the authority of legal communications.</p>
-
-  <h3>Protecting Against BEC</h3>
-  <ul>
-    <li>Always verify unusual requests through a different communication channel</li>
-    <li>Call the person directly using a known phone number (not one from the email)</li>
-    <li>Be suspicious of urgency—real emergencies rarely prevent verification</li>
-    <li>Establish verification procedures for financial requests over a certain amount</li>
-    <li>Question any request that asks you to bypass normal procedures</li>
-  </ul>
-
-  <h2 id="clicked-suspicious-link">What to Do If You Clicked a Link</h2>
 
   <p>
-    If you clicked a suspicious link or entered information on a fake site, don't panic—but
-    do act quickly. Time matters in limiting damage.
+    <strong>Account Compromise.</strong> Someone actually hacks a colleague's email. Then uses it to phish everyone else
+    internally. Since it's a real address, people trust it. Why wouldn't they?
   </p>
-
-  <h3>Immediate Actions</h3>
-  <ol>
-    <li><strong>Disconnect from the internet</strong> — This prevents potential malware from
-      communicating with attackers or spreading
-    </li>
-    <li><strong>Don't enter any more information</strong> — If you're still on the fake site,
-      close the browser immediately
-    </li>
-    <li><strong>Run a malware scan</strong> — Use your antivirus software to scan for any
-      downloaded threats
-    </li>
-    <li><strong>Document what happened</strong> — Screenshot the email and note what you clicked
-      or entered
-    </li>
-  </ol>
-
-  <h3>If You Entered Credentials</h3>
-  <ul>
-    <li>Change your password immediately on the real site</li>
-    <li>Change passwords on any other accounts using the same password</li>
-    <li>Enable two-factor authentication if you haven't already</li>
-    <li>Monitor the account for unusual activity</li>
-  </ul>
-
-  <h3>If You Entered Financial Information</h3>
-  <ul>
-    <li>Contact your bank or credit card company immediately</li>
-    <li>Place a fraud alert on your credit report</li>
-    <li>Monitor your accounts for unauthorized transactions</li>
-    <li>Consider a credit freeze if sensitive information was exposed</li>
-  </ul>
-
-  <h3>Report to Your Company</h3>
-  <p>
-    Always report the incident to your IT department or manager, even if you're embarrassed.
-    Your report helps protect colleagues from the same attack and allows IT to take defensive
-    measures.
-  </p>
-
-  <h2 id="training-and-awareness">Training Yourself and Your Team</h2>
 
   <p>
-    The best defense against phishing is a well-trained team that recognizes attacks before
-    they succeed. Here's how to build that awareness.
+    <strong>Attorney Impersonation.</strong> Fake lawyers. Urgent confidential matter. Needs immediate action. Legal
+    stuff sounds scary, so people comply.
   </p>
 
-  <h3>For Individual Remote Workers</h3>
-  <ul>
-    <li><strong>Practice skepticism</strong> — Treat unexpected emails requesting action as suspicious until verified
-    </li>
-    <li><strong>Slow down</strong> — Phishing exploits urgency; take an extra 30 seconds to verify</li>
-    <li><strong>Use a verification phrase</strong> — Establish code words with colleagues for verifying sensitive
-      requests
-    </li>
-    <li><strong>Stay informed</strong> — Follow cybersecurity news to learn about current phishing trends</li>
-    <li><strong>Test yourself</strong> — Take phishing awareness quizzes to sharpen your detection skills</li>
-  </ul>
+  <p>
+    How to protect yourself? Verify through a different channel. Call them on a number you already have. Not a number
+    from the suspicious email. Real emergencies can handle a two-minute verification call. Scams can't.
+  </p>
+
+  <h2 id="already-clicked">Already Clicked? Do This Now</h2>
+
+  <p>Okay. It happened. Don't panic but don't wait either.</p>
+
+  <p>
+    <strong>First.</strong> Disconnect from the internet. If something downloaded, this stops it from phoning home or
+    spreading.<br/>
+    <strong>Second.</strong> Close the browser. Don't enter anything else.<br/>
+    <strong>Third.</strong> Run a malware scan. Right now.<br/>
+    <strong>Fourth.</strong> Document everything. Screenshot the email. Write down what you clicked, what you entered.
+  </p>
+
+  <p>
+    If you typed in your password somewhere, change it immediately on the real site. And if you use that password
+    anywhere else? Change those too. Turn on two-factor authentication while you're at it.
+  </p>
+
+  <p>
+    If you entered credit card or bank info, call your bank. Now. They can freeze things fast. Consider a credit freeze
+    if it was really sensitive stuff.
+  </p>
+
+  <p>
+    And tell your IT team. Yeah, I know it's embarrassing. Tell them anyway. Letting them know means they can warn
+    everyone else before it spreads.
+  </p>
+
+  <h2 id="getting-better">Getting Better at This</h2>
+
+  <h3>For You Personally</h3>
+  <p>
+    Be suspicious by default. Unexpected email asking you to do something? Suspicious until proven otherwise.
+  </p>
+  <p>
+    Slow down. Phishing needs you to act fast. Taking thirty extra seconds to verify costs you nothing. Not verifying
+    might cost you everything.
+  </p>
+  <p>Establish verification words with colleagues. Sounds paranoid. Works though.</p>
+  <p>Stay current on what scams look like. They evolve. You should too.</p>
 
   <h3>For Teams and Managers</h3>
-  <ul>
-    <li><strong>Run phishing simulations</strong> — Regular fake phishing tests identify vulnerabilities and train
-      employees
-    </li>
-    <li><strong>Create a security-positive culture</strong> — Reward reporting suspicious emails, don't punish falling
-      for simulations
-    </li>
-    <li><strong>Establish clear procedures</strong> — Document how to verify requests, especially financial ones</li>
-    <li><strong>Share examples</strong> — When phishing attempts are caught, share them (anonymously) so everyone learns
-    </li>
-    <li><strong>Regular training sessions</strong> — Monthly or quarterly security briefings keep awareness high</li>
-  </ul>
+  <p>Run fake phishing tests. Regular simulations. Not to catch and punish people. To train them.</p>
+  <p>Reward reporting. Someone flags a suspicious email? That's a win. Even if it turns out to be legit.</p>
+  <p>Clear procedures for financial requests. Anything over a certain amount gets verified by phone. No exceptions.</p>
+  <p>Share examples. When someone catches a phishing attempt, share it with the team. Everyone learns.</p>
 
-  <h2 id="anti-phishing-tools">Tools That Help Catch Phishing</h2>
+  <h2 id="tools-that-help">Stuff That Actually Helps</h2>
 
-  <p>
-    Technology can't replace human awareness, but the right tools add valuable layers of
-    protection.
-  </p>
+  <h3>Email Security</h3>
+  <p>Modern spam filters catch a lot. External email warnings flag stuff from outside your organization. Some enterprise
+    tools scan links before you click them.</p>
 
-  <h3>Email Security Features</h3>
-  <ul>
-    <li><strong>Spam filters</strong> — Modern email providers catch many phishing attempts automatically</li>
-    <li><strong>Warning banners</strong> — Many email systems now flag external emails or first-time senders</li>
-    <li><strong>Link scanning</strong> — Enterprise email security can check links before you click them</li>
-    <li><strong>Attachment sandboxing</strong> — Suspicious attachments are opened in isolated environments first</li>
-  </ul>
-
-  <h3>Browser Security</h3>
-  <ul>
-    <li><strong>Safe Browsing warnings</strong> — Chrome, Firefox, and other browsers warn about known phishing sites
-    </li>
-    <li><strong>HTTPS verification</strong> — Always check for the padlock icon, especially on login pages</li>
-    <li><strong>Password manager auto-fill</strong> — Won't auto-fill on fake sites because the URL doesn't match</li>
-  </ul>
+  <h3>Browser Protection</h3>
+  <p>Chrome, Firefox, Edge. All have safe browsing that warns about known phishing sites. Check for the padlock on login
+    pages.</p>
 
   <h3>Password Managers</h3>
   <p>
-    A good password manager like 1Password, Bitwarden, or Dashlane provides indirect phishing
-    protection: it won't auto-fill your credentials on fake sites because the domain doesn't
-    match the saved entry. This is one of the best accidental phishing protections available.
+    Here's a trick. Your password manager won't auto-fill on fake sites because the URL doesn't match. If you go to log
+    into "PayPaI.com" instead of "PayPal.com," your password manager just sits there. Accidental phishing protection.
   </p>
 
-  <h3>Multi-Factor Authentication</h3>
+  <h3>Two-Factor Authentication</h3>
   <p>
-    Even if a phisher gets your password, MFA stops them from accessing your account. Use
-    authenticator apps rather than SMS when possible, as phone numbers can be compromised.
+    Password stolen? They still can't log in without that second factor. Authenticator apps beat text messages. SIM
+    swapping is a real thing. Phone numbers can be compromised.
   </p>
 
-  <h2 id="reporting-phishing">Reporting Phishing Attempts</h2>
+  <h2 id="reporting">Reporting This Garbage</h2>
 
-  <p>
-    Reporting phishing doesn't just protect you—it helps protect others by getting malicious
-    sites and senders blocked.
-  </p>
+  <p>Reporting helps everyone. Gets malicious sites blocked. Gets senders flagged.</p>
 
-  <h3>Report to Your Organization</h3>
-  <ul>
-    <li>Forward suspicious emails to your IT security team</li>
-    <li>Use any internal reporting buttons or tools your company provides</li>
-    <li>Report even if you're not sure—IT prefers false positives to missed attacks</li>
-  </ul>
+  <p>Report to your company's IT. Even if you're not sure. They'd rather have false alarms than missed attacks.</p>
 
-  <h3>Report to Email Providers</h3>
-  <ul>
-    <li><strong>Gmail:</strong> Use the "Report phishing" option in the menu</li>
-    <li><strong>Outlook:</strong> Use the "Report" button and select "Phishing"</li>
-    <li><strong>Yahoo:</strong> Forward to abuse@yahoo.com</li>
-  </ul>
+  <p>Report to your email provider. Gmail has "Report phishing" in the menu. Outlook has a "Report" button.</p>
 
-  <h3>Report to Authorities</h3>
-  <ul>
-    <li><strong>US:</strong> Forward to reportphishing@apwg.org or report at ic3.gov</li>
-    <li><strong>UK:</strong> Forward to report@phishing.gov.uk</li>
-    <li><strong>FTC:</strong> Report at reportfraud.ftc.gov for US consumers</li>
-  </ul>
+  <p>Report to authorities. In the US, forward to reportphishing@apwg.org. In the UK, report@phishing.gov.uk.</p>
 
-  <h3>Report to Impersonated Companies</h3>
-  <p>
-    If a phishing email pretends to be from a specific company, most have abuse or security
-    email addresses where you can report impersonation attempts. This helps them protect
-    their other customers.
-  </p>
+  <p>If someone's impersonating a company, most have abuse or security emails. Let them know. Helps protect their other
+    customers too.</p>
 
-  <h2 id="faq">Frequently Asked Questions</h2>
+  <h2 id="faq">Quick Answers</h2>
 
   <FAQSection faqs={faqData}/>
 
-  <h2>Staying Vigilant in a Remote World</h2>
+  <h2>Bottom Line</h2>
+
+  <p>Phishing isn't going away. If anything it's getting smarter. But the basics stay the same.</p>
+
+  <p>Verify before trusting. Slow down when someone's pressuring you. Report anything suspicious.</p>
 
   <p>
-    Phishing attacks will continue to evolve, but the core principles of protection remain
-    constant: verify before trusting, slow down when pressured, and report suspicious
-    communications. As a remote worker, you're both a potential target and your own first
-    line of defense.
+    You're your own first line of defense out there. Build good habits now. Verify weird requests through different
+    channels. Use a password manager. Turn on two-factor everywhere. Don't let urgency override your judgment.
   </p>
 
   <p>
-    Build good habits now: verify unexpected requests through separate channels, use strong
-    unique passwords with a password manager, enable two-factor authentication everywhere,
-    and never let urgency override your judgment. These practices will protect you from most
-    phishing attempts, whether you're working from home, a coffee shop, or anywhere else.
+    That fake CEO email I almost fell for? It's sitting in a folder now. I pull it out sometimes when training new
+    people. "This is what a good phishing email looks like," I tell them. "I almost wired twenty grand."
   </p>
+
+  <p>The embarrassment? Worth sharing. Might save someone else from making the same mistake.</p>
 
   <RelatedArticles articles={relatedArticles}/>
 </ArticleLayout>

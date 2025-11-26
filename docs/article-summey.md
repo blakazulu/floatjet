@@ -64,7 +64,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 052 | How to Stay Focused Working from Home: Proven Strategies (2025)            | Productivity  | Guides   | /guides/how-to-stay-focused-working-from-home    | 2327       | true              |
 | 053 | Building a Morning Routine for Remote Work: Complete Guide (2025)          | Productivity  | Guides   | /guides/morning-routine-remote-work              | 2166       | true              |
 | 054 | Pomodoro Technique for Remote Workers: Complete Guide (2025)               | Productivity  | Guides   | /guides/pomodoro-technique-remote-workers        | 2547       | true              |
-| 055 | Phishing Scams: How Remote Workers Can Stay Safe                           | Security      | Guides   | /guides/phishing-scams-remote-workers            | 2226       | false             |
+| 055 | Phishing Scams: How Remote Workers Can Stay Safe                           | Security      | Guides   | /guides/phishing-scams-remote-workers            | 1481       | true              |
 | 056 | Two-Factor Authentication Setup Guide for Remote Workers (2025)            | Security      | Guides   | /guides/two-factor-authentication-guide          | 2383       | false             |
 | 057 | Do I Need a VPN When Working from Cafes?                                   | Security      | Guides   | /guides/do-i-need-vpn-cafes                      | 1626       | false             |
 | 058 | How to Secure Your Home WiFi Network for Remote Work (2025)                | Security      | Guides   | /guides/secure-home-wifi-network                 | 2089       | false             |
@@ -114,11 +114,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 |-----------|----------|-------------|
 | Blog      | 16       | 14,776      |
 | Gear      | 23       | 38,861      |
-| Guides    | 30       | 61,605      |
+| Guides    | 30       | 60,860      |
 | Tools     | 28       | 74,329      |
-| **Total** | **97**   | **189,571** |
+| **Total** | **97**   | **188,826** |
 
-**Average words per article:** ~1,954
+**Average words per article:** ~1,946
 
 ### Word Count Summary for Non-Humanized Content
 
@@ -126,11 +126,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 |-----------|----------|-------------|
 | Blog      | 0        | 0           |
 | Gear      | 0        | 0           |
-| Guides    | 19       | 39,807      |
+| Guides    | 18       | 37,581      |
 | Tools     | 22       | 66,386      |
-| **Total** | **41**   | **106,193** |
+| **Total** | **40**   | **103,967** |
 
-**Average words per article:** ~2,590
+**Average words per article:** ~2,599
 
 ---
 

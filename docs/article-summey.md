@@ -45,11 +45,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 033 | Best Monitors for Remote Work (2025)                                       | Computers     | Gear     | /gear/best-monitors-remote-work                  | 1054       | true              |
 | 034 | Ergonomic Desk Setup: Complete Guide (2025)                                | Furniture     | Gear     | /gear/ergonomic-desk-setup-guide                 | 1110       | true              |
 | 035 | Best Standing Desk Converters (2025)                                       | Furniture     | Gear     | /gear/best-desk-converters                       | 904        | true              |
-| 036 | Best Ergonomic Chairs for Home Office (2025)                               | Furniture     | Gear     | /gear/best-ergonomic-chairs                      | 2478       | false             |
-| 037 | How Much Does a Standing Desk Really Cost? (2025 Guide)                    | Furniture     | Gear     | /gear/standing-desk-cost-guide                   | 1693       | false             |
-| 038 | Best Compact Desks for Small Home Offices (2025)                           | Furniture     | Gear     | /gear/best-compact-desks-small-office            | 1965       | false             |
-| 039 | Best Standing Desks for Home Office (2025)                                 | Furniture     | Gear     | /gear/best-standing-desks                        | 5095       | false             |
-| 040 | How to Avoid Miscommunication in Remote Teams (2025)                       | Communication | Guides   | /guides/avoid-miscommunication-remote-teams      | 1805       | false             |
+| 036 | Best Ergonomic Chairs for Home Office (2025)                               | Furniture     | Gear     | /gear/best-ergonomic-chairs                      | 2478       | true              |
+| 037 | How Much Does a Standing Desk Really Cost? (2025 Guide)                    | Furniture     | Gear     | /gear/standing-desk-cost-guide                   | 1693       | true              |
+| 038 | Best Compact Desks for Small Home Offices (2025)                           | Furniture     | Gear     | /gear/best-compact-desks-small-office            | 1965       | true              |
+| 039 | Best Standing Desks for Home Office (2025)                                 | Furniture     | Gear     | /gear/best-standing-desks                        | 5095       | true              |
+| 040 | How to Avoid Miscommunication in Remote Teams (2025)                       | Communication | Guides   | /guides/avoid-miscommunication-remote-teams      | 1805       | true              |
 | 041 | Slack vs Teams vs Discord for Remote Work: Complete Comparison (2025)      | Communication | Guides   | /guides/slack-vs-teams-vs-discord                | 2604       | false             |
 | 042 | How to Run Effective Remote Meetings: A Complete Guide (2025)              | Communication | Guides   | /guides/how-to-run-effective-remote-meetings     | 2539       | false             |
 | 043 | Email Etiquette for Remote Teams: Professional Communication Guide (2025)  | Communication | Guides   | /guides/email-etiquette-remote-teams             | 2377       | false             |
@@ -125,12 +125,12 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | Category  | Articles | Words       |
 |-----------|----------|-------------|
 | Blog      | 0        | 0           |
-| Gear      | 17       | 45,441      |
-| Guides    | 30       | 65,619      |
+| Gear      | 13       | 34,210      |
+| Guides    | 29       | 63,814      |
 | Tools     | 22       | 66,386      |
-| **Total** | **69**   | **177,446** |
+| **Total** | **64**   | **164,410** |
 
-**Average words per article:** ~2,572
+**Average words per article:** ~2,569
 
 ---
 

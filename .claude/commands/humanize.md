@@ -208,21 +208,59 @@ Edit `/mnt/c/My Stuff/floatjet/docs/article-summey.md`:
 
 ### Step 8: Final Report
 
-After all articles processed, show summary:
+After all articles processed, show detailed summary with API call tracking:
 
 ```
-════════════════════════════════════════════════════
-         HUMANIZER COMPLETE
-════════════════════════════════════════════════════
+════════════════════════════════════════════════════════════════════════
+                         HUMANIZER COMPLETE
+════════════════════════════════════════════════════════════════════════
 
-✅ #012: Home Office Setup - 6.2% (2,569 → 2,487 words)
-✅ #013: Find Reliable WiFi - 4.8% (1,552 → 1,621 words)
-⚠️ #014: Travel Tech - 9.1% (needs manual review)
+📄 Article #012: Home Office Setup
+   ├─ API Calls: 3
+   │  ├─ Attempt 1: 24.3% ❌
+   │  ├─ Attempt 2: 12.1% ❌
+   │  └─ Attempt 3: 6.2% ✅
+   ├─ Final Result: PASSED at 6.2%
+   └─ Words: 2,569 → 2,487
 
-Passed: 2 | Review needed: 1 | Errors: 0
+📄 Article #013: Find Reliable WiFi
+   ├─ API Calls: 1
+   │  └─ Attempt 1: 4.8% ✅
+   ├─ Final Result: PASSED at 4.8%
+   └─ Words: 1,552 → 1,621
+
+📄 Article #014: Travel Tech
+   ├─ API Calls: 5
+   │  ├─ Attempt 1: 31.2% ❌
+   │  ├─ Attempt 2: 22.4% ❌
+   │  ├─ Attempt 3: 15.8% ❌
+   │  ├─ Attempt 4: 11.3% ❌
+   │  └─ Attempt 5: 9.1% ❌
+   ├─ Final Result: NEEDS REVIEW (best: 9.1%)
+   └─ Words: 1,450 → 1,512
+
+────────────────────────────────────────────────────────────────────────
+                            SUMMARY
+────────────────────────────────────────────────────────────────────────
+Articles Processed: 3
+Total API Calls:    9
+Passed (≤8%):       2
+Needs Review:       1
+Errors:             0
+
 article-summey.md updated ✓
-════════════════════════════════════════════════════
+════════════════════════════════════════════════════════════════════════
 ```
+
+**Tracking Requirements:**
+
+For each article, maintain a running log of:
+
+1. Attempt number (1-5)
+2. AI percentage returned from each API call
+3. Pass/fail status for each attempt (✅ if ≤8%, ❌ if >8%)
+
+Display this information in the tree structure shown above after processing completes.
 
 ---
 

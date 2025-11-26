@@ -63,7 +63,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 051 | What Internet Speed Do You Need for Remote Work? (2025 Guide)              | Productivity  | Guides   | /guides/internet-speed-remote-work               | 1442       | true              |
 | 052 | How to Stay Focused Working from Home: Proven Strategies (2025)            | Productivity  | Guides   | /guides/how-to-stay-focused-working-from-home    | 2327       | true              |
 | 053 | Building a Morning Routine for Remote Work: Complete Guide (2025)          | Productivity  | Guides   | /guides/morning-routine-remote-work              | 2166       | true              |
-| 054 | Pomodoro Technique for Remote Workers: Complete Guide (2025)               | Productivity  | Guides   | /guides/pomodoro-technique-remote-workers        | 2365       | true              |
+| 054 | Pomodoro Technique for Remote Workers: Complete Guide (2025)               | Productivity  | Guides   | /guides/pomodoro-technique-remote-workers        |            | false             |
 | 055 | Phishing Scams: How Remote Workers Can Stay Safe                           | Security      | Guides   | /guides/phishing-scams-remote-workers            | 2226       | false             |
 | 056 | Two-Factor Authentication Setup Guide for Remote Workers (2025)            | Security      | Guides   | /guides/two-factor-authentication-guide          | 2383       | false             |
 | 057 | Do I Need a VPN When Working from Cafes?                                   | Security      | Guides   | /guides/do-i-need-vpn-cafes                      | 1626       | false             |

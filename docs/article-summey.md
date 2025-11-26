@@ -50,11 +50,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 038 | Best Compact Desks for Small Home Offices (2025)                           | Furniture     | Gear     | /gear/best-compact-desks-small-office            | 1965       | true              |
 | 039 | Best Standing Desks for Home Office (2025)                                 | Furniture     | Gear     | /gear/best-standing-desks                        | 5095       | true              |
 | 040 | How to Avoid Miscommunication in Remote Teams (2025)                       | Communication | Guides   | /guides/avoid-miscommunication-remote-teams      | 1805       | true              |
-| 041 | Slack vs Teams vs Discord for Remote Work: Complete Comparison (2025)      | Communication | Guides   | /guides/slack-vs-teams-vs-discord                | 2604       | false             |
-| 042 | How to Run Effective Remote Meetings: A Complete Guide (2025)              | Communication | Guides   | /guides/how-to-run-effective-remote-meetings     | 2539       | false             |
-| 043 | Email Etiquette for Remote Teams: Professional Communication Guide (2025)  | Communication | Guides   | /guides/email-etiquette-remote-teams             | 2377       | false             |
-| 044 | Remote Team Collaboration Best Practices: The Complete Guide (2025)        | Communication | Guides   | /guides/remote-team-collaboration-best-practices | 2740       | false             |
-| 045 | Invoice Payment Terms: Net 30 vs Net 15 vs Due on Receipt (2025)           | Finance       | Guides   | /guides/invoice-payment-terms-guide              | 2182       | false             |
+| 041 | Slack vs Teams vs Discord for Remote Work: Complete Comparison (2025)      | Communication | Guides   | /guides/slack-vs-teams-vs-discord                | 1782       | true              |
+| 042 | How to Run Effective Remote Meetings: A Complete Guide (2025)              | Communication | Guides   | /guides/how-to-run-effective-remote-meetings     | 1829       | true              |
+| 043 | Email Etiquette for Remote Teams: Professional Communication Guide (2025)  | Communication | Guides   | /guides/email-etiquette-remote-teams             | 1786       | true              |
+| 044 | Remote Team Collaboration Best Practices: The Complete Guide (2025)        | Communication | Guides   | /guides/remote-team-collaboration-best-practices | 1873       | true              |
+| 045 | Invoice Payment Terms: Net 30 vs Net 15 vs Due on Receipt (2025)           | Finance       | Guides   | /guides/invoice-payment-terms-guide              | 1620       | true              |
 | 046 | How to Set Up Retirement Savings as a Freelancer (2025)                    | Finance       | Guides   | /guides/retirement-savings-freelancer            | 2551       | false             |
 | 047 | Freelancer Tax Deductions: Complete Guide (2025)                           | Finance       | Guides   | /guides/freelancer-tax-deductions-guide          | 2532       | false             |
 | 048 | Multi-Currency Banking for Digital Nomads (2025)                           | Finance       | Guides   | /guides/multi-currency-banking-nomads            | 2206       | false             |

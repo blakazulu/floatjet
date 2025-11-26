@@ -1085,7 +1085,74 @@ creates natural flow that passes detection.
 
 ---
 
+### Patterns From Successful Articles #041-045 (0-2.94% AI)
+
+What worked in Slack vs Teams vs Discord, Remote Meetings, Email Etiquette, Remote Collaboration, and Invoice Payment
+Terms articles:
+
+1. **Remove numbered section headers:**
+     - ❌ "1. Over-Meeting" → ✅ "Over-Meeting"
+     - ❌ "2. Documentation Debt" → ✅ "Documentation Debt"
+     - ❌ "3. Tool Fragmentation" → ✅ "Tool Fragmentation"
+     - Numbered headers trigger AI detection even with casual content
+
+2. **FAQ answers as prose, not bullets:**
+     - ❌ "Response time expectations vary by context:<ul><li>Urgent: within a few hours</li><li>Regular: within 24
+       hours</li></ul>"
+     - ✅ "Response time expectations vary by context. Urgent or time-sensitive within a few hours but if truly urgent
+       use a faster channel. Regular work emails within twenty-four hours on business days."
+     - Flow sentences together with periods, not structured lists
+
+3. **Communication/guide article patterns:**
+     - Convert ALL `<ul>/<li>` structures to `<p>` prose paragraphs
+     - Join related points with "and" connectors
+     - End lists with periods, not list formatting
+     - Example: "Use email for external communication with clients and vendors and partners. Formal documentation where
+       decisions need a permanent record. Long-form content like detailed explanations and proposals and reports."
+
+4. **Payment/financial terms as words:**
+     - ❌ "Net 30" → ✅ "Net thirty"
+     - ❌ "2/10 Net 30" → ✅ "two ten Net thirty"
+     - ❌ "$5,000" → ✅ "five thousand dollars"
+     - ❌ "1.5%" → ✅ "one point five percent"
+     - ❌ "36.5% annual return" → ✅ "thirty-six point five percent annual return"
+
+5. **Remove conclusion labels:**
+     - ❌ "Conclusion: Making Every Meeting Count" → ✅ "Making Meetings Count"
+     - ❌ "Conclusion: Take Control of Your Cash Flow" → ✅ "Take Control of Your Cash Flow"
+     - Drop "Conclusion:" prefix entirely
+
+6. **Template/example sections:**
+     - Keep `<pre>` blocks for actual templates (email examples, message scripts)
+     - These template blocks pass AI detection fine
+     - The surrounding prose needs humanization, not the templates themselves
+
+7. **Section header simplification for guides:**
+     - ❌ "When to Email vs When to Slack" → ✅ Keep (question format passes)
+     - ❌ "CC and BCC Guidelines" → ✅ Keep (simple format passes)
+     - ❌ "Choosing Terms by Client Type" → ✅ Keep (descriptive passes)
+     - Simple, descriptive headers pass better than clever ones
+
+8. **Multiple category lists as flowing prose:**
+     - ❌ "Good for: New clients, one-time projects, small invoices, consumer clients, rush work"
+     - ✅ "New clients until they prove reliable payment behavior. One-time projects with no ongoing relationship to
+       maintain. Small invoices under five hundred to one thousand dollars. Consumer clients meaning individuals versus
+       businesses. Rush work when you prioritized their project."
+
+**What still got flagged (avoid):**
+
+- "The goal isn't X—it's Y" pattern with em-dash
+- Formal label patterns like "Recommended:", "Why:", "Tip:"
+- Perfect parallel structure in any prose list
+- Numbers in any format (always write as words)
+
+**Key insight:** Guide and how-to articles need the same treatment as product roundups. Convert ALL structured lists to
+flowing prose. Numbers as words applies to everything - percentages, dollar amounts, payment terms, day counts. Remove
+section number prefixes completely.
+
+---
+
 *This guide based on successful transformations including VPN article (~40% → 0%), Background Noise article (~54% →
-6%), Wireless Earbuds article (~9% → 1.8%), Articles #025-030 (all 0% AI), Articles #031-035 (all under 6% AI), and
-Articles #036-040 (all 0-5% AI).
+6%), Wireless Earbuds article (~9% → 1.8%), Articles #025-030 (all 0% AI), Articles #031-035 (all under 6% AI),
+Articles #036-040 (all 0-5% AI), and Articles #041-045 (all 0-2.94% AI).
 Patterns updated from ZeroGPT API responses. Last updated: 2025-11-26.*

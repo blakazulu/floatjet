@@ -1,9 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import {SITE_STRUCTURE, CATEGORY_COLORS} from '../utils/generateSiteStructure';
+import {
+  generateSiteStructure,
+  CATEGORY_COLORS,
+} from '../utils/generateSiteStructure';
 
 const title = 'Interactive Site Map | FloatJet';
-const description = 'Explore the FloatJet site structure with our interactive visualization. Navigate through tools, gear, guides, and articles.';
+const description =
+  'Explore the FloatJet site structure with our interactive visualization. Navigate through tools, gear, guides, and articles.';
+
+// Dynamically get all pages using Astro's glob
+const allPages = import.meta.glob('/src/pages/**/*.astro');
+
+// Generate site structure dynamically
+const SITE_STRUCTURE = generateSiteStructure(allPages);
 
 // Pass data to client
 const siteData = JSON.stringify(SITE_STRUCTURE);
@@ -19,7 +29,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
           Interactive Site Map
         </h1>
         <p class="text-sky-100 text-lg max-w-2xl mx-auto">
-          Explore FloatJet's content structure. Click nodes to navigate, drag to explore, and scroll to zoom.
+          Explore FloatJet's content structure. Click nodes to navigate, drag to
+          explore, and scroll to zoom.
         </p>
       </div>
 
@@ -37,10 +48,15 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         >
           Check Links
         </button>
-        <div class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm border border-white/20">
+        <div
+            class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm border border-white/20"
+        >
           <label for="layout-select" class="text-white text-sm">Layout:</label>
-          <select id="layout-select" aria-label="Select visualization layout"
-                  class="bg-transparent text-white text-sm border-none outline-none cursor-pointer">
+          <select
+              id="layout-select"
+              aria-label="Select visualization layout"
+              class="bg-transparent text-white text-sm border-none outline-none cursor-pointer"
+          >
             <option value="force" class="text-slate-800">Force Graph</option>
             <option value="radial" class="text-slate-800">Radial Tree</option>
             <option value="tree" class="text-slate-800">Hierarchical</option>
@@ -51,30 +67,43 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       <!-- Legend -->
       <div class="flex flex-wrap justify-center gap-4 mt-6" id="legend">
         <div class="flex items-center gap-2 text-sm text-white/80">
-          <span class="w-4 h-4 rounded-full bg-ocean-deep border-2 border-white/50"></span>
+          <span
+              class="w-4 h-4 rounded-full bg-ocean-deep border-2 border-white/50"
+          ></span>
           <span>Home</span>
         </div>
         <div class="flex items-center gap-2 text-sm text-white/80">
-          <span class="w-4 h-4 rounded-full bg-jet-stream border-2 border-white/50"></span>
+          <span
+              class="w-4 h-4 rounded-full bg-jet-stream border-2 border-white/50"
+          ></span>
           <span>Hubs</span>
         </div>
         <div class="flex items-center gap-2 text-sm text-white/80">
-          <span class="w-4 h-4 rounded-full bg-sky-light border-2 border-white/50"></span>
+          <span
+              class="w-4 h-4 rounded-full bg-sky-light border-2 border-white/50"
+          ></span>
           <span>Categories</span>
         </div>
         <div class="flex items-center gap-2 text-sm text-white/80">
-          <span class="w-4 h-4 rounded-full bg-blue-500 border-2 border-white/50"></span>
+          <span
+              class="w-4 h-4 rounded-full bg-blue-500 border-2 border-white/50"
+          ></span>
           <span>Articles</span>
         </div>
         <div class="flex items-center gap-2 text-sm text-white/80">
-          <span class="w-4 h-4 rounded-full bg-slate-500 border-2 border-white/50"></span>
+          <span
+              class="w-4 h-4 rounded-full bg-slate-500 border-2 border-white/50"
+          ></span>
           <span>Pages</span>
         </div>
       </div>
     </div>
 
     <!-- Visualization Container -->
-    <div id="sitemap-wrapper" class="max-w-7xl mx-auto transition-all duration-300">
+    <div
+        id="sitemap-wrapper"
+        class="max-w-7xl mx-auto transition-all duration-300"
+    >
       <div
           id="sitemap-container"
           class="relative w-full bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl overflow-hidden transition-all duration-300"
@@ -86,21 +115,41 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
             class="absolute top-4 right-4 z-40 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full backdrop-blur-sm border border-white/20 transition-all duration-300 group"
             aria-label="Toggle fullscreen"
         >
-          <svg id="icon-expand" class="w-5 h-5 transition-transform group-hover:scale-110" fill="none"
-               stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+          <svg
+              id="icon-expand"
+              class="w-5 h-5 transition-transform group-hover:scale-110"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+          >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+            ></path>
           </svg>
-          <svg id="icon-collapse" class="w-5 h-5 hidden transition-transform group-hover:scale-110" fill="none"
-               stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9 9L4 4m0 0v4m0-4h4m7 5l5-5m0 0v4m0-4h-4M9 15l-5 5m0 0v-4m0 4h4m7-5l5 5m0 0v-4m0 4h-4"/>
+          <svg
+              id="icon-collapse"
+              class="w-5 h-5 hidden transition-transform group-hover:scale-110"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+          >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 9L4 4m0 0v4m0-4h4m7 5l5-5m0 0v4m0-4h-4M9 15l-5 5m0 0v-4m0 4h4m7-5l5 5m0 0v-4m0 4h-4"
+            ></path>
           </svg>
         </button>
 
         <!-- Fullscreen Controls Overlay (hidden by default) -->
-        <div id="fullscreen-controls"
-             class="hidden absolute top-0 left-0 right-0 z-20 pt-4 pb-6 px-4 bg-gradient-to-b from-black/80 via-black/50 to-transparent">
+        <div
+            id="fullscreen-controls"
+            class="hidden absolute top-0 left-0 right-0 z-20 pt-4 pb-6 px-4 bg-gradient-to-b from-black/80 via-black/50 to-transparent"
+        >
           <div class="flex flex-col items-center gap-4">
             <!-- Controls -->
             <div class="flex flex-wrap justify-center gap-3">
@@ -117,13 +166,28 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
                 Check Links
               </button>
               <div
-                  class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm border border-white/20">
-                <label for="layout-select-fs" class="text-white text-sm">Layout:</label>
-                <select id="layout-select-fs" aria-label="Select visualization layout"
-                        class="bg-transparent text-white text-sm border-none outline-none cursor-pointer">
-                  <option value="force" class="text-slate-800">Force Graph</option>
-                  <option value="radial" class="text-slate-800">Radial Tree</option>
-                  <option value="tree" class="text-slate-800">Hierarchical</option>
+                  class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm border border-white/20"
+              >
+                <label for="layout-select-fs" class="text-white text-sm"
+                >Layout:</label
+                >
+                <select
+                    id="layout-select-fs"
+                    aria-label="Select visualization layout"
+                    class="bg-transparent text-white text-sm border-none outline-none cursor-pointer"
+                >
+                  <option value="force" class="text-slate-800"
+                  >Force Graph
+                  </option
+                  >
+                  <option value="radial" class="text-slate-800"
+                  >Radial Tree
+                  </option
+                  >
+                  <option value="tree" class="text-slate-800"
+                  >Hierarchical
+                  </option
+                  >
                 </select>
               </div>
               <button
@@ -137,34 +201,48 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
             <!-- Legend -->
             <div class="flex flex-wrap justify-center gap-4">
               <div class="flex items-center gap-2 text-sm text-white/80">
-                <span class="w-4 h-4 rounded-full bg-ocean-deep border-2 border-white/50"></span>
+                <span
+                    class="w-4 h-4 rounded-full bg-ocean-deep border-2 border-white/50"
+                ></span>
                 <span>Home</span>
               </div>
               <div class="flex items-center gap-2 text-sm text-white/80">
-                <span class="w-4 h-4 rounded-full bg-jet-stream border-2 border-white/50"></span>
+                <span
+                    class="w-4 h-4 rounded-full bg-jet-stream border-2 border-white/50"
+                ></span>
                 <span>Hubs</span>
               </div>
               <div class="flex items-center gap-2 text-sm text-white/80">
-                <span class="w-4 h-4 rounded-full bg-sky-light border-2 border-white/50"></span>
+                <span
+                    class="w-4 h-4 rounded-full bg-sky-light border-2 border-white/50"
+                ></span>
                 <span>Categories</span>
               </div>
               <div class="flex items-center gap-2 text-sm text-white/80">
-                <span class="w-4 h-4 rounded-full bg-blue-500 border-2 border-white/50"></span>
+                <span
+                    class="w-4 h-4 rounded-full bg-blue-500 border-2 border-white/50"
+                ></span>
                 <span>Articles</span>
               </div>
               <div class="flex items-center gap-2 text-sm text-white/80">
-                <span class="w-4 h-4 rounded-full bg-slate-500 border-2 border-white/50"></span>
+                <span
+                    class="w-4 h-4 rounded-full bg-slate-500 border-2 border-white/50"
+                ></span>
                 <span>Pages</span>
               </div>
             </div>
           </div>
         </div>
         <!-- Loading State -->
-        <div id="loading"
-             class="absolute inset-0 flex items-center justify-center bg-ocean-deep/50 backdrop-blur-sm z-10">
+        <div
+            id="loading"
+            class="absolute inset-0 flex items-center justify-center bg-ocean-deep/50 backdrop-blur-sm z-10"
+        >
           <div class="text-center">
             <div
-                class="w-16 h-16 border-4 border-sky-light border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                class="w-16 h-16 border-4 border-sky-light border-t-transparent rounded-full animate-spin mx-auto mb-4"
+            >
+            </div>
             <p class="text-white font-medium">Building visualization...</p>
           </div>
         </div>
@@ -177,9 +255,15 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
             id="tooltip"
             class="absolute pointer-events-none opacity-0 transition-opacity duration-200 z-20 px-4 py-3 bg-ocean-deep/95 backdrop-blur-md rounded-xl shadow-xl border border-white/20 text-white max-w-xs"
         >
-          <div id="tooltip-name" class="font-heading font-bold text-lg mb-1"></div>
-          <div id="tooltip-path" class="text-sky-light text-sm font-mono mb-2"></div>
-          <div id="tooltip-type" class="text-xs text-white/70 uppercase tracking-wide"></div>
+          <div id="tooltip-name" class="font-heading font-bold text-lg mb-1">
+          </div>
+          <div id="tooltip-path" class="text-sky-light text-sm font-mono mb-2">
+          </div>
+          <div
+              id="tooltip-type"
+              class="text-xs text-white/70 uppercase tracking-wide"
+          >
+          </div>
           <div id="tooltip-status" class="mt-2 text-sm hidden">
             <span id="tooltip-status-icon"></span>
             <span id="tooltip-status-text"></span>
@@ -191,19 +275,31 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     <!-- Stats Panel -->
     <div class="max-w-7xl mx-auto mt-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center">
+        <div
+            class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center"
+        >
           <div class="text-3xl font-bold text-white" id="stat-total">0</div>
           <div class="text-sky-100 text-sm">Total Pages</div>
         </div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center">
-          <div class="text-3xl font-bold text-emerald-400" id="stat-healthy">-</div>
+        <div
+            class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center"
+        >
+          <div class="text-3xl font-bold text-emerald-400" id="stat-healthy">
+            -
+          </div>
           <div class="text-sky-100 text-sm">Healthy Links</div>
         </div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center">
-          <div class="text-3xl font-bold text-amber-400" id="stat-pending">-</div>
+        <div
+            class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center"
+        >
+          <div class="text-3xl font-bold text-amber-400" id="stat-pending">
+            -
+          </div>
           <div class="text-sky-100 text-sm">Unchecked</div>
         </div>
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center">
+        <div
+            class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center"
+        >
           <div class="text-3xl font-bold text-red-400" id="stat-broken">-</div>
           <div class="text-sky-100 text-sm">Broken Links</div>
         </div>
@@ -212,8 +308,12 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     <!-- Link Check Results -->
     <div id="link-results" class="max-w-7xl mx-auto mt-8 hidden">
-      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-        <h2 class="font-heading text-xl font-bold text-white mb-4">Link Check Results</h2>
+      <div
+          class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
+      >
+        <h2 class="font-heading text-xl font-bold text-white mb-4">
+          Link Check Results
+        </h2>
         <div id="link-results-content" class="space-y-2"></div>
       </div>
     </div>
@@ -227,7 +327,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
   // Store data globally for reinitialization
   window.__sitemapData = {
     siteData: siteData,
-    colorData: colorData
+    colorData: colorData,
   };
 </script>
 
@@ -271,7 +371,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     const g = svg.append('g');
 
     // Initialize zoom behavior
-    const zoom = d3.zoom()
+    const zoom = d3
+      .zoom()
       .scaleExtent([0.1, 4])
       .on('zoom', (event) => {
         g.attr('transform', event.transform);
@@ -283,14 +384,16 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     const defs = svg.append('defs');
 
     // Glow filter for nodes
-    const glow = defs.append('filter')
+    const glow = defs
+      .append('filter')
       .attr('id', 'glow')
       .attr('x', '-50%')
       .attr('y', '-50%')
       .attr('width', '200%')
       .attr('height', '200%');
 
-    glow.append('feGaussianBlur')
+    glow
+      .append('feGaussianBlur')
       .attr('stdDeviation', '3')
       .attr('result', 'coloredBlur');
 
@@ -299,7 +402,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     glowMerge.append('feMergeNode').attr('in', 'SourceGraphic');
 
     // Create arrow marker for links
-    defs.append('marker')
+    defs
+      .append('marker')
       .attr('id', 'arrowhead')
       .attr('viewBox', '-0 -5 10 10')
       .attr('refX', 20)
@@ -343,26 +447,34 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Initialize force simulation
     function createForceSimulation(nodes, links) {
-      return d3.forceSimulation(nodes)
-        .force('link', d3.forceLink(links)
-          .id(d => d.id)
-          .distance(d => {
-            const sourceType = d.source.type || 'article';
-            if (sourceType === 'root') return 150;
-            if (sourceType === 'hub') return 100;
-            return 70;
-          })
-          .strength(0.5)
+      return d3
+        .forceSimulation(nodes)
+        .force(
+          'link',
+          d3
+            .forceLink(links)
+            .id((d) => d.id)
+            .distance((d) => {
+              const sourceType = d.source.type || 'article';
+              if (sourceType === 'root') return 150;
+              if (sourceType === 'hub') return 100;
+              return 70;
+            })
+            .strength(0.5),
         )
-        .force('charge', d3.forceManyBody()
-          .strength(d => {
+        .force(
+          'charge',
+          d3.forceManyBody().strength((d) => {
             if (d.type === 'root') return -800;
             if (d.type === 'hub') return -400;
             return -150;
-          })
+          }),
         )
         .force('center', d3.forceCenter(width / 2, height / 2))
-        .force('collision', d3.forceCollide().radius(d => getNodeSize(d) + 10));
+        .force(
+          'collision',
+          d3.forceCollide().radius((d) => getNodeSize(d) + 10),
+        );
     }
 
     // Build hierarchy from flat structure
@@ -370,12 +482,12 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       const nodeMap = new Map();
 
       // Create node objects
-      siteStructure.nodes.forEach(n => {
+      siteStructure.nodes.forEach((n) => {
         nodeMap.set(n.id, {...n, children: []});
       });
 
       // Build parent-child relationships
-      siteStructure.links.forEach(link => {
+      siteStructure.links.forEach((link) => {
         const parent = nodeMap.get(link.source);
         const child = nodeMap.get(link.target);
         if (parent && child) {
@@ -398,7 +510,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       }
 
       // Update stats
-      document.getElementById('stat-total').textContent = siteStructure.nodes.length;
+      document.getElementById('stat-total').textContent =
+        siteStructure.nodes.length;
 
       if (layout === 'force') {
         renderForceLayout();
@@ -414,14 +527,15 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Force-directed layout
     function renderForceLayout() {
-      const nodes = siteStructure.nodes.map(d => ({...d}));
-      const links = siteStructure.links.map(d => ({
+      const nodes = siteStructure.nodes.map((d) => ({...d}));
+      const links = siteStructure.links.map((d) => ({
         source: d.source,
         target: d.target,
-        type: d.type
+        type: d.type,
       }));
 
-      const link = g.append('g')
+      const link = g
+        .append('g')
         .attr('class', 'links')
         .selectAll('line')
         .data(links)
@@ -431,7 +545,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .attr('stroke-width', 1.5)
         .attr('marker-end', 'url(#arrowhead)');
 
-      const node = g.append('g')
+      const node = g
+        .append('g')
         .attr('class', 'nodes')
         .selectAll('g')
         .data(nodes)
@@ -439,10 +554,12 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .append('g')
         .attr('class', 'node')
         .style('cursor', 'pointer')
-        .call(d3.drag()
-          .on('start', dragstarted)
-          .on('drag', dragged)
-          .on('end', dragended)
+        .call(
+          d3
+            .drag()
+            .on('start', dragstarted)
+            .on('drag', dragged)
+            .on('end', dragended),
         );
 
       addNodeElements(node);
@@ -452,11 +569,11 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
       simulation.on('tick', () => {
         link
-          .attr('x1', d => d.source.x)
-          .attr('y1', d => d.source.y)
-          .attr('x2', d => d.target.x)
-          .attr('y2', d => d.target.y);
-        node.attr('transform', d => `translate(${d.x},${d.y})`);
+          .attr('x1', (d) => d.source.x)
+          .attr('y1', (d) => d.source.y)
+          .attr('x2', (d) => d.target.x)
+          .attr('y2', (d) => d.target.y);
+        node.attr('transform', (d) => `translate(${d.x},${d.y})`);
       });
 
       animateIn(node, link);
@@ -470,14 +587,16 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
       const radius = Math.min(width, height) / 2 - 100;
 
-      const treeLayout = d3.tree()
+      const treeLayout = d3
+        .tree()
         .size([2 * Math.PI, radius])
         .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
 
       treeLayout(root);
 
       // Create curved links
-      const link = g.append('g')
+      const link = g
+        .append('g')
         .attr('class', 'links')
         .attr('transform', `translate(${width / 2},${height / 2})`)
         .selectAll('path')
@@ -487,12 +606,16 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .attr('fill', 'none')
         .attr('stroke', 'rgba(128, 206, 215, 0.4)')
         .attr('stroke-width', 1.5)
-        .attr('d', d3.linkRadial()
-          .angle(d => d.x)
-          .radius(d => d.y)
+        .attr(
+          'd',
+          d3
+            .linkRadial()
+            .angle((d) => d.x)
+            .radius((d) => d.y),
         );
 
-      const node = g.append('g')
+      const node = g
+        .append('g')
         .attr('class', 'nodes')
         .attr('transform', `translate(${width / 2},${height / 2})`)
         .selectAll('g')
@@ -501,23 +624,30 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .append('g')
         .attr('class', 'node')
         .style('cursor', 'pointer')
-        .attr('transform', d => `rotate(${d.x * 180 / Math.PI - 90}) translate(${d.y},0)`);
+        .attr(
+          'transform',
+          (d) => `rotate(${(d.x * 180) / Math.PI - 90}) translate(${d.y},0)`,
+        );
 
       addNodeElements(node, true);
       addNodeInteractions(node, link, true);
 
       // Add labels with proper rotation
-      node.append('text')
+      node
+        .append('text')
         .attr('dy', '0.31em')
-        .attr('x', d => d.x < Math.PI === !d.children ? 6 : -6)
-        .attr('text-anchor', d => d.x < Math.PI === !d.children ? 'start' : 'end')
-        .attr('transform', d => d.x >= Math.PI ? 'rotate(180)' : null)
+        .attr('x', (d) => (d.x < Math.PI === !d.children ? 6 : -6))
+        .attr('text-anchor', (d) =>
+          d.x < Math.PI === !d.children ? 'start' : 'end',
+        )
+        .attr('transform', (d) => (d.x >= Math.PI ? 'rotate(180)' : null))
         .attr('fill', 'white')
-        .attr('font-size', d => d.data.type === 'root' ? '12px' : '10px')
+        .attr('font-size', (d) => (d.data.type === 'root' ? '12px' : '10px'))
         .attr('font-family', 'Outfit, sans-serif')
-        .text(d => d.data.name)
+        .text((d) => d.data.name)
         .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)')
-        .clone(true).lower()
+        .clone(true)
+        .lower()
         .attr('stroke', 'rgba(0,0,0,0.5)')
         .attr('stroke-width', 3);
 
@@ -530,13 +660,13 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       const hierarchy = buildHierarchy();
       const root = d3.hierarchy(hierarchy);
 
-      const treeLayout = d3.tree()
-        .size([width - 200, height - 150]);
+      const treeLayout = d3.tree().size([width - 200, height - 150]);
 
       treeLayout(root);
 
       // Create curved links
-      const link = g.append('g')
+      const link = g
+        .append('g')
         .attr('class', 'links')
         .attr('transform', 'translate(100, 50)')
         .selectAll('path')
@@ -546,12 +676,16 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .attr('fill', 'none')
         .attr('stroke', 'rgba(128, 206, 215, 0.4)')
         .attr('stroke-width', 1.5)
-        .attr('d', d3.linkVertical()
-          .x(d => d.x)
-          .y(d => d.y)
+        .attr(
+          'd',
+          d3
+            .linkVertical()
+            .x((d) => d.x)
+            .y((d) => d.y),
         );
 
-      const node = g.append('g')
+      const node = g
+        .append('g')
         .attr('class', 'nodes')
         .attr('transform', 'translate(100, 50)')
         .selectAll('g')
@@ -560,19 +694,22 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .append('g')
         .attr('class', 'node')
         .style('cursor', 'pointer')
-        .attr('transform', d => `translate(${d.x},${d.y})`);
+        .attr('transform', (d) => `translate(${d.x},${d.y})`);
 
       addNodeElements(node, true);
       addNodeInteractions(node, link, true);
 
       // Add labels below nodes
-      node.append('text')
-        .attr('dy', d => getNodeSize(d.data || d) + 14)
+      node
+        .append('text')
+        .attr('dy', (d) => getNodeSize(d.data || d) + 14)
         .attr('text-anchor', 'middle')
         .attr('fill', 'white')
-        .attr('font-size', d => (d.data || d).type === 'root' ? '11px' : '9px')
+        .attr('font-size', (d) =>
+          (d.data || d).type === 'root' ? '11px' : '9px',
+        )
         .attr('font-family', 'Outfit, sans-serif')
-        .text(d => (d.data || d).name)
+        .text((d) => (d.data || d).name)
         .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)');
 
       animateIn(node, link);
@@ -581,22 +718,26 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Shared function to add node visual elements
     function addNodeElements(node, isHierarchy = false) {
-      node.append('circle')
-        .attr('r', d => getNodeSize(isHierarchy ? d.data : d))
-        .attr('fill', d => getNodeColor(isHierarchy ? d.data : d))
+      node
+        .append('circle')
+        .attr('r', (d) => getNodeSize(isHierarchy ? d.data : d))
+        .attr('fill', (d) => getNodeColor(isHierarchy ? d.data : d))
         .attr('stroke', 'rgba(255, 255, 255, 0.5)')
         .attr('stroke-width', 2)
-        .attr('filter', d => {
+        .attr('filter', (d) => {
           const data = isHierarchy ? d.data : d;
-          return data.type === 'root' || data.type === 'hub' ? 'url(#glow)' : null;
+          return data.type === 'root' || data.type === 'hub'
+            ? 'url(#glow)'
+            : null;
         })
         .style('transition', 'all 0.3s ease');
 
-      node.append('circle')
+      node
+        .append('circle')
         .attr('class', 'status-indicator')
         .attr('r', 5)
-        .attr('cx', d => getNodeSize(isHierarchy ? d.data : d) - 2)
-        .attr('cy', d => -getNodeSize(isHierarchy ? d.data : d) + 2)
+        .attr('cx', (d) => getNodeSize(isHierarchy ? d.data : d) - 2)
+        .attr('cy', (d) => -getNodeSize(isHierarchy ? d.data : d) + 2)
         .attr('fill', 'transparent')
         .attr('stroke', 'transparent');
     }
@@ -606,20 +747,27 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       node
         .on('mouseover', function (event, d) {
           const data = isHierarchy ? d.data : d;
-          d3.select(this).select('circle')
+          d3.select(this)
+            .select('circle')
             .attr('stroke', 'white')
             .attr('stroke-width', 3);
           showTooltip(event, data);
 
           if (!isHierarchy) {
             link
-              .attr('stroke', l => (l.source.id === data.id || l.target.id === data.id)
-                ? 'rgba(128, 206, 215, 0.8)' : 'rgba(128, 206, 215, 0.15)')
-              .attr('stroke-width', l => (l.source.id === data.id || l.target.id === data.id) ? 3 : 1);
+              .attr('stroke', (l) =>
+                l.source.id === data.id || l.target.id === data.id
+                  ? 'rgba(128, 206, 215, 0.8)'
+                  : 'rgba(128, 206, 215, 0.15)',
+              )
+              .attr('stroke-width', (l) =>
+                l.source.id === data.id || l.target.id === data.id ? 3 : 1,
+              );
           }
         })
         .on('mouseout', function (event, d) {
-          d3.select(this).select('circle')
+          d3.select(this)
+            .select('circle')
             .attr('stroke', 'rgba(255, 255, 255, 0.5)')
             .attr('stroke-width', 2);
           hideTooltip();
@@ -640,13 +788,15 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Animate nodes and links in
     function animateIn(node, link) {
-      node.style('opacity', 0)
+      node
+        .style('opacity', 0)
         .transition()
         .duration(800)
         .delay((d, i) => i * 15)
         .style('opacity', 1);
 
-      link.style('opacity', 0)
+      link
+        .style('opacity', 0)
         .transition()
         .duration(800)
         .delay(300)
@@ -679,7 +829,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
       document.getElementById('tooltip-name').textContent = d.name;
       document.getElementById('tooltip-path').textContent = d.path;
-      document.getElementById('tooltip-type').textContent = `${d.type}${d.category ? ' • ' + d.category : ''}`;
+      document.getElementById('tooltip-type').textContent =
+        `${d.type}${d.category ? ' • ' + d.category : ''}`;
 
       // Show link status if available
       const statusEl = document.getElementById('tooltip-status');
@@ -738,7 +889,9 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       if (header) header.style.display = 'none';
       const footer = document.querySelector('footer');
       if (footer) footer.style.display = 'none';
-      const affiliateDisclosure = document.querySelector('.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure');
+      const affiliateDisclosure = document.querySelector(
+        '.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure',
+      );
       if (affiliateDisclosure) affiliateDisclosure.style.display = 'none';
 
       // Make wrapper fullscreen with highest z-index
@@ -777,7 +930,9 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       if (header) header.style.display = '';
       const footer = document.querySelector('footer');
       if (footer) footer.style.display = '';
-      const affiliateDisclosure = document.querySelector('.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure');
+      const affiliateDisclosure = document.querySelector(
+        '.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure',
+      );
       if (affiliateDisclosure) affiliateDisclosure.style.display = '';
 
       // Restore wrapper
@@ -819,7 +974,9 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     });
 
     // Exit fullscreen button
-    document.getElementById('btn-exit-fullscreen').addEventListener('click', exitFullscreen);
+    document
+      .getElementById('btn-exit-fullscreen')
+      .addEventListener('click', exitFullscreen);
 
     // ESC key to exit fullscreen
     document.addEventListener('keydown', (e) => {
@@ -830,15 +987,11 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Reset view (both normal and fullscreen)
     document.getElementById('btn-reset').addEventListener('click', () => {
-      svg.transition()
-        .duration(750)
-        .call(zoom.transform, d3.zoomIdentity);
+      svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
     });
 
     document.getElementById('btn-reset-fs').addEventListener('click', () => {
-      svg.transition()
-        .duration(750)
-        .call(zoom.transform, d3.zoomIdentity);
+      svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
     });
 
     // Layout change (both normal and fullscreen)
@@ -848,11 +1001,13 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       render(currentLayout);
     });
 
-    document.getElementById('layout-select-fs').addEventListener('change', (e) => {
-      currentLayout = e.target.value;
-      layoutSelect.value = currentLayout;
-      render(currentLayout);
-    });
+    document
+      .getElementById('layout-select-fs')
+      .addEventListener('change', (e) => {
+        currentLayout = e.target.value;
+        layoutSelect.value = currentLayout;
+        render(currentLayout);
+      });
 
     // Link checking function
     async function checkLinks(btn, btnFs) {
@@ -888,13 +1043,21 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
             linkStatus.set(node.path, 'error');
             updateNodeStatus(node.path, 'error');
             broken++;
-            results.push({path: node.path, status: response.status, name: node.name});
+            results.push({
+              path: node.path,
+              status: response.status,
+              name: node.name,
+            });
           }
         } catch (err) {
           linkStatus.set(node.path, 'error');
           updateNodeStatus(node.path, 'error');
           broken++;
-          results.push({path: node.path, status: 'Network Error', name: node.name});
+          results.push({
+            path: node.path,
+            status: 'Network Error',
+            name: node.name,
+          });
         }
 
         pending--;
@@ -915,7 +1078,9 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         const resultsEl = document.getElementById('link-results');
         const contentEl = document.getElementById('link-results-content');
 
-        contentEl.innerHTML = results.map(r => `
+        contentEl.innerHTML = results
+          .map(
+            (r) => `
         <div class="flex items-center justify-between p-3 bg-red-500/20 rounded-lg border border-red-500/30">
           <div>
             <div class="text-white font-medium">${r.name}</div>
@@ -923,13 +1088,16 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
           </div>
           <div class="text-red-400 font-mono">${r.status}</div>
         </div>
-      `).join('');
+      `,
+          )
+          .join('');
 
         resultsEl.classList.remove('hidden');
       } else {
         const resultsEl = document.getElementById('link-results');
         const contentEl = document.getElementById('link-results-content');
-        contentEl.innerHTML = '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
+        contentEl.innerHTML =
+          '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
         resultsEl.classList.remove('hidden');
       }
     }
@@ -938,17 +1106,28 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     const btnCheckLinks = document.getElementById('btn-check-links');
     const btnCheckLinksFs = document.getElementById('btn-check-links-fs');
 
-    btnCheckLinks.addEventListener('click', () => checkLinks(btnCheckLinks, btnCheckLinksFs));
-    btnCheckLinksFs.addEventListener('click', () => checkLinks(btnCheckLinksFs, btnCheckLinks));
+    btnCheckLinks.addEventListener('click', () =>
+      checkLinks(btnCheckLinks, btnCheckLinksFs),
+    );
+    btnCheckLinksFs.addEventListener('click', () =>
+      checkLinks(btnCheckLinksFs, btnCheckLinks),
+    );
 
     // Update node visual status
     function updateNodeStatus(path, status) {
       if (!window.currentNodes) return;
 
       window.currentNodes
-        .filter(d => d.path === path)
+        .filter((d) => d.path === path)
         .select('.status-indicator')
-        .attr('fill', status === 'ok' ? '#10B981' : status === 'error' ? '#EF4444' : '#F59E0B')
+        .attr(
+          'fill',
+          status === 'ok'
+            ? '#10B981'
+            : status === 'error'
+              ? '#EF4444'
+              : '#F59E0B',
+        )
         .attr('stroke', 'white');
     }
 
@@ -990,24 +1169,58 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
   }
 
   #sitemap-container {
-    background: radial-gradient(ellipse at 20% 30%, rgba(56, 163, 165, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 70%, rgba(128, 206, 215, 0.1) 0%, transparent 40%),
-    radial-gradient(ellipse at 50% 50%, rgba(15, 76, 92, 0.3) 0%, transparent 60%),
-    linear-gradient(180deg, #030a0d 0%, #0a1f26 30%, #0f3540 60%, #0a1f26 85%, #030a0d 100%);
+    background: radial-gradient(
+            ellipse at 20% 30%,
+            rgba(56, 163, 165, 0.15) 0%,
+            transparent 50%
+    ),
+    radial-gradient(
+            ellipse at 80% 70%,
+            rgba(128, 206, 215, 0.1) 0%,
+            transparent 40%
+    ),
+    radial-gradient(
+            ellipse at 50% 50%,
+            rgba(15, 76, 92, 0.3) 0%,
+            transparent 60%
+    ),
+    linear-gradient(
+            180deg,
+            #030a0d 0%,
+            #0a1f26 30%,
+            #0f3540 60%,
+            #0a1f26 85%,
+            #030a0d 100%
+    );
   }
 
   #sitemap-svg {
-    background: radial-gradient(circle at 30% 40%, rgba(56, 163, 165, 0.08) 0%, transparent 35%),
-    radial-gradient(circle at 70% 60%, rgba(128, 206, 215, 0.06) 0%, transparent 30%),
-    radial-gradient(circle at 50% 80%, rgba(15, 76, 92, 0.1) 0%, transparent 40%);
+    background: radial-gradient(
+            circle at 30% 40%,
+            rgba(56, 163, 165, 0.08) 0%,
+            transparent 35%
+    ),
+    radial-gradient(
+            circle at 70% 60%,
+            rgba(128, 206, 215, 0.06) 0%,
+            transparent 30%
+    ),
+    radial-gradient(
+            circle at 50% 80%,
+            rgba(15, 76, 92, 0.1) 0%,
+            transparent 40%
+    );
   }
 
   /* Animated grid pattern */
   #sitemap-container::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background-image: linear-gradient(rgba(56, 163, 165, 0.03) 1px, transparent 1px),
+    background-image: linear-gradient(
+            rgba(56, 163, 165, 0.03) 1px,
+            transparent 1px
+    ),
     linear-gradient(90deg, rgba(56, 163, 165, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
     pointer-events: none;
@@ -1017,21 +1230,26 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
   /* Subtle animated glow */
   #sitemap-container::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     width: 80%;
     height: 80%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(ellipse at center, rgba(56, 163, 165, 0.05) 0%, transparent 70%);
+    background: radial-gradient(
+            ellipse at center,
+            rgba(56, 163, 165, 0.05) 0%,
+            transparent 70%
+    );
     pointer-events: none;
     z-index: 0;
     animation: pulse-glow 8s ease-in-out infinite;
   }
 
   @keyframes pulse-glow {
-    0%, 100% {
+    0%,
+    100% {
       opacity: 0.5;
       transform: translate(-50%, -50%) scale(1);
     }

@@ -1,0 +1,157 @@
+Why You Can't Skip This Anymore
+
+Got an email last month that looked exactly like it came from my bank. Same logo, same formatting, same everything. Clicked the link without thinking. Typed in my password. Hit enter.
+
+Then I noticed the URL was off by one letter. Panicked. Changed my password immediately. And here's the thing that saved me: two-factor authentication. Even though they had my password, they couldn't get in. My phone never got the verification code because they weren't actually my bank.
+
+Close call. Way too close.
+
+Passwords by themselves? Not enough anymore. Breaches dump millions of credentials every year. Hackers run automated tools that try your stolen password across hundreds of sites. Same password for Netflix and your bank? They're getting into both.
+
+Two-factor authentication adds a second thing they need. Your password plus your phone. Or your password plus a physical key. Even when they steal your password, they're stuck.
+
+Remote workers specifically need this. No IT department watching your back. Public WiFi everywhere. Your work accounts have access to stuff that affects the whole company. You're basically a prime target.
+
+This whole guide takes maybe an hour to implement. Probably less. Let me walk you through it.
+
+The Different Types
+
+Not all two-factor authentication works the same. Some options are way more secure than others.
+
+Text Message Codes
+
+A code gets texted to your phone. Super easy to set up and works on any phone. But attackers can call your carrier, convince them to transfer your number to a new SIM card, and suddenly they're getting your codes. Happens more than you'd think. Use this if nothing else is available, but upgrade when you can.
+
+Email Codes
+
+A code lands in your inbox. Works if you don't have your phone around, I guess. Problem is your email becomes the weak link. If someone gets into your email, they get your codes too. Creates this weird circular thing where your email security depends on your email. Not great.
+
+Authenticator Apps
+
+An app on your phone generates codes that change every thirty seconds. Works even without internet. Nobody can intercept these codes the way they can with texts. You need your phone, sure, and technically someone could phish these codes if you enter them on a fake site. But it's way harder than stealing passwords. This is what I use for most stuff.
+
+Push Notifications
+
+Your phone buzzes and you tap approve or deny. Shows you where the login attempt is coming from, which is nice. Needs internet to work though. And if you're tired and not paying attention, you might approve something you shouldn't. Watch out for that.
+
+Hardware Keys
+
+Physical USB or NFC thing you plug in or tap. Can't be phished because the key actually checks the website's identity. Most secure option out there. Fast too. Downside? Costs money and you need to carry it around. Worth it for the important stuff.
+
+The Apps Worth Using
+
+Authenticator apps generate those time-based codes. Here's what's actually good:
+
+Authy
+
+This is what I point people toward. Backs up to the cloud and syncs across devices. Lose your phone? Download Authy on your new one, enter your backup password, and everything comes back. Free.
+
+Compare that to Google Authenticator where losing your phone means manually recovering every single account with backup codes. Learned that lesson the hard way.
+
+Already Using 1Password?
+
+The built-in authenticator is honestly great. Your codes live right next to your passwords. Everything autofills. Three to five bucks a month but you're probably paying for it anyway if you use the password manager.
+
+Google Authenticator
+
+Simple. Reliable. Works everywhere. They finally added cloud backup recently, so it's more usable now. Still think Authy handles multi-device better though.
+
+Microsoft Authenticator
+
+If your job uses Microsoft stuff, this is the obvious choice. Push notifications work smoothly and you can skip passwords entirely on Microsoft accounts. Free.
+
+Setting Everything Up
+
+Here's the quick rundown for the services that matter most.
+
+Google and Gmail
+
+Head to myaccount.google.com and find Security in the sidebar. Look for two-step verification under the sign-in section. Click get started, choose authenticator app, scan the QR code. Save those backup codes somewhere safe.
+
+Microsoft and Outlook
+
+Go to account.microsoft.com, then Security, then Advanced security options. Turn on two-step verification and follow the prompts. Save your recovery code.
+
+GitHub
+
+Click your profile picture, then Settings, then Password and authentication. Enable two-factor authentication, set up with an app, scan the code. Download those recovery codes right away.
+
+Slack
+
+Click your workspace name, find Profile and account, then Account settings. Expand the two-factor authentication section and set it up with an app.
+
+AWS
+
+Sign into the console, click your account name, then Security credentials. Under multi-factor authentication, assign an MFA device. Pick authenticator app, scan the code, enter two codes in a row to confirm.
+
+Social Media
+
+Twitter, Facebook, LinkedIn... they all have it buried somewhere in Settings then Security. Pick authenticator app instead of SMS when they give you the option.
+
+Hardware Keys
+
+These physical devices are the gold standard. Plug it in, tap the button, done. No codes to type. And here's the thing that makes them special: they verify the website is real before doing anything.
+
+Remember that fake bank email I clicked? If I'd been using a hardware key instead of an app, it wouldn't have worked at all. The key would have looked at that one-letter-off URL and refused to authenticate. Can't be phished.
+
+What's Actually Worth Buying
+
+YubiKey 5 Series runs forty-five to seventy bucks. Works with everything. This is what most security people use.
+
+YubiKey Security Key is around twenty-five bucks. More limited but handles the basics.
+
+Google Titan Key is thirty to thirty-five dollars and comes with both USB-A and USB-C versions.
+
+Thetis makes one for twenty to twenty-five bucks if you're budget-conscious.
+
+My advice? Buy two. Keep one somewhere safe as backup. Register both on every account. That way losing one isn't a disaster.
+
+Backup Codes Matter
+
+When you enable two-factor authentication, most services hand you a bunch of one-time codes. These are your emergency escape hatch. Phone stolen? Lost your authenticator? Backup codes get you back in.
+
+Store them in your password manager. That's encrypted and accessible anywhere. Or print them and stick them in a safe. Don't leave them sitting in a text file on your desktop. Don't email them to yourself. Defeats the whole purpose.
+
+Occasionally test that they work. Generate new ones if you've used a few. Know where they are before you actually need them.
+
+Phone Gone?
+
+This happens. Here's what to do.
+
+Using Authy? Download it on a new device, sign in with your phone number and backup password, everything syncs over. Done.
+
+Got backup codes? Log in with your password, look for the option to use a backup code, enter one. Then immediately set up two-factor again on your new phone and generate fresh codes.
+
+Have a spare hardware key? Use it to log in, remove the lost phone from your account, set up the new one.
+
+No backups at all? You're stuck contacting support and proving you're you. Might need ID, security questions, whatever they require. Can take days. Sometimes weeks. Learn from this and set up proper backups going forward.
+
+Running a Team?
+
+If you manage people, you can force this at the organization level.
+
+Google Workspace has it in Admin Console under Security. Find two-step verification and set it to enforce.
+
+Microsoft 365 uses Azure AD. Security section, then MFA, then require for all users.
+
+Slack lets you require it in Workspace Settings under Authentication.
+
+GitHub has organization settings with a security section that includes require two-factor.
+
+Pick one authenticator app for everyone. Makes support easier. Maybe give hardware keys to admins and anyone handling money. Set a deadline and actually enforce it.
+
+When someone gets locked out, verify who they are before helping. Don't just disable two-factor because they asked nicely. That's exactly what an attacker would do.
+
+Make It Happen
+
+Five minutes per account. Maybe an hour total for everything important.
+
+Today? Download Authy and enable two-factor on your email. That one matters most because it's your recovery point for everything else.
+
+This week? Password manager. Work accounts. Banking.
+
+This month? Hit the rest of your accounts. Consider grabbing a hardware key for the stuff that really matters.
+
+Going forward? Enable it on every new account you create. Just make it automatic.
+
+That close call with the fake bank email? It worked out because I'd set this up months earlier. Pure luck that I happened to have two-factor enabled. Don't wait for your own close call to take this seriously.

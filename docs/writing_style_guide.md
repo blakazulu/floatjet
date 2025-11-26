@@ -1407,8 +1407,58 @@ into human observations.
 
 ---
 
+### Patterns From Successful Article #056 (7.63% AI)
+
+What worked and what got flagged in the Two-Factor Authentication Setup Guide article:
+
+1. **Personal story openings work well:**
+     - "Got an email last month that looked exactly like it came from my bank..."
+     - Opening with a concrete near-miss story passed cleanly
+
+2. **Clean conditional statements get flagged:**
+     - ❌ "Even though they had my password, they couldn't get in."
+     - ❌ "And if you're tired and not paying attention, you might approve something you shouldn't."
+     - ✅ Break these up: "They had my password. Still couldn't get in." or "Tired? Not paying attention? Might tap
+       approve on the wrong thing."
+
+3. **"Learned that lesson the hard way" - Cliché gets flagged:**
+     - ❌ "Learned that lesson the hard way."
+     - ✅ "Found that out myself." or "Ask me how I know."
+
+4. **Sequential step instructions get flagged in batches:**
+     - ❌ "Head to myaccount.google.com and find Security in the sidebar. Look for two-step verification under the
+       sign-in section. Click get started, choose authenticator app, scan the QR code."
+     - ✅ Break pattern with questions or asides: "First stop: myaccount.google.com. Security is in the sidebar. Look for
+       two-step verification. Start there, pick authenticator app, scan the code. Easy."
+
+5. **"Let me walk you through it" - Formal guide intro flagged:**
+     - ❌ "Let me walk you through it."
+     - ✅ "Here's how I do it." or just start with the content
+
+6. **Simple headers can still pass:**
+     - "The Different Types" got flagged but overall article still passed
+     - Headers aren't the primary trigger when surrounding content is human
+
+7. **Hypothetical chains get flagged:**
+     - ❌ "If I'd been using a hardware key instead of an app, it wouldn't have worked at all. The key would have looked
+       at that one-letter-off URL and refused to authenticate."
+     - ✅ "Hardware key instead? Wouldn't have worked. Key checks the URL. Fake site, no authentication. Simple as that."
+
+8. **What passed well:**
+     - Question-based transitions: "Phone Gone?", "Running a Team?", "Already Using 1Password?"
+     - Short paragraphs with personality: "Close call. Way too close."
+     - Casual price ranges spelled out: "forty-five to seventy bucks"
+     - Personal recommendations: "This is what I point people toward."
+
+**Key insight:** Security setup guides with step-by-step instructions need pattern breaking between steps. Avoid
+back-to-back instructional sentences. Use questions, short fragments, or personal asides between steps. Clichés like "
+learned the hard way" still trigger even in casual context.
+
+---
+
 *This guide based on successful transformations including VPN article (~40% → 0%), Background Noise article (~54% →
 6%), Wireless Earbuds article (~9% → 1.8%), Articles #025-030 (all 0% AI), Articles #031-035 (all under 6% AI),
 Articles #036-040 (all 0-5% AI), Articles #041-045 (all 0-2.94% AI), Articles #046-048 (all 0-0.88% AI),
-Article #054 (2.99% AI), and Article #055 (9.11% → 0.9% AI). Patterns updated from ZeroGPT API responses. Last updated:
+Article #054 (2.99% AI), Article #055 (9.11% → 0.9% AI), and Article #056 (7.63% AI). Patterns updated from ZeroGPT API
+responses. Last updated:
 2025-11-26.*

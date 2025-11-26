@@ -40,11 +40,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 028 | Best Laptops for Remote Work & Digital Nomads (2025)                       | Computers     | Gear     | /gear/best-laptops-remote-work                   | 1756       | true              |
 | 029 | How Much RAM Do You Really Need for Remote Work? (2025)                    | Computers     | Gear     | /gear/how-much-ram-remote-work                   | 750        | true              |
 | 030 | MacBook vs Windows Laptop for Remote Work: Which Should You Choose? (2025) | Computers     | Gear     | /gear/macbook-vs-windows-remote-work             | 1100       | true              |
-| 031 | Best Portable Monitors for Digital Nomads (2025)                           | Computers     | Gear     | /gear/best-portable-monitors                     | 1845       | false             |
-| 032 | Best Budget Laptops Under $800 for Remote Work (2025)                      | Computers     | Gear     | /gear/best-budget-laptops-remote-work            | 1882       | false             |
-| 033 | Best Monitors for Remote Work (2025)                                       | Computers     | Gear     | /gear/best-monitors-remote-work                  | 2151       | false             |
-| 034 | Ergonomic Desk Setup: Complete Guide (2025)                                | Furniture     | Gear     | /gear/ergonomic-desk-setup-guide                 | 2133       | false             |
-| 035 | Best Standing Desk Converters (2025)                                       | Furniture     | Gear     | /gear/best-desk-converters                       | 1874       | false             |
+| 031 | Best Portable Monitors for Digital Nomads (2025)                           | Computers     | Gear     | /gear/best-portable-monitors                     | 1463       | true              |
+| 032 | Best Budget Laptops Under $800 for Remote Work (2025)                      | Computers     | Gear     | /gear/best-budget-laptops-remote-work            | 1102       | true              |
+| 033 | Best Monitors for Remote Work (2025)                                       | Computers     | Gear     | /gear/best-monitors-remote-work                  | 1054       | true              |
+| 034 | Ergonomic Desk Setup: Complete Guide (2025)                                | Furniture     | Gear     | /gear/ergonomic-desk-setup-guide                 | 1110       | true              |
+| 035 | Best Standing Desk Converters (2025)                                       | Furniture     | Gear     | /gear/best-desk-converters                       | 904        | true              |
 | 036 | Best Ergonomic Chairs for Home Office (2025)                               | Furniture     | Gear     | /gear/best-ergonomic-chairs                      | 2478       | false             |
 | 037 | How Much Does a Standing Desk Really Cost? (2025 Guide)                    | Furniture     | Gear     | /gear/standing-desk-cost-guide                   | 1693       | false             |
 | 038 | Best Compact Desks for Small Home Offices (2025)                           | Furniture     | Gear     | /gear/best-compact-desks-small-office            | 1965       | false             |

@@ -34,12 +34,12 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 022 | Best Microphones for Remote Meetings (2025)                                | Audio         | Gear     | /gear/best-microphones-remote-meetings           | 1168       | true              |
 | 023 | How to Reduce Background Noise on Video Calls (2025)                       | Audio         | Gear     | /gear/reduce-background-noise-calls              | 704        | true              |
 | 024 | Best Wireless Earbuds for Remote Work Calls (2025)                         | Audio         | Gear     | /gear/best-wireless-earbuds-remote-work          | 1680       | true              |
-| 025 | USB vs XLR Microphones: Which Is Better for Remote Work?                   | Audio         | Gear     | /gear/usb-vs-xlr-microphones                     | 1861       | false             |
-| 026 | Best Noise-Canceling Headphones for Remote Work (2025)                     | Audio         | Gear     | /gear/best-noise-canceling-headphones            | 4240       | false             |
-| 027 | Best Speakers for Home Office (2025)                                       | Audio         | Gear     | /gear/best-speakers-home-office                  | 2471       | false             |
-| 028 | Best Laptops for Remote Work & Digital Nomads (2025)                       | Computers     | Gear     | /gear/best-laptops-remote-work                   | 4593       | false             |
-| 029 | How Much RAM Do You Really Need for Remote Work? (2025)                    | Computers     | Gear     | /gear/how-much-ram-remote-work                   | 1380       | false             |
-| 030 | MacBook vs Windows Laptop for Remote Work: Which Should You Choose? (2025) | Computers     | Gear     | /gear/macbook-vs-windows-remote-work             | 1811       | false             |
+| 025 | USB vs XLR Microphones: Which Is Better for Remote Work?                   | Audio         | Gear     | /gear/usb-vs-xlr-microphones                     | 1085       | true              |
+| 026 | Best Noise-Canceling Headphones for Remote Work (2025)                     | Audio         | Gear     | /gear/best-noise-canceling-headphones            | 2046       | true              |
+| 027 | Best Speakers for Home Office (2025)                                       | Audio         | Gear     | /gear/best-speakers-home-office                  | 1037       | true              |
+| 028 | Best Laptops for Remote Work & Digital Nomads (2025)                       | Computers     | Gear     | /gear/best-laptops-remote-work                   | 1756       | true              |
+| 029 | How Much RAM Do You Really Need for Remote Work? (2025)                    | Computers     | Gear     | /gear/how-much-ram-remote-work                   | 750        | true              |
+| 030 | MacBook vs Windows Laptop for Remote Work: Which Should You Choose? (2025) | Computers     | Gear     | /gear/macbook-vs-windows-remote-work             | 1100       | true              |
 | 031 | Best Portable Monitors for Digital Nomads (2025)                           | Computers     | Gear     | /gear/best-portable-monitors                     | 1845       | false             |
 | 032 | Best Budget Laptops Under $800 for Remote Work (2025)                      | Computers     | Gear     | /gear/best-budget-laptops-remote-work            | 1882       | false             |
 | 033 | Best Monitors for Remote Work (2025)                                       | Computers     | Gear     | /gear/best-monitors-remote-work                  | 2151       | false             |

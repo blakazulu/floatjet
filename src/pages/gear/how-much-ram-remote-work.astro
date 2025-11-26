@@ -9,18 +9,18 @@ const updatedDate = new Date('2024-11-24');
 const author = 'FloatJet Team';
 const category = 'Computers';
 const categorySlug = 'gear';
-const readingTime = 8;
+const readingTime = 5;
 const image = 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80';
 const imageAlt = 'Computer RAM memory modules';
 
 const headings = [
   {text: 'Quick Answer', slug: 'quick-answer', depth: 2},
-  {text: 'What RAM Actually Does', slug: 'what-ram-does', depth: 2},
-  {text: 'RAM Usage by Task', slug: 'ram-by-task', depth: 2},
-  {text: '8GB vs 16GB vs 32GB', slug: 'ram-comparison', depth: 2},
-  {text: 'When to Upgrade', slug: 'when-to-upgrade', depth: 2},
-  {text: 'Laptop Recommendations', slug: 'recommendations', depth: 2},
-  {text: 'Frequently Asked Questions', slug: 'faq', depth: 2},
+  {text: 'What RAM Does', slug: 'what-ram-does', depth: 2},
+  {text: 'Real-World Usage', slug: 'ram-by-task', depth: 2},
+  {text: 'Comparing Options', slug: 'ram-comparison', depth: 2},
+  {text: 'Signs You Need More', slug: 'when-to-upgrade', depth: 2},
+  {text: 'Laptop Picks', slug: 'recommendations', depth: 2},
+  {text: 'Questions', slug: 'faq', depth: 2},
 ];
 
 const ramUsageColumns = [
@@ -71,24 +71,24 @@ const comparisonRows = [
 
 const faqItems = [
   {
-    question: 'Is 8GB RAM enough for Zoom calls?',
-    answer: 'Yes, 8GB handles Zoom, Teams, and Google Meet fine, especially if you close other apps. However, if you need to share your screen, take notes, and have reference materials open simultaneously, 16GB provides more breathing room.',
+    question: 'Eight gig enough for Zoom?',
+    answer: 'Yeah, handles Zoom, Teams, Meet fine if you close other apps. But screen sharing while taking notes with reference materials open? Sixteen gig gives breathing room.',
   },
   {
-    question: 'Why does Chrome use so much RAM?',
-    answer: 'Chrome runs each tab as a separate process for security and stability. Extensions also consume memory. Each tab typically uses 100-300MB, but media-heavy sites can use much more. Consider Firefox or Edge if RAM is limited.',
+    question: 'Why does Chrome hog memory?',
+    answer: 'Each tab runs as separate process for security. Extensions eat memory too. Each tab uses one hundred to three hundred meg. Media-heavy sites use more. Try Firefox or Edge if RAM is limited.',
   },
   {
     question: 'Can I upgrade RAM later?',
-    answer: 'It depends on the laptop. Many budget laptops have upgradeable RAM, but ultrabooks and MacBooks typically have RAM soldered to the motherboard. Check your specific model before buying. When in doubt, buy more RAM upfront.',
+    answer: 'Depends on laptop. Budget laptops often have upgradeable RAM. Ultrabooks and MacBooks usually have it soldered. Check your model before buying. When in doubt, buy more upfront.',
   },
   {
-    question: 'Does more RAM make my laptop faster?',
-    answer: 'Not directly. More RAM prevents slowdowns when multitasking by reducing disk swapping. If you have enough RAM for your tasks, adding more will not make individual apps faster. The processor determines raw speed.',
+    question: 'Does more RAM make things faster?',
+    answer: 'Not directly. More RAM prevents slowdowns by reducing disk swapping. If you have enough for your tasks, adding more won\'t speed up individual apps. Processor determines raw speed.',
   },
   {
-    question: 'What is the difference between RAM and storage?',
-    answer: 'RAM is temporary memory for running programs (cleared when shut down). Storage (SSD/HDD) is permanent memory for files. Both affect performance, but RAM impacts multitasking while storage affects file loading and boot times.',
+    question: 'RAM vs storage difference?',
+    answer: 'RAM is temporary memory for running programs. Cleared when you shut down. Storage is permanent for files. Both affect performance but RAM impacts multitasking while storage affects file loading and boot times.',
   },
 ];
 
@@ -131,137 +131,129 @@ const relatedArticles = [
     headings={headings}
 >
   <p class="lead">
-    Should you get 8GB, 16GB, or 32GB of RAM? We break down exactly how much memory common remote work tasks require to
-    help you make the right choice.
+    Eight gig? Sixteen? Thirty-two? Here's what actually matters for remote work.
   </p>
 
-  <h2 id="quick-answer">Quick Answer: How Much RAM Do You Need?</h2>
+  <h2 id="quick-answer">Quick Answer</h2>
 
   <ul>
-    <li><strong>8GB:</strong> Basic remote work - email, documents, video calls, light browsing</li>
-    <li><strong>16GB:</strong> Most remote workers - multitasking, many browser tabs, development</li>
-    <li><strong>32GB:</strong> Power users - video editing, multiple VMs, heavy creative work</li>
+    <li><strong>Eight gig:</strong> Basic stuff. Email, docs, video calls, light browsing.</li>
+    <li><strong>Sixteen gig:</strong> Most remote workers. Multitasking, lots of tabs, development.</li>
+    <li><strong>Thirty-two gig:</strong> Power users. Video editing, virtual machines, heavy creative work.</li>
   </ul>
 
   <p>
-    <strong>Our recommendation:</strong> Get 16GB if your budget allows. It is the sweet spot for most remote workers
-    and provides headroom for future needs.
+    Get sixteen if you can afford it. Sweet spot. Room for future needs.
   </p>
 
-  <h2 id="what-ram-does">What RAM Actually Does</h2>
+  <h2 id="what-ram-does">What RAM Does</h2>
 
   <p>
-    RAM (Random Access Memory) is your computer's short-term memory. When you open an app, it loads into RAM for quick
-    access. More RAM means:
+    RAM is short-term memory. Apps load there for quick access. More RAM means:
   </p>
 
   <ul>
-    <li>More apps running simultaneously without slowdown</li>
-    <li>Smoother switching between applications</li>
-    <li>Better handling of large files and datasets</li>
-    <li>Less reliance on slower disk-based virtual memory</li>
+    <li>More apps running without slowdown</li>
+    <li>Smoother app switching</li>
+    <li>Better handling of big files</li>
+    <li>Less reliance on slow disk memory</li>
   </ul>
 
   <p>
-    When RAM fills up, your computer uses "virtual memory" - writing data to your SSD/HDD. This is dramatically slower
-    and causes the frustrating lag you feel when multitasking.
+    When RAM fills up, your computer writes to the SSD. Dramatically slower. That's the lag you feel multitasking.
   </p>
 
-  <h2 id="ram-by-task">RAM Usage by Common Remote Work Tasks</h2>
+  <h2 id="ram-by-task">Real-World Usage</h2>
 
   <ComparisonTable columns={ramUsageColumns} rows={ramUsageRows}/>
 
-  <h3>Typical Remote Work Scenario</h3>
+  <h3>Typical Work Session</h3>
 
   <p>
-    A typical remote work session might include:
+    What a normal remote workday looks like:
   </p>
 
   <ul>
-    <li>Windows/macOS: 2-3 GB baseline</li>
-    <li>Chrome with 15 tabs: 3 GB</li>
-    <li>Zoom video call: 1 GB</li>
-    <li>Slack: 0.5 GB</li>
-    <li>Microsoft Word: 0.5 GB</li>
-    <li><strong>Total: ~7 GB</strong></li>
+    <li>Operating system: Two to three gig</li>
+    <li>Chrome with fifteen tabs: Three gig</li>
+    <li>Zoom call: One gig</li>
+    <li>Slack: Half a gig</li>
+    <li>Word: Half a gig</li>
+    <li><strong>Total: Around seven gig</strong></li>
   </ul>
 
   <p>
-    This scenario runs fine on 8GB but leaves little headroom. Opening Photoshop or another heavy app would cause
-    slowdowns.
+    Runs fine on eight. Little headroom though. Opening Photoshop would cause slowdowns.
   </p>
 
-  <h2 id="ram-comparison">8GB vs 16GB vs 32GB Comparison</h2>
+  <h2 id="ram-comparison">Comparing Options</h2>
 
   <ComparisonTable columns={comparisonColumns} rows={comparisonRows}/>
 
-  <h3>8GB RAM</h3>
+  <h3>Eight Gig</h3>
 
   <p>
-    <strong>Best for:</strong> Light users who primarily work in a browser, check email, and attend occasional video
-    calls.
+    Works for light users. Browser, email, occasional video calls.
   </p>
 
   <p>
-    <strong>Reality check:</strong> 8GB was comfortable in 2020. Modern apps, especially browsers and communication
-    tools, have grown. You will feel constraints with heavy browser use.
+    Real talk: Eight gig was comfortable in twenty-twenty. Modern apps grew. Browsers and communication tools
+    especially. You'll feel constraints with heavy browser use.
   </p>
 
-  <h3>16GB RAM</h3>
+  <h3>Sixteen Gig</h3>
 
   <p>
-    <strong>Best for:</strong> Most remote workers. Handles modern workflows comfortably with room to spare.
-    Future-proof for 3-5 years.
-  </p>
-
-  <p>
-    <strong>Why it is the sweet spot:</strong> The $50-150 upgrade cost is minimal compared to laptop price. Prevents
-    the frustration of constant memory management.
-  </p>
-
-  <h3>32GB RAM</h3>
-
-  <p>
-    <strong>Best for:</strong> Video editors, developers running local servers and VMs, data scientists, or anyone
-    running memory-intensive workflows.
+    Works for most remote workers. Modern workflows handled comfortably with room to spare. Future-proof for three to
+    five years.
   </p>
 
   <p>
-    <strong>Reality check:</strong> Overkill for typical office work. Only invest here if you know you need it.
+    Why it's the sweet spot: Fifty to one-fifty upgrade cost is minimal compared to laptop price. Prevents constant
+    memory management frustration.
   </p>
 
-  <h2 id="when-to-upgrade">Signs You Need More RAM</h2>
+  <h3>Thirty-Two Gig</h3>
 
   <p>
-    Upgrade RAM (or choose a laptop with more) if you experience:
+    Works for video editors, developers running servers and VMs, data scientists, memory-intensive workflows.
+  </p>
+
+  <p>
+    Real talk: Overkill for typical office work. Only invest if you know you need it.
+  </p>
+
+  <h2 id="when-to-upgrade">Signs You Need More</h2>
+
+  <p>
+    Upgrade if you experience:
   </p>
 
   <ul>
-    <li>Frequent slowdowns when switching between apps</li>
-    <li>Browser tabs reloading when you return to them</li>
+    <li>Slowdowns switching apps</li>
+    <li>Tabs reloading when you return to them</li>
     <li>Fan running constantly during normal work</li>
-    <li>Disk activity light flickering during multitasking</li>
-    <li>"Your computer is low on memory" warnings</li>
-    <li>Delays when opening new applications</li>
+    <li>Disk light flickering during multitasking</li>
+    <li>Low memory warnings</li>
+    <li>Delays opening new apps</li>
   </ul>
 
-  <h3>How to Check Your Current RAM Usage</h3>
+  <h3>Check Your Usage</h3>
 
-  <p><strong>Windows:</strong> Press Ctrl+Shift+Esc, click "Performance" tab, then "Memory"</p>
+  <p><strong>Windows:</strong> Ctrl+Shift+Esc, Performance tab, Memory.</p>
 
-  <p><strong>macOS:</strong> Open Activity Monitor, click "Memory" tab, check "Memory Used"</p>
+  <p><strong>Mac:</strong> Activity Monitor, Memory tab.</p>
 
   <p>
-    If you are regularly using 80%+ of available RAM during normal work, upgrading will improve your experience.
+    Using eighty percent or more during normal work? Upgrading will help.
   </p>
 
-  <h2 id="recommendations">Laptop Recommendations by RAM</h2>
+  <h2 id="recommendations">Laptop Picks</h2>
 
-  <h3>Best 16GB Laptops for Remote Work</h3>
+  <h3>Sixteen Gig Options</h3>
 
   <p>
-    <strong>MacBook Air M3 (16GB):</strong> Excellent choice for most remote workers. Apple Silicon uses RAM
-    efficiently.
+    <strong>MacBook Air M3:</strong> Excellent for most remote workers. Apple Silicon uses RAM efficiently.
   </p>
 
   <div class="my-6">
@@ -269,52 +261,51 @@ const relatedArticles = [
   </div>
 
   <p>
-    <strong>Lenovo ThinkPad X1 Carbon (16GB):</strong> Best Windows option for business users.
+    <strong>ThinkPad X1 Carbon:</strong> Best Windows for business users.
   </p>
 
   <div class="my-6">
     <AffiliateButton href="/go/thinkpad-x1-carbon" text="Check ThinkPad X1 Carbon Price"/>
   </div>
 
-  <h3>Best Value 8GB Laptops (Upgradeable)</h3>
+  <h3>Budget with Upgradeable RAM</h3>
 
   <p>
-    <strong>Acer Aspire 5:</strong> Comes with 8GB but supports up to 32GB. Buy 8GB now, upgrade later if needed.
+    <strong>Acer Aspire 5:</strong> Comes with eight, supports up to thirty-two. Buy now, upgrade later if needed.
   </p>
 
   <div class="my-6">
     <AffiliateButton href="/go/acer-aspire-5" text="Check Acer Aspire 5 Price"/>
   </div>
 
-  <h3>Best 32GB Laptops for Power Users</h3>
+  <h3>Thirty-Two Gig for Power Users</h3>
 
   <p>
-    <strong>MacBook Pro 14" M3 Pro (36GB):</strong> Maximum performance for creative professionals.
+    <strong>MacBook Pro 14 with M3 Pro:</strong> Maximum performance for creative pros.
   </p>
 
   <div class="my-6">
     <AffiliateButton href="/go/macbook-pro-14" text="Check MacBook Pro 14 Price"/>
   </div>
 
-  <h2 id="faq">Frequently Asked Questions</h2>
+  <h2 id="faq">Questions</h2>
 
   <FAQSection faqs={faqItems}/>
 
   <h2>Bottom Line</h2>
 
   <p>
-    <strong>For most remote workers: Get 16GB.</strong> The modest upgrade cost provides comfortable multitasking and
-    future-proofs your investment.
+    Most remote workers: Get sixteen gig. Modest upgrade cost provides comfortable multitasking and future-proofs your
+    investment.
   </p>
 
   <p>
-    <strong>If budget is tight:</strong> 8GB works for basic tasks, especially on laptops with upgradeable RAM. Monitor
-    your usage and upgrade if you hit limits.
+    Budget tight: Eight gig works for basic tasks. Especially on laptops with upgradeable RAM. Monitor usage and upgrade
+    if you hit limits.
   </p>
 
   <p>
-    <strong>For creative/technical work:</strong> 32GB ensures you never wait on memory. Worth the investment if your
-    work depends on it.
+    Creative or technical work: Thirty-two gig ensures you never wait on memory. Worth it if your work depends on it.
   </p>
 
   <RelatedArticles articles={relatedArticles}/>

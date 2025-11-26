@@ -66,10 +66,10 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 054 | Pomodoro Technique for Remote Workers: Complete Guide (2025)               | Productivity  | Guides   | /guides/pomodoro-technique-remote-workers        | 2547       | true              |
 | 055 | Phishing Scams: How Remote Workers Can Stay Safe                           | Security      | Guides   | /guides/phishing-scams-remote-workers            | 1481       | true              |
 | 056 | Two-Factor Authentication Setup Guide for Remote Workers (2025)            | Security      | Guides   | /guides/two-factor-authentication-guide          | 1431       | true              |
-| 057 | Do I Need a VPN When Working from Cafes?                                   | Security      | Guides   | /guides/do-i-need-vpn-cafes                      | 1626       | false             |
-| 058 | How to Secure Your Home WiFi Network for Remote Work (2025)                | Security      | Guides   | /guides/secure-home-wifi-network                 | 2089       | false             |
-| 059 | VPN vs Proxy: Which is Better for Remote Work?                             | Security      | Guides   | /guides/vpn-vs-proxy-remote-work                 | 1896       | false             |
-| 060 | Minimalist Home Office Setup: Less Stuff, More Focus                       | Setup         | Guides   | /guides/minimalist-home-office-setup             | 1879       | false             |
+| 057 | Do I Need a VPN When Working from Cafes?                                   | Security      | Guides   | /guides/do-i-need-vpn-cafes                      | 1548       | true              |
+| 058 | How to Secure Your Home WiFi Network for Remote Work (2025)                | Security      | Guides   | /guides/secure-home-wifi-network                 | 1889       | true              |
+| 059 | VPN vs Proxy: Which is Better for Remote Work?                             | Security      | Guides   | /guides/vpn-vs-proxy-remote-work                 | 1623       | true              |
+| 060 | Minimalist Home Office Setup: Less Stuff, More Focus                       | Setup         | Guides   | /guides/minimalist-home-office-setup             | 1602       | true              |
 | 061 | Home Office Cable Management: Tame the Wire Chaos                          | Setup         | Guides   | /guides/cable-management-guide                   | 1988       | false             |
 | 062 | Can You Use Your Personal Laptop for Remote Work?                          | Setup         | Guides   | /guides/personal-laptop-remote-work              | 1953       | false             |
 | 063 | Budget Home Office Setup Under $500: Everything You Need                   | Setup         | Guides   | /guides/budget-home-office-setup-500             | 1904       | false             |

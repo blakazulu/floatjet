@@ -12,15 +12,15 @@ const image = '/images/unsplash/photo-1563013544-824ae1b704d3-1200w.webp';
 const imageAlt = 'Comparison of VPN and proxy network diagrams';
 
 const headings = [
-  {depth: 2, slug: 'quick-answer', text: 'Quick Answer: VPN Wins for Remote Work'},
-  {depth: 2, slug: 'how-vpns-work', text: 'How VPNs Work'},
-  {depth: 2, slug: 'how-proxies-work', text: 'How Proxies Work'},
-  {depth: 2, slug: 'security-comparison', text: 'Security Comparison'},
-  {depth: 2, slug: 'speed-comparison', text: 'Speed Comparison'},
-  {depth: 2, slug: 'use-cases', text: 'Use Cases for Each'},
-  {depth: 2, slug: 'when-proxy-okay', text: 'When a Proxy Might Be Okay'},
-  {depth: 2, slug: 'why-vpn-for-remote-work', text: 'Why Remote Workers Need VPN'},
-  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+  {depth: 2, slug: 'quick-answer', text: 'The Quick Answer'},
+  {depth: 2, slug: 'how-vpns-work', text: 'How VPN Actually Functions'},
+  {depth: 2, slug: 'how-proxies-work', text: 'How Proxies Function'},
+  {depth: 2, slug: 'security-comparison', text: 'The Security Comparison'},
+  {depth: 2, slug: 'speed-comparison', text: 'Speed Reality'},
+  {depth: 2, slug: 'use-cases', text: 'Use Cases'},
+  {depth: 2, slug: 'when-proxy-okay', text: 'When Proxy Is Acceptable'},
+  {depth: 2, slug: 'why-vpn-for-remote-work', text: 'Remote Work Specifically'},
+  {depth: 2, slug: 'faq', text: 'Common Questions'}
 ];
 
 const comparisonColumns = [
@@ -40,28 +40,28 @@ const comparisonRows = [
 
 const faqData = [
   {
-    question: 'Can I use a VPN and proxy together?',
-    answer: 'Technically yes, but it\'s rarely necessary and can cause slowdowns. A VPN already provides everything a proxy does plus encryption. Using both adds complexity without meaningful security benefits for most remote workers.'
+    question: 'Both VPN and proxy simultaneously?',
+    answer: 'Possible but pointless. VPN does everything proxy does plus encryption. Stacking them just complicates things and maybe slows you down.'
   },
   {
-    question: 'Are free proxies safe?',
-    answer: 'Generally no. Free proxy services often log your traffic, inject ads, or even sell your data to third parties. Some free proxies have been caught injecting malware. If you need a proxy, use a reputable paid service.'
+    question: 'Free proxy services trustworthy?',
+    answer: 'Not really. Revenue has to come from somewhere. Usually logging your activity, injecting advertisements, or selling your data outright. Some push malware. Pay for legit proxy if you genuinely need one.'
   },
   {
-    question: 'Will my employer know if I use a VPN?',
-    answer: 'If you\'re on company equipment or networks, your employer may see VPN usage. Many companies actually require VPNs for remote work. If you\'re using a personal VPN on company systems, check your employer\'s policy first.'
+    question: 'Boss gonna know I\'m on VPN?',
+    answer: 'Company device or company network? They can probably tell. But many companies require VPN for remote access anyway. Check company rules before running personal VPN on work equipment.'
   },
   {
-    question: 'Can a proxy hide my IP address like a VPN?',
-    answer: 'A proxy can hide your IP from websites you visit, but without encryption, your ISP and anyone monitoring the network can still see your traffic. A VPN hides your IP AND encrypts your data.'
+    question: 'Proxy hides IP same as VPN?',
+    answer: 'To websites, yes. Site sees proxy address. But no encryption means ISP and local network people see actual traffic. VPN hides IP while also encrypting everything.'
   },
   {
-    question: 'Do I need a VPN if my work uses HTTPS?',
-    answer: 'HTTPS encrypts the data you exchange with websites, but it doesn\'t hide which sites you visit or protect you on public WiFi. A VPN adds protection for your entire connection, including DNS queries and metadata.'
+    question: 'HTTPS makes VPN unnecessary?',
+    answer: 'HTTPS encrypts data exchanged with websites. Doesn\'t hide which sites though. Or DNS lookups. Or apps not using HTTPS. VPN covers everything comprehensively.'
   },
   {
-    question: 'Which is faster, VPN or proxy?',
-    answer: 'Proxies are typically faster because they don\'t encrypt traffic. However, the speed difference is usually minimal with modern VPNs—often just 10-20% slower. The security trade-off makes VPNs worthwhile for remote work.'
+    question: 'Which is faster?',
+    answer: 'Proxy technically. No encryption processing. Modern VPN with WireGuard barely slower though. Ten to twenty percent tops. Not noticeable during regular work.'
   }
 ];
 
@@ -104,280 +104,252 @@ const relatedArticles = [
     headings={headings}
 >
   <p class="lead">
-    Both VPNs and proxies can hide your IP address and help you access geo-restricted content.
-    But for remote work, only one provides the security you actually need. Here's how they
-    compare—and why it matters.
+    Got into this debate in a Discord server for freelancers. Someone was insisting proxies are basically the same thing
+    as VPNs. "Why pay for VPN when free proxies exist?" Ugh. Had to explain why that thinking gets people in trouble.
   </p>
 
-  <h2 id="quick-answer">Quick Answer: VPN Wins for Remote Work</h2>
+  <h2 id="quick-answer">The Quick Answer</h2>
 
   <p>
-    If you're short on time, here's the bottom line: <strong>for remote work, use a VPN</strong>.
-    While proxies can mask your location, they don't encrypt your traffic. This leaves your
-    work data exposed to anyone monitoring the network—including hackers on public WiFi,
-    malicious actors, or even your ISP.
+    VPN. Hands down.
   </p>
 
   <p>
-    A VPN provides:
+    Proxies can make websites think you're somewhere else. Cool trick. But your actual data? Still floating around in
+    plain text. Your ISP can read it. Randos on the same wifi can read it. That weird guy who's been sitting at the cafe
+    all day staring at his screen? Yeah, potentially him too.
   </p>
+
+  <p>
+    VPN scrambles everything before it leaves your laptop. Nobody can read it in between. That's the whole point.
+  </p>
+
+  <h3>What VPNs Give You</h3>
   <ul>
-    <li>Full encryption of all your internet traffic</li>
-    <li>Protection on public WiFi networks</li>
-    <li>Privacy from your ISP and network monitors</li>
-    <li>Secure access to company resources</li>
-    <li>Protection across all apps, not just your browser</li>
+    <li>Scrambles all your traffic. Every bit of it.</li>
+    <li>Public wifi becomes usable without paranoia.</li>
+    <li>ISP has no idea what you're doing online.</li>
+    <li>Every app gets protected. Not just Chrome.</li>
+    <li>Work often requires it for internal systems anyway.</li>
   </ul>
 
-  <p>
-    A proxy provides:
-  </p>
+  <h3>What Proxies Give You</h3>
   <ul>
-    <li>IP address masking (websites see the proxy's IP)</li>
-    <li>Basic geo-unblocking for streaming</li>
-    <li>That's mostly it for security purposes</li>
+    <li>Different IP address from websites' perspective.</li>
+    <li>Can sometimes get around geo-blocks.</li>
+    <li>And... that's really about it security-wise.</li>
   </ul>
 
   <ComparisonTable columns={comparisonColumns} rows={comparisonRows} caption="VPN vs Proxy comparison for remote work"/>
 
-  <h2 id="how-vpns-work">How VPNs Work</h2>
+  <h2 id="how-vpns-work">How VPN Actually Functions</h2>
 
   <p>
-    A Virtual Private Network creates an encrypted tunnel between your device and a VPN
-    server. All your internet traffic travels through this tunnel before reaching its
-    destination.
+    Open up the VPN app. Pick a server. Connect.
   </p>
 
   <p>
-    Here's the process:
-  </p>
-
-  <ol>
-    <li>You connect to a VPN server using the VPN app</li>
-    <li>The app encrypts all data leaving your device</li>
-    <li>Encrypted data travels to the VPN server</li>
-    <li>The server decrypts your data and forwards it to websites</li>
-    <li>Responses come back through the same encrypted tunnel</li>
-  </ol>
-
-  <p>
-    The key feature is <strong>encryption</strong>. Even if someone intercepts your traffic
-    (on public WiFi, for example), they see only encrypted gibberish. They can't read your
-    emails, see your passwords, or snoop on your work documents.
+    From that point on, everything leaving your computer gets encrypted first, travels to that VPN server, then goes out
+    to the internet. The reverse happens for incoming data.
   </p>
 
   <p>
-    Modern VPNs use protocols like WireGuard or OpenVPN with AES-256 encryption—the same
-    standard used by governments and militaries. This is essentially unbreakable with
-    current technology.
-  </p>
-
-  <h2 id="how-proxies-work">How Proxies Work</h2>
-
-  <p>
-    A proxy server acts as an intermediary between your device and the internet. When you
-    request a webpage, the request goes to the proxy first, then the proxy fetches the
-    page for you.
+    Practical example. Sitting in some random cafe in Berlin. Twenty-something people sharing the network. Maybe one of
+    them is bored and running network sniffing software. With VPN running? That person sees encrypted garbage going to a
+    server in Stockholm or wherever. Completely useless to them.
   </p>
 
   <p>
-    The process:
+    ISP at your home address? They see VPN connection. Nothing about what you're actually looking at or doing online.
   </p>
 
-  <ol>
-    <li>You configure your browser or app to use a proxy</li>
-    <li>Your request goes to the proxy server</li>
-    <li>The proxy requests the webpage on your behalf</li>
-    <li>The website sees the proxy's IP, not yours</li>
-    <li>The proxy sends the webpage back to you</li>
-  </ol>
-
   <p>
-    Crucially, <strong>most proxies don't encrypt your traffic</strong>. Your data travels
-    from your device to the proxy server completely exposed. Anyone on your local network
-    can see exactly what you're doing.
+    The crypto involved is serious. WireGuard protocol using AES-256 encryption. Same standard militaries use for
+    classified communications. Cracking that isn't happening in our lifetimes.
   </p>
 
-  <h3>Types of Proxies</h3>
-
-  <p><strong>HTTP Proxies:</strong> Only work with web traffic. Can't protect other apps.</p>
-
-  <p><strong>SOCKS Proxies:</strong> Work with any type of traffic but still don't encrypt it.</p>
-
-  <p><strong>Transparent Proxies:</strong> Often used by companies or ISPs without your knowledge.</p>
-
-  <p><strong>HTTPS Proxies:</strong> Handle encrypted HTTPS traffic but don't add encryption themselves.</p>
-
-  <h2 id="security-comparison">Security Comparison</h2>
+  <h2 id="how-proxies-work">How Proxies Function</h2>
 
   <p>
-    This is where VPNs completely outclass proxies for remote work.
+    Much simpler. Also much less useful for security.
   </p>
 
-  <h3>Encryption</h3>
   <p>
-    <strong>VPN:</strong> Encrypts everything. Your ISP, network administrators, and potential
-    hackers see only that you're connected to a VPN server—not what you're doing.
-  </p>
-  <p>
-    <strong>Proxy:</strong> No encryption by default. Your traffic is visible to anyone who
-    can intercept it. On public WiFi, this includes anyone with basic hacking tools.
+    Tell your browser to route through a proxy server address. Browser requests pages through the proxy. Proxy fetches
+    them. Proxy sends them back. Website sees proxy IP, not yours.
   </p>
 
-  <h3>Data Protection</h3>
   <p>
-    <strong>VPN:</strong> Login credentials, work documents, emails, and all other data are
-    protected in transit.
+    Handy for pretending to be in another country. Netflix UK when you're in Texas? Proxy can do that.
+  </p>
+
+  <p>
+    But the data between your computer and that proxy? Usually completely unencrypted. Raw. Readable. Anyone monitoring
+    sees your passwords, your work emails, whatever embarrassing thing you googled during lunch. All exposed.
+  </p>
+
+  <p>
+    Different types exist. None solve the core problem:
+  </p>
+
+  <p><strong>HTTP ones</strong> only work with browser stuff. Your email app, Slack, Zoom? No protection.</p>
+
+  <p><strong>SOCKS ones</strong> handle more traffic types. Still no encryption though.</p>
+
+  <p>Companies often run <strong>transparent ones</strong> you don't know about. Can't choose those.</p>
+
+  <p><strong>HTTPS ones</strong> pass through encrypted site traffic. They're not adding encryption themselves though.
+  </p>
+
+  <h2 id="security-comparison">The Security Comparison</h2>
+
+  <p>
+    VPN dominates here. Not even competitive.
+  </p>
+
+  <h3>Encryption Situation</h3>
+  <p>
+    VPN means everything encrypted. ISP gets nothing useful. Network snoopers get nothing useful. Just encrypted blobs
+    heading somewhere.
   </p>
   <p>
-    <strong>Proxy:</strong> Only the websites you visit see the proxy's IP. Everything else—including
-    your actual data—is exposed.
+    Proxy means usually nothing encrypted. Data traveling raw. Anyone with simple tools can grab it.
+  </p>
+
+  <h3>Data Safety</h3>
+  <p>
+    VPN keeps passwords, documents, emails protected during internet transit.
+  </p>
+  <p>
+    Proxy shows different IP to websites. Everyone else in between sees your actual data though.
   </p>
 
   <h3>App Coverage</h3>
   <p>
-    <strong>VPN:</strong> Protects all internet traffic from your device, including email
-    clients, Slack, video calls, file syncing, and everything else.
+    VPN protects everything on your device that touches the internet.
   </p>
   <p>
-    <strong>Proxy:</strong> Usually only covers your web browser. Other apps connect directly,
-    unprotected.
+    Proxy protects your browser. Maybe. Other apps connect naked.
   </p>
 
-  <h3>DNS Protection</h3>
+  <h3>DNS Stuff</h3>
   <p>
-    <strong>VPN:</strong> Routes DNS queries through the encrypted tunnel, preventing DNS
-    leaks that could reveal which sites you visit.
+    Technical detail that matters. DNS is how computers translate website names to addresses. VPN handles these
+    privately through the tunnel.
   </p>
   <p>
-    <strong>Proxy:</strong> DNS queries often bypass the proxy entirely, exposing your
-    browsing habits.
+    Proxies usually let DNS happen normally. So someone watching sees you looked up mybank.com at 2pm then jobsearch.com
+    at 2:15pm. Revealing pattern there.
   </p>
 
-  <h2 id="speed-comparison">Speed Comparison</h2>
+  <h2 id="speed-comparison">Speed Reality</h2>
 
   <p>
-    Proxies generally have a speed advantage because they don't encrypt traffic. However,
-    the difference is smaller than you might expect.
+    Proxy wins on pure speed. No encryption processing needed.
   </p>
 
-  <h3>VPN Speed Impact</h3>
+  <p>
+    VPN adds overhead. Encryption costs CPU cycles. Data routes through extra servers. Maybe ten to twenty percent
+    slower with decent providers. WireGuard protocol improved things a lot compared to old OpenVPN.
+  </p>
+
+  <p>
+    Real world? Barely noticeable. Email works the same. Video calls work fine. Files sync at basically the same speed.
+    For work tasks, not an issue.
+  </p>
+
+  <h2 id="use-cases">Use Cases</h2>
+
+  <h3>VPN Is Right For</h3>
   <ul>
-    <li>Expect 10-30% speed reduction with a quality VPN</li>
-    <li>Modern protocols like WireGuard minimize slowdown</li>
-    <li>Connecting to nearby servers reduces latency</li>
-    <li>Premium VPNs maintain fast speeds for video calls and large file transfers</li>
+    <li>Work outside home or office. So basically all remote work.</li>
+    <li>Accessing company systems. Many employers require it.</li>
+    <li>Public networks full of strangers. Cafes, airports, hotels, coworking spaces.</li>
+    <li>Traveling to countries that block work tools.</li>
+    <li>Handling anything with client data or sensitive info.</li>
+    <li>Meetings you don't want intercepted.</li>
   </ul>
 
-  <h3>Proxy Speed Impact</h3>
+  <h3>Proxy Is Right For</h3>
   <ul>
-    <li>Minimal speed reduction since there's no encryption overhead</li>
-    <li>Free proxies may actually be slower due to overloaded servers</li>
-    <li>Quality varies wildly depending on the provider</li>
+    <li>Streaming geo-blocked shows from home wifi when security genuinely doesn't matter.</li>
+    <li>Web scraping with rotating IPs.</li>
+    <li>Checking how sites display in other countries.</li>
+    <li>Getting past simple blocks with nothing sensitive involved.</li>
   </ul>
+
+  <h2 id="when-proxy-okay">When Proxy Is Acceptable</h2>
 
   <p>
-    For remote work, the security benefits of VPNs far outweigh the small speed difference.
-    Most remote workers won't notice the VPN slowdown during normal work activities.
-  </p>
-
-  <h2 id="use-cases">Use Cases for Each</h2>
-
-  <h3>When to Use a VPN</h3>
-  <ul>
-    <li><strong>Remote work</strong> — Always, especially on public WiFi</li>
-    <li><strong>Accessing company resources</strong> — Secure connection to internal systems</li>
-    <li><strong>Working from coffee shops or hotels</strong> — Protection on untrusted networks</li>
-    <li><strong>International travel</strong> — Access region-restricted work tools</li>
-    <li><strong>Handling sensitive data</strong> — Client information, financial data, etc.</li>
-    <li><strong>Video conferences</strong> — Prevent eavesdropping on calls</li>
-  </ul>
-
-  <h3>When to Use a Proxy</h3>
-  <ul>
-    <li><strong>Quick geo-unblocking</strong> — Accessing region-locked content on trusted networks</li>
-    <li><strong>Web scraping</strong> — Rotating IPs for data collection</li>
-    <li><strong>Testing geo-targeted content</strong> — Checking how websites appear in different regions</li>
-    <li><strong>Bypassing basic restrictions</strong> — When security isn't a concern</li>
-  </ul>
-
-  <h2 id="when-proxy-okay">When a Proxy Might Be Okay</h2>
-
-  <p>
-    Proxies aren't inherently bad—they're just not designed for security. In some
-    situations, they're a reasonable choice:
+    Some scenarios where the security hole really doesn't matter:
   </p>
 
   <ul>
-    <li><strong>You're on a trusted network</strong> — Your home network with no security concerns</li>
-    <li><strong>You only need to change your apparent location</strong> — No sensitive data involved</li>
-    <li><strong>It's for non-work activity</strong> — Streaming geo-blocked entertainment</li>
-    <li><strong>Speed is critical and security isn't</strong> — Rare for remote work</li>
+    <li>Your home network where nobody's trying to spy on you.</li>
+    <li>Entertainment only. No work data touching that connection.</li>
+    <li>Games or streaming. Nothing sensitive happening.</li>
   </ul>
 
   <p>
-    Even in these cases, a VPN is usually the better choice. The cost difference is minimal,
-    and you get much better protection.
+    But like... VPN costs four bucks monthly. Just use that.
   </p>
 
-  <h2 id="why-vpn-for-remote-work">Why Remote Workers Need VPN</h2>
+  <h2 id="why-vpn-for-remote-work">Remote Work Specifically</h2>
 
   <p>
-    Remote work creates unique security challenges that VPNs are designed to address:
+    This situation has particular challenges VPNs handle well.
   </p>
 
-  <h3>Public WiFi Risks</h3>
+  <h3>Public Networks Constantly</h3>
   <p>
-    Working from coffee shops, airports, or hotels means using networks you don't control.
-    Without a VPN, attackers on the same network can potentially intercept your traffic,
-    capture passwords, or inject malware into unencrypted connections.
+    Week before last. Hotel wifi in Barcelona. Coffee shop in Madrid. Airport lounge in Amsterdam. Three networks
+    controlled by strangers, verified by nobody, shared with whoever wandered in. Without VPN? Three chances for someone
+    to intercept my stuff.
   </p>
 
-  <h3>Company Data Protection</h3>
+  <h3>You Own Data Security Now</h3>
   <p>
-    You're responsible for protecting company data outside the office. A VPN ensures that
-    sensitive information—client data, internal communications, financial records—stays
-    encrypted in transit.
+    Outside the office, keeping company data safe falls on you. Client information, internal chats, financial documents.
+    Your responsibility now. VPN handles the transit security.
   </p>
 
-  <h3>Compliance Requirements</h3>
+  <h3>Compliance Situations</h3>
   <p>
-    Many industries (healthcare, finance, legal) have data protection regulations. Using
-    a VPN helps demonstrate due diligence in protecting sensitive information, which may
-    be required for compliance.
+    Healthcare, finance, legal fields have data protection requirements. VPN demonstrates reasonable precautions. Some
+    regulations specifically require encrypted connections.
   </p>
 
-  <h3>Access to Company Resources</h3>
+  <h3>Getting Into Company Systems</h3>
   <p>
-    Many companies require VPN connections to access internal resources like intranets,
-    file servers, or development environments. Your company may provide a corporate VPN
-    for this purpose.
+    Intranet sites, dev environments, file storage. Often require VPN to access. Your company might issue one
+    specifically for this.
   </p>
 
-  <h3>Privacy from ISPs</h3>
+  <h3>ISP Curiosity</h3>
   <p>
-    Without a VPN, your internet provider can see every website you visit. In some
-    countries, ISPs sell this data or are required to log it. A VPN keeps your
-    browsing private.
+    No VPN means ISP sees every site visit. Some sell browsing data. Some jurisdictions require them to log everything.
+    VPN keeps browsing private from them.
   </p>
 
-  <h2 id="faq">Frequently Asked Questions</h2>
+  <h2 id="faq">Common Questions</h2>
 
   <FAQSection faqs={faqData}/>
 
-  <h2>The Bottom Line</h2>
+  <h2>Final Thought</h2>
 
   <p>
-    For remote work, the choice between VPN and proxy isn't really a choice at all. VPNs
-    provide the encryption, privacy, and comprehensive protection that remote workers need.
-    Proxies are useful tools for specific purposes, but they leave your work data exposed.
+    For remote work, not really a decision point. VPN provides encryption, privacy, actual protection. Proxy exposes
+    your data.
   </p>
 
   <p>
-    Invest in a reputable VPN service—the cost is typically $3-12 per month, a small price
-    for protecting your work, your company's data, and your professional reputation. When
-    you're handling sensitive information outside a secured office, encryption isn't
-    optional—it's essential.
+    Three to twelve bucks per month for reliable VPN. One fancy coffee equivalent. Protecting work data, company info,
+    professional reputation seems worth that.
+  </p>
+
+  <p>
+    Working remotely without encryption? Feels like leaving your phone on the table while you visit the restroom.
+    Probably fine. Why chance it though?
   </p>
 
   <RelatedArticles articles={relatedArticles}/>

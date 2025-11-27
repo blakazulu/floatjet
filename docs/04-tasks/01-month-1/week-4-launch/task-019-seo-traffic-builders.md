@@ -2,7 +2,7 @@
 task_id: "FJ-019"
 title: "SEO Traffic Builders: 5 Short Articles"
 category: "Content"
-priority: "P2"
+priority: "P1"
 status: "not-started"
 created_date: "2024-11-23"
 due_date: "2024-12-16"
@@ -39,6 +39,9 @@ search traffic and funnel readers to money pages. Quick to produce, high SEO val
 
 - FJ-004: Article template (completed)
 - Money pages (for internal linking)
+- FJ-022: Image lazy loading (images must use optimized component)
+- FJ-026: FAQ schema markup (articles need schema implementation)
+- FJ-027: Image format optimization (WebP conversion)
 
 **Blocks:**
 
@@ -47,6 +50,9 @@ search traffic and funnel readers to money pages. Quick to produce, high SEO val
 **Related:**
 
 - FJ-018: Supporting content (similar purpose)
+- FJ-022: Image lazy loading implementation
+- FJ-026: FAQ schema for rich snippets
+- FJ-027: Image format optimization
 
 ## Subtasks
 
@@ -102,14 +108,41 @@ search traffic and funnel readers to money pages. Quick to produce, high SEO val
 
 ### Phase 3: Implementation (1 hour)
 
-- [ ] 3.1 Create Astro pages
+- [ ] 3.1 Create Astro pages in appropriate directory (/src/pages/guides/ or /src/pages/tools/)
+
 - [ ] 3.2 Optimize for featured snippets
-    - Clear H2 with question
-    - Direct answer in first paragraph
+    - H2 heading = exact search query (question format)
+    - Direct answer in first 40-60 words
+    - Clear, definitive language ("Yes, you can..." not "It depends...")
     - Structured lists/tables
-- [ ] 3.3 Add FAQ schema where applicable
-- [ ] 3.4 Internal links to money pages
-- [ ] 3.5 Quick SEO review
+    - Short paragraphs (2-3 sentences max)
+
+- [ ] 3.3 Add FAQ schema markup (per FJ-026)
+    - Include 2-3 related questions
+    - Implement Schema.org FAQPage JSON-LD
+    - Validate with Google Rich Results Test
+
+- [ ] 3.4 Add images with optimization (per FJ-022, FJ-027)
+    - 1 hero image (use Astro Image component with lazy loading)
+    - 1-2 supporting images if helpful
+    - WebP format with fallbacks
+    - Proper alt text for accessibility
+
+- [ ] 3.5 Internal links to money pages
+    - 1 primary CTA (prominent button/link to money page)
+    - 2-3 contextual links within content
+    - Clear anchor text (not "click here")
+
+- [ ] 3.6 Run full SEO checklist
+    - Reference: `/docs/02-content/content-guidelines.md` (40+ item checklist)
+    - Meta description (150-160 characters)
+    - Proper heading hierarchy (H1 → H2 → H3)
+    - Mobile-friendly formatting
+
+- [ ] 3.7 Content quality check
+    - Run `/humanize` command (see `.claude/commands/humanize.md`)
+    - Verify natural, helpful tone (trust-first philosophy)
+    - Check for authentic voice (not AI-sounding)
 
 ## Resources
 
@@ -122,12 +155,35 @@ search traffic and funnel readers to money pages. Quick to produce, high SEO val
 Before marking this task complete:
 
 - [ ] All 5 articles published
-- [ ] Featured snippet optimization done
+- [ ] Featured snippet optimization verified
+    - [ ] H2 = exact question format
+    - [ ] Direct answer in first 40-60 words
+    - [ ] Structured data (lists/tables/steps)
+- [ ] FAQ schema added (per FJ-026)
+    - [ ] 2-3 questions per article
+    - [ ] Validated with Google Rich Results Test
+- [ ] Images optimized (per FJ-022, FJ-027)
+    - [ ] Astro Image component with lazy loading
+    - [ ] WebP format with fallbacks
+    - [ ] Proper alt text
 - [ ] Internal links working
-- [ ] Basic SEO checklist passed
-- [ ] Mobile friendly
+    - [ ] 1 primary CTA to money page
+    - [ ] 2-3 contextual links
+- [ ] Full SEO checklist completed (40+ items)
+- [ ] Content humanized (`.claude/commands/humanize.md`)
+- [ ] Mobile friendly (tested on 375px viewport)
+- [ ] Trust-first philosophy maintained (no dark patterns)
 
 ## Progress Log
+
+### 2025-11-28 - 0 hours
+
+- ✨ Task updated with P0 optimization integrations
+- 📈 Priority upgraded: P2 → P1 (pre-launch SEO critical)
+- 🔗 Added dependencies: FJ-022, FJ-026, FJ-027
+- 📋 Enhanced implementation checklist with featured snippet requirements
+- 🎨 Added humanize command reminder for content quality
+- ✅ Updated acceptance criteria with comprehensive checks
 
 ### 2024-11-23 - 0 hours
 
@@ -136,11 +192,41 @@ Before marking this task complete:
 
 ## Notes
 
+**Strategy:**
 - These are "quick win" articles - don't over-engineer
 - Focus on directly answering the search query
 - Featured snippets can drive significant traffic
 - Good for building topical authority quickly
 - Can be expanded later if they perform well
+
+**Featured Snippet Optimization:**
+
+- Google favors concise, direct answers (40-60 words)
+- Use question format in H2 (matches search query exactly)
+- Structure content with lists, tables, or steps
+- Avoid wishy-washy language - be definitive
+- Example: "Yes, you can use a personal laptop..." not "Well, it depends..."
+
+**Content Quality:**
+
+- **IMPORTANT:** Run `/humanize` command before publishing
+    - Reference: `.claude/commands/humanize.md`
+    - Ensures natural, trustworthy tone
+    - Removes AI-sounding patterns
+    - Maintains FloatJet's helpful, honest voice
+
+**P0 Optimizations Required:**
+
+- FJ-022: All images must use Astro Image component with lazy loading
+- FJ-026: FAQ schema must be implemented for rich snippets
+- FJ-027: Images must be in WebP format with fallbacks
+
+**Trust-First Philosophy:**
+
+- Provide genuine, helpful answers (no clickbait)
+- Be transparent about limitations
+- Don't oversell products in CTA
+- Focus on reader value, not just conversions
 
 ## Blockers
 

@@ -81,7 +81,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 069 | Portugal Digital Nomad Visa Guide 2025: Requirements & Application         | Travel        | Guides   | /guides/digital-nomad-visa-portugal              | 1813       | true              |
 | 070 | Best Expense Tracking Apps for Digital Nomads in 2025                      | Finance       | Tools    | /tools/best-expense-tracking-apps                | 1775       | true              |
 | 071 | Wise vs PayPal vs Payoneer: Which Is Best for Remote Workers? (2025)       | Finance       | Tools    | /tools/wise-vs-paypal-vs-payoneer                | 850        | true              |
-| 072 | How to Accept International Payments as a Freelancer (2025 Guide)          | Finance       | Tools    | /tools/accept-international-payments-freelancer  | 1872       | false             |
+| 072 | How to Accept International Payments (Without Losing 5% to Fees)           | Finance       | Tools    | /tools/accept-international-payments-freelancer  | 939        | true              |
 | 073 | Best Accounting Software for Freelancers in 2025: Complete Guide           | Finance       | Tools    | /tools/best-accounting-software-freelancers      | 2327       | false             |
 | 074 | Best Invoicing Tools for Remote Professionals in 2025                      | Finance       | Tools    | /tools/best-invoicing-tools                      | 1936       | false             |
 | 075 | Best Web Hosting for Remote Businesses (2025)                              | Hosting       | Tools    | /tools/best-web-hosting-remote-business          | 4102       | false             |
@@ -116,7 +116,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | Gear      | 23       | 38,861      |
 | Guides    | 30       | 59,908      |
 | Tools     | 28       | 73,703      |
-| **Total** | **97**   | **187,248** |
+| **Total** | **97**   | **186,315** |
 
 **Average words per article:** ~1,937
 
@@ -128,7 +128,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | Gear      | 0        | 0          |
 | Guides    | 13       | 28,155     |
 | Tools     | 20       | 63,135     |
-| **Total** | **33**   | **91,290** |
+| **Total** | **32**   | **89,418** |
 
 **Average words per article:** ~2,728
 

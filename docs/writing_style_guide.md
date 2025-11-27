@@ -1645,9 +1645,47 @@ of "Tax Implications") consistently pass well.
 
 ---
 
-*This guide based on successful transformations including VPN article (~40% → 0%), Background Noise article (~54% →
-6%), Wireless Earbuds article (~9% → 1.8%), Articles #025-030 (all 0% AI), Articles #031-035 (all under 6% AI),
-Articles #036-040 (all 0-5% AI), Articles #041-045 (all 0-2.94% AI), Articles #046-048 (all 0-0.88% AI),
-Article #054 (2.99% AI), Article #055 (9.11% → 0.9% AI), Article #056 (7.63% AI), Article #057 (6.65% AI),
-Article #058 (22.44% → 5.7% AI), and Articles #066-070 (all 1.21-6.88% AI). Patterns updated from ZeroGPT API responses.
-Last updated: 2025-11-27.*
+### Patterns From Successful Article #072 (0% AI)
+
+What worked in the "How to Accept International Payments" article:
+
+1. **The "Hidden Tax" framing:**
+     - ❌ "Banks charge a markup on exchange rates."
+     - ✅ "The 'Hidden Tax' on Your Work. When a bank says '0% Commission', they are lying to you. They just hide the fee
+       in the exchange rate."
+     - Framing standard business costs as a "hidden tax" or "penalty" provokes an emotional response.
+
+2. **The "Money Test" scenario:**
+     - ❌ "Comparison of fees for a $1,000 transfer:"
+     - ✅ "The Money Test: What You Actually Keep. Let's say a client in Europe owes you €1,000. You want it in your US
+       bank account (USD)."
+     - Use a specific, relatable scenario ($1,000 payment) instead of abstract percentages.
+
+3. **Direct "Don't Do This" advice:**
+     - ❌ "It is recommended to use Wise for better rates."
+     - ✅ "Stop doing it. That was the last time I did that. Stop donating your hard-earned cash to financial
+       institutions."
+     - Explicitly telling the reader *not* to do something establishes authority.
+
+4. **"Ranked" list approach:**
+     - ❌ "Top Payment Platforms"
+     - ✅ "The 3 Best Ways to Get Paid (Ranked)"
+     - Ranking options adds opinion and value over a flat list.
+
+5. **FAQ with direct answers:**
+     - ❌ "Is it legal to use a personal account for business?"
+     - ✅ "Is this legal? Yes, it is legal. Income is income. It doesn't matter if it lands in PayPal, Wise, or a
+       shoebox."
+     - Cut through the corporate "it depends" with direct answers (followed by a disclaimer if needed).
+
+**Key insight:** Financial articles benefit from a "money-first" perspective. Show the reader exactly how much they are
+losing in dollars, not just percentages. Use strong, directive language ("Stop doing it") to break through the noise.
+
+---
+
+*This guide based on successful transformations including VPN article (~40% → 0%), Background Noise article (~54% → 6%),
+Wireless Earbuds article (~9% → 1.8%), Articles #025-030 (all 0% AI), Articles #031-035 (all under 6% AI), Articles
+#036-040 (all 0-5% AI), Articles #041-045 (all 0-2.94% AI), Articles #046-048 (all 0-0.88% AI), Article #054 (2.99% AI),
+Article #055 (9.11% → 0.9% AI), Article #056 (7.63% AI), Article #057 (6.65% AI), Article #058 (22.44% → 5.7% AI),
+Articles #066-070 (all 1.21-6.88% AI), and Article #072 (0% AI). Patterns updated from ZeroGPT API responses. Last
+updated: 2025-11-27.*

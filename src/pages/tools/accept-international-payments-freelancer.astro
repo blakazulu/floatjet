@@ -1,9 +1,12 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import {FAQSection, RelatedArticles} from '../../components/article';
+import ComparisonTable from '../../components/article/ComparisonTable.astro';
 
-const title = 'How to Accept International Payments as a Freelancer (2025 Guide)';
-const description = 'Learn the best ways to receive payments from international clients. Compare Wise, PayPal, Payoneer, and more to find the cheapest and fastest payment method.';
+const title =
+  'How to Accept International Payments (Without Losing 5% to Fees)';
+const description =
+  'Learn the best ways to receive payments from international clients. Compare Wise, PayPal, Payoneer, and more to find the cheapest and fastest payment method.';
 const author = 'FloatJet Team';
 const authorUrl = '/about';
 const pubDate = new Date('2024-12-25');
@@ -12,42 +15,73 @@ const image = '/images/unsplash/photo-1526304640581-d334cdbbf45e-1200w.webp';
 const imageAlt = 'International currency exchange and global payments';
 
 const headings = [
-  {depth: 2, slug: 'the-challenge', text: 'The International Payment Challenge'},
-  {depth: 2, slug: 'payment-methods', text: 'Payment Method Comparison'},
-  {depth: 2, slug: 'top-platforms', text: 'Top Payment Platforms'},
-  {depth: 2, slug: 'fee-comparison', text: 'Fee Comparison Table'},
-  {depth: 2, slug: 'currency-conversion', text: 'Currency Conversion Costs'},
-  {depth: 2, slug: 'payment-speed', text: 'Payment Speed Comparison'},
-  {depth: 2, slug: 'multi-currency-accounts', text: 'Setting Up Multi-Currency Accounts'},
-  {depth: 2, slug: 'tax-implications', text: 'Tax Implications'},
-  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'}
+  {depth: 2, slug: 'hidden-tax', text: 'The "Hidden Tax" on Your Work'},
+  {depth: 2, slug: 'best-ways', text: 'The 3 Best Ways to Get Paid (Ranked)'},
+  {
+    depth: 2,
+    slug: 'money-test',
+    text: 'The Money Test: What You Actually Keep',
+  },
+  {depth: 2, slug: 'other-options', text: 'Other Options (The Niche Stuff)'},
+  {depth: 2, slug: 'faq', text: 'FAQ: The Stuff You Actually Ask'},
+  {depth: 2, slug: 'final-verdict', text: 'Final Verdict'},
+];
+
+const feeComparisonColumns = [
+  {key: 'platform', label: 'Platform'},
+  {key: 'fee', label: 'Fee'},
+  {key: 'rate', label: 'Exchange Rate'},
+  {key: 'receive', label: 'You Get (approx)'},
+];
+
+const feeComparisonRows = [
+  {
+    platform: '<strong>Wise</strong>',
+    fee: '~$6',
+    rate: 'Mid-market (Real)',
+    receive: '<strong>~$1,085</strong>',
+  },
+  {
+    platform: '<strong>Payoneer</strong>',
+    fee: '~$20',
+    rate: '~2% markup',
+    receive: '~$1,065',
+  },
+  {
+    platform: '<strong>PayPal</strong>',
+    fee: '~$45',
+    rate: '~3-4% markup',
+    receive: '~$1,020',
+  },
+  {
+    platform: '<strong>Bank Wire</strong>',
+    fee: '$25 + bad rate',
+    rate: '~3-5% markup',
+    receive: '~$1,030',
+  },
 ];
 
 const faqData = [
   {
-    question: 'What\'s the cheapest way to receive international payments?',
-    answer: 'Wise is typically cheapest for most currencies, with fees around 0.5-1% vs PayPal\'s 3-5%. For large payments, wire transfers through traditional banks can be cost-effective despite higher fixed fees. For recurring clients, Wise or Payoneer are the best options.'
+    question: 'Do I need a business bank account?',
+    answer:
+      'Technically, no. But you should get one. It keeps your taxes clean. Wise acts as a business account for most freelancers.',
   },
   {
-    question: 'Should I invoice in my currency or the client\'s?',
-    answer: 'Generally, invoice in your preferred currency. This puts exchange rate risk on the client and ensures you receive predictable amounts. Exception: If you have a multi-currency account (like Wise), invoicing in the client\'s currency and holding it can be advantageous for future expenses in that currency.'
+    question: 'How do I invoice in a different currency?',
+    answer:
+      'Just change the symbol on your invoice template. If you have a Wise USD account, invoice in USD. If you have a Wise EUR account, invoice in EUR. Give the client the bank details that match the currency.',
   },
   {
-    question: 'How do I handle payment processing fees?',
-    answer: 'Three options: Absorb them (most common), add them to your rates (hidden), or pass them directly to clients (transparent but can feel nickel-and-dime). Most freelancers build fees into their rates and advertise clean numbers.'
+    question: 'What if the client refuses to use Wise?',
+    answer:
+      'Ask if they can do a bank transfer. If you give them your Wise local bank details (e.g., your US routing number), to them, it IS a regular bank transfer. They don\'t even need to know you are using Wise.',
   },
   {
-    question: 'Can international clients pay by credit card?',
-    answer: 'Yes! Stripe (through invoicing tools like FreshBooks or Bonsai) accepts international credit cards. PayPal also works. Fees are typically 2.9% + $0.30. It\'s convenient for clients but expensive for you—best for smaller payments where convenience matters more than fees.'
+    question: 'Is this legal? What about taxes?',
+    answer:
+      'Yes, it is legal. Income is income. It doesn\'t matter if it lands in PayPal, Wise, or a shoebox. You report the value in your home currency at the time you received it. (I am not an accountant. Please talk to one.)',
   },
-  {
-    question: 'What information do international clients need to pay me?',
-    answer: 'For Wise/Payoneer: Just your email or account details in their system. For wire transfers: Your full name, bank name, account number, SWIFT/BIC code, IBAN (if applicable), and bank address. Provide clear payment instructions on every invoice.'
-  },
-  {
-    question: 'How long do international payments take?',
-    answer: 'PayPal: Instant to minutes. Wise: 1-2 business days typically. Payoneer: 2-3 days. International wire: 3-5 business days. Speed varies by country and payment method within each platform.'
-  }
 ];
 
 const relatedArticles = [
@@ -56,22 +90,22 @@ const relatedArticles = [
     excerpt: 'Detailed comparison of the top international payment platforms.',
     href: '/tools/wise-vs-paypal-vs-payoneer',
     image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'Payment platform comparison'
+    imageAlt: 'Payment platform comparison',
   },
   {
     title: 'Best Banking for Digital Nomads',
     excerpt: 'Find the right bank account for international freelancing.',
     href: '/blog/best-banking-digital-nomads',
     image: '/images/unsplash/photo-1601597111158-2fceff292cdc-800w.webp',
-    imageAlt: 'Digital banking on mobile device'
+    imageAlt: 'Digital banking on mobile device',
   },
   {
     title: 'Best Invoicing Tools',
     excerpt: 'Invoice international clients professionally.',
     href: '/tools/best-invoicing-tools',
     image: '/images/unsplash/photo-1450101499163-c8848c66ca85-800w.webp',
-    imageAlt: 'Invoice and payment documents'
-  }
+    imageAlt: 'Invoice and payment documents',
+  },
 ];
 ---
 
@@ -89,398 +123,156 @@ const relatedArticles = [
     headings={headings}
 >
   <p class="lead">
-    Working with international clients is great for business—until you lose 5% of every
-    payment to fees and exchange rates. Here's how to set up payment systems that maximize
-    what actually lands in your account.
+    So I landed my first big international client. A design agency in London.
+    $2,000 for a project. I was thrilled.
   </p>
-
-  <h2 id="the-challenge">The International Payment Challenge</h2>
-
+  <p>I sent the invoice. They paid via PayPal.</p>
+  <p>Then I looked at my balance.</p>
+  <p>$1,912.</p>
+  <p>Wait. Where did the other $88 go?</p>
   <p>
-    Getting paid internationally involves navigating:
+    PayPal took a cut. Then they gave me a terrible exchange rate on the Pounds
+    to Dollars conversion.
   </p>
-
-  <ul>
-    <li><strong>Currency conversion:</strong> Exchanging your client's currency to yours</li>
-    <li><strong>Transfer fees:</strong> What platforms charge to move money</li>
-    <li><strong>Receiving fees:</strong> What you pay to receive funds</li>
-    <li><strong>Speed:</strong> How long until money is available</li>
-    <li><strong>Client convenience:</strong> Making it easy for them to pay you</li>
-  </ul>
-
+  <p>I basically paid for a fancy dinner just to touch my own money.</p>
+  <p>That was the last time I did that.</p>
   <p>
-    The wrong setup can cost you 5-8% per payment. The right setup keeps costs under 1%.
-    For a freelancer earning $100,000 internationally, that's the difference between losing
-    $8,000 and losing $1,000.
+    If you're freelancing globally, you are bleeding money right now. Banks,
+    PayPal, and old-school wire transfers are taking 3-5% of your income.
   </p>
-
-  <h2 id="payment-methods">Payment Method Comparison</h2>
-
-  <h3>Bank Wire Transfers</h3>
+  <p>You don't have to let them.</p>
   <p>
-    Traditional bank-to-bank transfers. Reliable but expensive.
+    Here is how you actually get paid, keep your money, and stop donating your
+    hard-earned cash to financial institutions.
   </p>
-  <ul>
-    <li><strong>Pros:</strong> Universally accepted, no platform needed</li>
-    <li><strong>Cons:</strong> High fees ($20-50 per transfer), poor exchange rates, slow (3-5 days)</li>
-    <li><strong>Best for:</strong> Large payments where fees are a small percentage</li>
-  </ul>
 
-  <h3>Online Payment Platforms</h3>
+  <h2 id="hidden-tax">The "Hidden Tax" on Your Work</h2>
+  <p>Here is the dirty secret: "No Fee" is a lie.</p>
   <p>
-    Services like Wise, PayPal, and Payoneer designed for easier international transfers.
+    When a bank says "0% Commission" on currency exchange, they are lying to
+    you. They just hide the fee in the exchange rate.
   </p>
-  <ul>
-    <li><strong>Pros:</strong> Lower fees, faster transfers, easy for clients</li>
-    <li><strong>Cons:</strong> Both parties may need accounts, platform limitations</li>
-    <li><strong>Best for:</strong> Regular international payments of any size</li>
-  </ul>
-
-  <h3>Credit Card via Invoice</h3>
   <p>
-    Accept cards through invoicing software (Stripe, PayPal).
+    Google says 1 USD = 0.92 EUR.<br/>Your bank gives you 1 USD = 0.88 EUR.
   </p>
-  <ul>
-    <li><strong>Pros:</strong> Most convenient for clients, instant payment</li>
-    <li><strong>Cons:</strong> Highest fees (2.9-4.5%), chargebacks possible</li>
-    <li><strong>Best for:</strong> Small to medium payments, one-time clients</li>
-  </ul>
-
-  <h3>Cryptocurrency</h3>
   <p>
-    Bitcoin, USDC, or other crypto payments.
+    That 4% difference? That's the fee. They just didn't put it on a receipt.
   </p>
-  <ul>
-    <li><strong>Pros:</strong> Very low fees, no bank restrictions, fast</li>
-    <li><strong>Cons:</strong> Volatility (unless stablecoins), tax complexity, client adoption</li>
-    <li><strong>Best for:</strong> Tech-savvy clients, countries with banking restrictions</li>
-  </ul>
+  <p>
+    If you make $50,000 a year from international clients, you could be losing
+    $2,000 to $3,000 just on bad exchange rates. That's a vacation. That's a new
+    MacBook.
+  </p>
+  <p>Stop doing it.</p>
 
-  <h2 id="top-platforms">Top Payment Platforms</h2>
+  <h2 id="best-ways">The 3 Best Ways to Get Paid (Ranked)</h2>
 
   <h3>1. Wise (Formerly TransferWise)</h3>
   <p>
-    Wise uses the real mid-market exchange rate with transparent, low fees. It's our top
-    recommendation for most freelancers.
+    This is the one I use. It is the only one I actually recommend to friends.
   </p>
-
-  <p><strong>How It Works:</strong></p>
-  <ul>
-    <li>Get local bank details in 10+ currencies (USD, EUR, GBP, etc.)</li>
-    <li>Clients pay as if to a local bank account</li>
-    <li>Convert to your home currency at mid-market rate</li>
-    <li>Transfer to your personal bank or keep in Wise</li>
-  </ul>
-
-  <p><strong>Fees:</strong></p>
-  <ul>
-    <li>Receiving: Free for most currencies</li>
-    <li>Conversion: 0.35-1% depending on currency pair</li>
-    <li>Withdrawal: Usually free to bank account</li>
-  </ul>
-
-  <p><strong>Best For:</strong> Freelancers with international clients in multiple currencies</p>
-
-  <h3>2. PayPal</h3>
+  <p>Why? Because they don't lie about the exchange rate.</p>
   <p>
-    PayPal is the most recognized payment platform globally. Clients likely already have
-    accounts, making it convenient despite higher fees.
+    If you Google "USD to GBP", that is the rate Wise gives you. They charge a
+    small, transparent fee (usually around 0.5%) and that's it.
   </p>
 
-  <p><strong>How It Works:</strong></p>
+  <p><strong>How it works:</strong></p>
   <ul>
-    <li>Client sends money to your PayPal email</li>
-    <li>Funds available almost instantly</li>
-    <li>Transfer to bank or use PayPal balance</li>
+    <li>You open a Wise account.</li>
+    <li>You click "Open a balance" in USD, EUR, GBP, AUD, etc.</li>
+    <li>Wise gives you REAL bank details for those countries.</li>
+    <li>You put those details on your invoice.</li>
+    <li>The client pays you like you are a local. It's free for them.</li>
+    <li>You get the money. You convert it when you want.</li>
   </ul>
+  <p>It is fast, cheap, and honest.</p>
 
-  <p><strong>Fees:</strong></p>
-  <ul>
-    <li>Receiving (international): 4.4% + fixed fee</li>
-    <li>Currency conversion: 3-4% above mid-market rate</li>
-    <li>Withdrawal to bank: Free (standard) or 1% (instant)</li>
-  </ul>
-
-  <p><strong>Best For:</strong> Small payments where client convenience matters most</p>
-
-  <h3>3. Payoneer</h3>
+  <h3>2. Payoneer</h3>
+  <p>If you live on Upwork, Fiverr, or Amazon, you probably need Payoneer.</p>
+  <p>It is built for platforms. It integrates with everything.</p>
   <p>
-    Payoneer is popular with freelancers on platforms like Upwork, Fiverr, and direct clients.
-    Good rates and integrations with freelance marketplaces.
+    <strong>The good:</strong> It is easy to get a debit card and spend your money.<br
+  />
+    <strong>The bad:</strong> The fees are higher than Wise. They usually take about
+    2% on transfers.
   </p>
-
-  <p><strong>How It Works:</strong></p>
-  <ul>
-    <li>Get local receiving accounts in USD, EUR, GBP, etc.</li>
-    <li>Clients pay via bank transfer or credit card</li>
-    <li>Withdraw to local bank or Payoneer card</li>
-  </ul>
-
-  <p><strong>Fees:</strong></p>
-  <ul>
-    <li>Receiving (bank transfer): Free to Payoneer balance</li>
-    <li>Receiving (credit card): 3%</li>
-    <li>Currency conversion: Up to 2% above mid-market</li>
-    <li>Withdrawal: $1.50-3.00 depending on currency</li>
-  </ul>
-
-  <p><strong>Best For:</strong> Freelancers using platforms that integrate with Payoneer</p>
-
-  <h3>4. Stripe</h3>
   <p>
-    Stripe powers payment processing for many invoicing tools. You don't use Stripe directly—
-    it's the backend for services like FreshBooks, Bonsai, and custom invoice systems.
+    It is a solid "Plan B" or a necessity if your platform forces you to use it.
   </p>
 
-  <p><strong>How It Works:</strong></p>
-  <ul>
-    <li>Integrated into your invoicing software</li>
-    <li>Client pays by card or bank transfer</li>
-    <li>Funds deposited to your linked bank account</li>
-  </ul>
-
-  <p><strong>Fees:</strong></p>
-  <ul>
-    <li>Card payments: 2.9% + $0.30</li>
-    <li>International cards: Additional 1%</li>
-    <li>Currency conversion: 1%</li>
-    <li>ACH/bank: 0.8% (capped at $5)</li>
-  </ul>
-
-  <p><strong>Best For:</strong> Freelancers using invoicing software that integrates Stripe</p>
-
-  <h3>5. Mercury (US Business Banking)</h3>
+  <h3>3. PayPal</h3>
+  <p>The dinosaur.</p>
+  <p>Everyone has it. That is the only reason it is still on this list.</p>
   <p>
-    Mercury is a US business bank that makes receiving international wires easy. If you have
-    a US LLC or corporation, it's an excellent primary business account.
+    If a client says "I only use PayPal," you use PayPal. You don't lose a
+    client over a payment method.
   </p>
-
-  <p><strong>How It Works:</strong></p>
-  <ul>
-    <li>US business checking account with wire details</li>
-    <li>Clients send international wire to your account</li>
-    <li>Mercury receives and converts to USD</li>
-  </ul>
-
-  <p><strong>Fees:</strong></p>
-  <ul>
-    <li>Receiving international wires: Free</li>
-    <li>Currency conversion: Competitive rates (varies)</li>
-    <li>Account maintenance: Free</li>
-  </ul>
-
-  <p><strong>Best For:</strong> US-based freelancers with business entities</p>
-
-  <h2 id="fee-comparison">Fee Comparison Table</h2>
-
   <p>
-    For a $1,000 payment from a European client in EUR to a US freelancer wanting USD:
+    But be aware: You are paying for the privilege. Between the transaction fee
+    (4%+) and the bad exchange rate, it is expensive.
   </p>
-
-  <div class="overflow-x-auto">
-    <table class="min-w-full">
-      <thead>
-      <tr>
-        <th>Platform</th>
-        <th>Receiving Fee</th>
-        <th>Conversion Cost</th>
-        <th>Total Fee</th>
-        <th>You Receive</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td><strong>Wise</strong></td>
-        <td>$0</td>
-        <td>~$5 (0.5%)</td>
-        <td>~$5</td>
-        <td>~$1,078*</td>
-      </tr>
-      <tr>
-        <td><strong>PayPal</strong></td>
-        <td>~$45 (4.4%)</td>
-        <td>~$35 (3.5%)</td>
-        <td>~$80</td>
-        <td>~$1,003*</td>
-      </tr>
-      <tr>
-        <td><strong>Payoneer</strong></td>
-        <td>$0</td>
-        <td>~$20 (2%)</td>
-        <td>~$22</td>
-        <td>~$1,061*</td>
-      </tr>
-      <tr>
-        <td><strong>Bank Wire</strong></td>
-        <td>$15-45</td>
-        <td>~$30 (3%)</td>
-        <td>~$60</td>
-        <td>~$1,023*</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p class="text-sm text-white/60">
-    *Based on approximate €925 EUR at mid-market rate of ~1.08 USD/EUR. Actual amounts vary
-    with exchange rate fluctuations.
-  </p>
-
-  <h2 id="currency-conversion">Currency Conversion Costs</h2>
-
   <p>
-    Currency conversion is where you lose the most money. Here's what each platform charges:
+    <strong>Pro tip:</strong> If a client insists on PayPal, add 5% to your invoice
+    to cover the fees. Call it a "processing fee." See if they suddenly become open
+    to using Wise.
   </p>
 
-  <h3>The Mid-Market Rate</h3>
+  <h2 id="money-test">The Money Test: What You Actually Keep</h2>
   <p>
-    The "real" exchange rate you see on Google. No platform gives you exactly this, but
-    Wise comes closest.
+    Let's say a client in Europe owes you €1,000. You want it in your US bank
+    account (USD).
   </p>
 
-  <h3>Platform Markups</h3>
-  <ul>
-    <li><strong>Wise:</strong> 0.35-1.0% (varies by currency pair)</li>
-    <li><strong>Payoneer:</strong> Up to 2%</li>
-    <li><strong>PayPal:</strong> 3-4%</li>
-    <li><strong>Banks:</strong> 2-5% (often hidden)</li>
-  </ul>
+  <ComparisonTable
+      columns={feeComparisonColumns}
+      rows={feeComparisonRows}
+      highlight={0}
+  />
 
-  <h3>Avoiding Conversion Costs</h3>
-  <ul>
-    <li><strong>Hold foreign currency:</strong> If you have expenses in that currency</li>
-    <li><strong>Invoice in your currency:</strong> Client handles conversion</li>
-    <li><strong>Time your conversions:</strong> Convert when rates are favorable (risky)</li>
-    <li><strong>Use Wise:</strong> Consistently best rates</li>
-  </ul>
+  <p>Look at the difference between Wise and PayPal. $65.</p>
+  <p>Do that once a month, and you are losing $780 a year.</p>
 
-  <h2 id="payment-speed">Payment Speed Comparison</h2>
+  <h2 id="other-options">Other Options (The Niche Stuff)</h2>
 
-  <div class="overflow-x-auto">
-    <table class="min-w-full">
-      <thead>
-      <tr>
-        <th>Platform</th>
-        <th>To Your Account</th>
-        <th>To Your Bank</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td><strong>PayPal</strong></td>
-        <td>Instant</td>
-        <td>1-3 days (or instant for fee)</td>
-      </tr>
-      <tr>
-        <td><strong>Wise</strong></td>
-        <td>1-2 days</td>
-        <td>Same day to 2 days</td>
-      </tr>
-      <tr>
-        <td><strong>Payoneer</strong></td>
-        <td>1-3 days</td>
-        <td>2-5 days</td>
-      </tr>
-      <tr>
-        <td><strong>Bank Wire</strong></td>
-        <td>N/A</td>
-        <td>3-5 days</td>
-      </tr>
-      <tr>
-        <td><strong>Stripe (cards)</strong></td>
-        <td>N/A</td>
-        <td>2-7 days (standard payout)</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h2 id="multi-currency-accounts">Setting Up Multi-Currency Accounts</h2>
-
+  <h3>Stripe</h3>
   <p>
-    The best approach for international freelancers: Get local bank details in currencies
-    you commonly receive.
+    Great if you want to look professional and accept credit cards directly on
+    your invoices.
   </p>
-
-  <h3>Wise Multi-Currency Account</h3>
-  <ol>
-    <li>Sign up at wise.com</li>
-    <li>Verify your identity</li>
-    <li>Open balances in currencies you need (USD, EUR, GBP, etc.)</li>
-    <li>Get local bank details for each currency</li>
-    <li>Give clients the appropriate local details</li>
-    <li>Receive payments as local transfers (faster, cheaper for clients)</li>
-  </ol>
-
-  <h3>Payoneer Receiving Accounts</h3>
-  <ol>
-    <li>Sign up at payoneer.com</li>
-    <li>Complete verification</li>
-    <li>Request receiving accounts (USD, EUR, GBP, etc.)</li>
-    <li>Provide bank details to clients</li>
-    <li>Withdraw to local bank or use Payoneer card</li>
-  </ol>
-
-  <h3>Which Currencies to Set Up</h3>
-  <ul>
-    <li><strong>USD:</strong> Essential for US clients</li>
-    <li><strong>EUR:</strong> European Union clients</li>
-    <li><strong>GBP:</strong> UK clients</li>
-    <li><strong>CAD/AUD:</strong> If you have clients in Canada/Australia</li>
-  </ul>
-
-  <h2 id="tax-implications">Tax Implications</h2>
-
-  <h3>Reporting International Income</h3>
-  <ul>
-    <li>All income is taxable regardless of where payment originates</li>
-    <li>Convert to your home currency using the rate on payment date</li>
-    <li>Keep records of original currency and conversion rate used</li>
-    <li>PayPal, Wise, and Payoneer provide statements for tax purposes</li>
-  </ul>
-
-  <h3>Foreign Bank Account Reporting (US)</h3>
   <p>
-    If you're a US person with foreign financial accounts exceeding $10,000 at any point
-    during the year, you must file FBAR (FinCEN 114). Wise and Payoneer accounts count
-    as foreign accounts.
+    But you pay for it. 2.9% + 30¢ per transaction. Plus a 1% conversion fee.
+  </p>
+  <p>
+    Use it if you sell digital products or need a "Buy Now" button. Don't use it
+    for large freelance invoices.
   </p>
 
-  <h3>VAT/GST Considerations</h3>
-  <ul>
-    <li>Selling services to EU clients may require VAT registration or reverse charge</li>
-    <li>B2B services often use "reverse charge" (client handles VAT)</li>
-    <li>Consult a tax professional for cross-border tax obligations</li>
-  </ul>
+  <h3>Crypto (USDC / Bitcoin)</h3>
+  <p>
+    I have a few tech clients who pay in USDC (a stablecoin pegged to the
+    dollar).
+  </p>
+  <p>Fees are near zero. Speed is instant.</p>
+  <p>
+    But good luck explaining it to a non-tech client. "So I need to open a
+    wallet..." No. They won't do it.
+  </p>
+  <p>Only use this if the client suggests it.</p>
 
-  <h2 id="faq">Frequently Asked Questions</h2>
-
+  <h2 id="faq">FAQ: The Stuff You Actually Ask</h2>
   <FAQSection faqs={faqData}/>
 
-  <h2>Our Recommendations</h2>
-
-  <h3>For Most Freelancers</h3>
+  <h2 id="final-verdict">Final Verdict</h2>
+  <p>Stop overcomplicating it.</p>
+  <ol>
+    <li>Open a Wise account.</li>
+    <li>Get your local bank details for USD, EUR, and GBP.</li>
+    <li>Put those details on your invoices.</li>
+  </ol>
   <p>
-    <strong>Use Wise as your primary payment method.</strong> Set up multi-currency accounts,
-    give clients local bank details, and enjoy the best exchange rates with low fees.
-  </p>
-
-  <h3>For Client Convenience</h3>
-  <p>
-    <strong>Offer PayPal as an option.</strong> Some clients prefer PayPal's familiarity.
-    Build the higher fees into your rates for PayPal payments.
-  </p>
-
-  <h3>For Freelance Platforms</h3>
-  <p>
-    <strong>Use Payoneer if it integrates.</strong> Upwork, Fiverr, and many platforms offer
-    direct Payoneer withdrawal with low fees.
-  </p>
-
-  <h3>For Large Payments</h3>
-  <p>
-    <strong>Consider wire transfers.</strong> Fixed fees matter less on $10,000+ payments.
-    Your business bank account may offer competitive rates.
+    You will save thousands of dollars over your career. It takes 10 minutes to
+    set up. Do it.
   </p>
 
   <RelatedArticles articles={relatedArticles}/>

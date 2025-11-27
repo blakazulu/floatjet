@@ -91,7 +91,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 079 | Shared vs VPS vs Dedicated Hosting: Which Do You Need? (2025)              | Hosting       | Tools    | /tools/shared-vs-vps-vs-dedicated-hosting        | 1510       | true              |
 | 080 | Best E-commerce Hosting for Remote Entrepreneurs (2025)                    | Hosting       | Tools    | /tools/best-ecommerce-hosting                    | 3096       | true              |
 | 081 | Best Cloud Storage for Remote Work (2025)                                  | SaaS          | Tools    | /tools/best-cloud-storage-remote-work            | 2138       | true              |
-| 082 | Best Email Marketing Tools for Creators & Small Business (2025)            | SaaS          | Tools    | /tools/best-email-marketing-tools                | 4570       | false             |
+| 082 | Best Email Marketing Tools for Creators & Small Business (2025)            | SaaS          | Tools    | /tools/best-email-marketing-tools                | 3121       | true              |
 | 083 | Best Note-Taking Apps for Remote Professionals (2025)                      | SaaS          | Tools    | /tools/best-note-taking-apps                     | 3482       | false             |
 | 084 | Best Online Course Platforms for Creators (2025)                           | SaaS          | Tools    | /tools/best-online-course-platforms              | 4344       | false             |
 | 085 | Best Password Managers for Remote Workers (2025)                           | SaaS          | Tools    | /tools/best-password-manager-remote-work         | 3982       | false             |

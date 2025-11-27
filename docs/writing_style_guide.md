@@ -1741,10 +1741,74 @@ Question-based "Who should use what" sections pass much better than label-based 
 
 ---
 
+### Article #082 Learnings: Email Marketing Tools (72.4% → 4.03% AI)
+
+**Major patterns that consistently flagged (avoid these):**
+
+1. **Repeated "Works for:" / "Best for:" labels:**
+     - ❌ "Works for: Newsletter creators focused on growth and monetization. Writers, journalists, and content
+       creators..."
+     - ✅ "Makes sense for: Newsletter creators focused on growth and monetization. Writers, journalists, content
+       creators..."
+     - ✅ "Good fit for:", "Right for:", "Ideal for:", "Fits:" - vary the labels
+     - Better: Mix it up throughout the article, don't use the same label repeatedly
+
+2. **Clean parallel structure in feature lists:**
+     - ❌ Using same colon format repeatedly: "Feature name: Description of feature"
+     - ✅ Break up with line breaks: Use `<br/>` tags between features
+     - ✅ Vary sentence structure within lists
+     - Lists themselves are fine, but identical formatting triggers detection
+
+3. **Formulaic section headers like "What makes X stand out:":**
+     - ❌ Repeating "What makes [Product] stand out:" for every product
+     - ✅ Vary it: "What's in there:", "You get:", "In the package:", "What's included:"
+     - Same with downsides: "What's not great:", "The tradeoffs:", "What bugs me:", "What's annoying:"
+
+4. **Too-clean FAQ question format:**
+     - ❌ "What is the best free email marketing tool?"
+     - ✅ "Best free email marketing tool?"
+     - ❌ "How much does email marketing cost?"
+     - ✅ "Cost question?" or "How much does email marketing cost?" (this one is borderline)
+     - Drop unnecessary words, make it more conversational
+
+5. **Instructional steps too formal:**
+     - ❌ "Set up an opt-in form to start collecting subscribers. Place it on your website, share it on social media, or
+       create a standalone landing page."
+     - ✅ "Set up an opt-in form. Start collecting subscribers. Put it on your website. Share it on social. Create a
+       standalone landing page."
+     - Break compound sentences into fragments
+     - Shorter, punchier sentences pass better in instructional content
+
+6. **Corporate "We" language (still critical to avoid):**
+     - ❌ "We tested", "Our experience", "We recommend"
+     - ✅ "I tested", "My experience", "I'd recommend"
+     - Even in SaaS review articles, maintain first-person singular voice
+
+7. **Too many clean numbered lists:**
+     - ❌ Long feature lists with identical structure
+     - ✅ Use line breaks `<br/>` between items instead of bullet format
+     - ✅ Write features as flowing sentences when possible
+
+**What worked well (resulted in 4.03% pass):**
+
+- Questions embedded in statements: "Want to write newsletters? Buttondown works."
+- Fragment sentences: "The power tool." "Does one thing well."
+- Broken-up list items with line breaks instead of bullets
+- Varied section labels throughout (not repeating "Works for:" eight times)
+- Conversational pricing: "thirty-nine monthly" instead of "$39/month"
+- Mixed sentence lengths - some long, some fragments
+- Personal voice: "Using it myself:", "What bugs me:", "Makes sense for:"
+
+**Key insight for SaaS/Tool roundup articles:** These naturally want to follow a template structure (Features →
+Pricing → Experience → Best For → Drawbacks). The template itself isn't the problem—it's using IDENTICAL labels and
+structure for each product that triggers detection. Vary every section label. Break up parallel structures. Mix long and
+short sentences. The content can follow a pattern, but the *language* can't be formulaic.
+
 *This guide based on successful transformations including VPN article (~40% → 0%), Background Noise article (~54% → 6%),
 Wireless Earbuds article (~9% → 1.8%), Articles #025-030 (all 0% AI), Articles #031-035 (all under 6% AI), Articles
 #036-040 (all 0-5% AI), Articles #041-045 (all 0-2.94% AI), Articles #046-048 (all 0-0.88% AI), Article #054 (2.99% AI),
 Article #055 (9.11% → 0.9% AI), Article #056 (7.63% AI), Article #057 (6.65% AI), Article #058 (22.44% → 5.7% AI),
-Articles #066-070 (all 1.21-6.88% AI), Article #072 (0% AI), and Article #073 (3.11% AI). Patterns updated from ZeroGPT
-API responses. Last
+Articles #066-070 (all 1.21-6.88% AI), Article #072 (0% AI), Article #073 (3.11% AI), and Article #082 (72.4% → 4.03%
+AI).
+Patterns updated from ZeroGPT API responses. Last
 updated: 2025-11-27.*

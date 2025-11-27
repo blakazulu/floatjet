@@ -100,7 +100,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 088 | Best Time Tracking Software for Freelancers (2025)                         | SaaS          | Tools    | /tools/best-time-tracking-software               | 2032       | true              |
 | 089 | Best Video Conferencing Tools for Remote Teams (2025)                      | SaaS          | Tools    | /tools/best-video-conferencing-tools             | 3026       | true              |
 | 090 | Is Notion Worth It? Honest Review for Remote Workers (2025)                | SaaS          | Tools    | /tools/is-notion-worth-it                        | 1818       | true              |
-| 091 | Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)                | SaaS          | Tools    | /tools/notion-vs-clickup-vs-monday               | 2621       | false             |
+| 091 | Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)                | SaaS          | Tools    | /tools/notion-vs-clickup-vs-monday               | 1800       | true              |
 | 092 | Best VPNs for Digital Nomads & Remote Workers (2025)                       | VPN           | Tools    | /tools/best-vpn-digital-nomads                   | 1743       | true              |
 | 093 | Best VPN for Streaming While Traveling (2025)                              | VPN           | Tools    | /tools/best-vpn-streaming-travel                 | 1450       | true              |
 | 094 | Best Business VPN Solutions for Remote Teams (2025)                        | VPN           | Tools    | /tools/best-business-vpn-remote-teams            | 1550       | true              |
@@ -115,22 +115,22 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | Blog      | 16       | 14,776      |
 | Gear      | 23       | 38,861      |
 | Guides    | 30       | 59,908      |
-| Tools     | 28       | 68,648      |
-| **Total** | **97**   | **182,193** |
+| Tools     | 28       | 67,827      |
+| **Total** | **97**   | **181,372** |
 
-**Average words per article:** ~1,878
+**Average words per article:** ~1,870
 
 ### Word Count Summary for Non-Humanized Content
 
-| Category  | Articles | Words     |
-|-----------|----------|-----------|
-| Blog      | 0        | 0         |
-| Gear      | 0        | 0         |
-| Guides    | 0        | 0         |
-| Tools     | 1        | 2,621     |
-| **Total** | **1**    | **2,621** |
+| Category  | Articles | Words |
+|-----------|----------|-------|
+| Blog      | 0        | 0     |
+| Gear      | 0        | 0     |
+| Guides    | 0        | 0     |
+| Tools     | 0        | 0     |
+| **Total** | **0**    | **0** |
 
-**Average words per article:** ~2,621
+**Average words per article:** N/A
 
 ---
 

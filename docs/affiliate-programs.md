@@ -203,25 +203,25 @@ Ensure your site has:
 
 **Programs to Apply For (in your existing articles):**
 
-| Program      | Category          | Commission           | Your Article                        |
-|--------------|-------------------|----------------------|-------------------------------------|
-| ClickUp      | PM Software       | $50-200 + 20% rec.   | best-project-management-software    |
-| Monday.com   | PM Software / CRM | 100% first year      | best-project-management-software    |
-| Teamwork     | PM Software       | 20% recurring        | best-project-management-software    |
-| Pipedrive    | CRM               | 20-30% recurring     | best-crm-software-small-business    |
-| Close        | CRM               | 20% recurring        | best-crm-software-small-business    |
-| Freshsales   | CRM               | 15-20%               | best-crm-software-small-business    |
-| Toggl Track  | Time Tracking     | 20% recurring        | best-time-tracking-software         |
-| Harvest      | Time Tracking     | 15% recurring        | best-time-tracking-software         |
-| Clockify     | Time Tracking     | 20%                  | best-time-tracking-software         |
-| Calendly     | Productivity      | 15-20%               | best-productivity-apps              |
-| Teachable    | Course Platform   | 30% recurring (1yr)  | best-online-course-platforms        |
-| Thinkific    | Course Platform   | 20% recurring        | best-online-course-platforms        |
-| Podia        | Course Platform   | 30% recurring        | best-online-course-platforms        |
-| Loom         | Communication     | 20%                  | best-team-communication-tools       |
-| Intercom     | Communication     | 15-20%               | best-team-communication-tools       |
-| ActiveCampaign| Email Marketing  | 20-30% recurring     | best-email-marketing-tools          |
-| Drip         | Email Marketing   | 20% recurring        | best-email-marketing-tools          |
+| Program        | Category          | Commission          | Your Article                     |
+|----------------|-------------------|---------------------|----------------------------------|
+| ClickUp        | PM Software       | $50-200 + 20% rec.  | best-project-management-software |
+| Monday.com     | PM Software / CRM | 100% first year     | best-project-management-software |
+| Teamwork       | PM Software       | 20% recurring       | best-project-management-software |
+| Pipedrive      | CRM               | 20-30% recurring    | best-crm-software-small-business |
+| Close          | CRM               | 20% recurring       | best-crm-software-small-business |
+| Freshsales     | CRM               | 15-20%              | best-crm-software-small-business |
+| Toggl Track    | Time Tracking     | 20% recurring       | best-time-tracking-software      |
+| Harvest        | Time Tracking     | 15% recurring       | best-time-tracking-software      |
+| Clockify       | Time Tracking     | 20%                 | best-time-tracking-software      |
+| Calendly       | Productivity      | 15-20%              | best-productivity-apps           |
+| Teachable      | Course Platform   | 30% recurring (1yr) | best-online-course-platforms     |
+| Thinkific      | Course Platform   | 20% recurring       | best-online-course-platforms     |
+| Podia          | Course Platform   | 30% recurring       | best-online-course-platforms     |
+| Loom           | Communication     | 20%                 | best-team-communication-tools    |
+| Intercom       | Communication     | 15-20%              | best-team-communication-tools    |
+| ActiveCampaign | Email Marketing   | 20-30% recurring    | best-email-marketing-tools       |
+| Drip           | Email Marketing   | 20% recurring       | best-email-marketing-tools       |
 
 **Step-by-Step:**
 
@@ -338,13 +338,13 @@ Ensure your site has:
 
 ### Project Management Software
 
-| Program    | Commission              | Cookie  | Network       | Status          |
-|------------|-------------------------|---------|---------------|-----------------|
-| Notion     | $100-500/sale           | 30 days | Impact Radius | Applied         |
-| ClickUp    | $50-200 + 20% recurring | 90 days | PartnerStack  | Applied         |
-| Monday.com | 100% first year         | 90 days | PartnerStack  | 🎯 Apply Now    |
-| Teamwork   | 20% recurring           | 90 days | PartnerStack  | 🎯 Apply Now    |
-| Asana      | Unknown                 | Unknown | Direct        | Not Applied     |
+| Program    | Commission              | Cookie  | Network       | Status       |
+|------------|-------------------------|---------|---------------|--------------|
+| Notion     | $100-500/sale           | 30 days | Impact Radius | Applied      |
+| ClickUp    | $50-200 + 20% recurring | 90 days | PartnerStack  | Applied      |
+| Monday.com | 100% first year         | 90 days | PartnerStack  | 🎯 Apply Now |
+| Teamwork   | 20% recurring           | 90 days | PartnerStack  | 🎯 Apply Now |
+| Asana      | Unknown                 | Unknown | Direct        | Not Applied  |
 
 **Used in:** FJ-006 (PM Software article)
 
@@ -397,15 +397,15 @@ how-to-setup-vpn-all-devices
 
 ### Email Marketing
 
-| Program        | Commission                  | Cookie  | Network       | Status          |
-|----------------|-----------------------------|---------|---------------|-----------------|
-| ConvertKit     | $100 + 40% recurring (24mo) | 60 days | Direct        | Not Applied     |
-| Beehiiv        | 50% recurring (12mo)        | 60 days | Direct        | Not Applied     |
-| ActiveCampaign | 20-30% recurring            | 90 days | PartnerStack  | 🎯 Apply Now    |
-| Drip           | 20% recurring               | 90 days | PartnerStack  | 🎯 Apply Now    |
-| Klaviyo        | 15-20%                      | 30 days | PartnerStack  | 🎯 Apply Now    |
-| Mailchimp      | 20-30% first payment        | 30 days | Impact Radius | Not Applied     |
-| MailerLite     | 30% recurring               | 30 days | Direct        | Not Applied     |
+| Program        | Commission                  | Cookie  | Network       | Status       |
+|----------------|-----------------------------|---------|---------------|--------------|
+| ConvertKit     | $100 + 40% recurring (24mo) | 60 days | Direct        | Not Applied  |
+| Beehiiv        | 50% recurring (12mo)        | 60 days | Direct        | Not Applied  |
+| ActiveCampaign | 20-30% recurring            | 90 days | PartnerStack  | 🎯 Apply Now |
+| Drip           | 20% recurring               | 90 days | PartnerStack  | 🎯 Apply Now |
+| Klaviyo        | 15-20%                      | 30 days | PartnerStack  | 🎯 Apply Now |
+| Mailchimp      | 20-30% first payment        | 30 days | Impact Radius | Not Applied  |
+| MailerLite     | 30% recurring               | 30 days | Direct        | Not Applied  |
 
 **Used in:** FJ-013 (Email Marketing article)
 
@@ -512,14 +512,14 @@ how-much-ram-remote-work articles
 
 ### CRM Software
 
-| Program    | Commission       | Cookie  | Network       | Status          |
-|------------|------------------|---------|---------------|-----------------|
-| HubSpot    | 30% recurring    | 90 days | Impact Radius | Not Applied     |
-| Pipedrive  | 20-30% recurring | 60 days | PartnerStack  | 🎯 Apply Now    |
-| Close      | 20% recurring    | 90 days | PartnerStack  | 🎯 Apply Now    |
-| Freshsales | 15-20%           | 30 days | PartnerStack  | 🎯 Apply Now    |
-| Zoho CRM   | 15-20%           | 45 days | Direct        | Not Applied     |
-| Monday.com | 100% first year  | 90 days | PartnerStack  | 🎯 Apply Now    |
+| Program    | Commission       | Cookie  | Network       | Status       |
+|------------|------------------|---------|---------------|--------------|
+| HubSpot    | 30% recurring    | 90 days | Impact Radius | Not Applied  |
+| Pipedrive  | 20-30% recurring | 60 days | PartnerStack  | 🎯 Apply Now |
+| Close      | 20% recurring    | 90 days | PartnerStack  | 🎯 Apply Now |
+| Freshsales | 15-20%           | 30 days | PartnerStack  | 🎯 Apply Now |
+| Zoho CRM   | 15-20%           | 45 days | Direct        | Not Applied  |
+| Monday.com | 100% first year  | 90 days | PartnerStack  | 🎯 Apply Now |
 
 **Used in:** best-crm-software-small-business article
 
@@ -527,15 +527,15 @@ how-much-ram-remote-work articles
 
 ### Team Communication Tools
 
-| Program         | Commission | Cookie  | Network      | Status          |
-|-----------------|------------|---------|--------------|-----------------|
-| Intercom        | 15-20%     | 90 days | PartnerStack | 🎯 Apply Now    |
-| Drift           | 20%        | 90 days | PartnerStack | 🎯 Apply Now    |
-| Loom            | 20%        | 30 days | PartnerStack | 🎯 Apply Now    |
-| Slack           | Varies     | 30 days | Direct       | Not Applied     |
-| Zoom            | 10-15%     | 30 days | Direct       | Not Applied     |
-| Microsoft Teams | Varies     | 30 days | Direct       | Not Applied     |
-| Discord Nitro   | N/A        | N/A     | N/A          | No program      |
+| Program         | Commission | Cookie  | Network      | Status       |
+|-----------------|------------|---------|--------------|--------------|
+| Intercom        | 15-20%     | 90 days | PartnerStack | 🎯 Apply Now |
+| Drift           | 20%        | 90 days | PartnerStack | 🎯 Apply Now |
+| Loom            | 20%        | 30 days | PartnerStack | 🎯 Apply Now |
+| Slack           | Varies     | 30 days | Direct       | Not Applied  |
+| Zoom            | 10-15%     | 30 days | Direct       | Not Applied  |
+| Microsoft Teams | Varies     | 30 days | Direct       | Not Applied  |
+| Discord Nitro   | N/A        | N/A     | N/A          | No program   |
 
 **Used in:** best-team-communication-tools, slack-vs-teams-vs-discord articles
 
@@ -543,12 +543,12 @@ how-much-ram-remote-work articles
 
 ### Meeting Productivity Tools
 
-| Program    | Commission | Cookie  | Network      | Status          |
-|------------|------------|---------|--------------|-----------------|
-| Calendly   | 15-20%     | 90 days | PartnerStack | 🎯 Apply Now    |
-| Otter.ai   | 20-25%     | 30 days | Direct       | Not Applied     |
-| Grain      | 20%        | 30 days | Direct       | Not Applied     |
-| Fireflies  | 20%        | 30 days | Direct       | Not Applied     |
+| Program   | Commission | Cookie  | Network      | Status       |
+|-----------|------------|---------|--------------|--------------|
+| Calendly  | 15-20%     | 90 days | PartnerStack | 🎯 Apply Now |
+| Otter.ai  | 20-25%     | 30 days | Direct       | Not Applied  |
+| Grain     | 20%        | 30 days | Direct       | Not Applied  |
+| Fireflies | 20%        | 30 days | Direct       | Not Applied  |
 
 **Used in:** how-to-run-effective-remote-meetings article
 
@@ -556,12 +556,12 @@ how-much-ram-remote-work articles
 
 ### Time Tracking Software
 
-| Program      | Commission       | Cookie  | Network      | Status          |
-|--------------|------------------|---------|--------------|-----------------|
-| Toggl Track  | 20% recurring    | 90 days | PartnerStack | 🎯 Apply Now    |
-| Harvest      | 15% recurring    | 90 days | PartnerStack | 🎯 Apply Now    |
-| Clockify     | 20%              | 30 days | PartnerStack | 🎯 Apply Now    |
-| RescueTime   | 15-20%           | 30 days | Direct       | Not Applied     |
+| Program     | Commission    | Cookie  | Network      | Status       |
+|-------------|---------------|---------|--------------|--------------|
+| Toggl Track | 20% recurring | 90 days | PartnerStack | 🎯 Apply Now |
+| Harvest     | 15% recurring | 90 days | PartnerStack | 🎯 Apply Now |
+| Clockify    | 20%           | 30 days | PartnerStack | 🎯 Apply Now |
+| RescueTime  | 15-20%        | 30 days | Direct       | Not Applied  |
 
 **Used in:** best-time-tracking-software article
 
@@ -569,14 +569,14 @@ how-much-ram-remote-work articles
 
 ### Online Course Platforms
 
-| Program     | Commission           | Cookie  | Network      | Status          |
-|-------------|----------------------|---------|--------------|-----------------|
-| Teachable   | 30% recurring (1yr)  | 90 days | PartnerStack | 🎯 Apply Now    |
-| Thinkific   | 20% recurring        | 90 days | PartnerStack | 🎯 Apply Now    |
-| Podia       | 30% recurring        | 30 days | PartnerStack | 🎯 Apply Now    |
-| Kajabi      | 30% recurring        | 30 days | Direct       | Not Applied     |
-| LearnWorlds | 20%                  | 30 days | Direct       | Not Applied     |
-| Gumroad     | 10%                  | 30 days | Direct       | Not Applied     |
+| Program     | Commission          | Cookie  | Network      | Status       |
+|-------------|---------------------|---------|--------------|--------------|
+| Teachable   | 30% recurring (1yr) | 90 days | PartnerStack | 🎯 Apply Now |
+| Thinkific   | 20% recurring       | 90 days | PartnerStack | 🎯 Apply Now |
+| Podia       | 30% recurring       | 30 days | PartnerStack | 🎯 Apply Now |
+| Kajabi      | 30% recurring       | 30 days | Direct       | Not Applied  |
+| LearnWorlds | 20%                 | 30 days | Direct       | Not Applied  |
+| Gumroad     | 10%                 | 30 days | Direct       | Not Applied  |
 
 **Used in:** best-online-course-platforms article
 
@@ -596,10 +596,10 @@ how-much-ram-remote-work articles
 
 ### Writing & Productivity Tools
 
-| Program   | Commission | Cookie  | Network | Status      |
-|-----------|------------|---------|---------|-------------|
-| Grammarly | 20-25%     | 90 days | Direct  | Not Applied |
-| Superhuman| $5/signup  | 30 days | Direct  | Not Applied |
+| Program    | Commission | Cookie  | Network | Status      |
+|------------|------------|---------|---------|-------------|
+| Grammarly  | 20-25%     | 90 days | Direct  | Not Applied |
+| Superhuman | $5/signup  | 30 days | Direct  | Not Applied |
 
 **Used in:** email-etiquette-remote-teams article
 

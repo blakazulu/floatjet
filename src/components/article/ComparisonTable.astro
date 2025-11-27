@@ -40,10 +40,10 @@ const {columns, rows, caption, highlight} = Astro.props;
       rows.map((row, index) => (
           <tr class={highlight === index ? 'highlighted' : ''}>
             {columns.map((col) => (
-              <td data-label={col.label}>
-                {typeof row[col.key] === 'boolean' ? (
-                  row[col.key] ? (
-                      <span class="check" aria-label="Yes">
+                <td data-label={col.label}>
+                  {typeof row[col.key] === 'boolean' ? (
+                    row[col.key] ? (
+                        <span class="check" aria-label="Yes">
                       <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
@@ -56,8 +56,8 @@ const {columns, rows, caption, highlight} = Astro.props;
                         />
                       </svg>
                     </span>
-                  ) : (
-                      <span class="cross" aria-label="No">
+                    ) : (
+                        <span class="cross" aria-label="No">
                       <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
@@ -70,11 +70,11 @@ const {columns, rows, caption, highlight} = Astro.props;
                         />
                       </svg>
                     </span>
-                  )
-                ) : (
-                    <Fragment set:html={row[col.key]}/>
-                )}
-              </td>
+                    )
+                  ) : (
+                      <Fragment set:html={row[col.key]}/>
+                  )}
+                </td>
             ))}
           </tr>
       ))

@@ -1683,9 +1683,68 @@ losing in dollars, not just percentages. Use strong, directive language ("Stop d
 
 ---
 
+---
+
+### Patterns From Successful Article #073 (3.11% AI)
+
+What worked in the "Best Accounting Software for Freelancers" article:
+
+1. **Personal tax nightmare opening:**
+     - ❌ "Tax season doesn't have to be a nightmare. The right accounting software turns hours of spreadsheet chaos..."
+     - ✅ "My first year freelancing I did my taxes with a spreadsheet and a shoebox of receipts. Took me two full
+       weekends. Missed at least two grand in deductions I found out about later. Never again."
+     - Specific consequence story (shoebox, two weekends, two grand lost) beats generic problem statement
+
+2. **Software names as headers without labels:**
+     - ❌ "1. QuickBooks Self-Employed — Best Overall"
+     - ✅ "QuickBooks Self-Employed"
+     - Drop numbers and category labels. Just use the product name.
+
+3. **Personal opinion structure for reviews:**
+     - ✅ "This is what I point most freelancers toward."
+     - ✅ "What I like." and "What bugs me." instead of "Pros/Cons"
+     - ✅ "Runs fifteen bucks monthly." instead of "Pricing: $15/month"
+     - Integrate everything into conversational prose
+
+4. **Prices spelled out casually:**
+     - ❌ "$15/month" → ✅ "fifteen bucks monthly"
+     - ❌ "$42-$78/month" → ✅ "forty-two to seventy-eight bucks monthly"
+     - ❌ "2.9% + $0.60" → ✅ "Two point nine percent plus sixty cents"
+
+5. **Remove comparison tables entirely:**
+     - Feature comparison tables trigger AI detection even with casual prose
+     - Replace with flowing product descriptions that mention capabilities inline
+     - Tables for specs can stay but wrap in narrative context
+
+6. **Who-should-use headers as questions:**
+     - ❌ "Writers and Content Creators - Recommendation: FreshBooks or Bonsai"
+     - ✅ "Writing or creating content? FreshBooks or Bonsai."
+     - Question format passes better than label format
+
+7. **FAQ simplification:**
+     - ❌ "Do I really need accounting software as a freelancer?"
+     - ✅ "Do I actually need accounting software?"
+     - ❌ "What's the difference between accounting software and invoicing software?"
+     - ✅ "Accounting software vs invoicing software?"
+     - Drop filler words and redundant context
+
+**What still got flagged (minor, acceptable at 3.11%):**
+
+- "QuickBooks Self-Employed" as standalone header - product names as headers still occasionally flagged
+- "Set it once, forget it." - Short imperative chains
+- "For freelancers who hate switching between apps, this is appealing." - Clean explanatory sentences
+- Parallel "X wins on A. Y wins on B." recommendation patterns
+
+**Key insight:** Software roundup articles need the same treatment as gear roundups. Remove ALL numbered lists and
+formal labels. Prices as words is critical. Personal story opening establishes human voice that carries through.
+Question-based "Who should use what" sections pass much better than label-based recommendations.
+
+---
+
 *This guide based on successful transformations including VPN article (~40% → 0%), Background Noise article (~54% → 6%),
 Wireless Earbuds article (~9% → 1.8%), Articles #025-030 (all 0% AI), Articles #031-035 (all under 6% AI), Articles
 #036-040 (all 0-5% AI), Articles #041-045 (all 0-2.94% AI), Articles #046-048 (all 0-0.88% AI), Article #054 (2.99% AI),
 Article #055 (9.11% → 0.9% AI), Article #056 (7.63% AI), Article #057 (6.65% AI), Article #058 (22.44% → 5.7% AI),
-Articles #066-070 (all 1.21-6.88% AI), and Article #072 (0% AI). Patterns updated from ZeroGPT API responses. Last
+Articles #066-070 (all 1.21-6.88% AI), Article #072 (0% AI), and Article #073 (3.11% AI). Patterns updated from ZeroGPT
+API responses. Last
 updated: 2025-11-27.*

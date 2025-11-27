@@ -82,9 +82,9 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 070 | Best Expense Tracking Apps for Digital Nomads in 2025                      | Finance       | Tools    | /tools/best-expense-tracking-apps                | 1775       | true              |
 | 071 | Wise vs PayPal vs Payoneer: Which Is Best for Remote Workers? (2025)       | Finance       | Tools    | /tools/wise-vs-paypal-vs-payoneer                | 850        | true              |
 | 072 | How to Accept International Payments (Without Losing 5% to Fees)           | Finance       | Tools    | /tools/accept-international-payments-freelancer  | 939        | true              |
-| 073 | Best Accounting Software for Freelancers in 2025: Complete Guide           | Finance       | Tools    | /tools/best-accounting-software-freelancers      | 2327       | false             |
-| 074 | Best Invoicing Tools for Remote Professionals in 2025                      | Finance       | Tools    | /tools/best-invoicing-tools                      | 1936       | false             |
-| 075 | Best Web Hosting for Remote Businesses (2025)                              | Hosting       | Tools    | /tools/best-web-hosting-remote-business          | 4102       | false             |
+| 073 | Best Accounting Software for Freelancers in 2025: Complete Guide           | Finance       | Tools    | /tools/best-accounting-software-freelancers      | 2327       | true              |
+| 074 | Best Invoicing Tools for Remote Professionals in 2025                      | Finance       | Tools    | /tools/best-invoicing-tools                      | 1530       | true              |
+| 075 | Best Web Hosting for Remote Businesses (2025)                              | Hosting       | Tools    | /tools/best-web-hosting-remote-business          | 2480       | true              |
 | 076 | How to Migrate Your Website Without Downtime (2025)                        | Hosting       | Tools    | /tools/migrate-website-without-downtime          | 2347       | false             |
 | 077 | Website Speed Optimization: Complete Guide (2025)                          | Hosting       | Tools    | /tools/website-speed-optimization-guide          | 2560       | false             |
 | 078 | Best VPS Hosting for Remote Businesses (2025)                              | Hosting       | Tools    | /tools/best-vps-hosting-remote-business          | 3155       | false             |

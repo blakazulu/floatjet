@@ -798,6 +798,17 @@ These one-word or ultra-short sentences consistently pass as human:
 
 **Key insight:** Shorter, simpler headers pass better. Avoid clever titles.
 
+### Comparison Tables vs Text
+
+**Observation:**
+Article 71 passed (3.12%) by replacing a dry "Fee Comparison" section with a "The Money Test" narrative.
+
+❌ "Table 1 shows the fee breakdown..."
+✅ "Look at that difference. £53. That's not 'fees.' That's a grocery run."
+
+**Key insight:** Don't just show data. React to it. Tell the reader what the number *means* in real life (dinner,
+groceries).
+
 ### Label Patterns That Get Flagged
 
 ❌ Formal product info labels:

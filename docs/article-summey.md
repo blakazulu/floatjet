@@ -75,11 +75,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 063 | Budget Home Office Setup Under $500: Everything You Need                   | Setup         | Guides   | /guides/budget-home-office-setup-500             | 1668       | true              |
 | 064 | Complete Home Office Checklist: Everything You Need                        | Setup         | Guides   | /guides/complete-home-office-checklist           | 1281       | true              |
 | 065 | Can You Work Remotely from Another Country? A Legal Guide                  | Travel        | Guides   | /guides/can-you-work-remotely-another-country    | 1300       | true              |
-| 066 | How to Work Remotely from Different Time Zones: A Complete Guide           | Travel        | Guides   | /guides/work-remotely-different-time-zones       | 1772       | false             |
-| 067 | Best Coworking Spaces in Lisbon 2025: A Digital Nomad's Guide              | Travel        | Guides   | /guides/best-coworking-spaces-lisbon             | 1712       | false             |
-| 068 | Spain Digital Nomad Visa Guide 2025: Requirements & Application            | Travel        | Guides   | /guides/digital-nomad-visa-spain                 | 1746       | false             |
-| 069 | Portugal Digital Nomad Visa Guide 2025: Requirements & Application         | Travel        | Guides   | /guides/digital-nomad-visa-portugal              | 1813       | false             |
-| 070 | Best Expense Tracking Apps for Digital Nomads in 2025                      | Finance       | Tools    | /tools/best-expense-tracking-apps                | 1775       | false             |
+| 066 | How to Work Remotely from Different Time Zones: A Complete Guide           | Travel        | Guides   | /guides/work-remotely-different-time-zones       | 1772       | true              |
+| 067 | Best Coworking Spaces in Lisbon 2025: A Digital Nomad's Guide              | Travel        | Guides   | /guides/best-coworking-spaces-lisbon             | 1712       | true              |
+| 068 | Spain Digital Nomad Visa Guide 2025: Requirements & Application            | Travel        | Guides   | /guides/digital-nomad-visa-spain                 | 1746       | true              |
+| 069 | Portugal Digital Nomad Visa Guide 2025: Requirements & Application         | Travel        | Guides   | /guides/digital-nomad-visa-portugal              | 1813       | true              |
+| 070 | Best Expense Tracking Apps for Digital Nomads in 2025                      | Finance       | Tools    | /tools/best-expense-tracking-apps                | 1775       | true              |
 | 071 | Wise vs PayPal vs Payoneer: Which Is Best for Remote Workers? (2025)       | Finance       | Tools    | /tools/wise-vs-paypal-vs-payoneer                | 1476       | false             |
 | 072 | How to Accept International Payments as a Freelancer (2025 Guide)          | Finance       | Tools    | /tools/accept-international-payments-freelancer  | 1872       | false             |
 | 073 | Best Accounting Software for Freelancers in 2025: Complete Guide           | Finance       | Tools    | /tools/best-accounting-software-freelancers      | 2327       | false             |
@@ -122,15 +122,15 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 
 ### Word Count Summary for Non-Humanized Content
 
-| Category  | Articles | Words       |
-|-----------|----------|-------------|
-| Blog      | 0        | 0           |
-| Gear      | 0        | 0           |
-| Guides    | 17       | 35,198      |
-| Tools     | 22       | 66,386      |
-| **Total** | **39**   | **101,584** |
+| Category  | Articles | Words      |
+|-----------|----------|------------|
+| Blog      | 0        | 0          |
+| Gear      | 0        | 0          |
+| Guides    | 13       | 28,155     |
+| Tools     | 21       | 64,611     |
+| **Total** | **34**   | **92,766** |
 
-**Average words per article:** ~2,605
+**Average words per article:** ~2,728
 
 ---
 
@@ -164,4 +164,4 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 
 ---
 
-*Last updated: 2025-11-26*
+*Last updated: 2025-11-27*

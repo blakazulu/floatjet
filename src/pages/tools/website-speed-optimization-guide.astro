@@ -36,27 +36,27 @@ const headings = [
 const faqItems = [
   {
     question: 'What is a good website load time?',
-    answer: 'Aim for under 3 seconds on mobile and under 2 seconds on desktop. Google considers pages loading over 3 seconds as slow, which can hurt your search rankings. Top-performing sites load in under 1.5 seconds.'
+    answer: 'You want under 3 seconds on mobile and under 2 seconds on desktop. Google starts considering you slow once you cross that 3-second mark, and it can actually hurt your rankings. The really fast sites — the ones that feel instant — load in under 1.5 seconds.'
   },
   {
     question: 'Does website speed affect SEO?',
-    answer: 'Yes, significantly. Google uses Core Web Vitals as ranking factors. Slow sites also have higher bounce rates and lower engagement, which indirectly hurt SEO. Mobile speed is particularly important since Google uses mobile-first indexing.'
+    answer: 'Oh yeah, big time. Google made Core Web Vitals an actual ranking factor. But even beyond that, slow sites have awful bounce rates — people leave before they even see your content. And since Google switched to mobile-first indexing, your mobile speed matters most.'
   },
   {
     question: 'How do I check my website speed?',
-    answer: 'Use Google PageSpeed Insights (free) for Core Web Vitals data, GTmetrix for detailed waterfalls, and WebPageTest for real browser testing from multiple locations. Test both mobile and desktop versions.'
+    answer: 'Start with Google PageSpeed Insights — it is free and tells you exactly what Google thinks. GTmetrix shows you a cool waterfall of everything loading on your page. WebPageTest lets you test from real browsers in different cities. Always check both mobile and desktop.'
   },
   {
     question: 'Is a CDN necessary for website speed?',
-    answer: 'For sites with global visitors, yes. A CDN serves your content from servers closest to each visitor, reducing latency. Even local businesses benefit from CDN caching. Cloudflare offers a free tier that works well for most sites.'
+    answer: 'If you have visitors from different parts of the world, definitely yes. A CDN puts copies of your site on servers everywhere so people get served from nearby instead of across the globe. Even local businesses benefit from the caching. Cloudflare has a free tier that handles most sites just fine.'
   },
   {
     question: 'What causes slow website loading?',
-    answer: 'Common causes include: unoptimized images (biggest culprit), slow hosting, too many HTTP requests, render-blocking JavaScript/CSS, no browser caching, missing CDN, unoptimized databases, and excessive plugins or tracking scripts.'
+    answer: 'Nine times out of ten it is images — people upload these massive files straight from their camera. After that: cheap hosting, too many plugins loading too many files, JavaScript blocking everything, no caching set up, no CDN, and databases stuffed with years of junk.'
   },
   {
     question: 'How much does website speed affect conversion rates?',
-    answer: 'Every second counts. Studies show: 1-second delay reduces conversions by 7%. Pages loading in 2 seconds have 9% bounce rate vs 38% for 5-second pages. Amazon found that 100ms of latency cost them 1% in sales.'
+    answer: 'More than most people realize. A one-second delay typically drops conversions by about 7%. Sites loading in 2 seconds have around 9% bounce rate — but stretch that to 5 seconds and bounce rate shoots up to 38%. Amazon actually calculated that 100 milliseconds of extra load time cost them 1% in sales. At their scale, that is billions.'
   },
 ];
 
@@ -102,13 +102,15 @@ const relatedArticles = [
   <!-- Introduction -->
   <section id="introduction">
     <p class="lead">
-      Website speed is not just about user experience - it directly impacts your search rankings, conversion rates, and
-      bottom line. A 1-second delay can cost you 7% of conversions.
+      I used to think site speed was one of those things that only obsessive developers cared about. Then I watched a
+      client lose almost a third of their mobile visitors because their page took six seconds to load. Turns out people
+      are impatient. Who knew?
     </p>
     <p>
-      This comprehensive guide covers everything from measuring your current speed to implementing optimizations that
-      can cut your load time in half. Whether you run a simple blog or a complex e-commerce store, these techniques
-      work.
+      Here is the thing — speed affects everything. Your Google rankings. Your conversion rates. Whether people actually
+      stick around long enough to read what you wrote. I have spent years figuring out what actually moves the needle
+      versus what just wastes time. This guide is everything I wish someone had told me when I was staring at a
+      PageSpeed score of 23 wondering where to even start.
     </p>
   </section>
 
@@ -116,29 +118,29 @@ const relatedArticles = [
   <section id="why-speed-matters">
     <h2>Why Speed Matters</h2>
     <p>
-      The impact of website speed extends far beyond user satisfaction:
+      Let me hit you with some numbers that actually changed how I think about this stuff:
     </p>
 
     <div class="grid gap-4 sm:grid-cols-2 my-6">
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-jet-stream font-semibold">SEO Rankings</h4>
-        <p class="text-white/70 text-sm mt-2">Google uses Core Web Vitals as ranking factors. Slow sites get pushed down
-          in search results, especially on mobile searches.</p>
+        <h4 class="text-jet-stream font-semibold">Google Actually Cares</h4>
+        <p class="text-white/70 text-sm mt-2">Core Web Vitals are ranking factors now. Slow sites get buried, especially
+          on mobile searches. I have seen sites jump ten positions just by fixing speed issues.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-jet-stream font-semibold">Conversion Rates</h4>
-        <p class="text-white/70 text-sm mt-2">Amazon found that every 100ms of latency cost them 1% in sales. For a
-          $100k/year business, that is $1,000 per 0.1 seconds.</p>
+        <h4 class="text-jet-stream font-semibold">Every Fraction of a Second Costs Money</h4>
+        <p class="text-white/70 text-sm mt-2">Amazon figured out that 100 milliseconds of delay costs them 1% in sales.
+          Do that math for your business. Even at $100k/year, that is a thousand bucks per tenth of a second.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-jet-stream font-semibold">Bounce Rates</h4>
-        <p class="text-white/70 text-sm mt-2">53% of mobile users abandon sites that take over 3 seconds to load. Every
-          second after that loses more visitors.</p>
+        <h4 class="text-jet-stream font-semibold">People Just Leave</h4>
+        <p class="text-white/70 text-sm mt-2">More than half of mobile users bail if your site takes over three seconds.
+          They do not complain. They do not come back. They just disappear.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-jet-stream font-semibold">User Trust</h4>
-        <p class="text-white/70 text-sm mt-2">Slow sites feel untrustworthy. 79% of shoppers who are dissatisfied with
-          site performance say they will not return.</p>
+        <h4 class="text-jet-stream font-semibold">Slow Feels Sketchy</h4>
+        <p class="text-white/70 text-sm mt-2">A slow site makes people nervous, like something is wrong. Nearly 80% of
+          shoppers who have a bad experience with site speed say they would not buy from that store again.</p>
       </div>
     </div>
   </section>
@@ -147,44 +149,55 @@ const relatedArticles = [
   <section id="measure-speed">
     <h2>How to Measure Your Speed</h2>
     <p>
-      Before optimizing, you need baseline measurements. Use these free tools:
+      Before you start fixing things, you need to know what is actually broken. Running your site through these tools
+      gives you a baseline and tells you where to focus your energy.
     </p>
 
     <div class="space-y-4 my-6">
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">Google PageSpeed Insights</h4>
-        <p class="text-white/70 text-sm mt-2">The most important tool. Shows Core Web Vitals scores, mobile/desktop
-          performance, and specific recommendations. Aim for 90+ on both mobile and desktop.</p>
+        <p class="text-white/70 text-sm mt-2">Start here. This is Google telling you exactly what they think about your
+          site speed. Shows you Core Web Vitals, breaks down problems, and gives specific suggestions. Aim for 90+ but
+          do not lose sleep over getting to 100.</p>
         <p class="text-jet-stream text-sm mt-2">pagespeed.web.dev</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">GTmetrix</h4>
-        <p class="text-white/70 text-sm mt-2">Detailed waterfall charts showing exactly what loads and when. Great for
-          identifying bottlenecks. Free account allows testing from multiple locations.</p>
+        <p class="text-white/70 text-sm mt-2">This one shows you a waterfall chart of every single thing loading on your
+          page. You can see exactly which plugin is hogging resources or which giant image is killing your load time.
+          The free version is plenty useful.</p>
         <p class="text-jet-stream text-sm mt-2">gtmetrix.com</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">WebPageTest</h4>
-        <p class="text-white/70 text-sm mt-2">Advanced testing with real browsers from 40+ locations. Shows filmstrip
-          view of page loading. Best for deep technical analysis.</p>
+        <p class="text-white/70 text-sm mt-2">For when you really want to nerd out. Tests from real browsers in 40+
+          locations. Has this cool filmstrip view showing exactly what users see second by second as your page
+          loads.</p>
         <p class="text-jet-stream text-sm mt-2">webpagetest.org</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">Google Search Console</h4>
-        <p class="text-white/70 text-sm mt-2">Shows Core Web Vitals for your actual visitors over time. The most
-          accurate data since it comes from real Chrome users.</p>
+        <p class="text-white/70 text-sm mt-2">Unlike the others, this shows data from actual visitors to your site over
+          time. Real people on real connections. Much more useful than synthetic tests for understanding how your site
+          actually performs.</p>
         <p class="text-jet-stream text-sm mt-2">search.google.com/search-console</p>
       </div>
     </div>
 
     <p>
-      <strong>Key metrics to track:</strong>
+      <strong>The numbers you should care about:</strong>
     </p>
     <ul class="text-white/80 space-y-2 ml-4">
-      <li><strong>LCP (Largest Contentful Paint):</strong> Under 2.5 seconds</li>
-      <li><strong>FID (First Input Delay):</strong> Under 100 milliseconds</li>
-      <li><strong>CLS (Cumulative Layout Shift):</strong> Under 0.1</li>
-      <li><strong>TTFB (Time to First Byte):</strong> Under 600 milliseconds</li>
+      <li><strong>LCP (Largest Contentful Paint):</strong> Under 2.5 seconds — this is how fast your main content
+        appears
+      </li>
+      <li><strong>FID (First Input Delay):</strong> Under 100 milliseconds — how quickly your page responds when someone
+        clicks something
+      </li>
+      <li><strong>CLS (Cumulative Layout Shift):</strong> Under 0.1 — whether stuff jumps around while loading (so
+        annoying)
+      </li>
+      <li><strong>TTFB (Time to First Byte):</strong> Under 600 milliseconds — how fast your server responds</li>
     </ul>
   </section>
 
@@ -192,23 +205,34 @@ const relatedArticles = [
   <section id="hosting-optimization">
     <h2>Hosting Optimization</h2>
     <p>
-      Your hosting provider sets the baseline for your site's speed. No amount of optimization can overcome slow
-      servers.
+      Here is an uncomfortable truth: if your hosting is garbage, nothing else matters. You can optimize images all day
+      and still have a slow site because your $3/month bargain host is running your site on a potato.
     </p>
 
     <div class="bg-jet-stream/20 border border-jet-stream/40 rounded-lg p-4 my-6">
-      <h4 class="text-white font-semibold">Quick Win</h4>
-      <p class="text-white/70 text-sm mt-2">Upgrading from cheap shared hosting to quality hosting (SiteGround,
-        Cloudways, or similar) typically cuts load time by 40-60% with no other changes.</p>
+      <h4 class="text-white font-semibold">The Easiest Win in This Entire Guide</h4>
+      <p class="text-white/70 text-sm mt-2">Switching from cheap shared hosting to something decent (SiteGround,
+        Cloudways, even mid-tier Bluehost) typically cuts your load time by 40-60% immediately. No plugins required. No
+        technical knowledge. Just faster servers.</p>
     </div>
 
-    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Hosting Speed Factors</h3>
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">What Actually Makes Hosting Fast</h3>
     <ul class="text-white/80 space-y-2 ml-4">
-      <li><strong>Server hardware:</strong> NVMe SSDs are 10x faster than traditional SSDs</li>
-      <li><strong>PHP version:</strong> PHP 8.x is 3x faster than PHP 7.0</li>
-      <li><strong>Server location:</strong> Choose a data center near your primary audience</li>
-      <li><strong>Resource allocation:</strong> VPS/dedicated beats shared for consistent performance</li>
-      <li><strong>Server-level caching:</strong> LiteSpeed, nginx, or Varnish cache</li>
+      <li><strong>Server hardware matters:</strong> NVMe SSDs are roughly 10x faster than older SSDs. Ask what your host
+        uses.
+      </li>
+      <li><strong>PHP version:</strong> PHP 8.x runs circles around older versions. If your host is still on PHP 7.0,
+        that is a red flag.
+      </li>
+      <li><strong>Geographic location:</strong> If most of your visitors are in Europe, your server should be in Europe.
+        Seems obvious but people miss this.
+      </li>
+      <li><strong>Shared vs VPS:</strong> Shared hosting means fighting for resources with random other sites. VPS gives
+        you guaranteed performance.
+      </li>
+      <li><strong>Server-level caching:</strong> Good hosts run LiteSpeed, nginx, or Varnish. These cache pages before
+        your site even gets involved.
+      </li>
     </ul>
 
     <div class="mt-6">
@@ -224,37 +248,41 @@ const relatedArticles = [
   <section id="image-optimization">
     <h2>Image Optimization</h2>
     <p>
-      Images typically account for 50-80% of a page's total size. Optimizing them offers the biggest speed gains for
-      most sites.
+      If I could only give you one piece of advice in this whole guide, it would be about images. They are usually the
+      biggest thing on your pages — often 50-80% of total page weight. Fix your images and you fix half your speed
+      problems.
     </p>
 
-    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Image Optimization Techniques</h3>
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">What Actually Works</h3>
 
     <div class="space-y-4 my-6">
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-white font-semibold">1. Use Modern Formats (WebP/AVIF)</h4>
-        <p class="text-white/70 text-sm mt-2">WebP is 25-35% smaller than JPEG at the same quality. AVIF is even better
-          but has less browser support. Most image plugins can auto-convert.</p>
+        <h4 class="text-white font-semibold">Switch to WebP (or AVIF if you are fancy)</h4>
+        <p class="text-white/70 text-sm mt-2">WebP files are 25-35% smaller than JPEGs with identical visual quality.
+          AVIF is even better but browser support is still catching up. Most WordPress image plugins can convert your
+          uploads automatically.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-white font-semibold">2. Compress Images</h4>
-        <p class="text-white/70 text-sm mt-2">Use tools like TinyPNG, ShortPixel, or Imagify. Aim for 60-80% quality -
-          the difference is imperceptible to most users but saves significant file size.</p>
+        <h4 class="text-white font-semibold">Compress Everything</h4>
+        <p class="text-white/70 text-sm mt-2">Run images through TinyPNG, ShortPixel, or Imagify. Set quality to 60-80%
+          and I guarantee you will not see the difference. But your page load time definitely will.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-white font-semibold">3. Resize to Actual Display Size</h4>
-        <p class="text-white/70 text-sm mt-2">Do not serve a 3000px image for a 600px container. Create multiple sizes
-          and use srcset for responsive images.</p>
+        <h4 class="text-white font-semibold">Stop Uploading Giant Images</h4>
+        <p class="text-white/70 text-sm mt-2">I see this constantly — someone uploads a 4000px wide image for a spot
+          that only displays at 600px. All that extra data loads for nothing. Resize before uploading, or use plugins
+          that generate multiple sizes automatically.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-white font-semibold">4. Lazy Load Below-the-Fold Images</h4>
-        <p class="text-white/70 text-sm mt-2">Only load images when they enter the viewport. Native lazy loading: add
-          loading="lazy" to img tags. Most browsers now support this.</p>
+        <h4 class="text-white font-semibold">Lazy Load Below the Fold</h4>
+        <p class="text-white/70 text-sm mt-2">Why load images people cannot even see yet? Add loading="lazy" to your img
+          tags and browsers will wait until users scroll near them. Simple change, big impact.</p>
       </div>
     </div>
 
     <p>
-      <strong>Tools for image optimization:</strong> ShortPixel, Imagify, Cloudinary, imgix, or Cloudflare Polish.
+      <strong>My go-to tools:</strong> ShortPixel for WordPress, Cloudinary if you want to get fancy, or just run things
+      through TinyPNG before uploading.
     </p>
   </section>
 
@@ -262,25 +290,27 @@ const relatedArticles = [
   <section id="code-minification">
     <h2>Code Minification and Compression</h2>
     <p>
-      Minification removes unnecessary characters from code without changing functionality. Combined with compression,
-      you can reduce file sizes by 60-80%.
+      Minification is basically just removing all the spaces and comments from your code that humans need to read it but
+      browsers do not care about. Sounds nerdy, but it can shrink your files by 60-80% when combined with compression.
     </p>
 
-    <h3 class="text-xl font-semibold text-white mt-6 mb-4">What to Minify</h3>
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">What Gets Minified</h3>
     <ul class="text-white/80 space-y-2 ml-4">
-      <li><strong>HTML:</strong> Remove comments, whitespace, and unnecessary attributes</li>
-      <li><strong>CSS:</strong> Remove comments, whitespace, and combine rules</li>
-      <li><strong>JavaScript:</strong> Remove comments, whitespace, and shorten variable names</li>
+      <li><strong>HTML:</strong> All those nice line breaks and comments? Gone. Browsers do not need them.</li>
+      <li><strong>CSS:</strong> Whitespace, comments, and redundant rules get stripped out</li>
+      <li><strong>JavaScript:</strong> Same deal, plus variable names get shortened to single letters</li>
     </ul>
 
-    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Enable GZIP/Brotli Compression</h3>
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">GZIP and Brotli Compression</h3>
     <p>
-      Compression reduces file transfer size by 60-80%. Brotli is newer and 15-20% better than GZIP. Most modern hosts
-      enable this by default, but verify in your server settings.
+      Think of this like zipping files before sending them. The browser unzips automatically on the other end. GZIP has
+      been around forever and works great. Brotli is newer and about 15-20% better if your server supports it. Most
+      decent hosts enable one of these by default — but double-check.
     </p>
 
     <p class="mt-4">
-      <strong>WordPress tools:</strong> WP Rocket, Autoptimize, or W3 Total Cache handle minification automatically.
+      <strong>For WordPress:</strong> WP Rocket handles all of this automatically and does it well. Autoptimize or W3
+      Total Cache work too if you want free options.
     </p>
   </section>
 
@@ -288,23 +318,24 @@ const relatedArticles = [
   <section id="browser-caching">
     <h2>Browser Caching</h2>
     <p>
-      Browser caching stores static files locally so returning visitors do not re-download them. This makes subsequent
-      page loads nearly instant.
+      When someone visits your site, their browser downloads your images, CSS, JavaScript, fonts — everything. Browser
+      caching tells the browser to save those files locally, so next time they visit, their browser already has
+      everything. Repeat visits become almost instant.
     </p>
 
     <div class="bg-white/5 border border-white/10 rounded-lg p-4 my-6">
-      <h4 class="text-white font-semibold">Recommended Cache Durations</h4>
+      <h4 class="text-white font-semibold">How Long to Cache Different Stuff</h4>
       <ul class="text-white/70 text-sm mt-2 space-y-1">
-        <li>Images: 1 year (they rarely change)</li>
-        <li>CSS/JS: 1 year (use versioning for updates)</li>
-        <li>Fonts: 1 year</li>
-        <li>HTML: No cache or short (pages update frequently)</li>
+        <li>Images: 1 year — they almost never change</li>
+        <li>CSS and JavaScript: 1 year — when you update them, change the filename to bust the cache</li>
+        <li>Fonts: 1 year — same logic</li>
+        <li>HTML pages: Short or none — your actual content changes more often</li>
       </ul>
     </div>
 
     <p>
-      Most caching plugins handle this automatically. For custom setups, configure Cache-Control headers in your
-      .htaccess or nginx config.
+      If you are using a caching plugin on WordPress, this is probably already configured. If you are doing it manually,
+      you will need to mess with Cache-Control headers in your .htaccess or nginx config.
     </p>
   </section>
 
@@ -312,34 +343,36 @@ const relatedArticles = [
   <section id="cdn-implementation">
     <h2>CDN Implementation</h2>
     <p>
-      A Content Delivery Network (CDN) serves your files from servers closest to each visitor, reducing latency
-      dramatically for global audiences.
+      Your server lives somewhere specific. Let's say Virginia. If someone in Tokyo loads your site, their request has
+      to travel halfway around the world and back. A CDN puts copies of your files on servers all over the globe, so
+      that Tokyo visitor gets served from a server in Asia instead.
     </p>
 
-    <h3 class="text-xl font-semibold text-white mt-6 mb-4">How CDNs Help</h3>
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Why Bother with a CDN</h3>
     <ul class="text-white/80 space-y-2 ml-4">
-      <li>Reduce latency by serving from nearby servers</li>
-      <li>Handle traffic spikes without overloading your server</li>
-      <li>Provide DDoS protection</li>
-      <li>Offload bandwidth from your hosting</li>
+      <li>Visitors get files from whichever server is closest to them</li>
+      <li>When you go viral, the CDN absorbs the traffic instead of crashing your server</li>
+      <li>Most CDNs include DDoS protection — bonus security</li>
+      <li>Your hosting bill stays lower because the CDN handles most of the bandwidth</li>
     </ul>
 
-    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Recommended CDNs</h3>
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">CDNs Worth Using</h3>
     <div class="space-y-4 my-6">
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-white font-semibold">Cloudflare (Free tier available)</h4>
-        <p class="text-white/70 text-sm mt-2">Best free option. Includes CDN, DDoS protection, SSL, and basic
-          optimization. Pro plan ($20/month) adds image optimization and more edge locations.</p>
+        <h4 class="text-white font-semibold">Cloudflare (Free tier is actually great)</h4>
+        <p class="text-white/70 text-sm mt-2">Most people should just use Cloudflare. The free plan includes CDN, DDoS
+          protection, SSL, and some optimization features. I use their free tier on sites that get six-figure traffic
+          and it handles everything fine.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-white font-semibold">Bunny CDN ($0.01/GB)</h4>
-        <p class="text-white/70 text-sm mt-2">Pay-as-you-go pricing makes it extremely affordable. Great performance and
-          easy setup. Good alternative to Cloudflare.</p>
+        <h4 class="text-white font-semibold">Bunny CDN (Ridiculously Cheap)</h4>
+        <p class="text-white/70 text-sm mt-2">Pay-as-you-go at $0.01 per GB. For most sites, that means like $2/month.
+          Great if you want more control than Cloudflare offers or just prefer paying directly for what you use.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">KeyCDN ($0.04/GB)</h4>
-        <p class="text-white/70 text-sm mt-2">Simple, fast CDN with good WordPress integration. Real-time analytics and
-          easy purging.</p>
+        <p class="text-white/70 text-sm mt-2">Simple, straightforward, works well with WordPress. Nice dashboard for
+          seeing what is happening in real-time.</p>
       </div>
     </div>
   </section>
@@ -348,21 +381,28 @@ const relatedArticles = [
   <section id="database-optimization">
     <h2>Database Optimization</h2>
     <p>
-      For dynamic sites (WordPress, WooCommerce), database performance is crucial. A bloated database slows every page
-      load.
+      WordPress stores everything in a database — your posts, your settings, and way too much junk you do not need. Over
+      time, databases get bloated with thousands of post revisions, old spam comments, and expired temporary data. All
+      that extra stuff makes every database query slower.
     </p>
 
-    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Database Optimization Steps</h3>
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Cleaning Up the Mess</h3>
     <ul class="text-white/80 space-y-2 ml-4">
-      <li><strong>Delete post revisions:</strong> WordPress stores every revision by default</li>
-      <li><strong>Remove spam/trash comments:</strong> These clutter the database</li>
-      <li><strong>Clean transients:</strong> Expired temporary data should be purged</li>
-      <li><strong>Optimize tables:</strong> Run OPTIMIZE TABLE to defragment</li>
-      <li><strong>Limit revisions:</strong> Add define('WP_POST_REVISIONS', 5); to wp-config.php</li>
+      <li><strong>Delete old post revisions:</strong> WordPress saves every single version of every post by default. Do
+        you need revision 47 from three years ago? Probably not.
+      </li>
+      <li><strong>Empty the spam folder:</strong> Those spam comments are still taking up space until you actually
+        delete them
+      </li>
+      <li><strong>Clean up transients:</strong> Temporary data that was supposed to expire but never got cleaned up</li>
+      <li><strong>Optimize database tables:</strong> Like defragging a hard drive but for your database</li>
+      <li><strong>Limit future revisions:</strong> Add <code>define('WP_POST_REVISIONS', 5);</code> to wp-config.php so
+        WordPress stops hoarding every tiny edit
+      </li>
     </ul>
 
     <p class="mt-4">
-      <strong>WordPress tools:</strong> WP-Optimize, WP-Sweep, or Advanced Database Cleaner.
+      <strong>Easy solution:</strong> WP-Optimize has a one-click button that does all of this. Run it once a month.
     </p>
   </section>
 
@@ -370,29 +410,29 @@ const relatedArticles = [
   <section id="core-web-vitals">
     <h2>Core Web Vitals Explained</h2>
     <p>
-      Google's Core Web Vitals are the key metrics for page experience. They are ranking factors, so optimizing them
-      improves both speed and SEO.
+      Google came up with three specific metrics they call Core Web Vitals. They are not just vanity numbers — they are
+      actual ranking factors. Fix these and you help both your speed scores and your SEO.
     </p>
 
     <div class="space-y-4 my-6">
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">LCP (Largest Contentful Paint)</h4>
-        <p class="text-white/70 text-sm mt-2"><strong>Target: Under 2.5 seconds</strong></p>
-        <p class="text-white/70 text-sm mt-1">Measures when the largest visible element loads. Improve with: faster
-          hosting, optimized images, preloading critical resources.</p>
+        <p class="text-white/70 text-sm mt-2"><strong>Goal: Under 2.5 seconds</strong></p>
+        <p class="text-white/70 text-sm mt-1">This measures when the biggest thing on your page (usually a hero image or
+          main heading) actually shows up. Fix it with: better hosting, smaller images, preloading important stuff.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">INP (Interaction to Next Paint)</h4>
-        <p class="text-white/70 text-sm mt-2"><strong>Target: Under 200 milliseconds</strong></p>
-        <p class="text-white/70 text-sm mt-1">Measures responsiveness to user interactions. Improve with: reducing
-          JavaScript, breaking up long tasks, using web workers.</p>
+        <p class="text-white/70 text-sm mt-2"><strong>Goal: Under 200 milliseconds</strong></p>
+        <p class="text-white/70 text-sm mt-1">When someone clicks a button, how long until something visually responds?
+          If you have tons of JavaScript running, this suffers. Break up large scripts, defer non-critical JS.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">CLS (Cumulative Layout Shift)</h4>
-        <p class="text-white/70 text-sm mt-2"><strong>Target: Under 0.1</strong></p>
-        <p class="text-white/70 text-sm mt-1">Measures visual stability (elements jumping around). Improve with:
-          specifying image dimensions, reserving space for ads/embeds, avoiding inserting content above existing
-          content.</p>
+        <p class="text-white/70 text-sm mt-2"><strong>Goal: Under 0.1</strong></p>
+        <p class="text-white/70 text-sm mt-1">You know when you are about to click something and suddenly an ad loads
+          and pushes the button down and you click the wrong thing? That is layout shift. Fix it by always specifying
+          image dimensions and reserving space for ads before they load.</p>
       </div>
     </div>
   </section>
@@ -400,73 +440,77 @@ const relatedArticles = [
   <!-- Speed Optimization Tools -->
   <section id="optimization-tools">
     <h2>Speed Optimization Tools</h2>
+    <p>Here are the tools I actually use and recommend — not every plugin on the market, just the ones that work.</p>
 
-    <h3 class="text-xl font-semibold text-white mt-6 mb-4">WordPress Plugins</h3>
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">WordPress Caching Plugins</h3>
     <div class="space-y-4 my-6">
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">WP Rocket ($49/year)</h4>
-        <p class="text-white/70 text-sm mt-2">Best all-in-one caching plugin. Handles caching, minification, lazy
-          loading, and database optimization. Worth the price for most sites.</p>
+        <p class="text-white/70 text-sm mt-2">This is what I use on most client sites. Does everything — caching,
+          minification, lazy loading, database cleanup. You turn it on and things get faster. Worth every penny for most
+          sites.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">LiteSpeed Cache (Free)</h4>
-        <p class="text-white/70 text-sm mt-2">Free and powerful, but requires LiteSpeed server. Many hosts now use
-          LiteSpeed, making this an excellent free option.</p>
+        <p class="text-white/70 text-sm mt-2">If your host runs LiteSpeed servers (many do now), this free plugin is
+          absurdly powerful. Works better than most paid options. Check if your host supports it.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">Perfmatters ($24.95/year)</h4>
-        <p class="text-white/70 text-sm mt-2">Disables unnecessary features that slow WordPress. Great companion to
-          caching plugins.</p>
+        <p class="text-white/70 text-sm mt-2">Not a caching plugin — it turns off all the stuff WordPress loads that you
+          do not need. Emoji scripts, heartbeat API, unused features. Use it alongside a caching plugin.</p>
       </div>
     </div>
 
-    <h3 class="text-xl font-semibold text-white mt-6 mb-4">Image Optimization Services</h3>
+    <h3 class="text-xl font-semibold text-white mt-6 mb-4">For Images Specifically</h3>
     <ul class="text-white/80 space-y-2 ml-4">
-      <li><strong>ShortPixel:</strong> Best balance of compression and quality</li>
-      <li><strong>Imagify:</strong> Easy to use, integrates with many platforms</li>
-      <li><strong>Cloudinary:</strong> Advanced image CDN with on-the-fly optimization</li>
+      <li><strong>ShortPixel:</strong> My go-to. Good compression, good quality, fair pricing</li>
+      <li><strong>Imagify:</strong> Made by the WP Rocket people. Works well, super easy</li>
+      <li><strong>Cloudinary:</strong> Overkill for most sites but amazing if you have tons of images and want automatic
+        optimization
+      </li>
     </ul>
   </section>
 
   <!-- Speed Checklist -->
   <section id="speed-checklist">
     <h2>Speed Optimization Checklist</h2>
-    <p>Use this checklist to systematically improve your site's speed:</p>
+    <p>Here is a quick reference to work through. Check off what you have done, then tackle what is left.</p>
 
     <div class="bg-white/5 border border-white/10 rounded-lg p-6 my-6">
-      <h4 class="text-white font-semibold mb-4">Hosting & Infrastructure</h4>
+      <h4 class="text-white font-semibold mb-4">Foundation (Start Here)</h4>
       <ul class="text-white/70 text-sm space-y-2">
-        <li>[ ] Using quality hosting (not cheap shared hosting)</li>
-        <li>[ ] PHP version is 8.0 or higher</li>
-        <li>[ ] Server is in the same region as your audience</li>
-        <li>[ ] CDN is configured and active</li>
-        <li>[ ] SSL certificate is active (HTTPS)</li>
+        <li>[ ] Are you on decent hosting or still on that $3/month plan?</li>
+        <li>[ ] Is PHP version 8.0 or newer?</li>
+        <li>[ ] Is your server geographically close to your visitors?</li>
+        <li>[ ] Do you have a CDN set up?</li>
+        <li>[ ] SSL working? (Should be HTTPS in the address bar)</li>
       </ul>
 
-      <h4 class="text-white font-semibold mb-4 mt-6">Images</h4>
+      <h4 class="text-white font-semibold mb-4 mt-6">Images (The Big One)</h4>
       <ul class="text-white/70 text-sm space-y-2">
-        <li>[ ] Images are compressed</li>
-        <li>[ ] Using WebP format where possible</li>
-        <li>[ ] Images are sized appropriately (not oversized)</li>
-        <li>[ ] Lazy loading is enabled</li>
-        <li>[ ] Width and height attributes are set on images</li>
+        <li>[ ] Are images compressed or raw straight from the camera?</li>
+        <li>[ ] Using WebP instead of JPG/PNG where possible?</li>
+        <li>[ ] Are images sized for how they actually display?</li>
+        <li>[ ] Is lazy loading turned on?</li>
+        <li>[ ] Do images have width and height set? (Prevents layout shift)</li>
       </ul>
 
-      <h4 class="text-white font-semibold mb-4 mt-6">Code & Caching</h4>
+      <h4 class="text-white font-semibold mb-4 mt-6">Code and Caching</h4>
       <ul class="text-white/70 text-sm space-y-2">
-        <li>[ ] HTML, CSS, and JS are minified</li>
-        <li>[ ] GZIP or Brotli compression is enabled</li>
-        <li>[ ] Browser caching is configured</li>
-        <li>[ ] Page caching is enabled</li>
-        <li>[ ] Render-blocking resources are deferred/async</li>
+        <li>[ ] HTML, CSS, JS minified?</li>
+        <li>[ ] GZIP or Brotli compression enabled on server?</li>
+        <li>[ ] Browser caching headers configured?</li>
+        <li>[ ] Page caching plugin installed and working?</li>
+        <li>[ ] Non-critical scripts deferred?</li>
       </ul>
 
-      <h4 class="text-white font-semibold mb-4 mt-6">Database & Plugins</h4>
+      <h4 class="text-white font-semibold mb-4 mt-6">Database and Plugins</h4>
       <ul class="text-white/70 text-sm space-y-2">
-        <li>[ ] Database is optimized (revisions, transients cleaned)</li>
-        <li>[ ] Unused plugins are deleted (not just deactivated)</li>
-        <li>[ ] Plugin count is reasonable (under 30 for WordPress)</li>
-        <li>[ ] No conflicting or poorly-coded plugins</li>
+        <li>[ ] Database cleaned recently?</li>
+        <li>[ ] Old/unused plugins actually deleted (not just deactivated)?</li>
+        <li>[ ] Total plugin count under control? (30 is a reasonable max)</li>
+        <li>[ ] Any known resource-heavy plugins you could replace?</li>
       </ul>
     </div>
   </section>
@@ -481,16 +525,18 @@ const relatedArticles = [
   <section id="conclusion">
     <h2>Conclusion</h2>
     <p>
-      Website speed optimization is not a one-time task - it is an ongoing process. Start with the biggest wins:
-      <strong>quality hosting, image optimization, and caching</strong>. These three alone can cut your load time in
-      half.
+      Look, you do not have to tackle everything in this guide at once. That would be overwhelming and honestly
+      unnecessary. Start with the three things that move the needle most: <strong>get on decent hosting, optimize your
+      images, and set up basic caching</strong>. Just those three can easily cut your load time in half.
     </p>
     <p>
-      Once you have the basics covered, work through the checklist systematically. Test after each change to see the
-      impact. Aim for under 3 seconds on mobile and continuously monitor your Core Web Vitals.
+      From there, work through the checklist piece by piece. Test your speed after each change so you know what actually
+      helped. Getting under 3 seconds on mobile is the goal — once you hit that, everything else is bonus points.
     </p>
     <p>
-      Remember: every tenth of a second matters. Faster sites rank higher, convert better, and keep users happy.
+      Here is the thing I wish someone had told me years ago: speed improvements compound. Shaving off 200 milliseconds
+      here and 300 there does not feel like much in isolation. But add them all up and suddenly you have a site that
+      feels snappy, ranks better, and actually converts visitors into customers. Worth the effort? Absolutely.
     </p>
 
     <div class="bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-jet-stream/30 rounded-xl p-6 mt-6">

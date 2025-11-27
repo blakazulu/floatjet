@@ -85,11 +85,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 073 | Best Accounting Software for Freelancers in 2025: Complete Guide           | Finance       | Tools    | /tools/best-accounting-software-freelancers      | 2327       | true              |
 | 074 | Best Invoicing Tools for Remote Professionals in 2025                      | Finance       | Tools    | /tools/best-invoicing-tools                      | 1530       | true              |
 | 075 | Best Web Hosting for Remote Businesses (2025)                              | Hosting       | Tools    | /tools/best-web-hosting-remote-business          | 2480       | true              |
-| 076 | How to Migrate Your Website Without Downtime (2025)                        | Hosting       | Tools    | /tools/migrate-website-without-downtime          | 2347       | false             |
-| 077 | Website Speed Optimization: Complete Guide (2025)                          | Hosting       | Tools    | /tools/website-speed-optimization-guide          | 2560       | false             |
-| 078 | Best VPS Hosting for Remote Businesses (2025)                              | Hosting       | Tools    | /tools/best-vps-hosting-remote-business          | 3155       | false             |
-| 079 | Shared vs VPS vs Dedicated Hosting: Which Do You Need? (2025)              | Hosting       | Tools    | /tools/shared-vs-vps-vs-dedicated-hosting        | 1510       | false             |
-| 080 | Best E-commerce Hosting for Remote Entrepreneurs (2025)                    | Hosting       | Tools    | /tools/best-ecommerce-hosting                    | 3096       | false             |
+| 076 | How to Migrate Your Website Without Downtime (2025)                        | Hosting       | Tools    | /tools/migrate-website-without-downtime          | 2347       | true              |
+| 077 | Website Speed Optimization: Complete Guide (2025)                          | Hosting       | Tools    | /tools/website-speed-optimization-guide          | 2560       | true              |
+| 078 | Best VPS Hosting for Remote Businesses (2025)                              | Hosting       | Tools    | /tools/best-vps-hosting-remote-business          | 3155       | true              |
+| 079 | Shared vs VPS vs Dedicated Hosting: Which Do You Need? (2025)              | Hosting       | Tools    | /tools/shared-vs-vps-vs-dedicated-hosting        | 1510       | true              |
+| 080 | Best E-commerce Hosting for Remote Entrepreneurs (2025)                    | Hosting       | Tools    | /tools/best-ecommerce-hosting                    | 3096       | true              |
 | 081 | Best Cloud Storage for Remote Work (2025)                                  | SaaS          | Tools    | /tools/best-cloud-storage-remote-work            | 3486       | false             |
 | 082 | Best Email Marketing Tools for Creators & Small Business (2025)            | SaaS          | Tools    | /tools/best-email-marketing-tools                | 4570       | false             |
 | 083 | Best Note-Taking Apps for Remote Professionals (2025)                      | SaaS          | Tools    | /tools/best-note-taking-apps                     | 3482       | false             |
@@ -126,11 +126,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 |-----------|----------|------------|
 | Blog      | 0        | 0          |
 | Gear      | 0        | 0          |
-| Guides    | 13       | 28,155     |
-| Tools     | 20       | 63,135     |
-| **Total** | **32**   | **89,418** |
+| Guides    | 0        | 0          |
+| Tools     | 11       | 40,230     |
+| **Total** | **11**   | **40,230** |
 
-**Average words per article:** ~2,728
+**Average words per article:** ~3,657
 
 ---
 

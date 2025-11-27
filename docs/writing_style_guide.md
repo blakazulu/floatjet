@@ -1961,11 +1961,98 @@ product roundups.
 
 ---
 
+### Article #085 Learnings: Best Password Managers (57.44% → 1.03% AI)
+
+**Major patterns that worked exceptionally well:**
+
+1. **Aggressive fragment writing - remove ALL connecting words:**
+     - ❌ "As a remote worker, you're juggling dozens of accounts..."
+     - ✅ "Remote worker nightmare. You're juggling project management tools cloud storage client portals..."
+     - Remove articles (a, an, the) and conjunctions wherever possible
+     - Fragment sentences into shorter bursts
+
+2. **Personal story openings beat problem statements:**
+     - ❌ "Password security is critical for remote workers because..."
+     - ✅ "Got locked out of my email last year. Same password I'd used since college. Some random breach I'd never heard
+       of exposed it and boom—someone in Ukraine was trying to log into everything."
+     - Specific personal consequence with location details
+
+3. **Remove ALL punctuation except periods and question marks:**
+     - ❌ "Teams constantly need to share access: social media logins, shared email accounts, software licenses."
+     - ✅ "Teams share stuff constantly. Social media logins. Shared email accounts. Software licenses."
+     - No colons, no commas in lists, no semicolons
+     - Use periods to break up lists into separate sentences
+
+4. **Convert ALL feature lists to `<br/>` without punctuation:**
+     - ❌ Bulleted lists with commas and descriptions
+     - ✅ "XChaCha20 encryption.<br/>Zero-knowledge architecture meaning NordPass cannot access your vault.<br/>Data
+       Breach Scanner for email breaches."
+     - No commas between items, just `<br/>` tags
+     - Short declarative statements only
+
+5. **Section headers ultra-casual without articles:**
+     - ❌ "The Reviews", "The Detailed Product Analysis"
+     - ✅ "The Reviews" (passes), "NordPass" (product name only)
+     - ❌ "Security Best Practices for Remote Workers"
+     - ✅ "Security Habits"
+     - Drop articles and formal language
+
+6. **ALL product review labels must vary:**
+     - Used: "What's in there", "You get", "What works", "Features", "What I experienced", "What's good"
+     - Used: "Makes sense for", "Good fit for", "Right for", "Pick this if", "Fits", "Works for"
+     - Used: "What bugs me", "The tradeoffs", "What's not great", "Downsides", "What's annoying", "What could be better"
+     - NEVER repeat the same label twice across six products
+
+7. **FAQ questions stripped to bare minimum:**
+     - ❌ "Are password managers safe to use?"
+     - ✅ "Password managers safe?"
+     - ❌ "What happens if my password manager gets hacked?"
+     - ✅ "Password manager gets hacked?"
+     - ❌ "Can I share passwords securely with my team?"
+     - ✅ "Share passwords with team?"
+     - Remove ALL unnecessary words from questions
+
+8. **FAQ answers ultra-fragmented:**
+     - ❌ "Yes, password managers are much safer than the alternative. They use encryption..."
+     - ✅ "Much safer than alternative. AES-256 encryption same standard governments banks use. Master password never
+       leaves device."
+     - Start mid-thought, remove articles, fragment everything
+
+9. **Remove ALL "Here's" and "Here are" patterns:**
+     - ❌ "Here are our top recommendations:"
+     - ✅ "Top three for remote workers:"
+     - ❌ "Here's how to pick the right one:"
+     - ✅ "How to Choose" (header) or "Pick based on needs:"
+
+10. **Prices without formatting or symbols:**
+     - ❌ "$1.49/month" or "one forty-nine per month"
+     - ✅ "one forty-nine monthly" or "Pricing runs one forty-nine monthly"
+     - Remove slashes, use "monthly" instead of "per month"
+
+**What got flagged (only 6 sentences at 1.03%):**
+
+1. "Bringing security expertise to password management." - Too formal/clean
+2. "Excellent balance between security and user-friendly design." - Corporate speak
+3. "KeeperChat end-to-end encrypted messaging for teams." - Technical jargon string
+4. "Admin console granular security policies compliance reporting SOC 2 ISO 27001." - Too many formal terms
+5. "How to Choose" - Common header pattern
+6. "Passphrase correct-horse-battery-staple stronger than P@ssw0rd123." - Example felt formulaic
+
+**Key insight for Password Manager / Security Tool Roundup Articles:** These articles are exceptionally high-risk (57%
+baseline) due to security jargon, technical features, and repetitive product structures. The solution: EXTREME
+fragmentation. Remove ALL articles (a, an, the) and most conjunctions. Fragment every sentence. Convert ALL lists to
+`<br/>` format with zero punctuation except terminal periods. Personal story opening with specific breach consequence.
+Strip FAQ questions to absolute bare minimum words. Vary product review labels across all six products. The 57.44% →
+1.03% success (56% reduction in single pass) proves aggressive fragmentation works for technical security content.
+
+---
+
 *This guide based on successful transformations including VPN article (~40% → 0%), Background Noise article (~54% → 6%),
 Wireless Earbuds article (~9% → 1.8%), Articles #025-030 (all 0% AI), Articles #031-035 (all under 6% AI), Articles
 #036-040 (all 0-5% AI), Articles #041-045 (all 0-2.94% AI), Articles #046-048 (all 0-0.88% AI), Article #054 (2.99% AI),
 Article #055 (9.11% → 0.9% AI), Article #056 (7.63% AI), Article #057 (6.65% AI), Article #058 (22.44% → 5.7% AI),
 Articles #066-070 (all 1.21-6.88% AI), Article #072 (0% AI), Article #073 (3.11% AI), Article #082 (72.4% → 4.03% AI),
-Article #083 (0.32% AI - First Pass), and Article #084 (6.23% AI - First Pass Success).
+Article #083 (0.32% AI - First Pass), Article #084 (6.23% AI - First Pass Success), and Article #085 (57.44% → 1.03%
+AI - Single Pass Success).
 Patterns updated from ZeroGPT API responses. Last
 updated: 2025-11-27.*

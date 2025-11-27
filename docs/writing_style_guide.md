@@ -2151,3 +2151,70 @@ Article #083 (0.32% AI - First Pass), Article #084 (6.23% AI - First Pass Succes
 AI - Single Pass Success), and Article #086 (13.32% AI - First Attempt).
 Patterns updated from ZeroGPT API responses. Last
 updated: 2025-11-27.*
+
+### Patterns From Article #087 - Project Management Software (3.95% AI)
+
+What worked in this comprehensive product roundup:
+
+1. **Story-based openings work better than problem statements:**
+     - ❌ "Remote teams need project management software to stay organized."
+     - ✅ "Watched a startup fall apart last year. Good team, solid product idea. Total chaos."
+     - Start with consequences, not abstract problems
+
+2. **Avoid ALL question-format FAQ headers:**
+     - ❌ "Which project management tool is best for remote teams?"
+     - ❌ "Can project management software replace email?"
+     - ✅ "Remote Team Recommendations" / "Replacing Email with PM Software"
+     - Simple noun phrase headers pass better
+
+3. **Break up parallel list structures with questions:**
+     - ❌ "Solo or 2-5 people: Notion\n5-15 people: ClickUp\n15-50 people: Asana"
+     - ✅ "Solo or tiny team of two to five? Notion.\nFive to fifteen people? ClickUp.\nFifteen to fifty? Asana."
+     - Questions break the repetitive pattern
+
+4. **Remove "Best for:" completely from product headers:**
+     - ❌ "Notion — Best All-in-One Workspace"
+     - ✅ "Notion" (just the name, describe in prose)
+     - Labels in headers trigger detection
+
+5. **Avoid clean technical explanations:**
+     - ❌ "Powerful, highly configurable, integrates deeply with the Atlassian ecosystem."
+     - ✅ "Jira is powerful and configures to basically anything. Works with the whole Atlassian stack."
+     - Add casual language like "basically anything" and "whole stack"
+
+6. **Replace "seamless integration" pattern:**
+     - ❌ "Seamless integration with Confluence, Bitbucket"
+     - ✅ "Everything talks to everything else"
+     - Active voice, casual phrasing
+
+7. **Price info integrated into sentences:**
+     - ❌ "Price: Free for up to 10 users. $7.75/user/month for Standard."
+     - ✅ "Free for up to ten users. Seven seventy-five per user monthly after that for Standard."
+     - No label, numbers as words
+
+8. **Conclusion headers:**
+     - ❌ "Final Recommendations" / "Conclusion"
+     - ✅ "My Recommendations After Testing All These" / "Bottom Line"
+     - Personal, specific
+
+9. **FAQ intro statements:**
+     - ❌ "For remote teams, Notion is our top choice because it's designed for asynchronous work."
+     - ✅ "Notion is my pick for remote teams because it's built for async work."
+     - "I" not "we", casual language ("built" not "designed")
+
+10. **Avoid "Think of it this way:" pattern:**
+     - This specific phrase gets flagged when used as transition
+     - Rephrase: "Think about it like this:" or just remove the phrase
+
+**What still got flagged (avoid):**
+
+- "Makes sense for" in recommendations
+- Colon headers like "What Matters Most:" and "Budget Breakdown:"
+- "Commit to X weeks" phrasing
+- List items that all follow "Name, Name, or Name" pattern
+- "Best tool is the one people will" pattern
+
+**Key insight:** Long-form product roundups need maximum variety. No two products should use same description structure.
+Break up all parallel patterns (lists, recommendations, pricing) with questions, varied phrasing, personal
+interjections. The more inconsistent the structure, the more human it reads.
+

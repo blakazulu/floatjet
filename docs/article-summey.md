@@ -96,7 +96,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 084 | Best Online Course Platforms for Creators (2025)                           | SaaS          | Tools    | /tools/best-online-course-platforms              | 3174       | true              |
 | 085 | Best Password Managers for Remote Workers (2025)                           | SaaS          | Tools    | /tools/best-password-manager-remote-work         | 2156       | true              |
 | 086 | Best Productivity Apps for Remote Workers (2025)                           | SaaS          | Tools    | /tools/best-productivity-apps                    | 4256       | true              |
-| 087 | Best Project Management Software for Remote Teams (2025)                   | SaaS          | Tools    | /tools/best-project-management-software          | 3663       | false             |
+| 087 | Best Project Management Software for Remote Teams (2025)                   | SaaS          | Tools    | /tools/best-project-management-software          | 3600       | true              |
 | 088 | Best Time Tracking Software for Freelancers (2025)                         | SaaS          | Tools    | /tools/best-time-tracking-software               | 3925       | false             |
 | 089 | Best Video Conferencing Tools for Remote Teams (2025)                      | SaaS          | Tools    | /tools/best-video-conferencing-tools             | 3823       | false             |
 | 090 | Is Notion Worth It? Honest Review for Remote Workers (2025)                | SaaS          | Tools    | /tools/is-notion-worth-it                        | 2250       | false             |
@@ -115,8 +115,8 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | Blog      | 16       | 14,776      |
 | Gear      | 23       | 38,861      |
 | Guides    | 30       | 59,908      |
-| Tools     | 28       | 71,833      |
-| **Total** | **97**   | **185,378** |
+| Tools     | 28       | 71,770      |
+| **Total** | **97**   | **185,315** |
 
 **Average words per article:** ~1,911
 
@@ -127,10 +127,10 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | Blog      | 0        | 0          |
 | Gear      | 0        | 0          |
 | Guides    | 0        | 0          |
-| Tools     | 6        | 24,708     |
-| **Total** | **6**    | **24,708** |
+| Tools     | 5        | 21,045     |
+| **Total** | **5**    | **21,045** |
 
-**Average words per article:** ~4,118
+**Average words per article:** ~4,209
 
 ---
 

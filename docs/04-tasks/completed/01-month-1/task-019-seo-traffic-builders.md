@@ -1,8 +1,9 @@
 # Task FJ-019: SEO Traffic Builders - Final Review
 
 **Date:** 2025-11-28
-**Status:** Complete - All 5 articles published and humanized
+**Status:** ✅ COMPLETED - All 5 articles published, humanized, and tested
 **Reviewer:** Claude Code
+**Final Testing:** 2025-11-28 - User confirmed all articles working
 
 ---
 
@@ -390,10 +391,54 @@ Each article funnels to money pages:
 
 ---
 
+## Post-Publication Fixes (2025-11-28)
+
+After initial publication, several display and component issues were identified and fixed:
+
+### Visual Fixes
+
+- ✅ Fixed white-on-white text in example box (can-you-write-off-home-office-equipment)
+    - Added explicit color styles to `.example-box p` and `.example-box strong`
+- ✅ Replaced poor quality hero image (how-many-monitors-do-you-actually-need)
+    - Changed from `photo-1527443224154-c4a3942d3acf` to `photo-1547658719-da2b51169166`
+
+### Component Structure Fixes
+
+- ✅ Added missing `categorySlug` prop to all 5 ArticleLayout components
+    - Resolved TypeScript compilation errors
+- ✅ Fixed RelatedArticles structure (all 5 articles)
+    - Wrapped in `<Fragment slot="full-width">` for proper layout
+- ✅ Fixed related articles properties
+    - Changed `url` → `href` and `description` → `excerpt`
+    - Corrected image sizes from `-600w.webp` → `-800w.webp`
+
+### Image Downloads & Optimization
+
+- ✅ Added 6 missing Unsplash photo IDs to download script:
+    - photo-1586023492125-27b2c045efd7 (Standing Desk Cost Guide)
+    - photo-1600880292089-90a7e086ee0c (Ergonomic Desk Setup)
+    - photo-1588872657578-7efd1f1555ed (Laptop main image)
+    - photo-1611532736579-6b16e2b50449 (Personal Laptop)
+    - photo-1547658719-da2b51169166 (Monitors main image)
+    - photo-1586201375761-83865001e31c (Ultimate Home Office Setup)
+- ✅ Downloaded 100 images at 2 sizes (200 files total)
+- ✅ Optimized 12 new images to WebP format (saved 0.86 MB)
+- ✅ Deleted all 200 JPG files, keeping only WebP versions
+
+### User Testing Completed
+
+- ✅ All articles display correctly with proper styling
+- ✅ All related articles links work correctly
+- ✅ All images display at correct sizes
+- ✅ No white text or missing image issues
+- ✅ User confirmed: "they work"
+
+---
+
 ## Next Steps
 
-1. **User to test in staging:** Run dev server and complete pending tests above
-2. **Update task file:** Mark FJ-019 as completed, log actual hours
+1. ~~User to test in staging~~ ✅ COMPLETED - User confirmed working
+2. ~~Update task file~~ ✅ COMPLETED - Status updated
 3. **Move to completed folder:** Archive task in `/docs/04-tasks/completed/01-month-1/`
 4. **Git commit message:** Provided below
 

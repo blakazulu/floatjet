@@ -2,7 +2,7 @@
 
 This document contains a comprehensive list of all articles on the FloatJet website.
 
-**Total Articles:** 97 (excluding index/category pages)
+**Total Articles:** 102 (excluding index/category pages)
 
 ---
 
@@ -107,6 +107,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 | 095 | Free VPN vs Paid VPN: What Remote Workers Need to Know (2025)              | VPN           | Tools    | /tools/free-vpn-vs-paid-vpn                      | 1400       | true              |
 | 096 | How to Set Up a VPN on All Your Devices (2025)                             | VPN           | Tools    | /tools/how-to-setup-vpn-all-devices              | 1200       | true              |
 | 097 | VPN Kill Switch Explained: Why Remote Workers Need It (2025)               | VPN           | Tools    | /tools/vpn-kill-switch-explained                 | 600        | true              |
+| 098 | Can You Write Off Home Office Equipment? Tax Deduction Guide (2025)        | Finance       | Guides   | /guides/can-you-write-off-home-office-equipment  | 2200       | true              |
+| 099 | Do I Really Need a Password Manager? Honest Answer (2025)                  | Security      | Guides   | /guides/do-i-really-need-password-manager        | 2000       | true              |
+| 100 | Are Standing Desks Actually Worth It? (2025)                               | Setup         | Guides   | /guides/are-standing-desks-actually-worth-it     | 2300       | true              |
+| 101 | What Makes a Laptop Good for Remote Work? (2025)                           | Setup         | Guides   | /guides/what-makes-laptop-good-remote-work       | 2400       | true              |
+| 102 | How Many Monitors Do You Actually Need? Honest Answer (2025)               | Setup         | Guides   | /guides/how-many-monitors-do-you-actually-need   | 2600       | true              |
 
 ### Word Count Summary
 
@@ -114,11 +119,11 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 |-----------|----------|-------------|
 | Blog      | 16       | 14,776      |
 | Gear      | 23       | 38,861      |
-| Guides    | 30       | 59,908      |
+| Guides    | 35       | 71,408      |
 | Tools     | 28       | 67,827      |
-| **Total** | **97**   | **181,372** |
+| **Total** | **102**  | **192,872** |
 
-**Average words per article:** ~1,870
+**Average words per article:** ~1,891
 
 ### Word Count Summary for Non-Humanized Content
 
@@ -136,24 +141,24 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 
 ## Summary by Category
 
-| Category  | Count  |
-|-----------|--------|
-| Blog      | 16     |
-| Gear      | 23     |
-| Guides    | 30     |
-| Tools     | 28     |
-| **Total** | **97** |
+| Category  | Count   |
+|-----------|---------|
+| Blog      | 16      |
+| Gear      | 23      |
+| Guides    | 35      |
+| Tools     | 28      |
+| **Total** | **102** |
 
 ## Summary by Sub-Category
 
 | Sub-Category  | Count |
 |---------------|-------|
-| Finance       | 13    |
+| Finance       | 14    |
 | Communication | 7     |
 | Travel        | 9     |
-| Security      | 7     |
+| Security      | 8     |
 | Productivity  | 6     |
-| Setup         | 6     |
+| Setup         | 9     |
 | Hosting       | 8     |
 | SaaS          | 12    |
 | VPN           | 6     |
@@ -164,4 +169,4 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 
 ---
 
-*Last updated: 2025-11-27*
+*Last updated: 2025-11-28*

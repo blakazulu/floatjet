@@ -104,6 +104,12 @@ const photoIds = [
   "photo-1614064641938-3bbee52942c7",
   "photo-1621761191319-c6fb62004040",
   "photo-1633265486064-086b219458ec",
+  "photo-1586023492125-27b2c045efd7",
+  "photo-1600880292089-90a7e086ee0c",
+  "photo-1588872657578-7efd1f1555ed",
+  "photo-1611532736579-6b16e2b50449",
+  "photo-1547658719-da2b51169166",
+  "photo-1586201375761-83865001e31c",
 ];
 
 const OUTPUT_DIR = path.join(__dirname, "..", "public", "images", "unsplash");

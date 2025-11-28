@@ -1,0 +1,315 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+
+// Article metadata
+const title = 'Can You Write Off Home Office Equipment? Tax Deduction Guide (2025)';
+const description = 'Short answer if you\'re freelancing: yeah. Learn what qualifies, how much you can deduct, and mistakes that trigger IRS audits.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-28');
+const readingTime = 7;
+const image = '/images/unsplash/photo-1454165804606-c3d57bc86b40-1200w.webp';
+const imageAlt = 'Home office desk with laptop and office supplies';
+
+// Table of contents headings
+const headings = [
+  {text: 'Can You Write Off Home Office Equipment?', slug: 'can-you-write-off', depth: 2},
+  {text: 'What counts as deductible', slug: 'what-qualifies', depth: 2},
+  {text: 'Two requirements the IRS checks', slug: 'requirements', depth: 2},
+  {text: 'How to calculate the deduction', slug: 'how-much', depth: 2},
+  {text: 'What triggers audits', slug: 'common-mistakes', depth: 2},
+  {text: 'Tracking and documentation', slug: 'track-purchases', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+];
+
+// FAQ data with schema markup
+const faqs = [
+  {
+    question: 'Can the whole desk and chair cost get deducted?',
+    answer: 'Yeah if you\'re using them purely for business and meeting the home office requirements. Stuff under $2,500 can go on that year\'s taxes in full through Section 179. Bigger purchases get spread across multiple years. Keep those receipts and note the business percentage if there\'s any personal use mixed in.'
+  },
+  {
+    question: 'W-2 employee here working from home—does this apply?',
+    answer: 'Unfortunately no. 2018 tax changes removed home office deductions for employees completely. Only available now for self-employed folks, freelancers, business owners. Doesn\'t matter if your company mandates remote work—employees can\'t write off the equipment anymore.'
+  },
+  {
+    question: 'Receipts required for everything I deduct?',
+    answer: 'Yeah, IRS wants documentation on every deduction you claim. Receipts, invoices, credit card statements, bank records, keep all of it for minimum three years though seven is safer. Anything over $75 needs an actual receipt. Expense apps or accounting software keeps everything organized digitally which makes tax season less miserable.'
+  },
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Tax Tips for Remote Workers',
+    excerpt: 'Navigate international tax obligations and optimize your finances',
+    href: '/blog/tax-tips-remote-workers',
+    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
+    imageAlt: 'Tax forms and calculator'
+  },
+  {
+    title: 'Ultimate Home Office Setup',
+    excerpt: 'Must-have gear to upgrade your workspace for maximum comfort',
+    href: '/blog/ultimate-home-office-setup',
+    image: '/images/unsplash/photo-1493934558415-9d19f0b2b4d2-800w.webp',
+    imageAlt: 'Home office furniture and setup'
+  },
+  {
+    title: 'Best Banking for Digital Nomads',
+    excerpt: 'International banking solutions with low fees and multi-currency support',
+    href: '/blog/best-banking-digital-nomads',
+    image: '/images/unsplash/photo-1579621970563-ebec7560ff3e-800w.webp',
+    imageAlt: 'Banking and finance for remote workers'
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Finance"
+    categorySlug="finance"
+    headings={headings}
+>
+  <p class="lead">
+    Tax season rolls around and there you are, staring at receipts. Standing desk. New laptop. That ergonomic chair you
+    finally bought after your back started hurting. Can any of this lower what you actually owe the IRS?
+  </p>
+
+  <p>Short answer if you're freelancing or running your own business: yeah.</p>
+
+  <h2 id="can-you-write-off">Can You Write Off Home Office Equipment?</h2>
+
+  <p>
+    You can write this stuff off when you're self-employed and using it exclusively for work. Your desk, chair,
+    monitors, computer, all of it counts. W-2 employee though? The 2018 tax changes killed that option.
+  </p>
+
+  <p>
+    The IRS word that matters most here: "exclusively."
+  </p>
+
+  <p>
+    Everything in your home office—the space itself and what's in it—needs to be for business only. Office also
+    functions as a guest room? Laptop streams Netflix between client calls? That's the gray zone where the IRS starts
+    asking questions.
+  </p>
+
+  <h2 id="what-qualifies">What counts as deductible</h2>
+
+  <p>If you meet the requirements (coming up), here's what you can write off:</p>
+
+  <p>
+    <strong>Office furniture:</strong> your desk whether it's standing or sitting or some combo. Chair. Filing cabinet
+    if that's still your thing. Bookshelf for actual business books, not your Stephen King collection. Lamps for task
+    lighting.
+  </p>
+
+  <p>
+    <strong>Technology and equipment:</strong> computers of any kind—desktop, laptop, maybe a tablet if you actually use
+    it for work. Display screens. All those input devices you need, keyboards and mice and drawing tablets. Printer,
+    scanner, whatever office machines you've got. Webcam and microphone for the endless video calls. External storage
+    drives.
+  </p>
+
+  <p>
+    <strong>Software subscriptions:</strong> accounting platforms—I use QuickBooks but FreshBooks and Wave work too.
+    Whatever project management tool you're into, could be Notion or ClickUp or Asana. Cloud storage services. VPN if
+    you need secure connections.
+  </p>
+
+  <p>
+    Items under $2,500 usually get deducted in full the year you buy them through Section 179. Bigger purchases get
+    spread across several years through depreciation.
+  </p>
+
+  <h2 id="requirements">Two requirements the IRS checks</h2>
+
+  <p>Not handing these out automatically. You need both:</p>
+
+  <h3>Using the space regularly and only for business</h3>
+
+  <p>
+    Your home office is where you consistently work—not just when inspiration strikes. The space doesn't pull double
+    duty as anything else. Either it's your main workspace or where you meet clients face to face.
+  </p>
+
+  <p>
+    Converted a spare bedroom into your office? You're good. Set up a permanent desk area in the corner of your living
+    room? That can work if that corner stays work-only. Kitchen table where you also eat meals? IRS will shoot that
+    down.
+  </p>
+
+  <h3>Being self-employed or owning the business</h3>
+
+  <p>
+    This applies to freelancers, consultants, anyone getting 1099 forms. Business owners with an LLC, S-corp, sole
+    proprietorship setup.
+  </p>
+
+  <p>
+    W-2 employees working remote can't claim this anymore, even when the company requires you to work from home. Tax law
+    changes from 2017 killed employee home office deductions through 2025. Frustrating situation but that's reality.
+  </p>
+
+  <h2 id="how-much">How to calculate the deduction</h2>
+
+  <p>Two approaches depending on your situation.</p>
+
+  <p>
+    <strong>Simplified:</strong> five bucks per square foot of office space, caps at 300 square feet. Equipment gets
+    deducted on top of that $1,500 max.
+  </p>
+
+  <p>
+    <strong>Regular method:</strong> figure out what percentage of your home is office space, then deduct that same
+    percentage of eligible home expenses plus the equipment. Takes more work but usually results in bigger numbers if
+    your setup cost real money.
+  </p>
+
+  <div class="example-box">
+    <h4>Example</h4>
+    <p>
+      Say you dropped $800 on a standing desk for your office. Your office takes up 150 square feet, your whole place is
+      1,500 square feet.
+    </p>
+    <p>
+      <strong>Simplified calculation:</strong> that $800 for equipment, then add $750 from the space math (150 square
+      feet times five bucks each). Comes to $1,550 total.
+    </p>
+    <p>
+      <strong>Regular method:</strong> same $800 for equipment, plus 10% of all your home costs since the office is 10%
+      of your space. Mortgage interest, utilities, insurance, all of it factors in. Usually works out better
+      financially.
+    </p>
+    <p>Most freelancers go with the regular method after running actual numbers.</p>
+  </div>
+
+  <h2 id="common-mistakes">What triggers audits</h2>
+
+  <p>IRS loves auditing home office claims. Here's what gets their attention:</p>
+
+  <h3>Writing off dual-use items at 100%</h3>
+  <p>
+    Your laptop serves work and personal use? Can't deduct the full thing. Need to estimate how much goes to business
+    versus personal. Most people land around 80 or 90 percent for their main work machine.
+  </p>
+
+  <h3>No paper trail</h3>
+  <p>
+    Telling the IRS "I think I dropped like $3,000 on equipment" doesn't fly. You need receipts, invoices, bank
+    statements backing up every single deduction. No receipt equals no deduction, that's the rule.
+  </p>
+
+  <h3>Claiming purchases before launching</h3>
+  <p>
+    Bought that desk three months before officially starting your freelance work? Different category—startup costs. Only
+    counts if you bought it while the business was actually operating.
+  </p>
+
+  <h3>Unrealistic space claims</h3>
+  <p>
+    Home office somehow taking up your entire 2,000 square foot house? IRS will demand proof. Be honest with square
+    footage. Keep photos or a basic floor plan ready in case they audit.
+  </p>
+
+  <h2 id="track-purchases">Tracking and documentation</h2>
+
+  <p>Good records protect you. Here's what actually works:</p>
+
+  <p>
+    Expense tracking software handles this automatically. I use QuickBooks, some people prefer FreshBooks or Wave. They
+    sort purchases into categories and store digital copies of receipts. Way better than that box of faded thermal paper
+    receipts.
+  </p>
+
+  <p>
+    Separate business card or bank account makes everything cleaner. Shows the IRS you're keeping business and personal
+    finances apart, which they appreciate seeing.
+  </p>
+
+  <p>
+    Photos of receipts matter because thermal paper fades. Buy something for the office? Pull out your phone, snap it,
+    upload somewhere safe. Organize however makes sense to you—by year, by category, whatever.
+  </p>
+
+  <p>
+    Document the actual office space too. Photos showing it's dedicated workspace, not a corner of your bedroom.
+    Measurements proving the square footage you're claiming. Simple floor plan sketch. All valuable if they audit you.
+  </p>
+
+  <p>
+    For equipment serving both purposes—your primary laptop, whatever—track one month of usage. Business time versus
+    personal time. That percentage becomes your deduction basis.
+  </p>
+
+  <h2 id="next-steps">What to do from here</h2>
+
+  <p>Now that you know equipment is deductible, here's the move:</p>
+
+  <p>
+    Read through the complete <a href="/guides/freelancer-tax-deductions-guide">freelancer tax guide</a> to see
+    everything available. Check the detailed <a href="/guides/expense-home-office-furniture">furniture expensing
+    guide</a> for categorization specifics. Get <a href="/tools/best-expense-tracking-apps">expense tracking
+    software</a> running before buying more gear. And honestly, talk with an actual tax professional about your
+    situation because this is educational content, not real tax advice.
+  </p>
+
+  <p class="disclaimer">
+    <strong>Disclaimer:</strong> this covers general education about home office deductions. Tax code stays complex and
+    keeps evolving. Consult with a qualified tax pro or CPA about your specific circumstances. I'm not a tax advisor,
+    this content isn't professional tax advice.
+  </p>
+
+  <FAQSection faqs={faqs}/>
+
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>
+
+<style>
+  .lead {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .example-box {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+  }
+
+  .example-box h4 {
+    margin-top: 0;
+    color: var(--color-ocean-deep);
+  }
+
+  .example-box p {
+    color: #212529;
+  }
+
+  .example-box strong {
+    color: var(--color-ocean-deep);
+  }
+
+  .disclaimer {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    border-top: 1px solid #e9ecef;
+    padding-top: 1rem;
+    margin-top: 2rem;
+  }
+</style>

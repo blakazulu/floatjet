@@ -16,12 +16,12 @@ tags: [ "seo", "audit", "launch", "week-4" ]
 
 ## Overview
 
-Conduct a thorough SEO audit of all 20 articles and site infrastructure before official launch. Identify and fix any
+Conduct a thorough SEO audit of all articles and site infrastructure before official launch. Identify and fix any
 issues that could impact search rankings, user experience, or conversion rates.
 
 ## Goals
 
-- [ ] Audit all 20 articles against SEO checklist
+- [ ] Audit all articles against SEO checklist
 - [ ] Verify technical SEO implementation
 - [ ] Fix all critical issues before launch
 - [ ] Document any non-critical issues for future improvement

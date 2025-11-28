@@ -1,0 +1,411 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQSection from '@components/article/FAQSection.astro';
+import RelatedArticles from '@components/article/RelatedArticles.astro';
+
+// Article metadata
+const title = 'What Makes a Laptop Good for Remote Work? Honest Guide (2025)';
+const description = 'Real talk about laptop specs. Learn what actually matters - battery life, webcam, keyboard - vs marketing hype.';
+const author = 'FloatJet Team';
+const authorUrl = '/about';
+const pubDate = new Date('2025-11-28');
+const readingTime = 10;
+const image = '/images/unsplash/photo-1588872657578-7efd1f1555ed-1200w.webp';
+const imageAlt = 'Laptop on desk for remote work';
+
+// Table of contents headings
+const headings = [
+  {text: 'What actually matters', slug: 'what-matters', depth: 2},
+  {text: 'Specs vs marketing hype', slug: 'specs-vs-hype', depth: 2},
+  {text: 'Price reality', slug: 'price-reality', depth: 2},
+  {text: 'Mac vs Windows', slug: 'mac-vs-windows', depth: 2},
+  {text: 'Bottom line', slug: 'bottom-line', depth: 2},
+  {text: 'FAQ', slug: 'faq', depth: 2},
+];
+
+// FAQ data with schema markup
+const faqs = [
+  {
+    question: 'Can I use a cheap Chromebook for remote work?',
+    answer: 'Depends entirely on what your work involves and what specific tools you use daily. Chromebooks work fine if you\'re mostly in web apps like Google Workspace or Microsoft 365 online versions that run in a browser, basic email and document work that doesn\'t need heavy applications, video calls through the browser that don\'t need desktop apps installed locally. They won\'t run Windows or Mac desktop software at all though which is a complete dealbreaker if your work requires specific applications that only exist as desktop programs you need to install, and storage is super limited usually 64-128GB so you can\'t keep much locally on the device itself which can be annoying.'
+  },
+  {
+    question: 'How much RAM do I actually need for remote work?',
+    answer: '8GB is technically enough for basic work like email and documents and light web browsing with a few tabs, but it feels cramped pretty quickly in real-world use when you have multiple apps open at once like most people do during actual workdays with lots going on. 16GB is what I\'d recommend for most remote workers giving you comfortable multitasking ability without slowdowns when you have Slack and Zoom and your browser and a few other things running simultaneously like you normally would throughout the day. 32GB is overkill for typical remote work unless you\'re editing videos regularly or working with huge datasets or running virtual machines as part of your development work.'
+  },
+  {
+    question: 'MacBook Air or MacBook Pro for remote work?',
+    answer: 'MacBook Air handles most remote work easily with the M2 chip especially, it\'s lighter for traveling if you move around a lot, cheaper by a decent amount saving you money, battery life is excellent lasting all day easily without charging, fanless design means completely silent operation which is nice in quiet environments. MacBook Pro gives you slightly better performance with active cooling that prevents throttling under sustained heavy workloads, brighter screen that\'s easier to see in bright environments, even longer battery life than the Air which is already great, better speakers if audio quality matters to you for calls or music. For typical remote work the Air is plenty of laptop and saves you money.'
+  },
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: 'Best Laptops for Remote Work',
+    excerpt: 'Compare top laptops for performance, battery life, and value',
+    href: '/gear/best-laptops-remote-work',
+    image: '/images/unsplash/photo-1588872657578-7efd1f1555ed-800w.webp',
+    imageAlt: 'Modern laptop for remote work'
+  },
+  {
+    title: 'Best Budget Laptops for Remote Work',
+    excerpt: 'Quality laptops under $1,000 that handle remote work perfectly',
+    href: '/gear/best-budget-laptops-remote-work',
+    image: '/images/unsplash/photo-1525547719571-a2d4ac8945e2-800w.webp',
+    imageAlt: 'Budget laptop setup'
+  },
+  {
+    title: 'Can You Use Personal Laptop for Remote Work?',
+    excerpt: 'Security and performance considerations for using personal devices',
+    href: '/guides/personal-laptop-remote-work',
+    image: '/images/unsplash/photo-1611532736579-6b16e2b50449-800w.webp',
+    imageAlt: 'Person working on personal laptop'
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    author={author}
+    authorUrl={authorUrl}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Gear"
+    categorySlug="gear"
+    headings={headings}
+>
+  <p class="lead">
+    Been laptop shopping lately trying to find something decent that won't completely break the bank or make you
+    seriously regret buying it after just a few months of use when you realize it doesn't actually work for your needs?
+    Then you've probably already noticed there are like literally a million different options out there ranging from
+    those $300 Chromebooks that barely even run properly to $3,000 MacBook Pros that honestly cost more than some decent
+    used cars you could buy, all of them claiming to be absolutely perfect for whatever your needs might be while
+    simultaneously making you second-guess literally every single decision you're about to make about spending your
+    hard-earned money.
+  </p>
+
+  <p>
+    Here's what actually matters when you're working from home full-time or bouncing between different coffee shops
+    trying desperately to find decent wifi that doesn't cut out every five minutes right in the middle of important
+    video calls with clients who definitely notice when your screen freezes mid-sentence and you look completely
+    unprofessional.
+  </p>
+
+  <h2 id="what-matters">What actually matters</h2>
+
+  <p>
+    Not the flashy specs companies put in giant bold text on the box trying to catch your eye in the store, that's just
+    marketing nonsense specifically designed to make you think you need way more laptop than you actually do for most
+    normal work tasks throughout your typical day.
+  </p>
+
+  <p>
+    Battery life is probably the single most important thing to think about if you're working literally anywhere that's
+    not right next to an outlet where you can stay plugged in all day long like at home sitting at your regular desk in
+    the same spot. You genuinely need at least 8 full hours of actual use not those inflated numbers manufacturers love
+    to claim in their spec sheets under perfect lab conditions that nobody ever actually experiences in real life using
+    real applications and doing actual work with multiple things open. Realistically speaking that means you should
+    probably buy something that's rated for like 10-12 hours because those battery estimates are always super duper
+    optimistic and real-world usage drains way faster than what their carefully controlled tests suggest will happen,
+    especially when you're on video calls all day which absolutely destroy battery life faster than almost anything else
+    you can possibly do on a laptop throughout your workday besides maybe playing demanding games or rendering video
+    which most people aren't doing during work hours. Nothing feels worse in the moment than having your laptop just die
+    completely during an important client presentation because you trusted the manufacturer's overly optimistic battery
+    claims and didn't bring your charger along with you thinking you'd definitely be fine for just a few short hours
+    away from home or the office where you normally work.
+  </p>
+
+  <p>
+    Webcam quality matters way more than it did just a few years ago before literally everyone on earth started working
+    remotely and basically living their entire professional lives on Zoom calls all day every day without meaningful
+    breaks between endless meetings that fill your calendar. Most laptops still ship with honestly terrible 720p cameras
+    that make you look grainy and completely unprofessional on video calls even when you're in decent lighting
+    conditions which is honestly kind of ridiculous in this day and age when literally everyone everywhere is on video
+    constantly for hours every single day and these laptop companies absolutely know this is happening. Look for 1080p
+    minimum if you can possibly find it in your price range though honestly you might actually need to just get an
+    external webcam to get anything truly good that makes you look halfway decent on calls instead of appearing like
+    some blurry pixelated mess from an old video chat session back in 2010 when technology was way worse. Built-in
+    microphones are usually complete total garbage too across the board regardless of what price point you're shopping
+    at making you sound tinny and distant like you're in some echoey room, so definitely consider getting dedicated
+    audio equipment if you're on calls frequently throughout your day and genuinely want to sound at least somewhat
+    professional instead of sounding like you're literally talking from inside a tin can somewhere underwater.
+  </p>
+
+  <p>
+    Keyboard comfort becomes absolutely critical and non-negotiable when you're typing on this thing for 6-8 hours every
+    single day instead of just occasionally checking email like you might do with a personal laptop you barely even
+    touch most days. Go to an actual physical store if at all possible and actually spend time typing on different
+    keyboards for several minutes each to genuinely see what feels good to your specific hands and fingers because
+    everyone's preferences are totally completely different here based on individual hand size and typing style and what
+    naturally feels comfortable to them personally after years of typing on various keyboards. Some people absolutely
+    love those low-travel keyboards on the newer MacBooks that barely move at all when you press the keys down, while
+    others completely hate them and genuinely need way more key travel distance with that tactile feedback sensation you
+    get from deeper keypresses that feel way more satisfying under your fingers when you're typing quickly throughout
+    the day. No objectively right answer exists here honestly, just whatever works best for your particular hands and
+    the specific typing style you've gradually developed over years of working on all kinds of different keyboards
+    throughout your entire life.
+  </p>
+
+  <p>
+    Screen size and quality matters enormously because you're literally staring directly at this thing all day long
+    without much meaningful break for your eyes to rest, so you really genuinely want to get something comfortable that
+    doesn't strain your vision badly after just a few hours of focused work staring at tiny text on a screen. 13-inch
+    screens work okay I guess if you're traveling constantly and really need something super light and portable that
+    fits easily in literally any bag you're carrying around with you wherever you go, while 14-15 inch is honestly the
+    sweet spot for most normal people balancing portability with enough actual screen real estate to get work done
+    comfortably without constantly squinting at everything trying desperately to read small text that's too tiny. 16+
+    inch screens get pretty heavy really fast and aren't particularly great for mobility when you're moving around
+    regularly but they do give you way more screen real estate to spread out multiple windows side by side which can be
+    genuinely nice for multitasking when you need to see lots of things simultaneously. Resolution definitely matters a
+    lot for reducing eye strain over those long exhausting workdays you put in - you absolutely want 1080p minimum at
+    these screen sizes or text starts getting blurry and genuinely hard to read after staring at it all day making your
+    eyes feel super tired, and higher resolution is even better if you can possibly afford it because your eyes will
+    absolutely thank you profusely at the end of those really long workdays when you're not completely exhausted from
+    squinting at tiny blurry text for literally hours on end without stopping.
+  </p>
+
+  <p>
+    Processing power is honestly where most people tend to massively overspend on specs they'll literally never actually
+    use in their real daily work doing normal everyday tasks. If you're doing serious professional video editing or
+    complex 3D rendering work or running multiple virtual machines constantly throughout your entire workday for
+    development work yeah you absolutely definitely need serious power with a beefy fast processor and lots of RAM to
+    handle that intensive workload smoothly without lag or slowdowns. Most actual remote work though in reality? Email,
+    video calls, web browsing, documents, spreadsheets, maybe some light design work in Canva or similar basic tools
+    that don't really need much power to run well? Mid-range processor handles literally all of that super easily
+    without even breaking a sweat or showing any signs of strain, you honestly don't actually need that top-of-the-line
+    expensive chip that costs like an extra $500 or more for performance gains you'll genuinely never actually notice in
+    your daily workflow doing these completely normal office tasks that aren't particularly demanding on hardware.
+  </p>
+
+  <h2 id="specs-vs-hype">Specs vs marketing hype</h2>
+
+  <p>
+    Marketing teams at laptop companies absolutely love throwing these giant impressive numbers at you hoping that
+    bigger numbers always seem better in your mind when you're comparing different options trying to decide what to
+    actually buy with your money.
+  </p>
+
+  <p>
+    RAM or memory - 8GB is technically the bare absolute minimum these days for basic work tasks that don't involve much
+    multitasking or heavy resource-intensive applications running simultaneously on your machine, but honestly it feels
+    pretty cramped really quickly in actual real-world use when you have more than just like a few browser tabs open
+    alongside other apps you're actively using throughout your typical busy workday. 16GB is honestly the sweet spot for
+    most remote workers out there giving you enough comfortable headroom to multitask effectively without your computer
+    slowing down noticeably when you have way too much stuff running at once which happens way more often than you'd
+    probably think during those really busy workdays when you're juggling multiple different things simultaneously. 32GB
+    and above is complete total overkill unless you're doing legitimately heavy creative work with absolutely massive
+    files that take up tons of memory or running multiple virtual machines at the exact same time or keeping literally
+    hundreds of browser tabs open at once because you have a serious problem with tab hoarding like some people
+    definitely do and genuinely can't seem to close anything ever no matter how much it slows things down.
+  </p>
+
+  <p>
+    Storage space - 256GB SSD is technically the bare minimum you can possibly get away with these days without running
+    into constant storage problems, but 512GB is way more comfortable in actual practice giving you real breathing room
+    for files and applications and everything else without constantly managing storage space manually and deleting
+    things to free up room every few weeks when you inevitably run out of space. Don't even consider those old regular
+    hard drives anymore in modern laptops they're painfully slow compared to SSDs, like the speed difference is
+    absolutely night and day obvious and you'll notice it immediately every single time you boot up or try to open any
+    large files that would take forever on those old spinning mechanical drives. Cloud storage services like Dropbox or
+    Google Drive or whatever particular service you happen to prefer handles most actual file storage anyway for remote
+    workers who genuinely need to access their stuff from multiple different devices throughout the day and across
+    different locations, so local storage honestly matters significantly less than it used to back in the old days when
+    literally everything lived permanently on your computer's internal hard drive and nowhere else in the entire world.
+  </p>
+
+  <p>
+    Processor speed and power - Intel i5 or AMD Ryzen 5 handles most typical remote work super easily without any
+    noticeable performance issues you'd actually detect during normal daily use throughout your workday doing regular
+    tasks. i7 or Ryzen 7 makes sense if you regularly do heavier work like video editing multiple times per week or
+    compile code frequently as part of development or run resource-intensive design software that genuinely needs
+    significantly more processing power to run smoothly without annoying lag that slows you down. i9 or Ryzen 9 is
+    pretty much complete overkill for typical standard remote work unless you're doing really serious professional
+    creative work or complex development that actually requires that absolute top level of performance to get things
+    done efficiently and quickly without wasting time, most regular normal people won't notice any meaningful difference
+    whatsoever in their daily workflow doing normal tasks and it's really not worth that significant extra cost and
+    battery drain that inevitably comes with those more powerful processors that run hotter and use more energy.
+  </p>
+
+  <p>
+    Graphics cards and GPUs - Integrated graphics that come already built into the main processor work totally fine for
+    most remote work tasks you'll encounter throughout your normal daily workday, they handle regular everyday stuff
+    without any issues at all or performance problems. Dedicated GPU is only really genuinely needed if you're doing
+    video editing regularly as an actual significant part of your professional job, 3D modeling work that requires
+    rendering complex detailed scenes that need processing power, gaming during breaks between meetings when you
+    genuinely need to decompress and relax, or CAD work that's super graphically intensive and genuinely needs that
+    extra dedicated graphics power to function smoothly. Otherwise you're basically just paying for and physically
+    carrying around hardware you'll never actually use in your real work at all, adding completely unnecessary weight
+    and cost and battery drain for absolutely no real benefit to your actual productivity or work output or quality.
+  </p>
+
+  <h2 id="price-reality">The price reality</h2>
+
+  <p>
+    You can spend literally anywhere from like $500 to well over $3,000 on a laptop purchase and here's what you
+    actually get at those wildly different price points based on what's currently available in the market right now as
+    I'm writing this.
+  </p>
+
+  <p>
+    Budget range around $500-800 - Gets you something functional that works for basic tasks but expect serious
+    compromises somewhere in the overall package that you'll definitely notice during daily use and probably get
+    genuinely annoyed by eventually when it starts affecting your work. Probably plastic build that feels pretty cheap
+    in your hands and flexes noticeably when you pick it up or apply basically any pressure to it, okay screen that's
+    fine I guess but not amazing by any means and maybe a bit too dim in bright environments like coffee shops with big
+    windows, decent enough performance for basic tasks initially but starts struggling pretty quickly when you have too
+    many things open at once which honestly happens easily during normal work, battery life that might possibly get you
+    through maybe 6 hours of actual work if you're really lucky and not doing anything too intensive that drains power
+    quickly. Works okay if your budget is really genuinely tight right now and you mainly do light work that doesn't
+    push the hardware much at all, but you'll definitely feel those frustrating limitations pretty regularly throughout
+    your typical workday when things slow down or the battery suddenly dies way faster than you expected based on what
+    you'd actually been doing.
+  </p>
+
+  <p>
+    Mid-range sweet spot $800-1,500 - This is honestly where you start getting actually good solid laptops that feel
+    well-built and perform well for most remote work without any major compromises that constantly annoy you during
+    daily use and slow you down. Better build quality with aluminum or other premium materials that feel nice in your
+    hands and don't flex or creak when you handle them normally, excellent battery life that actually lasts a full
+    complete workday like the manufacturers claim it will in their marketing, good screens that are bright enough and
+    clear even in challenging lighting situations, solid reliable performance that handles multitasking comfortably
+    without noticeable slowdowns when you have a lot of stuff going on simultaneously throughout the day. This is
+    honestly where I'd genuinely recommend most normal people should shop unless they have really specific particular
+    needs that require going higher for significantly more power or lower because budget is extremely tight based on
+    their current financial situation and work requirements.
+  </p>
+
+  <p>
+    Premium range $1,500-2,500 - You're paying for refinement and premium features that make literally everything nicer
+    and more pleasant to use but aren't strictly necessary to actually get your work done effectively day to day without
+    issues. Exceptional build quality that feels genuinely expensive and solid in your hands making you feel good about
+    using it every day, best-in-class screens with super high resolution and accurate colors that make literally
+    everything look crisp and absolutely beautiful, top-tier performance that'll handle literally anything you throw at
+    it without breaking a sweat ever, premium extras like way better speakers that actually sound genuinely good for
+    listening to music, nicer trackpads that feel incredibly smooth and responsive, thinner and lighter designs overall
+    that are easier to carry around all day when you're mobile and moving between locations. Worth it if you can
+    comfortably afford it without financial stress and use your laptop heavily all day every single day for work,
+    probably overkill if you're on any kind of budget or only really need basic functionality to get your work done
+    without extra bells and whistles that don't affect productivity.
+  </p>
+
+  <p>
+    Ultra-premium $2,500 and way way up - Diminishing returns territory where you're mostly paying for brand prestige
+    and marginal improvements that most regular people honestly won't even notice in real-world daily use doing normal
+    everyday tasks. MacBook Pro maxed out with every single option possible, high-end ThinkPads with all the premium
+    upgrades and features, premium gaming laptops that are way overpowered for any remote work needs you might possibly
+    have. Makes sense for very specific professional use cases where you genuinely need that absolute top level of
+    performance and build quality for really demanding work you do every single day, probably completely unnecessary for
+    typical standard remote work where you're doing normal office tasks that don't require top-tier hardware to
+    accomplish efficiently.
+  </p>
+
+  <h2 id="mac-vs-windows">Mac vs Windows</h2>
+
+  <p>
+    Controversial topic that people have incredibly strong opinions about based on what they're personally used to and
+    their preferences built up over many years of using one or the other platform.
+  </p>
+
+  <p>
+    MacBooks in general - Premium build quality basically across the board that feels really nice, excellent battery
+    life especially with those newer Apple Silicon chips that are ridiculously efficient compared to older Intel ones,
+    basically zero setup hassle where everything just works perfectly out of the box without any configuration needed,
+    great trackpads that are legitimately the absolute best in the entire industry and make Windows trackpads feel
+    genuinely terrible in comparison once you're used to the Mac ones, seamless integration if you're already deep in
+    the Apple ecosystem with an iPhone and iPad and everything talks to each other nicely without issues. Downsides that
+    are very real: expensive even at the entry level compared to Windows laptops with similar specs on paper, limited
+    customization and upgradability where you're stuck with whatever you buy initially, incompatible with some business
+    software that's Windows-only and hasn't been ported to Mac which can be a dealbreaker, repair costs that honestly
+    make you cry when something breaks and you need to fix it because Apple parts are genuinely expensive.
+  </p>
+
+  <p>
+    Windows laptops in general - Way more variety in terms of brands and models and price points to choose from based on
+    your specific needs, better value at mid-range prices where you typically get more for your money compared to
+    similar Macs, compatible with basically all business software without worrying about whether Mac versions exist or
+    work properly, more ports and connectivity options especially on business-focused models, easier and cheaper to
+    repair when something inevitably goes wrong because parts are standardized. Downsides: build quality varies
+    absolutely wildly between different brands where some feel cheap and others are great making it hard to know what
+    you're getting, battery life often not quite as good as MacBooks especially on older Intel processors that drain
+    faster, trackpads are generally noticeably worse than Mac except on premium models that cost more, more setup and
+    maintenance required to keep things running smoothly over time without issues popping up.
+  </p>
+
+  <p>
+    Honestly in my experience using both for years? Both work totally fine for most remote work scenarios you'll
+    encounter. Pick based on what ecosystem you're already invested in with your other devices, what specific software
+    you absolutely need that might be platform-specific, and what honestly just feels comfortable to you based on what
+    you're used to from previous computers. Don't overthink it too much because both platforms will handle typical
+    remote work tasks without any major issues that actually prevent you from getting your job done effectively day to
+    day.
+  </p>
+
+  <h2 id="bottom-line">Bottom line</h2>
+
+  <p>
+    Best laptop for remote work isn't necessarily the most expensive one or the one with the highest specs listed on the
+    box trying to impress you.
+  </p>
+
+  <p>
+    It's the one that matches your actual work needs without overpaying for features you'll honestly never use in your
+    daily routine, feels comfortable for long work sessions without causing strain or discomfort after hours of use, has
+    battery life that genuinely gets you through your workday without constantly hunting for outlets everywhere you go,
+    and fits your budget without causing financial stress that outweighs the benefits of having nice equipment.
+  </p>
+
+  <p>
+    Mid-range models in that $800-1,500 range hit the sweet spot for most remote workers balancing performance and
+    quality and cost effectively. You get solid specs that handle typical work tasks comfortably, good build quality
+    that feels nice and lasts years, decent battery life that actually lasts through most of your workday, without
+    spending premium money on incremental improvements that don't meaningfully impact your productivity or work quality
+    in practice day to day.
+  </p>
+
+  <p>
+    Start there when shopping unless you know you genuinely need something specific that pushes you toward budget
+    options because money's really tight right now or premium options because you have demanding work requirements that
+    need significantly more power. And honestly test keyboards and trackpads in person if you can before buying because
+    you'll be using those all day every single day and comfort matters way more than specs when you're actually working
+    for hours on end typing and clicking constantly.
+  </p>
+
+  <p>
+    Check out the <a href="/gear/best-laptops-remote-work">full laptop comparison</a> for specific model recommendations
+    and current pricing if you're ready to buy something and want detailed breakdowns of options.
+  </p>
+
+  <p class="disclaimer">
+    <strong>Tiny disclaimer here:</strong> This is general guidance about laptops for remote work based on typical use
+    cases and experience using many different laptops over years of remote work in various situations. Your specific
+    needs might differ based on your work type and software requirements and personal preferences. Do your own research
+    on specific models and read recent reviews before buying to make absolutely sure it fits your needs.
+  </p>
+
+  <FAQSection faqs={faqs}/>
+
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>
+
+<style>
+  .lead {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .disclaimer {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    border-top: 1px solid #e9ecef;
+    padding-top: 1rem;
+    margin-top: 2rem;
+  }
+</style>

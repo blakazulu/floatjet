@@ -42,8 +42,11 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
       <!-- Utility Icons -->
       <div class="flex items-center gap-3">
         <!-- Search Icon -->
-        <button class="hidden md:flex items-center gap-2 text-white/90 hover:text-white transition-colors group"
-                aria-label="Search">
+        <button
+            data-search-trigger
+            class="hidden md:flex items-center gap-2 text-white/90 hover:text-white transition-colors group cursor-pointer"
+            aria-label="Search (Ctrl+K)"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -164,6 +167,20 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
             </li>
         ))}
       </ul>
+
+      <!-- Search Button (Mobile) -->
+      <div class="px-4 mt-2">
+        <button
+            data-search-trigger
+            class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-white/10 text-white/90 hover:text-white hover:bg-white/20 transition-all cursor-pointer"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <span class="font-medium">Search articles...</span>
+        </button>
+      </div>
 
       <!-- Divider -->
       <div class="my-4 mx-4 border-t border-white/10"></div>

@@ -10,6 +10,7 @@ import {floatjetRenderer} from "./src/lib/og-image-renderer";
 import partytown from "@astrojs/partytown";
 import compress from "astro-compress";
 import purgecss from "astro-purgecss";
+import pagefind from "astro-pagefind";
 import * as fs from "fs";
 
 // https://astro.build/config
@@ -80,6 +81,9 @@ export default defineConfig({
       Image: true,
       SVG: true,
     }),
+
+    // 8. Pagefind - Static site search (indexes content at build time)
+    pagefind(),
   ],
   vite: {
     // @ts-ignore - Vite version mismatch between @tailwindcss/vite and Astro's internal Vite

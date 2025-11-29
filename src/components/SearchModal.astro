@@ -1,0 +1,271 @@
+---
+import Search from 'astro-pagefind/components/Search';
+---
+
+<!-- Search Modal Overlay -->
+<div
+    id="search-overlay"
+    class="fixed inset-0 bg-black/70 backdrop-blur-md z-[80] hidden opacity-0 transition-opacity duration-300"
+    aria-hidden="true"
+></div>
+
+<!-- Search Modal -->
+<div
+    id="search-modal"
+    class="fixed inset-x-4 top-24 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl z-[90] hidden opacity-0 transform scale-95 transition-all duration-300"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Search"
+>
+  <div class="bg-[#0a2a33] border border-white/20 rounded-2xl shadow-2xl overflow-hidden">
+    <!-- Modal Header -->
+    <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+      <h2 class="text-lg font-bold text-white">Search FloatJet</h2>
+      <button
+          id="search-close"
+          class="text-white/80 hover:text-white p-1 transition-colors"
+          aria-label="Close search"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Search Component -->
+    <div class="p-4 search-container">
+      <div id="search-fallback" class="hidden text-center py-8">
+        <p class="text-white/70 mb-2">Search is not available in development mode.</p>
+        <p class="text-white/50 text-sm">Run <code class="px-2 py-1 bg-white/10 rounded">npm run build</code> to
+          generate the search index.</p>
+      </div>
+      <div id="search-wrapper">
+        <Search
+            id="search"
+            className="pagefind-ui"
+            uiOptions={{
+              showImages: true,
+              showEmptyFilters: false,
+              resetStyles: true,
+            }}
+        />
+      </div>
+    </div>
+
+    <!-- Keyboard Hint -->
+    <div class="px-6 py-3 border-t border-white/10 flex items-center justify-between text-xs text-white/50">
+      <span>Type to search articles, tools, and guides</span>
+      <span class="hidden md:inline">Press <kbd class="px-2 py-0.5 bg-white/10 rounded">ESC</kbd> to close</span>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  /* Pagefind UI Custom Styles - FloatJet Theme */
+  .pagefind-ui {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: #38A3A5;
+    --pagefind-ui-text: #ffffff;
+    --pagefind-ui-background: transparent;
+    --pagefind-ui-border: rgba(255, 255, 255, 0.2);
+    --pagefind-ui-tag: rgba(255, 255, 255, 0.1);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 12px;
+    --pagefind-ui-image-border-radius: 8px;
+    --pagefind-ui-image-box-ratio: 16 / 9;
+    --pagefind-ui-font: 'Inter', sans-serif;
+  }
+
+  .pagefind-ui .pagefind-ui__search-input {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+  }
+
+  /* Hide the default search icon from Pagefind - we style our own input */
+  .pagefind-ui .pagefind-ui__search-icon {
+    left: 0.75rem;
+    opacity: 0.5;
+  }
+
+  .pagefind-ui .pagefind-ui__search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .pagefind-ui .pagefind-ui__search-input:focus {
+    outline: none;
+    border-color: #38A3A5;
+    box-shadow: 0 0 0 2px rgba(56, 163, 165, 0.3);
+  }
+
+  .pagefind-ui .pagefind-ui__search-clear {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .pagefind-ui .pagefind-ui__search-clear:hover {
+    color: white;
+  }
+
+  .pagefind-ui .pagefind-ui__results-area {
+    margin-top: 1rem;
+  }
+
+  .pagefind-ui .pagefind-ui__result {
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 0.5rem;
+    transition: background 0.2s;
+  }
+
+  .pagefind-ui .pagefind-ui__result:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .pagefind-ui .pagefind-ui__result-link {
+    color: #80CED7;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .pagefind-ui .pagefind-ui__result-link:hover {
+    color: #38A3A5;
+  }
+
+  .pagefind-ui .pagefind-ui__result-excerpt {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .pagefind-ui mark {
+    background: rgba(56, 163, 165, 0.4);
+    color: white;
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+
+  .pagefind-ui .pagefind-ui__message {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 2rem;
+  }
+
+  /* Scrollable results */
+  .search-container {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .search-container::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .search-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .search-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+</style>
+
+<script>
+  function initSearch() {
+    const searchButtons = document.querySelectorAll('[data-search-trigger]');
+    const closeButton = document.getElementById('search-close');
+    const modal = document.getElementById('search-modal');
+    const overlay = document.getElementById('search-overlay');
+    let isOpen = false;
+
+    function openSearch() {
+      isOpen = true;
+      overlay?.classList.remove('hidden');
+      modal?.classList.remove('hidden');
+      setTimeout(() => {
+        overlay?.classList.remove('opacity-0');
+        modal?.classList.remove('opacity-0', 'scale-95');
+      }, 10);
+      document.body.style.overflow = 'hidden';
+
+      // Focus the search input
+      setTimeout(() => {
+        const input = modal?.querySelector('.pagefind-ui__search-input') as HTMLInputElement;
+        input?.focus();
+      }, 100);
+    }
+
+    function closeSearch() {
+      isOpen = false;
+      overlay?.classList.add('opacity-0');
+      modal?.classList.add('opacity-0', 'scale-95');
+      setTimeout(() => {
+        overlay?.classList.add('hidden');
+        modal?.classList.add('hidden');
+      }, 300);
+      document.body.style.overflow = '';
+    }
+
+    // Open search on button click
+    searchButtons.forEach(btn => {
+      btn.addEventListener('click', openSearch);
+    });
+
+    // Close on close button click
+    closeButton?.addEventListener('click', closeSearch);
+
+    // Close on overlay click
+    overlay?.addEventListener('click', closeSearch);
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        closeSearch();
+      }
+      // Open search on Cmd/Ctrl + K
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        if (isOpen) {
+          closeSearch();
+        } else {
+          openSearch();
+        }
+      }
+    });
+  }
+
+  // Check if Pagefind is available (it won't be in dev mode)
+  async function checkPagefind() {
+    try {
+      const response = await fetch('/pagefind/pagefind.js', {method: 'HEAD'});
+      if (!response.ok) {
+        showFallback();
+      }
+    } catch {
+      showFallback();
+    }
+  }
+
+  function showFallback() {
+    const fallback = document.getElementById('search-fallback');
+    const wrapper = document.getElementById('search-wrapper');
+    if (fallback && wrapper) {
+      fallback.classList.remove('hidden');
+      wrapper.classList.add('hidden');
+    }
+  }
+
+  // Initialize on first load
+  document.addEventListener('DOMContentLoaded', () => {
+    initSearch();
+    checkPagefind();
+  });
+
+  // Re-initialize on Astro page navigation
+  document.addEventListener('astro:page-load', () => {
+    initSearch();
+    checkPagefind();
+  });
+</script>

@@ -16,6 +16,23 @@ FloatJet helps remote workers and digital nomads discover the best productivity 
 
 ---
 
+## Site Architecture
+
+![FloatJet Site Architecture](public/images/floatjet_site_architecture.png)
+
+### Tech Stack
+
+- **Core:** Astro, MDX
+- **Styling:** Tailwind CSS
+- **Hosting:** Netlify
+- **Analytics:** Google Analytics 4
+
+### Architecture Diagram
+
+![FloatJet Architecture Diagram](public/images/floatjet_mermaid_architecture.png)
+
+---
+
 ## Our Mission
 
 We believe remote work should be simple. Our goal is to cut through the noise and help you find tools that actually work, so you can focus on what matters most - doing great work from wherever you are.

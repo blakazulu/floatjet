@@ -1,0 +1,89 @@
+---
+// Loading overlay shown during page transitions
+---
+
+<div id="loading-overlay" class="fixed inset-0 z-[100] pointer-events-none opacity-0 transition-opacity duration-300"
+     transition:persist="loading-overlay">
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-ocean-deep/90 backdrop-blur-sm"></div>
+
+  <!-- Logo Container -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="loading-logo">
+      <img
+          src="/images/big-logo.webp"
+          alt=""
+          width="120"
+          height="120"
+          class="w-24 h-24 md:w-32 md:h-32 object-contain"
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  .loading-logo {
+    animation: float 1.5s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(-10px) translateX(5px);
+    }
+    50% {
+      transform: translateY(-5px) translateX(10px);
+    }
+    75% {
+      transform: translateY(-12px) translateX(3px);
+    }
+  }
+
+  /* Add a subtle glow effect */
+  .loading-logo img {
+    filter: drop-shadow(0 0 20px rgba(128, 206, 215, 0.5));
+    animation: glow 1.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    0% {
+      filter: drop-shadow(0 0 15px rgba(128, 206, 215, 0.4));
+    }
+    100% {
+      filter: drop-shadow(0 0 30px rgba(128, 206, 215, 0.8));
+    }
+  }
+
+  /* Active state */
+  #loading-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
+<script is:inline>
+  // Only add listeners once (check for flag to prevent duplicates)
+  if (!window.__loadingOverlayInit) {
+    window.__loadingOverlayInit = true;
+
+    // Show overlay when navigation starts
+    document.addEventListener('astro:before-preparation', () => {
+      const overlay = document.getElementById('loading-overlay');
+      overlay?.classList.add('active');
+    });
+
+    // Hide overlay when new page is ready
+    document.addEventListener('astro:after-swap', () => {
+      const overlay = document.getElementById('loading-overlay');
+      overlay?.classList.remove('active');
+    });
+
+    // Also hide on page load (in case of direct navigation)
+    document.addEventListener('astro:page-load', () => {
+      const overlay = document.getElementById('loading-overlay');
+      overlay?.classList.remove('active');
+    });
+  }
+</script>

@@ -1,6 +1,7 @@
 ---
 import {ViewTransitions} from 'astro:transitions';
 import {getImagePath} from 'astro-opengraph-images';
+import LoadingIndicator from 'astro-loading-indicator/component';
 
 interface Props {
   title: string;
@@ -85,4 +86,7 @@ const canonical = canonicalUrl || Astro.url.href;
 
   <!-- View Transitions for smooth navigation -->
   <ViewTransitions/>
+
+  <!-- Loading indicator for page transitions -->
+  <LoadingIndicator color="var(--color-jet-stream)" height="3px"/>
 </head>

@@ -59,7 +59,7 @@ const featuredArticles = [
 
     <!-- Cards Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {featuredArticles.map((article) => (
+      {featuredArticles.map((article, index) => (
           <article
               class="group relative rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1">
             <!-- Glass Card Background -->
@@ -75,7 +75,7 @@ const featuredArticles = [
                     width={800}
                     height={450}
                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
+                    loading={index < 3 ? 'eager' : 'lazy'}
                 />
               </div>
 
@@ -94,7 +94,7 @@ const featuredArticles = [
                   Read Review
                   <svg xmlns="http://www.w3.org/2000/svg"
                        class="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20"
-                       fill="currentColor">
+                       fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd"
                           d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
                           clip-rule="evenodd"/>

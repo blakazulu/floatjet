@@ -8,6 +8,8 @@ import tailwindcss from "@tailwindcss/vite";
 import opengraphImages from "astro-opengraph-images";
 import {floatjetRenderer} from "./src/lib/og-image-renderer";
 import partytown from "@astrojs/partytown";
+import compress from "astro-compress";
+import purgecss from "astro-purgecss";
 import * as fs from "fs";
 
 // https://astro.build/config
@@ -65,6 +67,18 @@ export default defineConfig({
       config: {
         forward: ["dataLayer.push"], // Forward GA4 dataLayer calls
       },
+    }),
+
+    // 6. PurgeCSS - Remove unused CSS (50-90% CSS size reduction)
+    purgecss(),
+
+    // 7. Compress - Gzip/Brotli compression for HTML, CSS, JS, images, SVG
+    compress({
+      CSS: true,
+      HTML: true,
+      JavaScript: true,
+      Image: true,
+      SVG: true,
     }),
   ],
   vite: {

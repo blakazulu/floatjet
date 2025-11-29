@@ -707,21 +707,21 @@ Before finalizing installation:
 
 ### ⬜ To Install - Phase 1 (Critical - 5 packages)
 
-| Package                              | Purpose            | Priority |
-|--------------------------------------|--------------------|----------|
-| `@digi4care/astro-google-tagmanager` | GA4 analytics      | P0       |
-| `astro-seo-schema`                   | Schema.org JSON-LD | P0       |
-| `astro-compress`                     | Compression        | P0       |
-| `astro-critters`                     | Critical CSS       | P0       |
-| `astro-seo`                          | SEO meta tags      | P0       |
+| Package                              | Purpose            | Priority | Status                                     |
+|--------------------------------------|--------------------|----------|--------------------------------------------|
+| `@digi4care/astro-google-tagmanager` | GA4 analytics      | P0       | ⬜ Skip - using Partytown + manual GA4      |
+| `astro-seo-schema`                   | Schema.org JSON-LD | P0       | ⬜ Not installed                            |
+| `astro-compress`                     | Compression        | P0       | ✅ Installed 2024-11-30                     |
+| `astro-critters`                     | Critical CSS       | P0       | ⬜ Skip - PurgeCSS handles Tailwind CSS     |
+| `astro-seo`                          | SEO meta tags      | P0       | ⬜ Skip - using custom Head.astro component |
 
 ### ⬜ To Install - Phase 2 (High Value - 3 packages)
 
-| Package                       | Purpose            | Priority | Status          |
-|-------------------------------|--------------------|----------|-----------------|
-| `accessible-astro-components` | WCAG components    | P1       | ⬜ Not installed |
-| `@unpic/astro`                | Image optimization | P1       | ⬜ Not installed |
-| `astro-purgecss`              | Remove unused CSS  | P1       | ⬜ Not installed |
+| Package                       | Purpose            | Priority | Status                 |
+|-------------------------------|--------------------|----------|------------------------|
+| `accessible-astro-components` | WCAG components    | P1       | ⬜ Not installed        |
+| `@unpic/astro`                | Image optimization | P1       | ⬜ Using Astro Image    |
+| `astro-purgecss`              | Remove unused CSS  | P1       | ✅ Installed 2024-11-30 |
 
 ### ⬜ To Install - Phase 3 (Dev Tools - 1 package)
 
@@ -729,14 +729,13 @@ Before finalizing installation:
 |-------------------------------------|--------------------|----------|-----------------|
 | `astro-show-tailwindcss-breakpoint` | Breakpoint display | P1       | ⬜ Not installed |
 
-### ⏳ To Install - Phase 4 (Post-Launch - 4 packages)
+### ⏳ To Install - Phase 4 (Post-Launch - 3 packages)
 
-| Package                    | Purpose          | Priority |
-|----------------------------|------------------|----------|
-| `@4hse/astro-llms-txt`     | AI optimization  | P2       |
-| `astro-pagefind`           | Site search      | P2       |
-| `lucide-astro`             | Icon library     | P2       |
-| `@kindspells/astro-shield` | Security headers | P2       |
+| Package                    | Purpose          | Priority | Status          |
+|----------------------------|------------------|----------|-----------------|
+| `astro-pagefind`           | Site search      | P2       | ⬜ Not installed |
+| `lucide-astro`             | Icon library     | P2       | ⬜ Not installed |
+| `@kindspells/astro-shield` | Security headers | P2       | ⬜ Not installed |
 
 **Total packages:**
 

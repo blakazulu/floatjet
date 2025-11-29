@@ -30,7 +30,7 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
                 href={item.href}
                 class:list={[
                   'text-sm font-medium transition-colors',
-                  isActive(item.href) ? 'text-jet-stream' : 'text-white/90 hover:text-white'
+                  isActive(item.href) ? 'text-sky-light' : 'text-white/90 hover:text-white'
                 ]}
                 aria-current={isActive(item.href) ? 'page' : undefined}
             >
@@ -110,7 +110,7 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
           <a href="/"
              class:list={[
                'mobile-menu-link flex items-center gap-3 px-4 py-3 rounded-xl transition-all',
-               currentPath === '/' ? 'text-jet-stream bg-white/10' : 'text-white/90 hover:text-white hover:bg-white/10'
+               currentPath === '/' ? 'text-sky-light bg-white/10' : 'text-white/90 hover:text-white hover:bg-white/10'
              ]}
              aria-current={currentPath === '/' ? 'page' : undefined}>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -126,7 +126,7 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
               <a href={item.href}
                  class:list={[
                    'mobile-menu-link flex items-center gap-3 px-4 py-3 rounded-xl transition-all',
-                   isActive(item.href) ? 'text-jet-stream bg-white/10' : 'text-white/90 hover:text-white hover:bg-white/10'
+                   isActive(item.href) ? 'text-sky-light bg-white/10' : 'text-white/90 hover:text-white hover:bg-white/10'
                  ]}
                  aria-current={isActive(item.href) ? 'page' : undefined}>
                 {item.name === 'Tools' && (
@@ -216,10 +216,10 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
       if (href) {
         if (isActive(href)) {
           link.classList.remove('text-white/90', 'hover:text-white');
-          link.classList.add('text-jet-stream');
+          link.classList.add('text-sky-light');
           link.setAttribute('aria-current', 'page');
         } else {
-          link.classList.remove('text-jet-stream');
+          link.classList.remove('text-sky-light');
           link.classList.add('text-white/90', 'hover:text-white');
           link.removeAttribute('aria-current');
         }
@@ -234,10 +234,10 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
         const active = href === '/' ? currentPath === '/' : isActive(href);
         if (active) {
           link.classList.remove('text-white/90', 'text-white/70', 'hover:text-white');
-          link.classList.add('text-jet-stream', 'bg-white/10');
+          link.classList.add('text-sky-light', 'bg-white/10');
           link.setAttribute('aria-current', 'page');
         } else {
-          link.classList.remove('text-jet-stream', 'bg-white/10');
+          link.classList.remove('text-sky-light', 'bg-white/10');
           link.classList.add('text-white/90', 'hover:text-white');
           link.removeAttribute('aria-current');
         }

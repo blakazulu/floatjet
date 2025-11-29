@@ -16,42 +16,7 @@ on Netlify)
 
 ## Critical Priority
 
-### 1. Google Analytics 4
-
-**Tool:** `@digi4care/astro-google-tagmanager`
-
-**What it does:** Injects Google Tag Manager/GA4 tracking scripts into your Astro site.
-
-**Why we need it:** FloatJet requires GA4 for traffic analysis and affiliate conversion tracking.
-
-**Weekly Downloads:** ~4,600
-
-**Installation:**
-
-```bash
-npm install @digi4care/astro-google-tagmanager
-```
-
-**Basic Configuration:**
-
-```js
-// astro.config.mjs
-import googleTagManager from '@digi4care/astro-google-tagmanager';
-
-export default defineConfig({
-  integrations: [
-    googleTagManager({
-      id: 'GTM-XXXXXXX'
-    })
-  ]
-});
-```
-
-**Priority:** P0 - Required for launch
-
----
-
-### 2. Schema.org JSON-LD Generator
+### 1. Schema.org JSON-LD Generator
 
 **Tool:** `astro-seo-schema`
 
@@ -88,7 +53,7 @@ import { ArticleSchema, ProductSchema, FAQSchema } from 'astro-seo-schema';
 
 ---
 
-### 3. Compression (Brotli/Gzip)
+### 2. Compression (Brotli/Gzip)
 
 **Tool:** `astro-compress` OR `astro-compressor`
 
@@ -130,37 +95,7 @@ export default defineConfig({
 
 ---
 
-### 4. Critical CSS Inlining
-
-**Tool:** `astro-critters`
-
-**What it does:** Inlines critical CSS and lazy-loads non-critical CSS to improve First Contentful Paint.
-
-**Why we need it:** Performance target requires FCP <1.5s. Critical CSS inlining is key to achieving this.
-
-**Weekly Downloads:** ~7,100
-
-**Installation:**
-
-```bash
-npm install astro-critters
-```
-
-**Configuration:**
-
-```js
-import critters from 'astro-critters';
-
-export default defineConfig({
-  integrations: [critters()]
-});
-```
-
-**Priority:** P0 - Critical for mobile performance
-
----
-
-### 5. SEO Meta Tags Helper
+### 3. SEO Meta Tags Helper
 
 **Tool:** `astro-seo` OR `astro-seo-meta`
 
@@ -208,7 +143,7 @@ import { SEO } from 'astro-seo';
 
 ## High Priority
 
-### 6. Accessible UI Components
+### 4. Accessible UI Components
 
 **Tool:** `accessible-astro-components`
 
@@ -237,7 +172,7 @@ npm install accessible-astro-components
 
 ---
 
-### 7. High-Performance Image Optimization
+### 5. High-Performance Image Optimization
 
 **Tool:** `@unpic/astro`
 
@@ -275,7 +210,7 @@ import { Image } from '@unpic/astro';
 
 ---
 
-### 8. PurgeCSS (Remove Unused CSS)
+### 6. PurgeCSS (Remove Unused CSS)
 
 **Tool:** `astro-purgecss`
 
@@ -309,7 +244,7 @@ export default defineConfig({
 
 ---
 
-### 9. Dev Toolbar: Tailwind Breakpoint Display
+### 7. Dev Toolbar: Tailwind Breakpoint Display
 
 **Tool:** `astro-show-tailwindcss-breakpoint`
 
@@ -329,33 +264,10 @@ npm install astro-show-tailwindcss-breakpoint
 
 ---
 
-### 10. AI Crawler Optimization (llms.txt)
-
-**Tool:** `@4hse/astro-llms-txt` OR `starlight-llms-txt`
-
-**What it does:** Generates `llms.txt` file for AI training and indexing by LLMs (ChatGPT, Claude, Perplexity, etc.)
-
-**Why we need it:** FloatJet's strategy includes AI search optimization. This helps AI crawlers understand site
-structure.
-
-**Weekly Downloads:**
-
-- `@4hse/astro-llms-txt`: Found on page 20
-- `starlight-llms-txt`: ~19,000 (more popular, but Starlight-focused)
-
-**Installation:**
-
-```bash
-npm install @4hse/astro-llms-txt
-```
-
-**Priority:** P2 - AI optimization is part of strategy
-
----
 
 ## Medium Priority / Nice-to-Have
 
-### 11. Static Site Search
+### 8. Static Site Search
 
 **Tool:** `astro-pagefind`
 
@@ -375,7 +287,7 @@ npm install astro-pagefind
 
 ---
 
-### 12. Breadcrumb Component
+### 9. Breadcrumb Component
 
 **Tool:** `astro-breadcrumbs`
 
@@ -395,7 +307,7 @@ npm install astro-breadcrumbs
 
 ---
 
-### 13. View Transitions Loading Indicator
+### 10. View Transitions Loading Indicator
 
 **Tool:** `astro-loading-indicator`
 
@@ -415,7 +327,7 @@ npm install astro-loading-indicator
 
 ---
 
-### 14. Icon Library (Lucide)
+### 11. Icon Library (Lucide)
 
 **Tool:** `lucide-astro`
 
@@ -435,7 +347,7 @@ npm install lucide-astro
 
 ---
 
-### 15. Security Headers (CSP, SRI)
+### 12. Security Headers (CSP, SRI)
 
 **Tool:** `@kindspells/astro-shield`
 
@@ -455,7 +367,7 @@ npm install @kindspells/astro-shield
 
 ---
 
-### 16. Auto-Import Components
+### 13. Auto-Import Components
 
 **Tool:** `astro-auto-import`
 
@@ -475,7 +387,7 @@ npm install astro-auto-import
 
 ---
 
-### 17. Accessible Navigation Component
+### 14. Accessible Navigation Component
 
 **Tool:** `astro-navbar`
 
@@ -495,7 +407,7 @@ npm install astro-navbar
 
 ---
 
-### 18. Alternative Analytics (Umami)
+### 15. Alternative Analytics (Umami)
 
 **Tool:** `@yeskunall/astro-umami`
 
@@ -567,10 +479,8 @@ npm install astro-navbar
 
 ### Phase 1: Launch Blockers (Install First)
 
-1.  `@digi4care/astro-google-tagmanager` - Analytics (GA4)
 2.  `astro-seo-schema` - Schema.org JSON-LD
 3.  `astro-compress` - Compression
-4.  `astro-critters` - Critical CSS
 5.  `astro-seo` - SEO meta tags helper
 
 ### Phase 2: High Value (Install Before Content Launch)
@@ -585,9 +495,8 @@ npm install astro-navbar
 
 ### Phase 4: Post-Launch Enhancements
 
-10. � `@4hse/astro-llms-txt` - AI crawler optimization
-11. � `astro-pagefind` - Site search
-12. � `lucide-astro` - Icon library
+10. � `astro-pagefind` - Site search
+11. � `lucide-astro` - Icon library
 14. � `@kindspells/astro-shield` - Security headers
 
 ---
@@ -641,11 +550,11 @@ Based on integration types:
 
 **Build-time only (zero runtime impact):**
 
-- `astro-compress`, `astro-critters`, `astro-purgecss`, `astro-seo-schema`, `astro-show-tailwindcss-breakpoint`
+- `astro-compress`, `astro-purgecss`, `astro-seo-schema`, `astro-show-tailwindcss-breakpoint`
 
 **Small runtime impact (<5KB):**
 
-- `@digi4care/astro-google-tagmanager`, `astro-seo`, `astro-loading-indicator`
+- `astro-seo`, `astro-loading-indicator`
 
 **Medium runtime impact (5-20KB):**
 
@@ -658,11 +567,11 @@ Based on integration types:
 ## Next Steps
 
 1. **Review recommendations** with team/stakeholders
-2. **Install Phase 1 integrations** (analytics, SEO, performance)
-3. **Test each integration** individually before moving to next
-4. **Document configuration** in main project README
-5. **Run full Lighthouse audit** after all integrations installed
-6. **Iterate on Phase 2-4** based on performance impact
+1. **Install Phase 1 integrations** (analytics, SEO, performance)
+2. **Test each integration** individually before moving to next
+3. **Document configuration** in main project README
+4. **Run full Lighthouse audit** after all integrations installed
+5. **Iterate on Phase 2-4** based on performance impact
 
 ---
 
@@ -671,9 +580,9 @@ Based on integration types:
 Before finalizing installation:
 
 1. **Image optimization:** Compare `@unpic/astro` vs built-in Astro Image component for bundle size
-2. **Astro 5.x compatibility:** Verify each integration works with Astro 5.16.0 (current version in package.json)
-3. **Favicon solution:** Decide if we need `astro-favicons` just for favicon generation (skip PWA features)
-4. **Dev toolbar:** Assess if `astro-show-tailwindcss-breakpoint` complements existing `@spotlightjs/astro`
+1. **Astro 5.x compatibility:** Verify each integration works with Astro 5.16.0 (current version in package.json)
+2. **Favicon solution:** Decide if we need `astro-favicons` just for favicon generation (skip PWA features)
+3. **Dev toolbar:** Assess if `astro-show-tailwindcss-breakpoint` complements existing `@spotlightjs/astro`
 
 ---
 
@@ -705,23 +614,21 @@ Before finalizing installation:
 | `@fontsource/jetbrains-mono` | v5.2.8  | JetBrains font (code)  | ✅ Configured | Self-hosted                                     |
 | `react`                      | v19.2.0 | React (dev dep)        | ✅ Working    | Required by astro-opengraph-images              |
 
-### ⬜ To Install - Phase 1 (Critical - 5 packages)
+### ⬜ To Install - Phase 1 (Critical - 3 packages)
 
 | Package                              | Purpose            | Priority | Status                                     |
 |--------------------------------------|--------------------|----------|--------------------------------------------|
-| `@digi4care/astro-google-tagmanager` | GA4 analytics      | P0       | ⬜ Skip - using Partytown + manual GA4      |
 | `astro-seo-schema`                   | Schema.org JSON-LD | P0       | ⬜ Not installed                            |
 | `astro-compress`                     | Compression        | P0       | ✅ Installed 2024-11-30                     |
-| `astro-critters`                     | Critical CSS       | P0       | ⬜ Skip - PurgeCSS handles Tailwind CSS     |
 | `astro-seo`                          | SEO meta tags      | P0       | ⬜ Skip - using custom Head.astro component |
 
 ### ⬜ To Install - Phase 2 (High Value - 3 packages)
 
-| Package                       | Purpose            | Priority | Status                 |
-|-------------------------------|--------------------|----------|------------------------|
-| `accessible-astro-components` | WCAG components    | P1       | ⬜ Not installed        |
-| `@unpic/astro`                | Image optimization | P1       | ⬜ Using Astro Image    |
-| `astro-purgecss`              | Remove unused CSS  | P1       | ✅ Installed 2024-11-30 |
+| Package                       | Purpose            | Priority | Status                          |
+|-------------------------------|--------------------|----------|---------------------------------|
+| `accessible-astro-components` | WCAG components    | P1       | ⬜ Not installed                 |
+| `@unpic/astro`                | Image optimization | P1       | ⬜ Skip - Astro Image sufficient |
+| `astro-purgecss`              | Remove unused CSS  | P1       | ✅ Installed 2024-11-30          |
 
 ### ⬜ To Install - Phase 3 (Dev Tools - 1 package)
 
@@ -741,7 +648,7 @@ Before finalizing installation:
 
 - ✅ Installed & configured: 10 packages
 - ❌ Tested & removed (incompatible): 3 packages (astro-font, astro-lighthouse, astro-capo)
-- ⬜ Remaining to install: 13 packages (5 critical + 3 high + 1 dev + 4 post-launch)
+- ⬜ Remaining to install: 10 packages (3 critical + 3 high + 1 dev + 3 post-launch)
 
 **Installation order recommendation:** Phase 1 → Test → Phase 2 → Test → Phase 3 → Launch → Phase 4
 

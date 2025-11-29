@@ -7,6 +7,7 @@ import robotsTxt from "astro-robots-txt";
 import tailwindcss from "@tailwindcss/vite";
 import opengraphImages from "astro-opengraph-images";
 import {floatjetRenderer} from "./src/lib/og-image-renderer";
+import partytown from "@astrojs/partytown";
 import * as fs from "fs";
 
 // https://astro.build/config
@@ -57,6 +58,13 @@ export default defineConfig({
         ],
       },
       render: floatjetRenderer,
+    }),
+
+    // 5. Partytown - Moves analytics scripts to Web Workers (keeps Lighthouse 100/100)
+    partytown({
+      config: {
+        forward: ["dataLayer.push"], // Forward GA4 dataLayer calls
+      },
     }),
   ],
   vite: {

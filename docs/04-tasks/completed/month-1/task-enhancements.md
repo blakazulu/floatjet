@@ -3,9 +3,9 @@ task_id: "FJ-029"
 title: "Performance & SEO Enhancements - Astro Integrations"
 category: "Technical"
 priority: "P1"
-status: "in-progress"
+status: "completed"
 estimated_hours: 6
-actual_hours: 3.5
+actual_hours: 4
 assigned_to: ""
 created_date: "2024-11-29"
 due_date: ""
@@ -515,23 +515,7 @@ npm install astro-critters
 
 ---
 
-#### 9. `@waldheimdev/astro-ai-llms-txt` 🟡 OPTIONAL
-
-**What it does:**
-
-- Generates `/llms.txt` file
-- AI-optimized summary of all HTML pages
-- Helps AI crawlers understand site structure
-- Improves discoverability for ChatGPT, Claude, Perplexity
-
-**When to add:**
-
-- If AI search traffic is significant (>10% of total)
-- Month 2+ once measuring AI referral traffic
-
----
-
-#### 10. `astro-min` 🟡 OPTIONAL
+#### 9. `astro-min` 🟡 OPTIONAL
 
 **What it does:**
 
@@ -812,6 +796,7 @@ All pages must meet these targets:
 ### 2024-11-29 - Phase 1 Complete ✅
 
 **Completed:**
+
 - Task created
 - Analyzed 100+ Astro integrations (pages 1-8)
 - Prioritized 10 recommended integrations
@@ -820,6 +805,7 @@ All pages must meet these targets:
 **Phase 1 Implementation (2 hours total):**
 
 **Session 1 (1 hour):**
+
 - ✅ Verified `@astrojs/sitemap` already installed (v3.6.0)
 - ✅ Installed `astro-robots-txt` (149 new packages)
 - ✅ Attempted `astro-font` - incompatible with Astro 5.x
@@ -850,13 +836,13 @@ All pages must meet these targets:
 **Next Steps:**
 
 - Phase 3: Install `@astrojs/partytown` when adding PostHog/GA4
-- Consider: Remove `astro-lighthouse` if not used (can use Chrome DevTools Lighthouse)
 
-### 2024-11-29 - Phase 2 Complete ✅
+### 2024-11-30 - Phase 2 Complete ✅
 
-**Phase 2 Implementation (1 hour):**
+**Phase 2 Implementation (1.5 hours):**
 
 - ✅ Installed `astro-opengraph-images` package
+- ✅ Installed `react` as dev dependency (required by astro-opengraph-images)
 - ✅ Downloaded Outfit variable font to `public/fonts/outfit-variable.ttf`
 - ✅ Created custom FloatJet branded OG image renderer (`src/lib/og-image-renderer.tsx`):
     - Ocean Deep (#0F4C5C) gradient background
@@ -865,24 +851,65 @@ All pages must meet these targets:
     - Sky Light (#80CED7) description and tagline
     - FloatJet.com branding in footer
     - Decorative corner accent
-- ✅ Installed `astro-capo` for `<head>` element optimization
-- ✅ Configured both integrations in `astro.config.mjs`
-- ✅ Updated `Head.astro` to use `getImagePath()` for auto-generated OG images:
-    - Falls back to custom image if provided
-    - Otherwise uses auto-generated branded image
+- ✅ Configured integration in `astro.config.mjs`
+- ✅ Updated `Head.astro` to use `getImagePath()` for auto-generated OG images
+- ❌ Removed `astro-capo` - it's a component, not an integration (incompatible approach)
+- ❌ Removed `astro-lighthouse` - slow/hangs, use Chrome DevTools Lighthouse instead
+
+**Issues Encountered & Fixed:**
+
+1. `astro-capo` exports a `Head` component, not an integration - removed
+2. `astro-lighthouse` caused dev server to hang - removed
+3. React not defined error - added `import React from 'react'` to renderer
+4. OG image path mismatch - updated Head.astro to always use auto-generated path
+5. Vite plugin type mismatch - added `@ts-ignore` comment for tailwindcss plugin
 
 **Phase 2 Final Status:**
 
-- ✅ Open Graph images: COMPLETE (auto-generates for all pages)
-- ✅ Capo head optimization: COMPLETE (auto-optimizes `<head>` order)
+- ✅ Open Graph images: COMPLETE (auto-generates branded images for all pages)
 - ✅ Custom FloatJet branded renderer: COMPLETE
+- ❌ Capo head optimization: SKIPPED (component-based, not integration)
+- ❌ Lighthouse dev toolbar: REMOVED (use Chrome DevTools instead)
 
 **Files Modified:**
 
-- `astro.config.mjs` - Added opengraphImages and capo integrations
-- `src/components/layout/Head.astro` - Added getImagePath() for auto OG images
+- `astro.config.mjs` - Added opengraphImages integration, removed lighthouse
+- `src/components/layout/Head.astro` - Uses getImagePath() for all OG images
 - `src/lib/og-image-renderer.tsx` - NEW: Custom FloatJet branded renderer
 - `public/fonts/outfit-variable.ttf` - NEW: Font for OG image generation
+
+**Packages Installed:**
+
+- `astro-opengraph-images` - Auto-generates OG images at build time
+
+**Packages Removed:**
+
+- `astro-lighthouse` - Caused performance issues
+- `astro-capo` - Not an integration (component-based)
+
+### 2024-11-30 - Phase 3 Complete ✅
+
+**Phase 3 Implementation (15 min):**
+
+- ✅ Installed `@astrojs/partytown` package
+- ✅ Configured Partytown in `astro.config.mjs` with `dataLayer.push` forwarding
+- ✅ Updated GA4 scripts in `Head.astro` to use `type="text/partytown"`
+
+**What Partytown Does:**
+
+- Moves GA4 scripts to a Web Worker (background thread)
+- Prevents analytics from blocking main thread
+- Maintains 100/100 Lighthouse Performance score
+- Improves Total Blocking Time (TBT) and Time to Interactive (TTI)
+
+**Phase 3 Final Status:**
+
+- ✅ Partytown: COMPLETE (GA4 runs in Web Worker)
+
+**Files Modified:**
+
+- `astro.config.mjs` - Added partytown integration with dataLayer forwarding
+- `src/components/layout/Head.astro` - Changed GA4 scripts to `type="text/partytown"`
 
 ---
 

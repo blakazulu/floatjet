@@ -4,8 +4,10 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 // import AstroFont from 'astro-font'; // TEMP DISABLED - incompatible with Astro 5.x
-import astroLighthouse from "astro-lighthouse";
 import tailwindcss from "@tailwindcss/vite";
+import opengraphImages from "astro-opengraph-images";
+import {floatjetRenderer} from "./src/lib/og-image-renderer";
+import * as fs from "fs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -40,13 +42,25 @@ export default defineConfig({
       sitemap: "https://floatjet.com/sitemap-index.xml",
     }),
 
-    // 3. Font optimization - TEMP DISABLED (astro-font incompatible with Astro 5.x)
-    // Will replace with @fontsource or manual optimization
+    // 3. Font optimization - Using @fontsource (imported in BaseLayout.astro)
 
-    // 4. Lighthouse in dev toolbar - Real-time performance monitoring
-    astroLighthouse(),
+    // 4. Open Graph image generation - Auto-generates social preview images
+    opengraphImages({
+      options: {
+        fonts: [
+          {
+            name: "Outfit",
+            weight: 700,
+            style: "normal",
+            data: fs.readFileSync("node_modules/@fontsource/outfit/files/outfit-latin-700-normal.woff"),
+          },
+        ],
+      },
+      render: floatjetRenderer,
+    }),
   ],
   vite: {
+    // @ts-ignore - Vite version mismatch between @tailwindcss/vite and Astro's internal Vite
     plugins: [tailwindcss()]
   },
   image: {

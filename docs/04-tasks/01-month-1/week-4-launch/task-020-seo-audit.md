@@ -392,9 +392,124 @@ Before marking this task complete:
 
 **Non-Blocking Issues (Post-Launch):**
 
-- P1: Performance optimization (LCP 4.8-6.0s, target <2.5s)
-- P2: Accessibility contrast improvements (93-96/100 scores)
-- Future: Affiliate redirect system implementation (535 redirects needed)
+**P1: Performance Optimization (Critical for User Experience)**
+
+*Current Lighthouse Performance Scores: 53-74/100 (Mobile, Throttled)*
+
+**Problem Pages:**
+
+- Ergonomic Chairs: 53/100 (LCP 6.0s) - Worst performer
+- Blog Index: 65/100 (LCP 5.5s)
+- Online Courses: 66/100 (LCP 5.4s)
+- Homepage: 69/100 (LCP 5.3s)
+
+**Root Causes Identified:**
+
+1. **LCP (Largest Contentful Paint): 4.8-6.0s** ❌
+  - Target: <2.5s
+  - Actual: 4.8-6.0s (almost 2x too slow)
+  - Impact: Main content takes too long to appear
+  - Likely culprit: Hero images not optimized, font loading blocking
+
+2. **Font Loading Issues**
+  - Google Fonts (Outfit + Inter) blocking render
+  - Not using `font-display: swap`
+  - No font preloading for critical fonts
+  - Estimated impact: 0.5-1.0s on LCP
+
+3. **Unused JavaScript: ~53 KiB**
+  - Scripts loading but not executed on page
+  - Wasted bandwidth on mobile connections
+  - Contributes to TBT (Total Blocking Time: 70-310ms)
+
+4. **First Contentful Paint: 3.0-3.5s**
+  - Target: <1.8s
+  - Actual: Almost 2x too slow
+  - Related to font loading and initial render blocking
+
+5. **Cumulative Layout Shift (CLS)**
+  - Ergonomic Chairs page: 0.263 (target <0.1)
+  - Likely caused by images loading without dimensions
+  - Other pages: 0-0.017 (good)
+
+**Performance Metrics Summary:**
+
+| Metric      | Target | Current Range | Status          | Priority |
+|-------------|--------|---------------|-----------------|----------|
+| LCP         | <2.5s  | 4.8-6.0s      | ❌ Critical      | P1       |
+| FCP         | <1.8s  | 3.0-3.5s      | ⚠️ Poor         | P1       |
+| TBT         | <200ms | 70-310ms      | ⚠️ Mixed        | P1       |
+| CLS         | <0.1   | 0-0.263       | ⚠️ One page bad | P2       |
+| Speed Index | <3.4s  | 3.1-5.4s      | ⚠️ Mixed        | P1       |
+
+**Recommended Fixes (Post-Launch Task):**
+
+**Quick Wins (2-3 hours):**
+
+1. Font optimization (30 min)
+  - Add `font-display: swap` to Google Fonts
+  - Preload critical fonts (Outfit Bold, Inter Regular)
+  - Expected improvement: -0.5 to -1.0s LCP
+
+2. Hero image optimization (1 hour)
+  - Audit hero images (likely the LCP element)
+  - Ensure proper sizing and format (WebP with fallback)
+  - Add explicit width/height to prevent CLS
+  - Consider using `loading="eager"` for above-fold images
+  - Expected improvement: -1.0 to -2.0s LCP
+
+3. Remove unused JavaScript (30 min)
+  - Audit bundled scripts
+  - Defer non-critical JavaScript
+  - Consider code splitting for route-specific code
+  - Expected improvement: -50 to -150ms TBT
+
+4. Critical CSS inlining (30 min)
+  - Inline critical above-the-fold CSS
+  - Defer non-critical stylesheets
+  - Expected improvement: -0.3 to -0.5s FCP
+
+**Medium-Term Optimizations (4-6 hours):**
+
+5. Image lazy loading audit
+  - Verify below-fold images use `loading="lazy"`
+  - Consider using progressive JPEGs or AVIF format
+
+6. Third-party script optimization
+  - Review analytics loading strategy
+  - Consider using `partytown` for third-party scripts
+
+7. Server-side optimizations (Netlify)
+  - Enable HTTP/2 Server Push for critical resources
+  - Verify Brotli compression is enabled
+  - Review edge caching headers
+
+**Impact Assessment:**
+
+- With quick wins: Estimated 60-75/100 performance score (LCP ~3.5-4.0s)
+- With all optimizations: Estimated 80-90/100 performance score (LCP ~2.5-3.0s)
+- Core Web Vitals: Will meet "Needs Improvement" range, close to "Good"
+
+**Why This Matters:**
+
+- Core Web Vitals became ranking factor (June 2021)
+- Poor LCP correlates with higher bounce rates
+- Mobile users on slow connections will struggle
+- First impressions matter for new visitors
+
+**Separate Task Needed:** Yes - Create "FJ-022: Performance Optimization" post-launch
+
+---
+
+**P2: Accessibility Improvements**
+
+- Color contrast issues on some text elements
+- Touch target sizing needs review
+- Scores: 93-96/100 (good but improvable)
+
+**P3: Future Enhancements**
+
+- Affiliate redirect system implementation (535 redirects needed)
 
 **Time Breakdown:**
 

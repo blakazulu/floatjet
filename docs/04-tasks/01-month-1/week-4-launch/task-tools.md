@@ -16,71 +16,26 @@ on Netlify)
 
 ## Critical Priority
 
-### 1. PostHog Analytics
+### 1. Google Analytics 4
 
-**Tool:** `astro-posthog`
+**Tool:** `@digi4care/astro-google-tagmanager`
 
-**What it does:** Integrates PostHog analytics platform into Astro sites, providing product analytics, session
-recording, and feature flag capabilities.
+**What it does:** Injects Google Tag Manager/GA4 tracking scripts into your Astro site.
 
-**Why we need it:** FloatJet requires PostHog for user behavior tracking and conversion optimization.
+**Why we need it:** FloatJet requires GA4 for traffic analysis and affiliate conversion tracking.
 
-**Weekly Downloads:** ~1,100
+**Weekly Downloads:** ~4,600
 
 **Installation:**
 
 ```bash
-npm install astro-posthog
+npm install @digi4care/astro-google-tagmanager
 ```
 
 **Basic Configuration:**
 
 ```js
 // astro.config.mjs
-import {defineConfig} from 'astro/config';
-import posthog from 'astro-posthog';
-
-export default defineConfig({
-  integrations: [
-    posthog({
-      apiKey: 'YOUR_POSTHOG_KEY',
-      host: 'https://app.posthog.com'
-    })
-  ]
-});
-```
-
-**Priority:** P0 - Required for launch
-
----
-
-### 2. Google Analytics 4
-
-**Tool:** `@digi4care/astro-google-tagmanager` OR `@astrolib/analytics`
-
-**What it does:** Injects Google Tag Manager/GA4 tracking scripts into your Astro site.
-
-**Why we need it:** FloatJet requires GA4 for traffic analysis and affiliate conversion tracking.
-
-**Weekly Downloads:**
-
-- `@digi4care/astro-google-tagmanager`: ~4,600
-- `@astrolib/analytics`: Unknown (supports multiple platforms)
-
-**Installation:**
-
-```bash
-# Option 1: GTM-specific
-npm install @digi4care/astro-google-tagmanager
-
-# Option 2: Multi-analytics (supports PostHog + GA4 + more)
-npm install @astrolib/analytics
-```
-
-**Basic Configuration:**
-
-```js
-// Option 1: GTM
 import googleTagManager from '@digi4care/astro-google-tagmanager';
 
 export default defineConfig({
@@ -90,28 +45,13 @@ export default defineConfig({
     })
   ]
 });
-
-// Option 2: @astrolib/analytics (supports both PostHog + GA4)
-import analytics from '@astrolib/analytics';
-
-export default defineConfig({
-  integrations: [
-    analytics({
-      googleAnalytics: {id: 'G-XXXXXXXXXX'},
-      posthog: {apiKey: 'YOUR_KEY', host: 'https://app.posthog.com'}
-    })
-  ]
-});
 ```
-
-**Recommendation:** Research both options - GTM if you need Tag Manager features, @astrolib/analytics if you want
-unified config for PostHog + GA4.
 
 **Priority:** P0 - Required for launch
 
 ---
 
-### 3. Schema.org JSON-LD Generator
+### 2. Schema.org JSON-LD Generator
 
 **Tool:** `astro-seo-schema`
 
@@ -148,7 +88,7 @@ import { ArticleSchema, ProductSchema, FAQSchema } from 'astro-seo-schema';
 
 ---
 
-### 4. Compression (Brotli/Gzip)
+### 3. Compression (Brotli/Gzip)
 
 **Tool:** `astro-compress` OR `astro-compressor`
 
@@ -190,7 +130,7 @@ export default defineConfig({
 
 ---
 
-### 5. Critical CSS Inlining
+### 4. Critical CSS Inlining
 
 **Tool:** `astro-critters`
 
@@ -220,7 +160,7 @@ export default defineConfig({
 
 ---
 
-### 6. SEO Meta Tags Helper
+### 5. SEO Meta Tags Helper
 
 **Tool:** `astro-seo` OR `astro-seo-meta`
 
@@ -268,7 +208,7 @@ import { SEO } from 'astro-seo';
 
 ## High Priority
 
-### 7. Accessible UI Components
+### 6. Accessible UI Components
 
 **Tool:** `accessible-astro-components`
 
@@ -297,7 +237,7 @@ npm install accessible-astro-components
 
 ---
 
-### 8. High-Performance Image Optimization
+### 7. High-Performance Image Optimization
 
 **Tool:** `@unpic/astro`
 
@@ -335,60 +275,7 @@ import { Image } from '@unpic/astro';
 
 ---
 
-### 9. Google Fonts Optimizer
-
-**Tool:** `astro-google-fonts-optimizer` OR `astro-font`
-
-**What it does:** Optimizes Google Fonts loading by self-hosting, subsetting, and adding proper preload/prefetch hints.
-
-**Why we need it:** FloatJet uses 3 Google Fonts (Outfit, Inter, JetBrains Mono). Font loading impacts FCP/LCP
-significantly.
-
-**Weekly Downloads:**
-
-- `astro-google-fonts-optimizer`: ~5,100
-- `astro-font`: ~27,000 (more popular, supports custom fonts too)
-
-**Installation:**
-
-```bash
-npm install astro-font
-```
-
-**Configuration:**
-
-```js
-import AstroFont from 'astro-font';
-
-export default defineConfig({
-  integrations: [
-    AstroFont({
-      config: [
-        {
-          name: 'Outfit',
-          src: [],
-          preload: true,
-          display: 'swap',
-          selector: 'h1, h2, h3, h4, h5, h6'
-        },
-        {
-          name: 'Inter',
-          src: [],
-          preload: true,
-          display: 'swap',
-          selector: 'body'
-        }
-      ]
-    })
-  ]
-});
-```
-
-**Priority:** P1 - High impact on performance
-
----
-
-### 10. PurgeCSS (Remove Unused CSS)
+### 8. PurgeCSS (Remove Unused CSS)
 
 **Tool:** `astro-purgecss`
 
@@ -422,47 +309,7 @@ export default defineConfig({
 
 ---
 
-### 11. Head Element Optimizer
-
-**Tool:** `astro-capo`
-
-**What it does:** Automatically sorts `<head>` elements in optimal order using capo.js for better performance.
-
-**Why we need it:** Proper `<head>` ordering improves page load speed. Script/style order matters.
-
-**Weekly Downloads:** ~9,500
-
-**Installation:**
-
-```bash
-npm install astro-capo
-```
-
-**Priority:** P1 - Performance optimization
-
----
-
-### 12. Dev Toolbar: Meta Tags Debugger
-
-**Tool:** `astro-meta-tags`
-
-**What it does:** Dev toolbar extension that shows all meta tags on the current page for easy debugging.
-
-**Why we need it:** With 60 articles, debugging SEO meta tags manually is tedious. This speeds up QA.
-
-**Weekly Downloads:** ~6,300
-
-**Installation:**
-
-```bash
-npm install astro-meta-tags
-```
-
-**Priority:** P1 - Improves dev experience (already approved)
-
----
-
-### 13. Dev Toolbar: Tailwind Breakpoint Display
+### 9. Dev Toolbar: Tailwind Breakpoint Display
 
 **Tool:** `astro-show-tailwindcss-breakpoint`
 
@@ -482,7 +329,7 @@ npm install astro-show-tailwindcss-breakpoint
 
 ---
 
-### 14. AI Crawler Optimization (llms.txt)
+### 10. AI Crawler Optimization (llms.txt)
 
 **Tool:** `@4hse/astro-llms-txt` OR `starlight-llms-txt`
 
@@ -508,7 +355,7 @@ npm install @4hse/astro-llms-txt
 
 ## Medium Priority / Nice-to-Have
 
-### 15. Static Site Search
+### 11. Static Site Search
 
 **Tool:** `astro-pagefind`
 
@@ -528,7 +375,7 @@ npm install astro-pagefind
 
 ---
 
-### 16. Breadcrumb Component
+### 12. Breadcrumb Component
 
 **Tool:** `astro-breadcrumbs`
 
@@ -548,7 +395,7 @@ npm install astro-breadcrumbs
 
 ---
 
-### 17. View Transitions Loading Indicator
+### 13. View Transitions Loading Indicator
 
 **Tool:** `astro-loading-indicator`
 
@@ -568,7 +415,7 @@ npm install astro-loading-indicator
 
 ---
 
-### 18. Icon Library (Lucide)
+### 14. Icon Library (Lucide)
 
 **Tool:** `lucide-astro`
 
@@ -588,7 +435,7 @@ npm install lucide-astro
 
 ---
 
-### 19. Security Headers (CSP, SRI)
+### 15. Security Headers (CSP, SRI)
 
 **Tool:** `@kindspells/astro-shield`
 
@@ -608,7 +455,7 @@ npm install @kindspells/astro-shield
 
 ---
 
-### 20. Auto-Import Components
+### 16. Auto-Import Components
 
 **Tool:** `astro-auto-import`
 
@@ -628,7 +475,7 @@ npm install astro-auto-import
 
 ---
 
-### 21. Accessible Navigation Component
+### 17. Accessible Navigation Component
 
 **Tool:** `astro-navbar`
 
@@ -648,17 +495,17 @@ npm install astro-navbar
 
 ---
 
-### 22. Alternative Analytics (Umami)
+### 18. Alternative Analytics (Umami)
 
 **Tool:** `@yeskunall/astro-umami`
 
 **What it does:** Privacy-friendly analytics alternative to GA4. GDPR compliant.
 
-**Why we need it:** Optional privacy-focused alternative. Not needed with PostHog + GA4.
+**Why we need it:** Optional privacy-focused alternative. Not needed since we have GA4.
 
 **Weekly Downloads:** ~4,000
 
-**Priority:** P3 - Not needed (already have PostHog + GA4)
+**Priority:** P3 - Not needed (already have GA4)
 
 ---
 
@@ -720,32 +567,28 @@ npm install astro-navbar
 
 ### Phase 1: Launch Blockers (Install First)
 
-1.  `astro-posthog` - Analytics (PostHog)
-2.  `@digi4care/astro-google-tagmanager` OR `@astrolib/analytics` - Analytics (GA4)
-3.  `astro-seo-schema` - Schema.org JSON-LD
-4.  `astro-compress` - Compression
-5.  `astro-critters` - Critical CSS
-6.  `astro-seo` - SEO meta tags helper
+1.  `@digi4care/astro-google-tagmanager` - Analytics (GA4)
+2.  `astro-seo-schema` - Schema.org JSON-LD
+3.  `astro-compress` - Compression
+4.  `astro-critters` - Critical CSS
+5.  `astro-seo` - SEO meta tags helper
 
 ### Phase 2: High Value (Install Before Content Launch)
 
-7.  `accessible-astro-components` - WCAG components
-8.  `@unpic/astro` - Image optimization
-9.  `astro-font` - Google Fonts optimization
-10.  `astro-purgecss` - Remove unused CSS
-11.  `astro-capo` - Head element optimization
+6.  `accessible-astro-components` - WCAG components
+7.  `@unpic/astro` - Image optimization
+8.  `astro-purgecss` - Remove unused CSS
 
 ### Phase 3: Developer Experience (Install During Development)
 
-12.  `astro-meta-tags` - Dev toolbar meta debugger
-13.  `astro-show-tailwindcss-breakpoint` - Dev toolbar breakpoint display
+9.  `astro-show-tailwindcss-breakpoint` - Dev toolbar breakpoint display
 
 ### Phase 4: Post-Launch Enhancements
 
-14. � `@4hse/astro-llms-txt` - AI crawler optimization
-15. � `astro-pagefind` - Site search
-16. � `lucide-astro` - Icon library
-17. � `@kindspells/astro-shield` - Security headers
+10. � `@4hse/astro-llms-txt` - AI crawler optimization
+11. � `astro-pagefind` - Site search
+12. � `lucide-astro` - Icon library
+14. � `@kindspells/astro-shield` - Security headers
 
 ---
 
@@ -755,7 +598,6 @@ After installing each integration:
 
 ### Analytics Testing
 
-- [ ] PostHog events firing correctly in browser console
 - [ ] GA4 pageviews tracked in GA4 dashboard
 - [ ] No console errors related to tracking scripts
 - [ ] Scripts load asynchronously (no blocking)
@@ -799,12 +641,11 @@ Based on integration types:
 
 **Build-time only (zero runtime impact):**
 
-- `astro-compress`, `astro-critters`, `astro-purgecss`, `astro-capo`, `astro-seo-schema`, `astro-font`,
-  `astro-meta-tags`, `astro-show-tailwindcss-breakpoint`
+- `astro-compress`, `astro-critters`, `astro-purgecss`, `astro-seo-schema`, `astro-show-tailwindcss-breakpoint`
 
 **Small runtime impact (<5KB):**
 
-- `astro-posthog`, `@digi4care/astro-google-tagmanager`, `astro-seo`, `astro-loading-indicator`
+- `@digi4care/astro-google-tagmanager`, `astro-seo`, `astro-loading-indicator`
 
 **Medium runtime impact (5-20KB):**
 
@@ -829,11 +670,10 @@ Based on integration types:
 
 Before finalizing installation:
 
-1. **Analytics choice:** Test both `@digi4care/astro-google-tagmanager` and `@astrolib/analytics` to see which better
-   fits FloatJet workflow
-2. **Image optimization:** Compare `@unpic/astro` vs built-in Astro Image component for bundle size
-3. **Astro 5.x compatibility:** Verify each integration works with Astro 5.16.0 (current version)
-4. **Favicon solution:** Decide if we need `astro-favicons` just for favicon generation (skip PWA features)
+1. **Image optimization:** Compare `@unpic/astro` vs built-in Astro Image component for bundle size
+2. **Astro 5.x compatibility:** Verify each integration works with Astro 5.16.0 (current version in package.json)
+3. **Favicon solution:** Decide if we need `astro-favicons` just for favicon generation (skip PWA features)
+4. **Dev toolbar:** Assess if `astro-show-tailwindcss-breakpoint` complements existing `@spotlightjs/astro`
 
 ---
 
@@ -843,3 +683,102 @@ Before finalizing installation:
 - **Package Research:** All tools available on NPM
 - **FloatJet Requirements:** See `docs/01-planning/prd.md`
 - **Accessibility Guidelines:** See `docs/03-design/accessibility-guidelines.md`
+
+---
+
+## 📦 Current Package Status Summary
+
+### ✅ Already Installed & Configured (8 packages)
+
+**DO NOT reinstall these - already in package.json:**
+
+| Package                      | Version | Purpose                | Status       | Notes                                           |
+|------------------------------|---------|------------------------|--------------|-------------------------------------------------|
+| `@astrojs/sitemap`           | v3.6.0  | Sitemap generation     | ✅ Configured | Enhanced with filters, changefreq, priority     |
+| `@astrojs/mdx`               | v4.3.12 | MDX support            | ✅ Working    | -                                               |
+| `astro-robots-txt`           | v1.0.0  | robots.txt generator   | ✅ Configured | Allows all AI crawlers (ChatGPT, Claude, etc.)  |
+| `astro-opengraph-images`     | v1.13.1 | OG image generation    | ✅ Configured | Custom FloatJet branded renderer                |
+| `@astrojs/partytown`         | v2.1.4  | Scripts to web worker  | ✅ Configured | GA4 runs in Web Worker, maintains 100/100 score |
+| `@spotlightjs/astro`         | v3.2.6  | Dev toolbar debugger   | ✅ Working    | Alternative to astro-lighthouse                 |
+| `@fontsource/outfit`         | v5.2.8  | Outfit font (headings) | ✅ Configured | Self-hosted, 14-24 kB, 7ms load                 |
+| `@fontsource/inter`          | v5.2.8  | Inter font (body)      | ✅ Configured | Self-hosted, no Google CDN requests             |
+| `@fontsource/jetbrains-mono` | v5.2.8  | JetBrains font (code)  | ✅ Configured | Self-hosted                                     |
+| `react`                      | v19.2.0 | React (dev dep)        | ✅ Working    | Required by astro-opengraph-images              |
+
+### ⬜ To Install - Phase 1 (Critical - 5 packages)
+
+| Package                              | Purpose            | Priority |
+|--------------------------------------|--------------------|----------|
+| `@digi4care/astro-google-tagmanager` | GA4 analytics      | P0       |
+| `astro-seo-schema`                   | Schema.org JSON-LD | P0       |
+| `astro-compress`                     | Compression        | P0       |
+| `astro-critters`                     | Critical CSS       | P0       |
+| `astro-seo`                          | SEO meta tags      | P0       |
+
+### ⬜ To Install - Phase 2 (High Value - 3 packages)
+
+| Package                       | Purpose            | Priority | Status          |
+|-------------------------------|--------------------|----------|-----------------|
+| `accessible-astro-components` | WCAG components    | P1       | ⬜ Not installed |
+| `@unpic/astro`                | Image optimization | P1       | ⬜ Not installed |
+| `astro-purgecss`              | Remove unused CSS  | P1       | ⬜ Not installed |
+
+### ⬜ To Install - Phase 3 (Dev Tools - 1 package)
+
+| Package                             | Purpose            | Priority | Status          |
+|-------------------------------------|--------------------|----------|-----------------|
+| `astro-show-tailwindcss-breakpoint` | Breakpoint display | P1       | ⬜ Not installed |
+
+### ⏳ To Install - Phase 4 (Post-Launch - 4 packages)
+
+| Package                    | Purpose          | Priority |
+|----------------------------|------------------|----------|
+| `@4hse/astro-llms-txt`     | AI optimization  | P2       |
+| `astro-pagefind`           | Site search      | P2       |
+| `lucide-astro`             | Icon library     | P2       |
+| `@kindspells/astro-shield` | Security headers | P2       |
+
+**Total packages:**
+
+- ✅ Installed & configured: 10 packages
+- ❌ Tested & removed (incompatible): 3 packages (astro-font, astro-lighthouse, astro-capo)
+- ⬜ Remaining to install: 13 packages (5 critical + 3 high + 1 dev + 4 post-launch)
+
+**Installation order recommendation:** Phase 1 → Test → Phase 2 → Test → Phase 3 → Launch → Phase 4
+
+---
+
+## ⚠️ CRITICAL: Astro 5.x Compatibility Issues
+
+**The following integrations are INCOMPATIBLE with Astro 5.16.0:**
+
+### ❌ astro-font (SSR Module Error)
+
+- **Issue:** SSR module resolution error when importing integration
+- **Error:** Cannot find module errors during dev server startup
+- **Status:** Tested 2024-11-29, removed from project
+- **Solution:** Use `@fontsource/*` packages instead (official Astro 5.x approach)
+- **Impact:** HIGH - Recommended in many guides but doesn't work
+
+### ❌ astro-lighthouse (Performance Issues)
+
+- **Issue:** Causes dev server to hang/become extremely slow
+- **Error:** Dev toolbar becomes unresponsive, page loads take 10+ seconds
+- **Status:** Tested 2024-11-30, removed from project
+- **Solution:** Use Chrome DevTools Lighthouse (F12 → Lighthouse tab)
+- **Impact:** MEDIUM - Dev toolbar convenience vs built-in browser tool
+
+### ❌ astro-capo (Architecture Mismatch)
+
+- **Issue:** Exports `<Head>` component, not an Astro integration
+- **Error:** Cannot add to `integrations[]` array in astro.config.mjs
+- **Status:** Tested 2024-11-30, removed from project
+- **Solution:** Manually optimize `<head>` order in layout components
+- **Impact:** LOW - Manual optimization is straightforward
+
+**Recommendation:** Before installing ANY integration:
+
+1. Check GitHub issues for "Astro 5" compatibility
+2. Verify last update was after Astro 5 release (October 2024+)
+3. Test in dev environment before committing
+4. Have rollback plan ready

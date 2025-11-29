@@ -200,15 +200,17 @@ const categoryNames: Record<string, string> = {
                           <div
                               class="relative rounded-2xl overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 shadow-xl">
                             <!-- Image -->
-                            <div class="relative h-64 md:h-96 overflow-hidden">
+                            <div
+                                class="relative h-64 md:h-96 overflow-hidden bg-gradient-to-br from-ocean-deep/60 via-jet-stream/40 to-sky-light/30">
                               {isFirstVisible ? (
                                   <Image
                                       src={article.image}
                                       alt={article.title}
                                       width={1200}
                                       height={600}
-                                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 carousel-image"
                                       loading="eager"
+                                      fetchpriority="high"
                                   />
                               ) : (
                                   <Image
@@ -216,7 +218,7 @@ const categoryNames: Record<string, string> = {
                                       alt={article.title}
                                       width={1200}
                                       height={600}
-                                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 carousel-image"
                                       loading="lazy"
                                   />
                               )}
@@ -305,6 +307,16 @@ const categoryNames: Record<string, string> = {
 </section>
 
 <style>
+  /* Carousel image blur placeholder */
+  .carousel-image {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .carousel-image.loaded {
+    opacity: 1;
+  }
+
   .carousel-slides-container {
     position: relative;
     overflow: hidden;
@@ -422,10 +434,25 @@ const categoryNames: Record<string, string> = {
     }
 
     initializeSlides();
+    initCarouselImages();
     setupCategoryTabs();
     setupCarouselNavigation();
     setupDotNavigation();
     startAutoRotate();
+  }
+
+  // Initialize carousel image blur placeholders
+  function initCarouselImages() {
+    const images = document.querySelectorAll('.carousel-image') as NodeListOf<HTMLImageElement>;
+    images.forEach(img => {
+      if (img.complete && img.naturalHeight !== 0) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', () => {
+          img.classList.add('loaded');
+        }, {once: true});
+      }
+    });
   }
 
   // Cleanup function

@@ -68,13 +68,14 @@ const featuredArticles = [
 
             <a href={`/${article.slug}`} class="relative block h-full z-10 flex flex-col p-4">
               <!-- Card Image -->
-              <div class="relative h-48 overflow-hidden rounded-2xl mb-5 shadow-md">
+              <div
+                  class="relative h-48 overflow-hidden rounded-2xl mb-5 shadow-md bg-gradient-to-br from-ocean-deep/60 via-jet-stream/40 to-sky-light/30">
                 <Image
                     src={article.image}
                     alt={article.title}
                     width={800}
                     height={450}
-                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 blur-placeholder"
                     loading={index < 3 ? 'eager' : 'lazy'}
                 />
               </div>
@@ -107,3 +108,33 @@ const featuredArticles = [
     </div>
   </div>
 </section>
+
+<style>
+  .blur-placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .blur-placeholder.loaded {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  // Blur placeholder fade-in effect
+  function initBlurPlaceholders() {
+    const images = document.querySelectorAll('.blur-placeholder') as NodeListOf<HTMLImageElement>;
+    images.forEach(img => {
+      if (img.complete && img.naturalHeight !== 0) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', () => {
+          img.classList.add('loaded');
+        }, {once: true});
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initBlurPlaceholders);
+  document.addEventListener('astro:page-load', initBlurPlaceholders);
+</script>

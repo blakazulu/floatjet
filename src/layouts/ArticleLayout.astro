@@ -97,6 +97,7 @@ const articleSchema = {
                   height={630}
                   class="hero-image"
                   loading="eager"
+                  fetchpriority="high"
               />
             </div>
         )}
@@ -174,11 +175,22 @@ const articleSchema = {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   }
 
+  .article-hero {
+    position: relative;
+    background: linear-gradient(135deg, rgba(15, 76, 92, 0.6) 0%, rgba(56, 163, 165, 0.4) 100%);
+  }
+
   .hero-image {
     width: 100%;
     height: auto;
     object-fit: cover;
     aspect-ratio: 16 / 9;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .hero-image.loaded {
+    opacity: 1;
   }
 
   .article-body {
@@ -355,6 +367,21 @@ const articleSchema = {
 </style>
 
 <script>
+  // Hero image blur placeholder - fade in when loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const heroImage = document.querySelector('.hero-image') as HTMLImageElement;
+    if (heroImage) {
+      // Check if already loaded (cached)
+      if (heroImage.complete && heroImage.naturalHeight !== 0) {
+        heroImage.classList.add('loaded');
+      } else {
+        heroImage.addEventListener('load', () => {
+          heroImage.classList.add('loaded');
+        });
+      }
+    }
+  });
+
   // Stop TOC sticky at end of article content
   document.addEventListener('DOMContentLoaded', () => {
     const tocSidebar = document.getElementById('toc-sidebar');

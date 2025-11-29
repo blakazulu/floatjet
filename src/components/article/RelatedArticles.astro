@@ -30,13 +30,14 @@ const {articles} = Astro.props;
 
             <a href={article.href} class="relative block h-full z-10 flex flex-col p-4">
               <!-- Card Image -->
-              <div class="relative h-48 overflow-hidden rounded-2xl mb-5 shadow-md">
+              <div
+                  class="relative h-48 overflow-hidden rounded-2xl mb-5 shadow-md bg-gradient-to-br from-ocean-deep/60 via-jet-stream/40 to-sky-light/30">
                 <Image
                     src={article.image}
                     alt={article.imageAlt}
                     width={800}
                     height={450}
-                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 related-image"
                     loading="lazy"
                 />
               </div>
@@ -75,4 +76,32 @@ const {articles} = Astro.props;
     padding: 4rem 0;
     margin-top: 3rem;
   }
+
+  .related-image {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .related-image.loaded {
+    opacity: 1;
+  }
 </style>
+
+<script>
+  // Related articles image blur placeholder fade-in
+  function initRelatedImages() {
+    const images = document.querySelectorAll('.related-image') as NodeListOf<HTMLImageElement>;
+    images.forEach(img => {
+      if (img.complete && img.naturalHeight !== 0) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', () => {
+          img.classList.add('loaded');
+        }, {once: true});
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initRelatedImages);
+  document.addEventListener('astro:page-load', initRelatedImages);
+</script>

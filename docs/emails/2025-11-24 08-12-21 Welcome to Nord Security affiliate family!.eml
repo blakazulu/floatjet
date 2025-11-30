@@ -1,0 +1,291 @@
+Delivered-To: liraz.amir.1982@gmail.com
+Received: by 2002:a05:6504:2346:b0:2d1:a109:e86e with SMTP id o6csp1830480ltx;
+ Mon, 24 Nov 2025 00:12:27 -0800 (PST)
+X-Received: by 2002:a05:600c:3549:b0:477:9fa0:7495 with SMTP id
+ 5b1f17b1804b1-477c053069fmr103340285e9.14.1763971946869; Mon, 24 Nov 2025
+ 00:12:26 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1763971946; cv=none; d=google.com;
+ s=arc-20240605;
+ b=a9C93EOPR5CrdcxkuFum5gRCdT1+9d4FGd6vzeKet6pummMUukgVSC+Cw5aWzAL76s
+ /UqGd1mULeGmi+ZAjDfa7Q7z/Z5waclaPGRP+Du3n5OpXHsRFdqPzEvkg/OJyzYK+2C5
+ tuv2MjcuXOV704dQtdiRTl9SP8VlUCTTM8IWXxuRNb2umWXinkNKqWjYxof1BQu6600E
+ LWAvZPbc+fb2B7HF+jksqp6Mk/dXfjfWP/DZ2bzVLNmTDXtkm/xVzYPLuH0ROJj3VJ2p
+ skx9XQHYTEqoaF1Vq6b1B0bmyxA0U/Kzf5T3GkZZVTpWHKlGdpidWWAVix0ecYQSCVzp izOA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605; h=mime-version:date:message-id:subject:to:from:delivered-to
+ :dkim-signature; bh=+KcUVi3RHQwn8dBF6pFcD/bBAT9lZ5sQQ/IK2SfImR0=;
+ fh=mT1+JSIa8BeNPB3OxFf7SRMnMLi7RGXO5j8QH5Vjcu8=;
+ b=ZLeclA0wkmB8QvVzvxELV6iwxNx4O95uWYnfHB/mQMc0fKWH6iAwfV/KtjmL8/D9Eh
+ 1xALElQGMKnkpS9C45K7znYMI+ZNhwcB6kiCTrRoPEk0i31u145a9zphHFjwK/HmvKxD
+ 6CGNKQ+MTO3T2Ppn9EpOL0KhrVO4Xt/5KAcieO7OtgeQdgBKglAL7zxm1A97/R6+XctP
+ l1Bvz/nZMKKY59y7YCTYB4lb6H/byVaayTW6v4E5zdIuZk89JV2JicB7KzUnfMLAYa6W
+ i+Cz469BAsyfWF/kp1PkmrsDQCEFE3R0tBOc8trs6ZQPQH6X8IJ3kYmabBexU/m+4AG5 261A==;
+ dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass
+ header.i=@nordvpnmedia.com header.s=google header.b=17V5Kcyw; spf=pass
+ (google.com: domain of info@nordvpnmedia.com designates 209.85.220.41 as
+ permitted sender) smtp.mailfrom=info@nordvpnmedia.com; dmarc=pass
+ (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=nordvpnmedia.com; dara=pass
+ header.i=@gmail.com
+Return-Path: <info@nordvpnmedia.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com.
+ [209.85.220.41]) by mx.google.com with SMTPS id
+ 5b1f17b1804b1-477b803f176sor10639105e9.2.2025.11.24.00.12.26 for
+ <liraz.amir.1982@gmail.com> (Google Transport Security); Mon, 24 Nov 2025
+ 00:12:26 -0800 (PST)
+Received-SPF: pass (google.com: domain of info@nordvpnmedia.com designates
+ 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com; dkim=pass header.i=@nordvpnmedia.com
+ header.s=google header.b=17V5Kcyw; spf=pass (google.com: domain of
+ info@nordvpnmedia.com designates 209.85.220.41 as permitted sender)
+ smtp.mailfrom=info@nordvpnmedia.com; dmarc=pass (p=QUARANTINE sp=QUARANTINE
+ dis=NONE) header.from=nordvpnmedia.com; dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nordvpnmedia.com;
+ s=google; t=1763971946; x=1764576746; dara=google.com;
+ h=mime-version:date:message-id:subject:to:from:delivered-to:from:to
+ :cc:subject:date:message-id:reply-to;
+ bh=+KcUVi3RHQwn8dBF6pFcD/bBAT9lZ5sQQ/IK2SfImR0=;
+ b=17V5Kcywf1M9/1uDbebMxfH+Gyb/36NminRPdATt/GulN8Z+THq+OhWnhG0nzpmn93
+ ZAfA5weQuTHS1I3Ww3ODDDWztHh6KgVNIGXSgyDt1pc234+hJ5LdrUzaChcSM4xORmOW
+ so6cWpLhFSCd1M4Mnk2PY9yXNjAeju8u7KE0g=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=1e100.net;
+ s=20230601; t=1763971946; x=1764576746;
+ h=mime-version:date:message-id:subject:to:from:delivered-to:x-gm-gg
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=+KcUVi3RHQwn8dBF6pFcD/bBAT9lZ5sQQ/IK2SfImR0=;
+ b=M7GfbTEGDVWtqjnwZ3qCKt2DEoZubneADw6VBXHWpoBqNN4HqGHWZIvVy1gAnML1hD
+ Mtj5eAydDvLgL84LigFTxlAc9RlyxNgGLOt8ZYn6/bfZeNNqseRrydWCGNF6yzBt2Pfs
+ 1tv/O+pFvcYiqur5wCMC003Np5cFrwg9rEfFpHhwB1Vx1ht53eIsNg4X4uuFw7GRjnSN
+ 81uwjFu2vW8jU/jPmSFrii/6/tzASSUcaxl1imh5xq79N7YnXwplGSTkJ8KAIUK1Mvwj
+ UzfMhngGUgKFGS5WAjbaha+YINHRmHxbl5U+q8A7bFMATTHWwvYF8D3jmeOqFskh5S3u cVNA==
+X-Gm-Message-State: AOJu0Yyr3/ipKygoX7j2Q1Lw89lfdJAi+c+39Whvz9ox9F2YLo1oLhPc
+ VDSAH5VSX4zxkvWaqRh9G4N+y/bqvGQ7Ajm64htKZaXeejqBMeZD7lngluztfmcyFUFIs0Rf/52
+ dIwZ+ydGmBHhO+bwjigrY0eG1m5FACgVZFRGNj6jPptPv5x4H3semAfmx3PNa0bFgQjFjeTL8vf
+ 6Ym0Kfv1r4wiiNHCXv+qSCJ+AdHjM9m6b4lGs9Kh6QexCdjg==
+X-Gm-Gg: ASbGnctwnGMnc5bMFPagNTf340VOYfbY6MgYRNFTanLN0X2dYgObG31qVbuCeiXjiuh
+ JR7PfqK41ErU/yT5ZiCQHpNT3QF+a35/mD3w5Zf7tB1NY2UJf3Xh7YlXSlm1sJgY7xKXq+oMaVz
+ +GtYDvOnp7NTxcakIO62/dkqTceyllB8PGO3JCKBbe02NuR1uyoA6LdNadG4h2QcqHuqEFX1ows
+ 4o3QkcjmRJSbqmbdCS63ea2wr0w0xPQd4DdaLbTY7FlRKN0PLJoZpK2MSmgiIXJWz/xjra7sheI
+ 8ugk3tu3oZw2hc9ZPsjZDIQ7eCKvHLu40hhXwWztaFARDREvNbQ+fp+tcHZ1UefZBRc4sVEnjAJ
+ ge5GZthY9kHmeRuf2CLkHUe+Eur02e9PSMj9XP2Gz2TFemclGhpcFqUe557i6ai7O7epoRhbtyQ
+ jXf2jpuTJoeY11cPY6SVp6waRna7RIwan0/JS/wvtc17q6q8JRPJ+GnGL6gmStHaFJa6/XTrF4n
+ d7VAQrGE9TJVcdiESP8lB9z/ZpcKnbN43xB
+X-Google-Smtp-Source: AGHT+IESRkCSVch4/mFdSZTbD6UDcfbFBXOA1ZWGI3uBAL0qfP41e57ZO01Dd2y9GrFWlbz363IUbg==
+X-Received: by 2002:a05:600c:1516:b0:477:14ba:28da with SMTP id
+ 5b1f17b1804b1-477b9ea8f78mr91985845e9.5.1763971946124; Mon, 24 Nov 2025
+ 00:12:26 -0800 (PST)
+Return-Path: <info@nordvpnmedia.com>
+Received: from send-12.prod.mixmax-mailer.com (send-12.prod.mixmax-mailer.com.
+ [52.200.39.124]) by smtp.gmail.com with ESMTPSA id
+ d75a77b69052e-4ee48b45ccesm80578021cf.0.2025.11.24.00.12.24 for
+ <liraz.amir.1982@gmail.com> (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384
+ bits=256/256); Mon, 24 Nov 2025 00:12:25 -0800 (PST)
+Delivered-To: rsm@mixmax.com
+From: Tomas Partners Relationship Team <info@nordvpnmedia.com>
+To: liraz.amir.1982@gmail.com
+Subject: Welcome to Nord Security affiliate family!
+Message-ID: <v1-0mlEpFVSxC1ECyZsK-3e29c20cd28b8be8e6403a0817456121@nordvpnmedia.com>
+Date: Mon, 24 Nov 2025 08:12:21 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="--_NmP-32d2d29d5c246632-Part_1"
+
+----_NmP-32d2d29d5c246632-Part_1
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hello Liraz,Thank you for joining the Nord Security affiliate program! My n=
+ame
+is Tomas, and I=E2=80=99m your dedicated account manager.
+Here are your unique tracking links to get started along with other helpful
+resources: * NordVPN:https://go.nordvpn.net/aff_c?offer_id=3D15&aff_id=3D13=
+5757&url_id=3D902
+  =20
+   Learn more about NordVPN here.
+   Access affiliate assets here.
+  =20
+  =20
+ * NordPass:https://go.nordpass.io/aff_c?offer_id=3D488&aff_id=3D135757&url=
+_id=3D9356
+   Learn more about NordPass here.
+   Access affiliate assets here.
+
+Once the links are live on your website, let me know so I can share strateg=
+ies
+and tips for effective promotion.
+In addition, we offer several other products for promotion:
+ * Saily (eSIM provider);
+  =20
+  =20
+ * NordProtect (identity theft protection service, available for the US aud=
+ience
+   only).
+
+Let us know if you're interested, and we'll provide the necessary details o=
+r
+tracking links.
+Other important guidelines: * PPC restrictions:  We have strict restriction=
+s on PPC platforms such as
+   Google Ads, Bing Ads, and others, prohibiting the use of our branded
+   keywords, including NordVPN, NordPass, =E2=80=9CNord,=E2=80=9D and any v=
+ariations or
+   misspellings that could be mistaken for our brand.
+  =20
+  =20
+ * Promotion rules: Make sure your campaigns comply with our promotion rule=
+s,
+   which are available in your account dashboard.
+  =20
+  =20
+
+Feel free to reach out if you have any questions or need assistance.=20
+
+Best regards,
+Partners Relationship Team
+The content of this email, including all attachments, is confidential. If y=
+ou
+are not the intended recipient of this email, please notify us immediately=
+ and
+delete this email. Any disclosure, copying, distribution or any other use o=
+f its
+content is strictly prohibited. When creating and publishing content, remem=
+ber
+to follow our Affiliate Guide and other relevant documents, as well as comp=
+ly
+with all applicable laws.
+--=20
+The content of this email, including all attachments, is confidential. If=
+=20
+you are not the intended recipient of this e-mail, please notify us=20
+immediately and delete this email. Any disclosure, copying, distribution or=
+=20
+any other use of its content is strictly prohibited.
+
+----_NmP-32d2d29d5c246632-Part_1
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div><div style=3D"margin-top:0pt;margin-bottom:0pt"><font =
+face=3D"Arial">Hello Liraz,</font></div><div style=3D"margin-top:0pt;margi=
+n-bottom:0pt"><font face=3D"Arial">=C2=A0</font></div><div style=3D"margin-=
+top:0pt;margin-bottom:0pt"><font color=3D"#000000" style=3D"background-colo=
+r:transparent">Thank you for joining the Nord Security affiliate program! M=
+y name is Tomas, and I=E2=80=99m your dedicated account manager.</font></di=
+v><div><br></div><div style=3D"margin-top:0pt;margin-bottom:0pt"><font colo=
+r=3D"#000000" style=3D"background-color:transparent">Here are your unique t=
+racking links to get started along with other helpful resources:</font></di=
+v><ul><li><p dir=3D"ltr" style=3D"margin-top:0pt;margin-bottom:0pt"><font c=
+olor=3D"#000000" style=3D"background-color:transparent"><b>NordVPN</b>:=C2=
+=A0</font><font face=3D"Arial" color=3D"#222222"><a target=3D"_blank" href=
+=3D"https://go.nordvpn.net/aff_c?offer_id=3D15&amp;aff_id=3D">https://go.no=
+rdvpn.net/aff_c?offer_id=3D15&amp;aff_id=3D</a></font>135757<font face=3D"A=
+rial" color=3D"#222222">&amp;url_id=3D902</font></p><p dir=3D"ltr" style=3D=
+"margin-top:0pt;margin-bottom:0pt"><font color=3D"#000000" style=3D"backgro=
+und-color:transparent">Learn more about NordVPN </font><a href=3D"https://n=
+ordvpn.com/affiliate-guide/" target=3D"_blank"><span style=3D"background-co=
+lor:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;=
+font-variant-alternates:normal;font-variant-position:normal;font-variant-em=
+oji:normal;text-decoration-line:underline;text-decoration-skip-ink:none;ver=
+tical-align:baseline;white-space-collapse:preserve">here</span></a><font co=
+lor=3D"#000000" style=3D"background-color:transparent">.<br>Access affiliat=
+e assets </font><a href=3D"https://nordvpn.com/affiliate-assets/" target=3D=
+"_blank"><span style=3D"background-color:transparent;font-variant-numeric:n=
+ormal;font-variant-east-asian:normal;font-variant-alternates:normal;font-va=
+riant-position:normal;font-variant-emoji:normal;text-decoration-line:underl=
+ine;text-decoration-skip-ink:none;vertical-align:baseline;white-space-colla=
+pse:preserve">here</span></a><font color=3D"#000000" style=3D"background-co=
+lor:transparent">.</font></p></li><li><div style=3D"margin-top:0pt;margin-b=
+ottom:0pt"><font color=3D"#000000" style=3D"background-color:transparent"><=
+b>NordPass</b>:=C2=A0</font><font face=3D"Arial" color=3D"#222222"><a targe=
+t=3D"_blank" href=3D"https://go.nordpass.io/aff_c?offer_id=3D488&amp;aff_id=
+=3D">https://go.nordpass.io/aff_c?offer_id=3D488&amp;aff_id=3D</a></font>13=
+5757<font face=3D"Arial" color=3D"#222222">&amp;url_id=3D9356=C2=A0</font><=
+/div><div style=3D"margin-top:0pt;margin-bottom:0pt"><font color=3D"#000000=
+" style=3D"background-color:transparent">Learn more about NordPass </font><=
+a href=3D"https://nordpass.com/nordpass-affiliate-guide/" target=3D"_blank"=
+><span style=3D"background-color:transparent;font-variant-numeric:normal;fo=
+nt-variant-east-asian:normal;font-variant-alternates:normal;font-variant-po=
+sition:normal;font-variant-emoji:normal;text-decoration-line:underline;text=
+-decoration-skip-ink:none;vertical-align:baseline;white-space-collapse:pres=
+erve">here</span></a><font color=3D"#000000" style=3D"background-color:tran=
+sparent">.<br>Access affiliate assets </font><a href=3D"https://nordpass.co=
+m/affiliate-assets/" target=3D"_blank"><span style=3D"background-color:tran=
+sparent;font-variant-numeric:normal;font-variant-east-asian:normal;font-var=
+iant-alternates:normal;font-variant-position:normal;font-variant-emoji:norm=
+al;text-decoration-line:underline;text-decoration-skip-ink:none;vertical-al=
+ign:baseline;white-space-collapse:preserve">here</span></a><font color=3D"#=
+000000" style=3D"background-color:transparent">.</font></div></li></ul><div =
+style=3D"margin-top:0pt;margin-bottom:0pt"><font color=3D"#000000" style=
+=3D"background-color:transparent">Once the links are live on your website,=
+ let me know so I can share strategies and tips for effective promotion.</fo=
+nt></div><div><br></div><div style=3D"margin-top:0pt;margin-bottom:0pt"><fo=
+nt color=3D"#000000" style=3D"background-color:transparent">In addition, we =
+offer several other products for promotion:<br></font></div><ul><li><p dir=
+=3D"ltr" style=3D"margin-top:0pt;margin-bottom:0pt"><font color=3D"#000000" =
+style=3D"background-color:transparent"><b>Saily </b>(eSIM provider);</font=
+></p></li><li><div style=3D"margin-top:0pt;margin-bottom:0pt"><font color=
+=3D"#000000" style=3D"background-color:transparent"><b>NordProtect </b>(ide=
+ntity theft protection service, <b><i>available for the US audience only</i=
+></b>).</font></div></li></ul><div style=3D"margin-top:0pt;margin-bottom:0p=
+t"><font color=3D"#000000" style=3D"background-color:transparent">Let us kn=
+ow if you're interested, and we'll provide the necessary details or trackin=
+g links.</font></div><div style=3D"margin-top:0pt;margin-bottom:0pt"><font=
+ color=3D"#000000" style=3D"background-color:transparent"><br></font></div><=
+div><font color=3D"#000000" style=3D"background-color:transparent"><b>Other =
+important guidelines:</b></font></div><ul><li><p dir=3D"ltr" style=3D"marg=
+in-top:12pt;margin-bottom:0pt"><font color=3D"#000000" style=3D"background-=
+color:transparent"><b>PPC restrictions:</b> We have strict restrictions on=
+ PPC platforms such as Google Ads, Bing Ads, and others, prohibiting the use =
+of our branded keywords, including NordVPN, NordPass, =E2=80=9CNord,=E2=80=
+=9D and any variations or misspellings that could be mistaken for our brand=
+.</font></p></li><li><p dir=3D"ltr" style=3D"margin-top:0pt;margin-bottom:1=
+2pt"><font color=3D"#000000" style=3D"background-color:transparent"><b>Prom=
+otion rules: </b>Make sure your campaigns comply with our </font><a href=3D=
+"https://affiliates.nordvpn.com/publisher/#!/page/2" target=3D"_blank"><spa=
+n style=3D"background-color:transparent;font-variant-numeric:normal;font-va=
+riant-east-asian:normal;font-variant-alternates:normal;font-variant-positio=
+n:normal;font-variant-emoji:normal;text-decoration-line:underline;text-deco=
+ration-skip-ink:none;vertical-align:baseline;white-space-collapse:preserve"=
+>promotion rules</span></a><font color=3D"#000000" style=3D"background-colo=
+r:transparent">, which are available in your account dashboard.</font></p><=
+/li></ul><div style=3D"margin-top:0pt;margin-bottom:0pt"><font color=3D"#00=
+0000" style=3D"background-color:transparent">Feel free to reach out if you=
+ have any questions or need assistance. <br><br></font></div><div style=3D"m=
+argin-top:0pt;margin-bottom:0pt"><font color=3D"#000000" style=3D"backgroun=
+d-color:transparent">Best regards,</font></div><br clear=3D"all"></div><div =
+data-from-addr=3D"" content=3D"mixmax-signature"><div dir=3D"ltr"><span><d=
+iv dir=3D"ltr" style=3D"margin-left:0pt" align=3D"left"><table style=3D"bor=
+der:none;border-collapse:collapse"><colgroup><col width=3D"171"><col width=
+=3D"453"></colgroup><tbody><tr style=3D"height:117.0810546875pt"><td style=
+=3D"border-right:solid #000000 1pt;vertical-align:middle;padding:5pt 5pt 5p=
+t 5pt;overflow:hidden"><div style=3D"line-height:1.2;margin-top:0pt;margin-=
+bottom:0pt"><span style=3D"font-size:11pt;font-family:Arial,sans-serif;colo=
+r:rgb(0,0,0);background-color:transparent;vertical-align:baseline"><span st=
+yle=3D"border:none;display:inline-block;overflow:hidden;width:157px;height:=
+157px"><img src=3D"https://lh4.googleusercontent.com/pn8iPT-dVcEkyl9yWm7Zy7=
+LyKi5M-93lmD5jyvDrvJXtRWXMFDxPKnJRlHW0qdsAGzW6x32dxh5Qo3fH0Y9XmbTCLpN3QwhcA=
+Lk-63p09SAU-rRE4e9YIYjpypeN4ZDE2oGvLdh__YLHQf1tW5rU4Iw" width=3D"157" heigh=
+t=3D"157" style=3D"margin-left:0px;margin-top:0px"></span></span></div></td=
+><td style=3D"border-left:solid #000000 1pt;vertical-align:middle;padding:5=
+pt 5pt 5pt 5pt;overflow:hidden"><div style=3D"line-height:1.2;margin-left:1=
+3.5pt;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:12pt;font-=
+family:Inter,sans-serif;color:rgb(0,0,0);background-color:transparent;font-=
+weight:700;vertical-align:baseline">Partners Relationship Team</span></div>=
+<br><div style=3D"line-height:1.2;margin-left:13.5pt;margin-top:0pt;margin-=
+bottom:0pt"><span style=3D"font-size:8pt;font-family:Inter,sans-serif;color=
+:rgb(153,153,153);background-color:transparent;vertical-align:baseline">The =
+content of this email, including all attachments, is confidential. If you=
+ are not the intended recipient of this email, please notify us immediately=
+ and delete this email. Any disclosure, copying, distribution or any other u=
+se of its content is strictly prohibited. When creating and publishing cont=
+ent, remember to follow our Affiliate Guide and other relevant documents, a=
+s well as comply with all applicable laws.</span></div></td></tr></tbody></=
+table></div></span></div></div></div><img align=3D"left" width=3D"0" height=
+=3D"0" style=3D"border:0;width:0px;height:0px" src=3D"https://nordvpnmedia.=
+mxelm.com/api/track/v2/0mlEpFVSxC1ECyZsK/ISbvNmLhlGZl1mbwZHZy9mbA9mZulmI/i0=
+2bj5CbpFWbnBkM4kTMuIXatFmL6FmcpxmI/?sc=3Dfalse" alt=3D"">=20
+<br>
+The content of this email, including all attachments, is confidential. If y=
+ou are not the intended recipient of this e-mail, please notify us immediat=
+ely and delete this email. Any disclosure, copying, distribution or any oth=
+er use of its content is strictly prohibited.
+----_NmP-32d2d29d5c246632-Part_1--

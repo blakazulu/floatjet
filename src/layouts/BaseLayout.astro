@@ -2,6 +2,7 @@
 import Head from '@components/layout/Head.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
+import MobileMenu from '@components/MobileMenu.astro';
 import SearchModal from '@components/SearchModal.astro';
 import LoadingOverlay from '@components/LoadingOverlay.astro';
 import {Image} from 'astro:assets';
@@ -81,6 +82,9 @@ const organizationSchema = {
 <div transition:persist="footer">
   <Footer/>
 </div>
+
+<!-- Mobile Menu (outside transition:persist to avoid stacking context issues on Android) -->
+<MobileMenu/>
 
 <!-- Search Modal -->
 <SearchModal/>

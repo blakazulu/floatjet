@@ -66,9 +66,13 @@ const canonical = canonicalUrl || Astro.url.href;
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 
-  <!-- Preconnect to Google Analytics -->
+  <!-- Resource Hints: Preconnect to critical third-party domains -->
   <link rel="preconnect" href="https://www.googletagmanager.com"/>
   <link rel="preconnect" href="https://www.google-analytics.com"/>
+
+  <!-- DNS Prefetch: Affiliate network domains (used on article pages) -->
+  <link rel="dns-prefetch" href="https://impact.com"/>
+  <link rel="dns-prefetch" href="https://app.impact.com"/>
 
   <!-- Robots Meta -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>

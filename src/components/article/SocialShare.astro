@@ -1,0 +1,344 @@
+---
+import {
+  TwitterShareButton,
+  LinkedInShareButton,
+  FacebookShareButton,
+  RedditShareButton,
+  WhatsAppShareButton,
+  SocialShare as SocialShareButtons
+} from 'astro-social-share';
+import {Link, Check} from 'lucide-astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {title, description = ''} = Astro.props;
+
+// Always use production URL for sharing (localhost won't work with social platforms)
+const currentUrl = Astro.url.href;
+const shareUrl = currentUrl.replace(/^https?:\/\/localhost:\d+/, 'https://floatjet.com');
+
+// Select which buttons to show
+const buttons = [TwitterShareButton, LinkedInShareButton, FacebookShareButton, RedditShareButton, WhatsAppShareButton];
+---
+
+<!-- Desktop: Floating sidebar on left -->
+<aside class="social-share-desktop" aria-label="Share this article">
+  <div class="share-container">
+    <span class="share-label">Share</span>
+
+    <div class="share-buttons">
+      <SocialShareButtons
+          buttons={buttons}
+          url={shareUrl}
+          title={title}
+          description={description}
+      >
+        <style slot="astro-social-share-css" is:global>
+          .social-share-desktop .astro-social-share {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin: 0;
+            height: auto;
+          }
+
+          .social-share-desktop .astro-social-share a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0;
+            transition: all 0.2s ease;
+          }
+
+          .social-share-desktop .astro-social-share a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(128, 206, 215, 0.4);
+            transform: scale(1.1);
+          }
+
+          .social-share-desktop .astro-social-share a:focus-visible {
+            outline: 2px solid #80CED7;
+            outline-offset: 2px;
+          }
+
+          .social-share-desktop .astro-social-share svg {
+            width: 18px;
+            height: 18px;
+            fill: rgba(255, 255, 255, 0.8);
+          }
+
+          .social-share-desktop .astro-social-share a:hover svg {
+            fill: white;
+          }
+        </style>
+      </SocialShareButtons>
+
+      <!-- Copy Link Button -->
+      <button
+          type="button"
+          class="copy-link-btn"
+          aria-label="Copy link to clipboard"
+          title="Copy link"
+          data-url={shareUrl}
+      >
+        <Link size={18} class="link-icon" aria-hidden="true"/>
+        <Check size={18} class="check-icon" aria-hidden="true"/>
+      </button>
+    </div>
+  </div>
+</aside>
+
+<!-- Mobile: Floating bar at bottom -->
+<aside class="social-share-mobile" aria-label="Share this article">
+  <div class="share-container-mobile">
+    <SocialShareButtons
+        buttons={buttons}
+        url={shareUrl}
+        title={title}
+        description={description}
+    >
+      <style slot="astro-social-share-css" is:global>
+        .social-share-mobile .astro-social-share {
+          display: flex;
+          flex-direction: row;
+          gap: 0.75rem;
+          margin: 0;
+          height: auto;
+        }
+
+        .social-share-mobile .astro-social-share a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 2.75rem;
+          height: 2.75rem;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          margin: 0;
+          transition: all 0.2s ease;
+        }
+
+        .social-share-mobile .astro-social-share a:active {
+          background: rgba(255, 255, 255, 0.2);
+          transform: scale(0.95);
+        }
+
+        .social-share-mobile .astro-social-share svg {
+          width: 20px;
+          height: 20px;
+          fill: rgba(255, 255, 255, 0.9);
+        }
+      </style>
+    </SocialShareButtons>
+
+    <!-- Copy Link Button -->
+    <button
+        type="button"
+        class="copy-link-btn-mobile"
+        aria-label="Copy link to clipboard"
+        title="Copy link"
+        data-url={shareUrl}
+    >
+      <Link size={20} class="link-icon" aria-hidden="true"/>
+      <Check size={20} class="check-icon" aria-hidden="true"/>
+    </button>
+  </div>
+</aside>
+
+<style>
+  /* ==================== DESKTOP: Left sidebar ==================== */
+  .social-share-desktop {
+    position: fixed;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    display: none;
+  }
+
+  @media (min-width: 1280px) {
+    .social-share-desktop {
+      display: block;
+    }
+  }
+
+  .share-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 0.75rem;
+    background: rgba(15, 76, 92, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(128, 206, 215, 0.2);
+    border-radius: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .share-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+  }
+
+  .share-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .copy-link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .copy-link-btn:hover {
+    background: rgba(56, 163, 165, 0.2);
+    border-color: rgba(56, 163, 165, 0.5);
+    color: white;
+    transform: scale(1.1);
+  }
+
+  .copy-link-btn:focus-visible {
+    outline: 2px solid #80CED7;
+    outline-offset: 2px;
+  }
+
+  .copy-link-btn .check-icon {
+    display: none;
+  }
+
+  .copy-link-btn.copied .link-icon {
+    display: none;
+  }
+
+  .copy-link-btn.copied .check-icon {
+    display: block;
+    color: #38A3A5;
+  }
+
+  .copy-link-btn.copied {
+    background: rgba(56, 163, 165, 0.2);
+    border-color: rgba(56, 163, 165, 0.5);
+  }
+
+  /* ==================== MOBILE: Bottom bar ==================== */
+  .social-share-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    display: block;
+    padding: 0.75rem 1rem;
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    background: rgba(15, 76, 92, 0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(128, 206, 215, 0.2);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (min-width: 1280px) {
+    .social-share-mobile {
+      display: none;
+    }
+  }
+
+  .share-container-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .copy-link-btn-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .copy-link-btn-mobile:active {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0.95);
+  }
+
+  .copy-link-btn-mobile .check-icon {
+    display: none;
+  }
+
+  .copy-link-btn-mobile.copied .link-icon {
+    display: none;
+  }
+
+  .copy-link-btn-mobile.copied .check-icon {
+    display: block;
+    color: #38A3A5;
+  }
+
+  .copy-link-btn-mobile.copied {
+    background: rgba(56, 163, 165, 0.2);
+    border-color: rgba(56, 163, 165, 0.5);
+  }
+</style>
+
+<script>
+  function initCopyLink() {
+    const copyButtons = document.querySelectorAll('.copy-link-btn, .copy-link-btn-mobile');
+
+    copyButtons.forEach(button => {
+      button.addEventListener('click', async () => {
+        const url = button.getAttribute('data-url');
+        if (!url) return;
+
+        try {
+          await navigator.clipboard.writeText(url);
+          button.classList.add('copied');
+
+          // Reset after 2 seconds
+          setTimeout(() => {
+            button.classList.remove('copied');
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy:', err);
+        }
+      });
+    });
+  }
+
+  // Run on initial load and View Transitions
+  document.addEventListener('DOMContentLoaded', initCopyLink);
+  document.addEventListener('astro:page-load', initCopyLink);
+</script>

@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '@components/article/Breadcrumbs.astro';
 import ArticleMetadata from '@components/article/ArticleMetadata.astro';
 import TableOfContents from '@components/article/TableOfContents.astro';
+import SocialShare from '@components/article/SocialShare.astro';
 import ImageLoader from '@components/ui/ImageLoader.astro';
 import {Image} from 'astro:assets';
 
@@ -69,6 +70,9 @@ const articleSchema = {
 ---
 
 <BaseLayout title={`${title} | FloatJet`} description={description} image={image} type="article">
+  <!-- Floating Social Share Sidebar -->
+  <SocialShare title={title} description={description}/>
+
   <article class="article-page" data-pagefind-body>
     <!-- Article Header -->
     <header class="article-header">

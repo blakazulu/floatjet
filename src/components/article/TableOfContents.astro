@@ -1,4 +1,6 @@
 ---
+import {List, X} from 'lucide-astro';
+
 interface Heading {
   text: string;
   slug: string;
@@ -20,11 +22,7 @@ const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
   <!-- Mobile Floating Button + Overlay -->
 <div class="toc-mobile">
   <button class="toc-toggle" aria-label="Toggle table of contents" aria-expanded="false">
-    <svg class="toc-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path fill-rule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clip-rule="evenodd"/>
-    </svg>
+    <List class="toc-icon" aria-hidden="true"/>
     <span>Contents</span>
   </button>
 
@@ -35,11 +33,7 @@ const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
     <div class="toc-overlay-header">
       <h2>Table of Contents</h2>
       <button class="toc-close" aria-label="Close table of contents">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd"
-                d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-                clip-rule="evenodd"/>
-        </svg>
+        <X aria-hidden="true"/>
       </button>
     </div>
     <nav class="toc-overlay-nav">

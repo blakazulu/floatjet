@@ -1,13 +1,11 @@
 ---
 // Reusable image loading skeleton with spinner and shimmer effect
+import {Loader2} from 'lucide-astro';
 ---
 
 <div class="image-loader">
   <div class="loader-icon">
-    <svg class="animate-spin" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-opacity="0.2"/>
-      <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>
+    <Loader2 class="animate-spin" size={32} aria-hidden="true"/>
   </div>
   <div class="shimmer"></div>
 </div>

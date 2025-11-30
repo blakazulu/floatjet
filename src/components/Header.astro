@@ -1,5 +1,6 @@
 ---
 import {Image} from 'astro:assets';
+import {Search, Menu, X, Home, Monitor, Settings, BookOpen, Newspaper, Info, Mail} from 'lucide-astro';
 
 const navItems = [
   {name: 'Tools', href: '/tools'},
@@ -47,11 +48,7 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
             class="hidden md:flex items-center gap-2 text-white/90 hover:text-white transition-colors group cursor-pointer"
             aria-label="Search (Ctrl+K)"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-               aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
+          <Search class="h-5 w-5" aria-hidden="true"/>
           <span class="text-sm">Search</span>
         </button>
 
@@ -63,14 +60,8 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
             aria-expanded="false"
             aria-controls="mobile-menu"
         >
-          <svg class="menu-icon h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-               stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
-          </svg>
-          <svg class="close-icon h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-               stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
+          <Menu class="menu-icon h-6 w-6" aria-hidden="true"/>
+          <X class="close-icon h-6 w-6 hidden" aria-hidden="true"/>
         </button>
       </div>
     </div>
@@ -100,9 +91,7 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
           class="text-white/80 hover:text-white p-1 transition-colors"
           aria-label="Close menu"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
+        <X class="h-6 w-6" aria-hidden="true"/>
       </button>
     </div>
 
@@ -116,11 +105,7 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
                currentPath === '/' ? 'text-sky-light bg-white/10' : 'text-white/90 hover:text-white hover:bg-white/10'
              ]}
              aria-current={currentPath === '/' ? 'page' : undefined}>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-            </svg>
+            <Home class="h-5 w-5" aria-hidden="true"/>
             <span class="font-medium">Home</span>
           </a>
         </li>
@@ -132,36 +117,14 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
                    isActive(item.href) ? 'text-sky-light bg-white/10' : 'text-white/90 hover:text-white hover:bg-white/10'
                  ]}
                  aria-current={isActive(item.href) ? 'page' : undefined}>
-                {item.name === 'Tools' && (
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                    </svg>
-                )}
-                {item.name === 'Gear' && (
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                )}
-                {item.name === 'Guides' && (
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                )}
-                {item.name === 'Blog' && (
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
-                    </svg>
-                )}
+                {item.name === 'Tools' &&
+                    <Monitor class="h-5 w-5" aria-hidden="true"/>}
+                {item.name === 'Gear' &&
+                    <Settings class="h-5 w-5" aria-hidden="true"/>}
+                {item.name === 'Guides' &&
+                    <BookOpen class="h-5 w-5" aria-hidden="true"/>}
+                {item.name === 'Blog' &&
+                    <Newspaper class="h-5 w-5" aria-hidden="true"/>}
                 <span class="font-medium">{item.name}</span>
               </a>
             </li>
@@ -174,10 +137,7 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
             data-search-trigger
             class="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-white/10 text-white/90 hover:text-white hover:bg-white/20 transition-all cursor-pointer"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
+          <Search class="h-5 w-5" aria-hidden="true"/>
           <span class="font-medium">Search articles...</span>
         </button>
       </div>
@@ -190,22 +150,14 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
         <li>
           <a href="/about"
              class="mobile-menu-link flex items-center gap-3 px-4 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
+            <Info class="h-5 w-5" aria-hidden="true"/>
             <span>About</span>
           </a>
         </li>
         <li>
           <a href="/contact"
              class="mobile-menu-link flex items-center gap-3 px-4 py-3 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-all">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
+            <Mail class="h-5 w-5" aria-hidden="true"/>
             <span>Contact</span>
           </a>
         </li>

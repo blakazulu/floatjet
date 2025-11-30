@@ -22,13 +22,14 @@
 
 ### Applied Programs
 
-| Program              | Network       | Applied Date | Status            | Affiliate ID | Notes                              |
-|----------------------|---------------|--------------|-------------------|--------------|------------------------------------|
-| NordVPN + NordPass   | Direct        | 2025-11-22   | ✅ Approved        | 135757       | B2C bundle                         |
-| Impact Radius        | Impact Radius | 2025-11-22   | ❌ Declined        | 6717334      | Reapply after Month 2 with traffic |
-| Notion               | Impact Radius | 2025-11-22   | ⏸️ Deferred       | -            | Pending Impact approval            |
-| ClickUp              | PartnerStack  | 2025-11-22   | In Review         | -            | Partner program (not affected)     |
-| PartnerStack Network | PartnerStack  | 2025-11-24   | ⚠️ Limited Access | -            | Marketplace access limited         |
+| Program              | Network       | Applied Date | Status            | Affiliate ID | Notes                                |
+|----------------------|---------------|--------------|-------------------|--------------|--------------------------------------|
+| Amazon Associates    | Direct        | 2025-11-28   | ✅ Approved        | floatjet-20  | Store ID, 180-day 3-sale requirement |
+| NordVPN + NordPass   | Direct        | 2025-11-22   | ✅ Approved        | 135757       | B2C bundle                           |
+| Impact Radius        | Impact Radius | 2025-11-22   | ❌ Declined        | 6717334      | Reapply after Month 2 with traffic   |
+| Notion               | Impact Radius | 2025-11-22   | ⏸️ Deferred       | -            | Pending Impact approval              |
+| ClickUp              | PartnerStack  | 2025-11-22   | In Review         | -            | Partner program (not affected)       |
+| PartnerStack Network | PartnerStack  | 2025-11-24   | ⚠️ Limited Access | -            | Marketplace access limited           |
 
 ### Declined/Deferred Programs
 
@@ -56,13 +57,12 @@ application) are not impacted. Will reapply after FloatJet has:
 
 ### Pending Applications
 
-| Program           | Network       | Priority     | Target Date                         | Required For      |
-|-------------------|---------------|--------------|-------------------------------------|-------------------|
-| Amazon Associates | Direct        | **CRITICAL** | Week 2 (after launch)               | Laptops, Desks    |
-| ConvertKit        | Direct        | **HIGH**     | Week 2 (after launch)               | Email Marketing   |
-| Beehiiv           | Direct        | **HIGH**     | Week 2 (after launch)               | Email Marketing   |
-| FlexiSpot         | Direct        | **HIGH**     | Week 3                              | Standing Desks    |
-| 1Password         | Impact Radius | **HIGH**     | Month 2-3 (after Impact reapproval) | Password Managers |
+| Program    | Network       | Priority | Target Date                         | Required For      |
+|------------|---------------|----------|-------------------------------------|-------------------|
+| ConvertKit | Direct        | **HIGH** | Week 2 (after launch)               | Email Marketing   |
+| Beehiiv    | Direct        | **HIGH** | Week 2 (after launch)               | Email Marketing   |
+| FlexiSpot  | Direct        | **HIGH** | Week 3                              | Standing Desks    |
+| 1Password  | Impact Radius | **HIGH** | Month 2-3 (after Impact reapproval) | Password Managers |
 
 ### Configured Redirects (Placeholder URLs)
 
@@ -117,11 +117,43 @@ Ensure your site has:
 
 ---
 
-### 1. Amazon Associates
+### 1. Amazon Associates (✅ APPROVED)
 
 **URL:** https://affiliate-program.amazon.com
 
-**Step-by-Step:**
+**Status:** ✅ Approved 2025-11-28 | Store ID: floatjet-20
+
+**Commission:** 3-6% (varies by category)
+
+- Electronics: 2.5-4%
+- Furniture: 8%
+- PC Components: 2.5%
+
+**Cookie Duration:** 24 hours (very short!)
+
+**Critical Requirement:** Must make **3 qualifying sales within 180 days** to stay active
+
+**Link Format:**
+
+```
+https://amazon.com/dp/{ASIN}?tag=floatjet-20
+```
+
+**Current Product ASINs:** See `/mnt/c/My Stuff/floatjet/docs/amazon-products-asins.md` for complete list
+
+**Active Redirects in netlify.toml:**
+
+- 25 product redirects configured (laptops, desks, chairs, webcams, headphones, keyboards)
+- Format: `/go/amazon/{product-name}` → Amazon with tag
+
+**Important Notes:**
+
+- 24-hour cookie is SHORT - optimize for immediate purchases
+- Commission paid 60 days after month-end
+- Minimum payout: $10
+- Payment methods: Direct deposit, gift card, check
+
+**Step-by-Step Application:**
 
 1. Go to https://affiliate-program.amazon.com
 2. Click "Sign Up"
@@ -137,13 +169,6 @@ Ensure your site has:
 7. Explain how you drive traffic (be honest about being new)
 8. Enter payment and tax information
 9. Submit application
-
-**Important Notes:**
-
-- Approval usually takes 24-48 hours
-- Must make **3 qualifying sales within 180 days** to stay active
-- 24-hour cookie is SHORT - optimize for immediate purchases
-- Tag format: `?tag=floatjet-20`
 
 **If Rejected:**
 
@@ -1235,13 +1260,17 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** 2025-11-30 - PartnerStack Network Profile access limited. Marketplace access to new programs
-restricted. Reason: "Profile not a great fit, but may be in the future." ClickUp application (already submitted) not
-affected. Updated all PartnerStack program statuses to "⚠️ Unavailable (PS Network)" throughout affiliate-programs.md.
-Can reapply once site is launched with content and traffic.
+**Last Action:** 2025-11-30 - Amazon Associates APPROVED! Store ID: floatjet-20. Automatically discovered 25 product
+ASINs from published articles (laptops, desks, chairs, webcams, headphones, keyboards). Created amazon-products-asins.md
+reference document. Added 25 affiliate redirects to netlify.toml. Critical: Must make 3 qualifying sales within 180 days
+to stay active. Updated Applied Programs table and registration guide.
 
 **Previous Actions:**
 
+- 2025-11-30: PartnerStack Network Profile access limited. Marketplace access to new programs
+  restricted. Reason: "Profile not a great fit, but may be in the future." ClickUp application (already submitted) not
+  affected. Updated all PartnerStack program statuses to "⚠️ Unavailable (PS Network)" throughout affiliate-programs.md.
+  Can reapply once site is launched with content and traffic.
 - 2025-11-28: Impact Radius application declined (Account ID: 6717334). Reason: Site not live, no published content, no
   traffic. Updated affiliate-programs.md with decline details and deferral of Notion, 1Password, Mailchimp, HubSpot
   programs until Month 2-3 reapplication.

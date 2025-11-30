@@ -38,6 +38,23 @@ import {X} from 'lucide-astro';
         <p class="text-white/50 text-sm">Run <code class="px-2 py-1 bg-white/10 rounded">npm run build</code> to
           generate the search index.</p>
       </div>
+
+      <!-- Recent Searches (shown when input is empty) -->
+      <div id="recent-searches" class="hidden mb-4">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-sm font-semibold text-white/70">Recent Searches</h3>
+          <button
+              id="clear-recent-searches"
+              class="text-xs text-white/50 hover:text-white/80 transition-colors"
+          >
+            Clear all
+          </button>
+        </div>
+        <div id="recent-searches-list" class="flex flex-wrap gap-2">
+          <!-- Recent search chips will be inserted here -->
+        </div>
+      </div>
+
       <div id="search-wrapper">
         <Search
             id="search"
@@ -54,6 +71,14 @@ import {X} from 'lucide-astro';
               },
             }}
         />
+      </div>
+
+      <!-- Search Suggestions (autocomplete) -->
+      <div id="search-suggestions" class="hidden mt-2">
+        <p class="text-xs text-white/50 mb-2">Suggestions</p>
+        <div id="suggestions-list" class="space-y-1">
+          <!-- Suggestions will be inserted here -->
+        </div>
       </div>
     </div>
 
@@ -218,12 +243,260 @@ import {X} from 'lucide-astro';
     background: rgba(255, 255, 255, 0.2);
     border-radius: 3px;
   }
+
+  /* Recent Searches Styles */
+  .recent-search-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .recent-search-chip:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+  }
+
+  .recent-search-chip .remove-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.2s;
+  }
+
+  .recent-search-chip .remove-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  /* Search Suggestions Styles */
+  .suggestion-item {
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .suggestion-item:hover,
+  .suggestion-item.selected {
+    background: rgba(56, 163, 165, 0.2);
+  }
+
+  .suggestion-item mark {
+    background: transparent;
+    color: #38A3A5;
+    font-weight: 600;
+  }
 </style>
 
 <script>
+  // Recent Searches Manager
+  const RECENT_SEARCHES_KEY = 'floatjet_recent_searches';
+  const MAX_RECENT_SEARCHES = 5;
+
+  interface RecentSearch {
+    query: string;
+    timestamp: number;
+  }
+
+  function getRecentSearches(): RecentSearch[] {
+    try {
+      const stored = localStorage.getItem(RECENT_SEARCHES_KEY);
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveRecentSearch(query: string) {
+    if (!query.trim()) return;
+
+    const recent = getRecentSearches();
+    // Remove duplicate if exists
+    const filtered = recent.filter(s => s.query !== query);
+    // Add to front
+    filtered.unshift({query, timestamp: Date.now()});
+    // Keep only max items
+    const trimmed = filtered.slice(0, MAX_RECENT_SEARCHES);
+
+    try {
+      localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(trimmed));
+    } catch (e) {
+      console.error('Failed to save recent search:', e);
+    }
+  }
+
+  function removeRecentSearch(query: string) {
+    const recent = getRecentSearches();
+    const filtered = recent.filter(s => s.query !== query);
+    try {
+      localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(filtered));
+    } catch (e) {
+      console.error('Failed to remove recent search:', e);
+    }
+  }
+
+  function clearAllRecentSearches() {
+    try {
+      localStorage.removeItem(RECENT_SEARCHES_KEY);
+    } catch (e) {
+      console.error('Failed to clear recent searches:', e);
+    }
+  }
+
+  function renderRecentSearches() {
+    const container = document.getElementById('recent-searches');
+    const list = document.getElementById('recent-searches-list');
+    if (!container || !list) return;
+
+    const recent = getRecentSearches();
+
+    if (recent.length === 0) {
+      container.classList.add('hidden');
+      return;
+    }
+
+    list.innerHTML = recent.map(({query}) => `
+      <div class="recent-search-chip" data-query="${escapeHtml(query)}">
+        <span>${escapeHtml(query)}</span>
+        <button class="remove-btn" data-remove="${escapeHtml(query)}" aria-label="Remove">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    `).join('');
+
+    container.classList.remove('hidden');
+
+    // Attach event listeners
+    list.querySelectorAll('.recent-search-chip').forEach(chip => {
+      const query = chip.getAttribute('data-query');
+      chip.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        if (!target.closest('.remove-btn') && query) {
+          performSearch(query);
+        }
+      });
+    });
+
+    list.querySelectorAll('[data-remove]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const query = (btn as HTMLElement).getAttribute('data-remove');
+        if (query) {
+          removeRecentSearch(query);
+          renderRecentSearches();
+        }
+      });
+    });
+  }
+
+  function performSearch(query: string) {
+    const input = document.querySelector('.pagefind-ui__search-input') as HTMLInputElement;
+    if (input) {
+      input.value = query;
+      input.dispatchEvent(new Event('input', {bubbles: true}));
+      saveRecentSearch(query);
+      hideRecentSearches();
+    }
+  }
+
+  function hideRecentSearches() {
+    const container = document.getElementById('recent-searches');
+    container?.classList.add('hidden');
+  }
+
+  function showRecentSearches() {
+    renderRecentSearches();
+  }
+
+  function escapeHtml(text: string): string {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Autocomplete/Suggestions (mock implementation - can be enhanced with Pagefind API)
+  let debounceTimer: number;
+  const POPULAR_SEARCHES = [
+    'best vpn',
+    'password manager',
+    'standing desk',
+    'project management',
+    'remote work tools',
+    'laptops for remote work',
+    'time tracking',
+    'video conferencing'
+  ];
+
+  function showSuggestions(query: string) {
+    const container = document.getElementById('search-suggestions');
+    const list = document.getElementById('suggestions-list');
+    if (!container || !list || !query.trim()) {
+      container?.classList.add('hidden');
+      return;
+    }
+
+    // Filter popular searches that match the query
+    const matches = POPULAR_SEARCHES.filter(s =>
+      s.toLowerCase().includes(query.toLowerCase())
+    ).slice(0, 5);
+
+    if (matches.length === 0) {
+      container.classList.add('hidden');
+      return;
+    }
+
+    list.innerHTML = matches.map(suggestion => {
+      const highlighted = highlightMatch(suggestion, query);
+      return `
+        <div class="suggestion-item" data-suggestion="${escapeHtml(suggestion)}">
+          ${highlighted}
+        </div>
+      `;
+    }).join('');
+
+    container.classList.remove('hidden');
+
+    // Attach click handlers
+    list.querySelectorAll('.suggestion-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const suggestion = item.getAttribute('data-suggestion');
+        if (suggestion) {
+          performSearch(suggestion);
+        }
+      });
+    });
+  }
+
+  function highlightMatch(text: string, query: string): string {
+    const index = text.toLowerCase().indexOf(query.toLowerCase());
+    if (index === -1) return escapeHtml(text);
+
+    const before = escapeHtml(text.slice(0, index));
+    const match = escapeHtml(text.slice(index, index + query.length));
+    const after = escapeHtml(text.slice(index + query.length));
+
+    return `${before}<mark>${match}</mark>${after}`;
+  }
+
   function initSearch() {
     const searchButtons = document.querySelectorAll('[data-search-trigger]');
     const closeButton = document.getElementById('search-close');
+    const clearRecentBtn = document.getElementById('clear-recent-searches');
     const modal = document.getElementById('search-modal');
     const overlay = document.getElementById('search-overlay');
     let isOpen = false;
@@ -237,6 +510,9 @@ import {X} from 'lucide-astro';
         modal?.classList.remove('opacity-0', 'scale-95');
       }, 10);
       document.body.style.overflow = 'hidden';
+
+      // Show recent searches initially
+      showRecentSearches();
 
       // Focus the search input
       setTimeout(() => {
@@ -254,6 +530,11 @@ import {X} from 'lucide-astro';
         modal?.classList.add('hidden');
       }, 300);
       document.body.style.overflow = '';
+
+      // Clear input and hide suggestions
+      const input = modal?.querySelector('.pagefind-ui__search-input') as HTMLInputElement;
+      if (input) input.value = '';
+      document.getElementById('search-suggestions')?.classList.add('hidden');
     }
 
     // Open search on button click
@@ -266,6 +547,46 @@ import {X} from 'lucide-astro';
 
     // Close on overlay click
     overlay?.addEventListener('click', closeSearch);
+
+    // Clear all recent searches
+    clearRecentBtn?.addEventListener('click', () => {
+      clearAllRecentSearches();
+      renderRecentSearches();
+    });
+
+    // Monitor search input for autocomplete
+    const setupInputListener = () => {
+      const input = modal?.querySelector('.pagefind-ui__search-input') as HTMLInputElement;
+      if (!input) return;
+
+      input.addEventListener('input', (e) => {
+        const query = (e.target as HTMLInputElement).value;
+
+        if (query.trim()) {
+          hideRecentSearches();
+          clearTimeout(debounceTimer);
+          debounceTimer = window.setTimeout(() => {
+            showSuggestions(query);
+          }, 300);
+        } else {
+          document.getElementById('search-suggestions')?.classList.add('hidden');
+          showRecentSearches();
+        }
+      });
+
+      // Save search when user hits enter or clicks a result
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const query = (e.target as HTMLInputElement).value;
+          if (query.trim()) {
+            saveRecentSearch(query);
+          }
+        }
+      });
+    };
+
+    // Setup listener after a delay to ensure Pagefind has rendered
+    setTimeout(setupInputListener, 500);
 
     // Close on Escape key
     document.addEventListener('keydown', (e) => {

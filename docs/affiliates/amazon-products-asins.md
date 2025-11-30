@@ -1,8 +1,8 @@
 # Amazon Products & ASINs Reference
 
 **Store ID:** floatjet-20
-**Last Updated:** 2025-11-28
-**Status:** ✅ Amazon Associates Approved
+**Last Updated:** 2025-11-30
+**Status:** ✅ Amazon Associates Approved (18 monitors + 6 laptops added)
 
 This document contains all Amazon product ASINs for FloatJet affiliate links.
 
@@ -10,15 +10,21 @@ This document contains all Amazon product ASINs for FloatJet affiliate links.
 
 ## Laptops
 
-| Product                                       | ASIN       | Price Range | Link Format                                |
-|-----------------------------------------------|------------|-------------|--------------------------------------------|
-| **MacBook Air M3 13" (8GB/256GB) Space Gray** | B0CX22ZW1T | ~$1,099     | `/go/amazon/macbook-air-m3`                |
-| **MacBook Air M3 13" (16GB/512GB) Starlight** | B0CX24BNQC | ~$1,499     | `/go/amazon/macbook-air-m3-16gb`           |
-| **MacBook Air M3 15" (8GB/256GB) Midnight**   | B0CX23GFMJ | ~$1,299     | `/go/amazon/macbook-air-m3-15`             |
-| **Dell XPS 13 (2025 AI PC - Snapdragon)**     | B0DJPYW835 | ~$1,299     | `/go/amazon/dell-xps-13`                   |
-| **Dell XPS 13 9310 (11th Gen Intel)**         | B08ML2PW6W | ~$1,199     | `/go/amazon/dell-xps-13-9310`              |
-| **ThinkPad X1 Carbon Gen 11 (i7/16GB/512GB)** | B0CCKS8FVL | ~$1,599     | `/go/amazon/thinkpad-x1-carbon-gen11`      |
-| **ThinkPad X1 Carbon Gen 11 (i7/32GB/1TB)**   | B0CKJWP1M8 | ~$1,899     | `/go/amazon/thinkpad-x1-carbon-gen11-32gb` |
+| Product                                         | ASIN       | Price Range | Link Format                                |
+|-------------------------------------------------|------------|-------------|--------------------------------------------|
+| **MacBook Air M3 13" (8GB/256GB) Space Gray**   | B0CX22ZW1T | ~$1,099     | `/go/amazon/macbook-air-m3`                |
+| **MacBook Air M3 13" (16GB/512GB) Starlight**   | B0CX24BNQC | ~$1,499     | `/go/amazon/macbook-air-m3-16gb`           |
+| **MacBook Air M3 15" (8GB/256GB) Midnight**     | B0CX23GFMJ | ~$1,299     | `/go/amazon/macbook-air-m3-15`             |
+| **Dell XPS 13 (2025 AI PC - Snapdragon)**       | B0DJPYW835 | ~$1,299     | `/go/amazon/dell-xps-13`                   |
+| **Dell XPS 13 9310 (11th Gen Intel)**           | B08ML2PW6W | ~$1,199     | `/go/amazon/dell-xps-13-9310`              |
+| **ThinkPad X1 Carbon Gen 11 (i7/16GB/512GB)**   | B0CCKS8FVL | ~$1,599     | `/go/amazon/thinkpad-x1-carbon-gen11`      |
+| **ThinkPad X1 Carbon Gen 11 (i7/32GB/1TB)**     | B0CKJWP1M8 | ~$1,899     | `/go/amazon/thinkpad-x1-carbon-gen11-32gb` |
+| **ASUS ZenBook 14 OLED (Ultra 7-155H/16GB)**    | B0D25TXLLV | ~$1,299     | `/go/amazon/asus-zenbook-14`               |
+| **HP Spectre x360 14" AI (Ultra 7-155H/32GB)**  | B0DQ51X24V | ~$1,899     | `/go/amazon/hp-spectre-x360-14`            |
+| **Surface Laptop 5 13.5" (i7/16GB/512GB)**      | B0B8QCKB5Y | ~$1,399     | `/go/amazon/surface-laptop-5`              |
+| **Acer Swift 3 OLED (i7-12700H/16GB/1TB)**      | B0B1VYQ6XG | ~$999       | `/go/amazon/acer-swift-3-oled`             |
+| **MacBook Pro 14" M3 Pro (11-core/18GB/512GB)** | B0CM5JV26D | ~$1,999     | `/go/amazon/macbook-pro-14-m3`             |
+| **Dell XPS 15 9530 (i7-13700H/16GB/1TB)**       | B0CDNTRB2V | ~$1,799     | `/go/amazon/dell-xps-15`                   |
 
 ---
 
@@ -73,6 +79,38 @@ This document contains all Amazon product ASINs for FloatJet affiliate links.
 
 ---
 
+## Desktop Monitors
+
+| Product                     | ASIN       | Price Range | Link Format                      |
+|-----------------------------|------------|-------------|----------------------------------|
+| **Dell UltraSharp U2723QE** | B09TQZP9CL | ~$620       | `/go/amazon/dell-u2723qe`        |
+| **LG 27UK850-W**            | B078GVTD9N | ~$450       | `/go/amazon/lg-27uk850`          |
+| **Samsung Odyssey G7 32"**  | B088HHZBGJ | ~$550       | `/go/amazon/samsung-odyssey-g7`  |
+| **Dell U3423WE Ultrawide**  | B0BJZ3YNN5 | ~$850       | `/go/amazon/dell-u3423we`        |
+| **LG 34WN80C-B Ultrawide**  | B07YGZ7C1K | ~$500       | `/go/amazon/lg-34wn80c`          |
+| **BenQ PD2700U**            | B07H9XP92N | ~$450       | `/go/amazon/benq-pd2700u`        |
+| **ASUS ProArt PA278QV**     | B088BC5HMM | ~$350       | `/go/amazon/asus-proart-pa278qv` |
+| **HP Z27k G3**              | B08ZDRYT5J | ~$540       | `/go/amazon/hp-z27k-g3`          |
+| **ViewSonic VP2785-4K**     | B0748DGHSG | ~$580       | `/go/amazon/viewsonic-vp2785-4k` |
+| **Philips 276E8VJSB**       | B07JXCR263 | ~$280       | `/go/amazon/philips-276e8vjsb`   |
+
+---
+
+## Portable Monitors
+
+| Product                          | ASIN       | Price Range | Link Format                               |
+|----------------------------------|------------|-------------|-------------------------------------------|
+| **ASUS ZenScreen MB16AC**        | B071S84ZW7 | ~$250       | `/go/amazon/asus-zenscreen-mb16ac`        |
+| **Lepow Z1 Portable Monitor**    | B0863GM4YR | ~$180       | `/go/amazon/lepow-z1`                     |
+| **ViewSonic VG1655**             | B087792CQT | ~$220       | `/go/amazon/viewsonic-vg1655`             |
+| **INNOCN 15.6" OLED**            | B09L12DGW5 | ~$350       | `/go/amazon/innocn-oled-156`              |
+| **Lenovo ThinkVision M14**       | B07YX5NKK2 | ~$230       | `/go/amazon/lenovo-thinkvision-m14`       |
+| **Mobile Pixels DUEX Plus**      | B092LRR8HT | ~$280       | `/go/amazon/mobile-pixels-duex-plus`      |
+| **ASUS ZenScreen Touch MB16AMT** | B07WC2NL2G | ~$300       | `/go/amazon/asus-zenscreen-touch-mb16amt` |
+| **Espresso Display 15 Touch**    | B09WMX6442 | ~$350+      | `/go/amazon/espresso-display-15`          |
+
+---
+
 ## How to Use These ASINs
 
 ### Link Format:
@@ -105,13 +143,7 @@ These products are mentioned in articles but need ASINs to be found manually:
 
 ### Laptops:
 
-- Framework 13
-- ASUS ZenBook 14
-- HP Spectre x360
-- Surface Laptop 5
-- Acer Swift 3
-- MacBook Pro 14
-- XPS 15
+- Framework 13 (NOT available on Amazon - sold only at frame.work)
 
 ### Standing Desks:
 
@@ -135,19 +167,6 @@ These products are mentioned in articles but need ASINs to be found manually:
 - IKEA Markus
 - FlexiSpot C7
 - Sihoo M18
-
-### Monitors:
-
-- Dell UltraSharp U2723QE
-- LG 27UK850-W
-- Samsung Odyssey G7
-- Dell U3423WE
-- LG 34WN80C-B
-- BenQ PD2700U
-- ASUS ProArt PA278QV
-- HP Z27k G3
-- ViewSonic VP2785-4K
-- Philips 276E8VJSB
 
 ### Laptop Bags:
 
@@ -183,3 +202,27 @@ These products are mentioned in articles but need ASINs to be found manually:
 - [Amazon Logitech Brio](https://www.amazon.com/Logitech-2017-Brio-4K-Webcam/dp/B01N5UOYC4)
 - [Amazon ThinkPad X1](https://www.amazon.com/Lenovo-ThinkPad-21HM002DUS-i7-1355U-1920x1200/dp/B0CCKS8FVL)
 - [Amazon Anker PowerConf C300](https://www.amazon.com/Anker-AI-Powered-Noise-Cancelling-Microphones-Adjustable/dp/B08RNHCZ3K)
+- [Amazon Dell UltraSharp U2723QE](https://www.amazon.com/Dell-U2723QE-UltraSharp-USB-C-Monitor/dp/B09TQZP9CL)
+- [Amazon LG 27UK850-W](https://www.amazon.com/LG-27UK850-W-Monitor-Connectivity-FreeSync/dp/B078GVTD9N)
+- [Amazon Samsung Odyssey G7](https://www.amazon.com/SAMSUNG-32-inch-Odyssey-G7-Monitor/dp/B088HHZBGJ)
+- [Amazon Dell U3423WE](https://www.amazon.com/Dell-U3423WE-Curved-USB-C-Monitor/dp/B0BJZ3YNN5)
+- [Amazon LG 34WN80C-B](https://www.amazon.com/LG-34WN80C-B-inch-Connectivity-Compatibility/dp/B07YGZ7C1K)
+- [Amazon BenQ PD2700U](https://www.amazon.com/BenQ-PD2700U-Professional-Monitor-3840x2160/dp/B07H9XP92N)
+- [Amazon ASUS ProArt PA278QV](https://www.amazon.com/ASUS-PA278QV-DisplayPort-Anti-Glare-Adjustable/dp/B088BC5HMM)
+- [Amazon HP Z27k G3](https://www.amazon.com/HP-Backlit-Monitor-Filter-DisplayPort/dp/B08ZDRYT5J)
+- [Amazon ViewSonic VP2785-4K](https://www.amazon.com/ViewSonic-VP2785-4K-AdobeRGB-Calibration-Photography/dp/B0748DGHSG)
+- [Amazon Philips 276E8VJSB](https://www.amazon.com/Philips-276E8VJSB-3840x2160-UltraNarrow-DispalyPort/dp/B07JXCR263)
+- [Amazon ASUS ZenScreen MB16AC](https://www.amazon.com/ASUS-ZenScreen-MB16AC-Portable-Monitor/dp/B071S84ZW7)
+- [Amazon Lepow Z1](https://www.amazon.com/Portable-Monitor-Z1-Gamut-Computer-Speakers/dp/B0863GM4YR)
+- [Amazon ViewSonic VG1655](https://www.amazon.com/ViewSonic-Portable-Speakers-Frameless-VG1655/dp/B087792CQT)
+- [Amazon INNOCN 15.6" OLED](https://www.amazon.com/INNOCN-Portable-Monitor-DCI-P3-100000/dp/B09L12DGW5)
+- [Amazon Lenovo ThinkVision M14](https://www.amazon.com/Lenovo-ThinkVision-M14-1920x1080-Monitor/dp/B07YX5NKK2)
+- [Amazon Mobile Pixels DUEX Plus](https://www.amazon.com/Portable-Monitor-Duex-Extender-Compatible/dp/B092LRR8HT)
+- [Amazon ASUS ZenScreen Touch](https://www.amazon.com/Zenscreen-MB16AMT-Portable-Non-Glare-Speakers/dp/B07WC2NL2G)
+- [Amazon Espresso Display 15](https://www.amazon.com/espresso-Display-Touchscreen-Portable-External/dp/B09WMX6442)
+- [Amazon ASUS ZenBook 14 OLED](https://www.amazon.com/ASUS-Business-Touchscreen-Graphics-Thunderbolt/dp/B0D25TXLLV)
+- [Amazon HP Spectre x360 14](https://www.amazon.com/HP-Spectre-Touchscreen-Fingerprint-Expander/dp/B0DQ51X24V)
+- [Amazon Surface Laptop 5](https://www.amazon.com/Microsoft-Surface-Lightweight-Processor-Multi-Tasking/dp/B0B8QCKB5Y)
+- [Amazon Acer Swift 3 OLED](https://www.amazon.com/Acer-2880x1800-i7-12700H-Graphics-SF314-71-75MW/dp/B0B1VYQ6XG)
+- [Amazon MacBook Pro 14 M3](https://www.amazon.com/Apple-MacBook-Laptop-11‑core-14‑core/dp/B0CM5JV26D)
+- [Amazon Dell XPS 15 9530](https://www.amazon.com/Dell-9000-9530-15-6-Notebook/dp/B0CDNTRB2V)

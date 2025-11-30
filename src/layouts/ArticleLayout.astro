@@ -68,15 +68,20 @@ const articleSchema = {
 ---
 
 <BaseLayout title={`${title} | FloatJet`} description={description} image={image} type="article">
-  <article class="article-page">
+  <article class="article-page" data-pagefind-body>
     <!-- Article Header -->
     <header class="article-header">
       <div class="container mx-auto px-4 md:px-6 pt-28 md:pt-32">
-        <!-- Breadcrumbs -->
-        <Breadcrumbs items={breadcrumbItems}/>
+        <!-- Breadcrumbs - exclude from search -->
+        <div data-pagefind-ignore>
+          <Breadcrumbs items={breadcrumbItems}/>
+        </div>
 
-        <!-- Title -->
-        <h1 class="article-title">{title}</h1>
+        <!-- Description for search meta -->
+        <meta data-pagefind-meta="description" content={description}/>
+
+        <!-- Title - highest priority for search -->
+        <h1 class="article-title" data-pagefind-meta="title" data-pagefind-weight="10">{title}</h1>
 
         <!-- Metadata -->
         <ArticleMetadata
@@ -116,8 +121,8 @@ const articleSchema = {
             <slot/>
           </div>
 
-          <!-- Sidebar (Desktop) -->
-          <aside class="article-sidebar" id="toc-sidebar">
+          <!-- Sidebar (Desktop) - exclude TOC from search -->
+          <aside class="article-sidebar" id="toc-sidebar" data-pagefind-ignore>
             <TableOfContents headings={headings}/>
           </aside>
         </div>
@@ -368,7 +373,7 @@ const articleSchema = {
 
 <script>
   // Hero image blur placeholder - fade in when loaded
-  document.addEventListener('DOMContentLoaded', () => {
+  function initHeroImage() {
     const heroImage = document.querySelector('.hero-image') as HTMLImageElement;
     if (heroImage) {
       // Check if already loaded (cached)
@@ -380,10 +385,14 @@ const articleSchema = {
         });
       }
     }
-  });
+  }
+
+  // Run on initial load and View Transitions
+  document.addEventListener('DOMContentLoaded', initHeroImage);
+  document.addEventListener('astro:page-load', initHeroImage);
 
   // Stop TOC sticky at end of article content
-  document.addEventListener('DOMContentLoaded', () => {
+  function initTocSticky() {
     const tocSidebar = document.getElementById('toc-sidebar');
     const articleGrid = document.querySelector('.article-grid');
     const tocContent = tocSidebar?.querySelector('.toc-sidebar') as HTMLElement;
@@ -432,5 +441,9 @@ const articleSchema = {
     // Listen to scroll and resize
     window.addEventListener('scroll', handleScroll, {passive: true});
     window.addEventListener('resize', handleResize, {passive: true});
-  });
+  }
+
+  // Run on initial load and View Transitions
+  document.addEventListener('DOMContentLoaded', initTocSticky);
+  document.addEventListener('astro:page-load', initTocSticky);
 </script>

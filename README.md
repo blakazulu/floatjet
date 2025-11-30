@@ -8,11 +8,10 @@ FloatJet helps remote workers and digital nomads discover the best productivity 
 
 ## What We Cover
 
-- **Project Management** - Tools like Notion, ClickUp, and Monday.com to keep your work organized
-- **VPNs for Digital Nomads** - Stay secure and access your content from anywhere in the world
-- **Time Tracking & Productivity** - Apps to help you stay focused and manage your time effectively
-- **Cloud Storage & Collaboration** - Solutions for storing, sharing, and working together on files
-- **Web Hosting & Email Marketing** - Platforms to build your online presence and grow your audience
+- **Tools** - VPNs, project management, cloud storage, video conferencing, email marketing, and hosting platforms
+- **Gear** - Laptops, monitors, ergonomic chairs, standing desks, headphones, webcams, and portable accessories
+- **Guides** - Productivity techniques, security best practices, home office setup, finance tips, and travel advice
+- **Blog** - In-depth articles on remote work trends, team communication, and digital nomad lifestyle
 
 ---
 
@@ -22,8 +21,12 @@ FloatJet helps remote workers and digital nomads discover the best productivity 
 
 ### Tech Stack
 
-- **Core:** Astro, MDX
-- **Styling:** Tailwind CSS
+- **Core:** Astro 5, MDX
+- **Styling:** Tailwind CSS 4
+- **Fonts:** Self-hosted via @fontsource (Outfit, Inter, JetBrains Mono)
+- **Search:** Pagefind (static site search)
+- **Performance:** astro-compress, astro-purgecss, Partytown
+- **SEO:** astro-sitemap, astro-robots-txt, astro-opengraph-images
 - **Hosting:** Netlify
 - **Analytics:** Google Analytics 4
 

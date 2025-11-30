@@ -635,11 +635,11 @@ Before finalizing installation:
 
 ### ✅ Installed - Phase 4 (Post-Launch Enhancements)
 
-| Package                   | Purpose                  | Priority | Status                                            |
-|---------------------------|--------------------------|----------|---------------------------------------------------|
-| `astro-pagefind`          | Site search              | P2       | ✅ Installed 2024-11-30 - Custom SearchModal       |
-| `astro-loading-indicator` | Page transition progress | P2       | ✅ Installed 2024-11-30 - Sky-light color, 3px bar |
-| `lucide-astro`            | Icon library             | P2       | ✅ Installed 2024-11-30 - Replaced custom SVGs     |
+| Package                   | Purpose                  | Priority | Status                                                                                                          |
+|---------------------------|--------------------------|----------|-----------------------------------------------------------------------------------------------------------------|
+| `astro-pagefind`          | Site search              | P2       | ✅ Installed 2024-11-30 - Custom SearchModal                                                                     |
+| `astro-loading-indicator` | Page transition progress | P2       | ✅ Installed 2024-11-30 - Sky-light color, 3px bar                                                               |
+| `lucide-astro`            | Icon library             | P2       | ✅ Installed 2024-11-30 - Replaced 80+ SVGs across 30+ files (Header, Footer, all category pages, article cards) |
 
 ### ✅ Custom Components Added
 
@@ -647,6 +647,7 @@ Before finalizing installation:
 |------------------------|--------------------------------|------------------------------------------------|
 | `LoadingOverlay.astro` | Page transition logo animation | ✅ Created - Flying cloud logo with glow effect |
 | `SearchModal.astro`    | Pagefind search UI             | ✅ Created - FloatJet themed, Ctrl+K shortcut   |
+| `ImageLoader.astro`    | Image loading spinner          | ✅ Created - Uses Lucide Loader2 icon, animated |
 
 **Total packages:**
 

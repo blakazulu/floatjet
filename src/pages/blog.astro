@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import {ChevronRight, ArrowRight} from 'lucide-astro';
 
 const title = 'Remote Work Blog | FloatJet';
 const description = 'Insights, tips, and guides for remote workers, freelancers, and digital nomads. Expert advice on productivity, travel, security, and more.';
@@ -209,10 +210,7 @@ const displayArticles = shuffled.slice(0, 9);
             </div>
             <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
               Read Article
-              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-                   viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
+              <ChevronRight class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true"/>
             </div>
           </a>
       ))}
@@ -227,9 +225,7 @@ const displayArticles = shuffled.slice(0, 9);
     <div class="mt-12 text-center">
       <a href="/contact" class="inline-flex items-center text-jet-stream hover:text-sky-light transition-colors">
         Suggest a topic for us to cover
-        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-        </svg>
+        <ArrowRight class="w-4 h-4 ml-1" aria-hidden="true"/>
       </a>
     </div>
   </div>

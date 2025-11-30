@@ -1,4 +1,5 @@
 ---
+import {Image} from 'astro:assets';
 // Loading overlay shown during page transitions
 ---
 
@@ -10,11 +11,12 @@
   <!-- Logo Container -->
   <div class="absolute inset-0 flex items-center justify-center">
     <div class="loading-logo">
-      <img
+      <Image
           src="/images/big-logo.webp"
-          alt=""
-          width="120"
-          height="120"
+          alt="FloatJet logo"
+          width={120}
+          height={120}
+          loading="eager"
           class="w-24 h-24 md:w-32 md:h-32 object-contain"
       />
     </div>

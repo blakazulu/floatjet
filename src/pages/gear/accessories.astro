@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import {ChevronLeft, ChevronRight} from 'lucide-astro';
 
 const title = 'Best Remote Work Accessories | FloatJet';
 const description = 'Essential accessories for remote workers. Find the best laptop bags, chargers, webcams, keyboards, and travel gear for working anywhere without hassle.';
@@ -72,9 +73,7 @@ const currentPage = 1;
     <!-- Header -->
     <div class="text-center mb-12">
       <a href="/gear" class="inline-flex items-center text-white/60 hover:text-white text-sm mb-4 transition-colors">
-        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-        </svg>
+        <ChevronLeft class="w-4 h-4 mr-1" aria-hidden="true"/>
         All Gear
       </a>
       <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Accessories</h1>
@@ -102,10 +101,7 @@ const currentPage = 1;
         <span class="text-white/50 text-sm">{featuredArticle.readTime} min read</span>
         <span class="text-jet-stream font-medium flex items-center">
           Read Review
-          <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-               viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
+          <ChevronRight class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true"/>
         </span>
       </div>
     </a>
@@ -151,10 +147,7 @@ const currentPage = 1;
               </div>
               <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
                 Read Review
-                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none"
-                     stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
+                <ChevronRight class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true"/>
               </div>
             </a>
         ))}

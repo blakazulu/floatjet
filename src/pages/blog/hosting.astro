@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import {ChevronLeft, ChevronRight} from 'lucide-astro';
 
 const title = 'Web Hosting Articles for Remote Workers | FloatJet';
 const description = 'Compare web hosting solutions for remote businesses. Cloud hosting, WordPress hosting, and more for digital entrepreneurs without overpaying for resources.';
@@ -51,9 +52,7 @@ const tips = [
     <!-- Header -->
     <div class="text-center mb-12">
       <a href="/blog" class="inline-flex items-center text-white/60 hover:text-white text-sm mb-4 transition-colors">
-        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-        </svg>
+        <ChevronLeft class="w-4 h-4 mr-1" aria-hidden="true"/>
         All Blog Articles
       </a>
       <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Hosting</h1>
@@ -83,10 +82,7 @@ const tips = [
         <span class="text-white/50 text-sm">{mainArticle.readTime} read</span>
         <span class="text-jet-stream font-medium flex items-center">
           Read Article
-          <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-               viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
+          <ChevronRight class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true"/>
         </span>
       </div>
     </a>
@@ -117,10 +113,7 @@ const tips = [
               </div>
               <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
                 Read Article
-                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none"
-                     stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
+                <ChevronRight class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true"/>
               </div>
             </a>
         ))}

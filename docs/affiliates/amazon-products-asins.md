@@ -2,7 +2,7 @@
 
 **Store ID:** floatjet-20
 **Last Updated:** 2025-11-30
-**Status:** ✅ Amazon Associates Approved (18 monitors + 6 laptops added)
+**Status:** ✅ Amazon Associates Approved (18 monitors + 6 laptops + 9 chairs added)
 
 This document contains all Amazon product ASINs for FloatJet affiliate links.
 
@@ -39,11 +39,20 @@ This document contains all Amazon product ASINs for FloatJet affiliate links.
 
 ## Ergonomic Chairs
 
-| Product                                  | ASIN       | Price Range | Link Format                             |
-|------------------------------------------|------------|-------------|-----------------------------------------|
-| **Herman Miller Aeron Size B (Medium)**  | B01N0ZUN15 | ~$1,395     | `/go/amazon/herman-miller-aeron-b`      |
-| **Herman Miller Aeron Size C (Large)**   | B01N32UFNT | ~$1,495     | `/go/amazon/herman-miller-aeron-c`      |
-| **Herman Miller Aeron B (Fully Loaded)** | B01K31X4HG | ~$1,595     | `/go/amazon/herman-miller-aeron-loaded` |
+| Product                                   | ASIN       | Price Range | Link Format                             |
+|-------------------------------------------|------------|-------------|-----------------------------------------|
+| **Herman Miller Aeron Size B (Medium)**   | B01N0ZUN15 | ~$1,395     | `/go/amazon/herman-miller-aeron-b`      |
+| **Herman Miller Aeron Size C (Large)**    | B01N32UFNT | ~$1,495     | `/go/amazon/herman-miller-aeron-c`      |
+| **Herman Miller Aeron B (Fully Loaded)**  | B01K31X4HG | ~$1,595     | `/go/amazon/herman-miller-aeron-loaded` |
+| **Steelcase Leap (Black Frame/Onyx)**     | B006H1QYBA | ~$1,095     | `/go/amazon/steelcase-leap`             |
+| **Secretlab Titan Evo (Stealth Black)**   | B0B3RDWTDD | ~$549       | `/go/amazon/secretlab-titan-evo`        |
+| **Branch Ergonomic Chair (All Black)**    | B0CK497V2R | ~$329       | `/go/amazon/branch-ergonomic`           |
+| **HON Ignition 2.0 (Mid Back/Black)**     | B06Y3PGPR2 | ~$349       | `/go/amazon/hon-ignition-2`             |
+| **Autonomous ErgoChair Pro (Black Mesh)** | B0FL2H6GYL | ~$399       | `/go/amazon/autonomous-ergochair-pro`   |
+| **Humanscale Freedom (with Headrest)**    | B009WXGTYW | ~$1,295     | `/go/amazon/humanscale-freedom`         |
+| **IKEA Markus (Vissle Dark Grey)**        | B097Q4GKTK | ~$229       | `/go/amazon/ikea-markus`                |
+| **FlexiSpot C7 (Premium/All Black)**      | B0DPQQ2L22 | ~$299       | `/go/amazon/flexispot-c7`               |
+| **Sihoo M18 (Black)**                     | B07GNDDNMW | ~$299       | `/go/amazon/sihoo-m18`                  |
 
 ---
 
@@ -158,15 +167,7 @@ These products are mentioned in articles but need ASINs to be found manually:
 
 ### Chairs:
 
-- Steelcase Leap
-- Secretlab Titan
-- Branch Ergonomic Chair
-- HON Ignition 2.0
-- Autonomous ErgoChair Pro
-- Humanscale Freedom
-- IKEA Markus
-- FlexiSpot C7
-- Sihoo M18
+- (All chairs now added)
 
 ### Laptop Bags:
 
@@ -226,3 +227,12 @@ These products are mentioned in articles but need ASINs to be found manually:
 - [Amazon Acer Swift 3 OLED](https://www.amazon.com/Acer-2880x1800-i7-12700H-Graphics-SF314-71-75MW/dp/B0B1VYQ6XG)
 - [Amazon MacBook Pro 14 M3](https://www.amazon.com/Apple-MacBook-Laptop-11‑core-14‑core/dp/B0CM5JV26D)
 - [Amazon Dell XPS 15 9530](https://www.amazon.com/Dell-9000-9530-15-6-Notebook/dp/B0CDNTRB2V)
+- [Amazon Steelcase Leap](https://www.amazon.com/Steelcase-Fabric-Chair-Black-46216179FBL/dp/B006H1QYBA)
+- [Amazon Secretlab Titan Evo](https://www.amazon.com/Secretlab-Titan-Stealth-Gaming-Chair/dp/B0B3RDWTDD)
+- [Amazon Branch Ergonomic Chair](https://www.amazon.com/Branch-Ergonomic-Chair-Adjustable-Breathable/dp/B0CK497V2R)
+- [Amazon HON Ignition 2.0](https://www.amazon.com/HON-Ignition-Mid-Back-Adjustable-Lumbar/dp/B06Y3PGPR2)
+- [Amazon Autonomous ErgoChair Pro](https://www.amazon.com/Autonomous-ErgoChair-Pro-Ergonomic-Office/dp/B0FL2H6GYL)
+- [Amazon Humanscale Freedom](https://www.amazon.com/Humanscale-F211GV101-Freedom-Chair-Headrest/dp/B009WXGTYW)
+- [Amazon IKEA Markus](https://www.amazon.com/IKEA-MARKUS-Office-workday-comfortable/dp/B097Q4GKTK)
+- [Amazon FlexiSpot C7](https://www.amazon.com/FLEXISPOT-C7-Premium-Ergonomic-Office/dp/B0DPQQ2L22)
+- [Amazon Sihoo M18](https://www.amazon.com/SIHOO-Chair-Office/dp/B07GNDDNMW)

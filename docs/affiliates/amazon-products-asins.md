@@ -2,7 +2,7 @@
 
 **Store ID:** floatjet-20
 **Last Updated:** 2025-11-30
-**Status:** ✅ Amazon Associates Approved (18 monitors + 6 laptops + 9 chairs added)
+**Status:** ✅ Amazon Associates Approved (18 monitors + 6 laptops + 9 chairs + 7 standing desks added)
 
 This document contains all Amazon product ASINs for FloatJet affiliate links.
 
@@ -30,10 +30,17 @@ This document contains all Amazon product ASINs for FloatJet affiliate links.
 
 ## Standing Desks
 
-| Product                                  | ASIN       | Price Range | Link Format                     |
-|------------------------------------------|------------|-------------|---------------------------------|
-| **FlexiSpot E7 Pro (Black/Black 48x30)** | B08B3X9CKH | ~$549       | `/go/amazon/flexispot-e7-black` |
-| **FlexiSpot E7 Pro (White/White 48x30)** | B08B3SNBF8 | ~$549       | `/go/amazon/flexispot-e7-white` |
+| Product                                  | ASIN       | Price Range | Link Format                           |
+|------------------------------------------|------------|-------------|---------------------------------------|
+| **FlexiSpot E7 Pro (Black/Black 48x30)** | B08B3X9CKH | ~$549       | `/go/amazon/flexispot-e7-black`       |
+| **FlexiSpot E7 Pro (White/White 48x30)** | B08B3SNBF8 | ~$549       | `/go/amazon/flexispot-e7-white`       |
+| **Uplift V2 (Walnut Laminate 72x30)**    | B07RWQBJ8V | ~$799       | `/go/amazon/uplift-v2`                |
+| **Autonomous SmartDesk 5 Pro (53x29)**   | B0FL1VY7LS | ~$599       | `/go/amazon/autonomous-smartdesk-pro` |
+| **Fully Jarvis (Bamboo 60x30/Black)**    | B07PDNTS68 | ~$709       | `/go/amazon/fully-jarvis`             |
+| **Vari Electric Classic (60x30)**        | B089CX2F42 | ~$695       | `/go/amazon/vari-electric`            |
+| **Branch Standing Desk (48"/Walnut)**    | B0C3WVGD4L | ~$489       | `/go/amazon/branch-standing`          |
+| **IKEA BEKANT (63x31.5"/White-Black)**   | B0BW8S93BB | ~$489       | `/go/amazon/ikea-bekant`              |
+| **Fezibo Electric (48x24/Rustic Brown)** | B08CBVGXZC | ~$279       | `/go/amazon/fezibo-electric`          |
 
 ---
 
@@ -156,14 +163,7 @@ These products are mentioned in articles but need ASINs to be found manually:
 
 ### Standing Desks:
 
-- Uplift V2
-- Autonomous SmartDesk Pro
-- Fully Jarvis
-- Vari Electric
-- Branch Standing Desk
-- IKEA BEKANT
-- FlexiSpot E5
-- Fezibo Electric
+- FlexiSpot E5 (specific model not commonly available on Amazon)
 
 ### Chairs:
 
@@ -236,3 +236,10 @@ These products are mentioned in articles but need ASINs to be found manually:
 - [Amazon IKEA Markus](https://www.amazon.com/IKEA-MARKUS-Office-workday-comfortable/dp/B097Q4GKTK)
 - [Amazon FlexiSpot C7](https://www.amazon.com/FLEXISPOT-C7-Premium-Ergonomic-Office/dp/B0DPQQ2L22)
 - [Amazon Sihoo M18](https://www.amazon.com/SIHOO-Chair-Office/dp/B07GNDDNMW)
+- [Amazon Uplift V2](https://www.amazon.com/UPLIFT-Desk-Laminate-Standing-Adjustable/dp/B07RWQBJ8V)
+- [Amazon Autonomous SmartDesk 5 Pro](https://www.amazon.com/Autonomous-SmartDesk-Pro-Adjustable-29-5-48-5/dp/B0FL1VY7LS)
+- [Amazon Fully Jarvis](https://www.amazon.com/Jarvis-Standing-Desk-Bamboo-Top/dp/B07PDNTS68)
+- [Amazon Vari Electric Classic](https://www.amazon.com/Vari-Electric-Standing-Desk-Adjustable/dp/B089CX2F42)
+- [Amazon Branch Standing Desk](https://www.amazon.com/Branch-Standing-Desk-Inches-Productivity/dp/B0C3WVGD4L)
+- [Amazon IKEA BEKANT](https://www.amazon.com/Ikea-BEKANT-stand-160x80-white/dp/B0BW8S93BB)
+- [Amazon Fezibo Electric](https://www.amazon.com/FEZIBO-Height-Adjustable-Electric-Standing/dp/B08CBVGXZC)

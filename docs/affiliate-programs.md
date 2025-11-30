@@ -1,6 +1,6 @@
 # FloatJet Affiliate Programs Master Guide
 
-**Last Updated:** 2025-11-24
+**Last Updated:** 2025-11-28
 **Purpose:** Complete reference for all affiliate programs, registration guides, and tracking
 
 ---
@@ -22,22 +22,47 @@
 
 ### Applied Programs
 
-| Program              | Network       | Applied Date | Status     | Affiliate ID | Notes                    |
-|----------------------|---------------|--------------|------------|--------------|--------------------------|
-| NordVPN + NordPass   | Direct        | 2025-11-22   | ✅ Approved | 135757       | B2C bundle               |
-| Notion               | Impact Radius | 2025-11-22   | In Review  | -            | Via Impact.com           |
-| ClickUp              | PartnerStack  | 2025-11-22   | In Review  | -            | Partner program          |
-| PartnerStack Network | PartnerStack  | 2025-11-24   | In Review  | -            | Unlocks marketplace apps |
+| Program              | Network       | Applied Date | Status            | Affiliate ID | Notes                              |
+|----------------------|---------------|--------------|-------------------|--------------|------------------------------------|
+| NordVPN + NordPass   | Direct        | 2025-11-22   | ✅ Approved        | 135757       | B2C bundle                         |
+| Impact Radius        | Impact Radius | 2025-11-22   | ❌ Declined        | 6717334      | Reapply after Month 2 with traffic |
+| Notion               | Impact Radius | 2025-11-22   | ⏸️ Deferred       | -            | Pending Impact approval            |
+| ClickUp              | PartnerStack  | 2025-11-22   | In Review         | -            | Partner program (not affected)     |
+| PartnerStack Network | PartnerStack  | 2025-11-24   | ⚠️ Limited Access | -            | Marketplace access limited         |
+
+### Declined/Deferred Programs
+
+| Program              | Network       | Decline Date | Reason                                | Reapply Date                  | Action Required                                     |
+|----------------------|---------------|--------------|---------------------------------------|-------------------------------|-----------------------------------------------------|
+| Impact Radius        | Impact Radius | 2025-11-28   | Site not live, no traffic             | End of Month 2 (Jan 2026)     | Launch site, publish 20+ articles, generate traffic |
+| PartnerStack Network | PartnerStack  | 2025-11-30   | Profile not a fit (network expansion) | Month 2-3 (After site launch) | Reapply with live site and content                  |
+
+**Impact Note:** Application declined on 2025-11-28 (Account ID: 6717334). Impact requires established sites with
+published content and actual traffic. Will reapply in Month 2-3 once FloatJet has:
+
+- ✅ Live website with 20+ published articles
+- ✅ Privacy Policy, Terms, Affiliate Disclosure pages
+- ✅ Real traffic data (50-500 visitors/month minimum)
+- ✅ 4-6 weeks of content history
+
+**PartnerStack Note:** Network Profile access limited on 2025-11-30. Reason: "Profile is not a great fit, but may be in
+the future." This limits access to new programs via the PartnerStack Marketplace. Existing partnerships (ClickUp
+application) are not impacted. Will reapply after FloatJet has:
+
+- ✅ Live website with published content
+- ✅ Established traffic and engagement metrics
+- ✅ Demonstrated affiliate marketing track record
+- ℹ️ Can reapply through dashboard once site is established
 
 ### Pending Applications
 
-| Program           | Network       | Priority     | Target Date | Required For      |
-|-------------------|---------------|--------------|-------------|-------------------|
-| Amazon Associates | Direct        | **CRITICAL** | ASAP        | Laptops, Desks    |
-| ConvertKit        | Direct        | **HIGH**     | ASAP        | Email Marketing   |
-| 1Password         | Impact Radius | **HIGH**     | Week 3      | Password Managers |
-| Beehiiv           | Direct        | **HIGH**     | Week 3      | Email Marketing   |
-| FlexiSpot         | Direct        | **HIGH**     | Week 3      | Standing Desks    |
+| Program           | Network       | Priority     | Target Date                         | Required For      |
+|-------------------|---------------|--------------|-------------------------------------|-------------------|
+| Amazon Associates | Direct        | **CRITICAL** | Week 2 (after launch)               | Laptops, Desks    |
+| ConvertKit        | Direct        | **HIGH**     | Week 2 (after launch)               | Email Marketing   |
+| Beehiiv           | Direct        | **HIGH**     | Week 2 (after launch)               | Email Marketing   |
+| FlexiSpot         | Direct        | **HIGH**     | Week 3                              | Standing Desks    |
+| 1Password         | Impact Radius | **HIGH**     | Month 2-3 (after Impact reapproval) | Password Managers |
 
 ### Configured Redirects (Placeholder URLs)
 
@@ -182,14 +207,25 @@ Ensure your site has:
     - Search "Mailchimp" � Apply
 7. Each brand approves separately (1-7 days each)
 
-**Status:**
+**Status:** ❌ **DECLINED - Reapply Month 2-3**
 
--  Account created
--  Notion applied (In Review)
-- [ ] 1Password (to apply)
-- [ ] Mailchimp (to apply)
+- ❌ Application declined 2025-11-28 (Account ID: 6717334)
+- **Reason:** Site not live, no published content, no traffic
+- **Reapply:** End of Month 2 (January 2026) after:
+   - ✅ Site launched with 20+ published articles
+   - ✅ Legal pages live (Privacy, Terms, Disclosure)
+   - ✅ Real traffic data (50-500+ visitors/month)
+   - ✅ 4-6 weeks of content history
 
-**Tip:** Apply to multiple programs at once to save time.
+**Programs Affected:**
+
+- ⏸️ Notion - $100-500/sale (deferred until Impact approval)
+- ⏸️ 1Password - 25% commission (deferred until Impact approval)
+- ⏸️ Mailchimp - 20-30% first payment (deferred until Impact approval)
+- ⏸️ HubSpot - 30% recurring (deferred until Impact approval)
+
+**Alternative:** Apply to direct programs and other networks (ShareASale, CJ Affiliate, Amazon) now. Circle back to
+Impact in Month 2-3.
 
 ---
 
@@ -197,11 +233,19 @@ Ensure your site has:
 
 **URL:** https://dash.partnerstack.com/marketplace
 
-**Status:** Account created, ClickUp applied (In Review)
+**Status:** ⚠️ **MARKETPLACE ACCESS LIMITED** - ClickUp application still in review (not affected)
 
-**How It Works:** One PartnerStack account = access to entire marketplace. Apply to each brand separately.
+**Network Profile Status:** Limited access to new marketplace programs as of 2025-11-30. Can reapply once site is
+established with traffic and content.
+
+**How It Works:** One PartnerStack account = access to entire marketplace. Apply to each brand separately. **NOTE:**
+Marketplace access currently restricted - focus on direct program applications and other networks (Impact, ShareASale,
+CJ) for now.
 
 **Programs to Apply For (in your existing articles):**
+
+⚠️ **IMPORTANT:** These marketplace programs are currently unavailable due to limited Network Profile access. Will be
+accessible after reapplication once site is launched. ClickUp application already submitted is not affected.
 
 | Program        | Category          | Commission          | Your Article                     |
 |----------------|-------------------|---------------------|----------------------------------|
@@ -338,13 +382,13 @@ Ensure your site has:
 
 ### Project Management Software
 
-| Program    | Commission              | Cookie  | Network       | Status       |
-|------------|-------------------------|---------|---------------|--------------|
-| Notion     | $100-500/sale           | 30 days | Impact Radius | Applied      |
-| ClickUp    | $50-200 + 20% recurring | 90 days | PartnerStack  | Applied      |
-| Monday.com | 100% first year         | 90 days | PartnerStack  | 🎯 Apply Now |
-| Teamwork   | 20% recurring           | 90 days | PartnerStack  | 🎯 Apply Now |
-| Asana      | Unknown                 | Unknown | Direct        | Not Applied  |
+| Program    | Commission              | Cookie  | Network       | Status                      |
+|------------|-------------------------|---------|---------------|-----------------------------|
+| Notion     | $100-500/sale           | 30 days | Impact Radius | Deferred                    |
+| ClickUp    | $50-200 + 20% recurring | 90 days | PartnerStack  | In Review                   |
+| Monday.com | 100% first year         | 90 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
+| Teamwork   | 20% recurring           | 90 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
+| Asana      | Unknown                 | Unknown | Direct        | Not Applied                 |
 
 **Used in:** FJ-006 (PM Software article)
 
@@ -397,15 +441,15 @@ how-to-setup-vpn-all-devices
 
 ### Email Marketing
 
-| Program        | Commission                  | Cookie  | Network       | Status       |
-|----------------|-----------------------------|---------|---------------|--------------|
-| ConvertKit     | $100 + 40% recurring (24mo) | 60 days | Direct        | Not Applied  |
-| Beehiiv        | 50% recurring (12mo)        | 60 days | Direct        | Not Applied  |
-| ActiveCampaign | 20-30% recurring            | 90 days | PartnerStack  | 🎯 Apply Now |
-| Drip           | 20% recurring               | 90 days | PartnerStack  | 🎯 Apply Now |
-| Klaviyo        | 15-20%                      | 30 days | PartnerStack  | 🎯 Apply Now |
-| Mailchimp      | 20-30% first payment        | 30 days | Impact Radius | Not Applied  |
-| MailerLite     | 30% recurring               | 30 days | Direct        | Not Applied  |
+| Program        | Commission                  | Cookie  | Network       | Status                      |
+|----------------|-----------------------------|---------|---------------|-----------------------------|
+| ConvertKit     | $100 + 40% recurring (24mo) | 60 days | Direct        | Not Applied                 |
+| Beehiiv        | 50% recurring (12mo)        | 60 days | Direct        | Not Applied                 |
+| ActiveCampaign | 20-30% recurring            | 90 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
+| Drip           | 20% recurring               | 90 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
+| Klaviyo        | 15-20%                      | 30 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
+| Mailchimp      | 20-30% first payment        | 30 days | Impact Radius | Deferred                    |
+| MailerLite     | 30% recurring               | 30 days | Direct        | Not Applied                 |
 
 **Used in:** FJ-013 (Email Marketing article)
 
@@ -512,14 +556,14 @@ how-much-ram-remote-work articles
 
 ### CRM Software
 
-| Program    | Commission       | Cookie  | Network       | Status       |
-|------------|------------------|---------|---------------|--------------|
-| HubSpot    | 30% recurring    | 90 days | Impact Radius | Not Applied  |
-| Pipedrive  | 20-30% recurring | 60 days | PartnerStack  | 🎯 Apply Now |
-| Close      | 20% recurring    | 90 days | PartnerStack  | 🎯 Apply Now |
-| Freshsales | 15-20%           | 30 days | PartnerStack  | 🎯 Apply Now |
-| Zoho CRM   | 15-20%           | 45 days | Direct        | Not Applied  |
-| Monday.com | 100% first year  | 90 days | PartnerStack  | 🎯 Apply Now |
+| Program    | Commission       | Cookie  | Network       | Status                      |
+|------------|------------------|---------|---------------|-----------------------------|
+| HubSpot    | 30% recurring    | 90 days | Impact Radius | Deferred                    |
+| Pipedrive  | 20-30% recurring | 60 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
+| Close      | 20% recurring    | 90 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
+| Freshsales | 15-20%           | 30 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
+| Zoho CRM   | 15-20%           | 45 days | Direct        | Not Applied                 |
+| Monday.com | 100% first year  | 90 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
 
 **Used in:** best-crm-software-small-business article
 
@@ -527,15 +571,15 @@ how-much-ram-remote-work articles
 
 ### Team Communication Tools
 
-| Program         | Commission | Cookie  | Network      | Status       |
-|-----------------|------------|---------|--------------|--------------|
-| Intercom        | 15-20%     | 90 days | PartnerStack | 🎯 Apply Now |
-| Drift           | 20%        | 90 days | PartnerStack | 🎯 Apply Now |
-| Loom            | 20%        | 30 days | PartnerStack | 🎯 Apply Now |
-| Slack           | Varies     | 30 days | Direct       | Not Applied  |
-| Zoom            | 10-15%     | 30 days | Direct       | Not Applied  |
-| Microsoft Teams | Varies     | 30 days | Direct       | Not Applied  |
-| Discord Nitro   | N/A        | N/A     | N/A          | No program   |
+| Program         | Commission | Cookie  | Network      | Status                      |
+|-----------------|------------|---------|--------------|-----------------------------|
+| Intercom        | 15-20%     | 90 days | PartnerStack | ⚠️ Unavailable (PS Network) |
+| Drift           | 20%        | 90 days | PartnerStack | ⚠️ Unavailable (PS Network) |
+| Loom            | 20%        | 30 days | PartnerStack | ⚠️ Unavailable (PS Network) |
+| Slack           | Varies     | 30 days | Direct       | Not Applied                 |
+| Zoom            | 10-15%     | 30 days | Direct       | Not Applied                 |
+| Microsoft Teams | Varies     | 30 days | Direct       | Not Applied                 |
+| Discord Nitro   | N/A        | N/A     | N/A          | No program                  |
 
 **Used in:** best-team-communication-tools, slack-vs-teams-vs-discord articles
 
@@ -543,12 +587,12 @@ how-much-ram-remote-work articles
 
 ### Meeting Productivity Tools
 
-| Program   | Commission | Cookie  | Network      | Status       |
-|-----------|------------|---------|--------------|--------------|
-| Calendly  | 15-20%     | 90 days | PartnerStack | 🎯 Apply Now |
-| Otter.ai  | 20-25%     | 30 days | Direct       | Not Applied  |
-| Grain     | 20%        | 30 days | Direct       | Not Applied  |
-| Fireflies | 20%        | 30 days | Direct       | Not Applied  |
+| Program   | Commission | Cookie  | Network      | Status                      |
+|-----------|------------|---------|--------------|-----------------------------|
+| Calendly  | 15-20%     | 90 days | PartnerStack | ⚠️ Unavailable (PS Network) |
+| Otter.ai  | 20-25%     | 30 days | Direct       | Not Applied                 |
+| Grain     | 20%        | 30 days | Direct       | Not Applied                 |
+| Fireflies | 20%        | 30 days | Direct       | Not Applied                 |
 
 **Used in:** how-to-run-effective-remote-meetings article
 
@@ -556,12 +600,12 @@ how-much-ram-remote-work articles
 
 ### Time Tracking Software
 
-| Program     | Commission    | Cookie  | Network      | Status       |
-|-------------|---------------|---------|--------------|--------------|
-| Toggl Track | 20% recurring | 90 days | PartnerStack | 🎯 Apply Now |
-| Harvest     | 15% recurring | 90 days | PartnerStack | 🎯 Apply Now |
-| Clockify    | 20%           | 30 days | PartnerStack | 🎯 Apply Now |
-| RescueTime  | 15-20%        | 30 days | Direct       | Not Applied  |
+| Program     | Commission    | Cookie  | Network      | Status                      |
+|-------------|---------------|---------|--------------|-----------------------------|
+| Toggl Track | 20% recurring | 90 days | PartnerStack | ⚠️ Unavailable (PS Network) |
+| Harvest     | 15% recurring | 90 days | PartnerStack | ⚠️ Unavailable (PS Network) |
+| Clockify    | 20%           | 30 days | PartnerStack | ⚠️ Unavailable (PS Network) |
+| RescueTime  | 15-20%        | 30 days | Direct       | Not Applied                 |
 
 **Used in:** best-time-tracking-software article
 
@@ -569,14 +613,14 @@ how-much-ram-remote-work articles
 
 ### Online Course Platforms
 
-| Program     | Commission          | Cookie  | Network      | Status       |
-|-------------|---------------------|---------|--------------|--------------|
-| Teachable   | 30% recurring (1yr) | 90 days | PartnerStack | 🎯 Apply Now |
-| Thinkific   | 20% recurring       | 90 days | PartnerStack | 🎯 Apply Now |
-| Podia       | 30% recurring       | 30 days | PartnerStack | 🎯 Apply Now |
-| Kajabi      | 30% recurring       | 30 days | Direct       | Not Applied  |
-| LearnWorlds | 20%                 | 30 days | Direct       | Not Applied  |
-| Gumroad     | 10%                 | 30 days | Direct       | Not Applied  |
+| Program     | Commission          | Cookie  | Network      | Status                      |
+|-------------|---------------------|---------|--------------|-----------------------------|
+| Teachable   | 30% recurring (1yr) | 90 days | PartnerStack | ⚠️ Unavailable (PS Network) |
+| Thinkific   | 20% recurring       | 90 days | PartnerStack | ⚠️ Unavailable (PS Network) |
+| Podia       | 30% recurring       | 30 days | PartnerStack | ⚠️ Unavailable (PS Network) |
+| Kajabi      | 30% recurring       | 30 days | Direct       | Not Applied                 |
+| LearnWorlds | 20%                 | 30 days | Direct       | Not Applied                 |
+| Gumroad     | 10%                 | 30 days | Direct       | Not Applied                 |
 
 **Used in:** best-online-course-platforms article
 
@@ -1191,14 +1235,22 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** Added new affiliate program categories on 2025-11-24: Accounting & Tax Software (QuickBooks,
-FreshBooks,
-Xero, TurboTax, Expensify, Dext), Investment & Retirement Platforms (Fidelity, Schwab, Betterment, Wealthfront, M1
-Finance).
-Updated Digital Banking with N26 and new article references. Five new finance guide articles written:
-freelancer-tax-deductions-guide,
-retirement-savings-freelancer, invoice-payment-terms-guide, multi-currency-banking-nomads,
-expense-home-office-furniture.
+**Last Action:** 2025-11-30 - PartnerStack Network Profile access limited. Marketplace access to new programs
+restricted. Reason: "Profile not a great fit, but may be in the future." ClickUp application (already submitted) not
+affected. Updated all PartnerStack program statuses to "⚠️ Unavailable (PS Network)" throughout affiliate-programs.md.
+Can reapply once site is launched with content and traffic.
 
-**Next Action:** Apply to priority programs: Amazon Associates, QuickBooks (CJ Affiliate), FreshBooks (ShareASale),
-Wise, Revolut, Betterment.
+**Previous Actions:**
+
+- 2025-11-28: Impact Radius application declined (Account ID: 6717334). Reason: Site not live, no published content, no
+  traffic. Updated affiliate-programs.md with decline details and deferral of Notion, 1Password, Mailchimp, HubSpot
+  programs until Month 2-3 reapplication.
+- 2025-11-24: Added new affiliate program categories: Accounting & Tax Software (QuickBooks, FreshBooks, Xero, TurboTax,
+  Expensify, Dext), Investment & Retirement Platforms (Fidelity, Schwab, Betterment, Wealthfront, M1 Finance). Updated
+  Digital Banking with N26. Five new finance guide articles written: freelancer-tax-deductions-guide,
+  retirement-savings-freelancer, invoice-payment-terms-guide, multi-currency-banking-nomads,
+  expense-home-office-furniture.
+
+**Next Action:** Focus on site launch (Week 2-4). **Priority: Apply to direct programs and other networks first** -
+Amazon Associates, ConvertKit, Beehiiv, FlexiSpot, Wise, Revolut, ShareASale, CJ Affiliate. Reapply to Impact Radius AND
+PartnerStack Network in Month 2-3 (January 2026) once site has 20+ articles and traffic.

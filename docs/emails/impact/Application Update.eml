@@ -1,0 +1,403 @@
+Delivered-To: liraz.amir.1982@gmail.com
+Received: by 2002:a05:6504:2346:b0:2d1:a109:e86e with SMTP id o6csp4982588ltx;
+ Fri, 28 Nov 2025 02:00:12 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHVZUDo3JXbfZK8cp47QrlZNGUvy1E4+n12RYR3dvqnQn1Gkt8JL7wVkjqAE/lxCJvsK3Al
+X-Received: by 2002:a02:cd2d:0:b0:5b7:bacb:803 with SMTP id
+ 8926c6da1cb9f-5b99948c395mr8277689173.0.1764324011990; Fri, 28 Nov 2025
+ 02:00:11 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1764324011; cv=none; d=google.com;
+ s=arc-20240605;
+ b=Hz46eL2eftFlP3SFDIGjw/tzwuv+yp7npzmNYUPovwD5G7mV3zO7sqTnE/0AIAMQcs
+ DuyRR0+DBjI2sBhkospOm6QiutlOk9nuNC56AM8svme7pNl4BTyfpFj1Ndc+DYZ8+f71
+ cXjbJgxCz+F5UO4V1USgOHQtP3YOhF2JlysFcL37vkUO+6CCcQR7ROeoCCyuQhr3cG9m
+ AVT2cnzUGWUXmOdy1UwVCp9kiD5fWxQS4MYsCWxaznNUZIGIKVESxtYUNyB7X4NrPisE
+ LU/eB5E92QfSG7bZAkrYaJwEJG6AhJFkRPKfHBsO4j0u1NOf4pzec6LdTcimADhXUOlY fZlw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605; h=to:mime-version:subject:message-id:from:date:dkim-signature
+ :dkim-signature; bh=u3Hj+Qsx+Fp7MHUSmFRD4qOUcT/7UQfPVSO82f8N1yo=;
+ fh=mT1+JSIa8BeNPB3OxFf7SRMnMLi7RGXO5j8QH5Vjcu8=;
+ b=iVTBEAThrxVIC/4+AI2tqG5A9GFd4BTY2tWx1/WT1eokDVh50XYvBpEL9bDJmLd1hx
+ +gpwF/8u54iGsjbm2Bg0AmbIwOXFVxBHbsB2/w3OPCw0kjH3P6hBWakrRQwicHe1G+F+
+ HSiT+X2H2M+AKeT24yyFCLPD35MPk7oyRUELmGkysfDxSC/+4wK27XcsY3e5tvVwgMYO
+ uSpjLE3+Jmm8ZXGy5hOjWEd54/JCMwr3FmaYBpeU0nc19PaFyQw3YHTc3dFGZw/l2x1I
+ D+fuQgFUXpsrdpQaMoLAnVV1Qpyv8XL9CJD5tNTl8L6YWASyDv1KQCwvdvupYE91E454 Jo0Q==;
+ dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass
+ header.i=@app.impact.com header.s=m1 header.b=dcmkLxp2; dkim=pass
+ header.i=@sendgrid.info header.s=smtpapi header.b=DK8jWLEy; spf=pass
+ (google.com: domain of
+ bounces+7415542-871e-liraz.amir.1982=gmail.com@em.app.impact.com designates
+ 198.37.151.191 as permitted sender)
+ smtp.mailfrom="bounces+7415542-871e-liraz.amir.1982=gmail.com@em.app.impact.com";
+ dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=impact.com
+Return-Path: <bounces+7415542-871e-liraz.amir.1982=gmail.com@em.app.impact.com>
+Received: from o4.em.app.impact.com (o4.em.app.impact.com. [198.37.151.191])
+ by mx.google.com with ESMTPS id
+ 8926c6da1cb9f-5b9bc323174si2878564173.30.2025.11.28.02.00.11 for
+ <liraz.amir.1982@gmail.com> (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256
+ bits=128/128); Fri, 28 Nov 2025 02:00:11 -0800 (PST)
+Received-SPF: pass (google.com: domain of
+ bounces+7415542-871e-liraz.amir.1982=gmail.com@em.app.impact.com designates
+ 198.37.151.191 as permitted sender) client-ip=198.37.151.191;
+Authentication-Results: mx.google.com; dkim=pass header.i=@app.impact.com
+ header.s=m1 header.b=dcmkLxp2; dkim=pass header.i=@sendgrid.info
+ header.s=smtpapi header.b=DK8jWLEy; spf=pass (google.com: domain of
+ bounces+7415542-871e-liraz.amir.1982=gmail.com@em.app.impact.com designates
+ 198.37.151.191 as permitted sender)
+ smtp.mailfrom="bounces+7415542-871e-liraz.amir.1982=gmail.com@em.app.impact.com";
+ dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=impact.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=app.impact.com;
+ h=date:from:subject:mime-version:to:content-type:cc:content-type:date:
+ feedback-id:from:subject:to; s=m1;
+ bh=u3Hj+Qsx+Fp7MHUSmFRD4qOUcT/7UQfPVSO82f8N1yo=;
+ b=dcmkLxp2DxTTIfhVph2qdCO5fQmN+3/JFSvvN7A+SC0iQP9oVekTetcgsBn3uqWbiN3N
+ hArVOi0l6Xs8z6FrJGjTNPq7VuJFx8ylRPjSVzE5OoCmz/GVt09FxxPiDtSKkK94D3kymt
+ 56RPleoKk3tckplrQnCX9OHXHAn//6q8k=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+ h=date:from:subject:mime-version:to:content-type:cc:content-type:date:
+ feedback-id:from:subject:to; s=smtpapi;
+ bh=u3Hj+Qsx+Fp7MHUSmFRD4qOUcT/7UQfPVSO82f8N1yo=;
+ b=DK8jWLEySOLZNb9yt1GNEbGFTed/cRA9fWx9OcbJmWbeW7ZqCSeqOto0DVcew7Uu2WRV
+ oFKNmHVwlgmZcZ6KzsGzQrNJpCWjkaQoNcyzUZZlENvpmlpJjYsg3N2J1tnUUySjK6uAfX
+ aVwA2ODEoD+0c7ndslBxCONMY2WTCo6Ac=
+Received: by recvd-5bc4f988-hkrrp with SMTP id
+ recvd-5bc4f988-hkrrp-1-692972AB-1D 2025-11-28 10:00:11.202913141 +0000 UTC
+ m=+15269188.623982178
+Received: from app-account-03.localdomain (unknown) by geopod-ismtpd-canary-0
+ (SG) with ESMTP id mRAwe84kTuqGqpiepUZ9fA for <liraz.amir.1982@gmail.com>;
+ Fri, 28 Nov 2025 10:00:11.177 +0000 (UTC)
+Received: from app-account-03.gcp.inf-impact.net (localhost [127.0.0.1]) by
+ app-account-03.localdomain (Postfix) with ESMTP id D77221A53 for
+ <liraz.amir.1982@gmail.com>; Fri, 28 Nov 2025 10:00:10 +0000 (UTC)
+Date: Fri, 28 Nov 2025 10:00:11 +0000 (UTC)
+From: "notifications@app.impact.com" <notifications@app.impact.com>
+Message-ID: <946413171.510531.1764324010881@app-account-03.gcp.inf-impact.net>
+Subject: Application Update
+MIME-Version: 1.0
+X-SG-EID: =?us-ascii?Q?u001=2E5LNmzYNMUveaqXQydC+1YnXUtasYgTcIQvZnlRhSF+JVQrSKhMtNgI4Bm?=
+ =?us-ascii?Q?JIC+yvI6OruWE2X0T2Le1CGaTX=2FAzjBrHM9I4Q9?=
+ =?us-ascii?Q?cB3TWmLkLmVMPIMpdzSiaydvQ1ZeyeFJgeujFiE?=
+ =?us-ascii?Q?6NnEoh4A628QaSSeFLI4lgx5+Q6MYomYI7svoI2?=
+ =?us-ascii?Q?b1nALwtzGLnwt6ssAUYP71lBUbpg38gtvUws6w3?=
+ =?us-ascii?Q?cJ4B3nBeTupuo42MdFsgmZFZ=2FAHgapNAJ+Eg1tx?=
+ =?us-ascii?Q?ljl7=2FPlmOZfR6MXUzRA+cMxrSQ=3D=3D?=
+X-SG-ID: =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprB=2FP2hS+czmahSbM?=
+ =?us-ascii?Q?+537nyRpHmzznlGCM3QayClmhbIUj79gg+JzA=2Fl?=
+ =?us-ascii?Q?sVl2nw=2FwVbufj1Sj3xgYj7XlC=2FA=2FaM+p+Fd7PI2?=
+ =?us-ascii?Q?Vp8BGMooMYK60fB+geicLI70wnUauFWCPy+Q=3D?=
+To: liraz.amir.1982@gmail.com
+X-Entity-ID: u001.tpEICkL7UZ/I31Y++uUWVg==
+Content-Type: multipart/mixed;
+ boundary="----=_Part_510528_1922755725.1764324010880"
+
+------=_Part_510528_1922755725.1764324010880
+Content-Type: multipart/related;
+ boundary="----=_Part_510529_787159454.1764324010880"
+
+------=_Part_510529_787159454.1764324010880
+Content-Type: multipart/alternative;
+ boundary="----=_Part_510530_1774765983.1764324010880"
+
+------=_Part_510530_1774765983.1764324010880
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+You are receiving this Impact Alert in reference to your Media Partner account, LirazAmir (6717334).
+Application Update 
+
+Your application to join Impact as a partner, LirazAmir, was declined for the following reason: http://em.impact.com/ls/click?upn=u001.iUNywRU2PIdBuqR2OhDBvADAwK2Ct25gmhlSq-2FJ9H-2Bhn9cDrSPH-2FlWjC0Rh1sjDaqA7NJnixTun0cb0TjRyslViZ8ru78UKspXCnU0azViw-3Da7ZI_RtZj-2FOECq68mGZAenQB6tvpByQP9PCbpzylFDP31vKiF6MqMEk-2BM-2FLb2tExWpBthNlHz9qX-2B6furdGa2XI5NGxSTLB4eZQJTjKH9lDwIN0-2BfJ5GXU1mdi1kUTmktMl1bK8Jg5jXHnCu9IIqSe5Q32Cne7oOUdL8gjLSsZpqfuazavAIn5XPrSjvTo4US9kiWSN3JghqdubRwmgMDHlZWPbvsPkwdMzIxxC3ayrFVxXGdYeZ5tvodpUbvasaRgqbe4KsmQPufyDY2xyBixUCAZSm-2F0KFkiubDUdSgiSvpnCrgYLOqugS8EhesvlvVr6cQdR2V9kjZYSedYTBekJb4sQ-3D-3D
+
+To reapply, please create a new account that addresses the decline reasons listed below.
+
+
+______________________________________________________________________
+
+
+    Follow the Impact Marketplace:
+On Twitter - http://em.impact.com/ls/click?upn=u001.oCUX41Xza-2FjXw-2FgmWzFqY-2BphGrP6saHWp-2B-2Bmzd10m4YFoliy3qJPISSIDIwTgejv-LHv_RtZj-2FOECq68mGZAenQB6tvpByQP9PCbpzylFDP31vKiF6MqMEk-2BM-2FLb2tExWpBthNlHz9qX-2B6furdGa2XI5NGxSTLB4eZQJTjKH9lDwIN0-2BfJ5GXU1mdi1kUTmktMl1bK8Jg5jXHnCu9IIqSe5Q32Cne7oOUdL8gjLSsZpqfuazavAIn5XPrSjvTo4US9kiWmOdpdTo4alXgniv1BH86bXyVafBbGB3CqoKWZooLRCk1-2FVqwO1FK8SCqfSLPIZ-2F9sE97XC8sJAZJ1UQf1R238GYmPSRDS3J0LksxCwctiOgA2YkgKirSsSVz0M5f1vHNTEkQI8UM2tH1Vqd-2B-2Bw7F6Q-3D-3D | RSS - http://em.impact.com/ls/click?upn=u001.WK6pTMJemlRvZjjOX3LX9X434a-2FTg6bsqBxrpTInNMhTvFNvtzu-2FwIcG8XF3kY1pc80-2B915CxlojfQWznodGhw-3D-3DgAyr_RtZj-2FOECq68mGZAenQB6tvpByQP9PCbpzylFDP31vKiF6MqMEk-2BM-2FLb2tExWpBthNlHz9qX-2B6furdGa2XI5NGxSTLB4eZQJTjKH9lDwIN0-2BfJ5GXU1mdi1kUTmktMl1bK8Jg5jXHnCu9IIqSe5Q32Cne7oOUdL8gjLSsZpqfuazavAIn5XPrSjvTo4US9kiWFICXDEN1vChNk7jMuy05Kh3yilvY-2FriLBCOgRbvWgKO55-2F52fwQLOh-2Fel0BjCaYDeyIfJ3gyDN4kaZm-2BR-2BOOOq9EctX2Q0Iur7sZ5pyFRoZrdWwVvaQ-2Bma4v1UOqN7v9bMNJOXyHwmZmtd8z-2Fzv8Jw-3D-3D
+
+    Copyright  Impact Tech Inc. All rights reserved.
+
+        
+
+US Office:
+    Impact Headquarters
+223 E. De La Guerra Street, Santa Barbara, CA 93101
+805 966 2300
+
+UK Office:
+    Impact UK
+14, Bedford Square, London WC1B 3JA
++44 (0)20 7470 9228
+
+    Impact - impact.com
+
+------=_Part_510530_1774765983.1764324010880
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+                <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+        <meta charset=3D"utf-8"/>
+        <link rel=3D"preconnect" href=3D"https://fonts.googleapis.com">
+        <link rel=3D"preconnect" href=3D"https://fonts.gstatic.com" crossor=
+igin>
+        <link href=3D"https://fonts.googleapis.com/css2?family=3DMulish:wgh=
+t@400;600;700&display=3Dswap" rel=3D"stylesheet">
+        <style type=3D"text/css">
+            body, div, p, a, li, td {
+                -webkit-text-size-adjust:none;
+                font-family: 'Mulish', sans-serif !important;
+                color: #2D3E50;
+            }
+            @media screen {
+                @font-face {
+                    font-family: 'Mulish', sans-serif !important;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .footer-table{
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body style=3D"margin: 0;  background: #FFFFFF;">
+    <div style=3D"max-width: 700px; margin: auto; padding: 30px 5% 10px 5%;=
+  background: #FFFFFF;">
+        <div>
+            <table style=3D"max-width: 700px; width: 100%; text-align: cent=
+er; border-collapse: collapse; margin: auto; background: white; border-radi=
+us: 2px; border:1px solid #EAEBED" cellspacing=3D"0" cellpadding=3D"0">
+                <tr style=3D"height: 60px;">
+                    <td style=3D"text-align: left; padding: 30px 0 30px 30p=
+x;">
+                        <div style=3D"max-width: 160px; display: table;">
+                            <div style=3D"display: table-cell; vertical-ali=
+gn: middle; text-align: left;">
+                                <a href=3D"http://em.impact.com/ls/click?up=
+n=3Du001.qJkM5WWo1VuKeDUDrYfgCXrYTZaUArRz-2BvLniZTJ3nc-3DTKHk_RtZj-2FOECq68=
+mGZAenQB6tvpByQP9PCbpzylFDP31vKiF6MqMEk-2BM-2FLb2tExWpBthNlHz9qX-2B6furdGa2=
+XI5NGxSTLB4eZQJTjKH9lDwIN0-2BfJ5GXU1mdi1kUTmktMl1bK8Jg5jXHnCu9IIqSe5Q32Cne7=
+oOUdL8gjLSsZpqfuazavAIn5XPrSjvTo4US9kiWdkUv3wPIsFB-2F6n9renCA0CzXKj-2Fv5BL9=
+0aeshqwzgxpLPNZJchkfpS75tE4uiOZnizJwRoK09D2fFVftfNDp-2FqRPGkiw4vMfcb4VLm8zX=
+60YSnwWnW3VSHKmFYODj2VLtxAMGV0guDsoN9HdH5r-2Bcg-3D-3D">
+                                    <img src=3D"http://app.impact.com/image=
+s/email/impact_logo_transparent_full_color.png" height=3D"24" alt=3D"logo"=
+ style=3D"border:0; height: 24px;"/>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                    <td style=3D"text-align: right; width: 42%; padding: 30=
+px 30px 30px 0; word-break: break-word">
+                        <div style=3D"font-size: 10px; width: 100%; color:=
+ #6C7784; word-break: break-word">
+                            <div style=3D"display: block; color: #6C7784; f=
+ont-weight: 400; line-height: 24px; font-size: 14px">
+                                                            </div>
+                            <div style=3D"display: block; color: #6C7784 !i=
+mportant; font-weight: 400; line-height: 24px; font-size: 14px">
+                                                            </div>
+                                                            <div style=3D"d=
+isplay: block; color: #6C7784 !important; font-weight: 400; line-height: 24=
+px; font-size: 14px">
+                                                                            =
+Account ID (6717334)
+                                                                    </div>
+                                                    </div>
+                    </td>
+                </tr>
+
+                                <tr style=3D"height: 100%;">
+                    <td colspan=3D"2" style=3D"height: 100%; padding: 0 40p=
+x 10px 40px;">
+                        <div style=3D"height: 100%; min-height: 40px;">
+                            <div style=3D"height: 100%; display: table; wid=
+th: 100%;">
+                                <div class=3D"header" style=3D"font-size: 2=
+2px; text-align: left; display: table-cell; vertical-align: middle; width:=
+ 70%; line-height: 27px; font-weight: 600">
+                                    Application Update
+                                </div>
+                                                                    <div st=
+yle=3D"display: table-cell; vertical-align: middle; text-align: right; heig=
+ht: 40px; width: 30%;">
+                                        <img height=3D"40" src=3D"http://ap=
+p.impact.com/images/email/listformd@2x.png" alt=3D"Header">
+                                    </div>
+                                                            </div>
+                        </div>
+                    </td>
+                </tr>
+                                <tr>
+                    <td colspan=3D"2" style=3D"padding: 0 40px 20px 40px;">
+                        <div style=3D"min-height: 100px;">
+                            <div style=3D"display: table-cell;">
+                                                                <div style=
+=3D"text-align: left;">
+                                    <div style=3D"font-size: 14px; line-hei=
+ght: 20px; font-weight: 400">
+                                        <div class=3D"body">
+                                            Your application to join Impact =
+as a media partner has been declined for the reason noted below. To reappl=
+y, please create a new account that addresses the decline reasons listed be=
+low..=20
+
+https://app.impact.com/content/displaympserviceagreement.ihtml=20
+
+                                        </div>
+                                                                           =
+     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                                    <tr style=3D"border-top: 1px solid #EAE=
+BED">
+                        <td align=3D"left" colspan=3D"2">
+                        <table class=3D"footer-table" align=3D"left" width=
+=3D"50%" height=3D"100%" id=3D"leftSideFooter" style=3D"border-collapse: co=
+llapse;" cellspacing=3D"0" cellpadding=3D"0">
+                            <td>
+                                <div class=3D"footer" style=3D"display: inl=
+ine-block; vertical-align: middle; padding: 30px 10px 30px 40px;">
+                                                                            =
+<div style=3D"text-align: left; font-size: 12px; line-height: 18px; font-w=
+eight: 400; word-break: break-word">
+                                                <div>
+                                                                           =
+                                 <h3 style=3D"font-size: 14px; font-weight: =
+600; line-height: 24px; margin-top: 0; margin-bottom: 10px;">Help Center</=
+h3>
+                                                        <p style=3D"font-si=
+ze: 12px; font-weight: 400; line-height: 18px; margin-bottom: 0;">It=E2=80=
+=99s filled with articles to assist you!</p>
+                                                        <p style=3D"font-si=
+ze: 12px; font-weight: 400; line-height: 18px; margin-bottom: 40px;">If you =
+can=E2=80=99t find what you=E2=80=99re looking for, reach out to our Suppo=
+rt Team by creating a ticket in the platform and someone will reach out to=
+ you.</p>
+                                                                           =
+                         </div>
+                                                <div style=3D"padding-botto=
+m: 5px;">
+                                                                           =
+                                                                           =
+  </div>
+                                        </div>
+                                                                    </div>
+                            </td>
+                        </table>
+
+                        <table class=3D"footer-table" align=3D"right" width=
+=3D"45%" height=3D"100%" style=3D"border-collapse: collapse;" cellspacing=
+=3D"0" cellpadding=3D"0">
+                            <td>
+                                <div align=3D"right" style=3D"padding: 30px =
+0 0; vertical-align:top; text-align: left; font-size: 12px; line-height: 1=
+8px; font-weight: 400; background-color: #F2F3F4;">
+                                                                           =
+                                     <div style=3D"text-align: left; font-s=
+ize: 12px; line-height: 18px; font-weight: 400;">
+                                            <div style=3D"text-decoration:n=
+one; padding-left: 40px; word-break: break-word">
+                                                <h3 style=3D"font-size: 14p=
+x; font-weight: 600; line-height: 24px; margin-top: 0; margin-bottom: 10px;=
+">Impact</h3>
+                                                <p style=3D"font-size: 12px=
+; font-weight: 400; line-height: 18px; margin-bottom: 0; white-space: nowra=
+p">223 East De La Guerra Street,</p>
+                                                <p style=3D"font-size: 12px=
+; font-weight: 400; line-height: 18px; margin-top: 0; margin-bottom: 0; whi=
+te-space: nowrap">Santa Barbara, CA 93101</p>
+                                                <p style=3D"font-size: 12px=
+; font-weight: 400; line-height: 18px; margin-top: 0; margin-bottom: 0; whi=
+te-space: nowrap">+ 1 (805) 324 6021</p>
+                                            </div>
+                                        </div>
+
+                                        <div style=3D"vertical-align: text-=
+top; padding-left: 40px; padding-top: 40px; padding-bottom: 82px">
+                                            <div style=3D"display: inline-b=
+lock; float:left;">
+                                                <a href=3D"http://em.impact=
+.com/ls/click?upn=3Du001.iUNywRU2PIdBuqR2OhDBvHg2yMOENCCv-2B9-2BbHq-2BsRKqQ=
+h-2F0lj7Xjd4R-2F99xQA8I0GdJf_RtZj-2FOECq68mGZAenQB6tvpByQP9PCbpzylFDP31vKiF=
+6MqMEk-2BM-2FLb2tExWpBthNlHz9qX-2B6furdGa2XI5NGxSTLB4eZQJTjKH9lDwIN0-2BfJ5G=
+XU1mdi1kUTmktMl1bK8Jg5jXHnCu9IIqSe5Q32Cne7oOUdL8gjLSsZpqfuazavAIn5XPrSjvTo4=
+US9kiW-2FbF1n7pKRbcUDwrt3DKxB4VsJSgYvpdWI9HCZlTlF03Gf-2FsP68reeHA4ULOK9SYsN=
+HVvdo80jXjWLchIDlN47wVTj7UdoGGgI-2FHMpOhhLz-2BoYnMWTGUbCcTfyf0lPRXY-2FfXZLH=
+ZIhtPtLZM07SuiyA-3D-3D" style=3D"text-decoration:none;padding-right:15px;"=
+ target=3D"_blank">
+                                                    <img src=3D"http://app.=
+impact.com/images/email/facebook@2x.png" border=3D"0" width=3D"25" height=
+=3D"25" alt=3D"facebook"/>
+                                                </a>
+                                            </div>
+                                            <div style=3D"display: inline-b=
+lock; float:left;">
+                                                <a href=3D"http://em.impact=
+.com/ls/click?upn=3Du001.iUNywRU2PIdBuqR2OhDBvDHJuN90fZbjngy3sbmhYt5yOQarVY=
+QAD8cvSG1CPTL3alXFn0wVhGVmcV-2Fk7zBY4Q-3D-3DPkwK_RtZj-2FOECq68mGZAenQB6tvpB=
+yQP9PCbpzylFDP31vKiF6MqMEk-2BM-2FLb2tExWpBthNlHz9qX-2B6furdGa2XI5NGxSTLB4eZ=
+QJTjKH9lDwIN0-2BfJ5GXU1mdi1kUTmktMl1bK8Jg5jXHnCu9IIqSe5Q32Cne7oOUdL8gjLSsZp=
+qfuazavAIn5XPrSjvTo4US9kiW676-2FwGwmSbvW77DepuAI8P0q5Z7EuHSQdLBiKy-2FnG-2FJ=
+EDC2BYk9hB1m4MGSpd8uyk-2BWsCp1LEjf0aqtfPnRnfGIOI-2FX4pTRTZ2L4-2Bn5EMAH6SGoc=
+TRTbtwFDoiIVoZEX8N-2BLijXsBqtGuMqlq8ul2g-3D-3D" style=3D"text-decoration:no=
+ne;padding-right:15px;" target=3D"_blank">
+                                                    <img src=3D"http://app.=
+impact.com/images/email/linkedin@2x.png" border=3D"0" width=3D"25" height=
+=3D"25" alt=3D"linkedin"/>
+                                                </a>
+                                            </div>
+                                            <div style=3D"display: inline-b=
+lock; float:left;">
+                                                <a href=3D"http://em.impact=
+.com/ls/click?upn=3Du001.iUNywRU2PIdBuqR2OhDBvOAhe5Ld0tDdH-2F5e50vCnRS8Ltdx=
+aBeZtE7UxWputQzAiQbA_RtZj-2FOECq68mGZAenQB6tvpByQP9PCbpzylFDP31vKiF6MqMEk-2=
+BM-2FLb2tExWpBthNlHz9qX-2B6furdGa2XI5NGxSTLB4eZQJTjKH9lDwIN0-2BfJ5GXU1mdi1k=
+UTmktMl1bK8Jg5jXHnCu9IIqSe5Q32Cne7oOUdL8gjLSsZpqfuazavAIn5XPrSjvTo4US9kiW51=
+e5sIb7ZI54g1DEg5du2jTRB3cNrEE2gtIIUma7yd9CtU2GoP9V2kW0st-2FqHUHTLrzILL6mv9D=
+lkPrmduXTGeg1uLqZqLTLvXP5auzrZLoq2-2BKt7a8sFt9TwdNf8268uG-2BQ2NeEqFyp84idHk=
+3APA-3D-3D" style=3D"text-decoration:none; padding-right:5px;" target=3D"_b=
+lank">
+                                                    <img src=3D"http://app.=
+impact.com/images/email/twitter@2x.png" border=3D"0" width=3D"25" height=3D=
+"25" alt=3D"twitter"/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                                                    </div>
+                            </td>
+                    </table>
+                    </td>
+                    </tr>
+                            </table>
+        </div>
+                    <div style=3D"font-size: 10px; color: #FFF; text-align: =
+center; margin: auto; max-width: 700px; padding-top: 10px;">
+                <div>Copyright &copy;  Impact All Rights Reserved</div>
+            </div>
+            </div>
+    <img src=3D"http://em.impact.com/wf/open?upn=3Du001.cohR6Fr-2BUaqGt4jdw=
+5FdSzS1vKQv3w6JbrrKjbNHFhMUZJLko-2FeIvB-2F6VSa-2BQxae39aACAvXoICAVGTi-2BkJx=
+W7nlyEDI-2BqM-2Bx5GMmydMf381Js3waV2Vqn37C2h6KliFpbzbbsD6o-2BBJ4ghI3lxn8LskH=
+RNH7JVky8Ej1f2i9-2FTPXGbVGdCpjsgCOcHQ5cjSgonTQ2uP3hCCZsWdLOjJPFVr90L5HO6qJO=
+wv0L9bRYOS62YOPxXWBpFJpnYttJdskxwxYBEf4Z8K5QJzHH0u2tlh9eSWg1hlJ-2FkJB0EQr8W=
+L4rZsxEvVrQrzNiGkR3Jd-2Fh7MSOZjZfliAwq3bLmq-2BQ-3D-3D" alt=3D"" width=3D"1" =
+height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !import=
+ant;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !impo=
+rtant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !imp=
+ortant;padding-bottom:0 !important;padding-right:0 !important;padding-left:=
+0 !important;"/></body>
+    </html>
+ 
+------=_Part_510530_1774765983.1764324010880--
+
+------=_Part_510529_787159454.1764324010880--
+
+------=_Part_510528_1922755725.1764324010880--

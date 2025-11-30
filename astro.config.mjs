@@ -11,6 +11,7 @@ import partytown from "@astrojs/partytown";
 import compress from "astro-compress";
 import purgecss from "astro-purgecss";
 import pagefind from "astro-pagefind";
+import tailwindBreakpoint from "astro-show-tailwindcss-breakpoint";
 import * as fs from "fs";
 
 // https://astro.build/config
@@ -84,6 +85,9 @@ export default defineConfig({
 
     // 8. Pagefind - Static site search (indexes content at build time)
     pagefind(),
+
+    // 9. Tailwind Breakpoint - Shows current breakpoint in dev toolbar
+    tailwindBreakpoint(),
   ],
   vite: {
     // @ts-ignore - Vite version mismatch between @tailwindcss/vite and Astro's internal Vite

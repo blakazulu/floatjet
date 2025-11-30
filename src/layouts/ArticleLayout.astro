@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '@components/article/Breadcrumbs.astro';
 import ArticleMetadata from '@components/article/ArticleMetadata.astro';
 import TableOfContents from '@components/article/TableOfContents.astro';
+import ImageLoader from '@components/ui/ImageLoader.astro';
 import {Image} from 'astro:assets';
 
 interface Props {
@@ -95,6 +96,7 @@ const articleSchema = {
         <!-- Hero Image -->
         {image && (
             <div class="article-hero">
+              <ImageLoader/>
               <Image
                   src={image}
                   alt={imageAlt}
@@ -186,6 +188,8 @@ const articleSchema = {
   }
 
   .hero-image {
+    position: relative;
+    z-index: 2;
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -196,6 +200,11 @@ const articleSchema = {
 
   .hero-image.loaded {
     opacity: 1;
+  }
+
+  /* Hide loader when image is loaded */
+  .article-hero:has(.hero-image.loaded) :global(.image-loader) {
+    opacity: 0;
   }
 
   .article-body {

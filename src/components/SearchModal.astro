@@ -158,6 +158,49 @@ import Search from 'astro-pagefind/components/Search';
     padding: 2rem;
   }
 
+  /* Result image loading styles */
+  .pagefind-ui .pagefind-ui__result-image {
+    position: relative;
+    background: linear-gradient(135deg, rgba(15, 76, 92, 0.6) 0%, rgba(56, 163, 165, 0.4) 100%);
+    overflow: hidden;
+  }
+
+  /* Shimmer effect for loading images */
+  .pagefind-ui .pagefind-ui__result-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.08) 50%,
+            transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: pagefind-shimmer 1.5s ease-in-out infinite;
+    z-index: 1;
+  }
+
+  .pagefind-ui .pagefind-ui__result-image img {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .pagefind-ui .pagefind-ui__result-image img[src] {
+    opacity: 1;
+  }
+
+  @keyframes pagefind-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
   /* Scrollable results */
   .search-container {
     max-height: 60vh;

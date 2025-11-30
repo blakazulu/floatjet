@@ -1,5 +1,6 @@
 ---
 import {Image} from 'astro:assets';
+import ImageLoader from '@components/ui/ImageLoader.astro';
 
 interface Article {
   title: string;
@@ -31,7 +32,8 @@ const {articles} = Astro.props;
             <a href={article.href} class="relative block h-full z-10 flex flex-col p-4">
               <!-- Card Image -->
               <div
-                  class="relative h-48 overflow-hidden rounded-2xl mb-5 shadow-md bg-gradient-to-br from-ocean-deep/60 via-jet-stream/40 to-sky-light/30">
+                  class="related-image-container relative h-48 overflow-hidden rounded-2xl mb-5 shadow-md bg-gradient-to-br from-ocean-deep/60 via-jet-stream/40 to-sky-light/30">
+                <ImageLoader/>
                 <Image
                     src={article.image}
                     alt={article.imageAlt}
@@ -78,12 +80,19 @@ const {articles} = Astro.props;
   }
 
   .related-image {
+    position: relative;
+    z-index: 2;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }
 
   .related-image.loaded {
     opacity: 1;
+  }
+
+  /* Hide loader when image is loaded */
+  .related-image-container:has(.related-image.loaded) :global(.image-loader) {
+    opacity: 0;
   }
 </style>
 

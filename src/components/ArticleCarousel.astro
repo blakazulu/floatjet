@@ -1,5 +1,6 @@
 ---
 import {Image} from 'astro:assets';
+import ImageLoader from '@components/ui/ImageLoader.astro';
 
 // Articles grouped by category - 3 articles per category
 const articlesByCategory = {
@@ -201,7 +202,8 @@ const categoryNames: Record<string, string> = {
                               class="relative rounded-2xl overflow-hidden bg-white/10 backdrop-blur-md border border-white/20 shadow-xl">
                             <!-- Image -->
                             <div
-                                class="relative h-64 md:h-96 overflow-hidden bg-gradient-to-br from-ocean-deep/60 via-jet-stream/40 to-sky-light/30">
+                                class="carousel-image-container relative h-64 md:h-96 overflow-hidden bg-gradient-to-br from-ocean-deep/60 via-jet-stream/40 to-sky-light/30">
+                              <ImageLoader/>
                               {isFirstVisible ? (
                                   <Image
                                       src={article.image}
@@ -223,7 +225,7 @@ const categoryNames: Record<string, string> = {
                                   />
                               )}
                               <div
-                                  class="absolute inset-0 bg-gradient-to-t from-ocean-deep/90 via-ocean-deep/40 to-transparent"></div>
+                                  class="absolute inset-0 bg-gradient-to-t from-ocean-deep/90 via-ocean-deep/40 to-transparent z-[3]"></div>
                             </div>
 
                             <!-- Content Overlay -->
@@ -309,12 +311,19 @@ const categoryNames: Record<string, string> = {
 <style>
   /* Carousel image blur placeholder */
   .carousel-image {
+    position: relative;
+    z-index: 2;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }
 
   .carousel-image.loaded {
     opacity: 1;
+  }
+
+  /* Hide loader when image is loaded */
+  .carousel-image-container:has(.carousel-image.loaded) :global(.image-loader) {
+    opacity: 0;
   }
 
   .carousel-slides-container {

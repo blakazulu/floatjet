@@ -1,5 +1,6 @@
 ---
 import {Image} from 'astro:assets';
+import ImageLoader from '@components/ui/ImageLoader.astro';
 
 // Placeholder data for now - one article per category
 const featuredArticles = [
@@ -69,7 +70,8 @@ const featuredArticles = [
             <a href={`/${article.slug}`} class="relative block h-full z-10 flex flex-col p-4">
               <!-- Card Image -->
               <div
-                  class="relative h-48 overflow-hidden rounded-2xl mb-5 shadow-md bg-gradient-to-br from-ocean-deep/60 via-jet-stream/40 to-sky-light/30">
+                  class="featured-image-container relative h-48 overflow-hidden rounded-2xl mb-5 shadow-md bg-gradient-to-br from-ocean-deep/60 via-jet-stream/40 to-sky-light/30">
+                <ImageLoader/>
                 <Image
                     src={article.image}
                     alt={article.title}
@@ -111,12 +113,19 @@ const featuredArticles = [
 
 <style>
   .blur-placeholder {
+    position: relative;
+    z-index: 2;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }
 
   .blur-placeholder.loaded {
     opacity: 1;
+  }
+
+  /* Hide loader when image is loaded */
+  .featured-image-container:has(.blur-placeholder.loaded) :global(.image-loader) {
+    opacity: 0;
   }
 </style>
 

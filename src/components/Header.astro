@@ -42,7 +42,7 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
 
       <!-- Utility Icons -->
       <div class="flex items-center gap-3">
-        <!-- Search Icon -->
+        <!-- Search Icon (Desktop - with text) -->
         <button
             data-search-trigger
             class="hidden md:flex items-center gap-2 text-white/90 hover:text-white transition-colors group cursor-pointer"
@@ -50,6 +50,15 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
         >
           <Search class="h-5 w-5" aria-hidden="true"/>
           <span class="text-sm">Search</span>
+        </button>
+
+        <!-- Search Icon (Mobile - icon only) -->
+        <button
+            data-search-trigger
+            class="md:hidden text-white/90 hover:text-white transition-colors p-1 cursor-pointer"
+            aria-label="Search"
+        >
+          <Search class="h-5 w-5" aria-hidden="true"/>
         </button>
 
         <!-- Mobile Menu Button -->

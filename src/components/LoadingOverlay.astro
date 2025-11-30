@@ -70,22 +70,51 @@ import {Image} from 'astro:assets';
   if (!window.__loadingOverlayInit) {
     window.__loadingOverlayInit = true;
 
-    // Show overlay when navigation starts
-    document.addEventListener('astro:before-preparation', () => {
+    function hideOverlay() {
+      const overlay = document.getElementById('loading-overlay');
+      overlay?.classList.remove('active');
+    }
+
+    function showOverlay() {
       const overlay = document.getElementById('loading-overlay');
       overlay?.classList.add('active');
+    }
+
+    // Check if a link is external
+    function isExternalLink(url) {
+      try {
+        const linkUrl = new URL(url, window.location.href);
+        return linkUrl.hostname !== window.location.hostname;
+      } catch {
+        return false;
+      }
+    }
+
+    // Show overlay when navigation starts (only for internal links)
+    document.addEventListener('astro:before-preparation', (event) => {
+      // Check if this is an external link
+      const target = event.detail?.newLocationHref || event.detail?.to;
+      if (target && isExternalLink(target)) {
+        return; // Don't show overlay for external links
+      }
+      showOverlay();
     });
 
     // Hide overlay when new page is ready
-    document.addEventListener('astro:after-swap', () => {
-      const overlay = document.getElementById('loading-overlay');
-      overlay?.classList.remove('active');
+    document.addEventListener('astro:after-swap', hideOverlay);
+
+    // Hide on page load (direct navigation or browser back/forward)
+    document.addEventListener('astro:page-load', hideOverlay);
+
+    // Hide overlay when using browser back/forward buttons
+    window.addEventListener('pageshow', hideOverlay);
+
+    // Safety timeout: auto-hide overlay after 5 seconds if still visible
+    document.addEventListener('astro:before-preparation', () => {
+      setTimeout(hideOverlay, 5000);
     });
 
-    // Also hide on page load (in case of direct navigation)
-    document.addEventListener('astro:page-load', () => {
-      const overlay = document.getElementById('loading-overlay');
-      overlay?.classList.remove('active');
-    });
+    // Ensure overlay is hidden on initial page load
+    hideOverlay();
   }
 </script>

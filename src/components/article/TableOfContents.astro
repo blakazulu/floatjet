@@ -1,5 +1,4 @@
 ---
-import {List, X} from 'lucide-astro';
 
 interface Heading {
   text: string;
@@ -22,7 +21,7 @@ const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
   <!-- Mobile Floating Button + Overlay -->
 <div class="toc-mobile">
   <button class="toc-toggle" aria-label="Toggle table of contents" aria-expanded="false">
-    <List class="toc-icon" aria-hidden="true"/>
+    <svg class="toc-icon" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
     <span>Contents</span>
   </button>
 
@@ -33,7 +32,7 @@ const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
     <div class="toc-overlay-header">
       <h2>Table of Contents</h2>
       <button class="toc-close" aria-label="Close table of contents">
-        <X aria-hidden="true"/>
+        <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
     </div>
     <nav class="toc-overlay-nav">

@@ -1,6 +1,5 @@
 ---
 import {Image} from 'astro:assets';
-import {Search, Menu, X} from 'lucide-astro';
 
 const navItems = [
   {name: 'Tools', href: '/tools'},
@@ -47,7 +46,9 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
             class="hidden md:flex items-center gap-2 text-white/90 hover:text-white transition-colors group cursor-pointer"
             aria-label="Search (Ctrl+K)"
         >
-          <Search class="h-5 w-5" aria-hidden="true"/>
+          <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
           <span class="text-sm">Search</span>
         </button>
 
@@ -57,7 +58,9 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
             class="md:hidden text-white/90 hover:text-white transition-colors p-1 cursor-pointer"
             aria-label="Search"
         >
-          <Search class="h-5 w-5" aria-hidden="true"/>
+          <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
         </button>
 
         <!-- Mobile Menu Button -->
@@ -68,8 +71,12 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
             aria-expanded="false"
             aria-controls="mobile-menu"
         >
-          <Menu class="menu-icon h-6 w-6" aria-hidden="true"/>
-          <X class="close-icon h-6 w-6 hidden" aria-hidden="true"/>
+          <svg class="menu-icon h-6 w-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+          <svg class="close-icon h-6 w-6 hidden" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
         </button>
       </div>
     </div>

@@ -1,5 +1,4 @@
 ---
-import {Check, X} from 'lucide-astro';
 
 interface TableColumn {
   key: string;
@@ -46,11 +45,11 @@ const {columns, rows, caption, highlight} = Astro.props;
                   {typeof row[col.key] === 'boolean' ? (
                     row[col.key] ? (
                         <span class="check" aria-label="Yes">
-                          <Check aria-hidden="true"/>
+                          <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
                         </span>
                     ) : (
                         <span class="cross" aria-label="No">
-                          <X aria-hidden="true"/>
+                          <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
                         </span>
                     )
                   ) : (

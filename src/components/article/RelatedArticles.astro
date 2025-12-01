@@ -1,7 +1,6 @@
 ---
 import {Image} from 'astro:assets';
 import ImageLoader from '@components/ui/ImageLoader.astro';
-import {ArrowUpRight} from 'lucide-astro';
 
 interface Article {
   title: string;
@@ -58,7 +57,7 @@ const {articles} = Astro.props;
                 <div
                     class="flex items-center text-sm font-semibold text-sky-300 group-hover:text-white transition-colors mt-auto">
                   Read Article
-                  <ArrowUpRight class="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true"/>
+                  <svg class="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
                 </div>
               </div>
             </a>

@@ -1,7 +1,6 @@
 ---
 import {Image} from 'astro:assets';
 import ImageLoader from '@components/ui/ImageLoader.astro';
-import {ChevronLeft, ChevronRight, ArrowRight} from 'lucide-astro';
 
 // Articles grouped by category - 3 articles per category
 const articlesByCategory = {
@@ -167,7 +166,7 @@ const categoryNames: Record<string, string> = {
           class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 z-20 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg"
           aria-label="Previous article"
       >
-        <ChevronLeft class="h-6 w-6" aria-hidden="true"/>
+        <svg class="h-6 w-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
       </button>
 
       <!-- Articles Container -->
@@ -242,7 +241,7 @@ const categoryNames: Record<string, string> = {
                                 <span>{article.readTime}</span>
                                 <span class="flex items-center gap-1 text-sky-light group-hover:gap-2 transition-all">
                             Read Article
-                            <ChevronRight class="h-4 w-4" aria-hidden="true"/>
+                            <svg class="h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
                           </span>
                               </div>
                             </div>
@@ -278,7 +277,7 @@ const categoryNames: Record<string, string> = {
           class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 z-20 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg"
           aria-label="Next article"
       >
-        <ChevronRight class="h-6 w-6" aria-hidden="true"/>
+        <svg class="h-6 w-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
       </button>
     </div>
 
@@ -291,7 +290,7 @@ const categoryNames: Record<string, string> = {
       >
         <span>More articles from</span>
         <span id="selected-category-name" class="font-bold text-sky-light">SaaS</span>
-        <ArrowRight class="h-5 w-5" aria-hidden="true"/>
+        <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
       </a>
     </div>
   </div>

@@ -1,5 +1,4 @@
 ---
-import {Monitor, Shield, Server, Settings, DollarSign, Globe} from 'lucide-astro';
 
 const categories = [
   {id: 'saas', name: 'SaaS'},
@@ -31,17 +30,17 @@ const categories = [
               ]}
           >
             {cat.id === 'saas' &&
-                <Monitor class="h-4 w-4 lg:h-5 lg:w-5 shrink-0" aria-hidden="true"/>}
+                <svg class="h-4 w-4 lg:h-5 lg:w-5 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>}
             {cat.id === 'vpn' &&
-                <Shield class="h-4 w-4 lg:h-5 lg:w-5 shrink-0" aria-hidden="true"/>}
+                <svg class="h-4 w-4 lg:h-5 lg:w-5 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>}
             {cat.id === 'hosting' &&
-                <Server class="h-4 w-4 lg:h-5 lg:w-5 shrink-0" aria-hidden="true"/>}
+                <svg class="h-4 w-4 lg:h-5 lg:w-5 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><path d="M6 6h.01M6 18h.01"/></svg>}
             {cat.id === 'gear' &&
-                <Settings class="h-4 w-4 lg:h-5 lg:w-5 shrink-0" aria-hidden="true"/>}
+                <svg class="h-4 w-4 lg:h-5 lg:w-5 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6m5.2-13.2-4.2 4.2m-3 3-4.2 4.2M23 12h-6m-6 0H5m13.2 5.2-4.2-4.2m-3-3-4.2-4.2"/></svg>}
             {cat.id === 'finance' &&
-                <DollarSign class="h-4 w-4 lg:h-5 lg:w-5 shrink-0" aria-hidden="true"/>}
+                <svg class="h-4 w-4 lg:h-5 lg:w-5 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>}
             {cat.id === 'travel' &&
-                <Globe class="h-4 w-4 lg:h-5 lg:w-5 shrink-0" aria-hidden="true"/>}
+                <svg class="h-4 w-4 lg:h-5 lg:w-5 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>}
             <span>{cat.name}</span>
           </button>
       ))}

@@ -65,7 +65,7 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 ### Twitter / X
 
 - **Handle:** @FloatJetWebsite
-- **URL:** https://twitter.com/FloatJetWebsite
+- **URL:** https://x.com/FloatJetWebsite
 - **Email:** social@floatjet.com
 - **Purpose:** Remote work tips, tool reviews, community engagement
 - **Target Audience:** Digital nomads, remote workers, freelancers
@@ -105,7 +105,7 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 
 ### Pinterest
 
-- **Profile:** [Add URL when available]
+- **Profile:** https://www.pinterest.com/floatjet/
 - **Account Type:** Business
 - **Email:** social@floatjet.com
 - **Brand Focus:** Travel

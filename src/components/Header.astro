@@ -1,81 +1,123 @@
 ---
-import {Image} from 'astro:assets';
+import { Image } from "astro:assets";
 
 const navItems = [
-  {name: 'Tools', href: '/tools'},
-  {name: 'Gear', href: '/gear'},
-  {name: 'Guides', href: '/guides'},
-  {name: 'Blog', href: '/blog'},
+  { name: "Home", href: "/" },
+  { name: "Tools", href: "/tools" },
+  { name: "Gear", href: "/gear" },
+  { name: "Guides", href: "/guides" },
+  { name: "Blog", href: "/blog" },
 ];
 
 const currentPath = Astro.url.pathname;
-const isActive = (href: string) => currentPath === href || currentPath.startsWith(href + '/');
+const isActive = (href: string) =>
+  currentPath === href || currentPath.startsWith(href + "/");
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <div class="mx-auto px-4 md:px-6 py-4">
     <div
-        class="bg-ocean-deep/90 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg px-6 py-3 flex items-center justify-between max-w-6xl mx-auto">
+      class="bg-ocean-deep/90 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg px-6 py-3 flex items-center justify-between max-w-6xl mx-auto"
+    >
       <!-- Logo -->
-      <a href="/" class="group" aria-label="FloatJet Home">
-        <Image src="/images/logo.webp" alt="FloatJet" width={100} height={40}
-               class="h-10 w-auto object-contain group-hover:scale-110 transition-transform brightness-0 invert" loading="eager"/>
+      <a href="/" id="logo-link" class="group" aria-label="FloatJet Home">
+        <Image
+          src="/images/logo.webp"
+          alt="FloatJet"
+          width={100}
+          height={40}
+          class="h-10 w-auto object-contain group-hover:scale-110 transition-transform brightness-0 invert"
+          loading="eager"
+        />
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
-        {navItems.map(item => (
+      <nav
+        class="hidden md:flex items-center gap-8"
+        aria-label="Main navigation"
+      >
+        {
+          navItems.map((item) => (
             <a
-                href={item.href}
-                class:list={[
-                  'text-sm font-medium transition-colors',
-                  isActive(item.href) ? 'text-sky-light' : 'text-white/90 hover:text-white'
-                ]}
-                aria-current={isActive(item.href) ? 'page' : undefined}
+              href={item.href}
+              class:list={[
+                "text-sm font-medium transition-colors",
+                isActive(item.href)
+                  ? "text-sky-light"
+                  : "text-white/90 hover:text-white",
+              ]}
+              aria-current={isActive(item.href) ? "page" : undefined}
             >
               {item.name}
             </a>
-        ))}
+          ))
+        }
       </nav>
 
       <!-- Utility Icons -->
       <div class="flex items-center gap-3">
         <!-- Search Icon (Desktop - with text) -->
         <button
-            data-search-trigger
-            class="hidden md:flex items-center gap-2 text-white/90 hover:text-white transition-colors group cursor-pointer"
-            aria-label="Search (Ctrl+K)"
+          data-search-trigger
+          class="hidden md:flex items-center gap-2 text-white/90 hover:text-white transition-colors group cursor-pointer"
+          aria-label="Search (Ctrl+K)"
         >
-          <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          <svg
+            class="h-5 w-5"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"
+            ></path>
           </svg>
           <span class="text-sm">Search</span>
         </button>
 
         <!-- Search Icon (Mobile - icon only) -->
         <button
-            data-search-trigger
-            class="md:hidden text-white/90 hover:text-white transition-colors p-1 cursor-pointer"
-            aria-label="Search"
+          data-search-trigger
+          class="md:hidden text-white/90 hover:text-white transition-colors p-1 cursor-pointer"
+          aria-label="Search"
         >
-          <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          <svg
+            class="h-5 w-5"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"
+            ></path>
           </svg>
         </button>
 
         <!-- Mobile Menu Button -->
         <button
-            id="mobile-menu-button"
-            class="md:hidden text-white p-1"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
+          id="mobile-menu-button"
+          class="md:hidden text-white p-1"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
         >
-          <svg class="menu-icon h-6 w-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path d="M3 12h18M3 6h18M3 18h18"/>
+          <svg
+            class="menu-icon h-6 w-6"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M3 12h18M3 6h18M3 18h18"></path>
           </svg>
-          <svg class="close-icon h-6 w-6 hidden" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path d="M18 6L6 18M6 6l12 12"/>
+          <svg
+            class="close-icon h-6 w-6 hidden"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M18 6L6 18M6 6l12 12"></path>
           </svg>
         </button>
       </div>
@@ -86,29 +128,80 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
 <script>
   function updateActiveNav() {
     const currentPath = window.location.pathname;
-    const isActive = (href: string) => currentPath === href || currentPath.startsWith(href + '/');
+    const isActive = (href: string) => {
+      // Special handling for home page - only match exact path
+      if (href === "/") {
+        return currentPath === "/";
+      }
+      // For other pages, match exact path or subpaths
+      return currentPath === href || currentPath.startsWith(href + "/");
+    };
 
     // Desktop nav links
-    const desktopLinks = document.querySelectorAll('nav[aria-label="Main navigation"] a');
-    desktopLinks.forEach(link => {
-      const href = link.getAttribute('href');
+    const desktopLinks = document.querySelectorAll(
+      'nav[aria-label="Main navigation"] a',
+    );
+    desktopLinks.forEach((link) => {
+      const href = link.getAttribute("href");
       if (href) {
         if (isActive(href)) {
-          link.classList.remove('text-white/90', 'hover:text-white');
-          link.classList.add('text-sky-light');
-          link.setAttribute('aria-current', 'page');
+          link.classList.remove("text-white/90", "hover:text-white");
+          link.classList.add("text-sky-light");
+          link.setAttribute("aria-current", "page");
         } else {
-          link.classList.remove('text-sky-light');
-          link.classList.add('text-white/90', 'hover:text-white');
-          link.removeAttribute('aria-current');
+          link.classList.remove("text-sky-light");
+          link.classList.add("text-white/90", "hover:text-white");
+          link.removeAttribute("aria-current");
         }
       }
     });
   }
 
+  // Prevent navigation when clicking on the active link
+  function preventActiveNavigation(e: Event) {
+    const link = e.currentTarget as HTMLAnchorElement;
+    const href = link.getAttribute("href");
+    const currentPath = window.location.pathname;
+
+    // Check if this link is currently active
+    const isActive = (href: string) => {
+      if (href === "/") {
+        return currentPath === "/";
+      }
+      return currentPath === href || currentPath.startsWith(href + "/");
+    };
+
+    if (href && isActive(href)) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }
+
+  // Attach click handlers to navigation links and logo
+  function attachNavClickHandlers() {
+    const navLinks = document.querySelectorAll(
+      'nav[aria-label="Main navigation"] a',
+    );
+    navLinks.forEach((link) => {
+      link.addEventListener("click", preventActiveNavigation);
+    });
+
+    // Also attach to logo link
+    const logoLink = document.getElementById("logo-link");
+    if (logoLink) {
+      logoLink.addEventListener("click", preventActiveNavigation);
+    }
+  }
+
   // Initialize on first load
-  document.addEventListener('DOMContentLoaded', updateActiveNav);
+  document.addEventListener("DOMContentLoaded", () => {
+    updateActiveNav();
+    attachNavClickHandlers();
+  });
 
   // Re-initialize on Astro page navigation (View Transitions)
-  document.addEventListener('astro:page-load', updateActiveNav);
+  document.addEventListener("astro:page-load", () => {
+    updateActiveNav();
+    attachNavClickHandlers();
+  });
 </script>

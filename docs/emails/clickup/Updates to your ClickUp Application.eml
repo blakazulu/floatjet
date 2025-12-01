@@ -1,0 +1,363 @@
+Delivered-To: liraz.amir.1982@gmail.com
+Received: by 2002:a05:6504:2346:b0:2d1:a109:e86e with SMTP id o6csp7364985ltx;
+ Mon, 1 Dec 2025 06:45:13 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFevHPgv9p1zBm4Iu7Kz4U6DNfHvgBwL5609U1QhEpWi+qKrVA6AgLheJnG0HvuPgwyYSXz
+X-Received: by 2002:a05:6602:601b:b0:948:6aca:4932 with SMTP id
+ ca18e2360f4ac-949488c1728mr3020612739f.3.1764600313561; Mon, 01 Dec 2025
+ 06:45:13 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1764600313; cv=none; d=google.com;
+ s=arc-20240605;
+ b=FwbnuzAFZ8GvWDYailYjZy9mm9RIN4qWmUZchlr1oHLoDtoWGqc5ywzzFEQuEEEfa1
+ nwNKXKPaInh6bOEjicItV84vBBtVLjAVR6V7niPWRzvsmp/InIYqnXaqAdJvVMIkcTsg
+ lOoX5QTJY+r/MmRXsE310TbaUIkkue7XGnySm33nB6kNwyBQEWojh/X3Eo/CYahADIv7
+ 1gbiSMXK946nfYNP+aSPqC1p0pRExWakHwAJOT6YNUxS3vSJKFpMshAJM6nPcGk/vXR1
+ 6HLFPxZ4GPfZm00zassnHvpIi2tNXUcqQBF5j9Xmje1UtjaA8UHl6KAvFOlYY2/d/9ms Uhqw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605;
+ h=list-unsubscribe-post:list-unsubscribe:to:subject:message-id
+ :mime-version:from:date:content-transfer-encoding:dkim-signature
+ :dkim-signature; bh=HYjnuD8FfSjGhPWgpk1escgpDnshX6Xc1AYw9nMLyJg=;
+ fh=5bgoxyY5e32SFW1tpAi8bJBjD3l4k0qw5dgN+N3dV0o=;
+ b=KmFdguppwPP9I5QCJ7Xeb8wBjc+/4doYjlVQIw473r9AGkTMDfv6bFRVikwGVYTDC0
+ 6JS37mw1mKjIGrkzlii7huLvT9RAZCLclHJ3yvx62VEPRodp3926S07Hq0F1t9+7h+ZO
+ /et5FwSkjE8FQ4XRQlIIhr9jFm1+ORrQTwKWb2CjB13fYUtEvzIcMK81OxNq5nUKkvnF
+ GHLX8ja9Dkx2X6msNkRiYOR79Mb24Rx4O6nU+V7WOF1VK8EAOj3tGQ2joP4Wyl3CdP3c
+ Gp4MWgtKl6SiOYa7eDaDKEBhobB1lUKhhPurxG7sTrhmZDFm2IEws1i/68d+KwEv5gmK YoTw==;
+ dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass
+ header.i=@partnerstackmail.com header.s=s1 header.b=eV7lpzvu; dkim=pass
+ header.i=@sendgrid.info header.s=smtpapi header.b=G91lz6yt; spf=pass
+ (google.com: domain of
+ bounces+1741745-c7ab-liraz.amir.1982=gmail.com@em1926.partnerstackmail.com
+ designates 198.37.149.20 as permitted sender)
+ smtp.mailfrom="bounces+1741745-c7ab-liraz.amir.1982=gmail.com@em1926.partnerstackmail.com";
+ dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=partnerstackmail.com
+Return-Path: <bounces+1741745-c7ab-liraz.amir.1982=gmail.com@em1926.partnerstackmail.com>
+Received: from o1.ptr7485.partnerstackmail.com
+ (o1.ptr7485.partnerstackmail.com. [198.37.149.20]) by mx.google.com with
+ ESMTPS id ca18e2360f4ac-9498fbc7464si1003209639f.52.2025.12.01.06.45.13 for
+ <liraz.amir.1982@gmail.com> (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256
+ bits=128/128); Mon, 01 Dec 2025 06:45:13 -0800 (PST)
+Received-SPF: pass (google.com: domain of
+ bounces+1741745-c7ab-liraz.amir.1982=gmail.com@em1926.partnerstackmail.com
+ designates 198.37.149.20 as permitted sender) client-ip=198.37.149.20;
+Authentication-Results: mx.google.com; dkim=pass
+ header.i=@partnerstackmail.com header.s=s1 header.b=eV7lpzvu; dkim=pass
+ header.i=@sendgrid.info header.s=smtpapi header.b=G91lz6yt; spf=pass
+ (google.com: domain of
+ bounces+1741745-c7ab-liraz.amir.1982=gmail.com@em1926.partnerstackmail.com
+ designates 198.37.149.20 as permitted sender)
+ smtp.mailfrom="bounces+1741745-c7ab-liraz.amir.1982=gmail.com@em1926.partnerstackmail.com";
+ dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
+ header.from=partnerstackmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=partnerstackmail.com;
+ h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+ to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date:
+ feedback-id:from:subject:to; s=s1;
+ bh=HYjnuD8FfSjGhPWgpk1escgpDnshX6Xc1AYw9nMLyJg=;
+ b=eV7lpzvuYFgXSz3gN+e0T33Nsay6o2b+wgEGO/DAsG/EQZ1HpL5JjBt+1ZkbkIE/Z02j
+ wkUVisIjEAKrC8j5PjrZRYSqHdrODtL8/A+5A6D8iU5QjuFE/PXtn7qDLnePwEoxEZy9MH
+ ruo4bp9EaExTmPpoy7fFokIHaOyxKK+/2MUOOCWComFCwhEGx/C9h+Df5JVvqaEIB6Ys+D
+ d9H036hYa9YP7JTFgXg8X7aWuY9Ns6CWL4om2B0i+AxZT++ys31QN6peVeadN+DyNPVFOP
+ L7JSgTVLTb6h1bx6Lhk14QNrmL3rM92RVMTEFx8AbqleYfJf6KyjHlWrjWb5fOFw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+ h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+ to:list-unsubscribe:list-unsubscribe-post:cc:content-type:date:
+ feedback-id:from:subject:to; s=smtpapi;
+ bh=HYjnuD8FfSjGhPWgpk1escgpDnshX6Xc1AYw9nMLyJg=;
+ b=G91lz6ytmKEYQnGHRcdPaLcjvyckzJoFlTpa8Ujj9+Wkcni1SbnKXKsix0jhOi0+Db5z
+ Z3X6h0XilcmO6UhFHKlBluXXaKWmUAOu0QX/W5na4bmr0LLkdT+Nxg9MagEcTaHSQVOa08
+ j8u1p2H1e3H2WbIcpGVDtUutIK79LSrwA=
+Received: by recvd-69f969db4d-sz75q with SMTP id
+ recvd-69f969db4d-sz75q-1-692DA9F8-35 2025-12-01 14:45:12.77899508 +0000 UTC
+ m=+2303317.541827621
+Received: from MTc0MTc0NQ (unknown) by geopod-ismtpd-32 (SG) with HTTP id
+ 66WnAxUYQuGTy6D3HscY3g Mon, 01 Dec 2025 14:45:12.770 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Date: Mon, 01 Dec 2025 14:45:12 +0000 (UTC)
+From: PartnerStack <hello@partnerstackmail.com>
+Mime-Version: 1.0
+Message-ID: <66WnAxUYQuGTy6D3HscY3g@geopod-ismtpd-32>
+Subject: Updates to your ClickUp Application
+X-SG-EID: =?us-ascii?Q?u001=2EsKpVOPR2aZH9uIfNPYtCBL93PMwLskMBbRmRgV0PX7h1Vi2NcAtPJ4WmY?=
+ =?us-ascii?Q?QXgQ0DhnXNZlKBWT2xq5lYz4UfiaJ5N+l06tTkc?=
+ =?us-ascii?Q?V8=2F6bQRIDY2wSFnMkH34oH15j4jb3dHw8tQ5nZa?=
+ =?us-ascii?Q?DTxnvPoUI9Rh4G0ub10TKOxhbYCL4PkDqZkOTp3?=
+ =?us-ascii?Q?iGvBgdVkkvaIO08xkFrY5cNBZgCb8bsonbbY8H5?=
+ =?us-ascii?Q?ODEhCvszwEgvUUn4R66w7ESbeWlS3CUH07LNRj1?= =?us-ascii?Q?me3L?=
+To: Liraz <liraz.amir.1982@gmail.com>
+X-Entity-ID: u001.3RoWXpp4M2DuBaMQf1K15Q==
+List-Unsubscribe: =?us-ascii?Q?=3Chttps=3A=2F=2Fu1741745=2Ect=2Esendgrid=2Enet=2Flu=2Funsubscribe=3Foc=3Du001=2Ex9V5X?=
+ =?us-ascii?Q?Rq10pam6ZLvNi5fNUmHJ6E9HLXVeF=5FxR7x1jIA9?=
+ =?us-ascii?Q?9ZEMjahe1JspTDuIcAl1Q4LvY3gSMEShVkH2fMa?=
+ =?us-ascii?Q?gkncUMYvwxPqg9rAXwiR6U6vlWr2IXgvCt0U3MY?=
+ =?us-ascii?Q?YiYRFL5OPFz8B4iXH6Kljx09oXB-2qx6Is5dJZQ?=
+ =?us-ascii?Q?Quh0HzLzuj3MnQeAgDVmiX9L3g5m779dIjzfGZ=5F?=
+ =?us-ascii?Q?ISZz8piZOoim6ZThNBFOMU6eJ4Cb7bv7QpC-TIH?=
+ =?us-ascii?Q?Y9tRkjopc5upBIwamQqsITxuAy2KN1Ckjou9onZ?=
+ =?us-ascii?Q?=5FfeLE2Bx7gU7w6XK2qUsiq6=5FMFPEqfC9njZXqh6?=
+ =?us-ascii?Q?LU9m8BlAZMNziJrx4hIDLrMq0d2AtCTNT3sHlzK?=
+ =?us-ascii?Q?NBVc=5FnQ150V7Q3Lsq1sW7Om09mFoNssOpX2FcJ4?=
+ =?us-ascii?Q?ePfwF6Rr-6vSMfTs-wBjteO4Bg-FsqYQ=3E=2C=3Cmail?=
+ =?us-ascii?Q?to=3Aunsubscribe=40em1926=2Epartnerstackmail=2E?=
+ =?us-ascii?Q?com=3Fsubject=3Dhttps=3A=2F=2Fu1741745=2Ect=2Esendgri?=
+ =?us-ascii?Q?d=2Enet=2Fmt=2Fu=2Fu001=2EVD-wgcFW9gbxOqhdzr4zekN?=
+ =?us-ascii?Q?EyxF915WPTjIFkiFbudIuC4LarueLMkbjQeO9SA?=
+ =?us-ascii?Q?5F=2F4m2=2Fu001=2ECd=5FvTjUL=2Fu001=2E0q6Mkp8-2BLPM?=
+ =?us-ascii?Q?vlBRqZ5KzsiUb-2BmiPVXqZw7yofBexGc-2FEY1?=
+ =?us-ascii?Q?B1nB2IWEtutm9RpIkUnBRZMIfMvWevgi-2FPgim?=
+ =?us-ascii?Q?weIsChY0xijlgPGbJ4E8n6SiqBh-2BQzUKRPaD8?=
+ =?us-ascii?Q?JTBSrbwnoS-2FWUEMk96NBMYJJbKAcl1nl2EcPm?=
+ =?us-ascii?Q?Ql7MQw2AfhuwztbYmX-2BljotpF1TbpZREHF6Xg?=
+ =?us-ascii?Q?L2JEqA9m-2B7YyZpl6MaVG-2BfU5WAm67-2FeZF?=
+ =?us-ascii?Q?QsgKOlA8-3D=2Fu001=2EvPPKQ=5Fpe=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+
+<html style=3D"height: 100%;padding: 0px;margin: 0px;"><head>
+    <title>PartnerStack</title>
+
+    <meta charset=3D"utf-8">
+    <meta http-equiv=3D"Content-Type" content=3D"text/html charset=3DUTF-8"=
+>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+   =20
+
+   =20
+   =20
+  </head>
+  <body style=3D"margin: 0px;padding: 0px;font-family: 'Inter', Helvetica,=
+ Arial, sans-serif;">
+   =20
+
+<span class=3D"preheader" style=3D"color: transparent;display: none;height: =
+0;max-height: 0;max-width: 0;opacity: 0;overflow: hidden;mso-hide: all;vis=
+ibility: hidden;width: 0;">
+ =20
+</span>
+    <div class=3D"root-container" style=3D"background: #f5f5f5;padding: 0px=
+;margin: 0px;overflow: auto;">
+      <table class=3D"root-table" cellspacing=3D"0px" border=3D"0px" cellpa=
+dding=3D"0px" style=3D"width: 100%;max-width: 100%;">
+        <tbody><tr>
+          <td class=3D"root-cell-spacing-offset" style=3D"width: 5%;min-wid=
+th: 10px;"></td>
+          <td class=3D"root-cell-spacing-card" style=3D"width: 90%;max-widt=
+h: 600px;text-align: center;">
+            <div class=3D"content-container" style=3D"width: 100%;max-width=
+: 600px;min-width: 280px;display: inline-block;text-align: left;">
+            =20
+              <table class=3D"header-table" cellpadding=3D"0" style=3D"padd=
+ing: 0px;width: 100%;margin-top: 32px;margin-bottom: 16px;">
+                <tbody><tr class=3D"header-row">
+                 =20
+                    <td class=3D"logo link-table-cell" style=3D"padding: 0p=
+x;display: inline-block;">
+  <img src=3D"https://assets.partnerstack.com/partnerstack_logo_transparent=
+_small.png" width=3D"232" alt=3D"PartnerStack Logo">
+</td>
+                 =20
+
+                 =20
+   =20
+
+<td class=3D"right-aligned-cell link-table-cell" style=3D"padding: 0px;text=
+-align: right;">
+  <a class=3D"your-dashboard-link uppercase" href=3D"https://u1741745.ct.se=
+ndgrid.net/ls/click?upn=3Du001.cud-2FbDMBu2c4-2BzBMrXPxZunhTfLRE2T1nGe8cNh-=
+2FWqILJoJ2oMlXuUHhcrQs8m6zYCWV_RtZj-2FOECq68mGZAenQB6tvpByQP9PCbpzylFDP31vK=
+hFv88eTnEbPhrAjbnaUPedkFFNSotQxKXFznPfvtHJeD0wZd4OdX7wR4x1ZYcqTN0AQUAijvr5s=
+omcBEIz9YimHZcGfcSgs-2Ba2Hg3JS-2FHa1sk-2B2HQMzybA3IcPd0p5SROYtNQJ5I85B2B5EH=
+KpAiNoH7bBNl-2FT0jr8P2VaOMun2g-3D-3D" target=3D"_blank" style=3D"color: #21=
+2325 !important;text-transform: uppercase;font-family: 'Inter', Helvetica,=
+ Arial, sans-serif;font-style: normal;font-weight: 600;font-size: 12px;line-=
+height: 130%;letter-spacing: -0.25px;">
+   =20
+      YOUR DASHBOARD
+   =20
+    </a>
+</td>
+
+                </tr>
+              </tbody></table>
+            =20
+              <div class=3D"card" style=3D"background: #ffffff;padding: 52p=
+x 42px;color: #000000;font-family: 'Inter', Helvetica, Arial, sans-serif;fo=
+nt-style: normal;font-weight: 400;font-size: 16px;line-height: 154.3%;lette=
+r-spacing: -0.25px;margin-bottom: 32px;">
+               =20
+
+   =20
+
+ =20
+
+
+
+
+
+
+
+
+
+
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"width: 100%; max-width: 663px; margin: 0 auto; border-collapse: collap=
+se;">
+   =20
+    <tbody><tr>
+        <td bgcolor=3D"#49CCF9" style=3D"background-color: #49CCF9; border-=
+radius: 5px 5px 0px 0px; padding: 0;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">
+                <tbody><tr>
+                    <td height=3D"89.5px" style=3D"height: 89.5px; text-ali=
+gn: center; vertical-align: top;">
+                        <div style=3D"height: 0; line-height: 0;">
+                            <img src=3D"https://company-images.partnerstack=
+.com/file_h5m8NRvunISw8BIYO3Sx.png" alt=3D"ClickUp" height=3D"107" width=3D=
+"107" style=3D"display: inline-block; width: 107px; height: 107px;=20
+                                       margin-top: 36px;=20
+                                       margin-bottom: -53.5px;=20
+                                       border: 1px solid #e6e7e9;=20
+                                       border-radius: 3px; background-color=
+: #ffffff; line-height: 100%;">
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+   =20
+    <tr>
+        <td bgcolor=3D"#ffffff" style=3D"background-color: #ffffff; padding=
+: 0;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">
+                <tbody><tr>
+                   =20
+                    <td height=3D"53.5px" style=3D"height: 53.5px;"></td>
+                </tr>
+                <tr>
+                   =20
+                    <td height=3D"1px" style=3D"height: 1px;">
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+    <h2 style=3D"font-size: 20px;font-weight: 600;line-height: 28px;color:=
+ #212325;">
+   =20
+          Hey Liraz,
+   =20
+</h2>
+
+    <p style=3D"font-family: 'Inter', Helvetica, Arial, sans-serif;font-siz=
+e: 16px;line-height: 140%;color: #212325;">
+   =20
+   =20
+        After careful consideration, ClickUp has declined your application=
+ to join their program.
+   =20
+   =20
+    </p>
+   =20
+   =20
+      =20
+       =20
+           =20
+
+
+<div class=3D"button-container" style=3D"margin-top: 32px;margin-bottom: 0"=
+>
+    <table align=3D"center">
+        <tbody><tr>
+            <td>
+
+
+
+   =20
+    <a class=3D"button button-slab button-primary" href=3D"https://u1741745=
+.ct.sendgrid.net/ls/click?upn=3Du001.cud-2FbDMBu2c4-2BzBMrXPxZunhTfLRE2T1nG=
+e8cNh-2FWqLOttom0XJ6rYfFN7ZrxRXt-2BtAp8lYJKDMO-2FqoCGQQ0KjEKO-2Bn4G-2FTX6-2=
+Bp2pu0q1P-2FdzX6F79ZXvXWGeYxl9h-2B-2Bt-2BTcVkMHHf0aS7ptmEx5qw-3D-3Do8SH_RtZ=
+j-2FOECq68mGZAenQB6tvpByQP9PCbpzylFDP31vKhFv88eTnEbPhrAjbnaUPedkFFNSotQxKXF=
+znPfvtHJeEIBeqioIo2BjDUbNZqW5mgOX-2BUpWxcgDJdIHc70-2BExkzuv-2BCVlp2uHIHvFF5=
+ZX6qKd1IJjS0YIbaQ-2FN2EOlgcwVycVR5lljnxc57alo9vYm-2F53V8K7LeuDzDHF1-2B-2FjU=
+ug-3D-3D" target=3D"_blank" style=3D"color: #ffffff !important;display: inl=
+ine-block;font-family: 'Inter', Helvetica, Arial, sans-serif;cursor: pointe=
+r;font-size: 16px;font-weight: 500;line-height: 36px;letter-spacing: 0.3px;=
+border-style: solid;outline: 0;word-wrap: break-word;word-break: break-all;=
+border-radius: 3px;text-align: center;padding: 6px 32px;min-width: 160px;bo=
+x-shadow: 1px 1px 4px 0 #d9dcdf;border-width: 0;background: #246feb;backgro=
+und-image: linear-gradient(225deg, #3391fa,#246feb,#246feb);text-decoration=
+: none;">
+        Re-apply to this program
+    </a>
+   =20
+
+
+            </td>
+        </tr>
+    </tbody></table>
+</div>
+
+       =20
+   =20
+    <hr style=3D"border: none;border-top: 2px solid rgba(13,13,13, 0.1) !im=
+portant;margin: 2rem 0;">
+    <p class=3D"italic" style=3D"font-family: 'Inter', Helvetica, Arial, sa=
+ns-serif;font-size: 16px;line-height: 140%;color: #212325;font-style: itali=
+c;">
+    PartnerStack has over 200 other programs that you can still apply for.=
+ <a href=3D"https://u1741745.ct.sendgrid.net/ls/click?upn=3Du001.cud-2FbDMBu=
+2c4-2BzBMrXPxZunhTfLRE2T1nGe8cNh-2FWqKKD0U1z0kj-2F4sMLauDvgbS35Q-_RtZj-2FOE=
+Cq68mGZAenQB6tvpByQP9PCbpzylFDP31vKhFv88eTnEbPhrAjbnaUPedkFFNSotQxKXFznPfvt=
+HJeOKXbN4DFmhrpUKWbTq1uwnzd4yL4hZOVyRiH1cSt9LhmsfAkBkW6jAEDnSFNIU1rc01Q-2BS=
+dFl7k2KIdO8dFdWd7QUDpxJ1MIEZTYwu-2FpRVTYzQdenRyx3K6fEHeAMFeQQ-3D-3D" style=
+=3D"color: #246FEB;">Discover other programs.</a>
+    </p>
+   =20
+
+              </div>
+
+              <footer class=3D"footer" style=3D"margin-bottom: 48px;">
+               =20
+   =20
+  <p class=3D"footer-text" style=3D"font-family: 'Lato', sans-serif !import=
+ant;font-size: 12px !important;line-height: 150%;color: #212325 !important;=
+font-style: normal;font-weight: 400;padding: 0 8px;">
+  This email is sent on behalf of ClickUp by <a href=3D"https://u1741745.ct=
+.sendgrid.net/ls/click?upn=3Du001.UuexCU9b6mMJjDsvQrTcI5l3Vv-2FAaIlo-2FneCW=
+F3-2BzeFmtOL01QKFNjTZ-2BNFHpKN7G3aLmc74hI3GRluxG-2FrLWVqy7y-2FJ2K0AQW2JilUc=
+3R8-3Dl6pe_RtZj-2FOECq68mGZAenQB6tvpByQP9PCbpzylFDP31vKhFv88eTnEbPhrAjbnaUP=
+edkFFNSotQxKXFznPfvtHJeCgltOiGn6HYYQGhHFNCn-2FHBEKn907rnsxkMScUNRjzlCFDpdBx=
+OtA0TS48hpQYFC0FE-2B731YUi1L23REdP6jQyOnXGSWq5PMxJMyEDVGgvxFZJZpuukULaSfibo=
+hboXVQ-3D-3D" target=3D"_blank" style=3D"color: #246FEB;"><b>PartnerStack.c=
+om</b></a>.
+  </p>
+
+
+              </footer>
+            </div>
+          </td>
+          <td class=3D"root-cell-spacing-offset" style=3D"width: 5%;min-wid=
+th: 10px;"></td>
+        </tr>
+      </tbody></table>
+    </div>
+ =20
+<img src=3D"https://u1741745.ct.sendgrid.net/wf/open?upn=3Du001.cohR6Fr-2BU=
+aqGt4jdw5FdSzS1vKQv3w6JbrrKjbNHFhOt7a7Hhq4AQLIbcsqj360dVL0wUo2RNI7qFVzDKDDe=
+dxmfNatDZm5SlxZ8RW3tCRqmNgUFl33h5z-2B-2BJtdLMnldd2tF3syAI9BIkhFt9sYujnIYAnt=
+mrTCP-2BdtRJ1cIshK2uOydn4MN8RTpn6-2FQIkIB7ub-2FPOIeeDbUIwQ684C9Z7t-2BFBUyj5=
+DyZZQRFrAqZ-2Fs-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D=
+"height:1px !important;width:1px !important;border-width:0 !important;margi=
+n-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;mar=
+gin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;=
+padding-right:0 !important;padding-left:0 !important;"/></body></html>

@@ -28,7 +28,7 @@
 | NordVPN + NordPass   | Direct        | 2025-11-22   | ✅ Approved        | 135757       | B2C bundle                           |
 | Impact Radius        | Impact Radius | 2025-11-22   | ❌ Declined        | 6717334      | Reapply after Month 2 with traffic   |
 | Notion               | Impact Radius | 2025-11-22   | ⏸️ Deferred       | -            | Pending Impact approval              |
-| ClickUp              | PartnerStack  | 2025-11-22   | In Review         | -            | Partner program (not affected)       |
+| ClickUp              | PartnerStack  | 2025-11-22   | ❌ Declined        | -            | Reapply after site launch            |
 | PartnerStack Network | PartnerStack  | 2025-11-24   | ⚠️ Limited Access | -            | Marketplace access limited           |
 
 ### Declined/Deferred Programs
@@ -37,6 +37,7 @@
 |----------------------|---------------|--------------|---------------------------------------|-------------------------------|-----------------------------------------------------|
 | Impact Radius        | Impact Radius | 2025-11-28   | Site not live, no traffic             | End of Month 2 (Jan 2026)     | Launch site, publish 20+ articles, generate traffic |
 | PartnerStack Network | PartnerStack  | 2025-11-30   | Profile not a fit (network expansion) | Month 2-3 (After site launch) | Reapply with live site and content                  |
+| ClickUp              | PartnerStack  | 2025-12-01   | Application declined by brand         | Month 2-3 (After site launch) | Reapply with live site, traffic, and published PM content |
 
 **Impact Note:** Application declined on 2025-11-28 (Account ID: 6717334). Impact requires established sites with
 published content and actual traffic. Will reapply in Month 2-3 once FloatJet has:
@@ -54,6 +55,14 @@ application) are not impacted. Will reapply after FloatJet has:
 - ✅ Established traffic and engagement metrics
 - ✅ Demonstrated affiliate marketing track record
 - ℹ️ Can reapply through dashboard once site is established
+
+**ClickUp Note:** Application declined on 2025-12-01. ClickUp (via PartnerStack) declined the application after review. This is independent of the PartnerStack Network Profile limitation. Will reapply in Month 2-3 once FloatJet has:
+
+- ✅ Live website with published project management content
+- ✅ Best PM Software article live with traffic
+- ✅ Demonstrated engagement and conversions
+- ✅ 4-6 weeks of content history
+- ℹ️ Can re-apply directly through PartnerStack dashboard
 
 ### Pending Applications
 
@@ -119,7 +128,7 @@ Ensure your site has:
 
 ### 1. Amazon Associates (✅ APPROVED)
 
-**URL:** https://affiliate-program.amazon.com
+**URL:** <https://affiliate-program.amazon.com>
 
 **Status:** ✅ Approved 2025-11-28 | Store ID: floatjet-20
 
@@ -155,7 +164,7 @@ https://amazon.com/dp/{ASIN}?tag=floatjet-20
 
 **Step-by-Step Application:**
 
-1. Go to https://affiliate-program.amazon.com
+1. Go to <https://affiliate-program.amazon.com>
 2. Click "Sign Up"
 3. Log in with your Amazon account (or create one)
 4. Enter account information:
@@ -179,11 +188,11 @@ https://amazon.com/dp/{ASIN}?tag=floatjet-20
 
 ### 2. NordVPN + NordPass (✅ APPROVED)
 
-**URL:** https://nordvpn.com/affiliate/
+**URL:** <https://nordvpn.com/affiliate/>
 
 **Step-by-Step:**
 
-1. Go to https://nordvpn.com/affiliate/
+1. Go to <https://nordvpn.com/affiliate/>
 2. Click "Become an Affiliate"
 3. Fill out application form:
     - Website URL: floatjet.com
@@ -214,11 +223,11 @@ https://amazon.com/dp/{ASIN}?tag=floatjet-20
 
 ### 3. Impact Radius (Notion, 1Password, Mailchimp)
 
-**URL:** https://impact.com
+**URL:** <https://impact.com>
 
 **Step-by-Step:**
 
-1. Go to https://impact.com
+1. Go to <https://impact.com>
 2. Click "Sign Up" � "Partner" (not Advertiser)
 3. Create account with email
 4. Complete profile:
@@ -237,10 +246,10 @@ https://amazon.com/dp/{ASIN}?tag=floatjet-20
 - ❌ Application declined 2025-11-28 (Account ID: 6717334)
 - **Reason:** Site not live, no published content, no traffic
 - **Reapply:** End of Month 2 (January 2026) after:
-   - ✅ Site launched with 20+ published articles
-   - ✅ Legal pages live (Privacy, Terms, Disclosure)
-   - ✅ Real traffic data (50-500+ visitors/month)
-   - ✅ 4-6 weeks of content history
+  - ✅ Site launched with 20+ published articles
+  - ✅ Legal pages live (Privacy, Terms, Disclosure)
+  - ✅ Real traffic data (50-500+ visitors/month)
+  - ✅ 4-6 weeks of content history
 
 **Programs Affected:**
 
@@ -256,7 +265,7 @@ Impact in Month 2-3.
 
 ### 4. PartnerStack (Multiple Programs)
 
-**URL:** https://dash.partnerstack.com/marketplace
+**URL:** <https://dash.partnerstack.com/marketplace>
 
 **Status:** ⚠️ **MARKETPLACE ACCESS LIMITED** - ClickUp application still in review (not affected)
 
@@ -294,7 +303,7 @@ accessible after reapplication once site is launched. ClickUp application alread
 
 **Step-by-Step:**
 
-1. Log into https://dash.partnerstack.com/marketplace
+1. Log into <https://dash.partnerstack.com/marketplace>
 2. Search for each program above
 3. Click "Apply" for each one
 4. Most approve within 3-7 days since you're already a partner
@@ -303,11 +312,11 @@ accessible after reapplication once site is launched. ClickUp application alread
 
 ### 5. ConvertKit (Kit)
 
-**URL:** https://convertkit.com/affiliates
+**URL:** <https://convertkit.com/affiliates>
 
 **Step-by-Step:**
 
-1. Go to https://convertkit.com/affiliates
+1. Go to <https://convertkit.com/affiliates>
 2. Click "Apply Now"
 3. Fill out application:
     - Website: floatjet.com
@@ -327,11 +336,11 @@ accessible after reapplication once site is launched. ClickUp application alread
 
 ### 6. Beehiiv
 
-**URL:** https://www.beehiiv.com/partners
+**URL:** <https://www.beehiiv.com/partners>
 
 **Step-by-Step:**
 
-1. Go to https://www.beehiiv.com/partners
+1. Go to <https://www.beehiiv.com/partners>
 2. Click "Become a Partner"
 3. Fill out form:
     - Name, email, website
@@ -347,11 +356,11 @@ accessible after reapplication once site is launched. ClickUp application alread
 
 ### 7. FlexiSpot
 
-**URL:** https://www.flexispot.com/affiliate
+**URL:** <https://www.flexispot.com/affiliate>
 
 **Step-by-Step:**
 
-1. Go to https://www.flexispot.com/affiliate
+1. Go to <https://www.flexispot.com/affiliate>
 2. Click "Apply Now"
 3. Fill out application:
     - Website URL
@@ -367,11 +376,11 @@ accessible after reapplication once site is launched. ClickUp application alread
 
 ### 8. CJ Affiliate (Dashlane, LastPass)
 
-**URL:** https://www.cj.com
+**URL:** <https://www.cj.com>
 
 **Step-by-Step:**
 
-1. Go to https://www.cj.com
+1. Go to <https://www.cj.com>
 2. Click "Publishers" � "Sign Up"
 3. Create account
 4. Complete profile with website details
@@ -386,11 +395,11 @@ accessible after reapplication once site is launched. ClickUp application alread
 
 ### 9. ShareASale (Fully, Uplift)
 
-**URL:** https://www.shareasale.com
+**URL:** <https://www.shareasale.com>
 
 **Step-by-Step:**
 
-1. Go to https://www.shareasale.com
+1. Go to <https://www.shareasale.com>
 2. Click "Affiliate Sign Up"
 3. Create account
 4. Verify email and complete profile
@@ -410,7 +419,7 @@ accessible after reapplication once site is launched. ClickUp application alread
 | Program    | Commission              | Cookie  | Network       | Status                      |
 |------------|-------------------------|---------|---------------|-----------------------------|
 | Notion     | $100-500/sale           | 30 days | Impact Radius | Deferred                    |
-| ClickUp    | $50-200 + 20% recurring | 90 days | PartnerStack  | In Review                   |
+| ClickUp    | $50-200 + 20% recurring | 90 days | PartnerStack  | ❌ Declined (Reapply M2-3)  |
 | Monday.com | 100% first year         | 90 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
 | Teamwork   | 20% recurring           | 90 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
 | Asana      | Unknown                 | Unknown | Direct        | Not Applied                 |
@@ -1215,17 +1224,17 @@ Assuming modest traffic and 1% conversion:
 
 | Program           | Application URL                        |
 |-------------------|----------------------------------------|
-| Amazon Associates | https://affiliate-program.amazon.com   |
-| NordVPN/NordPass  | https://nordvpn.com/affiliate/         |
-| Impact Radius     | https://impact.com                     |
-| PartnerStack      | https://partnerstack.com               |
-| ConvertKit        | https://convertkit.com/affiliates      |
-| Beehiiv           | https://www.beehiiv.com/partners       |
-| FlexiSpot         | https://www.flexispot.com/affiliate    |
-| ActiveCampaign    | https://www.activecampaign.com/partner |
-| Autonomous        | https://www.autonomous.ai/affiliate    |
-| CJ Affiliate      | https://www.cj.com                     |
-| ShareASale        | https://www.shareasale.com             |
+| Amazon Associates | <https://affiliate-program.amazon.com>   |
+| NordVPN/NordPass  | <https://nordvpn.com/affiliate/>         |
+| Impact Radius     | <https://impact.com>                     |
+| PartnerStack      | <https://partnerstack.com>               |
+| ConvertKit        | <https://convertkit.com/affiliates>      |
+| Beehiiv           | <https://www.beehiiv.com/partners>       |
+| FlexiSpot         | <https://www.flexispot.com/affiliate>    |
+| ActiveCampaign    | <https://www.activecampaign.com/partner> |
+| Autonomous        | <https://www.autonomous.ai/affiliate>    |
+| CJ Affiliate      | <https://www.cj.com>                     |
+| ShareASale        | <https://www.shareasale.com>             |
 
 ---
 

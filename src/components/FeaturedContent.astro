@@ -78,7 +78,7 @@ const featuredArticles = [
                     alt={article.title}
                     width={800}
                     height={450}
-                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 blur-placeholder"
+                    class="w-full h-full object-cover transform group-hover:scale-105 transition-all duration-500 ease-in-out blur-placeholder"
                     loading={index < 3 ? 'eager' : 'lazy'}
                 />
               </div>
@@ -111,7 +111,6 @@ const featuredArticles = [
     position: relative;
     z-index: 2;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
   }
 
   .blur-placeholder.loaded {

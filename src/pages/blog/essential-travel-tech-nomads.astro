@@ -1,77 +1,82 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Essential Travel Tech for Digital Nomads (2025)';
-const description = 'Worked from forty countries. Here\'s the compact tech that earns its weight in my backpack, what flopped after two months, and what I never travel without.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Essential Travel Tech for Digital Nomads (2025)";
+const description =
+  "Worked from forty countries. Here's the compact tech that earns its weight in my backpack, what flopped after two months, and what I never travel without.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 10;
-const image = '/images/unsplash/photo-1519389950473-47ba0277781c-1200w.webp';
-const imageAlt = 'Digital nomad travel tech setup with laptop and accessories';
+const image = "/images/unsplash/photo-1519389950473-47ba0277781c-1200w.webp";
+const imageAlt = "Digital nomad travel tech setup with laptop and accessories";
 
 // Table of contents
 const headings = [
-  {text: 'My Bag Weighs 23 Pounds', slug: 'introduction', depth: 2},
-  {text: 'The Non-Negotiables', slug: 'essentials', depth: 2},
-  {text: 'Connectivity', slug: 'connectivity', depth: 2},
-  {text: 'Productivity Stuff', slug: 'productivity', depth: 2},
-  {text: 'Power', slug: 'power', depth: 2},
-  {text: 'Organization', slug: 'comfort', depth: 2},
-  {text: 'Quick Answers', slug: 'faq', depth: 2},
-  {text: 'What I\'ve Learned', slug: 'conclusion', depth: 2},
+  { text: "My Bag Weighs 23 Pounds", slug: "introduction", depth: 2 },
+  { text: "The Non-Negotiables", slug: "essentials", depth: 2 },
+  { text: "Connectivity", slug: "connectivity", depth: 2 },
+  { text: "Productivity Stuff", slug: "productivity", depth: 2 },
+  { text: "Power", slug: "power", depth: 2 },
+  { text: "Organization", slug: "comfort", depth: 2 },
+  { text: "Quick Answers", slug: "faq", depth: 2 },
+  { text: "What I've Learned", slug: "conclusion", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Phone hotspot or dedicated device?',
-    answer: '<p>Phone works. Kills your battery though. I just keep my phone plugged in when I\'m using it as a hotspot. Good enough.</p>'
+    question: "Phone hotspot or dedicated device?",
+    answer:
+      "<p>Phone works. Kills your battery though. I just keep my phone plugged in when I'm using it as a hotspot. Good enough.</p>",
   },
   {
-    question: 'Laptop specs?',
-    answer: '<p>16GB RAM if you can. 8GB minimum. SSD required—not negotiable. Battery life matters more than you think. Everything else is preference.</p>'
+    question: "Laptop specs?",
+    answer:
+      "<p>16GB RAM if you can. 8GB minimum. SSD required—not negotiable. Battery life matters more than you think. Everything else is preference.</p>",
   },
   {
-    question: 'Portable monitor?',
-    answer: '<p>Staying put for months? Maybe worth it. Actually traveling? Probably not. I tried. Didn\'t work for me.</p>'
+    question: "Portable monitor?",
+    answer:
+      "<p>Staying put for months? Maybe worth it. Actually traveling? Probably not. I tried. Didn't work for me.</p>",
   },
   {
-    question: 'Keeping gear safe?',
-    answer: '<p>Never check electronics. Never leave stuff unattended. Get insurance that actually covers tech. Back everything up. Common sense mostly.</p>'
+    question: "Keeping gear safe?",
+    answer:
+      "<p>Never check electronics. Never leave stuff unattended. Get insurance that actually covers tech. Back everything up. Common sense mostly.</p>",
   },
   {
-    question: 'Adapters?',
-    answer: '<p>One universal adapter with USB ports. Don\'t overthink it.</p>'
-  }
+    question: "Adapters?",
+    answer: "<p>One universal adapter with USB ports. Don't overthink it.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Find the perfect laptop for productivity on the go.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp',
-    imageAlt: 'Laptop on desk'
+    title: "Best Laptops for Remote Work",
+    excerpt: "Find the perfect laptop for productivity on the go.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "Laptop on desk",
   },
   {
-    title: 'Top Destinations for Digital Nomads',
-    excerpt: 'Cities with great WiFi, affordable living, and thriving communities.',
-    href: '/blog/top-destinations-digital-nomads',
-    image: '/images/unsplash/photo-1528181304800-259b08848526-800w.webp',
-    imageAlt: 'Digital nomad destination'
+    title: "Top Destinations for Digital Nomads",
+    excerpt: "Cities with great WiFi, affordable living, and thriving communities.",
+    href: "/blog/top-destinations-digital-nomads",
+    image: "/images/unsplash/photo-1528181304800-259b08848526-800w.webp",
+    imageAlt: "Digital nomad destination",
   },
   {
-    title: 'How to Find Reliable WiFi Anywhere',
-    excerpt: 'Tips and tools for staying connected no matter where you travel.',
-    href: '/blog/find-reliable-wifi-anywhere',
-    image: '/images/unsplash/photo-1521791136064-7986c2920216-800w.webp',
-    imageAlt: 'WiFi signal concept'
-  }
+    title: "How to Find Reliable WiFi Anywhere",
+    excerpt: "Tips and tools for staying connected no matter where you travel.",
+    href: "/blog/find-reliable-wifi-anywhere",
+    image: "/images/unsplash/photo-1521791136064-7986c2920216-800w.webp",
+    imageAlt: "WiFi signal concept",
+  },
 ];
 ---
 

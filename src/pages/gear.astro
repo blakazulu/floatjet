@@ -1,203 +1,236 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = 'Best Remote Work Gear & Equipment | FloatJet';
-const description = 'Find the best gear for your home office or mobile setup. Reviews of standing desks, headphones, monitors, and essential remote work equipment.';
+const title = "Best Remote Work Gear & Equipment | FloatJet";
+const description =
+  "Find the best gear for your home office or mobile setup. Reviews of standing desks, headphones, monitors, and essential remote work equipment.";
 
 // Category pages
 const categories = [
-  {name: 'Computers', href: '/gear/computers', icon: '💻', description: 'Laptops, tablets & monitors'},
-  {name: 'Furniture', href: '/gear/furniture', icon: '🪑', description: 'Desks, chairs & ergonomics'},
-  {name: 'Audio', href: '/gear/audio', icon: '🎧', description: 'Headphones, mics & speakers'},
-  {name: 'Accessories', href: '/gear/accessories', icon: '🎒', description: 'Bags, cables & travel gear'}
+  {
+    name: "Computers",
+    href: "/gear/computers",
+    icon: "💻",
+    description: "Laptops, tablets & monitors",
+  },
+  {
+    name: "Furniture",
+    href: "/gear/furniture",
+    icon: "🪑",
+    description: "Desks, chairs & ergonomics",
+  },
+  { name: "Audio", href: "/gear/audio", icon: "🎧", description: "Headphones, mics & speakers" },
+  {
+    name: "Accessories",
+    href: "/gear/accessories",
+    icon: "🎒",
+    description: "Bags, cables & travel gear",
+  },
 ];
 
 // All gear articles data with correct reading times from articles
 const allGear = [
   {
-    title: 'Best Laptops for Remote Work',
-    description: 'Find the perfect laptop for productivity on the go. Our top picks for every budget and work style.',
-    href: '/gear/best-laptops-remote-work',
-    category: 'Computers',
-    icon: '💻',
-    readTime: 18
+    title: "Best Laptops for Remote Work",
+    description:
+      "Find the perfect laptop for productivity on the go. Our top picks for every budget and work style.",
+    href: "/gear/best-laptops-remote-work",
+    category: "Computers",
+    icon: "💻",
+    readTime: 18,
   },
   {
-    title: 'Best Monitors for Remote Work',
-    description: 'Find the best 4K, ultrawide, and budget monitors for your home office setup.',
-    href: '/gear/best-monitors-remote-work',
-    category: 'Computers',
-    icon: '🖥️',
-    readTime: 16
+    title: "Best Monitors for Remote Work",
+    description: "Find the best 4K, ultrawide, and budget monitors for your home office setup.",
+    href: "/gear/best-monitors-remote-work",
+    category: "Computers",
+    icon: "🖥️",
+    readTime: 16,
   },
   {
-    title: 'Best Portable Monitors',
-    description: 'Dual-screen productivity on the go with the best portable monitors for digital nomads.',
-    href: '/gear/best-portable-monitors',
-    category: 'Computers',
-    icon: '📱',
-    readTime: 14
+    title: "Best Portable Monitors",
+    description:
+      "Dual-screen productivity on the go with the best portable monitors for digital nomads.",
+    href: "/gear/best-portable-monitors",
+    category: "Computers",
+    icon: "📱",
+    readTime: 14,
   },
   {
-    title: 'Best Budget Laptops Under $800',
-    description: 'Great remote work laptops that do not break the bank. Top picks for every budget.',
-    href: '/gear/best-budget-laptops-remote-work',
-    category: 'Computers',
-    icon: '💻',
-    readTime: 14
+    title: "Best Budget Laptops Under $800",
+    description:
+      "Great remote work laptops that do not break the bank. Top picks for every budget.",
+    href: "/gear/best-budget-laptops-remote-work",
+    category: "Computers",
+    icon: "💻",
+    readTime: 14,
   },
   {
-    title: 'MacBook vs Windows for Remote Work',
-    description: 'The definitive comparison to help you choose the right platform for your work style.',
-    href: '/gear/macbook-vs-windows-remote-work',
-    category: 'Computers',
-    icon: '💻',
-    readTime: 12
+    title: "MacBook vs Windows for Remote Work",
+    description:
+      "The definitive comparison to help you choose the right platform for your work style.",
+    href: "/gear/macbook-vs-windows-remote-work",
+    category: "Computers",
+    icon: "💻",
+    readTime: 12,
   },
   {
-    title: 'How Much RAM Do You Need?',
-    description: 'Is 8GB enough? Find out how much RAM you really need for remote work.',
-    href: '/gear/how-much-ram-remote-work',
-    category: 'Computers',
-    icon: '💾',
-    readTime: 8
+    title: "How Much RAM Do You Need?",
+    description: "Is 8GB enough? Find out how much RAM you really need for remote work.",
+    href: "/gear/how-much-ram-remote-work",
+    category: "Computers",
+    icon: "💾",
+    readTime: 8,
   },
   {
-    title: 'Best Standing Desks',
-    description: 'Upgrade your workspace with an ergonomic standing desk for healthier, more productive workdays.',
-    href: '/gear/best-standing-desks',
-    category: 'Furniture',
-    icon: '🪑',
-    readTime: 18
+    title: "Best Standing Desks",
+    description:
+      "Upgrade your workspace with an ergonomic standing desk for healthier, more productive workdays.",
+    href: "/gear/best-standing-desks",
+    category: "Furniture",
+    icon: "🪑",
+    readTime: 18,
   },
   {
-    title: 'Best Ergonomic Chairs',
-    description: 'Find the perfect chair for all-day comfort. From premium Herman Miller to budget-friendly options.',
-    href: '/gear/best-ergonomic-chairs',
-    category: 'Furniture',
-    icon: '🪑',
-    readTime: 18
+    title: "Best Ergonomic Chairs",
+    description:
+      "Find the perfect chair for all-day comfort. From premium Herman Miller to budget-friendly options.",
+    href: "/gear/best-ergonomic-chairs",
+    category: "Furniture",
+    icon: "🪑",
+    readTime: 18,
   },
   {
-    title: 'Best Desk Converters',
-    description: 'Transform your existing desk into a standing desk with these top-rated converters.',
-    href: '/gear/best-desk-converters',
-    category: 'Furniture',
-    icon: '🪑',
-    readTime: 14
+    title: "Best Desk Converters",
+    description:
+      "Transform your existing desk into a standing desk with these top-rated converters.",
+    href: "/gear/best-desk-converters",
+    category: "Furniture",
+    icon: "🪑",
+    readTime: 14,
   },
   {
-    title: 'Best Compact Desks for Small Offices',
-    description: 'Maximize your small workspace with these space-saving desks for home offices.',
-    href: '/gear/best-compact-desks-small-office',
-    category: 'Furniture',
-    icon: '🪑',
-    readTime: 14
+    title: "Best Compact Desks for Small Offices",
+    description: "Maximize your small workspace with these space-saving desks for home offices.",
+    href: "/gear/best-compact-desks-small-office",
+    category: "Furniture",
+    icon: "🪑",
+    readTime: 14,
   },
   {
-    title: 'Ergonomic Desk Setup Guide',
-    description: 'Complete guide to setting up your home office for maximum comfort and productivity.',
-    href: '/gear/ergonomic-desk-setup-guide',
-    category: 'Furniture',
-    icon: '🪑',
-    readTime: 12
+    title: "Ergonomic Desk Setup Guide",
+    description:
+      "Complete guide to setting up your home office for maximum comfort and productivity.",
+    href: "/gear/ergonomic-desk-setup-guide",
+    category: "Furniture",
+    icon: "🪑",
+    readTime: 12,
   },
   {
-    title: 'Standing Desk Cost Guide',
-    description: 'How much should you spend on a standing desk? Price breakdown at every budget level.',
-    href: '/gear/standing-desk-cost-guide',
-    category: 'Furniture',
-    icon: '🪑',
-    readTime: 8
+    title: "Standing Desk Cost Guide",
+    description:
+      "How much should you spend on a standing desk? Price breakdown at every budget level.",
+    href: "/gear/standing-desk-cost-guide",
+    category: "Furniture",
+    icon: "🪑",
+    readTime: 8,
   },
   {
-    title: 'Best Noise-Canceling Headphones',
-    description: 'Block out distractions and focus on your work with premium noise-canceling headphones.',
-    href: '/gear/best-noise-canceling-headphones',
-    category: 'Audio',
-    icon: '🎧',
-    readTime: 18
+    title: "Best Noise-Canceling Headphones",
+    description:
+      "Block out distractions and focus on your work with premium noise-canceling headphones.",
+    href: "/gear/best-noise-canceling-headphones",
+    category: "Audio",
+    icon: "🎧",
+    readTime: 18,
   },
   {
-    title: 'Best Microphones for Remote Meetings',
-    description: 'USB and XLR microphones tested for video call clarity and background noise rejection.',
-    href: '/gear/best-microphones-remote-meetings',
-    category: 'Audio',
-    icon: '🎙️',
-    readTime: 16
+    title: "Best Microphones for Remote Meetings",
+    description:
+      "USB and XLR microphones tested for video call clarity and background noise rejection.",
+    href: "/gear/best-microphones-remote-meetings",
+    category: "Audio",
+    icon: "🎙️",
+    readTime: 16,
   },
   {
-    title: 'Best Speakers for Home Office',
-    description: 'Desktop speakers for music, calls, and all-day listening comfort while working from home.',
-    href: '/gear/best-speakers-home-office',
-    category: 'Audio',
-    icon: '🔊',
-    readTime: 14
+    title: "Best Speakers for Home Office",
+    description:
+      "Desktop speakers for music, calls, and all-day listening comfort while working from home.",
+    href: "/gear/best-speakers-home-office",
+    category: "Audio",
+    icon: "🔊",
+    readTime: 14,
   },
   {
-    title: 'Best Wireless Earbuds for Remote Work',
-    description: 'Top earbuds for video calls, noise cancellation, and comfortable all-day wear.',
-    href: '/gear/best-wireless-earbuds-remote-work',
-    category: 'Audio',
-    icon: '🎧',
-    readTime: 14
+    title: "Best Wireless Earbuds for Remote Work",
+    description: "Top earbuds for video calls, noise cancellation, and comfortable all-day wear.",
+    href: "/gear/best-wireless-earbuds-remote-work",
+    category: "Audio",
+    icon: "🎧",
+    readTime: 14,
   },
   {
-    title: 'USB vs XLR Microphones',
-    description: 'Which microphone type is right for your remote work setup? We break down the pros and cons.',
-    href: '/gear/usb-vs-xlr-microphones',
-    category: 'Audio',
-    icon: '🎤',
-    readTime: 10
+    title: "USB vs XLR Microphones",
+    description:
+      "Which microphone type is right for your remote work setup? We break down the pros and cons.",
+    href: "/gear/usb-vs-xlr-microphones",
+    category: "Audio",
+    icon: "🎤",
+    readTime: 10,
   },
   {
-    title: 'How to Reduce Background Noise on Calls',
-    description: 'Tips, software, and gear to eliminate distracting background noise from your video meetings.',
-    href: '/gear/reduce-background-noise-calls',
-    category: 'Audio',
-    icon: '🔇',
-    readTime: 8
+    title: "How to Reduce Background Noise on Calls",
+    description:
+      "Tips, software, and gear to eliminate distracting background noise from your video meetings.",
+    href: "/gear/reduce-background-noise-calls",
+    category: "Audio",
+    icon: "🔇",
+    readTime: 8,
   },
   {
-    title: 'Best Laptop Bags & Backpacks',
-    description: 'Protect your gear while traveling light. Top picks for digital nomads and remote workers.',
-    href: '/gear/best-laptop-bags-backpacks',
-    category: 'Accessories',
-    icon: '🎒',
-    readTime: 16
+    title: "Best Laptop Bags & Backpacks",
+    description:
+      "Protect your gear while traveling light. Top picks for digital nomads and remote workers.",
+    href: "/gear/best-laptop-bags-backpacks",
+    category: "Accessories",
+    icon: "🎒",
+    readTime: 16,
   },
   {
-    title: 'Best Webcams for Video Calls',
-    description: 'Look professional on every video call with these top-rated webcams for remote work.',
-    href: '/gear/best-webcams-video-calls',
-    category: 'Accessories',
-    icon: '📹',
-    readTime: 14
+    title: "Best Webcams for Video Calls",
+    description:
+      "Look professional on every video call with these top-rated webcams for remote work.",
+    href: "/gear/best-webcams-video-calls",
+    category: "Accessories",
+    icon: "📹",
+    readTime: 14,
   },
   {
-    title: 'Best Portable Chargers & Power Banks',
-    description: 'Never run out of battery on the go. Compare the best power banks for travel.',
-    href: '/gear/best-portable-chargers-power-banks',
-    category: 'Accessories',
-    icon: '🔋',
-    readTime: 13
+    title: "Best Portable Chargers & Power Banks",
+    description: "Never run out of battery on the go. Compare the best power banks for travel.",
+    href: "/gear/best-portable-chargers-power-banks",
+    category: "Accessories",
+    icon: "🔋",
+    readTime: 13,
   },
   {
-    title: 'Best Mechanical Keyboards',
-    description: 'Type faster and more comfortably with these mechanical keyboards for remote work.',
-    href: '/gear/best-mechanical-keyboards',
-    category: 'Accessories',
-    icon: '⌨️',
-    readTime: 14
+    title: "Best Mechanical Keyboards",
+    description:
+      "Type faster and more comfortably with these mechanical keyboards for remote work.",
+    href: "/gear/best-mechanical-keyboards",
+    category: "Accessories",
+    icon: "⌨️",
+    readTime: 14,
   },
   {
-    title: 'Best Travel Adapters',
-    description: 'Power up anywhere in the world with these universal travel adapters.',
-    href: '/gear/best-travel-adapters',
-    category: 'Accessories',
-    icon: '🔌',
-    readTime: 10
-  }
+    title: "Best Travel Adapters",
+    description: "Power up anywhere in the world with these universal travel adapters.",
+    href: "/gear/best-travel-adapters",
+    category: "Accessories",
+    icon: "🔌",
+    readTime: 10,
+  },
 ];
 
 // Shuffle and limit articles - render all 9, CSS handles responsive visibility

@@ -1,90 +1,99 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'How to Expense Home Office Furniture: Complete Guide (2025)';
-const description = 'Learn the rules for deducting home office furniture on your taxes. Desks, chairs, lighting - what qualifies and how to document it properly without IRS trouble.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "How to Expense Home Office Furniture: Complete Guide (2025)";
+const description =
+  "Learn the rules for deducting home office furniture on your taxes. Desks, chairs, lighting - what qualifies and how to document it properly without IRS trouble.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 9;
-const image = '/images/unsplash/photo-1518455027359-f3f8164ba6bd-1200w.webp';
-const imageAlt = 'Home office setup with desk and chair for tax deduction';
+const image = "/images/unsplash/photo-1518455027359-f3f8164ba6bd-1200w.webp";
+const imageAlt = "Home office setup with desk and chair for tax deduction";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'The Basics Before We Dive In', slug: 'basics', depth: 2},
-  {text: 'Stuff That Counts (And Stuff That Doesn\'t)', slug: 'what-qualifies', depth: 2},
-  {text: 'Writing It Off: Now vs Later', slug: 'deduction-methods', depth: 2},
-  {text: 'That Depreciation Rabbit Hole', slug: 'depreciation', depth: 2},
-  {text: 'Keeping the IRS Happy', slug: 'documentation', depth: 2},
-  {text: 'Employees vs Everyone Else', slug: 'employee-vs-self-employed', depth: 2},
-  {text: 'The Limits Nobody Hits', slug: 'limits', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "The Basics Before We Dive In", slug: "basics", depth: 2 },
+  { text: "Stuff That Counts (And Stuff That Doesn't)", slug: "what-qualifies", depth: 2 },
+  { text: "Writing It Off: Now vs Later", slug: "deduction-methods", depth: 2 },
+  { text: "That Depreciation Rabbit Hole", slug: "depreciation", depth: 2 },
+  { text: "Keeping the IRS Happy", slug: "documentation", depth: 2 },
+  { text: "Employees vs Everyone Else", slug: "employee-vs-self-employed", depth: 2 },
+  { text: "The Limits Nobody Hits", slug: "limits", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'My desk gets used for personal stuff too — can I still deduct it?',
-    answer: '<p>If your desk lives in a <strong>dedicated home office</strong> used exclusively for work, full deduction — even if you occasionally check personal stuff there. In a shared space like the living room? Only deduct the percentage you actually use for work. Eighty percent work use equals eighty percent deductible.</p>'
+    question: "My desk gets used for personal stuff too — can I still deduct it?",
+    answer:
+      "<p>If your desk lives in a <strong>dedicated home office</strong> used exclusively for work, full deduction — even if you occasionally check personal stuff there. In a shared space like the living room? Only deduct the percentage you actually use for work. Eighty percent work use equals eighty percent deductible.</p>",
   },
   {
-    question: 'What about furniture in multiple rooms?',
-    answer: '<p>Only furniture in your dedicated office counts. That chair in the living room where you sometimes take calls doesn\'t qualify. The test: is this space used regularly and exclusively for business?</p>'
+    question: "What about furniture in multiple rooms?",
+    answer:
+      "<p>Only furniture in your dedicated office counts. That chair in the living room where you sometimes take calls doesn't qualify. The test: is this space used regularly and exclusively for business?</p>",
   },
   {
-    question: 'How long do I keep receipts?',
-    answer: '<p>Keep them <strong>seven years minimum</strong>. IRS can audit six years back in some situations. Digital copies work fine — photo the receipt, toss it in cloud storage. Apps like Expensify help too.</p>'
+    question: "How long do I keep receipts?",
+    answer:
+      "<p>Keep them <strong>seven years minimum</strong>. IRS can audit six years back in some situations. Digital copies work fine — photo the receipt, toss it in cloud storage. Apps like Expensify help too.</p>",
   },
   {
-    question: 'Can employees deduct anything?',
-    answer: '<p><strong>Not at the federal level</strong> through 2025. Some states still allow it — California, New York, and Pennsylvania among them. Self-employed or have 1099 income? You can deduct for that work.</p>'
+    question: "Can employees deduct anything?",
+    answer:
+      "<p><strong>Not at the federal level</strong> through 2025. Some states still allow it — California, New York, and Pennsylvania among them. Self-employed or have 1099 income? You can deduct for that work.</p>",
   },
   {
-    question: 'What about ergonomic stuff specifically?',
-    answer: '<p>Yep, same as any office furniture. <a href="/gear/best-ergonomic-chairs">Ergonomic chairs</a>, standing desks, monitor arms — all deductible if used for business. Doctor prescribed it for medical reasons? Might also qualify as a medical expense.</p>'
+    question: "What about ergonomic stuff specifically?",
+    answer:
+      '<p>Yep, same as any office furniture. <a href="/gear/best-ergonomic-chairs">Ergonomic chairs</a>, standing desks, monitor arms — all deductible if used for business. Doctor prescribed it for medical reasons? Might also qualify as a medical expense.</p>',
   },
   {
-    question: 'Can I deduct furniture I already owned?',
-    answer: '<p>You can depreciate it based on fair market value when you convert it to business use — not what you originally paid. This gets complicated. Buying new and deducting straight is usually simpler.</p>'
+    question: "Can I deduct furniture I already owned?",
+    answer:
+      "<p>You can depreciate it based on fair market value when you convert it to business use — not what you originally paid. This gets complicated. Buying new and deducting straight is usually simpler.</p>",
   },
   {
-    question: 'Section 179 versus depreciation — which is better?',
-    answer: '<p><strong>Section 179 for most people.</strong> Immediate tax savings, simpler records, and you probably need the deduction more now than years from now. Depreciation only makes sense if you\'re low income now but expect way higher taxes later.</p>'
+    question: "Section 179 versus depreciation — which is better?",
+    answer:
+      "<p><strong>Section 179 for most people.</strong> Immediate tax savings, simpler records, and you probably need the deduction more now than years from now. Depreciation only makes sense if you're low income now but expect way higher taxes later.</p>",
   },
   {
-    question: 'Do I need a separate room for this?',
-    answer: '<p>Not necessarily. A dedicated corner with a desk works. A partitioned area. A closet converted to workspace. Just has to be <strong>regular and exclusive business use</strong>. Kitchen table where you eat dinner? Doesn\'t count.</p>'
-  }
+    question: "Do I need a separate room for this?",
+    answer:
+      "<p>Not necessarily. A dedicated corner with a desk works. A partitioned area. A closet converted to workspace. Just has to be <strong>regular and exclusive business use</strong>. Kitchen table where you eat dinner? Doesn't count.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Freelancer Tax Deductions Guide',
-    excerpt: 'Discover every tax deduction available to freelancers and self-employed workers.',
-    href: '/guides/freelancer-tax-deductions-guide',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Tax documents'
+    title: "Freelancer Tax Deductions Guide",
+    excerpt: "Discover every tax deduction available to freelancers and self-employed workers.",
+    href: "/guides/freelancer-tax-deductions-guide",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Tax documents",
   },
   {
-    title: 'Best Standing Desks for Remote Work',
-    excerpt: 'Find the perfect standing desk for your home office setup.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1593642702821-c8da6771f0c6-800w.webp',
-    imageAlt: 'Standing desk setup'
+    title: "Best Standing Desks for Remote Work",
+    excerpt: "Find the perfect standing desk for your home office setup.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593642702821-c8da6771f0c6-800w.webp",
+    imageAlt: "Standing desk setup",
   },
   {
-    title: 'Best Ergonomic Chairs',
-    excerpt: 'Invest in comfort with these top-rated office chairs.',
-    href: '/gear/best-ergonomic-chairs',
-    image: '/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp',
-    imageAlt: 'Ergonomic office chair'
-  }
+    title: "Best Ergonomic Chairs",
+    excerpt: "Invest in comfort with these top-rated office chairs.",
+    href: "/gear/best-ergonomic-chairs",
+    image: "/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp",
+    imageAlt: "Ergonomic office chair",
+  },
 ];
 ---
 

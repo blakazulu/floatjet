@@ -1,111 +1,158 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Best Budget Laptops Under $800 for Remote Work (2025)';
-const description = 'Great remote work laptops don\'t require huge budgets. Tested eight laptops under eight hundred bucks to find the best for productivity and battery life.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Computers';
-const categorySlug = 'gear';
+const title = "Best Budget Laptops Under $800 for Remote Work (2025)";
+const description =
+  "Great remote work laptops don't require huge budgets. Tested eight laptops under eight hundred bucks to find the best for productivity and battery life.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Computers";
+const categorySlug = "gear";
 const readingTime = 14;
-const image = '/images/unsplash/photo-1525547719571-a2d4ac8945e2-1200w.webp';
-const imageAlt = 'Budget laptop on desk for remote work';
+const image = "/images/unsplash/photo-1525547719571-a2d4ac8945e2-1200w.webp";
+const imageAlt = "Budget laptop on desk for remote work";
 
 const headings = [
-  {text: 'What Actually Matters', slug: 'what-specs-matter', depth: 2},
-  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
-  {text: 'The Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Acer Aspire 5', slug: 'acer-aspire-5', depth: 3},
-  {text: 'Lenovo IdeaPad 5', slug: 'lenovo-ideapad-5', depth: 3},
-  {text: 'HP Pavilion 15', slug: 'hp-pavilion-15', depth: 3},
-  {text: 'ASUS VivoBook 15', slug: 'asus-vivobook-15', depth: 3},
-  {text: 'Dell Inspiron 15', slug: 'dell-inspiron-15', depth: 3},
-  {text: 'Lenovo ThinkPad E-Series', slug: 'thinkpad-e-series', depth: 3},
-  {text: 'Acer Swift 3', slug: 'acer-swift-3', depth: 3},
-  {text: 'HP 15', slug: 'hp-15', depth: 3},
-  {text: 'Windows vs Chromebook', slug: 'windows-vs-chromebook', depth: 2},
-  {text: 'Finding Deals', slug: 'best-deals', depth: 2},
-  {text: 'Refurbished Guide', slug: 'refurbished-guide', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
+  { text: "What Actually Matters", slug: "what-specs-matter", depth: 2 },
+  { text: "Quick Comparison", slug: "quick-comparison", depth: 2 },
+  { text: "The Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Acer Aspire 5", slug: "acer-aspire-5", depth: 3 },
+  { text: "Lenovo IdeaPad 5", slug: "lenovo-ideapad-5", depth: 3 },
+  { text: "HP Pavilion 15", slug: "hp-pavilion-15", depth: 3 },
+  { text: "ASUS VivoBook 15", slug: "asus-vivobook-15", depth: 3 },
+  { text: "Dell Inspiron 15", slug: "dell-inspiron-15", depth: 3 },
+  { text: "Lenovo ThinkPad E-Series", slug: "thinkpad-e-series", depth: 3 },
+  { text: "Acer Swift 3", slug: "acer-swift-3", depth: 3 },
+  { text: "HP 15", slug: "hp-15", depth: 3 },
+  { text: "Windows vs Chromebook", slug: "windows-vs-chromebook", depth: 2 },
+  { text: "Finding Deals", slug: "best-deals", depth: 2 },
+  { text: "Refurbished Guide", slug: "refurbished-guide", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
 ];
 
 const comparisonColumns = [
-  {key: 'laptop', label: 'Laptop', width: '140px'},
-  {key: 'processor', label: 'Processor'},
-  {key: 'ram', label: 'RAM'},
-  {key: 'battery', label: 'Battery'},
-  {key: 'price', label: 'Price'},
+  { key: "laptop", label: "Laptop", width: "140px" },
+  { key: "processor", label: "Processor" },
+  { key: "ram", label: "RAM" },
+  { key: "battery", label: "Battery" },
+  { key: "price", label: "Price" },
 ];
 
 const comparisonRows = [
-  {laptop: '<strong>Acer Aspire 5</strong>', processor: 'i5-1235U', ram: '8GB', battery: '10 hrs', price: '$550'},
   {
-    laptop: '<strong>Lenovo IdeaPad 5</strong>',
-    processor: 'Ryzen 5 5500U',
-    ram: '8GB',
-    battery: '10 hrs',
-    price: '$600'
+    laptop: "<strong>Acer Aspire 5</strong>",
+    processor: "i5-1235U",
+    ram: "8GB",
+    battery: "10 hrs",
+    price: "$550",
   },
-  {laptop: '<strong>HP Pavilion 15</strong>', processor: 'i5-1235U', ram: '8GB', battery: '8 hrs', price: '$650'},
   {
-    laptop: '<strong>ASUS VivoBook 15</strong>',
-    processor: 'Ryzen 5 5500U',
-    ram: '8GB',
-    battery: '8 hrs',
-    price: '$500'
+    laptop: "<strong>Lenovo IdeaPad 5</strong>",
+    processor: "Ryzen 5 5500U",
+    ram: "8GB",
+    battery: "10 hrs",
+    price: "$600",
   },
-  {laptop: '<strong>Dell Inspiron 15</strong>', processor: 'i5-1235U', ram: '8GB', battery: '8 hrs', price: '$580'},
-  {laptop: '<strong>ThinkPad E14</strong>', processor: 'i5-1235U', ram: '8GB', battery: '10 hrs', price: '$750'},
-  {laptop: '<strong>Acer Swift 3</strong>', processor: 'i5-1240P', ram: '8GB', battery: '11 hrs', price: '$700'},
-  {laptop: '<strong>HP 15</strong>', processor: 'i3-1215U', ram: '8GB', battery: '7 hrs', price: '$400'},
+  {
+    laptop: "<strong>HP Pavilion 15</strong>",
+    processor: "i5-1235U",
+    ram: "8GB",
+    battery: "8 hrs",
+    price: "$650",
+  },
+  {
+    laptop: "<strong>ASUS VivoBook 15</strong>",
+    processor: "Ryzen 5 5500U",
+    ram: "8GB",
+    battery: "8 hrs",
+    price: "$500",
+  },
+  {
+    laptop: "<strong>Dell Inspiron 15</strong>",
+    processor: "i5-1235U",
+    ram: "8GB",
+    battery: "8 hrs",
+    price: "$580",
+  },
+  {
+    laptop: "<strong>ThinkPad E14</strong>",
+    processor: "i5-1235U",
+    ram: "8GB",
+    battery: "10 hrs",
+    price: "$750",
+  },
+  {
+    laptop: "<strong>Acer Swift 3</strong>",
+    processor: "i5-1240P",
+    ram: "8GB",
+    battery: "11 hrs",
+    price: "$700",
+  },
+  {
+    laptop: "<strong>HP 15</strong>",
+    processor: "i3-1215U",
+    ram: "8GB",
+    battery: "7 hrs",
+    price: "$400",
+  },
 ];
 
 const faqItems = [
   {
-    question: 'Eight gig RAM enough?',
-    answer: 'Video calls, docs, browsing—plenty. Slack plus Zoom plus Chrome tabs? Handles it. Video editing or real multitasking? Get sixteen.',
+    question: "Eight gig RAM enough?",
+    answer:
+      "Video calls, docs, browsing—plenty. Slack plus Zoom plus Chrome tabs? Handles it. Video editing or real multitasking? Get sixteen.",
   },
   {
-    question: 'SSD or HDD?',
-    answer: 'SSD. Windows boots in ten seconds vs two minutes. Two fifty-six SSD beats one terabyte HDD. Always.',
+    question: "SSD or HDD?",
+    answer:
+      "SSD. Windows boots in ten seconds vs two minutes. Two fifty-six SSD beats one terabyte HDD. Always.",
   },
   {
-    question: 'Handle video calls?',
-    answer: 'All of them. Zoom, Teams, Meet—fine. Webcams vary quality-wise. Some grainy. 720p works though.',
+    question: "Handle video calls?",
+    answer:
+      "All of them. Zoom, Teams, Meet—fine. Webcams vary quality-wise. Some grainy. 720p works though.",
   },
   {
-    question: 'How long do they last?',
-    answer: 'Three to five years usually. ThinkPads and Dells survive longer. Take care of the battery and keep it cool.',
+    question: "How long do they last?",
+    answer:
+      "Three to five years usually. ThinkPads and Dells survive longer. Take care of the battery and keep it cool.",
   },
   {
-    question: 'Refurbished worth it?',
-    answer: 'From Dell Outlet or Lenovo Outlet? Yeah. Thirty to forty percent off with warranty. Random marketplace sellers? Nope.',
+    question: "Refurbished worth it?",
+    answer:
+      "From Dell Outlet or Lenovo Outlet? Yeah. Thirty to forty percent off with warranty. Random marketplace sellers? Nope.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Our complete guide including premium options.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp',
-    imageAlt: 'Premium laptop on desk',
+    title: "Best Laptops for Remote Work",
+    excerpt: "Our complete guide including premium options.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "Premium laptop on desk",
   },
   {
-    title: 'MacBook vs Windows for Remote Work',
-    excerpt: 'Which platform is right for your work style?',
-    href: '/gear/macbook-vs-windows-remote-work',
-    image: '/images/unsplash/photo-1517336714731-489689fd1ca8-800w.webp',
-    imageAlt: 'MacBook and Windows laptop comparison',
+    title: "MacBook vs Windows for Remote Work",
+    excerpt: "Which platform is right for your work style?",
+    href: "/gear/macbook-vs-windows-remote-work",
+    image: "/images/unsplash/photo-1517336714731-489689fd1ca8-800w.webp",
+    imageAlt: "MacBook and Windows laptop comparison",
   },
   {
-    title: 'How Much RAM Do You Need?',
-    excerpt: 'Find the right amount of memory for your workflow.',
-    href: '/gear/how-much-ram-remote-work',
-    image: '/images/unsplash/photo-1518770660439-4636190af475-800w.webp',
-    imageAlt: 'Computer RAM memory',
+    title: "How Much RAM Do You Need?",
+    excerpt: "Find the right amount of memory for your workflow.",
+    href: "/gear/how-much-ram-remote-work",
+    image: "/images/unsplash/photo-1518770660439-4636190af475-800w.webp",
+    imageAlt: "Computer RAM memory",
   },
 ];
 ---

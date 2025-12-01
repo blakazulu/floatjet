@@ -1,76 +1,83 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Minimalist Home Office Setup: Less Stuff, More Focus';
-const description = 'Create a distraction-free workspace with minimal gear. Learn how to build a productive minimalist home office that helps you focus on what matters most.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-16');
+const title = "Minimalist Home Office Setup: Less Stuff, More Focus";
+const description =
+  "Create a distraction-free workspace with minimal gear. Learn how to build a productive minimalist home office that helps you focus on what matters most.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-16");
 const readingTime = 12;
-const image = '/images/unsplash/photo-1593062096033-9a26b09da705-1200w.webp';
-const imageAlt = 'Clean minimalist home office with simple desk and natural light';
+const image = "/images/unsplash/photo-1593062096033-9a26b09da705-1200w.webp";
+const imageAlt = "Clean minimalist home office with simple desk and natural light";
 
 const headings = [
-  {depth: 2, slug: 'introduction', text: 'Why Less Stuff Actually Works'},
-  {depth: 2, slug: 'core-principles', text: 'The Principles That Actually Work'},
-  {depth: 2, slug: 'essential-items', text: 'What You Actually Need'},
-  {depth: 2, slug: 'declutter-process', text: 'How to Actually Declutter'},
-  {depth: 2, slug: 'desk-setup', text: 'The Setup Itself'},
-  {depth: 2, slug: 'digital-minimalism', text: 'Digital Clutter Counts'},
-  {depth: 2, slug: 'maintaining-minimalism', text: 'Keeping It This Way'},
-  {depth: 2, slug: 'faq', text: 'Questions People Ask'}
+  { depth: 2, slug: "introduction", text: "Why Less Stuff Actually Works" },
+  { depth: 2, slug: "core-principles", text: "The Principles That Actually Work" },
+  { depth: 2, slug: "essential-items", text: "What You Actually Need" },
+  { depth: 2, slug: "declutter-process", text: "How to Actually Declutter" },
+  { depth: 2, slug: "desk-setup", text: "The Setup Itself" },
+  { depth: 2, slug: "digital-minimalism", text: "Digital Clutter Counts" },
+  { depth: 2, slug: "maintaining-minimalism", text: "Keeping It This Way" },
+  { depth: 2, slug: "faq", text: "Questions People Ask" },
 ];
 
 const faqData = [
   {
-    question: 'Isn\'t minimalism about suffering?',
-    answer: 'No. It\'s about keeping what adds value. Removing what doesn\'t. Some minimalist setups have quite a few things. Every item just has a reason to be there.'
+    question: "Isn't minimalism about suffering?",
+    answer:
+      "No. It's about keeping what adds value. Removing what doesn't. Some minimalist setups have quite a few things. Every item just has a reason to be there.",
   },
   {
-    question: 'Can I work productively with just a laptop?',
-    answer: 'Many people do. If you\'re working eight hour days, external monitor and keyboard help ergonomically. Even minimalists prioritize not destroying their necks.'
+    question: "Can I work productively with just a laptop?",
+    answer:
+      "Many people do. If you're working eight hour days, external monitor and keyboard help ergonomically. Even minimalists prioritize not destroying their necks.",
   },
   {
-    question: 'What about paperwork?',
-    answer: 'Scan it. Cloud storage. For things you absolutely must keep physically, one small folder. Not a cabinet.'
+    question: "What about paperwork?",
+    answer:
+      "Scan it. Cloud storage. For things you absolutely must keep physically, one small folder. Not a cabinet.",
   },
   {
-    question: 'Can I keep personal items?',
-    answer: 'One or two meaningful things is fine. A plant. A photo. Something that makes you feel good. Minimalism isn\'t sterile. It\'s intentional.'
+    question: "Can I keep personal items?",
+    answer:
+      "One or two meaningful things is fine. A plant. A photo. Something that makes you feel good. Minimalism isn't sterile. It's intentional.",
   },
   {
-    question: 'Standing desk?',
-    answer: 'Actually fits minimalist thinking. One piece of furniture that does two jobs. Manual converters are even simpler since they work with your existing desk.'
+    question: "Standing desk?",
+    answer:
+      "Actually fits minimalist thinking. One piece of furniture that does two jobs. Manual converters are even simpler since they work with your existing desk.",
   },
   {
-    question: 'Family thinks my workspace looks empty?',
-    answer: 'Explain that it helps you work better. Better work means you finish faster. Finishing faster means more present time with them. Usually wins people over.'
-  }
+    question: "Family thinks my workspace looks empty?",
+    answer:
+      "Explain that it helps you work better. Better work means you finish faster. Finishing faster means more present time with them. Usually wins people over.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Complete Home Office Checklist',
-    excerpt: 'Full checklist of everything you might need.',
-    href: '/guides/complete-home-office-checklist',
-    image: '/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp',
-    imageAlt: 'Well-organized home office setup'
+    title: "Complete Home Office Checklist",
+    excerpt: "Full checklist of everything you might need.",
+    href: "/guides/complete-home-office-checklist",
+    image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp",
+    imageAlt: "Well-organized home office setup",
   },
   {
-    title: 'Cable Management Guide',
-    excerpt: 'Keep your workspace clean and organized.',
-    href: '/guides/cable-management-guide',
-    image: '/images/unsplash/photo-1558618666-fcd25c85cd64-800w.webp',
-    imageAlt: 'Organized cables under desk'
+    title: "Cable Management Guide",
+    excerpt: "Keep your workspace clean and organized.",
+    href: "/guides/cable-management-guide",
+    image: "/images/unsplash/photo-1558618666-fcd25c85cd64-800w.webp",
+    imageAlt: "Organized cables under desk",
   },
   {
-    title: 'Best Standing Desks',
-    excerpt: 'Top standing desks for health and productivity.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1611269154421-4e27233ac5c7-800w.webp',
-    imageAlt: 'Standing desk in home office'
-  }
+    title: "Best Standing Desks",
+    excerpt: "Top standing desks for health and productivity.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1611269154421-4e27233ac5c7-800w.webp",
+    imageAlt: "Standing desk in home office",
+  },
 ];
 ---
 

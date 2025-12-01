@@ -1,67 +1,71 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Can You Write Off Home Office Equipment? | FloatJet';
-const description = 'Can you write off that standing desk? Yeah, if you\'re self-employed. Here\'s what qualifies, what doesn\'t, and how to track it without losing your mind.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-28');
+const title = "Can You Write Off Home Office Equipment? | FloatJet";
+const description =
+  "Can you write off that standing desk? Yeah, if you're self-employed. Here's what qualifies, what doesn't, and how to track it without losing your mind.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-28");
 const readingTime = 7;
-const image = '/images/unsplash/photo-1454165804606-c3d57bc86b40-1200w.webp';
-const imageAlt = 'Home office desk with laptop and office supplies';
+const image = "/images/unsplash/photo-1454165804606-c3d57bc86b40-1200w.webp";
+const imageAlt = "Home office desk with laptop and office supplies";
 
 // Table of contents headings
 const headings = [
-  {text: 'Can You Write Off Home Office Equipment?', slug: 'can-you-write-off', depth: 2},
-  {text: 'What counts as deductible', slug: 'what-qualifies', depth: 2},
-  {text: 'Two requirements the IRS checks', slug: 'requirements', depth: 2},
-  {text: 'How to calculate the deduction', slug: 'how-much', depth: 2},
-  {text: 'What triggers audits', slug: 'common-mistakes', depth: 2},
-  {text: 'Tracking and documentation', slug: 'track-purchases', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Can You Write Off Home Office Equipment?", slug: "can-you-write-off", depth: 2 },
+  { text: "What counts as deductible", slug: "what-qualifies", depth: 2 },
+  { text: "Two requirements the IRS checks", slug: "requirements", depth: 2 },
+  { text: "How to calculate the deduction", slug: "how-much", depth: 2 },
+  { text: "What triggers audits", slug: "common-mistakes", depth: 2 },
+  { text: "Tracking and documentation", slug: "track-purchases", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data with schema markup
 const faqs = [
   {
-    question: 'Can the whole desk and chair cost get deducted?',
-    answer: 'Yeah if you\'re using them purely for business and meeting the home office requirements. Stuff under $2,500 can go on that year\'s taxes in full through Section 179. Bigger purchases get spread across multiple years. Keep those receipts and note the business percentage if there\'s any personal use mixed in.'
+    question: "Can the whole desk and chair cost get deducted?",
+    answer:
+      "Yeah if you're using them purely for business and meeting the home office requirements. Stuff under $2,500 can go on that year's taxes in full through Section 179. Bigger purchases get spread across multiple years. Keep those receipts and note the business percentage if there's any personal use mixed in.",
   },
   {
-    question: 'W-2 employee here working from home—does this apply?',
-    answer: 'Unfortunately no. 2018 tax changes removed home office deductions for employees completely. Only available now for self-employed folks, freelancers, business owners. Doesn\'t matter if your company mandates remote work—employees can\'t write off the equipment anymore.'
+    question: "W-2 employee here working from home—does this apply?",
+    answer:
+      "Unfortunately no. 2018 tax changes removed home office deductions for employees completely. Only available now for self-employed folks, freelancers, business owners. Doesn't matter if your company mandates remote work—employees can't write off the equipment anymore.",
   },
   {
-    question: 'Receipts required for everything I deduct?',
-    answer: 'Yeah, the <a href="https://www.irs.gov/businesses/small-businesses-self-employed/what-kind-of-records-should-i-keep" target="_blank" rel="nofollow">IRS wants documentation on every deduction you claim</a>. Receipts, invoices, credit card statements, bank records, keep all of it for minimum three years though seven is safer. Anything over $75 needs an actual receipt. Expense apps or accounting software keeps everything organized digitally which makes tax season less miserable.'
+    question: "Receipts required for everything I deduct?",
+    answer:
+      'Yeah, the <a href="https://www.irs.gov/businesses/small-businesses-self-employed/what-kind-of-records-should-i-keep" target="_blank" rel="nofollow">IRS wants documentation on every deduction you claim</a>. Receipts, invoices, credit card statements, bank records, keep all of it for minimum three years though seven is safer. Anything over $75 needs an actual receipt. Expense apps or accounting software keeps everything organized digitally which makes tax season less miserable.',
   },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Tax Tips for Remote Workers',
-    excerpt: 'Navigate international tax obligations and optimize your finances',
-    href: '/blog/tax-tips-remote-workers',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Tax forms and calculator'
+    title: "Tax Tips for Remote Workers",
+    excerpt: "Navigate international tax obligations and optimize your finances",
+    href: "/blog/tax-tips-remote-workers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Tax forms and calculator",
   },
   {
-    title: 'Ultimate Home Office Setup',
-    excerpt: 'Must-have gear to upgrade your workspace for maximum comfort',
-    href: '/blog/ultimate-home-office-setup',
-    image: '/images/unsplash/photo-1493934558415-9d19f0b2b4d2-800w.webp',
-    imageAlt: 'Home office furniture and setup'
+    title: "Ultimate Home Office Setup",
+    excerpt: "Must-have gear to upgrade your workspace for maximum comfort",
+    href: "/blog/ultimate-home-office-setup",
+    image: "/images/unsplash/photo-1493934558415-9d19f0b2b4d2-800w.webp",
+    imageAlt: "Home office furniture and setup",
   },
   {
-    title: 'Best Banking for Digital Nomads',
-    excerpt: 'International banking solutions with low fees and multi-currency support',
-    href: '/blog/best-banking-digital-nomads',
-    image: '/images/unsplash/photo-1579621970563-ebec7560ff3e-800w.webp',
-    imageAlt: 'Banking and finance for remote workers'
+    title: "Best Banking for Digital Nomads",
+    excerpt: "International banking solutions with low fees and multi-currency support",
+    href: "/blog/best-banking-digital-nomads",
+    image: "/images/unsplash/photo-1579621970563-ebec7560ff3e-800w.webp",
+    imageAlt: "Banking and finance for remote workers",
   },
 ];
 ---

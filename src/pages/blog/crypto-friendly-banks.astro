@@ -1,124 +1,129 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Crypto-Friendly Banks for Remote Workers (2025)';
-const description = 'Some banks will freeze your account the moment they see Coinbase or Binance transactions. It happened to me twice. Here\'s which banks work with crypto.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Crypto-Friendly Banks for Remote Workers (2025)";
+const description =
+  "Some banks will freeze your account the moment they see Coinbase or Binance transactions. It happened to me twice. Here's which banks work with crypto.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 3;
-const image = '/images/unsplash/photo-1518546305927-5a555bb7020d-1200w.webp';
-const imageAlt = 'Bitcoin and cryptocurrency concept with digital technology';
+const image = "/images/unsplash/photo-1518546305927-5a555bb7020d-1200w.webp";
+const imageAlt = "Bitcoin and cryptocurrency concept with digital technology";
 
 // Table of contents
 const headings = [
-  {text: 'The Problem', slug: 'introduction', depth: 2},
-  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
-  {text: 'Why Banks Hate Crypto', slug: 'why-banks-block', depth: 2},
-  {text: 'The Good Options', slug: 'best-options', depth: 2},
-  {text: 'How to Not Get Banned', slug: 'best-practices', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Bottom Line', slug: 'conclusion', depth: 2},
+  { text: "The Problem", slug: "introduction", depth: 2 },
+  { text: "Quick Comparison", slug: "quick-comparison", depth: 2 },
+  { text: "Why Banks Hate Crypto", slug: "why-banks-block", depth: 2 },
+  { text: "The Good Options", slug: "best-options", depth: 2 },
+  { text: "How to Not Get Banned", slug: "best-practices", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Bottom Line", slug: "conclusion", depth: 2 },
 ];
 
 // Comparison table
 const comparisonColumns = [
-  {key: 'bank', label: 'Bank', width: '110px'},
-  {key: 'type', label: 'Type'},
-  {key: 'crypto', label: 'Crypto Friendly'},
-  {key: 'transfers', label: 'Exchange Transfers'},
-  {key: 'notes', label: 'Notes'},
+  { key: "bank", label: "Bank", width: "110px" },
+  { key: "type", label: "Type" },
+  { key: "crypto", label: "Crypto Friendly" },
+  { key: "transfers", label: "Exchange Transfers" },
+  { key: "notes", label: "Notes" },
 ];
 
 const comparisonRows = [
   {
-    bank: '<strong>Revolut</strong>',
-    type: 'Digital',
-    crypto: 'Built-in',
-    transfers: 'Yes',
-    notes: 'Buy/sell crypto in-app'
+    bank: "<strong>Revolut</strong>",
+    type: "Digital",
+    crypto: "Built-in",
+    transfers: "Yes",
+    notes: "Buy/sell crypto in-app",
   },
   {
-    bank: '<strong>Ally Bank</strong>',
-    type: 'Traditional',
-    crypto: 'Tolerant',
-    transfers: 'Yes',
-    notes: 'US only, no issues reported'
+    bank: "<strong>Ally Bank</strong>",
+    type: "Traditional",
+    crypto: "Tolerant",
+    transfers: "Yes",
+    notes: "US only, no issues reported",
   },
   {
-    bank: '<strong>Fidelity</strong>',
-    type: 'Brokerage',
-    crypto: 'Supports',
-    transfers: 'Yes',
-    notes: 'Bitcoin in retirement accounts'
+    bank: "<strong>Fidelity</strong>",
+    type: "Brokerage",
+    crypto: "Supports",
+    transfers: "Yes",
+    notes: "Bitcoin in retirement accounts",
   },
   {
-    bank: '<strong>Mercury</strong>',
-    type: 'Business',
-    crypto: 'Business OK',
-    transfers: 'Yes',
-    notes: 'Crypto business friendly'
+    bank: "<strong>Mercury</strong>",
+    type: "Business",
+    crypto: "Business OK",
+    transfers: "Yes",
+    notes: "Crypto business friendly",
   },
   {
-    bank: '<strong>Juno</strong>',
-    type: 'Digital',
-    crypto: 'Built-in',
-    transfers: 'Yes',
-    notes: 'Crypto checking account'
+    bank: "<strong>Juno</strong>",
+    type: "Digital",
+    crypto: "Built-in",
+    transfers: "Yes",
+    notes: "Crypto checking account",
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Can they close my account for buying crypto?',
-    answer: '<p>Yes. Happens more with large or frequent transfers. Using the right banks and not being sketchy minimizes risk.</p>'
+    question: "Can they close my account for buying crypto?",
+    answer:
+      "<p>Yes. Happens more with large or frequent transfers. Using the right banks and not being sketchy minimizes risk.</p>",
   },
   {
-    question: 'Should I tell my bank?',
-    answer: '<p>No need to volunteer. If they ask, be honest. Crypto investing is legal.</p>'
+    question: "Should I tell my bank?",
+    answer: "<p>No need to volunteer. If they ask, be honest. Crypto investing is legal.</p>",
   },
   {
-    question: 'Best way to cash out?',
-    answer: '<p>Sell on Coinbase/Kraken/Gemini, withdraw to bank. Smaller regular withdrawals beat one huge transfer. Or use a crypto debit card.</p>'
+    question: "Best way to cash out?",
+    answer:
+      "<p>Sell on Coinbase/Kraken/Gemini, withdraw to bank. Smaller regular withdrawals beat one huge transfer. Or use a crypto debit card.</p>",
   },
   {
-    question: 'Are crypto banks safe?',
-    answer: '<p>Be careful with newer ones. Check FDIC insurance. Several have failed. Only keep what you\'re using.</p>'
+    question: "Are crypto banks safe?",
+    answer:
+      "<p>Be careful with newer ones. Check FDIC insurance. Several have failed. Only keep what you're using.</p>",
   },
   {
-    question: 'Do I pay taxes on crypto?',
-    answer: '<p>Yes. Treated as property in the US. Capital gains when you sell. Keep records. Use Koinly or CoinTracker.</p>'
-  }
+    question: "Do I pay taxes on crypto?",
+    answer:
+      "<p>Yes. Treated as property in the US. Capital gains when you sell. Keep records. Use Koinly or CoinTracker.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Banking for Digital Nomads',
-    excerpt: 'Multi-currency accounts and low-fee banking for international living.',
-    href: '/blog/best-banking-digital-nomads',
-    image: '/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp',
-    imageAlt: 'Mobile banking app'
+    title: "Best Banking for Digital Nomads",
+    excerpt: "Multi-currency accounts and low-fee banking for international living.",
+    href: "/blog/best-banking-digital-nomads",
+    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp",
+    imageAlt: "Mobile banking app",
   },
   {
-    title: 'Tax Tips for Remote Workers',
-    excerpt: 'Navigate taxes including crypto reporting as a digital nomad.',
-    href: '/blog/tax-tips-remote-workers',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Tax documents'
+    title: "Tax Tips for Remote Workers",
+    excerpt: "Navigate taxes including crypto reporting as a digital nomad.",
+    href: "/blog/tax-tips-remote-workers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Tax documents",
   },
   {
-    title: 'Best VPN for Digital Nomads',
-    excerpt: 'Secure your crypto transactions while traveling.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'VPN security'
-  }
+    title: "Best VPN for Digital Nomads",
+    excerpt: "Secure your crypto transactions while traveling.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "VPN security",
+  },
 ];
 ---
 

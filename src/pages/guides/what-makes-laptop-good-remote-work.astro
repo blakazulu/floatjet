@@ -1,66 +1,70 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'What Makes a Laptop Good for Remote Work?';
-const description = 'Real talk about laptop specs. Battery life matters way more than processor speed. Here\'s what actually counts for remote work beyond marketing specs daily.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-28');
+const title = "What Makes a Laptop Good for Remote Work?";
+const description =
+  "Real talk about laptop specs. Battery life matters way more than processor speed. Here's what actually counts for remote work beyond marketing specs daily.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-28");
 const readingTime = 10;
-const image = '/images/unsplash/photo-1588872657578-7efd1f1555ed-1200w.webp';
-const imageAlt = 'Laptop on desk for remote work';
+const image = "/images/unsplash/photo-1588872657578-7efd1f1555ed-1200w.webp";
+const imageAlt = "Laptop on desk for remote work";
 
 // Table of contents headings
 const headings = [
-  {text: 'What actually matters', slug: 'what-matters', depth: 2},
-  {text: 'Specs vs marketing hype', slug: 'specs-vs-hype', depth: 2},
-  {text: 'Price reality', slug: 'price-reality', depth: 2},
-  {text: 'Mac vs Windows', slug: 'mac-vs-windows', depth: 2},
-  {text: 'Bottom line', slug: 'bottom-line', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "What actually matters", slug: "what-matters", depth: 2 },
+  { text: "Specs vs marketing hype", slug: "specs-vs-hype", depth: 2 },
+  { text: "Price reality", slug: "price-reality", depth: 2 },
+  { text: "Mac vs Windows", slug: "mac-vs-windows", depth: 2 },
+  { text: "Bottom line", slug: "bottom-line", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data with schema markup
 const faqs = [
   {
-    question: 'Can I use a cheap Chromebook for remote work?',
-    answer: 'Depends entirely on what your work involves and what specific tools you use daily. Chromebooks work fine if you\'re mostly in web apps like Google Workspace or Microsoft 365 online versions that run in a browser, basic email and document work that doesn\'t need heavy applications, video calls through the browser that don\'t need desktop apps installed locally. They won\'t run Windows or Mac desktop software at all though which is a complete dealbreaker if your work requires specific applications that only exist as desktop programs you need to install, and storage is super limited usually 64-128GB so you can\'t keep much locally on the device itself which can be annoying.'
+    question: "Can I use a cheap Chromebook for remote work?",
+    answer:
+      "Depends entirely on what your work involves and what specific tools you use daily. Chromebooks work fine if you're mostly in web apps like Google Workspace or Microsoft 365 online versions that run in a browser, basic email and document work that doesn't need heavy applications, video calls through the browser that don't need desktop apps installed locally. They won't run Windows or Mac desktop software at all though which is a complete dealbreaker if your work requires specific applications that only exist as desktop programs you need to install, and storage is super limited usually 64-128GB so you can't keep much locally on the device itself which can be annoying.",
   },
   {
-    question: 'How much RAM do I actually need for remote work?',
-    answer: '8GB is technically enough for basic work like email and documents and light web browsing with a few tabs, but it feels cramped pretty quickly in real-world use when you have multiple apps open at once like most people do during actual workdays with lots going on. 16GB is what I\'d recommend for most remote workers giving you comfortable multitasking ability without slowdowns when you have Slack and Zoom and your browser and a few other things running simultaneously like you normally would throughout the day. 32GB is overkill for typical remote work unless you\'re editing videos regularly or working with huge datasets or running virtual machines as part of your development work.'
+    question: "How much RAM do I actually need for remote work?",
+    answer:
+      "8GB is technically enough for basic work like email and documents and light web browsing with a few tabs, but it feels cramped pretty quickly in real-world use when you have multiple apps open at once like most people do during actual workdays with lots going on. 16GB is what I'd recommend for most remote workers giving you comfortable multitasking ability without slowdowns when you have Slack and Zoom and your browser and a few other things running simultaneously like you normally would throughout the day. 32GB is overkill for typical remote work unless you're editing videos regularly or working with huge datasets or running virtual machines as part of your development work.",
   },
   {
-    question: 'MacBook Air or MacBook Pro for remote work?',
-    answer: 'MacBook Air handles most remote work easily with the M2 chip especially, it\'s lighter for traveling if you move around a lot, cheaper by a decent amount saving you money, battery life is excellent lasting all day easily without charging, fanless design means completely silent operation which is nice in quiet environments. MacBook Pro gives you slightly better performance with active cooling that prevents throttling under sustained heavy workloads, brighter screen that\'s easier to see in bright environments, even longer battery life than the Air which is already great, better speakers if audio quality matters to you for calls or music. For typical remote work the Air is plenty of laptop and saves you money.'
+    question: "MacBook Air or MacBook Pro for remote work?",
+    answer:
+      "MacBook Air handles most remote work easily with the M2 chip especially, it's lighter for traveling if you move around a lot, cheaper by a decent amount saving you money, battery life is excellent lasting all day easily without charging, fanless design means completely silent operation which is nice in quiet environments. MacBook Pro gives you slightly better performance with active cooling that prevents throttling under sustained heavy workloads, brighter screen that's easier to see in bright environments, even longer battery life than the Air which is already great, better speakers if audio quality matters to you for calls or music. For typical remote work the Air is plenty of laptop and saves you money.",
   },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Compare top laptops for performance, battery life, and value',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1588872657578-7efd1f1555ed-800w.webp',
-    imageAlt: 'Modern laptop for remote work'
+    title: "Best Laptops for Remote Work",
+    excerpt: "Compare top laptops for performance, battery life, and value",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1588872657578-7efd1f1555ed-800w.webp",
+    imageAlt: "Modern laptop for remote work",
   },
   {
-    title: 'Best Budget Laptops for Remote Work',
-    excerpt: 'Quality laptops under $1,000 that handle remote work perfectly',
-    href: '/gear/best-budget-laptops-remote-work',
-    image: '/images/unsplash/photo-1525547719571-a2d4ac8945e2-800w.webp',
-    imageAlt: 'Budget laptop setup'
+    title: "Best Budget Laptops for Remote Work",
+    excerpt: "Quality laptops under $1,000 that handle remote work perfectly",
+    href: "/gear/best-budget-laptops-remote-work",
+    image: "/images/unsplash/photo-1525547719571-a2d4ac8945e2-800w.webp",
+    imageAlt: "Budget laptop setup",
   },
   {
-    title: 'Can You Use Personal Laptop for Remote Work?',
-    excerpt: 'Security and performance considerations for using personal devices',
-    href: '/guides/personal-laptop-remote-work',
-    image: '/images/unsplash/photo-1611532736579-6b16e2b50449-800w.webp',
-    imageAlt: 'Person working on personal laptop'
+    title: "Can You Use Personal Laptop for Remote Work?",
+    excerpt: "Security and performance considerations for using personal devices",
+    href: "/guides/personal-laptop-remote-work",
+    image: "/images/unsplash/photo-1611532736579-6b16e2b50449-800w.webp",
+    imageAlt: "Person working on personal laptop",
   },
 ];
 ---

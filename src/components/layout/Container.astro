@@ -1,25 +1,25 @@
 ---
-import {clsx} from 'clsx';
+import { clsx } from "clsx";
 
 interface Props {
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+  size?: "sm" | "md" | "lg" | "xl" | "full";
   class?: string;
 }
 
-const {size = 'xl', class: className} = Astro.props;
+const { size = "xl", class: className } = Astro.props;
 
 // Max-width based on size variant
 const sizeClasses = {
-  sm: 'max-w-3xl',    // 768px - for narrow content like articles
-  md: 'max-w-5xl',    // 1024px - for regular content
-  lg: 'max-w-7xl',    // 1280px - for wide content
-  xl: 'max-w-screen-xl', // 1280px - default
-  full: 'max-w-full'  // No max-width constraint
+  sm: "max-w-3xl", // 768px - for narrow content like articles
+  md: "max-w-5xl", // 1024px - for regular content
+  lg: "max-w-7xl", // 1280px - for wide content
+  xl: "max-w-screen-xl", // 1280px - default
+  full: "max-w-full", // No max-width constraint
 };
 
 const containerClasses = clsx(
-  'mx-auto',
-  'px-4 sm:px-6 lg:px-8', // Mobile-first padding
+  "mx-auto",
+  "px-4 sm:px-6 lg:px-8", // Mobile-first padding
   sizeClasses[size],
   className
 );

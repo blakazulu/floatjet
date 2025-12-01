@@ -1,186 +1,194 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Travel Adapters for International Nomads (2025)';
-const description = 'I tested 8 universal travel adapters across four continents. Here\'s which ones actually work, charge fast, and don\'t break after two months of travel.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Best Travel Adapters for International Nomads (2025)";
+const description =
+  "I tested 8 universal travel adapters across four continents. Here's which ones actually work, charge fast, and don't break after two months of travel.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 10;
-const image = '/images/unsplash/photo-1558618666-fcd25c85cd64-1200w.webp';
-const imageAlt = 'Universal travel adapter for international power outlets';
+const image = "/images/unsplash/photo-1558618666-fcd25c85cd64-1200w.webp";
+const imageAlt = "Universal travel adapter for international power outlets";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Top Picks at a Glance', slug: 'quick-picks', depth: 2},
-  {text: 'Understanding Plug Types', slug: 'plug-types', depth: 2},
-  {text: 'The Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Epicka Universal Adapter', slug: 'epicka', depth: 3},
-  {text: 'Anker PowerPort Atom', slug: 'anker-atom', depth: 3},
-  {text: 'Satechi 75W Travel Charger', slug: 'satechi-75w', depth: 3},
-  {text: 'Zendure Passport III', slug: 'zendure-passport', depth: 3},
-  {text: 'TESSAN Universal Adapter', slug: 'tessan', depth: 3},
-  {text: 'Adapter vs Converter Explained', slug: 'adapter-vs-converter', depth: 2},
-  {text: 'Plug Types Around the World', slug: 'plug-types-region', depth: 2},
-  {text: 'Safety Stuff', slug: 'safety', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'The Bottom Line', slug: 'conclusion', depth: 2},
-  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Top Picks at a Glance", slug: "quick-picks", depth: 2 },
+  { text: "Understanding Plug Types", slug: "plug-types", depth: 2 },
+  { text: "The Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Epicka Universal Adapter", slug: "epicka", depth: 3 },
+  { text: "Anker PowerPort Atom", slug: "anker-atom", depth: 3 },
+  { text: "Satechi 75W Travel Charger", slug: "satechi-75w", depth: 3 },
+  { text: "Zendure Passport III", slug: "zendure-passport", depth: 3 },
+  { text: "TESSAN Universal Adapter", slug: "tessan", depth: 3 },
+  { text: "Adapter vs Converter Explained", slug: "adapter-vs-converter", depth: 2 },
+  { text: "Plug Types Around the World", slug: "plug-types-region", depth: 2 },
+  { text: "Safety Stuff", slug: "safety", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "The Bottom Line", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'adapter', label: 'Adapter', width: '140px'},
-  {key: 'bestFor', label: 'Best For', width: '140px'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
-  {key: 'action', label: ''},
+  { key: "adapter", label: "Adapter", width: "140px" },
+  { key: "bestFor", label: "Best For", width: "140px" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    adapter: '<strong>Epicka Universal</strong>',
-    bestFor: 'Best Overall',
-    price: '$25',
-    rating: '9.3/10',
-    action: '<a href="/go/amazon/epicka-adapter" rel="nofollow sponsored">Check Price</a>'
+    adapter: "<strong>Epicka Universal</strong>",
+    bestFor: "Best Overall",
+    price: "$25",
+    rating: "9.3/10",
+    action: '<a href="/go/amazon/epicka-adapter" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    adapter: '<strong>Anker PowerPort</strong>',
-    bestFor: 'Best Compact',
-    price: '$35',
-    rating: '9.0/10',
-    action: '<a href="/go/amazon/anker-travel-adapter" rel="nofollow sponsored">Check Price</a>'
+    adapter: "<strong>Anker PowerPort</strong>",
+    bestFor: "Best Compact",
+    price: "$35",
+    rating: "9.0/10",
+    action: '<a href="/go/amazon/anker-travel-adapter" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    adapter: '<strong>TESSAN Universal</strong>',
-    bestFor: 'Best Budget',
-    price: '$18',
-    rating: '8.5/10',
-    action: '<a href="/go/amazon/tessan-adapter" rel="nofollow sponsored">Check Price</a>'
+    adapter: "<strong>TESSAN Universal</strong>",
+    bestFor: "Best Budget",
+    price: "$18",
+    rating: "8.5/10",
+    action: '<a href="/go/amazon/tessan-adapter" rel="nofollow sponsored">Check Price</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'adapter', label: 'Adapter', width: '130px'},
-  {key: 'bestFor', label: 'Best For', width: '100px'},
-  {key: 'price', label: 'Price'},
-  {key: 'usb', label: 'USB Ports'},
-  {key: 'power', label: 'Max Power'},
-  {key: 'regions', label: 'Regions'},
-  {key: 'action', label: ''},
+  { key: "adapter", label: "Adapter", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "100px" },
+  { key: "price", label: "Price" },
+  { key: "usb", label: "USB Ports" },
+  { key: "power", label: "Max Power" },
+  { key: "regions", label: "Regions" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    adapter: '<strong>Epicka Universal</strong>',
-    bestFor: 'Overall',
-    price: '$25',
-    usb: '4 USB-A + 1 USB-C',
-    power: '1840W',
-    regions: '150+',
-    action: '<a href="/go/amazon/epicka-adapter" rel="nofollow sponsored">Buy</a>'
+    adapter: "<strong>Epicka Universal</strong>",
+    bestFor: "Overall",
+    price: "$25",
+    usb: "4 USB-A + 1 USB-C",
+    power: "1840W",
+    regions: "150+",
+    action: '<a href="/go/amazon/epicka-adapter" rel="nofollow sponsored">Buy</a>',
   },
   {
-    adapter: '<strong>Anker PowerPort</strong>',
-    bestFor: 'Compact',
-    price: '$35',
-    usb: '3 USB-A + 1 USB-C',
-    power: '30W',
-    regions: '150+',
-    action: '<a href="/go/amazon/anker-travel-adapter" rel="nofollow sponsored">Buy</a>'
+    adapter: "<strong>Anker PowerPort</strong>",
+    bestFor: "Compact",
+    price: "$35",
+    usb: "3 USB-A + 1 USB-C",
+    power: "30W",
+    regions: "150+",
+    action: '<a href="/go/amazon/anker-travel-adapter" rel="nofollow sponsored">Buy</a>',
   },
   {
-    adapter: '<strong>Satechi 75W</strong>',
-    bestFor: 'Apple Users',
-    price: '$60',
-    usb: '2 USB-C PD',
-    power: '75W PD',
-    regions: '150+',
-    action: '<a href="/go/amazon/satechi-75w" rel="nofollow sponsored">Buy</a>'
+    adapter: "<strong>Satechi 75W</strong>",
+    bestFor: "Apple Users",
+    price: "$60",
+    usb: "2 USB-C PD",
+    power: "75W PD",
+    regions: "150+",
+    action: '<a href="/go/amazon/satechi-75w" rel="nofollow sponsored">Buy</a>',
   },
   {
-    adapter: '<strong>Zendure Passport III</strong>',
-    bestFor: 'Premium',
-    price: '$70',
-    usb: '2 USB-A + 2 USB-C',
-    power: '65W PD',
-    regions: '200+',
-    action: '<a href="/go/amazon/zendure-passport" rel="nofollow sponsored">Buy</a>'
+    adapter: "<strong>Zendure Passport III</strong>",
+    bestFor: "Premium",
+    price: "$70",
+    usb: "2 USB-A + 2 USB-C",
+    power: "65W PD",
+    regions: "200+",
+    action: '<a href="/go/amazon/zendure-passport" rel="nofollow sponsored">Buy</a>',
   },
   {
-    adapter: '<strong>TESSAN Universal</strong>',
-    bestFor: 'Budget',
-    price: '$18',
-    usb: '3 USB-A + 1 USB-C',
-    power: '1380W',
-    regions: '150+',
-    action: '<a href="/go/amazon/tessan-adapter" rel="nofollow sponsored">Buy</a>'
+    adapter: "<strong>TESSAN Universal</strong>",
+    bestFor: "Budget",
+    price: "$18",
+    usb: "3 USB-A + 1 USB-C",
+    power: "1380W",
+    regions: "150+",
+    action: '<a href="/go/amazon/tessan-adapter" rel="nofollow sponsored">Buy</a>',
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'What\'s the best universal travel adapter?',
-    answer: '<p>The <strong>Epicka Universal Adapter</strong> for most people. Twenty-five bucks, works in 150+ countries, has 5 USB ports. It\'s what I use.</p><p>If you\'re all-in on Apple and want USB-C fast charging, the <strong>Satechi 75W</strong> at $60 is worth it.</p>'
+    question: "What's the best universal travel adapter?",
+    answer:
+      "<p>The <strong>Epicka Universal Adapter</strong> for most people. Twenty-five bucks, works in 150+ countries, has 5 USB ports. It's what I use.</p><p>If you're all-in on Apple and want USB-C fast charging, the <strong>Satechi 75W</strong> at $60 is worth it.</p>",
   },
   {
-    question: 'Adapter or voltage converter—which do I need?',
-    answer: '<p><strong>Probably just an adapter.</strong> Check your charger\'s tiny text. If it says "INPUT: 100-240V" you\'re good with just an adapter.</p><p>That covers all laptops, phones, tablets, and cameras. You might need a converter for hair dryers and curling irons—but honestly just buy dual-voltage versions instead.</p>'
+    question: "Adapter or voltage converter—which do I need?",
+    answer:
+      "<p><strong>Probably just an adapter.</strong> Check your charger's tiny text. If it says \"INPUT: 100-240V\" you're good with just an adapter.</p><p>That covers all laptops, phones, tablets, and cameras. You might need a converter for hair dryers and curling irons—but honestly just buy dual-voltage versions instead.</p>",
   },
   {
-    question: 'What plug types are used around the world?',
-    answer: '<p>Like 15+ different types. The main ones: Type A/B in the US, Canada, Mexico, Japan. Type C across Europe and most of Asia. Type G in the UK and former colonies. Type I in Australia and New Zealand.</p><p>A universal adapter handles all of them. Don\'t overthink it.</p>'
+    question: "What plug types are used around the world?",
+    answer:
+      "<p>Like 15+ different types. The main ones: Type A/B in the US, Canada, Mexico, Japan. Type C across Europe and most of Asia. Type G in the UK and former colonies. Type I in Australia and New Zealand.</p><p>A universal adapter handles all of them. Don't overthink it.</p>",
   },
   {
-    question: 'Can I charge my laptop with a travel adapter?',
-    answer: '<p><strong>Yes.</strong> If your laptop uses USB-C charging, get an adapter with USB-C PD (the Satechi or Zendure). If your laptop uses a regular power brick, any adapter with an AC outlet works—just plug in your existing charger.</p>'
+    question: "Can I charge my laptop with a travel adapter?",
+    answer:
+      "<p><strong>Yes.</strong> If your laptop uses USB-C charging, get an adapter with USB-C PD (the Satechi or Zendure). If your laptop uses a regular power brick, any adapter with an AC outlet works—just plug in your existing charger.</p>",
   },
   {
-    question: 'Are all travel adapters safe?',
-    answer: '<p><strong>No.</strong> Cheap knockoffs can fry your gear or start fires. Look for CE, FCC, or UL certifications. If the price seems too good to be true, it probably is.</p><p>Everything in this guide has proper certifications.</p>'
+    question: "Are all travel adapters safe?",
+    answer:
+      "<p><strong>No.</strong> Cheap knockoffs can fry your gear or start fires. Look for CE, FCC, or UL certifications. If the price seems too good to be true, it probably is.</p><p>Everything in this guide has proper certifications.</p>",
   },
   {
-    question: 'How many adapters do I need?',
-    answer: '<p>One good universal adapter with USB ports is usually enough. If you want a backup or like having one at your hotel and one in your bag, grab two. The TESSAN at $18 makes a solid backup.</p>'
+    question: "How many adapters do I need?",
+    answer:
+      "<p>One good universal adapter with USB ports is usually enough. If you want a backup or like having one at your hotel and one in your bag, grab two. The TESSAN at $18 makes a solid backup.</p>",
   },
   {
-    question: 'Do I need an adapter for Europe?',
-    answer: '<p><strong>Yes, if you\'re coming from the US.</strong> Most of Europe uses Type C or F plugs (round pins). UK uses Type G (three rectangles). A universal adapter handles all of them—the Epicka and TESSAN both work across all of Europe.</p>'
-  }
+    question: "Do I need an adapter for Europe?",
+    answer:
+      "<p><strong>Yes, if you're coming from the US.</strong> Most of Europe uses Type C or F plugs (round pins). UK uses Type G (three rectangles). A universal adapter handles all of them—the Epicka and TESSAN both work across all of Europe.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Portable Chargers & Power Banks',
-    excerpt: 'Never run out of battery on the road with these tested portable chargers.',
-    href: '/gear/best-portable-chargers-power-banks',
-    image: '/images/unsplash/photo-1585338107529-13afc5f02586-800w.webp',
-    imageAlt: 'Portable power bank for travel'
+    title: "Best Portable Chargers & Power Banks",
+    excerpt: "Never run out of battery on the road with these tested portable chargers.",
+    href: "/gear/best-portable-chargers-power-banks",
+    image: "/images/unsplash/photo-1585338107529-13afc5f02586-800w.webp",
+    imageAlt: "Portable power bank for travel",
   },
   {
-    title: 'Essential Travel Tech for Nomads',
-    excerpt: 'Complete guide to the must-have tech gadgets for digital nomads.',
-    href: '/blog/essential-travel-tech-nomads',
-    image: '/images/unsplash/photo-1488590528505-98d2b5aba04b-800w.webp',
-    imageAlt: 'Travel tech essentials'
+    title: "Essential Travel Tech for Nomads",
+    excerpt: "Complete guide to the must-have tech gadgets for digital nomads.",
+    href: "/blog/essential-travel-tech-nomads",
+    image: "/images/unsplash/photo-1488590528505-98d2b5aba04b-800w.webp",
+    imageAlt: "Travel tech essentials",
   },
   {
-    title: 'Top Destinations for Digital Nomads',
-    excerpt: 'Discover the best cities for remote work with great WiFi and cost of living.',
-    href: '/blog/top-destinations-digital-nomads',
-    image: '/images/unsplash/photo-1488085061387-422e29b40080-800w.webp',
-    imageAlt: 'Digital nomad destination'
-  }
+    title: "Top Destinations for Digital Nomads",
+    excerpt: "Discover the best cities for remote work with great WiFi and cost of living.",
+    href: "/blog/top-destinations-digital-nomads",
+    image: "/images/unsplash/photo-1488085061387-422e29b40080-800w.webp",
+    imageAlt: "Digital nomad destination",
+  },
 ];
 ---
 

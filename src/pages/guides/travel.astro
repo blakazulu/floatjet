@@ -1,102 +1,120 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const title = 'Travel Guides for Digital Nomads | FloatJet';
-const description = 'Essential travel guides for digital nomads and remote workers. Find the best destinations, travel tech, and tips for working abroad without visa headaches.';
+const title = "Travel Guides for Digital Nomads | FloatJet";
+const description =
+  "Essential travel guides for digital nomads and remote workers. Find the best destinations, travel tech, and tips for working abroad without visa headaches.";
 
 const mainArticle = {
-  title: 'Top Destinations for Digital Nomads (2025)',
-  description: 'We researched visa policies, cost of living, WiFi speeds, and nomad communities in 30+ countries to find the best places to work remotely.',
-  href: '/blog/top-destinations-digital-nomads',
-  readTime: '20 min'
+  title: "Top Destinations for Digital Nomads (2025)",
+  description:
+    "We researched visa policies, cost of living, WiFi speeds, and nomad communities in 30+ countries to find the best places to work remotely.",
+  href: "/blog/top-destinations-digital-nomads",
+  readTime: "20 min",
 };
 
 const travelGuides = [
   {
-    title: 'Portugal Digital Nomad Visa Guide',
-    description: 'Complete guide to working legally from Portugal with the digital nomad visa.',
-    href: '/guides/digital-nomad-visa-portugal',
-    icon: '🇵🇹',
-    category: 'Travel',
-    readTime: 15
+    title: "Portugal Digital Nomad Visa Guide",
+    description: "Complete guide to working legally from Portugal with the digital nomad visa.",
+    href: "/guides/digital-nomad-visa-portugal",
+    icon: "🇵🇹",
+    category: "Travel",
+    readTime: 15,
   },
   {
-    title: 'Spain Digital Nomad Visa Guide',
-    description: 'Everything about Spain\'s visa including Beckham Law tax benefits.',
-    href: '/guides/digital-nomad-visa-spain',
-    icon: '🇪🇸',
-    category: 'Travel',
-    readTime: 14
+    title: "Spain Digital Nomad Visa Guide",
+    description: "Everything about Spain's visa including Beckham Law tax benefits.",
+    href: "/guides/digital-nomad-visa-spain",
+    icon: "🇪🇸",
+    category: "Travel",
+    readTime: 14,
   },
   {
-    title: 'Best Coworking Spaces in Lisbon',
-    description: 'Top coworking spaces for digital nomads in Portugal\'s capital.',
-    href: '/guides/best-coworking-spaces-lisbon',
-    icon: '💼',
-    category: 'Travel',
-    readTime: 13
+    title: "Best Coworking Spaces in Lisbon",
+    description: "Top coworking spaces for digital nomads in Portugal's capital.",
+    href: "/guides/best-coworking-spaces-lisbon",
+    icon: "💼",
+    category: "Travel",
+    readTime: 13,
   },
   {
-    title: 'Working Across Time Zones',
-    description: 'Master working with teams in different time zones while traveling.',
-    href: '/guides/work-remotely-different-time-zones',
-    icon: '🌍',
-    category: 'Travel',
-    readTime: 12
+    title: "Working Across Time Zones",
+    description: "Master working with teams in different time zones while traveling.",
+    href: "/guides/work-remotely-different-time-zones",
+    icon: "🌍",
+    category: "Travel",
+    readTime: 12,
   },
   {
-    title: 'Can You Work Remotely from Another Country?',
-    description: 'Legal guide to visa requirements and tax implications.',
-    href: '/guides/can-you-work-remotely-another-country',
-    icon: '⚖️',
-    category: 'Travel',
-    readTime: 10
+    title: "Can You Work Remotely from Another Country?",
+    description: "Legal guide to visa requirements and tax implications.",
+    href: "/guides/can-you-work-remotely-another-country",
+    icon: "⚖️",
+    category: "Travel",
+    readTime: 10,
   },
   {
-    title: 'Essential Travel Tech for Nomads',
-    description: 'The must-have gadgets and gear for productive travel.',
-    href: '/blog/essential-travel-tech-nomads',
-    icon: '🎒',
-    category: 'Gear',
-    readTime: 10
+    title: "Essential Travel Tech for Nomads",
+    description: "The must-have gadgets and gear for productive travel.",
+    href: "/blog/essential-travel-tech-nomads",
+    icon: "🎒",
+    category: "Gear",
+    readTime: 10,
   },
   {
-    title: 'Best Travel Insurance',
-    description: 'Protect yourself abroad with insurance built for remote workers.',
-    href: '/blog/best-travel-insurance-remote-workers',
-    icon: '🛡️',
-    category: 'Insurance',
-    readTime: 11
+    title: "Best Travel Insurance",
+    description: "Protect yourself abroad with insurance built for remote workers.",
+    href: "/blog/best-travel-insurance-remote-workers",
+    icon: "🛡️",
+    category: "Insurance",
+    readTime: 11,
   },
   {
-    title: 'Find Reliable WiFi Anywhere',
-    description: 'Tips and tools for finding fast, stable internet while traveling.',
-    href: '/blog/find-reliable-wifi-anywhere',
-    icon: '📶',
-    category: 'Connectivity',
-    readTime: 9
+    title: "Find Reliable WiFi Anywhere",
+    description: "Tips and tools for finding fast, stable internet while traveling.",
+    href: "/blog/find-reliable-wifi-anywhere",
+    icon: "📶",
+    category: "Connectivity",
+    readTime: 9,
   },
   {
-    title: 'VPN & Public WiFi Security',
-    description: 'Stay safe on public networks with these essential security practices.',
-    href: '/blog/vpn-public-wifi-guide',
-    icon: '🔐',
-    category: 'Security',
-    readTime: 13
-  }
+    title: "VPN & Public WiFi Security",
+    description: "Stay safe on public networks with these essential security practices.",
+    href: "/blog/vpn-public-wifi-guide",
+    icon: "🔐",
+    category: "Security",
+    readTime: 13,
+  },
 ];
 
 const topDestinations = [
-  {name: 'Lisbon', tag: 'Europe', color: 'bg-blue-500/20 text-blue-400'},
-  {name: 'Bali', tag: 'Asia', color: 'bg-green-500/20 text-green-400'},
-  {name: 'Mexico City', tag: 'Americas', color: 'bg-purple-500/20 text-purple-400'}
+  { name: "Lisbon", tag: "Europe", color: "bg-blue-500/20 text-blue-400" },
+  { name: "Bali", tag: "Asia", color: "bg-green-500/20 text-green-400" },
+  { name: "Mexico City", tag: "Americas", color: "bg-purple-500/20 text-purple-400" },
 ];
 
 const travelTips = [
-  {title: 'Visa Research', description: 'Know entry requirements and digital nomad visa options', icon: '📄'},
-  {title: 'Cost of Living', description: 'Budget for accommodation, food, coworking, and more', icon: '💰'},
-  {title: 'Time Zone Planning', description: 'Manage client calls across different time zones', icon: '🌍'},
-  {title: 'Community Finding', description: 'Connect with other nomads and build your network', icon: '👥'}
+  {
+    title: "Visa Research",
+    description: "Know entry requirements and digital nomad visa options",
+    icon: "📄",
+  },
+  {
+    title: "Cost of Living",
+    description: "Budget for accommodation, food, coworking, and more",
+    icon: "💰",
+  },
+  {
+    title: "Time Zone Planning",
+    description: "Manage client calls across different time zones",
+    icon: "🌍",
+  },
+  {
+    title: "Community Finding",
+    description: "Connect with other nomads and build your network",
+    icon: "👥",
+  },
 ];
 ---
 

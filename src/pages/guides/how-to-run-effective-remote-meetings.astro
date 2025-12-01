@@ -1,92 +1,102 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'How to Run Effective Remote Meetings (2025)';
-const description = 'Virtual meeting best practices to cut the fatigue. Facilitation techniques, tools, and templates that actually work for distributed teams without the BS.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "How to Run Effective Remote Meetings (2025)";
+const description =
+  "Virtual meeting best practices to cut the fatigue. Facilitation techniques, tools, and templates that actually work for distributed teams without the BS.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 14;
-const image = '/images/unsplash/photo-1609619385002-f40f1df9b7eb-1200w.webp';
-const imageAlt = 'Remote team participating in a productive video conference meeting';
+const image = "/images/unsplash/photo-1609619385002-f40f1df9b7eb-1200w.webp";
+const imageAlt = "Remote team participating in a productive video conference meeting";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Before the Meeting', slug: 'before-meeting', depth: 2},
-  {text: 'Starting Strong', slug: 'starting-strong', depth: 2},
-  {text: 'Facilitating Engagement', slug: 'facilitating-engagement', depth: 2},
-  {text: 'Managing Different Personalities', slug: 'managing-personalities', depth: 2},
-  {text: 'Recording and Notes', slug: 'recording-notes', depth: 2},
-  {text: 'Ending with Action Items', slug: 'action-items', depth: 2},
-  {text: 'Follow-Up Essentials', slug: 'follow-up', depth: 2},
-  {text: 'Tools That Help', slug: 'tools', depth: 2},
-  {text: 'Meeting-Free Alternatives', slug: 'alternatives', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Before the Meeting", slug: "before-meeting", depth: 2 },
+  { text: "Starting Strong", slug: "starting-strong", depth: 2 },
+  { text: "Facilitating Engagement", slug: "facilitating-engagement", depth: 2 },
+  { text: "Managing Different Personalities", slug: "managing-personalities", depth: 2 },
+  { text: "Recording and Notes", slug: "recording-notes", depth: 2 },
+  { text: "Ending with Action Items", slug: "action-items", depth: 2 },
+  { text: "Follow-Up Essentials", slug: "follow-up", depth: 2 },
+  { text: "Tools That Help", slug: "tools", depth: 2 },
+  { text: "Meeting-Free Alternatives", slug: "alternatives", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'How long should remote meetings be?',
-    answer: '<p>Twenty-five to fifty minutes works best. Schedule twenty-five instead of thirty. Fifty instead of sixty. This builds buffer time between calls. Prevents fatigue. Forces tighter agendas.</p><p>For complex topics schedule multiple twenty-five minute blocks with breaks rather than marathon sessions.</p>'
+    question: "How long should remote meetings be?",
+    answer:
+      "<p>Twenty-five to fifty minutes works best. Schedule twenty-five instead of thirty. Fifty instead of sixty. This builds buffer time between calls. Prevents fatigue. Forces tighter agendas.</p><p>For complex topics schedule multiple twenty-five minute blocks with breaks rather than marathon sessions.</p>",
   },
   {
-    question: 'Should cameras always be on?',
-    answer: '<p>Not always. Cameras help engagement for some meetings but mandatory policies cause fatigue and exclude people with legit reasons to be off-camera.</p><p>Cameras on for team bonding and important discussions and client meetings.</p><p>Cameras optional for status updates and large all-hands and early morning calls.</p><p>Let purpose guide expectation not a blanket rule.</p>'
+    question: "Should cameras always be on?",
+    answer:
+      "<p>Not always. Cameras help engagement for some meetings but mandatory policies cause fatigue and exclude people with legit reasons to be off-camera.</p><p>Cameras on for team bonding and important discussions and client meetings.</p><p>Cameras optional for status updates and large all-hands and early morning calls.</p><p>Let purpose guide expectation not a blanket rule.</p>",
   },
   {
-    question: 'What about people who dominate meetings?',
-    answer: '<p>Several approaches help. Round-robin explicitly calls on each person. Chat-first has everyone type before speaking. Visible timers limit each speaker. Pre-work collects input async before meeting.</p><p>If someone consistently dominates address it privately with specific examples and agreed solutions.</p>'
+    question: "What about people who dominate meetings?",
+    answer:
+      "<p>Several approaches help. Round-robin explicitly calls on each person. Chat-first has everyone type before speaking. Visible timers limit each speaker. Pre-work collects input async before meeting.</p><p>If someone consistently dominates address it privately with specific examples and agreed solutions.</p>",
   },
   {
-    question: 'How many people should attend?',
-    answer: '<p>The two-pizza rule applies. Five to eight people. Larger meetings become passive consumption not collaboration.</p><p>For updates to big groups consider recording a video instead. Send written updates with optional Q&A. Have working groups report to larger audiences async.</p><p>Every additional person increases coordination cost and reduces engagement.</p>'
+    question: "How many people should attend?",
+    answer:
+      "<p>The two-pizza rule applies. Five to eight people. Larger meetings become passive consumption not collaboration.</p><p>For updates to big groups consider recording a video instead. Send written updates with optional Q&A. Have working groups report to larger audiences async.</p><p>Every additional person increases coordination cost and reduces engagement.</p>",
   },
   {
-    question: 'What about no-shows?',
-    answer: '<p>Consistent no-shows signal systemic issues. Check if their attendance was actually required. Review if timing works for their schedule or timezone. Send reminders since calendar invites alone may not be enough. Discuss directly and ask what barriers prevent attendance.</p><p>If someone regularly misses meetings they committed to it may be a performance conversation.</p>'
+    question: "What about no-shows?",
+    answer:
+      "<p>Consistent no-shows signal systemic issues. Check if their attendance was actually required. Review if timing works for their schedule or timezone. Send reminders since calendar invites alone may not be enough. Discuss directly and ask what barriers prevent attendance.</p><p>If someone regularly misses meetings they committed to it may be a performance conversation.</p>",
   },
   {
-    question: 'How do I make meetings more interactive?',
-    answer: '<p>Break passive listening with active elements. Use polls for quick decisions or temperature checks. Breakout rooms for small group discussions before sharing. Collaborative docs for real-time editing together. Chat engagement for reactions and questions. Rotating roles where different people facilitate or take notes.</p>'
+    question: "How do I make meetings more interactive?",
+    answer:
+      "<p>Break passive listening with active elements. Use polls for quick decisions or temperature checks. Breakout rooms for small group discussions before sharing. Collaborative docs for real-time editing together. Chat engagement for reactions and questions. Rotating roles where different people facilitate or take notes.</p>",
   },
   {
-    question: 'Should I record everything?',
-    answer: '<p>No. Record when key decisions are made. Important info others need to reference. Timezone differences require catch-up. Training or knowledge transfer happens.</p><p>Skip recording for casual check-ins. Sensitive conversations. Brainstorming where people may self-censor. Meetings where written notes suffice.</p>'
+    question: "Should I record everything?",
+    answer:
+      "<p>No. Record when key decisions are made. Important info others need to reference. Timezone differences require catch-up. Training or knowledge transfer happens.</p><p>Skip recording for casual check-ins. Sensitive conversations. Brainstorming where people may self-censor. Meetings where written notes suffice.</p>",
   },
   {
-    question: 'How do I handle multiple time zones?',
-    answer: '<p>Rotate meeting times to share the inconvenience. Record and let people watch async. Use async alternatives. Find the two to three hours of overlap. Always specify time zones in invites.</p><p>Consider whether real-time presence is truly required.</p>'
-  }
+    question: "How do I handle multiple time zones?",
+    answer:
+      "<p>Rotate meeting times to share the inconvenience. Record and let people watch async. Use async alternatives. Find the two to three hours of overlap. Always specify time zones in invites.</p><p>Consider whether real-time presence is truly required.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Async Communication for Remote Teams',
-    excerpt: 'Master asynchronous communication to reduce meetings and boost productivity in distributed teams.',
-    href: '/blog/async-communication-remote-teams',
-    image: '/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp',
-    imageAlt: 'Remote team collaborating through digital communication tools'
+    title: "Async Communication for Remote Teams",
+    excerpt:
+      "Master asynchronous communication to reduce meetings and boost productivity in distributed teams.",
+    href: "/blog/async-communication-remote-teams",
+    image: "/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp",
+    imageAlt: "Remote team collaborating through digital communication tools",
   },
   {
-    title: 'Best Team Communication Tools',
-    excerpt: 'Compare top messaging and collaboration platforms for remote teams.',
-    href: '/blog/best-team-communication-tools',
-    image: '/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp',
-    imageAlt: 'Team using communication software'
+    title: "Best Team Communication Tools",
+    excerpt: "Compare top messaging and collaboration platforms for remote teams.",
+    href: "/blog/best-team-communication-tools",
+    image: "/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp",
+    imageAlt: "Team using communication software",
   },
   {
-    title: 'Best Project Management Software',
-    excerpt: 'Find the perfect project management tool for organizing your remote team workflows.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Modern workspace with project management dashboard'
-  }
+    title: "Best Project Management Software",
+    excerpt: "Find the perfect project management tool for organizing your remote team workflows.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Modern workspace with project management dashboard",
+  },
 ];
 ---
 

@@ -12,12 +12,7 @@ const TITLE_MIN = 30;
 const TITLE_MAX = 60;
 
 // Glob patterns for all article directories
-const articleDirs = [
-  "src/pages/blog",
-  "src/pages/gear",
-  "src/pages/guides",
-  "src/pages/tools"
-];
+const articleDirs = ["src/pages/blog", "src/pages/gear", "src/pages/guides", "src/pages/tools"];
 
 function extractMetadata(content, filePath) {
   // Extract title - look for: const title = 'xxx';
@@ -28,20 +23,20 @@ function extractMetadata(content, filePath) {
   const descMatch = content.match(/const\s+description\s*=\s*['"`](.+?)['"`];/s);
   const description = descMatch ? descMatch[1].replace(/\\'/g, "'") : null;
 
-  return {title, description};
+  return { title, description };
 }
 
 function analyzeArticle(filePath) {
   const content = fs.readFileSync(filePath, "utf-8");
   const relativePath = filePath.replace(/^.*src\/pages/, "").replace(/\.astro$/, "");
 
-  const {title, description} = extractMetadata(content, filePath);
+  const { title, description } = extractMetadata(content, filePath);
 
   const issues = [];
 
   // Check title
   if (!title) {
-    issues.push({type: "TITLE_MISSING", severity: "P0"});
+    issues.push({ type: "TITLE_MISSING", severity: "P0" });
   } else {
     const titleLen = title.length;
     if (titleLen < TITLE_MIN) {
@@ -50,7 +45,7 @@ function analyzeArticle(filePath) {
         severity: "P1",
         current: titleLen,
         needed: TITLE_MIN - titleLen,
-        value: title
+        value: title,
       });
     } else if (titleLen > TITLE_MAX) {
       issues.push({
@@ -58,14 +53,14 @@ function analyzeArticle(filePath) {
         severity: "P1",
         current: titleLen,
         needed: titleLen - TITLE_MAX,
-        value: title
+        value: title,
       });
     }
   }
 
   // Check description
   if (!description) {
-    issues.push({type: "DESCRIPTION_MISSING", severity: "P0"});
+    issues.push({ type: "DESCRIPTION_MISSING", severity: "P0" });
   } else {
     const descLen = description.length;
     if (descLen < DESCRIPTION_MIN) {
@@ -74,7 +69,7 @@ function analyzeArticle(filePath) {
         severity: "P1",
         current: descLen,
         needed: DESCRIPTION_MIN - descLen,
-        value: description
+        value: description,
       });
     } else if (descLen > DESCRIPTION_MAX) {
       issues.push({
@@ -82,7 +77,7 @@ function analyzeArticle(filePath) {
         severity: "P1",
         current: descLen,
         needed: descLen - DESCRIPTION_MAX,
-        value: description
+        value: description,
       });
     }
   }
@@ -94,8 +89,12 @@ function analyzeArticle(filePath) {
     description: description || "MISSING",
     descriptionLength: description ? description.length : 0,
     issues,
-    status: issues.length === 0 ? "PERFECT" :
-      issues.some(i => i.severity === "P0") ? "BROKEN" : "NEEDS_FIX"
+    status:
+      issues.length === 0
+        ? "PERFECT"
+        : issues.some((i) => i.severity === "P0")
+          ? "BROKEN"
+          : "NEEDS_FIX",
   };
 }
 
@@ -103,14 +102,18 @@ function findArticles(dir) {
   const articles = [];
 
   function scan(currentDir) {
-    const entries = fs.readdirSync(currentDir, {withFileTypes: true});
+    const entries = fs.readdirSync(currentDir, { withFileTypes: true });
 
     for (const entry of entries) {
       const fullPath = path.join(currentDir, entry.name);
 
       if (entry.isDirectory()) {
         scan(fullPath);
-      } else if (entry.isFile() && entry.name.endsWith(".astro") && !entry.name.startsWith("index")) {
+      } else if (
+        entry.isFile() &&
+        entry.name.endsWith(".astro") &&
+        !entry.name.startsWith("index")
+      ) {
         articles.push(fullPath);
       }
     }
@@ -134,16 +137,14 @@ for (const dir of articleDirs) {
 const results = allArticles.map(analyzeArticle);
 
 // Categorize results
-const perfect = results.filter(r => r.status === "PERFECT");
-const broken = results.filter(r => r.status === "BROKEN");
-const needsFix = results.filter(r => r.status === "NEEDS_FIX");
+const perfect = results.filter((r) => r.status === "PERFECT");
+const broken = results.filter((r) => r.status === "BROKEN");
+const needsFix = results.filter((r) => r.status === "NEEDS_FIX");
 
 // Separate by issue type
-const titleIssues = needsFix.filter(r =>
-  r.issues.some(i => i.type.startsWith("TITLE_"))
-);
-const descriptionIssues = needsFix.filter(r =>
-  r.issues.some(i => i.type.startsWith("DESCRIPTION_"))
+const titleIssues = needsFix.filter((r) => r.issues.some((i) => i.type.startsWith("TITLE_")));
+const descriptionIssues = needsFix.filter((r) =>
+  r.issues.some((i) => i.type.startsWith("DESCRIPTION_"))
 );
 
 console.log("📊 SUMMARY\n");
@@ -159,13 +160,13 @@ if (descriptionIssues.length > 0) {
   console.log("📝 DESCRIPTION FIXES NEEDED:\n");
 
   descriptionIssues.sort((a, b) => {
-    const aIssue = a.issues.find(i => i.type.startsWith("DESCRIPTION_"));
-    const bIssue = b.issues.find(i => i.type.startsWith("DESCRIPTION_"));
+    const aIssue = a.issues.find((i) => i.type.startsWith("DESCRIPTION_"));
+    const bIssue = b.issues.find((i) => i.type.startsWith("DESCRIPTION_"));
     return (bIssue?.needed || 0) - (aIssue?.needed || 0);
   });
 
   for (const article of descriptionIssues.slice(0, 20)) {
-    const issue = article.issues.find(i => i.type.startsWith("DESCRIPTION_"));
+    const issue = article.issues.find((i) => i.type.startsWith("DESCRIPTION_"));
     const action = issue.type === "DESCRIPTION_TOO_SHORT" ? "ADD" : "REMOVE";
 
     console.log(`${article.path}`);
@@ -184,7 +185,7 @@ if (titleIssues.length > 0) {
   console.log("\n📌 TITLE FIXES NEEDED:\n");
 
   for (const article of titleIssues) {
-    const issue = article.issues.find(i => i.type.startsWith("TITLE_"));
+    const issue = article.issues.find((i) => i.type.startsWith("TITLE_"));
     const action = issue.type === "TITLE_TOO_SHORT" ? "ADD" : "REMOVE";
 
     console.log(`${article.path}`);
@@ -203,30 +204,27 @@ const report = {
     broken: broken.length,
     needsFix: needsFix.length,
     titleIssues: titleIssues.length,
-    descriptionIssues: descriptionIssues.length
+    descriptionIssues: descriptionIssues.length,
   },
-  descriptionIssues: descriptionIssues.map(r => ({
+  descriptionIssues: descriptionIssues.map((r) => ({
     path: r.path,
     current: r.descriptionLength,
-    issue: r.issues.find(i => i.type.startsWith("DESCRIPTION_")),
-    description: r.description
+    issue: r.issues.find((i) => i.type.startsWith("DESCRIPTION_")),
+    description: r.description,
   })),
-  titleIssues: titleIssues.map(r => ({
+  titleIssues: titleIssues.map((r) => ({
     path: r.path,
     current: r.titleLength,
-    issue: r.issues.find(i => i.type.startsWith("TITLE_")),
-    title: r.title
+    issue: r.issues.find((i) => i.type.startsWith("TITLE_")),
+    title: r.title,
   })),
-  perfect: perfect.map(r => ({
+  perfect: perfect.map((r) => ({
     path: r.path,
     titleLength: r.titleLength,
-    descriptionLength: r.descriptionLength
-  }))
+    descriptionLength: r.descriptionLength,
+  })),
 };
 
-fs.writeFileSync(
-  "docs/METADATA-VERIFICATION-REPORT.json",
-  JSON.stringify(report, null, 2)
-);
+fs.writeFileSync("docs/METADATA-VERIFICATION-REPORT.json", JSON.stringify(report, null, 2));
 
 console.log("\n✅ Detailed report saved to: docs/METADATA-VERIFICATION-REPORT.json");

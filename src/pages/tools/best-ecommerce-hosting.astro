@@ -1,197 +1,208 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best E-commerce Hosting for Remote Entrepreneurs (2025)';
-const description = 'Compare the best e-commerce hosting platforms. Shopify, WooCommerce, BigCommerce, and more with features, pricing, and honest reviews for online stores.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Best E-commerce Hosting for Remote Entrepreneurs (2025)";
+const description =
+  "Compare the best e-commerce hosting platforms. Shopify, WooCommerce, BigCommerce, and more with features, pricing, and honest reviews for online stores.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 16;
-const image = '/images/unsplash/photo-1556742049-0cfed4f6a45d-1200w.webp';
-const imageAlt = 'E-commerce shopping cart and online store concept';
+const image = "/images/unsplash/photo-1556742049-0cfed4f6a45d-1200w.webp";
+const imageAlt = "E-commerce shopping cart and online store concept";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'What Makes E-commerce Hosting Different', slug: 'ecommerce-hosting-requirements', depth: 2},
-  {text: 'Top 8 E-commerce Hosting Solutions', slug: 'top-ecommerce-hosting', depth: 2},
-  {text: 'Shopify', slug: 'shopify', depth: 3},
-  {text: 'WooCommerce + SiteGround', slug: 'woocommerce-siteground', depth: 3},
-  {text: 'BigCommerce', slug: 'bigcommerce', depth: 3},
-  {text: 'Squarespace Commerce', slug: 'squarespace', depth: 3},
-  {text: 'Wix eCommerce', slug: 'wix', depth: 3},
-  {text: 'Nexcess', slug: 'nexcess', depth: 3},
-  {text: 'Kinsta', slug: 'kinsta', depth: 3},
-  {text: 'Cloudways', slug: 'cloudways', depth: 3},
-  {text: 'Transaction Fees Breakdown', slug: 'transaction-fees', depth: 2},
-  {text: 'Security and PCI Compliance', slug: 'security-pci', depth: 2},
-  {text: 'How to Choose', slug: 'how-to-choose', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  {
+    text: "What Makes E-commerce Hosting Different",
+    slug: "ecommerce-hosting-requirements",
+    depth: 2,
+  },
+  { text: "Top 8 E-commerce Hosting Solutions", slug: "top-ecommerce-hosting", depth: 2 },
+  { text: "Shopify", slug: "shopify", depth: 3 },
+  { text: "WooCommerce + SiteGround", slug: "woocommerce-siteground", depth: 3 },
+  { text: "BigCommerce", slug: "bigcommerce", depth: 3 },
+  { text: "Squarespace Commerce", slug: "squarespace", depth: 3 },
+  { text: "Wix eCommerce", slug: "wix", depth: 3 },
+  { text: "Nexcess", slug: "nexcess", depth: 3 },
+  { text: "Kinsta", slug: "kinsta", depth: 3 },
+  { text: "Cloudways", slug: "cloudways", depth: 3 },
+  { text: "Transaction Fees Breakdown", slug: "transaction-fees", depth: 2 },
+  { text: "Security and PCI Compliance", slug: "security-pci", depth: 2 },
+  { text: "How to Choose", slug: "how-to-choose", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Conclusion", slug: "conclusion", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'platform', label: 'Platform', width: '130px'},
-  {key: 'bestFor', label: 'Best For', width: '150px'},
-  {key: 'price', label: 'Starting Price'},
-  {key: 'rating', label: 'Rating'},
+  { key: "platform", label: "Platform", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "price", label: "Starting Price" },
+  { key: "rating", label: "Rating" },
 ];
 
 const quickPicksRows = [
   {
-    platform: '<strong>Shopify</strong>',
-    bestFor: 'All-in-one simplicity',
-    price: '$29/mo',
-    rating: '9.5/10'
+    platform: "<strong>Shopify</strong>",
+    bestFor: "All-in-one simplicity",
+    price: "$29/mo",
+    rating: "9.5/10",
   },
   {
-    platform: '<strong>WooCommerce</strong>',
-    bestFor: 'WordPress flexibility',
-    price: '$2.99/mo + free',
-    rating: '9.3/10'
+    platform: "<strong>WooCommerce</strong>",
+    bestFor: "WordPress flexibility",
+    price: "$2.99/mo + free",
+    rating: "9.3/10",
   },
   {
-    platform: '<strong>BigCommerce</strong>',
-    bestFor: 'Scaling businesses',
-    price: '$29/mo',
-    rating: '9.2/10'
+    platform: "<strong>BigCommerce</strong>",
+    bestFor: "Scaling businesses",
+    price: "$29/mo",
+    rating: "9.2/10",
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'platform', label: 'Platform', width: '120px'},
-  {key: 'price', label: 'Starting At'},
-  {key: 'transFee', label: 'Transaction Fee'},
-  {key: 'products', label: 'Product Limit'},
-  {key: 'bandwidth', label: 'Bandwidth'},
-  {key: 'ssl', label: 'Free SSL'},
+  { key: "platform", label: "Platform", width: "120px" },
+  { key: "price", label: "Starting At" },
+  { key: "transFee", label: "Transaction Fee" },
+  { key: "products", label: "Product Limit" },
+  { key: "bandwidth", label: "Bandwidth" },
+  { key: "ssl", label: "Free SSL" },
 ];
 
 const fullComparisonRows = [
   {
-    platform: '<strong>Shopify</strong>',
-    price: '$29/mo',
-    transFee: '0% (Shopify Pay)',
-    products: 'Unlimited',
-    bandwidth: 'Unlimited',
-    ssl: true
+    platform: "<strong>Shopify</strong>",
+    price: "$29/mo",
+    transFee: "0% (Shopify Pay)",
+    products: "Unlimited",
+    bandwidth: "Unlimited",
+    ssl: true,
   },
   {
-    platform: '<strong>BigCommerce</strong>',
-    price: '$29/mo',
-    transFee: '0%',
-    products: 'Unlimited',
-    bandwidth: 'Unlimited',
-    ssl: true
+    platform: "<strong>BigCommerce</strong>",
+    price: "$29/mo",
+    transFee: "0%",
+    products: "Unlimited",
+    bandwidth: "Unlimited",
+    ssl: true,
   },
   {
-    platform: '<strong>WooCommerce</strong>',
-    price: 'Free + hosting',
-    transFee: '0%',
-    products: 'Unlimited',
-    bandwidth: 'Varies',
-    ssl: true
+    platform: "<strong>WooCommerce</strong>",
+    price: "Free + hosting",
+    transFee: "0%",
+    products: "Unlimited",
+    bandwidth: "Varies",
+    ssl: true,
   },
   {
-    platform: '<strong>Squarespace</strong>',
-    price: '$27/mo',
-    transFee: '0%',
-    products: 'Unlimited',
-    bandwidth: 'Unlimited',
-    ssl: true
+    platform: "<strong>Squarespace</strong>",
+    price: "$27/mo",
+    transFee: "0%",
+    products: "Unlimited",
+    bandwidth: "Unlimited",
+    ssl: true,
   },
   {
-    platform: '<strong>Wix</strong>',
-    price: '$27/mo',
-    transFee: '0%',
-    products: '50,000',
-    bandwidth: 'Unlimited',
-    ssl: true
+    platform: "<strong>Wix</strong>",
+    price: "$27/mo",
+    transFee: "0%",
+    products: "50,000",
+    bandwidth: "Unlimited",
+    ssl: true,
   },
   {
-    platform: '<strong>Nexcess</strong>',
-    price: '$21/mo',
-    transFee: '0%',
-    products: 'Unlimited',
-    bandwidth: '2TB',
-    ssl: true
+    platform: "<strong>Nexcess</strong>",
+    price: "$21/mo",
+    transFee: "0%",
+    products: "Unlimited",
+    bandwidth: "2TB",
+    ssl: true,
   },
   {
-    platform: '<strong>Kinsta</strong>',
-    price: '$35/mo',
-    transFee: '0%',
-    products: 'Unlimited',
-    bandwidth: '50GB',
-    ssl: true
+    platform: "<strong>Kinsta</strong>",
+    price: "$35/mo",
+    transFee: "0%",
+    products: "Unlimited",
+    bandwidth: "50GB",
+    ssl: true,
   },
   {
-    platform: '<strong>Cloudways</strong>',
-    price: '$14/mo',
-    transFee: '0%',
-    products: 'Unlimited',
-    bandwidth: '1TB',
-    ssl: true
+    platform: "<strong>Cloudways</strong>",
+    price: "$14/mo",
+    transFee: "0%",
+    products: "Unlimited",
+    bandwidth: "1TB",
+    ssl: true,
   },
 ];
 
 // FAQ data
 const faqItems = [
   {
-    question: 'What is the best e-commerce platform for beginners?',
-    answer: 'Shopify, hands down. You do not need any technical skills. Hosting, SSL, payment processing — it is all built in. You can literally have a store live in a few hours. Wix and Squarespace are also easy if you want something a bit cheaper to start.'
+    question: "What is the best e-commerce platform for beginners?",
+    answer:
+      "Shopify, hands down. You do not need any technical skills. Hosting, SSL, payment processing — it is all built in. You can literally have a store live in a few hours. Wix and Squarespace are also easy if you want something a bit cheaper to start.",
   },
   {
-    question: 'Is WooCommerce really free?',
-    answer: 'The plugin itself? Yeah, free. But you still need hosting (call it $3-30 a month), a domain ($10-15 per year), and probably some premium plugins to do anything fancy. Realistically you are looking at $50-200 a year for a basic store. Still cheaper than Shopify long-term though.'
+    question: "Is WooCommerce really free?",
+    answer:
+      "The plugin itself? Yeah, free. But you still need hosting (call it $3-30 a month), a domain ($10-15 per year), and probably some premium plugins to do anything fancy. Realistically you are looking at $50-200 a year for a basic store. Still cheaper than Shopify long-term though.",
   },
   {
-    question: 'Which platform has the lowest transaction fees?',
-    answer: 'BigCommerce and WooCommerce charge you zero platform fees — you just pay whatever your payment processor charges (usually 2.9% + 30 cents per transaction). Shopify takes an extra 0.5-2% cut if you do not use their Shopify Payments. That adds up fast.'
+    question: "Which platform has the lowest transaction fees?",
+    answer:
+      "BigCommerce and WooCommerce charge you zero platform fees — you just pay whatever your payment processor charges (usually 2.9% + 30 cents per transaction). Shopify takes an extra 0.5-2% cut if you do not use their Shopify Payments. That adds up fast.",
   },
   {
-    question: 'Do I need PCI compliance for my online store?',
-    answer: 'Technically yes, but with Shopify, BigCommerce, Squarespace, or Wix, they handle all that scary compliance stuff for you. With WooCommerce you are technically responsible, but if you use Stripe or PayPal (which process the actual card data), your compliance requirements drop to almost nothing.'
+    question: "Do I need PCI compliance for my online store?",
+    answer:
+      "Technically yes, but with Shopify, BigCommerce, Squarespace, or Wix, they handle all that scary compliance stuff for you. With WooCommerce you are technically responsible, but if you use Stripe or PayPal (which process the actual card data), your compliance requirements drop to almost nothing.",
   },
   {
-    question: 'Which platform is best for dropshipping?',
-    answer: 'Shopify owns this space. Apps like DSers connect right to suppliers and automate everything. WooCommerce with AliDropship works too if you want more control. Both integrate with the major dropshipping suppliers out of the box.'
+    question: "Which platform is best for dropshipping?",
+    answer:
+      "Shopify owns this space. Apps like DSers connect right to suppliers and automate everything. WooCommerce with AliDropship works too if you want more control. Both integrate with the major dropshipping suppliers out of the box.",
   },
   {
-    question: 'Can I migrate from one platform to another?',
-    answer: 'Yeah but it ranges from easy to painful depending on where you are going. Shopify to BigCommerce or back? Pretty simple, built-in tools handle it. Moving to or from WooCommerce? More hands-on work. Most platforms at least have migration apps or services to help.'
+    question: "Can I migrate from one platform to another?",
+    answer:
+      "Yeah but it ranges from easy to painful depending on where you are going. Shopify to BigCommerce or back? Pretty simple, built-in tools handle it. Moving to or from WooCommerce? More hands-on work. Most platforms at least have migration apps or services to help.",
   },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Web Hosting for Remote Businesses',
-    excerpt: 'Complete guide to web hosting for remote teams and online businesses.',
-    href: '/tools/best-web-hosting-remote-business',
-    image: '/images/unsplash/photo-1558494949-ef010cbdcc31-400w.webp',
-    imageAlt: 'Server room infrastructure'
+    title: "Best Web Hosting for Remote Businesses",
+    excerpt: "Complete guide to web hosting for remote teams and online businesses.",
+    href: "/tools/best-web-hosting-remote-business",
+    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-400w.webp",
+    imageAlt: "Server room infrastructure",
   },
   {
-    title: 'Best VPS Hosting for Remote Businesses',
-    excerpt: 'Compare VPS providers for scalable e-commerce hosting.',
-    href: '/tools/best-vps-hosting-remote-business',
-    image: '/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp',
-    imageAlt: 'VPS server infrastructure'
+    title: "Best VPS Hosting for Remote Businesses",
+    excerpt: "Compare VPS providers for scalable e-commerce hosting.",
+    href: "/tools/best-vps-hosting-remote-business",
+    image: "/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp",
+    imageAlt: "VPS server infrastructure",
   },
   {
-    title: 'Best Accounting Software for Freelancers',
-    excerpt: 'Track sales, expenses, and taxes for your e-commerce business.',
-    href: '/tools/best-accounting-software-freelancers',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-400w.webp',
-    imageAlt: 'Accounting and finance software'
+    title: "Best Accounting Software for Freelancers",
+    excerpt: "Track sales, expenses, and taxes for your e-commerce business.",
+    href: "/tools/best-accounting-software-freelancers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-400w.webp",
+    imageAlt: "Accounting and finance software",
   },
 ];
 ---

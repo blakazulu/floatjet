@@ -130,38 +130,39 @@ function downloadImage(photoId, width) {
 
     const file = fs.createWriteStream(filepath);
 
-    https.get(url, (response) => {
-      if (response.statusCode === 301 || response.statusCode === 302) {
-        // Follow redirect
-        https.get(response.headers.location, (redirectResponse) => {
-          redirectResponse.pipe(file);
+    https
+      .get(url, (response) => {
+        if (response.statusCode === 301 || response.statusCode === 302) {
+          // Follow redirect
+          https
+            .get(response.headers.location, (redirectResponse) => {
+              redirectResponse.pipe(file);
+              file.on("finish", () => {
+                file.close();
+                console.log(`  [OK] ${filename}`);
+                resolve(filepath);
+              });
+            })
+            .on("error", (err) => {
+              fs.unlink(filepath, () => {});
+              reject(err);
+            });
+        } else if (response.statusCode === 200) {
+          response.pipe(file);
           file.on("finish", () => {
             file.close();
             console.log(`  [OK] ${filename}`);
             resolve(filepath);
           });
-        }).on("error", (err) => {
-          fs.unlink(filepath, () => {
-          });
-          reject(err);
-        });
-      } else if (response.statusCode === 200) {
-        response.pipe(file);
-        file.on("finish", () => {
-          file.close();
-          console.log(`  [OK] ${filename}`);
-          resolve(filepath);
-        });
-      } else {
-        fs.unlink(filepath, () => {
-        });
-        reject(new Error(`HTTP ${response.statusCode} for ${photoId}`));
-      }
-    }).on("error", (err) => {
-      fs.unlink(filepath, () => {
+        } else {
+          fs.unlink(filepath, () => {});
+          reject(new Error(`HTTP ${response.statusCode} for ${photoId}`));
+        }
+      })
+      .on("error", (err) => {
+        fs.unlink(filepath, () => {});
+        reject(err);
       });
-      reject(err);
-    });
   });
 }
 
@@ -171,7 +172,7 @@ async function downloadAllImages() {
 
   // Ensure output directory exists
   if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR, {recursive: true});
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
 
   const sizes = [1200, 800]; // Hero images, thumbnails
@@ -185,7 +186,7 @@ async function downloadAllImages() {
       try {
         await downloadImage(photoId, width);
         // Small delay to avoid rate limiting
-        await new Promise(r => setTimeout(r, 100));
+        await new Promise((r) => setTimeout(r, 100));
       } catch (err) {
         console.error(`  [FAIL] ${photoId}-${width}w: ${err.message}`);
         failed++;

@@ -1,211 +1,220 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Cloud Storage for Remote Work (2025)';
-const description = 'I tested eight cloud storage solutions for remote teams. Google Drive, Dropbox, OneDrive compared with pricing, security features, and collaboration tools.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Best Cloud Storage for Remote Work (2025)";
+const description =
+  "I tested eight cloud storage solutions for remote teams. Google Drive, Dropbox, OneDrive compared with pricing, security features, and collaboration tools.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 16;
-const image = '/images/unsplash/photo-1544197150-b99a580bb7a8-1200w.webp';
-const imageAlt = 'Cloud storage icons on laptop screen with documents';
+const image = "/images/unsplash/photo-1544197150-b99a580bb7a8-1200w.webp";
+const imageAlt = "Cloud storage icons on laptop screen with documents";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Key Features to Evaluate', slug: 'key-features', depth: 2},
-  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Google Drive', slug: 'google-drive', depth: 3},
-  {text: 'Dropbox', slug: 'dropbox', depth: 3},
-  {text: 'OneDrive', slug: 'onedrive', depth: 3},
-  {text: 'iCloud', slug: 'icloud', depth: 3},
-  {text: 'Box', slug: 'box', depth: 3},
-  {text: 'pCloud', slug: 'pcloud', depth: 3},
-  {text: 'Sync.com', slug: 'sync', depth: 3},
-  {text: 'MEGA', slug: 'mega', depth: 3},
-  {text: 'Collaboration Features', slug: 'collaboration-features', depth: 2},
-  {text: 'Security & Encryption', slug: 'security-encryption', depth: 2},
-  {text: 'Mobile App Experience', slug: 'mobile-apps', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Recommendations by Team Size', slug: 'recommendations', depth: 2},
-  {text: 'Storage & Pricing Comparison', slug: 'storage-pricing', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Key Features to Evaluate", slug: "key-features", depth: 2 },
+  { text: "Detailed Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Google Drive", slug: "google-drive", depth: 3 },
+  { text: "Dropbox", slug: "dropbox", depth: 3 },
+  { text: "OneDrive", slug: "onedrive", depth: 3 },
+  { text: "iCloud", slug: "icloud", depth: 3 },
+  { text: "Box", slug: "box", depth: 3 },
+  { text: "pCloud", slug: "pcloud", depth: 3 },
+  { text: "Sync.com", slug: "sync", depth: 3 },
+  { text: "MEGA", slug: "mega", depth: 3 },
+  { text: "Collaboration Features", slug: "collaboration-features", depth: 2 },
+  { text: "Security & Encryption", slug: "security-encryption", depth: 2 },
+  { text: "Mobile App Experience", slug: "mobile-apps", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Recommendations by Team Size", slug: "recommendations", depth: 2 },
+  { text: "Storage & Pricing Comparison", slug: "storage-pricing", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'service', label: 'Service', width: '120px'},
-  {key: 'bestFor', label: 'Best For', width: '150px'},
-  {key: 'freeStorage', label: 'Free Storage'},
-  {key: 'price', label: 'Paid Plans From'},
-  {key: 'action', label: ''},
+  { key: "service", label: "Service", width: "120px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "freeStorage", label: "Free Storage" },
+  { key: "price", label: "Paid Plans From" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    service: '<strong>Google Drive</strong>',
-    bestFor: 'Best for collaboration',
-    freeStorage: '15 GB',
-    price: '$1.99/mo (100GB)',
-    action: '<a href="/go/google-drive" rel="nofollow sponsored">Try Free</a>'
+    service: "<strong>Google Drive</strong>",
+    bestFor: "Best for collaboration",
+    freeStorage: "15 GB",
+    price: "$1.99/mo (100GB)",
+    action: '<a href="/go/google-drive" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    service: '<strong>Dropbox</strong>',
-    bestFor: 'Best for file syncing',
-    freeStorage: '2 GB',
-    price: '$11.99/mo (2TB)',
-    action: '<a href="/go/dropbox" rel="nofollow sponsored">Try Free</a>'
+    service: "<strong>Dropbox</strong>",
+    bestFor: "Best for file syncing",
+    freeStorage: "2 GB",
+    price: "$11.99/mo (2TB)",
+    action: '<a href="/go/dropbox" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    service: '<strong>OneDrive</strong>',
-    bestFor: 'Best for Microsoft users',
-    freeStorage: '5 GB',
-    price: '$1.99/mo (100GB)',
-    action: '<a href="/go/onedrive" rel="nofollow sponsored">Try Free</a>'
+    service: "<strong>OneDrive</strong>",
+    bestFor: "Best for Microsoft users",
+    freeStorage: "5 GB",
+    price: "$1.99/mo (100GB)",
+    action: '<a href="/go/onedrive" rel="nofollow sponsored">Try Free</a>',
   },
 ];
 
 // Storage comparison table
 const storageComparisonColumns = [
-  {key: 'service', label: 'Service', width: '110px'},
-  {key: 'free', label: 'Free Tier'},
-  {key: 'paid100gb', label: '100GB'},
-  {key: 'paid2tb', label: '2TB'},
-  {key: 'maxStorage', label: 'Max Storage'},
-  {key: 'action', label: ''},
+  { key: "service", label: "Service", width: "110px" },
+  { key: "free", label: "Free Tier" },
+  { key: "paid100gb", label: "100GB" },
+  { key: "paid2tb", label: "2TB" },
+  { key: "maxStorage", label: "Max Storage" },
+  { key: "action", label: "" },
 ];
 
 const storageComparisonRows = [
   {
-    service: '<strong>Google Drive</strong>',
-    free: '15 GB',
-    paid100gb: '$1.99/mo',
-    paid2tb: '$9.99/mo',
-    maxStorage: '30 TB',
-    action: '<a href="/go/google-drive" rel="nofollow sponsored">Try Free</a>'
+    service: "<strong>Google Drive</strong>",
+    free: "15 GB",
+    paid100gb: "$1.99/mo",
+    paid2tb: "$9.99/mo",
+    maxStorage: "30 TB",
+    action: '<a href="/go/google-drive" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    service: '<strong>Dropbox</strong>',
-    free: '2 GB',
-    paid100gb: 'N/A',
-    paid2tb: '$11.99/mo',
-    maxStorage: 'Unlimited (Advanced plan)',
-    action: '<a href="/go/dropbox" rel="nofollow sponsored">Try Free</a>'
+    service: "<strong>Dropbox</strong>",
+    free: "2 GB",
+    paid100gb: "N/A",
+    paid2tb: "$11.99/mo",
+    maxStorage: "Unlimited (Advanced plan)",
+    action: '<a href="/go/dropbox" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    service: '<strong>OneDrive</strong>',
-    free: '5 GB',
-    paid100gb: '$1.99/mo',
-    paid2tb: '$6.99/mo (M365)',
-    maxStorage: 'Unlimited (enterprise)',
-    action: '<a href="/go/onedrive" rel="nofollow sponsored">Try Free</a>'
+    service: "<strong>OneDrive</strong>",
+    free: "5 GB",
+    paid100gb: "$1.99/mo",
+    paid2tb: "$6.99/mo (M365)",
+    maxStorage: "Unlimited (enterprise)",
+    action: '<a href="/go/onedrive" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    service: '<strong>iCloud</strong>',
-    free: '5 GB',
-    paid100gb: 'N/A',
-    paid2tb: '$9.99/mo',
-    maxStorage: '12 TB',
-    action: '<a href="/go/icloud" rel="nofollow sponsored">Try Free</a>'
+    service: "<strong>iCloud</strong>",
+    free: "5 GB",
+    paid100gb: "N/A",
+    paid2tb: "$9.99/mo",
+    maxStorage: "12 TB",
+    action: '<a href="/go/icloud" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    service: '<strong>Box</strong>',
-    free: '10 GB',
-    paid100gb: '$10/user/mo',
-    paid2tb: 'Unlimited (Enterprise)',
-    maxStorage: 'Unlimited',
-    action: '<a href="/go/box" rel="nofollow sponsored">Try Free</a>'
+    service: "<strong>Box</strong>",
+    free: "10 GB",
+    paid100gb: "$10/user/mo",
+    paid2tb: "Unlimited (Enterprise)",
+    maxStorage: "Unlimited",
+    action: '<a href="/go/box" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    service: '<strong>pCloud</strong>',
-    free: '10 GB',
-    paid100gb: 'N/A',
-    paid2tb: '$99/year or $399 lifetime',
-    maxStorage: '10 TB',
-    action: '<a href="/go/pcloud" rel="nofollow sponsored">Try Free</a>'
+    service: "<strong>pCloud</strong>",
+    free: "10 GB",
+    paid100gb: "N/A",
+    paid2tb: "$99/year or $399 lifetime",
+    maxStorage: "10 TB",
+    action: '<a href="/go/pcloud" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    service: '<strong>Sync.com</strong>',
-    free: '5 GB',
-    paid100gb: 'N/A',
-    paid2tb: '$8/mo',
-    maxStorage: '6 TB',
-    action: '<a href="/go/sync" rel="nofollow sponsored">Try Free</a>'
+    service: "<strong>Sync.com</strong>",
+    free: "5 GB",
+    paid100gb: "N/A",
+    paid2tb: "$8/mo",
+    maxStorage: "6 TB",
+    action: '<a href="/go/sync" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    service: '<strong>MEGA</strong>',
-    free: '20 GB',
-    paid100gb: 'N/A',
-    paid2tb: '€9.99/mo',
-    maxStorage: '16 TB',
-    action: '<a href="/go/mega" rel="nofollow sponsored">Try Free</a>'
+    service: "<strong>MEGA</strong>",
+    free: "20 GB",
+    paid100gb: "N/A",
+    paid2tb: "€9.99/mo",
+    maxStorage: "16 TB",
+    action: '<a href="/go/mega" rel="nofollow sponsored">Try Free</a>',
   },
 ];
 
 // FAQ data with schema markup
 const faqs = [
   {
-    question: 'What is the best cloud storage for small businesses?',
-    answer: '<strong>Google Drive</strong> (via Google Workspace) offers the best value for small businesses at $6/user/month with 30GB storage, plus Gmail, Docs, Sheets, and video calling. <strong>Dropbox Business</strong> is excellent if file syncing and version history are priorities. For Microsoft-centric teams, <strong>OneDrive for Business</strong> ($5-12.50/user/mo) is the obvious choice.'
+    question: "What is the best cloud storage for small businesses?",
+    answer:
+      "<strong>Google Drive</strong> (via Google Workspace) offers the best value for small businesses at $6/user/month with 30GB storage, plus Gmail, Docs, Sheets, and video calling. <strong>Dropbox Business</strong> is excellent if file syncing and version history are priorities. For Microsoft-centric teams, <strong>OneDrive for Business</strong> ($5-12.50/user/mo) is the obvious choice.",
   },
   {
-    question: 'Which cloud storage has the most free storage?',
-    answer: '<strong>MEGA</strong> offers the most free storage at 20GB. <strong>Google Drive</strong> provides 15GB (shared across Gmail, Drive, and Photos). <strong>pCloud</strong> and <strong>Box</strong> offer 10GB free. If you need lots of free space, MEGA is the clear winner, though Google Drive is more practical for collaboration.'
+    question: "Which cloud storage has the most free storage?",
+    answer:
+      "<strong>MEGA</strong> offers the most free storage at 20GB. <strong>Google Drive</strong> provides 15GB (shared across Gmail, Drive, and Photos). <strong>pCloud</strong> and <strong>Box</strong> offer 10GB free. If you need lots of free space, MEGA is the clear winner, though Google Drive is more practical for collaboration.",
   },
   {
-    question: 'Is Dropbox better than Google Drive?',
-    answer: 'It depends on your needs. <strong>Dropbox</strong> excels at file syncing, has better desktop integration, and offers longer file version history (180 days vs 30 days). <strong>Google Drive</strong> is better for collaboration with real-time editing in Docs/Sheets, costs less ($9.99/mo for 2TB vs $11.99/mo), and offers more free storage (15GB vs 2GB). Choose Dropbox for syncing, Google for collaboration.'
+    question: "Is Dropbox better than Google Drive?",
+    answer:
+      "It depends on your needs. <strong>Dropbox</strong> excels at file syncing, has better desktop integration, and offers longer file version history (180 days vs 30 days). <strong>Google Drive</strong> is better for collaboration with real-time editing in Docs/Sheets, costs less ($9.99/mo for 2TB vs $11.99/mo), and offers more free storage (15GB vs 2GB). Choose Dropbox for syncing, Google for collaboration.",
   },
   {
-    question: 'Which cloud storage is most secure?',
-    answer: '<strong>Sync.com</strong> and <strong>pCloud</strong> offer zero-knowledge encryption, meaning even the provider cannot access your files. <strong>Dropbox</strong>, <strong>Google Drive</strong>, and <strong>OneDrive</strong> use encryption in transit and at rest but can technically access your files. For maximum security, choose a zero-knowledge provider. For enterprise compliance, all major providers offer SOC 2 and ISO certifications.'
+    question: "Which cloud storage is most secure?",
+    answer:
+      "<strong>Sync.com</strong> and <strong>pCloud</strong> offer zero-knowledge encryption, meaning even the provider cannot access your files. <strong>Dropbox</strong>, <strong>Google Drive</strong>, and <strong>OneDrive</strong> use encryption in transit and at rest but can technically access your files. For maximum security, choose a zero-knowledge provider. For enterprise compliance, all major providers offer SOC 2 and ISO certifications.",
   },
   {
-    question: 'Can I use cloud storage offline?',
-    answer: 'Yes, all major cloud storage services offer offline access. <strong>Dropbox</strong>, <strong>Google Drive</strong>, and <strong>OneDrive</strong> sync files to your computer for offline use. You can mark specific files/folders for offline access on mobile apps. Changes sync automatically when you reconnect to the internet. Dropbox has the most seamless offline experience.'
+    question: "Can I use cloud storage offline?",
+    answer:
+      "Yes, all major cloud storage services offer offline access. <strong>Dropbox</strong>, <strong>Google Drive</strong>, and <strong>OneDrive</strong> sync files to your computer for offline use. You can mark specific files/folders for offline access on mobile apps. Changes sync automatically when you reconnect to the internet. Dropbox has the most seamless offline experience.",
   },
   {
-    question: 'What happens if a cloud storage company shuts down?',
-    answer: 'Established providers like <strong>Google</strong>, <strong>Microsoft</strong>, and <strong>Dropbox</strong> are unlikely to shut down suddenly. However, it\'s wise to maintain local backups of critical files and not rely solely on cloud storage. Most services provide data export tools. Consider using the 3-2-1 backup rule: 3 copies of data, on 2 different media, with 1 offsite (cloud).'
+    question: "What happens if a cloud storage company shuts down?",
+    answer:
+      "Established providers like <strong>Google</strong>, <strong>Microsoft</strong>, and <strong>Dropbox</strong> are unlikely to shut down suddenly. However, it's wise to maintain local backups of critical files and not rely solely on cloud storage. Most services provide data export tools. Consider using the 3-2-1 backup rule: 3 copies of data, on 2 different media, with 1 offsite (cloud).",
   },
   {
-    question: 'How much cloud storage do I need?',
-    answer: 'For <strong>individuals</strong>: 50-200GB is typical for documents and photos. For <strong>freelancers/creators</strong>: 1-2TB if you work with video/photo files. For <strong>small teams (5-10 people)</strong>: 1TB per user is a good starting point. For <strong>larger teams</strong>: Plan for 2-5TB per user depending on file types. Start small and upgrade as needed - all services allow easy plan changes.'
+    question: "How much cloud storage do I need?",
+    answer:
+      "For <strong>individuals</strong>: 50-200GB is typical for documents and photos. For <strong>freelancers/creators</strong>: 1-2TB if you work with video/photo files. For <strong>small teams (5-10 people)</strong>: 1TB per user is a good starting point. For <strong>larger teams</strong>: Plan for 2-5TB per user depending on file types. Start small and upgrade as needed - all services allow easy plan changes.",
   },
   {
-    question: 'Is cloud storage safe from hackers?',
-    answer: 'Cloud storage is generally safe with proper precautions: <strong>Enable two-factor authentication (2FA)</strong>, use strong unique passwords, don\'t share sensitive files publicly, and enable zero-knowledge encryption if available (<strong>Sync.com</strong>, <strong>pCloud Crypto</strong>). Major providers like <strong>Google</strong>, <strong>Dropbox</strong>, and <strong>Microsoft</strong> have enterprise-grade security and rarely experience breaches. Most hacks result from weak user passwords, not provider vulnerabilities.'
-  }
+    question: "Is cloud storage safe from hackers?",
+    answer:
+      "Cloud storage is generally safe with proper precautions: <strong>Enable two-factor authentication (2FA)</strong>, use strong unique passwords, don't share sensitive files publicly, and enable zero-knowledge encryption if available (<strong>Sync.com</strong>, <strong>pCloud Crypto</strong>). Major providers like <strong>Google</strong>, <strong>Dropbox</strong>, and <strong>Microsoft</strong> have enterprise-grade security and rarely experience breaches. Most hacks result from weak user passwords, not provider vulnerabilities.",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Project Management Software',
-    href: '/tools/best-project-management-software',
-    excerpt: 'Compare top project management tools for remote teams and freelancers.',
-    image: '/images/unsplash/photo-1507925921958-8a62f3d1a50d-800w.webp',
-    imageAlt: 'Project management dashboard on computer'
+    title: "Best Project Management Software",
+    href: "/tools/best-project-management-software",
+    excerpt: "Compare top project management tools for remote teams and freelancers.",
+    image: "/images/unsplash/photo-1507925921958-8a62f3d1a50d-800w.webp",
+    imageAlt: "Project management dashboard on computer",
   },
   {
-    title: 'Best Note-Taking Apps',
-    href: '/tools/best-note-taking-apps',
-    excerpt: 'Find the perfect note-taking app for your remote work workflow.',
-    image: '/images/unsplash/photo-1517842645767-c639042777db-800w.webp',
-    imageAlt: 'Digital notes and notebooks'
+    title: "Best Note-Taking Apps",
+    href: "/tools/best-note-taking-apps",
+    excerpt: "Find the perfect note-taking app for your remote work workflow.",
+    image: "/images/unsplash/photo-1517842645767-c639042777db-800w.webp",
+    imageAlt: "Digital notes and notebooks",
   },
   {
-    title: 'Best VPN for Digital Nomads',
-    href: '/tools/best-vpn-digital-nomads',
-    excerpt: 'Secure your connection while working from anywhere in the world.',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'Digital security concept with encrypted data'
-  }
+    title: "Best VPN for Digital Nomads",
+    href: "/tools/best-vpn-digital-nomads",
+    excerpt: "Secure your connection while working from anywhere in the world.",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept with encrypted data",
+  },
 ];
 ---
 

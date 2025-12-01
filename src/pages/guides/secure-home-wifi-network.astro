@@ -1,90 +1,99 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'How to Secure Your Home WiFi Network for Remote Work (2025)';
-const description = 'Secure your home WiFi network. Learn router security settings, WPA3 encryption, guest networks, firmware updates, and VPN setup for remote workers today.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "How to Secure Your Home WiFi Network for Remote Work (2025)";
+const description =
+  "Secure your home WiFi network. Learn router security settings, WPA3 encryption, guest networks, firmware updates, and VPN setup for remote workers today.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 11;
-const image = '/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp';
-const imageAlt = 'Modern WiFi router on desk in home office setup';
+const image = "/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp";
+const imageAlt = "Modern WiFi router on desk in home office setup";
 
 // Table of contents headings
 const headings = [
-  {text: 'The Checklist', slug: 'checklist', depth: 2},
-  {text: 'The Password Situation', slug: 'passwords', depth: 2},
-  {text: 'Encryption Settings', slug: 'encryption', depth: 2},
-  {text: 'Guest Networks Save Your Bacon', slug: 'guest-network', depth: 2},
-  {text: 'Keeping Firmware Updated', slug: 'firmware', depth: 2},
-  {text: 'Features You Should Disable', slug: 'disable-features', depth: 2},
-  {text: 'Router-Level VPN', slug: 'vpn', depth: 2},
-  {text: 'For the Paranoid: Network Segmentation', slug: 'segmentation', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
+  { text: "The Checklist", slug: "checklist", depth: 2 },
+  { text: "The Password Situation", slug: "passwords", depth: 2 },
+  { text: "Encryption Settings", slug: "encryption", depth: 2 },
+  { text: "Guest Networks Save Your Bacon", slug: "guest-network", depth: 2 },
+  { text: "Keeping Firmware Updated", slug: "firmware", depth: 2 },
+  { text: "Features You Should Disable", slug: "disable-features", depth: 2 },
+  { text: "Router-Level VPN", slug: "vpn", depth: 2 },
+  { text: "For the Paranoid: Network Segmentation", slug: "segmentation", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'How do I even get into router settings?',
-    answer: '<p>Type 192.168.1.1 or 192.168.0.1 in your browser while connected to wifi. Some routers use 10.0.0.1. ASUS uses router.asus.com. Netgear uses routerlogin.net. Default login is often admin/admin or printed on a sticker somewhere on the router.</p>'
+    question: "How do I even get into router settings?",
+    answer:
+      "<p>Type 192.168.1.1 or 192.168.0.1 in your browser while connected to wifi. Some routers use 10.0.0.1. ASUS uses router.asus.com. Netgear uses routerlogin.net. Default login is often admin/admin or printed on a sticker somewhere on the router.</p>",
   },
   {
-    question: 'Should I hide my network name?',
-    answer: '<p>Doesn\'t really help. Hidden networks still announce themselves. Just without the name visible. Some devices get confused and have connection problems. Waste of time. Strong encryption and good password matter. Hidden name doesn\'t.</p>'
+    question: "Should I hide my network name?",
+    answer:
+      "<p>Doesn't really help. Hidden networks still announce themselves. Just without the name visible. Some devices get confused and have connection problems. Waste of time. Strong encryption and good password matter. Hidden name doesn't.</p>",
   },
   {
-    question: 'How often to check for updates?',
-    answer: '<p>Monthly at least. Or just enable automatic updates and forget about it. Security patches matter. Vulnerabilities get discovered. Updates fix them. Monthly reminder in your calendar if automatic isn\'t available.</p>'
+    question: "How often to check for updates?",
+    answer:
+      "<p>Monthly at least. Or just enable automatic updates and forget about it. Security patches matter. Vulnerabilities get discovered. Updates fix them. Monthly reminder in your calendar if automatic isn't available.</p>",
   },
   {
-    question: 'My ISP gave me a router. Is it any good?',
-    answer: '<p>Usually fine but not great. ISP maintains it and pushes updates. Support included. But hardware\'s often older. Features limited. Some ISPs have been caught with backdoors. For serious remote work, grab something like an ASUS or Netgear. Better features, better performance.</p>'
+    question: "My ISP gave me a router. Is it any good?",
+    answer:
+      "<p>Usually fine but not great. ISP maintains it and pushes updates. Support included. But hardware's often older. Features limited. Some ISPs have been caught with backdoors. For serious remote work, grab something like an ASUS or Netgear. Better features, better performance.</p>",
   },
   {
-    question: 'WPA3 or stick with WPA2?',
-    answer: '<p>WPA3 if everything supports it. Otherwise WPA2/WPA3 transitional mode gives you the best of both. Never use WEP or plain WPA. They\'re broken. Been broken for years.</p>'
+    question: "WPA3 or stick with WPA2?",
+    answer:
+      "<p>WPA3 if everything supports it. Otherwise WPA2/WPA3 transitional mode gives you the best of both. Never use WEP or plain WPA. They're broken. Been broken for years.</p>",
   },
   {
-    question: 'Do smart devices really need their own network?',
-    answer: '<p>Kind of, yeah. Security on these things is awful. Manufacturers stop updating them. Known vulnerabilities just sit there. If something gets compromised, you want it isolated from your work laptop. Guest network handles this fine for most people.</p>'
+    question: "Do smart devices really need their own network?",
+    answer:
+      "<p>Kind of, yeah. Security on these things is awful. Manufacturers stop updating them. Known vulnerabilities just sit there. If something gets compromised, you want it isolated from your work laptop. Guest network handles this fine for most people.</p>",
   },
   {
-    question: 'What router should I buy?',
-    answer: '<p>ASUS, Netgear, TP-Link all make solid options. Look for regular firmware updates, WPA3 support, VLAN support if you want segmentation. ASUS RT-AX86U is popular. Netgear Nighthawk line is solid. TP-Link Archer series works. For mesh, eero Pro, ASUS ZenWiFi, or Google Nest WiFi Pro.</p>'
+    question: "What router should I buy?",
+    answer:
+      "<p>ASUS, Netgear, TP-Link all make solid options. Look for regular firmware updates, WPA3 support, VLAN support if you want segmentation. ASUS RT-AX86U is popular. Netgear Nighthawk line is solid. TP-Link Archer series works. For mesh, eero Pro, ASUS ZenWiFi, or Google Nest WiFi Pro.</p>",
   },
   {
-    question: 'Can neighbors steal my wifi?',
-    answer: '<p>Not with proper security. Strong random password, twelve plus characters. WPA2 or WPA3 encryption. Uncrackable without the password. Check connected devices in your router admin panel occasionally. If wifi seems slow and you see unknown devices, kick them off and change your password.</p>'
-  }
+    question: "Can neighbors steal my wifi?",
+    answer:
+      "<p>Not with proper security. Strong random password, twelve plus characters. WPA2 or WPA3 encryption. Uncrackable without the password. Check connected devices in your router admin panel occasionally. If wifi seems slow and you see unknown devices, kick them off and change your password.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best VPN for Digital Nomads',
-    excerpt: 'Top VPN services to protect your connection anywhere.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp',
-    imageAlt: 'VPN security illustration'
+    title: "Best VPN for Digital Nomads",
+    excerpt: "Top VPN services to protect your connection anywhere.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
+    imageAlt: "VPN security illustration",
   },
   {
-    title: 'Two-Factor Authentication Guide',
-    excerpt: 'Set up 2FA on all your accounts for better security.',
-    href: '/guides/two-factor-authentication-guide',
-    image: '/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp',
-    imageAlt: 'Two-factor authentication'
+    title: "Two-Factor Authentication Guide",
+    excerpt: "Set up 2FA on all your accounts for better security.",
+    href: "/guides/two-factor-authentication-guide",
+    image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
+    imageAlt: "Two-factor authentication",
   },
   {
-    title: 'Best Password Manager for Remote Work',
-    excerpt: 'Secure all your passwords with the right tool.',
-    href: '/tools/best-password-manager-remote-work',
-    image: '/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp',
-    imageAlt: 'Password manager interface'
-  }
+    title: "Best Password Manager for Remote Work",
+    excerpt: "Secure all your passwords with the right tool.",
+    href: "/tools/best-password-manager-remote-work",
+    image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
+    imageAlt: "Password manager interface",
+  },
 ];
 ---
 

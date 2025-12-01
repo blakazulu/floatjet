@@ -1,85 +1,92 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'How to Migrate Your Website Without Downtime (2025)';
-const description = 'Step-by-step guide to migrating your website to a new host without downtime. Covers backups, DNS changes, testing, and common migration mistakes to avoid.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "How to Migrate Your Website Without Downtime (2025)";
+const description =
+  "Step-by-step guide to migrating your website to a new host without downtime. Covers backups, DNS changes, testing, and common migration mistakes to avoid.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 12;
-const image = '/images/unsplash/photo-1551288049-bebda4e38f71-1200w.webp';
-const imageAlt = 'Website migration and data transfer concept';
+const image = "/images/unsplash/photo-1551288049-bebda4e38f71-1200w.webp";
+const imageAlt = "Website migration and data transfer concept";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Pre-Migration Checklist', slug: 'pre-migration-checklist', depth: 2},
-  {text: 'Step 1: Backup Everything', slug: 'backup-everything', depth: 2},
-  {text: 'Step 2: Set Up New Hosting', slug: 'setup-new-hosting', depth: 2},
-  {text: 'Step 3: Transfer Files and Database', slug: 'transfer-files', depth: 2},
-  {text: 'Step 4: Test on Temporary URL', slug: 'test-temporary-url', depth: 2},
-  {text: 'Step 5: Update DNS Settings', slug: 'update-dns', depth: 2},
-  {text: 'Step 6: Monitor After Migration', slug: 'monitor-after', depth: 2},
-  {text: 'Common Migration Mistakes', slug: 'common-mistakes', depth: 2},
-  {text: 'When to Hire a Professional', slug: 'hire-professional', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Pre-Migration Checklist", slug: "pre-migration-checklist", depth: 2 },
+  { text: "Step 1: Backup Everything", slug: "backup-everything", depth: 2 },
+  { text: "Step 2: Set Up New Hosting", slug: "setup-new-hosting", depth: 2 },
+  { text: "Step 3: Transfer Files and Database", slug: "transfer-files", depth: 2 },
+  { text: "Step 4: Test on Temporary URL", slug: "test-temporary-url", depth: 2 },
+  { text: "Step 5: Update DNS Settings", slug: "update-dns", depth: 2 },
+  { text: "Step 6: Monitor After Migration", slug: "monitor-after", depth: 2 },
+  { text: "Common Migration Mistakes", slug: "common-mistakes", depth: 2 },
+  { text: "When to Hire a Professional", slug: "hire-professional", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Conclusion", slug: "conclusion", depth: 2 },
 ];
 
 // FAQ data
 const faqItems = [
   {
-    question: 'How long does a website migration take?',
-    answer: 'A simple WordPress site can be migrated in 1-2 hours. Complex e-commerce sites with large databases may take 4-8 hours. DNS propagation (the time for your domain to point to the new server) can take up to 48 hours, though it is usually much faster.'
+    question: "How long does a website migration take?",
+    answer:
+      "A simple WordPress site can be migrated in 1-2 hours. Complex e-commerce sites with large databases may take 4-8 hours. DNS propagation (the time for your domain to point to the new server) can take up to 48 hours, though it is usually much faster.",
   },
   {
-    question: 'Will my website go down during migration?',
-    answer: 'Not if done correctly. By testing on a temporary URL before updating DNS, and keeping your old hosting active during DNS propagation, you can achieve zero downtime. The technique is called "parallel hosting."'
+    question: "Will my website go down during migration?",
+    answer:
+      'Not if done correctly. By testing on a temporary URL before updating DNS, and keeping your old hosting active during DNS propagation, you can achieve zero downtime. The technique is called "parallel hosting."',
   },
   {
-    question: 'Do I need to re-install WordPress after migrating?',
-    answer: 'No. Migration involves copying your existing WordPress installation (files + database) to the new server. Everything transfers including themes, plugins, settings, and content. You should not need to reinstall anything.'
+    question: "Do I need to re-install WordPress after migrating?",
+    answer:
+      "No. Migration involves copying your existing WordPress installation (files + database) to the new server. Everything transfers including themes, plugins, settings, and content. You should not need to reinstall anything.",
   },
   {
-    question: 'What happens to my email during migration?',
-    answer: 'If your email is hosted with your web hosting, you will need to migrate email accounts too. Consider using dedicated email hosting (Google Workspace, Microsoft 365) to keep email separate from web hosting and avoid this complexity.'
+    question: "What happens to my email during migration?",
+    answer:
+      "If your email is hosted with your web hosting, you will need to migrate email accounts too. Consider using dedicated email hosting (Google Workspace, Microsoft 365) to keep email separate from web hosting and avoid this complexity.",
   },
   {
-    question: 'Should I cancel my old hosting immediately after migration?',
-    answer: 'No. Keep your old hosting active for at least 1-2 weeks after migration. This ensures you have a backup if something goes wrong and allows DNS to fully propagate. Cancel only after confirming everything works correctly.'
+    question: "Should I cancel my old hosting immediately after migration?",
+    answer:
+      "No. Keep your old hosting active for at least 1-2 weeks after migration. This ensures you have a backup if something goes wrong and allows DNS to fully propagate. Cancel only after confirming everything works correctly.",
   },
   {
-    question: 'Will migration affect my SEO rankings?',
-    answer: 'A properly executed migration should not affect SEO. Ensure all URLs remain the same, 301 redirects are in place for any changed URLs, your sitemap is updated, and you resubmit to Google Search Console. Temporary minor fluctuations are normal.'
+    question: "Will migration affect my SEO rankings?",
+    answer:
+      "A properly executed migration should not affect SEO. Ensure all URLs remain the same, 301 redirects are in place for any changed URLs, your sitemap is updated, and you resubmit to Google Search Console. Temporary minor fluctuations are normal.",
   },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Web Hosting for Remote Businesses',
-    excerpt: 'Found a better host? Compare the best options for your migration.',
-    href: '/tools/best-web-hosting-remote-business',
-    image: '/images/unsplash/photo-1558494949-ef010cbdcc31-400w.webp',
-    imageAlt: 'Server room infrastructure'
+    title: "Best Web Hosting for Remote Businesses",
+    excerpt: "Found a better host? Compare the best options for your migration.",
+    href: "/tools/best-web-hosting-remote-business",
+    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-400w.webp",
+    imageAlt: "Server room infrastructure",
   },
   {
-    title: 'Best VPS Hosting for Remote Businesses',
-    excerpt: 'Upgrading to VPS? Here are the best options to migrate to.',
-    href: '/tools/best-vps-hosting-remote-business',
-    image: '/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp',
-    imageAlt: 'VPS server infrastructure'
+    title: "Best VPS Hosting for Remote Businesses",
+    excerpt: "Upgrading to VPS? Here are the best options to migrate to.",
+    href: "/tools/best-vps-hosting-remote-business",
+    image: "/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp",
+    imageAlt: "VPS server infrastructure",
   },
   {
-    title: 'Website Speed Optimization Guide',
-    excerpt: 'After migration, optimize your new site for maximum speed.',
-    href: '/tools/website-speed-optimization-guide',
-    image: '/images/unsplash/photo-1460925895917-afdab827c52f-400w.webp',
-    imageAlt: 'Website performance dashboard'
+    title: "Website Speed Optimization Guide",
+    excerpt: "After migration, optimize your new site for maximum speed.",
+    href: "/tools/website-speed-optimization-guide",
+    image: "/images/unsplash/photo-1460925895917-afdab827c52f-400w.webp",
+    imageAlt: "Website performance dashboard",
   },
 ];
 ---

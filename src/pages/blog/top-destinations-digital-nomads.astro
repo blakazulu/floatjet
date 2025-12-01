@@ -1,124 +1,130 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Top 10 Destinations for Digital Nomads (2025)';
-const description = 'Lived in twelve cities across four continents. Here are the ones with fast internet, affordable rent, and visas that won\'t make you want to quit the nomad life.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Top 10 Destinations for Digital Nomads (2025)";
+const description =
+  "Lived in twelve cities across four continents. Here are the ones with fast internet, affordable rent, and visas that won't make you want to quit the nomad life.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 14;
-const image = '/images/unsplash/photo-1528181304800-259b08848526-1200w.webp';
-const imageAlt = 'Digital nomad working from tropical location';
+const image = "/images/unsplash/photo-1528181304800-259b08848526-1200w.webp";
+const imageAlt = "Digital nomad working from tropical location";
 
 // Table of contents
 const headings = [
-  {text: 'I\'ve Lived in 14 Cities', slug: 'introduction', depth: 2},
-  {text: 'The Quick Numbers', slug: 'quick-comparison', depth: 2},
-  {text: 'How I Picked These', slug: 'methodology', depth: 2},
-  {text: 'The Actual Cities', slug: 'destinations', depth: 2},
-  {text: 'Almost Made It', slug: 'honorable-mentions', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
-  {text: 'Pick Something', slug: 'conclusion', depth: 2},
+  { text: "I've Lived in 14 Cities", slug: "introduction", depth: 2 },
+  { text: "The Quick Numbers", slug: "quick-comparison", depth: 2 },
+  { text: "How I Picked These", slug: "methodology", depth: 2 },
+  { text: "The Actual Cities", slug: "destinations", depth: 2 },
+  { text: "Almost Made It", slug: "honorable-mentions", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "Pick Something", slug: "conclusion", depth: 2 },
 ];
 
 // Comparison table
 const comparisonColumns = [
-  {key: 'city', label: 'City', width: '130px'},
-  {key: 'cost', label: 'Monthly Cost'},
-  {key: 'wifi', label: 'Avg WiFi'},
-  {key: 'visa', label: 'Visa'},
-  {key: 'bestFor', label: 'Best For'},
+  { key: "city", label: "City", width: "130px" },
+  { key: "cost", label: "Monthly Cost" },
+  { key: "wifi", label: "Avg WiFi" },
+  { key: "visa", label: "Visa" },
+  { key: "bestFor", label: "Best For" },
 ];
 
 const comparisonRows = [
   {
-    city: '<strong>Lisbon</strong>',
-    cost: '$2,000-2,800',
-    wifi: '100+ Mbps',
-    visa: 'Digital Nomad',
-    bestFor: 'European base'
+    city: "<strong>Lisbon</strong>",
+    cost: "$2,000-2,800",
+    wifi: "100+ Mbps",
+    visa: "Digital Nomad",
+    bestFor: "European base",
   },
   {
-    city: '<strong>Bangkok</strong>',
-    cost: '$1,200-1,800',
-    wifi: '50-100 Mbps',
-    visa: '60 days',
-    bestFor: 'Low cost'
+    city: "<strong>Bangkok</strong>",
+    cost: "$1,200-1,800",
+    wifi: "50-100 Mbps",
+    visa: "60 days",
+    bestFor: "Low cost",
   },
   {
-    city: '<strong>Mexico City</strong>',
-    cost: '$1,500-2,200',
-    wifi: '50-80 Mbps',
-    visa: '180 days',
-    bestFor: 'US time zones'
+    city: "<strong>Mexico City</strong>",
+    cost: "$1,500-2,200",
+    wifi: "50-80 Mbps",
+    visa: "180 days",
+    bestFor: "US time zones",
   },
   {
-    city: '<strong>Bali</strong>',
-    cost: '$1,400-2,000',
-    wifi: '30-50 Mbps',
-    visa: '60 days',
-    bestFor: 'Lifestyle'
+    city: "<strong>Bali</strong>",
+    cost: "$1,400-2,000",
+    wifi: "30-50 Mbps",
+    visa: "60 days",
+    bestFor: "Lifestyle",
   },
   {
-    city: '<strong>Medellín</strong>',
-    cost: '$1,200-1,800',
-    wifi: '50-80 Mbps',
-    visa: '90 days',
-    bestFor: 'Weather + value'
+    city: "<strong>Medellín</strong>",
+    cost: "$1,200-1,800",
+    wifi: "50-80 Mbps",
+    visa: "90 days",
+    bestFor: "Weather + value",
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'What is a digital nomad visa?',
-    answer: '<p>A digital nomad visa allows remote workers to legally live and work in a foreign country while employed by companies outside that country. Countries like Portugal, Spain, Croatia, and Costa Rica offer these visas, typically requiring proof of remote income ($2,000-4,000/month) and health insurance. They usually last 1-2 years and are renewable.</p>'
+    question: "What is a digital nomad visa?",
+    answer:
+      "<p>A digital nomad visa allows remote workers to legally live and work in a foreign country while employed by companies outside that country. Countries like Portugal, Spain, Croatia, and Costa Rica offer these visas, typically requiring proof of remote income ($2,000-4,000/month) and health insurance. They usually last 1-2 years and are renewable.</p>",
   },
   {
-    question: 'How much money do I need to be a digital nomad?',
-    answer: '<p>Budget varies wildly by location. Southeast Asia: $1,200-1,800/month. Latin America: $1,500-2,500/month. Europe: $2,500-4,000/month. We recommend having <strong>3-6 months of expenses saved</strong> before starting, plus emergency funds and travel insurance.</p>'
+    question: "How much money do I need to be a digital nomad?",
+    answer:
+      "<p>Budget varies wildly by location. Southeast Asia: $1,200-1,800/month. Latin America: $1,500-2,500/month. Europe: $2,500-4,000/month. We recommend having <strong>3-6 months of expenses saved</strong> before starting, plus emergency funds and travel insurance.</p>",
   },
   {
-    question: 'Is it legal to work remotely while traveling on a tourist visa?',
-    answer: '<p>Technically, most tourist visas prohibit "work." However, the intent is to prevent taking local jobs. Working remotely for a foreign employer falls into a gray area that most countries don\'t actively enforce. Digital nomad visas exist partly to clarify this—they\'re the safest legal option for long-term stays.</p>'
+    question: "Is it legal to work remotely while traveling on a tourist visa?",
+    answer:
+      "<p>Technically, most tourist visas prohibit \"work.\" However, the intent is to prevent taking local jobs. Working remotely for a foreign employer falls into a gray area that most countries don't actively enforce. Digital nomad visas exist partly to clarify this—they're the safest legal option for long-term stays.</p>",
   },
   {
-    question: 'What about taxes as a digital nomad?',
-    answer: '<p>Tax obligations depend on your citizenship, tax residency, and where you earn income. US citizens owe taxes regardless of location. Others may become tax residents after 183+ days in a country. <strong>Consult a tax professional</strong> familiar with international remote work—this is not DIY territory.</p>'
+    question: "What about taxes as a digital nomad?",
+    answer:
+      "<p>Tax obligations depend on your citizenship, tax residency, and where you earn income. US citizens owe taxes regardless of location. Others may become tax residents after 183+ days in a country. <strong>Consult a tax professional</strong> familiar with international remote work—this is not DIY territory.</p>",
   },
   {
-    question: 'How do I find other digital nomads?',
-    answer: '<p>Coworking spaces are the easiest way to meet people. Apps like Nomad List, Meetup, and Facebook groups for specific cities help too. Many destinations have regular nomad meetups, skill-sharing events, and social gatherings. The community is generally welcoming to newcomers.</p>'
-  }
+    question: "How do I find other digital nomads?",
+    answer:
+      "<p>Coworking spaces are the easiest way to meet people. Apps like Nomad List, Meetup, and Facebook groups for specific cities help too. Many destinations have regular nomad meetups, skill-sharing events, and social gatherings. The community is generally welcoming to newcomers.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Essential Travel Tech for Nomads',
-    excerpt: 'Compact gadgets and accessories for working from anywhere.',
-    href: '/blog/essential-travel-tech-nomads',
-    image: '/images/unsplash/photo-1519389950473-47ba0277781c-800w.webp',
-    imageAlt: 'Travel tech setup'
+    title: "Essential Travel Tech for Nomads",
+    excerpt: "Compact gadgets and accessories for working from anywhere.",
+    href: "/blog/essential-travel-tech-nomads",
+    image: "/images/unsplash/photo-1519389950473-47ba0277781c-800w.webp",
+    imageAlt: "Travel tech setup",
   },
   {
-    title: 'Best Travel Insurance for Remote Workers',
-    excerpt: 'Coverage designed for long-term travelers and location-independent professionals.',
-    href: '/blog/best-travel-insurance-remote-workers',
-    image: '/images/unsplash/photo-1436491865332-7a61a109cc05-800w.webp',
-    imageAlt: 'Travel planning'
+    title: "Best Travel Insurance for Remote Workers",
+    excerpt: "Coverage designed for long-term travelers and location-independent professionals.",
+    href: "/blog/best-travel-insurance-remote-workers",
+    image: "/images/unsplash/photo-1436491865332-7a61a109cc05-800w.webp",
+    imageAlt: "Travel planning",
   },
   {
-    title: 'Best VPN for Digital Nomads',
-    excerpt: 'Protect your data and access content from anywhere.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'VPN security concept'
-  }
+    title: "Best VPN for Digital Nomads",
+    excerpt: "Protect your data and access content from anywhere.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "VPN security concept",
+  },
 ];
 ---
 

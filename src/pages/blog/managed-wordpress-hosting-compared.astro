@@ -1,124 +1,127 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Managed WordPress Hosting: Who\'s Actually Worth It (2025)';
-const description = 'I tested five managed WordPress hosts for remote businesses. Here\'s which ones are worth the premium and which are just overpriced shared hosting honestly.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Managed WordPress Hosting: Who's Actually Worth It (2025)";
+const description =
+  "I tested five managed WordPress hosts for remote businesses. Here's which ones are worth the premium and which are just overpriced shared hosting honestly.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 4;
-const image = '/images/unsplash/photo-1504639725590-34d0984388bd-1200w.webp';
-const imageAlt = 'WordPress development and hosting concept';
+const image = "/images/unsplash/photo-1504639725590-34d0984388bd-1200w.webp";
+const imageAlt = "WordPress development and hosting concept";
 
 // Table of contents
 const headings = [
-  {text: 'Why I Care About This', slug: 'introduction', depth: 2},
-  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
-  {text: 'What You Actually Get', slug: 'what-is-managed', depth: 2},
-  {text: 'The Hosts', slug: 'reviews', depth: 2},
-  {text: 'Which One?', slug: 'how-to-choose', depth: 2},
-  {text: 'Quick Answers', slug: 'faq', depth: 2},
-  {text: 'Bottom Line', slug: 'conclusion', depth: 2},
+  { text: "Why I Care About This", slug: "introduction", depth: 2 },
+  { text: "Quick Comparison", slug: "quick-comparison", depth: 2 },
+  { text: "What You Actually Get", slug: "what-is-managed", depth: 2 },
+  { text: "The Hosts", slug: "reviews", depth: 2 },
+  { text: "Which One?", slug: "how-to-choose", depth: 2 },
+  { text: "Quick Answers", slug: "faq", depth: 2 },
+  { text: "Bottom Line", slug: "conclusion", depth: 2 },
 ];
 
 // Comparison table
 const comparisonColumns = [
-  {key: 'host', label: 'Host', width: '110px'},
-  {key: 'price', label: 'Starting Price'},
-  {key: 'sites', label: 'Sites'},
-  {key: 'storage', label: 'Storage'},
-  {key: 'bestFor', label: 'Best For'},
+  { key: "host", label: "Host", width: "110px" },
+  { key: "price", label: "Starting Price" },
+  { key: "sites", label: "Sites" },
+  { key: "storage", label: "Storage" },
+  { key: "bestFor", label: "Best For" },
 ];
 
 const comparisonRows = [
   {
-    host: '<strong>WP Engine</strong>',
-    price: '$20/mo',
-    sites: '1',
-    storage: '10GB',
-    bestFor: 'Business sites'
+    host: "<strong>WP Engine</strong>",
+    price: "$20/mo",
+    sites: "1",
+    storage: "10GB",
+    bestFor: "Business sites",
   },
   {
-    host: '<strong>Kinsta</strong>',
-    price: '$35/mo',
-    sites: '1',
-    storage: '10GB',
-    bestFor: 'Performance'
+    host: "<strong>Kinsta</strong>",
+    price: "$35/mo",
+    sites: "1",
+    storage: "10GB",
+    bestFor: "Performance",
   },
   {
-    host: '<strong>Cloudways</strong>',
-    price: '$14/mo',
-    sites: 'Unlimited',
-    storage: '25GB',
-    bestFor: 'Value'
+    host: "<strong>Cloudways</strong>",
+    price: "$14/mo",
+    sites: "Unlimited",
+    storage: "25GB",
+    bestFor: "Value",
   },
   {
-    host: '<strong>Flywheel</strong>',
-    price: '$15/mo',
-    sites: '1',
-    storage: '5GB',
-    bestFor: 'Designers/Agencies'
+    host: "<strong>Flywheel</strong>",
+    price: "$15/mo",
+    sites: "1",
+    storage: "5GB",
+    bestFor: "Designers/Agencies",
   },
   {
-    host: '<strong>SiteGround</strong>',
-    price: '$15/mo',
-    sites: '1',
-    storage: '20GB',
-    bestFor: 'Budget managed'
+    host: "<strong>SiteGround</strong>",
+    price: "$15/mo",
+    sites: "1",
+    storage: "20GB",
+    bestFor: "Budget managed",
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Worth the extra cost?',
-    answer: '<p>For business sites, yes. For hobby blogs, probably not.</p>'
+    question: "Worth the extra cost?",
+    answer: "<p>For business sites, yes. For hobby blogs, probably not.</p>",
   },
   {
-    question: 'Can I use any plugins?',
-    answer: '<p>Most work. They block caching plugins (they have their own) and some security plugins. WooCommerce, Elementor, SEO stuff—all fine.</p>'
+    question: "Can I use any plugins?",
+    answer:
+      "<p>Most work. They block caching plugins (they have their own) and some security plugins. WooCommerce, Elementor, SEO stuff—all fine.</p>",
   },
   {
-    question: 'What if traffic exceeds my plan?',
-    answer: '<p>WP Engine and Kinsta charge overages. Cloudways lets you scale the server up. They\'ll warn you first.</p>'
+    question: "What if traffic exceeds my plan?",
+    answer:
+      "<p>WP Engine and Kinsta charge overages. Cloudways lets you scale the server up. They'll warn you first.</p>",
   },
   {
-    question: 'Need managed for WooCommerce?',
-    answer: '<p>Strongly recommended. Stores need the uptime and resources.</p>'
+    question: "Need managed for WooCommerce?",
+    answer: "<p>Strongly recommended. Stores need the uptime and resources.</p>",
   },
   {
-    question: 'How do updates work?',
-    answer: '<p>Automatic. They test in staging first. One-click rollback if something breaks.</p>'
-  }
+    question: "How do updates work?",
+    answer: "<p>Automatic. They test in staging first. One-click rollback if something breaks.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Web Hosting for Remote Businesses',
-    excerpt: 'Complete comparison of all hosting types for remote teams.',
-    href: '/tools/best-web-hosting-remote-business',
-    image: '/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp',
-    imageAlt: 'Server infrastructure'
+    title: "Best Web Hosting for Remote Businesses",
+    excerpt: "Complete comparison of all hosting types for remote teams.",
+    href: "/tools/best-web-hosting-remote-business",
+    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp",
+    imageAlt: "Server infrastructure",
   },
   {
-    title: 'Cloud vs Traditional Hosting',
-    excerpt: 'Understand the differences to choose the right hosting type.',
-    href: '/blog/cloud-vs-traditional-hosting',
-    image: '/images/unsplash/photo-1451187580459-43490279c0fa-800w.webp',
-    imageAlt: 'Cloud computing concept'
+    title: "Cloud vs Traditional Hosting",
+    excerpt: "Understand the differences to choose the right hosting type.",
+    href: "/blog/cloud-vs-traditional-hosting",
+    image: "/images/unsplash/photo-1451187580459-43490279c0fa-800w.webp",
+    imageAlt: "Cloud computing concept",
   },
   {
-    title: 'Best Project Management Software',
-    excerpt: 'Organize your WordPress projects with the right PM tools.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Project management dashboard'
-  }
+    title: "Best Project Management Software",
+    excerpt: "Organize your WordPress projects with the right PM tools.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Project management dashboard",
+  },
 ];
 ---
 

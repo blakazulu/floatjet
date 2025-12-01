@@ -1,77 +1,84 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Phishing Scams: How Remote Workers Can Stay Safe';
-const description = 'Learn how to identify and avoid phishing scams targeting remote workers. Protect yourself from email scams, business email compromise, and social engineering.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-10');
+const title = "Phishing Scams: How Remote Workers Can Stay Safe";
+const description =
+  "Learn how to identify and avoid phishing scams targeting remote workers. Protect yourself from email scams, business email compromise, and social engineering.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-10");
 const readingTime = 11;
-const image = '/images/unsplash/photo-1550751827-4bd374c3f58b-1200w.webp';
-const imageAlt = 'Remote worker identifying phishing email on laptop screen';
+const image = "/images/unsplash/photo-1550751827-4bd374c3f58b-1200w.webp";
+const imageAlt = "Remote worker identifying phishing email on laptop screen";
 
 const headings = [
-  {depth: 2, slug: 'why-easy-targets', text: 'Why We\'re Easy Targets'},
-  {depth: 2, slug: 'types-of-phishing', text: 'The Different Flavors of Phishing'},
-  {depth: 2, slug: 'spotting-fakes', text: 'Spotting the Fakes'},
-  {depth: 2, slug: 'business-email-compromise', text: 'When They Go After Your Company'},
-  {depth: 2, slug: 'already-clicked', text: 'Already Clicked? Do This Now'},
-  {depth: 2, slug: 'getting-better', text: 'Getting Better at This'},
-  {depth: 2, slug: 'tools-that-help', text: 'Stuff That Actually Helps'},
-  {depth: 2, slug: 'reporting', text: 'Reporting This Garbage'},
-  {depth: 2, slug: 'faq', text: 'Quick Answers'}
+  { depth: 2, slug: "why-easy-targets", text: "Why We're Easy Targets" },
+  { depth: 2, slug: "types-of-phishing", text: "The Different Flavors of Phishing" },
+  { depth: 2, slug: "spotting-fakes", text: "Spotting the Fakes" },
+  { depth: 2, slug: "business-email-compromise", text: "When They Go After Your Company" },
+  { depth: 2, slug: "already-clicked", text: "Already Clicked? Do This Now" },
+  { depth: 2, slug: "getting-better", text: "Getting Better at This" },
+  { depth: 2, slug: "tools-that-help", text: "Stuff That Actually Helps" },
+  { depth: 2, slug: "reporting", text: "Reporting This Garbage" },
+  { depth: 2, slug: "faq", text: "Quick Answers" },
 ];
 
 const faqData = [
   {
-    question: 'What percentage of attacks start with phishing?',
-    answer: '<a href="https://www.ic3.gov/Media/PDF/AnnualReport/2023_IC3Report.pdf" target="_blank" rel="nofollow">Around ninety percent of data breaches</a> according to security researchers. Phishing is the front door for almost everything bad.'
+    question: "What percentage of attacks start with phishing?",
+    answer:
+      '<a href="https://www.ic3.gov/Media/PDF/AnnualReport/2023_IC3Report.pdf" target="_blank" rel="nofollow">Around ninety percent of data breaches</a> according to security researchers. Phishing is the front door for almost everything bad.',
   },
   {
-    question: 'Can phishing emails have viruses?',
-    answer: 'Yep. Attachments can carry malware. Links can download stuff automatically. Don\'t open random attachments. Don\'t click random links.'
+    question: "Can phishing emails have viruses?",
+    answer:
+      "Yep. Attachments can carry malware. Links can download stuff automatically. Don't open random attachments. Don't click random links.",
   },
   {
-    question: 'What\'s spear phishing?',
-    answer: 'Regular phishing casts a wide net. Spear phishing targets you specifically using info they gathered about you. Way more convincing. Way more dangerous.'
+    question: "What's spear phishing?",
+    answer:
+      "Regular phishing casts a wide net. Spear phishing targets you specifically using info they gathered about you. Way more convincing. Way more dangerous.",
   },
   {
-    question: 'Are company laptops safer?',
-    answer: 'Usually have better security software. But you can still get phished on any device. Awareness matters more than hardware.'
+    question: "Are company laptops safer?",
+    answer:
+      "Usually have better security software. But you can still get phished on any device. Awareness matters more than hardware.",
   },
   {
-    question: 'Should I click unsubscribe on spam?',
-    answer: 'Careful. Legit companies have safe unsubscribe links. Phishing emails use fake ones to confirm your email works or to install something. When in doubt, just delete it.'
+    question: "Should I click unsubscribe on spam?",
+    answer:
+      "Careful. Legit companies have safe unsubscribe links. Phishing emails use fake ones to confirm your email works or to install something. When in doubt, just delete it.",
   },
   {
-    question: 'How fast should I report phishing?',
-    answer: 'Minutes if possible. Quick reporting lets IT block the threat before others fall for it.'
-  }
+    question: "How fast should I report phishing?",
+    answer:
+      "Minutes if possible. Quick reporting lets IT block the threat before others fall for it.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Password Manager for Remote Work',
-    excerpt: 'Protect all your accounts with a secure password manager.',
-    href: '/tools/best-password-manager-remote-work',
-    image: '/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp',
-    imageAlt: 'Password manager security interface'
+    title: "Best Password Manager for Remote Work",
+    excerpt: "Protect all your accounts with a secure password manager.",
+    href: "/tools/best-password-manager-remote-work",
+    image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
+    imageAlt: "Password manager security interface",
   },
   {
-    title: 'Two-Factor Authentication Setup Guide',
-    excerpt: 'Add an extra layer of security to all your accounts.',
-    href: '/guides/two-factor-authentication-guide',
-    image: '/images/unsplash/photo-1633265486064-086b219458ec-800w.webp',
-    imageAlt: 'Two-factor authentication code on smartphone'
+    title: "Two-Factor Authentication Setup Guide",
+    excerpt: "Add an extra layer of security to all your accounts.",
+    href: "/guides/two-factor-authentication-guide",
+    image: "/images/unsplash/photo-1633265486064-086b219458ec-800w.webp",
+    imageAlt: "Two-factor authentication code on smartphone",
   },
   {
-    title: 'VPN & Public WiFi Security Guide',
-    excerpt: 'Stay safe when working from public networks.',
-    href: '/blog/vpn-public-wifi-guide',
-    image: '/images/unsplash/photo-1544197150-b99a580bb7a8-800w.webp',
-    imageAlt: 'Public WiFi hotspot security concept'
-  }
+    title: "VPN & Public WiFi Security Guide",
+    excerpt: "Stay safe when working from public networks.",
+    href: "/blog/vpn-public-wifi-guide",
+    image: "/images/unsplash/photo-1544197150-b99a580bb7a8-800w.webp",
+    imageAlt: "Public WiFi hotspot security concept",
+  },
 ];
 ---
 

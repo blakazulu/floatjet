@@ -1,124 +1,125 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'I Lost a $15K Client Because of a Spreadsheet';
-const description = 'Forgot to follow up with a hot lead. Lost the deal. Fifteen grand gone. Never again. Here\'s the CRM software that actually helps small businesses organize.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "I Lost a $15K Client Because of a Spreadsheet";
+const description =
+  "Forgot to follow up with a hot lead. Lost the deal. Fifteen grand gone. Never again. Here's the CRM software that actually helps small businesses organize.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 4;
-const image = '/images/unsplash/photo-1552664730-d307ca884978-1200w.webp';
-const imageAlt = 'Team discussing customer relationship management strategy';
+const image = "/images/unsplash/photo-1552664730-d307ca884978-1200w.webp";
+const imageAlt = "Team discussing customer relationship management strategy";
 
 // Table of contents
 const headings = [
-  {text: 'The Spreadsheet Disaster', slug: 'introduction', depth: 2},
-  {text: 'The Short Version', slug: 'quick-comparison', depth: 2},
-  {text: 'What You Actually Need', slug: 'what-to-look-for', depth: 2},
-  {text: 'The CRMs', slug: 'reviews', depth: 2},
-  {text: 'Quick Picks', slug: 'best-for', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
-  {text: 'Just Pick One', slug: 'conclusion', depth: 2},
+  { text: "The Spreadsheet Disaster", slug: "introduction", depth: 2 },
+  { text: "The Short Version", slug: "quick-comparison", depth: 2 },
+  { text: "What You Actually Need", slug: "what-to-look-for", depth: 2 },
+  { text: "The CRMs", slug: "reviews", depth: 2 },
+  { text: "Quick Picks", slug: "best-for", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "Just Pick One", slug: "conclusion", depth: 2 },
 ];
 
 // Comparison table
 const comparisonColumns = [
-  {key: 'crm', label: 'CRM', width: '110px'},
-  {key: 'price', label: 'Starting Price'},
-  {key: 'freeplan', label: 'Free Plan'},
-  {key: 'contacts', label: 'Contacts'},
-  {key: 'bestFor', label: 'Best For'},
+  { key: "crm", label: "CRM", width: "110px" },
+  { key: "price", label: "Starting Price" },
+  { key: "freeplan", label: "Free Plan" },
+  { key: "contacts", label: "Contacts" },
+  { key: "bestFor", label: "Best For" },
 ];
 
 const comparisonRows = [
   {
-    crm: '<strong>HubSpot</strong>',
-    price: '$0-$20/mo',
-    freeplan: 'Yes (generous)',
-    contacts: 'Unlimited free',
-    bestFor: 'Growing businesses'
+    crm: "<strong>HubSpot</strong>",
+    price: "$0-$20/mo",
+    freeplan: "Yes (generous)",
+    contacts: "Unlimited free",
+    bestFor: "Growing businesses",
   },
   {
-    crm: '<strong>Pipedrive</strong>',
-    price: '$14/mo',
-    freeplan: '14-day trial',
-    contacts: 'Unlimited',
-    bestFor: 'Sales teams'
+    crm: "<strong>Pipedrive</strong>",
+    price: "$14/mo",
+    freeplan: "14-day trial",
+    contacts: "Unlimited",
+    bestFor: "Sales teams",
   },
   {
-    crm: '<strong>Zoho CRM</strong>',
-    price: '$0-$14/mo',
-    freeplan: 'Yes (3 users)',
-    contacts: '5K-100K',
-    bestFor: 'Budget-conscious'
+    crm: "<strong>Zoho CRM</strong>",
+    price: "$0-$14/mo",
+    freeplan: "Yes (3 users)",
+    contacts: "5K-100K",
+    bestFor: "Budget-conscious",
   },
   {
-    crm: '<strong>Monday Sales</strong>',
-    price: '$12/mo',
-    freeplan: '14-day trial',
-    contacts: 'Unlimited',
-    bestFor: 'Visual workflows'
+    crm: "<strong>Monday Sales</strong>",
+    price: "$12/mo",
+    freeplan: "14-day trial",
+    contacts: "Unlimited",
+    bestFor: "Visual workflows",
   },
   {
-    crm: '<strong>Freshsales</strong>',
-    price: '$0-$15/mo',
-    freeplan: 'Yes (basic)',
-    contacts: 'Unlimited',
-    bestFor: 'AI features'
+    crm: "<strong>Freshsales</strong>",
+    price: "$0-$15/mo",
+    freeplan: "Yes (basic)",
+    contacts: "Unlimited",
+    bestFor: "AI features",
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Do I need this?',
-    answer: '<p>More than 50 contacts? Ever forget to follow up? Then yes.</p>'
+    question: "Do I need this?",
+    answer: "<p>More than 50 contacts? Ever forget to follow up? Then yes.</p>",
   },
   {
-    question: 'HubSpot is really free?',
-    answer: '<p>Yes. I ran my business on free for two years.</p>'
+    question: "HubSpot is really free?",
+    answer: "<p>Yes. I ran my business on free for two years.</p>",
   },
   {
-    question: 'How long to set up?',
-    answer: '<p>Afternoon for basic. Week if you want automations perfect.</p>'
+    question: "How long to set up?",
+    answer: "<p>Afternoon for basic. Week if you want automations perfect.</p>",
   },
   {
-    question: 'Can I switch later?',
-    answer: '<p>Technically yes. Actually annoying. Pick carefully.</p>'
+    question: "Can I switch later?",
+    answer: "<p>Technically yes. Actually annoying. Pick carefully.</p>",
   },
   {
-    question: 'My spreadsheet works fine.',
-    answer: '<p>Until it doesn\'t. You\'ll know when.</p>'
-  }
+    question: "My spreadsheet works fine.",
+    answer: "<p>Until it doesn't. You'll know when.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Project Management Software',
-    excerpt: 'Organize your work and collaborate better with the right PM tools.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Project management dashboard'
+    title: "Best Project Management Software",
+    excerpt: "Organize your work and collaborate better with the right PM tools.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Project management dashboard",
   },
   {
-    title: 'Best Email Marketing Tools',
-    excerpt: 'Grow your list and nurture leads with email marketing.',
-    href: '/tools/best-email-marketing-tools',
-    image: '/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp',
-    imageAlt: 'Email marketing campaign'
+    title: "Best Email Marketing Tools",
+    excerpt: "Grow your list and nurture leads with email marketing.",
+    href: "/tools/best-email-marketing-tools",
+    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp",
+    imageAlt: "Email marketing campaign",
   },
   {
-    title: 'Best Team Communication Tools',
-    excerpt: 'Keep your remote team connected and productive.',
-    href: '/blog/best-team-communication-tools',
-    image: '/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp',
-    imageAlt: 'Team video call'
-  }
+    title: "Best Team Communication Tools",
+    excerpt: "Keep your remote team connected and productive.",
+    href: "/blog/best-team-communication-tools",
+    image: "/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp",
+    imageAlt: "Team video call",
+  },
 ];
 ---
 

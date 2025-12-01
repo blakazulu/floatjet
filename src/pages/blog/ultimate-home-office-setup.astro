@@ -1,90 +1,102 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'How to Set Up a Productive Home Office on Any Budget (2025)';
-const description = 'Set up your home office right without blowing your budget. Whether you\'re spending $500 or $5,000, here\'s what matters and what\'s just marketing hype honestly.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "How to Set Up a Productive Home Office on Any Budget (2025)";
+const description =
+  "Set up your home office right without blowing your budget. Whether you're spending $500 or $5,000, here's what matters and what's just marketing hype honestly.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 11;
-const image = '/images/unsplash/photo-1593642632559-0c6d3fc62b89-1200w.webp';
-const imageAlt = 'Modern home office setup with standing desk and dual monitors';
+const image = "/images/unsplash/photo-1593642632559-0c6d3fc62b89-1200w.webp";
+const imageAlt = "Modern home office setup with standing desk and dual monitors";
 
 // Table of contents headings
 const headings = [
-  {text: 'My Back Gave Out at 32', slug: 'introduction', depth: 2},
-  {text: 'What Actually Matters', slug: 'essentials', depth: 2},
-  {text: 'Broke? Here\'s $450', slug: 'budget-500', depth: 2},
-  {text: 'Got a Grand to Spend?', slug: 'mid-range', depth: 2},
-  {text: 'Money Isn\'t the Issue?', slug: 'premium', depth: 2},
-  {text: 'Zero Dollars', slug: 'ergonomics', depth: 2},
-  {text: 'Tiny Apartment Problems', slug: 'optimize-space', depth: 2},
-  {text: 'Quick Answers', slug: 'faq', depth: 2},
-  {text: 'Three Years After the Kitchen Chair', slug: 'conclusion', depth: 2},
+  { text: "My Back Gave Out at 32", slug: "introduction", depth: 2 },
+  { text: "What Actually Matters", slug: "essentials", depth: 2 },
+  { text: "Broke? Here's $450", slug: "budget-500", depth: 2 },
+  { text: "Got a Grand to Spend?", slug: "mid-range", depth: 2 },
+  { text: "Money Isn't the Issue?", slug: "premium", depth: 2 },
+  { text: "Zero Dollars", slug: "ergonomics", depth: 2 },
+  { text: "Tiny Apartment Problems", slug: "optimize-space", depth: 2 },
+  { text: "Quick Answers", slug: "faq", depth: 2 },
+  { text: "Three Years After the Kitchen Chair", slug: "conclusion", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'What\'s the absolute cheapest setup that works?',
-    answer: '<p>Around <strong>$300</strong>. Chair, desk, lamp. Main priority is not wrecking your back. Skip the fancy stuff and focus on something that supports you properly for 8 hours.</p>'
+    question: "What's the absolute cheapest setup that works?",
+    answer:
+      "<p>Around <strong>$300</strong>. Chair, desk, lamp. Main priority is not wrecking your back. Skip the fancy stuff and focus on something that supports you properly for 8 hours.</p>",
   },
   {
-    question: 'Is a standing desk actually worth it?',
-    answer: '<p>Yeah it is. But alternate between sitting and standing. Don\'t just stand all day—that\'s its own problem. A converter for around $250 sits on your existing desk and works great.</p>'
+    question: "Is a standing desk actually worth it?",
+    answer:
+      "<p>Yeah it is. But alternate between sitting and standing. Don't just stand all day—that's its own problem. A converter for around $250 sits on your existing desk and works great.</p>",
   },
   {
-    question: 'Do I really need an external monitor?',
-    answer: '<p>For daily work? <strong>Absolutely</strong>. Single best upgrade you can make. Your laptop screen forces you to look down all day. That destroys your neck over time. A 27 inch monitor changes everything.</p>'
+    question: "Do I really need an external monitor?",
+    answer:
+      "<p>For daily work? <strong>Absolutely</strong>. Single best upgrade you can make. Your laptop screen forces you to look down all day. That destroys your neck over time. A 27 inch monitor changes everything.</p>",
   },
   {
-    question: 'What\'s the best budget chair?',
-    answer: '<p>IKEA MARKUS or a used Herman Miller for the same price. Take a guess which one is actually better. Check Facebook Marketplace—office liquidations happen constantly.</p>'
+    question: "What's the best budget chair?",
+    answer:
+      "<p>IKEA MARKUS or a used Herman Miller for the same price. Take a guess which one is actually better. Check Facebook Marketplace—office liquidations happen constantly.</p>",
   },
   {
-    question: 'Does lighting really matter?',
-    answer: '<p><strong>More than you\'d think.</strong> $30 lamp. No excuse not to have one. Dark room equals eye strain equals headaches by 3pm. A decent LED lamp fixes this immediately.</p>'
+    question: "Does lighting really matter?",
+    answer:
+      "<p><strong>More than you'd think.</strong> $30 lamp. No excuse not to have one. Dark room equals eye strain equals headaches by 3pm. A decent LED lamp fixes this immediately.</p>",
   },
   {
-    question: 'My video calls look terrible?',
-    answer: '<p>Face a window. Or grab a $30 ring light. And put your camera at eye level. Those three things fix 90% of bad video call problems.</p>'
+    question: "My video calls look terrible?",
+    answer:
+      "<p>Face a window. Or grab a $30 ring light. And put your camera at eye level. Those three things fix 90% of bad video call problems.</p>",
   },
   {
-    question: 'What desk size do I actually need?',
-    answer: '<p>48 inches wide minimum for a single monitor. 60 inches if you want room to breathe. And make sure it\'s at least 24 inches deep—lots of cheap desks are too shallow and force your monitor way too close to your face.</p>'
+    question: "What desk size do I actually need?",
+    answer:
+      "<p>48 inches wide minimum for a single monitor. 60 inches if you want room to breathe. And make sure it's at least 24 inches deep—lots of cheap desks are too shallow and force your monitor way too close to your face.</p>",
   },
   {
-    question: 'Gaming chair or office chair?',
-    answer: '<p>Office chair. Every time. Gaming chairs look cool in photos and absolutely destroy your posture. Talk to anyone who\'s owned one for more than six months. They all regret it.</p>'
-  }
+    question: "Gaming chair or office chair?",
+    answer:
+      "<p>Office chair. Every time. Gaming chairs look cool in photos and absolutely destroy your posture. Talk to anyone who's owned one for more than six months. They all regret it.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Standing Desks for Home Office',
-    excerpt: 'Compare Uplift, FlexiSpot, Autonomous and more to find the perfect standing desk for your workspace.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Standing desk in modern home office'
+    title: "Best Standing Desks for Home Office",
+    excerpt:
+      "Compare Uplift, FlexiSpot, Autonomous and more to find the perfect standing desk for your workspace.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Standing desk in modern home office",
   },
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Find the perfect laptop for working from anywhere with our tested recommendations for every budget.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp',
-    imageAlt: 'Laptop on desk with coffee'
+    title: "Best Laptops for Remote Work",
+    excerpt:
+      "Find the perfect laptop for working from anywhere with our tested recommendations for every budget.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "Laptop on desk with coffee",
   },
   {
-    title: 'Best Productivity Apps for Remote Workers',
-    excerpt: 'Stay organized and efficient with these top-rated productivity tools designed for distributed teams.',
-    href: '/tools/best-productivity-apps',
-    image: '/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp',
-    imageAlt: 'Productivity apps on laptop screen'
-  }
+    title: "Best Productivity Apps for Remote Workers",
+    excerpt:
+      "Stay organized and efficient with these top-rated productivity tools designed for distributed teams.",
+    href: "/tools/best-productivity-apps",
+    image: "/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp",
+    imageAlt: "Productivity apps on laptop screen",
+  },
 ];
 ---
 

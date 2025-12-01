@@ -1,86 +1,106 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const title = 'Best Web Hosting for Remote Businesses | FloatJet';
-const description = 'Find the best web hosting for your remote business. Compare speed, reliability, and value. Plus hosting tips for entrepreneurs without overpaying for features.';
+const title = "Best Web Hosting for Remote Businesses | FloatJet";
+const description =
+  "Find the best web hosting for your remote business. Compare speed, reliability, and value. Plus hosting tips for entrepreneurs without overpaying for features.";
 
 const mainArticle = {
-  title: 'Best Web Hosting for Remote Businesses (2025)',
-  description: 'We tested 12+ hosting providers to find the best options for remote teams and online businesses. Compare WP Engine, Cloudways, SiteGround, and more.',
-  href: '/tools/best-web-hosting-remote-business',
-  readTime: '16 min'
+  title: "Best Web Hosting for Remote Businesses (2025)",
+  description:
+    "We tested 12+ hosting providers to find the best options for remote teams and online businesses. Compare WP Engine, Cloudways, SiteGround, and more.",
+  href: "/tools/best-web-hosting-remote-business",
+  readTime: "16 min",
 };
 
 const hostingGuides = [
   {
-    title: 'Best VPS Hosting for Remote Businesses',
-    description: 'Compare DigitalOcean, Vultr, Linode, Cloudways and more for scalable VPS hosting.',
-    href: '/tools/best-vps-hosting-remote-business',
-    icon: '🖥️',
-    category: 'Hosting',
-    readTime: 18
+    title: "Best VPS Hosting for Remote Businesses",
+    description:
+      "Compare DigitalOcean, Vultr, Linode, Cloudways and more for scalable VPS hosting.",
+    href: "/tools/best-vps-hosting-remote-business",
+    icon: "🖥️",
+    category: "Hosting",
+    readTime: 18,
   },
   {
-    title: 'Best E-commerce Hosting',
-    description: 'Shopify, WooCommerce, BigCommerce and more for your online store.',
-    href: '/tools/best-ecommerce-hosting',
-    icon: '🛒',
-    category: 'Hosting',
-    readTime: 16
+    title: "Best E-commerce Hosting",
+    description: "Shopify, WooCommerce, BigCommerce and more for your online store.",
+    href: "/tools/best-ecommerce-hosting",
+    icon: "🛒",
+    category: "Hosting",
+    readTime: 16,
   },
   {
-    title: 'Website Speed Optimization Guide',
-    description: 'Complete guide to making your website load faster with hosting, images, and caching.',
-    href: '/tools/website-speed-optimization-guide',
-    icon: '⚡',
-    category: 'Hosting',
-    readTime: 15
+    title: "Website Speed Optimization Guide",
+    description:
+      "Complete guide to making your website load faster with hosting, images, and caching.",
+    href: "/tools/website-speed-optimization-guide",
+    icon: "⚡",
+    category: "Hosting",
+    readTime: 15,
   },
   {
-    title: 'How to Migrate Your Website Without Downtime',
-    description: 'Step-by-step guide to switching hosts safely with zero downtime.',
-    href: '/tools/migrate-website-without-downtime',
-    icon: '🔄',
-    category: 'Hosting',
-    readTime: 12
+    title: "How to Migrate Your Website Without Downtime",
+    description: "Step-by-step guide to switching hosts safely with zero downtime.",
+    href: "/tools/migrate-website-without-downtime",
+    icon: "🔄",
+    category: "Hosting",
+    readTime: 12,
   },
   {
-    title: 'Shared vs VPS vs Dedicated Hosting',
-    description: 'Quick guide to choosing the right hosting type for your needs and budget.',
-    href: '/tools/shared-vs-vps-vs-dedicated-hosting',
-    icon: '⚖️',
-    category: 'Hosting',
-    readTime: 8
+    title: "Shared vs VPS vs Dedicated Hosting",
+    description: "Quick guide to choosing the right hosting type for your needs and budget.",
+    href: "/tools/shared-vs-vps-vs-dedicated-hosting",
+    icon: "⚖️",
+    category: "Hosting",
+    readTime: 8,
   },
   {
-    title: 'Managed WordPress Hosting Compared',
-    description: 'Deep dive into the best managed WordPress hosts for bloggers and businesses.',
-    href: '/blog/managed-wordpress-hosting-compared',
-    icon: '🔧',
-    category: 'Hosting',
-    readTime: 11
+    title: "Managed WordPress Hosting Compared",
+    description: "Deep dive into the best managed WordPress hosts for bloggers and businesses.",
+    href: "/blog/managed-wordpress-hosting-compared",
+    icon: "🔧",
+    category: "Hosting",
+    readTime: 11,
   },
   {
-    title: 'Cloud vs Traditional Hosting',
-    description: 'Understand the differences and choose the right hosting type for your needs.',
-    href: '/blog/cloud-vs-traditional-hosting',
-    icon: '☁️',
-    category: 'Hosting',
-    readTime: 9
-  }
+    title: "Cloud vs Traditional Hosting",
+    description: "Understand the differences and choose the right hosting type for your needs.",
+    href: "/blog/cloud-vs-traditional-hosting",
+    icon: "☁️",
+    category: "Hosting",
+    readTime: 9,
+  },
 ];
 
 const topPicks = [
-  {name: 'WP Engine', tag: 'Best Managed', color: 'bg-blue-500/20 text-blue-400'},
-  {name: 'Cloudways', tag: 'Best Cloud', color: 'bg-green-500/20 text-green-400'},
-  {name: 'SiteGround', tag: 'Best Value', color: 'bg-purple-500/20 text-purple-400'}
+  { name: "WP Engine", tag: "Best Managed", color: "bg-blue-500/20 text-blue-400" },
+  { name: "Cloudways", tag: "Best Cloud", color: "bg-green-500/20 text-green-400" },
+  { name: "SiteGround", tag: "Best Value", color: "bg-purple-500/20 text-purple-400" },
 ];
 
 const whyHosting = [
-  {title: 'Fast Loading Speeds', description: 'Keep visitors engaged with sub-2-second load times', icon: '⚡'},
-  {title: '99.9% Uptime', description: 'Your site stays online when your business depends on it', icon: '🛡️'},
-  {title: 'Global CDN', description: 'Serve content fast to visitors anywhere in the world', icon: '🌍'},
-  {title: '24/7 Support', description: 'Get help when you need it, no matter your time zone', icon: '💬'}
+  {
+    title: "Fast Loading Speeds",
+    description: "Keep visitors engaged with sub-2-second load times",
+    icon: "⚡",
+  },
+  {
+    title: "99.9% Uptime",
+    description: "Your site stays online when your business depends on it",
+    icon: "🛡️",
+  },
+  {
+    title: "Global CDN",
+    description: "Serve content fast to visitors anywhere in the world",
+    icon: "🌍",
+  },
+  {
+    title: "24/7 Support",
+    description: "Get help when you need it, no matter your time zone",
+    icon: "💬",
+  },
 ];
 ---
 

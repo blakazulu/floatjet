@@ -1,248 +1,300 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Business VPN Solutions for Remote Teams (2025)';
-const description = 'I deployed business VPNs for remote teams. NordLayer for most companies. Perimeter 81 for complex setups. Twingate for zero-trust. Real deployment tests.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Best Business VPN Solutions for Remote Teams (2025)";
+const description =
+  "I deployed business VPNs for remote teams. NordLayer for most companies. Perimeter 81 for complex setups. Twingate for zero-trust. Real deployment tests.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 16;
-const image = '/images/unsplash/photo-1551434678-e076c223a692-1200w.webp';
-const imageAlt = 'Remote team collaborating on video call with secure connection';
+const image = "/images/unsplash/photo-1551434678-e076c223a692-1200w.webp";
+const imageAlt = "Remote team collaborating on video call with secure connection";
 
 // Table of contents headings
 const headings = [
-  {text: 'Your Office Network Left the Building', slug: 'introduction', depth: 2},
-  {text: 'Business vs Consumer VPN', slug: 'business-vs-consumer', depth: 2},
-  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
-  {text: 'These Actually Work', slug: 'top-solutions', depth: 2},
-  {text: 'NordLayer', slug: 'nordlayer', depth: 3},
-  {text: 'Perimeter 81', slug: 'perimeter-81', depth: 3},
-  {text: 'Cisco AnyConnect', slug: 'cisco-anyconnect', depth: 3},
-  {text: 'OpenVPN Access Server', slug: 'openvpn', depth: 3},
-  {text: 'Twingate', slug: 'twingate', depth: 3},
-  {text: 'GoodAccess', slug: 'goodaccess', depth: 3},
-  {text: 'Cloudflare Access', slug: 'cloudflare-access', depth: 3},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Feature Comparison', slug: 'feature-comparison', depth: 2},
-  {text: 'Pricing by Team Size', slug: 'pricing-comparison', depth: 2},
-  {text: 'Actually Deploying This', slug: 'implementation-guide', depth: 2},
-  {text: 'Compliance Notes', slug: 'compliance', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
-  {text: 'Bottom Line', slug: 'conclusion', depth: 2},
+  { text: "Your Office Network Left the Building", slug: "introduction", depth: 2 },
+  { text: "Business vs Consumer VPN", slug: "business-vs-consumer", depth: 2 },
+  { text: "Quick Comparison", slug: "quick-comparison", depth: 2 },
+  { text: "These Actually Work", slug: "top-solutions", depth: 2 },
+  { text: "NordLayer", slug: "nordlayer", depth: 3 },
+  { text: "Perimeter 81", slug: "perimeter-81", depth: 3 },
+  { text: "Cisco AnyConnect", slug: "cisco-anyconnect", depth: 3 },
+  { text: "OpenVPN Access Server", slug: "openvpn", depth: 3 },
+  { text: "Twingate", slug: "twingate", depth: 3 },
+  { text: "GoodAccess", slug: "goodaccess", depth: 3 },
+  { text: "Cloudflare Access", slug: "cloudflare-access", depth: 3 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Feature Comparison", slug: "feature-comparison", depth: 2 },
+  { text: "Pricing by Team Size", slug: "pricing-comparison", depth: 2 },
+  { text: "Actually Deploying This", slug: "implementation-guide", depth: 2 },
+  { text: "Compliance Notes", slug: "compliance", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "Bottom Line", slug: "conclusion", depth: 2 },
 ];
 
 // Quick comparison table
 const quickCompareColumns = [
-  {key: 'solution', label: 'Solution', width: '130px'},
-  {key: 'bestFor', label: 'Best For', width: '160px'},
-  {key: 'price', label: 'Starting Price'},
-  {key: 'users', label: 'Min Users'},
+  { key: "solution", label: "Solution", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "160px" },
+  { key: "price", label: "Starting Price" },
+  { key: "users", label: "Min Users" },
 ];
 
 const quickCompareRows = [
   {
-    solution: '<strong>NordLayer</strong>',
-    bestFor: 'SMBs & startups',
-    price: '$8/user/mo',
-    users: '5',
+    solution: "<strong>NordLayer</strong>",
+    bestFor: "SMBs & startups",
+    price: "$8/user/mo",
+    users: "5",
   },
   {
-    solution: '<strong>Perimeter 81</strong>',
-    bestFor: 'Mid-size enterprises',
-    price: '$8/user/mo',
-    users: '5',
+    solution: "<strong>Perimeter 81</strong>",
+    bestFor: "Mid-size enterprises",
+    price: "$8/user/mo",
+    users: "5",
   },
   {
-    solution: '<strong>Twingate</strong>',
-    bestFor: 'Zero-trust security',
-    price: '$5/user/mo',
-    users: '1',
+    solution: "<strong>Twingate</strong>",
+    bestFor: "Zero-trust security",
+    price: "$5/user/mo",
+    users: "1",
   },
   {
-    solution: '<strong>Cloudflare Access</strong>',
-    bestFor: 'Tech teams',
-    price: '$7/user/mo',
-    users: '1',
+    solution: "<strong>Cloudflare Access</strong>",
+    bestFor: "Tech teams",
+    price: "$7/user/mo",
+    users: "1",
   },
   {
-    solution: '<strong>OpenVPN</strong>',
-    bestFor: 'Self-hosted control',
-    price: '$0 (self-hosted)',
-    users: '1',
+    solution: "<strong>OpenVPN</strong>",
+    bestFor: "Self-hosted control",
+    price: "$0 (self-hosted)",
+    users: "1",
   },
   {
-    solution: '<strong>GoodAccess</strong>',
-    bestFor: 'Growing startups',
-    price: '$7/user/mo',
-    users: '3',
+    solution: "<strong>GoodAccess</strong>",
+    bestFor: "Growing startups",
+    price: "$7/user/mo",
+    users: "3",
   },
   {
-    solution: '<strong>Cisco AnyConnect</strong>',
-    bestFor: 'Large enterprises',
-    price: 'Contact sales',
-    users: '100+',
+    solution: "<strong>Cisco AnyConnect</strong>",
+    bestFor: "Large enterprises",
+    price: "Contact sales",
+    users: "100+",
   },
 ];
 
 // Feature comparison table
 const featureColumns = [
-  {key: 'solution', label: 'Solution', width: '120px'},
-  {key: 'zeroTrust', label: 'Zero Trust'},
-  {key: 'sso', label: 'SSO'},
-  {key: 'mfa', label: 'MFA'},
-  {key: 'audit', label: 'Audit Logs'},
-  {key: 'dedicated', label: 'Dedicated IPs'},
-  {key: 'support', label: 'Support'},
+  { key: "solution", label: "Solution", width: "120px" },
+  { key: "zeroTrust", label: "Zero Trust" },
+  { key: "sso", label: "SSO" },
+  { key: "mfa", label: "MFA" },
+  { key: "audit", label: "Audit Logs" },
+  { key: "dedicated", label: "Dedicated IPs" },
+  { key: "support", label: "Support" },
 ];
 
 const featureRows = [
   {
-    solution: '<strong>NordLayer</strong>',
-    zeroTrust: '✅',
-    sso: '✅',
-    mfa: '✅',
-    audit: '✅',
-    dedicated: '✅',
-    support: '24/7'
+    solution: "<strong>NordLayer</strong>",
+    zeroTrust: "✅",
+    sso: "✅",
+    mfa: "✅",
+    audit: "✅",
+    dedicated: "✅",
+    support: "24/7",
   },
   {
-    solution: '<strong>Perimeter 81</strong>',
-    zeroTrust: '✅',
-    sso: '✅',
-    mfa: '✅',
-    audit: '✅',
-    dedicated: '✅',
-    support: '24/7'
+    solution: "<strong>Perimeter 81</strong>",
+    zeroTrust: "✅",
+    sso: "✅",
+    mfa: "✅",
+    audit: "✅",
+    dedicated: "✅",
+    support: "24/7",
   },
   {
-    solution: '<strong>Twingate</strong>',
-    zeroTrust: '✅',
-    sso: '✅',
-    mfa: '✅',
-    audit: '✅',
-    dedicated: '⚠️',
-    support: 'Business hrs'
+    solution: "<strong>Twingate</strong>",
+    zeroTrust: "✅",
+    sso: "✅",
+    mfa: "✅",
+    audit: "✅",
+    dedicated: "⚠️",
+    support: "Business hrs",
   },
   {
-    solution: '<strong>Cloudflare</strong>',
-    zeroTrust: '✅',
-    sso: '✅',
-    mfa: '✅',
-    audit: '✅',
-    dedicated: '❌',
-    support: '24/7'
+    solution: "<strong>Cloudflare</strong>",
+    zeroTrust: "✅",
+    sso: "✅",
+    mfa: "✅",
+    audit: "✅",
+    dedicated: "❌",
+    support: "24/7",
   },
   {
-    solution: '<strong>OpenVPN</strong>',
-    zeroTrust: '⚠️',
-    sso: '✅',
-    mfa: '✅',
-    audit: '✅',
-    dedicated: '✅',
-    support: 'Community'
+    solution: "<strong>OpenVPN</strong>",
+    zeroTrust: "⚠️",
+    sso: "✅",
+    mfa: "✅",
+    audit: "✅",
+    dedicated: "✅",
+    support: "Community",
   },
   {
-    solution: '<strong>GoodAccess</strong>',
-    zeroTrust: '✅',
-    sso: '✅',
-    mfa: '✅',
-    audit: '✅',
-    dedicated: '✅',
-    support: 'Business hrs'
+    solution: "<strong>GoodAccess</strong>",
+    zeroTrust: "✅",
+    sso: "✅",
+    mfa: "✅",
+    audit: "✅",
+    dedicated: "✅",
+    support: "Business hrs",
   },
-  {solution: '<strong>Cisco</strong>', zeroTrust: '✅', sso: '✅', mfa: '✅', audit: '✅', dedicated: '✅', support: '24/7'},
+  {
+    solution: "<strong>Cisco</strong>",
+    zeroTrust: "✅",
+    sso: "✅",
+    mfa: "✅",
+    audit: "✅",
+    dedicated: "✅",
+    support: "24/7",
+  },
 ];
 
 // Pricing comparison table
 const pricingColumns = [
-  {key: 'solution', label: 'Solution', width: '120px'},
-  {key: 'small', label: '10 Users/mo'},
-  {key: 'medium', label: '50 Users/mo'},
-  {key: 'large', label: '200 Users/mo'},
-  {key: 'notes', label: 'Notes'},
+  { key: "solution", label: "Solution", width: "120px" },
+  { key: "small", label: "10 Users/mo" },
+  { key: "medium", label: "50 Users/mo" },
+  { key: "large", label: "200 Users/mo" },
+  { key: "notes", label: "Notes" },
 ];
 
 const pricingRows = [
-  {solution: '<strong>NordLayer</strong>', small: '$80', medium: '$400', large: '$1,600', notes: 'Annual discounts'},
-  {solution: '<strong>Perimeter 81</strong>', small: '$80', medium: '$400', large: '$1,600', notes: 'Enterprise tiers'},
-  {solution: '<strong>Twingate</strong>', small: '$50', medium: '$250', large: '$1,000', notes: 'Free tier (5 users)'},
   {
-    solution: '<strong>Cloudflare</strong>',
-    small: '$70',
-    medium: '$350',
-    large: 'Custom',
-    notes: 'Free tier (50 users)'
+    solution: "<strong>NordLayer</strong>",
+    small: "$80",
+    medium: "$400",
+    large: "$1,600",
+    notes: "Annual discounts",
   },
-  {solution: '<strong>OpenVPN</strong>', small: '$0*', medium: '$0*', large: '$0*', notes: '*Self-hosted costs'},
-  {solution: '<strong>GoodAccess</strong>', small: '$70', medium: '$350', large: '$1,400', notes: 'Startup discounts'},
-  {solution: '<strong>Cisco</strong>', small: 'N/A', medium: 'Contact', large: 'Contact', notes: 'Enterprise only'},
+  {
+    solution: "<strong>Perimeter 81</strong>",
+    small: "$80",
+    medium: "$400",
+    large: "$1,600",
+    notes: "Enterprise tiers",
+  },
+  {
+    solution: "<strong>Twingate</strong>",
+    small: "$50",
+    medium: "$250",
+    large: "$1,000",
+    notes: "Free tier (5 users)",
+  },
+  {
+    solution: "<strong>Cloudflare</strong>",
+    small: "$70",
+    medium: "$350",
+    large: "Custom",
+    notes: "Free tier (50 users)",
+  },
+  {
+    solution: "<strong>OpenVPN</strong>",
+    small: "$0*",
+    medium: "$0*",
+    large: "$0*",
+    notes: "*Self-hosted costs",
+  },
+  {
+    solution: "<strong>GoodAccess</strong>",
+    small: "$70",
+    medium: "$350",
+    large: "$1,400",
+    notes: "Startup discounts",
+  },
+  {
+    solution: "<strong>Cisco</strong>",
+    small: "N/A",
+    medium: "Contact",
+    large: "Contact",
+    notes: "Enterprise only",
+  },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Business vs consumer VPN?',
-    answer: '<p>Consumer encrypts your traffic. Business adds admin control, audit logs, SSO, dedicated infrastructure, compliance stuff.</p>'
+    question: "Business vs consumer VPN?",
+    answer:
+      "<p>Consumer encrypts your traffic. Business adds admin control, audit logs, SSO, dedicated infrastructure, compliance stuff.</p>",
   },
   {
-    question: 'Need one if everything\'s in the cloud?',
-    answer: '<p>Probably. Public WiFi is still sketchy. Many services allow IP whitelisting. Compliance often requires it regardless.</p>'
+    question: "Need one if everything's in the cloud?",
+    answer:
+      "<p>Probably. Public WiFi is still sketchy. Many services allow IP whitelisting. Compliance often requires it regardless.</p>",
   },
   {
-    question: 'Zero-trust vs traditional?',
-    answer: '<p>Traditional: connect to VPN, access everything. Zero-trust: verify every resource access separately. Zero-trust is better but more setup.</p>'
+    question: "Zero-trust vs traditional?",
+    answer:
+      "<p>Traditional: connect to VPN, access everything. Zero-trust: verify every resource access separately. Zero-trust is better but more setup.</p>",
   },
   {
-    question: 'Personal use on company VPN?',
-    answer: '<p>No. Split tunneling keeps them separate. Don\'t route Netflix through corporate infrastructure.</p>'
+    question: "Personal use on company VPN?",
+    answer:
+      "<p>No. Split tunneling keeps them separate. Don't route Netflix through corporate infrastructure.</p>",
   },
   {
-    question: 'Best for compliance?',
-    answer: '<p>HIPAA: NordLayer, Perimeter 81, Cisco. SOC 2: NordLayer, Perimeter 81, Twingate, Cloudflare. GDPR: everyone. PCI: Perimeter 81, Cisco.</p>'
+    question: "Best for compliance?",
+    answer:
+      "<p>HIPAA: NordLayer, Perimeter 81, Cisco. SOC 2: NordLayer, Perimeter 81, Twingate, Cloudflare. GDPR: everyone. PCI: Perimeter 81, Cisco.</p>",
   },
   {
-    question: 'Deployment time?',
-    answer: '<p>Cloud solutions: hours to days. Self-hosted: days to weeks. Enterprise: weeks to months.</p>'
+    question: "Deployment time?",
+    answer:
+      "<p>Cloud solutions: hours to days. Self-hosted: days to weeks. Enterprise: weeks to months.</p>",
   },
   {
-    question: 'Self-host or managed?',
-    answer: '<p>Self-host if you have IT staff and data sovereignty requirements. Managed if you want minimal maintenance and fast deployment.</p>'
+    question: "Self-host or managed?",
+    answer:
+      "<p>Self-host if you have IT staff and data sovereignty requirements. Managed if you want minimal maintenance and fast deployment.</p>",
   },
   {
-    question: 'Bandwidth needed?',
-    answer: '<p>Light use: 5-10 Mbps per user. Normal work: 15-25 Mbps. Heavy: 50+ Mbps.</p>'
-  }
+    question: "Bandwidth needed?",
+    answer: "<p>Light use: 5-10 Mbps per user. Normal work: 15-25 Mbps. Heavy: 50+ Mbps.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best VPNs for Digital Nomads',
-    excerpt: 'Consumer VPN recommendations for individual remote workers and freelancers.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'Digital security concept'
+    title: "Best VPNs for Digital Nomads",
+    excerpt: "Consumer VPN recommendations for individual remote workers and freelancers.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept",
   },
   {
-    title: 'How to Secure Your Home WiFi Network',
-    excerpt: 'Essential security measures for your home office network setup.',
-    href: '/guides/secure-home-wifi-network',
-    image: '/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp',
-    imageAlt: 'Home WiFi router with security concept'
+    title: "How to Secure Your Home WiFi Network",
+    excerpt: "Essential security measures for your home office network setup.",
+    href: "/guides/secure-home-wifi-network",
+    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp",
+    imageAlt: "Home WiFi router with security concept",
   },
   {
-    title: 'Best Password Manager for Remote Work',
-    excerpt: 'Secure credential management for distributed teams.',
-    href: '/tools/best-password-manager-remote-work',
-    image: '/images/unsplash/photo-1555949963-ff9fe0c870eb-800w.webp',
-    imageAlt: 'Password security concept'
-  }
+    title: "Best Password Manager for Remote Work",
+    excerpt: "Secure credential management for distributed teams.",
+    href: "/tools/best-password-manager-remote-work",
+    image: "/images/unsplash/photo-1555949963-ff9fe0c870eb-800w.webp",
+    imageAlt: "Password security concept",
+  },
 ];
 ---
 

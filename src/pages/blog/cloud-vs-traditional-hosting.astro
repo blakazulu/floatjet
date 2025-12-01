@@ -1,118 +1,122 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Cloud vs Traditional Hosting: What Actually Matters (2025)';
-const description = 'I\'ve migrated sites at 3am while clients panicked about downtime. Don\'t be me. Here\'s how to pick the right hosting type the first time and avoid disasters.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Cloud vs Traditional Hosting: What Actually Matters (2025)";
+const description =
+  "I've migrated sites at 3am while clients panicked about downtime. Don't be me. Here's how to pick the right hosting type the first time and avoid disasters.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 4;
-const image = '/images/unsplash/photo-1451187580459-43490279c0fa-1200w.webp';
-const imageAlt = 'Cloud computing concept with server infrastructure visualization';
+const image = "/images/unsplash/photo-1451187580459-43490279c0fa-1200w.webp";
+const imageAlt = "Cloud computing concept with server infrastructure visualization";
 
 // Table of contents
 const headings = [
-  {text: 'The Real Question', slug: 'introduction', depth: 2},
-  {text: 'Traditional Hosting', slug: 'traditional-hosting', depth: 2},
-  {text: 'Cloud Hosting', slug: 'cloud-hosting', depth: 2},
-  {text: 'The Actual Difference', slug: 'key-differences', depth: 2},
-  {text: 'So Which One?', slug: 'which-to-choose', depth: 2},
-  {text: 'Who I\'d Actually Use', slug: 'best-providers', depth: 2},
-  {text: 'Quick Answers', slug: 'faq', depth: 2},
-  {text: 'Bottom Line', slug: 'conclusion', depth: 2},
+  { text: "The Real Question", slug: "introduction", depth: 2 },
+  { text: "Traditional Hosting", slug: "traditional-hosting", depth: 2 },
+  { text: "Cloud Hosting", slug: "cloud-hosting", depth: 2 },
+  { text: "The Actual Difference", slug: "key-differences", depth: 2 },
+  { text: "So Which One?", slug: "which-to-choose", depth: 2 },
+  { text: "Who I'd Actually Use", slug: "best-providers", depth: 2 },
+  { text: "Quick Answers", slug: "faq", depth: 2 },
+  { text: "Bottom Line", slug: "conclusion", depth: 2 },
 ];
 
 // Comparison table
 const comparisonColumns = [
-  {key: 'feature', label: 'Feature', width: '140px'},
-  {key: 'traditional', label: 'Traditional'},
-  {key: 'cloud', label: 'Cloud'},
+  { key: "feature", label: "Feature", width: "140px" },
+  { key: "traditional", label: "Traditional" },
+  { key: "cloud", label: "Cloud" },
 ];
 
 const comparisonRows = [
   {
-    feature: '<strong>Scalability</strong>',
-    traditional: 'Limited - must upgrade plan',
-    cloud: 'Instant - scale on demand'
+    feature: "<strong>Scalability</strong>",
+    traditional: "Limited - must upgrade plan",
+    cloud: "Instant - scale on demand",
   },
   {
-    feature: '<strong>Pricing</strong>',
-    traditional: 'Fixed monthly cost',
-    cloud: 'Pay for what you use'
+    feature: "<strong>Pricing</strong>",
+    traditional: "Fixed monthly cost",
+    cloud: "Pay for what you use",
   },
   {
-    feature: '<strong>Uptime</strong>',
-    traditional: '99.9% typical',
-    cloud: '99.99%+ with redundancy'
+    feature: "<strong>Uptime</strong>",
+    traditional: "99.9% typical",
+    cloud: "99.99%+ with redundancy",
   },
   {
-    feature: '<strong>Performance</strong>',
-    traditional: 'Shared resources',
-    cloud: 'Dedicated resources'
+    feature: "<strong>Performance</strong>",
+    traditional: "Shared resources",
+    cloud: "Dedicated resources",
   },
   {
-    feature: '<strong>Setup</strong>',
-    traditional: 'Simple, beginner-friendly',
-    cloud: 'More technical knowledge needed'
+    feature: "<strong>Setup</strong>",
+    traditional: "Simple, beginner-friendly",
+    cloud: "More technical knowledge needed",
   },
   {
-    feature: '<strong>Best For</strong>',
-    traditional: 'Small sites, blogs',
-    cloud: 'Growing businesses, apps'
+    feature: "<strong>Best For</strong>",
+    traditional: "Small sites, blogs",
+    cloud: "Growing businesses, apps",
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Cloud costs more?',
-    answer: '<p>Depends. Spiky traffic? Cloud might be cheaper. Steady traffic? Traditional wins.</p>'
+    question: "Cloud costs more?",
+    answer:
+      "<p>Depends. Spiky traffic? Cloud might be cheaper. Steady traffic? Traditional wins.</p>",
   },
   {
-    question: 'Can I switch later?',
-    answer: '<p>Yeah. Most hosts help with migration. Back up, transfer, update DNS. Not fun but doable.</p>'
+    question: "Can I switch later?",
+    answer:
+      "<p>Yeah. Most hosts help with migration. Back up, transfer, update DNS. Not fun but doable.</p>",
   },
   {
-    question: 'Need to be technical for cloud?',
-    answer: '<p>Not with managed hosts. Cloudways and Kinsta handle the hard stuff.</p>'
+    question: "Need to be technical for cloud?",
+    answer: "<p>Not with managed hosts. Cloudways and Kinsta handle the hard stuff.</p>",
   },
   {
-    question: 'Better for WordPress?',
-    answer: '<p>Small blog? Traditional shared is fine. Business site? <a href="/blog/managed-wordpress-hosting-compared">Managed WordPress cloud</a>. WP Engine or Kinsta.</p>'
+    question: "Better for WordPress?",
+    answer:
+      '<p>Small blog? Traditional shared is fine. Business site? <a href="/blog/managed-wordpress-hosting-compared">Managed WordPress cloud</a>. WP Engine or Kinsta.</p>',
   },
   {
-    question: 'Traffic spike on traditional hosting?',
-    answer: '<p>Site slows or crashes. On cloud? Scales automatically. You just pay more.</p>'
-  }
+    question: "Traffic spike on traditional hosting?",
+    answer: "<p>Site slows or crashes. On cloud? Scales automatically. You just pay more.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Web Hosting for Remote Businesses',
-    excerpt: 'Complete comparison of top hosting providers for remote teams and online businesses.',
-    href: '/tools/best-web-hosting-remote-business',
-    image: '/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp',
-    imageAlt: 'Server room with hosting infrastructure'
+    title: "Best Web Hosting for Remote Businesses",
+    excerpt: "Complete comparison of top hosting providers for remote teams and online businesses.",
+    href: "/tools/best-web-hosting-remote-business",
+    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp",
+    imageAlt: "Server room with hosting infrastructure",
   },
   {
-    title: 'Managed WordPress Hosting Compared',
-    excerpt: 'Find the best managed WordPress host for your blog or business site.',
-    href: '/blog/managed-wordpress-hosting-compared',
-    image: '/images/unsplash/photo-1504639725590-34d0984388bd-800w.webp',
-    imageAlt: 'WordPress development on laptop'
+    title: "Managed WordPress Hosting Compared",
+    excerpt: "Find the best managed WordPress host for your blog or business site.",
+    href: "/blog/managed-wordpress-hosting-compared",
+    image: "/images/unsplash/photo-1504639725590-34d0984388bd-800w.webp",
+    imageAlt: "WordPress development on laptop",
   },
   {
-    title: 'Best Project Management Software',
-    excerpt: 'Organize your remote business with the right project management tools.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Project management dashboard'
-  }
+    title: "Best Project Management Software",
+    excerpt: "Organize your remote business with the right project management tools.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Project management dashboard",
+  },
 ];
 ---
 

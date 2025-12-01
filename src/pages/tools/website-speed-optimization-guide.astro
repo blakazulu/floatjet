@@ -1,87 +1,94 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Website Speed Optimization: Complete Guide (2025)';
-const description = 'Learn how to speed up your website with this comprehensive guide. Covers hosting, images, caching, CDNs, Core Web Vitals, and optimization tools that work.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Website Speed Optimization: Complete Guide (2025)";
+const description =
+  "Learn how to speed up your website with this comprehensive guide. Covers hosting, images, caching, CDNs, Core Web Vitals, and optimization tools that work.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 15;
-const image = '/images/unsplash/photo-1460925895917-afdab827c52f-1200w.webp';
-const imageAlt = 'Website speed and performance analytics dashboard';
+const image = "/images/unsplash/photo-1460925895917-afdab827c52f-1200w.webp";
+const imageAlt = "Website speed and performance analytics dashboard";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Why Speed Matters', slug: 'why-speed-matters', depth: 2},
-  {text: 'How to Measure Your Speed', slug: 'measure-speed', depth: 2},
-  {text: 'Hosting Optimization', slug: 'hosting-optimization', depth: 2},
-  {text: 'Image Optimization', slug: 'image-optimization', depth: 2},
-  {text: 'Code Minification', slug: 'code-minification', depth: 2},
-  {text: 'Browser Caching', slug: 'browser-caching', depth: 2},
-  {text: 'CDN Implementation', slug: 'cdn-implementation', depth: 2},
-  {text: 'Database Optimization', slug: 'database-optimization', depth: 2},
-  {text: 'Core Web Vitals', slug: 'core-web-vitals', depth: 2},
-  {text: 'Speed Optimization Tools', slug: 'optimization-tools', depth: 2},
-  {text: 'Speed Checklist', slug: 'speed-checklist', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Conclusion', slug: 'conclusion', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Why Speed Matters", slug: "why-speed-matters", depth: 2 },
+  { text: "How to Measure Your Speed", slug: "measure-speed", depth: 2 },
+  { text: "Hosting Optimization", slug: "hosting-optimization", depth: 2 },
+  { text: "Image Optimization", slug: "image-optimization", depth: 2 },
+  { text: "Code Minification", slug: "code-minification", depth: 2 },
+  { text: "Browser Caching", slug: "browser-caching", depth: 2 },
+  { text: "CDN Implementation", slug: "cdn-implementation", depth: 2 },
+  { text: "Database Optimization", slug: "database-optimization", depth: 2 },
+  { text: "Core Web Vitals", slug: "core-web-vitals", depth: 2 },
+  { text: "Speed Optimization Tools", slug: "optimization-tools", depth: 2 },
+  { text: "Speed Checklist", slug: "speed-checklist", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Conclusion", slug: "conclusion", depth: 2 },
 ];
 
 // FAQ data
 const faqItems = [
   {
-    question: 'What is a good website load time?',
-    answer: 'You want under 3 seconds on mobile and under 2 seconds on desktop. Google starts considering you slow once you cross that 3-second mark, and it can actually hurt your rankings. The really fast sites — the ones that feel instant — load in under 1.5 seconds.'
+    question: "What is a good website load time?",
+    answer:
+      "You want under 3 seconds on mobile and under 2 seconds on desktop. Google starts considering you slow once you cross that 3-second mark, and it can actually hurt your rankings. The really fast sites — the ones that feel instant — load in under 1.5 seconds.",
   },
   {
-    question: 'Does website speed affect SEO?',
-    answer: 'Oh yeah, big time. Google made Core Web Vitals an actual ranking factor. But even beyond that, slow sites have awful bounce rates — people leave before they even see your content. And since Google switched to mobile-first indexing, your mobile speed matters most.'
+    question: "Does website speed affect SEO?",
+    answer:
+      "Oh yeah, big time. Google made Core Web Vitals an actual ranking factor. But even beyond that, slow sites have awful bounce rates — people leave before they even see your content. And since Google switched to mobile-first indexing, your mobile speed matters most.",
   },
   {
-    question: 'How do I check my website speed?',
-    answer: 'Start with Google PageSpeed Insights — it is free and tells you exactly what Google thinks. GTmetrix shows you a cool waterfall of everything loading on your page. WebPageTest lets you test from real browsers in different cities. Always check both mobile and desktop.'
+    question: "How do I check my website speed?",
+    answer:
+      "Start with Google PageSpeed Insights — it is free and tells you exactly what Google thinks. GTmetrix shows you a cool waterfall of everything loading on your page. WebPageTest lets you test from real browsers in different cities. Always check both mobile and desktop.",
   },
   {
-    question: 'Is a CDN necessary for website speed?',
-    answer: 'If you have visitors from different parts of the world, definitely yes. A CDN puts copies of your site on servers everywhere so people get served from nearby instead of across the globe. Even local businesses benefit from the caching. Cloudflare has a free tier that handles most sites just fine.'
+    question: "Is a CDN necessary for website speed?",
+    answer:
+      "If you have visitors from different parts of the world, definitely yes. A CDN puts copies of your site on servers everywhere so people get served from nearby instead of across the globe. Even local businesses benefit from the caching. Cloudflare has a free tier that handles most sites just fine.",
   },
   {
-    question: 'What causes slow website loading?',
-    answer: 'Nine times out of ten it is images — people upload these massive files straight from their camera. After that: <a href="/tools/best-ecommerce-hosting">cheap hosting</a>, too many plugins loading too many files, JavaScript blocking everything, no caching set up, no CDN, and databases stuffed with years of junk.'
+    question: "What causes slow website loading?",
+    answer:
+      'Nine times out of ten it is images — people upload these massive files straight from their camera. After that: <a href="/tools/best-ecommerce-hosting">cheap hosting</a>, too many plugins loading too many files, JavaScript blocking everything, no caching set up, no CDN, and databases stuffed with years of junk.',
   },
   {
-    question: 'How much does website speed affect conversion rates?',
-    answer: 'More than most people realize. A one-second delay typically drops conversions by about 7%. Sites loading in 2 seconds have around 9% bounce rate — but stretch that to 5 seconds and bounce rate shoots up to 38%. Amazon actually calculated that 100 milliseconds of extra load time cost them 1% in sales. At their scale, that is billions.'
+    question: "How much does website speed affect conversion rates?",
+    answer:
+      "More than most people realize. A one-second delay typically drops conversions by about 7%. Sites loading in 2 seconds have around 9% bounce rate — but stretch that to 5 seconds and bounce rate shoots up to 38%. Amazon actually calculated that 100 milliseconds of extra load time cost them 1% in sales. At their scale, that is billions.",
   },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Web Hosting for Remote Businesses',
-    excerpt: 'Fast hosting is the foundation of website speed. Compare top providers.',
-    href: '/tools/best-web-hosting-remote-business',
-    image: '/images/unsplash/photo-1558494949-ef010cbdcc31-400w.webp',
-    imageAlt: 'Server room infrastructure'
+    title: "Best Web Hosting for Remote Businesses",
+    excerpt: "Fast hosting is the foundation of website speed. Compare top providers.",
+    href: "/tools/best-web-hosting-remote-business",
+    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-400w.webp",
+    imageAlt: "Server room infrastructure",
   },
   {
-    title: 'Best VPS Hosting for Remote Businesses',
-    excerpt: 'When shared hosting is not fast enough, VPS delivers the performance you need.',
-    href: '/tools/best-vps-hosting-remote-business',
-    image: '/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp',
-    imageAlt: 'VPS server infrastructure'
+    title: "Best VPS Hosting for Remote Businesses",
+    excerpt: "When shared hosting is not fast enough, VPS delivers the performance you need.",
+    href: "/tools/best-vps-hosting-remote-business",
+    image: "/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp",
+    imageAlt: "VPS server infrastructure",
   },
   {
-    title: 'How to Migrate Your Website Without Downtime',
-    excerpt: 'Moving to faster hosting? Learn how to migrate safely.',
-    href: '/tools/migrate-website-without-downtime',
-    image: '/images/unsplash/photo-1551288049-bebda4e38f71-400w.webp',
-    imageAlt: 'Website migration process'
+    title: "How to Migrate Your Website Without Downtime",
+    excerpt: "Moving to faster hosting? Learn how to migrate safely.",
+    href: "/tools/migrate-website-without-downtime",
+    image: "/images/unsplash/photo-1551288049-bebda4e38f71-400w.webp",
+    imageAlt: "Website migration process",
   },
 ];
 ---

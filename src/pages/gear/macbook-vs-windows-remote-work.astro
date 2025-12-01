@@ -1,105 +1,156 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'MacBook vs Windows for Remote Work: Which One? (2025)';
-const description = 'The definitive comparison of MacBook vs Windows laptops for remote work. We break down performance, software compatibility, price, and more to help you decide.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Computers';
-const categorySlug = 'gear';
+const title = "MacBook vs Windows for Remote Work: Which One? (2025)";
+const description =
+  "The definitive comparison of MacBook vs Windows laptops for remote work. We break down performance, software compatibility, price, and more to help you decide.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Computers";
+const categorySlug = "gear";
 const readingTime = 7;
-const image = '/images/unsplash/photo-1517336714731-489689fd1ca8-1200w.webp';
-const imageAlt = 'MacBook and Windows laptop side by side comparison';
+const image = "/images/unsplash/photo-1517336714731-489689fd1ca8-1200w.webp";
+const imageAlt = "MacBook and Windows laptop side by side comparison";
 
 const headings = [
-  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
-  {text: 'Why MacBook?', slug: 'macbook-advantages', depth: 2},
-  {text: 'Why Windows?', slug: 'windows-advantages', depth: 2},
-  {text: 'Software Guide', slug: 'software-compatibility', depth: 2},
-  {text: 'Price vs Value', slug: 'price-vs-value', depth: 2},
-  {text: 'Ecosystem Stuff', slug: 'ecosystem', depth: 2},
-  {text: 'Best MacBooks', slug: 'best-macbooks', depth: 2},
-  {text: 'Best Windows Laptops', slug: 'best-windows', depth: 2},
-  {text: 'Which One for You?', slug: 'decision-by-profession', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
+  { text: "Quick Comparison", slug: "quick-comparison", depth: 2 },
+  { text: "Why MacBook?", slug: "macbook-advantages", depth: 2 },
+  { text: "Why Windows?", slug: "windows-advantages", depth: 2 },
+  { text: "Software Guide", slug: "software-compatibility", depth: 2 },
+  { text: "Price vs Value", slug: "price-vs-value", depth: 2 },
+  { text: "Ecosystem Stuff", slug: "ecosystem", depth: 2 },
+  { text: "Best MacBooks", slug: "best-macbooks", depth: 2 },
+  { text: "Best Windows Laptops", slug: "best-windows", depth: 2 },
+  { text: "Which One for You?", slug: "decision-by-profession", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
 ];
 
 const comparisonColumns = [
-  {key: 'feature', label: 'Feature', width: '140px'},
-  {key: 'macbook', label: 'MacBook'},
-  {key: 'windows', label: 'Windows'},
-  {key: 'winner', label: 'Winner'},
+  { key: "feature", label: "Feature", width: "140px" },
+  { key: "macbook", label: "MacBook" },
+  { key: "windows", label: "Windows" },
+  { key: "winner", label: "Winner" },
 ];
 
 const comparisonRows = [
-  {feature: '<strong>Battery Life</strong>', macbook: '15-22 hours', windows: '6-15 hours', winner: 'MacBook'},
   {
-    feature: '<strong>Performance/Watt</strong>',
-    macbook: 'Excellent (M-chips)',
-    windows: 'Good (improving)',
-    winner: 'MacBook'
+    feature: "<strong>Battery Life</strong>",
+    macbook: "15-22 hours",
+    windows: "6-15 hours",
+    winner: "MacBook",
   },
   {
-    feature: '<strong>Software Options</strong>',
-    macbook: 'Limited selection',
-    windows: 'Vast library',
-    winner: 'Windows'
+    feature: "<strong>Performance/Watt</strong>",
+    macbook: "Excellent (M-chips)",
+    windows: "Good (improving)",
+    winner: "MacBook",
   },
-  {feature: '<strong>Gaming</strong>', macbook: 'Limited', windows: 'Extensive', winner: 'Windows'},
-  {feature: '<strong>Price Range</strong>', macbook: '$999-$3,499', windows: '$300-$3,000+', winner: 'Windows'},
-  {feature: '<strong>Build Quality</strong>', macbook: 'Excellent', windows: 'Varies', winner: 'MacBook'},
-  {feature: '<strong>Upgrade Options</strong>', macbook: 'None', windows: 'RAM/SSD often', winner: 'Windows'},
-  {feature: '<strong>Keyboard</strong>', macbook: 'Good (improved)', windows: 'ThinkPad best', winner: 'Tie'},
-  {feature: '<strong>Display</strong>', macbook: 'Excellent', windows: 'Varies widely', winner: 'MacBook'},
-  {feature: '<strong>Support</strong>', macbook: 'Apple Stores', windows: 'Varies by brand', winner: 'MacBook'},
+  {
+    feature: "<strong>Software Options</strong>",
+    macbook: "Limited selection",
+    windows: "Vast library",
+    winner: "Windows",
+  },
+  {
+    feature: "<strong>Gaming</strong>",
+    macbook: "Limited",
+    windows: "Extensive",
+    winner: "Windows",
+  },
+  {
+    feature: "<strong>Price Range</strong>",
+    macbook: "$999-$3,499",
+    windows: "$300-$3,000+",
+    winner: "Windows",
+  },
+  {
+    feature: "<strong>Build Quality</strong>",
+    macbook: "Excellent",
+    windows: "Varies",
+    winner: "MacBook",
+  },
+  {
+    feature: "<strong>Upgrade Options</strong>",
+    macbook: "None",
+    windows: "RAM/SSD often",
+    winner: "Windows",
+  },
+  {
+    feature: "<strong>Keyboard</strong>",
+    macbook: "Good (improved)",
+    windows: "ThinkPad best",
+    winner: "Tie",
+  },
+  {
+    feature: "<strong>Display</strong>",
+    macbook: "Excellent",
+    windows: "Varies widely",
+    winner: "MacBook",
+  },
+  {
+    feature: "<strong>Support</strong>",
+    macbook: "Apple Stores",
+    windows: "Varies by brand",
+    winner: "MacBook",
+  },
 ];
 
 const faqItems = [
   {
-    question: 'MacBook worth it for remote work?',
-    answer: 'If your work doesn\'t require Windows-specific software, MacBooks offer excellent value through longevity, battery life, resale value. M-series chips deliver exceptional performance for creative work, development, general productivity. However, Windows offers more flexibility at lower price points.',
+    question: "MacBook worth it for remote work?",
+    answer:
+      "If your work doesn't require Windows-specific software, MacBooks offer excellent value through longevity, battery life, resale value. M-series chips deliver exceptional performance for creative work, development, general productivity. However, Windows offers more flexibility at lower price points.",
   },
   {
-    question: 'Can I use Office on Mac?',
-    answer: 'Yes. Microsoft Office runs natively on macOS with full feature parity. Word, Excel, PowerPoint, Outlook work identically to Windows versions. Microsoft 365 subscription works on both platforms.',
+    question: "Can I use Office on Mac?",
+    answer:
+      "Yes. Microsoft Office runs natively on macOS with full feature parity. Word, Excel, PowerPoint, Outlook work identically to Windows versions. Microsoft 365 subscription works on both platforms.",
   },
   {
-    question: 'What software only works on Windows?',
-    answer: 'Some specialized business software, engineering tools like AutoCAD and SolidWorks, most PC games. Many accounting packages, legacy enterprise software, niche industry tools may be Windows-only. Always check software requirements before choosing.',
+    question: "What software only works on Windows?",
+    answer:
+      "Some specialized business software, engineering tools like AutoCAD and SolidWorks, most PC games. Many accounting packages, legacy enterprise software, niche industry tools may be Windows-only. Always check software requirements before choosing.",
   },
   {
-    question: 'Can I switch from Windows to Mac easily?',
-    answer: 'Most users adapt within two to four weeks. Biggest adjustments are keyboard shortcuts, window management, file system differences. Documents, photos, browser data transfer easily. Cloud-based workflows make switching nearly seamless.',
+    question: "Can I switch from Windows to Mac easily?",
+    answer:
+      "Most users adapt within two to four weeks. Biggest adjustments are keyboard shortcuts, window management, file system differences. Documents, photos, browser data transfer easily. Cloud-based workflows make switching nearly seamless.",
   },
   {
-    question: 'MacBook Air or Pro for remote work?',
-    answer: 'For ninety percent of remote workers, MacBook Air M2 or M3 is the better choice. Lighter, fanless, silent, handles typical work tasks effortlessly. Choose MacBook Pro only for heavy video editing, 3D rendering, or if you need the sixteen-inch display.',
+    question: "MacBook Air or Pro for remote work?",
+    answer:
+      "For ninety percent of remote workers, MacBook Air M2 or M3 is the better choice. Lighter, fanless, silent, handles typical work tasks effortlessly. Choose MacBook Pro only for heavy video editing, 3D rendering, or if you need the sixteen-inch display.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Our complete guide to the best laptops across all platforms.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp',
-    imageAlt: 'Laptop on desk',
+    title: "Best Laptops for Remote Work",
+    excerpt: "Our complete guide to the best laptops across all platforms.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "Laptop on desk",
   },
   {
-    title: 'Best Budget Laptops Under $800',
-    excerpt: 'Great Windows laptops for remote work on a budget.',
-    href: '/gear/best-budget-laptops-remote-work',
-    image: '/images/unsplash/photo-1525547719571-a2d4ac8945e2-800w.webp',
-    imageAlt: 'Budget laptop',
+    title: "Best Budget Laptops Under $800",
+    excerpt: "Great Windows laptops for remote work on a budget.",
+    href: "/gear/best-budget-laptops-remote-work",
+    image: "/images/unsplash/photo-1525547719571-a2d4ac8945e2-800w.webp",
+    imageAlt: "Budget laptop",
   },
   {
-    title: 'How Much RAM Do You Need?',
-    excerpt: 'Find the right amount of memory for your workflow.',
-    href: '/gear/how-much-ram-remote-work',
-    image: '/images/unsplash/photo-1518770660439-4636190af475-800w.webp',
-    imageAlt: 'Computer RAM',
+    title: "How Much RAM Do You Need?",
+    excerpt: "Find the right amount of memory for your workflow.",
+    href: "/gear/how-much-ram-remote-work",
+    image: "/images/unsplash/photo-1518770660439-4636190af475-800w.webp",
+    imageAlt: "Computer RAM",
   },
 ];
 ---

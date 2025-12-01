@@ -1,90 +1,99 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Morning Routine for Remote Work: What Works (2025)';
-const description = 'Create the perfect morning routine for remote workers. Learn transition rituals, 30-60-90 minute routines, and avoiding the bed-to-desk trap entirely.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Morning Routine for Remote Work: What Works (2025)";
+const description =
+  "Create the perfect morning routine for remote workers. Learn transition rituals, 30-60-90 minute routines, and avoiding the bed-to-desk trap entirely.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 11;
-const image = '/images/unsplash/photo-1506784983877-45594efa4cbe-1200w.webp';
-const imageAlt = 'Morning coffee and journal representing a productive remote work morning routine';
+const image = "/images/unsplash/photo-1506784983877-45594efa4cbe-1200w.webp";
+const imageAlt = "Morning coffee and journal representing a productive remote work morning routine";
 
 // Table of contents headings
 const headings = [
-  {text: 'The Bed-to-Desk Problem', slug: 'bed-to-desk', depth: 2},
-  {text: 'Sample Routines', slug: 'sample-routines', depth: 2},
-  {text: 'Physical Movement', slug: 'movement', depth: 2},
-  {text: 'Mental Preparation', slug: 'mental-prep', depth: 2},
-  {text: 'Skip the Email Trap', slug: 'email-trap', depth: 2},
-  {text: 'Transition Rituals', slug: 'transitions', depth: 2},
-  {text: 'Tools That Help', slug: 'tools', depth: 2},
-  {text: 'Different Body Clocks', slug: 'chronotypes', depth: 2},
-  {text: 'Common Questions', slug: 'faq', depth: 2},
+  { text: "The Bed-to-Desk Problem", slug: "bed-to-desk", depth: 2 },
+  { text: "Sample Routines", slug: "sample-routines", depth: 2 },
+  { text: "Physical Movement", slug: "movement", depth: 2 },
+  { text: "Mental Preparation", slug: "mental-prep", depth: 2 },
+  { text: "Skip the Email Trap", slug: "email-trap", depth: 2 },
+  { text: "Transition Rituals", slug: "transitions", depth: 2 },
+  { text: "Tools That Help", slug: "tools", depth: 2 },
+  { text: "Different Body Clocks", slug: "chronotypes", depth: 2 },
+  { text: "Common Questions", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'What\'s the ideal wake time?',
-    answer: '<p>No universal answer. Depends on your body and work requirements. Early birds do well with five thirty to six thirty. Night owls need seven thirty to eight thirty. Flexible schedules mean wake time matters less than consistency. Key is same time every day within thirty minutes. Even weekends.</p>'
+    question: "What's the ideal wake time?",
+    answer:
+      "<p>No universal answer. Depends on your body and work requirements. Early birds do well with five thirty to six thirty. Night owls need seven thirty to eight thirty. Flexible schedules mean wake time matters less than consistency. Key is same time every day within thirty minutes. Even weekends.</p>",
   },
   {
-    question: 'Should I check email first?',
-    answer: '<p>No. Checking email hands your agenda to others. Complete routine first. Spend first work hour on your most important task. Schedule email checks for mid-morning and afternoon. Exception: time-sensitive roles can do a quick emergency-only scan. Emails from eleven PM can wait until ten AM.</p>'
+    question: "Should I check email first?",
+    answer:
+      "<p>No. Checking email hands your agenda to others. Complete routine first. Spend first work hour on your most important task. Schedule email checks for mid-morning and afternoon. Exception: time-sensitive roles can do a quick emergency-only scan. Emails from eleven PM can wait until ten AM.</p>",
   },
   {
-    question: 'Morning routine with kids?',
-    answer: '<p>Requires creative timing. Wake before them if possible. Even thirty minutes of quiet helps. Involve them in parts. Family breakfast. Kid-friendly stretching. Parallel routines. They do theirs while you do yours. Adjust expectations. Fifteen minutes beats nothing. Focus on the transition element. Short ritual that signals work time still helps.</p>'
+    question: "Morning routine with kids?",
+    answer:
+      "<p>Requires creative timing. Wake before them if possible. Even thirty minutes of quiet helps. Involve them in parts. Family breakfast. Kid-friendly stretching. Parallel routines. They do theirs while you do yours. Adjust expectations. Fifteen minutes beats nothing. Focus on the transition element. Short ritual that signals work time still helps.</p>",
   },
   {
-    question: 'Not a morning person?',
-    answer: '<p>Night owls can still benefit from routines. Don\'t fight biology. If you\'re alert at ten, design around that. Give yourself sixty to ninety minutes from wake to work. Light exposure after waking helps. Consistency matters more than timing. Same eight AM routine every day is fine.</p>'
+    question: "Not a morning person?",
+    answer:
+      "<p>Night owls can still benefit from routines. Don't fight biology. If you're alert at ten, design around that. Give yourself sixty to ninety minutes from wake to work. Light exposure after waking helps. Consistency matters more than timing. Same eight AM routine every day is fine.</p>",
   },
   {
-    question: 'How long should my routine be?',
-    answer: '<p>Quality beats duration. Minimum effective: fifteen to thirty minutes. Movement plus transition ritual. Standard: forty-five to sixty minutes. Movement, mindfulness, planning. Extended: ninety plus minutes. Includes deep work before interruptions. Start sustainable. A fifteen-minute routine you do daily beats a two-hour routine you abandon after a week.</p>'
+    question: "How long should my routine be?",
+    answer:
+      "<p>Quality beats duration. Minimum effective: fifteen to thirty minutes. Movement plus transition ritual. Standard: forty-five to sixty minutes. Movement, mindfulness, planning. Extended: ninety plus minutes. Includes deep work before interruptions. Start sustainable. A fifteen-minute routine you do daily beats a two-hour routine you abandon after a week.</p>",
   },
   {
-    question: 'Shower and dress for remote work?',
-    answer: '<p>Yes. But not necessarily formal clothes. Shower provides physical reset. Signals day has started. Change clothes. Different from what you slept in, even if casual. The test: could you answer a video call without embarrassment? You don\'t need business attire. Just need to feel ready for work, not bed.</p>'
+    question: "Shower and dress for remote work?",
+    answer:
+      "<p>Yes. But not necessarily formal clothes. Shower provides physical reset. Signals day has started. Change clothes. Different from what you slept in, even if casual. The test: could you answer a video call without embarrassment? You don't need business attire. Just need to feel ready for work, not bed.</p>",
   },
   {
-    question: 'What to eat for focus?',
-    answer: '<p>Protein helps. Eggs, Greek yogurt, nuts. Keeps you full and stable. Complex carbs like oatmeal or whole grains provide sustained energy. Avoid high-sugar cereals and pastries. They cause crashes. Some people focus better fasting. Experiment. Hydration matters too. You wake up dehydrated. Water first.</p>'
+    question: "What to eat for focus?",
+    answer:
+      "<p>Protein helps. Eggs, Greek yogurt, nuts. Keeps you full and stable. Complex carbs like oatmeal or whole grains provide sustained energy. Avoid high-sugar cereals and pastries. They cause crashes. Some people focus better fasting. Experiment. Hydration matters too. You wake up dehydrated. Water first.</p>",
   },
   {
-    question: 'How long to build the habit?',
-    answer: '<p><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.674" target="_blank" rel="nofollow">Research says eighteen to two fifty-four days with an average of sixty-six days</a> according to University College London habit formation studies. Week one through two requires conscious effort and willpower. Week three through eight gets easier but still needs intention. Month three plus becomes more automatic. Faster adoption: link new habits to existing ones, start small, track completion, don\'t break chain on weekends.</p>'
-  }
+    question: "How long to build the habit?",
+    answer:
+      '<p><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.674" target="_blank" rel="nofollow">Research says eighteen to two fifty-four days with an average of sixty-six days</a> according to University College London habit formation studies. Week one through two requires conscious effort and willpower. Week three through eight gets easier but still needs intention. Month three plus becomes more automatic. Faster adoption: link new habits to existing ones, start small, track completion, don\'t break chain on weekends.</p>',
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'How to Stay Focused Working from Home',
-    excerpt: 'Eliminate distractions and maintain concentration throughout your workday.',
-    href: '/guides/how-to-stay-focused-working-from-home',
-    image: '/images/unsplash/photo-1499750310107-5fef28a66643-800w.webp',
-    imageAlt: 'Focused remote worker at desk'
+    title: "How to Stay Focused Working from Home",
+    excerpt: "Eliminate distractions and maintain concentration throughout your workday.",
+    href: "/guides/how-to-stay-focused-working-from-home",
+    image: "/images/unsplash/photo-1499750310107-5fef28a66643-800w.webp",
+    imageAlt: "Focused remote worker at desk",
   },
   {
-    title: 'Best Productivity Apps for Remote Workers',
-    excerpt: 'Essential tools to boost your efficiency and stay organized.',
-    href: '/tools/best-productivity-apps',
-    image: '/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp',
-    imageAlt: 'Productivity apps on laptop'
+    title: "Best Productivity Apps for Remote Workers",
+    excerpt: "Essential tools to boost your efficiency and stay organized.",
+    href: "/tools/best-productivity-apps",
+    image: "/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp",
+    imageAlt: "Productivity apps on laptop",
   },
   {
-    title: 'Ultimate Home Office Setup Guide',
-    excerpt: 'Design a workspace that maximizes comfort and productivity.',
-    href: '/blog/ultimate-home-office-setup',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Modern home office setup'
-  }
+    title: "Ultimate Home Office Setup Guide",
+    excerpt: "Design a workspace that maximizes comfort and productivity.",
+    href: "/blog/ultimate-home-office-setup",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern home office setup",
+  },
 ];
 ---
 

@@ -1,219 +1,231 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Online Course Platforms for Creators (2025)';
-const description = 'We tested 10 course platforms to find the best for creators. Compare Teachable, Thinkific, Kajabi, Podia and more to sell your courses online successfully.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Best Online Course Platforms for Creators (2025)";
+const description =
+  "We tested 10 course platforms to find the best for creators. Compare Teachable, Thinkific, Kajabi, Podia and more to sell your courses online successfully.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 16;
-const image = '/images/unsplash/photo-1501504905252-473c47e087f8-1200w.webp';
-const imageAlt = 'Online course creation workspace with laptop and notes';
+const image = "/images/unsplash/photo-1501504905252-473c47e087f8-1200w.webp";
+const imageAlt = "Online course creation workspace with laptop and notes";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Why Sell Courses Online', slug: 'why-sell-courses', depth: 2},
-  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Teachable', slug: 'teachable', depth: 3},
-  {text: 'Thinkific', slug: 'thinkific', depth: 3},
-  {text: 'Kajabi', slug: 'kajabi', depth: 3},
-  {text: 'Podia', slug: 'podia', depth: 3},
-  {text: 'Skillshare', slug: 'skillshare', depth: 3},
-  {text: 'Udemy', slug: 'udemy', depth: 3},
-  {text: 'Gumroad', slug: 'gumroad', depth: 3},
-  {text: 'LearnWorlds', slug: 'learnworlds', depth: 3},
-  {text: 'How to Choose', slug: 'how-to-choose', depth: 2},
-  {text: 'Getting Started', slug: 'getting-started', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Conclusion', slug: 'conclusion', depth: 2},
-  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why Sell Courses Online", slug: "why-sell-courses", depth: 2 },
+  { text: "Detailed Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Teachable", slug: "teachable", depth: 3 },
+  { text: "Thinkific", slug: "thinkific", depth: 3 },
+  { text: "Kajabi", slug: "kajabi", depth: 3 },
+  { text: "Podia", slug: "podia", depth: 3 },
+  { text: "Skillshare", slug: "skillshare", depth: 3 },
+  { text: "Udemy", slug: "udemy", depth: 3 },
+  { text: "Gumroad", slug: "gumroad", depth: 3 },
+  { text: "LearnWorlds", slug: "learnworlds", depth: 3 },
+  { text: "How to Choose", slug: "how-to-choose", depth: 2 },
+  { text: "Getting Started", slug: "getting-started", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Conclusion", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'platform', label: 'Platform', width: '120px'},
-  {key: 'bestFor', label: 'Best For', width: '150px'},
-  {key: 'price', label: 'Starting Price'},
-  {key: 'rating', label: 'Rating'},
-  {key: 'action', label: ''},
+  { key: "platform", label: "Platform", width: "120px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "price", label: "Starting Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    platform: '<strong>Teachable</strong>',
-    bestFor: 'First-time creators',
-    price: '$0-59/mo',
-    rating: '9.4/10',
-    action: '<a href="/go/teachable" rel="nofollow sponsored">Try Free</a>'
+    platform: "<strong>Teachable</strong>",
+    bestFor: "First-time creators",
+    price: "$0-59/mo",
+    rating: "9.4/10",
+    action: '<a href="/go/teachable" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    platform: '<strong>Kajabi</strong>',
-    bestFor: 'All-in-one business',
-    price: '$149/mo',
-    rating: '9.3/10',
-    action: '<a href="/go/kajabi" rel="nofollow sponsored">Start Trial</a>'
+    platform: "<strong>Kajabi</strong>",
+    bestFor: "All-in-one business",
+    price: "$149/mo",
+    rating: "9.3/10",
+    action: '<a href="/go/kajabi" rel="nofollow sponsored">Start Trial</a>',
   },
   {
-    platform: '<strong>Thinkific</strong>',
-    bestFor: 'Course customization',
-    price: '$0-99/mo',
-    rating: '9.2/10',
-    action: '<a href="/go/thinkific" rel="nofollow sponsored">Get Started</a>'
+    platform: "<strong>Thinkific</strong>",
+    bestFor: "Course customization",
+    price: "$0-99/mo",
+    rating: "9.2/10",
+    action: '<a href="/go/thinkific" rel="nofollow sponsored">Get Started</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'platform', label: 'Platform', width: '110px'},
-  {key: 'bestFor', label: 'Best For', width: '130px'},
-  {key: 'price', label: 'Starting Price'},
-  {key: 'transFee', label: 'Transaction Fee'},
-  {key: 'students', label: 'Students'},
-  {key: 'courses', label: 'Courses'},
-  {key: 'action', label: ''},
+  { key: "platform", label: "Platform", width: "110px" },
+  { key: "bestFor", label: "Best For", width: "130px" },
+  { key: "price", label: "Starting Price" },
+  { key: "transFee", label: "Transaction Fee" },
+  { key: "students", label: "Students" },
+  { key: "courses", label: "Courses" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    platform: '<strong>Teachable</strong>',
-    bestFor: 'Beginners',
-    price: '$0-59/mo',
-    transFee: '0-5%',
-    students: 'Unlimited',
-    courses: 'Unlimited (paid)',
-    action: '<a href="/go/teachable" rel="nofollow sponsored">Get Deal</a>'
+    platform: "<strong>Teachable</strong>",
+    bestFor: "Beginners",
+    price: "$0-59/mo",
+    transFee: "0-5%",
+    students: "Unlimited",
+    courses: "Unlimited (paid)",
+    action: '<a href="/go/teachable" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    platform: '<strong>Thinkific</strong>',
-    bestFor: 'Customization',
-    price: '$0-99/mo',
-    transFee: '0%',
-    students: 'Unlimited',
-    courses: '1 free, unlimited paid',
-    action: '<a href="/go/thinkific" rel="nofollow sponsored">Get Deal</a>'
+    platform: "<strong>Thinkific</strong>",
+    bestFor: "Customization",
+    price: "$0-99/mo",
+    transFee: "0%",
+    students: "Unlimited",
+    courses: "1 free, unlimited paid",
+    action: '<a href="/go/thinkific" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    platform: '<strong>Kajabi</strong>',
-    bestFor: 'All-in-one',
-    price: '$149/mo',
-    transFee: '0%',
-    students: '10K-100K',
-    courses: '3-100',
-    action: '<a href="/go/kajabi" rel="nofollow sponsored">Get Deal</a>'
+    platform: "<strong>Kajabi</strong>",
+    bestFor: "All-in-one",
+    price: "$149/mo",
+    transFee: "0%",
+    students: "10K-100K",
+    courses: "3-100",
+    action: '<a href="/go/kajabi" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    platform: '<strong>Podia</strong>',
-    bestFor: 'Digital products',
-    price: '$39/mo',
-    transFee: '0%',
-    students: 'Unlimited',
-    courses: 'Unlimited',
-    action: '<a href="/go/podia" rel="nofollow sponsored">Get Deal</a>'
+    platform: "<strong>Podia</strong>",
+    bestFor: "Digital products",
+    price: "$39/mo",
+    transFee: "0%",
+    students: "Unlimited",
+    courses: "Unlimited",
+    action: '<a href="/go/podia" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    platform: '<strong>LearnWorlds</strong>',
-    bestFor: 'Interactive courses',
-    price: '$29/mo',
-    transFee: '$5/sale (starter)',
-    students: 'Unlimited',
-    courses: 'Unlimited',
-    action: '<a href="/go/learnworlds" rel="nofollow sponsored">Get Deal</a>'
+    platform: "<strong>LearnWorlds</strong>",
+    bestFor: "Interactive courses",
+    price: "$29/mo",
+    transFee: "$5/sale (starter)",
+    students: "Unlimited",
+    courses: "Unlimited",
+    action: '<a href="/go/learnworlds" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    platform: '<strong>Gumroad</strong>',
-    bestFor: 'Simple sales',
-    price: 'Free',
-    transFee: '10%',
-    students: 'Unlimited',
-    courses: 'Unlimited',
-    action: '<a href="/go/gumroad" rel="nofollow sponsored">Get Deal</a>'
+    platform: "<strong>Gumroad</strong>",
+    bestFor: "Simple sales",
+    price: "Free",
+    transFee: "10%",
+    students: "Unlimited",
+    courses: "Unlimited",
+    action: '<a href="/go/gumroad" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    platform: '<strong>Udemy</strong>',
-    bestFor: 'Built-in audience',
-    price: 'Free',
-    transFee: '37-63%',
-    students: 'Marketplace',
-    courses: 'Unlimited',
-    action: '<a href="https://www.udemy.com/teaching/" target="_blank" rel="noopener">Visit Site</a>'
+    platform: "<strong>Udemy</strong>",
+    bestFor: "Built-in audience",
+    price: "Free",
+    transFee: "37-63%",
+    students: "Marketplace",
+    courses: "Unlimited",
+    action:
+      '<a href="https://www.udemy.com/teaching/" target="_blank" rel="noopener">Visit Site</a>',
   },
   {
-    platform: '<strong>Skillshare</strong>',
-    bestFor: 'Creative skills',
-    price: 'Free',
-    transFee: 'Revenue share',
-    students: 'Marketplace',
-    courses: 'Unlimited',
-    action: '<a href="https://www.skillshare.com/teach" target="_blank" rel="noopener">Visit Site</a>'
+    platform: "<strong>Skillshare</strong>",
+    bestFor: "Creative skills",
+    price: "Free",
+    transFee: "Revenue share",
+    students: "Marketplace",
+    courses: "Unlimited",
+    action:
+      '<a href="https://www.skillshare.com/teach" target="_blank" rel="noopener">Visit Site</a>',
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Best platform to sell online courses?',
-    answer: '<p>Teachable for most creators especially those just starting out. Excellent free tier intuitive course builder scales well as you grow. For creators wanting an all-in-one business platform with email marketing and sales funnels built in Kajabi is worth the premium price.</p><p>Want zero transaction fees and maximum customization? Thinkific is an excellent choice with a strong free tier.</p>'
+    question: "Best platform to sell online courses?",
+    answer:
+      "<p>Teachable for most creators especially those just starting out. Excellent free tier intuitive course builder scales well as you grow. For creators wanting an all-in-one business platform with email marketing and sales funnels built in Kajabi is worth the premium price.</p><p>Want zero transaction fees and maximum customization? Thinkific is an excellent choice with a strong free tier.</p>",
   },
   {
-    question: 'How much does creating an online course cost?',
-    answer: '<p>Start creating courses for zero upfront using free tiers from Teachable Thinkific or Gumroad. Your main costs:</p><p>Course platform zero to one forty-nine monthly.<br/>Video equipment zero using phone or up to five hundred plus for professional setup.<br/>Screen recording software zero to thirty monthly.<br/>Editing software zero to fifty-five monthly.</p><p>Most creators start with under one hundred monthly in tools and scale up as revenue grows. The free tiers are genuinely usable for launching your first course.</p>'
+    question: "How much does creating an online course cost?",
+    answer:
+      "<p>Start creating courses for zero upfront using free tiers from Teachable Thinkific or Gumroad. Your main costs:</p><p>Course platform zero to one forty-nine monthly.<br/>Video equipment zero using phone or up to five hundred plus for professional setup.<br/>Screen recording software zero to thirty monthly.<br/>Editing software zero to fifty-five monthly.</p><p>Most creators start with under one hundred monthly in tools and scale up as revenue grows. The free tiers are genuinely usable for launching your first course.</p>",
   },
   {
-    question: 'Teachable vs Thinkific?',
-    answer: '<p>Both are excellent but they serve slightly different needs.</p><p>Pick Teachable if you want the easiest setup built-in payment processing and don\'t mind transaction fees on free and basic plans. Better for beginners.</p><p>Pick Thinkific if you want zero transaction fees more customization options and stronger quiz and assessment features. Better for established creators.</p><p>Thinkific\'s free plan is more generous with unlimited students while Teachable\'s paid plans include more marketing features.</p>'
+    question: "Teachable vs Thinkific?",
+    answer:
+      "<p>Both are excellent but they serve slightly different needs.</p><p>Pick Teachable if you want the easiest setup built-in payment processing and don't mind transaction fees on free and basic plans. Better for beginners.</p><p>Pick Thinkific if you want zero transaction fees more customization options and stronger quiz and assessment features. Better for established creators.</p><p>Thinkific's free plan is more generous with unlimited students while Teachable's paid plans include more marketing features.</p>",
   },
   {
-    question: 'Can I make money selling online courses?',
-    answer: '<p>Yep. Online courses are one of the most profitable digital products. Global e-learning market exceeds three hundred billion and continues growing ten to fifteen percent annually.</p><p>Realistic expectations:</p><p>First course one thousand to ten thousand with proper marketing.<br/>Established creators ten thousand to one hundred thousand annually.<br/>Top creators one million plus annually.</p><p>Success depends more on your audience and marketing than the platform you choose. Build an email list validate your course idea and price based on value delivered.</p>'
+    question: "Can I make money selling online courses?",
+    answer:
+      "<p>Yep. Online courses are one of the most profitable digital products. Global e-learning market exceeds three hundred billion and continues growing ten to fifteen percent annually.</p><p>Realistic expectations:</p><p>First course one thousand to ten thousand with proper marketing.<br/>Established creators ten thousand to one hundred thousand annually.<br/>Top creators one million plus annually.</p><p>Success depends more on your audience and marketing than the platform you choose. Build an email list validate your course idea and price based on value delivered.</p>",
   },
   {
-    question: 'Udemy or my own platform?',
-    answer: '<p>Use Udemy if you have no existing audience want marketplace discovery and are okay with lower per-sale revenue. Udemy\'s fifty-seven million students can discover your course but you keep only thirty-seven percent of sales they generate.</p><p>Use your own platform if you have an audience like email list or social following want to build a brand and keep more revenue. Platforms like Teachable let you keep ninety-five to one hundred percent of sales.</p><p>Many creators do both. Use Udemy for discovery and their own platform for premium courses with higher prices.</p>'
+    question: "Udemy or my own platform?",
+    answer:
+      "<p>Use Udemy if you have no existing audience want marketplace discovery and are okay with lower per-sale revenue. Udemy's fifty-seven million students can discover your course but you keep only thirty-seven percent of sales they generate.</p><p>Use your own platform if you have an audience like email list or social following want to build a brand and keep more revenue. Platforms like Teachable let you keep ninety-five to one hundred percent of sales.</p><p>Many creators do both. Use Udemy for discovery and their own platform for premium courses with higher prices.</p>",
   },
   {
-    question: 'Equipment needed to create an online course?',
-    answer: '<p>Minimum setup under one hundred bucks:</p><p>Your smartphone since modern phones shoot excellent video.<br/>Natural lighting or a thirty dollar ring light.<br/>A quiet room.<br/>Free screen recording like OBS or Loom free tier.</p><p>Professional setup five hundred to fifteen hundred:</p><p>USB microphone Blue Yeti or Rode NT-USB one hundred to one seventy.<br/>Webcam Logitech C nine twenty or C nine twenty-two seventy to one hundred.<br/>Lighting Elgato Key Light or softbox kit one hundred to two hundred.<br/>Screen recording Camtasia or ScreenFlow two fifty to three hundred.</p><p>Audio quality matters more than video quality. Invest in a good microphone first.</p>'
+    question: "Equipment needed to create an online course?",
+    answer:
+      "<p>Minimum setup under one hundred bucks:</p><p>Your smartphone since modern phones shoot excellent video.<br/>Natural lighting or a thirty dollar ring light.<br/>A quiet room.<br/>Free screen recording like OBS or Loom free tier.</p><p>Professional setup five hundred to fifteen hundred:</p><p>USB microphone Blue Yeti or Rode NT-USB one hundred to one seventy.<br/>Webcam Logitech C nine twenty or C nine twenty-two seventy to one hundred.<br/>Lighting Elgato Key Light or softbox kit one hundred to two hundred.<br/>Screen recording Camtasia or ScreenFlow two fifty to three hundred.</p><p>Audio quality matters more than video quality. Invest in a good microphone first.</p>",
   },
   {
-    question: 'How long should an online course be?',
-    answer: '<p>Course length depends on the topic and price point:</p><p>Mini-course twenty to fifty bucks runs thirty to sixty minutes.<br/>Standard course one hundred to three hundred runs two to five hours.<br/>Premium course five hundred plus runs five to twenty plus hours.</p><p>Focus on outcomes not duration. A two-hour course that delivers results is more valuable than a twenty-hour course with padding. Students want transformation not content for content\'s sake.</p><p>Break content into five to fifteen minute lessons for better engagement and completion rates.</p>'
+    question: "How long should an online course be?",
+    answer:
+      "<p>Course length depends on the topic and price point:</p><p>Mini-course twenty to fifty bucks runs thirty to sixty minutes.<br/>Standard course one hundred to three hundred runs two to five hours.<br/>Premium course five hundred plus runs five to twenty plus hours.</p><p>Focus on outcomes not duration. A two-hour course that delivers results is more valuable than a twenty-hour course with padding. Students want transformation not content for content's sake.</p><p>Break content into five to fifteen minute lessons for better engagement and completion rates.</p>",
   },
   {
-    question: 'Need a website to sell courses?',
-    answer: '<p>Nope. Platforms like Teachable Kajabi and Thinkific host your course pages sales pages and checkout. You can launch with just the platform.</p><p>However having your own website helps with:</p><p>SEO and organic traffic.<br/>Building authority and trust.<br/>Email list building.<br/>Content marketing like blog or podcast.</p><p>Start with just the course platform then add a website as you grow and want more control over your brand.</p>'
-  }
+    question: "Need a website to sell courses?",
+    answer:
+      "<p>Nope. Platforms like Teachable Kajabi and Thinkific host your course pages sales pages and checkout. You can launch with just the platform.</p><p>However having your own website helps with:</p><p>SEO and organic traffic.<br/>Building authority and trust.<br/>Email list building.<br/>Content marketing like blog or podcast.</p><p>Start with just the course platform then add a website as you grow and want more control over your brand.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Email Marketing Tools for Creators',
-    excerpt: 'Build your audience with the best email platforms for course creators and online businesses.',
-    href: '/tools/best-email-marketing-tools',
-    image: '/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp',
-    imageAlt: 'Email marketing concept'
+    title: "Best Email Marketing Tools for Creators",
+    excerpt:
+      "Build your audience with the best email platforms for course creators and online businesses.",
+    href: "/tools/best-email-marketing-tools",
+    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp",
+    imageAlt: "Email marketing concept",
   },
   {
-    title: 'Best Project Management Software for Remote Teams',
-    excerpt: 'Organize your course creation workflow with the right project management tools.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Project management dashboard'
+    title: "Best Project Management Software for Remote Teams",
+    excerpt: "Organize your course creation workflow with the right project management tools.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Project management dashboard",
   },
   {
-    title: 'Best Web Hosting for Remote Businesses',
-    excerpt: 'Find reliable hosting for your course website and online business.',
-    href: '/tools/best-web-hosting-remote-business',
-    image: '/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp',
-    imageAlt: 'Server room with hosting infrastructure'
-  }
+    title: "Best Web Hosting for Remote Businesses",
+    excerpt: "Find reliable hosting for your course website and online business.",
+    href: "/tools/best-web-hosting-remote-business",
+    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp",
+    imageAlt: "Server room with hosting infrastructure",
+  },
 ];
 ---
 

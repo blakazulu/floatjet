@@ -1,90 +1,100 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'What Internet Speed Do You Need for Remote Work?';
-const description = 'Find out exactly what internet speed you need for remote work. Speed requirements for Zoom, Teams, cloud apps, file uploads, and tips for better connections.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "What Internet Speed Do You Need for Remote Work?";
+const description =
+  "Find out exactly what internet speed you need for remote work. Speed requirements for Zoom, Teams, cloud apps, file uploads, and tips for better connections.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 7;
-const image = '/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp';
-const imageAlt = 'WiFi router and laptop representing internet speed for remote work';
+const image = "/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp";
+const imageAlt = "WiFi router and laptop representing internet speed for remote work";
 
 // Table of contents headings
 const headings = [
-  {text: 'Quick Answer', slug: 'quick-answer', depth: 2},
-  {text: 'Speed Requirements by Task', slug: 'requirements', depth: 2},
-  {text: 'Download vs Upload', slug: 'download-upload', depth: 2},
-  {text: 'Bandwidth vs Latency', slug: 'bandwidth-latency', depth: 2},
-  {text: 'Multiple People in Your Household', slug: 'multiple-users', depth: 2},
-  {text: 'How to Test Your Speed', slug: 'test-speed', depth: 2},
-  {text: 'Improving Your Connection', slug: 'improve', depth: 2},
-  {text: 'Mobile Hotspot Backup', slug: 'hotspot', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
+  { text: "Quick Answer", slug: "quick-answer", depth: 2 },
+  { text: "Speed Requirements by Task", slug: "requirements", depth: 2 },
+  { text: "Download vs Upload", slug: "download-upload", depth: 2 },
+  { text: "Bandwidth vs Latency", slug: "bandwidth-latency", depth: 2 },
+  { text: "Multiple People in Your Household", slug: "multiple-users", depth: 2 },
+  { text: "How to Test Your Speed", slug: "test-speed", depth: 2 },
+  { text: "Improving Your Connection", slug: "improve", depth: 2 },
+  { text: "Mobile Hotspot Backup", slug: "hotspot", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Minimum speed for Zoom?',
-    answer: '<p><a href="https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060649" target="_blank" rel="nofollow">Official requirements say six hundred kbps for one-on-one, one meg for groups, three point eight for HD</a> according to Zoom. Real world? Aim for ten down and five up minimum so quality doesn\'t tank when something else happens on your network.</p>'
+    question: "Minimum speed for Zoom?",
+    answer:
+      '<p><a href="https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0060649" target="_blank" rel="nofollow">Official requirements say six hundred kbps for one-on-one, one meg for groups, three point eight for HD</a> according to Zoom. Real world? Aim for ten down and five up minimum so quality doesn\'t tank when something else happens on your network.</p>',
   },
   {
-    question: 'Video choppy even with fast internet?',
-    answer: '<p>Speed isn\'t always the problem. High latency causes delay and sync issues. Packet loss drops data. WiFi interference. Old router hardware. ISP throttling specific traffic types. Test latency and packet loss, not just speed.</p>'
+    question: "Video choppy even with fast internet?",
+    answer:
+      "<p>Speed isn't always the problem. High latency causes delay and sync issues. Packet loss drops data. WiFi interference. Old router hardware. ISP throttling specific traffic types. Test latency and packet loss, not just speed.</p>",
   },
   {
-    question: 'Do I need fiber?',
-    answer: '<p>Not necessarily. Fiber is great but cable works for most remote work. DSL can work if you\'re getting twenty-five plus meg. Five G home internet is fast but latency varies. What matters: consistent twenty-five plus down, ten plus up, low latency. Technology matters less than actual performance.</p>'
+    question: "Do I need fiber?",
+    answer:
+      "<p>Not necessarily. Fiber is great but cable works for most remote work. DSL can work if you're getting twenty-five plus meg. Five G home internet is fast but latency varies. What matters: consistent twenty-five plus down, ten plus up, low latency. Technology matters less than actual performance.</p>",
   },
   {
-    question: 'How much does VPN slow things down?',
-    answer: '<p>Ten to thirty percent typical. Up to fifty on bad servers. Latency adds twenty to fifty ms depending on server distance. If you need fifty meg for work and use VPN, get seventy plus base speed.</p>'
+    question: "How much does VPN slow things down?",
+    answer:
+      "<p>Ten to thirty percent typical. Up to fifty on bad servers. Latency adds twenty to fifty ms depending on server distance. If you need fifty meg for work and use VPN, get seventy plus base speed.</p>",
   },
   {
-    question: 'Five G hotspot good enough?',
-    answer: '<p>Can be. Speeds run hundred to three hundred plus in good coverage. Latency is fifteen to thirty ms usually. Reliability varies by location. Data caps are the main limitation. Works for short-term or backup. For all-day work, verify coverage and consider unlimited plans.</p>'
+    question: "Five G hotspot good enough?",
+    answer:
+      "<p>Can be. Speeds run hundred to three hundred plus in good coverage. Latency is fifteen to thirty ms usually. Reliability varies by location. Data caps are the main limitation. Works for short-term or backup. For all-day work, verify coverage and consider unlimited plans.</p>",
   },
   {
-    question: 'WiFi or ethernet?',
-    answer: '<p>Ethernet is better when possible. More stable. Lower latency. Consistent speeds versus WiFi fluctuations. If ethernet isn\'t practical, optimize WiFi. Central router placement, five gigahertz band, minimize interference, mesh systems for larger spaces.</p>'
+    question: "WiFi or ethernet?",
+    answer:
+      "<p>Ethernet is better when possible. More stable. Lower latency. Consistent speeds versus WiFi fluctuations. If ethernet isn't practical, optimize WiFi. Central router placement, five gigahertz band, minimize interference, mesh systems for larger spaces.</p>",
   },
   {
-    question: 'How do I know if ISP is throttling?',
-    answer: '<p>Symptoms: specific apps slow while speed tests look fine. Test by using VPN and comparing speeds. VPN hides traffic type from your ISP. If speeds are significantly better with VPN, they may be throttling specific traffic. Slower during peak evening hours suggests congestion or throttling too.</p>'
+    question: "How do I know if ISP is throttling?",
+    answer:
+      "<p>Symptoms: specific apps slow while speed tests look fine. Test by using VPN and comparing speeds. VPN hides traffic type from your ISP. If speeds are significantly better with VPN, they may be throttling specific traffic. Slower during peak evening hours suggests congestion or throttling too.</p>",
   },
   {
-    question: 'What speed for screen sharing?',
-    answer: '<p>More upload than you\'d expect. Basic sharing needs one to two meg upload. High quality needs three to five. Sharing plus video simultaneously needs five to eight. If you screen share frequently, ensure at least ten meg upload.</p>'
-  }
+    question: "What speed for screen sharing?",
+    answer:
+      "<p>More upload than you'd expect. Basic sharing needs one to two meg upload. High quality needs three to five. Sharing plus video simultaneously needs five to eight. If you screen share frequently, ensure at least ten meg upload.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Find Reliable WiFi Anywhere',
-    excerpt: 'Tips for finding fast, secure internet connections as a remote worker or digital nomad.',
-    href: '/blog/find-reliable-wifi-anywhere',
-    image: '/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp',
-    imageAlt: 'WiFi signal and laptop'
+    title: "Find Reliable WiFi Anywhere",
+    excerpt:
+      "Tips for finding fast, secure internet connections as a remote worker or digital nomad.",
+    href: "/blog/find-reliable-wifi-anywhere",
+    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp",
+    imageAlt: "WiFi signal and laptop",
   },
   {
-    title: 'Best VPN for Digital Nomads',
-    excerpt: 'Secure your connection and access content from anywhere.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp',
-    imageAlt: 'VPN security illustration'
+    title: "Best VPN for Digital Nomads",
+    excerpt: "Secure your connection and access content from anywhere.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
+    imageAlt: "VPN security illustration",
   },
   {
-    title: 'VPN and Public WiFi Security Guide',
-    excerpt: 'Stay safe when working from coffee shops, airports, and coworking spaces.',
-    href: '/blog/vpn-public-wifi-guide',
-    image: '/images/unsplash/photo-1510915228340-29c85a43dcfe-800w.webp',
-    imageAlt: 'Public WiFi security'
-  }
+    title: "VPN and Public WiFi Security Guide",
+    excerpt: "Stay safe when working from coffee shops, airports, and coworking spaces.",
+    href: "/blog/vpn-public-wifi-guide",
+    image: "/images/unsplash/photo-1510915228340-29c85a43dcfe-800w.webp",
+    imageAlt: "Public WiFi security",
+  },
 ];
 ---
 

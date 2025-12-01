@@ -1,82 +1,116 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'How to Reduce Background Noise on Video Calls (2025)';
-const description = 'Practical tips and software solutions to eliminate background noise during remote meetings. From free apps to hardware upgrades for professional call quality.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Audio';
-const categorySlug = 'gear';
+const title = "How to Reduce Background Noise on Video Calls (2025)";
+const description =
+  "Practical tips and software solutions to eliminate background noise during remote meetings. From free apps to hardware upgrades for professional call quality.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Audio";
+const categorySlug = "gear";
 const readingTime = 8;
-const image = '/images/unsplash/photo-1587560699334-cc4ff634909a-1200w.webp';
-const imageAlt = 'Person on video call with noise-canceling setup';
+const image = "/images/unsplash/photo-1587560699334-cc4ff634909a-1200w.webp";
+const imageAlt = "Person on video call with noise-canceling setup";
 
 const headings = [
-  {text: 'Free Stuff That Helps', slug: 'free-stuff'},
-  {text: 'Software Options', slug: 'software-options'},
-  {text: 'Hardware If You Need It', slug: 'hardware'},
-  {text: 'Room Acoustics', slug: 'room-acoustics'},
-  {text: 'What To Do (In Order)', slug: 'what-to-do'},
-  {text: 'Questions', slug: 'faq'},
+  { text: "Free Stuff That Helps", slug: "free-stuff" },
+  { text: "Software Options", slug: "software-options" },
+  { text: "Hardware If You Need It", slug: "hardware" },
+  { text: "Room Acoustics", slug: "room-acoustics" },
+  { text: "What To Do (In Order)", slug: "what-to-do" },
+  { text: "Questions", slug: "faq" },
 ];
 
 const softwareComparisonColumns = [
-  {key: 'software', label: 'Software', width: '140px'},
-  {key: 'price', label: 'Price'},
-  {key: 'bestFor', label: 'Best For'},
-  {key: 'platform', label: 'Platform'},
+  { key: "software", label: "Software", width: "140px" },
+  { key: "price", label: "Price" },
+  { key: "bestFor", label: "Best For" },
+  { key: "platform", label: "Platform" },
 ];
 
 const softwareComparisonRows = [
-  {software: '<strong>Krisp</strong>', price: '$8/mo', bestFor: 'All-around best', platform: 'Windows/Mac'},
-  {software: '<strong>NVIDIA Broadcast</strong>', price: 'Free', bestFor: 'NVIDIA GPU owners', platform: 'Windows'},
-  {software: '<strong>RTX Voice</strong>', price: 'Free', bestFor: 'Older NVIDIA cards', platform: 'Windows'},
-  {software: '<strong>Zoom Built-in</strong>', price: 'Free', bestFor: 'Zoom users', platform: 'All'},
-  {software: '<strong>Teams Built-in</strong>', price: 'Free', bestFor: 'Teams users', platform: 'All'},
+  {
+    software: "<strong>Krisp</strong>",
+    price: "$8/mo",
+    bestFor: "All-around best",
+    platform: "Windows/Mac",
+  },
+  {
+    software: "<strong>NVIDIA Broadcast</strong>",
+    price: "Free",
+    bestFor: "NVIDIA GPU owners",
+    platform: "Windows",
+  },
+  {
+    software: "<strong>RTX Voice</strong>",
+    price: "Free",
+    bestFor: "Older NVIDIA cards",
+    platform: "Windows",
+  },
+  {
+    software: "<strong>Zoom Built-in</strong>",
+    price: "Free",
+    bestFor: "Zoom users",
+    platform: "All",
+  },
+  {
+    software: "<strong>Teams Built-in</strong>",
+    price: "Free",
+    bestFor: "Teams users",
+    platform: "All",
+  },
 ];
 
 const faqItems = [
   {
-    question: 'Everyone hears me typing?',
-    answer: 'Condenser mics pick up everything. That\'s what they do. Switch to dynamic or use Krisp. Or just mute.',
+    question: "Everyone hears me typing?",
+    answer:
+      "Condenser mics pick up everything. That's what they do. Switch to dynamic or use Krisp. Or just mute.",
   },
   {
-    question: 'Noise cancellation makes me sound robotic?',
-    answer: 'Happens if settings are too aggressive. Krisp does this well. Built-in platform stuff varies. Record yourself and check.',
+    question: "Noise cancellation makes me sound robotic?",
+    answer:
+      "Happens if settings are too aggressive. Krisp does this well. Built-in platform stuff varies. Record yourself and check.",
   },
   {
-    question: 'Echo problems?',
-    answer: 'Speakers instead of headphones. That\'s it 90% of the time. Wear headphones.',
+    question: "Echo problems?",
+    answer: "Speakers instead of headphones. That's it 90% of the time. Wear headphones.",
   },
   {
-    question: 'Do I actually need all this?',
-    answer: 'Client calls where you\'re closing deals? Probably fix it. Internal meetings where everyone\'s used to your barking dog? Maybe less urgent. Your call.',
+    question: "Do I actually need all this?",
+    answer:
+      "Client calls where you're closing deals? Probably fix it. Internal meetings where everyone's used to your barking dog? Maybe less urgent. Your call.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Microphones for Remote Meetings',
-    excerpt: 'Upgrade your mic for clearer audio that rejects background noise.',
-    href: '/gear/best-microphones-remote-meetings',
-    image: '/images/unsplash/photo-1590602847861-f357a9332bbc-800w.webp',
-    imageAlt: 'Professional USB microphone for remote work',
+    title: "Best Microphones for Remote Meetings",
+    excerpt: "Upgrade your mic for clearer audio that rejects background noise.",
+    href: "/gear/best-microphones-remote-meetings",
+    image: "/images/unsplash/photo-1590602847861-f357a9332bbc-800w.webp",
+    imageAlt: "Professional USB microphone for remote work",
   },
   {
-    title: 'Best Noise-Canceling Headphones',
-    excerpt: 'Block distractions and prevent echo with quality headphones.',
-    href: '/gear/best-noise-canceling-headphones',
-    image: '/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp',
-    imageAlt: 'Noise-canceling headphones on desk',
+    title: "Best Noise-Canceling Headphones",
+    excerpt: "Block distractions and prevent echo with quality headphones.",
+    href: "/gear/best-noise-canceling-headphones",
+    image: "/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp",
+    imageAlt: "Noise-canceling headphones on desk",
   },
   {
-    title: 'USB vs XLR Microphones',
-    excerpt: 'Understanding microphone types and which reduces noise best.',
-    href: '/gear/usb-vs-xlr-microphones',
-    image: '/images/unsplash/photo-1598653222000-6b7b7a552625-800w.webp',
-    imageAlt: 'Professional microphone setup comparing USB and XLR',
+    title: "USB vs XLR Microphones",
+    excerpt: "Understanding microphone types and which reduces noise best.",
+    href: "/gear/usb-vs-xlr-microphones",
+    image: "/images/unsplash/photo-1598653222000-6b7b7a552625-800w.webp",
+    imageAlt: "Professional microphone setup comparing USB and XLR",
   },
 ];
 ---

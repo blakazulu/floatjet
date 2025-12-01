@@ -1,171 +1,270 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best VPN for Streaming While Traveling (2025)';
-const description = 'Tested 10 VPNs for streaming while traveling. NordVPN works with everything. Surfshark is best value. ExpressVPN for premium speed. Real results from trips.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Best VPN for Streaming While Traveling (2025)";
+const description =
+  "Tested 10 VPNs for streaming while traveling. NordVPN works with everything. Surfshark is best value. ExpressVPN for premium speed. Real results from trips.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 14;
-const image = '/images/unsplash/photo-1522199755839-a2bacb67c546-1200w.webp';
-const imageAlt = 'Person streaming video content on laptop while traveling';
+const image = "/images/unsplash/photo-1522199755839-a2bacb67c546-1200w.webp";
+const imageAlt = "Person streaming video content on laptop while traveling";
 
 // Table of contents headings
 const headings = [
-  {text: 'When Your Shows Disappear', slug: 'introduction', depth: 2},
-  {text: 'Why Most VPNs Fail', slug: 'why-fail', depth: 2},
-  {text: 'These Actually Work', slug: 'top-vpns', depth: 2},
-  {text: 'NordVPN', slug: 'nordvpn', depth: 3},
-  {text: 'Surfshark', slug: 'surfshark', depth: 3},
-  {text: 'ExpressVPN', slug: 'expressvpn', depth: 3},
-  {text: 'CyberGhost', slug: 'cyberghost', depth: 3},
-  {text: 'PIA', slug: 'pia', depth: 3},
-  {text: 'IPVanish', slug: 'ipvanish', depth: 3},
-  {text: 'ProtonVPN', slug: 'protonvpn', depth: 3},
-  {text: 'Compatibility Summary', slug: 'streaming-compatibility', depth: 2},
-  {text: 'Speeds I Measured', slug: 'speed-tests', depth: 2},
-  {text: 'Getting Started', slug: 'setup-guide', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
-  {text: 'My Take', slug: 'conclusion', depth: 2},
+  { text: "When Your Shows Disappear", slug: "introduction", depth: 2 },
+  { text: "Why Most VPNs Fail", slug: "why-fail", depth: 2 },
+  { text: "These Actually Work", slug: "top-vpns", depth: 2 },
+  { text: "NordVPN", slug: "nordvpn", depth: 3 },
+  { text: "Surfshark", slug: "surfshark", depth: 3 },
+  { text: "ExpressVPN", slug: "expressvpn", depth: 3 },
+  { text: "CyberGhost", slug: "cyberghost", depth: 3 },
+  { text: "PIA", slug: "pia", depth: 3 },
+  { text: "IPVanish", slug: "ipvanish", depth: 3 },
+  { text: "ProtonVPN", slug: "protonvpn", depth: 3 },
+  { text: "Compatibility Summary", slug: "streaming-compatibility", depth: 2 },
+  { text: "Speeds I Measured", slug: "speed-tests", depth: 2 },
+  { text: "Getting Started", slug: "setup-guide", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "My Take", slug: "conclusion", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'vpn', label: 'VPN', width: '120px'},
-  {key: 'bestFor', label: 'Best For', width: '150px'},
-  {key: 'price', label: 'Price'},
-  {key: 'streaming', label: 'Streaming'},
-  {key: 'action', label: ''},
+  { key: "vpn", label: "VPN", width: "120px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "price", label: "Price" },
+  { key: "streaming", label: "Streaming" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    vpn: '<strong>NordVPN</strong>',
-    bestFor: 'Best overall',
-    price: '$3.39/mo',
-    streaming: '✅ All platforms',
-    action: '<a href="/go/nordvpn" rel="nofollow sponsored">Get 68% Off</a>'
+    vpn: "<strong>NordVPN</strong>",
+    bestFor: "Best overall",
+    price: "$3.39/mo",
+    streaming: "✅ All platforms",
+    action: '<a href="/go/nordvpn" rel="nofollow sponsored">Get 68% Off</a>',
   },
   {
-    vpn: '<strong>Surfshark</strong>',
-    bestFor: 'Best value overall',
-    price: '$2.49/mo',
-    streaming: '✅ All platforms',
-    action: '<a href="/go/surfshark" rel="nofollow sponsored">Get 81% Off</a>'
+    vpn: "<strong>Surfshark</strong>",
+    bestFor: "Best value overall",
+    price: "$2.49/mo",
+    streaming: "✅ All platforms",
+    action: '<a href="/go/surfshark" rel="nofollow sponsored">Get 81% Off</a>',
   },
   {
-    vpn: '<strong>ExpressVPN</strong>',
-    bestFor: 'Premium speed',
-    price: '$6.67/mo',
-    streaming: '✅ All platforms',
-    action: '<a href="/go/expressvpn" rel="nofollow sponsored">Try Risk-Free</a>'
+    vpn: "<strong>ExpressVPN</strong>",
+    bestFor: "Premium speed",
+    price: "$6.67/mo",
+    streaming: "✅ All platforms",
+    action: '<a href="/go/expressvpn" rel="nofollow sponsored">Try Risk-Free</a>',
   },
 ];
 
 // Streaming compatibility table
 const streamingColumns = [
-  {key: 'vpn', label: 'VPN', width: '110px'},
-  {key: 'netflix', label: 'Netflix'},
-  {key: 'disney', label: 'Disney+'},
-  {key: 'hulu', label: 'Hulu'},
-  {key: 'bbc', label: 'BBC iPlayer'},
-  {key: 'prime', label: 'Prime Video'},
-  {key: 'hbo', label: 'Max (HBO)'},
+  { key: "vpn", label: "VPN", width: "110px" },
+  { key: "netflix", label: "Netflix" },
+  { key: "disney", label: "Disney+" },
+  { key: "hulu", label: "Hulu" },
+  { key: "bbc", label: "BBC iPlayer" },
+  { key: "prime", label: "Prime Video" },
+  { key: "hbo", label: "Max (HBO)" },
 ];
 
 const streamingRows = [
-  {vpn: '<strong>NordVPN</strong>', netflix: '✅', disney: '✅', hulu: '✅', bbc: '✅', prime: '✅', hbo: '✅'},
-  {vpn: '<strong>Surfshark</strong>', netflix: '✅', disney: '✅', hulu: '✅', bbc: '✅', prime: '✅', hbo: '✅'},
-  {vpn: '<strong>ExpressVPN</strong>', netflix: '✅', disney: '✅', hulu: '✅', bbc: '✅', prime: '✅', hbo: '✅'},
-  {vpn: '<strong>CyberGhost</strong>', netflix: '✅', disney: '✅', hulu: '✅', bbc: '✅', prime: '✅', hbo: '✅'},
-  {vpn: '<strong>PIA</strong>', netflix: '✅', disney: '✅', hulu: '✅', bbc: '⚠️', prime: '✅', hbo: '✅'},
-  {vpn: '<strong>IPVanish</strong>', netflix: '✅', disney: '✅', hulu: '✅', bbc: '⚠️', prime: '✅', hbo: '⚠️'},
-  {vpn: '<strong>ProtonVPN</strong>', netflix: '✅', disney: '✅', hulu: '✅', bbc: '✅', prime: '✅', hbo: '✅'},
+  {
+    vpn: "<strong>NordVPN</strong>",
+    netflix: "✅",
+    disney: "✅",
+    hulu: "✅",
+    bbc: "✅",
+    prime: "✅",
+    hbo: "✅",
+  },
+  {
+    vpn: "<strong>Surfshark</strong>",
+    netflix: "✅",
+    disney: "✅",
+    hulu: "✅",
+    bbc: "✅",
+    prime: "✅",
+    hbo: "✅",
+  },
+  {
+    vpn: "<strong>ExpressVPN</strong>",
+    netflix: "✅",
+    disney: "✅",
+    hulu: "✅",
+    bbc: "✅",
+    prime: "✅",
+    hbo: "✅",
+  },
+  {
+    vpn: "<strong>CyberGhost</strong>",
+    netflix: "✅",
+    disney: "✅",
+    hulu: "✅",
+    bbc: "✅",
+    prime: "✅",
+    hbo: "✅",
+  },
+  {
+    vpn: "<strong>PIA</strong>",
+    netflix: "✅",
+    disney: "✅",
+    hulu: "✅",
+    bbc: "⚠️",
+    prime: "✅",
+    hbo: "✅",
+  },
+  {
+    vpn: "<strong>IPVanish</strong>",
+    netflix: "✅",
+    disney: "✅",
+    hulu: "✅",
+    bbc: "⚠️",
+    prime: "✅",
+    hbo: "⚠️",
+  },
+  {
+    vpn: "<strong>ProtonVPN</strong>",
+    netflix: "✅",
+    disney: "✅",
+    hulu: "✅",
+    bbc: "✅",
+    prime: "✅",
+    hbo: "✅",
+  },
 ];
 
 // Speed test results table
 const speedColumns = [
-  {key: 'vpn', label: 'VPN', width: '110px'},
-  {key: 'usSpeed', label: 'US Server'},
-  {key: 'ukSpeed', label: 'UK Server'},
-  {key: 'jpSpeed', label: 'Japan Server'},
-  {key: 'avgDrop', label: 'Avg. Drop'},
+  { key: "vpn", label: "VPN", width: "110px" },
+  { key: "usSpeed", label: "US Server" },
+  { key: "ukSpeed", label: "UK Server" },
+  { key: "jpSpeed", label: "Japan Server" },
+  { key: "avgDrop", label: "Avg. Drop" },
 ];
 
 const speedRows = [
-  {vpn: '<strong>NordVPN</strong>', usSpeed: '89 Mbps', ukSpeed: '85 Mbps', jpSpeed: '72 Mbps', avgDrop: '11%'},
-  {vpn: '<strong>Surfshark</strong>', usSpeed: '85 Mbps', ukSpeed: '80 Mbps', jpSpeed: '68 Mbps', avgDrop: '15%'},
-  {vpn: '<strong>ExpressVPN</strong>', usSpeed: '92 Mbps', ukSpeed: '88 Mbps', jpSpeed: '75 Mbps', avgDrop: '8%'},
-  {vpn: '<strong>CyberGhost</strong>', usSpeed: '82 Mbps', ukSpeed: '78 Mbps', jpSpeed: '62 Mbps', avgDrop: '18%'},
-  {vpn: '<strong>ProtonVPN</strong>', usSpeed: '86 Mbps', ukSpeed: '82 Mbps', jpSpeed: '70 Mbps', avgDrop: '14%'},
-  {vpn: '<strong>PIA</strong>', usSpeed: '83 Mbps', ukSpeed: '79 Mbps', jpSpeed: '65 Mbps', avgDrop: '17%'},
-  {vpn: '<strong>IPVanish</strong>', usSpeed: '80 Mbps', ukSpeed: '75 Mbps', jpSpeed: '58 Mbps', avgDrop: '20%'},
+  {
+    vpn: "<strong>NordVPN</strong>",
+    usSpeed: "89 Mbps",
+    ukSpeed: "85 Mbps",
+    jpSpeed: "72 Mbps",
+    avgDrop: "11%",
+  },
+  {
+    vpn: "<strong>Surfshark</strong>",
+    usSpeed: "85 Mbps",
+    ukSpeed: "80 Mbps",
+    jpSpeed: "68 Mbps",
+    avgDrop: "15%",
+  },
+  {
+    vpn: "<strong>ExpressVPN</strong>",
+    usSpeed: "92 Mbps",
+    ukSpeed: "88 Mbps",
+    jpSpeed: "75 Mbps",
+    avgDrop: "8%",
+  },
+  {
+    vpn: "<strong>CyberGhost</strong>",
+    usSpeed: "82 Mbps",
+    ukSpeed: "78 Mbps",
+    jpSpeed: "62 Mbps",
+    avgDrop: "18%",
+  },
+  {
+    vpn: "<strong>ProtonVPN</strong>",
+    usSpeed: "86 Mbps",
+    ukSpeed: "82 Mbps",
+    jpSpeed: "70 Mbps",
+    avgDrop: "14%",
+  },
+  {
+    vpn: "<strong>PIA</strong>",
+    usSpeed: "83 Mbps",
+    ukSpeed: "79 Mbps",
+    jpSpeed: "65 Mbps",
+    avgDrop: "17%",
+  },
+  {
+    vpn: "<strong>IPVanish</strong>",
+    usSpeed: "80 Mbps",
+    ukSpeed: "75 Mbps",
+    jpSpeed: "58 Mbps",
+    avgDrop: "20%",
+  },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Why does Netflix block VPNs?',
-    answer: '<p>Licensing. They\'re supposed to.</p>'
+    question: "Why does Netflix block VPNs?",
+    answer: "<p>Licensing. They're supposed to.</p>",
   },
   {
-    question: 'Is this legal?',
-    answer: '<p>VPNs are legal. Violates Netflix\'s terms technically. Nobody gets in trouble.</p>'
+    question: "Is this legal?",
+    answer: "<p>VPNs are legal. Violates Netflix's terms technically. Nobody gets in trouble.</p>",
   },
   {
-    question: 'What speed do I need?',
-    answer: '<p>15-20 Mbps for HD after slowdown. More for 4K.</p>'
+    question: "What speed do I need?",
+    answer: "<p>15-20 Mbps for HD after slowdown. More for 4K.</p>",
   },
   {
-    question: 'Free VPNs work?',
-    answer: '<p>Don\'t bother. ProtonVPN free works but limited.</p>'
+    question: "Free VPNs work?",
+    answer: "<p>Don't bother. ProtonVPN free works but limited.</p>",
   },
   {
-    question: 'Most Netflix libraries?',
-    answer: '<p>NordVPN. Got 15+ regions.</p>'
+    question: "Most Netflix libraries?",
+    answer: "<p>NordVPN. Got 15+ regions.</p>",
   },
   {
-    question: 'Why is it slow?',
-    answer: '<p>Wrong server. Try closer. Try different one. Use WireGuard.</p>'
+    question: "Why is it slow?",
+    answer: "<p>Wrong server. Try closer. Try different one. Use WireGuard.</p>",
   },
   {
-    question: 'Can hotels see what I stream?',
-    answer: '<p>No. Encrypted.</p>'
+    question: "Can hotels see what I stream?",
+    answer: "<p>No. Encrypted.</p>",
   },
   {
-    question: 'Phone needs VPN too?',
-    answer: '<p>Yeah. Same IP check.</p>'
-  }
+    question: "Phone needs VPN too?",
+    answer: "<p>Yeah. Same IP check.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best VPNs for Digital Nomads',
-    excerpt: 'Comprehensive guide to choosing a VPN for remote work security and privacy.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'Digital security concept'
+    title: "Best VPNs for Digital Nomads",
+    excerpt: "Comprehensive guide to choosing a VPN for remote work security and privacy.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept",
   },
   {
-    title: 'Top Destinations for Digital Nomads',
-    excerpt: 'Best places to live and work remotely with great internet and quality of life.',
-    href: '/blog/top-destinations-digital-nomads',
-    image: '/images/unsplash/photo-1507525428034-b723cf961d3e-800w.webp',
-    imageAlt: 'Tropical beach destination'
+    title: "Top Destinations for Digital Nomads",
+    excerpt: "Best places to live and work remotely with great internet and quality of life.",
+    href: "/blog/top-destinations-digital-nomads",
+    image: "/images/unsplash/photo-1507525428034-b723cf961d3e-800w.webp",
+    imageAlt: "Tropical beach destination",
   },
   {
-    title: 'VPN & Public WiFi Security Guide',
-    excerpt: 'Stay secure on public networks with our comprehensive security guide.',
-    href: '/blog/vpn-public-wifi-guide',
-    image: '/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp',
-    imageAlt: 'Digital security concept'
-  }
+    title: "VPN & Public WiFi Security Guide",
+    excerpt: "Stay secure on public networks with our comprehensive security guide.",
+    href: "/blog/vpn-public-wifi-guide",
+    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp",
+    imageAlt: "Digital security concept",
+  },
 ];
 ---
 

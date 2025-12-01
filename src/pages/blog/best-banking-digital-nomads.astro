@@ -1,124 +1,130 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Banking for Digital Nomads (2025)';
-const description = 'Traditional banks weren\'t built for people like us. I was losing hundreds monthly to exchange rates and transfer fees. Here\'s how to stop the bleeding.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Best Banking for Digital Nomads (2025)";
+const description =
+  "Traditional banks weren't built for people like us. I was losing hundreds monthly to exchange rates and transfer fees. Here's how to stop the bleeding.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 4;
-const image = '/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp';
-const imageAlt = 'Mobile banking app on smartphone with credit cards';
+const image = "/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp";
+const imageAlt = "Mobile banking app on smartphone with credit cards";
 
 // Table of contents
 const headings = [
-  {text: 'Why This Matters', slug: 'introduction', depth: 2},
-  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
-  {text: 'What Actually Matters', slug: 'what-to-look-for', depth: 2},
-  {text: 'The Accounts', slug: 'reviews', depth: 2},
-  {text: 'My Stack', slug: 'strategies', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Bottom Line', slug: 'conclusion', depth: 2},
+  { text: "Why This Matters", slug: "introduction", depth: 2 },
+  { text: "Quick Comparison", slug: "quick-comparison", depth: 2 },
+  { text: "What Actually Matters", slug: "what-to-look-for", depth: 2 },
+  { text: "The Accounts", slug: "reviews", depth: 2 },
+  { text: "My Stack", slug: "strategies", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Bottom Line", slug: "conclusion", depth: 2 },
 ];
 
 // Comparison table
 const comparisonColumns = [
-  {key: 'bank', label: 'Account', width: '100px'},
-  {key: 'currencies', label: 'Currencies'},
-  {key: 'fees', label: 'Monthly Fee'},
-  {key: 'atm', label: 'Free ATM'},
-  {key: 'bestFor', label: 'Best For'},
+  { key: "bank", label: "Account", width: "100px" },
+  { key: "currencies", label: "Currencies" },
+  { key: "fees", label: "Monthly Fee" },
+  { key: "atm", label: "Free ATM" },
+  { key: "bestFor", label: "Best For" },
 ];
 
 const comparisonRows = [
   {
-    bank: '<strong>Wise</strong>',
-    currencies: '40+',
-    fees: '$0',
-    atm: '$100-200/mo',
-    bestFor: 'Currency exchange'
+    bank: "<strong>Wise</strong>",
+    currencies: "40+",
+    fees: "$0",
+    atm: "$100-200/mo",
+    bestFor: "Currency exchange",
   },
   {
-    bank: '<strong>Revolut</strong>',
-    currencies: '30+',
-    fees: '$0-13',
-    atm: '$200-400/mo',
-    bestFor: 'All-in-one'
+    bank: "<strong>Revolut</strong>",
+    currencies: "30+",
+    fees: "$0-13",
+    atm: "$200-400/mo",
+    bestFor: "All-in-one",
   },
   {
-    bank: '<strong>Mercury</strong>',
-    currencies: 'USD only',
-    fees: '$0',
-    atm: '$0',
-    bestFor: 'US business'
+    bank: "<strong>Mercury</strong>",
+    currencies: "USD only",
+    fees: "$0",
+    atm: "$0",
+    bestFor: "US business",
   },
   {
-    bank: '<strong>Payoneer</strong>',
-    currencies: '4',
-    fees: '$0-30',
-    atm: '$3.15/txn',
-    bestFor: 'Freelancer payments'
+    bank: "<strong>Payoneer</strong>",
+    currencies: "4",
+    fees: "$0-30",
+    atm: "$3.15/txn",
+    bestFor: "Freelancer payments",
   },
   {
-    bank: '<strong>Charles Schwab</strong>',
-    currencies: 'USD',
-    fees: '$0',
-    atm: 'Unlimited',
-    bestFor: 'US citizens abroad'
+    bank: "<strong>Charles Schwab</strong>",
+    currencies: "USD",
+    fees: "$0",
+    atm: "Unlimited",
+    bestFor: "US citizens abroad",
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'No fixed address—can I open these?',
-    answer: '<p>Wise and Revolut just need ID verification. Traditional banks want addresses. Use a family member\'s or a virtual mailbox.</p>'
+    question: "No fixed address—can I open these?",
+    answer:
+      "<p>Wise and Revolut just need ID verification. Traditional banks want addresses. Use a family member's or a virtual mailbox.</p>",
   },
   {
-    question: 'Will my home bank close my account?',
-    answer: '<p>Maybe. US banks generally don\'t care. UK and EU vary. Keep it active with occasional transactions.</p>'
+    question: "Will my home bank close my account?",
+    answer:
+      "<p>Maybe. US banks generally don't care. UK and EU vary. Keep it active with occasional transactions.</p>",
   },
   {
-    question: 'How do I receive international payments?',
-    answer: '<p>Wise and Payoneer give you local bank details. Clients pay locally, you receive in your currency. No wire fees.</p>'
+    question: "How do I receive international payments?",
+    answer:
+      "<p>Wise and Payoneer give you local bank details. Clients pay locally, you receive in your currency. No wire fees.</p>",
   },
   {
-    question: 'Emergency cash access?',
-    answer: '<p>Multiple cards from different providers. Charles Schwab for unlimited ATM. Keep some USD/EUR cash.</p>'
+    question: "Emergency cash access?",
+    answer:
+      "<p>Multiple cards from different providers. Charles Schwab for unlimited ATM. Keep some USD/EUR cash.</p>",
   },
   {
-    question: 'Do I need a business account?',
-    answer: '<p>Not legally required. But it separates finances for taxes, looks professional, and often has higher limits.</p>'
-  }
+    question: "Do I need a business account?",
+    answer:
+      "<p>Not legally required. But it separates finances for taxes, looks professional, and often has higher limits.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Tax Tips for Remote Workers',
-    excerpt: 'Navigate taxes as a remote worker or digital nomad.',
-    href: '/blog/tax-tips-remote-workers',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Tax documents and calculator'
+    title: "Tax Tips for Remote Workers",
+    excerpt: "Navigate taxes as a remote worker or digital nomad.",
+    href: "/blog/tax-tips-remote-workers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Tax documents and calculator",
   },
   {
-    title: 'Crypto-Friendly Banks for Remote Workers',
-    excerpt: 'Traditional banks that work well with cryptocurrency.',
-    href: '/blog/crypto-friendly-banks',
-    image: '/images/unsplash/photo-1518546305927-5a555bb7020d-800w.webp',
-    imageAlt: 'Cryptocurrency concept'
+    title: "Crypto-Friendly Banks for Remote Workers",
+    excerpt: "Traditional banks that work well with cryptocurrency.",
+    href: "/blog/crypto-friendly-banks",
+    image: "/images/unsplash/photo-1518546305927-5a555bb7020d-800w.webp",
+    imageAlt: "Cryptocurrency concept",
   },
   {
-    title: 'Best Travel Insurance for Remote Workers',
-    excerpt: 'Coverage designed for long-term travelers.',
-    href: '/blog/best-travel-insurance-remote-workers',
-    image: '/images/unsplash/photo-1436491865332-7a61a109cc05-800w.webp',
-    imageAlt: 'Travel planning'
-  }
+    title: "Best Travel Insurance for Remote Workers",
+    excerpt: "Coverage designed for long-term travelers.",
+    href: "/blog/best-travel-insurance-remote-workers",
+    image: "/images/unsplash/photo-1436491865332-7a61a109cc05-800w.webp",
+    imageAlt: "Travel planning",
+  },
 ];
 ---
 

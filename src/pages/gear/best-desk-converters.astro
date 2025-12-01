@@ -1,163 +1,204 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Best Standing Desk Converters (2025)';
-const description = 'Transform your existing desk into a standing desk. We tested 8 desk converters to find the best options for every budget and workspace size without hassle.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Furniture';
-const categorySlug = 'gear';
+const title = "Best Standing Desk Converters (2025)";
+const description =
+  "Transform your existing desk into a standing desk. We tested 8 desk converters to find the best options for every budget and workspace size without hassle.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Furniture";
+const categorySlug = "gear";
 const readingTime = 14;
-const image = '/images/unsplash/photo-1518455027359-f3f8164ba6bd-1200w.webp';
-const imageAlt = 'Standing desk converter on an office desk with dual monitors';
+const image = "/images/unsplash/photo-1518455027359-f3f8164ba6bd-1200w.webp";
+const imageAlt = "Standing desk converter on an office desk with dual monitors";
 
 const headings = [
-  {text: 'When Converters Make Sense', slug: 'why-converter', depth: 2},
-  {text: 'Quick Decision Guide', slug: 'converter-vs-desk', depth: 2},
-  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
-  {text: 'The Converters Worth Buying', slug: 'detailed-reviews', depth: 2},
-  {text: 'FlexiSpot M2B', slug: 'flexispot-m2b', depth: 3},
-  {text: 'VIVO Height Adjustable', slug: 'vivo-converter', depth: 3},
-  {text: 'Varidesk Pro Plus Thirty-Six', slug: 'varidesk-pro', depth: 3},
-  {text: 'FEZIBO Converter', slug: 'fezibo-converter', depth: 3},
-  {text: 'Mount-It MI-7927', slug: 'mount-it-electric', depth: 3},
-  {text: 'Ergotron WorkFit-T', slug: 'ergotron-workfit', depth: 3},
-  {text: 'UPLIFT E7 Converter', slug: 'uplift-e7', depth: 3},
-  {text: 'Gas Spring vs Electric', slug: 'manual-vs-electric', depth: 2},
-  {text: 'Frequently Asked Questions', slug: 'faq', depth: 2},
+  { text: "When Converters Make Sense", slug: "why-converter", depth: 2 },
+  { text: "Quick Decision Guide", slug: "converter-vs-desk", depth: 2 },
+  { text: "Quick Comparison", slug: "quick-comparison", depth: 2 },
+  { text: "The Converters Worth Buying", slug: "detailed-reviews", depth: 2 },
+  { text: "FlexiSpot M2B", slug: "flexispot-m2b", depth: 3 },
+  { text: "VIVO Height Adjustable", slug: "vivo-converter", depth: 3 },
+  { text: "Varidesk Pro Plus Thirty-Six", slug: "varidesk-pro", depth: 3 },
+  { text: "FEZIBO Converter", slug: "fezibo-converter", depth: 3 },
+  { text: "Mount-It MI-7927", slug: "mount-it-electric", depth: 3 },
+  { text: "Ergotron WorkFit-T", slug: "ergotron-workfit", depth: 3 },
+  { text: "UPLIFT E7 Converter", slug: "uplift-e7", depth: 3 },
+  { text: "Gas Spring vs Electric", slug: "manual-vs-electric", depth: 2 },
+  { text: "Frequently Asked Questions", slug: "faq", depth: 2 },
 ];
 
 const quickComparisonColumns = [
-  {key: 'converter', label: 'Converter', width: '150px'},
-  {key: 'bestFor', label: 'Best For'},
-  {key: 'type', label: 'Type'},
-  {key: 'price', label: 'Price'},
+  { key: "converter", label: "Converter", width: "150px" },
+  { key: "bestFor", label: "Best For" },
+  { key: "type", label: "Type" },
+  { key: "price", label: "Price" },
 ];
 
 const quickComparisonRows = [
-  {converter: '<strong>FlexiSpot M2B</strong>', bestFor: 'Best overall', type: 'Manual', price: '$300'},
-  {converter: '<strong>VIVO Height Adj.</strong>', bestFor: 'Best budget', type: 'Manual', price: '$140'},
-  {converter: '<strong>Varidesk Pro Plus</strong>', bestFor: 'Best premium', type: 'Manual', price: '$395'},
-  {converter: '<strong>FEZIBO</strong>', bestFor: 'Best value', type: 'Manual', price: '$180'},
-  {converter: '<strong>Mount-It! MI-7927</strong>', bestFor: 'Best electric', type: 'Electric', price: '$350'},
-  {converter: '<strong>Ergotron WorkFit-T</strong>', bestFor: 'Best ergonomics', type: 'Manual', price: '$399'},
-  {converter: '<strong>UPLIFT E7</strong>', bestFor: 'Best large surface', type: 'Manual', price: '$299'},
+  {
+    converter: "<strong>FlexiSpot M2B</strong>",
+    bestFor: "Best overall",
+    type: "Manual",
+    price: "$300",
+  },
+  {
+    converter: "<strong>VIVO Height Adj.</strong>",
+    bestFor: "Best budget",
+    type: "Manual",
+    price: "$140",
+  },
+  {
+    converter: "<strong>Varidesk Pro Plus</strong>",
+    bestFor: "Best premium",
+    type: "Manual",
+    price: "$395",
+  },
+  { converter: "<strong>FEZIBO</strong>", bestFor: "Best value", type: "Manual", price: "$180" },
+  {
+    converter: "<strong>Mount-It! MI-7927</strong>",
+    bestFor: "Best electric",
+    type: "Electric",
+    price: "$350",
+  },
+  {
+    converter: "<strong>Ergotron WorkFit-T</strong>",
+    bestFor: "Best ergonomics",
+    type: "Manual",
+    price: "$399",
+  },
+  {
+    converter: "<strong>UPLIFT E7</strong>",
+    bestFor: "Best large surface",
+    type: "Manual",
+    price: "$299",
+  },
 ];
 
 const fullComparisonColumns = [
-  {key: 'converter', label: 'Converter', width: '130px'},
-  {key: 'surface', label: 'Surface'},
-  {key: 'heightRange', label: 'Height'},
-  {key: 'weightCap', label: 'Capacity'},
-  {key: 'keyboard', label: 'Keyboard Tray'},
-  {key: 'price', label: 'Price'},
+  { key: "converter", label: "Converter", width: "130px" },
+  { key: "surface", label: "Surface" },
+  { key: "heightRange", label: "Height" },
+  { key: "weightCap", label: "Capacity" },
+  { key: "keyboard", label: "Keyboard Tray" },
+  { key: "price", label: "Price" },
 ];
 
 const fullComparisonRows = [
   {
-    converter: '<strong>FlexiSpot M2B</strong>',
+    converter: "<strong>FlexiSpot M2B</strong>",
     surface: '35"',
     heightRange: '4.7"-19.7"',
-    weightCap: '35 lbs',
-    keyboard: 'Yes',
-    price: '$300'
+    weightCap: "35 lbs",
+    keyboard: "Yes",
+    price: "$300",
   },
   {
-    converter: '<strong>VIVO</strong>',
+    converter: "<strong>VIVO</strong>",
     surface: '32"',
     heightRange: '6"-16"',
-    weightCap: '33 lbs',
-    keyboard: 'Yes',
-    price: '$140'
+    weightCap: "33 lbs",
+    keyboard: "Yes",
+    price: "$140",
   },
   {
-    converter: '<strong>Varidesk Pro</strong>',
+    converter: "<strong>Varidesk Pro</strong>",
     surface: '36"',
     heightRange: '4.5"-17.5"',
-    weightCap: '35 lbs',
-    keyboard: 'Yes',
-    price: '$395'
+    weightCap: "35 lbs",
+    keyboard: "Yes",
+    price: "$395",
   },
   {
-    converter: '<strong>FEZIBO</strong>',
+    converter: "<strong>FEZIBO</strong>",
     surface: '36"',
     heightRange: '5.9"-19.7"',
-    weightCap: '33 lbs',
-    keyboard: 'Yes',
-    price: '$180'
+    weightCap: "33 lbs",
+    keyboard: "Yes",
+    price: "$180",
   },
   {
-    converter: '<strong>Mount-It!</strong>',
+    converter: "<strong>Mount-It!</strong>",
     surface: '35"',
     heightRange: '5"-20"',
-    weightCap: '55 lbs',
-    keyboard: 'Yes',
-    price: '$350'
+    weightCap: "55 lbs",
+    keyboard: "Yes",
+    price: "$350",
   },
   {
-    converter: '<strong>Ergotron</strong>',
+    converter: "<strong>Ergotron</strong>",
     surface: '35"',
     heightRange: '5"-18"',
-    weightCap: '40 lbs',
-    keyboard: 'Yes',
-    price: '$399'
+    weightCap: "40 lbs",
+    keyboard: "Yes",
+    price: "$399",
   },
   {
-    converter: '<strong>UPLIFT E7</strong>',
+    converter: "<strong>UPLIFT E7</strong>",
     surface: '37"',
     heightRange: '6"-21"',
-    weightCap: '35 lbs',
-    keyboard: 'Yes',
-    price: '$299'
+    weightCap: "35 lbs",
+    keyboard: "Yes",
+    price: "$299",
   },
 ];
 
 const faqItems = [
   {
-    question: 'Are standing desk converters worth it?',
-    answer: 'Yes, if you already have a desk you like or cannot replace your current setup. Converters cost 30-50% less than full standing desks and require no assembly or permanent changes. They are ideal for rental apartments, shared offices, or testing if standing desks work for you before investing in a full desk.',
+    question: "Are standing desk converters worth it?",
+    answer:
+      "Yes, if you already have a desk you like or cannot replace your current setup. Converters cost 30-50% less than full standing desks and require no assembly or permanent changes. They are ideal for rental apartments, shared offices, or testing if standing desks work for you before investing in a full desk.",
   },
   {
-    question: 'What is the difference between a converter and a standing desk?',
-    answer: 'A standing desk replaces your entire desk with a motorized or crank-adjustable frame. A converter sits on top of your existing desk and raises your monitor and keyboard. Converters are cheaper and portable but have smaller surfaces and less height range than full standing desks.',
+    question: "What is the difference between a converter and a standing desk?",
+    answer:
+      "A standing desk replaces your entire desk with a motorized or crank-adjustable frame. A converter sits on top of your existing desk and raises your monitor and keyboard. Converters are cheaper and portable but have smaller surfaces and less height range than full standing desks.",
   },
   {
-    question: 'How much weight can a desk converter hold?',
-    answer: 'Most converters support 33-55 lbs, enough for dual monitors, a laptop, keyboard, and accessories. Electric converters typically have higher weight capacities (50+ lbs). Check the weight of your setup before buying, especially if you use large monitors or monitor arms.',
+    question: "How much weight can a desk converter hold?",
+    answer:
+      "Most converters support 33-55 lbs, enough for dual monitors, a laptop, keyboard, and accessories. Electric converters typically have higher weight capacities (50+ lbs). Check the weight of your setup before buying, especially if you use large monitors or monitor arms.",
   },
   {
-    question: 'Do I need a keyboard tray with a converter?',
-    answer: 'Highly recommended. Without a separate keyboard tray, your keyboard sits at the same height as your monitors, forcing you to raise your arms uncomfortably. The best converters include a keyboard tray that positions your arms at the correct ergonomic angle.',
+    question: "Do I need a keyboard tray with a converter?",
+    answer:
+      "Highly recommended. Without a separate keyboard tray, your keyboard sits at the same height as your monitors, forcing you to raise your arms uncomfortably. The best converters include a keyboard tray that positions your arms at the correct ergonomic angle.",
   },
   {
-    question: 'Should I get manual or electric?',
-    answer: 'Manual converters work fine for occasional transitions (2-3 times per day). If you switch frequently or have mobility concerns, electric converters offer effortless adjustment at the push of a button. Electric models cost $50-150 more but save physical effort over time.',
+    question: "Should I get manual or electric?",
+    answer:
+      "Manual converters work fine for occasional transitions (2-3 times per day). If you switch frequently or have mobility concerns, electric converters offer effortless adjustment at the push of a button. Electric models cost $50-150 more but save physical effort over time.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Standing Desks',
-    excerpt: 'Full standing desks for those ready to replace their entire setup.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Modern standing desk in home office',
+    title: "Best Standing Desks",
+    excerpt: "Full standing desks for those ready to replace their entire setup.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern standing desk in home office",
   },
   {
-    title: 'How Much Does a Standing Desk Cost?',
-    excerpt: 'Budget breakdown for standing desks at every price point.',
-    href: '/gear/standing-desk-cost-guide',
-    image: '/images/unsplash/photo-1497366216548-37526070297c-800w.webp',
-    imageAlt: 'Various standing desk options at different prices',
+    title: "How Much Does a Standing Desk Cost?",
+    excerpt: "Budget breakdown for standing desks at every price point.",
+    href: "/gear/standing-desk-cost-guide",
+    image: "/images/unsplash/photo-1497366216548-37526070297c-800w.webp",
+    imageAlt: "Various standing desk options at different prices",
   },
   {
-    title: 'Ergonomic Desk Setup Guide',
-    excerpt: 'Optimize your converter setup for maximum comfort and health.',
-    href: '/gear/ergonomic-desk-setup-guide',
-    image: '/images/unsplash/photo-1498050108023-c5249f4df085-800w.webp',
-    imageAlt: 'Properly configured ergonomic workstation',
+    title: "Ergonomic Desk Setup Guide",
+    excerpt: "Optimize your converter setup for maximum comfort and health.",
+    href: "/gear/ergonomic-desk-setup-guide",
+    image: "/images/unsplash/photo-1498050108023-c5249f4df085-800w.webp",
+    imageAlt: "Properly configured ergonomic workstation",
   },
 ];
 ---

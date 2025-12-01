@@ -1,76 +1,83 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Best Accounting Software for Freelancers (2025)';
-const description = 'I tested QuickBooks, FreshBooks, Wave for freelancers. Here\'s which accounting software actually works without costing a fortune or confusing you daily.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-25');
+const title = "Best Accounting Software for Freelancers (2025)";
+const description =
+  "I tested QuickBooks, FreshBooks, Wave for freelancers. Here's which accounting software actually works without costing a fortune or confusing you daily.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-25");
 const readingTime = 18;
-const image = '/images/unsplash/photo-1554224155-6726b3ff858f-1200w.webp';
-const imageAlt = 'Calculator and financial documents representing accounting software';
+const image = "/images/unsplash/photo-1554224155-6726b3ff858f-1200w.webp";
+const imageAlt = "Calculator and financial documents representing accounting software";
 
 const headings = [
-  {depth: 2, slug: 'why-you-need-this', text: 'Why You Need This'},
-  {depth: 2, slug: 'what-to-look-for', text: 'What to Look For'},
-  {depth: 2, slug: 'top-picks', text: 'The Eight Tools Worth Considering'},
-  {depth: 2, slug: 'tax-stuff', text: 'The Tax Stuff'},
-  {depth: 2, slug: 'mobile-apps', text: 'Mobile Apps'},
-  {depth: 2, slug: 'who-should-use-what', text: 'Who Should Use What'},
-  {depth: 2, slug: 'faq', text: 'Questions'},
-  {depth: 2, slug: 'my-picks', text: 'My Picks'}
+  { depth: 2, slug: "why-you-need-this", text: "Why You Need This" },
+  { depth: 2, slug: "what-to-look-for", text: "What to Look For" },
+  { depth: 2, slug: "top-picks", text: "The Eight Tools Worth Considering" },
+  { depth: 2, slug: "tax-stuff", text: "The Tax Stuff" },
+  { depth: 2, slug: "mobile-apps", text: "Mobile Apps" },
+  { depth: 2, slug: "who-should-use-what", text: "Who Should Use What" },
+  { depth: 2, slug: "faq", text: "Questions" },
+  { depth: 2, slug: "my-picks", text: "My Picks" },
 ];
 
 const faqData = [
   {
-    question: 'Do I actually need accounting software?',
-    answer: 'Even with simple finances, yes. Saves hours in April. Catches deductions you\'d miss. Professional invoices get you paid faster. And you finally know if you\'re actually making money. The software usually costs less than the time and money it saves.'
+    question: "Do I actually need accounting software?",
+    answer:
+      "Even with simple finances, yes. Saves hours in April. Catches deductions you'd miss. Professional invoices get you paid faster. And you finally know if you're actually making money. The software usually costs less than the time and money it saves.",
   },
   {
-    question: 'Accounting software vs invoicing software?',
-    answer: 'Invoicing just sends invoices. Accounting software does that plus expense tracking, reports, bank connections, tax prep. Most freelancers need the full thing. Invoicing alone doesn\'t tell you if you\'re profitable.'
+    question: "Accounting software vs invoicing software?",
+    answer:
+      "Invoicing just sends invoices. Accounting software does that plus expense tracking, reports, bank connections, tax prep. Most freelancers need the full thing. Invoicing alone doesn't tell you if you're profitable.",
   },
   {
-    question: 'Free options work?',
-    answer: 'Wave is genuinely good for free. Straightforward needs, basic bookkeeping, it handles it. Trade-off is no time tracking, limited integrations, and email-only support. But for zero dollars? Hard to argue.'
+    question: "Free options work?",
+    answer:
+      "Wave is genuinely good for free. Straightforward needs, basic bookkeeping, it handles it. Trade-off is no time tracking, limited integrations, and email-only support. But for zero dollars? Hard to argue.",
   },
   {
-    question: 'QuickBooks vs FreshBooks?',
-    answer: 'QuickBooks is better at tax prep and expense categorization. FreshBooks is better at invoicing, time tracking, and client management. Tax optimization priority? Go QuickBooks. Getting paid and managing projects? FreshBooks.'
+    question: "QuickBooks vs FreshBooks?",
+    answer:
+      "QuickBooks is better at tax prep and expense categorization. FreshBooks is better at invoicing, time tracking, and client management. Tax optimization priority? Go QuickBooks. Getting paid and managing projects? FreshBooks.",
   },
   {
-    question: 'Accountant or software?',
-    answer: 'Both. Software handles daily bookkeeping. An accountant provides strategy and catches things you\'d miss. Use software all year, talk to an accountant quarterly or at tax time. The software makes their job easier and cheaper.'
+    question: "Accountant or software?",
+    answer:
+      "Both. Software handles daily bookkeeping. An accountant provides strategy and catches things you'd miss. Use software all year, talk to an accountant quarterly or at tax time. The software makes their job easier and cheaper.",
   },
   {
-    question: 'What do accountants prefer?',
-    answer: 'Most know QuickBooks or Xero. Ask yours before choosing. But any decent software exports what they need. Convenience matters more than which logo is on the app.'
-  }
+    question: "What do accountants prefer?",
+    answer:
+      "Most know QuickBooks or Xero. Ask yours before choosing. But any decent software exports what they need. Convenience matters more than which logo is on the app.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Invoicing Tools for Remote Professionals',
-    excerpt: 'Get paid faster with the right invoicing software.',
-    href: '/tools/best-invoicing-tools',
-    image: '/images/unsplash/photo-1450101499163-c8848c66ca85-800w.webp',
-    imageAlt: 'Invoice and payment documents'
+    title: "Best Invoicing Tools for Remote Professionals",
+    excerpt: "Get paid faster with the right invoicing software.",
+    href: "/tools/best-invoicing-tools",
+    image: "/images/unsplash/photo-1450101499163-c8848c66ca85-800w.webp",
+    imageAlt: "Invoice and payment documents",
   },
   {
-    title: 'Tax Tips for Remote Workers',
-    excerpt: 'Navigate taxes as a remote worker or digital nomad.',
-    href: '/blog/tax-tips-remote-workers',
-    image: '/images/unsplash/photo-1586486855514-8c633cc6fd38-800w.webp',
-    imageAlt: 'Tax forms and calculator'
+    title: "Tax Tips for Remote Workers",
+    excerpt: "Navigate taxes as a remote worker or digital nomad.",
+    href: "/blog/tax-tips-remote-workers",
+    image: "/images/unsplash/photo-1586486855514-8c633cc6fd38-800w.webp",
+    imageAlt: "Tax forms and calculator",
   },
   {
-    title: 'Best Banking for Digital Nomads',
-    excerpt: 'Find the right bank account for your freelance business.',
-    href: '/blog/best-banking-digital-nomads',
-    image: '/images/unsplash/photo-1601597111158-2fceff292cdc-800w.webp',
-    imageAlt: 'Digital banking on mobile device'
-  }
+    title: "Best Banking for Digital Nomads",
+    excerpt: "Find the right bank account for your freelance business.",
+    href: "/blog/best-banking-digital-nomads",
+    image: "/images/unsplash/photo-1601597111158-2fceff292cdc-800w.webp",
+    imageAlt: "Digital banking on mobile device",
+  },
 ];
 ---
 

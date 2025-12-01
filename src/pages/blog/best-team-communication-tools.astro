@@ -1,131 +1,137 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Team Communication Tools for Remote Work (2025)';
-const description = 'Your chat app is your office now. Slack, Teams, Zoom, Discord - I\'ve used them all for remote teams. Here\'s which ones actually work and which are overrated.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Best Team Communication Tools for Remote Work (2025)";
+const description =
+  "Your chat app is your office now. Slack, Teams, Zoom, Discord - I've used them all for remote teams. Here's which ones actually work and which are overrated.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 11;
-const image = '/images/unsplash/photo-1600880292203-757bb62b4baf-1200w.webp';
-const imageAlt = 'Remote team on video conference call';
+const image = "/images/unsplash/photo-1600880292203-757bb62b4baf-1200w.webp";
+const imageAlt = "Remote team on video conference call";
 
 // Table of contents
 const headings = [
-  {text: 'Why This Matters', slug: 'introduction', depth: 2},
-  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
-  {text: 'Tool Types', slug: 'types-of-tools', depth: 2},
-  {text: 'The Tools', slug: 'reviews', depth: 2},
-  {text: 'My Stack Picks', slug: 'building-stack', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Bottom Line', slug: 'conclusion', depth: 2},
+  { text: "Why This Matters", slug: "introduction", depth: 2 },
+  { text: "Quick Comparison", slug: "quick-comparison", depth: 2 },
+  { text: "Tool Types", slug: "types-of-tools", depth: 2 },
+  { text: "The Tools", slug: "reviews", depth: 2 },
+  { text: "My Stack Picks", slug: "building-stack", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Bottom Line", slug: "conclusion", depth: 2 },
 ];
 
 // Comparison table
 const comparisonColumns = [
-  {key: 'tool', label: 'Tool', width: '110px'},
-  {key: 'type', label: 'Type'},
-  {key: 'price', label: 'Free Plan'},
-  {key: 'users', label: 'Free Users'},
-  {key: 'bestFor', label: 'Best For'},
+  { key: "tool", label: "Tool", width: "110px" },
+  { key: "type", label: "Type" },
+  { key: "price", label: "Free Plan" },
+  { key: "users", label: "Free Users" },
+  { key: "bestFor", label: "Best For" },
 ];
 
 const comparisonRows = [
   {
-    tool: '<strong>Slack</strong>',
-    type: 'Chat',
-    price: 'Yes',
-    users: 'Unlimited',
-    bestFor: 'All-around chat'
+    tool: "<strong>Slack</strong>",
+    type: "Chat",
+    price: "Yes",
+    users: "Unlimited",
+    bestFor: "All-around chat",
   },
   {
-    tool: '<strong>Microsoft Teams</strong>',
-    type: 'All-in-one',
-    price: 'Yes',
-    users: '100',
-    bestFor: 'Microsoft users'
+    tool: "<strong>Microsoft Teams</strong>",
+    type: "All-in-one",
+    price: "Yes",
+    users: "100",
+    bestFor: "Microsoft users",
   },
   {
-    tool: '<strong>Zoom</strong>',
-    type: 'Video',
-    price: 'Yes (40 min)',
-    users: '100',
-    bestFor: 'Video meetings'
+    tool: "<strong>Zoom</strong>",
+    type: "Video",
+    price: "Yes (40 min)",
+    users: "100",
+    bestFor: "Video meetings",
   },
   {
-    tool: '<strong>Google Meet</strong>',
-    type: 'Video',
-    price: 'Yes (60 min)',
-    users: '100',
-    bestFor: 'Google Workspace'
+    tool: "<strong>Google Meet</strong>",
+    type: "Video",
+    price: "Yes (60 min)",
+    users: "100",
+    bestFor: "Google Workspace",
   },
   {
-    tool: '<strong>Loom</strong>',
-    type: 'Async video',
-    price: 'Yes',
-    users: 'Unlimited',
-    bestFor: 'Async updates'
+    tool: "<strong>Loom</strong>",
+    type: "Async video",
+    price: "Yes",
+    users: "Unlimited",
+    bestFor: "Async updates",
   },
   {
-    tool: '<strong>Discord</strong>',
-    type: 'Chat + Voice',
-    price: 'Yes',
-    users: 'Unlimited',
-    bestFor: 'Casual teams'
+    tool: "<strong>Discord</strong>",
+    type: "Chat + Voice",
+    price: "Yes",
+    users: "Unlimited",
+    bestFor: "Casual teams",
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Need both Slack AND Zoom?',
-    answer: '<p>Slack has Huddles for quick calls. But for longer meetings or external people, Zoom\'s better.</p>'
+    question: "Need both Slack AND Zoom?",
+    answer:
+      "<p>Slack has Huddles for quick calls. But for longer meetings or external people, Zoom's better.</p>",
   },
   {
-    question: 'Slack worth paying for?',
-    answer: '<p>If you need old messages or lots of integrations, yes. Small teams often do fine on free.</p>'
+    question: "Slack worth paying for?",
+    answer:
+      "<p>If you need old messages or lots of integrations, yes. Small teams often do fine on free.</p>",
   },
   {
-    question: 'How to avoid notification hell?',
-    answer: '<p>Set expectations. Define channel purposes. Encourage async. The tool won\'t save you—culture will.</p>'
+    question: "How to avoid notification hell?",
+    answer:
+      "<p>Set expectations. Define channel purposes. Encourage async. The tool won't save you—culture will.</p>",
   },
   {
-    question: 'Video for every meeting?',
-    answer: '<p>No. Video fatigue is real. Mix it up: video for important stuff, audio for quick syncs, Loom for updates.</p>'
+    question: "Video for every meeting?",
+    answer:
+      "<p>No. Video fatigue is real. Mix it up: video for important stuff, audio for quick syncs, Loom for updates.</p>",
   },
   {
-    question: 'Discord for business?',
-    answer: '<p>Works for startups and tech teams. Not great for enterprises needing compliance features.</p>'
-  }
+    question: "Discord for business?",
+    answer:
+      "<p>Works for startups and tech teams. Not great for enterprises needing compliance features.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Project Management Software',
-    excerpt: 'Organize tasks and projects alongside team communication.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Project management dashboard'
+    title: "Best Project Management Software",
+    excerpt: "Organize tasks and projects alongside team communication.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Project management dashboard",
   },
   {
-    title: 'Best CRM Software for Small Business',
-    excerpt: 'Track customer relationships and sales alongside internal comms.',
-    href: '/blog/best-crm-software-small-business',
-    image: '/images/unsplash/photo-1552664730-d307ca884978-800w.webp',
-    imageAlt: 'CRM strategy meeting'
+    title: "Best CRM Software for Small Business",
+    excerpt: "Track customer relationships and sales alongside internal comms.",
+    href: "/blog/best-crm-software-small-business",
+    image: "/images/unsplash/photo-1552664730-d307ca884978-800w.webp",
+    imageAlt: "CRM strategy meeting",
   },
   {
-    title: 'VPN & Public WiFi Security Guide',
-    excerpt: 'Secure your communications when working remotely.',
-    href: '/blog/vpn-public-wifi-guide',
-    image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'Working at cafe on laptop'
-  }
+    title: "VPN & Public WiFi Security Guide",
+    excerpt: "Secure your communications when working remotely.",
+    href: "/blog/vpn-public-wifi-guide",
+    image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
+    imageAlt: "Working at cafe on laptop",
+  },
 ];
 ---
 

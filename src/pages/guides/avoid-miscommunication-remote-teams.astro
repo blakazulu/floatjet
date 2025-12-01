@@ -1,81 +1,89 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'How to Avoid Miscommunication in Remote Teams (2025)';
-const description = 'Prevent misunderstandings and communication breakdowns in distributed teams. Practical strategies for clear, effective remote work communication success.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "How to Avoid Miscommunication in Remote Teams (2025)";
+const description =
+  "Prevent misunderstandings and communication breakdowns in distributed teams. Practical strategies for clear, effective remote work communication success.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 9;
-const image = '/images/unsplash/photo-1516321318423-f06f85e504b3-1200w.webp';
-const imageAlt = 'Remote worker thoughtfully composing a message on laptop';
+const image = "/images/unsplash/photo-1516321318423-f06f85e504b3-1200w.webp";
+const imageAlt = "Remote worker thoughtfully composing a message on laptop";
 
 // Table of contents headings
 const headings = [
-  {text: 'Why It Happens', slug: 'why-it-happens', depth: 2},
-  {text: 'Over-Communicate', slug: 'over-communicate', depth: 2},
-  {text: 'Tone and Intent', slug: 'tone', depth: 2},
-  {text: 'Use Video', slug: 'use-video', depth: 2},
-  {text: 'Confirm Understanding', slug: 'confirm', depth: 2},
-  {text: 'Shared Language', slug: 'shared-language', depth: 2},
-  {text: 'When to Call', slug: 'when-to-call', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
+  { text: "Why It Happens", slug: "why-it-happens", depth: 2 },
+  { text: "Over-Communicate", slug: "over-communicate", depth: 2 },
+  { text: "Tone and Intent", slug: "tone", depth: 2 },
+  { text: "Use Video", slug: "use-video", depth: 2 },
+  { text: "Confirm Understanding", slug: "confirm", depth: 2 },
+  { text: "Shared Language", slug: "shared-language", depth: 2 },
+  { text: "When to Call", slug: "when-to-call", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'How do I know if my message was understood correctly?',
-    answer: '<p>Strategies to confirm understanding. Ask for confirmation: "Can you summarize your understanding of the next steps?" Request acknowledgment: "Please reply to confirm you got this." Check in later. Follow up before deadlines to catch misalignment early. Watch for questions. No questions sometimes means the message wasn\'t fully read.</p><p>For important communications, explicit confirmation beats assumptions.</p>'
+    question: "How do I know if my message was understood correctly?",
+    answer:
+      '<p>Strategies to confirm understanding. Ask for confirmation: "Can you summarize your understanding of the next steps?" Request acknowledgment: "Please reply to confirm you got this." Check in later. Follow up before deadlines to catch misalignment early. Watch for questions. No questions sometimes means the message wasn\'t fully read.</p><p>For important communications, explicit confirmation beats assumptions.</p>',
   },
   {
-    question: 'What\'s the best way to give critical feedback remotely?',
-    answer: '<p>Critical feedback needs extra care without in-person cues. Use video. Tone and facial expressions prevent misreading. Lead with intent: "I\'m sharing this because I want to help you succeed." Be specific. Concrete examples, not general impressions. Focus forward. What to do differently, not just what went wrong. Allow response. Give space for their perspective.</p><p>Written feedback works for minor points. Video is better for anything significant.</p>'
+    question: "What's the best way to give critical feedback remotely?",
+    answer:
+      '<p>Critical feedback needs extra care without in-person cues. Use video. Tone and facial expressions prevent misreading. Lead with intent: "I\'m sharing this because I want to help you succeed." Be specific. Concrete examples, not general impressions. Focus forward. What to do differently, not just what went wrong. Allow response. Give space for their perspective.</p><p>Written feedback works for minor points. Video is better for anything significant.</p>',
   },
   {
-    question: 'How do I handle a message that upset me?',
-    answer: '<p>Before reacting, pause. Wait at least an hour before responding. Assume good intent. Written messages often sound harsher than intended. Seek clarity. Ask what they meant before assuming. Move to video. If confused about tone, suggest a quick call.</p><p>Most upsetting messages are unintentional. A quick clarifying conversation usually resolves things.</p>'
+    question: "How do I handle a message that upset me?",
+    answer:
+      "<p>Before reacting, pause. Wait at least an hour before responding. Assume good intent. Written messages often sound harsher than intended. Seek clarity. Ask what they meant before assuming. Move to video. If confused about tone, suggest a quick call.</p><p>Most upsetting messages are unintentional. A quick clarifying conversation usually resolves things.</p>",
   },
   {
-    question: 'How can I make my written communication clearer?',
-    answer: '<p>Techniques for clearer writing. Front-load the point. Key message in the first sentence. Use structure. Bullet points, numbered lists, headers. Define terms. Don\'t assume shared vocabulary. Include context. Why you\'re asking, what you\'ll do with the answer. State the ask explicitly. What you need, from whom, by when. Read it aloud. Catches awkward phrasing and unclear sentences.</p>'
+    question: "How can I make my written communication clearer?",
+    answer:
+      "<p>Techniques for clearer writing. Front-load the point. Key message in the first sentence. Use structure. Bullet points, numbered lists, headers. Define terms. Don't assume shared vocabulary. Include context. Why you're asking, what you'll do with the answer. State the ask explicitly. What you need, from whom, by when. Read it aloud. Catches awkward phrasing and unclear sentences.</p>",
   },
   {
-    question: 'What if someone consistently misunderstands me?',
-    answer: '<p>Patterns suggest a systemic issue. Check your communication. Are you being as clear as you think? Ask for feedback: "I notice we\'ve had some miscommunications, what could I do differently?" Try different formats. Maybe they process video better than text, or vice versa. Document agreements. Written records of what was decided. More frequent check-ins. Catch misalignments earlier.</p><p>Address patterns directly rather than letting frustration build.</p>'
+    question: "What if someone consistently misunderstands me?",
+    answer:
+      '<p>Patterns suggest a systemic issue. Check your communication. Are you being as clear as you think? Ask for feedback: "I notice we\'ve had some miscommunications, what could I do differently?" Try different formats. Maybe they process video better than text, or vice versa. Document agreements. Written records of what was decided. More frequent check-ins. Catch misalignments earlier.</p><p>Address patterns directly rather than letting frustration build.</p>',
   },
   {
-    question: 'How do I communicate across cultural differences?',
-    answer: '<p>Cultural differences affect communication styles. Learn preferences. Some cultures are more direct, others more indirect. Be explicit. Don\'t rely on hints or implications. Confirm understanding. Especially for important messages. Ask questions: "How would you prefer I communicate this?" Be patient. Non-native speakers may need more time.</p><p>When in doubt, over-communicate and verify understanding.</p>'
-  }
+    question: "How do I communicate across cultural differences?",
+    answer:
+      '<p>Cultural differences affect communication styles. Learn preferences. Some cultures are more direct, others more indirect. Be explicit. Don\'t rely on hints or implications. Confirm understanding. Especially for important messages. Ask questions: "How would you prefer I communicate this?" Be patient. Non-native speakers may need more time.</p><p>When in doubt, over-communicate and verify understanding.</p>',
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Async Communication for Remote Teams',
-    excerpt: 'Master asynchronous communication to reduce meetings and boost productivity.',
-    href: '/blog/async-communication-remote-teams',
-    image: '/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp',
-    imageAlt: 'Remote team collaborating through digital tools'
+    title: "Async Communication for Remote Teams",
+    excerpt: "Master asynchronous communication to reduce meetings and boost productivity.",
+    href: "/blog/async-communication-remote-teams",
+    image: "/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp",
+    imageAlt: "Remote team collaborating through digital tools",
   },
   {
-    title: 'How to Run Effective Remote Meetings',
-    excerpt: 'Master virtual meeting best practices to boost productivity and reduce meeting fatigue.',
-    href: '/guides/how-to-run-effective-remote-meetings',
-    image: '/images/unsplash/photo-1609619385002-f40f1df9b7eb-800w.webp',
-    imageAlt: 'Remote team in productive video conference'
+    title: "How to Run Effective Remote Meetings",
+    excerpt:
+      "Master virtual meeting best practices to boost productivity and reduce meeting fatigue.",
+    href: "/guides/how-to-run-effective-remote-meetings",
+    image: "/images/unsplash/photo-1609619385002-f40f1df9b7eb-800w.webp",
+    imageAlt: "Remote team in productive video conference",
   },
   {
-    title: 'Best Team Communication Tools',
-    excerpt: 'Compare top messaging and collaboration platforms for remote teams.',
-    href: '/blog/best-team-communication-tools',
-    image: '/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp',
-    imageAlt: 'Team using communication software'
-  }
+    title: "Best Team Communication Tools",
+    excerpt: "Compare top messaging and collaboration platforms for remote teams.",
+    href: "/blog/best-team-communication-tools",
+    image: "/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp",
+    imageAlt: "Team using communication software",
+  },
 ];
 ---
 

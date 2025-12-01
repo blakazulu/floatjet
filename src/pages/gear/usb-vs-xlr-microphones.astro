@@ -1,123 +1,181 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'USB vs XLR Microphones: Which Is Better for Remote Work?';
-const description = 'USB or XLR microphone? We break down the pros and cons of each type to help you choose the right microphone for your remote work setup and budget needs.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Audio';
-const categorySlug = 'gear';
+const title = "USB vs XLR Microphones: Which Is Better for Remote Work?";
+const description =
+  "USB or XLR microphone? We break down the pros and cons of each type to help you choose the right microphone for your remote work setup and budget needs.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Audio";
+const categorySlug = "gear";
 const readingTime = 10;
-const image = '/images/unsplash/photo-1598653222000-6b7b7a552625-1200w.webp';
-const imageAlt = 'Professional microphone setup comparing USB and XLR connections';
+const image = "/images/unsplash/photo-1598653222000-6b7b7a552625-1200w.webp";
+const imageAlt = "Professional microphone setup comparing USB and XLR connections";
 
 const headings = [
-  {text: 'Quick Comparison', slug: 'quick-comparison'},
-  {text: 'What\'s Actually Different?', slug: 'understanding-difference'},
-  {text: 'USB Microphones: Why I Recommend Them', slug: 'usb-microphones'},
-  {text: 'XLR Microphones: When They Make Sense', slug: 'xlr-microphones'},
-  {text: 'My Take for Remote Workers', slug: 'verdict'},
-  {text: 'Best USB Mics for Remote Work', slug: 'best-usb-mics'},
-  {text: 'Best XLR Mics Worth the Hassle', slug: 'best-xlr-mics'},
-  {text: 'Both USB and XLR? Get These', slug: 'hybrid-options'},
-  {text: 'Questions', slug: 'faq'},
+  { text: "Quick Comparison", slug: "quick-comparison" },
+  { text: "What's Actually Different?", slug: "understanding-difference" },
+  { text: "USB Microphones: Why I Recommend Them", slug: "usb-microphones" },
+  { text: "XLR Microphones: When They Make Sense", slug: "xlr-microphones" },
+  { text: "My Take for Remote Workers", slug: "verdict" },
+  { text: "Best USB Mics for Remote Work", slug: "best-usb-mics" },
+  { text: "Best XLR Mics Worth the Hassle", slug: "best-xlr-mics" },
+  { text: "Both USB and XLR? Get These", slug: "hybrid-options" },
+  { text: "Questions", slug: "faq" },
 ];
 
 const quickComparisonColumns = [
-  {key: 'feature', label: 'Feature', width: '140px'},
-  {key: 'usb', label: 'USB Microphones'},
-  {key: 'xlr', label: 'XLR Microphones'},
+  { key: "feature", label: "Feature", width: "140px" },
+  { key: "usb", label: "USB Microphones" },
+  { key: "xlr", label: "XLR Microphones" },
 ];
 
 const quickComparisonRows = [
-  {feature: '<strong>Setup Complexity</strong>', usb: 'Plug and play', xlr: 'Requires audio interface'},
-  {feature: '<strong>Initial Cost</strong>', usb: '$50-300', xlr: '$150-500+ with interface'},
-  {feature: '<strong>Audio Quality Ceiling</strong>', usb: 'Very good', xlr: 'Professional/broadcast'},
-  {feature: '<strong>Latency</strong>', usb: 'Minimal', xlr: 'Zero (with interface)'},
-  {feature: '<strong>Portability</strong>', usb: 'Excellent', xlr: 'Poor'},
-  {feature: '<strong>Upgrade Path</strong>', usb: 'Limited', xlr: 'Flexible'},
-  {feature: '<strong>Best For</strong>', usb: 'Remote workers, beginners', xlr: 'Content creators, podcasters'},
+  {
+    feature: "<strong>Setup Complexity</strong>",
+    usb: "Plug and play",
+    xlr: "Requires audio interface",
+  },
+  { feature: "<strong>Initial Cost</strong>", usb: "$50-300", xlr: "$150-500+ with interface" },
+  {
+    feature: "<strong>Audio Quality Ceiling</strong>",
+    usb: "Very good",
+    xlr: "Professional/broadcast",
+  },
+  { feature: "<strong>Latency</strong>", usb: "Minimal", xlr: "Zero (with interface)" },
+  { feature: "<strong>Portability</strong>", usb: "Excellent", xlr: "Poor" },
+  { feature: "<strong>Upgrade Path</strong>", usb: "Limited", xlr: "Flexible" },
+  {
+    feature: "<strong>Best For</strong>",
+    usb: "Remote workers, beginners",
+    xlr: "Content creators, podcasters",
+  },
 ];
 
 const usbRecommendationsColumns = [
-  {key: 'microphone', label: 'Microphone', width: '160px'},
-  {key: 'type', label: 'Type'},
-  {key: 'bestFor', label: 'Best For'},
-  {key: 'price', label: 'Price'},
+  { key: "microphone", label: "Microphone", width: "160px" },
+  { key: "type", label: "Type" },
+  { key: "bestFor", label: "Best For" },
+  { key: "price", label: "Price" },
 ];
 
 const usbRecommendationsRows = [
-  {microphone: '<strong>Shure MV7</strong>', type: 'Dynamic', bestFor: 'All-around best', price: '$249'},
-  {microphone: '<strong>Blue Yeti</strong>', type: 'Condenser', bestFor: 'Versatility', price: '$129'},
-  {microphone: '<strong>Rode NT-USB Mini</strong>', type: 'Condenser', bestFor: 'Compact quality', price: '$99'},
-  {microphone: '<strong>Audio-Technica AT2020USB+</strong>', type: 'Condenser', bestFor: 'Studio sound', price: '$149'},
+  {
+    microphone: "<strong>Shure MV7</strong>",
+    type: "Dynamic",
+    bestFor: "All-around best",
+    price: "$249",
+  },
+  {
+    microphone: "<strong>Blue Yeti</strong>",
+    type: "Condenser",
+    bestFor: "Versatility",
+    price: "$129",
+  },
+  {
+    microphone: "<strong>Rode NT-USB Mini</strong>",
+    type: "Condenser",
+    bestFor: "Compact quality",
+    price: "$99",
+  },
+  {
+    microphone: "<strong>Audio-Technica AT2020USB+</strong>",
+    type: "Condenser",
+    bestFor: "Studio sound",
+    price: "$149",
+  },
 ];
 
 const xlrRecommendationsColumns = [
-  {key: 'microphone', label: 'Microphone', width: '160px'},
-  {key: 'type', label: 'Type'},
-  {key: 'bestFor', label: 'Best For'},
-  {key: 'price', label: 'Price'},
+  { key: "microphone", label: "Microphone", width: "160px" },
+  { key: "type", label: "Type" },
+  { key: "bestFor", label: "Best For" },
+  { key: "price", label: "Price" },
 ];
 
 const xlrRecommendationsRows = [
-  {microphone: '<strong>Shure SM7B</strong>', type: 'Dynamic', bestFor: 'Broadcast standard', price: '$399'},
-  {microphone: '<strong>Rode PodMic</strong>', type: 'Dynamic', bestFor: 'Value podcasting', price: '$99'},
-  {microphone: '<strong>Audio-Technica AT2020</strong>', type: 'Condenser', bestFor: 'Studio recording', price: '$99'},
   {
-    microphone: '<strong>Electro-Voice RE20</strong>',
-    type: 'Dynamic',
-    bestFor: 'Professional broadcast',
-    price: '$449'
+    microphone: "<strong>Shure SM7B</strong>",
+    type: "Dynamic",
+    bestFor: "Broadcast standard",
+    price: "$399",
+  },
+  {
+    microphone: "<strong>Rode PodMic</strong>",
+    type: "Dynamic",
+    bestFor: "Value podcasting",
+    price: "$99",
+  },
+  {
+    microphone: "<strong>Audio-Technica AT2020</strong>",
+    type: "Condenser",
+    bestFor: "Studio recording",
+    price: "$99",
+  },
+  {
+    microphone: "<strong>Electro-Voice RE20</strong>",
+    type: "Dynamic",
+    bestFor: "Professional broadcast",
+    price: "$449",
   },
 ];
 
 const faqItems = [
   {
-    question: 'Can I monitor myself in real-time with USB?',
-    answer: 'Some USB mics have zero-latency monitoring via headphone jacks—Shure MV7 and Blue Yeti do. Without this feature, you hear yourself through the computer with delay. Drives some people crazy.',
+    question: "Can I monitor myself in real-time with USB?",
+    answer:
+      "Some USB mics have zero-latency monitoring via headphone jacks—Shure MV7 and Blue Yeti do. Without this feature, you hear yourself through the computer with delay. Drives some people crazy.",
   },
   {
-    question: 'Do XLR mics sound noticeably better?',
-    answer: 'For remote work? Nah. Quality difference matters for music production and professional content. For video calls, good USB mics sound excellent. XLR advantage is flexibility, not quality.',
+    question: "Do XLR mics sound noticeably better?",
+    answer:
+      "For remote work? Nah. Quality difference matters for music production and professional content. For video calls, good USB mics sound excellent. XLR advantage is flexibility, not quality.",
   },
   {
-    question: 'Which interface should I get?',
-    answer: 'For remote work and basic podcasting, Focusrite Scarlett Solo or PreSonus AudioBox work fine. Rodecaster Pro is nice but more than most people need.',
+    question: "Which interface should I get?",
+    answer:
+      "For remote work and basic podcasting, Focusrite Scarlett Solo or PreSonus AudioBox work fine. Rodecaster Pro is nice but more than most people need.",
   },
   {
-    question: 'Can I use both connections on one mic?',
-    answer: 'Yep. Shure MV7 and Samson Q2U have both. Plug-and-play now, upgrade to interface later if you want.',
+    question: "Can I use both connections on one mic?",
+    answer:
+      "Yep. Shure MV7 and Samson Q2U have both. Plug-and-play now, upgrade to interface later if you want.",
   },
   {
-    question: 'Which type reduces background noise better?',
-    answer: 'Dynamic mics reject noise better than condensers—true for both USB and XLR. Shure SM7B and Shure MV7 are both known for this. Condensers pick up everything, including your neighbor\'s lawn mower.',
+    question: "Which type reduces background noise better?",
+    answer:
+      "Dynamic mics reject noise better than condensers—true for both USB and XLR. Shure SM7B and Shure MV7 are both known for this. Condensers pick up everything, including your neighbor's lawn mower.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Microphones for Remote Meetings',
-    excerpt: 'Our top picks for USB and XLR microphones for video calls.',
-    href: '/gear/best-microphones-remote-meetings',
-    image: '/images/unsplash/photo-1590602847861-f357a9332bbc-800w.webp',
-    imageAlt: 'Professional USB microphone for remote work',
+    title: "Best Microphones for Remote Meetings",
+    excerpt: "Our top picks for USB and XLR microphones for video calls.",
+    href: "/gear/best-microphones-remote-meetings",
+    image: "/images/unsplash/photo-1590602847861-f357a9332bbc-800w.webp",
+    imageAlt: "Professional USB microphone for remote work",
   },
   {
-    title: 'How to Reduce Background Noise on Calls',
-    excerpt: 'Tips and techniques to eliminate distracting noise from your meetings.',
-    href: '/gear/reduce-background-noise-calls',
-    image: '/images/unsplash/photo-1587560699334-cc4ff634909a-800w.webp',
-    imageAlt: 'Person on video call with noise-canceling setup',
+    title: "How to Reduce Background Noise on Calls",
+    excerpt: "Tips and techniques to eliminate distracting noise from your meetings.",
+    href: "/gear/reduce-background-noise-calls",
+    image: "/images/unsplash/photo-1587560699334-cc4ff634909a-800w.webp",
+    imageAlt: "Person on video call with noise-canceling setup",
   },
   {
-    title: 'Ultimate Home Office Setup Guide',
-    excerpt: 'Build your complete remote workspace including audio gear.',
-    href: '/blog/ultimate-home-office-setup',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Modern home office setup',
+    title: "Ultimate Home Office Setup Guide",
+    excerpt: "Build your complete remote workspace including audio gear.",
+    href: "/blog/ultimate-home-office-setup",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern home office setup",
   },
 ];
 ---

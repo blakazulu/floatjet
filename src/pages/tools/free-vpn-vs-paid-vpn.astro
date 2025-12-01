@@ -1,190 +1,214 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Free VPN vs Paid VPN: What You Need to Know (2025)';
-const description = 'I tried free VPNs. Bad idea. They sell your data. Here\'s the actual difference between free and paid VPNs and why the $5 monthly matters for security.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Free VPN vs Paid VPN: What You Need to Know (2025)";
+const description =
+  "I tried free VPNs. Bad idea. They sell your data. Here's the actual difference between free and paid VPNs and why the $5 monthly matters for security.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 12;
-const image = '/images/unsplash/photo-1563013544-824ae1b704d3-1200w.webp';
-const imageAlt = 'Lock symbol on digital interface representing VPN security';
+const image = "/images/unsplash/photo-1563013544-824ae1b704d3-1200w.webp";
+const imageAlt = "Lock symbol on digital interface representing VPN security";
 
 // Table of contents headings
 const headings = [
-  {text: 'The "Free" Trap', slug: 'introduction', depth: 2},
-  {text: 'How Free VPNs Stay Afloat', slug: 'how-free-vpns-make-money', depth: 2},
-  {text: 'Security? What Security?', slug: 'security-risks', depth: 2},
-  {text: 'The Numbers Don\'t Lie', slug: 'performance-comparison', depth: 2},
-  {text: 'When Free Might Be Okay', slug: 'when-free-okay', depth: 2},
-  {text: 'The Only Free VPNs I Trust', slug: 'best-freemium', depth: 2},
-  {text: 'Why I Pay', slug: 'why-paid-worth-it', depth: 2},
-  {text: 'Budget Options That Work', slug: 'budget-options', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
-  {text: 'The Bottom Line', slug: 'recommendation', depth: 2},
+  { text: 'The "Free" Trap', slug: "introduction", depth: 2 },
+  { text: "How Free VPNs Stay Afloat", slug: "how-free-vpns-make-money", depth: 2 },
+  { text: "Security? What Security?", slug: "security-risks", depth: 2 },
+  { text: "The Numbers Don't Lie", slug: "performance-comparison", depth: 2 },
+  { text: "When Free Might Be Okay", slug: "when-free-okay", depth: 2 },
+  { text: "The Only Free VPNs I Trust", slug: "best-freemium", depth: 2 },
+  { text: "Why I Pay", slug: "why-paid-worth-it", depth: 2 },
+  { text: "Budget Options That Work", slug: "budget-options", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "The Bottom Line", slug: "recommendation", depth: 2 },
 ];
 
 // Free vs Paid comparison table
 const comparisonColumns = [
-  {key: 'feature', label: 'Feature', width: '180px'},
-  {key: 'free', label: 'Free VPNs'},
-  {key: 'paid', label: 'Paid VPNs'},
+  { key: "feature", label: "Feature", width: "180px" },
+  { key: "free", label: "Free VPNs" },
+  { key: "paid", label: "Paid VPNs" },
 ];
 
 const comparisonRows = [
-  {feature: '<strong>Monthly cost</strong>', free: '$0', paid: '$2-13'},
-  {feature: '<strong>Data limit</strong>', free: '500MB-10GB', paid: 'Unlimited'},
-  {feature: '<strong>Speed</strong>', free: 'Slow (throttled)', paid: 'Fast (10-20% drop)'},
-  {feature: '<strong>Server locations</strong>', free: '3-10 countries', paid: '50-100+ countries'},
-  {feature: '<strong>Streaming</strong>', free: '❌ Blocked', paid: '✅ Works'},
-  {feature: '<strong>No-logs policy</strong>', free: '⚠️ Often logs data', paid: '✅ Audited policies'},
-  {feature: '<strong>Kill switch</strong>', free: '❌ Rarely', paid: '✅ Standard'},
-  {feature: '<strong>Customer support</strong>', free: 'None/forums', paid: '24/7 live chat'},
-  {feature: '<strong>Ads</strong>', free: '⚠️ Often yes', paid: '✅ No ads'},
+  { feature: "<strong>Monthly cost</strong>", free: "$0", paid: "$2-13" },
+  { feature: "<strong>Data limit</strong>", free: "500MB-10GB", paid: "Unlimited" },
+  { feature: "<strong>Speed</strong>", free: "Slow (throttled)", paid: "Fast (10-20% drop)" },
+  {
+    feature: "<strong>Server locations</strong>",
+    free: "3-10 countries",
+    paid: "50-100+ countries",
+  },
+  { feature: "<strong>Streaming</strong>", free: "❌ Blocked", paid: "✅ Works" },
+  {
+    feature: "<strong>No-logs policy</strong>",
+    free: "⚠️ Often logs data",
+    paid: "✅ Audited policies",
+  },
+  { feature: "<strong>Kill switch</strong>", free: "❌ Rarely", paid: "✅ Standard" },
+  { feature: "<strong>Customer support</strong>", free: "None/forums", paid: "24/7 live chat" },
+  { feature: "<strong>Ads</strong>", free: "⚠️ Often yes", paid: "✅ No ads" },
 ];
 
 // Freemium VPNs comparison table
 const freemiumColumns = [
-  {key: 'vpn', label: 'VPN', width: '130px'},
-  {key: 'freeLimit', label: 'Free Tier Limit'},
-  {key: 'servers', label: 'Free Servers'},
-  {key: 'streaming', label: 'Streaming'},
-  {key: 'upgrade', label: 'Paid Upgrade'},
+  { key: "vpn", label: "VPN", width: "130px" },
+  { key: "freeLimit", label: "Free Tier Limit" },
+  { key: "servers", label: "Free Servers" },
+  { key: "streaming", label: "Streaming" },
+  { key: "upgrade", label: "Paid Upgrade" },
 ];
 
 const freemiumRows = [
   {
-    vpn: '<strong>ProtonVPN</strong>',
-    freeLimit: 'Unlimited data',
-    servers: '3 countries',
-    streaming: '❌',
-    upgrade: '$4.99/mo'
+    vpn: "<strong>ProtonVPN</strong>",
+    freeLimit: "Unlimited data",
+    servers: "3 countries",
+    streaming: "❌",
+    upgrade: "$4.99/mo",
   },
   {
-    vpn: '<strong>Windscribe</strong>',
-    freeLimit: '10GB/month',
-    servers: '10 countries',
-    streaming: '⚠️ Some',
-    upgrade: '$5.75/mo'
+    vpn: "<strong>Windscribe</strong>",
+    freeLimit: "10GB/month",
+    servers: "10 countries",
+    streaming: "⚠️ Some",
+    upgrade: "$5.75/mo",
   },
   {
-    vpn: '<strong>hide.me</strong>',
-    freeLimit: '10GB/month',
-    servers: '8 countries',
-    streaming: '❌',
-    upgrade: '$2.59/mo'
+    vpn: "<strong>hide.me</strong>",
+    freeLimit: "10GB/month",
+    servers: "8 countries",
+    streaming: "❌",
+    upgrade: "$2.59/mo",
   },
   {
-    vpn: '<strong>TunnelBear</strong>',
-    freeLimit: '2GB/month',
-    servers: '47 countries',
-    streaming: '❌',
-    upgrade: '$3.33/mo'
+    vpn: "<strong>TunnelBear</strong>",
+    freeLimit: "2GB/month",
+    servers: "47 countries",
+    streaming: "❌",
+    upgrade: "$3.33/mo",
   },
   {
-    vpn: '<strong>Hotspot Shield</strong>',
-    freeLimit: '500MB/day',
-    servers: 'US only',
-    streaming: '❌',
-    upgrade: '$7.99/mo'
+    vpn: "<strong>Hotspot Shield</strong>",
+    freeLimit: "500MB/day",
+    servers: "US only",
+    streaming: "❌",
+    upgrade: "$7.99/mo",
   },
 ];
 
 // Budget paid VPNs comparison table
 const budgetColumns = [
-  {key: 'vpn', label: 'VPN', width: '120px'},
-  {key: 'price', label: 'Price'},
-  {key: 'data', label: 'Data'},
-  {key: 'devices', label: 'Devices'},
-  {key: 'streaming', label: 'Streaming'},
+  { key: "vpn", label: "VPN", width: "120px" },
+  { key: "price", label: "Price" },
+  { key: "data", label: "Data" },
+  { key: "devices", label: "Devices" },
+  { key: "streaming", label: "Streaming" },
 ];
 
 const budgetRows = [
   {
-    vpn: '<strong>Surfshark</strong>',
-    price: '$2.49/mo',
-    data: 'Unlimited',
-    devices: 'Unlimited',
-    streaming: '✅ All platforms'
+    vpn: "<strong>Surfshark</strong>",
+    price: "$2.49/mo",
+    data: "Unlimited",
+    devices: "Unlimited",
+    streaming: "✅ All platforms",
   },
   {
-    vpn: '<strong>PIA</strong>',
-    price: '$2.19/mo',
-    data: 'Unlimited',
-    devices: 'Unlimited',
-    streaming: '✅ Most platforms'
+    vpn: "<strong>PIA</strong>",
+    price: "$2.19/mo",
+    data: "Unlimited",
+    devices: "Unlimited",
+    streaming: "✅ Most platforms",
   },
   {
-    vpn: '<strong>CyberGhost</strong>',
-    price: '$2.19/mo',
-    data: 'Unlimited',
-    devices: '7',
-    streaming: '✅ All platforms'
+    vpn: "<strong>CyberGhost</strong>",
+    price: "$2.19/mo",
+    data: "Unlimited",
+    devices: "7",
+    streaming: "✅ All platforms",
   },
-  {vpn: '<strong>NordVPN</strong>', price: '$3.39/mo', data: 'Unlimited', devices: '10', streaming: '✅ All platforms'},
-  {vpn: '<strong>hide.me</strong>', price: '$2.59/mo', data: 'Unlimited', devices: '10', streaming: '✅ Most platforms'},
+  {
+    vpn: "<strong>NordVPN</strong>",
+    price: "$3.39/mo",
+    data: "Unlimited",
+    devices: "10",
+    streaming: "✅ All platforms",
+  },
+  {
+    vpn: "<strong>hide.me</strong>",
+    price: "$2.59/mo",
+    data: "Unlimited",
+    devices: "10",
+    streaming: "✅ Most platforms",
+  },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Safe to use free VPNs?',
-    answer: '<p>Most aren\'t. ProtonVPN and Windscribe free tiers are the exceptions. Everyone else is selling your data.</p>'
+    question: "Safe to use free VPNs?",
+    answer:
+      "<p>Most aren't. ProtonVPN and Windscribe free tiers are the exceptions. Everyone else is selling your data.</p>",
   },
   {
-    question: 'Free VPNs work with Netflix?',
-    answer: '<p>No. They get blocked immediately. Need at least Surfshark-tier for streaming.</p>'
+    question: "Free VPNs work with Netflix?",
+    answer: "<p>No. They get blocked immediately. Need at least Surfshark-tier for streaming.</p>",
   },
   {
-    question: 'ProtonVPN free actually safe?',
-    answer: '<p>Yes. One of the few. Swiss privacy laws, no-logs audits, funded by paid users.</p>'
+    question: "ProtonVPN free actually safe?",
+    answer: "<p>Yes. One of the few. Swiss privacy laws, no-logs audits, funded by paid users.</p>",
   },
   {
-    question: 'How much should I pay?',
-    answer: '<p>$3-5/month gets you everything you need. Under $3 works but requires long commitments.</p>'
+    question: "How much should I pay?",
+    answer:
+      "<p>$3-5/month gets you everything you need. Under $3 works but requires long commitments.</p>",
   },
   {
-    question: 'Cheap VPNs legit?',
-    answer: '<p>Yes, but you\'re paying 2-3 years upfront. That\'s the trade-off.</p>'
+    question: "Cheap VPNs legit?",
+    answer: "<p>Yes, but you're paying 2-3 years upfront. That's the trade-off.</p>",
   },
   {
-    question: 'Employer see my VPN use?',
-    answer: '<p>Personal VPN on personal device: no. Company device: maybe. Corporate VPN: yes.</p>'
+    question: "Employer see my VPN use?",
+    answer:
+      "<p>Personal VPN on personal device: no. Company device: maybe. Corporate VPN: yes.</p>",
   },
   {
-    question: 'Freelancers need to pay?',
-    answer: '<p>Absolutely. Client data on public WiFi? Get the $3/month protection.</p>'
-  }
+    question: "Freelancers need to pay?",
+    answer: "<p>Absolutely. Client data on public WiFi? Get the $3/month protection.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best VPNs for Digital Nomads',
-    excerpt: 'Our tested recommendations for VPNs that actually work for remote workers.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'Digital security concept'
+    title: "Best VPNs for Digital Nomads",
+    excerpt: "Our tested recommendations for VPNs that actually work for remote workers.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept",
   },
   {
-    title: 'Do I Need a VPN When Working from Cafes?',
-    excerpt: 'Understanding when you actually need VPN protection for remote work.',
-    href: '/guides/do-i-need-vpn-cafes',
-    image: '/images/unsplash/photo-1521017432531-fbd92d768814-800w.webp',
-    imageAlt: 'Person working on laptop in cafe'
+    title: "Do I Need a VPN When Working from Cafes?",
+    excerpt: "Understanding when you actually need VPN protection for remote work.",
+    href: "/guides/do-i-need-vpn-cafes",
+    image: "/images/unsplash/photo-1521017432531-fbd92d768814-800w.webp",
+    imageAlt: "Person working on laptop in cafe",
   },
   {
-    title: 'VPN & Public WiFi Security Guide',
-    excerpt: 'Complete guide to staying secure on public networks.',
-    href: '/blog/vpn-public-wifi-guide',
-    image: '/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp',
-    imageAlt: 'Digital security concept'
-  }
+    title: "VPN & Public WiFi Security Guide",
+    excerpt: "Complete guide to staying secure on public networks.",
+    href: "/blog/vpn-public-wifi-guide",
+    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp",
+    imageAlt: "Digital security concept",
+  },
 ];
 ---
 

@@ -1,87 +1,93 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Someone\'s Watching You Work Right Now (Probably)';
-const description = 'Got hacked at a Lisbon coffee shop using public WiFi. Lost three accounts here. Here\'s what I learned about staying safe and which VPNs actually work now.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Someone's Watching You Work Right Now (Probably)";
+const description =
+  "Got hacked at a Lisbon coffee shop using public WiFi. Lost three accounts here. Here's what I learned about staying safe and which VPNs actually work now.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 4;
-const image = '/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp';
-const imageAlt = 'Digital security concept with lock and encrypted data';
+const image = "/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp";
+const imageAlt = "Digital security concept with lock and encrypted data";
 
 // Table of contents headings
 const headings = [
-  {text: 'The Lisbon Incident', slug: 'introduction', depth: 2},
-  {text: 'What Actually Gets People', slug: 'threat-landscape', depth: 2},
-  {text: 'VPN: Not Optional', slug: 'vpn-protection', depth: 2},
-  {text: 'Passwords: You\'re Doing It Wrong', slug: 'password-security', depth: 2},
-  {text: '2FA: The Second Lock', slug: '2fa', depth: 2},
-  {text: 'File Sharing Without Being Stupid', slug: 'file-sharing', depth: 2},
-  {text: 'Your Laptop Is a Liability', slug: 'device-security', depth: 2},
-  {text: 'Public WiFi: The Rules', slug: 'public-wifi', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
-  {text: 'Just Do These Things', slug: 'conclusion', depth: 2},
+  { text: "The Lisbon Incident", slug: "introduction", depth: 2 },
+  { text: "What Actually Gets People", slug: "threat-landscape", depth: 2 },
+  { text: "VPN: Not Optional", slug: "vpn-protection", depth: 2 },
+  { text: "Passwords: You're Doing It Wrong", slug: "password-security", depth: 2 },
+  { text: "2FA: The Second Lock", slug: "2fa", depth: 2 },
+  { text: "File Sharing Without Being Stupid", slug: "file-sharing", depth: 2 },
+  { text: "Your Laptop Is a Liability", slug: "device-security", depth: 2 },
+  { text: "Public WiFi: The Rules", slug: "public-wifi", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "Just Do These Things", slug: "conclusion", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Public WiFi safe?',
-    answer: '<p>With VPN, yes. Without, no.</p>'
+    question: "Public WiFi safe?",
+    answer: "<p>With VPN, yes. Without, no.</p>",
   },
   {
-    question: 'VPN vs antivirus?',
-    answer: '<p>Different things. VPN protects data traveling over networks. Antivirus protects your device from malware. Need both.</p>'
+    question: "VPN vs antivirus?",
+    answer:
+      "<p>Different things. VPN protects data traveling over networks. Antivirus protects your device from malware. Need both.</p>",
   },
   {
-    question: 'Change passwords how often?',
-    answer: '<p>Only when breached. Use unique passwords with a manager and you won\'t need to rotate constantly.</p>'
+    question: "Change passwords how often?",
+    answer:
+      "<p>Only when breached. Use unique passwords with a manager and you won't need to rotate constantly.</p>",
   },
   {
-    question: 'Think I\'m hacked?',
-    answer: '<p>Change passwords on email and bank immediately. Enable 2FA everywhere. Scan for malware. Check account activity logs.</p>'
+    question: "Think I'm hacked?",
+    answer:
+      "<p>Change passwords on email and bank immediately. Enable 2FA everywhere. Scan for malware. Check account activity logs.</p>",
   },
   {
-    question: 'Free password managers?',
-    answer: '<p>Bitwarden is free and legit. Better than reusing "password123."</p>'
+    question: "Free password managers?",
+    answer: '<p>Bitwarden is free and legit. Better than reusing "password123."</p>',
   },
   {
-    question: 'Personal device for work?',
-    answer: '<p>Check your company policy. If yes: separate data, encrypt disk, strong passwords.</p>'
+    question: "Personal device for work?",
+    answer:
+      "<p>Check your company policy. If yes: separate data, encrypt disk, strong passwords.</p>",
   },
   {
-    question: 'How to spot unsafe WiFi?',
-    answer: '<p>You can\'t always. Assume all public WiFi is hostile. VPN regardless.</p>'
-  }
+    question: "How to spot unsafe WiFi?",
+    answer: "<p>You can't always. Assume all public WiFi is hostile. VPN regardless.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best VPNs for Digital Nomads',
-    excerpt: 'We tested 12 VPNs to find the best options for remote workers. Compare NordVPN, ExpressVPN, and more.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'Digital security concept'
+    title: "Best VPNs for Digital Nomads",
+    excerpt:
+      "We tested 12 VPNs to find the best options for remote workers. Compare NordVPN, ExpressVPN, and more.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept",
   },
   {
-    title: 'Best Password Managers for Remote Work',
-    excerpt: 'Keep your credentials secure across devices with these top-rated password managers.',
-    href: '/tools/best-password-manager-remote-work',
-    image: '/images/unsplash/photo-1555949963-ff9fe0c870eb-800w.webp',
-    imageAlt: 'Password security concept'
+    title: "Best Password Managers for Remote Work",
+    excerpt: "Keep your credentials secure across devices with these top-rated password managers.",
+    href: "/tools/best-password-manager-remote-work",
+    image: "/images/unsplash/photo-1555949963-ff9fe0c870eb-800w.webp",
+    imageAlt: "Password security concept",
   },
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Find the perfect laptop for working from anywhere with our tested recommendations.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp',
-    imageAlt: 'Laptop on desk with coffee'
-  }
+    title: "Best Laptops for Remote Work",
+    excerpt: "Find the perfect laptop for working from anywhere with our tested recommendations.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "Laptop on desk with coffee",
+  },
 ];
 ---
 

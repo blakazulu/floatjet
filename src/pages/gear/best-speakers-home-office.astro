@@ -1,168 +1,194 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Best Speakers for Home Office (2025)';
-const description = 'Top-rated desktop speakers for remote work. We tested 8 speaker systems for audio quality, voice clarity on calls, and value for home office setups honestly.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Audio';
-const categorySlug = 'gear';
+const title = "Best Speakers for Home Office (2025)";
+const description =
+  "Top-rated desktop speakers for remote work. We tested 8 speaker systems for audio quality, voice clarity on calls, and value for home office setups honestly.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Audio";
+const categorySlug = "gear";
 const readingTime = 5;
-const image = '/images/unsplash/photo-1545454675-3531b543be5d-1200w.webp';
-const imageAlt = 'Desktop speakers on a home office desk setup';
+const image = "/images/unsplash/photo-1545454675-3531b543be5d-1200w.webp";
+const imageAlt = "Desktop speakers on a home office desk setup";
 
 const headings = [
-  {text: 'Quick Picks', slug: 'quick-picks'},
-  {text: 'Why Bother', slug: 'why-desktop-speakers'},
-  {text: 'What Matters', slug: 'what-to-look-for'},
-  {text: 'Audioengine A2+', slug: 'audioengine-a2-plus'},
-  {text: 'Edifier R1280DB', slug: 'edifier-r1280db'},
-  {text: 'Creative Pebble V3', slug: 'creative-pebble-v3'},
-  {text: 'Logitech Z407', slug: 'logitech-z407'},
-  {text: 'Bose Companion 2 III', slug: 'bose-companion-2'},
-  {text: 'Klipsch ProMedia 2.1', slug: 'klipsch-promedia'},
-  {text: 'Edifier R1280T', slug: 'edifier-r1280t'},
-  {text: 'Razer Nommo', slug: 'razer-nommo'},
-  {text: 'Full Comparison', slug: 'comparison-table'},
-  {text: 'Speakers vs Headphones', slug: 'speakers-vs-headphones'},
-  {text: 'Questions', slug: 'faq'},
+  { text: "Quick Picks", slug: "quick-picks" },
+  { text: "Why Bother", slug: "why-desktop-speakers" },
+  { text: "What Matters", slug: "what-to-look-for" },
+  { text: "Audioengine A2+", slug: "audioengine-a2-plus" },
+  { text: "Edifier R1280DB", slug: "edifier-r1280db" },
+  { text: "Creative Pebble V3", slug: "creative-pebble-v3" },
+  { text: "Logitech Z407", slug: "logitech-z407" },
+  { text: "Bose Companion 2 III", slug: "bose-companion-2" },
+  { text: "Klipsch ProMedia 2.1", slug: "klipsch-promedia" },
+  { text: "Edifier R1280T", slug: "edifier-r1280t" },
+  { text: "Razer Nommo", slug: "razer-nommo" },
+  { text: "Full Comparison", slug: "comparison-table" },
+  { text: "Speakers vs Headphones", slug: "speakers-vs-headphones" },
+  { text: "Questions", slug: "faq" },
 ];
 
 const quickPicksColumns = [
-  {key: 'speaker', label: 'Speaker', width: '140px'},
-  {key: 'bestFor', label: 'Best For'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
+  { key: "speaker", label: "Speaker", width: "140px" },
+  { key: "bestFor", label: "Best For" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
 ];
 
 const quickPicksRows = [
-  {speaker: '<strong>Audioengine A2+</strong>', bestFor: 'Overall Quality', price: '$269', rating: '9.5/10'},
-  {speaker: '<strong>Edifier R1280DB</strong>', bestFor: 'Music Lovers', price: '$149', rating: '9.2/10'},
-  {speaker: '<strong>Creative Pebble V3</strong>', bestFor: 'Budget Pick', price: '$39', rating: '8.8/10'},
+  {
+    speaker: "<strong>Audioengine A2+</strong>",
+    bestFor: "Overall Quality",
+    price: "$269",
+    rating: "9.5/10",
+  },
+  {
+    speaker: "<strong>Edifier R1280DB</strong>",
+    bestFor: "Music Lovers",
+    price: "$149",
+    rating: "9.2/10",
+  },
+  {
+    speaker: "<strong>Creative Pebble V3</strong>",
+    bestFor: "Budget Pick",
+    price: "$39",
+    rating: "8.8/10",
+  },
 ];
 
 const comparisonColumns = [
-  {key: 'speaker', label: 'Speaker', width: '140px'},
-  {key: 'power', label: 'Power'},
-  {key: 'connectivity', label: 'Connectivity', width: '160px'},
-  {key: 'subwoofer', label: 'Subwoofer'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
+  { key: "speaker", label: "Speaker", width: "140px" },
+  { key: "power", label: "Power" },
+  { key: "connectivity", label: "Connectivity", width: "160px" },
+  { key: "subwoofer", label: "Subwoofer" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
 ];
 
 const comparisonRows = [
   {
-    speaker: '<strong>Audioengine A2+</strong>',
-    power: '60W',
-    connectivity: 'USB, Bluetooth, 3.5mm',
-    subwoofer: 'No (available)',
-    price: '$269',
-    rating: '9.5/10'
+    speaker: "<strong>Audioengine A2+</strong>",
+    power: "60W",
+    connectivity: "USB, Bluetooth, 3.5mm",
+    subwoofer: "No (available)",
+    price: "$269",
+    rating: "9.5/10",
   },
   {
-    speaker: '<strong>Edifier R1280DB</strong>',
-    power: '42W',
-    connectivity: 'Bluetooth, Optical, RCA',
-    subwoofer: 'No',
-    price: '$149',
-    rating: '9.2/10'
+    speaker: "<strong>Edifier R1280DB</strong>",
+    power: "42W",
+    connectivity: "Bluetooth, Optical, RCA",
+    subwoofer: "No",
+    price: "$149",
+    rating: "9.2/10",
   },
   {
-    speaker: '<strong>Creative Pebble V3</strong>',
-    power: '8W',
-    connectivity: 'USB-C, Bluetooth',
-    subwoofer: 'No',
-    price: '$39',
-    rating: '8.8/10'
+    speaker: "<strong>Creative Pebble V3</strong>",
+    power: "8W",
+    connectivity: "USB-C, Bluetooth",
+    subwoofer: "No",
+    price: "$39",
+    rating: "8.8/10",
   },
   {
-    speaker: '<strong>Logitech Z407</strong>',
-    power: '40W',
-    connectivity: 'Bluetooth, 3.5mm, USB',
-    subwoofer: 'Yes (included)',
-    price: '$69',
-    rating: '8.7/10'
+    speaker: "<strong>Logitech Z407</strong>",
+    power: "40W",
+    connectivity: "Bluetooth, 3.5mm, USB",
+    subwoofer: "Yes (included)",
+    price: "$69",
+    rating: "8.7/10",
   },
   {
-    speaker: '<strong>Bose Companion 2 III</strong>',
-    power: '20W',
-    connectivity: '3.5mm',
-    subwoofer: 'No',
-    price: '$149',
-    rating: '8.5/10'
+    speaker: "<strong>Bose Companion 2 III</strong>",
+    power: "20W",
+    connectivity: "3.5mm",
+    subwoofer: "No",
+    price: "$149",
+    rating: "8.5/10",
   },
   {
-    speaker: '<strong>Klipsch ProMedia 2.1</strong>',
-    power: '200W',
-    connectivity: '3.5mm',
-    subwoofer: 'Yes (included)',
-    price: '$179',
-    rating: '9.0/10'
+    speaker: "<strong>Klipsch ProMedia 2.1</strong>",
+    power: "200W",
+    connectivity: "3.5mm",
+    subwoofer: "Yes (included)",
+    price: "$179",
+    rating: "9.0/10",
   },
   {
-    speaker: '<strong>Edifier R1280T</strong>',
-    power: '42W',
-    connectivity: 'RCA, 3.5mm',
-    subwoofer: 'No',
-    price: '$99',
-    rating: '8.6/10'
+    speaker: "<strong>Edifier R1280T</strong>",
+    power: "42W",
+    connectivity: "RCA, 3.5mm",
+    subwoofer: "No",
+    price: "$99",
+    rating: "8.6/10",
   },
   {
-    speaker: '<strong>Razer Nommo</strong>',
-    power: '24W',
-    connectivity: 'USB, 3.5mm',
-    subwoofer: 'No',
-    price: '$99',
-    rating: '8.4/10'
+    speaker: "<strong>Razer Nommo</strong>",
+    power: "24W",
+    connectivity: "USB, 3.5mm",
+    subwoofer: "No",
+    price: "$99",
+    rating: "8.4/10",
   },
 ];
 
 const faqItems = [
   {
-    question: 'Which is better for remote work?',
-    answer: 'Both. Speakers for long sessions—no ear fatigue. Better for background music and staying aware of your space. Headphones for calls, noise, focus. Most people use both.',
+    question: "Which is better for remote work?",
+    answer:
+      "Both. Speakers for long sessions—no ear fatigue. Better for background music and staying aware of your space. Headphones for calls, noise, focus. Most people use both.",
   },
   {
-    question: 'Subwoofer needed?',
-    answer: 'Nah, not really. For calls and podcasts, regular speakers are fine. If you listen to music or watch stuff, subwoofer adds depth. Think about neighbors though.',
+    question: "Subwoofer needed?",
+    answer:
+      "Nah, not really. For calls and podcasts, regular speakers are fine. If you listen to music or watch stuff, subwoofer adds depth. Think about neighbors though.",
   },
   {
-    question: 'How much to spend?',
-    answer: 'Basic use? Forty to eighty. Want good music? One to two hundred. Above that you\'re paying for stuff most ears can\'t hear.',
+    question: "How much to spend?",
+    answer:
+      "Basic use? Forty to eighty. Want good music? One to two hundred. Above that you're paying for stuff most ears can't hear.",
   },
   {
-    question: 'Desktop speakers for calls?',
-    answer: 'Yeah, they work for hearing people. Still need a separate mic though. Laptop mics pick up speaker audio and create echo. External speakers plus good mic is the setup.',
+    question: "Desktop speakers for calls?",
+    answer:
+      "Yeah, they work for hearing people. Still need a separate mic though. Laptop mics pick up speaker audio and create echo. External speakers plus good mic is the setup.",
   },
   {
-    question: 'Wired or Bluetooth?',
-    answer: 'Wired has no latency. Consistent. Great for calls and video. Bluetooth lets you play from phone. Many have both. Do that.',
+    question: "Wired or Bluetooth?",
+    answer:
+      "Wired has no latency. Consistent. Great for calls and video. Bluetooth lets you play from phone. Many have both. Do that.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Noise-Canceling Headphones',
-    excerpt: 'Top headphones for focus and calls when speakers aren\'t practical.',
-    href: '/gear/best-noise-canceling-headphones',
-    image: '/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp',
-    imageAlt: 'Noise-canceling headphones on desk',
+    title: "Best Noise-Canceling Headphones",
+    excerpt: "Top headphones for focus and calls when speakers aren't practical.",
+    href: "/gear/best-noise-canceling-headphones",
+    image: "/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp",
+    imageAlt: "Noise-canceling headphones on desk",
   },
   {
-    title: 'Best Microphones for Remote Meetings',
-    excerpt: 'Pair your speakers with a quality mic for better call audio.',
-    href: '/gear/best-microphones-remote-meetings',
-    image: '/images/unsplash/photo-1590602847861-f357a9332bbc-800w.webp',
-    imageAlt: 'Professional USB microphone for remote work',
+    title: "Best Microphones for Remote Meetings",
+    excerpt: "Pair your speakers with a quality mic for better call audio.",
+    href: "/gear/best-microphones-remote-meetings",
+    image: "/images/unsplash/photo-1590602847861-f357a9332bbc-800w.webp",
+    imageAlt: "Professional USB microphone for remote work",
   },
   {
-    title: 'Ultimate Home Office Setup Guide',
-    excerpt: 'Build your complete remote workspace with our comprehensive guide.',
-    href: '/blog/ultimate-home-office-setup',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Modern home office setup',
+    title: "Ultimate Home Office Setup Guide",
+    excerpt: "Build your complete remote workspace with our comprehensive guide.",
+    href: "/blog/ultimate-home-office-setup",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern home office setup",
   },
 ];
 ---

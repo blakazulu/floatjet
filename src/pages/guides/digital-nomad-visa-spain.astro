@@ -1,79 +1,86 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Spain Digital Nomad Visa 2025: How to Apply';
-const description = 'Complete guide to Spain\'s digital nomad visa. Requirements, application process, timeline, costs, and tips from someone who actually did it successfully.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-21');
+const title = "Spain Digital Nomad Visa 2025: How to Apply";
+const description =
+  "Complete guide to Spain's digital nomad visa. Requirements, application process, timeline, costs, and tips from someone who actually did it successfully.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-21");
 const readingTime = 14;
-const image = '/images/unsplash/photo-1539037116277-4db20889f2d4-1200w.webp';
-const imageAlt = 'Barcelona Spain cityscape with Sagrada Familia';
+const image = "/images/unsplash/photo-1539037116277-4db20889f2d4-1200w.webp";
+const imageAlt = "Barcelona Spain cityscape with Sagrada Familia";
 
 const headings = [
-  {depth: 2, slug: 'introduction', text: 'Why Spain'},
-  {depth: 2, slug: 'visa-overview', text: 'The Visa Basics'},
-  {depth: 2, slug: 'eligibility', text: 'Who Can Apply'},
-  {depth: 2, slug: 'required-documents', text: 'Documents You Need'},
-  {depth: 2, slug: 'application-process', text: 'How to Apply'},
-  {depth: 2, slug: 'costs-timeline', text: 'Costs and Timeline'},
-  {depth: 2, slug: 'beckham-law', text: 'Beckham Law Tax Benefits'},
-  {depth: 2, slug: 'best-cities', text: 'Best Cities'},
-  {depth: 2, slug: 'cost-of-living', text: 'Cost of Living'},
-  {depth: 2, slug: 'healthcare', text: 'Healthcare'},
-  {depth: 2, slug: 'faq', text: 'Questions'}
+  { depth: 2, slug: "introduction", text: "Why Spain" },
+  { depth: 2, slug: "visa-overview", text: "The Visa Basics" },
+  { depth: 2, slug: "eligibility", text: "Who Can Apply" },
+  { depth: 2, slug: "required-documents", text: "Documents You Need" },
+  { depth: 2, slug: "application-process", text: "How to Apply" },
+  { depth: 2, slug: "costs-timeline", text: "Costs and Timeline" },
+  { depth: 2, slug: "beckham-law", text: "Beckham Law Tax Benefits" },
+  { depth: 2, slug: "best-cities", text: "Best Cities" },
+  { depth: 2, slug: "cost-of-living", text: "Cost of Living" },
+  { depth: 2, slug: "healthcare", text: "Healthcare" },
+  { depth: 2, slug: "faq", text: "Questions" },
 ];
 
 const faqData = [
   {
-    question: 'What\'s the minimum income requirement?',
-    answer: 'You need to show monthly income of at least two thousand three hundred thirty four euros. That\'s two hundred percent of Spain\'s minimum wage for individuals. This increases by seventy five percent of minimum wage roughly eight seventy five for each additional family member. Self-employed might need to show higher income.'
+    question: "What's the minimum income requirement?",
+    answer:
+      "You need to show monthly income of at least two thousand three hundred thirty four euros. That's two hundred percent of Spain's minimum wage for individuals. This increases by seventy five percent of minimum wage roughly eight seventy five for each additional family member. Self-employed might need to show higher income.",
   },
   {
-    question: 'Can I work for Spanish clients?',
-    answer: 'Yes but with limits. Up to twenty percent of your income can come from Spanish companies. The remaining eighty percent must come from non-Spanish clients or employers. This is more flexible than Portugal\'s visa.'
+    question: "Can I work for Spanish clients?",
+    answer:
+      "Yes but with limits. Up to twenty percent of your income can come from Spanish companies. The remaining eighty percent must come from non-Spanish clients or employers. This is more flexible than Portugal's visa.",
   },
   {
-    question: 'How long does the visa last?',
-    answer: 'Initial visa is valid for one year or up to three years for certain applicants. Renewable for up to two additional years. After five years you may apply for permanent residency.'
+    question: "How long does the visa last?",
+    answer:
+      "Initial visa is valid for one year or up to three years for certain applicants. Renewable for up to two additional years. After five years you may apply for permanent residency.",
   },
   {
-    question: 'Can I bring family?',
-    answer: 'Yes. Spouse and children and dependent parents can apply together with you or join through family reunification. Each family member adds to the income requirement.'
+    question: "Can I bring family?",
+    answer:
+      "Yes. Spouse and children and dependent parents can apply together with you or join through family reunification. Each family member adds to the income requirement.",
   },
   {
-    question: 'Do I qualify for Beckham Law?',
-    answer: 'Digital nomad visa holders can apply for Beckham Law status. That offers a flat twenty four percent tax rate on Spanish income up to six hundred thousand compared to progressive rates up to forty seven percent. You must not have been a Spanish tax resident in the previous five years.'
+    question: "Do I qualify for Beckham Law?",
+    answer:
+      "Digital nomad visa holders can apply for Beckham Law status. That offers a flat twenty four percent tax rate on Spanish income up to six hundred thousand compared to progressive rates up to forty seven percent. You must not have been a Spanish tax resident in the previous five years.",
   },
   {
-    question: 'What if I lose my remote job?',
-    answer: 'Your visa status depends on continued remote work. If you lose your job find new remote employment or leave Spain before your visa expires. Consult an immigration lawyer for your specific situation.'
-  }
+    question: "What if I lose my remote job?",
+    answer:
+      "Your visa status depends on continued remote work. If you lose your job find new remote employment or leave Spain before your visa expires. Consult an immigration lawyer for your specific situation.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Portugal Digital Nomad Visa Guide',
-    excerpt: 'Compare Spain with Portugal\'s digital nomad program.',
-    href: '/guides/digital-nomad-visa-portugal',
-    image: '/images/unsplash/photo-1555881400-74d7acaacd8b-800w.webp',
-    imageAlt: 'Lisbon Portugal cityscape'
+    title: "Portugal Digital Nomad Visa Guide",
+    excerpt: "Compare Spain with Portugal's digital nomad program.",
+    href: "/guides/digital-nomad-visa-portugal",
+    image: "/images/unsplash/photo-1555881400-74d7acaacd8b-800w.webp",
+    imageAlt: "Lisbon Portugal cityscape",
   },
   {
-    title: 'Top Destinations for Digital Nomads',
-    excerpt: 'Explore more options for working remotely abroad.',
-    href: '/blog/top-destinations-digital-nomads',
-    image: '/images/unsplash/photo-1488646953014-85cb44e25828-800w.webp',
-    imageAlt: 'World travel destinations'
+    title: "Top Destinations for Digital Nomads",
+    excerpt: "Explore more options for working remotely abroad.",
+    href: "/blog/top-destinations-digital-nomads",
+    image: "/images/unsplash/photo-1488646953014-85cb44e25828-800w.webp",
+    imageAlt: "World travel destinations",
   },
   {
-    title: 'Best Banking for Digital Nomads',
-    excerpt: 'Set up your finances for international living.',
-    href: '/blog/best-banking-digital-nomads',
-    image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'Digital banking on laptop'
-  }
+    title: "Best Banking for Digital Nomads",
+    excerpt: "Set up your finances for international living.",
+    href: "/blog/best-banking-digital-nomads",
+    image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
+    imageAlt: "Digital banking on laptop",
+  },
 ];
 ---
 

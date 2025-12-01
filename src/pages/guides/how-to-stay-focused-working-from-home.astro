@@ -1,91 +1,100 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'How to Stay Focused Working from Home (2025)';
-const description = 'Struggling with focus while working remotely? Learn environment design, digital distraction management, and practical techniques to concentrate better at home.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "How to Stay Focused Working from Home (2025)";
+const description =
+  "Struggling with focus while working remotely? Learn environment design, digital distraction management, and practical techniques to concentrate better at home.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 11;
-const image = '/images/unsplash/photo-1499750310107-5fef28a66643-1200w.webp';
-const imageAlt = 'Focused remote worker at home office desk with laptop';
+const image = "/images/unsplash/photo-1499750310107-5fef28a66643-1200w.webp";
+const imageAlt = "Focused remote worker at home office desk with laptop";
 
 // Table of contents headings
 const headings = [
-  {text: 'Why Focusing At Home Sucks', slug: 'challenge', depth: 2},
-  {text: 'Set Up Your Space Right', slug: 'environment', depth: 2},
-  {text: 'Managing Your Time', slug: 'time-management', depth: 2},
-  {text: 'Fighting Digital Distractions', slug: 'digital-distractions', depth: 2},
-  {text: 'Distraction Blocker Apps', slug: 'distraction-blockers', depth: 2},
-  {text: 'Physical Focus Cues', slug: 'focus-triggers', depth: 2},
-  {text: 'When to Work, When to Stop', slug: 'work-breaks', depth: 2},
-  {text: 'Living With Other People', slug: 'household', depth: 2},
-  {text: 'Audio Environment', slug: 'focus-music', depth: 2},
-  {text: 'Common Questions', slug: 'faq', depth: 2},
+  { text: "Why Focusing At Home Sucks", slug: "challenge", depth: 2 },
+  { text: "Set Up Your Space Right", slug: "environment", depth: 2 },
+  { text: "Managing Your Time", slug: "time-management", depth: 2 },
+  { text: "Fighting Digital Distractions", slug: "digital-distractions", depth: 2 },
+  { text: "Distraction Blocker Apps", slug: "distraction-blockers", depth: 2 },
+  { text: "Physical Focus Cues", slug: "focus-triggers", depth: 2 },
+  { text: "When to Work, When to Stop", slug: "work-breaks", depth: 2 },
+  { text: "Living With Other People", slug: "household", depth: 2 },
+  { text: "Audio Environment", slug: "focus-music", depth: 2 },
+  { text: "Common Questions", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Why can\'t I focus at home?',
-    answer: '<p>Home lacks the automatic focus signals offices have. No one watching you. Distractions everywhere. Brain thinks home means relaxing. Too many devices competing. Fix it by creating your own structure and signals that say work mode.</p>'
+    question: "Why can't I focus at home?",
+    answer:
+      "<p>Home lacks the automatic focus signals offices have. No one watching you. Distractions everywhere. Brain thinks home means relaxing. Too many devices competing. Fix it by creating your own structure and signals that say work mode.</p>",
   },
   {
-    question: 'How long can anyone actually focus?',
-    answer: '<p>Not forever. Most people max out somewhere between twenty-five and ninety minutes. Brains naturally cycle through alertness roughly every ninety minutes. Each time you switch tasks, focus takes fifteen to twenty-five minutes to recover. Plan focused sprints with actual breaks. Eight hours without breaks isn\'t eight hours of focus. It\'s steadily declining effectiveness.</p>'
+    question: "How long can anyone actually focus?",
+    answer:
+      "<p>Not forever. Most people max out somewhere between twenty-five and ninety minutes. Brains naturally cycle through alertness roughly every ninety minutes. Each time you switch tasks, focus takes fifteen to twenty-five minutes to recover. Plan focused sprints with actual breaks. Eight hours without breaks isn't eight hours of focus. It's steadily declining effectiveness.</p>",
   },
   {
-    question: 'Music or no music?',
-    answer: '<p>Depends on you and the task. Routine work often goes better with music. Complicated stuff usually wants quiet or ambient sounds. Lyrics mess with tasks involving words. Music you already know is less distracting than new stuff. Try different options for different work.</p>'
+    question: "Music or no music?",
+    answer:
+      "<p>Depends on you and the task. Routine work often goes better with music. Complicated stuff usually wants quiet or ambient sounds. Lyrics mess with tasks involving words. Music you already know is less distracting than new stuff. Try different options for different work.</p>",
   },
   {
-    question: 'Focusing with kids around?',
-    answer: '<p>Need structure and communication. Visual signals like red or green light for interruption status. Activity boxes with special stuff only available during your focus blocks. Trade off with partner if possible. Scheduled times for kid questions. Realistic expectations because shorter focus windows may be reality. Some parents crush it early mornings or late nights.</p>'
+    question: "Focusing with kids around?",
+    answer:
+      "<p>Need structure and communication. Visual signals like red or green light for interruption status. Activity boxes with special stuff only available during your focus blocks. Trade off with partner if possible. Scheduled times for kid questions. Realistic expectations because shorter focus windows may be reality. Some parents crush it early mornings or late nights.</p>",
   },
   {
-    question: 'When should I schedule focus work?',
-    answer: '<p>Varies by person. Morning people peak around eight to noon, crash in afternoons. Night owls build momentum all day and peak at night. Most folks spike mid-morning, dip after lunch, and get a second wind late afternoon. Track yourself for a week and schedule around your patterns.</p>'
+    question: "When should I schedule focus work?",
+    answer:
+      "<p>Varies by person. Morning people peak around eight to noon, crash in afternoons. Night owls build momentum all day and peak at night. Most folks spike mid-morning, dip after lunch, and get a second wind late afternoon. Track yourself for a week and schedule around your patterns.</p>",
   },
   {
-    question: 'How do I stop grabbing my phone?',
-    answer: '<p>Phone addiction is deliberately engineered by experts. Fight with systems. Put phone in different room during focus time. Grayscale mode makes it visually boring. Use Screen Time or Digital Wellbeing limits. Delete addictive apps entirely and only use browser versions. Check only at scheduled breaks. The goal isn\'t zero phone. It\'s phone on your terms.</p>'
+    question: "How do I stop grabbing my phone?",
+    answer:
+      "<p>Phone addiction is deliberately engineered by experts. Fight with systems. Put phone in different room during focus time. Grayscale mode makes it visually boring. Use Screen Time or Digital Wellbeing limits. Delete addictive apps entirely and only use browser versions. Check only at scheduled breaks. The goal isn't zero phone. It's phone on your terms.</p>",
   },
   {
-    question: 'Caffeine helpful or not?',
-    answer: '<p>Can help when used smart. Best timing is ninety minutes to two hours after waking since cortisol is already high when you first get up. One to two cups is the sweet spot. None after two PM or sleep suffers. Daily use builds tolerance so occasional use or cycling works better. Good sleep beats caffeine anyway.</p>'
+    question: "Caffeine helpful or not?",
+    answer:
+      "<p>Can help when used smart. Best timing is ninety minutes to two hours after waking since cortisol is already high when you first get up. One to two cups is the sweet spot. None after two PM or sleep suffers. Daily use builds tolerance so occasional use or cycling works better. Good sleep beats caffeine anyway.</p>",
   },
   {
-    question: 'How do I get back on track after interruption?',
-    answer: '<p>It\'s a learnable skill. Before handling the interruption, jot where you were. Set a timer like "I\'ll deal with this and be back in five minutes." When returning, reread your last paragraph or code block for context. Quick reset ritual like deep breath or sip of water. <a href="https://ics.uci.edu/~gmark/chi08-mark.pdf" target="_blank" rel="nofollow">Research says it takes twenty-three minutes to fully recover from interruption</a> per UC Irvine studies. Preventing interruptions beats recovering from them.</p>'
-  }
+    question: "How do I get back on track after interruption?",
+    answer:
+      '<p>It\'s a learnable skill. Before handling the interruption, jot where you were. Set a timer like "I\'ll deal with this and be back in five minutes." When returning, reread your last paragraph or code block for context. Quick reset ritual like deep breath or sip of water. <a href="https://ics.uci.edu/~gmark/chi08-mark.pdf" target="_blank" rel="nofollow">Research says it takes twenty-three minutes to fully recover from interruption</a> per UC Irvine studies. Preventing interruptions beats recovering from them.</p>',
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Pomodoro Technique for Remote Workers',
-    excerpt: 'Master the classic focus technique adapted for remote work environments.',
-    href: '/guides/pomodoro-technique-remote-workers',
-    image: '/images/unsplash/photo-1611532736597-de2d4265fba3-800w.webp',
-    imageAlt: 'Timer on desk for Pomodoro technique'
+    title: "Pomodoro Technique for Remote Workers",
+    excerpt: "Master the classic focus technique adapted for remote work environments.",
+    href: "/guides/pomodoro-technique-remote-workers",
+    image: "/images/unsplash/photo-1611532736597-de2d4265fba3-800w.webp",
+    imageAlt: "Timer on desk for Pomodoro technique",
   },
   {
-    title: 'Building a Morning Routine for Remote Work',
-    excerpt: 'Start your day right to maintain focus throughout.',
-    href: '/guides/morning-routine-remote-work',
-    image: '/images/unsplash/photo-1506784983877-45594efa4cbe-800w.webp',
-    imageAlt: 'Morning routine setup'
+    title: "Building a Morning Routine for Remote Work",
+    excerpt: "Start your day right to maintain focus throughout.",
+    href: "/guides/morning-routine-remote-work",
+    image: "/images/unsplash/photo-1506784983877-45594efa4cbe-800w.webp",
+    imageAlt: "Morning routine setup",
   },
   {
-    title: 'Best Noise-Canceling Headphones',
-    excerpt: 'Block distractions with premium audio gear.',
-    href: '/gear/best-noise-canceling-headphones',
-    image: '/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp',
-    imageAlt: 'Noise-canceling headphones'
-  }
+    title: "Best Noise-Canceling Headphones",
+    excerpt: "Block distractions with premium audio gear.",
+    href: "/gear/best-noise-canceling-headphones",
+    image: "/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp",
+    imageAlt: "Noise-canceling headphones",
+  },
 ];
 ---
 

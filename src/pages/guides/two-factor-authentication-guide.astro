@@ -1,90 +1,99 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Two-Factor Authentication Guide for Remote Workers (2025)';
-const description = 'Guide to setting up 2FA on all your accounts. Learn about authenticator apps, hardware keys, backup codes, and best practices for remote work security.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Two-Factor Authentication Guide for Remote Workers (2025)";
+const description =
+  "Guide to setting up 2FA on all your accounts. Learn about authenticator apps, hardware keys, backup codes, and best practices for remote work security.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 11;
-const image = '/images/unsplash/photo-1614064641938-3bbee52942c7-1200w.webp';
-const imageAlt = 'Smartphone showing two-factor authentication code for secure login';
+const image = "/images/unsplash/photo-1614064641938-3bbee52942c7-1200w.webp";
+const imageAlt = "Smartphone showing two-factor authentication code for secure login";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Types of 2FA', slug: 'types', depth: 2},
-  {text: 'Best Authenticator Apps', slug: 'apps', depth: 2},
-  {text: 'Setting Up 2FA', slug: 'setup', depth: 2},
-  {text: 'Hardware Security Keys', slug: 'hardware-keys', depth: 2},
-  {text: 'Backup Codes', slug: 'backup-codes', depth: 2},
-  {text: 'Lost Phone Recovery', slug: 'lost-phone', depth: 2},
-  {text: '2FA for Teams', slug: 'teams', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Types of 2FA", slug: "types", depth: 2 },
+  { text: "Best Authenticator Apps", slug: "apps", depth: 2 },
+  { text: "Setting Up 2FA", slug: "setup", depth: 2 },
+  { text: "Hardware Security Keys", slug: "hardware-keys", depth: 2 },
+  { text: "Backup Codes", slug: "backup-codes", depth: 2 },
+  { text: "Lost Phone Recovery", slug: "lost-phone", depth: 2 },
+  { text: "2FA for Teams", slug: "teams", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'What is two-factor authentication (2FA)?',
-    answer: '<p>Two-factor authentication adds a second layer of security beyond your password. Even if someone steals your password, they can\'t access your account without the second factor—usually a code from your phone or a physical key.</p><p>The two factors are typically:</p><ul><li><strong>Something you know:</strong> Your password</li><li><strong>Something you have:</strong> Your phone or security key</li></ul>'
+    question: "What is two-factor authentication (2FA)?",
+    answer:
+      "<p>Two-factor authentication adds a second layer of security beyond your password. Even if someone steals your password, they can't access your account without the second factor—usually a code from your phone or a physical key.</p><p>The two factors are typically:</p><ul><li><strong>Something you know:</strong> Your password</li><li><strong>Something you have:</strong> Your phone or security key</li></ul>",
   },
   {
-    question: 'Which authenticator app is best?',
-    answer: '<p>Our top recommendations:</p><ul><li><strong>Authy:</strong> Best overall—cloud backup, multi-device sync, easy recovery</li><li><strong>1Password:</strong> Best if you already use it for passwords—built-in authenticator</li><li><strong>Google Authenticator:</strong> Simple and reliable, but no cloud backup</li><li><strong>Microsoft Authenticator:</strong> Great for Microsoft/Azure environments</li></ul><p>Avoid SMS-based 2FA when possible—it\'s vulnerable to SIM swapping attacks.</p>'
+    question: "Which authenticator app is best?",
+    answer:
+      "<p>Our top recommendations:</p><ul><li><strong>Authy:</strong> Best overall—cloud backup, multi-device sync, easy recovery</li><li><strong>1Password:</strong> Best if you already use it for passwords—built-in authenticator</li><li><strong>Google Authenticator:</strong> Simple and reliable, but no cloud backup</li><li><strong>Microsoft Authenticator:</strong> Great for Microsoft/Azure environments</li></ul><p>Avoid SMS-based 2FA when possible—it's vulnerable to SIM swapping attacks.</p>",
   },
   {
-    question: 'What happens if I lose my phone?',
-    answer: '<p>This is why backup codes are critical. If you lose your phone:</p><ul><li><strong>Use backup codes:</strong> Each code works once to regain access</li><li><strong>Use backup device:</strong> If you use Authy, you can access from another synced device</li><li><strong>Contact support:</strong> Most services have account recovery processes (slow but works)</li><li><strong>Hardware key backup:</strong> If you have a second security key, use it</li></ul><p>Always store backup codes securely (password manager or printed in a safe place).</p>'
+    question: "What happens if I lose my phone?",
+    answer:
+      "<p>This is why backup codes are critical. If you lose your phone:</p><ul><li><strong>Use backup codes:</strong> Each code works once to regain access</li><li><strong>Use backup device:</strong> If you use Authy, you can access from another synced device</li><li><strong>Contact support:</strong> Most services have account recovery processes (slow but works)</li><li><strong>Hardware key backup:</strong> If you have a second security key, use it</li></ul><p>Always store backup codes securely (password manager or printed in a safe place).</p>",
   },
   {
-    question: 'Is SMS 2FA better than nothing?',
-    answer: '<p><strong>Yes, SMS is better than no 2FA at all.</strong> However, it\'s the weakest form:</p><ul><li><strong>SIM swapping:</strong> Attackers can convince carriers to transfer your number</li><li><strong>SS7 vulnerabilities:</strong> Technical exploits in phone networks</li><li><strong>Phone theft:</strong> If your phone is stolen and unlocked</li></ul><p>Use SMS 2FA as a stepping stone, but upgrade to authenticator apps or hardware keys for important accounts.</p>'
+    question: "Is SMS 2FA better than nothing?",
+    answer:
+      "<p><strong>Yes, SMS is better than no 2FA at all.</strong> However, it's the weakest form:</p><ul><li><strong>SIM swapping:</strong> Attackers can convince carriers to transfer your number</li><li><strong>SS7 vulnerabilities:</strong> Technical exploits in phone networks</li><li><strong>Phone theft:</strong> If your phone is stolen and unlocked</li></ul><p>Use SMS 2FA as a stepping stone, but upgrade to authenticator apps or hardware keys for important accounts.</p>",
   },
   {
-    question: 'Should I use 2FA on all accounts?',
-    answer: '<p>Enable 2FA on all accounts that support it, but prioritize:</p><ul><li><strong>Critical:</strong> Email (it\'s your recovery point), banking, password manager</li><li><strong>High priority:</strong> Work accounts, cloud storage, social media</li><li><strong>Good to have:</strong> Shopping sites, forums, any account with payment info</li></ul><p>Your email is especially important—if someone compromises your email, they can reset passwords on other accounts.</p>'
+    question: "Should I use 2FA on all accounts?",
+    answer:
+      "<p>Enable 2FA on all accounts that support it, but prioritize:</p><ul><li><strong>Critical:</strong> Email (it's your recovery point), banking, password manager</li><li><strong>High priority:</strong> Work accounts, cloud storage, social media</li><li><strong>Good to have:</strong> Shopping sites, forums, any account with payment info</li></ul><p>Your email is especially important—if someone compromises your email, they can reset passwords on other accounts.</p>",
   },
   {
-    question: 'Are hardware security keys worth it?',
-    answer: '<p><strong>Yes, for high-value accounts.</strong> Hardware keys are the most secure form of 2FA:</p><ul><li><strong>Phishing-proof:</strong> Won\'t work on fake websites</li><li><strong>No codes to intercept:</strong> Authentication happens on the key itself</li><li><strong>Fast:</strong> Just tap or insert—no typing codes</li></ul><p>We recommend hardware keys for: email, password manager, work accounts, financial services. A YubiKey costs $25-50 and lasts years.</p>'
+    question: "Are hardware security keys worth it?",
+    answer:
+      "<p><strong>Yes, for high-value accounts.</strong> Hardware keys are the most secure form of 2FA:</p><ul><li><strong>Phishing-proof:</strong> Won't work on fake websites</li><li><strong>No codes to intercept:</strong> Authentication happens on the key itself</li><li><strong>Fast:</strong> Just tap or insert—no typing codes</li></ul><p>We recommend hardware keys for: email, password manager, work accounts, financial services. A YubiKey costs $25-50 and lasts years.</p>",
   },
   {
-    question: 'Can I use the same authenticator for work and personal accounts?',
-    answer: '<p><strong>Yes, but with considerations:</strong></p><ul><li><strong>Authy/1Password:</strong> All accounts in one app, convenient</li><li><strong>Separation:</strong> Some prefer separate apps for work vs. personal</li><li><strong>Work requirements:</strong> Your employer may mandate a specific authenticator</li></ul><p>The most important thing is using 2FA at all. Convenience that leads to adoption beats perfect security that goes unused.</p>'
+    question: "Can I use the same authenticator for work and personal accounts?",
+    answer:
+      "<p><strong>Yes, but with considerations:</strong></p><ul><li><strong>Authy/1Password:</strong> All accounts in one app, convenient</li><li><strong>Separation:</strong> Some prefer separate apps for work vs. personal</li><li><strong>Work requirements:</strong> Your employer may mandate a specific authenticator</li></ul><p>The most important thing is using 2FA at all. Convenience that leads to adoption beats perfect security that goes unused.</p>",
   },
   {
-    question: 'How do I set up 2FA on accounts that don\'t obviously support it?',
-    answer: '<p>Many sites hide 2FA settings. Look for:</p><ul><li><strong>Security settings:</strong> Usually under Account → Security</li><li><strong>"Login verification":</strong> Some sites use different terminology</li><li><strong>"Two-step verification":</strong> Google\'s term for 2FA</li><li><strong>Search "[site name] 2FA":</strong> Often faster than finding it in menus</li></ul><p>The website <a href="https://2fa.directory" target="_blank" rel="noopener" class="text-jet-stream hover:text-sky-light">2fa.directory</a> lists which sites support 2FA and what methods they offer.</p>'
-  }
+    question: "How do I set up 2FA on accounts that don't obviously support it?",
+    answer:
+      '<p>Many sites hide 2FA settings. Look for:</p><ul><li><strong>Security settings:</strong> Usually under Account → Security</li><li><strong>"Login verification":</strong> Some sites use different terminology</li><li><strong>"Two-step verification":</strong> Google\'s term for 2FA</li><li><strong>Search "[site name] 2FA":</strong> Often faster than finding it in menus</li></ul><p>The website <a href="https://2fa.directory" target="_blank" rel="noopener" class="text-jet-stream hover:text-sky-light">2fa.directory</a> lists which sites support 2FA and what methods they offer.</p>',
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Password Manager for Remote Work',
-    excerpt: 'Secure all your passwords with the right password manager.',
-    href: '/tools/best-password-manager-remote-work',
-    image: '/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp',
-    imageAlt: 'Password manager interface'
+    title: "Best Password Manager for Remote Work",
+    excerpt: "Secure all your passwords with the right password manager.",
+    href: "/tools/best-password-manager-remote-work",
+    image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
+    imageAlt: "Password manager interface",
   },
   {
-    title: 'VPN & Public WiFi Security Guide',
-    excerpt: 'Stay safe when working from coffee shops and public networks.',
-    href: '/blog/vpn-public-wifi-guide',
-    image: '/images/unsplash/photo-1510915228340-29c85a43dcfe-800w.webp',
-    imageAlt: 'Public WiFi security'
+    title: "VPN & Public WiFi Security Guide",
+    excerpt: "Stay safe when working from coffee shops and public networks.",
+    href: "/blog/vpn-public-wifi-guide",
+    image: "/images/unsplash/photo-1510915228340-29c85a43dcfe-800w.webp",
+    imageAlt: "Public WiFi security",
   },
   {
-    title: 'How to Secure Your Home WiFi Network',
-    excerpt: 'Protect your home office network from threats.',
-    href: '/guides/secure-home-wifi-network',
-    image: '/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp',
-    imageAlt: 'Home WiFi router'
-  }
+    title: "How to Secure Your Home WiFi Network",
+    excerpt: "Protect your home office network from threats.",
+    href: "/guides/secure-home-wifi-network",
+    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp",
+    imageAlt: "Home WiFi router",
+  },
 ];
 ---
 

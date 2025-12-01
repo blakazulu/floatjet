@@ -21,7 +21,7 @@ const results = {
   totalArticles: 0,
   titleIssues: [],
   descriptionIssues: [],
-  goodArticles: []
+  goodArticles: [],
 };
 
 // Extract metadata from an Astro file
@@ -43,7 +43,7 @@ function extractMetadata(filePath) {
     title,
     titleLength: title.length,
     description,
-    descLength: description.length
+    descLength: description.length,
   };
 }
 
@@ -57,7 +57,7 @@ function auditCategory(category) {
 
   const files = fs.readdirSync(categoryPath);
 
-  files.forEach(file => {
+  files.forEach((file) => {
     if (!file.endsWith(".astro")) {
       return;
     }
@@ -86,7 +86,9 @@ function auditCategory(category) {
         title: metadata.title,
         length: metadata.titleLength,
         issue: titleIssue ? "TOO_LONG" : "TOO_SHORT",
-        recommendation: titleIssue ? `Shorten by ${metadata.titleLength - TITLE_MAX} chars` : `Lengthen by ${TITLE_MIN - metadata.titleLength} chars`
+        recommendation: titleIssue
+          ? `Shorten by ${metadata.titleLength - TITLE_MAX} chars`
+          : `Lengthen by ${TITLE_MIN - metadata.titleLength} chars`,
       });
     }
 
@@ -96,9 +98,10 @@ function auditCategory(category) {
         description: metadata.description,
         length: metadata.descLength,
         issue: metadata.descLength < DESC_MIN ? "TOO_SHORT" : "TOO_LONG",
-        recommendation: metadata.descLength < DESC_MIN
-          ? `Add ${DESC_MIN - metadata.descLength} chars`
-          : `Remove ${metadata.descLength - DESC_MAX} chars`
+        recommendation:
+          metadata.descLength < DESC_MIN
+            ? `Add ${DESC_MIN - metadata.descLength} chars`
+            : `Remove ${metadata.descLength - DESC_MAX} chars`,
       });
     }
 
@@ -106,7 +109,7 @@ function auditCategory(category) {
       results.goodArticles.push({
         path: articlePath,
         titleLength: metadata.titleLength,
-        descLength: metadata.descLength
+        descLength: metadata.descLength,
       });
     }
   });
@@ -115,7 +118,7 @@ function auditCategory(category) {
 // Main audit
 console.log("🔍 Starting SEO Metadata Audit...\n");
 
-categories.forEach(category => {
+categories.forEach((category) => {
   auditCategory(category);
 });
 
@@ -127,7 +130,9 @@ console.log();
 
 console.log(`📊 SUMMARY:`);
 console.log(`   Total Articles: ${results.totalArticles}`);
-console.log(`   ✅ Perfect: ${results.goodArticles.length} (${Math.round(results.goodArticles.length / results.totalArticles * 100)}%)`);
+console.log(
+  `   ✅ Perfect: ${results.goodArticles.length} (${Math.round((results.goodArticles.length / results.totalArticles) * 100)}%)`
+);
 console.log(`   ⚠️  Title Issues: ${results.titleIssues.length}`);
 console.log(`   ⚠️  Description Issues: ${results.descriptionIssues.length}`);
 console.log();

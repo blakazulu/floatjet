@@ -1,149 +1,170 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = 'Remote Work Guides & Tips | FloatJet';
-const description = 'Expert guides for remote workers and digital nomads. Learn best practices for async communication, time management, home office setup, and more.';
+const title = "Remote Work Guides & Tips | FloatJet";
+const description =
+  "Expert guides for remote workers and digital nomads. Learn best practices for async communication, time management, home office setup, and more.";
 
 // Category pages
 const categories = [
-  {name: 'Travel', href: '/guides/travel', icon: '✈️', description: 'Destinations, visas & travel tips'},
-  {name: 'Communication', href: '/guides/communication', icon: '💬', description: 'Async workflows & collaboration'},
-  {name: 'Productivity', href: '/guides/productivity', icon: '⚡', description: 'Time management & focus'},
-  {name: 'Security', href: '/guides/security', icon: '🔐', description: 'VPNs, passwords & online safety'},
-  {name: 'Setup', href: '/guides/setup', icon: '🏠', description: 'Home office & gear guides'},
-  {name: 'Finance', href: '/guides/finance', icon: '📊', description: 'Taxes, banking & money'}
+  {
+    name: "Travel",
+    href: "/guides/travel",
+    icon: "✈️",
+    description: "Destinations, visas & travel tips",
+  },
+  {
+    name: "Communication",
+    href: "/guides/communication",
+    icon: "💬",
+    description: "Async workflows & collaboration",
+  },
+  {
+    name: "Productivity",
+    href: "/guides/productivity",
+    icon: "⚡",
+    description: "Time management & focus",
+  },
+  {
+    name: "Security",
+    href: "/guides/security",
+    icon: "🔐",
+    description: "VPNs, passwords & online safety",
+  },
+  { name: "Setup", href: "/guides/setup", icon: "🏠", description: "Home office & gear guides" },
+  { name: "Finance", href: "/guides/finance", icon: "📊", description: "Taxes, banking & money" },
 ];
 
 // All guides with correct reading times from articles
 const allGuides = [
   {
-    title: 'Top Destinations for Digital Nomads',
-    description: 'Best places to work remotely with great WiFi, community, and cost of living.',
-    href: '/blog/top-destinations-digital-nomads',
-    category: 'Travel',
+    title: "Top Destinations for Digital Nomads",
+    description: "Best places to work remotely with great WiFi, community, and cost of living.",
+    href: "/blog/top-destinations-digital-nomads",
+    category: "Travel",
     readTime: 14,
-    icon: '✈️'
+    icon: "✈️",
   },
   {
-    title: 'Essential Travel Tech for Nomads',
-    description: 'The tech essentials every digital nomad needs for productive travel.',
-    href: '/blog/essential-travel-tech-nomads',
-    category: 'Travel',
+    title: "Essential Travel Tech for Nomads",
+    description: "The tech essentials every digital nomad needs for productive travel.",
+    href: "/blog/essential-travel-tech-nomads",
+    category: "Travel",
     readTime: 10,
-    icon: '🎒'
+    icon: "🎒",
   },
   {
-    title: 'Find Reliable WiFi Anywhere',
-    description: 'Tips and tools for finding fast, reliable internet on the road.',
-    href: '/blog/find-reliable-wifi-anywhere',
-    category: 'Travel',
+    title: "Find Reliable WiFi Anywhere",
+    description: "Tips and tools for finding fast, reliable internet on the road.",
+    href: "/blog/find-reliable-wifi-anywhere",
+    category: "Travel",
     readTime: 9,
-    icon: '📶'
+    icon: "📶",
   },
   {
-    title: 'Best Travel Insurance for Remote Workers',
-    description: 'Compare travel insurance options designed for digital nomads.',
-    href: '/blog/best-travel-insurance-remote-workers',
-    category: 'Travel',
+    title: "Best Travel Insurance for Remote Workers",
+    description: "Compare travel insurance options designed for digital nomads.",
+    href: "/blog/best-travel-insurance-remote-workers",
+    category: "Travel",
     readTime: 11,
-    icon: '🛡️'
+    icon: "🛡️",
   },
   {
-    title: 'Async Communication for Remote Teams',
-    description: 'Master asynchronous communication to boost productivity and reduce meetings.',
-    href: '/blog/async-communication-remote-teams',
-    category: 'Communication',
+    title: "Async Communication for Remote Teams",
+    description: "Master asynchronous communication to boost productivity and reduce meetings.",
+    href: "/blog/async-communication-remote-teams",
+    category: "Communication",
     readTime: 12,
-    icon: '💬'
+    icon: "💬",
   },
   {
-    title: 'Best Team Communication Tools',
-    description: 'Compare Slack, Teams, Discord, and more for remote team communication.',
-    href: '/blog/best-team-communication-tools',
-    category: 'Communication',
+    title: "Best Team Communication Tools",
+    description: "Compare Slack, Teams, Discord, and more for remote team communication.",
+    href: "/blog/best-team-communication-tools",
+    category: "Communication",
     readTime: 11,
-    icon: '📢'
+    icon: "📢",
   },
   {
-    title: 'Managing Time Zones in Remote Teams',
-    description: 'Strategies for effective collaboration across different time zones.',
-    href: '/blog/managing-time-zones-remote-teams',
-    category: 'Productivity',
+    title: "Managing Time Zones in Remote Teams",
+    description: "Strategies for effective collaboration across different time zones.",
+    href: "/blog/managing-time-zones-remote-teams",
+    category: "Productivity",
     readTime: 11,
-    icon: '🌍'
+    icon: "🌍",
   },
   {
-    title: 'VPN & Public WiFi Security',
-    description: 'Essential cybersecurity practices for working from anywhere.',
-    href: '/blog/vpn-public-wifi-guide',
-    category: 'Security',
+    title: "VPN & Public WiFi Security",
+    description: "Essential cybersecurity practices for working from anywhere.",
+    href: "/blog/vpn-public-wifi-guide",
+    category: "Security",
     readTime: 13,
-    icon: '🔐'
+    icon: "🔐",
   },
   {
-    title: 'VPN Speed Comparison',
-    description: 'Real-world speed tests of popular VPNs for remote workers.',
-    href: '/blog/vpn-speed-comparison',
-    category: 'Security',
+    title: "VPN Speed Comparison",
+    description: "Real-world speed tests of popular VPNs for remote workers.",
+    href: "/blog/vpn-speed-comparison",
+    category: "Security",
     readTime: 10,
-    icon: '⚡'
+    icon: "⚡",
   },
   {
-    title: 'Ultimate Home Office Setup',
-    description: 'Build the perfect home office on any budget.',
-    href: '/blog/ultimate-home-office-setup',
-    category: 'Setup',
+    title: "Ultimate Home Office Setup",
+    description: "Build the perfect home office on any budget.",
+    href: "/blog/ultimate-home-office-setup",
+    category: "Setup",
     readTime: 11,
-    icon: '🏠'
+    icon: "🏠",
   },
   {
-    title: 'Tax Tips for Remote Workers',
-    description: 'Navigate taxes as a remote worker or digital nomad.',
-    href: '/blog/tax-tips-remote-workers',
-    category: 'Finance',
+    title: "Tax Tips for Remote Workers",
+    description: "Navigate taxes as a remote worker or digital nomad.",
+    href: "/blog/tax-tips-remote-workers",
+    category: "Finance",
     readTime: 12,
-    icon: '📊'
+    icon: "📊",
   },
   {
-    title: 'Best Banking for Digital Nomads',
-    description: 'Compare international banking options for remote workers.',
-    href: '/blog/best-banking-digital-nomads',
-    category: 'Finance',
+    title: "Best Banking for Digital Nomads",
+    description: "Compare international banking options for remote workers.",
+    href: "/blog/best-banking-digital-nomads",
+    category: "Finance",
     readTime: 12,
-    icon: '🏦'
+    icon: "🏦",
   },
   {
-    title: 'Crypto-Friendly Banks',
-    description: 'Banks that support cryptocurrency for digital nomads.',
-    href: '/blog/crypto-friendly-banks',
-    category: 'Finance',
+    title: "Crypto-Friendly Banks",
+    description: "Banks that support cryptocurrency for digital nomads.",
+    href: "/blog/crypto-friendly-banks",
+    category: "Finance",
     readTime: 10,
-    icon: '₿'
+    icon: "₿",
   },
   {
-    title: 'Best CRM Software for Small Business',
-    description: 'Compare HubSpot, Pipedrive, Zoho, and more CRM tools.',
-    href: '/blog/best-crm-software-small-business',
-    category: 'Productivity',
+    title: "Best CRM Software for Small Business",
+    description: "Compare HubSpot, Pipedrive, Zoho, and more CRM tools.",
+    href: "/blog/best-crm-software-small-business",
+    category: "Productivity",
     readTime: 12,
-    icon: '👥'
+    icon: "👥",
   },
   {
-    title: 'Cloud vs Traditional Hosting',
-    description: 'Understand the differences between cloud and traditional hosting.',
-    href: '/blog/cloud-vs-traditional-hosting',
-    category: 'Setup',
+    title: "Cloud vs Traditional Hosting",
+    description: "Understand the differences between cloud and traditional hosting.",
+    href: "/blog/cloud-vs-traditional-hosting",
+    category: "Setup",
     readTime: 9,
-    icon: '☁️'
+    icon: "☁️",
   },
   {
-    title: 'Managed WordPress Hosting Compared',
-    description: 'Compare WP Engine, Kinsta, Flywheel, and other managed hosts.',
-    href: '/blog/managed-wordpress-hosting-compared',
-    category: 'Setup',
+    title: "Managed WordPress Hosting Compared",
+    description: "Compare WP Engine, Kinsta, Flywheel, and other managed hosts.",
+    href: "/blog/managed-wordpress-hosting-compared",
+    category: "Setup",
     readTime: 11,
-    icon: '🌐'
-  }
+    icon: "🌐",
+  },
 ];
 
 // Shuffle and limit articles - render all 9, CSS handles responsive visibility

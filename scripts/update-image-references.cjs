@@ -10,7 +10,8 @@ const path = require("path");
 const SRC_DIR = path.join(__dirname, "..", "src");
 
 // Regex to match Unsplash URLs with different sizes
-const unsplashRegex = /https:\/\/images\.unsplash\.com\/(photo-[a-zA-Z0-9_-]+)\?auto=format&fit=crop&w=(\d+)&q=\d+/g;
+const unsplashRegex =
+  /https:\/\/images\.unsplash\.com\/(photo-[a-zA-Z0-9_-]+)\?auto=format&fit=crop&w=(\d+)&q=\d+/g;
 
 // Find all .astro files recursively
 function findAstroFiles(dir, files = []) {

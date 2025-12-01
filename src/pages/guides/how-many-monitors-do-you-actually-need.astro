@@ -1,72 +1,76 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'How Many Monitors Do You Actually Need? Honest Answer (2025)';
-const description = 'One monitor works fine. Two is the sweet spot. Three starts costing more than it helps. Here\'s what actually matters beyond just counting screens on your desk.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-28');
+const title = "How Many Monitors Do You Actually Need? Honest Answer (2025)";
+const description =
+  "One monitor works fine. Two is the sweet spot. Three starts costing more than it helps. Here's what actually matters beyond just counting screens on your desk.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-28");
 const readingTime = 8;
-const image = '/images/unsplash/photo-1547658719-da2b51169166-1200w.webp';
-const imageAlt = 'Dual monitor workspace setup for remote work';
+const image = "/images/unsplash/photo-1547658719-da2b51169166-1200w.webp";
+const imageAlt = "Dual monitor workspace setup for remote work";
 
 // Table of contents headings
 const headings = [
-  {text: 'How many monitors do you actually need?', slug: 'how-many', depth: 2},
-  {text: 'What actually matters more than count', slug: 'what-matters', depth: 2},
-  {text: 'Screen positioning and ergonomics', slug: 'ergonomics', depth: 2},
-  {text: 'Budget reality', slug: 'budget', depth: 2},
-  {text: 'Ultra-wide monitors as alternative', slug: 'ultrawide', depth: 2},
-  {text: 'Laptop plus external monitor', slug: 'laptop-plus-one', depth: 2},
-  {text: 'The productivity research', slug: 'research', depth: 2},
-  {text: 'Desk space and cable management', slug: 'desk-space', depth: 2},
-  {text: 'When one monitor is enough', slug: 'one-enough', depth: 2},
-  {text: 'When two monitors make sense', slug: 'two-makes-sense', depth: 2},
-  {text: 'When three or more actually make sense', slug: 'three-plus', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "How many monitors do you actually need?", slug: "how-many", depth: 2 },
+  { text: "What actually matters more than count", slug: "what-matters", depth: 2 },
+  { text: "Screen positioning and ergonomics", slug: "ergonomics", depth: 2 },
+  { text: "Budget reality", slug: "budget", depth: 2 },
+  { text: "Ultra-wide monitors as alternative", slug: "ultrawide", depth: 2 },
+  { text: "Laptop plus external monitor", slug: "laptop-plus-one", depth: 2 },
+  { text: "The productivity research", slug: "research", depth: 2 },
+  { text: "Desk space and cable management", slug: "desk-space", depth: 2 },
+  { text: "When one monitor is enough", slug: "one-enough", depth: 2 },
+  { text: "When two monitors make sense", slug: "two-makes-sense", depth: 2 },
+  { text: "When three or more actually make sense", slug: "three-plus", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data with schema markup
 const faqs = [
   {
-    question: 'What\'s the ideal monitor setup for most people?',
-    answer: 'Most remote workers doing typical office work are honestly best served by two 27-inch monitors at 1440p resolution which gives you enough screen space to multitask comfortably without overwhelming your desk or your budget. Primary monitor directly in front of you for main work tasks, secondary monitor angled to your dominant side for communication apps and reference materials you want visible but not taking up your main workspace. Costs around $500-800 total for decent quality displays that\'ll last years, way better investment than one expensive ultra-wide or three cheaper smaller screens in my experience. If budget is tight start with one good 27-inch display and add the second later when you can afford it rather than buying two mediocre monitors that\'ll frustrate you daily with poor image quality.'
+    question: "What's the ideal monitor setup for most people?",
+    answer:
+      "Most remote workers doing typical office work are honestly best served by two 27-inch monitors at 1440p resolution which gives you enough screen space to multitask comfortably without overwhelming your desk or your budget. Primary monitor directly in front of you for main work tasks, secondary monitor angled to your dominant side for communication apps and reference materials you want visible but not taking up your main workspace. Costs around $500-800 total for decent quality displays that'll last years, way better investment than one expensive ultra-wide or three cheaper smaller screens in my experience. If budget is tight start with one good 27-inch display and add the second later when you can afford it rather than buying two mediocre monitors that'll frustrate you daily with poor image quality.",
   },
   {
-    question: 'Do you really need 4K monitors for productivity work?',
-    answer: 'Honestly no not really unless you work with high-resolution photos or videos professionally where color accuracy and detail visibility actually matter for your job quality. For typical productivity work like documents, spreadsheets, email, web browsing, video calls, 1440p at 27 inches gives you plenty sharp text that\'s comfortable to read all day without noticeable pixelation. 4K on monitors smaller than 32 inches requires scaling text and UI elements up to be readable which kind of defeats the purpose of having all those extra pixels, and on larger screens it\'s nice but not necessary for office work where you\'re not pixel-peeping photos or editing 4K footage. Save the money and get better stands or monitor arms instead of paying extra for 4K resolution you won\'t meaningfully benefit from in daily use.'
+    question: "Do you really need 4K monitors for productivity work?",
+    answer:
+      "Honestly no not really unless you work with high-resolution photos or videos professionally where color accuracy and detail visibility actually matter for your job quality. For typical productivity work like documents, spreadsheets, email, web browsing, video calls, 1440p at 27 inches gives you plenty sharp text that's comfortable to read all day without noticeable pixelation. 4K on monitors smaller than 32 inches requires scaling text and UI elements up to be readable which kind of defeats the purpose of having all those extra pixels, and on larger screens it's nice but not necessary for office work where you're not pixel-peeping photos or editing 4K footage. Save the money and get better stands or monitor arms instead of paying extra for 4K resolution you won't meaningfully benefit from in daily use.",
   },
   {
-    question: 'Should I get an ultrawide instead of two monitors?',
-    answer: 'Depends on your workflow and personal preferences honestly. Ultrawide works great if you want that seamless continuous workspace without bezels interrupting your view, good for creative work and coding where you benefit from wide uninterrupted space. Less ideal for general productivity where having that physical separation between screens actually helps mentally organize different types of work and information across distinct spaces. Also consider that ultrawide monitors are more expensive than equivalent screen space in two separate displays, can\'t reposition the two halves independently for optimal viewing angles, and if it breaks you lose your entire setup at once. Try one if you can before committing to make sure the workflow actually suits how your brain organizes work better than separate displays would.'
+    question: "Should I get an ultrawide instead of two monitors?",
+    answer:
+      "Depends on your workflow and personal preferences honestly. Ultrawide works great if you want that seamless continuous workspace without bezels interrupting your view, good for creative work and coding where you benefit from wide uninterrupted space. Less ideal for general productivity where having that physical separation between screens actually helps mentally organize different types of work and information across distinct spaces. Also consider that ultrawide monitors are more expensive than equivalent screen space in two separate displays, can't reposition the two halves independently for optimal viewing angles, and if it breaks you lose your entire setup at once. Try one if you can before committing to make sure the workflow actually suits how your brain organizes work better than separate displays would.",
   },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Monitors for Remote Work',
-    excerpt: 'Top monitor picks at every price point for home office setups',
-    href: '/gear/best-monitors-remote-work',
-    image: '/images/unsplash/photo-1527443224154-c4a3942d3acf-800w.webp',
-    imageAlt: 'Professional monitor setup'
+    title: "Best Monitors for Remote Work",
+    excerpt: "Top monitor picks at every price point for home office setups",
+    href: "/gear/best-monitors-remote-work",
+    image: "/images/unsplash/photo-1527443224154-c4a3942d3acf-800w.webp",
+    imageAlt: "Professional monitor setup",
   },
   {
-    title: 'Ergonomic Desk Setup Guide',
-    excerpt: 'Complete guide to setting up your desk for comfort and health',
-    href: '/gear/ergonomic-desk-setup-guide',
-    image: '/images/unsplash/photo-1593062096033-9a26b09da705-800w.webp',
-    imageAlt: 'Ergonomic home office desk'
+    title: "Ergonomic Desk Setup Guide",
+    excerpt: "Complete guide to setting up your desk for comfort and health",
+    href: "/gear/ergonomic-desk-setup-guide",
+    image: "/images/unsplash/photo-1593062096033-9a26b09da705-800w.webp",
+    imageAlt: "Ergonomic home office desk",
   },
   {
-    title: 'Ultimate Home Office Setup',
-    excerpt: 'Build your perfect remote work environment step by step',
-    href: '/blog/ultimate-home-office-setup',
-    image: '/images/unsplash/photo-1586201375761-83865001e31c-800w.webp',
-    imageAlt: 'Complete home office setup'
+    title: "Ultimate Home Office Setup",
+    excerpt: "Build your perfect remote work environment step by step",
+    href: "/blog/ultimate-home-office-setup",
+    image: "/images/unsplash/photo-1586201375761-83865001e31c-800w.webp",
+    imageAlt: "Complete home office setup",
   },
 ];
 ---

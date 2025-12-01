@@ -12,21 +12,21 @@ const stats = {
   imagesWithoutAlt: [],
   externalLinksWithoutNofollow: [],
   httpLinks: [],
-  missingTitleLinks: []
+  missingTitleLinks: [],
 };
 
 function checkFileExists(filePath) {
   // Convert URL path to file path
-  let checkPath = filePath.replace(/^\//, "");
+  const checkPath = filePath.replace(/^\//, "");
 
   // Check if it's an article page
   const possiblePaths = [
     `src/pages/${checkPath}.astro`,
     `src/pages/${checkPath}/index.astro`,
-    `public/${checkPath}`
+    `public/${checkPath}`,
   ];
 
-  return possiblePaths.some(p => fs.existsSync(p));
+  return possiblePaths.some((p) => fs.existsSync(p));
 }
 
 function auditLinks(content, filePath) {
@@ -53,7 +53,7 @@ function auditLinks(content, filePath) {
       if (href.startsWith("http://") && !href.includes("localhost")) {
         stats.httpLinks.push({
           path: relativePath,
-          link: href
+          link: href,
         });
       }
 
@@ -62,7 +62,7 @@ function auditLinks(content, filePath) {
       if (!isWhitelisted && !fullTag.includes("nofollow")) {
         stats.externalLinksWithoutNofollow.push({
           path: relativePath,
-          link: href
+          link: href,
         });
       }
     } else {
@@ -73,7 +73,7 @@ function auditLinks(content, filePath) {
       if (!checkFileExists(href)) {
         stats.brokenInternalLinks.push({
           path: relativePath,
-          link: href
+          link: href,
         });
       }
     }
@@ -99,7 +99,7 @@ function auditImages(content, filePath) {
     if (!fullTag.includes("alt=")) {
       stats.imagesWithoutAlt.push({
         path: relativePath,
-        image: src
+        image: src,
       });
     } else {
       // Check for empty alt
@@ -108,7 +108,7 @@ function auditImages(content, filePath) {
         stats.imagesWithoutAlt.push({
           path: relativePath,
           image: src,
-          reason: "Empty alt attribute"
+          reason: "Empty alt attribute",
         });
       }
     }
@@ -116,7 +116,7 @@ function auditImages(content, filePath) {
 }
 
 function scanArticles(dir) {
-  const entries = fs.readdirSync(dir, {withFileTypes: true});
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
 
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
@@ -141,7 +141,7 @@ const pageDirs = [
   "src/pages/gear",
   "src/pages/guides",
   "src/pages/tools",
-  "src/pages"
+  "src/pages",
 ];
 
 for (const dir of pageDirs) {
@@ -162,7 +162,7 @@ let hasIssues = false;
 if (stats.brokenInternalLinks.length > 0) {
   hasIssues = true;
   console.log(`❌ BROKEN INTERNAL LINKS: ${stats.brokenInternalLinks.length}\n`);
-  stats.brokenInternalLinks.slice(0, 10).forEach(({path, link}) => {
+  stats.brokenInternalLinks.slice(0, 10).forEach(({ path, link }) => {
     console.log(`  ${path}`);
     console.log(`    → ${link}`);
   });
@@ -176,7 +176,7 @@ if (stats.brokenInternalLinks.length > 0) {
 if (stats.imagesWithoutAlt.length > 0) {
   hasIssues = true;
   console.log(`⚠️  IMAGES WITHOUT ALT TEXT: ${stats.imagesWithoutAlt.length}\n`);
-  stats.imagesWithoutAlt.slice(0, 10).forEach(({path, image, reason}) => {
+  stats.imagesWithoutAlt.slice(0, 10).forEach(({ path, image, reason }) => {
     console.log(`  ${path}`);
     console.log(`    → ${image}${reason ? ` (${reason})` : ""}`);
   });
@@ -190,7 +190,7 @@ if (stats.imagesWithoutAlt.length > 0) {
 if (stats.httpLinks.length > 0) {
   hasIssues = true;
   console.log(`⚠️  HTTP LINKS (should be HTTPS): ${stats.httpLinks.length}\n`);
-  stats.httpLinks.slice(0, 5).forEach(({path, link}) => {
+  stats.httpLinks.slice(0, 5).forEach(({ path, link }) => {
     console.log(`  ${path}`);
     console.log(`    → ${link}`);
   });
@@ -213,14 +213,10 @@ if (!hasIssues) {
 // Save detailed report
 const report = {
   summary: stats,
-  timestamp: new Date().toISOString()
+  timestamp: new Date().toISOString(),
 };
 
-fs.writeFileSync(
-  "docs/LINK-ASSET-AUDIT-REPORT.json",
-  JSON.stringify(report, null, 2),
-  "utf-8"
-);
+fs.writeFileSync("docs/LINK-ASSET-AUDIT-REPORT.json", JSON.stringify(report, null, 2), "utf-8");
 
 console.log("✅ Detailed report saved to: docs/LINK-ASSET-AUDIT-REPORT.json");
 

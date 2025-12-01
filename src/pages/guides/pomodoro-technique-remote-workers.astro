@@ -1,92 +1,101 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Pomodoro Technique for Remote Workers: Complete Guide (2025)';
-const description = 'Master the Pomodoro Technique for remote work. Learn optimal intervals, handling interruptions, best apps, and how to adapt this focus method for deep work.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Pomodoro Technique for Remote Workers: Complete Guide (2025)";
+const description =
+  "Master the Pomodoro Technique for remote work. Learn optimal intervals, handling interruptions, best apps, and how to adapt this focus method for deep work.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 12;
-const image = '/images/unsplash/photo-1611532736597-de2d4265fba3-1200w.webp';
-const imageAlt = 'Timer and notebook on desk representing Pomodoro productivity technique';
+const image = "/images/unsplash/photo-1611532736597-de2d4265fba3-1200w.webp";
+const imageAlt = "Timer and notebook on desk representing Pomodoro productivity technique";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'What Is the Pomodoro Technique', slug: 'what-is-pomodoro', depth: 2},
-  {text: 'Why It Works for Remote Workers', slug: 'why-it-works', depth: 2},
-  {text: 'Best Interval Lengths', slug: 'intervals', depth: 2},
-  {text: 'Handling Interruptions', slug: 'interruptions', depth: 2},
-  {text: 'Adapting for Deep Work', slug: 'deep-work', depth: 2},
-  {text: 'Best Pomodoro Apps', slug: 'apps', depth: 2},
-  {text: 'Combining with Other Systems', slug: 'combining-systems', depth: 2},
-  {text: 'Common Mistakes', slug: 'mistakes', depth: 2},
-  {text: 'When Pomodoro Doesn\'t Work', slug: 'when-not-to-use', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "What Is the Pomodoro Technique", slug: "what-is-pomodoro", depth: 2 },
+  { text: "Why It Works for Remote Workers", slug: "why-it-works", depth: 2 },
+  { text: "Best Interval Lengths", slug: "intervals", depth: 2 },
+  { text: "Handling Interruptions", slug: "interruptions", depth: 2 },
+  { text: "Adapting for Deep Work", slug: "deep-work", depth: 2 },
+  { text: "Best Pomodoro Apps", slug: "apps", depth: 2 },
+  { text: "Combining with Other Systems", slug: "combining-systems", depth: 2 },
+  { text: "Common Mistakes", slug: "mistakes", depth: 2 },
+  { text: "When Pomodoro Doesn't Work", slug: "when-not-to-use", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'How long should sessions be?',
-    answer: '<p>Twenty-five minutes is traditional. But honestly lots of people prefer something different. I do fifty-minute sessions for coding and writing because twenty-five isn\'t enough time to get into flow. Some people go up to ninety minutes for creative work. Try different lengths and see what clicks.</p>'
+    question: "How long should sessions be?",
+    answer:
+      "<p>Twenty-five minutes is traditional. But honestly lots of people prefer something different. I do fifty-minute sessions for coding and writing because twenty-five isn't enough time to get into flow. Some people go up to ninety minutes for creative work. Try different lengths and see what clicks.</p>",
   },
   {
-    question: 'What do I do during breaks?',
-    answer: '<p>Get up. Walk around. Stretch. Look out a window. Grab water or coffee. Anything physical that gets you away from the screen. Avoid social media and email during breaks. That stuff pulls you back into work mode and defeats the whole point.</p>'
+    question: "What do I do during breaks?",
+    answer:
+      "<p>Get up. Walk around. Stretch. Look out a window. Grab water or coffee. Anything physical that gets you away from the screen. Avoid social media and email during breaks. That stuff pulls you back into work mode and defeats the whole point.</p>",
   },
   {
-    question: 'Meetings keep interrupting me?',
-    answer: '<p>Put focus blocks on your calendar where people can see them. Bunch your meetings together so you get solid uninterrupted time. Push for meeting-free mornings if your team is open to it. And if a call cuts into your session, just restart after. Not a big deal.</p>'
+    question: "Meetings keep interrupting me?",
+    answer:
+      "<p>Put focus blocks on your calendar where people can see them. Bunch your meetings together so you get solid uninterrupted time. Push for meeting-free mornings if your team is open to it. And if a call cuts into your session, just restart after. Not a big deal.</p>",
   },
   {
-    question: 'Does this work for creative stuff?',
-    answer: '<p>Yeah but stretch the timer. Creative work needs longer sessions, fifty or ninety minutes, to get into flow. If you\'re rolling when the timer dings, don\'t stop. Think of it as a minimum not a deadline.</p>'
+    question: "Does this work for creative stuff?",
+    answer:
+      "<p>Yeah but stretch the timer. Creative work needs longer sessions, fifty or ninety minutes, to get into flow. If you're rolling when the timer dings, don't stop. Think of it as a minimum not a deadline.</p>",
   },
   {
-    question: 'Can\'t focus for twenty-five minutes?',
-    answer: '<p>Start with fifteen. Or ten. Phone in another room, notifications off, maybe some focus music. Add five minutes each week as you build the habit. You get better at this over time.</p>'
+    question: "Can't focus for twenty-five minutes?",
+    answer:
+      "<p>Start with fifteen. Or ten. Phone in another room, notifications off, maybe some focus music. Add five minutes each week as you build the habit. You get better at this over time.</p>",
   },
   {
-    question: 'Worth tracking sessions?',
-    answer: '<p>Helps a lot actually. You figure out how long different tasks really take. You see when you\'re most productive during the day. And counting finished sessions is weirdly satisfying. Most apps track automatically or you can just tally on paper.</p>'
+    question: "Worth tracking sessions?",
+    answer:
+      "<p>Helps a lot actually. You figure out how long different tasks really take. You see when you're most productive during the day. And counting finished sessions is weirdly satisfying. Most apps track automatically or you can just tally on paper.</p>",
   },
   {
-    question: 'Is this scientifically proven?',
-    answer: '<p>Nobody has studied this specific technique in a clinical setting. But the underlying ideas are solid. Deadlines improve focus. Breaks improve attention. Doing one thing at a time beats bouncing between tasks. The technique just bundles all that into something practical.</p>'
+    question: "Is this scientifically proven?",
+    answer:
+      "<p>Nobody has studied this specific technique in a clinical setting. But the underlying ideas are solid. Deadlines improve focus. Breaks improve attention. Doing one thing at a time beats bouncing between tasks. The technique just bundles all that into something practical.</p>",
   },
   {
-    question: 'How many sessions per day?',
-    answer: '<p>Eight to ten is a solid full day. Twelve or more is impressive but hard to maintain. Four to six works for part-time schedules or really intense creative work. Track yours for a week and you\'ll find your number. Going past it just burns you out.</p>'
-  }
+    question: "How many sessions per day?",
+    answer:
+      "<p>Eight to ten is a solid full day. Twelve or more is impressive but hard to maintain. Four to six works for part-time schedules or really intense creative work. Track yours for a week and you'll find your number. Going past it just burns you out.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'How to Stay Focused Working from Home',
-    excerpt: 'Eliminate distractions and maintain concentration throughout your workday.',
-    href: '/guides/how-to-stay-focused-working-from-home',
-    image: '/images/unsplash/photo-1499750310107-5fef28a66643-800w.webp',
-    imageAlt: 'Focused remote worker at desk'
+    title: "How to Stay Focused Working from Home",
+    excerpt: "Eliminate distractions and maintain concentration throughout your workday.",
+    href: "/guides/how-to-stay-focused-working-from-home",
+    image: "/images/unsplash/photo-1499750310107-5fef28a66643-800w.webp",
+    imageAlt: "Focused remote worker at desk",
   },
   {
-    title: 'Best Time Tracking Software',
-    excerpt: 'Track your hours and understand where your time actually goes.',
-    href: '/tools/best-time-tracking-software',
-    image: '/images/unsplash/photo-1611532736597-de2d4265fba3-800w.webp',
-    imageAlt: 'Time tracking app interface'
+    title: "Best Time Tracking Software",
+    excerpt: "Track your hours and understand where your time actually goes.",
+    href: "/tools/best-time-tracking-software",
+    image: "/images/unsplash/photo-1611532736597-de2d4265fba3-800w.webp",
+    imageAlt: "Time tracking app interface",
   },
   {
-    title: 'Best Productivity Apps for Remote Workers',
-    excerpt: 'Essential tools to boost your efficiency and stay organized.',
-    href: '/tools/best-productivity-apps',
-    image: '/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp',
-    imageAlt: 'Productivity apps on laptop'
-  }
+    title: "Best Productivity Apps for Remote Workers",
+    excerpt: "Essential tools to boost your efficiency and stay organized.",
+    href: "/tools/best-productivity-apps",
+    image: "/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp",
+    imageAlt: "Productivity apps on laptop",
+  },
 ];
 ---
 

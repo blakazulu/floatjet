@@ -1,123 +1,139 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = 'Best Remote Work Tools & Software | FloatJet';
-const description = 'Discover the best tools and software for remote workers. In-depth reviews of project management, VPNs, productivity apps, and more.';
+const title = "Best Remote Work Tools & Software | FloatJet";
+const description =
+  "Discover the best tools and software for remote workers. In-depth reviews of project management, VPNs, productivity apps, and more.";
 
 // Category pages
 const categories = [
-  {name: 'VPN & Security', href: '/tools/vpn', icon: '🔒', description: 'Protect your data & privacy'},
-  {name: 'SaaS Tools', href: '/tools/saas', icon: '📋', description: 'Project management & productivity'},
-  {name: 'Web Hosting', href: '/tools/hosting', icon: '🌐', description: 'Reliable hosting solutions'},
-  {name: 'Finance', href: '/tools/finance', icon: '💰', description: 'Invoicing & accounting'}
+  {
+    name: "VPN & Security",
+    href: "/tools/vpn",
+    icon: "🔒",
+    description: "Protect your data & privacy",
+  },
+  {
+    name: "SaaS Tools",
+    href: "/tools/saas",
+    icon: "📋",
+    description: "Project management & productivity",
+  },
+  {
+    name: "Web Hosting",
+    href: "/tools/hosting",
+    icon: "🌐",
+    description: "Reliable hosting solutions",
+  },
+  { name: "Finance", href: "/tools/finance", icon: "💰", description: "Invoicing & accounting" },
 ];
 
 // Tool articles data with correct reading times
 const allTools = [
   {
-    title: 'Best Project Management Software',
-    description: 'Compare Notion, ClickUp, Asana, Monday.com and more for remote teams.',
-    href: '/tools/best-project-management-software',
-    category: 'SaaS',
-    icon: '📋',
-    readTime: 14
+    title: "Best Project Management Software",
+    description: "Compare Notion, ClickUp, Asana, Monday.com and more for remote teams.",
+    href: "/tools/best-project-management-software",
+    category: "SaaS",
+    icon: "📋",
+    readTime: 14,
   },
   {
-    title: 'Best VPN for Digital Nomads',
-    description: 'Secure your connection while working from anywhere in the world.',
-    href: '/tools/best-vpn-digital-nomads',
-    category: 'VPN',
-    icon: '🔒',
-    readTime: 15
+    title: "Best VPN for Digital Nomads",
+    description: "Secure your connection while working from anywhere in the world.",
+    href: "/tools/best-vpn-digital-nomads",
+    category: "VPN",
+    icon: "🔒",
+    readTime: 15,
   },
   {
-    title: 'Best Email Marketing Tools',
-    description: 'Grow your audience with the right email marketing platform.',
-    href: '/tools/best-email-marketing-tools',
-    category: 'SaaS',
-    icon: '📧',
-    readTime: 14
+    title: "Best Email Marketing Tools",
+    description: "Grow your audience with the right email marketing platform.",
+    href: "/tools/best-email-marketing-tools",
+    category: "SaaS",
+    icon: "📧",
+    readTime: 14,
   },
   {
-    title: 'Best Password Managers',
-    description: 'Keep your accounts secure with a reliable password manager.',
-    href: '/tools/best-password-manager-remote-work',
-    category: 'VPN',
-    icon: '🔐',
-    readTime: 14
+    title: "Best Password Managers",
+    description: "Keep your accounts secure with a reliable password manager.",
+    href: "/tools/best-password-manager-remote-work",
+    category: "VPN",
+    icon: "🔐",
+    readTime: 14,
   },
   {
-    title: 'Best Web Hosting',
-    description: 'Reliable hosting for your remote business or side project.',
-    href: '/tools/best-web-hosting-remote-business',
-    category: 'Hosting',
-    icon: '🌐',
-    readTime: 15
+    title: "Best Web Hosting",
+    description: "Reliable hosting for your remote business or side project.",
+    href: "/tools/best-web-hosting-remote-business",
+    category: "Hosting",
+    icon: "🌐",
+    readTime: 15,
   },
   {
-    title: 'Best Time Tracking Software',
-    description: 'Track billable hours and boost productivity.',
-    href: '/tools/best-time-tracking-software',
-    category: 'SaaS',
-    icon: '⏱️',
-    readTime: 15
+    title: "Best Time Tracking Software",
+    description: "Track billable hours and boost productivity.",
+    href: "/tools/best-time-tracking-software",
+    category: "SaaS",
+    icon: "⏱️",
+    readTime: 15,
   },
   {
-    title: 'Best Online Course Platforms',
-    description: 'Learn new skills or create courses to share your expertise.',
-    href: '/tools/best-online-course-platforms',
-    category: 'SaaS',
-    icon: '🎓',
-    readTime: 16
+    title: "Best Online Course Platforms",
+    description: "Learn new skills or create courses to share your expertise.",
+    href: "/tools/best-online-course-platforms",
+    category: "SaaS",
+    icon: "🎓",
+    readTime: 16,
   },
   {
-    title: 'Best Productivity Apps',
-    description: 'Apps to help you focus, organize, and get more done.',
-    href: '/tools/best-productivity-apps',
-    category: 'SaaS',
-    icon: '🚀',
-    readTime: 16
+    title: "Best Productivity Apps",
+    description: "Apps to help you focus, organize, and get more done.",
+    href: "/tools/best-productivity-apps",
+    category: "SaaS",
+    icon: "🚀",
+    readTime: 16,
   },
   {
-    title: 'Best Video Conferencing Tools',
-    description: 'Compare Zoom, Google Meet, Teams and more for remote meetings.',
-    href: '/tools/best-video-conferencing-tools',
-    category: 'SaaS',
-    icon: '📹',
-    readTime: 18
+    title: "Best Video Conferencing Tools",
+    description: "Compare Zoom, Google Meet, Teams and more for remote meetings.",
+    href: "/tools/best-video-conferencing-tools",
+    category: "SaaS",
+    icon: "📹",
+    readTime: 18,
   },
   {
-    title: 'Best Cloud Storage for Remote Work',
-    description: 'Find the perfect cloud storage solution for your team and files.',
-    href: '/tools/best-cloud-storage-remote-work',
-    category: 'SaaS',
-    icon: '☁️',
-    readTime: 16
+    title: "Best Cloud Storage for Remote Work",
+    description: "Find the perfect cloud storage solution for your team and files.",
+    href: "/tools/best-cloud-storage-remote-work",
+    category: "SaaS",
+    icon: "☁️",
+    readTime: 16,
   },
   {
-    title: 'Best Note-Taking Apps',
-    description: 'Compare Notion, Obsidian, Evernote and more for digital notes.',
-    href: '/tools/best-note-taking-apps',
-    category: 'SaaS',
-    icon: '📝',
-    readTime: 17
+    title: "Best Note-Taking Apps",
+    description: "Compare Notion, Obsidian, Evernote and more for digital notes.",
+    href: "/tools/best-note-taking-apps",
+    category: "SaaS",
+    icon: "📝",
+    readTime: 17,
   },
   {
-    title: 'Notion vs ClickUp vs Monday',
-    description: 'Ultimate comparison of the top 3 productivity platforms.',
-    href: '/tools/notion-vs-clickup-vs-monday',
-    category: 'SaaS',
-    icon: '⚖️',
-    readTime: 14
+    title: "Notion vs ClickUp vs Monday",
+    description: "Ultimate comparison of the top 3 productivity platforms.",
+    href: "/tools/notion-vs-clickup-vs-monday",
+    category: "SaaS",
+    icon: "⚖️",
+    readTime: 14,
   },
   {
-    title: 'Is Notion Worth It?',
-    description: 'Honest review: pros, cons, pricing, and who should use Notion.',
-    href: '/tools/is-notion-worth-it',
-    category: 'SaaS',
-    icon: '💭',
-    readTime: 9
-  }
+    title: "Is Notion Worth It?",
+    description: "Honest review: pros, cons, pricing, and who should use Notion.",
+    href: "/tools/is-notion-worth-it",
+    category: "SaaS",
+    icon: "💭",
+    readTime: 9,
+  },
 ];
 
 // Shuffle and limit articles - render all 9, CSS handles responsive visibility

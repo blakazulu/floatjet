@@ -1,113 +1,134 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Ergonomic Desk Setup: Complete Guide (2025)';
-const description = 'Learn how to set up your home office for maximum comfort and productivity. Step-by-step guide to proper chair, desk, monitor, and keyboard positioning.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Furniture';
-const categorySlug = 'gear';
+const title = "Ergonomic Desk Setup: Complete Guide (2025)";
+const description =
+  "Learn how to set up your home office for maximum comfort and productivity. Step-by-step guide to proper chair, desk, monitor, and keyboard positioning.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Furniture";
+const categorySlug = "gear";
 const readingTime = 12;
-const image = '/images/unsplash/photo-1498050108023-c5249f4df085-1200w.webp';
-const imageAlt = 'Properly configured ergonomic workstation with monitor at eye level';
+const image = "/images/unsplash/photo-1498050108023-c5249f4df085-1200w.webp";
+const imageAlt = "Properly configured ergonomic workstation with monitor at eye level";
 
 const headings = [
-  {text: 'Why Ergonomics Matter', slug: 'why-ergonomics', depth: 2},
-  {text: 'Chair Setup', slug: 'chair-setup', depth: 2},
-  {text: 'Monitor Position', slug: 'monitor-position', depth: 2},
-  {text: 'Keyboard and Mouse', slug: 'keyboard-mouse', depth: 2},
-  {text: 'Desk Height', slug: 'desk-height', depth: 2},
-  {text: 'Lighting', slug: 'lighting', depth: 2},
-  {text: 'Standing Desk Ergonomics', slug: 'standing-ergonomics', depth: 2},
-  {text: 'Common Mistakes', slug: 'common-mistakes', depth: 2},
-  {text: 'Ergonomic Accessories', slug: 'accessories', depth: 2},
-  {text: 'Micro-Break Schedule', slug: 'micro-breaks', depth: 2},
-  {text: 'Setup Checklist', slug: 'checklist', depth: 2},
-  {text: 'Frequently Asked Questions', slug: 'faq', depth: 2},
+  { text: "Why Ergonomics Matter", slug: "why-ergonomics", depth: 2 },
+  { text: "Chair Setup", slug: "chair-setup", depth: 2 },
+  { text: "Monitor Position", slug: "monitor-position", depth: 2 },
+  { text: "Keyboard and Mouse", slug: "keyboard-mouse", depth: 2 },
+  { text: "Desk Height", slug: "desk-height", depth: 2 },
+  { text: "Lighting", slug: "lighting", depth: 2 },
+  { text: "Standing Desk Ergonomics", slug: "standing-ergonomics", depth: 2 },
+  { text: "Common Mistakes", slug: "common-mistakes", depth: 2 },
+  { text: "Ergonomic Accessories", slug: "accessories", depth: 2 },
+  { text: "Micro-Break Schedule", slug: "micro-breaks", depth: 2 },
+  { text: "Setup Checklist", slug: "checklist", depth: 2 },
+  { text: "Frequently Asked Questions", slug: "faq", depth: 2 },
 ];
 
 const accessoriesColumns = [
-  {key: 'accessory', label: 'Accessory', width: '150px'},
-  {key: 'purpose', label: 'Purpose'},
-  {key: 'priority', label: 'Priority'},
-  {key: 'price', label: 'Price Range'},
+  { key: "accessory", label: "Accessory", width: "150px" },
+  { key: "purpose", label: "Purpose" },
+  { key: "priority", label: "Priority" },
+  { key: "price", label: "Price Range" },
 ];
 
 const accessoriesRows = [
   {
-    accessory: '<strong>Monitor Arm</strong>',
-    purpose: 'Proper eye height, free desk space',
-    priority: 'High',
-    price: '$30-150'
-  },
-  {accessory: '<strong>Keyboard Tray</strong>', purpose: 'Correct arm angle', priority: 'Medium', price: '$40-100'},
-  {
-    accessory: '<strong>Footrest</strong>',
-    purpose: 'Support if feet dont reach floor',
-    priority: 'As needed',
-    price: '$25-60'
+    accessory: "<strong>Monitor Arm</strong>",
+    purpose: "Proper eye height, free desk space",
+    priority: "High",
+    price: "$30-150",
   },
   {
-    accessory: '<strong>Laptop Stand</strong>',
-    purpose: 'Raise laptop screen to eye level',
-    priority: 'High (laptops)',
-    price: '$20-80'
+    accessory: "<strong>Keyboard Tray</strong>",
+    purpose: "Correct arm angle",
+    priority: "Medium",
+    price: "$40-100",
   },
   {
-    accessory: '<strong>Document Holder</strong>',
-    purpose: 'Reduce neck strain when reading',
-    priority: 'Low',
-    price: '$15-40'
+    accessory: "<strong>Footrest</strong>",
+    purpose: "Support if feet dont reach floor",
+    priority: "As needed",
+    price: "$25-60",
   },
-  {accessory: '<strong>Wrist Rest</strong>', purpose: 'Support during typing breaks', priority: 'Low', price: '$10-30'},
+  {
+    accessory: "<strong>Laptop Stand</strong>",
+    purpose: "Raise laptop screen to eye level",
+    priority: "High (laptops)",
+    price: "$20-80",
+  },
+  {
+    accessory: "<strong>Document Holder</strong>",
+    purpose: "Reduce neck strain when reading",
+    priority: "Low",
+    price: "$15-40",
+  },
+  {
+    accessory: "<strong>Wrist Rest</strong>",
+    purpose: "Support during typing breaks",
+    priority: "Low",
+    price: "$10-30",
+  },
 ];
 
 const faqItems = [
   {
-    question: 'How far should my monitor be from my face?',
-    answer: 'Position your monitor 20-26 inches from your eyes, about an arms length away. If you strain to read text at this distance, increase font size rather than moving the monitor closer. Larger monitors (27 inches or more) should be at the farther end of this range.',
+    question: "How far should my monitor be from my face?",
+    answer:
+      "Position your monitor 20-26 inches from your eyes, about an arms length away. If you strain to read text at this distance, increase font size rather than moving the monitor closer. Larger monitors (27 inches or more) should be at the farther end of this range.",
   },
   {
-    question: 'Should my keyboard be flat or tilted?',
-    answer: 'Flat or with a slight negative tilt (front edge higher than back). The keyboard legs that tilt the keyboard up actually increase wrist strain by forcing your wrists to bend backward. If your desk is too high, use a keyboard tray to achieve proper positioning.',
+    question: "Should my keyboard be flat or tilted?",
+    answer:
+      "Flat or with a slight negative tilt (front edge higher than back). The keyboard legs that tilt the keyboard up actually increase wrist strain by forcing your wrists to bend backward. If your desk is too high, use a keyboard tray to achieve proper positioning.",
   },
   {
-    question: 'How often should I take breaks from sitting?',
-    answer: 'Take a 30-second micro-break every 20-30 minutes to look away from the screen and stretch. Every 60-90 minutes, take a 5-10 minute break to stand, walk, or do light stretching. These breaks reduce eye strain, prevent stiffness, and improve focus.',
+    question: "How often should I take breaks from sitting?",
+    answer:
+      "Take a 30-second micro-break every 20-30 minutes to look away from the screen and stretch. Every 60-90 minutes, take a 5-10 minute break to stand, walk, or do light stretching. These breaks reduce eye strain, prevent stiffness, and improve focus.",
   },
   {
-    question: 'Is it better to sit or stand while working?',
-    answer: 'Neither exclusively. The healthiest approach alternates between sitting and standing throughout the day. Aim for a 3:1 ratio (45 minutes sitting, 15 minutes standing per hour) or whatever feels sustainable. Movement is more important than any single position.',
+    question: "Is it better to sit or stand while working?",
+    answer:
+      "Neither exclusively. The healthiest approach alternates between sitting and standing throughout the day. Aim for a 3:1 ratio (45 minutes sitting, 15 minutes standing per hour) or whatever feels sustainable. Movement is more important than any single position.",
   },
   {
-    question: 'My back still hurts with an ergonomic setup. What am I doing wrong?',
-    answer: 'Even perfect ergonomics cannot compensate for prolonged static posture. Ensure you are taking regular breaks, adjust your lumbar support position, and consider whether your chair actually fits your body. Some back pain requires strengthening exercises or professional consultation.',
+    question: "My back still hurts with an ergonomic setup. What am I doing wrong?",
+    answer:
+      "Even perfect ergonomics cannot compensate for prolonged static posture. Ensure you are taking regular breaks, adjust your lumbar support position, and consider whether your chair actually fits your body. Some back pain requires strengthening exercises or professional consultation.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Ergonomic Chairs',
-    excerpt: 'Find the right chair to complete your ergonomic setup.',
-    href: '/gear/best-ergonomic-chairs',
-    image: '/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp',
-    imageAlt: 'Ergonomic office chair',
+    title: "Best Ergonomic Chairs",
+    excerpt: "Find the right chair to complete your ergonomic setup.",
+    href: "/gear/best-ergonomic-chairs",
+    image: "/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp",
+    imageAlt: "Ergonomic office chair",
   },
   {
-    title: 'Best Standing Desks',
-    excerpt: 'Standing desks for alternating between sitting and standing.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Modern standing desk in home office',
+    title: "Best Standing Desks",
+    excerpt: "Standing desks for alternating between sitting and standing.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern standing desk in home office",
   },
   {
-    title: 'Best Noise-Canceling Headphones',
-    excerpt: 'Block distractions for better focus during deep work.',
-    href: '/gear/best-noise-canceling-headphones',
-    image: '/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp',
-    imageAlt: 'Noise-canceling headphones on desk',
+    title: "Best Noise-Canceling Headphones",
+    excerpt: "Block distractions for better focus during deep work.",
+    href: "/gear/best-noise-canceling-headphones",
+    image: "/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp",
+    imageAlt: "Noise-canceling headphones on desk",
   },
 ];
 ---

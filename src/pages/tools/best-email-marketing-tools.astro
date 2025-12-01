@@ -1,219 +1,230 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Email Marketing Tools for Creators (2025)';
-const description = 'I tested twelve email marketing platforms for creators and businesses. ConvertKit, Beehiiv, Mailchimp compared with pricing, features, and honest reviews.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Best Email Marketing Tools for Creators (2025)";
+const description =
+  "I tested twelve email marketing platforms for creators and businesses. ConvertKit, Beehiiv, Mailchimp compared with pricing, features, and honest reviews.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 14;
-const image = '/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp';
-const imageAlt = 'Email marketing concept with envelope and digital elements';
+const image = "/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp";
+const imageAlt = "Email marketing concept with envelope and digital elements";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Why Email Marketing Matters', slug: 'why-email-marketing', depth: 2},
-  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'ConvertKit', slug: 'convertkit', depth: 3},
-  {text: 'Beehiiv', slug: 'beehiiv', depth: 3},
-  {text: 'Mailchimp', slug: 'mailchimp', depth: 3},
-  {text: 'ActiveCampaign', slug: 'activecampaign', depth: 3},
-  {text: 'MailerLite', slug: 'mailerlite', depth: 3},
-  {text: 'Buttondown', slug: 'buttondown', depth: 3},
-  {text: 'Flodesk', slug: 'flodesk', depth: 3},
-  {text: 'Substack', slug: 'substack', depth: 3},
-  {text: 'How to Choose', slug: 'how-to-choose', depth: 2},
-  {text: 'Getting Started', slug: 'getting-started', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Conclusion', slug: 'conclusion', depth: 2},
-  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why Email Marketing Matters", slug: "why-email-marketing", depth: 2 },
+  { text: "Detailed Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "ConvertKit", slug: "convertkit", depth: 3 },
+  { text: "Beehiiv", slug: "beehiiv", depth: 3 },
+  { text: "Mailchimp", slug: "mailchimp", depth: 3 },
+  { text: "ActiveCampaign", slug: "activecampaign", depth: 3 },
+  { text: "MailerLite", slug: "mailerlite", depth: 3 },
+  { text: "Buttondown", slug: "buttondown", depth: 3 },
+  { text: "Flodesk", slug: "flodesk", depth: 3 },
+  { text: "Substack", slug: "substack", depth: 3 },
+  { text: "How to Choose", slug: "how-to-choose", depth: 2 },
+  { text: "Getting Started", slug: "getting-started", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Conclusion", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'tool', label: 'Tool', width: '120px'},
-  {key: 'bestFor', label: 'Best For', width: '150px'},
-  {key: 'price', label: 'Starting Price'},
-  {key: 'rating', label: 'Rating'},
-  {key: 'action', label: ''},
+  { key: "tool", label: "Tool", width: "120px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "price", label: "Starting Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    tool: '<strong>ConvertKit</strong>',
-    bestFor: 'Creators & bloggers',
-    price: '$0-29/mo',
-    rating: '9.5/10',
-    action: '<a href="/go/convertkit" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>ConvertKit</strong>",
+    bestFor: "Creators & bloggers",
+    price: "$0-29/mo",
+    rating: "9.5/10",
+    action: '<a href="/go/convertkit" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    tool: '<strong>Beehiiv</strong>',
-    bestFor: 'Newsletter growth',
-    price: '$0-99/mo',
-    rating: '9.3/10',
-    action: '<a href="/go/beehiiv" rel="nofollow sponsored">Start Free</a>'
+    tool: "<strong>Beehiiv</strong>",
+    bestFor: "Newsletter growth",
+    price: "$0-99/mo",
+    rating: "9.3/10",
+    action: '<a href="/go/beehiiv" rel="nofollow sponsored">Start Free</a>',
   },
   {
-    tool: '<strong>MailerLite</strong>',
-    bestFor: 'Best free option',
-    price: '$0-10/mo',
-    rating: '9.1/10',
-    action: '<a href="/go/mailerlite" rel="nofollow sponsored">Get Started</a>'
+    tool: "<strong>MailerLite</strong>",
+    bestFor: "Best free option",
+    price: "$0-10/mo",
+    rating: "9.1/10",
+    action: '<a href="/go/mailerlite" rel="nofollow sponsored">Get Started</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'tool', label: 'Tool', width: '110px'},
-  {key: 'bestFor', label: 'Best For', width: '130px'},
-  {key: 'price', label: 'Starting Price'},
-  {key: 'subscribers', label: 'Free Tier'},
-  {key: 'automation', label: 'Automation'},
-  {key: 'landing', label: 'Landing Pages'},
-  {key: 'action', label: ''},
+  { key: "tool", label: "Tool", width: "110px" },
+  { key: "bestFor", label: "Best For", width: "130px" },
+  { key: "price", label: "Starting Price" },
+  { key: "subscribers", label: "Free Tier" },
+  { key: "automation", label: "Automation" },
+  { key: "landing", label: "Landing Pages" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    tool: '<strong>ConvertKit</strong>',
-    bestFor: 'Creators',
-    price: '$0-29/mo',
-    subscribers: '10,000 subs',
+    tool: "<strong>ConvertKit</strong>",
+    bestFor: "Creators",
+    price: "$0-29/mo",
+    subscribers: "10,000 subs",
     automation: true,
     landing: true,
-    action: '<a href="/go/convertkit" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/convertkit" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    tool: '<strong>Beehiiv</strong>',
-    bestFor: 'Newsletters',
-    price: '$0-99/mo',
-    subscribers: '2,500 subs',
+    tool: "<strong>Beehiiv</strong>",
+    bestFor: "Newsletters",
+    price: "$0-99/mo",
+    subscribers: "2,500 subs",
     automation: true,
     landing: true,
-    action: '<a href="/go/beehiiv" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/beehiiv" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    tool: '<strong>Mailchimp</strong>',
-    bestFor: 'Beginners',
-    price: '$0-13/mo',
-    subscribers: '500 subs',
+    tool: "<strong>Mailchimp</strong>",
+    bestFor: "Beginners",
+    price: "$0-13/mo",
+    subscribers: "500 subs",
     automation: true,
     landing: true,
-    action: '<a href="/go/mailchimp" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/mailchimp" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    tool: '<strong>ActiveCampaign</strong>',
-    bestFor: 'Automation',
-    price: '$29/mo',
-    subscribers: 'No free tier',
+    tool: "<strong>ActiveCampaign</strong>",
+    bestFor: "Automation",
+    price: "$29/mo",
+    subscribers: "No free tier",
     automation: true,
     landing: true,
-    action: '<a href="/go/activecampaign" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/activecampaign" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    tool: '<strong>MailerLite</strong>',
-    bestFor: 'Free option',
-    price: '$0-10/mo',
-    subscribers: '1,000 subs',
+    tool: "<strong>MailerLite</strong>",
+    bestFor: "Free option",
+    price: "$0-10/mo",
+    subscribers: "1,000 subs",
     automation: true,
     landing: true,
-    action: '<a href="/go/mailerlite" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/mailerlite" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    tool: '<strong>Buttondown</strong>',
-    bestFor: 'Simplicity',
-    price: '$0-9/mo',
-    subscribers: '100 subs',
+    tool: "<strong>Buttondown</strong>",
+    bestFor: "Simplicity",
+    price: "$0-9/mo",
+    subscribers: "100 subs",
     automation: false,
     landing: false,
-    action: '<a href="/go/buttondown" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/buttondown" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    tool: '<strong>Flodesk</strong>',
-    bestFor: 'Design',
-    price: '$38/mo flat',
-    subscribers: 'Unlimited',
+    tool: "<strong>Flodesk</strong>",
+    bestFor: "Design",
+    price: "$38/mo flat",
+    subscribers: "Unlimited",
     automation: true,
     landing: true,
-    action: '<a href="/go/flodesk" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/flodesk" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    tool: '<strong>Substack</strong>',
-    bestFor: 'Writers',
-    price: 'Free (10% cut)',
-    subscribers: 'Unlimited',
+    tool: "<strong>Substack</strong>",
+    bestFor: "Writers",
+    price: "Free (10% cut)",
+    subscribers: "Unlimited",
     automation: false,
     landing: false,
-    action: '<a href="https://substack.com" target="_blank" rel="noopener">Visit Site</a>'
+    action: '<a href="https://substack.com" target="_blank" rel="noopener">Visit Site</a>',
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Best free email marketing tool?',
-    answer: '<p><strong>ConvertKit</strong> offers the most generous free tier for creators. Up to ten thousand subscribers with landing pages and forms included. <strong>MailerLite</strong> is another excellent free option with one thousand subscribers and full automation capabilities.</p><p>Key difference is that ConvertKit limits some automation features on the free plan while MailerLite includes them. For pure newsletter publishing, <strong>Beehiiv</strong> gives you twenty-five hundred subscribers free with monetization tools built in.</p>'
+    question: "Best free email marketing tool?",
+    answer:
+      "<p><strong>ConvertKit</strong> offers the most generous free tier for creators. Up to ten thousand subscribers with landing pages and forms included. <strong>MailerLite</strong> is another excellent free option with one thousand subscribers and full automation capabilities.</p><p>Key difference is that ConvertKit limits some automation features on the free plan while MailerLite includes them. For pure newsletter publishing, <strong>Beehiiv</strong> gives you twenty-five hundred subscribers free with monetization tools built in.</p>",
   },
   {
-    question: 'ConvertKit vs Mailchimp?',
-    answer: '<p><strong>ConvertKit</strong> is better for creators, bloggers, course sellers who need powerful automation and tagging. <strong>Mailchimp</strong> is better for e-commerce businesses and beginners who want all-in-one marketing platform.</p><p>ConvertKit\'s strength is its simplicity and creator-focused features. Mailchimp offers more marketing channels like social, ads, postcards but can feel overwhelming. For most remote workers and creators, I\'d go with ConvertKit.</p>'
+    question: "ConvertKit vs Mailchimp?",
+    answer:
+      "<p><strong>ConvertKit</strong> is better for creators, bloggers, course sellers who need powerful automation and tagging. <strong>Mailchimp</strong> is better for e-commerce businesses and beginners who want all-in-one marketing platform.</p><p>ConvertKit's strength is its simplicity and creator-focused features. Mailchimp offers more marketing channels like social, ads, postcards but can feel overwhelming. For most remote workers and creators, I'd go with ConvertKit.</p>",
   },
   {
-    question: 'Cost question?',
-    answer: '<p>Email marketing costs range from <strong>free to several hundred monthly</strong>, primarily based on subscriber count. Most platforms offer free tiers for small lists:</p><ul><li>ConvertKit: Free up to ten thousand subscribers</li><li>MailerLite: Free up to one thousand subscribers</li><li>Beehiiv: Free up to twenty-five hundred subscribers</li><li>Mailchimp: Free up to five hundred subscribers</li></ul><p>Paid plans typically start at nine to twenty-nine monthly and scale with your list size. <strong>Flodesk</strong> is unique with flat-rate pricing at thirty-eight monthly regardless of subscriber count.</p>'
+    question: "Cost question?",
+    answer:
+      "<p>Email marketing costs range from <strong>free to several hundred monthly</strong>, primarily based on subscriber count. Most platforms offer free tiers for small lists:</p><ul><li>ConvertKit: Free up to ten thousand subscribers</li><li>MailerLite: Free up to one thousand subscribers</li><li>Beehiiv: Free up to twenty-five hundred subscribers</li><li>Mailchimp: Free up to five hundred subscribers</li></ul><p>Paid plans typically start at nine to twenty-nine monthly and scale with your list size. <strong>Flodesk</strong> is unique with flat-rate pricing at thirty-eight monthly regardless of subscriber count.</p>",
   },
   {
-    question: 'Best email platform for beginners?',
-    answer: '<p><strong>MailerLite</strong> and <strong>Mailchimp</strong> both work well for beginners. MailerLite has a cleaner interface and more generous free tier. Mailchimp offers more hand-holding tutorials.</p><p>You\'re a content creator or blogger? <strong>ConvertKit</strong> is surprisingly beginner-friendly despite its powerful features. Interface is intentionally simple and they offer excellent onboarding resources.</p>'
+    question: "Best email platform for beginners?",
+    answer:
+      "<p><strong>MailerLite</strong> and <strong>Mailchimp</strong> both work well for beginners. MailerLite has a cleaner interface and more generous free tier. Mailchimp offers more hand-holding tutorials.</p><p>You're a content creator or blogger? <strong>ConvertKit</strong> is surprisingly beginner-friendly despite its powerful features. Interface is intentionally simple and they offer excellent onboarding resources.</p>",
   },
   {
-    question: 'Make money with email marketing?',
-    answer: '<p>Absolutely. Email marketing has the highest ROI of any marketing channel. Thirty-six to forty-two bucks for every dollar spent on average. How creators monetize their lists:</p><p>Selling digital products like courses, ebooks, templates<br/>Paid newsletter subscriptions through Substack or Beehiiv<br/>Affiliate marketing<br/>Sponsored content<br/>Driving traffic to ad-supported content</p><p>Beehiiv and ConvertKit include built-in monetization features. Paid subscriptions and tip jars.</p>'
+    question: "Make money with email marketing?",
+    answer:
+      "<p>Absolutely. Email marketing has the highest ROI of any marketing channel. Thirty-six to forty-two bucks for every dollar spent on average. How creators monetize their lists:</p><p>Selling digital products like courses, ebooks, templates<br/>Paid newsletter subscriptions through Substack or Beehiiv<br/>Affiliate marketing<br/>Sponsored content<br/>Driving traffic to ad-supported content</p><p>Beehiiv and ConvertKit include built-in monetization features. Paid subscriptions and tip jars.</p>",
   },
   {
-    question: 'How many subscribers before paying?',
-    answer: '<p>Most creators can stay on free plans until they reach one thousand to twenty-five hundred subscribers. At that point, upgrading usually costs nine to twenty-nine monthly depending on the platform.</p><p>Don\'t wait to build your list because you\'re worried about future costs. A list of one thousand engaged subscribers is valuable. If you\'re making money from your content, twenty bucks monthly for email marketing is a tiny expense.</p>'
+    question: "How many subscribers before paying?",
+    answer:
+      "<p>Most creators can stay on free plans until they reach one thousand to twenty-five hundred subscribers. At that point, upgrading usually costs nine to twenty-nine monthly depending on the platform.</p><p>Don't wait to build your list because you're worried about future costs. A list of one thousand engaged subscribers is valuable. If you're making money from your content, twenty bucks monthly for email marketing is a tiny expense.</p>",
   },
   {
-    question: 'Best email tool for newsletters?',
-    answer: '<p><strong>Beehiiv</strong> is specifically built for newsletter creators and includes features like:</p><p>Built-in referral programs to grow your list<br/>Ad network for monetization<br/>Subscriber analytics and engagement tracking<br/>SEO-optimized web hosting</p><p><strong>Substack</strong> is also excellent for writers who want to monetize through paid subscriptions though you give up ownership and pay ten percent of subscription revenue.</p>'
+    question: "Best email tool for newsletters?",
+    answer:
+      "<p><strong>Beehiiv</strong> is specifically built for newsletter creators and includes features like:</p><p>Built-in referral programs to grow your list<br/>Ad network for monetization<br/>Subscriber analytics and engagement tracking<br/>SEO-optimized web hosting</p><p><strong>Substack</strong> is also excellent for writers who want to monetize through paid subscriptions though you give up ownership and pay ten percent of subscription revenue.</p>",
   },
   {
-    question: 'Do I own my email list?',
-    answer: '<p>Yes, with most platforms. You can export your subscriber list - email addresses, names, tags - anytime and move to a different provider. This is a critical feature. Never use a platform that doesn\'t let you export your list.</p><p>Exception is <strong>Substack</strong> where you can export subscribers but the platform owns the relationship more than you do. For full ownership, ConvertKit, Beehiiv, MailerLite, and Mailchimp all allow complete list portability.</p>'
-  }
+    question: "Do I own my email list?",
+    answer:
+      "<p>Yes, with most platforms. You can export your subscriber list - email addresses, names, tags - anytime and move to a different provider. This is a critical feature. Never use a platform that doesn't let you export your list.</p><p>Exception is <strong>Substack</strong> where you can export subscribers but the platform owns the relationship more than you do. For full ownership, ConvertKit, Beehiiv, MailerLite, and Mailchimp all allow complete list portability.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Project Management Software for Remote Teams',
-    excerpt: 'Compare Notion, ClickUp, Asana, and more to find the perfect PM tool for your distributed team.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Modern workspace with laptop displaying project management dashboard'
+    title: "Best Project Management Software for Remote Teams",
+    excerpt:
+      "Compare Notion, ClickUp, Asana, and more to find the perfect PM tool for your distributed team.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Modern workspace with laptop displaying project management dashboard",
   },
   {
-    title: 'Best VPNs for Digital Nomads & Remote Workers',
-    excerpt: 'Protect your data on public WiFi and access content from anywhere with these top-rated VPNs.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'Digital security concept with encrypted data visualization'
+    title: "Best VPNs for Digital Nomads & Remote Workers",
+    excerpt:
+      "Protect your data on public WiFi and access content from anywhere with these top-rated VPNs.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept with encrypted data visualization",
   },
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Find the perfect laptop for working from anywhere with our tested recommendations.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp',
-    imageAlt: 'Modern laptop on desk for remote work'
-  }
+    title: "Best Laptops for Remote Work",
+    excerpt: "Find the perfect laptop for working from anywhere with our tested recommendations.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "Modern laptop on desk for remote work",
+  },
 ];
 ---
 

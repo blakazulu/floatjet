@@ -1,149 +1,160 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = 'Remote Work Blog | FloatJet';
-const description = 'Insights, tips, and guides for remote workers, freelancers, and digital nomads. Expert advice on productivity, travel, security, and more.';
+const title = "Remote Work Blog | FloatJet";
+const description =
+  "Insights, tips, and guides for remote workers, freelancers, and digital nomads. Expert advice on productivity, travel, security, and more.";
 
 // Subcategory pages
 const categories = [
-  {name: 'Communication', href: '/blog/communication', icon: '💬', description: 'Team collaboration tips'},
-  {name: 'Finance', href: '/blog/finance', icon: '💰', description: 'Banking & taxes for nomads'},
-  {name: 'Hosting', href: '/blog/hosting', icon: '🌐', description: 'Web hosting insights'},
-  {name: 'Productivity', href: '/blog/productivity', icon: '🚀', description: 'Work smarter, not harder'},
-  {name: 'Security', href: '/blog/security', icon: '🔒', description: 'Stay safe online'},
-  {name: 'Travel', href: '/blog/travel', icon: '✈️', description: 'Digital nomad lifestyle'}
+  {
+    name: "Communication",
+    href: "/blog/communication",
+    icon: "💬",
+    description: "Team collaboration tips",
+  },
+  { name: "Finance", href: "/blog/finance", icon: "💰", description: "Banking & taxes for nomads" },
+  { name: "Hosting", href: "/blog/hosting", icon: "🌐", description: "Web hosting insights" },
+  {
+    name: "Productivity",
+    href: "/blog/productivity",
+    icon: "🚀",
+    description: "Work smarter, not harder",
+  },
+  { name: "Security", href: "/blog/security", icon: "🔒", description: "Stay safe online" },
+  { name: "Travel", href: "/blog/travel", icon: "✈️", description: "Digital nomad lifestyle" },
 ];
 
 // All blog articles
 const allArticles = [
   {
-    title: 'Best Team Communication Tools',
-    description: 'Compare Slack, Teams, Discord and more for remote team collaboration.',
-    href: '/blog/best-team-communication-tools',
-    category: 'Communication',
-    icon: '💬',
-    readTime: 12
+    title: "Best Team Communication Tools",
+    description: "Compare Slack, Teams, Discord and more for remote team collaboration.",
+    href: "/blog/best-team-communication-tools",
+    category: "Communication",
+    icon: "💬",
+    readTime: 12,
   },
   {
-    title: 'Async Communication for Remote Teams',
-    description: 'Master asynchronous communication to boost productivity across time zones.',
-    href: '/blog/async-communication-remote-teams',
-    category: 'Communication',
-    icon: '📝',
-    readTime: 10
+    title: "Async Communication for Remote Teams",
+    description: "Master asynchronous communication to boost productivity across time zones.",
+    href: "/blog/async-communication-remote-teams",
+    category: "Communication",
+    icon: "📝",
+    readTime: 10,
   },
   {
-    title: 'Best Banking for Digital Nomads',
-    description: 'Find the best banks and accounts for location-independent workers.',
-    href: '/blog/best-banking-digital-nomads',
-    category: 'Finance',
-    icon: '🏦',
-    readTime: 14
+    title: "Best Banking for Digital Nomads",
+    description: "Find the best banks and accounts for location-independent workers.",
+    href: "/blog/best-banking-digital-nomads",
+    category: "Finance",
+    icon: "🏦",
+    readTime: 14,
   },
   {
-    title: 'Crypto-Friendly Banks',
-    description: 'Banks that work well with cryptocurrency for remote workers.',
-    href: '/blog/crypto-friendly-banks',
-    category: 'Finance',
-    icon: '₿',
-    readTime: 11
+    title: "Crypto-Friendly Banks",
+    description: "Banks that work well with cryptocurrency for remote workers.",
+    href: "/blog/crypto-friendly-banks",
+    category: "Finance",
+    icon: "₿",
+    readTime: 11,
   },
   {
-    title: 'Tax Tips for Remote Workers',
-    description: 'Essential tax advice for freelancers and remote employees.',
-    href: '/blog/tax-tips-remote-workers',
-    category: 'Finance',
-    icon: '📊',
-    readTime: 13
+    title: "Tax Tips for Remote Workers",
+    description: "Essential tax advice for freelancers and remote employees.",
+    href: "/blog/tax-tips-remote-workers",
+    category: "Finance",
+    icon: "📊",
+    readTime: 13,
   },
   {
-    title: 'Cloud vs Traditional Hosting',
-    description: 'Compare cloud and traditional hosting for your remote business.',
-    href: '/blog/cloud-vs-traditional-hosting',
-    category: 'Hosting',
-    icon: '☁️',
-    readTime: 11
+    title: "Cloud vs Traditional Hosting",
+    description: "Compare cloud and traditional hosting for your remote business.",
+    href: "/blog/cloud-vs-traditional-hosting",
+    category: "Hosting",
+    icon: "☁️",
+    readTime: 11,
   },
   {
-    title: 'Managed WordPress Hosting Compared',
-    description: 'Find the best managed WordPress hosting for your blog or business.',
-    href: '/blog/managed-wordpress-hosting-compared',
-    category: 'Hosting',
-    icon: '🔧',
-    readTime: 13
+    title: "Managed WordPress Hosting Compared",
+    description: "Find the best managed WordPress hosting for your blog or business.",
+    href: "/blog/managed-wordpress-hosting-compared",
+    category: "Hosting",
+    icon: "🔧",
+    readTime: 13,
   },
   {
-    title: 'Best CRM Software for Small Business',
-    description: 'Compare top CRM tools for managing customer relationships remotely.',
-    href: '/blog/best-crm-software-small-business',
-    category: 'Productivity',
-    icon: '👥',
-    readTime: 14
+    title: "Best CRM Software for Small Business",
+    description: "Compare top CRM tools for managing customer relationships remotely.",
+    href: "/blog/best-crm-software-small-business",
+    category: "Productivity",
+    icon: "👥",
+    readTime: 14,
   },
   {
-    title: 'Managing Time Zones in Remote Teams',
-    description: 'Strategies for effective collaboration across different time zones.',
-    href: '/blog/managing-time-zones-remote-teams',
-    category: 'Productivity',
-    icon: '🌍',
-    readTime: 9
+    title: "Managing Time Zones in Remote Teams",
+    description: "Strategies for effective collaboration across different time zones.",
+    href: "/blog/managing-time-zones-remote-teams",
+    category: "Productivity",
+    icon: "🌍",
+    readTime: 9,
   },
   {
-    title: 'Ultimate Home Office Setup Guide',
-    description: 'Create the perfect workspace for maximum productivity at home.',
-    href: '/blog/ultimate-home-office-setup',
-    category: 'Productivity',
-    icon: '🏠',
-    readTime: 15
+    title: "Ultimate Home Office Setup Guide",
+    description: "Create the perfect workspace for maximum productivity at home.",
+    href: "/blog/ultimate-home-office-setup",
+    category: "Productivity",
+    icon: "🏠",
+    readTime: 15,
   },
   {
-    title: 'VPN Speed Comparison',
-    description: 'We tested VPN speeds across 20+ countries. See which ones are fastest.',
-    href: '/blog/vpn-speed-comparison',
-    category: 'Security',
-    icon: '⚡',
-    readTime: 10
+    title: "VPN Speed Comparison",
+    description: "We tested VPN speeds across 20+ countries. See which ones are fastest.",
+    href: "/blog/vpn-speed-comparison",
+    category: "Security",
+    icon: "⚡",
+    readTime: 10,
   },
   {
-    title: 'VPN on Public WiFi Guide',
-    description: 'How to stay safe when using public WiFi networks while traveling.',
-    href: '/blog/vpn-public-wifi-guide',
-    category: 'Security',
-    icon: '🛡️',
-    readTime: 8
+    title: "VPN on Public WiFi Guide",
+    description: "How to stay safe when using public WiFi networks while traveling.",
+    href: "/blog/vpn-public-wifi-guide",
+    category: "Security",
+    icon: "🛡️",
+    readTime: 8,
   },
   {
-    title: 'How to Find Reliable WiFi Anywhere',
-    description: 'Tips and tools for finding fast, reliable internet while traveling.',
-    href: '/blog/find-reliable-wifi-anywhere',
-    category: 'Travel',
-    icon: '📶',
-    readTime: 9
+    title: "How to Find Reliable WiFi Anywhere",
+    description: "Tips and tools for finding fast, reliable internet while traveling.",
+    href: "/blog/find-reliable-wifi-anywhere",
+    category: "Travel",
+    icon: "📶",
+    readTime: 9,
   },
   {
-    title: 'Best Travel Insurance for Remote Workers',
-    description: 'Compare travel insurance options designed for digital nomads.',
-    href: '/blog/best-travel-insurance-remote-workers',
-    category: 'Travel',
-    icon: '🏥',
-    readTime: 12
+    title: "Best Travel Insurance for Remote Workers",
+    description: "Compare travel insurance options designed for digital nomads.",
+    href: "/blog/best-travel-insurance-remote-workers",
+    category: "Travel",
+    icon: "🏥",
+    readTime: 12,
   },
   {
-    title: 'Top Destinations for Digital Nomads',
-    description: 'Best cities for remote work based on cost, internet, and community.',
-    href: '/blog/top-destinations-digital-nomads',
-    category: 'Travel',
-    icon: '🗺️',
-    readTime: 14
+    title: "Top Destinations for Digital Nomads",
+    description: "Best cities for remote work based on cost, internet, and community.",
+    href: "/blog/top-destinations-digital-nomads",
+    category: "Travel",
+    icon: "🗺️",
+    readTime: 14,
   },
   {
-    title: 'Essential Travel Tech for Nomads',
-    description: 'Must-have gadgets and gear for working while traveling.',
-    href: '/blog/essential-travel-tech-nomads',
-    category: 'Travel',
-    icon: '🎒',
-    readTime: 11
-  }
+    title: "Essential Travel Tech for Nomads",
+    description: "Must-have gadgets and gear for working while traveling.",
+    href: "/blog/essential-travel-tech-nomads",
+    category: "Travel",
+    icon: "🎒",
+    readTime: 11,
+  },
 ];
 
 // Shuffle and limit articles - render all 9, CSS handles responsive visibility

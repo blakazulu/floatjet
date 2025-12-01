@@ -1,120 +1,124 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Travel Insurance for Digital Nomads (2025)';
-const description = 'Needed medical evacuation in Thailand. Insurance covered eighteen grand. Here\'s the best travel insurance for remote workers who work abroad without disasters.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Best Travel Insurance for Digital Nomads (2025)";
+const description =
+  "Needed medical evacuation in Thailand. Insurance covered eighteen grand. Here's the best travel insurance for remote workers who work abroad without disasters.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 11;
-const image = '/images/unsplash/photo-1436491865332-7a61a109cc05-1200w.webp';
-const imageAlt = 'Travel planning with passport and map';
+const image = "/images/unsplash/photo-1436491865332-7a61a109cc05-1200w.webp";
+const imageAlt = "Travel planning with passport and map";
 
 // Table of contents
 const headings = [
-  {text: 'I Spent $2,400 on a Hospital', slug: 'introduction', depth: 2},
-  {text: 'The Options at a Glance', slug: 'quick-comparison', depth: 2},
-  {text: 'What You Actually Need', slug: 'what-to-look-for', depth: 2},
-  {text: 'My Actual Opinions', slug: 'reviews', depth: 2},
-  {text: 'Stuff NOT Covered', slug: 'coverage', depth: 2},
-  {text: 'Quick Questions', slug: 'faq', depth: 2},
-  {text: 'Just Pick One', slug: 'conclusion', depth: 2},
+  { text: "I Spent $2,400 on a Hospital", slug: "introduction", depth: 2 },
+  { text: "The Options at a Glance", slug: "quick-comparison", depth: 2 },
+  { text: "What You Actually Need", slug: "what-to-look-for", depth: 2 },
+  { text: "My Actual Opinions", slug: "reviews", depth: 2 },
+  { text: "Stuff NOT Covered", slug: "coverage", depth: 2 },
+  { text: "Quick Questions", slug: "faq", depth: 2 },
+  { text: "Just Pick One", slug: "conclusion", depth: 2 },
 ];
 
 // Comparison table
 const comparisonColumns = [
-  {key: 'provider', label: 'Provider', width: '120px'},
-  {key: 'price', label: 'Cost/Month'},
-  {key: 'medical', label: 'Medical'},
-  {key: 'electronics', label: 'Electronics'},
-  {key: 'bestFor', label: 'Who It\'s For'},
+  { key: "provider", label: "Provider", width: "120px" },
+  { key: "price", label: "Cost/Month" },
+  { key: "medical", label: "Medical" },
+  { key: "electronics", label: "Electronics" },
+  { key: "bestFor", label: "Who It's For" },
 ];
 
 const comparisonRows = [
   {
-    provider: '<strong>SafetyWing</strong>',
-    price: '$45-70',
-    medical: '$250K',
-    electronics: 'Add separately',
-    bestFor: 'Most nomads'
+    provider: "<strong>SafetyWing</strong>",
+    price: "$45-70",
+    medical: "$250K",
+    electronics: "Add separately",
+    bestFor: "Most nomads",
   },
   {
-    provider: '<strong>World Nomads</strong>',
-    price: '$100-200',
-    medical: 'Up to $1M',
-    electronics: 'Included',
-    bestFor: 'Adventure stuff'
+    provider: "<strong>World Nomads</strong>",
+    price: "$100-200",
+    medical: "Up to $1M",
+    electronics: "Included",
+    bestFor: "Adventure stuff",
   },
   {
-    provider: '<strong>Genki</strong>',
-    price: '€35-60',
-    medical: '€1M+',
-    electronics: 'Add separately',
-    bestFor: 'Europe people'
+    provider: "<strong>Genki</strong>",
+    price: "€35-60",
+    medical: "€1M+",
+    electronics: "Add separately",
+    bestFor: "Europe people",
   },
   {
-    provider: '<strong>Passport Card</strong>',
-    price: '$150-250',
-    medical: '$1M',
-    electronics: 'Included',
-    bestFor: 'Want the best'
+    provider: "<strong>Passport Card</strong>",
+    price: "$150-250",
+    medical: "$1M",
+    electronics: "Included",
+    bestFor: "Want the best",
   },
   {
-    provider: '<strong>Insured Nomads</strong>',
-    price: '$80-150',
-    medical: '$1M+',
-    electronics: 'Add separately',
-    bestFor: 'Americans'
+    provider: "<strong>Insured Nomads</strong>",
+    price: "$80-150",
+    medical: "$1M+",
+    electronics: "Add separately",
+    bestFor: "Americans",
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Can I work and still be covered?',
-    answer: '<p>With nomad insurance, yes. With regular travel insurance, usually no.</p>'
+    question: "Can I work and still be covered?",
+    answer: "<p>With nomad insurance, yes. With regular travel insurance, usually no.</p>",
   },
   {
-    question: 'Pre-existing conditions?',
-    answer: '<p>Mostly no. Some cover sudden worsening. For ongoing stuff you need real expat health insurance.</p>'
+    question: "Pre-existing conditions?",
+    answer:
+      "<p>Mostly no. Some cover sudden worsening. For ongoing stuff you need real expat health insurance.</p>",
   },
   {
-    question: 'Already left home. Can I still buy it?',
-    answer: '<p>SafetyWing and Genki let you buy from anywhere. Traditional insurance usually requires buying before you leave.</p>'
+    question: "Already left home. Can I still buy it?",
+    answer:
+      "<p>SafetyWing and Genki let you buy from anywhere. Traditional insurance usually requires buying before you leave.</p>",
   },
   {
-    question: 'How do claims work?',
-    answer: '<p>Small stuff: pay yourself, submit receipts, get reimbursed. Big stuff: better providers bill the hospital directly. You don\'t pay anything upfront.</p>'
-  }
+    question: "How do claims work?",
+    answer:
+      "<p>Small stuff: pay yourself, submit receipts, get reimbursed. Big stuff: better providers bill the hospital directly. You don't pay anything upfront.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Top Destinations for Digital Nomads',
-    excerpt: 'Cities with great WiFi, affordable living, and thriving communities.',
-    href: '/blog/top-destinations-digital-nomads',
-    image: '/images/unsplash/photo-1528181304800-259b08848526-800w.webp',
-    imageAlt: 'Digital nomad destination'
+    title: "Top Destinations for Digital Nomads",
+    excerpt: "Cities with great WiFi, affordable living, and thriving communities.",
+    href: "/blog/top-destinations-digital-nomads",
+    image: "/images/unsplash/photo-1528181304800-259b08848526-800w.webp",
+    imageAlt: "Digital nomad destination",
   },
   {
-    title: 'Essential Travel Tech for Nomads',
-    excerpt: 'Protect your gear investment with the right insurance and accessories.',
-    href: '/blog/essential-travel-tech-nomads',
-    image: '/images/unsplash/photo-1519389950473-47ba0277781c-800w.webp',
-    imageAlt: 'Travel tech setup'
+    title: "Essential Travel Tech for Nomads",
+    excerpt: "Protect your gear investment with the right insurance and accessories.",
+    href: "/blog/essential-travel-tech-nomads",
+    image: "/images/unsplash/photo-1519389950473-47ba0277781c-800w.webp",
+    imageAlt: "Travel tech setup",
   },
   {
-    title: 'Best Banking for Digital Nomads',
-    excerpt: 'Manage your finances across borders without excessive fees.',
-    href: '/blog/best-banking-digital-nomads',
-    image: '/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp',
-    imageAlt: 'Mobile banking app'
-  }
+    title: "Best Banking for Digital Nomads",
+    excerpt: "Manage your finances across borders without excessive fees.",
+    href: "/blog/best-banking-digital-nomads",
+    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp",
+    imageAlt: "Mobile banking app",
+  },
 ];
 ---
 

@@ -1,50 +1,48 @@
 ---
-import Head from '@components/layout/Head.astro';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
-import MobileMenu from '@components/MobileMenu.astro';
-import SearchModal from '@components/SearchModal.astro';
-import LoadingOverlay from '@components/LoadingOverlay.astro';
-import {Image} from 'astro:assets';
-import '@styles/global.css';
+import { Image } from "astro:assets";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import LoadingOverlay from "@components/LoadingOverlay.astro";
+import Head from "@components/layout/Head.astro";
+import MobileMenu from "@components/MobileMenu.astro";
+import SearchModal from "@components/SearchModal.astro";
+import "@styles/global.css";
 
 // Self-hosted fonts via @fontsource (optimized for performance)
-import '@fontsource/outfit/400.css';
-import '@fontsource/outfit/600.css';
-import '@fontsource/outfit/700.css';
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/500.css';
-import '@fontsource/inter/600.css';
-import '@fontsource/jetbrains-mono/400.css';
+import "@fontsource/outfit/400.css";
+import "@fontsource/outfit/600.css";
+import "@fontsource/outfit/700.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/jetbrains-mono/400.css";
 
 interface Props {
   title: string;
   description: string;
   image?: string;
-  type?: 'website' | 'article';
+  type?: "website" | "article";
   canonicalUrl?: string;
 }
 
 const {
   title,
   description,
-  image = '/images/og-default.webp',
-  type = 'website',
-  canonicalUrl = Astro.url.href
+  image = "/images/og-default.webp",
+  type = "website",
+  canonicalUrl = Astro.url.href,
 } = Astro.props;
 
 // Schema.org Organization markup
 const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'FloatJet',
-  url: 'https://floatjet.com',
-  logo: 'https://floatjet.com/logo.png',
-  description: 'Find the best remote work and productivity tools for digital nomads and location-independent professionals',
-  sameAs: [
-    'https://twitter.com/floatjet',
-    'https://www.pinterest.com/floatjet'
-  ]
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "FloatJet",
+  url: "https://floatjet.com",
+  logo: "https://floatjet.com/logo.png",
+  description:
+    "Find the best remote work and productivity tools for digital nomads and location-independent professionals",
+  sameAs: ["https://twitter.com/floatjet", "https://www.pinterest.com/floatjet"],
 };
 ---
 

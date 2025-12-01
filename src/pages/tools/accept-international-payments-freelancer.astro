@@ -1,84 +1,83 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
-import ComparisonTable from '../../components/article/ComparisonTable.astro';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ComparisonTable from "../../components/article/ComparisonTable.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title =
-  'Accept International Payments Without Losing 5%';
+const title = "Accept International Payments Without Losing 5%";
 const description =
-  'Learn the best ways to receive payments from international clients. Compare Wise, PayPal, Payoneer, and more to find the cheapest and fastest payment method.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-25');
+  "Learn the best ways to receive payments from international clients. Compare Wise, PayPal, Payoneer, and more to find the cheapest and fastest payment method.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-25");
 const readingTime = 12;
-const image = '/images/unsplash/photo-1526304640581-d334cdbbf45e-1200w.webp';
-const imageAlt = 'International currency exchange and global payments';
+const image = "/images/unsplash/photo-1526304640581-d334cdbbf45e-1200w.webp";
+const imageAlt = "International currency exchange and global payments";
 
 const headings = [
-  {depth: 2, slug: 'hidden-tax', text: 'The "Hidden Tax" on Your Work'},
-  {depth: 2, slug: 'best-ways', text: 'The 3 Best Ways to Get Paid (Ranked)'},
+  { depth: 2, slug: "hidden-tax", text: 'The "Hidden Tax" on Your Work' },
+  { depth: 2, slug: "best-ways", text: "The 3 Best Ways to Get Paid (Ranked)" },
   {
     depth: 2,
-    slug: 'money-test',
-    text: 'The Money Test: What You Actually Keep',
+    slug: "money-test",
+    text: "The Money Test: What You Actually Keep",
   },
-  {depth: 2, slug: 'other-options', text: 'Other Options (The Niche Stuff)'},
-  {depth: 2, slug: 'faq', text: 'FAQ: The Stuff You Actually Ask'},
-  {depth: 2, slug: 'final-verdict', text: 'Final Verdict'},
+  { depth: 2, slug: "other-options", text: "Other Options (The Niche Stuff)" },
+  { depth: 2, slug: "faq", text: "FAQ: The Stuff You Actually Ask" },
+  { depth: 2, slug: "final-verdict", text: "Final Verdict" },
 ];
 
 const feeComparisonColumns = [
-  {key: 'platform', label: 'Platform'},
-  {key: 'fee', label: 'Fee'},
-  {key: 'rate', label: 'Exchange Rate'},
-  {key: 'receive', label: 'You Get (approx)'},
+  { key: "platform", label: "Platform" },
+  { key: "fee", label: "Fee" },
+  { key: "rate", label: "Exchange Rate" },
+  { key: "receive", label: "You Get (approx)" },
 ];
 
 const feeComparisonRows = [
   {
-    platform: '<strong>Wise</strong>',
-    fee: '~$6',
-    rate: 'Mid-market (Real)',
-    receive: '<strong>~$1,085</strong>',
+    platform: "<strong>Wise</strong>",
+    fee: "~$6",
+    rate: "Mid-market (Real)",
+    receive: "<strong>~$1,085</strong>",
   },
   {
-    platform: '<strong>Payoneer</strong>',
-    fee: '~$20',
-    rate: '~2% markup',
-    receive: '~$1,065',
+    platform: "<strong>Payoneer</strong>",
+    fee: "~$20",
+    rate: "~2% markup",
+    receive: "~$1,065",
   },
   {
-    platform: '<strong>PayPal</strong>',
-    fee: '~$45',
-    rate: '~3-4% markup',
-    receive: '~$1,020',
+    platform: "<strong>PayPal</strong>",
+    fee: "~$45",
+    rate: "~3-4% markup",
+    receive: "~$1,020",
   },
   {
-    platform: '<strong>Bank Wire</strong>',
-    fee: '$25 + bad rate',
-    rate: '~3-5% markup',
-    receive: '~$1,030',
+    platform: "<strong>Bank Wire</strong>",
+    fee: "$25 + bad rate",
+    rate: "~3-5% markup",
+    receive: "~$1,030",
   },
 ];
 
 const faqData = [
   {
-    question: 'Do I need a business bank account?',
+    question: "Do I need a business bank account?",
     answer:
       'Technically, no. But you should get one. It keeps your <a href="/blog/tax-tips-remote-workers">taxes</a> clean. Wise acts as a business account for most freelancers. Check our <a href="/blog/best-banking-digital-nomads">banking guide</a> for more options.',
   },
   {
-    question: 'How do I invoice in a different currency?',
+    question: "How do I invoice in a different currency?",
     answer:
-      'Just change the symbol on your invoice template. If you have a Wise USD account, invoice in USD. If you have a Wise EUR account, invoice in EUR. Give the client the bank details that match the currency.',
+      "Just change the symbol on your invoice template. If you have a Wise USD account, invoice in USD. If you have a Wise EUR account, invoice in EUR. Give the client the bank details that match the currency.",
   },
   {
-    question: 'What if the client refuses to use Wise?',
+    question: "What if the client refuses to use Wise?",
     answer:
-      'Ask if they can do a bank transfer. If you give them your Wise local bank details (e.g., your US routing number), to them, it IS a regular bank transfer. They don\'t even need to know you are using Wise.',
+      "Ask if they can do a bank transfer. If you give them your Wise local bank details (e.g., your US routing number), to them, it IS a regular bank transfer. They don't even need to know you are using Wise.",
   },
   {
-    question: 'Is this legal? What about taxes?',
+    question: "Is this legal? What about taxes?",
     answer:
       'Yes, it is legal. Income is income. It doesn\'t matter if it lands in PayPal, Wise, or a shoebox. You report the value in your home currency at the time you received it. See our <a href="/blog/tax-tips-remote-workers">tax guide for remote workers</a> for more details. (I am not an accountant. Please talk to one.)',
   },
@@ -86,25 +85,25 @@ const faqData = [
 
 const relatedArticles = [
   {
-    title: 'Wise vs PayPal vs Payoneer',
-    excerpt: 'Detailed comparison of the top international payment platforms.',
-    href: '/tools/wise-vs-paypal-vs-payoneer',
-    image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'Payment platform comparison',
+    title: "Wise vs PayPal vs Payoneer",
+    excerpt: "Detailed comparison of the top international payment platforms.",
+    href: "/tools/wise-vs-paypal-vs-payoneer",
+    image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
+    imageAlt: "Payment platform comparison",
   },
   {
-    title: 'Best Banking for Digital Nomads',
-    excerpt: 'Find the right bank account for international freelancing.',
-    href: '/blog/best-banking-digital-nomads',
-    image: '/images/unsplash/photo-1601597111158-2fceff292cdc-800w.webp',
-    imageAlt: 'Digital banking on mobile device',
+    title: "Best Banking for Digital Nomads",
+    excerpt: "Find the right bank account for international freelancing.",
+    href: "/blog/best-banking-digital-nomads",
+    image: "/images/unsplash/photo-1601597111158-2fceff292cdc-800w.webp",
+    imageAlt: "Digital banking on mobile device",
   },
   {
-    title: 'Best Invoicing Tools',
-    excerpt: 'Invoice international clients professionally.',
-    href: '/tools/best-invoicing-tools',
-    image: '/images/unsplash/photo-1450101499163-c8848c66ca85-800w.webp',
-    imageAlt: 'Invoice and payment documents',
+    title: "Best Invoicing Tools",
+    excerpt: "Invoice international clients professionally.",
+    href: "/tools/best-invoicing-tools",
+    image: "/images/unsplash/photo-1450101499163-c8848c66ca85-800w.webp",
+    imageAlt: "Invoice and payment documents",
   },
 ];
 ---

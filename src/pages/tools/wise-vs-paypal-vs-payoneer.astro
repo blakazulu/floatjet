@@ -1,180 +1,182 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
-import ComparisonTable from '../../components/article/ComparisonTable.astro';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ComparisonTable from "../../components/article/ComparisonTable.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title =
-  'Wise vs PayPal vs Payoneer: Best for Remote Workers?';
+const title = "Wise vs PayPal vs Payoneer: Best for Remote Workers?";
 const description =
-  'Compare Wise, PayPal, and Payoneer for international payments. Fees, exchange rates, speed, and features to help freelancers choose the right platform.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-25');
+  "Compare Wise, PayPal, and Payoneer for international payments. Fees, exchange rates, speed, and features to help freelancers choose the right platform.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-25");
 const readingTime = 10;
-const image = '/images/unsplash/photo-1563013544-824ae1b704d3-1200w.webp';
-const imageAlt = 'International payment platforms comparison';
+const image = "/images/unsplash/photo-1563013544-824ae1b704d3-1200w.webp";
+const imageAlt = "International payment platforms comparison";
 
 const headings = [
   {
     depth: 2,
-    slug: 'quick-answer',
-    text: 'Quick Answer: Which Should You Use?',
+    slug: "quick-answer",
+    text: "Quick Answer: Which Should You Use?",
   },
-  {depth: 2, slug: 'wise-overview', text: 'Wise Overview'},
-  {depth: 2, slug: 'paypal-overview', text: 'PayPal Overview'},
-  {depth: 2, slug: 'payoneer-overview', text: 'Payoneer Overview'},
-  {depth: 2, slug: 'feature-comparison', text: 'Feature Comparison'},
+  { depth: 2, slug: "wise-overview", text: "Wise Overview" },
+  { depth: 2, slug: "paypal-overview", text: "PayPal Overview" },
+  { depth: 2, slug: "payoneer-overview", text: "Payoneer Overview" },
+  { depth: 2, slug: "feature-comparison", text: "Feature Comparison" },
   {
     depth: 2,
-    slug: 'fee-comparison',
-    text: 'The Money Test (The Real Numbers)',
+    slug: "fee-comparison",
+    text: "The Money Test (The Real Numbers)",
   },
-  {depth: 2, slug: 'speed-comparison', text: 'Speed of Transfers'},
-  {depth: 2, slug: 'best-use-cases', text: 'Best Use Cases'},
-  {depth: 2, slug: 'faq', text: 'Frequently Asked Questions'},
+  { depth: 2, slug: "speed-comparison", text: "Speed of Transfers" },
+  { depth: 2, slug: "best-use-cases", text: "Best Use Cases" },
+  { depth: 2, slug: "faq", text: "Frequently Asked Questions" },
 ];
 
 // Fee Comparison Data
 const feeComparisonColumns = [
-  {key: 'platform', label: 'Platform'},
-  {key: 'receivingFee', label: 'Receiving Fee'},
-  {key: 'conversionFee', label: 'Conversion Fee'},
-  {key: 'totalCost', label: 'Total Cost'},
-  {key: 'youReceive', label: 'You Receive'},
+  { key: "platform", label: "Platform" },
+  { key: "receivingFee", label: "Receiving Fee" },
+  { key: "conversionFee", label: "Conversion Fee" },
+  { key: "totalCost", label: "Total Cost" },
+  { key: "youReceive", label: "You Receive" },
 ];
 
 const feeComparisonRows = [
   {
-    platform: '<strong>Wise</strong>',
-    receivingFee: '$0',
-    conversionFee: '~$5 (0.5%)',
-    totalCost: '<strong>~$5</strong>',
-    youReceive: '<strong>~£790</strong>',
+    platform: "<strong>Wise</strong>",
+    receivingFee: "$0",
+    conversionFee: "~$5 (0.5%)",
+    totalCost: "<strong>~$5</strong>",
+    youReceive: "<strong>~£790</strong>",
   },
   {
-    platform: '<strong>Payoneer</strong>',
-    receivingFee: '$0',
-    conversionFee: '~$20 (2%)',
-    totalCost: '~$22',
-    youReceive: '~£778',
+    platform: "<strong>Payoneer</strong>",
+    receivingFee: "$0",
+    conversionFee: "~$20 (2%)",
+    totalCost: "~$22",
+    youReceive: "~£778",
   },
   {
-    platform: '<strong>PayPal</strong>',
-    receivingFee: '$44 (4.4%)',
-    conversionFee: '~$30 (3%)',
-    totalCost: '~$74',
-    youReceive: '~£737',
+    platform: "<strong>PayPal</strong>",
+    receivingFee: "$44 (4.4%)",
+    conversionFee: "~$30 (3%)",
+    totalCost: "~$74",
+    youReceive: "~£737",
   },
 ];
 
 // Currency Support Data
 const currencySupportColumns = [
-  {key: 'feature', label: 'Feature'},
-  {key: 'wise', label: 'Wise'},
-  {key: 'paypal', label: 'PayPal'},
-  {key: 'payoneer', label: 'Payoneer'},
+  { key: "feature", label: "Feature" },
+  { key: "wise", label: "Wise" },
+  { key: "paypal", label: "PayPal" },
+  { key: "payoneer", label: "Payoneer" },
 ];
 
 const currencySupportRows = [
   {
-    feature: 'Currencies Supported',
-    wise: '50+',
-    paypal: '25+',
-    payoneer: '150+',
+    feature: "Currencies Supported",
+    wise: "50+",
+    paypal: "25+",
+    payoneer: "150+",
   },
   {
-    feature: 'Multi-Currency Balance',
-    wise: 'Yes (50+)',
-    paypal: 'Limited',
-    payoneer: 'Yes (8)',
+    feature: "Multi-Currency Balance",
+    wise: "Yes (50+)",
+    paypal: "Limited",
+    payoneer: "Yes (8)",
   },
   {
-    feature: 'Local Bank Details',
-    wise: '10+ countries',
-    paypal: 'No',
-    payoneer: '4+ countries',
+    feature: "Local Bank Details",
+    wise: "10+ countries",
+    paypal: "No",
+    payoneer: "4+ countries",
   },
   {
-    feature: 'Exchange Rate Quality',
-    wise: 'Excellent',
-    paypal: 'Poor',
-    payoneer: 'Good',
+    feature: "Exchange Rate Quality",
+    wise: "Excellent",
+    paypal: "Poor",
+    payoneer: "Good",
   },
 ];
 
 // Speed Comparison Data
 const speedComparisonColumns = [
-  {key: 'platform', label: 'Platform'},
-  {key: 'paymentToAccount', label: 'Payment to Account'},
-  {key: 'withdrawalToBank', label: 'Withdrawal to Bank'},
+  { key: "platform", label: "Platform" },
+  { key: "paymentToAccount", label: "Payment to Account" },
+  { key: "withdrawalToBank", label: "Withdrawal to Bank" },
 ];
 
 const speedComparisonRows = [
   {
-    platform: '<strong>PayPal</strong>',
-    paymentToAccount: 'Instant',
-    withdrawalToBank: '3-5 days (standard) / instant for 1%',
+    platform: "<strong>PayPal</strong>",
+    paymentToAccount: "Instant",
+    withdrawalToBank: "3-5 days (standard) / instant for 1%",
   },
   {
-    platform: '<strong>Wise</strong>',
-    paymentToAccount: '1-2 days',
-    withdrawalToBank: 'Same day to 2 days',
+    platform: "<strong>Wise</strong>",
+    paymentToAccount: "1-2 days",
+    withdrawalToBank: "Same day to 2 days",
   },
   {
-    platform: '<strong>Payoneer</strong>',
-    paymentToAccount: '1-3 days',
-    withdrawalToBank: '2-5 days',
+    platform: "<strong>Payoneer</strong>",
+    paymentToAccount: "1-3 days",
+    withdrawalToBank: "2-5 days",
   },
 ];
 
 const faqData = [
   {
-    question: 'Which platform has the lowest fees overall?',
-    answer: 'Wise. Almost always. The 0.35-1% fee is unbeatable compared to PayPal\'s 4-6%.',
+    question: "Which platform has the lowest fees overall?",
+    answer: "Wise. Almost always. The 0.35-1% fee is unbeatable compared to PayPal's 4-6%.",
   },
   {
-    question: 'Can I use multiple platforms at once?',
-    answer: 'Yes. I do. Wise is my main. PayPal is for clients who refuse anything else. Payoneer is for my Upwork gigs.',
+    question: "Can I use multiple platforms at once?",
+    answer:
+      "Yes. I do. Wise is my main. PayPal is for clients who refuse anything else. Payoneer is for my Upwork gigs.",
   },
   {
-    question: 'Which is safest for large payments?',
-    answer: 'They\'re all safe. Regulated. But PayPal likes to freeze accounts more than the others. For huge amounts ($10k+), I\'d stick to Wise or a traditional bank wire.',
+    question: "Which is safest for large payments?",
+    answer:
+      "They're all safe. Regulated. But PayPal likes to freeze accounts more than the others. For huge amounts ($10k+), I'd stick to Wise or a traditional bank wire.",
   },
   {
-    question: 'Which works best with freelance platforms like Upwork?',
-    answer: 'Payoneer. It\'s built into the dashboard of almost every gig site.',
+    question: "Which works best with freelance platforms like Upwork?",
+    answer: "Payoneer. It's built into the dashboard of almost every gig site.",
   },
   {
-    question: 'Can I hold multiple currencies in these accounts?',
-    answer: 'Wise is best for this. 50+ currencies. You can hold Thai Baht, Euros, and Dollars all at once. PayPal lets you do it but charges you to convert.',
+    question: "Can I hold multiple currencies in these accounts?",
+    answer:
+      "Wise is best for this. 50+ currencies. You can hold Thai Baht, Euros, and Dollars all at once. PayPal lets you do it but charges you to convert.",
   },
   {
-    question: 'Which has the best mobile app?',
-    answer: 'PayPal\'s app is slick. Wise is clean and simple. Payoneer is... fine. It works.',
+    question: "Which has the best mobile app?",
+    answer: "PayPal's app is slick. Wise is clean and simple. Payoneer is... fine. It works.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'How to Accept International Payments',
-    excerpt: 'Complete guide to getting paid by international clients.',
-    href: '/tools/accept-international-payments-freelancer',
-    image: '/images/unsplash/photo-1526304640581-d334cdbbf45e-800w.webp',
-    imageAlt: 'International currency and payments',
+    title: "How to Accept International Payments",
+    excerpt: "Complete guide to getting paid by international clients.",
+    href: "/tools/accept-international-payments-freelancer",
+    image: "/images/unsplash/photo-1526304640581-d334cdbbf45e-800w.webp",
+    imageAlt: "International currency and payments",
   },
   {
-    title: 'Best Banking for Digital Nomads',
-    excerpt: 'Compare banking options for remote workers.',
-    href: '/blog/best-banking-digital-nomads',
-    image: '/images/unsplash/photo-1601597111158-2fceff292cdc-800w.webp',
-    imageAlt: 'Digital banking on mobile device',
+    title: "Best Banking for Digital Nomads",
+    excerpt: "Compare banking options for remote workers.",
+    href: "/blog/best-banking-digital-nomads",
+    image: "/images/unsplash/photo-1601597111158-2fceff292cdc-800w.webp",
+    imageAlt: "Digital banking on mobile device",
   },
   {
-    title: 'Crypto-Friendly Banks',
-    excerpt: 'Banks that work with cryptocurrency for digital nomads.',
-    href: '/blog/crypto-friendly-banks',
-    image: '/images/unsplash/photo-1518546305927-5a555bb7020d-800w.webp',
-    imageAlt: 'Cryptocurrency and banking',
+    title: "Crypto-Friendly Banks",
+    excerpt: "Banks that work with cryptocurrency for digital nomads.",
+    href: "/blog/crypto-friendly-banks",
+    image: "/images/unsplash/photo-1518546305927-5a555bb7020d-800w.webp",
+    imageAlt: "Cryptocurrency and banking",
   },
 ];
 ---

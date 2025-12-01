@@ -1,220 +1,229 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Mechanical Keyboards for Remote Work (2025)';
-const description = 'Tested eight mechanical keyboards over three months. Here\'s which switches feel best, sound quietest, and work for all-day typing without your hands hurting.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Best Mechanical Keyboards for Remote Work (2025)";
+const description =
+  "Tested eight mechanical keyboards over three months. Here's which switches feel best, sound quietest, and work for all-day typing without your hands hurting.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 14;
-const image = '/images/unsplash/photo-1595225476474-87563907a212-1200w.webp';
-const imageAlt = 'Mechanical keyboard for remote work productivity';
+const image = "/images/unsplash/photo-1595225476474-87563907a212-1200w.webp";
+const imageAlt = "Mechanical keyboard for remote work productivity";
 
 // Table of contents headings
 const headings = [
-  {text: 'The Confession', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Switch Types', slug: 'switch-types', depth: 2},
-  {text: 'The Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Keychron K2', slug: 'keychron-k2', depth: 3},
-  {text: 'Das Keyboard 4', slug: 'das-keyboard', depth: 3},
-  {text: 'Logitech MX Mechanical', slug: 'logitech-mx', depth: 3},
-  {text: 'Keychron Q1', slug: 'keychron-q1', depth: 3},
-  {text: 'NuPhy Air75', slug: 'nuphy-air75', depth: 3},
-  {text: 'Ducky One 3', slug: 'ducky-one', depth: 3},
-  {text: 'Leopold FC660M', slug: 'leopold', depth: 3},
-  {text: 'Royal Kludge RK84', slug: 'royal-kludge', depth: 3},
-  {text: 'Video Call Guide', slug: 'quiet-switches', depth: 2},
-  {text: 'Wireless vs Wired', slug: 'wireless-vs-wired', depth: 2},
-  {text: 'Mac Compatibility', slug: 'mac-compatibility', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Final Picks', slug: 'conclusion', depth: 2},
-  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+  { text: "The Confession", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Switch Types", slug: "switch-types", depth: 2 },
+  { text: "The Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Keychron K2", slug: "keychron-k2", depth: 3 },
+  { text: "Das Keyboard 4", slug: "das-keyboard", depth: 3 },
+  { text: "Logitech MX Mechanical", slug: "logitech-mx", depth: 3 },
+  { text: "Keychron Q1", slug: "keychron-q1", depth: 3 },
+  { text: "NuPhy Air75", slug: "nuphy-air75", depth: 3 },
+  { text: "Ducky One 3", slug: "ducky-one", depth: 3 },
+  { text: "Leopold FC660M", slug: "leopold", depth: 3 },
+  { text: "Royal Kludge RK84", slug: "royal-kludge", depth: 3 },
+  { text: "Video Call Guide", slug: "quiet-switches", depth: 2 },
+  { text: "Wireless vs Wired", slug: "wireless-vs-wired", depth: 2 },
+  { text: "Mac Compatibility", slug: "mac-compatibility", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Final Picks", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'keyboard', label: 'Keyboard', width: '140px'},
-  {key: 'bestFor', label: 'Best For', width: '140px'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
-  {key: 'action', label: ''},
+  { key: "keyboard", label: "Keyboard", width: "140px" },
+  { key: "bestFor", label: "Best For", width: "140px" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    keyboard: '<strong>Keychron K2</strong>',
-    bestFor: 'Best Overall',
-    price: '$89',
-    rating: '9.3/10',
-    action: '<a href="/go/keychron-k2" rel="nofollow sponsored">Check Price</a>'
+    keyboard: "<strong>Keychron K2</strong>",
+    bestFor: "Best Overall",
+    price: "$89",
+    rating: "9.3/10",
+    action: '<a href="/go/keychron-k2" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    keyboard: '<strong>Logitech MX Mechanical</strong>',
-    bestFor: 'Best Wireless',
-    price: '$149',
-    rating: '9.0/10',
-    action: '<a href="/go/amazon/logitech-mx-mechanical" rel="nofollow sponsored">Check Price</a>'
+    keyboard: "<strong>Logitech MX Mechanical</strong>",
+    bestFor: "Best Wireless",
+    price: "$149",
+    rating: "9.0/10",
+    action: '<a href="/go/amazon/logitech-mx-mechanical" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    keyboard: '<strong>Royal Kludge RK84</strong>',
-    bestFor: 'Best Budget',
-    price: '$60',
-    rating: '8.5/10',
-    action: '<a href="/go/amazon/rk84" rel="nofollow sponsored">Check Price</a>'
+    keyboard: "<strong>Royal Kludge RK84</strong>",
+    bestFor: "Best Budget",
+    price: "$60",
+    rating: "8.5/10",
+    action: '<a href="/go/amazon/rk84" rel="nofollow sponsored">Check Price</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'keyboard', label: 'Keyboard', width: '130px'},
-  {key: 'bestFor', label: 'Best For', width: '100px'},
-  {key: 'price', label: 'Price'},
-  {key: 'switches', label: 'Switches'},
-  {key: 'connection', label: 'Connection'},
-  {key: 'layout', label: 'Layout'},
-  {key: 'action', label: ''},
+  { key: "keyboard", label: "Keyboard", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "100px" },
+  { key: "price", label: "Price" },
+  { key: "switches", label: "Switches" },
+  { key: "connection", label: "Connection" },
+  { key: "layout", label: "Layout" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    keyboard: '<strong>Keychron K2</strong>',
-    bestFor: 'Overall',
-    price: '$89',
-    switches: 'Gateron',
-    connection: 'BT/Wired',
-    layout: '75%',
-    action: '<a href="/go/keychron-k2" rel="nofollow sponsored">Buy</a>'
+    keyboard: "<strong>Keychron K2</strong>",
+    bestFor: "Overall",
+    price: "$89",
+    switches: "Gateron",
+    connection: "BT/Wired",
+    layout: "75%",
+    action: '<a href="/go/keychron-k2" rel="nofollow sponsored">Buy</a>',
   },
   {
-    keyboard: '<strong>Das Keyboard 4</strong>',
-    bestFor: 'Premium',
-    price: '$169',
-    switches: 'Cherry MX',
-    connection: 'Wired',
-    layout: 'Full',
-    action: '<a href="/go/amazon/das-keyboard-4" rel="nofollow sponsored">Buy</a>'
+    keyboard: "<strong>Das Keyboard 4</strong>",
+    bestFor: "Premium",
+    price: "$169",
+    switches: "Cherry MX",
+    connection: "Wired",
+    layout: "Full",
+    action: '<a href="/go/amazon/das-keyboard-4" rel="nofollow sponsored">Buy</a>',
   },
   {
-    keyboard: '<strong>Logitech MX</strong>',
-    bestFor: 'Wireless',
-    price: '$149',
-    switches: 'Tactile Quiet',
-    connection: 'BT/Bolt',
-    layout: 'Full/TKL',
-    action: '<a href="/go/amazon/logitech-mx-mechanical" rel="nofollow sponsored">Buy</a>'
+    keyboard: "<strong>Logitech MX</strong>",
+    bestFor: "Wireless",
+    price: "$149",
+    switches: "Tactile Quiet",
+    connection: "BT/Bolt",
+    layout: "Full/TKL",
+    action: '<a href="/go/amazon/logitech-mx-mechanical" rel="nofollow sponsored">Buy</a>',
   },
   {
-    keyboard: '<strong>Keychron Q1</strong>',
-    bestFor: 'Customizable',
-    price: '$179',
-    switches: 'Hot-swap',
-    connection: 'Wired',
-    layout: '75%',
-    action: '<a href="/go/keychron-q1" rel="nofollow sponsored">Buy</a>'
+    keyboard: "<strong>Keychron Q1</strong>",
+    bestFor: "Customizable",
+    price: "$179",
+    switches: "Hot-swap",
+    connection: "Wired",
+    layout: "75%",
+    action: '<a href="/go/keychron-q1" rel="nofollow sponsored">Buy</a>',
   },
   {
-    keyboard: '<strong>NuPhy Air75</strong>',
-    bestFor: 'Low-profile',
-    price: '$109',
-    switches: 'Gateron LP',
-    connection: 'BT/2.4G/Wired',
-    layout: '75%',
-    action: '<a href="/go/amazon/nuphy-air75" rel="nofollow sponsored">Buy</a>'
+    keyboard: "<strong>NuPhy Air75</strong>",
+    bestFor: "Low-profile",
+    price: "$109",
+    switches: "Gateron LP",
+    connection: "BT/2.4G/Wired",
+    layout: "75%",
+    action: '<a href="/go/amazon/nuphy-air75" rel="nofollow sponsored">Buy</a>',
   },
   {
-    keyboard: '<strong>Ducky One 3</strong>',
-    bestFor: 'Build Quality',
-    price: '$129',
-    switches: 'Cherry MX',
-    connection: 'Wired',
-    layout: 'Various',
-    action: '<a href="/go/amazon/ducky-one-3" rel="nofollow sponsored">Buy</a>'
+    keyboard: "<strong>Ducky One 3</strong>",
+    bestFor: "Build Quality",
+    price: "$129",
+    switches: "Cherry MX",
+    connection: "Wired",
+    layout: "Various",
+    action: '<a href="/go/amazon/ducky-one-3" rel="nofollow sponsored">Buy</a>',
   },
   {
-    keyboard: '<strong>Leopold FC660M</strong>',
-    bestFor: 'Typing Feel',
-    price: '$119',
-    switches: 'Cherry MX',
-    connection: 'Wired',
-    layout: '65%',
-    action: '<a href="/go/amazon/leopold-fc660m" rel="nofollow sponsored">Buy</a>'
+    keyboard: "<strong>Leopold FC660M</strong>",
+    bestFor: "Typing Feel",
+    price: "$119",
+    switches: "Cherry MX",
+    connection: "Wired",
+    layout: "65%",
+    action: '<a href="/go/amazon/leopold-fc660m" rel="nofollow sponsored">Buy</a>',
   },
   {
-    keyboard: '<strong>RK84</strong>',
-    bestFor: 'Budget',
-    price: '$60',
-    switches: 'Hot-swap',
-    connection: 'BT/2.4G/Wired',
-    layout: '75%',
-    action: '<a href="/go/amazon/rk84" rel="nofollow sponsored">Buy</a>'
+    keyboard: "<strong>RK84</strong>",
+    bestFor: "Budget",
+    price: "$60",
+    switches: "Hot-swap",
+    connection: "BT/2.4G/Wired",
+    layout: "75%",
+    action: '<a href="/go/amazon/rk84" rel="nofollow sponsored">Buy</a>',
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Are mechanical keyboards better for remote work?',
-    answer: '<p><strong>Yes, for heavy typists.</strong> Mechanical keyboards offer several productivity benefits:</p><ul><li><strong>Better typing feel:</strong> Tactile feedback helps you type faster with fewer errors</li><li><strong>Durability:</strong> Rated for 50-100 million keystrokes vs 5-10 million for membrane</li><li><strong>Comfort:</strong> Reduced finger fatigue over long typing sessions</li><li><strong>Customization:</strong> Choose switch types, keycaps, and layouts</li></ul><p>For occasional typists or those prioritizing quiet, membrane or low-profile mechanical keyboards may be sufficient.</p>'
+    question: "Are mechanical keyboards better for remote work?",
+    answer:
+      "<p><strong>Yes, for heavy typists.</strong> Mechanical keyboards offer several productivity benefits:</p><ul><li><strong>Better typing feel:</strong> Tactile feedback helps you type faster with fewer errors</li><li><strong>Durability:</strong> Rated for 50-100 million keystrokes vs 5-10 million for membrane</li><li><strong>Comfort:</strong> Reduced finger fatigue over long typing sessions</li><li><strong>Customization:</strong> Choose switch types, keycaps, and layouts</li></ul><p>For occasional typists or those prioritizing quiet, membrane or low-profile mechanical keyboards may be sufficient.</p>",
   },
   {
-    question: 'What switches are best for office work?',
-    answer: '<p><strong>Tactile or linear switches with dampening</strong> work best for shared workspaces and video calls:</p><ul><li><strong>Cherry MX Brown:</strong> Tactile bump, moderate noise (popular choice)</li><li><strong>Cherry MX Silent Red:</strong> Linear, very quiet (best for calls)</li><li><strong>Gateron Silent Brown:</strong> Tactile, dampened (quiet tactile option)</li><li><strong>Logitech Tactile Quiet:</strong> Designed for offices</li></ul><p>Avoid Cherry MX Blue (clicky) switches for office environments—they\'re loud and will annoy colleagues on calls.</p>'
+    question: "What switches are best for office work?",
+    answer:
+      "<p><strong>Tactile or linear switches with dampening</strong> work best for shared workspaces and video calls:</p><ul><li><strong>Cherry MX Brown:</strong> Tactile bump, moderate noise (popular choice)</li><li><strong>Cherry MX Silent Red:</strong> Linear, very quiet (best for calls)</li><li><strong>Gateron Silent Brown:</strong> Tactile, dampened (quiet tactile option)</li><li><strong>Logitech Tactile Quiet:</strong> Designed for offices</li></ul><p>Avoid Cherry MX Blue (clicky) switches for office environments—they're loud and will annoy colleagues on calls.</p>",
   },
   {
-    question: 'What keyboard layout is best for productivity?',
-    answer: '<p>Depends on your workflow:</p><ul><li><strong>Full-size (100%):</strong> Best for data entry and spreadsheets (numpad included)</li><li><strong>Tenkeyless (TKL/80%):</strong> No numpad, more desk space, keeps mouse closer</li><li><strong>75%:</strong> Compact with function keys, great balance for most users</li><li><strong>65%:</strong> Ultra-compact, no function row (arrows retained)</li></ul><p>For most remote workers, <strong>75% or TKL</strong> offers the best balance—essential keys without wasted space.</p>'
+    question: "What keyboard layout is best for productivity?",
+    answer:
+      "<p>Depends on your workflow:</p><ul><li><strong>Full-size (100%):</strong> Best for data entry and spreadsheets (numpad included)</li><li><strong>Tenkeyless (TKL/80%):</strong> No numpad, more desk space, keeps mouse closer</li><li><strong>75%:</strong> Compact with function keys, great balance for most users</li><li><strong>65%:</strong> Ultra-compact, no function row (arrows retained)</li></ul><p>For most remote workers, <strong>75% or TKL</strong> offers the best balance—essential keys without wasted space.</p>",
   },
   {
-    question: 'Should I get a wired or wireless mechanical keyboard?',
-    answer: '<p><strong>Wireless is convenient but wired is reliable:</strong></p><p><strong>Choose wireless if:</strong></p><ul><li>You value clean desk aesthetics</li><li>You switch between devices (Bluetooth multi-pairing)</li><li>You use your keyboard with a laptop on the go</li></ul><p><strong>Choose wired if:</strong></p><ul><li>You want zero latency (though modern wireless is near-imperceptible)</li><li>You don\'t want to charge batteries</li><li>You want the cheapest price (wireless adds cost)</li></ul><p>Many keyboards offer both options. The Keychron K2 and Royal Kludge RK84 can be used wired or wireless.</p>'
+    question: "Should I get a wired or wireless mechanical keyboard?",
+    answer:
+      "<p><strong>Wireless is convenient but wired is reliable:</strong></p><p><strong>Choose wireless if:</strong></p><ul><li>You value clean desk aesthetics</li><li>You switch between devices (Bluetooth multi-pairing)</li><li>You use your keyboard with a laptop on the go</li></ul><p><strong>Choose wired if:</strong></p><ul><li>You want zero latency (though modern wireless is near-imperceptible)</li><li>You don't want to charge batteries</li><li>You want the cheapest price (wireless adds cost)</li></ul><p>Many keyboards offer both options. The Keychron K2 and Royal Kludge RK84 can be used wired or wireless.</p>",
   },
   {
-    question: 'Do mechanical keyboards work with Mac?',
-    answer: '<p><strong>Yes, but check for Mac-specific features:</strong></p><ul><li><strong>Switch for Mac layouts:</strong> Command/Option key positions differ from Windows</li><li><strong>Mac keycaps included:</strong> Keychron includes both Mac and Windows keycaps</li><li><strong>Function key behavior:</strong> Some keyboards need software for Mac media keys</li></ul><p>Best Mac-compatible options: <strong>Keychron K2/Q1</strong> (designed for Mac), <strong>Logitech MX Mechanical</strong> (Easy-Switch between devices), <strong>NuPhy Air75</strong> (Mac keycaps included).</p>'
+    question: "Do mechanical keyboards work with Mac?",
+    answer:
+      "<p><strong>Yes, but check for Mac-specific features:</strong></p><ul><li><strong>Switch for Mac layouts:</strong> Command/Option key positions differ from Windows</li><li><strong>Mac keycaps included:</strong> Keychron includes both Mac and Windows keycaps</li><li><strong>Function key behavior:</strong> Some keyboards need software for Mac media keys</li></ul><p>Best Mac-compatible options: <strong>Keychron K2/Q1</strong> (designed for Mac), <strong>Logitech MX Mechanical</strong> (Easy-Switch between devices), <strong>NuPhy Air75</strong> (Mac keycaps included).</p>",
   },
   {
-    question: 'What is hot-swappable and do I need it?',
-    answer: '<p><strong>Hot-swappable keyboards let you change switches without soldering.</strong></p><p>You might want hot-swap if:</p><ul><li>You\'re new to mechanical keyboards and want to experiment</li><li>You want different switches for different keys</li><li>You plan to upgrade switches later</li></ul><p>You probably don\'t need hot-swap if:</p><ul><li>You know what switches you like</li><li>You don\'t want to modify your keyboard</li><li>Budget is a concern</li></ul><p>Hot-swap keyboards: Keychron Q1, Royal Kludge RK84, some Ducky models.</p>'
+    question: "What is hot-swappable and do I need it?",
+    answer:
+      "<p><strong>Hot-swappable keyboards let you change switches without soldering.</strong></p><p>You might want hot-swap if:</p><ul><li>You're new to mechanical keyboards and want to experiment</li><li>You want different switches for different keys</li><li>You plan to upgrade switches later</li></ul><p>You probably don't need hot-swap if:</p><ul><li>You know what switches you like</li><li>You don't want to modify your keyboard</li><li>Budget is a concern</li></ul><p>Hot-swap keyboards: Keychron Q1, Royal Kludge RK84, some Ducky models.</p>",
   },
   {
-    question: 'How loud are mechanical keyboards on video calls?',
-    answer: '<p><strong>It depends on switches and microphone.</strong> Ways to reduce keyboard noise on calls:</p><ol><li><strong>Choose quiet switches:</strong> Silent Reds, Silent Browns, or Logitech Tactile Quiet</li><li><strong>Add dampening:</strong> O-rings, desk mat, or foam inside keyboard</li><li><strong>Microphone settings:</strong> Use noise suppression (Krisp, RTX Voice, built-in)</li><li><strong>Microphone type:</strong> Cardioid mics pick up less keyboard noise than omnidirectional</li><li><strong>Push-to-talk:</strong> Mute when typing heavily</li></ol><p>With proper setup, even clicky keyboards can be managed on calls.</p>'
+    question: "How loud are mechanical keyboards on video calls?",
+    answer:
+      "<p><strong>It depends on switches and microphone.</strong> Ways to reduce keyboard noise on calls:</p><ol><li><strong>Choose quiet switches:</strong> Silent Reds, Silent Browns, or Logitech Tactile Quiet</li><li><strong>Add dampening:</strong> O-rings, desk mat, or foam inside keyboard</li><li><strong>Microphone settings:</strong> Use noise suppression (Krisp, RTX Voice, built-in)</li><li><strong>Microphone type:</strong> Cardioid mics pick up less keyboard noise than omnidirectional</li><li><strong>Push-to-talk:</strong> Mute when typing heavily</li></ol><p>With proper setup, even clicky keyboards can be managed on calls.</p>",
   },
   {
-    question: 'How much should I spend on a mechanical keyboard?',
-    answer: '<p>Budget tiers for remote work keyboards:</p><ul><li><strong>$50-80:</strong> Good entry-level (Royal Kludge, Keychron C-series)</li><li><strong>$80-120:</strong> Sweet spot for most users (Keychron K2, NuPhy Air75)</li><li><strong>$120-180:</strong> Premium features and build (Ducky, Leopold, Keychron Q)</li><li><strong>$180+:</strong> Enthusiast-grade (HHKB, custom builds)</li></ul><p>For most remote workers, <strong>$80-120</strong> delivers excellent value. The Keychron K2 at $89 is hard to beat.</p>'
-  }
+    question: "How much should I spend on a mechanical keyboard?",
+    answer:
+      "<p>Budget tiers for remote work keyboards:</p><ul><li><strong>$50-80:</strong> Good entry-level (Royal Kludge, Keychron C-series)</li><li><strong>$80-120:</strong> Sweet spot for most users (Keychron K2, NuPhy Air75)</li><li><strong>$120-180:</strong> Premium features and build (Ducky, Leopold, Keychron Q)</li><li><strong>$180+:</strong> Enthusiast-grade (HHKB, custom builds)</li></ul><p>For most remote workers, <strong>$80-120</strong> delivers excellent value. The Keychron K2 at $89 is hard to beat.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Standing Desks for Home Office',
-    excerpt: 'Complete your ergonomic setup with a height-adjustable desk.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Modern standing desk setup'
+    title: "Best Standing Desks for Home Office",
+    excerpt: "Complete your ergonomic setup with a height-adjustable desk.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern standing desk setup",
   },
   {
-    title: 'Best Noise-Canceling Headphones',
-    excerpt: 'Block distractions and stay focused with the best audio gear.',
-    href: '/gear/best-noise-canceling-headphones',
-    image: '/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp',
-    imageAlt: 'Professional headphones for remote work'
+    title: "Best Noise-Canceling Headphones",
+    excerpt: "Block distractions and stay focused with the best audio gear.",
+    href: "/gear/best-noise-canceling-headphones",
+    image: "/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp",
+    imageAlt: "Professional headphones for remote work",
   },
   {
-    title: 'Ultimate Home Office Setup Guide',
-    excerpt: 'Build the perfect workspace for productivity and comfort.',
-    href: '/blog/ultimate-home-office-setup',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Complete home office setup'
-  }
+    title: "Ultimate Home Office Setup Guide",
+    excerpt: "Build the perfect workspace for productivity and comfort.",
+    href: "/blog/ultimate-home-office-setup",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Complete home office setup",
+  },
 ];
 ---
 

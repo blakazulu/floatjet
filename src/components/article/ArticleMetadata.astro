@@ -8,19 +8,13 @@ interface Props {
   readingTime?: number;
 }
 
-const {
-  author,
-  authorUrl,
-  pubDate,
-  updatedDate,
-  readingTime
-} = Astro.props;
+const { author, authorUrl, pubDate, updatedDate, readingTime } = Astro.props;
 
 const formatDate = (date: Date) => {
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric'
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
   }).format(date);
 };
 ---

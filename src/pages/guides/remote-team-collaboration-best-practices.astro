@@ -1,92 +1,102 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Remote Team Collaboration: What Actually Works (2025)';
-const description = 'Build a high-performing distributed team with proven collaboration strategies. Learn tools, processes, and culture tips for seamless remote teamwork success.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Remote Team Collaboration: What Actually Works (2025)";
+const description =
+  "Build a high-performing distributed team with proven collaboration strategies. Learn tools, processes, and culture tips for seamless remote teamwork success.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 15;
-const image = '/images/unsplash/photo-1552664730-d307ca884978-1200w.webp';
-const imageAlt = 'Remote team members collaborating on digital whiteboard';
+const image = "/images/unsplash/photo-1552664730-d307ca884978-1200w.webp";
+const imageAlt = "Remote team members collaborating on digital whiteboard";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Building Collaboration Culture', slug: 'culture', depth: 2},
-  {text: 'Choosing Your Tool Stack', slug: 'tools', depth: 2},
-  {text: 'Documentation as Collaboration', slug: 'documentation', depth: 2},
-  {text: 'Sync vs Async Collaboration', slug: 'sync-vs-async', depth: 2},
-  {text: 'Project Management for Distributed Teams', slug: 'project-management', depth: 2},
-  {text: 'Creative Collaboration Remotely', slug: 'creative', depth: 2},
-  {text: 'Code and Design Reviews', slug: 'reviews', depth: 2},
-  {text: 'Building Team Cohesion', slug: 'cohesion', depth: 2},
-  {text: 'Common Pitfalls', slug: 'pitfalls', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Building Collaboration Culture", slug: "culture", depth: 2 },
+  { text: "Choosing Your Tool Stack", slug: "tools", depth: 2 },
+  { text: "Documentation as Collaboration", slug: "documentation", depth: 2 },
+  { text: "Sync vs Async Collaboration", slug: "sync-vs-async", depth: 2 },
+  { text: "Project Management for Distributed Teams", slug: "project-management", depth: 2 },
+  { text: "Creative Collaboration Remotely", slug: "creative", depth: 2 },
+  { text: "Code and Design Reviews", slug: "reviews", depth: 2 },
+  { text: "Building Team Cohesion", slug: "cohesion", depth: 2 },
+  { text: "Common Pitfalls", slug: "pitfalls", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'How do I collaborate with team members in very different time zones?',
-    answer: '<p>Time zone gaps require intentional strategies. Overlap hours to identify the two to four hours where everyone can meet if truly necessary. Async-first meaning default to written communication with clear response time expectations. Handoff docs as end-of-day summaries that set up the next person for success. Rotating meeting times to share the inconvenience of early and late calls fairly. Recorded updates using video messages instead of live meetings when possible.</p><p>The key is recognizing that most work can be async reducing the need for real-time overlap.</p>'
+    question: "How do I collaborate with team members in very different time zones?",
+    answer:
+      "<p>Time zone gaps require intentional strategies. Overlap hours to identify the two to four hours where everyone can meet if truly necessary. Async-first meaning default to written communication with clear response time expectations. Handoff docs as end-of-day summaries that set up the next person for success. Rotating meeting times to share the inconvenience of early and late calls fairly. Recorded updates using video messages instead of live meetings when possible.</p><p>The key is recognizing that most work can be async reducing the need for real-time overlap.</p>",
   },
   {
-    question: 'How do I know if my team is collaborating effectively?',
-    answer: '<p>Signs of healthy collaboration. Projects progress without constant meetings or check-ins. Documentation is current and people reference it. Team members help each other without being asked. Decisions are made transparently with clear rationale. Conflict is addressed directly and constructively. New team members can onboard from existing docs.</p><p>Warning signs: everything requires a meeting and information is hoarded and people work in silos and decisions happen in private channels.</p>'
+    question: "How do I know if my team is collaborating effectively?",
+    answer:
+      "<p>Signs of healthy collaboration. Projects progress without constant meetings or check-ins. Documentation is current and people reference it. Team members help each other without being asked. Decisions are made transparently with clear rationale. Conflict is addressed directly and constructively. New team members can onboard from existing docs.</p><p>Warning signs: everything requires a meeting and information is hoarded and people work in silos and decisions happen in private channels.</p>",
   },
   {
-    question: 'What tools are essential for remote collaboration?',
-    answer: '<p>A minimal effective stack includes communication like Slack or Teams or similar for async messaging. Video like Zoom or Meet or Teams for necessary sync meetings. Project management like Notion or ClickUp or Asana or similar for work tracking. Documents like Google Workspace or Microsoft three sixty-five for collaborative editing. Visual collaboration like Miro or FigJam or similar for workshops and brainstorms.</p><p>Avoid tool sprawl. Better to master fewer tools than have dozens that nobody uses well.</p>'
+    question: "What tools are essential for remote collaboration?",
+    answer:
+      "<p>A minimal effective stack includes communication like Slack or Teams or similar for async messaging. Video like Zoom or Meet or Teams for necessary sync meetings. Project management like Notion or ClickUp or Asana or similar for work tracking. Documents like Google Workspace or Microsoft three sixty-five for collaborative editing. Visual collaboration like Miro or FigJam or similar for workshops and brainstorms.</p><p>Avoid tool sprawl. Better to master fewer tools than have dozens that nobody uses well.</p>",
   },
   {
-    question: 'How do I handle disagreements in remote collaboration?',
-    answer: '<p>Remote disagreements require extra care because tone is easily misread. Assume good intent since written messages often sound harsher than intended. Move to video since complex disagreements benefit from seeing faces and hearing tone. Focus on interests not positions and understand what each person is trying to achieve. Document the decision. Once resolved write down what was decided and why. Follow up and check in later to ensure the resolution is working.</p><p>Don\'t let disagreements fester in async. Schedule a call if back-and-forth continues.</p>'
+    question: "How do I handle disagreements in remote collaboration?",
+    answer:
+      "<p>Remote disagreements require extra care because tone is easily misread. Assume good intent since written messages often sound harsher than intended. Move to video since complex disagreements benefit from seeing faces and hearing tone. Focus on interests not positions and understand what each person is trying to achieve. Document the decision. Once resolved write down what was decided and why. Follow up and check in later to ensure the resolution is working.</p><p>Don't let disagreements fester in async. Schedule a call if back-and-forth continues.</p>",
   },
   {
-    question: 'How do I prevent information silos in distributed teams?',
-    answer: '<p>Information silos are a common remote work failure mode. Prevent them by defaulting to public and using public channels unless there\'s a specific reason for private. Document decisions and create searchable records of why choices were made. Regular cross-team updates share what each team is working on. Rotating participation includes different people in meetings and projects. Centralized knowledge base is one place everyone knows to look for information.</p><p>Silos form when communication is easy within teams but friction exists between them. Reduce that friction.</p>'
+    question: "How do I prevent information silos in distributed teams?",
+    answer:
+      "<p>Information silos are a common remote work failure mode. Prevent them by defaulting to public and using public channels unless there's a specific reason for private. Document decisions and create searchable records of why choices were made. Regular cross-team updates share what each team is working on. Rotating participation includes different people in meetings and projects. Centralized knowledge base is one place everyone knows to look for information.</p><p>Silos form when communication is easy within teams but friction exists between them. Reduce that friction.</p>",
   },
   {
-    question: 'How do I onboard new team members remotely?',
-    answer: '<p>Remote onboarding requires more structure than in-office. Pre-day one means sending welcome package and equipment and account setup instructions. First week schedule is structured calendar with introductions and training sessions and one-on-ones. Onboarding buddy is a dedicated person for questions and social connection. Documentation is comprehensive wiki covering processes and tools and culture. Quick wins are small tasks that let them contribute meaningfully early. Regular check-ins are frequent one-on-ones during first ninety days.</p><p>Good remote onboarding documentation benefits everyone not just new hires.</p>'
+    question: "How do I onboard new team members remotely?",
+    answer:
+      "<p>Remote onboarding requires more structure than in-office. Pre-day one means sending welcome package and equipment and account setup instructions. First week schedule is structured calendar with introductions and training sessions and one-on-ones. Onboarding buddy is a dedicated person for questions and social connection. Documentation is comprehensive wiki covering processes and tools and culture. Quick wins are small tasks that let them contribute meaningfully early. Regular check-ins are frequent one-on-ones during first ninety days.</p><p>Good remote onboarding documentation benefits everyone not just new hires.</p>",
   },
   {
-    question: 'How do I balance collaboration with deep work time?',
-    answer: '<p>Both matter. The key is intentional scheduling. Meeting-free blocks are designated times like mornings with no scheduled collaboration. Focus modes use tools\' status features to signal unavailability. Async defaults since most collaboration can happen asynchronously. Calendar blocking protects deep work time like you protect meetings. Team agreements are shared understanding of when real-time response is expected.</p><p>The goal isn\'t eliminating collaboration. It\'s making it intentional rather than interrupt-driven.</p>'
+    question: "How do I balance collaboration with deep work time?",
+    answer:
+      "<p>Both matter. The key is intentional scheduling. Meeting-free blocks are designated times like mornings with no scheduled collaboration. Focus modes use tools' status features to signal unavailability. Async defaults since most collaboration can happen asynchronously. Calendar blocking protects deep work time like you protect meetings. Team agreements are shared understanding of when real-time response is expected.</p><p>The goal isn't eliminating collaboration. It's making it intentional rather than interrupt-driven.</p>",
   },
   {
-    question: 'What\'s the best way to run remote brainstorming sessions?',
-    answer: '<p>Remote brainstorming can actually be more effective than in-person when done right. Define the challenge with clear problem statement shared in advance. Individual ideation first with five to ten minutes of silent solo idea generation in a shared space like Miro or FigJam. Share and build by walking through ideas and commenting and combining and expanding. Voting with dot voting or ranking to surface top ideas. Action planning for next steps on promising ideas.</p><p>The silent start prevents groupthink and gives introverts equal voice.</p>'
-  }
+    question: "What's the best way to run remote brainstorming sessions?",
+    answer:
+      "<p>Remote brainstorming can actually be more effective than in-person when done right. Define the challenge with clear problem statement shared in advance. Individual ideation first with five to ten minutes of silent solo idea generation in a shared space like Miro or FigJam. Share and build by walking through ideas and commenting and combining and expanding. Voting with dot voting or ranking to surface top ideas. Action planning for next steps on promising ideas.</p><p>The silent start prevents groupthink and gives introverts equal voice.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Team Communication Tools',
-    excerpt: 'Compare top messaging and collaboration platforms for remote teams.',
-    href: '/blog/best-team-communication-tools',
-    image: '/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp',
-    imageAlt: 'Team using communication software'
+    title: "Best Team Communication Tools",
+    excerpt: "Compare top messaging and collaboration platforms for remote teams.",
+    href: "/blog/best-team-communication-tools",
+    image: "/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp",
+    imageAlt: "Team using communication software",
   },
   {
-    title: 'Best Project Management Software',
-    excerpt: 'Find the perfect project management tool for organizing your distributed team workflows.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Modern workspace with project management dashboard'
+    title: "Best Project Management Software",
+    excerpt:
+      "Find the perfect project management tool for organizing your distributed team workflows.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Modern workspace with project management dashboard",
   },
   {
-    title: 'Async Communication for Remote Teams',
-    excerpt: 'Master asynchronous communication to reduce meetings and boost productivity.',
-    href: '/blog/async-communication-remote-teams',
-    image: '/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp',
-    imageAlt: 'Remote team collaborating through digital tools'
-  }
+    title: "Async Communication for Remote Teams",
+    excerpt: "Master asynchronous communication to reduce meetings and boost productivity.",
+    href: "/blog/async-communication-remote-teams",
+    image: "/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp",
+    imageAlt: "Remote team collaborating through digital tools",
+  },
 ];
 ---
 

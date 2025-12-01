@@ -1,76 +1,83 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Best Expense Tracking Apps for Digital Nomads in 2025';
-const description = 'Compare the top expense tracking apps for freelancers and digital nomads. Track expenses, scan receipts, and maximize tax deductions with the right tool.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-25');
+const title = "Best Expense Tracking Apps for Digital Nomads in 2025";
+const description =
+  "Compare the top expense tracking apps for freelancers and digital nomads. Track expenses, scan receipts, and maximize tax deductions with the right tool.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-25");
 const readingTime = 14;
-const image = '/images/unsplash/photo-1554224154-26032ffc0d07-1200w.webp';
-const imageAlt = 'Receipt and expense tracking on mobile device';
+const image = "/images/unsplash/photo-1554224154-26032ffc0d07-1200w.webp";
+const imageAlt = "Receipt and expense tracking on mobile device";
 
 const headings = [
-  {depth: 2, slug: 'why-expense-tracking', text: 'Why It Matters'},
-  {depth: 2, slug: 'what-to-look-for', text: 'What to Look For'},
-  {depth: 2, slug: 'top-picks', text: 'Eight Worth Checking'},
-  {depth: 2, slug: 'comparison-table', text: 'Feature Comparison'},
-  {depth: 2, slug: 'receipt-scanning', text: 'Receipt Scanning Accuracy'},
-  {depth: 2, slug: 'multi-currency', text: 'Multi-Currency for Nomads'},
-  {depth: 2, slug: 'integrations', text: 'Integrations'},
-  {depth: 2, slug: 'faq', text: 'Questions'}
+  { depth: 2, slug: "why-expense-tracking", text: "Why It Matters" },
+  { depth: 2, slug: "what-to-look-for", text: "What to Look For" },
+  { depth: 2, slug: "top-picks", text: "Eight Worth Checking" },
+  { depth: 2, slug: "comparison-table", text: "Feature Comparison" },
+  { depth: 2, slug: "receipt-scanning", text: "Receipt Scanning Accuracy" },
+  { depth: 2, slug: "multi-currency", text: "Multi-Currency for Nomads" },
+  { depth: 2, slug: "integrations", text: "Integrations" },
+  { depth: 2, slug: "faq", text: "Questions" },
 ];
 
 const faqData = [
   {
-    question: 'What can freelancers deduct?',
-    answer: 'Common deductibles include home office meaning rent or mortgage portion plus utilities. Equipment like computer desk chair. Software subscriptions. Internet and phone. Professional development. Business travel. Health insurance premiums. Business meals at fifty percent. Keep receipts for everything over seventy five and track all business expenses regardless of amount.'
+    question: "What can freelancers deduct?",
+    answer:
+      "Common deductibles include home office meaning rent or mortgage portion plus utilities. Equipment like computer desk chair. Software subscriptions. Internet and phone. Professional development. Business travel. Health insurance premiums. Business meals at fifty percent. Keep receipts for everything over seventy five and track all business expenses regardless of amount.",
   },
   {
-    question: 'Do I need physical receipts?',
-    answer: 'IRS accepts digital copies if legible and complete. Most expense apps create IRS-compliant digital records. Keep digital copies organized by year and category. For expenses over seventy five you need documentation showing amount date vendor and business purpose.'
+    question: "Do I need physical receipts?",
+    answer:
+      "IRS accepts digital copies if legible and complete. Most expense apps create IRS-compliant digital records. Keep digital copies organized by year and category. For expenses over seventy five you need documentation showing amount date vendor and business purpose.",
   },
   {
-    question: 'How do I handle foreign currencies?',
-    answer: 'Record expenses in local currency when they occur then convert to home currency for tax reporting. Most expense apps handle this automatically using the exchange rate from the transaction date. Keep receipts showing both currencies if available.'
+    question: "How do I handle foreign currencies?",
+    answer:
+      "Record expenses in local currency when they occur then convert to home currency for tax reporting. Most expense apps handle this automatically using the exchange rate from the transaction date. Keep receipts showing both currencies if available.",
   },
   {
-    question: 'Should I use a separate business card?',
-    answer: 'Absolutely. Separating business and personal expenses makes tracking way easier. Simplifies tax prep. Provides clear paper trail if audited. Use a dedicated business card or at minimum one personal card exclusively for business.'
+    question: "Should I use a separate business card?",
+    answer:
+      "Absolutely. Separating business and personal expenses makes tracking way easier. Simplifies tax prep. Provides clear paper trail if audited. Use a dedicated business card or at minimum one personal card exclusively for business.",
   },
   {
-    question: 'How far back should I keep records?',
-    answer: 'Keep records at least three years from the date you file your return or the due date whichever is later. If you underreported income by more than twenty five percent the IRS can audit six years back. For assets like computers keep records until three years after you dispose of them.'
+    question: "How far back should I keep records?",
+    answer:
+      "Keep records at least three years from the date you file your return or the due date whichever is later. If you underreported income by more than twenty five percent the IRS can audit six years back. For assets like computers keep records until three years after you dispose of them.",
   },
   {
-    question: 'Best tracker for nomads specifically?',
-    answer: 'Expensify or QuickBooks Self-Employed. Both handle multi-currency well have reliable receipt scanning and work offline. Expensify is better standalone. QuickBooks is better if you want integrated accounting and tax estimates.'
-  }
+    question: "Best tracker for nomads specifically?",
+    answer:
+      "Expensify or QuickBooks Self-Employed. Both handle multi-currency well have reliable receipt scanning and work offline. Expensify is better standalone. QuickBooks is better if you want integrated accounting and tax estimates.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Accounting Software for Freelancers',
-    excerpt: 'Complete guide to bookkeeping tools for self-employed.',
-    href: '/tools/best-accounting-software-freelancers',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Accounting and financial documents'
+    title: "Best Accounting Software for Freelancers",
+    excerpt: "Complete guide to bookkeeping tools for self-employed.",
+    href: "/tools/best-accounting-software-freelancers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Accounting and financial documents",
   },
   {
-    title: 'Tax Tips for Remote Workers',
-    excerpt: 'Maximize deductions as a remote worker or digital nomad.',
-    href: '/blog/tax-tips-remote-workers',
-    image: '/images/unsplash/photo-1586486855514-8c633cc6fd38-800w.webp',
-    imageAlt: 'Tax forms and calculator'
+    title: "Tax Tips for Remote Workers",
+    excerpt: "Maximize deductions as a remote worker or digital nomad.",
+    href: "/blog/tax-tips-remote-workers",
+    image: "/images/unsplash/photo-1586486855514-8c633cc6fd38-800w.webp",
+    imageAlt: "Tax forms and calculator",
   },
   {
-    title: 'Multi-Currency Banking for Digital Nomads',
-    excerpt: 'Manage money across borders without losing to fees.',
-    href: '/guides/multi-currency-banking-nomads',
-    image: '/images/unsplash/photo-1580519542036-c47de6196ba5-800w.webp',
-    imageAlt: 'International currency and banking'
-  }
+    title: "Multi-Currency Banking for Digital Nomads",
+    excerpt: "Manage money across borders without losing to fees.",
+    href: "/guides/multi-currency-banking-nomads",
+    image: "/images/unsplash/photo-1580519542036-c47de6196ba5-800w.webp",
+    imageAlt: "International currency and banking",
+  },
 ];
 ---
 

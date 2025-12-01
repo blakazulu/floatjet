@@ -1,208 +1,220 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Noise-Canceling Headphones for Remote Work (2025)';
-const description = 'I tested ten noise-canceling headphones for remote workers. Sony, Bose, Apple compared with ANC tests, sound quality, and honest takes on what actually works.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Best Noise-Canceling Headphones for Remote Work (2025)";
+const description =
+  "I tested ten noise-canceling headphones for remote workers. Sony, Bose, Apple compared with ANC tests, sound quality, and honest takes on what actually works.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 18;
-const image = '/images/unsplash/photo-1505740420928-5e560c06d30e-1200w.webp';
-const imageAlt = 'Premium noise-canceling headphones on wooden desk';
+const image = "/images/unsplash/photo-1505740420928-5e560c06d30e-1200w.webp";
+const imageAlt = "Premium noise-canceling headphones on wooden desk";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Why These Matter', slug: 'why-anc', depth: 2},
-  {text: 'The Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Sony XM5', slug: 'sony-xm5', depth: 3},
-  {text: 'Bose QC Ultra', slug: 'bose-qc-ultra', depth: 3},
-  {text: 'AirPods Max', slug: 'airpods-max', depth: 3},
-  {text: 'Sony XM4', slug: 'sony-xm4', depth: 3},
-  {text: 'Bose 700', slug: 'bose-700', depth: 3},
-  {text: 'Sennheiser Momentum 4', slug: 'sennheiser-momentum-4', depth: 3},
-  {text: 'Jabra Evolve2 85', slug: 'jabra-evolve2', depth: 3},
-  {text: 'Picking One', slug: 'how-to-choose', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
-  {text: 'Wrapping Up', slug: 'conclusion', depth: 2},
-  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why These Matter", slug: "why-anc", depth: 2 },
+  { text: "The Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Sony XM5", slug: "sony-xm5", depth: 3 },
+  { text: "Bose QC Ultra", slug: "bose-qc-ultra", depth: 3 },
+  { text: "AirPods Max", slug: "airpods-max", depth: 3 },
+  { text: "Sony XM4", slug: "sony-xm4", depth: 3 },
+  { text: "Bose 700", slug: "bose-700", depth: 3 },
+  { text: "Sennheiser Momentum 4", slug: "sennheiser-momentum-4", depth: 3 },
+  { text: "Jabra Evolve2 85", slug: "jabra-evolve2", depth: 3 },
+  { text: "Picking One", slug: "how-to-choose", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "Wrapping Up", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'headphones', label: 'Headphones', width: '140px'},
-  {key: 'bestFor', label: 'Best For', width: '150px'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
-  {key: 'action', label: ''},
+  { key: "headphones", label: "Headphones", width: "140px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    headphones: '<strong>Sony WH-1000XM5</strong>',
-    bestFor: 'Overall best',
-    price: '$348',
-    rating: '9.5/10',
-    action: '<a href="/go/sony-xm5" rel="nofollow sponsored">Check Price</a>'
+    headphones: "<strong>Sony WH-1000XM5</strong>",
+    bestFor: "Overall best",
+    price: "$348",
+    rating: "9.5/10",
+    action: '<a href="/go/sony-xm5" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    headphones: '<strong>Bose QC Ultra</strong>',
-    bestFor: 'Best ANC',
-    price: '$429',
-    rating: '9.3/10',
-    action: '<a href="/go/bose-qc-ultra" rel="nofollow sponsored">Check Price</a>'
+    headphones: "<strong>Bose QC Ultra</strong>",
+    bestFor: "Best ANC",
+    price: "$429",
+    rating: "9.3/10",
+    action: '<a href="/go/bose-qc-ultra" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    headphones: '<strong>Sony WH-1000XM4</strong>',
-    bestFor: 'Best value',
-    price: '$248',
-    rating: '9.1/10',
-    action: '<a href="/go/sony-xm4" rel="nofollow sponsored">Check Price</a>'
+    headphones: "<strong>Sony WH-1000XM4</strong>",
+    bestFor: "Best value",
+    price: "$248",
+    rating: "9.1/10",
+    action: '<a href="/go/sony-xm4" rel="nofollow sponsored">Check Price</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'headphones', label: 'Headphones', width: '130px'},
-  {key: 'bestFor', label: 'Best For', width: '120px'},
-  {key: 'price', label: 'Price'},
-  {key: 'battery', label: 'Battery'},
-  {key: 'weight', label: 'Weight'},
-  {key: 'anc', label: 'ANC Quality'},
-  {key: 'action', label: ''},
+  { key: "headphones", label: "Headphones", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "120px" },
+  { key: "price", label: "Price" },
+  { key: "battery", label: "Battery" },
+  { key: "weight", label: "Weight" },
+  { key: "anc", label: "ANC Quality" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    headphones: '<strong>Sony WH-1000XM5</strong>',
-    bestFor: 'Overall best',
-    price: '$348',
-    battery: '30 hours',
-    weight: '250g',
-    anc: '⭐⭐⭐⭐⭐',
-    action: '<a href="/go/sony-xm5" rel="nofollow sponsored">Get Deal</a>'
+    headphones: "<strong>Sony WH-1000XM5</strong>",
+    bestFor: "Overall best",
+    price: "$348",
+    battery: "30 hours",
+    weight: "250g",
+    anc: "⭐⭐⭐⭐⭐",
+    action: '<a href="/go/sony-xm5" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    headphones: '<strong>Bose QC Ultra</strong>',
-    bestFor: 'Best ANC',
-    price: '$429',
-    battery: '24 hours',
-    weight: '250g',
-    anc: '⭐⭐⭐⭐⭐',
-    action: '<a href="/go/bose-qc-ultra" rel="nofollow sponsored">Get Deal</a>'
+    headphones: "<strong>Bose QC Ultra</strong>",
+    bestFor: "Best ANC",
+    price: "$429",
+    battery: "24 hours",
+    weight: "250g",
+    anc: "⭐⭐⭐⭐⭐",
+    action: '<a href="/go/bose-qc-ultra" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    headphones: '<strong>Apple AirPods Max</strong>',
-    bestFor: 'Apple ecosystem',
-    price: '$449',
-    battery: '20 hours',
-    weight: '385g',
-    anc: '⭐⭐⭐⭐⭐',
-    action: '<a href="/go/airpods-max" rel="nofollow sponsored">Get Deal</a>'
+    headphones: "<strong>Apple AirPods Max</strong>",
+    bestFor: "Apple ecosystem",
+    price: "$449",
+    battery: "20 hours",
+    weight: "385g",
+    anc: "⭐⭐⭐⭐⭐",
+    action: '<a href="/go/airpods-max" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    headphones: '<strong>Sony WH-1000XM4</strong>',
-    bestFor: 'Best value',
-    price: '$248',
-    battery: '30 hours',
-    weight: '254g',
-    anc: '⭐⭐⭐⭐',
-    action: '<a href="/go/sony-xm4" rel="nofollow sponsored">Get Deal</a>'
+    headphones: "<strong>Sony WH-1000XM4</strong>",
+    bestFor: "Best value",
+    price: "$248",
+    battery: "30 hours",
+    weight: "254g",
+    anc: "⭐⭐⭐⭐",
+    action: '<a href="/go/sony-xm4" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    headphones: '<strong>Bose 700</strong>',
-    bestFor: 'Video calls',
-    price: '$329',
-    battery: '20 hours',
-    weight: '250g',
-    anc: '⭐⭐⭐⭐',
-    action: '<a href="/go/bose-700" rel="nofollow sponsored">Get Deal</a>'
+    headphones: "<strong>Bose 700</strong>",
+    bestFor: "Video calls",
+    price: "$329",
+    battery: "20 hours",
+    weight: "250g",
+    anc: "⭐⭐⭐⭐",
+    action: '<a href="/go/bose-700" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    headphones: '<strong>Sennheiser Momentum 4</strong>',
-    bestFor: 'Sound quality',
-    price: '$350',
-    battery: '60 hours',
-    weight: '293g',
-    anc: '⭐⭐⭐⭐',
-    action: '<a href="/go/sennheiser-momentum-4" rel="nofollow sponsored">Get Deal</a>'
+    headphones: "<strong>Sennheiser Momentum 4</strong>",
+    bestFor: "Sound quality",
+    price: "$350",
+    battery: "60 hours",
+    weight: "293g",
+    anc: "⭐⭐⭐⭐",
+    action: '<a href="/go/sennheiser-momentum-4" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    headphones: '<strong>Jabra Evolve2 85</strong>',
-    bestFor: 'Business calls',
-    price: '$449',
-    battery: '37 hours',
-    weight: '286g',
-    anc: '⭐⭐⭐⭐',
-    action: '<a href="/go/jabra-evolve2-85" rel="nofollow sponsored">Get Deal</a>'
+    headphones: "<strong>Jabra Evolve2 85</strong>",
+    bestFor: "Business calls",
+    price: "$449",
+    battery: "37 hours",
+    weight: "286g",
+    anc: "⭐⭐⭐⭐",
+    action: '<a href="/go/jabra-evolve2-85" rel="nofollow sponsored">Get Deal</a>',
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Worth the money?',
-    answer: '<p>Yeah. Honestly one of my better purchases. Household noise, traffic, cafe chaos—all gone. Your brain works better in quiet. ANC creates quiet anywhere.</p>'
+    question: "Worth the money?",
+    answer:
+      "<p>Yeah. Honestly one of my better purchases. Household noise, traffic, cafe chaos—all gone. Your brain works better in quiet. ANC creates quiet anywhere.</p>",
   },
   {
-    question: 'What\'s the difference between passive and active?',
-    answer: '<p>Passive is just physical blocking. Covering your ears. All over-ear headphones do some of that.</p><p>Active is electronic. Mics detect outside sound, headphones generate opposite waves to cancel it. Way more effective, especially for low frequencies like engine noise and air conditioning.</p>'
+    question: "What's the difference between passive and active?",
+    answer:
+      "<p>Passive is just physical blocking. Covering your ears. All over-ear headphones do some of that.</p><p>Active is electronic. Mics detect outside sound, headphones generate opposite waves to cancel it. Way more effective, especially for low frequencies like engine noise and air conditioning.</p>",
   },
   {
-    question: 'How many years do they last?',
-    answer: '<p>Good ones go three to five years typically. Battery slowly gets worse but most keep eighty percent capacity for ages. Sony and Bose both last. Keep them in a case, don\'t leave them in hot cars, don\'t overcharge.</p>'
+    question: "How many years do they last?",
+    answer:
+      "<p>Good ones go three to five years typically. Battery slowly gets worse but most keep eighty percent capacity for ages. Sony and Bose both last. Keep them in a case, don't leave them in hot cars, don't overcharge.</p>",
   },
   {
-    question: 'Work well for video calls?',
-    answer: '<p>Yep. Modern ones have multiple mics specifically for voice. Bose 700 and Jabra especially—the beam-forming tech isolates your voice from background noise.</p>'
+    question: "Work well for video calls?",
+    answer:
+      "<p>Yep. Modern ones have multiple mics specifically for voice. Bose 700 and Jabra especially—the beam-forming tech isolates your voice from background noise.</p>",
   },
   {
-    question: 'Should I go wireless?',
-    answer: '<p>Probably. Moving around freely, taking calls from the kitchen, no tangled cables—it\'s nicer.</p><p>Bluetooth quality is genuinely good now. Codecs like LDAC are close to wired.</p><p>Exception: if you do audio production or video editing, wired eliminates latency completely. Most premium wireless come with a cable anyway.</p>'
+    question: "Should I go wireless?",
+    answer:
+      "<p>Probably. Moving around freely, taking calls from the kitchen, no tangled cables—it's nicer.</p><p>Bluetooth quality is genuinely good now. Codecs like LDAC are close to wired.</p><p>Exception: if you do audio production or video editing, wired eliminates latency completely. Most premium wireless come with a cable anyway.</p>",
   },
   {
-    question: 'Sony or Bose?',
-    answer: '<p>Both good. Different strengths.</p><p>Sony usually wins on sound, battery, features per dollar. XM5 is my overall pick.</p><p>Bose pioneered this tech and still arguably leads on pure noise canceling, especially for voices. More comfortable for long sessions. QC Ultra if ANC matters most.</p>'
+    question: "Sony or Bose?",
+    answer:
+      "<p>Both good. Different strengths.</p><p>Sony usually wins on sound, battery, features per dollar. XM5 is my overall pick.</p><p>Bose pioneered this tech and still arguably leads on pure noise canceling, especially for voices. More comfortable for long sessions. QC Ultra if ANC matters most.</p>",
   },
   {
-    question: 'Can you use them without playing anything?',
-    answer: '<p>Totally. Lots of people do exactly that. Just ANC blocking ambient noise. Sony and Bose both create near-silence. It\'s like a focus switch for your brain.</p>'
+    question: "Can you use them without playing anything?",
+    answer:
+      "<p>Totally. Lots of people do exactly that. Just ANC blocking ambient noise. Sony and Bose both create near-silence. It's like a focus switch for your brain.</p>",
   },
   {
-    question: 'Cheapest option that\'s still good?',
-    answer: '<p>XM4 at two-fifty. Last-gen flagship, but still better ANC than most current headphones. Thirty-hour battery. Great sound.</p><p>Really tight budget? XM3 around one-eighty on sale. Or JBL Tour One M2 for about two-fifty.</p>'
-  }
+    question: "Cheapest option that's still good?",
+    answer:
+      "<p>XM4 at two-fifty. Last-gen flagship, but still better ANC than most current headphones. Thirty-hour battery. Great sound.</p><p>Really tight budget? XM3 around one-eighty on sale. Or JBL Tour One M2 for about two-fifty.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Standing Desks for Remote Workers',
-    excerpt: 'Upgrade your home office with these top-rated standing desks that boost productivity and reduce back pain.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Modern standing desk setup in home office'
+    title: "Best Standing Desks for Remote Workers",
+    excerpt:
+      "Upgrade your home office with these top-rated standing desks that boost productivity and reduce back pain.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern standing desk setup in home office",
   },
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Find the perfect laptop for working from anywhere with our comprehensive comparison guide.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp',
-    imageAlt: 'Laptop on desk with coffee and notebook'
+    title: "Best Laptops for Remote Work",
+    excerpt:
+      "Find the perfect laptop for working from anywhere with our comprehensive comparison guide.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "Laptop on desk with coffee and notebook",
   },
   {
-    title: 'Ultimate Home Office Setup Guide',
-    excerpt: 'Create the perfect productive workspace at home with our complete guide to ergonomics and equipment.',
-    href: '/blog/ultimate-home-office-setup',
-    image: '/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp',
-    imageAlt: 'Well-organized home office with dual monitors'
-  }
+    title: "Ultimate Home Office Setup Guide",
+    excerpt:
+      "Create the perfect productive workspace at home with our complete guide to ergonomics and equipment.",
+    href: "/blog/ultimate-home-office-setup",
+    image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp",
+    imageAlt: "Well-organized home office with dual monitors",
+  },
 ];
 ---
 

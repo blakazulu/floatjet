@@ -1,77 +1,84 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'How to Work Across Time Zones: Complete Guide (2025)';
-const description = 'Master working across time zones as a digital nomad. Strategies for managing overlap hours, async communication, and work-life balance while traveling.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-23');
+const title = "How to Work Across Time Zones: Complete Guide (2025)";
+const description =
+  "Master working across time zones as a digital nomad. Strategies for managing overlap hours, async communication, and work-life balance while traveling.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-23");
 const readingTime = 12;
-const image = '/images/unsplash/photo-1516738901171-8eb4fc13bd20-1200w.webp';
-const imageAlt = 'World time zone clocks on wall';
+const image = "/images/unsplash/photo-1516738901171-8eb4fc13bd20-1200w.webp";
+const imageAlt = "World time zone clocks on wall";
 
 const headings = [
-  {depth: 2, slug: 'introduction', text: 'The Real Challenges'},
-  {depth: 2, slug: 'communicate-availability', text: 'Telling People Where You Are'},
-  {depth: 2, slug: 'setting-boundaries', text: 'Drawing Lines with Your Team'},
-  {depth: 2, slug: 'overlap-strategies', text: 'Making Overlap Work'},
-  {depth: 2, slug: 'tools', text: 'Useful Tools'},
-  {depth: 2, slug: 'best-time-zones', text: 'Where to Go Based on Your Clients'},
-  {depth: 2, slug: 'async-communication', text: 'Async Communication'},
-  {depth: 2, slug: 'work-life-balance', text: 'Keeping Your Life Together'},
-  {depth: 2, slug: 'faq', text: 'Questions'}
+  { depth: 2, slug: "introduction", text: "The Real Challenges" },
+  { depth: 2, slug: "communicate-availability", text: "Telling People Where You Are" },
+  { depth: 2, slug: "setting-boundaries", text: "Drawing Lines with Your Team" },
+  { depth: 2, slug: "overlap-strategies", text: "Making Overlap Work" },
+  { depth: 2, slug: "tools", text: "Useful Tools" },
+  { depth: 2, slug: "best-time-zones", text: "Where to Go Based on Your Clients" },
+  { depth: 2, slug: "async-communication", text: "Async Communication" },
+  { depth: 2, slug: "work-life-balance", text: "Keeping Your Life Together" },
+  { depth: 2, slug: "faq", text: "Questions" },
 ];
 
 const faqData = [
   {
-    question: 'How much overlap with my team?',
-    answer: 'Most teams need three to four hours for collaboration. Some async-first companies get by with one to two. Talk to your employer before heading somewhere with a big time difference.'
+    question: "How much overlap with my team?",
+    answer:
+      "Most teams need three to four hours for collaboration. Some async-first companies get by with one to two. Talk to your employer before heading somewhere with a big time difference.",
   },
   {
-    question: 'Should I tell my employer?',
-    answer: 'Yes. Most are fine with it if you stay available for key meetings and deliver your work. Surprising them with missed meetings or weird hours destroys trust fast.'
+    question: "Should I tell my employer?",
+    answer:
+      "Yes. Most are fine with it if you stay available for key meetings and deliver your work. Surprising them with missed meetings or weird hours destroys trust fast.",
   },
   {
-    question: 'What if they require specific hours?',
-    answer: 'Respect their requirements. If you need to work nine to five Eastern then pick destinations where that\'s reasonable. For EST Europe means evening work and Latin America keeps similar hours. Don\'t lose your job over a destination.'
+    question: "What if they require specific hours?",
+    answer:
+      "Respect their requirements. If you need to work nine to five Eastern then pick destinations where that's reasonable. For EST Europe means evening work and Latin America keeps similar hours. Don't lose your job over a destination.",
   },
   {
-    question: 'What about urgent requests when I\'m asleep?',
-    answer: 'Set expectations about response times. Have someone who covers emergencies. Use status messages showing when you\'re on. If truly twenty four seven availability is required this lifestyle might not work for your role.'
+    question: "What about urgent requests when I'm asleep?",
+    answer:
+      "Set expectations about response times. Have someone who covers emergencies. Use status messages showing when you're on. If truly twenty four seven availability is required this lifestyle might not work for your role.",
   },
   {
-    question: 'Are odd hours bad for health?',
-    answer: 'Long-term irregular hours affect sleep mood and health. If you\'re constantly working late nights consider destinations with better time zones or negotiate more async arrangements.'
+    question: "Are odd hours bad for health?",
+    answer:
+      "Long-term irregular hours affect sleep mood and health. If you're constantly working late nights consider destinations with better time zones or negotiate more async arrangements.",
   },
   {
-    question: 'How do I schedule across time zones?',
-    answer: 'Use tools that show multiple zones like Calendly or World Time Buddy. Always put the time zone in invites. For recurring meetings with global teams rotate the times so everyone shares the pain.'
-  }
+    question: "How do I schedule across time zones?",
+    answer:
+      "Use tools that show multiple zones like Calendly or World Time Buddy. Always put the time zone in invites. For recurring meetings with global teams rotate the times so everyone shares the pain.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Async Communication for Remote Teams',
-    excerpt: 'Master asynchronous communication skills.',
-    href: '/blog/async-communication-remote-teams',
-    image: '/images/unsplash/photo-1552581234-26160f608093-800w.webp',
-    imageAlt: 'Team communication concept'
+    title: "Async Communication for Remote Teams",
+    excerpt: "Master asynchronous communication skills.",
+    href: "/blog/async-communication-remote-teams",
+    image: "/images/unsplash/photo-1552581234-26160f608093-800w.webp",
+    imageAlt: "Team communication concept",
   },
   {
-    title: 'Managing Time Zones in Remote Teams',
-    excerpt: 'Tips for managers coordinating global teams.',
-    href: '/blog/managing-time-zones-remote-teams',
-    image: '/images/unsplash/photo-1434626881859-194d67b2b86f-800w.webp',
-    imageAlt: 'Global team coordination'
+    title: "Managing Time Zones in Remote Teams",
+    excerpt: "Tips for managers coordinating global teams.",
+    href: "/blog/managing-time-zones-remote-teams",
+    image: "/images/unsplash/photo-1434626881859-194d67b2b86f-800w.webp",
+    imageAlt: "Global team coordination",
   },
   {
-    title: 'Top Destinations for Digital Nomads',
-    excerpt: 'Find locations with ideal time zones for your clients.',
-    href: '/blog/top-destinations-digital-nomads',
-    image: '/images/unsplash/photo-1488646953014-85cb44e25828-800w.webp',
-    imageAlt: 'World travel destinations'
-  }
+    title: "Top Destinations for Digital Nomads",
+    excerpt: "Find locations with ideal time zones for your clients.",
+    href: "/blog/top-destinations-digital-nomads",
+    image: "/images/unsplash/photo-1488646953014-85cb44e25828-800w.webp",
+    imageAlt: "World travel destinations",
+  },
 ];
 ---
 

@@ -1,81 +1,85 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Remote Work Taxes: The No-BS Guide (2025)';
-const description = 'Taxes as a nomad are confusing as hell. Tax home, residency, foreign income - here\'s what actually matters and what you can ignore without IRS trouble.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Remote Work Taxes: The No-BS Guide (2025)";
+const description =
+  "Taxes as a nomad are confusing as hell. Tax home, residency, foreign income - here's what actually matters and what you can ignore without IRS trouble.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 4;
-const image = '/images/unsplash/photo-1554224155-6726b3ff858f-1200w.webp';
-const imageAlt = 'Calculator and financial documents for tax planning';
+const image = "/images/unsplash/photo-1554224155-6726b3ff858f-1200w.webp";
+const imageAlt = "Calculator and financial documents for tax planning";
 
 // Table of contents headings
 const headings = [
-  {text: 'Why This Is Complicated', slug: 'introduction', depth: 2},
-  {text: 'Tax Residency', slug: 'tax-residency', depth: 2},
-  {text: 'Your Situation', slug: 'tax-scenarios', depth: 2},
-  {text: 'Deductions Worth Knowing', slug: 'deductions', depth: 2},
-  {text: 'The International Stuff', slug: 'international', depth: 2},
-  {text: 'When to Get Help', slug: 'hire-professional', depth: 2},
-  {text: 'Quick Answers', slug: 'faq', depth: 2},
-  {text: 'Bottom Line', slug: 'conclusion', depth: 2},
+  { text: "Why This Is Complicated", slug: "introduction", depth: 2 },
+  { text: "Tax Residency", slug: "tax-residency", depth: 2 },
+  { text: "Your Situation", slug: "tax-scenarios", depth: 2 },
+  { text: "Deductions Worth Knowing", slug: "deductions", depth: 2 },
+  { text: "The International Stuff", slug: "international", depth: 2 },
+  { text: "When to Get Help", slug: "hire-professional", depth: 2 },
+  { text: "Quick Answers", slug: "faq", depth: 2 },
+  { text: "Bottom Line", slug: "conclusion", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Do I pay taxes if I work from another country?',
-    answer: '<p>Usually yes. Depends on tax residency, not location. US citizens always file.</p>'
+    question: "Do I pay taxes if I work from another country?",
+    answer: "<p>Usually yes. Depends on tax residency, not location. US citizens always file.</p>",
   },
   {
-    question: 'Home office deduction?',
-    answer: '<p>Self-employed: yes, if exclusive business use. Employees: no (federal).</p>'
+    question: "Home office deduction?",
+    answer: "<p>Self-employed: yes, if exclusive business use. Employees: no (federal).</p>",
   },
   {
-    question: 'Coworking deductible?',
-    answer: '<p>Self-employed: yes. Keep receipts.</p>'
+    question: "Coworking deductible?",
+    answer: "<p>Self-employed: yes. Keep receipts.</p>",
   },
   {
-    question: 'Foreign bank accounts?',
-    answer: '<p>Report them. Over $10,000 = FBAR required. Penalties are brutal.</p>'
+    question: "Foreign bank accounts?",
+    answer: "<p>Report them. Over $10,000 = FBAR required. Penalties are brutal.</p>",
   },
   {
-    question: 'Nomad travel deductible?',
-    answer: '<p>No. Business travel yes. Lifestyle travel no.</p>'
+    question: "Nomad travel deductible?",
+    answer: "<p>No. Business travel yes. Lifestyle travel no.</p>",
   },
   {
-    question: 'Quarterly taxes?',
-    answer: '<p>Freelancers: pay quarterly or face penalties. Set aside 25-30% of everything.</p>'
-  }
+    question: "Quarterly taxes?",
+    answer: "<p>Freelancers: pay quarterly or face penalties. Set aside 25-30% of everything.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Banking Solutions for Digital Nomads',
-    excerpt: 'Compare international-friendly banks, multi-currency accounts, and fee-free options for remote workers.',
-    href: '/blog/best-banking-digital-nomads',
-    image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'Digital banking on smartphone'
+    title: "Best Banking Solutions for Digital Nomads",
+    excerpt:
+      "Compare international-friendly banks, multi-currency accounts, and fee-free options for remote workers.",
+    href: "/blog/best-banking-digital-nomads",
+    image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
+    imageAlt: "Digital banking on smartphone",
   },
   {
-    title: 'Best Productivity Apps for Remote Workers',
-    excerpt: 'Stay organized and efficient with these top-rated productivity tools designed for distributed teams.',
-    href: '/tools/best-productivity-apps',
-    image: '/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp',
-    imageAlt: 'Productivity apps on laptop screen'
+    title: "Best Productivity Apps for Remote Workers",
+    excerpt:
+      "Stay organized and efficient with these top-rated productivity tools designed for distributed teams.",
+    href: "/tools/best-productivity-apps",
+    image: "/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp",
+    imageAlt: "Productivity apps on laptop screen",
   },
   {
-    title: 'Best Time Tracking Software',
-    excerpt: 'Track billable hours accurately and understand where your time goes with these top time tracking tools.',
-    href: '/tools/best-time-tracking-software',
-    image: '/images/unsplash/photo-1508672019048-805c876b67e2-800w.webp',
-    imageAlt: 'Time tracking dashboard'
-  }
+    title: "Best Time Tracking Software",
+    excerpt:
+      "Track billable hours accurately and understand where your time goes with these top time tracking tools.",
+    href: "/tools/best-time-tracking-software",
+    image: "/images/unsplash/photo-1508672019048-805c876b67e2-800w.webp",
+    imageAlt: "Time tracking dashboard",
+  },
 ];
 ---
 

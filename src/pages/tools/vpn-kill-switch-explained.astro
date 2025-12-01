@@ -1,105 +1,145 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'VPN Kill Switch Explained: Why Remote Workers Need It (2025)';
-const description = 'Your VPN will drop eventually. Maybe once a year, maybe monthly. The kill switch decides whether that brief moment exposes everything or nothing at all.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "VPN Kill Switch Explained: Why Remote Workers Need It (2025)";
+const description =
+  "Your VPN will drop eventually. Maybe once a year, maybe monthly. The kill switch decides whether that brief moment exposes everything or nothing at all.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 7;
-const image = '/images/unsplash/photo-1550751827-4bd374c3f58b-1200w.webp';
-const imageAlt = 'Digital security switch concept with lock protection';
+const image = "/images/unsplash/photo-1550751827-4bd374c3f58b-1200w.webp";
+const imageAlt = "Digital security switch concept with lock protection";
 
 // Table of contents headings
 const headings = [
-  {text: 'What Is a Kill Switch?', slug: 'what-is-kill-switch', depth: 2},
-  {text: 'How It Works', slug: 'how-it-works', depth: 2},
-  {text: 'Why You Need This', slug: 'why-you-need-it', depth: 2},
-  {text: 'Three Types', slug: 'types-of-kill-switches', depth: 2},
-  {text: 'Best VPNs', slug: 'best-vpns', depth: 2},
-  {text: 'Test Yours', slug: 'how-to-test', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Bottom Line', slug: 'recommendation', depth: 2},
+  { text: "What Is a Kill Switch?", slug: "what-is-kill-switch", depth: 2 },
+  { text: "How It Works", slug: "how-it-works", depth: 2 },
+  { text: "Why You Need This", slug: "why-you-need-it", depth: 2 },
+  { text: "Three Types", slug: "types-of-kill-switches", depth: 2 },
+  { text: "Best VPNs", slug: "best-vpns", depth: 2 },
+  { text: "Test Yours", slug: "how-to-test", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Bottom Line", slug: "recommendation", depth: 2 },
 ];
 
 // VPN kill switch comparison table
 const killSwitchColumns = [
-  {key: 'vpn', label: 'VPN', width: '120px'},
-  {key: 'type', label: 'Kill Switch Type'},
-  {key: 'appLevel', label: 'App-Level'},
-  {key: 'systemLevel', label: 'System-Level'},
-  {key: 'reliability', label: 'Reliability'},
+  { key: "vpn", label: "VPN", width: "120px" },
+  { key: "type", label: "Kill Switch Type" },
+  { key: "appLevel", label: "App-Level" },
+  { key: "systemLevel", label: "System-Level" },
+  { key: "reliability", label: "Reliability" },
 ];
 
 const killSwitchRows = [
-  {vpn: '<strong>NordVPN</strong>', type: 'Both options', appLevel: '✅', systemLevel: '✅', reliability: '⭐⭐⭐⭐⭐'},
-  {vpn: '<strong>ExpressVPN</strong>', type: 'Network Lock', appLevel: '✅', systemLevel: '✅', reliability: '⭐⭐⭐⭐⭐'},
-  {vpn: '<strong>Surfshark</strong>', type: 'Both options', appLevel: '✅', systemLevel: '✅', reliability: '⭐⭐⭐⭐'},
-  {vpn: '<strong>ProtonVPN</strong>', type: 'Permanent', appLevel: '✅', systemLevel: '✅', reliability: '⭐⭐⭐⭐⭐'},
-  {vpn: '<strong>CyberGhost</strong>', type: 'Automatic', appLevel: '✅', systemLevel: '⚠️', reliability: '⭐⭐⭐⭐'},
-  {vpn: '<strong>PIA</strong>', type: 'Both options', appLevel: '✅', systemLevel: '✅', reliability: '⭐⭐⭐⭐'},
+  {
+    vpn: "<strong>NordVPN</strong>",
+    type: "Both options",
+    appLevel: "✅",
+    systemLevel: "✅",
+    reliability: "⭐⭐⭐⭐⭐",
+  },
+  {
+    vpn: "<strong>ExpressVPN</strong>",
+    type: "Network Lock",
+    appLevel: "✅",
+    systemLevel: "✅",
+    reliability: "⭐⭐⭐⭐⭐",
+  },
+  {
+    vpn: "<strong>Surfshark</strong>",
+    type: "Both options",
+    appLevel: "✅",
+    systemLevel: "✅",
+    reliability: "⭐⭐⭐⭐",
+  },
+  {
+    vpn: "<strong>ProtonVPN</strong>",
+    type: "Permanent",
+    appLevel: "✅",
+    systemLevel: "✅",
+    reliability: "⭐⭐⭐⭐⭐",
+  },
+  {
+    vpn: "<strong>CyberGhost</strong>",
+    type: "Automatic",
+    appLevel: "✅",
+    systemLevel: "⚠️",
+    reliability: "⭐⭐⭐⭐",
+  },
+  {
+    vpn: "<strong>PIA</strong>",
+    type: "Both options",
+    appLevel: "✅",
+    systemLevel: "✅",
+    reliability: "⭐⭐⭐⭐",
+  },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Will it disconnect my video calls?',
-    answer: '<p>Only if VPN drops. Which is rare. Worth the tradeoff vs. exposed data.</p>'
+    question: "Will it disconnect my video calls?",
+    answer: "<p>Only if VPN drops. Which is rare. Worth the tradeoff vs. exposed data.</p>",
   },
   {
-    question: 'Keep it on all the time?',
-    answer: '<p>Yes. No downside when VPN works. Only activates when something breaks.</p>'
+    question: "Keep it on all the time?",
+    answer: "<p>Yes. No downside when VPN works. Only activates when something breaks.</p>",
   },
   {
-    question: 'Internet stopped when VPN disconnected?',
-    answer: '<p>That\'s it working. Reconnect VPN or restart the app.</p>'
+    question: "Internet stopped when VPN disconnected?",
+    answer: "<p>That's it working. Reconnect VPN or restart the app.</p>",
   },
   {
-    question: 'All VPNs have this?',
-    answer: '<p>Premium ones, yes. <a href="/tools/free-vpn-vs-paid-vpn">Free VPNs</a> often don\'t. Check before subscribing.</p>'
+    question: "All VPNs have this?",
+    answer:
+      '<p>Premium ones, yes. <a href="/tools/free-vpn-vs-paid-vpn">Free VPNs</a> often don\'t. Check before subscribing.</p>',
   },
   {
-    question: 'Kill switch vs. auto-connect?',
-    answer: '<p>Different things. Auto-connect starts VPN automatically. Kill switch blocks traffic when it fails. Use both.</p>'
+    question: "Kill switch vs. auto-connect?",
+    answer:
+      "<p>Different things. Auto-connect starts VPN automatically. Kill switch blocks traffic when it fails. Use both.</p>",
   },
   {
-    question: 'Does my ISP know when it activates?',
-    answer: '<p>They see traffic stopped then resumed. That\'s it. Can\'t tell why.</p>'
+    question: "Does my ISP know when it activates?",
+    answer: "<p>They see traffic stopped then resumed. That's it. Can't tell why.</p>",
   },
   {
-    question: 'Works on mobile?',
-    answer: '<p>Android: yes, full support. iOS: limited—uses quick reconnect instead of true blocking.</p>'
-  }
+    question: "Works on mobile?",
+    answer:
+      "<p>Android: yes, full support. iOS: limited—uses quick reconnect instead of true blocking.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best VPNs for Digital Nomads',
-    excerpt: 'Our tested recommendations for VPNs that protect remote workers everywhere.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'Digital security concept'
+    title: "Best VPNs for Digital Nomads",
+    excerpt: "Our tested recommendations for VPNs that protect remote workers everywhere.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept",
   },
   {
-    title: 'Free VPN vs Paid VPN',
-    excerpt: 'Why free VPNs often lack essential security features like kill switches.',
-    href: '/tools/free-vpn-vs-paid-vpn',
-    image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'VPN security comparison concept'
+    title: "Free VPN vs Paid VPN",
+    excerpt: "Why free VPNs often lack essential security features like kill switches.",
+    href: "/tools/free-vpn-vs-paid-vpn",
+    image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
+    imageAlt: "VPN security comparison concept",
   },
   {
-    title: 'VPN & Public WiFi Security Guide',
-    excerpt: 'Complete guide to staying secure when working on public networks.',
-    href: '/blog/vpn-public-wifi-guide',
-    image: '/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp',
-    imageAlt: 'Digital security on public WiFi'
-  }
+    title: "VPN & Public WiFi Security Guide",
+    excerpt: "Complete guide to staying secure when working on public networks.",
+    href: "/blog/vpn-public-wifi-guide",
+    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp",
+    imageAlt: "Digital security on public WiFi",
+  },
 ];
 ---
 

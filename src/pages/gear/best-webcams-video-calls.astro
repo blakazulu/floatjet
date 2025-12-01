@@ -1,220 +1,229 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Webcams for Professional Video Calls (2025)';
-const description = 'I tested ten webcams for remote workers. Logitech Brio, Razer Kiyo Pro, Elgato Facecam compared with real image quality tests and honest recommendations.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Best Webcams for Professional Video Calls (2025)";
+const description =
+  "I tested ten webcams for remote workers. Logitech Brio, Razer Kiyo Pro, Elgato Facecam compared with real image quality tests and honest recommendations.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 12;
-const image = '/images/unsplash/photo-1587825140708-dfaf72ae4b04-1200w.webp';
-const imageAlt = 'Professional webcam setup for video calls';
+const image = "/images/unsplash/photo-1587825140708-dfaf72ae4b04-1200w.webp";
+const imageAlt = "Professional webcam setup for video calls";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'What to Look For', slug: 'what-to-look-for', depth: 2},
-  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Logitech C920s', slug: 'logitech-c920s', depth: 3},
-  {text: 'Logitech Brio 4K', slug: 'logitech-brio', depth: 3},
-  {text: 'Razer Kiyo Pro', slug: 'razer-kiyo-pro', depth: 3},
-  {text: 'Elgato Facecam', slug: 'elgato-facecam', depth: 3},
-  {text: 'Dell UltraSharp Webcam', slug: 'dell-ultrasharp', depth: 3},
-  {text: 'Anker PowerConf C300', slug: 'anker-c300', depth: 3},
-  {text: 'Insta360 Link', slug: 'insta360-link', depth: 3},
-  {text: 'NexiGo N660', slug: 'nexigo-n660', depth: 3},
-  {text: '1080p vs 4K', slug: '1080p-vs-4k', depth: 2},
-  {text: 'Built-in vs External', slug: 'builtin-vs-external', depth: 2},
-  {text: 'Lighting Tips', slug: 'lighting-tips', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Conclusion', slug: 'conclusion', depth: 2},
-  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "What to Look For", slug: "what-to-look-for", depth: 2 },
+  { text: "Detailed Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Logitech C920s", slug: "logitech-c920s", depth: 3 },
+  { text: "Logitech Brio 4K", slug: "logitech-brio", depth: 3 },
+  { text: "Razer Kiyo Pro", slug: "razer-kiyo-pro", depth: 3 },
+  { text: "Elgato Facecam", slug: "elgato-facecam", depth: 3 },
+  { text: "Dell UltraSharp Webcam", slug: "dell-ultrasharp", depth: 3 },
+  { text: "Anker PowerConf C300", slug: "anker-c300", depth: 3 },
+  { text: "Insta360 Link", slug: "insta360-link", depth: 3 },
+  { text: "NexiGo N660", slug: "nexigo-n660", depth: 3 },
+  { text: "1080p vs 4K", slug: "1080p-vs-4k", depth: 2 },
+  { text: "Built-in vs External", slug: "builtin-vs-external", depth: 2 },
+  { text: "Lighting Tips", slug: "lighting-tips", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Conclusion", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'webcam', label: 'Webcam', width: '140px'},
-  {key: 'bestFor', label: 'Best For', width: '140px'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
-  {key: 'action', label: ''},
+  { key: "webcam", label: "Webcam", width: "140px" },
+  { key: "bestFor", label: "Best For", width: "140px" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    webcam: '<strong>Logitech C920s</strong>',
-    bestFor: 'Best Overall Value',
-    price: '$70',
-    rating: '9.2/10',
-    action: '<a href="/go/amazon/logitech-c920s" rel="nofollow sponsored">Check Price</a>'
+    webcam: "<strong>Logitech C920s</strong>",
+    bestFor: "Best Overall Value",
+    price: "$70",
+    rating: "9.2/10",
+    action: '<a href="/go/amazon/logitech-c920s" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    webcam: '<strong>Logitech Brio 4K</strong>',
-    bestFor: 'Best Premium',
-    price: '$199',
-    rating: '9.4/10',
-    action: '<a href="/go/amazon/logitech-brio" rel="nofollow sponsored">Check Price</a>'
+    webcam: "<strong>Logitech Brio 4K</strong>",
+    bestFor: "Best Premium",
+    price: "$199",
+    rating: "9.4/10",
+    action: '<a href="/go/amazon/logitech-brio" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    webcam: '<strong>NexiGo N660</strong>',
-    bestFor: 'Best Budget',
-    price: '$40',
-    rating: '8.3/10',
-    action: '<a href="/go/amazon/nexigo-n660" rel="nofollow sponsored">Check Price</a>'
+    webcam: "<strong>NexiGo N660</strong>",
+    bestFor: "Best Budget",
+    price: "$40",
+    rating: "8.3/10",
+    action: '<a href="/go/amazon/nexigo-n660" rel="nofollow sponsored">Check Price</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'webcam', label: 'Webcam', width: '130px'},
-  {key: 'bestFor', label: 'Best For', width: '120px'},
-  {key: 'price', label: 'Price'},
-  {key: 'resolution', label: 'Resolution'},
-  {key: 'fps', label: 'Frame Rate'},
-  {key: 'fov', label: 'FOV'},
-  {key: 'action', label: ''},
+  { key: "webcam", label: "Webcam", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "120px" },
+  { key: "price", label: "Price" },
+  { key: "resolution", label: "Resolution" },
+  { key: "fps", label: "Frame Rate" },
+  { key: "fov", label: "FOV" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    webcam: '<strong>Logitech C920s</strong>',
-    bestFor: 'Best Value',
-    price: '$70',
-    resolution: '1080p',
-    fps: '30 fps',
-    fov: '78°',
-    action: '<a href="/go/amazon/logitech-c920s" rel="nofollow sponsored">Buy</a>'
+    webcam: "<strong>Logitech C920s</strong>",
+    bestFor: "Best Value",
+    price: "$70",
+    resolution: "1080p",
+    fps: "30 fps",
+    fov: "78°",
+    action: '<a href="/go/amazon/logitech-c920s" rel="nofollow sponsored">Buy</a>',
   },
   {
-    webcam: '<strong>Logitech Brio 4K</strong>',
-    bestFor: 'Premium',
-    price: '$199',
-    resolution: '4K',
-    fps: '30/60 fps',
-    fov: '65-90°',
-    action: '<a href="/go/amazon/logitech-brio" rel="nofollow sponsored">Buy</a>'
+    webcam: "<strong>Logitech Brio 4K</strong>",
+    bestFor: "Premium",
+    price: "$199",
+    resolution: "4K",
+    fps: "30/60 fps",
+    fov: "65-90°",
+    action: '<a href="/go/amazon/logitech-brio" rel="nofollow sponsored">Buy</a>',
   },
   {
-    webcam: '<strong>Razer Kiyo Pro</strong>',
-    bestFor: 'Low Light',
-    price: '$150',
-    resolution: '1080p',
-    fps: '60 fps',
-    fov: '103°',
-    action: '<a href="/go/amazon/razer-kiyo-pro" rel="nofollow sponsored">Buy</a>'
+    webcam: "<strong>Razer Kiyo Pro</strong>",
+    bestFor: "Low Light",
+    price: "$150",
+    resolution: "1080p",
+    fps: "60 fps",
+    fov: "103°",
+    action: '<a href="/go/amazon/razer-kiyo-pro" rel="nofollow sponsored">Buy</a>',
   },
   {
-    webcam: '<strong>Elgato Facecam</strong>',
-    bestFor: 'Streamers',
-    price: '$170',
-    resolution: '1080p',
-    fps: '60 fps',
-    fov: '82°',
-    action: '<a href="/go/amazon/elgato-facecam" rel="nofollow sponsored">Buy</a>'
+    webcam: "<strong>Elgato Facecam</strong>",
+    bestFor: "Streamers",
+    price: "$170",
+    resolution: "1080p",
+    fps: "60 fps",
+    fov: "82°",
+    action: '<a href="/go/amazon/elgato-facecam" rel="nofollow sponsored">Buy</a>',
   },
   {
-    webcam: '<strong>Dell UltraSharp</strong>',
-    bestFor: 'Enterprise',
-    price: '$199',
-    resolution: '4K',
-    fps: '30 fps',
-    fov: '65-90°',
-    action: '<a href="/go/amazon/dell-ultrasharp-webcam" rel="nofollow sponsored">Buy</a>'
+    webcam: "<strong>Dell UltraSharp</strong>",
+    bestFor: "Enterprise",
+    price: "$199",
+    resolution: "4K",
+    fps: "30 fps",
+    fov: "65-90°",
+    action: '<a href="/go/amazon/dell-ultrasharp-webcam" rel="nofollow sponsored">Buy</a>',
   },
   {
-    webcam: '<strong>Anker C300</strong>',
-    bestFor: 'AI Features',
-    price: '$90',
-    resolution: '1080p',
-    fps: '60 fps',
-    fov: '78-115°',
-    action: '<a href="/go/amazon/anker-c300" rel="nofollow sponsored">Buy</a>'
+    webcam: "<strong>Anker C300</strong>",
+    bestFor: "AI Features",
+    price: "$90",
+    resolution: "1080p",
+    fps: "60 fps",
+    fov: "78-115°",
+    action: '<a href="/go/amazon/anker-c300" rel="nofollow sponsored">Buy</a>',
   },
   {
-    webcam: '<strong>Insta360 Link</strong>',
-    bestFor: 'PTZ Features',
-    price: '$299',
-    resolution: '4K',
-    fps: '30 fps',
-    fov: '79.5°',
-    action: '<a href="/go/amazon/insta360-link" rel="nofollow sponsored">Buy</a>'
+    webcam: "<strong>Insta360 Link</strong>",
+    bestFor: "PTZ Features",
+    price: "$299",
+    resolution: "4K",
+    fps: "30 fps",
+    fov: "79.5°",
+    action: '<a href="/go/amazon/insta360-link" rel="nofollow sponsored">Buy</a>',
   },
   {
-    webcam: '<strong>NexiGo N660</strong>',
-    bestFor: 'Budget',
-    price: '$40',
-    resolution: '1080p',
-    fps: '30 fps',
-    fov: '110°',
-    action: '<a href="/go/amazon/nexigo-n660" rel="nofollow sponsored">Buy</a>'
+    webcam: "<strong>NexiGo N660</strong>",
+    bestFor: "Budget",
+    price: "$40",
+    resolution: "1080p",
+    fps: "30 fps",
+    fov: "110°",
+    action: '<a href="/go/amazon/nexigo-n660" rel="nofollow sponsored">Buy</a>',
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Best webcam overall?',
-    answer: '<p>C920s. Seventy bucks, great image, reliable autofocus, handles low-light okay, privacy shutter built in. Industry standard for years and there\'s a reason.</p><p>Premium pick is Brio 4K at about $199. 4K, HDR, adjustable FOV.</p>'
+    question: "Best webcam overall?",
+    answer:
+      "<p>C920s. Seventy bucks, great image, reliable autofocus, handles low-light okay, privacy shutter built in. Industry standard for years and there's a reason.</p><p>Premium pick is Brio 4K at about $199. 4K, HDR, adjustable FOV.</p>",
   },
   {
-    question: '4K worth it?',
-    answer: '<p>For calls? Nope. Zoom/Teams/Meet all cap at 1080p. 4K needs more bandwidth. People see you in a tiny window anyway.</p><p>4K makes sense for YouTube content, courses, creative work, or if you just want the best regardless.</p>'
+    question: "4K worth it?",
+    answer:
+      "<p>For calls? Nope. Zoom/Teams/Meet all cap at 1080p. 4K needs more bandwidth. People see you in a tiny window anyway.</p><p>4K makes sense for YouTube content, courses, creative work, or if you just want the best regardless.</p>",
   },
   {
-    question: 'External or laptop camera?',
-    answer: '<p>External if you call regularly. Bigger sensors, better glass, better low-light. You can position at eye level. More features.</p><p>Crazy thing is: many premium <a href="/gear/best-laptops-remote-work">laptops</a> STILL ship with 720p cameras in 2025. MacBook Air M3 and Dell XPS 13 improved but still don\'t match a dedicated webcam.</p><p>For daily calls, spend the $70 on a C920s.</p>'
+    question: "External or laptop camera?",
+    answer:
+      '<p>External if you call regularly. Bigger sensors, better glass, better low-light. You can position at eye level. More features.</p><p>Crazy thing is: many premium <a href="/gear/best-laptops-remote-work">laptops</a> STILL ship with 720p cameras in 2025. MacBook Air M3 and Dell XPS 13 improved but still don\'t match a dedicated webcam.</p><p>For daily calls, spend the $70 on a C920s.</p>',
   },
   {
-    question: 'Does frame rate matter?',
-    answer: '<p>30 fps works fine for calls. Standard, looks natural. 60 fps is smoother for demos and streaming.</p><p>Platforms mostly use 30 fps anyway. You won\'t notice the difference in regular Zoom calls.</p><p>60 fps matters for streaming and recording fast-moving stuff.</p>'
+    question: "Does frame rate matter?",
+    answer:
+      "<p>30 fps works fine for calls. Standard, looks natural. 60 fps is smoother for demos and streaming.</p><p>Platforms mostly use 30 fps anyway. You won't notice the difference in regular Zoom calls.</p><p>60 fps matters for streaming and recording fast-moving stuff.</p>",
   },
   {
-    question: 'What features matter most?',
-    answer: '<p>Resolution—1080p minimum. 720p looks bad now. Low-light handling—lighting isn\'t always perfect. Autofocus—keeps you sharp. FOV around 78-90 degrees sweet spot. Mounting options. Privacy shutter. Built-in mic just as backup.</p>'
+    question: "What features matter most?",
+    answer:
+      "<p>Resolution—1080p minimum. 720p looks bad now. Low-light handling—lighting isn't always perfect. Autofocus—keeps you sharp. FOV around 78-90 degrees sweet spot. Mounting options. Privacy shutter. Built-in mic just as backup.</p>",
   },
   {
-    question: 'Do I need a ring light?',
-    answer: '<p>Maybe not. Good lighting beats good cameras.</p><p>Skip if you face a window or have decent overhead light or use something like the Kiyo Pro.</p><p>Consider if your room is dim or lighting is unflattering or you create video content.</p><p>Budget move: desk lamp at 45 degrees often works just as well.</p>'
+    question: "Do I need a ring light?",
+    answer:
+      "<p>Maybe not. Good lighting beats good cameras.</p><p>Skip if you face a window or have decent overhead light or use something like the Kiyo Pro.</p><p>Consider if your room is dim or lighting is unflattering or you create video content.</p><p>Budget move: desk lamp at 45 degrees often works just as well.</p>",
   },
   {
-    question: 'Which webcams work with Zoom and Teams?',
-    answer: '<p>Every one I tested works fine with everything—Zoom, Teams, Meet, whatever.</p><p>Logitech has best compatibility overall. Microsoft Modern Webcam is Teams-optimized. Dell UltraSharp has enterprise features.</p><p>Mac users—all USB webcams work. Logitech and Elgato have good Mac software.</p><p>Avoid super cheap no-name brands—driver problems and bad support.</p>'
+    question: "Which webcams work with Zoom and Teams?",
+    answer:
+      "<p>Every one I tested works fine with everything—Zoom, Teams, Meet, whatever.</p><p>Logitech has best compatibility overall. Microsoft Modern Webcam is Teams-optimized. Dell UltraSharp has enterprise features.</p><p>Mac users—all USB webcams work. Logitech and Elgato have good Mac software.</p><p>Avoid super cheap no-name brands—driver problems and bad support.</p>",
   },
   {
-    question: 'How do I position it?',
-    answer: '<p>Eye level or slightly above—never below looking up at you. Arm\'s length for natural framing. Slight downward angle flatters. Check background. Light should face you.</p><p>If your laptop camera is below eye level, get a monitor-mounted webcam or raise the laptop.</p>'
-  }
+    question: "How do I position it?",
+    answer:
+      "<p>Eye level or slightly above—never below looking up at you. Arm's length for natural framing. Slight downward angle flatters. Check background. Light should face you.</p><p>If your laptop camera is below eye level, get a monitor-mounted webcam or raise the laptop.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Noise-Canceling Headphones',
-    excerpt: 'Complete your video call setup with quality audio gear for remote work.',
-    href: '/gear/best-noise-canceling-headphones',
-    image: '/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp',
-    imageAlt: 'Professional noise-canceling headphones'
+    title: "Best Noise-Canceling Headphones",
+    excerpt: "Complete your video call setup with quality audio gear for remote work.",
+    href: "/gear/best-noise-canceling-headphones",
+    image: "/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp",
+    imageAlt: "Professional noise-canceling headphones",
   },
   {
-    title: 'Best Team Communication Tools',
-    excerpt: 'Compare Slack, Teams, Zoom and more for effective remote team collaboration.',
-    href: '/blog/best-team-communication-tools',
-    image: '/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp',
-    imageAlt: 'Team video call on laptop'
+    title: "Best Team Communication Tools",
+    excerpt: "Compare Slack, Teams, Zoom and more for effective remote team collaboration.",
+    href: "/blog/best-team-communication-tools",
+    image: "/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp",
+    imageAlt: "Team video call on laptop",
   },
   {
-    title: 'Ultimate Home Office Setup Guide',
-    excerpt: 'Create the perfect workspace with our complete home office guide.',
-    href: '/blog/ultimate-home-office-setup',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Modern home office setup'
-  }
+    title: "Ultimate Home Office Setup Guide",
+    excerpt: "Create the perfect workspace with our complete home office guide.",
+    href: "/blog/ultimate-home-office-setup",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern home office setup",
+  },
 ];
 ---
 

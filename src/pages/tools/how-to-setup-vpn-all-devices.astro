@@ -1,93 +1,97 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'How to Set Up a VPN on All Your Devices (2025 Guide)';
-const description = 'VPN setup used to be technical. Not anymore. Five minutes per device. Here\'s the step-by-step for laptop, phone, tablet, and router setup without confusion.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "How to Set Up a VPN on All Your Devices (2025 Guide)";
+const description =
+  "VPN setup used to be technical. Not anymore. Five minutes per device. Here's the step-by-step for laptop, phone, tablet, and router setup without confusion.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 11;
-const image = '/images/unsplash/photo-1516321318423-f06f85e504b3-1200w.webp';
-const imageAlt = 'Multiple devices showing VPN connection screens';
+const image = "/images/unsplash/photo-1516321318423-f06f85e504b3-1200w.webp";
+const imageAlt = "Multiple devices showing VPN connection screens";
 
 // Table of contents headings
 const headings = [
-  {text: 'It\'s Easier Than You Think', slug: 'introduction', depth: 2},
-  {text: 'Windows', slug: 'windows-setup', depth: 2},
-  {text: 'Mac', slug: 'mac-setup', depth: 2},
-  {text: 'iPhone/iPad', slug: 'ios-setup', depth: 2},
-  {text: 'Android', slug: 'android-setup', depth: 2},
-  {text: 'Linux', slug: 'linux-setup', depth: 2},
-  {text: 'Router', slug: 'router-setup', depth: 2},
-  {text: 'Browser Extensions', slug: 'browser-extensions', depth: 2},
-  {text: 'Smart TVs & Streaming', slug: 'smart-tv-setup', depth: 2},
-  {text: 'Troubleshooting', slug: 'troubleshooting', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
+  { text: "It's Easier Than You Think", slug: "introduction", depth: 2 },
+  { text: "Windows", slug: "windows-setup", depth: 2 },
+  { text: "Mac", slug: "mac-setup", depth: 2 },
+  { text: "iPhone/iPad", slug: "ios-setup", depth: 2 },
+  { text: "Android", slug: "android-setup", depth: 2 },
+  { text: "Linux", slug: "linux-setup", depth: 2 },
+  { text: "Router", slug: "router-setup", depth: 2 },
+  { text: "Browser Extensions", slug: "browser-extensions", depth: 2 },
+  { text: "Smart TVs & Streaming", slug: "smart-tv-setup", depth: 2 },
+  { text: "Troubleshooting", slug: "troubleshooting", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Set up on every device?',
-    answer: '<p>Yes. Most VPNs allow 5-10 devices. Surfshark and PIA do unlimited. Or set up on router to cover everything at once.</p>'
+    question: "Set up on every device?",
+    answer:
+      "<p>Yes. Most VPNs allow 5-10 devices. Surfshark and PIA do unlimited. Or set up on router to cover everything at once.</p>",
   },
   {
-    question: 'Which protocol?',
-    answer: '<p>WireGuard. Fastest and secure. OpenVPN as backup if WireGuard has issues.</p>'
+    question: "Which protocol?",
+    answer: "<p>WireGuard. Fastest and secure. OpenVPN as backup if WireGuard has issues.</p>",
   },
   {
-    question: 'Auto-connect?',
-    answer: '<p>Yes. Turn it on. You\'ll forget to connect manually otherwise.</p>'
+    question: "Auto-connect?",
+    answer: "<p>Yes. Turn it on. You'll forget to connect manually otherwise.</p>",
   },
   {
-    question: 'Split tunneling?',
-    answer: '<p>Route work through VPN, personal stuff through regular connection. Useful if banking apps hate VPNs.</p>'
+    question: "Split tunneling?",
+    answer:
+      "<p>Route work through VPN, personal stuff through regular connection. Useful if banking apps hate VPNs.</p>",
   },
   {
-    question: 'How to test it\'s working?',
-    answer: '<p>whatismyipaddress.com. Should show VPN location, not yours.</p>'
+    question: "How to test it's working?",
+    answer: "<p>whatismyipaddress.com. Should show VPN location, not yours.</p>",
   },
   {
-    question: 'Why is it slow?',
-    answer: '<p>Connect closer. Try different server. Use WireGuard. 10-20% slowdown is normal.</p>'
+    question: "Why is it slow?",
+    answer:
+      "<p>Connect closer. Try different server. Use WireGuard. 10-20% slowdown is normal.</p>",
   },
   {
-    question: 'Work laptop?',
-    answer: '<p>Check with IT first. Company devices may have restrictions.</p>'
+    question: "Work laptop?",
+    answer: "<p>Check with IT first. Company devices may have restrictions.</p>",
   },
   {
-    question: 'Devices without apps?',
-    answer: '<p>Router VPN, Smart DNS, or share connection from a device that has VPN.</p>'
-  }
+    question: "Devices without apps?",
+    answer: "<p>Router VPN, Smart DNS, or share connection from a device that has VPN.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best VPNs for Digital Nomads',
-    excerpt: 'Our tested recommendations for the best VPN services for remote workers.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'Digital security concept'
+    title: "Best VPNs for Digital Nomads",
+    excerpt: "Our tested recommendations for the best VPN services for remote workers.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept",
   },
   {
-    title: 'Best VPN for Streaming While Traveling',
-    excerpt: 'Unblock Netflix, Disney+, and more with these streaming-optimized VPNs.',
-    href: '/tools/best-vpn-streaming-travel',
-    image: '/images/unsplash/photo-1522199755839-a2bacb67c546-800w.webp',
-    imageAlt: 'Person streaming content on laptop'
+    title: "Best VPN for Streaming While Traveling",
+    excerpt: "Unblock Netflix, Disney+, and more with these streaming-optimized VPNs.",
+    href: "/tools/best-vpn-streaming-travel",
+    image: "/images/unsplash/photo-1522199755839-a2bacb67c546-800w.webp",
+    imageAlt: "Person streaming content on laptop",
   },
   {
-    title: 'VPN & Public WiFi Security Guide',
-    excerpt: 'Essential security practices for working on public networks.',
-    href: '/blog/vpn-public-wifi-guide',
-    image: '/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp',
-    imageAlt: 'Digital security concept'
-  }
+    title: "VPN & Public WiFi Security Guide",
+    excerpt: "Essential security practices for working on public networks.",
+    href: "/blog/vpn-public-wifi-guide",
+    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp",
+    imageAlt: "Digital security concept",
+  },
 ];
 ---
 

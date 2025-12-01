@@ -1,75 +1,82 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Do I Need a VPN When Working from Cafes?';
-const description = 'Short answer: yes. Learn why VPNs are essential for cafe WiFi security, what risks you face on public networks, and how to stay safe while working remotely.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-10');
+const title = "Do I Need a VPN When Working from Cafes?";
+const description =
+  "Short answer: yes. Learn why VPNs are essential for cafe WiFi security, what risks you face on public networks, and how to stay safe while working remotely.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-10");
 const readingTime = 7;
-const image = '/images/unsplash/photo-1521017432531-fbd92d768814-1200w.webp';
-const imageAlt = 'Remote worker using laptop at coffee shop with VPN protection';
+const image = "/images/unsplash/photo-1521017432531-fbd92d768814-1200w.webp";
+const imageAlt = "Remote worker using laptop at coffee shop with VPN protection";
 
 const headings = [
-  {depth: 2, slug: 'short-answer', text: 'The Short Answer'},
-  {depth: 2, slug: 'why-sketchy', text: 'Why Cafe WiFi Is Sketchy'},
-  {depth: 2, slug: 'what-happens', text: 'Stuff That Actually Happens'},
-  {depth: 2, slug: 'what-vpn-does', text: 'What a VPN Actually Does'},
-  {depth: 2, slug: 'other-habits', text: 'Other Good Habits'},
-  {depth: 2, slug: 'vpns-worth-using', text: 'VPNs Worth Using'},
-  {depth: 2, slug: 'faq', text: 'Questions'}
+  { depth: 2, slug: "short-answer", text: "The Short Answer" },
+  { depth: 2, slug: "why-sketchy", text: "Why Cafe WiFi Is Sketchy" },
+  { depth: 2, slug: "what-happens", text: "Stuff That Actually Happens" },
+  { depth: 2, slug: "what-vpn-does", text: "What a VPN Actually Does" },
+  { depth: 2, slug: "other-habits", text: "Other Good Habits" },
+  { depth: 2, slug: "vpns-worth-using", text: "VPNs Worth Using" },
+  { depth: 2, slug: "faq", text: "Questions" },
 ];
 
 const faqData = [
   {
-    question: 'Is password-protected cafe wifi safe?',
-    answer: 'A little safer than completely open wifi. But the password just controls who gets on the network. Once someone\'s connected, they can still snoop. Still need a VPN.'
+    question: "Is password-protected cafe wifi safe?",
+    answer:
+      "A little safer than completely open wifi. But the password just controls who gets on the network. Once someone's connected, they can still snoop. Still need a VPN.",
   },
   {
-    question: 'Can people really see what I\'m doing?',
-    answer: 'Yep. On regular public wifi, anyone with basic tools can watch unencrypted traffic. Grab passwords. Watch what sites you hit. Not paranoia. Reality.'
+    question: "Can people really see what I'm doing?",
+    answer:
+      "Yep. On regular public wifi, anyone with basic tools can watch unencrypted traffic. Grab passwords. Watch what sites you hit. Not paranoia. Reality.",
   },
   {
-    question: 'Should I just use mobile data instead?',
-    answer: 'Cellular is generally safer. Harder to intercept. If you\'ve got unlimited data, your phone\'s hotspot works fine. VPN on cafe wifi is more flexible though.'
+    question: "Should I just use mobile data instead?",
+    answer:
+      "Cellular is generally safer. Harder to intercept. If you've got unlimited data, your phone's hotspot works fine. VPN on cafe wifi is more flexible though.",
   },
   {
-    question: 'Does a VPN make everything slow?',
-    answer: 'Barely. Ten to twenty percent slower maybe. You won\'t notice during normal work stuff. Email, docs, video calls. All fine. Worth the tradeoff.'
+    question: "Does a VPN make everything slow?",
+    answer:
+      "Barely. Ten to twenty percent slower maybe. You won't notice during normal work stuff. Email, docs, video calls. All fine. Worth the tradeoff.",
   },
   {
-    question: 'What if the cafe blocks VPNs?',
-    answer: 'Some do. Switch protocols in your VPN app. Try obfuscation mode if your VPN has it. Or just use your phone\'s hotspot instead.'
+    question: "What if the cafe blocks VPNs?",
+    answer:
+      "Some do. Switch protocols in your VPN app. Try obfuscation mode if your VPN has it. Or just use your phone's hotspot instead.",
   },
   {
-    question: 'I only visit HTTPS sites. Still need VPN?',
-    answer: 'HTTPS encrypts what you\'re exchanging with sites. But not which sites you\'re visiting. Not your DNS queries. Not all your apps. VPN covers everything.'
-  }
+    question: "I only visit HTTPS sites. Still need VPN?",
+    answer:
+      "HTTPS encrypts what you're exchanging with sites. But not which sites you're visiting. Not your DNS queries. Not all your apps. VPN covers everything.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best VPN for Digital Nomads',
-    excerpt: 'Our top VPN picks for remote workers who travel.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'VPN security shield on laptop screen'
+    title: "Best VPN for Digital Nomads",
+    excerpt: "Our top VPN picks for remote workers who travel.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
+    imageAlt: "VPN security shield on laptop screen",
   },
   {
-    title: 'VPN & Public WiFi Security Guide',
-    excerpt: 'Complete guide to staying safe on public networks.',
-    href: '/blog/vpn-public-wifi-guide',
-    image: '/images/unsplash/photo-1544197150-b99a580bb7a8-800w.webp',
-    imageAlt: 'Public WiFi hotspot security concept'
+    title: "VPN & Public WiFi Security Guide",
+    excerpt: "Complete guide to staying safe on public networks.",
+    href: "/blog/vpn-public-wifi-guide",
+    image: "/images/unsplash/photo-1544197150-b99a580bb7a8-800w.webp",
+    imageAlt: "Public WiFi hotspot security concept",
   },
   {
-    title: 'Find Reliable WiFi Anywhere',
-    excerpt: 'Tips for finding good internet while traveling.',
-    href: '/blog/find-reliable-wifi-anywhere',
-    image: '/images/unsplash/photo-1521791136064-7986c2920216-800w.webp',
-    imageAlt: 'Digital nomad searching for WiFi'
-  }
+    title: "Find Reliable WiFi Anywhere",
+    excerpt: "Tips for finding good internet while traveling.",
+    href: "/blog/find-reliable-wifi-anywhere",
+    image: "/images/unsplash/photo-1521791136064-7986c2920216-800w.webp",
+    imageAlt: "Digital nomad searching for WiFi",
+  },
 ];
 ---
 

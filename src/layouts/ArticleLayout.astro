@@ -1,11 +1,11 @@
 ---
-import BaseLayout from './BaseLayout.astro';
-import Breadcrumbs from '@components/article/Breadcrumbs.astro';
-import ArticleMetadata from '@components/article/ArticleMetadata.astro';
-import TableOfContents from '@components/article/TableOfContents.astro';
-import SocialShare from '@components/article/SocialShare.astro';
-import ImageLoader from '@components/ui/ImageLoader.astro';
-import {Image} from 'astro:assets';
+import { Image } from "astro:assets";
+import ArticleMetadata from "@components/article/ArticleMetadata.astro";
+import Breadcrumbs from "@components/article/Breadcrumbs.astro";
+import SocialShare from "@components/article/SocialShare.astro";
+import TableOfContents from "@components/article/TableOfContents.astro";
+import ImageLoader from "@components/ui/ImageLoader.astro";
+import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
   title: string;
@@ -31,41 +31,41 @@ const {
   updatedDate,
   readingTime,
   image,
-  imageAlt = '',
+  imageAlt = "",
   category,
   categorySlug,
-  headings = []
+  headings = [],
 } = Astro.props;
 
 // Build breadcrumb items
 const breadcrumbItems = [
-  {label: 'Home', href: '/'},
-  {label: category, href: `/${categorySlug}`},
-  {label: title}
+  { label: "Home", href: "/" },
+  { label: category, href: `/${categorySlug}` },
+  { label: title },
 ];
 
 // Article Schema markup
 const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
+  "@context": "https://schema.org",
+  "@type": "Article",
   headline: title,
   description: description,
   image: image ? `https://floatjet.com${image}` : undefined,
   author: {
-    '@type': 'Person',
+    "@type": "Person",
     name: author,
-    url: authorUrl
+    url: authorUrl,
   },
   publisher: {
-    '@type': 'Organization',
-    name: 'FloatJet',
+    "@type": "Organization",
+    name: "FloatJet",
     logo: {
-      '@type': 'ImageObject',
-      url: 'https://floatjet.com/logo.png'
-    }
+      "@type": "ImageObject",
+      url: "https://floatjet.com/logo.png",
+    },
   },
   datePublished: pubDate.toISOString(),
-  dateModified: updatedDate ? updatedDate.toISOString() : pubDate.toISOString()
+  dateModified: updatedDate ? updatedDate.toISOString() : pubDate.toISOString(),
 };
 ---
 

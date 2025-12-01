@@ -1,77 +1,83 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'How to Find Reliable WiFi Anywhere in the World (2025)';
-const description = 'I\'ve worked from forty countries. Here\'s how to find reliable wifi anywhere without wasting hours testing cafes or paying for terrible hotel internet.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "How to Find Reliable WiFi Anywhere in the World (2025)";
+const description =
+  "I've worked from forty countries. Here's how to find reliable wifi anywhere without wasting hours testing cafes or paying for terrible hotel internet.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 9;
-const image = '/images/unsplash/photo-1521791136064-7986c2920216-1200w.webp';
-const imageAlt = 'Person working on laptop in cafe with WiFi';
+const image = "/images/unsplash/photo-1521791136064-7986c2920216-1200w.webp";
+const imageAlt = "Person working on laptop in cafe with WiFi";
 
 // Table of contents
 const headings = [
-  {text: 'I Almost Got Fired Over Hotel WiFi', slug: 'introduction', depth: 2},
-  {text: 'Apps That Have Saved Me', slug: 'tools', depth: 2},
-  {text: 'Where to Actually Work', slug: 'sources', depth: 2},
-  {text: 'Before Any Important Call', slug: 'testing', depth: 2},
-  {text: 'Backup Plans I Actually Use', slug: 'backups', depth: 2},
-  {text: 'By Region', slug: 'country-tips', depth: 2},
-  {text: 'Quick Answers', slug: 'faq', depth: 2},
-  {text: 'Four Years Since Bangkok', slug: 'conclusion', depth: 2},
+  { text: "I Almost Got Fired Over Hotel WiFi", slug: "introduction", depth: 2 },
+  { text: "Apps That Have Saved Me", slug: "tools", depth: 2 },
+  { text: "Where to Actually Work", slug: "sources", depth: 2 },
+  { text: "Before Any Important Call", slug: "testing", depth: 2 },
+  { text: "Backup Plans I Actually Use", slug: "backups", depth: 2 },
+  { text: "By Region", slug: "country-tips", depth: 2 },
+  { text: "Quick Answers", slug: "faq", depth: 2 },
+  { text: "Four Years Since Bangkok", slug: "conclusion", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'What speed do I actually need for calls?',
-    answer: '<p>10-25 Mbps download, 5-10 up for video calls. Zoom claims 3.8 Mbps is enough but real world definitely needs more buffer than that.</p>'
+    question: "What speed do I actually need for calls?",
+    answer:
+      "<p>10-25 Mbps download, 5-10 up for video calls. Zoom claims 3.8 Mbps is enough but real world definitely needs more buffer than that.</p>",
   },
   {
-    question: 'Is cafe WiFi safe to use?',
-    answer: '<p>Not really if I\'m being honest. Use a VPN. Every time. Don\'t check your bank account on Starbucks WiFi.</p>'
+    question: "Is cafe WiFi safe to use?",
+    answer:
+      "<p>Not really if I'm being honest. Use a VPN. Every time. Don't check your bank account on Starbucks WiFi.</p>",
   },
   {
-    question: 'How do I know if hotel WiFi is good before I book?',
-    answer: '<p>Filter reviews by "WiFi" or "work" on booking sites. Or just message them directly and ask for speed test numbers. If they won\'t tell you, that tells you something.</p>'
+    question: "How do I know if hotel WiFi is good before I book?",
+    answer:
+      '<p>Filter reviews by "WiFi" or "work" on booking sites. Or just message them directly and ask for speed test numbers. If they won\'t tell you, that tells you something.</p>',
   },
   {
-    question: 'What if there\'s literally no WiFi anywhere?',
-    answer: '<p>Mobile data it is. eSIM. Or local SIM. In truly remote places, just accept that some work is going to have to wait.</p>'
+    question: "What if there's literally no WiFi anywhere?",
+    answer:
+      "<p>Mobile data it is. eSIM. Or local SIM. In truly remote places, just accept that some work is going to have to wait.</p>",
   },
   {
-    question: 'Should I bring a travel router?',
-    answer: '<p>If you stay in a lot of hotels with weak signal, maybe worth it. GL.iNet makes good ones. Adds weight though. Skip it if you mostly use coworking spaces.</p>'
-  }
+    question: "Should I bring a travel router?",
+    answer:
+      "<p>If you stay in a lot of hotels with weak signal, maybe worth it. GL.iNet makes good ones. Adds weight though. Skip it if you mostly use coworking spaces.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Essential Travel Tech for Nomads',
-    excerpt: 'Compact gadgets and accessories for working from anywhere.',
-    href: '/blog/essential-travel-tech-nomads',
-    image: '/images/unsplash/photo-1519389950473-47ba0277781c-800w.webp',
-    imageAlt: 'Travel tech setup'
+    title: "Essential Travel Tech for Nomads",
+    excerpt: "Compact gadgets and accessories for working from anywhere.",
+    href: "/blog/essential-travel-tech-nomads",
+    image: "/images/unsplash/photo-1519389950473-47ba0277781c-800w.webp",
+    imageAlt: "Travel tech setup",
   },
   {
-    title: 'VPN & Public WiFi Security Guide',
-    excerpt: 'Protect yourself when working on public networks.',
-    href: '/blog/vpn-public-wifi-guide',
-    image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'WiFi security concept'
+    title: "VPN & Public WiFi Security Guide",
+    excerpt: "Protect yourself when working on public networks.",
+    href: "/blog/vpn-public-wifi-guide",
+    image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
+    imageAlt: "WiFi security concept",
   },
   {
-    title: 'Top Destinations for Digital Nomads',
-    excerpt: 'Cities with great infrastructure for remote work.',
-    href: '/blog/top-destinations-digital-nomads',
-    image: '/images/unsplash/photo-1528181304800-259b08848526-800w.webp',
-    imageAlt: 'Digital nomad destination'
-  }
+    title: "Top Destinations for Digital Nomads",
+    excerpt: "Cities with great infrastructure for remote work.",
+    href: "/blog/top-destinations-digital-nomads",
+    image: "/images/unsplash/photo-1528181304800-259b08848526-800w.webp",
+    imageAlt: "Digital nomad destination",
+  },
 ];
 ---
 

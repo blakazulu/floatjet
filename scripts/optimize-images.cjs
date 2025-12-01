@@ -13,7 +13,7 @@ const IMAGES_DIR = path.join(__dirname, "..", "public", "images", "unsplash");
 async function convertToWebP() {
   console.log("\nConverting images to WebP...\n");
 
-  const files = fs.readdirSync(IMAGES_DIR).filter(f => f.endsWith(".jpg"));
+  const files = fs.readdirSync(IMAGES_DIR).filter((f) => f.endsWith(".jpg"));
   let converted = 0;
   let savedBytes = 0;
 
@@ -32,8 +32,8 @@ async function convertToWebP() {
 
       await sharp(inputPath)
         .webp({
-          quality: 80,        // Good balance of quality/size
-          effort: 6,          // Higher = smaller file, slower conversion
+          quality: 80, // Good balance of quality/size
+          effort: 6, // Higher = smaller file, slower conversion
         })
         .toFile(outputPath);
 

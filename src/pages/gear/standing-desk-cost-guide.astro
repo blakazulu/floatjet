@@ -1,106 +1,117 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'How Much Does a Standing Desk Really Cost? (2025 Guide)';
-const description = 'Complete price breakdown for standing desks at every budget. Learn what you get at $200, $500, and $1,000+ price points and whether expensive desks worth it.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Furniture';
-const categorySlug = 'gear';
+const title = "How Much Does a Standing Desk Really Cost? (2025 Guide)";
+const description =
+  "Complete price breakdown for standing desks at every budget. Learn what you get at $200, $500, and $1,000+ price points and whether expensive desks worth it.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Furniture";
+const categorySlug = "gear";
 const readingTime = 8;
-const image = '/images/unsplash/photo-1497366216548-37526070297c-1200w.webp';
-const imageAlt = 'Various standing desks at different price points';
+const image = "/images/unsplash/photo-1497366216548-37526070297c-1200w.webp";
+const imageAlt = "Various standing desks at different price points";
 
 const headings = [
-  {text: 'Short Answer', slug: 'quick-answer', depth: 2},
-  {text: 'Budget Tier: One Fifty to Four Hundred', slug: 'budget-tier', depth: 2},
-  {text: 'Mid-Range: Four to Eight Hundred', slug: 'mid-range-tier', depth: 2},
-  {text: 'Premium: Eight Hundred to Two Thousand', slug: 'premium-tier', depth: 2},
-  {text: 'Hidden Costs', slug: 'hidden-costs', depth: 2},
-  {text: 'DIY Options', slug: 'diy-options', depth: 2},
-  {text: 'Is It Worth It?', slug: 'worth-it', depth: 2},
-  {text: 'Best Picks By Price', slug: 'best-value', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
+  { text: "Short Answer", slug: "quick-answer", depth: 2 },
+  { text: "Budget Tier: One Fifty to Four Hundred", slug: "budget-tier", depth: 2 },
+  { text: "Mid-Range: Four to Eight Hundred", slug: "mid-range-tier", depth: 2 },
+  { text: "Premium: Eight Hundred to Two Thousand", slug: "premium-tier", depth: 2 },
+  { text: "Hidden Costs", slug: "hidden-costs", depth: 2 },
+  { text: "DIY Options", slug: "diy-options", depth: 2 },
+  { text: "Is It Worth It?", slug: "worth-it", depth: 2 },
+  { text: "Best Picks By Price", slug: "best-value", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
 ];
 
 const tierComparisonColumns = [
-  {key: 'tier', label: 'Tier', width: '120px'},
-  {key: 'price', label: 'Price Range'},
-  {key: 'motor', label: 'Motor'},
-  {key: 'warranty', label: 'Warranty'},
-  {key: 'example', label: 'Example'},
+  { key: "tier", label: "Tier", width: "120px" },
+  { key: "price", label: "Price Range" },
+  { key: "motor", label: "Motor" },
+  { key: "warranty", label: "Warranty" },
+  { key: "example", label: "Example" },
 ];
 
 const tierComparisonRows = [
   {
-    tier: '<strong>Budget</strong>',
-    price: '$150-400',
-    motor: 'Single/Dual',
-    warranty: '2-5 years',
-    example: 'Autonomous, FEZIBO'
+    tier: "<strong>Budget</strong>",
+    price: "$150-400",
+    motor: "Single/Dual",
+    warranty: "2-5 years",
+    example: "Autonomous, FEZIBO",
   },
   {
-    tier: '<strong>Mid-Range</strong>',
-    price: '$400-800',
-    motor: 'Dual',
-    warranty: '5-15 years',
-    example: 'FlexiSpot E7, Uplift V2'
+    tier: "<strong>Mid-Range</strong>",
+    price: "$400-800",
+    motor: "Dual",
+    warranty: "5-15 years",
+    example: "FlexiSpot E7, Uplift V2",
   },
   {
-    tier: '<strong>Premium</strong>',
-    price: '$800-2,000',
-    motor: 'Dual',
-    warranty: '10-15 years',
-    example: 'Jarvis, Fully, Branch'
+    tier: "<strong>Premium</strong>",
+    price: "$800-2,000",
+    motor: "Dual",
+    warranty: "10-15 years",
+    example: "Jarvis, Fully, Branch",
   },
 ];
 
 const faqItems = [
   {
-    question: 'Worth buying a two hundred dollar desk?',
-    answer: 'For light use over two to three years, sure. Budget desks like Autonomous SmartDesk Core work fine for occasional standing. Shorter warranties though. Single motors. Less stability. If you\'re using a standing desk daily for five plus years, invest in mid-range.',
+    question: "Worth buying a two hundred dollar desk?",
+    answer:
+      "For light use over two to three years, sure. Budget desks like Autonomous SmartDesk Core work fine for occasional standing. Shorter warranties though. Single motors. Less stability. If you're using a standing desk daily for five plus years, invest in mid-range.",
   },
   {
-    question: 'Sweet spot price?',
-    answer: 'Five hundred to seven hundred range offers best value for most. Dual motors. Long warranties at ten to fifteen years. Good stability. Quality construction. FlexiSpot E7 and Uplift V2 both fall here and outperform budget options significantly.',
+    question: "Sweet spot price?",
+    answer:
+      "Five hundred to seven hundred range offers best value for most. Dual motors. Long warranties at ten to fifteen years. Good stability. Quality construction. FlexiSpot E7 and Uplift V2 both fall here and outperform budget options significantly.",
   },
   {
-    question: 'Do expensive desks last longer?',
-    answer: 'Generally yes. Premium desks over eight hundred use better motors, thicker steel frames, higher-quality electronics. More importantly, longer warranties that manufacturers back because they expect fewer failures. A six hundred desk lasting fifteen years costs less per year than a two hundred desk replaced every three years.',
+    question: "Do expensive desks last longer?",
+    answer:
+      "Generally yes. Premium desks over eight hundred use better motors, thicker steel frames, higher-quality electronics. More importantly, longer warranties that manufacturers back because they expect fewer failures. A six hundred desk lasting fifteen years costs less per year than a two hundred desk replaced every three years.",
   },
   {
-    question: 'Save money with a converter instead?',
-    answer: 'Desk converters cost one fifty to four hundred and sit on your existing desk. Work well for testing standing work or when you can\'t replace your desk. Smaller surfaces though. Limited height range. Take up desk space when lowered. For long-term daily use, full standing desk is typically better value.',
+    question: "Save money with a converter instead?",
+    answer:
+      "Desk converters cost one fifty to four hundred and sit on your existing desk. Work well for testing standing work or when you can't replace your desk. Smaller surfaces though. Limited height range. Take up desk space when lowered. For long-term daily use, full standing desk is typically better value.",
   },
   {
-    question: 'Any hidden costs?',
-    answer: 'Budget for desktop if buying frame only at one to two hundred. Anti-fatigue mat at forty to eighty. Cable management at twenty to fifty. Potentially a new chair for alternating. These extras add two to four hundred to your total investment.',
+    question: "Any hidden costs?",
+    answer:
+      "Budget for desktop if buying frame only at one to two hundred. Anti-fatigue mat at forty to eighty. Cable management at twenty to fifty. Potentially a new chair for alternating. These extras add two to four hundred to your total investment.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Standing Desks',
-    excerpt: 'Full comparison of the top standing desks at every price point.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Modern standing desk in home office',
+    title: "Best Standing Desks",
+    excerpt: "Full comparison of the top standing desks at every price point.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern standing desk in home office",
   },
   {
-    title: 'Best Desk Converters',
-    excerpt: 'Budget-friendly alternative to full standing desks.',
-    href: '/gear/best-desk-converters',
-    image: '/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp',
-    imageAlt: 'Standing desk converter on office desk',
+    title: "Best Desk Converters",
+    excerpt: "Budget-friendly alternative to full standing desks.",
+    href: "/gear/best-desk-converters",
+    image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp",
+    imageAlt: "Standing desk converter on office desk",
   },
   {
-    title: 'Best Ergonomic Chairs',
-    excerpt: 'Pair your standing desk with a quality chair for sitting periods.',
-    href: '/gear/best-ergonomic-chairs',
-    image: '/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp',
-    imageAlt: 'Ergonomic office chair',
+    title: "Best Ergonomic Chairs",
+    excerpt: "Pair your standing desk with a quality chair for sitting periods.",
+    href: "/gear/best-ergonomic-chairs",
+    image: "/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp",
+    imageAlt: "Ergonomic office chair",
   },
 ];
 ---

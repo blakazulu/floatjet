@@ -1,92 +1,102 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Freelancer Tax Deductions: Complete Guide (2025)';
-const description = 'Every tax deduction for freelancers and self-employed folks. Home office, equipment, software, travel - here\'s what you can write off without IRS trouble.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Freelancer Tax Deductions: Complete Guide (2025)";
+const description =
+  "Every tax deduction for freelancers and self-employed folks. Home office, equipment, software, travel - here's what you can write off without IRS trouble.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 16;
-const image = '/images/unsplash/photo-1554224155-6726b3ff858f-1200w.webp';
-const imageAlt = 'Tax documents and calculator for freelancer deductions';
+const image = "/images/unsplash/photo-1554224155-6726b3ff858f-1200w.webp";
+const imageAlt = "Tax documents and calculator for freelancer deductions";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'That Confusing Home Office Thing', slug: 'home-office', depth: 2},
-  {text: 'Your Gear and Tech Stuff', slug: 'equipment', depth: 2},
-  {text: 'All Those Monthly Services', slug: 'software', depth: 2},
-  {text: 'Getting Around for Work', slug: 'travel', depth: 2},
-  {text: 'Learning and Growing', slug: 'professional-development', depth: 2},
-  {text: 'Covering Your Health', slug: 'health-insurance', depth: 2},
-  {text: 'Stashing Money for Later', slug: 'retirement', depth: 2},
-  {text: 'Keeping Track of Everything', slug: 'record-keeping', depth: 2},
-  {text: 'Getting Professional Help', slug: 'hire-professional', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "That Confusing Home Office Thing", slug: "home-office", depth: 2 },
+  { text: "Your Gear and Tech Stuff", slug: "equipment", depth: 2 },
+  { text: "All Those Monthly Services", slug: "software", depth: 2 },
+  { text: "Getting Around for Work", slug: "travel", depth: 2 },
+  { text: "Learning and Growing", slug: "professional-development", depth: 2 },
+  { text: "Covering Your Health", slug: "health-insurance", depth: 2 },
+  { text: "Stashing Money for Later", slug: "retirement", depth: 2 },
+  { text: "Keeping Track of Everything", slug: "record-keeping", depth: 2 },
+  { text: "Getting Professional Help", slug: "hire-professional", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'How much of my place actually counts?',
-    answer: '<p>Figure out the portion where only work happens. Two options:</p><ul><li><strong>Quick method:</strong> Five dollars per square foot, capping at 300 feet</li><li><strong>Detailed method:</strong> Compare your workspace against total area — say 150 sq ft from a 1,500 sq ft apartment gives you 10% of qualified expenses</li></ul><p>The detailed approach usually yields more but demands tracking actual expenses like rent, utilities, insurance, and repairs.</p>'
+    question: "How much of my place actually counts?",
+    answer:
+      "<p>Figure out the portion where only work happens. Two options:</p><ul><li><strong>Quick method:</strong> Five dollars per square foot, capping at 300 feet</li><li><strong>Detailed method:</strong> Compare your workspace against total area — say 150 sq ft from a 1,500 sq ft apartment gives you 10% of qualified expenses</li></ul><p>The detailed approach usually yields more but demands tracking actual expenses like rent, utilities, insurance, and repairs.</p>",
   },
   {
-    question: 'My laptop handles personal stuff too — still deductible?',
-    answer: '<p>Partially. Match the deduction to actual work use. If 80% of screen time serves business purposes, write off 80%. Keep some kind of log in case questions come up during a review.</p><p>Devices used exclusively for work? Grab the whole amount through Section 179.</p>'
+    question: "My laptop handles personal stuff too — still deductible?",
+    answer:
+      "<p>Partially. Match the deduction to actual work use. If 80% of screen time serves business purposes, write off 80%. Keep some kind of log in case questions come up during a review.</p><p>Devices used exclusively for work? Grab the whole amount through Section 179.</p>",
   },
   {
-    question: 'What about buying lunch for clients?',
-    answer: '<p>Half the tab when real business gets discussed. A few requirements:</p><ul><li>Either you or an employee has to show up</li><li>Nothing ridiculous or extravagant</li><li>Record who attended and what topics came up</li></ul><p>Meals while traveling for work also hit 50%. Regular groceries at home? Different story entirely.</p>'
+    question: "What about buying lunch for clients?",
+    answer:
+      "<p>Half the tab when real business gets discussed. A few requirements:</p><ul><li>Either you or an employee has to show up</li><li>Nothing ridiculous or extravagant</li><li>Record who attended and what topics came up</li></ul><p>Meals while traveling for work also hit 50%. Regular groceries at home? Different story entirely.</p>",
   },
   {
-    question: 'Writing off my car?',
-    answer: '<p>Two ways to handle this:</p><ul><li><strong>Standard mileage:</strong> <a href="https://www.irs.gov/tax-professionals/standard-mileage-rates" target="_blank" rel="nofollow">67 cents per mile currently</a> according to the IRS. Track every work-related trip.</li><li><strong>Actual expenses:</strong> Tally up fuel, insurance, repairs, depreciation — then apply whatever percentage represents business driving. More math but sometimes bigger.</li></ul><p>Commutes to an office never count. But heading from your home workspace to meet clients? That mileage qualifies.</p>'
+    question: "Writing off my car?",
+    answer:
+      '<p>Two ways to handle this:</p><ul><li><strong>Standard mileage:</strong> <a href="https://www.irs.gov/tax-professionals/standard-mileage-rates" target="_blank" rel="nofollow">67 cents per mile currently</a> according to the IRS. Track every work-related trip.</li><li><strong>Actual expenses:</strong> Tally up fuel, insurance, repairs, depreciation — then apply whatever percentage represents business driving. More math but sometimes bigger.</li></ul><p>Commutes to an office never count. But heading from your home workspace to meet clients? That mileage qualifies.</p>',
   },
   {
-    question: 'Missing receipts from earlier purchases?',
-    answer: '<p>Under 75 bucks, lean on bank statements and calendar notes and written descriptions.</p><p>Larger amounts mean hunting down replacements from wherever you bought stuff. Going forward, just scan everything the moment you get it. Phone apps take three seconds.</p>'
+    question: "Missing receipts from earlier purchases?",
+    answer:
+      "<p>Under 75 bucks, lean on bank statements and calendar notes and written descriptions.</p><p>Larger amounts mean hunting down replacements from wherever you bought stuff. Going forward, just scan everything the moment you get it. Phone apps take three seconds.</p>",
   },
   {
-    question: 'Does health insurance qualify?',
-    answer: '<p><strong>Working for yourself with no access to coverage elsewhere</strong> — including through anyone you\'re married to — means you can deduct everything. Full premiums for yourself and dependents.</p><p>This comes off above the line, which directly shrinks your AGI. Makes a huge difference.</p>'
+    question: "Does health insurance qualify?",
+    answer:
+      "<p><strong>Working for yourself with no access to coverage elsewhere</strong> — including through anyone you're married to — means you can deduct everything. Full premiums for yourself and dependents.</p><p>This comes off above the line, which directly shrinks your AGI. Makes a huge difference.</p>",
   },
   {
-    question: 'Deductions versus credits — what\'s the actual difference?',
-    answer: '<p>They work differently:</p><ul><li><strong>Deductions</strong> shrink how much income gets taxed. Knocking a thousand off your taxable amount saves maybe 200-400 depending where you fall.</li><li><strong>Credits</strong> attack your actual bill directly. A thousand dollar credit means a thousand dollars less owed.</li></ul><p>Most freelancer expenses work as deductions rather than credits.</p>'
+    question: "Deductions versus credits — what's the actual difference?",
+    answer:
+      "<p>They work differently:</p><ul><li><strong>Deductions</strong> shrink how much income gets taxed. Knocking a thousand off your taxable amount saves maybe 200-400 depending where you fall.</li><li><strong>Credits</strong> attack your actual bill directly. A thousand dollar credit means a thousand dollars less owed.</li></ul><p>Most freelancer expenses work as deductions rather than credits.</p>",
   },
   {
-    question: 'Years I should hold onto records?',
-    answer: '<p>The <a href="https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records" target="_blank" rel="nofollow">IRS officially says</a> <strong>3 years</strong> from when you filed. However:</p><ul><li>Bump to <strong>6 years</strong> if there\'s any chance you underreported — even accidentally</li><li><strong>7 years</strong> for situations involving worthless investments or debts going bad</li><li><strong>Forever</strong> if you never filed or something fraudulent happened</li></ul><p>Personally I keep everything 7 years minimum. Storage costs basically nothing anymore.</p>'
-  }
+    question: "Years I should hold onto records?",
+    answer:
+      '<p>The <a href="https://www.irs.gov/businesses/small-businesses-self-employed/how-long-should-i-keep-records" target="_blank" rel="nofollow">IRS officially says</a> <strong>3 years</strong> from when you filed. However:</p><ul><li>Bump to <strong>6 years</strong> if there\'s any chance you underreported — even accidentally</li><li><strong>7 years</strong> for situations involving worthless investments or debts going bad</li><li><strong>Forever</strong> if you never filed or something fraudulent happened</li></ul><p>Personally I keep everything 7 years minimum. Storage costs basically nothing anymore.</p>',
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Tax Tips for Remote Workers',
-    excerpt: 'Navigate taxes as a remote worker or digital nomad with these essential strategies.',
-    href: '/blog/tax-tips-remote-workers',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Tax planning documents'
+    title: "Tax Tips for Remote Workers",
+    excerpt: "Navigate taxes as a remote worker or digital nomad with these essential strategies.",
+    href: "/blog/tax-tips-remote-workers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Tax planning documents",
   },
   {
-    title: 'How to Expense Home Office Furniture',
-    excerpt: 'Learn the rules for deducting desks, chairs, and other home office furniture.',
-    href: '/guides/expense-home-office-furniture',
-    image: '/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp',
-    imageAlt: 'Home office setup'
+    title: "How to Expense Home Office Furniture",
+    excerpt: "Learn the rules for deducting desks, chairs, and other home office furniture.",
+    href: "/guides/expense-home-office-furniture",
+    image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp",
+    imageAlt: "Home office setup",
   },
   {
-    title: 'Retirement Savings for Freelancers',
-    excerpt: 'Set up tax-advantaged retirement accounts to reduce your tax burden and build wealth.',
-    href: '/guides/retirement-savings-freelancer',
-    image: '/images/unsplash/photo-1579621970563-ebec7560ff3e-800w.webp',
-    imageAlt: 'Retirement savings planning'
-  }
+    title: "Retirement Savings for Freelancers",
+    excerpt:
+      "Set up tax-advantaged retirement accounts to reduce your tax burden and build wealth.",
+    href: "/guides/retirement-savings-freelancer",
+    image: "/images/unsplash/photo-1579621970563-ebec7560ff3e-800w.webp",
+    imageAlt: "Retirement savings planning",
+  },
 ];
 ---
 

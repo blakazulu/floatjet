@@ -1,75 +1,82 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Best Invoicing Tools for Remote Professionals in 2025';
-const description = 'Compare the top invoicing software for freelancers and remote workers. Get paid faster with professional invoices, automatic reminders, and online payments.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-25');
+const title = "Best Invoicing Tools for Remote Professionals in 2025";
+const description =
+  "Compare the top invoicing software for freelancers and remote workers. Get paid faster with professional invoices, automatic reminders, and online payments.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-25");
 const readingTime = 15;
-const image = '/images/unsplash/photo-1450101499163-c8848c66ca85-1200w.webp';
-const imageAlt = 'Invoice documents and payment processing';
+const image = "/images/unsplash/photo-1450101499163-c8848c66ca85-1200w.webp";
+const imageAlt = "Invoice documents and payment processing";
 
 const headings = [
-  {depth: 2, slug: 'why-this-matters', text: 'Why This Matters'},
-  {depth: 2, slug: 'what-features-matter', text: 'What Features Actually Matter'},
-  {depth: 2, slug: 'top-picks', text: 'The Tools Worth Looking At'},
-  {depth: 2, slug: 'getting-paid-faster', text: 'Getting Paid Faster'},
-  {depth: 2, slug: 'international-clients', text: 'International Clients'},
-  {depth: 2, slug: 'faq', text: 'Questions'},
-  {depth: 2, slug: 'my-picks', text: 'My Picks'}
+  { depth: 2, slug: "why-this-matters", text: "Why This Matters" },
+  { depth: 2, slug: "what-features-matter", text: "What Features Actually Matter" },
+  { depth: 2, slug: "top-picks", text: "The Tools Worth Looking At" },
+  { depth: 2, slug: "getting-paid-faster", text: "Getting Paid Faster" },
+  { depth: 2, slug: "international-clients", text: "International Clients" },
+  { depth: 2, slug: "faq", text: "Questions" },
+  { depth: 2, slug: "my-picks", text: "My Picks" },
 ];
 
 const faqData = [
   {
-    question: 'Best free invoicing software?',
-    answer: 'Wave and Invoice Ninja. Wave is unlimited free invoicing with no monthly fee. You only pay transaction fees when accepting online payments. Invoice Ninja is open source and free forever. Their paid hosted version is there for convenience but you don\'t need it.'
+    question: "Best free invoicing software?",
+    answer:
+      "Wave and Invoice Ninja. Wave is unlimited free invoicing with no monthly fee. You only pay transaction fees when accepting online payments. Invoice Ninja is open source and free forever. Their paid hosted version is there for convenience but you don't need it.",
   },
   {
-    question: 'How do automatic reminders work?',
-    answer: 'You set rules. Reminder three days before due date. Follow-up a week after if still unpaid. The software emails your clients automatically with whatever message you write. Most let you customize how often, what tone, and whether to mention late fees.'
+    question: "How do automatic reminders work?",
+    answer:
+      "You set rules. Reminder three days before due date. Follow-up a week after if still unpaid. The software emails your clients automatically with whatever message you write. Most let you customize how often, what tone, and whether to mention late fees.",
   },
   {
-    question: 'Should invoicing integrate with accounting software?',
-    answer: 'If you use separate tools for each, yes. Integration kills double-entry and keeps everything accurate. All-in-one tools like FreshBooks or QuickBooks have it built in already. For standalone invoicing tools, check their integrations list for your accounting software.'
+    question: "Should invoicing integrate with accounting software?",
+    answer:
+      "If you use separate tools for each, yes. Integration kills double-entry and keeps everything accurate. All-in-one tools like FreshBooks or QuickBooks have it built in already. For standalone invoicing tools, check their integrations list for your accounting software.",
   },
   {
-    question: 'What payment methods should I offer?',
-    answer: 'At minimum card and bank transfer. That covers ninety-five percent of clients. Add PayPal if your clients prefer it. For international clients, offer Wise or multi-currency options. More payment options means faster payment.'
+    question: "What payment methods should I offer?",
+    answer:
+      "At minimum card and bank transfer. That covers ninety-five percent of clients. Add PayPal if your clients prefer it. For international clients, offer Wise or multi-currency options. More payment options means faster payment.",
   },
   {
-    question: 'Getting clients to pay faster?',
-    answer: 'Enable online payments. Cards get paid twice as fast as checks. Send invoices the moment you finish work. Automatic reminders help. Consider early payment discounts like two percent off if paid within ten days. Make the payment button obvious.'
+    question: "Getting clients to pay faster?",
+    answer:
+      "Enable online payments. Cards get paid twice as fast as checks. Send invoices the moment you finish work. Automatic reminders help. Consider early payment discounts like two percent off if paid within ten days. Make the payment button obvious.",
   },
   {
-    question: 'What goes on a professional invoice?',
-    answer: 'Your business name and contact info. Client name and contact. Invoice number that\'s unique. Invoice date and when it\'s due. Every service itemized with descriptions and amounts. The total. Payment instructions. Optional but smart: your payment terms, late fee policy, and a thank you.'
-  }
+    question: "What goes on a professional invoice?",
+    answer:
+      "Your business name and contact info. Client name and contact. Invoice number that's unique. Invoice date and when it's due. Every service itemized with descriptions and amounts. The total. Payment instructions. Optional but smart: your payment terms, late fee policy, and a thank you.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Accounting Software for Freelancers',
-    excerpt: 'Complete guide to bookkeeping tools for the self-employed.',
-    href: '/tools/best-accounting-software-freelancers',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Calculator and financial documents'
+    title: "Best Accounting Software for Freelancers",
+    excerpt: "Complete guide to bookkeeping tools for the self-employed.",
+    href: "/tools/best-accounting-software-freelancers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Calculator and financial documents",
   },
   {
-    title: 'How to Accept International Payments',
-    excerpt: 'Get paid from clients anywhere in the world.',
-    href: '/tools/accept-international-payments-freelancer',
-    image: '/images/unsplash/photo-1526304640581-d334cdbbf45e-800w.webp',
-    imageAlt: 'International currency and payments'
+    title: "How to Accept International Payments",
+    excerpt: "Get paid from clients anywhere in the world.",
+    href: "/tools/accept-international-payments-freelancer",
+    image: "/images/unsplash/photo-1526304640581-d334cdbbf45e-800w.webp",
+    imageAlt: "International currency and payments",
   },
   {
-    title: 'Invoice Payment Terms Guide',
-    excerpt: 'Set the right payment terms to get paid on time.',
-    href: '/guides/invoice-payment-terms-guide',
-    image: '/images/unsplash/photo-1556742049-0cfed4f6a45d-800w.webp',
-    imageAlt: 'Payment terms documentation'
-  }
+    title: "Invoice Payment Terms Guide",
+    excerpt: "Set the right payment terms to get paid on time.",
+    href: "/guides/invoice-payment-terms-guide",
+    image: "/images/unsplash/photo-1556742049-0cfed4f6a45d-800w.webp",
+    imageAlt: "Payment terms documentation",
+  },
 ];
 ---
 

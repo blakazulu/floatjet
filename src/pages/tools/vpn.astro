@@ -1,81 +1,103 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const title = 'Best VPNs for Remote Workers & Digital Nomads | FloatJet';
-const description = 'Find the best VPN for secure remote work. Compare top VPNs for speed, security, and reliability when working from anywhere without sacrificing performance.';
+const title = "Best VPNs for Remote Workers & Digital Nomads | FloatJet";
+const description =
+  "Find the best VPN for secure remote work. Compare top VPNs for speed, security, and reliability when working from anywhere without sacrificing performance.";
 
 const mainArticle = {
-  title: 'Best VPN for Digital Nomads (2025)',
-  description: 'We tested 10+ VPNs across 20 countries to find the best options for remote workers. Compare NordVPN, ExpressVPN, Surfshark, and more.',
-  href: '/tools/best-vpn-digital-nomads',
-  readTime: '15 min'
+  title: "Best VPN for Digital Nomads (2025)",
+  description:
+    "We tested 10+ VPNs across 20 countries to find the best options for remote workers. Compare NordVPN, ExpressVPN, Surfshark, and more.",
+  href: "/tools/best-vpn-digital-nomads",
+  readTime: "15 min",
 };
 
 const whyVpn = [
-  {title: 'Secure Public WiFi', description: 'Encrypt your connection on coffee shop and hotel networks', icon: '☕'},
-  {title: 'Access Work Tools', description: 'Bypass geo-restrictions to access company resources', icon: '🔓'},
-  {title: 'Protect Sensitive Data', description: 'Keep client data and communications private', icon: '🛡️'},
-  {title: 'Avoid Throttling', description: 'Prevent ISPs from slowing your connection', icon: '⚡'}
+  {
+    title: "Secure Public WiFi",
+    description: "Encrypt your connection on coffee shop and hotel networks",
+    icon: "☕",
+  },
+  {
+    title: "Access Work Tools",
+    description: "Bypass geo-restrictions to access company resources",
+    icon: "🔓",
+  },
+  {
+    title: "Protect Sensitive Data",
+    description: "Keep client data and communications private",
+    icon: "🛡️",
+  },
+  {
+    title: "Avoid Throttling",
+    description: "Prevent ISPs from slowing your connection",
+    icon: "⚡",
+  },
 ];
 
 const vpnArticles = [
   {
-    title: 'Best VPN for Streaming While Traveling',
-    description: 'Unblock Netflix, Disney+, and more while abroad. Find the best VPN for streaming overseas.',
-    href: '/tools/best-vpn-streaming-travel',
-    icon: '📺',
-    category: 'VPN',
-    readTime: 14
+    title: "Best VPN for Streaming While Traveling",
+    description:
+      "Unblock Netflix, Disney+, and more while abroad. Find the best VPN for streaming overseas.",
+    href: "/tools/best-vpn-streaming-travel",
+    icon: "📺",
+    category: "VPN",
+    readTime: 14,
   },
   {
-    title: 'Best Business VPN for Remote Teams',
-    description: 'Enterprise-grade VPN solutions for distributed teams. Compare NordLayer, Perimeter 81, and more.',
-    href: '/tools/best-business-vpn-remote-teams',
-    icon: '🏢',
-    category: 'VPN',
-    readTime: 16
+    title: "Best Business VPN for Remote Teams",
+    description:
+      "Enterprise-grade VPN solutions for distributed teams. Compare NordLayer, Perimeter 81, and more.",
+    href: "/tools/best-business-vpn-remote-teams",
+    icon: "🏢",
+    category: "VPN",
+    readTime: 16,
   },
   {
-    title: 'Free VPN vs Paid VPN',
-    description: 'Should you use a free VPN? Learn the hidden costs and security risks of free VPN services.',
-    href: '/tools/free-vpn-vs-paid-vpn',
-    icon: '💰',
-    category: 'VPN',
-    readTime: 12
+    title: "Free VPN vs Paid VPN",
+    description:
+      "Should you use a free VPN? Learn the hidden costs and security risks of free VPN services.",
+    href: "/tools/free-vpn-vs-paid-vpn",
+    icon: "💰",
+    category: "VPN",
+    readTime: 12,
   },
   {
-    title: 'How to Set Up VPN on All Devices',
-    description: 'Step-by-step setup guides for Windows, Mac, iPhone, Android, routers, and more.',
-    href: '/tools/how-to-setup-vpn-all-devices',
-    icon: '⚙️',
-    category: 'VPN',
-    readTime: 11
+    title: "How to Set Up VPN on All Devices",
+    description: "Step-by-step setup guides for Windows, Mac, iPhone, Android, routers, and more.",
+    href: "/tools/how-to-setup-vpn-all-devices",
+    icon: "⚙️",
+    category: "VPN",
+    readTime: 11,
   },
   {
-    title: 'VPN Kill Switch Explained',
-    description: 'What is a kill switch and why do remote workers need it? Essential security feature explained.',
-    href: '/tools/vpn-kill-switch-explained',
-    icon: '🔌',
-    category: 'VPN',
-    readTime: 7
-  }
+    title: "VPN Kill Switch Explained",
+    description:
+      "What is a kill switch and why do remote workers need it? Essential security feature explained.",
+    href: "/tools/vpn-kill-switch-explained",
+    icon: "🔌",
+    category: "VPN",
+    readTime: 7,
+  },
 ];
 
 const relatedTools = [
   {
-    title: 'Best Password Managers',
-    description: 'Secure your accounts with enterprise-grade password management for remote teams.',
-    href: '/tools/best-password-manager-remote-work',
-    icon: '🔐',
-    category: 'Security',
-    readTime: 14
-  }
+    title: "Best Password Managers",
+    description: "Secure your accounts with enterprise-grade password management for remote teams.",
+    href: "/tools/best-password-manager-remote-work",
+    icon: "🔐",
+    category: "Security",
+    readTime: 14,
+  },
 ];
 
 const topPicks = [
-  {name: 'NordVPN', tag: 'Best Overall', color: 'bg-blue-500/20 text-blue-400'},
-  {name: 'ExpressVPN', tag: 'Fastest', color: 'bg-green-500/20 text-green-400'},
-  {name: 'Surfshark', tag: 'Best Value', color: 'bg-purple-500/20 text-purple-400'}
+  { name: "NordVPN", tag: "Best Overall", color: "bg-blue-500/20 text-blue-400" },
+  { name: "ExpressVPN", tag: "Fastest", color: "bg-green-500/20 text-green-400" },
+  { name: "Surfshark", tag: "Best Value", color: "bg-purple-500/20 text-purple-400" },
 ];
 ---
 

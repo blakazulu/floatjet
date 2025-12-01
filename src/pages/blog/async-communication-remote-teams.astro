@@ -1,90 +1,101 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Async Communication for Remote Teams: The Guide (2025)';
-const description = 'Meetings that could\'ve been emails. Slack pings at midnight pulling you back to work. Here\'s how to fix communication without ruining your life or sanity.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Async Communication for Remote Teams: The Guide (2025)";
+const description =
+  "Meetings that could've been emails. Slack pings at midnight pulling you back to work. Here's how to fix communication without ruining your life or sanity.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 3;
-const image = '/images/unsplash/photo-1522071820081-009f0129c71c-1200w.webp';
-const imageAlt = 'Remote team collaborating through digital communication tools';
+const image = "/images/unsplash/photo-1522071820081-009f0129c71c-1200w.webp";
+const imageAlt = "Remote team collaborating through digital communication tools";
 
 // Table of contents headings
 const headings = [
-  {text: 'Why This Matters', slug: 'introduction', depth: 2},
-  {text: 'What\'s Async?', slug: 'what-is-async', depth: 2},
-  {text: 'Why It\'s Better', slug: 'benefits', depth: 2},
-  {text: 'When to Use Which', slug: 'async-vs-sync', depth: 2},
-  {text: 'Tools That Work', slug: 'tools', depth: 2},
-  {text: 'How to Do It Right', slug: 'best-practices', depth: 2},
-  {text: 'Quick Templates', slug: 'templates', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Getting Started', slug: 'conclusion', depth: 2},
+  { text: "Why This Matters", slug: "introduction", depth: 2 },
+  { text: "What's Async?", slug: "what-is-async", depth: 2 },
+  { text: "Why It's Better", slug: "benefits", depth: 2 },
+  { text: "When to Use Which", slug: "async-vs-sync", depth: 2 },
+  { text: "Tools That Work", slug: "tools", depth: 2 },
+  { text: "How to Do It Right", slug: "best-practices", depth: 2 },
+  { text: "Quick Templates", slug: "templates", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Getting Started", slug: "conclusion", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'How do I convince my boss?',
-    answer: '<p>Track metrics. Meeting time before vs. after. Start with one recurring meeting. Show results.</p>'
+    question: "How do I convince my boss?",
+    answer:
+      "<p>Track metrics. Meeting time before vs. after. Start with one recurring meeting. Show results.</p>",
   },
   {
-    question: 'Won\'t this slow things down?',
-    answer: '<p>Counterintuitively, no. People respond with complete info. Work continues while waiting. Total time often shorter.</p>'
+    question: "Won't this slow things down?",
+    answer:
+      "<p>Counterintuitively, no. People respond with complete info. Work continues while waiting. Total time often shorter.</p>",
   },
   {
-    question: 'How do I build relationships remotely?',
-    answer: '<p>Virtual coffee chats. Social channels. Video messages instead of text. Occasional in-person if possible.</p>'
+    question: "How do I build relationships remotely?",
+    answer:
+      "<p>Virtual coffee chats. Social channels. Video messages instead of text. Occasional in-person if possible.</p>",
   },
   {
-    question: 'What\'s the right response time?',
-    answer: '<p>DMs: 4-8 hours. Mentions: 24 hours. General posts: 24-48 hours. Emergencies: separate channel.</p>'
+    question: "What's the right response time?",
+    answer:
+      "<p>DMs: 4-8 hours. Mentions: 24 hours. General posts: 24-48 hours. Emergencies: separate channel.</p>",
   },
   {
-    question: 'How do I handle urgent stuff?',
-    answer: '<p>Define "urgent" explicitly. Separate channel for emergencies. On-call rotation if needed. Phone for true crises.</p>'
+    question: "How do I handle urgent stuff?",
+    answer:
+      '<p>Define "urgent" explicitly. Separate channel for emergencies. On-call rotation if needed. Phone for true crises.</p>',
   },
   {
-    question: 'Async brainstorming?',
-    answer: '<p>Everyone adds ideas independently, then comments, then votes. Often better than sync—no groupthink.</p>'
+    question: "Async brainstorming?",
+    answer:
+      "<p>Everyone adds ideas independently, then comments, then votes. Often better than sync—no groupthink.</p>",
   },
   {
-    question: 'Giving feedback async?',
-    answer: '<p>Use video for tone. Lead with context. Be specific. Invite their perspective.</p>'
+    question: "Giving feedback async?",
+    answer: "<p>Use video for tone. Lead with context. Be specific. Invite their perspective.</p>",
   },
   {
-    question: 'Onboarding new people?',
-    answer: '<p>Pre-recorded videos, written guides, assigned buddy for sync questions. More real-time at first, then gradually shift.</p>'
-  }
+    question: "Onboarding new people?",
+    answer:
+      "<p>Pre-recorded videos, written guides, assigned buddy for sync questions. More real-time at first, then gradually shift.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Project Management Software for Remote Teams',
-    excerpt: 'Compare Notion, ClickUp, Asana, and more to find the perfect PM tool for async collaboration.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Modern workspace with project management dashboard'
+    title: "Best Project Management Software for Remote Teams",
+    excerpt:
+      "Compare Notion, ClickUp, Asana, and more to find the perfect PM tool for async collaboration.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Modern workspace with project management dashboard",
   },
   {
-    title: 'Best Team Communication Tools',
-    excerpt: 'Keep your distributed team connected with these top-rated communication and collaboration platforms.',
-    href: '/blog/best-team-communication-tools',
-    image: '/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp',
-    imageAlt: 'Remote team on video call'
+    title: "Best Team Communication Tools",
+    excerpt:
+      "Keep your distributed team connected with these top-rated communication and collaboration platforms.",
+    href: "/blog/best-team-communication-tools",
+    image: "/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp",
+    imageAlt: "Remote team on video call",
   },
   {
-    title: 'Best Time Tracking Software',
-    excerpt: 'Track time effectively across time zones with these async-friendly time management tools.',
-    href: '/tools/best-time-tracking-software',
-    image: '/images/unsplash/photo-1508672019048-805c876b67e2-800w.webp',
-    imageAlt: 'Time tracking dashboard'
-  }
+    title: "Best Time Tracking Software",
+    excerpt:
+      "Track time effectively across time zones with these async-friendly time management tools.",
+    href: "/tools/best-time-tracking-software",
+    image: "/images/unsplash/photo-1508672019048-805c876b67e2-800w.webp",
+    imageAlt: "Time tracking dashboard",
+  },
 ];
 ---
 

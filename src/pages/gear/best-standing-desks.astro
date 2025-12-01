@@ -1,249 +1,260 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Standing Desks for Home Office (2025)';
-const description = 'We tested 10 standing desks to find the best for home offices. Compare Uplift, FlexiSpot, Autonomous & more with honest reviews, specs, and buying advice.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Best Standing Desks for Home Office (2025)";
+const description =
+  "We tested 10 standing desks to find the best for home offices. Compare Uplift, FlexiSpot, Autonomous & more with honest reviews, specs, and buying advice.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 18;
-const image = '/images/unsplash/photo-1593642632559-0c6d3fc62b89-1200w.webp';
-const imageAlt = 'Modern standing desk setup in a home office with dual monitors';
+const image = "/images/unsplash/photo-1593642632559-0c6d3fc62b89-1200w.webp";
+const imageAlt = "Modern standing desk setup in a home office with dual monitors";
 
 // Table of contents headings
 const headings = [
-  {text: 'Find Your Desk', slug: 'introduction', depth: 2},
-  {text: 'Top 3 Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Why Standing Desks', slug: 'why-standing-desk', depth: 2},
-  {text: 'The Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Uplift V2', slug: 'uplift-v2', depth: 3},
-  {text: 'FlexiSpot E7', slug: 'flexispot-e7', depth: 3},
-  {text: 'Autonomous SmartDesk Pro', slug: 'autonomous-smartdesk', depth: 3},
-  {text: 'Fully Jarvis', slug: 'fully-jarvis', depth: 3},
-  {text: 'Vari Electric', slug: 'vari-electric', depth: 3},
-  {text: 'Branch Standing Desk', slug: 'branch', depth: 3},
-  {text: 'IKEA BEKANT', slug: 'ikea-bekant', depth: 3},
-  {text: 'FlexiSpot E5', slug: 'flexispot-e5', depth: 3},
-  {text: 'Fezibo Electric', slug: 'fezibo', depth: 3},
-  {text: 'Secretlab Magnus Pro', slug: 'secretlab-magnus', depth: 3},
-  {text: 'How to Choose', slug: 'how-to-choose', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
-  {text: 'Final Picks', slug: 'conclusion', depth: 2},
-  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+  { text: "Find Your Desk", slug: "introduction", depth: 2 },
+  { text: "Top 3 Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why Standing Desks", slug: "why-standing-desk", depth: 2 },
+  { text: "The Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Uplift V2", slug: "uplift-v2", depth: 3 },
+  { text: "FlexiSpot E7", slug: "flexispot-e7", depth: 3 },
+  { text: "Autonomous SmartDesk Pro", slug: "autonomous-smartdesk", depth: 3 },
+  { text: "Fully Jarvis", slug: "fully-jarvis", depth: 3 },
+  { text: "Vari Electric", slug: "vari-electric", depth: 3 },
+  { text: "Branch Standing Desk", slug: "branch", depth: 3 },
+  { text: "IKEA BEKANT", slug: "ikea-bekant", depth: 3 },
+  { text: "FlexiSpot E5", slug: "flexispot-e5", depth: 3 },
+  { text: "Fezibo Electric", slug: "fezibo", depth: 3 },
+  { text: "Secretlab Magnus Pro", slug: "secretlab-magnus", depth: 3 },
+  { text: "How to Choose", slug: "how-to-choose", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "Final Picks", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'desk', label: 'Desk', width: '140px'},
-  {key: 'bestFor', label: 'Best For', width: '140px'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
-  {key: 'action', label: ''},
+  { key: "desk", label: "Desk", width: "140px" },
+  { key: "bestFor", label: "Best For", width: "140px" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    desk: '<strong>Uplift V2</strong>',
-    bestFor: 'Overall quality',
-    price: '$599+',
-    rating: '9.5/10',
-    action: '<a href="/go/uplift" rel="nofollow sponsored">Shop Now</a>'
+    desk: "<strong>Uplift V2</strong>",
+    bestFor: "Overall quality",
+    price: "$599+",
+    rating: "9.5/10",
+    action: '<a href="/go/uplift" rel="nofollow sponsored">Shop Now</a>',
   },
   {
-    desk: '<strong>FlexiSpot E7</strong>',
-    bestFor: 'Best value',
-    price: '$479+',
-    rating: '9.3/10',
-    action: '<a href="/go/flexispot" rel="nofollow sponsored">Get 20% Off</a>'
+    desk: "<strong>FlexiSpot E7</strong>",
+    bestFor: "Best value",
+    price: "$479+",
+    rating: "9.3/10",
+    action: '<a href="/go/flexispot" rel="nofollow sponsored">Get 20% Off</a>',
   },
   {
-    desk: '<strong>Autonomous SmartDesk</strong>',
-    bestFor: 'Budget pick',
-    price: '$399+',
-    rating: '8.8/10',
-    action: '<a href="/go/autonomous" rel="nofollow sponsored">Shop Now</a>'
+    desk: "<strong>Autonomous SmartDesk</strong>",
+    bestFor: "Budget pick",
+    price: "$399+",
+    rating: "8.8/10",
+    action: '<a href="/go/autonomous" rel="nofollow sponsored">Shop Now</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'desk', label: 'Desk', width: '130px'},
-  {key: 'bestFor', label: 'Best For', width: '110px'},
-  {key: 'price', label: 'Price'},
-  {key: 'motor', label: 'Motor'},
-  {key: 'heightRange', label: 'Height Range'},
-  {key: 'weight', label: 'Capacity'},
-  {key: 'warranty', label: 'Warranty'},
-  {key: 'action', label: ''},
+  { key: "desk", label: "Desk", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "110px" },
+  { key: "price", label: "Price" },
+  { key: "motor", label: "Motor" },
+  { key: "heightRange", label: "Height Range" },
+  { key: "weight", label: "Capacity" },
+  { key: "warranty", label: "Warranty" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    desk: '<strong>Uplift V2</strong>',
-    bestFor: 'Overall',
-    price: '$599-899',
-    motor: 'Dual',
+    desk: "<strong>Uplift V2</strong>",
+    bestFor: "Overall",
+    price: "$599-899",
+    motor: "Dual",
     heightRange: '25.3"-50.9"',
-    weight: '355 lbs',
-    warranty: '15 years',
-    action: '<a href="/go/uplift" rel="nofollow sponsored">Shop</a>'
+    weight: "355 lbs",
+    warranty: "15 years",
+    action: '<a href="/go/uplift" rel="nofollow sponsored">Shop</a>',
   },
   {
-    desk: '<strong>FlexiSpot E7</strong>',
-    bestFor: 'Value',
-    price: '$479-599',
-    motor: 'Dual',
+    desk: "<strong>FlexiSpot E7</strong>",
+    bestFor: "Value",
+    price: "$479-599",
+    motor: "Dual",
     heightRange: '22.8"-48.4"',
-    weight: '355 lbs',
-    warranty: '15 years',
-    action: '<a href="/go/flexispot" rel="nofollow sponsored">Shop</a>'
+    weight: "355 lbs",
+    warranty: "15 years",
+    action: '<a href="/go/flexispot" rel="nofollow sponsored">Shop</a>',
   },
   {
-    desk: '<strong>Autonomous SmartDesk</strong>',
-    bestFor: 'Budget',
-    price: '$399-499',
-    motor: 'Dual',
+    desk: "<strong>Autonomous SmartDesk</strong>",
+    bestFor: "Budget",
+    price: "$399-499",
+    motor: "Dual",
     heightRange: '26.2"-52"',
-    weight: '310 lbs',
-    warranty: '7 years',
-    action: '<a href="/go/autonomous" rel="nofollow sponsored">Shop</a>'
+    weight: "310 lbs",
+    warranty: "7 years",
+    action: '<a href="/go/autonomous" rel="nofollow sponsored">Shop</a>',
   },
   {
-    desk: '<strong>Fully Jarvis</strong>',
-    bestFor: 'Build quality',
-    price: '$559-799',
-    motor: 'Dual',
+    desk: "<strong>Fully Jarvis</strong>",
+    bestFor: "Build quality",
+    price: "$559-799",
+    motor: "Dual",
     heightRange: '25.5"-51.1"',
-    weight: '350 lbs',
-    warranty: '15 years',
-    action: '<a href="/go/fully" rel="nofollow sponsored">Shop</a>'
+    weight: "350 lbs",
+    warranty: "15 years",
+    action: '<a href="/go/fully" rel="nofollow sponsored">Shop</a>',
   },
   {
-    desk: '<strong>Vari Electric</strong>',
-    bestFor: 'Small spaces',
-    price: '$695',
-    motor: 'Dual',
+    desk: "<strong>Vari Electric</strong>",
+    bestFor: "Small spaces",
+    price: "$695",
+    motor: "Dual",
     heightRange: '25"-50.5"',
-    weight: '200 lbs',
-    warranty: '5 years',
-    action: '<a href="/go/vari" rel="nofollow sponsored">Shop</a>'
+    weight: "200 lbs",
+    warranty: "5 years",
+    action: '<a href="/go/vari" rel="nofollow sponsored">Shop</a>',
   },
   {
-    desk: '<strong>Branch Standing Desk</strong>',
-    bestFor: 'Design',
-    price: '$999',
-    motor: 'Dual',
+    desk: "<strong>Branch Standing Desk</strong>",
+    bestFor: "Design",
+    price: "$999",
+    motor: "Dual",
     heightRange: '24.5"-50"',
-    weight: '275 lbs',
-    warranty: '10 years',
-    action: '<a href="/go/branch" rel="nofollow sponsored">Shop</a>'
+    weight: "275 lbs",
+    warranty: "10 years",
+    action: '<a href="/go/branch" rel="nofollow sponsored">Shop</a>',
   },
   {
-    desk: '<strong>IKEA BEKANT</strong>',
-    bestFor: 'IKEA fans',
-    price: '$399-549',
-    motor: 'Single',
+    desk: "<strong>IKEA BEKANT</strong>",
+    bestFor: "IKEA fans",
+    price: "$399-549",
+    motor: "Single",
     heightRange: '22"-48"',
-    weight: '154 lbs',
-    warranty: '10 years',
-    action: '<a href="/go/ikea" rel="nofollow sponsored">Shop</a>'
+    weight: "154 lbs",
+    warranty: "10 years",
+    action: '<a href="/go/ikea" rel="nofollow sponsored">Shop</a>',
   },
   {
-    desk: '<strong>FlexiSpot E5</strong>',
-    bestFor: 'Under $400',
-    price: '$299-379',
-    motor: 'Dual',
+    desk: "<strong>FlexiSpot E5</strong>",
+    bestFor: "Under $400",
+    price: "$299-379",
+    motor: "Dual",
     heightRange: '24.4"-50"',
-    weight: '220 lbs',
-    warranty: '10 years',
-    action: '<a href="/go/flexispot-e5" rel="nofollow sponsored">Shop</a>'
+    weight: "220 lbs",
+    warranty: "10 years",
+    action: '<a href="/go/flexispot-e5" rel="nofollow sponsored">Shop</a>',
   },
   {
-    desk: '<strong>Fezibo Electric</strong>',
-    bestFor: 'Budget Amazon',
-    price: '$199-299',
-    motor: 'Single',
+    desk: "<strong>Fezibo Electric</strong>",
+    bestFor: "Budget Amazon",
+    price: "$199-299",
+    motor: "Single",
     heightRange: '27.6"-46.5"',
-    weight: '154 lbs',
-    warranty: '3 years',
-    action: '<a href="/go/amazon/fezibo" rel="nofollow sponsored">Shop</a>'
+    weight: "154 lbs",
+    warranty: "3 years",
+    action: '<a href="/go/amazon/fezibo" rel="nofollow sponsored">Shop</a>',
   },
   {
-    desk: '<strong>Secretlab Magnus Pro</strong>',
-    bestFor: 'Gaming',
-    price: '$749',
-    motor: 'Dual',
+    desk: "<strong>Secretlab Magnus Pro</strong>",
+    bestFor: "Gaming",
+    price: "$749",
+    motor: "Dual",
     heightRange: '27.5"-49.5"',
-    weight: '265 lbs',
-    warranty: '5 years',
-    action: '<a href="/go/secretlab" rel="nofollow sponsored">Shop</a>'
+    weight: "265 lbs",
+    warranty: "5 years",
+    action: '<a href="/go/secretlab" rel="nofollow sponsored">Shop</a>',
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Is a standing desk worth it for remote work?',
-    answer: '<p>Yeah. Standing desks are worth the investment for remote workers. <a href="https://www.cdc.gov/niosh/topics/ergonomics/default.html" target="_blank" rel="nofollow">Research from CDC/NIOSH shows alternating between sitting and standing can reduce musculoskeletal discomfort and improve perceived energy levels</a> according to workplace ergonomics studies. If you work from home 8 plus hours daily, a standing desk helps break up sedentary time.</p><p>The key is variety. Standing all day isn\'t better than sitting all day. Best approach is switching positions every 30-60 minutes. A quality standing desk makes this effortless with one-touch preset buttons.</p>'
+    question: "Is a standing desk worth it for remote work?",
+    answer:
+      '<p>Yeah. Standing desks are worth the investment for remote workers. <a href="https://www.cdc.gov/niosh/topics/ergonomics/default.html" target="_blank" rel="nofollow">Research from CDC/NIOSH shows alternating between sitting and standing can reduce musculoskeletal discomfort and improve perceived energy levels</a> according to workplace ergonomics studies. If you work from home 8 plus hours daily, a standing desk helps break up sedentary time.</p><p>The key is variety. Standing all day isn\'t better than sitting all day. Best approach is switching positions every 30-60 minutes. A quality standing desk makes this effortless with one-touch preset buttons.</p>',
   },
   {
-    question: 'How much should I spend on a standing desk?',
-    answer: '<p>For a quality standing desk that will last, expect to spend $400-600. Budget options under $300 often have wobble issues, slower motors, and shorter coverage. Premium desks at $600 plus offer better stability, faster height adjustment, and longer coverage.</p><p>My sweet spot recommendation is the FlexiSpot E7 at $479-599. Offers premium features like dual motor, wide height range, fifteen years coverage at a mid-range price.</p>'
+    question: "How much should I spend on a standing desk?",
+    answer:
+      "<p>For a quality standing desk that will last, expect to spend $400-600. Budget options under $300 often have wobble issues, slower motors, and shorter coverage. Premium desks at $600 plus offer better stability, faster height adjustment, and longer coverage.</p><p>My sweet spot recommendation is the FlexiSpot E7 at $479-599. Offers premium features like dual motor, wide height range, fifteen years coverage at a mid-range price.</p>",
   },
   {
-    question: 'Single motor vs dual motor standing desk: which is better?',
-    answer: '<p>Dual motor desks are significantly better for most users. They lift faster at 1.5 plus inches per second versus 1 inch. Handle heavier loads evenly. Have better stability. Typically last longer because the workload is distributed.</p><p>Single motor desks are only worth considering if you\'re on a strict budget under $300 and have minimal equipment on your desk. For most home office setups with monitors, laptop, and accessories, dual motor is the way to go.</p>'
+    question: "Single motor vs dual motor standing desk: which is better?",
+    answer:
+      "<p>Dual motor desks are significantly better for most users. They lift faster at 1.5 plus inches per second versus 1 inch. Handle heavier loads evenly. Have better stability. Typically last longer because the workload is distributed.</p><p>Single motor desks are only worth considering if you're on a strict budget under $300 and have minimal equipment on your desk. For most home office setups with monitors, laptop, and accessories, dual motor is the way to go.</p>",
   },
   {
-    question: 'What standing desk height range do I need?',
-    answer: '<p>Depends on your own height. For sitting, you want your elbows at 90 degrees with feet flat on the floor. For standing, elbows should still be at 90 degrees with the monitor at eye level.</p><p>Most people need: sitting height of 25-30 inches and standing height of 40-48 inches. If you\'re over 6\'2" or under 5\'4", look for desks with wider ranges. The Autonomous SmartDesk Pro goes up to 52 inches for taller users.</p>'
+    question: "What standing desk height range do I need?",
+    answer:
+      "<p>Depends on your own height. For sitting, you want your elbows at 90 degrees with feet flat on the floor. For standing, elbows should still be at 90 degrees with the monitor at eye level.</p><p>Most people need: sitting height of 25-30 inches and standing height of 40-48 inches. If you're over 6'2\" or under 5'4\", look for desks with wider ranges. The Autonomous SmartDesk Pro goes up to 52 inches for taller users.</p>",
   },
   {
-    question: 'Do standing desks wobble? How can I reduce wobble?',
-    answer: '<p>Some wobble is normal at standing height, especially on budget desks. However, quality desks from Uplift, FlexiSpot, and Fully have minimal wobble even at maximum height. Cross-bracing between legs significantly improves stability.</p><p>To reduce wobble: Use the included crossbar if provided. Ensure legs are level on your floor. Tighten all bolts fully. Consider a wider desk frame. Place on a flat hard surface rather than carpet.</p>'
+    question: "Do standing desks wobble? How can I reduce wobble?",
+    answer:
+      "<p>Some wobble is normal at standing height, especially on budget desks. However, quality desks from Uplift, FlexiSpot, and Fully have minimal wobble even at maximum height. Cross-bracing between legs significantly improves stability.</p><p>To reduce wobble: Use the included crossbar if provided. Ensure legs are level on your floor. Tighten all bolts fully. Consider a wider desk frame. Place on a flat hard surface rather than carpet.</p>",
   },
   {
-    question: 'How loud are standing desks? Will it disrupt video calls?',
-    answer: '<p>Modern standing desks with quality motors are surprisingly quiet. Premium desks like the Uplift V2 and FlexiSpot E7 operate at around 40-50 decibels. Similar to a refrigerator hum. Adjustment takes about 10-15 seconds.</p><p>You\'d want to avoid adjusting mid-video call, but the noise shouldn\'t disrupt anyone in the same room. Budget desks with single motors are noticeably louder and slower. Dual motor desks are generally quieter because they don\'t work as hard.</p>'
+    question: "How loud are standing desks? Will it disrupt video calls?",
+    answer:
+      "<p>Modern standing desks with quality motors are surprisingly quiet. Premium desks like the Uplift V2 and FlexiSpot E7 operate at around 40-50 decibels. Similar to a refrigerator hum. Adjustment takes about 10-15 seconds.</p><p>You'd want to avoid adjusting mid-video call, but the noise shouldn't disrupt anyone in the same room. Budget desks with single motors are noticeably louder and slower. Dual motor desks are generally quieter because they don't work as hard.</p>",
   },
   {
-    question: 'Can I convert my existing desk to a standing desk?',
-    answer: '<p>Yeah, but I don\'t recommend it. <a href="/gear/best-desk-converters">Desktop converters</a>, those sit-stand units that sit on top of your desk, are cheaper but have significant drawbacks. Limited space. Awkward ergonomics. Take up desk space when sitting. Can be unstable.</p><p>If budget is tight, a basic standing desk frame at $200-300 with your own desktop is better than a converter. The FlexiSpot E5 frame-only option or IKEA\'s TROTTEN frame are solid budget choices.</p>'
+    question: "Can I convert my existing desk to a standing desk?",
+    answer:
+      "<p>Yeah, but I don't recommend it. <a href=\"/gear/best-desk-converters\">Desktop converters</a>, those sit-stand units that sit on top of your desk, are cheaper but have significant drawbacks. Limited space. Awkward ergonomics. Take up desk space when sitting. Can be unstable.</p><p>If budget is tight, a basic standing desk frame at $200-300 with your own desktop is better than a converter. The FlexiSpot E5 frame-only option or IKEA's TROTTEN frame are solid budget choices.</p>",
   },
   {
-    question: 'What\'s the best standing desk for a small home office?',
-    answer: '<p>For small spaces, look for desks that offer 48 inch wide tops instead of 60, or have narrow depth options at 24 inches instead of 30. The Vari Electric 48 inch is excellent for compact spaces with its T-leg design that maximizes legroom.</p><p>Also consider corner L-shaped desks if you need surface area but have an awkward room layout. The FlexiSpot E7L is a good option for corner setups.</p>'
+    question: "What's the best standing desk for a small home office?",
+    answer:
+      "<p>For small spaces, look for desks that offer 48 inch wide tops instead of 60, or have narrow depth options at 24 inches instead of 30. The Vari Electric 48 inch is excellent for compact spaces with its T-leg design that maximizes legroom.</p><p>Also consider corner L-shaped desks if you need surface area but have an awkward room layout. The FlexiSpot E7L is a good option for corner setups.</p>",
   },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Portable powerhouses that balance performance, battery life, and portability for remote professionals.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp',
-    imageAlt: 'MacBook laptop on modern desk'
+    title: "Best Laptops for Remote Work",
+    excerpt:
+      "Portable powerhouses that balance performance, battery life, and portability for remote professionals.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "MacBook laptop on modern desk",
   },
   {
-    title: 'Ultimate Home Office Setup Guide',
-    excerpt: 'Everything you need to create a productive, ergonomic workspace at home without breaking the bank.',
-    href: '/blog/ultimate-home-office-setup',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Complete home office setup with standing desk'
+    title: "Ultimate Home Office Setup Guide",
+    excerpt:
+      "Everything you need to create a productive, ergonomic workspace at home without breaking the bank.",
+    href: "/blog/ultimate-home-office-setup",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Complete home office setup with standing desk",
   },
   {
-    title: 'Best VPNs for Digital Nomads',
-    excerpt: 'Protect your work on public WiFi with these tested and trusted VPN services.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'Digital security visualization'
-  }
+    title: "Best VPNs for Digital Nomads",
+    excerpt: "Protect your work on public WiFi with these tested and trusted VPN services.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security visualization",
+  },
 ];
 ---
 

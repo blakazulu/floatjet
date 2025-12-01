@@ -1,91 +1,100 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Invoice Payment Terms: Net 30 vs Net 15 (2025)';
-const description = 'Understand invoice payment terms, choose the right terms for your clients, and get paid faster. Complete guide to Net 30, Net 15, and more without confusion.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Invoice Payment Terms: Net 30 vs Net 15 (2025)";
+const description =
+  "Understand invoice payment terms, choose the right terms for your clients, and get paid faster. Complete guide to Net 30, Net 15, and more without confusion.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 10;
-const image = '/images/unsplash/photo-1554224154-26032ffc0d07-1200w.webp';
-const imageAlt = 'Invoice document showing payment terms';
+const image = "/images/unsplash/photo-1554224154-26032ffc0d07-1200w.webp";
+const imageAlt = "Invoice document showing payment terms";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Common Payment Terms', slug: 'payment-terms', depth: 2},
-  {text: 'Net 30 vs Net 15', slug: 'net-30-vs-15', depth: 2},
-  {text: 'When to Use Due on Receipt', slug: 'due-on-receipt', depth: 2},
-  {text: 'Early Payment Discounts', slug: 'early-payment', depth: 2},
-  {text: 'Late Payment Fees', slug: 'late-fees', depth: 2},
-  {text: 'Choosing Terms by Client', slug: 'client-terms', depth: 2},
-  {text: 'Communication Tips', slug: 'communication', depth: 2},
-  {text: 'Handling Late Payments', slug: 'late-payments', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Common Payment Terms", slug: "payment-terms", depth: 2 },
+  { text: "Net 30 vs Net 15", slug: "net-30-vs-15", depth: 2 },
+  { text: "When to Use Due on Receipt", slug: "due-on-receipt", depth: 2 },
+  { text: "Early Payment Discounts", slug: "early-payment", depth: 2 },
+  { text: "Late Payment Fees", slug: "late-fees", depth: 2 },
+  { text: "Choosing Terms by Client", slug: "client-terms", depth: 2 },
+  { text: "Communication Tips", slug: "communication", depth: 2 },
+  { text: "Handling Late Payments", slug: "late-payments", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'What does Net thirty actually mean?',
-    answer: '<p>Net thirty means payment is due within thirty days of the invoice date. Net refers to the total amount due and thirty is the number of days.</p><p>If you invoice on January first with Net thirty terms payment is due by January thirty-first. Some clients count from receipt date rather than invoice date. Clarify this in your contract.</p>'
+    question: "What does Net thirty actually mean?",
+    answer:
+      "<p>Net thirty means payment is due within thirty days of the invoice date. Net refers to the total amount due and thirty is the number of days.</p><p>If you invoice on January first with Net thirty terms payment is due by January thirty-first. Some clients count from receipt date rather than invoice date. Clarify this in your contract.</p>",
   },
   {
-    question: 'What payment terms should new freelancers use?',
-    answer: '<p>For new freelancers start with shorter terms. Net fifteen or Due on Receipt for new clients. Require fifty percent deposit before starting work. Consider <a href="/tools/best-project-management-software">milestone payments</a> for larger projects.</p><p>As you build trust and cash reserves you can offer more flexible terms to valuable clients.</p>'
+    question: "What payment terms should new freelancers use?",
+    answer:
+      '<p>For new freelancers start with shorter terms. Net fifteen or Due on Receipt for new clients. Require fifty percent deposit before starting work. Consider <a href="/tools/best-project-management-software">milestone payments</a> for larger projects.</p><p>As you build trust and cash reserves you can offer more flexible terms to valuable clients.</p>',
   },
   {
-    question: 'Is it legal to charge late fees?',
-    answer: '<p>Yes but with conditions. Late fee terms must be in the contract or clearly stated on the invoice. Client must be aware of fees before work begins. Fees must be reasonable typically one to one point five percent monthly or ten to eighteen percent annually. Some states cap late fee amounts so check local laws.</p><p>Having late fees stated clearly even if you rarely enforce them encourages timely payment.</p>'
+    question: "Is it legal to charge late fees?",
+    answer:
+      "<p>Yes but with conditions. Late fee terms must be in the contract or clearly stated on the invoice. Client must be aware of fees before work begins. Fees must be reasonable typically one to one point five percent monthly or ten to eighteen percent annually. Some states cap late fee amounts so check local laws.</p><p>Having late fees stated clearly even if you rarely enforce them encourages timely payment.</p>",
   },
   {
-    question: 'How do I transition existing clients to shorter terms?',
-    answer: '<p>Transition respectfully. Give advance notice of at least one billing cycle. Explain the reason like cash flow management or industry standard. Offer a transition period like Net twenty-one before Net fourteen. Consider grandfathering loyal clients on existing terms.</p><p>Frame it positively. I\'m standardizing my billing to serve you better.</p>'
+    question: "How do I transition existing clients to shorter terms?",
+    answer:
+      "<p>Transition respectfully. Give advance notice of at least one billing cycle. Explain the reason like cash flow management or industry standard. Offer a transition period like Net twenty-one before Net fourteen. Consider grandfathering loyal clients on existing terms.</p><p>Frame it positively. I'm standardizing my billing to serve you better.</p>",
   },
   {
-    question: 'Should I offer early payment discounts?',
-    answer: '<p>It depends on your cash flow needs. Pros are faster payment and improved cash flow and client goodwill. Cons are reduced revenue and may set expectations and can be expensive.</p><p>A two ten Net thirty discount or two percent off if paid in ten days equals about thirty-six percent annually. Only offer if faster payment is more valuable than the discount cost.</p>'
+    question: "Should I offer early payment discounts?",
+    answer:
+      "<p>It depends on your cash flow needs. Pros are faster payment and improved cash flow and client goodwill. Cons are reduced revenue and may set expectations and can be expensive.</p><p>A two ten Net thirty discount or two percent off if paid in ten days equals about thirty-six percent annually. Only offer if faster payment is more valuable than the discount cost.</p>",
   },
   {
-    question: 'What if a client has their own payment terms?',
-    answer: '<p>Large clients often have standard payment policies. Accept their terms if the relationship is valuable. Negotiate middle ground where their Net sixty becomes Net forty-five. Adjust pricing to account for longer payment cycles. Request deposit even if remaining balance is on their terms.</p><p>Factor longer terms into your cash flow planning if you accept them.</p>'
+    question: "What if a client has their own payment terms?",
+    answer:
+      "<p>Large clients often have standard payment policies. Accept their terms if the relationship is valuable. Negotiate middle ground where their Net sixty becomes Net forty-five. Adjust pricing to account for longer payment cycles. Request deposit even if remaining balance is on their terms.</p><p>Factor longer terms into your cash flow planning if you accept them.</p>",
   },
   {
-    question: 'How do payment terms affect my cash flow?',
-    answer: '<p>Payment terms directly impact when money arrives. Due on Receipt is typically paid within seven to fourteen days. Net fifteen means cash arrives fifteen to twenty-five days after invoicing. Net thirty means cash arrives thirty to forty-five days after invoicing. Net sixty means cash arrives sixty to ninety days after invoicing.</p><p>Plan for worst-case timing. If a client pays Net thirty late you might wait forty-five to sixty days. Maintain a cash reserve covering two to three months of expenses.</p>'
+    question: "How do payment terms affect my cash flow?",
+    answer:
+      "<p>Payment terms directly impact when money arrives. Due on Receipt is typically paid within seven to fourteen days. Net fifteen means cash arrives fifteen to twenty-five days after invoicing. Net thirty means cash arrives thirty to forty-five days after invoicing. Net sixty means cash arrives sixty to ninety days after invoicing.</p><p>Plan for worst-case timing. If a client pays Net thirty late you might wait forty-five to sixty days. Maintain a cash reserve covering two to three months of expenses.</p>",
   },
   {
-    question: 'Do payment terms apply to retainers?',
-    answer: '<p>Retainers typically work differently. Pre-paid retainers mean client pays in advance for hours or services. Monthly retainers are often invoiced first of month and due immediately or Net seven. Post-paid retainers are invoiced after work with standard terms.</p><p>Pre-paid retainers offer the best cash flow. Clearly define what happens to unused hours.</p>'
-  }
+    question: "Do payment terms apply to retainers?",
+    answer:
+      "<p>Retainers typically work differently. Pre-paid retainers mean client pays in advance for hours or services. Monthly retainers are often invoiced first of month and due immediately or Net seven. Post-paid retainers are invoiced after work with standard terms.</p><p>Pre-paid retainers offer the best cash flow. Clearly define what happens to unused hours.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Freelancer Tax Deductions Guide',
-    excerpt: 'Discover every tax deduction available to freelancers and self-employed workers.',
-    href: '/guides/freelancer-tax-deductions-guide',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Tax documents'
+    title: "Freelancer Tax Deductions Guide",
+    excerpt: "Discover every tax deduction available to freelancers and self-employed workers.",
+    href: "/guides/freelancer-tax-deductions-guide",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Tax documents",
   },
   {
-    title: 'Best Banking for Digital Nomads',
-    excerpt: 'Find international-friendly bank accounts for your freelance business.',
-    href: '/blog/best-banking-digital-nomads',
-    image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'Digital banking interface'
+    title: "Best Banking for Digital Nomads",
+    excerpt: "Find international-friendly bank accounts for your freelance business.",
+    href: "/blog/best-banking-digital-nomads",
+    image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
+    imageAlt: "Digital banking interface",
   },
   {
-    title: 'Multi-Currency Banking for Nomads',
-    excerpt: 'Manage multiple currencies efficiently with the right accounts and tools.',
-    href: '/guides/multi-currency-banking-nomads',
-    image: '/images/unsplash/photo-1580519542036-c47de6196ba5-800w.webp',
-    imageAlt: 'Multiple currency bills'
-  }
+    title: "Multi-Currency Banking for Nomads",
+    excerpt: "Manage multiple currencies efficiently with the right accounts and tools.",
+    href: "/guides/multi-currency-banking-nomads",
+    image: "/images/unsplash/photo-1580519542036-c47de6196ba5-800w.webp",
+    imageAlt: "Multiple currency bills",
+  },
 ];
 ---
 

@@ -1,79 +1,86 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Portugal Digital Nomad Visa 2025: How to Apply';
-const description = 'Complete guide to Portugal\'s digital nomad visa. Learn about eligibility, required documents, application process, costs, and best cities for remote workers.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-20');
+const title = "Portugal Digital Nomad Visa 2025: How to Apply";
+const description =
+  "Complete guide to Portugal's digital nomad visa. Learn about eligibility, required documents, application process, costs, and best cities for remote workers.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-20");
 const readingTime = 15;
-const image = '/images/unsplash/photo-1555881400-74d7acaacd8b-1200w.webp';
-const imageAlt = 'Lisbon Portugal cityscape with colorful buildings and tram';
+const image = "/images/unsplash/photo-1555881400-74d7acaacd8b-1200w.webp";
+const imageAlt = "Lisbon Portugal cityscape with colorful buildings and tram";
 
 const headings = [
-  {depth: 2, slug: 'introduction', text: 'Why Portugal'},
-  {depth: 2, slug: 'visa-overview', text: 'The Visa Basics'},
-  {depth: 2, slug: 'eligibility', text: 'Who Can Apply'},
-  {depth: 2, slug: 'required-documents', text: 'Documents You Need'},
-  {depth: 2, slug: 'application-process', text: 'How to Apply'},
-  {depth: 2, slug: 'costs-timeline', text: 'Costs and Timeline'},
-  {depth: 2, slug: 'd7-comparison', text: 'D7 Versus Nomad Visa'},
-  {depth: 2, slug: 'tax-implications', text: 'Tax Stuff'},
-  {depth: 2, slug: 'best-cities', text: 'Best Cities'},
-  {depth: 2, slug: 'cost-of-living', text: 'Cost of Living'},
-  {depth: 2, slug: 'faq', text: 'Questions'}
+  { depth: 2, slug: "introduction", text: "Why Portugal" },
+  { depth: 2, slug: "visa-overview", text: "The Visa Basics" },
+  { depth: 2, slug: "eligibility", text: "Who Can Apply" },
+  { depth: 2, slug: "required-documents", text: "Documents You Need" },
+  { depth: 2, slug: "application-process", text: "How to Apply" },
+  { depth: 2, slug: "costs-timeline", text: "Costs and Timeline" },
+  { depth: 2, slug: "d7-comparison", text: "D7 Versus Nomad Visa" },
+  { depth: 2, slug: "tax-implications", text: "Tax Stuff" },
+  { depth: 2, slug: "best-cities", text: "Best Cities" },
+  { depth: 2, slug: "cost-of-living", text: "Cost of Living" },
+  { depth: 2, slug: "faq", text: "Questions" },
 ];
 
 const faqData = [
   {
-    question: 'How much income do I need?',
-    answer: 'You need minimum monthly income of three thousand forty euros. That\'s four times Portugal\'s minimum wage. Can come from remote work or freelancing or passive income. Bank statements or contracts prove it.'
+    question: "How much income do I need?",
+    answer:
+      "You need minimum monthly income of three thousand forty euros. That's four times Portugal's minimum wage. Can come from remote work or freelancing or passive income. Bank statements or contracts prove it.",
   },
   {
-    question: 'Can family come?',
-    answer: 'Yes. Spouse or partner and dependent kids can apply for family reunification once your visa is approved. They get residence permits tied to yours.'
+    question: "Can family come?",
+    answer:
+      "Yes. Spouse or partner and dependent kids can apply for family reunification once your visa is approved. They get residence permits tied to yours.",
   },
   {
-    question: 'How long can I stay?',
-    answer: 'Initial permit is one year. Renews for two year periods. After five years of legal residence you can apply for permanent residency or citizenship.'
+    question: "How long can I stay?",
+    answer:
+      "Initial permit is one year. Renews for two year periods. After five years of legal residence you can apply for permanent residency or citizenship.",
   },
   {
-    question: 'Do I need to be in Portugal to apply?',
-    answer: 'You apply for the initial visa at a Portuguese consulate in your home country. Once approved travel to Portugal and apply for residence permit at AIMA within four months of arrival.'
+    question: "Do I need to be in Portugal to apply?",
+    answer:
+      "You apply for the initial visa at a Portuguese consulate in your home country. Once approved travel to Portugal and apply for residence permit at AIMA within four months of arrival.",
   },
   {
-    question: 'Can I work for Portuguese clients?',
-    answer: 'This visa is for remote workers serving clients outside Portugal. Want Portuguese clients you need different visa type. Occasional local freelance might be okay but talk to an immigration lawyer.'
+    question: "Can I work for Portuguese clients?",
+    answer:
+      "This visa is for remote workers serving clients outside Portugal. Want Portuguese clients you need different visa type. Occasional local freelance might be okay but talk to an immigration lawyer.",
   },
   {
-    question: 'Is healthcare included?',
-    answer: 'As legal resident you get access to Portugal\'s national health service SNS after registering with your local health center. Many nomads keep private insurance for faster access and English speaking doctors.'
-  }
+    question: "Is healthcare included?",
+    answer:
+      "As legal resident you get access to Portugal's national health service SNS after registering with your local health center. Many nomads keep private insurance for faster access and English speaking doctors.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Top Destinations for Digital Nomads',
-    excerpt: 'Compare Portugal with other top remote work destinations.',
-    href: '/blog/top-destinations-digital-nomads',
-    image: '/images/unsplash/photo-1488646953014-85cb44e25828-800w.webp',
-    imageAlt: 'World travel destinations concept'
+    title: "Top Destinations for Digital Nomads",
+    excerpt: "Compare Portugal with other top remote work destinations.",
+    href: "/blog/top-destinations-digital-nomads",
+    image: "/images/unsplash/photo-1488646953014-85cb44e25828-800w.webp",
+    imageAlt: "World travel destinations concept",
   },
   {
-    title: 'Best Travel Insurance for Remote Workers',
-    excerpt: 'Protect yourself abroad with the right coverage.',
-    href: '/blog/best-travel-insurance-remote-workers',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Travel insurance documents'
+    title: "Best Travel Insurance for Remote Workers",
+    excerpt: "Protect yourself abroad with the right coverage.",
+    href: "/blog/best-travel-insurance-remote-workers",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Travel insurance documents",
   },
   {
-    title: 'Tax Tips for Remote Workers',
-    excerpt: 'Navigate international tax obligations as a nomad.',
-    href: '/blog/tax-tips-remote-workers',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Tax planning documents'
-  }
+    title: "Tax Tips for Remote Workers",
+    excerpt: "Navigate international tax obligations as a nomad.",
+    href: "/blog/tax-tips-remote-workers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Tax planning documents",
+  },
 ];
 ---
 

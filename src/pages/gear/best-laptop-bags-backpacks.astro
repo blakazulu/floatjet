@@ -1,208 +1,215 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Laptop Bags & Backpacks for Digital Nomads (2025)';
-const description = 'I tested twelve laptop bags across three continents. Nomatic, Peak Design, Aer compared - plus a forty-five dollar budget pick that actually worked really well.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Best Laptop Bags & Backpacks for Digital Nomads (2025)";
+const description =
+  "I tested twelve laptop bags across three continents. Nomatic, Peak Design, Aer compared - plus a forty-five dollar budget pick that actually worked really well.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 10;
-const image = '/images/unsplash/photo-1553062407-98eeb64c6a62-1200w.webp';
-const imageAlt = 'Professional laptop backpack for digital nomads';
+const image = "/images/unsplash/photo-1553062407-98eeb64c6a62-1200w.webp";
+const imageAlt = "Professional laptop backpack for digital nomads";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'What I Learned About Bags', slug: 'what-i-learned', depth: 2},
-  {text: 'The Bags', slug: 'the-bags', depth: 2},
-  {text: 'Nomatic Travel Pack', slug: 'nomatic-travel-pack', depth: 3},
-  {text: 'Peak Design Everyday Backpack', slug: 'peak-design', depth: 3},
-  {text: 'Aer Travel Pack 3', slug: 'aer-travel-pack', depth: 3},
-  {text: 'Thule Subterra', slug: 'thule-subterra', depth: 3},
-  {text: 'Tortuga Outbreaker', slug: 'tortuga-outbreaker', depth: 3},
-  {text: 'WANDRD PRVKE', slug: 'wandrd-prvke', depth: 3},
-  {text: 'Targus Drifter II', slug: 'targus-drifter', depth: 3},
-  {text: 'Bellroy Transit', slug: 'bellroy-transit', depth: 3},
-  {text: 'Backpack vs Messenger vs Briefcase', slug: 'bag-types', depth: 2},
-  {text: 'The TSA Thing', slug: 'tsa-thing', depth: 2},
-  {text: 'Anti-Theft Stuff', slug: 'anti-theft', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'The Actual Recommendation', slug: 'conclusion', depth: 2},
-  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "What I Learned About Bags", slug: "what-i-learned", depth: 2 },
+  { text: "The Bags", slug: "the-bags", depth: 2 },
+  { text: "Nomatic Travel Pack", slug: "nomatic-travel-pack", depth: 3 },
+  { text: "Peak Design Everyday Backpack", slug: "peak-design", depth: 3 },
+  { text: "Aer Travel Pack 3", slug: "aer-travel-pack", depth: 3 },
+  { text: "Thule Subterra", slug: "thule-subterra", depth: 3 },
+  { text: "Tortuga Outbreaker", slug: "tortuga-outbreaker", depth: 3 },
+  { text: "WANDRD PRVKE", slug: "wandrd-prvke", depth: 3 },
+  { text: "Targus Drifter II", slug: "targus-drifter", depth: 3 },
+  { text: "Bellroy Transit", slug: "bellroy-transit", depth: 3 },
+  { text: "Backpack vs Messenger vs Briefcase", slug: "bag-types", depth: 2 },
+  { text: "The TSA Thing", slug: "tsa-thing", depth: 2 },
+  { text: "Anti-Theft Stuff", slug: "anti-theft", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "The Actual Recommendation", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'bag', label: 'Bag', width: '160px'},
-  {key: 'why', label: 'Why', width: '180px'},
-  {key: 'price', label: 'Price'},
-  {key: 'action', label: ''},
+  { key: "bag", label: "Bag", width: "160px" },
+  { key: "why", label: "Why", width: "180px" },
+  { key: "price", label: "Price" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    bag: '<strong>Nomatic Travel Pack</strong>',
-    why: 'What I actually use daily',
-    price: '$299',
-    action: '<a href="/go/nomatic" rel="nofollow sponsored">Check Price</a>'
+    bag: "<strong>Nomatic Travel Pack</strong>",
+    why: "What I actually use daily",
+    price: "$299",
+    action: '<a href="/go/nomatic" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    bag: '<strong>Peak Design Everyday</strong>',
-    why: 'Best for photographers/creatives',
-    price: '$299',
-    action: '<a href="/go/peak-design" rel="nofollow sponsored">Check Price</a>'
+    bag: "<strong>Peak Design Everyday</strong>",
+    why: "Best for photographers/creatives",
+    price: "$299",
+    action: '<a href="/go/peak-design" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    bag: '<strong>Targus Drifter II</strong>',
-    why: 'Cheap but works',
-    price: '$45',
-    action: '<a href="/go/amazon/targus-drifter" rel="nofollow sponsored">Check Price</a>'
+    bag: "<strong>Targus Drifter II</strong>",
+    why: "Cheap but works",
+    price: "$45",
+    action: '<a href="/go/amazon/targus-drifter" rel="nofollow sponsored">Check Price</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'bag', label: 'Bag', width: '130px'},
-  {key: 'bestFor', label: 'Best For', width: '120px'},
-  {key: 'price', label: 'Price'},
-  {key: 'capacity', label: 'Capacity'},
-  {key: 'laptopSize', label: 'Laptop Size'},
-  {key: 'weight', label: 'Weight'},
-  {key: 'action', label: ''},
+  { key: "bag", label: "Bag", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "120px" },
+  { key: "price", label: "Price" },
+  { key: "capacity", label: "Capacity" },
+  { key: "laptopSize", label: "Laptop Size" },
+  { key: "weight", label: "Weight" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    bag: '<strong>Nomatic Travel Pack</strong>',
-    bestFor: 'Best Overall',
-    price: '$299',
-    capacity: '20-30L',
+    bag: "<strong>Nomatic Travel Pack</strong>",
+    bestFor: "Best Overall",
+    price: "$299",
+    capacity: "20-30L",
     laptopSize: '15.6"',
-    weight: '3.8 lbs',
-    action: '<a href="/go/nomatic" rel="nofollow sponsored">Buy</a>'
+    weight: "3.8 lbs",
+    action: '<a href="/go/nomatic" rel="nofollow sponsored">Buy</a>',
   },
   {
-    bag: '<strong>Peak Design Everyday</strong>',
-    bestFor: 'Best Design',
-    price: '$299',
-    capacity: '20L/30L',
+    bag: "<strong>Peak Design Everyday</strong>",
+    bestFor: "Best Design",
+    price: "$299",
+    capacity: "20L/30L",
     laptopSize: '16"',
-    weight: '3.3 lbs',
-    action: '<a href="/go/peak-design" rel="nofollow sponsored">Buy</a>'
+    weight: "3.3 lbs",
+    action: '<a href="/go/peak-design" rel="nofollow sponsored">Buy</a>',
   },
   {
-    bag: '<strong>Aer Travel Pack 3</strong>',
-    bestFor: 'Organization',
-    price: '$249',
-    capacity: '35L',
+    bag: "<strong>Aer Travel Pack 3</strong>",
+    bestFor: "Organization",
+    price: "$249",
+    capacity: "35L",
     laptopSize: '16"',
-    weight: '3.7 lbs',
-    action: '<a href="/go/aer" rel="nofollow sponsored">Buy</a>'
+    weight: "3.7 lbs",
+    action: '<a href="/go/aer" rel="nofollow sponsored">Buy</a>',
   },
   {
-    bag: '<strong>Thule Subterra</strong>',
-    bestFor: 'Best Value',
-    price: '$179',
-    capacity: '30L',
+    bag: "<strong>Thule Subterra</strong>",
+    bestFor: "Best Value",
+    price: "$179",
+    capacity: "30L",
     laptopSize: '15.6"',
-    weight: '3.2 lbs',
-    action: '<a href="/go/thule" rel="nofollow sponsored">Buy</a>'
+    weight: "3.2 lbs",
+    action: '<a href="/go/thule" rel="nofollow sponsored">Buy</a>',
   },
   {
-    bag: '<strong>Tortuga Outbreaker</strong>',
-    bestFor: 'Long Trips',
-    price: '$249',
-    capacity: '35-45L',
+    bag: "<strong>Tortuga Outbreaker</strong>",
+    bestFor: "Long Trips",
+    price: "$249",
+    capacity: "35-45L",
     laptopSize: '17"',
-    weight: '4.4 lbs',
-    action: '<a href="/go/tortuga" rel="nofollow sponsored">Buy</a>'
+    weight: "4.4 lbs",
+    action: '<a href="/go/tortuga" rel="nofollow sponsored">Buy</a>',
   },
   {
-    bag: '<strong>WANDRD PRVKE</strong>',
-    bestFor: 'Creatives',
-    price: '$264',
-    capacity: '21-31L',
+    bag: "<strong>WANDRD PRVKE</strong>",
+    bestFor: "Creatives",
+    price: "$264",
+    capacity: "21-31L",
     laptopSize: '15"',
-    weight: '3.4 lbs',
-    action: '<a href="/go/wandrd" rel="nofollow sponsored">Buy</a>'
+    weight: "3.4 lbs",
+    action: '<a href="/go/wandrd" rel="nofollow sponsored">Buy</a>',
   },
   {
-    bag: '<strong>Targus Drifter II</strong>',
-    bestFor: 'Budget',
-    price: '$45',
-    capacity: '27L',
+    bag: "<strong>Targus Drifter II</strong>",
+    bestFor: "Budget",
+    price: "$45",
+    capacity: "27L",
     laptopSize: '16"',
-    weight: '2.2 lbs',
-    action: '<a href="/go/amazon/targus-drifter" rel="nofollow sponsored">Buy</a>'
+    weight: "2.2 lbs",
+    action: '<a href="/go/amazon/targus-drifter" rel="nofollow sponsored">Buy</a>',
   },
   {
-    bag: '<strong>Bellroy Transit</strong>',
-    bestFor: 'Minimalist',
-    price: '$249',
-    capacity: '28L',
+    bag: "<strong>Bellroy Transit</strong>",
+    bestFor: "Minimalist",
+    price: "$249",
+    capacity: "28L",
     laptopSize: '15"',
-    weight: '2.9 lbs',
-    action: '<a href="/go/bellroy" rel="nofollow sponsored">Buy</a>'
+    weight: "2.9 lbs",
+    action: '<a href="/go/bellroy" rel="nofollow sponsored">Buy</a>',
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'What\'s the best laptop backpack for nomads?',
-    answer: '<p>Nomatic if you can afford it. Targus if you can\'t. The Nomatic Travel Pack is expandable, organized, and durable at $299. The Targus Drifter II does the job at $45.</p>'
+    question: "What's the best laptop backpack for nomads?",
+    answer:
+      "<p>Nomatic if you can afford it. Targus if you can't. The Nomatic Travel Pack is expandable, organized, and durable at $299. The Targus Drifter II does the job at $45.</p>",
   },
   {
-    question: 'What size do I need?',
-    answer: '<p>25-35L for most people. Under 25L only works for day trips. Over 35L is probably too big for daily use.</p>'
+    question: "What size do I need?",
+    answer:
+      "<p>25-35L for most people. Under 25L only works for day trips. Over 35L is probably too big for daily use.</p>",
   },
   {
-    question: 'Worth spending $300?',
-    answer: '<p>If you travel monthly and will use it for years, yes. A $300 bag over 5 years is $5/month. If you travel twice a year, get the Targus.</p>'
+    question: "Worth spending $300?",
+    answer:
+      "<p>If you travel monthly and will use it for years, yes. A $300 bag over 5 years is $5/month. If you travel twice a year, get the Targus.</p>",
   },
   {
-    question: 'Backpack or messenger?',
-    answer: '<p>Backpack. No contest. Messengers hurt after a few hours when you\'re carrying 15+ lbs.</p>'
+    question: "Backpack or messenger?",
+    answer:
+      "<p>Backpack. No contest. Messengers hurt after a few hours when you're carrying 15+ lbs.</p>",
   },
   {
-    question: 'What features matter most?',
-    answer: '<p>Suspended laptop sleeve (doesn\'t touch bottom), lockable zippers, padded straps, water-resistant materials, carry-on dimensions.</p>'
+    question: "What features matter most?",
+    answer:
+      "<p>Suspended laptop sleeve (doesn't touch bottom), lockable zippers, padded straps, water-resistant materials, carry-on dimensions.</p>",
   },
   {
-    question: 'What\'s TSA-friendly mean?',
-    answer: '<p>Your laptop might stay in the bag during screening. Clamshell bags that lie flat work best. But TSA can still ask you to remove it anyway.</p>'
+    question: "What's TSA-friendly mean?",
+    answer:
+      "<p>Your laptop might stay in the bag during screening. Clamshell bags that lie flat work best. But TSA can still ask you to remove it anyway.</p>",
   },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'I tested 10 laptops to find the best for digital nomads and remote workers.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp',
-    imageAlt: 'Modern laptop on minimalist desk'
+    title: "Best Laptops for Remote Work",
+    excerpt: "I tested 10 laptops to find the best for digital nomads and remote workers.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "Modern laptop on minimalist desk",
   },
   {
-    title: 'Essential Travel Tech for Nomads',
-    excerpt: 'The must-have tech gadgets for productive travel and remote work on the road.',
-    href: '/blog/essential-travel-tech-nomads',
-    image: '/images/unsplash/photo-1488590528505-98d2b5aba04b-800w.webp',
-    imageAlt: 'Travel tech essentials laid out'
+    title: "Essential Travel Tech for Nomads",
+    excerpt: "The must-have tech gadgets for productive travel and remote work on the road.",
+    href: "/blog/essential-travel-tech-nomads",
+    image: "/images/unsplash/photo-1488590528505-98d2b5aba04b-800w.webp",
+    imageAlt: "Travel tech essentials laid out",
   },
   {
-    title: 'Best Portable Chargers & Power Banks',
-    excerpt: 'Never run out of battery on the road with these tested portable chargers.',
-    href: '/gear/best-portable-chargers-power-banks',
-    image: '/images/unsplash/photo-1585338107529-13afc5f02586-800w.webp',
-    imageAlt: 'Portable power bank charging devices'
-  }
+    title: "Best Portable Chargers & Power Banks",
+    excerpt: "Never run out of battery on the road with these tested portable chargers.",
+    href: "/gear/best-portable-chargers-power-banks",
+    image: "/images/unsplash/photo-1585338107529-13afc5f02586-800w.webp",
+    imageAlt: "Portable power bank charging devices",
+  },
 ];
 ---
 

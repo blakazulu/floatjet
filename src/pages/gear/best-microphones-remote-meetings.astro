@@ -1,175 +1,181 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Microphones for Remote Meetings (2025)';
-const description = 'I tested 10 USB and XLR microphones to find the best options for remote workers. Compare Blue Yeti, Shure MV7, Rode NT-USB, and more for crystal-clear calls.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Best Microphones for Remote Meetings (2025)";
+const description =
+  "I tested 10 USB and XLR microphones to find the best options for remote workers. Compare Blue Yeti, Shure MV7, Rode NT-USB, and more for crystal-clear calls.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 16;
-const image = '/images/unsplash/photo-1590602847861-f357a9332bbc-1200w.webp';
-const imageAlt = 'Professional USB microphone on desk for remote work';
+const image = "/images/unsplash/photo-1590602847861-f357a9332bbc-1200w.webp";
+const imageAlt = "Professional USB microphone on desk for remote work";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Why Audio Matters', slug: 'why-audio-matters', depth: 2},
-  {text: 'The Mics I Tested', slug: 'mics-tested', depth: 2},
-  {text: 'Shure MV7', slug: 'shure-mv7', depth: 3},
-  {text: 'Blue Yeti', slug: 'blue-yeti', depth: 3},
-  {text: 'Rode NT-USB Mini', slug: 'rode-nt-usb-mini', depth: 3},
-  {text: 'More Options', slug: 'more-options', depth: 3},
-  {text: 'USB vs XLR', slug: 'usb-vs-xlr', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'My Actual Take', slug: 'conclusion', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why Audio Matters", slug: "why-audio-matters", depth: 2 },
+  { text: "The Mics I Tested", slug: "mics-tested", depth: 2 },
+  { text: "Shure MV7", slug: "shure-mv7", depth: 3 },
+  { text: "Blue Yeti", slug: "blue-yeti", depth: 3 },
+  { text: "Rode NT-USB Mini", slug: "rode-nt-usb-mini", depth: 3 },
+  { text: "More Options", slug: "more-options", depth: 3 },
+  { text: "USB vs XLR", slug: "usb-vs-xlr", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "My Actual Take", slug: "conclusion", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'microphone', label: 'Microphone', width: '140px'},
-  {key: 'bestFor', label: 'Best For', width: '150px'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
-  {key: 'action', label: ''},
+  { key: "microphone", label: "Microphone", width: "140px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    microphone: '<strong>Shure MV7</strong>',
-    bestFor: 'Overall best',
-    price: '$249',
-    rating: '9.5/10',
-    action: '<a href="/go/shure-mv7" rel="nofollow sponsored">Check Price</a>'
+    microphone: "<strong>Shure MV7</strong>",
+    bestFor: "Overall best",
+    price: "$249",
+    rating: "9.5/10",
+    action: '<a href="/go/shure-mv7" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    microphone: '<strong>Blue Yeti</strong>',
-    bestFor: 'Best value',
-    price: '$129',
-    rating: '9.0/10',
-    action: '<a href="/go/blue-yeti" rel="nofollow sponsored">Check Price</a>'
+    microphone: "<strong>Blue Yeti</strong>",
+    bestFor: "Best value",
+    price: "$129",
+    rating: "9.0/10",
+    action: '<a href="/go/blue-yeti" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    microphone: '<strong>Rode NT-USB Mini</strong>',
-    bestFor: 'Best compact',
-    price: '$99',
-    rating: '9.2/10',
-    action: '<a href="/go/rode-nt-usb-mini" rel="nofollow sponsored">Check Price</a>'
+    microphone: "<strong>Rode NT-USB Mini</strong>",
+    bestFor: "Best compact",
+    price: "$99",
+    rating: "9.2/10",
+    action: '<a href="/go/rode-nt-usb-mini" rel="nofollow sponsored">Check Price</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'microphone', label: 'Microphone', width: '130px'},
-  {key: 'bestFor', label: 'Best For', width: '120px'},
-  {key: 'price', label: 'Price'},
-  {key: 'type', label: 'Type'},
-  {key: 'pattern', label: 'Pattern'},
-  {key: 'action', label: ''},
+  { key: "microphone", label: "Microphone", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "120px" },
+  { key: "price", label: "Price" },
+  { key: "type", label: "Type" },
+  { key: "pattern", label: "Pattern" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    microphone: '<strong>Shure MV7</strong>',
-    bestFor: 'Overall best',
-    price: '$249',
-    type: 'USB/XLR',
-    pattern: 'Cardioid',
-    action: '<a href="/go/shure-mv7" rel="nofollow sponsored">Get Deal</a>'
+    microphone: "<strong>Shure MV7</strong>",
+    bestFor: "Overall best",
+    price: "$249",
+    type: "USB/XLR",
+    pattern: "Cardioid",
+    action: '<a href="/go/shure-mv7" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    microphone: '<strong>Blue Yeti</strong>',
-    bestFor: 'Best value',
-    price: '$129',
-    type: 'USB',
-    pattern: 'Multi',
-    action: '<a href="/go/blue-yeti" rel="nofollow sponsored">Get Deal</a>'
+    microphone: "<strong>Blue Yeti</strong>",
+    bestFor: "Best value",
+    price: "$129",
+    type: "USB",
+    pattern: "Multi",
+    action: '<a href="/go/blue-yeti" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    microphone: '<strong>Rode NT-USB Mini</strong>',
-    bestFor: 'Best compact',
-    price: '$99',
-    type: 'USB',
-    pattern: 'Cardioid',
-    action: '<a href="/go/rode-nt-usb-mini" rel="nofollow sponsored">Get Deal</a>'
+    microphone: "<strong>Rode NT-USB Mini</strong>",
+    bestFor: "Best compact",
+    price: "$99",
+    type: "USB",
+    pattern: "Cardioid",
+    action: '<a href="/go/rode-nt-usb-mini" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    microphone: '<strong>Audio-Technica AT2020USB+</strong>',
-    bestFor: 'Best mid-range',
-    price: '$149',
-    type: 'USB',
-    pattern: 'Cardioid',
-    action: '<a href="/go/audio-technica-at2020" rel="nofollow sponsored">Get Deal</a>'
+    microphone: "<strong>Audio-Technica AT2020USB+</strong>",
+    bestFor: "Best mid-range",
+    price: "$149",
+    type: "USB",
+    pattern: "Cardioid",
+    action: '<a href="/go/audio-technica-at2020" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    microphone: '<strong>Elgato Wave:3</strong>',
-    bestFor: 'Best streaming',
-    price: '$149',
-    type: 'USB',
-    pattern: 'Cardioid',
-    action: '<a href="/go/elgato-wave-3" rel="nofollow sponsored">Get Deal</a>'
+    microphone: "<strong>Elgato Wave:3</strong>",
+    bestFor: "Best streaming",
+    price: "$149",
+    type: "USB",
+    pattern: "Cardioid",
+    action: '<a href="/go/elgato-wave-3" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    microphone: '<strong>Samson Q2U</strong>',
-    bestFor: 'Best budget',
-    price: '$69',
-    type: 'USB/XLR',
-    pattern: 'Cardioid',
-    action: '<a href="/go/samson-q2u" rel="nofollow sponsored">Get Deal</a>'
+    microphone: "<strong>Samson Q2U</strong>",
+    bestFor: "Best budget",
+    price: "$69",
+    type: "USB/XLR",
+    pattern: "Cardioid",
+    action: '<a href="/go/samson-q2u" rel="nofollow sponsored">Get Deal</a>',
   },
 ];
 
 // FAQ items
 const faqItems = [
   {
-    question: 'Will a cheap mic actually help?',
-    answer: 'On calls, night and day difference. Laptop mics are genuinely terrible. Even a $70 upgrade transforms how you come across. Past $150 or so you\'re paying for marginal gains unless you\'re producing real content.'
+    question: "Will a cheap mic actually help?",
+    answer:
+      "On calls, night and day difference. Laptop mics are genuinely terrible. Even a $70 upgrade transforms how you come across. Past $150 or so you're paying for marginal gains unless you're producing real content.",
   },
   {
-    question: 'USB or XLR for work?',
-    answer: 'USB, every time. Just plug it in. Unless you already have audio equipment lying around or want to start a podcast eventually, there\'s no point adding interfaces and cables to the mix.'
+    question: "USB or XLR for work?",
+    answer:
+      "USB, every time. Just plug it in. Unless you already have audio equipment lying around or want to start a podcast eventually, there's no point adding interfaces and cables to the mix.",
   },
   {
-    question: 'What about polar patterns?',
-    answer: 'Cardioid is what you want for calls. Picks up what\'s in front of the mic and mostly ignores everything else—your typing, AC humming, construction noise outside the window.'
+    question: "What about polar patterns?",
+    answer:
+      "Cardioid is what you want for calls. Picks up what's in front of the mic and mostly ignores everything else—your typing, AC humming, construction noise outside the window.",
   },
   {
-    question: 'Gaming mics for business?',
-    answer: 'Why not? HyperX QuadCast got built for gaming streams, but voice is voice. Whatever makes you sound good on Discord works fine on Teams.'
+    question: "Gaming mics for business?",
+    answer:
+      "Why not? HyperX QuadCast got built for gaming streams, but voice is voice. Whatever makes you sound good on Discord works fine on Teams.",
   },
   {
-    question: 'Where should the mic sit?',
-    answer: 'Somewhere between six and twelve inches from your face, slightly off to the side so you\'re not blasting air into it when you say words with P or B sounds. A boom arm helps dial this in.'
-  }
+    question: "Where should the mic sit?",
+    answer:
+      "Somewhere between six and twelve inches from your face, slightly off to the side so you're not blasting air into it when you say words with P or B sounds. A boom arm helps dial this in.",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Noise-Canceling Headphones',
-    excerpt: 'Complete your audio setup with headphones that block distractions.',
-    href: '/gear/best-noise-canceling-headphones',
-    image: '/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp',
-    imageAlt: 'Noise-canceling headphones on desk',
+    title: "Best Noise-Canceling Headphones",
+    excerpt: "Complete your audio setup with headphones that block distractions.",
+    href: "/gear/best-noise-canceling-headphones",
+    image: "/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp",
+    imageAlt: "Noise-canceling headphones on desk",
   },
   {
-    title: 'Best Webcams for Video Calls',
-    excerpt: 'Pair great audio with professional video quality.',
-    href: '/gear/best-webcams-video-calls',
-    image: '/images/unsplash/photo-1611532736597-de2d4265fba3-800w.webp',
-    imageAlt: 'Professional webcam for video calls',
+    title: "Best Webcams for Video Calls",
+    excerpt: "Pair great audio with professional video quality.",
+    href: "/gear/best-webcams-video-calls",
+    image: "/images/unsplash/photo-1611532736597-de2d4265fba3-800w.webp",
+    imageAlt: "Professional webcam for video calls",
   },
   {
-    title: 'How to Reduce Background Noise on Calls',
-    excerpt: 'Software and hardware tips for cleaner audio.',
-    href: '/gear/reduce-background-noise-calls',
-    image: '/images/unsplash/photo-1587560699334-cc4ff634909a-800w.webp',
-    imageAlt: 'Person on video call with noise-canceling setup',
+    title: "How to Reduce Background Noise on Calls",
+    excerpt: "Software and hardware tips for cleaner audio.",
+    href: "/gear/reduce-background-noise-calls",
+    image: "/images/unsplash/photo-1587560699334-cc4ff634909a-800w.webp",
+    imageAlt: "Person on video call with noise-canceling setup",
   },
 ];
 ---

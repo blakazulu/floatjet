@@ -1,168 +1,194 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Best Wireless Earbuds for Remote Work Calls (2025)';
-const description = 'Top wireless earbuds tested for video calls and remote work. We evaluated call quality, comfort for all-day wear, and noise cancellation across 10 models.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Audio';
-const categorySlug = 'gear';
+const title = "Best Wireless Earbuds for Remote Work Calls (2025)";
+const description =
+  "Top wireless earbuds tested for video calls and remote work. We evaluated call quality, comfort for all-day wear, and noise cancellation across 10 models.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Audio";
+const categorySlug = "gear";
 const readingTime = 14;
-const image = '/images/unsplash/photo-1590658268037-6bf12165a8df-1200w.webp';
-const imageAlt = 'Wireless earbuds in charging case for remote work';
+const image = "/images/unsplash/photo-1590658268037-6bf12165a8df-1200w.webp";
+const imageAlt = "Wireless earbuds in charging case for remote work";
 
 const headings = [
-  {text: 'My Three Picks', slug: 'quick-picks'},
-  {text: 'So Why Earbuds Instead of Headphones?', slug: 'why-earbuds'},
-  {text: 'What to Look For', slug: 'what-to-look-for'},
-  {text: 'My Pick for Apple People: AirPods Pro 2', slug: 'airpods-pro-2'},
-  {text: 'My Pick for Android People: Sony WF-1000XM5', slug: 'sony-wf-1000xm5'},
-  {text: 'Best Value: Samsung Galaxy Buds2 Pro', slug: 'galaxy-buds2-pro'},
-  {text: 'Best for Calls: Jabra Elite 85t', slug: 'jabra-elite-85t'},
-  {text: 'Budget Pick: Soundcore Liberty 4', slug: 'soundcore-liberty-4'},
-  {text: 'Most Comfortable: Bose QuietComfort Earbuds II', slug: 'bose-qc-earbuds-ii'},
-  {text: 'Lightest Option: Sony LinkBuds S', slug: 'sony-linkbuds-s'},
-  {text: 'For Staying Aware: Apple AirPods (3rd Gen)', slug: 'airpods-3'},
-  {text: 'Full Comparison', slug: 'comparison-table'},
-  {text: 'Earbuds vs Headphones: Which One?', slug: 'earbuds-vs-headphones'},
-  {text: 'Questions', slug: 'faq'},
+  { text: "My Three Picks", slug: "quick-picks" },
+  { text: "So Why Earbuds Instead of Headphones?", slug: "why-earbuds" },
+  { text: "What to Look For", slug: "what-to-look-for" },
+  { text: "My Pick for Apple People: AirPods Pro 2", slug: "airpods-pro-2" },
+  { text: "My Pick for Android People: Sony WF-1000XM5", slug: "sony-wf-1000xm5" },
+  { text: "Best Value: Samsung Galaxy Buds2 Pro", slug: "galaxy-buds2-pro" },
+  { text: "Best for Calls: Jabra Elite 85t", slug: "jabra-elite-85t" },
+  { text: "Budget Pick: Soundcore Liberty 4", slug: "soundcore-liberty-4" },
+  { text: "Most Comfortable: Bose QuietComfort Earbuds II", slug: "bose-qc-earbuds-ii" },
+  { text: "Lightest Option: Sony LinkBuds S", slug: "sony-linkbuds-s" },
+  { text: "For Staying Aware: Apple AirPods (3rd Gen)", slug: "airpods-3" },
+  { text: "Full Comparison", slug: "comparison-table" },
+  { text: "Earbuds vs Headphones: Which One?", slug: "earbuds-vs-headphones" },
+  { text: "Questions", slug: "faq" },
 ];
 
 const quickPicksColumns = [
-  {key: 'earbuds', label: 'Earbuds', width: '140px'},
-  {key: 'bestFor', label: 'Best For'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
+  { key: "earbuds", label: "Earbuds", width: "140px" },
+  { key: "bestFor", label: "Best For" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
 ];
 
 const quickPicksRows = [
-  {earbuds: '<strong>AirPods Pro 2</strong>', bestFor: 'Apple Users', price: '$249', rating: '9.5/10'},
-  {earbuds: '<strong>Sony WF-1000XM5</strong>', bestFor: 'Android Users', price: '$299', rating: '9.4/10'},
-  {earbuds: '<strong>Jabra Elite 85t</strong>', bestFor: 'Call Quality', price: '$179', rating: '9.2/10'},
+  {
+    earbuds: "<strong>AirPods Pro 2</strong>",
+    bestFor: "Apple Users",
+    price: "$249",
+    rating: "9.5/10",
+  },
+  {
+    earbuds: "<strong>Sony WF-1000XM5</strong>",
+    bestFor: "Android Users",
+    price: "$299",
+    rating: "9.4/10",
+  },
+  {
+    earbuds: "<strong>Jabra Elite 85t</strong>",
+    bestFor: "Call Quality",
+    price: "$179",
+    rating: "9.2/10",
+  },
 ];
 
 const comparisonColumns = [
-  {key: 'earbuds', label: 'Earbuds', width: '140px'},
-  {key: 'anc', label: 'ANC'},
-  {key: 'battery', label: 'Battery (buds)'},
-  {key: 'callQuality', label: 'Call Quality'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
+  { key: "earbuds", label: "Earbuds", width: "140px" },
+  { key: "anc", label: "ANC" },
+  { key: "battery", label: "Battery (buds)" },
+  { key: "callQuality", label: "Call Quality" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
 ];
 
 const comparisonRows = [
   {
-    earbuds: '<strong>AirPods Pro 2</strong>',
-    anc: 'Excellent',
-    battery: '6 hours',
-    callQuality: 'Excellent',
-    price: '$249',
-    rating: '9.5/10'
+    earbuds: "<strong>AirPods Pro 2</strong>",
+    anc: "Excellent",
+    battery: "6 hours",
+    callQuality: "Excellent",
+    price: "$249",
+    rating: "9.5/10",
   },
   {
-    earbuds: '<strong>Sony WF-1000XM5</strong>',
-    anc: 'Best-in-class',
-    battery: '8 hours',
-    callQuality: 'Excellent',
-    price: '$299',
-    rating: '9.4/10'
+    earbuds: "<strong>Sony WF-1000XM5</strong>",
+    anc: "Best-in-class",
+    battery: "8 hours",
+    callQuality: "Excellent",
+    price: "$299",
+    rating: "9.4/10",
   },
   {
-    earbuds: '<strong>Galaxy Buds2 Pro</strong>',
-    anc: 'Very Good',
-    battery: '5 hours',
-    callQuality: 'Very Good',
-    price: '$179',
-    rating: '9.1/10'
+    earbuds: "<strong>Galaxy Buds2 Pro</strong>",
+    anc: "Very Good",
+    battery: "5 hours",
+    callQuality: "Very Good",
+    price: "$179",
+    rating: "9.1/10",
   },
   {
-    earbuds: '<strong>Jabra Elite 85t</strong>',
-    anc: 'Very Good',
-    battery: '5.5 hours',
-    callQuality: 'Best-in-class',
-    price: '$179',
-    rating: '9.2/10'
+    earbuds: "<strong>Jabra Elite 85t</strong>",
+    anc: "Very Good",
+    battery: "5.5 hours",
+    callQuality: "Best-in-class",
+    price: "$179",
+    rating: "9.2/10",
   },
   {
-    earbuds: '<strong>Soundcore Liberty 4</strong>',
-    anc: 'Good',
-    battery: '9 hours',
-    callQuality: 'Good',
-    price: '$99',
-    rating: '8.8/10'
+    earbuds: "<strong>Soundcore Liberty 4</strong>",
+    anc: "Good",
+    battery: "9 hours",
+    callQuality: "Good",
+    price: "$99",
+    rating: "8.8/10",
   },
   {
-    earbuds: '<strong>Bose QC Earbuds II</strong>',
-    anc: 'Excellent',
-    battery: '6 hours',
-    callQuality: 'Very Good',
-    price: '$279',
-    rating: '9.0/10'
+    earbuds: "<strong>Bose QC Earbuds II</strong>",
+    anc: "Excellent",
+    battery: "6 hours",
+    callQuality: "Very Good",
+    price: "$279",
+    rating: "9.0/10",
   },
   {
-    earbuds: '<strong>Sony LinkBuds S</strong>',
-    anc: 'Very Good',
-    battery: '6 hours',
-    callQuality: 'Very Good',
-    price: '$148',
-    rating: '8.9/10'
+    earbuds: "<strong>Sony LinkBuds S</strong>",
+    anc: "Very Good",
+    battery: "6 hours",
+    callQuality: "Very Good",
+    price: "$148",
+    rating: "8.9/10",
   },
   {
-    earbuds: '<strong>AirPods 3</strong>',
-    anc: 'None',
-    battery: '6 hours',
-    callQuality: 'Very Good',
-    price: '$169',
-    rating: '8.7/10'
+    earbuds: "<strong>AirPods 3</strong>",
+    anc: "None",
+    battery: "6 hours",
+    callQuality: "Very Good",
+    price: "$169",
+    rating: "8.7/10",
   },
 ];
 
 const faqItems = [
   {
-    question: 'Good for video calls?',
-    answer: 'Yes. Premium ones anyway. Jabra Elite 85t and AirPods Pro 2 have multiple mics with AI processing specifically for voice. They often beat laptop mics.',
+    question: "Good for video calls?",
+    answer:
+      "Yes. Premium ones anyway. Jabra Elite 85t and AirPods Pro 2 have multiple mics with AI processing specifically for voice. They often beat laptop mics.",
   },
   {
-    question: 'How much does ANC matter?',
-    answer: 'Depends on your environment. Noisy cafe or house with kids? Important. Quiet home office? Nice to have.',
+    question: "How much does ANC matter?",
+    answer:
+      "Depends on your environment. Noisy cafe or house with kids? Important. Quiet home office? Nice to have.",
   },
   {
-    question: 'All day wear okay?',
-    answer: 'Technically yes. But take breaks. Even comfortable ones cause ear fatigue after 3-4 hours. Switch to speakers when not on calls. Your ears will thank you.',
+    question: "All day wear okay?",
+    answer:
+      "Technically yes. But take breaks. Even comfortable ones cause ear fatigue after 3-4 hours. Switch to speakers when not on calls. Your ears will thank you.",
   },
   {
-    question: 'Need to match my phone OS?',
-    answer: 'Not strictly. But you get better features with matching ecosystems. AirPods work with Android but lose seamless switching and Spatial Audio. Same for Galaxy Buds on iPhone.',
+    question: "Need to match my phone OS?",
+    answer:
+      "Not strictly. But you get better features with matching ecosystems. AirPods work with Android but lose seamless switching and Spatial Audio. Same for Galaxy Buds on iPhone.",
   },
   {
-    question: 'Battery life requirement?',
-    answer: 'Five plus hours on buds, 20+ total with case. And get fast charging—fifteen minutes for two hours saves you when you inevitably forget to charge.',
+    question: "Battery life requirement?",
+    answer:
+      "Five plus hours on buds, 20+ total with case. And get fast charging—fifteen minutes for two hours saves you when you inevitably forget to charge.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Noise-Canceling Headphones',
-    excerpt: 'Over-ear alternatives when you need maximum isolation and comfort.',
-    href: '/gear/best-noise-canceling-headphones',
-    image: '/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp',
-    imageAlt: 'Noise-canceling headphones on desk',
+    title: "Best Noise-Canceling Headphones",
+    excerpt: "Over-ear alternatives when you need maximum isolation and comfort.",
+    href: "/gear/best-noise-canceling-headphones",
+    image: "/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp",
+    imageAlt: "Noise-canceling headphones on desk",
   },
   {
-    title: 'Best Microphones for Remote Meetings',
-    excerpt: 'Dedicated microphones for superior call quality at your desk.',
-    href: '/gear/best-microphones-remote-meetings',
-    image: '/images/unsplash/photo-1590602847861-f357a9332bbc-800w.webp',
-    imageAlt: 'Professional USB microphone for remote work',
+    title: "Best Microphones for Remote Meetings",
+    excerpt: "Dedicated microphones for superior call quality at your desk.",
+    href: "/gear/best-microphones-remote-meetings",
+    image: "/images/unsplash/photo-1590602847861-f357a9332bbc-800w.webp",
+    imageAlt: "Professional USB microphone for remote work",
   },
   {
-    title: 'How to Reduce Background Noise on Calls',
-    excerpt: 'Tips and tools to eliminate distracting noise from your meetings.',
-    href: '/gear/reduce-background-noise-calls',
-    image: '/images/unsplash/photo-1587560699334-cc4ff634909a-800w.webp',
-    imageAlt: 'Person on video call with noise-canceling setup',
+    title: "How to Reduce Background Noise on Calls",
+    excerpt: "Tips and tools to eliminate distracting noise from your meetings.",
+    href: "/gear/reduce-background-noise-calls",
+    image: "/images/unsplash/photo-1587560699334-cc4ff634909a-800w.webp",
+    imageAlt: "Person on video call with noise-canceling setup",
   },
 ];
 ---

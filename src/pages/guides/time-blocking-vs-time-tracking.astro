@@ -1,89 +1,98 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Time Blocking vs Time Tracking: Which Works? (2025)';
-const description = 'Compare time blocking and time tracking for remote work. Learn when each method works best, how to combine them, and which suits your work personality best.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Time Blocking vs Time Tracking: Which Works? (2025)";
+const description =
+  "Compare time blocking and time tracking for remote work. Learn when each method works best, how to combine them, and which suits your work personality best.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 9;
-const image = '/images/unsplash/photo-1611532736597-de2d4265fba3-1200w.webp';
-const imageAlt = 'Calendar and timer representing time blocking and time tracking methods';
+const image = "/images/unsplash/photo-1611532736597-de2d4265fba3-1200w.webp";
+const imageAlt = "Calendar and timer representing time blocking and time tracking methods";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'So What Even Is Time Blocking?', slug: 'time-blocking', depth: 2},
-  {text: 'And Time Tracking — That\'s Different How?', slug: 'time-tracking', depth: 2},
-  {text: 'Where Each Approach Clicks', slug: 'approach-fit', depth: 2},
-  {text: 'Here\'s the Thing: Run Both', slug: 'combining', depth: 2},
-  {text: 'Tools Worth Mentioning', slug: 'tools', depth: 2},
-  {text: 'Personality Alignment', slug: 'personality', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "So What Even Is Time Blocking?", slug: "time-blocking", depth: 2 },
+  { text: "And Time Tracking — That's Different How?", slug: "time-tracking", depth: 2 },
+  { text: "Where Each Approach Clicks", slug: "approach-fit", depth: 2 },
+  { text: "Here's the Thing: Run Both", slug: "combining", depth: 2 },
+  { text: "Tools Worth Mentioning", slug: "tools", depth: 2 },
+  { text: "Personality Alignment", slug: "personality", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Should I track billable time or everything?',
-    answer: '<p>For hourly invoicing, track client time precisely. For self-understanding, track everything. Most remote workers get more insight from tracking all work time, billable or not.</p>'
+    question: "Should I track billable time or everything?",
+    answer:
+      "<p>For hourly invoicing, track client time precisely. For self-understanding, track everything. Most remote workers get more insight from tracking all work time, billable or not.</p>",
   },
   {
-    question: 'How rigid should blocks be?',
-    answer: '<p>Rigid enough to matter, flexible enough to survive real life. Theme blocks like "morning deep work" bend easier than "nine to eleven thirty exactly." Buffers absorb overflow. Adjusting mid-day isn\'t failure — blocks guide rather than imprison.</p>'
+    question: "How rigid should blocks be?",
+    answer:
+      '<p>Rigid enough to matter, flexible enough to survive real life. Theme blocks like "morning deep work" bend easier than "nine to eleven thirty exactly." Buffers absorb overflow. Adjusting mid-day isn\'t failure — blocks guide rather than imprison.</p>',
   },
   {
-    question: 'What\'s the minimum time worth blocking or tracking?',
-    answer: '<p>Blocks under thirty minutes fragment attention too much. Tracking makes sense above five minutes. Tiny tasks get lumped into "admin" batches rather than tracked individually.</p>'
+    question: "What's the minimum time worth blocking or tracking?",
+    answer:
+      '<p>Blocks under thirty minutes fragment attention too much. Tracking makes sense above five minutes. Tiny tasks get lumped into "admin" batches rather than tracked individually.</p>',
   },
   {
-    question: 'Interruptions keep wrecking my blocks — now what?',
-    answer: '<p>Plan for them. Buffer blocks absorb surprises. Log interruptions to spot patterns. Tell teammates about focus blocks. If a block gets demolished, shift that task to buffer time.</p>'
+    question: "Interruptions keep wrecking my blocks — now what?",
+    answer:
+      "<p>Plan for them. Buffer blocks absorb surprises. Log interruptions to spot patterns. Tell teammates about focus blocks. If a block gets demolished, shift that task to buffer time.</p>",
   },
   {
-    question: 'Isn\'t tracking just micromanagement?',
-    answer: '<p>Tracking yourself for growth is a tool. Being tracked by others for control is surveillance. Who\'s running the data matters.</p>'
+    question: "Isn't tracking just micromanagement?",
+    answer:
+      "<p>Tracking yourself for growth is a tool. Being tracked by others for control is surveillance. Who's running the data matters.</p>",
   },
   {
-    question: 'How long before I should switch methods?',
-    answer: '<p>At least two weeks of honest effort. A month is better for seeing patterns. Quitting after three days because it felt weird doesn\'t count — new systems always feel weird initially.</p>'
+    question: "How long before I should switch methods?",
+    answer:
+      "<p>At least two weeks of honest effort. A month is better for seeing patterns. Quitting after three days because it felt weird doesn't count — new systems always feel weird initially.</p>",
   },
   {
-    question: 'Can these work for personal life too?',
-    answer: '<p>Sure, lighter touch though. Block exercise and family time to defend them. Track personal projects for accountability. But avoid turning leisure into another spreadsheet. Spontaneity matters.</p>'
+    question: "Can these work for personal life too?",
+    answer:
+      "<p>Sure, lighter touch though. Block exercise and family time to defend them. Track personal projects for accountability. But avoid turning leisure into another spreadsheet. Spontaneity matters.</p>",
   },
   {
-    question: 'What if I hate both methods?',
-    answer: '<p>Go gentler. Daily highlights — just name one to three priorities each morning. Time boxing — set timers without calendar-blocking everything. Weekly reviews instead of daily obsession. Energy management — match tasks to how you feel rather than arbitrary schedules. Formal systems aren\'t mandatory.</p>'
-  }
+    question: "What if I hate both methods?",
+    answer:
+      "<p>Go gentler. Daily highlights — just name one to three priorities each morning. Time boxing — set timers without calendar-blocking everything. Weekly reviews instead of daily obsession. Energy management — match tasks to how you feel rather than arbitrary schedules. Formal systems aren't mandatory.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Time Tracking Software',
-    excerpt: 'Compare top time tracking tools for remote workers and freelancers.',
-    href: '/tools/best-time-tracking-software',
-    image: '/images/unsplash/photo-1611532736597-de2d4265fba3-800w.webp',
-    imageAlt: 'Time tracking app interface'
+    title: "Best Time Tracking Software",
+    excerpt: "Compare top time tracking tools for remote workers and freelancers.",
+    href: "/tools/best-time-tracking-software",
+    image: "/images/unsplash/photo-1611532736597-de2d4265fba3-800w.webp",
+    imageAlt: "Time tracking app interface",
   },
   {
-    title: 'Pomodoro Technique for Remote Workers',
-    excerpt: 'Master the classic focus technique with structured work intervals.',
-    href: '/guides/pomodoro-technique-remote-workers',
-    image: '/images/unsplash/photo-1611532736597-de2d4265fba3-800w.webp',
-    imageAlt: 'Timer for Pomodoro technique'
+    title: "Pomodoro Technique for Remote Workers",
+    excerpt: "Master the classic focus technique with structured work intervals.",
+    href: "/guides/pomodoro-technique-remote-workers",
+    image: "/images/unsplash/photo-1611532736597-de2d4265fba3-800w.webp",
+    imageAlt: "Timer for Pomodoro technique",
   },
   {
-    title: 'Best Productivity Apps for Remote Workers',
-    excerpt: 'Essential tools to boost your efficiency and stay organized.',
-    href: '/tools/best-productivity-apps',
-    image: '/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp',
-    imageAlt: 'Productivity apps on laptop'
-  }
+    title: "Best Productivity Apps for Remote Workers",
+    excerpt: "Essential tools to boost your efficiency and stay organized.",
+    href: "/tools/best-productivity-apps",
+    image: "/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp",
+    imageAlt: "Productivity apps on laptop",
+  },
 ];
 ---
 

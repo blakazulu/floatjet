@@ -3,24 +3,16 @@
 interface Props {
   href: string;
   text: string;
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: "primary" | "secondary" | "ghost";
   program?: string;
   fullWidth?: boolean;
 }
 
-const {
-  href,
-  text,
-  variant = 'primary',
-  program,
-  fullWidth = false
-} = Astro.props;
+const { href, text, variant = "primary", program, fullWidth = false } = Astro.props;
 
-const classes = [
-  'cta-button',
-  `cta-${variant}`,
-  fullWidth ? 'full-width' : ''
-].filter(Boolean).join(' ');
+const classes = ["cta-button", `cta-${variant}`, fullWidth ? "full-width" : ""]
+  .filter(Boolean)
+  .join(" ");
 ---
 
 <a

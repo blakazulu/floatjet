@@ -1,123 +1,223 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Best Compact Desks for Small Home Offices (2025)';
-const description = 'Maximize your small workspace with these space-saving desks. We reviewed 8 compact desks for home offices with limited space without sacrificing quality.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Furniture';
-const categorySlug = 'gear';
+const title = "Best Compact Desks for Small Home Offices (2025)";
+const description =
+  "Maximize your small workspace with these space-saving desks. We reviewed 8 compact desks for home offices with limited space without sacrificing quality.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Furniture";
+const categorySlug = "gear";
 const readingTime = 14;
-const image = '/images/unsplash/photo-1593062096033-9a26b09da705-1200w.webp';
-const imageAlt = 'Compact desk setup in a small home office corner';
+const image = "/images/unsplash/photo-1593062096033-9a26b09da705-1200w.webp";
+const imageAlt = "Compact desk setup in a small home office corner";
 
 const headings = [
-  {text: 'Measure First', slug: 'measure-space', depth: 2},
-  {text: 'The Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Branch Duo Desk', slug: 'branch-duo', depth: 3},
-  {text: 'IKEA MICKE', slug: 'ikea-micke', depth: 3},
-  {text: 'Autonomous SmallDesk', slug: 'autonomous-smalldesk', depth: 3},
-  {text: 'Zinus Jennifer', slug: 'zinus-jennifer', depth: 3},
-  {text: 'Walker Edison Corner', slug: 'walker-edison-corner', depth: 3},
-  {text: 'ApexDesk Elite Compact', slug: 'apexdesk-compact', depth: 3},
-  {text: 'Prepac Floating Desk', slug: 'prepac-floating', depth: 3},
-  {text: 'FlexiSpot E7 Small', slug: 'flexispot-compact', depth: 3},
-  {text: 'Desk Types', slug: 'desk-types', depth: 2},
-  {text: 'Cable Management', slug: 'cable-management', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
+  { text: "Measure First", slug: "measure-space", depth: 2 },
+  { text: "The Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Branch Duo Desk", slug: "branch-duo", depth: 3 },
+  { text: "IKEA MICKE", slug: "ikea-micke", depth: 3 },
+  { text: "Autonomous SmallDesk", slug: "autonomous-smalldesk", depth: 3 },
+  { text: "Zinus Jennifer", slug: "zinus-jennifer", depth: 3 },
+  { text: "Walker Edison Corner", slug: "walker-edison-corner", depth: 3 },
+  { text: "ApexDesk Elite Compact", slug: "apexdesk-compact", depth: 3 },
+  { text: "Prepac Floating Desk", slug: "prepac-floating", depth: 3 },
+  { text: "FlexiSpot E7 Small", slug: "flexispot-compact", depth: 3 },
+  { text: "Desk Types", slug: "desk-types", depth: 2 },
+  { text: "Cable Management", slug: "cable-management", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
 ];
 
 const quickComparisonColumns = [
-  {key: 'desk', label: 'Desk', width: '150px'},
-  {key: 'bestFor', label: 'Best For'},
-  {key: 'dimensions', label: 'Dimensions'},
-  {key: 'price', label: 'Price'},
+  { key: "desk", label: "Desk", width: "150px" },
+  { key: "bestFor", label: "Best For" },
+  { key: "dimensions", label: "Dimensions" },
+  { key: "price", label: "Price" },
 ];
 
 const quickComparisonRows = [
-  {desk: '<strong>Branch Duo</strong>', bestFor: 'Minimal design', dimensions: '48" x 24"', price: '$349'},
-  {desk: '<strong>IKEA MICKE</strong>', bestFor: 'Best budget', dimensions: '41" x 20"', price: '$89'},
-  {desk: '<strong>Autonomous SmallDesk</strong>', bestFor: 'Compact standing', dimensions: '43" x 24"', price: '$349'},
-  {desk: '<strong>Zinus Jennifer</strong>', bestFor: 'Best value', dimensions: '47" x 24"', price: '$99'},
-  {desk: '<strong>Walker Edison Corner</strong>', bestFor: 'Corner spaces', dimensions: '56" x 44"', price: '$189'},
-  {desk: '<strong>ApexDesk Elite</strong>', bestFor: 'Standing compact', dimensions: '48" x 30"', price: '$449'},
-  {desk: '<strong>Prepac Floating</strong>', bestFor: 'Wall-mounted', dimensions: '42" x 20"', price: '$199'},
-  {desk: '<strong>FlexiSpot E7 48"</strong>', bestFor: 'Standing option', dimensions: '48" x 24"', price: '$479'},
+  {
+    desk: "<strong>Branch Duo</strong>",
+    bestFor: "Minimal design",
+    dimensions: '48" x 24"',
+    price: "$349",
+  },
+  {
+    desk: "<strong>IKEA MICKE</strong>",
+    bestFor: "Best budget",
+    dimensions: '41" x 20"',
+    price: "$89",
+  },
+  {
+    desk: "<strong>Autonomous SmallDesk</strong>",
+    bestFor: "Compact standing",
+    dimensions: '43" x 24"',
+    price: "$349",
+  },
+  {
+    desk: "<strong>Zinus Jennifer</strong>",
+    bestFor: "Best value",
+    dimensions: '47" x 24"',
+    price: "$99",
+  },
+  {
+    desk: "<strong>Walker Edison Corner</strong>",
+    bestFor: "Corner spaces",
+    dimensions: '56" x 44"',
+    price: "$189",
+  },
+  {
+    desk: "<strong>ApexDesk Elite</strong>",
+    bestFor: "Standing compact",
+    dimensions: '48" x 30"',
+    price: "$449",
+  },
+  {
+    desk: "<strong>Prepac Floating</strong>",
+    bestFor: "Wall-mounted",
+    dimensions: '42" x 20"',
+    price: "$199",
+  },
+  {
+    desk: '<strong>FlexiSpot E7 48"</strong>',
+    bestFor: "Standing option",
+    dimensions: '48" x 24"',
+    price: "$479",
+  },
 ];
 
 const fullComparisonColumns = [
-  {key: 'desk', label: 'Desk', width: '130px'},
-  {key: 'type', label: 'Type'},
-  {key: 'width', label: 'Width'},
-  {key: 'depth', label: 'Depth'},
-  {key: 'storage', label: 'Storage'},
-  {key: 'price', label: 'Price'},
+  { key: "desk", label: "Desk", width: "130px" },
+  { key: "type", label: "Type" },
+  { key: "width", label: "Width" },
+  { key: "depth", label: "Depth" },
+  { key: "storage", label: "Storage" },
+  { key: "price", label: "Price" },
 ];
 
 const fullComparisonRows = [
-  {desk: '<strong>Branch Duo</strong>', type: 'Standard', width: '48"', depth: '24"', storage: 'None', price: '$349'},
-  {desk: '<strong>IKEA MICKE</strong>', type: 'Standard', width: '41"', depth: '20"', storage: 'Drawer', price: '$89'},
-  {desk: '<strong>Autonomous</strong>', type: 'Standing', width: '43"', depth: '24"', storage: 'None', price: '$349'},
-  {desk: '<strong>Zinus</strong>', type: 'Standard', width: '47"', depth: '24"', storage: 'None', price: '$99'},
   {
-    desk: '<strong>Walker Edison</strong>',
-    type: 'Corner',
+    desk: "<strong>Branch Duo</strong>",
+    type: "Standard",
+    width: '48"',
+    depth: '24"',
+    storage: "None",
+    price: "$349",
+  },
+  {
+    desk: "<strong>IKEA MICKE</strong>",
+    type: "Standard",
+    width: '41"',
+    depth: '20"',
+    storage: "Drawer",
+    price: "$89",
+  },
+  {
+    desk: "<strong>Autonomous</strong>",
+    type: "Standing",
+    width: '43"',
+    depth: '24"',
+    storage: "None",
+    price: "$349",
+  },
+  {
+    desk: "<strong>Zinus</strong>",
+    type: "Standard",
+    width: '47"',
+    depth: '24"',
+    storage: "None",
+    price: "$99",
+  },
+  {
+    desk: "<strong>Walker Edison</strong>",
+    type: "Corner",
     width: '56"',
     depth: '44"',
-    storage: 'Shelves',
-    price: '$189'
+    storage: "Shelves",
+    price: "$189",
   },
-  {desk: '<strong>ApexDesk</strong>', type: 'Standing', width: '48"', depth: '30"', storage: 'None', price: '$449'},
-  {desk: '<strong>Prepac</strong>', type: 'Floating', width: '42"', depth: '20"', storage: 'Shelves', price: '$199'},
-  {desk: '<strong>FlexiSpot</strong>', type: 'Standing', width: '48"', depth: '24"', storage: 'None', price: '$479'},
+  {
+    desk: "<strong>ApexDesk</strong>",
+    type: "Standing",
+    width: '48"',
+    depth: '30"',
+    storage: "None",
+    price: "$449",
+  },
+  {
+    desk: "<strong>Prepac</strong>",
+    type: "Floating",
+    width: '42"',
+    depth: '20"',
+    storage: "Shelves",
+    price: "$199",
+  },
+  {
+    desk: "<strong>FlexiSpot</strong>",
+    type: "Standing",
+    width: '48"',
+    depth: '24"',
+    storage: "None",
+    price: "$479",
+  },
 ];
 
 const faqItems = [
   {
-    question: 'Minimum desk size?',
-    answer: 'Laptop with external monitor needs at least forty inches wide and twenty deep. Dual monitors? Forty-eight to fifty-five wide and twenty-four deep. Laptop only? Thirty inches wide works for occasional use.',
+    question: "Minimum desk size?",
+    answer:
+      "Laptop with external monitor needs at least forty inches wide and twenty deep. Dual monitors? Forty-eight to fifty-five wide and twenty-four deep. Laptop only? Thirty inches wide works for occasional use.",
   },
   {
-    question: 'Making a small desk feel bigger?',
-    answer: 'Monitor arms free up surface space. Mount stuff under the desk. Vertical storage. Only keep essentials on top. Wireless peripherals. Clean desk surface makes any desk feel more spacious.',
+    question: "Making a small desk feel bigger?",
+    answer:
+      "Monitor arms free up surface space. Mount stuff under the desk. Vertical storage. Only keep essentials on top. Wireless peripherals. Clean desk surface makes any desk feel more spacious.",
   },
   {
-    question: 'Corner desk for small room?',
-    answer: 'Corner desks use dead space but limit where you can put them. Work well if you have an empty corner and plan to keep the desk there forever. Regular rectangular desks give more flexibility if you might move things around later.',
+    question: "Corner desk for small room?",
+    answer:
+      "Corner desks use dead space but limit where you can put them. Work well if you have an empty corner and plan to keep the desk there forever. Regular rectangular desks give more flexibility if you might move things around later.",
   },
   {
-    question: 'Is twenty-four inches deep enough?',
-    answer: 'Yeah. Twenty-four inches works for most setups. Fits a monitor at proper viewing distance, keyboard, and mouse. Thirty inches deep only necessary for really large monitors or lots of paper-based work.',
+    question: "Is twenty-four inches deep enough?",
+    answer:
+      "Yeah. Twenty-four inches works for most setups. Fits a monitor at proper viewing distance, keyboard, and mouse. Thirty inches deep only necessary for really large monitors or lots of paper-based work.",
   },
   {
-    question: 'Standing desks in compact sizes?',
-    answer: 'Yep. Several brands make standing desks in forty-three to forty-eight inch widths. Autonomous SmallDesk and FlexiSpot E7 with forty-eight inch top are popular options. Work well in small spaces with full sit-stand capability.',
+    question: "Standing desks in compact sizes?",
+    answer:
+      "Yep. Several brands make standing desks in forty-three to forty-eight inch widths. Autonomous SmallDesk and FlexiSpot E7 with forty-eight inch top are popular options. Work well in small spaces with full sit-stand capability.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Standing Desks',
-    excerpt: 'Full-size standing desks for those with more space.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Modern standing desk in home office',
+    title: "Best Standing Desks",
+    excerpt: "Full-size standing desks for those with more space.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern standing desk in home office",
   },
   {
-    title: 'Best Ergonomic Chairs',
-    excerpt: 'Pair your compact desk with a comfortable ergonomic chair.',
-    href: '/gear/best-ergonomic-chairs',
-    image: '/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp',
-    imageAlt: 'Ergonomic office chair',
+    title: "Best Ergonomic Chairs",
+    excerpt: "Pair your compact desk with a comfortable ergonomic chair.",
+    href: "/gear/best-ergonomic-chairs",
+    image: "/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp",
+    imageAlt: "Ergonomic office chair",
   },
   {
-    title: 'Ultimate Home Office Setup',
-    excerpt: 'Complete guide to building a productive home office.',
-    href: '/blog/ultimate-home-office-setup',
-    image: '/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp',
-    imageAlt: 'Complete home office setup',
+    title: "Ultimate Home Office Setup",
+    excerpt: "Complete guide to building a productive home office.",
+    href: "/blog/ultimate-home-office-setup",
+    image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp",
+    imageAlt: "Complete home office setup",
   },
 ];
 ---

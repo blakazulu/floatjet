@@ -1,75 +1,82 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Best Coworking Spaces in Lisbon: Digital Nomad Guide';
-const description = 'Worked from twelve Lisbon coworking spaces. Here\'s where digital nomads actually get work done - fast wifi, good coffee, and reasonable monthly rates included.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-22');
+const title = "Best Coworking Spaces in Lisbon: Digital Nomad Guide";
+const description =
+  "Worked from twelve Lisbon coworking spaces. Here's where digital nomads actually get work done - fast wifi, good coffee, and reasonable monthly rates included.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-22");
 const readingTime = 13;
-const image = '/images/unsplash/photo-1497366216548-37526070297c-1200w.webp';
-const imageAlt = 'Modern coworking space with people working on laptops';
+const image = "/images/unsplash/photo-1497366216548-37526070297c-1200w.webp";
+const imageAlt = "Modern coworking space with people working on laptops";
 
 const headings = [
-  {depth: 2, slug: 'introduction', text: 'What the Scene Looks Like'},
-  {depth: 2, slug: 'top-coworking-spaces', text: 'Ten Spaces Worth Checking'},
-  {depth: 2, slug: 'comparison', text: 'How They Compare'},
-  {depth: 2, slug: 'day-pass-vs-monthly', text: 'Day Pass or Monthly?'},
-  {depth: 2, slug: 'neighborhoods', text: 'Neighborhoods'},
-  {depth: 2, slug: 'cafe-alternatives', text: 'Cafe Options'},
-  {depth: 2, slug: 'faq', text: 'Questions'}
+  { depth: 2, slug: "introduction", text: "What the Scene Looks Like" },
+  { depth: 2, slug: "top-coworking-spaces", text: "Ten Spaces Worth Checking" },
+  { depth: 2, slug: "comparison", text: "How They Compare" },
+  { depth: 2, slug: "day-pass-vs-monthly", text: "Day Pass or Monthly?" },
+  { depth: 2, slug: "neighborhoods", text: "Neighborhoods" },
+  { depth: 2, slug: "cafe-alternatives", text: "Cafe Options" },
+  { depth: 2, slug: "faq", text: "Questions" },
 ];
 
 const faqData = [
   {
-    question: 'What does coworking cost in Lisbon?',
-    answer: 'Day passes run fifteen to thirty euros. Monthly hot desk memberships cost one hundred to two hundred. Dedicated desks run two hundred to three fifty. Private offices start around four hundred to six hundred monthly for small teams. Neighborhood and amenities affect price.'
+    question: "What does coworking cost in Lisbon?",
+    answer:
+      "Day passes run fifteen to thirty euros. Monthly hot desk memberships cost one hundred to two hundred. Dedicated desks run two hundred to three fifty. Private offices start around four hundred to six hundred monthly for small teams. Neighborhood and amenities affect price.",
   },
   {
-    question: 'Need to book ahead?',
-    answer: 'Day passes usually walk-in works but booking helps during busy times. Monthly memberships need a tour and signup. Some popular spots have waitlists for dedicated desks.'
+    question: "Need to book ahead?",
+    answer:
+      "Day passes usually walk-in works but booking helps during busy times. Monthly memberships need a tour and signup. Some popular spots have waitlists for dedicated desks.",
   },
   {
-    question: 'WiFi speed?',
-    answer: 'Professional spaces typically have <a href="/guides/internet-speed-remote-work">one hundred to five hundred Mbps</a> symmetric fiber with backup. Test speed during a trial day before committing monthly.'
+    question: "WiFi speed?",
+    answer:
+      'Professional spaces typically have <a href="/guides/internet-speed-remote-work">one hundred to five hundred Mbps</a> symmetric fiber with backup. Test speed during a trial day before committing monthly.',
   },
   {
-    question: 'Can I take calls?',
-    answer: 'Most spaces have phone booths or meeting rooms. Hot desks in open areas work for quick calls but not great for long video meetings. Some have dedicated call zones.'
+    question: "Can I take calls?",
+    answer:
+      "Most spaces have phone booths or meeting rooms. Hot desks in open areas work for quick calls but not great for long video meetings. Some have dedicated call zones.",
   },
   {
-    question: 'Good for meeting people?',
-    answer: 'Definitely. Many Lisbon spaces host events and workshops and social stuff. Places like Second Home and Heden have strong communities. Great way to build a network.'
+    question: "Good for meeting people?",
+    answer:
+      "Definitely. Many Lisbon spaces host events and workshops and social stuff. Places like Second Home and Heden have strong communities. Great way to build a network.",
   },
   {
-    question: 'Just need workspace sometimes?',
-    answer: 'Day passes work perfectly. Some offer punch cards at ten days discounted or part-time memberships at ten to fifteen days monthly. Cafes are free but less reliable for long stretches.'
-  }
+    question: "Just need workspace sometimes?",
+    answer:
+      "Day passes work perfectly. Some offer punch cards at ten days discounted or part-time memberships at ten to fifteen days monthly. Cafes are free but less reliable for long stretches.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Portugal Digital Nomad Visa Guide',
-    excerpt: 'Everything you need to work legally from Lisbon.',
-    href: '/guides/digital-nomad-visa-portugal',
-    image: '/images/unsplash/photo-1555881400-74d7acaacd8b-800w.webp',
-    imageAlt: 'Lisbon Portugal cityscape'
+    title: "Portugal Digital Nomad Visa Guide",
+    excerpt: "Everything you need to work legally from Lisbon.",
+    href: "/guides/digital-nomad-visa-portugal",
+    image: "/images/unsplash/photo-1555881400-74d7acaacd8b-800w.webp",
+    imageAlt: "Lisbon Portugal cityscape",
   },
   {
-    title: 'Find Reliable WiFi Anywhere',
-    excerpt: 'Tips for finding fast internet while traveling.',
-    href: '/blog/find-reliable-wifi-anywhere',
-    image: '/images/unsplash/photo-1544197150-b99a580bb7a8-800w.webp',
-    imageAlt: 'WiFi connectivity concept'
+    title: "Find Reliable WiFi Anywhere",
+    excerpt: "Tips for finding fast internet while traveling.",
+    href: "/blog/find-reliable-wifi-anywhere",
+    image: "/images/unsplash/photo-1544197150-b99a580bb7a8-800w.webp",
+    imageAlt: "WiFi connectivity concept",
   },
   {
-    title: 'Top Destinations for Digital Nomads',
-    excerpt: 'Compare Lisbon with other nomad hotspots.',
-    href: '/blog/top-destinations-digital-nomads',
-    image: '/images/unsplash/photo-1488646953014-85cb44e25828-800w.webp',
-    imageAlt: 'World travel destinations'
-  }
+    title: "Top Destinations for Digital Nomads",
+    excerpt: "Compare Lisbon with other nomad hotspots.",
+    href: "/blog/top-destinations-digital-nomads",
+    image: "/images/unsplash/photo-1488646953014-85cb44e25828-800w.webp",
+    imageAlt: "World travel destinations",
+  },
 ];
 ---
 

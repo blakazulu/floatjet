@@ -1,208 +1,219 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Time Tracking Software for Freelancers (2025)';
-const description = 'I tested Toggl, Harvest, Clockify for freelancers. Here\'s which time tracking software works without micromanaging yourself into productivity hell daily.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Best Time Tracking Software for Freelancers (2025)";
+const description =
+  "I tested Toggl, Harvest, Clockify for freelancers. Here's which time tracking software works without micromanaging yourself into productivity hell daily.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 15;
-const image = '/images/unsplash/photo-1508962914676-134849a727f0-1200w.webp';
-const imageAlt = 'Timer and clock concept for time tracking productivity';
+const image = "/images/unsplash/photo-1508962914676-134849a727f0-1200w.webp";
+const imageAlt = "Timer and clock concept for time tracking productivity";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Why Freelancers Need Time Tracking', slug: 'why-time-tracking', depth: 2},
-  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Toggl Track', slug: 'toggl', depth: 3},
-  {text: 'Harvest', slug: 'harvest', depth: 3},
-  {text: 'Clockify', slug: 'clockify', depth: 3},
-  {text: 'Timely', slug: 'timely', depth: 3},
-  {text: 'RescueTime', slug: 'rescuetime', depth: 3},
-  {text: 'Paymo', slug: 'paymo', depth: 3},
-  {text: 'Hours', slug: 'hours', depth: 3},
-  {text: 'How to Choose', slug: 'how-to-choose', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Conclusion', slug: 'conclusion', depth: 2},
-  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why Freelancers Need Time Tracking", slug: "why-time-tracking", depth: 2 },
+  { text: "Detailed Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Toggl Track", slug: "toggl", depth: 3 },
+  { text: "Harvest", slug: "harvest", depth: 3 },
+  { text: "Clockify", slug: "clockify", depth: 3 },
+  { text: "Timely", slug: "timely", depth: 3 },
+  { text: "RescueTime", slug: "rescuetime", depth: 3 },
+  { text: "Paymo", slug: "paymo", depth: 3 },
+  { text: "Hours", slug: "hours", depth: 3 },
+  { text: "How to Choose", slug: "how-to-choose", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Conclusion", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'app', label: 'App', width: '120px'},
-  {key: 'bestFor', label: 'Best For', width: '150px'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
-  {key: 'action', label: ''},
+  { key: "app", label: "App", width: "120px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    app: '<strong>Toggl Track</strong>',
-    bestFor: 'Overall best',
-    price: 'Free / $10/mo',
-    rating: '9.5/10',
-    action: '<a href="/go/toggl" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Toggl Track</strong>",
+    bestFor: "Overall best",
+    price: "Free / $10/mo",
+    rating: "9.5/10",
+    action: '<a href="/go/toggl" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    app: '<strong>Harvest</strong>',
-    bestFor: 'Invoicing',
-    price: 'Free / $12/mo',
-    rating: '9.2/10',
-    action: '<a href="/go/harvest" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Harvest</strong>",
+    bestFor: "Invoicing",
+    price: "Free / $12/mo",
+    rating: "9.2/10",
+    action: '<a href="/go/harvest" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    app: '<strong>Clockify</strong>',
-    bestFor: 'Free unlimited',
-    price: 'Free',
-    rating: '9.0/10',
-    action: '<a href="/go/clockify" rel="nofollow sponsored">Start Free</a>'
+    app: "<strong>Clockify</strong>",
+    bestFor: "Free unlimited",
+    price: "Free",
+    rating: "9.0/10",
+    action: '<a href="/go/clockify" rel="nofollow sponsored">Start Free</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'app', label: 'App', width: '110px'},
-  {key: 'bestFor', label: 'Best For', width: '120px'},
-  {key: 'price', label: 'Price'},
-  {key: 'invoicing', label: 'Invoicing'},
-  {key: 'integrations', label: 'Integrations'},
-  {key: 'mobile', label: 'Mobile App'},
-  {key: 'action', label: ''},
+  { key: "app", label: "App", width: "110px" },
+  { key: "bestFor", label: "Best For", width: "120px" },
+  { key: "price", label: "Price" },
+  { key: "invoicing", label: "Invoicing" },
+  { key: "integrations", label: "Integrations" },
+  { key: "mobile", label: "Mobile App" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    app: '<strong>Toggl Track</strong>',
-    bestFor: 'Overall best',
-    price: 'Free / $10/mo',
-    invoicing: 'Via Toggl Invoice',
-    integrations: '100+',
-    mobile: '⭐⭐⭐⭐⭐',
-    action: '<a href="/go/toggl" rel="nofollow sponsored">Get Toggl</a>'
+    app: "<strong>Toggl Track</strong>",
+    bestFor: "Overall best",
+    price: "Free / $10/mo",
+    invoicing: "Via Toggl Invoice",
+    integrations: "100+",
+    mobile: "⭐⭐⭐⭐⭐",
+    action: '<a href="/go/toggl" rel="nofollow sponsored">Get Toggl</a>',
   },
   {
-    app: '<strong>Harvest</strong>',
-    bestFor: 'Invoicing',
-    price: 'Free / $12/mo',
+    app: "<strong>Harvest</strong>",
+    bestFor: "Invoicing",
+    price: "Free / $12/mo",
     invoicing: true,
-    integrations: '50+',
-    mobile: '⭐⭐⭐⭐⭐',
-    action: '<a href="/go/harvest" rel="nofollow sponsored">Get Harvest</a>'
+    integrations: "50+",
+    mobile: "⭐⭐⭐⭐⭐",
+    action: '<a href="/go/harvest" rel="nofollow sponsored">Get Harvest</a>',
   },
   {
-    app: '<strong>Clockify</strong>',
-    bestFor: 'Free option',
-    price: 'Free / $5/mo',
+    app: "<strong>Clockify</strong>",
+    bestFor: "Free option",
+    price: "Free / $5/mo",
     invoicing: true,
-    integrations: '80+',
-    mobile: '⭐⭐⭐⭐',
-    action: '<a href="/go/clockify" rel="nofollow sponsored">Get Clockify</a>'
+    integrations: "80+",
+    mobile: "⭐⭐⭐⭐",
+    action: '<a href="/go/clockify" rel="nofollow sponsored">Get Clockify</a>',
   },
   {
-    app: '<strong>Timely</strong>',
-    bestFor: 'Automatic tracking',
-    price: '$11/mo',
-    invoicing: 'Export only',
-    integrations: '40+',
-    mobile: '⭐⭐⭐⭐',
-    action: '<a href="/go/timely" rel="nofollow sponsored">Get Timely</a>'
+    app: "<strong>Timely</strong>",
+    bestFor: "Automatic tracking",
+    price: "$11/mo",
+    invoicing: "Export only",
+    integrations: "40+",
+    mobile: "⭐⭐⭐⭐",
+    action: '<a href="/go/timely" rel="nofollow sponsored">Get Timely</a>',
   },
   {
-    app: '<strong>RescueTime</strong>',
-    bestFor: 'Productivity insights',
-    price: 'Free / $12/mo',
+    app: "<strong>RescueTime</strong>",
+    bestFor: "Productivity insights",
+    price: "Free / $12/mo",
     invoicing: false,
-    integrations: '10+',
-    mobile: '⭐⭐⭐',
-    action: '<a href="/go/rescuetime" rel="nofollow sponsored">Get RescueTime</a>'
+    integrations: "10+",
+    mobile: "⭐⭐⭐",
+    action: '<a href="/go/rescuetime" rel="nofollow sponsored">Get RescueTime</a>',
   },
   {
-    app: '<strong>Paymo</strong>',
-    bestFor: 'Project management',
-    price: 'Free / $6/mo',
+    app: "<strong>Paymo</strong>",
+    bestFor: "Project management",
+    price: "Free / $6/mo",
     invoicing: true,
-    integrations: '25+',
-    mobile: '⭐⭐⭐⭐',
-    action: '<a href="/go/paymo" rel="nofollow sponsored">Get Paymo</a>'
+    integrations: "25+",
+    mobile: "⭐⭐⭐⭐",
+    action: '<a href="/go/paymo" rel="nofollow sponsored">Get Paymo</a>',
   },
   {
-    app: '<strong>Hours</strong>',
-    bestFor: 'Apple users',
-    price: '$8/mo',
-    invoicing: 'Basic',
-    integrations: '5',
-    mobile: '⭐⭐⭐⭐⭐',
-    action: '<a href="/go/hours" rel="nofollow sponsored">Get Hours</a>'
+    app: "<strong>Hours</strong>",
+    bestFor: "Apple users",
+    price: "$8/mo",
+    invoicing: "Basic",
+    integrations: "5",
+    mobile: "⭐⭐⭐⭐⭐",
+    action: '<a href="/go/hours" rel="nofollow sponsored">Get Hours</a>',
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'What is the best free time tracking app for freelancers?',
-    answer: '<p><strong>Clockify</strong> is the best free time tracking app, offering unlimited tracking, unlimited users, and unlimited projects at no cost. The free tier includes most features you need: timer, manual entry, reports, and integrations.</p><p><strong>Toggl Track</strong> also offers a solid free tier for up to 5 users with core tracking features. For solo freelancers, either works well. Clockify\'s free tier is more generous for growing teams.</p>'
+    question: "What is the best free time tracking app for freelancers?",
+    answer:
+      "<p><strong>Clockify</strong> is the best free time tracking app, offering unlimited tracking, unlimited users, and unlimited projects at no cost. The free tier includes most features you need: timer, manual entry, reports, and integrations.</p><p><strong>Toggl Track</strong> also offers a solid free tier for up to 5 users with core tracking features. For solo freelancers, either works well. Clockify's free tier is more generous for growing teams.</p>",
   },
   {
-    question: 'How do freelancers track billable hours accurately?',
-    answer: '<p>The most accurate method is <strong>real-time tracking</strong>—start a timer when you begin work, stop when you\'re done. Apps like Toggl and Harvest make this effortless with one-click timers and browser extensions.</p><p>For those who forget timers, <strong>Timely</strong> offers automatic tracking that runs in the background and logs app/website usage. You review the timeline later and categorize time into projects. This captures time you\'d otherwise miss.</p>'
+    question: "How do freelancers track billable hours accurately?",
+    answer:
+      "<p>The most accurate method is <strong>real-time tracking</strong>—start a timer when you begin work, stop when you're done. Apps like Toggl and Harvest make this effortless with one-click timers and browser extensions.</p><p>For those who forget timers, <strong>Timely</strong> offers automatic tracking that runs in the background and logs app/website usage. You review the timeline later and categorize time into projects. This captures time you'd otherwise miss.</p>",
   },
   {
-    question: 'Should freelancers bill hourly or fixed-price?',
-    answer: '<p>Both have their place. <strong>Hourly billing</strong> is safer when scope is unclear—you get paid for all time worked. It\'s transparent and fair for open-ended projects. Time tracking apps make hourly billing straightforward.</p><p><strong>Fixed-price</strong> rewards efficiency—finish faster, earn more per hour. It\'s better for well-defined projects where you can estimate accurately. Even with fixed-price, track time internally to understand your actual hourly rate and improve estimates.</p>'
+    question: "Should freelancers bill hourly or fixed-price?",
+    answer:
+      "<p>Both have their place. <strong>Hourly billing</strong> is safer when scope is unclear—you get paid for all time worked. It's transparent and fair for open-ended projects. Time tracking apps make hourly billing straightforward.</p><p><strong>Fixed-price</strong> rewards efficiency—finish faster, earn more per hour. It's better for well-defined projects where you can estimate accurately. Even with fixed-price, track time internally to understand your actual hourly rate and improve estimates.</p>",
   },
   {
-    question: 'Can time tracking apps integrate with invoicing software?',
-    answer: '<p>Yes, most time trackers integrate with invoicing tools. <strong>Harvest</strong> has best-in-class built-in invoicing—tracked time converts to invoices seamlessly. <strong>Toggl</strong> integrates with Toggl Invoice and third-party tools like QuickBooks, FreshBooks, and Xero.</p><p><strong>Clockify</strong> also includes invoicing in its free tier. For complex accounting needs, look for integrations with your existing accounting software rather than switching.</p>'
+    question: "Can time tracking apps integrate with invoicing software?",
+    answer:
+      "<p>Yes, most time trackers integrate with invoicing tools. <strong>Harvest</strong> has best-in-class built-in invoicing—tracked time converts to invoices seamlessly. <strong>Toggl</strong> integrates with Toggl Invoice and third-party tools like QuickBooks, FreshBooks, and Xero.</p><p><strong>Clockify</strong> also includes invoicing in its free tier. For complex accounting needs, look for integrations with your existing accounting software rather than switching.</p>",
   },
   {
-    question: 'What is automatic time tracking and is it accurate?',
-    answer: '<p><strong>Automatic time tracking</strong> runs in the background, logging which apps, websites, and documents you use throughout the day. <strong>Timely</strong> and <strong>RescueTime</strong> lead in this category.</p><p>Accuracy depends on your work style. If you work primarily on computers, automatic tracking captures nearly everything. However, you\'ll still need to review and categorize time, especially for distinguishing between client projects or separating work from personal use.</p>'
+    question: "What is automatic time tracking and is it accurate?",
+    answer:
+      "<p><strong>Automatic time tracking</strong> runs in the background, logging which apps, websites, and documents you use throughout the day. <strong>Timely</strong> and <strong>RescueTime</strong> lead in this category.</p><p>Accuracy depends on your work style. If you work primarily on computers, automatic tracking captures nearly everything. However, you'll still need to review and categorize time, especially for distinguishing between client projects or separating work from personal use.</p>",
   },
   {
-    question: 'How do I track time across multiple clients and projects?',
-    answer: '<p>Good time trackers organize by <strong>client → project → task</strong> hierarchy. Set up clients first, then create projects under each client. When tracking, select the specific project. Apps like Toggl, Harvest, and Clockify all support this structure.</p><p>Use <strong>tags</strong> for additional categorization—meeting vs. coding vs. admin. This helps with reporting and understanding where time actually goes across your business.</p>'
+    question: "How do I track time across multiple clients and projects?",
+    answer:
+      "<p>Good time trackers organize by <strong>client → project → task</strong> hierarchy. Set up clients first, then create projects under each client. When tracking, select the specific project. Apps like Toggl, Harvest, and Clockify all support this structure.</p><p>Use <strong>tags</strong> for additional categorization—meeting vs. coding vs. admin. This helps with reporting and understanding where time actually goes across your business.</p>",
   },
   {
-    question: 'What reports should freelancers generate from time tracking?',
-    answer: '<p>Key reports for freelancers include: <strong>Weekly/monthly client summaries</strong> (for invoicing), <strong>project profitability</strong> (actual hours vs. quoted), <strong>time by category</strong> (billable vs. admin), and <strong>daily patterns</strong> (when you\'re most productive).</p><p>Use reports to identify unprofitable clients, scope creep on fixed-price projects, and time leaks to non-billable work. Regular review turns time data into business intelligence.</p>'
+    question: "What reports should freelancers generate from time tracking?",
+    answer:
+      "<p>Key reports for freelancers include: <strong>Weekly/monthly client summaries</strong> (for invoicing), <strong>project profitability</strong> (actual hours vs. quoted), <strong>time by category</strong> (billable vs. admin), and <strong>daily patterns</strong> (when you're most productive).</p><p>Use reports to identify unprofitable clients, scope creep on fixed-price projects, and time leaks to non-billable work. Regular review turns time data into business intelligence.</p>",
   },
   {
-    question: 'Do I need to track non-billable time too?',
-    answer: '<p><strong>Yes, absolutely.</strong> Tracking non-billable time (admin, marketing, learning, breaks) reveals your true hourly rate. If you bill 30 hours but work 50, your effective rate is 40% lower than your billable rate.</p><p>This data helps you price projects accurately, identify tasks to delegate or eliminate, and maintain work-life balance by seeing total hours worked. The goal is increasing your billable percentage over time.</p>'
-  }
+    question: "Do I need to track non-billable time too?",
+    answer:
+      "<p><strong>Yes, absolutely.</strong> Tracking non-billable time (admin, marketing, learning, breaks) reveals your true hourly rate. If you bill 30 hours but work 50, your effective rate is 40% lower than your billable rate.</p><p>This data helps you price projects accurately, identify tasks to delegate or eliminate, and maintain work-life balance by seeing total hours worked. The goal is increasing your billable percentage over time.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Productivity Apps for Remote Workers',
-    excerpt: 'Compare Notion, Todoist, Obsidian and more to boost your remote work productivity.',
-    href: '/tools/best-productivity-apps',
-    image: '/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp',
-    imageAlt: 'Organized workspace with productivity tools'
+    title: "Best Productivity Apps for Remote Workers",
+    excerpt: "Compare Notion, Todoist, Obsidian and more to boost your remote work productivity.",
+    href: "/tools/best-productivity-apps",
+    image: "/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp",
+    imageAlt: "Organized workspace with productivity tools",
   },
   {
-    title: 'Best Project Management Software for Remote Teams',
-    excerpt: 'Find the perfect PM tool for your distributed team with our comprehensive comparison.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Project management dashboard on laptop'
+    title: "Best Project Management Software for Remote Teams",
+    excerpt:
+      "Find the perfect PM tool for your distributed team with our comprehensive comparison.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Project management dashboard on laptop",
   },
   {
-    title: 'Tax Tips for Remote Workers & Freelancers',
-    excerpt: 'Navigate freelance taxes with confidence using these essential strategies and deductions.',
-    href: '/blog/tax-tips-remote-workers',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Tax documents and calculator on desk'
-  }
+    title: "Tax Tips for Remote Workers & Freelancers",
+    excerpt:
+      "Navigate freelance taxes with confidence using these essential strategies and deductions.",
+    href: "/blog/tax-tips-remote-workers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Tax documents and calculator on desk",
+  },
 ];
 ---
 

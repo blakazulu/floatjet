@@ -1,199 +1,210 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best VPNs for Digital Nomads & Remote Workers (2025)';
-const description = 'I tested 12 VPNs across 15 countries to find the best for digital nomads. NordVPN, ExpressVPN, Surfshark compared with real speed tests and honest takes.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-22');
+const title = "Best VPNs for Digital Nomads & Remote Workers (2025)";
+const description =
+  "I tested 12 VPNs across 15 countries to find the best for digital nomads. NordVPN, ExpressVPN, Surfshark compared with real speed tests and honest takes.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-22");
 const readingTime = 15;
-const image = '/images/unsplash/photo-1526374965328-7f61d4dc18c5-1200w.webp';
-const imageAlt = 'Digital security concept with encrypted data visualization';
+const image = "/images/unsplash/photo-1526374965328-7f61d4dc18c5-1200w.webp";
+const imageAlt = "Digital security concept with encrypted data visualization";
 
 // Table of contents headings
 const headings = [
-  {text: 'Why You Need a VPN', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Why You Actually Need One', slug: 'why-vpn', depth: 2},
-  {text: 'The Ones Worth Getting', slug: 'detailed-reviews', depth: 2},
-  {text: 'NordVPN', slug: 'nordvpn', depth: 3},
-  {text: 'Surfshark', slug: 'surfshark', depth: 3},
-  {text: 'ExpressVPN', slug: 'expressvpn', depth: 3},
-  {text: 'CyberGhost', slug: 'cyberghost', depth: 3},
-  {text: 'ProtonVPN', slug: 'protonvpn', depth: 3},
-  {text: 'Private Internet Access', slug: 'pia', depth: 3},
-  {text: 'Which One Should You Get', slug: 'how-to-choose', depth: 2},
-  {text: 'Quick Setup Notes', slug: 'setup-guide', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Bottom Line', slug: 'conclusion', depth: 2},
-  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+  { text: "Why You Need a VPN", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why You Actually Need One", slug: "why-vpn", depth: 2 },
+  { text: "The Ones Worth Getting", slug: "detailed-reviews", depth: 2 },
+  { text: "NordVPN", slug: "nordvpn", depth: 3 },
+  { text: "Surfshark", slug: "surfshark", depth: 3 },
+  { text: "ExpressVPN", slug: "expressvpn", depth: 3 },
+  { text: "CyberGhost", slug: "cyberghost", depth: 3 },
+  { text: "ProtonVPN", slug: "protonvpn", depth: 3 },
+  { text: "Private Internet Access", slug: "pia", depth: 3 },
+  { text: "Which One Should You Get", slug: "how-to-choose", depth: 2 },
+  { text: "Quick Setup Notes", slug: "setup-guide", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Bottom Line", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'vpn', label: 'VPN', width: '120px'},
-  {key: 'bestFor', label: 'Best For', width: '150px'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
-  {key: 'action', label: ''},
+  { key: "vpn", label: "VPN", width: "120px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    vpn: '<strong>NordVPN</strong>',
-    bestFor: 'Overall security',
-    price: '$3.39/mo',
-    rating: '9.6/10',
-    action: '<a href="/go/nordvpn" rel="nofollow sponsored">Get 68% Off</a>'
+    vpn: "<strong>NordVPN</strong>",
+    bestFor: "Overall security",
+    price: "$3.39/mo",
+    rating: "9.6/10",
+    action: '<a href="/go/nordvpn" rel="nofollow sponsored">Get 68% Off</a>',
   },
   {
-    vpn: '<strong>Surfshark</strong>',
-    bestFor: 'Best value overall',
-    price: '$2.49/mo',
-    rating: '9.4/10',
-    action: '<a href="/go/surfshark" rel="nofollow sponsored">Get 81% Off</a>'
+    vpn: "<strong>Surfshark</strong>",
+    bestFor: "Best value overall",
+    price: "$2.49/mo",
+    rating: "9.4/10",
+    action: '<a href="/go/surfshark" rel="nofollow sponsored">Get 81% Off</a>',
   },
   {
-    vpn: '<strong>ExpressVPN</strong>',
-    bestFor: 'Premium speed',
-    price: '$6.67/mo',
-    rating: '9.2/10',
-    action: '<a href="/go/expressvpn" rel="nofollow sponsored">Try Risk-Free</a>'
+    vpn: "<strong>ExpressVPN</strong>",
+    bestFor: "Premium speed",
+    price: "$6.67/mo",
+    rating: "9.2/10",
+    action: '<a href="/go/expressvpn" rel="nofollow sponsored">Try Risk-Free</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'vpn', label: 'VPN', width: '110px'},
-  {key: 'bestFor', label: 'Best For', width: '130px'},
-  {key: 'price', label: 'Monthly Price'},
-  {key: 'servers', label: 'Servers'},
-  {key: 'devices', label: 'Devices'},
-  {key: 'streaming', label: 'Streaming'},
-  {key: 'action', label: ''},
+  { key: "vpn", label: "VPN", width: "110px" },
+  { key: "bestFor", label: "Best For", width: "130px" },
+  { key: "price", label: "Monthly Price" },
+  { key: "servers", label: "Servers" },
+  { key: "devices", label: "Devices" },
+  { key: "streaming", label: "Streaming" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    vpn: '<strong>NordVPN</strong>',
-    bestFor: 'Overall security',
-    price: '$3.39/mo (2yr)',
-    servers: '6,000+ in 111 countries',
-    devices: '10',
+    vpn: "<strong>NordVPN</strong>",
+    bestFor: "Overall security",
+    price: "$3.39/mo (2yr)",
+    servers: "6,000+ in 111 countries",
+    devices: "10",
     streaming: true,
-    action: '<a href="/go/nordvpn" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/nordvpn" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    vpn: '<strong>Surfshark</strong>',
-    bestFor: 'Best value',
-    price: '$2.49/mo (2yr)',
-    servers: '3,200+ in 100 countries',
-    devices: 'Unlimited',
+    vpn: "<strong>Surfshark</strong>",
+    bestFor: "Best value",
+    price: "$2.49/mo (2yr)",
+    servers: "3,200+ in 100 countries",
+    devices: "Unlimited",
     streaming: true,
-    action: '<a href="/go/surfshark" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/surfshark" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    vpn: '<strong>ExpressVPN</strong>',
-    bestFor: 'Premium speed',
-    price: '$6.67/mo (1yr)',
-    servers: '3,000+ in 105 countries',
-    devices: '8',
+    vpn: "<strong>ExpressVPN</strong>",
+    bestFor: "Premium speed",
+    price: "$6.67/mo (1yr)",
+    servers: "3,000+ in 105 countries",
+    devices: "8",
     streaming: true,
-    action: '<a href="/go/expressvpn" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/expressvpn" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    vpn: '<strong>CyberGhost</strong>',
-    bestFor: 'Streaming',
-    price: '$2.19/mo (2yr)',
-    servers: '11,000+ in 100 countries',
-    devices: '7',
+    vpn: "<strong>CyberGhost</strong>",
+    bestFor: "Streaming",
+    price: "$2.19/mo (2yr)",
+    servers: "11,000+ in 100 countries",
+    devices: "7",
     streaming: true,
-    action: '<a href="/go/cyberghost" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/cyberghost" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    vpn: '<strong>ProtonVPN</strong>',
-    bestFor: 'Privacy',
-    price: '$4.99/mo (2yr)',
-    servers: '4,600+ in 91 countries',
-    devices: '10',
+    vpn: "<strong>ProtonVPN</strong>",
+    bestFor: "Privacy",
+    price: "$4.99/mo (2yr)",
+    servers: "4,600+ in 91 countries",
+    devices: "10",
     streaming: true,
-    action: '<a href="/go/protonvpn" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/protonvpn" rel="nofollow sponsored">Get Deal</a>',
   },
   {
-    vpn: '<strong>PIA</strong>',
-    bestFor: 'Value',
-    price: '$2.19/mo (3yr)',
-    servers: '35,000+ in 91 countries',
-    devices: 'Unlimited',
+    vpn: "<strong>PIA</strong>",
+    bestFor: "Value",
+    price: "$2.19/mo (3yr)",
+    servers: "35,000+ in 91 countries",
+    devices: "Unlimited",
     streaming: true,
-    action: '<a href="/go/pia" rel="nofollow sponsored">Get Deal</a>'
+    action: '<a href="/go/pia" rel="nofollow sponsored">Get Deal</a>',
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Do I actually need a VPN for remote work?',
-    answer: '<p>If you ever use public WiFi—and you will—yes. Your data is exposed without one. Beyond security, VPNs solve practical problems like accessing your bank and keeping your streaming subscriptions working abroad. Many companies now require VPN usage in their remote work policies anyway.</p>'
+    question: "Do I actually need a VPN for remote work?",
+    answer:
+      "<p>If you ever use public WiFi—and you will—yes. Your data is exposed without one. Beyond security, VPNs solve practical problems like accessing your bank and keeping your streaming subscriptions working abroad. Many companies now require VPN usage in their remote work policies anyway.</p>",
   },
   {
-    question: 'Will it make my internet slow?',
-    answer: '<p>Modern VPNs barely impact speed. We\'re talking 10-20% on a good connection. With decent baseline internet (50+ Mbps), you won\'t notice during normal use. Video calls, streaming, file uploads—all fine. Just connect to a server reasonably close to your physical location.</p>'
+    question: "Will it make my internet slow?",
+    answer:
+      "<p>Modern VPNs barely impact speed. We're talking 10-20% on a good connection. With decent baseline internet (50+ Mbps), you won't notice during normal use. Video calls, streaming, file uploads—all fine. Just connect to a server reasonably close to your physical location.</p>",
   },
   {
-    question: 'Do they work with Netflix?',
-    answer: '<p>All six I\'ve recommended do. NordVPN, ExpressVPN, and Surfshark are the most consistent in my testing. You connect to a server in whatever country\'s library you want, and streaming services think you\'re there. Simple.</p>'
+    question: "Do they work with Netflix?",
+    answer:
+      "<p>All six I've recommended do. NordVPN, ExpressVPN, and Surfshark are the most consistent in my testing. You connect to a server in whatever country's library you want, and streaming services think you're there. Simple.</p>",
   },
   {
-    question: 'What about free VPNs?',
-    answer: '<p>Avoid them. Free VPNs make money somehow, and usually it\'s by logging and selling your browsing data. That\'s literally the opposite of what a VPN should do. They also have brutal speed limits and data caps. ProtonVPN\'s free tier is the one exception—it\'s from a legit company and doesn\'t have data caps.</p>'
+    question: "What about free VPNs?",
+    answer:
+      "<p>Avoid them. Free VPNs make money somehow, and usually it's by logging and selling your browsing data. That's literally the opposite of what a VPN should do. They also have brutal speed limits and data caps. ProtonVPN's free tier is the one exception—it's from a legit company and doesn't have data caps.</p>",
   },
   {
-    question: 'Which VPN works in China?',
-    answer: '<p>ExpressVPN and NordVPN. Both have obfuscation features that disguise VPN traffic as regular browsing. ExpressVPN is slightly more reliable in my experience, but NordVPN works too. Download and configure whichever you choose BEFORE entering China—the app stores block VPN apps there.</p>'
+    question: "Which VPN works in China?",
+    answer:
+      "<p>ExpressVPN and NordVPN. Both have obfuscation features that disguise VPN traffic as regular browsing. ExpressVPN is slightly more reliable in my experience, but NordVPN works too. Download and configure whichever you choose BEFORE entering China—the app stores block VPN apps there.</p>",
   },
   {
-    question: 'How many devices can I connect?',
-    answer: '<p>Depends on the provider. Surfshark and PIA: unlimited. NordVPN and ProtonVPN: 10. ExpressVPN: 8. CyberGhost: 7. For most people, even 7 is plenty—laptop, phone, tablet, maybe a backup device.</p>'
+    question: "How many devices can I connect?",
+    answer:
+      "<p>Depends on the provider. Surfshark and PIA: unlimited. NordVPN and ProtonVPN: 10. ExpressVPN: 8. CyberGhost: 7. For most people, even 7 is plenty—laptop, phone, tablet, maybe a backup device.</p>",
   },
   {
-    question: 'What\'s a kill switch? Do I need it?',
-    answer: '<p>A kill switch cuts your internet connection if the VPN drops unexpectedly. This prevents your real IP and unencrypted traffic from leaking out. Yes, you need it enabled. All these VPNs have it—just make sure it\'s turned on in settings.</p>'
+    question: "What's a kill switch? Do I need it?",
+    answer:
+      "<p>A kill switch cuts your internet connection if the VPN drops unexpectedly. This prevents your real IP and unencrypted traffic from leaking out. Yes, you need it enabled. All these VPNs have it—just make sure it's turned on in settings.</p>",
   },
   {
-    question: 'Can my boss see what I\'m doing?',
-    answer: '<p>Not through a personal VPN on your own device. Your traffic is encrypted end-to-end. But if you\'re using company equipment or their corporate VPN, they might have monitoring software installed locally. VPN can\'t help with that. Check your company\'s policies if you\'re unsure.</p>'
-  }
+    question: "Can my boss see what I'm doing?",
+    answer:
+      "<p>Not through a personal VPN on your own device. Your traffic is encrypted end-to-end. But if you're using company equipment or their corporate VPN, they might have monitoring software installed locally. VPN can't help with that. Check your company's policies if you're unsure.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Project Management Software for Remote Teams',
-    excerpt: 'Compare Notion, ClickUp, Asana, and more to find the perfect PM tool for your distributed team.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Modern workspace with laptop displaying project management dashboard'
+    title: "Best Project Management Software for Remote Teams",
+    excerpt:
+      "Compare Notion, ClickUp, Asana, and more to find the perfect PM tool for your distributed team.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Modern workspace with laptop displaying project management dashboard",
   },
   {
-    title: 'Best Team Communication Tools',
-    excerpt: 'Keep your distributed team connected with these top-rated communication and collaboration platforms.',
-    href: '/blog/best-team-communication-tools',
-    image: '/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp',
-    imageAlt: 'Remote team on video call'
+    title: "Best Team Communication Tools",
+    excerpt:
+      "Keep your distributed team connected with these top-rated communication and collaboration platforms.",
+    href: "/blog/best-team-communication-tools",
+    image: "/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp",
+    imageAlt: "Remote team on video call",
   },
   {
-    title: 'Find Reliable WiFi Anywhere',
-    excerpt: 'Essential tips for finding fast, reliable internet as a digital nomad.',
-    href: '/blog/find-reliable-wifi-anywhere',
-    image: '/images/unsplash/photo-1488190211105-8b0e65b80b4e-800w.webp',
-    imageAlt: 'Digital nomad working from cafe with laptop'
-  }
+    title: "Find Reliable WiFi Anywhere",
+    excerpt: "Essential tips for finding fast, reliable internet as a digital nomad.",
+    href: "/blog/find-reliable-wifi-anywhere",
+    image: "/images/unsplash/photo-1488190211105-8b0e65b80b4e-800w.webp",
+    imageAlt: "Digital nomad working from cafe with laptop",
+  },
 ];
 ---
 

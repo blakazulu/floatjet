@@ -1,90 +1,99 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Multi-Currency Banking for Digital Nomads (2025)';
-const description = 'Hold and manage multiple currencies with one account. Compare Wise, Revolut, Payoneer, and N26 for digital nomads who earn and spend globally without high fees.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Multi-Currency Banking for Digital Nomads (2025)";
+const description =
+  "Hold and manage multiple currencies with one account. Compare Wise, Revolut, Payoneer, and N26 for digital nomads who earn and spend globally without high fees.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 13;
-const image = '/images/unsplash/photo-1580519542036-c47de6196ba5-1200w.webp';
-const imageAlt = 'Multiple currency bills representing multi-currency banking';
+const image = "/images/unsplash/photo-1580519542036-c47de6196ba5-1200w.webp";
+const imageAlt = "Multiple currency bills representing multi-currency banking";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Why Your Regular Bank Keeps Draining You', slug: 'traditional-banks', depth: 2},
-  {text: 'The Services Actually Worth Using', slug: 'best-accounts', depth: 2},
-  {text: 'Feature Comparison', slug: 'comparison', depth: 2},
-  {text: 'What the Rates and Fees Actually Mean', slug: 'fees', depth: 2},
-  {text: 'Cards and How to Use Them', slug: 'debit-cards', depth: 2},
-  {text: 'Where Each Service Actually Works', slug: 'availability', depth: 2},
-  {text: 'Building Your Setup', slug: 'system-setup', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Why Your Regular Bank Keeps Draining You", slug: "traditional-banks", depth: 2 },
+  { text: "The Services Actually Worth Using", slug: "best-accounts", depth: 2 },
+  { text: "Feature Comparison", slug: "comparison", depth: 2 },
+  { text: "What the Rates and Fees Actually Mean", slug: "fees", depth: 2 },
+  { text: "Cards and How to Use Them", slug: "debit-cards", depth: 2 },
+  { text: "Where Each Service Actually Works", slug: "availability", depth: 2 },
+  { text: "Building Your Setup", slug: "system-setup", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Should I close my regular bank account?',
-    answer: '<p>Not really, and honestly you probably shouldn\'t. That home account handles tax payments, government stuff, keeping your credit history alive, emergency access, and all those subscriptions with direct debits attached. Think of multi-currency accounts as additions to your setup, not replacements.</p>'
+    question: "Should I close my regular bank account?",
+    answer:
+      "<p>Not really, and honestly you probably shouldn't. That home account handles tax payments, government stuff, keeping your credit history alive, emergency access, and all those subscriptions with direct debits attached. Think of multi-currency accounts as additions to your setup, not replacements.</p>",
   },
   {
-    question: 'Which service has the fairest rates?',
-    answer: '<p>Wise pretty consistently lands closest to actual market prices. Their fees stay transparent and typically total around half a percent for common currencies. Revolut matches them on weekdays but adds markup over weekends. Traditional banks? Usually charging 2-4% buried in their rates where you won\'t spot it.</p>'
+    question: "Which service has the fairest rates?",
+    answer:
+      "<p>Wise pretty consistently lands closest to actual market prices. Their fees stay transparent and typically total around half a percent for common currencies. Revolut matches them on weekdays but adds markup over weekends. Traditional banks? Usually charging 2-4% buried in their rates where you won't spot it.</p>",
   },
   {
-    question: 'Can clients pay me in different currencies?',
-    answer: '<p>That\'s kind of the whole point. Wise and Payoneer give you local bank details across multiple countries. American clients pay your US account. British clients pay your UK account. European clients pay your euro account. Money arrives in whatever currency they sent. You decide when to convert instead of getting forced into bad rates.</p>'
+    question: "Can clients pay me in different currencies?",
+    answer:
+      "<p>That's kind of the whole point. Wise and Payoneer give you local bank details across multiple countries. American clients pay your US account. British clients pay your UK account. European clients pay your euro account. Money arrives in whatever currency they sent. You decide when to convert instead of getting forced into bad rates.</p>",
   },
   {
-    question: 'Are these accounts actually safe?',
-    answer: '<p>The reputable ones are properly regulated financial institutions. Wise holds authorization from financial regulators in the UK, US, EU, and elsewhere, with funds kept in safeguarded accounts. Revolut has an EU banking license and some deposit protection. Payoneer is licensed as a money transmitter across US states and regulated in the EU and UK.</p><p>They\'re not traditional banks with FDIC insurance unless specifically mentioned, but they\'re overseen by real regulators and have been around long enough to trust.</p>'
+    question: "Are these accounts actually safe?",
+    answer:
+      "<p>The reputable ones are properly regulated financial institutions. Wise holds authorization from financial regulators in the UK, US, EU, and elsewhere, with funds kept in safeguarded accounts. Revolut has an EU banking license and some deposit protection. Payoneer is licensed as a money transmitter across US states and regulated in the EU and UK.</p><p>They're not traditional banks with FDIC insurance unless specifically mentioned, but they're overseen by real regulators and have been around long enough to trust.</p>",
   },
   {
-    question: 'What happens with taxes?',
-    answer: '<p>Where you bank doesn\'t change what you owe. Taxes follow your residency, not account location. All worldwide income gets reported regardless of currency. Americans with foreign accounts totaling over ten grand need to file that FBAR thing. Convert everything to your reporting currency using whatever rates your tax authority specifies.</p><p>See our <a href="/blog/tax-tips-remote-workers">tax tips for remote workers</a> for detailed guidance.</p>'
+    question: "What happens with taxes?",
+    answer:
+      '<p>Where you bank doesn\'t change what you owe. Taxes follow your residency, not account location. All worldwide income gets reported regardless of currency. Americans with foreign accounts totaling over ten grand need to file that FBAR thing. Convert everything to your reporting currency using whatever rates your tax authority specifies.</p><p>See our <a href="/blog/tax-tips-remote-workers">tax tips for remote workers</a> for detailed guidance.</p>',
   },
   {
-    question: 'What about getting cash in random countries?',
-    answer: '<p>ATM policies differ:</p><p>Wise lets you pull around two hundred to four hundred free monthly depending on your country, then charges 1.75% after. Revolut\'s free withdrawal limits depend on which plan you\'re paying for. N26 gives free eurozone withdrawals but charges outside that zone.</p><p>If you burn through a lot of cash, consider a travel credit card that reimburses ATM fees as backup.</p>'
+    question: "What about getting cash in random countries?",
+    answer:
+      "<p>ATM policies differ:</p><p>Wise lets you pull around two hundred to four hundred free monthly depending on your country, then charges 1.75% after. Revolut's free withdrawal limits depend on which plan you're paying for. N26 gives free eurozone withdrawals but charges outside that zone.</p><p>If you burn through a lot of cash, consider a travel credit card that reimburses ATM fees as backup.</p>",
   },
   {
-    question: 'Can I hold crypto in these accounts?',
-    answer: '<p>Some platforms dabble in it. Revolut lets you buy, hold, and sell crypto right in their app. PayPal offers crypto trading in certain countries. Wise and Payoneer don\'t touch crypto at all.</p><p>For anything beyond casual trading, dedicated exchanges like Coinbase or Kraken generally offer better rates and more features.</p>'
+    question: "Can I hold crypto in these accounts?",
+    answer:
+      "<p>Some platforms dabble in it. Revolut lets you buy, hold, and sell crypto right in their app. PayPal offers crypto trading in certain countries. Wise and Payoneer don't touch crypto at all.</p><p>For anything beyond casual trading, dedicated exchanges like Coinbase or Kraken generally offer better rates and more features.</p>",
   },
   {
-    question: 'How do I pick between all these?',
-    answer: '<p>Match services to what you actually do:</p><p>Getting paid by clients? Wise or Payoneer. Daily spending? Revolut or N26. Chasing the absolute best rates? Wise. Need the most currency options? Wise with fifty-plus or Revolut with thirty-plus. Based in America? Wise or Payoneer since Revolut and N26 have limited US service.</p><p>Plenty of nomads run several accounts simultaneously for different purposes. No rule says you have to pick just one.</p>'
-  }
+    question: "How do I pick between all these?",
+    answer:
+      "<p>Match services to what you actually do:</p><p>Getting paid by clients? Wise or Payoneer. Daily spending? Revolut or N26. Chasing the absolute best rates? Wise. Need the most currency options? Wise with fifty-plus or Revolut with thirty-plus. Based in America? Wise or Payoneer since Revolut and N26 have limited US service.</p><p>Plenty of nomads run several accounts simultaneously for different purposes. No rule says you have to pick just one.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Banking for Digital Nomads',
-    excerpt: 'Compare international-friendly banks and accounts for location-independent workers.',
-    href: '/blog/best-banking-digital-nomads',
-    image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'Digital banking interface'
+    title: "Best Banking for Digital Nomads",
+    excerpt: "Compare international-friendly banks and accounts for location-independent workers.",
+    href: "/blog/best-banking-digital-nomads",
+    image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
+    imageAlt: "Digital banking interface",
   },
   {
-    title: 'Tax Tips for Remote Workers',
-    excerpt: 'Navigate taxes as a remote worker or digital nomad.',
-    href: '/blog/tax-tips-remote-workers',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Tax planning documents'
+    title: "Tax Tips for Remote Workers",
+    excerpt: "Navigate taxes as a remote worker or digital nomad.",
+    href: "/blog/tax-tips-remote-workers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Tax planning documents",
   },
   {
-    title: 'Best Travel Insurance for Remote Workers',
-    excerpt: 'Protect yourself abroad with the right travel and health insurance.',
-    href: '/blog/best-travel-insurance-remote-workers',
-    image: '/images/unsplash/photo-1488646953014-85cb44e25828-800w.webp',
-    imageAlt: 'Travel planning'
-  }
+    title: "Best Travel Insurance for Remote Workers",
+    excerpt: "Protect yourself abroad with the right travel and health insurance.",
+    href: "/blog/best-travel-insurance-remote-workers",
+    image: "/images/unsplash/photo-1488646953014-85cb44e25828-800w.webp",
+    imageAlt: "Travel planning",
+  },
 ];
 ---
 

@@ -1,173 +1,184 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Best Ergonomic Chairs for Home Office (2025)';
-const description = 'Tested ten ergonomic office chairs for home offices. Herman Miller, Steelcase, Secretlab compared with honest reviews on comfort, durability, and value.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Furniture';
-const categorySlug = 'gear';
+const title = "Best Ergonomic Chairs for Home Office (2025)";
+const description =
+  "Tested ten ergonomic office chairs for home offices. Herman Miller, Steelcase, Secretlab compared with honest reviews on comfort, durability, and value.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Furniture";
+const categorySlug = "gear";
 const readingTime = 18;
-const image = '/images/unsplash/photo-1580480055273-228ff5388ef8-1200w.webp';
-const imageAlt = 'Modern ergonomic office chair in a home office setup';
+const image = "/images/unsplash/photo-1580480055273-228ff5388ef8-1200w.webp";
+const imageAlt = "Modern ergonomic office chair in a home office setup";
 
 const headings = [
-  {text: 'Why Your Chair Matters', slug: 'why-chair-matters', depth: 2},
-  {text: 'What Actually Makes a Chair Ergonomic', slug: 'what-makes-ergonomic', depth: 2},
-  {text: 'The Reviews', slug: 'reviews', depth: 2},
-  {text: 'Herman Miller Aeron', slug: 'herman-miller-aeron', depth: 3},
-  {text: 'Steelcase Leap', slug: 'steelcase-leap', depth: 3},
-  {text: 'Secretlab Titan', slug: 'secretlab-titan', depth: 3},
-  {text: 'Branch Ergonomic Chair', slug: 'branch-ergonomic', depth: 3},
-  {text: 'HON Ignition 2.0', slug: 'hon-ignition', depth: 3},
-  {text: 'Autonomous ErgoChair Pro', slug: 'autonomous-ergochair', depth: 3},
-  {text: 'Humanscale Freedom', slug: 'humanscale-freedom', depth: 3},
-  {text: 'IKEA Markus', slug: 'ikea-markus', depth: 3},
-  {text: 'FlexiSpot C7', slug: 'flexispot-c7', depth: 3},
-  {text: 'Sihoo M18', slug: 'sihoo-m18', depth: 3},
-  {text: 'Mesh vs Foam vs Hybrid', slug: 'mesh-vs-foam', depth: 2},
-  {text: 'How to Actually Adjust Your Chair', slug: 'how-to-adjust', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
+  { text: "Why Your Chair Matters", slug: "why-chair-matters", depth: 2 },
+  { text: "What Actually Makes a Chair Ergonomic", slug: "what-makes-ergonomic", depth: 2 },
+  { text: "The Reviews", slug: "reviews", depth: 2 },
+  { text: "Herman Miller Aeron", slug: "herman-miller-aeron", depth: 3 },
+  { text: "Steelcase Leap", slug: "steelcase-leap", depth: 3 },
+  { text: "Secretlab Titan", slug: "secretlab-titan", depth: 3 },
+  { text: "Branch Ergonomic Chair", slug: "branch-ergonomic", depth: 3 },
+  { text: "HON Ignition 2.0", slug: "hon-ignition", depth: 3 },
+  { text: "Autonomous ErgoChair Pro", slug: "autonomous-ergochair", depth: 3 },
+  { text: "Humanscale Freedom", slug: "humanscale-freedom", depth: 3 },
+  { text: "IKEA Markus", slug: "ikea-markus", depth: 3 },
+  { text: "FlexiSpot C7", slug: "flexispot-c7", depth: 3 },
+  { text: "Sihoo M18", slug: "sihoo-m18", depth: 3 },
+  { text: "Mesh vs Foam vs Hybrid", slug: "mesh-vs-foam", depth: 2 },
+  { text: "How to Actually Adjust Your Chair", slug: "how-to-adjust", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
 ];
 
 const fullComparisonColumns = [
-  {key: 'chair', label: 'Chair', width: '130px'},
-  {key: 'material', label: 'Material'},
-  {key: 'lumbar', label: 'Lumbar'},
-  {key: 'armrests', label: 'Armrests'},
-  {key: 'weightCap', label: 'Weight Cap'},
-  {key: 'price', label: 'Price'},
+  { key: "chair", label: "Chair", width: "130px" },
+  { key: "material", label: "Material" },
+  { key: "lumbar", label: "Lumbar" },
+  { key: "armrests", label: "Armrests" },
+  { key: "weightCap", label: "Weight Cap" },
+  { key: "price", label: "Price" },
 ];
 
 const fullComparisonRows = [
   {
-    chair: '<strong>Aeron</strong>',
-    material: 'Mesh',
-    lumbar: 'Adjustable',
-    armrests: '4D',
-    weightCap: '350 lbs',
-    price: '$1,395+'
+    chair: "<strong>Aeron</strong>",
+    material: "Mesh",
+    lumbar: "Adjustable",
+    armrests: "4D",
+    weightCap: "350 lbs",
+    price: "$1,395+",
   },
   {
-    chair: '<strong>Leap</strong>',
-    material: 'Foam',
-    lumbar: 'LiveBack',
-    armrests: '4D',
-    weightCap: '400 lbs',
-    price: '$1,199+'
+    chair: "<strong>Leap</strong>",
+    material: "Foam",
+    lumbar: "LiveBack",
+    armrests: "4D",
+    weightCap: "400 lbs",
+    price: "$1,199+",
   },
   {
-    chair: '<strong>Titan</strong>',
-    material: 'Leather/Fabric',
-    lumbar: '4-way',
-    armrests: '4D',
-    weightCap: '395 lbs',
-    price: '$519+'
+    chair: "<strong>Titan</strong>",
+    material: "Leather/Fabric",
+    lumbar: "4-way",
+    armrests: "4D",
+    weightCap: "395 lbs",
+    price: "$519+",
   },
   {
-    chair: '<strong>Branch</strong>',
-    material: 'Mesh',
-    lumbar: 'Adjustable',
-    armrests: '3D',
-    weightCap: '300 lbs',
-    price: '$449'
+    chair: "<strong>Branch</strong>",
+    material: "Mesh",
+    lumbar: "Adjustable",
+    armrests: "3D",
+    weightCap: "300 lbs",
+    price: "$449",
   },
   {
-    chair: '<strong>HON</strong>',
-    material: 'Mesh/Fabric',
-    lumbar: 'Fixed',
-    armrests: '2D',
-    weightCap: '300 lbs',
-    price: '$350+'
+    chair: "<strong>HON</strong>",
+    material: "Mesh/Fabric",
+    lumbar: "Fixed",
+    armrests: "2D",
+    weightCap: "300 lbs",
+    price: "$350+",
   },
   {
-    chair: '<strong>ErgoChair</strong>',
-    material: 'Mesh',
-    lumbar: 'Adjustable',
-    armrests: '4D',
-    weightCap: '300 lbs',
-    price: '$349+'
+    chair: "<strong>ErgoChair</strong>",
+    material: "Mesh",
+    lumbar: "Adjustable",
+    armrests: "4D",
+    weightCap: "300 lbs",
+    price: "$349+",
   },
   {
-    chair: '<strong>Freedom</strong>',
-    material: 'Leather/Fabric',
-    lumbar: 'Auto',
-    armrests: 'Auto',
-    weightCap: '300 lbs',
-    price: '$1,299+'
+    chair: "<strong>Freedom</strong>",
+    material: "Leather/Fabric",
+    lumbar: "Auto",
+    armrests: "Auto",
+    weightCap: "300 lbs",
+    price: "$1,299+",
   },
   {
-    chair: '<strong>Markus</strong>',
-    material: 'Fabric',
-    lumbar: 'Built-in',
-    armrests: 'Fixed',
-    weightCap: '242 lbs',
-    price: '$199'
+    chair: "<strong>Markus</strong>",
+    material: "Fabric",
+    lumbar: "Built-in",
+    armrests: "Fixed",
+    weightCap: "242 lbs",
+    price: "$199",
   },
   {
-    chair: '<strong>C7</strong>',
-    material: 'Mesh',
-    lumbar: 'Adjustable',
-    armrests: '3D',
-    weightCap: '300 lbs',
-    price: '$349'
+    chair: "<strong>C7</strong>",
+    material: "Mesh",
+    lumbar: "Adjustable",
+    armrests: "3D",
+    weightCap: "300 lbs",
+    price: "$349",
   },
   {
-    chair: '<strong>M18</strong>',
-    material: 'Mesh',
-    lumbar: 'Adjustable',
-    armrests: '2D',
-    weightCap: '330 lbs',
-    price: '$199'
+    chair: "<strong>M18</strong>",
+    material: "Mesh",
+    lumbar: "Adjustable",
+    armrests: "2D",
+    weightCap: "330 lbs",
+    price: "$199",
   },
 ];
 
 const faqItems = [
   {
-    question: 'How much to spend?',
-    answer: 'Daily use at eight plus hours? Four hundred to eight hundred for quality construction. Premium chairs over a grand offer twelve plus years warranty coverage. Budget options work for occasional use but need replacement sooner. A fourteen hundred dollar Herman Miller lasting fifteen years costs less than a hundred per year.',
+    question: "How much to spend?",
+    answer:
+      "Daily use at eight plus hours? Four hundred to eight hundred for quality construction. Premium chairs over a grand offer twelve plus years warranty coverage. Budget options work for occasional use but need replacement sooner. A fourteen hundred dollar Herman Miller lasting fifteen years costs less than a hundred per year.",
   },
   {
-    question: 'Worth spending more?',
-    answer: 'Full-time remote work? Yes. Better materials. Longer coverage. Superior lumbar support. Comfort that lasts thousands of hours. Higher resale value too. Occasional use? Mid-range at four to six hundred works fine.',
+    question: "Worth spending more?",
+    answer:
+      "Full-time remote work? Yes. Better materials. Longer coverage. Superior lumbar support. Comfort that lasts thousands of hours. Higher resale value too. Occasional use? Mid-range at four to six hundred works fine.",
   },
   {
-    question: 'Most important thing?',
-    answer: 'Lumbar support you can adjust. Your lower back needs consistent support for your spine\'s natural curve. After that, seat depth adjustment and armrest adjustability matter most.',
+    question: "Most important thing?",
+    answer:
+      "Lumbar support you can adjust. Your lower back needs consistent support for your spine's natural curve. After that, seat depth adjustment and armrest adjustability matter most.",
   },
   {
-    question: 'Mesh or foam?',
-    answer: 'Mesh for hot environments. Consistent support that doesn\'t degrade. Foam for softer cushioned feel but develops impressions over years. Hybrid designs combine mesh backs with foam seats.',
+    question: "Mesh or foam?",
+    answer:
+      "Mesh for hot environments. Consistent support that doesn't degrade. Foam for softer cushioned feel but develops impressions over years. Hybrid designs combine mesh backs with foam seats.",
   },
   {
-    question: 'How long do they last?',
-    answer: 'Quality chairs last ten to fifteen years with daily use. Herman Miller and Steelcase often exceed their twelve-year coverage. Budget chairs typically last three to five years before foam dies or mechanisms fail.',
+    question: "How long do they last?",
+    answer:
+      "Quality chairs last ten to fifteen years with daily use. Herman Miller and Steelcase often exceed their twelve-year coverage. Budget chairs typically last three to five years before foam dies or mechanisms fail.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Standing Desks',
-    excerpt: 'Complete your ergonomic setup with a height-adjustable standing desk.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Modern standing desk in home office',
+    title: "Best Standing Desks",
+    excerpt: "Complete your ergonomic setup with a height-adjustable standing desk.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern standing desk in home office",
   },
   {
-    title: 'Ergonomic Desk Setup Guide',
-    excerpt: 'Learn how to position your chair, desk, and monitor for optimal comfort.',
-    href: '/gear/ergonomic-desk-setup-guide',
-    image: '/images/unsplash/photo-1498050108023-c5249f4df085-800w.webp',
-    imageAlt: 'Properly configured ergonomic workstation',
+    title: "Ergonomic Desk Setup Guide",
+    excerpt: "Learn how to position your chair, desk, and monitor for optimal comfort.",
+    href: "/gear/ergonomic-desk-setup-guide",
+    image: "/images/unsplash/photo-1498050108023-c5249f4df085-800w.webp",
+    imageAlt: "Properly configured ergonomic workstation",
   },
   {
-    title: 'Ultimate Home Office Setup',
-    excerpt: 'Build the perfect home office with our comprehensive setup guide.',
-    href: '/blog/ultimate-home-office-setup',
-    image: '/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp',
-    imageAlt: 'Complete home office setup',
+    title: "Ultimate Home Office Setup",
+    excerpt: "Build the perfect home office with our comprehensive setup guide.",
+    href: "/blog/ultimate-home-office-setup",
+    image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp",
+    imageAlt: "Complete home office setup",
   },
 ];
 ---

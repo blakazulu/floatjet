@@ -1,89 +1,97 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Web Hosting for Remote Businesses (2025)';
-const description = 'We tested 10 web hosts to find the best for remote businesses. Compare WP Engine, Cloudways, SiteGround and more with speed tests and honest reviews here.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Best Web Hosting for Remote Businesses (2025)";
+const description =
+  "We tested 10 web hosts to find the best for remote businesses. Compare WP Engine, Cloudways, SiteGround and more with speed tests and honest reviews here.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 15;
-const image = '/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp';
-const imageAlt = 'Server room with modern hosting infrastructure';
+const image = "/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp";
+const imageAlt = "Server room with modern hosting infrastructure";
 
 // Table of contents headings
 const headings = [
-  {text: 'Why Hosting Matters', slug: 'why-hosting-matters', depth: 2},
-  {text: 'The Tools Worth Looking At', slug: 'tools', depth: 2},
-  {text: 'How to Choose', slug: 'how-to-choose', depth: 2},
-  {text: 'Migrating to a New Host', slug: 'migration', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
-  {text: 'My Picks', slug: 'my-picks', depth: 2},
+  { text: "Why Hosting Matters", slug: "why-hosting-matters", depth: 2 },
+  { text: "The Tools Worth Looking At", slug: "tools", depth: 2 },
+  { text: "How to Choose", slug: "how-to-choose", depth: 2 },
+  { text: "Migrating to a New Host", slug: "migration", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "My Picks", slug: "my-picks", depth: 2 },
 ];
-
 
 // FAQ data
 const faqs = [
   {
-    question: 'Best web hosting for WordPress?',
-    answer: 'WP Engine is our top recommendation for WordPress hosting. It\'s specifically optimized for WordPress with automatic updates, staging environments, daily backups, and expert WordPress support. Sites hosted on WP Engine are noticeably faster and more secure than standard shared hosting. For budget-conscious users, SiteGround offers excellent WordPress hosting starting at two ninety-nine monthly with solid performance and free SSL certificates.'
+    question: "Best web hosting for WordPress?",
+    answer:
+      "WP Engine is our top recommendation for WordPress hosting. It's specifically optimized for WordPress with automatic updates, staging environments, daily backups, and expert WordPress support. Sites hosted on WP Engine are noticeably faster and more secure than standard shared hosting. For budget-conscious users, SiteGround offers excellent WordPress hosting starting at two ninety-nine monthly with solid performance and free SSL certificates.",
   },
   {
-    question: 'Shared hosting vs managed hosting?',
-    answer: 'Shared hosting puts multiple websites on one server, sharing resources. It\'s cheap at two to ten bucks monthly but performance suffers when neighbors have traffic spikes. You manage everything yourself. Managed hosting handles server management, security, updates, and optimization for you. It costs more at fifteen to fifty bucks monthly but saves hours of technical work and typically delivers better performance and security. For serious businesses, managed hosting is worth the premium. For hobby sites or testing, shared hosting is fine.'
+    question: "Shared hosting vs managed hosting?",
+    answer:
+      "Shared hosting puts multiple websites on one server, sharing resources. It's cheap at two to ten bucks monthly but performance suffers when neighbors have traffic spikes. You manage everything yourself. Managed hosting handles server management, security, updates, and optimization for you. It costs more at fifteen to fifty bucks monthly but saves hours of technical work and typically delivers better performance and security. For serious businesses, managed hosting is worth the premium. For hobby sites or testing, shared hosting is fine.",
   },
   {
-    question: 'How much does web hosting cost?',
-    answer: 'Web hosting costs range widely based on type and features. Shared hosting runs two to fifteen bucks monthly. Managed WordPress runs fifteen to fifty monthly. VPS hosting runs ten to a hundred monthly. Dedicated servers run a hundred to five hundred plus monthly. Cloud hosting is pay-as-you-go, typically ten to a hundred monthly. Most remote businesses do well with managed WordPress hosting in the twenty to thirty-five dollar monthly range. Don\'t let cheap hosting cost you customers through slow load times.'
+    question: "How much does web hosting cost?",
+    answer:
+      "Web hosting costs range widely based on type and features. Shared hosting runs two to fifteen bucks monthly. Managed WordPress runs fifteen to fifty monthly. VPS hosting runs ten to a hundred monthly. Dedicated servers run a hundred to five hundred plus monthly. Cloud hosting is pay-as-you-go, typically ten to a hundred monthly. Most remote businesses do well with managed WordPress hosting in the twenty to thirty-five dollar monthly range. Don't let cheap hosting cost you customers through slow load times.",
   },
   {
-    question: 'Do I need managed hosting for my business?',
-    answer: 'For most remote businesses, yes. Managed hosting is worth it because your time has value and server management takes hours monthly. Security incidents cost far more than premium hosting. Slow sites lose customers with fifty-three percent leaving if load time exceeds three seconds. Downtime directly impacts revenue. If your website generates revenue or represents your business, managed hosting is a business expense that pays for itself.'
+    question: "Do I need managed hosting for my business?",
+    answer:
+      "For most remote businesses, yes. Managed hosting is worth it because your time has value and server management takes hours monthly. Security incidents cost far more than premium hosting. Slow sites lose customers with fifty-three percent leaving if load time exceeds three seconds. Downtime directly impacts revenue. If your website generates revenue or represents your business, managed hosting is a business expense that pays for itself.",
   },
   {
-    question: 'What uptime should I expect?',
-    answer: 'Reputable hosts guarantee ninety-nine point nine percent uptime or higher. Here\'s what that means in downtime. Ninety-nine point nine percent equals eight point seven six hours per year. Ninety-nine point nine five percent equals four point three eight hours per year. Ninety-nine point nine nine percent equals fifty-two point six minutes per year. Premium hosts like WP Engine, Kinsta, and Cloudways consistently deliver ninety-nine point nine nine percent or better. Budget hosts typically hit ninety-nine point nine percent but may have occasional longer outages.'
+    question: "What uptime should I expect?",
+    answer:
+      "Reputable hosts guarantee ninety-nine point nine percent uptime or higher. Here's what that means in downtime. Ninety-nine point nine percent equals eight point seven six hours per year. Ninety-nine point nine five percent equals four point three eight hours per year. Ninety-nine point nine nine percent equals fifty-two point six minutes per year. Premium hosts like WP Engine, Kinsta, and Cloudways consistently deliver ninety-nine point nine nine percent or better. Budget hosts typically hit ninety-nine point nine percent but may have occasional longer outages.",
   },
   {
-    question: 'Can I switch hosts without losing my site?',
-    answer: 'Yes, and most good hosts make it easy. The migration process typically involves signing up with the new host, migrating files and database which is often done free by the new host, testing on a temporary URL, updating DNS to point to the new server, and SSL certificate installation. Most managed hosts offer free migration handled by their team. WP Engine, SiteGround, Kinsta, and Cloudways all migrate sites for free. The process typically takes twenty-four to forty-eight hours with minimal downtime.'
+    question: "Can I switch hosts without losing my site?",
+    answer:
+      "Yes, and most good hosts make it easy. The migration process typically involves signing up with the new host, migrating files and database which is often done free by the new host, testing on a temporary URL, updating DNS to point to the new server, and SSL certificate installation. Most managed hosts offer free migration handled by their team. WP Engine, SiteGround, Kinsta, and Cloudways all migrate sites for free. The process typically takes twenty-four to forty-eight hours with minimal downtime.",
   },
   {
-    question: 'What is a CDN and do I need one?',
-    answer: 'A CDN or Content Delivery Network stores copies of your website on servers worldwide. When someone visits your site, they load it from the nearest server, reducing load times significantly. You need a CDN if your audience is geographically distributed, you have image-heavy content, or speed is a priority. Most managed hosts include CDN. WP Engine includes their Global Edge Security, Kinsta includes Cloudflare CDN, and Cloudways offers Cloudflare integration. For shared hosts, you can add Cloudflare\'s free tier yourself.'
+    question: "What is a CDN and do I need one?",
+    answer:
+      "A CDN or Content Delivery Network stores copies of your website on servers worldwide. When someone visits your site, they load it from the nearest server, reducing load times significantly. You need a CDN if your audience is geographically distributed, you have image-heavy content, or speed is a priority. Most managed hosts include CDN. WP Engine includes their Global Edge Security, Kinsta includes Cloudflare CDN, and Cloudways offers Cloudflare integration. For shared hosts, you can add Cloudflare's free tier yourself.",
   },
   {
-    question: 'How do I know when to upgrade?',
-    answer: 'Signs you\'ve outgrown your current hosting include slow load times where pages take more than three seconds, frequent downtime more than a few hours per month, resource limits where you\'re hitting CPU, RAM, or storage caps, traffic spikes that crash your site, and security incidents like hacks or vulnerabilities. If you\'re experiencing any of these, it\'s time to upgrade. Don\'t wait for a critical failure during a product launch or important campaign.'
-  }
+    question: "How do I know when to upgrade?",
+    answer:
+      "Signs you've outgrown your current hosting include slow load times where pages take more than three seconds, frequent downtime more than a few hours per month, resource limits where you're hitting CPU, RAM, or storage caps, traffic spikes that crash your site, and security incidents like hacks or vulnerabilities. If you're experiencing any of these, it's time to upgrade. Don't wait for a critical failure during a product launch or important campaign.",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Online Course Platforms for Creators',
-    excerpt: 'Create and sell online courses with the best platforms for knowledge entrepreneurs.',
-    href: '/tools/best-online-course-platforms',
-    image: '/images/unsplash/photo-1501504905252-473c47e087f8-800w.webp',
-    imageAlt: 'Online course creation workspace'
+    title: "Best Online Course Platforms for Creators",
+    excerpt: "Create and sell online courses with the best platforms for knowledge entrepreneurs.",
+    href: "/tools/best-online-course-platforms",
+    image: "/images/unsplash/photo-1501504905252-473c47e087f8-800w.webp",
+    imageAlt: "Online course creation workspace",
   },
   {
-    title: 'Best Project Management Software',
-    excerpt: 'Keep your web projects organized with the right project management tools.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Project management dashboard'
+    title: "Best Project Management Software",
+    excerpt: "Keep your web projects organized with the right project management tools.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Project management dashboard",
   },
   {
-    title: 'Best VPNs for Digital Nomads',
-    excerpt: 'Protect your connection while managing your sites from anywhere in the world.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'Digital security concept'
-  }
+    title: "Best VPNs for Digital Nomads",
+    excerpt: "Protect your connection while managing your sites from anywhere in the world.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept",
+  },
 ];
 ---
 

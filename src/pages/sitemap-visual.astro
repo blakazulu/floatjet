@@ -1,16 +1,13 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import {
-  generateSiteStructure,
-  CATEGORY_COLORS,
-} from '../utils/generateSiteStructure';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { CATEGORY_COLORS, generateSiteStructure } from "../utils/generateSiteStructure";
 
-const title = 'Interactive Site Map | FloatJet';
+const title = "Interactive Site Map | FloatJet";
 const description =
-  'Explore the FloatJet site structure with our interactive visualization. Navigate through tools, gear, guides, and articles.';
+  "Explore the FloatJet site structure with our interactive visualization. Navigate through tools, gear, guides, and articles.";
 
 // Dynamically get all pages using Astro's glob
-const allPages = import.meta.glob('/src/pages/**/*.astro');
+const allPages = import.meta.glob("/src/pages/**/*.astro");
 
 // Generate site structure dynamically
 const SITE_STRUCTURE = generateSiteStructure(allPages);

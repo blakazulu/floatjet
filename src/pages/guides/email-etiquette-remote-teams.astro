@@ -1,91 +1,100 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Email Etiquette for Remote Teams: Write Better (2025)';
-const description = 'Master professional email communication for remote work. Learn when to email, how to write clearly, and best practices for distributed teams without mistakes.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Email Etiquette for Remote Teams: Write Better (2025)";
+const description =
+  "Master professional email communication for remote work. Learn when to email, how to write clearly, and best practices for distributed teams without mistakes.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 10;
-const image = '/images/unsplash/photo-1596526131083-e8c633c948d2-1200w.webp';
-const imageAlt = 'Professional working on email communication at home office';
+const image = "/images/unsplash/photo-1596526131083-e8c633c948d2-1200w.webp";
+const imageAlt = "Professional working on email communication at home office";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'When to Email vs When to Slack', slug: 'email-vs-slack', depth: 2},
-  {text: 'Subject Line Best Practices', slug: 'subject-lines', depth: 2},
-  {text: 'Clear and Concise Writing', slug: 'clear-writing', depth: 2},
-  {text: 'Response Time Expectations', slug: 'response-times', depth: 2},
-  {text: 'CC and BCC Guidelines', slug: 'cc-bcc', depth: 2},
-  {text: 'Handling Sensitive Topics', slug: 'sensitive-topics', depth: 2},
-  {text: 'Email Signatures', slug: 'signatures', depth: 2},
-  {text: 'Templates for Common Scenarios', slug: 'templates', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "When to Email vs When to Slack", slug: "email-vs-slack", depth: 2 },
+  { text: "Subject Line Best Practices", slug: "subject-lines", depth: 2 },
+  { text: "Clear and Concise Writing", slug: "clear-writing", depth: 2 },
+  { text: "Response Time Expectations", slug: "response-times", depth: 2 },
+  { text: "CC and BCC Guidelines", slug: "cc-bcc", depth: 2 },
+  { text: "Handling Sensitive Topics", slug: "sensitive-topics", depth: 2 },
+  { text: "Email Signatures", slug: "signatures", depth: 2 },
+  { text: "Templates for Common Scenarios", slug: "templates", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'How quickly should I respond to work emails?',
-    answer: '<p>Response time expectations vary by context. Urgent or time-sensitive within a few hours but if truly urgent use a faster channel. Regular work emails within twenty-four hours on business days. Complex requests acknowledge receipt quickly and provide full response within forty-eight to seventy-two hours. CC\'d emails read within twenty-four hours and respond only if needed.</p><p>Set clear expectations with your team. If you\'ll be delayed send a quick acknowledgment with an estimated response time.</p>'
+    question: "How quickly should I respond to work emails?",
+    answer:
+      "<p>Response time expectations vary by context. Urgent or time-sensitive within a few hours but if truly urgent use a faster channel. Regular work emails within twenty-four hours on business days. Complex requests acknowledge receipt quickly and provide full response within forty-eight to seventy-two hours. CC'd emails read within twenty-four hours and respond only if needed.</p><p>Set clear expectations with your team. If you'll be delayed send a quick acknowledgment with an estimated response time.</p>",
   },
   {
-    question: 'Is it okay to send work emails outside business hours?',
-    answer: '<p>It depends on your team culture. Schedule send and use delayed delivery to send during normal hours. Set expectations and make clear in the email that no immediate response is expected. Respect boundaries and don\'t expect responses outside others\' working hours.</p><p>For global teams business hours varies. Be explicit about urgency rather than relying on send time to convey it.</p>'
+    question: "Is it okay to send work emails outside business hours?",
+    answer:
+      "<p>It depends on your team culture. Schedule send and use delayed delivery to send during normal hours. Set expectations and make clear in the email that no immediate response is expected. Respect boundaries and don't expect responses outside others' working hours.</p><p>For global teams business hours varies. Be explicit about urgency rather than relying on send time to convey it.</p>",
   },
   {
-    question: 'How do I write emails that actually get read?',
-    answer: '<p>Front-load the ask and put the request or key point in the first paragraph. Use formatting like bullet points and bold text and numbered lists. Keep it short. If it\'s over five paragraphs consider a meeting or document. Clear subject line that summarizes the content accurately. One topic per email since multiple topics get partially addressed or ignored. <a href="/guides/avoid-miscommunication-remote-teams">Clear communication</a> prevents misunderstandings.</p>'
+    question: "How do I write emails that actually get read?",
+    answer:
+      '<p>Front-load the ask and put the request or key point in the first paragraph. Use formatting like bullet points and bold text and numbered lists. Keep it short. If it\'s over five paragraphs consider a meeting or document. Clear subject line that summarizes the content accurately. One topic per email since multiple topics get partially addressed or ignored. <a href="/guides/avoid-miscommunication-remote-teams">Clear communication</a> prevents misunderstandings.</p>',
   },
   {
-    question: 'When should I reply-all vs reply to sender only?',
-    answer: '<p>Ask yourself does everyone need this information?</p><p>Reply-all when your response is relevant to all recipients. When you\'re answering a question others might have. When you\'re making a decision others need to know.</p><p>Reply to sender when your response is only relevant to them. When you\'re asking a clarifying question. When you\'re providing feedback that shouldn\'t be public.</p><p>When in doubt reply to sender only. You can always forward to the group if they confirm others need to see it.</p>'
+    question: "When should I reply-all vs reply to sender only?",
+    answer:
+      "<p>Ask yourself does everyone need this information?</p><p>Reply-all when your response is relevant to all recipients. When you're answering a question others might have. When you're making a decision others need to know.</p><p>Reply to sender when your response is only relevant to them. When you're asking a clarifying question. When you're providing feedback that shouldn't be public.</p><p>When in doubt reply to sender only. You can always forward to the group if they confirm others need to see it.</p>",
   },
   {
-    question: 'How do I handle an email thread that\'s gotten out of control?',
-    answer: '<p>Long threads lose context and productivity. Summarize by starting a new email with summary of discussion so far. Clarify by stating the specific question or decision needed. Suggest a call if async isn\'t working and <a href="/guides/how-to-run-effective-remote-meetings">propose a quick meeting</a>. Move to a document for complex discussions and create a shared doc for structured input.</p><p>Don\'t let threads exceed five to seven exchanges. If you\'re still going the medium isn\'t working.</p>'
+    question: "How do I handle an email thread that's gotten out of control?",
+    answer:
+      "<p>Long threads lose context and productivity. Summarize by starting a new email with summary of discussion so far. Clarify by stating the specific question or decision needed. Suggest a call if async isn't working and <a href=\"/guides/how-to-run-effective-remote-meetings\">propose a quick meeting</a>. Move to a document for complex discussions and create a shared doc for structured input.</p><p>Don't let threads exceed five to seven exchanges. If you're still going the medium isn't working.</p>",
   },
   {
-    question: 'Should I use read receipts?',
-    answer: '<p>Generally no. Read receipts feel like surveillance to recipients. Don\'t guarantee the email was actually read just opened. Create unnecessary pressure.</p><p>Instead if you need confirmation ask for it directly. Please reply to confirm you\'ve received this. Or let me know by Friday if you have questions.</p>'
+    question: "Should I use read receipts?",
+    answer:
+      "<p>Generally no. Read receipts feel like surveillance to recipients. Don't guarantee the email was actually read just opened. Create unnecessary pressure.</p><p>Instead if you need confirmation ask for it directly. Please reply to confirm you've received this. Or let me know by Friday if you have questions.</p>",
   },
   {
-    question: 'How formal should work emails be?',
-    answer: '<p>Match the formality to context. External and new contacts more formal with complete sentences and professional greeting. Internal and established relationships can be more casual but still professional. Clients and leadership err on the side of formality until you know preferences.</p><p>Avoid excessive formality that sounds stiff but also avoid slang and excessive abbreviations and overly casual language. When in doubt slightly more formal is safer.</p>'
+    question: "How formal should work emails be?",
+    answer:
+      "<p>Match the formality to context. External and new contacts more formal with complete sentences and professional greeting. Internal and established relationships can be more casual but still professional. Clients and leadership err on the side of formality until you know preferences.</p><p>Avoid excessive formality that sounds stiff but also avoid slang and excessive abbreviations and overly casual language. When in doubt slightly more formal is safer.</p>",
   },
   {
-    question: 'What\'s the best way to follow up on unanswered emails?',
-    answer: '<p>Wait an appropriate time usually two to three business days then forward the original with following up on the below. Add context about why this matters and any new information. Be specific about the ask and what you need from them. Provide a deadline like I need to finalize by Friday so any input by Thursday would help.</p><p>If still no response try a different channel like Slack or phone. The email may have been missed or buried.</p>'
-  }
+    question: "What's the best way to follow up on unanswered emails?",
+    answer:
+      "<p>Wait an appropriate time usually two to three business days then forward the original with following up on the below. Add context about why this matters and any new information. Be specific about the ask and what you need from them. Provide a deadline like I need to finalize by Friday so any input by Thursday would help.</p><p>If still no response try a different channel like Slack or phone. The email may have been missed or buried.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Async Communication for Remote Teams',
-    excerpt: 'Master asynchronous communication to reduce meetings and boost productivity.',
-    href: '/blog/async-communication-remote-teams',
-    image: '/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp',
-    imageAlt: 'Remote team collaborating through digital tools'
+    title: "Async Communication for Remote Teams",
+    excerpt: "Master asynchronous communication to reduce meetings and boost productivity.",
+    href: "/blog/async-communication-remote-teams",
+    image: "/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp",
+    imageAlt: "Remote team collaborating through digital tools",
   },
   {
-    title: 'Best Team Communication Tools',
-    excerpt: 'Compare top messaging and collaboration platforms for remote teams.',
-    href: '/blog/best-team-communication-tools',
-    image: '/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp',
-    imageAlt: 'Team using communication software'
+    title: "Best Team Communication Tools",
+    excerpt: "Compare top messaging and collaboration platforms for remote teams.",
+    href: "/blog/best-team-communication-tools",
+    image: "/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp",
+    imageAlt: "Team using communication software",
   },
   {
-    title: 'Best Email Marketing Tools',
-    excerpt: 'Find the right email platform for your business communications and marketing.',
-    href: '/tools/best-email-marketing-tools',
-    image: '/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp',
-    imageAlt: 'Email marketing dashboard'
-  }
+    title: "Best Email Marketing Tools",
+    excerpt: "Find the right email platform for your business communications and marketing.",
+    href: "/tools/best-email-marketing-tools",
+    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp",
+    imageAlt: "Email marketing dashboard",
+  },
 ];
 ---
 

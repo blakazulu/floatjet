@@ -1,101 +1,132 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Shared vs VPS vs Dedicated Hosting: Which One?';
-const description = 'Quick guide to hosting types. Compare shared, VPS, and dedicated hosting to find the right option for your website budget and traffic without overpaying.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Shared vs VPS vs Dedicated Hosting: Which One?";
+const description =
+  "Quick guide to hosting types. Compare shared, VPS, and dedicated hosting to find the right option for your website budget and traffic without overpaying.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 8;
-const image = '/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp';
-const imageAlt = 'Server hosting infrastructure comparison';
+const image = "/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp";
+const imageAlt = "Server hosting infrastructure comparison";
 
 // Table of contents headings
 const headings = [
-  {text: 'Quick Answer', slug: 'quick-answer', depth: 2},
-  {text: 'Shared Hosting', slug: 'shared-hosting', depth: 2},
-  {text: 'VPS Hosting', slug: 'vps-hosting', depth: 2},
-  {text: 'Dedicated Hosting', slug: 'dedicated-hosting', depth: 2},
-  {text: 'Comparison Table', slug: 'comparison-table', depth: 2},
-  {text: 'When to Upgrade', slug: 'when-to-upgrade', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Recommendations', slug: 'recommendations', depth: 2},
+  { text: "Quick Answer", slug: "quick-answer", depth: 2 },
+  { text: "Shared Hosting", slug: "shared-hosting", depth: 2 },
+  { text: "VPS Hosting", slug: "vps-hosting", depth: 2 },
+  { text: "Dedicated Hosting", slug: "dedicated-hosting", depth: 2 },
+  { text: "Comparison Table", slug: "comparison-table", depth: 2 },
+  { text: "When to Upgrade", slug: "when-to-upgrade", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Recommendations", slug: "recommendations", depth: 2 },
 ];
 
 // Comparison table
 const comparisonColumns = [
-  {key: 'feature', label: 'Feature', width: '150px'},
-  {key: 'shared', label: 'Shared'},
-  {key: 'vps', label: 'VPS'},
-  {key: 'dedicated', label: 'Dedicated'},
+  { key: "feature", label: "Feature", width: "150px" },
+  { key: "shared", label: "Shared" },
+  { key: "vps", label: "VPS" },
+  { key: "dedicated", label: "Dedicated" },
 ];
 
 const comparisonRows = [
-  {feature: '<strong>Price</strong>', shared: '$3-15/mo', vps: '$20-100/mo', dedicated: '$100-500+/mo'},
-  {feature: '<strong>Performance</strong>', shared: 'Variable', vps: 'Consistent', dedicated: 'Maximum'},
-  {feature: '<strong>Traffic Handling</strong>', shared: 'Up to 25k/mo', vps: '50k-500k/mo', dedicated: 'Unlimited'},
-  {feature: '<strong>Root Access</strong>', shared: false, vps: true, dedicated: true},
-  {feature: '<strong>Technical Skill</strong>', shared: 'None', vps: 'Some', dedicated: 'Advanced'},
-  {feature: '<strong>Security</strong>', shared: 'Shared risk', vps: 'Isolated', dedicated: 'Full control'},
   {
-    feature: '<strong>Best For</strong>',
-    shared: 'Blogs, small sites',
-    vps: 'Growing businesses',
-    dedicated: 'Enterprise'
+    feature: "<strong>Price</strong>",
+    shared: "$3-15/mo",
+    vps: "$20-100/mo",
+    dedicated: "$100-500+/mo",
+  },
+  {
+    feature: "<strong>Performance</strong>",
+    shared: "Variable",
+    vps: "Consistent",
+    dedicated: "Maximum",
+  },
+  {
+    feature: "<strong>Traffic Handling</strong>",
+    shared: "Up to 25k/mo",
+    vps: "50k-500k/mo",
+    dedicated: "Unlimited",
+  },
+  { feature: "<strong>Root Access</strong>", shared: false, vps: true, dedicated: true },
+  {
+    feature: "<strong>Technical Skill</strong>",
+    shared: "None",
+    vps: "Some",
+    dedicated: "Advanced",
+  },
+  {
+    feature: "<strong>Security</strong>",
+    shared: "Shared risk",
+    vps: "Isolated",
+    dedicated: "Full control",
+  },
+  {
+    feature: "<strong>Best For</strong>",
+    shared: "Blogs, small sites",
+    vps: "Growing businesses",
+    dedicated: "Enterprise",
   },
 ];
 
 // FAQ data
 const faqItems = [
   {
-    question: 'What is the main difference between shared and VPS hosting?',
-    answer: 'With shared hosting, you are crammed onto a server with tons of other websites, fighting for the same pool of resources. When your neighbor gets a traffic spike, your site slows down. VPS gives you your own guaranteed slice of the pie that nobody else can touch. More money, but way better performance and security.'
+    question: "What is the main difference between shared and VPS hosting?",
+    answer:
+      "With shared hosting, you are crammed onto a server with tons of other websites, fighting for the same pool of resources. When your neighbor gets a traffic spike, your site slows down. VPS gives you your own guaranteed slice of the pie that nobody else can touch. More money, but way better performance and security.",
   },
   {
-    question: 'Is VPS hosting worth the extra cost?',
-    answer: 'If your site makes money or gets decent traffic (say, over 10,000 visitors a month), yeah it is. The extra speed and reliability usually pays for itself in better conversions and fewer headaches. For a personal blog nobody reads? Probably not worth it yet.'
+    question: "Is VPS hosting worth the extra cost?",
+    answer:
+      "If your site makes money or gets decent traffic (say, over 10,000 visitors a month), yeah it is. The extra speed and reliability usually pays for itself in better conversions and fewer headaches. For a personal blog nobody reads? Probably not worth it yet.",
   },
   {
-    question: 'When should I upgrade from shared to VPS hosting?',
-    answer: 'When your site feels slow even after you have optimized everything. When you keep getting downtime errors. When traffic crosses 25,000 visitors a month. When you are selling things online and cannot afford slow checkout pages. When you need to install something your shared host will not allow. If you are migrating anyway, check out our <a href="/tools/migrate-website-without-downtime">guide to migrate without downtime</a>.'
+    question: "When should I upgrade from shared to VPS hosting?",
+    answer:
+      'When your site feels slow even after you have optimized everything. When you keep getting downtime errors. When traffic crosses 25,000 visitors a month. When you are selling things online and cannot afford slow checkout pages. When you need to install something your shared host will not allow. If you are migrating anyway, check out our <a href="/tools/migrate-website-without-downtime">guide to migrate without downtime</a>.',
   },
   {
-    question: 'Do I need dedicated hosting?',
-    answer: 'Probably not, honestly. Most businesses never get to the point where they need an entire physical server. You would need millions of visitors, or serious compliance requirements like HIPAA, or custom hardware needs. VPS handles 99% of business needs just fine.'
+    question: "Do I need dedicated hosting?",
+    answer:
+      "Probably not, honestly. Most businesses never get to the point where they need an entire physical server. You would need millions of visitors, or serious compliance requirements like HIPAA, or custom hardware needs. VPS handles 99% of business needs just fine.",
   },
   {
-    question: 'Can I upgrade from shared to VPS without downtime?',
-    answer: 'Totally. Most hosts will even do the <a href="/tools/migrate-website-without-downtime">migration</a> for you. The basic process is: copy everything to the new server, test it on a temporary URL, then switch the DNS. If you do it right, your visitors never know anything changed.'
+    question: "Can I upgrade from shared to VPS without downtime?",
+    answer:
+      'Totally. Most hosts will even do the <a href="/tools/migrate-website-without-downtime">migration</a> for you. The basic process is: copy everything to the new server, test it on a temporary URL, then switch the DNS. If you do it right, your visitors never know anything changed.',
   },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Web Hosting for Remote Businesses',
-    excerpt: 'Full comparison of the best hosts across all tiers.',
-    href: '/tools/best-web-hosting-remote-business',
-    image: '/images/unsplash/photo-1558494949-ef010cbdcc31-400w.webp',
-    imageAlt: 'Server room infrastructure'
+    title: "Best Web Hosting for Remote Businesses",
+    excerpt: "Full comparison of the best hosts across all tiers.",
+    href: "/tools/best-web-hosting-remote-business",
+    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-400w.webp",
+    imageAlt: "Server room infrastructure",
   },
   {
-    title: 'Best VPS Hosting for Remote Businesses',
-    excerpt: 'Detailed VPS provider comparison if you are ready to upgrade.',
-    href: '/tools/best-vps-hosting-remote-business',
-    image: '/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp',
-    imageAlt: 'VPS server infrastructure'
+    title: "Best VPS Hosting for Remote Businesses",
+    excerpt: "Detailed VPS provider comparison if you are ready to upgrade.",
+    href: "/tools/best-vps-hosting-remote-business",
+    image: "/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp",
+    imageAlt: "VPS server infrastructure",
   },
   {
-    title: 'Cloud vs Traditional Hosting',
-    excerpt: 'Understanding the difference between cloud and traditional setups.',
-    href: '/blog/cloud-vs-traditional-hosting',
-    image: '/images/unsplash/photo-1451187580459-43490279c0fa-400w.webp',
-    imageAlt: 'Cloud computing concept'
+    title: "Cloud vs Traditional Hosting",
+    excerpt: "Understanding the difference between cloud and traditional setups.",
+    href: "/blog/cloud-vs-traditional-hosting",
+    image: "/images/unsplash/photo-1451187580459-43490279c0fa-400w.webp",
+    imageAlt: "Cloud computing concept",
   },
 ];
 ---

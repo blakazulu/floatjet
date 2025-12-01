@@ -1,132 +1,134 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = '500 Speed Tests Later, Here\'s What Actually Happened';
-const description = 'My wife thought I\'d lost it. Two weeks running speed tests on twelve VPNs from five countries. Worth it here. Here\'s which ones actually deliver on speed.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "500 Speed Tests Later, Here's What Actually Happened";
+const description =
+  "My wife thought I'd lost it. Two weeks running speed tests on twelve VPNs from five countries. Worth it here. Here's which ones actually deliver on speed.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 4;
-const image = '/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp';
-const imageAlt = 'Network speed testing visualization with data transfer graphics';
+const image = "/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp";
+const imageAlt = "Network speed testing visualization with data transfer graphics";
 
 // Table of contents headings
 const headings = [
-  {text: 'Why I Did This', slug: 'introduction', depth: 2},
-  {text: 'What I Found', slug: 'speed-results', depth: 2},
-  {text: 'The Testing Part', slug: 'methodology', depth: 2},
-  {text: 'The VPNs', slug: 'rankings', depth: 2},
-  {text: 'Why VPNs Are Slower', slug: 'speed-factors', depth: 2},
-  {text: 'Making It Less Slow', slug: 'speed-tips', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
-  {text: 'The Point', slug: 'conclusion', depth: 2},
+  { text: "Why I Did This", slug: "introduction", depth: 2 },
+  { text: "What I Found", slug: "speed-results", depth: 2 },
+  { text: "The Testing Part", slug: "methodology", depth: 2 },
+  { text: "The VPNs", slug: "rankings", depth: 2 },
+  { text: "Why VPNs Are Slower", slug: "speed-factors", depth: 2 },
+  { text: "Making It Less Slow", slug: "speed-tips", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "The Point", slug: "conclusion", depth: 2 },
 ];
 
 // Speed test comparison table
 const speedColumns = [
-  {key: 'vpn', label: 'VPN', width: '120px'},
-  {key: 'download', label: 'Download'},
-  {key: 'upload', label: 'Upload'},
-  {key: 'ping', label: 'Ping'},
-  {key: 'speedLoss', label: 'Speed Loss'},
+  { key: "vpn", label: "VPN", width: "120px" },
+  { key: "download", label: "Download" },
+  { key: "upload", label: "Upload" },
+  { key: "ping", label: "Ping" },
+  { key: "speedLoss", label: "Speed Loss" },
 ];
 
 const speedRows = [
   {
-    vpn: '<strong>NordVPN</strong>',
-    download: '445 Mbps',
-    upload: '42 Mbps',
-    ping: '24ms',
-    speedLoss: '11%'
+    vpn: "<strong>NordVPN</strong>",
+    download: "445 Mbps",
+    upload: "42 Mbps",
+    ping: "24ms",
+    speedLoss: "11%",
   },
   {
-    vpn: '<strong>ExpressVPN</strong>',
-    download: '432 Mbps',
-    upload: '40 Mbps',
-    ping: '28ms',
-    speedLoss: '14%'
+    vpn: "<strong>ExpressVPN</strong>",
+    download: "432 Mbps",
+    upload: "40 Mbps",
+    ping: "28ms",
+    speedLoss: "14%",
   },
   {
-    vpn: '<strong>Surfshark</strong>',
-    download: '410 Mbps',
-    upload: '38 Mbps',
-    ping: '31ms',
-    speedLoss: '18%'
+    vpn: "<strong>Surfshark</strong>",
+    download: "410 Mbps",
+    upload: "38 Mbps",
+    ping: "31ms",
+    speedLoss: "18%",
   },
   {
-    vpn: '<strong>CyberGhost</strong>',
-    download: '385 Mbps',
-    upload: '35 Mbps',
-    ping: '35ms',
-    speedLoss: '23%'
+    vpn: "<strong>CyberGhost</strong>",
+    download: "385 Mbps",
+    upload: "35 Mbps",
+    ping: "35ms",
+    speedLoss: "23%",
   },
   {
-    vpn: '<strong>ProtonVPN</strong>',
-    download: '378 Mbps',
-    upload: '34 Mbps',
-    ping: '38ms',
-    speedLoss: '24%'
+    vpn: "<strong>ProtonVPN</strong>",
+    download: "378 Mbps",
+    upload: "34 Mbps",
+    ping: "38ms",
+    speedLoss: "24%",
   },
   {
-    vpn: '<strong>Private Internet Access</strong>',
-    download: '365 Mbps',
-    upload: '32 Mbps',
-    ping: '42ms',
-    speedLoss: '27%'
+    vpn: "<strong>Private Internet Access</strong>",
+    download: "365 Mbps",
+    upload: "32 Mbps",
+    ping: "42ms",
+    speedLoss: "27%",
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Slower?',
-    answer: '<p>Yes. 10-15%. Won\'t notice.</p>'
+    question: "Slower?",
+    answer: "<p>Yes. 10-15%. Won't notice.</p>",
   },
   {
-    question: 'Fastest protocol?',
-    answer: '<p>WireGuard. Just use it.</p>'
+    question: "Fastest protocol?",
+    answer: "<p>WireGuard. Just use it.</p>",
   },
   {
-    question: 'Distance matter?',
-    answer: '<p>Yes. Stay close.</p>'
+    question: "Distance matter?",
+    answer: "<p>Yes. Stay close.</p>",
   },
   {
-    question: 'Can VPN make things faster?',
-    answer: '<p>Sometimes. If your ISP throttles streaming, VPN bypasses it.</p>'
+    question: "Can VPN make things faster?",
+    answer: "<p>Sometimes. If your ISP throttles streaming, VPN bypasses it.</p>",
   },
   {
-    question: 'Speed I need?',
-    answer: '<p>25 Mbps for video calls. 50+ for 4K. Add 15% buffer for VPN.</p>'
-  }
+    question: "Speed I need?",
+    answer: "<p>25 Mbps for video calls. 50+ for 4K. Add 15% buffer for VPN.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best VPNs for Digital Nomads',
-    excerpt: 'Complete guide to choosing the right VPN for remote work, with full reviews of top providers.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'Digital security concept'
+    title: "Best VPNs for Digital Nomads",
+    excerpt:
+      "Complete guide to choosing the right VPN for remote work, with full reviews of top providers.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept",
   },
   {
-    title: 'VPN & Public WiFi Security Guide',
-    excerpt: 'How to stay safe on public networks while traveling and working remotely.',
-    href: '/blog/vpn-public-wifi-guide',
-    image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'Person working at cafe on laptop'
+    title: "VPN & Public WiFi Security Guide",
+    excerpt: "How to stay safe on public networks while traveling and working remotely.",
+    href: "/blog/vpn-public-wifi-guide",
+    image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
+    imageAlt: "Person working at cafe on laptop",
   },
   {
-    title: 'Find Reliable WiFi Anywhere',
-    excerpt: 'Tips and tools for finding fast, stable internet connections while traveling.',
-    href: '/blog/find-reliable-wifi-anywhere',
-    image: '/images/unsplash/photo-1521791136064-7986c2920216-800w.webp',
-    imageAlt: 'WiFi signal concept'
-  }
+    title: "Find Reliable WiFi Anywhere",
+    excerpt: "Tips and tools for finding fast, stable internet connections while traveling.",
+    href: "/blog/find-reliable-wifi-anywhere",
+    image: "/images/unsplash/photo-1521791136064-7986c2920216-800w.webp",
+    imageAlt: "WiFi signal concept",
+  },
 ];
 ---
 

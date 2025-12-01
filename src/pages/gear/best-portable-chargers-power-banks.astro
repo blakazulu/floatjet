@@ -1,220 +1,229 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Portable Chargers & Power Banks for Travel (2025)';
-const description = 'Tested ten portable chargers over four months of travel. Here are the ones that deliver on their promises, which died after two months, and what I actually use.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Best Portable Chargers & Power Banks for Travel (2025)";
+const description =
+  "Tested ten portable chargers over four months of travel. Here are the ones that deliver on their promises, which died after two months, and what I actually use.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 13;
-const image = '/images/unsplash/photo-1609091839311-d5365f9ff1c5-1200w.webp';
-const imageAlt = 'Power bank portable charger with USB cables';
+const image = "/images/unsplash/photo-1609091839311-d5365f9ff1c5-1200w.webp";
+const imageAlt = "Power bank portable charger with USB cables";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Understanding Capacity', slug: 'understanding-capacity', depth: 2},
-  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Anker 737 PowerCore', slug: 'anker-737', depth: 3},
-  {text: 'Anker 622 MagGo', slug: 'anker-magsafe', depth: 3},
-  {text: 'Zendure SuperTank Pro', slug: 'zendure-supertank', depth: 3},
-  {text: 'Baseus 65W', slug: 'baseus-65w', depth: 3},
-  {text: 'Mophie Powerstation XXL', slug: 'mophie-xxl', depth: 3},
-  {text: 'INIU Power Bank', slug: 'iniu-budget', depth: 3},
-  {text: 'Belkin BoostCharge Pro', slug: 'belkin-magsafe', depth: 3},
-  {text: 'Goal Zero Sherpa', slug: 'goal-zero', depth: 3},
-  {text: 'Laptop Charging', slug: 'laptop-charging', depth: 2},
-  {text: 'TSA Regulations', slug: 'tsa-regulations', depth: 2},
-  {text: 'Fast Charging Explained', slug: 'fast-charging', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Conclusion', slug: 'conclusion', depth: 2},
-  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Understanding Capacity", slug: "understanding-capacity", depth: 2 },
+  { text: "Detailed Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Anker 737 PowerCore", slug: "anker-737", depth: 3 },
+  { text: "Anker 622 MagGo", slug: "anker-magsafe", depth: 3 },
+  { text: "Zendure SuperTank Pro", slug: "zendure-supertank", depth: 3 },
+  { text: "Baseus 65W", slug: "baseus-65w", depth: 3 },
+  { text: "Mophie Powerstation XXL", slug: "mophie-xxl", depth: 3 },
+  { text: "INIU Power Bank", slug: "iniu-budget", depth: 3 },
+  { text: "Belkin BoostCharge Pro", slug: "belkin-magsafe", depth: 3 },
+  { text: "Goal Zero Sherpa", slug: "goal-zero", depth: 3 },
+  { text: "Laptop Charging", slug: "laptop-charging", depth: 2 },
+  { text: "TSA Regulations", slug: "tsa-regulations", depth: 2 },
+  { text: "Fast Charging Explained", slug: "fast-charging", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Conclusion", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'charger', label: 'Charger', width: '140px'},
-  {key: 'bestFor', label: 'Best For', width: '140px'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
-  {key: 'action', label: ''},
+  { key: "charger", label: "Charger", width: "140px" },
+  { key: "bestFor", label: "Best For", width: "140px" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    charger: '<strong>Anker 737</strong>',
-    bestFor: 'Laptop Charging',
-    price: '$110',
-    rating: '9.5/10',
-    action: '<a href="/go/amazon/anker-737" rel="nofollow sponsored">Check Price</a>'
+    charger: "<strong>Anker 737</strong>",
+    bestFor: "Laptop Charging",
+    price: "$110",
+    rating: "9.5/10",
+    action: '<a href="/go/amazon/anker-737" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    charger: '<strong>Anker 622 MagGo</strong>',
-    bestFor: 'iPhone Users',
-    price: '$50',
-    rating: '9.0/10',
-    action: '<a href="/go/amazon/anker-622-magsafe" rel="nofollow sponsored">Check Price</a>'
+    charger: "<strong>Anker 622 MagGo</strong>",
+    bestFor: "iPhone Users",
+    price: "$50",
+    rating: "9.0/10",
+    action: '<a href="/go/amazon/anker-622-magsafe" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    charger: '<strong>INIU 10000mAh</strong>',
-    bestFor: 'Best Budget',
-    price: '$20',
-    rating: '8.5/10',
-    action: '<a href="/go/amazon/iniu-power-bank" rel="nofollow sponsored">Check Price</a>'
+    charger: "<strong>INIU 10000mAh</strong>",
+    bestFor: "Best Budget",
+    price: "$20",
+    rating: "8.5/10",
+    action: '<a href="/go/amazon/iniu-power-bank" rel="nofollow sponsored">Check Price</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'charger', label: 'Charger', width: '130px'},
-  {key: 'bestFor', label: 'Best For', width: '100px'},
-  {key: 'price', label: 'Price'},
-  {key: 'capacity', label: 'Capacity'},
-  {key: 'output', label: 'Max Output'},
-  {key: 'weight', label: 'Weight'},
-  {key: 'action', label: ''},
+  { key: "charger", label: "Charger", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "100px" },
+  { key: "price", label: "Price" },
+  { key: "capacity", label: "Capacity" },
+  { key: "output", label: "Max Output" },
+  { key: "weight", label: "Weight" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    charger: '<strong>Anker 737</strong>',
-    bestFor: 'Laptops',
-    price: '$110',
-    capacity: '24,000mAh',
-    output: '140W',
-    weight: '1.3 lbs',
-    action: '<a href="/go/amazon/anker-737" rel="nofollow sponsored">Buy</a>'
+    charger: "<strong>Anker 737</strong>",
+    bestFor: "Laptops",
+    price: "$110",
+    capacity: "24,000mAh",
+    output: "140W",
+    weight: "1.3 lbs",
+    action: '<a href="/go/amazon/anker-737" rel="nofollow sponsored">Buy</a>',
   },
   {
-    charger: '<strong>Anker 622 MagGo</strong>',
-    bestFor: 'iPhone',
-    price: '$50',
-    capacity: '5,000mAh',
-    output: '7.5W wireless',
-    weight: '0.3 lbs',
-    action: '<a href="/go/amazon/anker-622-magsafe" rel="nofollow sponsored">Buy</a>'
+    charger: "<strong>Anker 622 MagGo</strong>",
+    bestFor: "iPhone",
+    price: "$50",
+    capacity: "5,000mAh",
+    output: "7.5W wireless",
+    weight: "0.3 lbs",
+    action: '<a href="/go/amazon/anker-622-magsafe" rel="nofollow sponsored">Buy</a>',
   },
   {
-    charger: '<strong>Zendure SuperTank</strong>',
-    bestFor: 'Max Capacity',
-    price: '$200',
-    capacity: '26,800mAh',
-    output: '100W',
-    weight: '1.4 lbs',
-    action: '<a href="/go/amazon/zendure-supertank" rel="nofollow sponsored">Buy</a>'
+    charger: "<strong>Zendure SuperTank</strong>",
+    bestFor: "Max Capacity",
+    price: "$200",
+    capacity: "26,800mAh",
+    output: "100W",
+    weight: "1.4 lbs",
+    action: '<a href="/go/amazon/zendure-supertank" rel="nofollow sponsored">Buy</a>',
   },
   {
-    charger: '<strong>Baseus 65W</strong>',
-    bestFor: 'Compact Laptop',
-    price: '$50',
-    capacity: '20,000mAh',
-    output: '65W',
-    weight: '0.9 lbs',
-    action: '<a href="/go/amazon/baseus-65w" rel="nofollow sponsored">Buy</a>'
+    charger: "<strong>Baseus 65W</strong>",
+    bestFor: "Compact Laptop",
+    price: "$50",
+    capacity: "20,000mAh",
+    output: "65W",
+    weight: "0.9 lbs",
+    action: '<a href="/go/amazon/baseus-65w" rel="nofollow sponsored">Buy</a>',
   },
   {
-    charger: '<strong>Mophie XXL</strong>',
-    bestFor: 'Reliability',
-    price: '$80',
-    capacity: '20,000mAh',
-    output: '18W',
-    weight: '0.9 lbs',
-    action: '<a href="/go/amazon/mophie-xxl" rel="nofollow sponsored">Buy</a>'
+    charger: "<strong>Mophie XXL</strong>",
+    bestFor: "Reliability",
+    price: "$80",
+    capacity: "20,000mAh",
+    output: "18W",
+    weight: "0.9 lbs",
+    action: '<a href="/go/amazon/mophie-xxl" rel="nofollow sponsored">Buy</a>',
   },
   {
-    charger: '<strong>INIU 10000mAh</strong>',
-    bestFor: 'Budget',
-    price: '$20',
-    capacity: '10,000mAh',
-    output: '22.5W',
-    weight: '0.5 lbs',
-    action: '<a href="/go/amazon/iniu-power-bank" rel="nofollow sponsored">Buy</a>'
+    charger: "<strong>INIU 10000mAh</strong>",
+    bestFor: "Budget",
+    price: "$20",
+    capacity: "10,000mAh",
+    output: "22.5W",
+    weight: "0.5 lbs",
+    action: '<a href="/go/amazon/iniu-power-bank" rel="nofollow sponsored">Buy</a>',
   },
   {
-    charger: '<strong>Belkin BoostCharge</strong>',
-    bestFor: 'MagSafe',
-    price: '$60',
-    capacity: '10,000mAh',
-    output: '15W wireless',
-    weight: '0.5 lbs',
-    action: '<a href="/go/amazon/belkin-magsafe" rel="nofollow sponsored">Buy</a>'
+    charger: "<strong>Belkin BoostCharge</strong>",
+    bestFor: "MagSafe",
+    price: "$60",
+    capacity: "10,000mAh",
+    output: "15W wireless",
+    weight: "0.5 lbs",
+    action: '<a href="/go/amazon/belkin-magsafe" rel="nofollow sponsored">Buy</a>',
   },
   {
-    charger: '<strong>Goal Zero Sherpa</strong>',
-    bestFor: 'Adventure',
-    price: '$150',
-    capacity: '25,600mAh',
-    output: '100W',
-    weight: '1.5 lbs',
-    action: '<a href="/go/amazon/goal-zero-sherpa" rel="nofollow sponsored">Buy</a>'
+    charger: "<strong>Goal Zero Sherpa</strong>",
+    bestFor: "Adventure",
+    price: "$150",
+    capacity: "25,600mAh",
+    output: "100W",
+    weight: "1.5 lbs",
+    action: '<a href="/go/amazon/goal-zero-sherpa" rel="nofollow sponsored">Buy</a>',
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Which one should I buy?',
-    answer: '<p>I use the <strong>Anker 737</strong> for my laptop—$110 but worth it. iPhone people love the <strong>MagGo</strong> at $50. Broke? <strong>INIU</strong> at $20 works fine for phones.</p>'
+    question: "Which one should I buy?",
+    answer:
+      "<p>I use the <strong>Anker 737</strong> for my laptop—$110 but worth it. iPhone people love the <strong>MagGo</strong> at $50. Broke? <strong>INIU</strong> at $20 works fine for phones.</p>",
   },
   {
-    question: 'Will TSA take my power bank?',
-    answer: '<p>Only if you check it. Carry-on is fine. I fly with mine constantly—never had issues staying under 100Wh.</p>'
+    question: "Will TSA take my power bank?",
+    answer:
+      "<p>Only if you check it. Carry-on is fine. I fly with mine constantly—never had issues staying under 100Wh.</p>",
   },
   {
-    question: 'How much capacity do I need?',
-    answer: '<p>I\'d say 10,000mAh for casual users, 20,000mAh for heavy phone users, and 25,000+ if you\'re powering a laptop. Most people are fine with 20k.</p>'
+    question: "How much capacity do I need?",
+    answer:
+      "<p>I'd say 10,000mAh for casual users, 20,000mAh for heavy phone users, and 25,000+ if you're powering a laptop. Most people are fine with 20k.</p>",
   },
   {
-    question: 'Will this charge my MacBook?',
-    answer: '<p>Needs USB-C PD with decent wattage—45W bare minimum, but 65W+ is what I\'d recommend. My Anker 737 does 140W which handles anything.</p>'
+    question: "Will this charge my MacBook?",
+    answer:
+      "<p>Needs USB-C PD with decent wattage—45W bare minimum, but 65W+ is what I'd recommend. My Anker 737 does 140W which handles anything.</p>",
   },
   {
-    question: 'mAh vs Wh—huh?',
-    answer: '<p>mAh is the marketing number. Wh is what matters for flying. Take mAh, multiply by 3.7, divide by 1000. My 20,000mAh charger = 74Wh. Under 100Wh and you\'re golden.</p>'
+    question: "mAh vs Wh—huh?",
+    answer:
+      "<p>mAh is the marketing number. Wh is what matters for flying. Take mAh, multiply by 3.7, divide by 1000. My 20,000mAh charger = 74Wh. Under 100Wh and you're golden.</p>",
   },
   {
-    question: 'When do I replace it?',
-    answer: '<p>Mine lasted about 4 years before I noticed shorter battery life. Don\'t leave them baking in cars and they\'ll last longer.</p>'
+    question: "When do I replace it?",
+    answer:
+      "<p>Mine lasted about 4 years before I noticed shorter battery life. Don't leave them baking in cars and they'll last longer.</p>",
   },
   {
-    question: 'Wireless worth it?',
-    answer: '<p>I like it for convenience—my MagGo just snaps on. But it\'s slower than plugging in. Trade-off.</p>'
+    question: "Wireless worth it?",
+    answer:
+      "<p>I like it for convenience—my MagGo just snaps on. But it's slower than plugging in. Trade-off.</p>",
   },
   {
-    question: 'What\'s USB-C PD?',
-    answer: '<p>The charging standard that actually matters. If a power bank has it, you can charge laptops and phones fast. All my picks have it.</p>'
-  }
+    question: "What's USB-C PD?",
+    answer:
+      "<p>The charging standard that actually matters. If a power bank has it, you can charge laptops and phones fast. All my picks have it.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Find the perfect laptop to pair with your portable charger for productive travel.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp',
-    imageAlt: 'Modern laptop for remote work'
+    title: "Best Laptops for Remote Work",
+    excerpt: "Find the perfect laptop to pair with your portable charger for productive travel.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "Modern laptop for remote work",
   },
   {
-    title: 'Essential Travel Tech for Nomads',
-    excerpt: 'Complete guide to the must-have tech gadgets for digital nomads.',
-    href: '/blog/essential-travel-tech-nomads',
-    image: '/images/unsplash/photo-1488590528505-98d2b5aba04b-800w.webp',
-    imageAlt: 'Travel tech essentials'
+    title: "Essential Travel Tech for Nomads",
+    excerpt: "Complete guide to the must-have tech gadgets for digital nomads.",
+    href: "/blog/essential-travel-tech-nomads",
+    image: "/images/unsplash/photo-1488590528505-98d2b5aba04b-800w.webp",
+    imageAlt: "Travel tech essentials",
   },
   {
-    title: 'Best Travel Adapters',
-    excerpt: 'Power up anywhere in the world with our top universal adapter picks.',
-    href: '/gear/best-travel-adapters',
-    image: '/images/unsplash/photo-1558618666-fcd25c85cd64-800w.webp',
-    imageAlt: 'Universal travel adapters'
-  }
+    title: "Best Travel Adapters",
+    excerpt: "Power up anywhere in the world with our top universal adapter picks.",
+    href: "/gear/best-travel-adapters",
+    image: "/images/unsplash/photo-1558618666-fcd25c85cd64-800w.webp",
+    imageAlt: "Universal travel adapters",
+  },
 ];
 ---
 

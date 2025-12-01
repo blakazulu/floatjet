@@ -1,92 +1,101 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Slack vs Teams vs Discord: Which for Remote Work? (2025)';
-const description = 'Compare Slack, Microsoft Teams, and Discord for team communication. Find the best chat app for your remote team based on features, pricing, and use case.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Slack vs Teams vs Discord: Which for Remote Work? (2025)";
+const description =
+  "Compare Slack, Microsoft Teams, and Discord for team communication. Find the best chat app for your remote team based on features, pricing, and use case.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 16;
-const image = '/images/unsplash/photo-1611746872915-64382b5c76da-1200w.webp';
-const imageAlt = 'Team communication apps displayed on multiple devices';
+const image = "/images/unsplash/photo-1611746872915-64382b5c76da-1200w.webp";
+const imageAlt = "Team communication apps displayed on multiple devices";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
-  {text: 'Slack Deep Dive', slug: 'slack', depth: 2},
-  {text: 'Microsoft Teams Deep Dive', slug: 'teams', depth: 2},
-  {text: 'Discord for Work', slug: 'discord', depth: 2},
-  {text: 'Feature Comparison', slug: 'features', depth: 2},
-  {text: 'Pricing Comparison', slug: 'pricing', depth: 2},
-  {text: 'Integration Ecosystems', slug: 'integrations', depth: 2},
-  {text: 'Best For Different Teams', slug: 'best-for', depth: 2},
-  {text: 'Migration Considerations', slug: 'migration', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Comparison", slug: "quick-comparison", depth: 2 },
+  { text: "Slack Deep Dive", slug: "slack", depth: 2 },
+  { text: "Microsoft Teams Deep Dive", slug: "teams", depth: 2 },
+  { text: "Discord for Work", slug: "discord", depth: 2 },
+  { text: "Feature Comparison", slug: "features", depth: 2 },
+  { text: "Pricing Comparison", slug: "pricing", depth: 2 },
+  { text: "Integration Ecosystems", slug: "integrations", depth: 2 },
+  { text: "Best For Different Teams", slug: "best-for", depth: 2 },
+  { text: "Migration Considerations", slug: "migration", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Slack or Teams for startups?',
-    answer: '<p>Slack usually makes more sense. Intuitive. Better startup tool integrations. Pricing fits small teams. Teams only if you\'re already Microsoft heavy.</p>'
+    question: "Slack or Teams for startups?",
+    answer:
+      "<p>Slack usually makes more sense. Intuitive. Better startup tool integrations. Pricing fits small teams. Teams only if you're already Microsoft heavy.</p>",
   },
   {
-    question: 'Does Discord work professionally?',
-    answer: '<p>Depends who\'s asking.</p><p>Small teams? Gaming companies? Dev communities? Creative shops? Bootstrapped startups? Works great.</p><p>Enterprise with compliance needs? Client communication? Regulated industries? Probably not.</p><p>Voice channels and casual energy build culture. Enterprise features don\'t exist though.</p>'
+    question: "Does Discord work professionally?",
+    answer:
+      "<p>Depends who's asking.</p><p>Small teams? Gaming companies? Dev communities? Creative shops? Bootstrapped startups? Works great.</p><p>Enterprise with compliance needs? Client communication? Regulated industries? Probably not.</p><p>Voice channels and casual energy build culture. Enterprise features don't exist though.</p>",
   },
   {
-    question: 'Multiple platforms together?',
-    answer: '<p>Sure. Lots of teams do this.</p><p>Slack for internal. Teams for three sixty-five meetings and external calls.</p><p>Slack for work. Discord for community bonding.</p><p>Teams for official. Discord for social.</p><p>Clear purpose for each tool prevents confusion.</p>'
+    question: "Multiple platforms together?",
+    answer:
+      "<p>Sure. Lots of teams do this.</p><p>Slack for internal. Teams for three sixty-five meetings and external calls.</p><p>Slack for work. Discord for community bonding.</p><p>Teams for official. Discord for social.</p><p>Clear purpose for each tool prevents confusion.</p>",
   },
   {
-    question: 'Best video option?',
-    answer: '<p>Teams by a mile.</p><p>Together mode. Background blur and replacement. Live captions. Transcription. Breakout rooms. Recording.</p><p>Slack Huddles are limited. Discord video works but stays casual.</p>'
+    question: "Best video option?",
+    answer:
+      "<p>Teams by a mile.</p><p>Together mode. Background blur and replacement. Live captions. Transcription. Breakout rooms. Recording.</p><p>Slack Huddles are limited. Discord video works but stays casual.</p>",
   },
   {
-    question: 'Most secure option?',
-    answer: '<p>Enterprise security rankings.</p><p>Teams first. Compliance certifications everywhere. Data loss prevention. eDiscovery.</p><p>Slack Enterprise Grid second. SOC 2. HIPAA capable. Encryption covered.</p><p>Discord third. Security adequate. Compliance features missing. Skip for regulated industries.</p><p>Normal use cases? All three are secure enough.</p>'
+    question: "Most secure option?",
+    answer:
+      "<p>Enterprise security rankings.</p><p>Teams first. Compliance certifications everywhere. Data loss prevention. eDiscovery.</p><p>Slack Enterprise Grid second. SOC 2. HIPAA capable. Encryption covered.</p><p>Discord third. Security adequate. Compliance features missing. Skip for regulated industries.</p><p>Normal use cases? All three are secure enough.</p>",
   },
   {
-    question: 'Notification differences?',
-    answer: '<p>All three offer controls. Different approaches.</p><p><strong>Slack.</strong> Channel settings. Keyword triggers. Do not disturb. Thread preferences.</p><p><strong>Teams.</strong> Channel controls. Mention settings. Quiet hours. Priority contacts.</p><p><strong>Discord.</strong> Server and channel settings. Suppress everyone pings. Custom sounds.</p><p>Slack refinement is generally strongest for work contexts.</p>'
+    question: "Notification differences?",
+    answer:
+      "<p>All three offer controls. Different approaches.</p><p><strong>Slack.</strong> Channel settings. Keyword triggers. Do not disturb. Thread preferences.</p><p><strong>Teams.</strong> Channel controls. Mention settings. Quiet hours. Priority contacts.</p><p><strong>Discord.</strong> Server and channel settings. Suppress everyone pings. Custom sounds.</p><p>Slack refinement is generally strongest for work contexts.</p>",
   },
   {
-    question: 'Async communication winner?',
-    answer: '<p>Slack was designed for it.</p><p>Threads organize discussion. Scheduled send exists. Search works. Reminders work. Status updates show availability.</p><p>Teams improved but still leans toward meetings. Discord is synchronous by nature.</p>'
+    question: "Async communication winner?",
+    answer:
+      "<p>Slack was designed for it.</p><p>Threads organize discussion. Scheduled send exists. Search works. Reminders work. Status updates show availability.</p><p>Teams improved but still leans toward meetings. Discord is synchronous by nature.</p>",
   },
   {
-    question: 'What about Twist or Rocket.Chat?',
-    answer: '<p>Other options exist.</p><p><strong>Twist.</strong> Async first. Topic threads. Great for notification-hating distributed teams.</p><p><strong>Rocket.Chat.</strong> Open source. Self-hosted. Privacy focused.</p><p><strong>Mattermost.</strong> Open source Slack clone. Engineering teams like it.</p><p><strong>Google Chat.</strong> Works for Google Workspace shops.</p><p>Smaller ecosystems than the big three though.</p>'
-  }
+    question: "What about Twist or Rocket.Chat?",
+    answer:
+      "<p>Other options exist.</p><p><strong>Twist.</strong> Async first. Topic threads. Great for notification-hating distributed teams.</p><p><strong>Rocket.Chat.</strong> Open source. Self-hosted. Privacy focused.</p><p><strong>Mattermost.</strong> Open source Slack clone. Engineering teams like it.</p><p><strong>Google Chat.</strong> Works for Google Workspace shops.</p><p>Smaller ecosystems than the big three though.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Team Communication Tools',
-    excerpt: 'Compare top messaging and collaboration platforms for remote teams.',
-    href: '/blog/best-team-communication-tools',
-    image: '/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp',
-    imageAlt: 'Team using communication software'
+    title: "Best Team Communication Tools",
+    excerpt: "Compare top messaging and collaboration platforms for remote teams.",
+    href: "/blog/best-team-communication-tools",
+    image: "/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp",
+    imageAlt: "Team using communication software",
   },
   {
-    title: 'Async Communication for Remote Teams',
-    excerpt: 'Master asynchronous communication to reduce meetings and boost productivity.',
-    href: '/blog/async-communication-remote-teams',
-    image: '/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp',
-    imageAlt: 'Remote team collaborating through digital tools'
+    title: "Async Communication for Remote Teams",
+    excerpt: "Master asynchronous communication to reduce meetings and boost productivity.",
+    href: "/blog/async-communication-remote-teams",
+    image: "/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp",
+    imageAlt: "Remote team collaborating through digital tools",
   },
   {
-    title: 'Best Project Management Software',
-    excerpt: 'Find the perfect project management tool for organizing your remote team.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Modern workspace with project management dashboard'
-  }
+    title: "Best Project Management Software",
+    excerpt: "Find the perfect project management tool for organizing your remote team.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Modern workspace with project management dashboard",
+  },
 ];
 ---
 

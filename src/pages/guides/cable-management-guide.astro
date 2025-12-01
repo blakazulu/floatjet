@@ -1,77 +1,84 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Home Office Cable Management: Tame the Wire Chaos';
-const description = 'Transform your messy workspace into a clean, organized setup. Complete guide to cable management solutions and routing techniques for a tangle-free desk.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-18');
+const title = "Home Office Cable Management: Tame the Wire Chaos";
+const description =
+  "Transform your messy workspace into a clean, organized setup. Complete guide to cable management solutions and routing techniques for a tangle-free desk.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-18");
 const readingTime = 11;
-const image = '/images/unsplash/photo-1558618666-fcd25c85cd64-1200w.webp';
-const imageAlt = 'Clean desk setup with organized cable management';
+const image = "/images/unsplash/photo-1558618666-fcd25c85cd64-1200w.webp";
+const imageAlt = "Clean desk setup with organized cable management";
 
 const headings = [
-  {depth: 2, slug: 'introduction', text: 'Why This Even Matters'},
-  {depth: 2, slug: 'assess-your-cables', text: 'Check What You\'re Working With'},
-  {depth: 2, slug: 'essential-tools', text: 'The Tools That Actually Work'},
-  {depth: 2, slug: 'routing-strategies', text: 'How to Route Everything'},
-  {depth: 2, slug: 'desk-solutions', text: 'Under the Desk'},
-  {depth: 2, slug: 'on-desk-management', text: 'On Your Desk'},
-  {depth: 2, slug: 'wireless-alternatives', text: 'Go Wireless Where You Can'},
-  {depth: 2, slug: 'maintenance', text: 'Keeping Things Clean'},
-  {depth: 2, slug: 'faq', text: 'Questions'}
+  { depth: 2, slug: "introduction", text: "Why This Even Matters" },
+  { depth: 2, slug: "assess-your-cables", text: "Check What You're Working With" },
+  { depth: 2, slug: "essential-tools", text: "The Tools That Actually Work" },
+  { depth: 2, slug: "routing-strategies", text: "How to Route Everything" },
+  { depth: 2, slug: "desk-solutions", text: "Under the Desk" },
+  { depth: 2, slug: "on-desk-management", text: "On Your Desk" },
+  { depth: 2, slug: "wireless-alternatives", text: "Go Wireless Where You Can" },
+  { depth: 2, slug: "maintenance", text: "Keeping Things Clean" },
+  { depth: 2, slug: "faq", text: "Questions" },
 ];
 
 const faqData = [
   {
-    question: 'How much should I spend?',
-    answer: 'Basic setup runs twenty to forty bucks. Velcro ties, clips, and an under-desk tray cover most needs. Premium setups with raceways and custom routing run fifty to a hundred. Start cheap and upgrade if you need to.'
+    question: "How much should I spend?",
+    answer:
+      "Basic setup runs twenty to forty bucks. Velcro ties, clips, and an under-desk tray cover most needs. Premium setups with raceways and custom routing run fifty to a hundred. Start cheap and upgrade if you need to.",
   },
   {
-    question: 'Worth going wireless?',
-    answer: 'Wireless keyboard, mouse, and headphones eliminate two to three cables. Higher upfront cost but cleaner look and more flexibility. Trade-off is managing charging instead of managing cables.'
+    question: "Worth going wireless?",
+    answer:
+      "Wireless keyboard, mouse, and headphones eliminate two to three cables. Higher upfront cost but cleaner look and more flexibility. Trade-off is managing charging instead of managing cables.",
   },
   {
-    question: 'What about standing desks?',
-    answer: 'Need extra slack in cables for height changes with <a href="/gear/best-standing-desks">standing desks</a>. Cable chains or spiral wraps extend and contract as the desk moves. Route through a central spine that follows the desk. Keep power strips mounted to the frame so they move with everything.'
+    question: "What about standing desks?",
+    answer:
+      'Need extra slack in cables for height changes with <a href="/gear/best-standing-desks">standing desks</a>. Cable chains or spiral wraps extend and contract as the desk moves. Route through a central spine that follows the desk. Keep power strips mounted to the frame so they move with everything.',
   },
   {
-    question: 'Should I label cables?',
-    answer: 'Yes. Especially when multiple cables look the same. Simple labels or colored tape help identify things without unplugging. Saves time when troubleshooting or changing stuff.'
+    question: "Should I label cables?",
+    answer:
+      "Yes. Especially when multiple cables look the same. Simple labels or colored tape help identify things without unplugging. Saves time when troubleshooting or changing stuff.",
   },
   {
-    question: 'How often to reorganize?',
-    answer: 'Monthly quick check. Tighten anything loose. Fix escaped cables. Full reorganization only when adding or removing devices. Good initial setup shouldn\'t need constant maintenance.'
+    question: "How often to reorganize?",
+    answer:
+      "Monthly quick check. Tighten anything loose. Fix escaped cables. Full reorganization only when adding or removing devices. Good initial setup shouldn't need constant maintenance.",
   },
   {
-    question: 'Biggest mistake?',
-    answer: 'Making things too tight or permanent. Leave slack for adjustments. Use velcro not zip ties so you can make changes without cutting things. Over-engineering leads to frustration when you inevitably need to modify something.'
-  }
+    question: "Biggest mistake?",
+    answer:
+      "Making things too tight or permanent. Leave slack for adjustments. Use velcro not zip ties so you can make changes without cutting things. Over-engineering leads to frustration when you inevitably need to modify something.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Minimalist Home Office Setup',
-    excerpt: 'Create a clean, distraction-free workspace.',
-    href: '/guides/minimalist-home-office-setup',
-    image: '/images/unsplash/photo-1593062096033-9a26b09da705-800w.webp',
-    imageAlt: 'Minimalist home office setup'
+    title: "Minimalist Home Office Setup",
+    excerpt: "Create a clean, distraction-free workspace.",
+    href: "/guides/minimalist-home-office-setup",
+    image: "/images/unsplash/photo-1593062096033-9a26b09da705-800w.webp",
+    imageAlt: "Minimalist home office setup",
   },
   {
-    title: 'Complete Home Office Checklist',
-    excerpt: 'Everything you need for your workspace.',
-    href: '/guides/complete-home-office-checklist',
-    image: '/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp',
-    imageAlt: 'Organized home office'
+    title: "Complete Home Office Checklist",
+    excerpt: "Everything you need for your workspace.",
+    href: "/guides/complete-home-office-checklist",
+    image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp",
+    imageAlt: "Organized home office",
   },
   {
-    title: 'Best Standing Desks',
-    excerpt: 'Top standing desks for health and productivity.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1611269154421-4e27233ac5c7-800w.webp',
-    imageAlt: 'Standing desk setup'
-  }
+    title: "Best Standing Desks",
+    excerpt: "Top standing desks for health and productivity.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1611269154421-4e27233ac5c7-800w.webp",
+    imageAlt: "Standing desk setup",
+  },
 ];
 ---
 

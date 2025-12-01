@@ -9,20 +9,20 @@ interface Props {
   faqs: FAQ[];
 }
 
-const {faqs} = Astro.props;
+const { faqs } = Astro.props;
 
 // FAQ Schema markup for rich snippets
 const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map(faq => ({
-    '@type': 'Question',
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
     name: faq.question,
     acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer.replace(/<[^>]*>/g, '') // Strip HTML for schema
-    }
-  }))
+      "@type": "Answer",
+      text: faq.answer.replace(/<[^>]*>/g, ""), // Strip HTML for schema
+    },
+  })),
 };
 ---
 

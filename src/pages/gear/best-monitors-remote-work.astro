@@ -1,109 +1,174 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Best Monitors for Remote Work (2025)';
-const description = 'I tested ten monitors for remote workers. 4K, ultrawide, budget displays compared with color tests, desk space, and what actually matters for productivity work.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Computers';
-const categorySlug = 'gear';
+const title = "Best Monitors for Remote Work (2025)";
+const description =
+  "I tested ten monitors for remote workers. 4K, ultrawide, budget displays compared with color tests, desk space, and what actually matters for productivity work.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Computers";
+const categorySlug = "gear";
 const readingTime = 16;
-const image = '/images/unsplash/photo-1527443224154-c4a3942d3acf-1200w.webp';
-const imageAlt = 'Modern monitor setup on clean desk for remote work';
+const image = "/images/unsplash/photo-1527443224154-c4a3942d3acf-1200w.webp";
+const imageAlt = "Modern monitor setup on clean desk for remote work";
 
 const headings = [
-  {text: 'Why Your Monitor Matters', slug: 'why-monitor-matters', depth: 2},
-  {text: 'Quick Comparison', slug: 'quick-comparison', depth: 2},
-  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Dell UltraSharp U2723QE', slug: 'dell-ultrasharp', depth: 3},
-  {text: 'LG 27UK850-W', slug: 'lg-27uk850', depth: 3},
-  {text: 'Samsung Odyssey G7', slug: 'samsung-odyssey', depth: 3},
-  {text: 'Dell U3423WE', slug: 'dell-ultrawide', depth: 3},
-  {text: 'LG 34WN80C-B', slug: 'lg-ultrawide', depth: 3},
-  {text: 'BenQ PD2700U', slug: 'benq-pd2700u', depth: 3},
-  {text: 'ASUS ProArt PA278QV', slug: 'asus-proart', depth: 3},
-  {text: 'HP Z27k G3', slug: 'hp-z27k', depth: 3},
-  {text: 'ViewSonic VP2785-4K', slug: 'viewsonic-vp2785', depth: 3},
-  {text: 'Philips 276E8VJSB', slug: 'philips-budget', depth: 3},
-  {text: '4K vs 1440p vs 1080p', slug: 'resolution-comparison', depth: 2},
-  {text: 'Panel Types Explained', slug: 'panel-types', depth: 2},
-  {text: 'Dual Monitor Setup', slug: 'dual-monitor', depth: 2},
-  {text: 'Frequently Asked Questions', slug: 'faq', depth: 2},
+  { text: "Why Your Monitor Matters", slug: "why-monitor-matters", depth: 2 },
+  { text: "Quick Comparison", slug: "quick-comparison", depth: 2 },
+  { text: "Detailed Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Dell UltraSharp U2723QE", slug: "dell-ultrasharp", depth: 3 },
+  { text: "LG 27UK850-W", slug: "lg-27uk850", depth: 3 },
+  { text: "Samsung Odyssey G7", slug: "samsung-odyssey", depth: 3 },
+  { text: "Dell U3423WE", slug: "dell-ultrawide", depth: 3 },
+  { text: "LG 34WN80C-B", slug: "lg-ultrawide", depth: 3 },
+  { text: "BenQ PD2700U", slug: "benq-pd2700u", depth: 3 },
+  { text: "ASUS ProArt PA278QV", slug: "asus-proart", depth: 3 },
+  { text: "HP Z27k G3", slug: "hp-z27k", depth: 3 },
+  { text: "ViewSonic VP2785-4K", slug: "viewsonic-vp2785", depth: 3 },
+  { text: "Philips 276E8VJSB", slug: "philips-budget", depth: 3 },
+  { text: "4K vs 1440p vs 1080p", slug: "resolution-comparison", depth: 2 },
+  { text: "Panel Types Explained", slug: "panel-types", depth: 2 },
+  { text: "Dual Monitor Setup", slug: "dual-monitor", depth: 2 },
+  { text: "Frequently Asked Questions", slug: "faq", depth: 2 },
 ];
 
 const comparisonColumns = [
-  {key: 'monitor', label: 'Monitor', width: '140px'},
-  {key: 'resolution', label: 'Resolution'},
-  {key: 'size', label: 'Size'},
-  {key: 'panel', label: 'Panel'},
-  {key: 'price', label: 'Price'},
+  { key: "monitor", label: "Monitor", width: "140px" },
+  { key: "resolution", label: "Resolution" },
+  { key: "size", label: "Size" },
+  { key: "panel", label: "Panel" },
+  { key: "price", label: "Price" },
 ];
 
 const comparisonRows = [
   {
-    monitor: '<strong>Dell UltraSharp U2723QE</strong>',
-    resolution: '4K',
+    monitor: "<strong>Dell UltraSharp U2723QE</strong>",
+    resolution: "4K",
     size: '27"',
-    panel: 'IPS Black',
-    price: '$620'
+    panel: "IPS Black",
+    price: "$620",
   },
-  {monitor: '<strong>LG 27UK850-W</strong>', resolution: '4K', size: '27"', panel: 'IPS', price: '$450'},
-  {monitor: '<strong>Samsung Odyssey G7</strong>', resolution: '1440p', size: '32"', panel: 'VA', price: '$550'},
-  {monitor: '<strong>Dell U3423WE</strong>', resolution: 'WQHD UW', size: '34"', panel: 'IPS', price: '$850'},
-  {monitor: '<strong>LG 34WN80C-B</strong>', resolution: 'WQHD UW', size: '34"', panel: 'IPS', price: '$500'},
-  {monitor: '<strong>BenQ PD2700U</strong>', resolution: '4K', size: '27"', panel: 'IPS', price: '$450'},
-  {monitor: '<strong>ASUS ProArt PA278QV</strong>', resolution: '1440p', size: '27"', panel: 'IPS', price: '$350'},
-  {monitor: '<strong>HP Z27k G3</strong>', resolution: '4K', size: '27"', panel: 'IPS', price: '$540'},
-  {monitor: '<strong>ViewSonic VP2785-4K</strong>', resolution: '4K', size: '27"', panel: 'IPS', price: '$580'},
-  {monitor: '<strong>Philips 276E8VJSB</strong>', resolution: '4K', size: '27"', panel: 'IPS', price: '$280'},
+  {
+    monitor: "<strong>LG 27UK850-W</strong>",
+    resolution: "4K",
+    size: '27"',
+    panel: "IPS",
+    price: "$450",
+  },
+  {
+    monitor: "<strong>Samsung Odyssey G7</strong>",
+    resolution: "1440p",
+    size: '32"',
+    panel: "VA",
+    price: "$550",
+  },
+  {
+    monitor: "<strong>Dell U3423WE</strong>",
+    resolution: "WQHD UW",
+    size: '34"',
+    panel: "IPS",
+    price: "$850",
+  },
+  {
+    monitor: "<strong>LG 34WN80C-B</strong>",
+    resolution: "WQHD UW",
+    size: '34"',
+    panel: "IPS",
+    price: "$500",
+  },
+  {
+    monitor: "<strong>BenQ PD2700U</strong>",
+    resolution: "4K",
+    size: '27"',
+    panel: "IPS",
+    price: "$450",
+  },
+  {
+    monitor: "<strong>ASUS ProArt PA278QV</strong>",
+    resolution: "1440p",
+    size: '27"',
+    panel: "IPS",
+    price: "$350",
+  },
+  {
+    monitor: "<strong>HP Z27k G3</strong>",
+    resolution: "4K",
+    size: '27"',
+    panel: "IPS",
+    price: "$540",
+  },
+  {
+    monitor: "<strong>ViewSonic VP2785-4K</strong>",
+    resolution: "4K",
+    size: '27"',
+    panel: "IPS",
+    price: "$580",
+  },
+  {
+    monitor: "<strong>Philips 276E8VJSB</strong>",
+    resolution: "4K",
+    size: '27"',
+    panel: "IPS",
+    price: "$280",
+  },
 ];
 
 const faqItems = [
   {
-    question: 'Is 4K resolution worth it for remote work?',
-    answer: 'Yes, if your work involves reading text, spreadsheets, or design work. 4K at 27 inches provides crisp text and more screen real estate. However, you need a graphics card capable of driving 4K, and some users prefer 1440p for better scaling.',
+    question: "Is 4K resolution worth it for remote work?",
+    answer:
+      "Yes, if your work involves reading text, spreadsheets, or design work. 4K at 27 inches provides crisp text and more screen real estate. However, you need a graphics card capable of driving 4K, and some users prefer 1440p for better scaling.",
   },
   {
-    question: 'What size monitor is best for working from home?',
-    answer: '27 inches is the sweet spot for most remote workers. It is large enough for multitasking without being overwhelming. If you have desk space and budget, 32 inches or a 34-inch ultrawide can be even more productive.',
+    question: "What size monitor is best for working from home?",
+    answer:
+      "27 inches is the sweet spot for most remote workers. It is large enough for multitasking without being overwhelming. If you have desk space and budget, 32 inches or a 34-inch ultrawide can be even more productive.",
   },
   {
-    question: 'Should I get an ultrawide or dual monitors?',
-    answer: 'Ultrawides offer a seamless experience with no bezels in the middle, better for video editing and spreadsheets. Dual monitors provide more flexibility and a clear separation between tasks. Most remote workers are happy with either setup.',
+    question: "Should I get an ultrawide or dual monitors?",
+    answer:
+      "Ultrawides offer a seamless experience with no bezels in the middle, better for video editing and spreadsheets. Dual monitors provide more flexibility and a clear separation between tasks. Most remote workers are happy with either setup.",
   },
   {
-    question: 'Do I need a curved monitor for work?',
-    answer: 'Curved monitors reduce eye strain on larger displays (32 inches+) by keeping all parts of the screen equidistant from your eyes. For 27-inch monitors, flat panels work fine. Personal preference plays a big role.',
+    question: "Do I need a curved monitor for work?",
+    answer:
+      "Curved monitors reduce eye strain on larger displays (32 inches+) by keeping all parts of the screen equidistant from your eyes. For 27-inch monitors, flat panels work fine. Personal preference plays a big role.",
   },
   {
-    question: 'What refresh rate do I need for office work?',
-    answer: '60Hz is perfectly fine for office work, video calls, and general productivity. Higher refresh rates (120Hz+) only matter for gaming or if you find scrolling smoother. Do not pay extra for refresh rate if you are not gaming.',
+    question: "What refresh rate do I need for office work?",
+    answer:
+      "60Hz is perfectly fine for office work, video calls, and general productivity. Higher refresh rates (120Hz+) only matter for gaming or if you find scrolling smoother. Do not pay extra for refresh rate if you are not gaming.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Find the perfect laptop to pair with your monitor setup.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp',
-    imageAlt: 'Modern laptop on desk',
+    title: "Best Laptops for Remote Work",
+    excerpt: "Find the perfect laptop to pair with your monitor setup.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "Modern laptop on desk",
   },
   {
-    title: 'Best Portable Monitors',
-    excerpt: 'Dual-screen productivity for digital nomads on the go.',
-    href: '/gear/best-portable-monitors',
-    image: '/images/unsplash/photo-1587829741301-dc798b83add3-800w.webp',
-    imageAlt: 'Portable monitor with laptop',
+    title: "Best Portable Monitors",
+    excerpt: "Dual-screen productivity for digital nomads on the go.",
+    href: "/gear/best-portable-monitors",
+    image: "/images/unsplash/photo-1587829741301-dc798b83add3-800w.webp",
+    imageAlt: "Portable monitor with laptop",
   },
   {
-    title: 'Best Standing Desks',
-    excerpt: 'Complete your ergonomic setup with a quality standing desk.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Standing desk in home office',
+    title: "Best Standing Desks",
+    excerpt: "Complete your ergonomic setup with a quality standing desk.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Standing desk in home office",
   },
 ];
 ---

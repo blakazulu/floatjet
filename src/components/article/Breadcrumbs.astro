@@ -6,18 +6,18 @@ interface Props {
   }>;
 }
 
-const {items} = Astro.props;
+const { items } = Astro.props;
 
 // Schema.org BreadcrumbList markup
 const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
   itemListElement: items.map((item, index) => ({
-    '@type': 'ListItem',
+    "@type": "ListItem",
     position: index + 1,
     name: item.label,
-    item: item.href ? `https://floatjet.com${item.href}` : undefined
-  }))
+    item: item.href ? `https://floatjet.com${item.href}` : undefined,
+  })),
 };
 ---
 

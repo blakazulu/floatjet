@@ -1,118 +1,129 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {AffiliateButton, ComparisonTable, FAQSection, RelatedArticles} from '../../components/article';
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'How Much RAM Do You Really Need for Remote Work? (2025)';
-const description = 'Is 8GB RAM enough for working from home? We break down RAM requirements for video calls, browser tabs, Office apps, and more to help you choose wisely.';
-const pubDate = new Date('2024-11-24');
-const updatedDate = new Date('2024-11-24');
-const author = 'FloatJet Team';
-const category = 'Computers';
-const categorySlug = 'gear';
+const title = "How Much RAM Do You Really Need for Remote Work? (2025)";
+const description =
+  "Is 8GB RAM enough for working from home? We break down RAM requirements for video calls, browser tabs, Office apps, and more to help you choose wisely.";
+const pubDate = new Date("2024-11-24");
+const updatedDate = new Date("2024-11-24");
+const author = "FloatJet Team";
+const category = "Computers";
+const categorySlug = "gear";
 const readingTime = 5;
-const image = '/images/unsplash/photo-1518770660439-4636190af475-1200w.webp';
-const imageAlt = 'Computer RAM memory modules';
+const image = "/images/unsplash/photo-1518770660439-4636190af475-1200w.webp";
+const imageAlt = "Computer RAM memory modules";
 
 const headings = [
-  {text: 'Quick Answer', slug: 'quick-answer', depth: 2},
-  {text: 'What RAM Does', slug: 'what-ram-does', depth: 2},
-  {text: 'Real-World Usage', slug: 'ram-by-task', depth: 2},
-  {text: 'Comparing Options', slug: 'ram-comparison', depth: 2},
-  {text: 'Signs You Need More', slug: 'when-to-upgrade', depth: 2},
-  {text: 'Laptop Picks', slug: 'recommendations', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
+  { text: "Quick Answer", slug: "quick-answer", depth: 2 },
+  { text: "What RAM Does", slug: "what-ram-does", depth: 2 },
+  { text: "Real-World Usage", slug: "ram-by-task", depth: 2 },
+  { text: "Comparing Options", slug: "ram-comparison", depth: 2 },
+  { text: "Signs You Need More", slug: "when-to-upgrade", depth: 2 },
+  { text: "Laptop Picks", slug: "recommendations", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
 ];
 
 const ramUsageColumns = [
-  {key: 'task', label: 'Task', width: '180px'},
-  {key: 'usage', label: 'Typical RAM Usage'},
-  {key: 'minimum', label: 'Minimum Recommended'},
+  { key: "task", label: "Task", width: "180px" },
+  { key: "usage", label: "Typical RAM Usage" },
+  { key: "minimum", label: "Minimum Recommended" },
 ];
 
 const ramUsageRows = [
-  {task: '<strong>Video Call (Zoom/Teams)</strong>', usage: '0.5-1.5 GB', minimum: '8 GB'},
-  {task: '<strong>10 Chrome Tabs</strong>', usage: '2-4 GB', minimum: '8 GB'},
-  {task: '<strong>30+ Chrome Tabs</strong>', usage: '6-10 GB', minimum: '16 GB'},
-  {task: '<strong>Microsoft Office</strong>', usage: '0.5-1 GB', minimum: '8 GB'},
-  {task: '<strong>Slack/Discord</strong>', usage: '0.5-1 GB', minimum: '8 GB'},
-  {task: '<strong>Adobe Photoshop</strong>', usage: '2-8 GB', minimum: '16 GB'},
-  {task: '<strong>Video Editing</strong>', usage: '8-16+ GB', minimum: '32 GB'},
-  {task: '<strong>Web Development</strong>', usage: '4-8 GB', minimum: '16 GB'},
-  {task: '<strong>Virtual Machines</strong>', usage: '4-8 GB per VM', minimum: '32 GB'},
+  { task: "<strong>Video Call (Zoom/Teams)</strong>", usage: "0.5-1.5 GB", minimum: "8 GB" },
+  { task: "<strong>10 Chrome Tabs</strong>", usage: "2-4 GB", minimum: "8 GB" },
+  { task: "<strong>30+ Chrome Tabs</strong>", usage: "6-10 GB", minimum: "16 GB" },
+  { task: "<strong>Microsoft Office</strong>", usage: "0.5-1 GB", minimum: "8 GB" },
+  { task: "<strong>Slack/Discord</strong>", usage: "0.5-1 GB", minimum: "8 GB" },
+  { task: "<strong>Adobe Photoshop</strong>", usage: "2-8 GB", minimum: "16 GB" },
+  { task: "<strong>Video Editing</strong>", usage: "8-16+ GB", minimum: "32 GB" },
+  { task: "<strong>Web Development</strong>", usage: "4-8 GB", minimum: "16 GB" },
+  { task: "<strong>Virtual Machines</strong>", usage: "4-8 GB per VM", minimum: "32 GB" },
 ];
 
 const comparisonColumns = [
-  {key: 'ram', label: 'RAM', width: '100px'},
-  {key: 'good_for', label: 'Good For'},
-  {key: 'not_ideal', label: 'Not Ideal For'},
-  {key: 'price_impact', label: 'Price Impact'},
+  { key: "ram", label: "RAM", width: "100px" },
+  { key: "good_for", label: "Good For" },
+  { key: "not_ideal", label: "Not Ideal For" },
+  { key: "price_impact", label: "Price Impact" },
 ];
 
 const comparisonRows = [
   {
-    ram: '<strong>8 GB</strong>',
-    good_for: 'Basic tasks, light browsing, email',
-    not_ideal: 'Heavy multitasking, creative work',
-    price_impact: 'Base price'
+    ram: "<strong>8 GB</strong>",
+    good_for: "Basic tasks, light browsing, email",
+    not_ideal: "Heavy multitasking, creative work",
+    price_impact: "Base price",
   },
   {
-    ram: '<strong>16 GB</strong>',
-    good_for: 'Most remote work, moderate multitasking',
-    not_ideal: 'Video editing, VMs',
-    price_impact: '+$50-150'
+    ram: "<strong>16 GB</strong>",
+    good_for: "Most remote work, moderate multitasking",
+    not_ideal: "Video editing, VMs",
+    price_impact: "+$50-150",
   },
   {
-    ram: '<strong>32 GB</strong>',
-    good_for: 'Power users, creative pros, developers',
-    not_ideal: 'Casual users (overkill)',
-    price_impact: '+$150-300'
+    ram: "<strong>32 GB</strong>",
+    good_for: "Power users, creative pros, developers",
+    not_ideal: "Casual users (overkill)",
+    price_impact: "+$150-300",
   },
 ];
 
 const faqItems = [
   {
-    question: 'Eight gig enough for Zoom?',
-    answer: 'Yeah, handles Zoom, Teams, Meet fine if you close other apps. But screen sharing while taking notes with reference materials open? Sixteen gig gives breathing room.',
+    question: "Eight gig enough for Zoom?",
+    answer:
+      "Yeah, handles Zoom, Teams, Meet fine if you close other apps. But screen sharing while taking notes with reference materials open? Sixteen gig gives breathing room.",
   },
   {
-    question: 'Why does Chrome hog memory?',
-    answer: 'Each tab runs as separate process for security. Extensions eat memory too. Each tab uses one hundred to three hundred meg. Media-heavy sites use more. Try Firefox or Edge if RAM is limited.',
+    question: "Why does Chrome hog memory?",
+    answer:
+      "Each tab runs as separate process for security. Extensions eat memory too. Each tab uses one hundred to three hundred meg. Media-heavy sites use more. Try Firefox or Edge if RAM is limited.",
   },
   {
-    question: 'Can I upgrade RAM later?',
-    answer: 'Depends on laptop. Budget laptops often have upgradeable RAM. Ultrabooks and MacBooks usually have it soldered. Check your model before buying. When in doubt, buy more upfront.',
+    question: "Can I upgrade RAM later?",
+    answer:
+      "Depends on laptop. Budget laptops often have upgradeable RAM. Ultrabooks and MacBooks usually have it soldered. Check your model before buying. When in doubt, buy more upfront.",
   },
   {
-    question: 'Does more RAM make things faster?',
-    answer: 'Not directly. More RAM prevents slowdowns by reducing disk swapping. If you have enough for your tasks, adding more won\'t speed up individual apps. Processor determines raw speed.',
+    question: "Does more RAM make things faster?",
+    answer:
+      "Not directly. More RAM prevents slowdowns by reducing disk swapping. If you have enough for your tasks, adding more won't speed up individual apps. Processor determines raw speed.",
   },
   {
-    question: 'RAM vs storage difference?',
-    answer: 'RAM is temporary memory for running programs. Cleared when you shut down. Storage is permanent for files. Both affect performance but RAM impacts multitasking while storage affects file loading and boot times.',
+    question: "RAM vs storage difference?",
+    answer:
+      "RAM is temporary memory for running programs. Cleared when you shut down. Storage is permanent for files. Both affect performance but RAM impacts multitasking while storage affects file loading and boot times.",
   },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Our top picks at every RAM configuration.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp',
-    imageAlt: 'Laptop on desk',
+    title: "Best Laptops for Remote Work",
+    excerpt: "Our top picks at every RAM configuration.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "Laptop on desk",
   },
   {
-    title: 'Best Budget Laptops Under $800',
-    excerpt: 'Affordable laptops with smart RAM configurations.',
-    href: '/gear/best-budget-laptops-remote-work',
-    image: '/images/unsplash/photo-1525547719571-a2d4ac8945e2-800w.webp',
-    imageAlt: 'Budget laptop',
+    title: "Best Budget Laptops Under $800",
+    excerpt: "Affordable laptops with smart RAM configurations.",
+    href: "/gear/best-budget-laptops-remote-work",
+    image: "/images/unsplash/photo-1525547719571-a2d4ac8945e2-800w.webp",
+    imageAlt: "Budget laptop",
   },
   {
-    title: 'MacBook vs Windows for Remote Work',
-    excerpt: 'Platform comparison including RAM efficiency.',
-    href: '/gear/macbook-vs-windows-remote-work',
-    image: '/images/unsplash/photo-1517336714731-489689fd1ca8-800w.webp',
-    imageAlt: 'MacBook and Windows comparison',
+    title: "MacBook vs Windows for Remote Work",
+    excerpt: "Platform comparison including RAM efficiency.",
+    href: "/gear/macbook-vs-windows-remote-work",
+    image: "/images/unsplash/photo-1517336714731-489689fd1ca8-800w.webp",
+    imageAlt: "MacBook and Windows comparison",
   },
 ];
 ---

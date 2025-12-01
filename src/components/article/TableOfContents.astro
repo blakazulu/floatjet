@@ -11,10 +11,10 @@ interface Props {
   mobile?: boolean;
 }
 
-const {headings, mobile = false} = Astro.props;
+const { headings, mobile = false } = Astro.props;
 
 // Filter to only H2 and H3
-const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
+const filteredHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
 ---
 
 {mobile ? (

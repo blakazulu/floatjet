@@ -11,7 +11,7 @@
 
 import fs from "fs";
 import path from "path";
-import {fileURLToPath} from "url";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,7 +28,7 @@ async function detectAI(text) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "ApiKey": API_KEY,
+      ApiKey: API_KEY,
     },
     body: JSON.stringify({
       input_text: text,

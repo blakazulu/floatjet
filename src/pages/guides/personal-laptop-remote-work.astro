@@ -1,76 +1,83 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Can You Use Your Personal Laptop for Remote Work?';
-const description = 'Everything you need to know about using your personal laptop for work. Security considerations, employer policies, and setup tips for remote work success.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-19');
+const title = "Can You Use Your Personal Laptop for Remote Work?";
+const description =
+  "Everything you need to know about using your personal laptop for work. Security considerations, employer policies, and setup tips for remote work success.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-19");
 const readingTime = 13;
-const image = '/images/unsplash/photo-1496181133206-80ce9b88a853-1200w.webp';
-const imageAlt = 'Person working on personal laptop at home office desk';
+const image = "/images/unsplash/photo-1496181133206-80ce9b88a853-1200w.webp";
+const imageAlt = "Person working on personal laptop at home office desk";
 
 const headings = [
-  {depth: 2, slug: 'short-answer', text: 'The Quick Answer'},
-  {depth: 2, slug: 'security-concerns', text: 'The Security Stuff'},
-  {depth: 2, slug: 'setting-up-personal-laptop', text: 'Getting Set Up'},
-  {depth: 2, slug: 'separating-work-personal', text: 'Keeping Work and Personal Apart'},
-  {depth: 2, slug: 'byod-pros-cons', text: 'Good Stuff and Bad Stuff'},
-  {depth: 2, slug: 'when-to-get-separate', text: 'When You Need Something Separate'},
-  {depth: 2, slug: 'asking-employer', text: 'Asking Your Employer for Equipment'},
-  {depth: 2, slug: 'faq', text: 'Questions People Ask'}
+  { depth: 2, slug: "short-answer", text: "The Quick Answer" },
+  { depth: 2, slug: "security-concerns", text: "The Security Stuff" },
+  { depth: 2, slug: "setting-up-personal-laptop", text: "Getting Set Up" },
+  { depth: 2, slug: "separating-work-personal", text: "Keeping Work and Personal Apart" },
+  { depth: 2, slug: "byod-pros-cons", text: "Good Stuff and Bad Stuff" },
+  { depth: 2, slug: "when-to-get-separate", text: "When You Need Something Separate" },
+  { depth: 2, slug: "asking-employer", text: "Asking Your Employer for Equipment" },
+  { depth: 2, slug: "faq", text: "Questions People Ask" },
 ];
 
 const faqData = [
   {
-    question: 'Can my employer see what I do on my personal laptop?',
-    answer: 'Generally no. Unless you install company monitoring software or use their VPN. But if you access work accounts, they can see activity inside those applications. Keep personal browsing separate from work apps.'
+    question: "Can my employer see what I do on my personal laptop?",
+    answer:
+      "Generally no. Unless you install company monitoring software or use their VPN. But if you access work accounts, they can see activity inside those applications. Keep personal browsing separate from work apps.",
   },
   {
-    question: 'Should I let IT install software on my personal device?',
-    answer: 'Be cautious. Some company software includes monitoring or MDM that gives IT control over your machine. Understand exactly what the software does before saying yes. Decide if you\'re comfortable with that access.'
+    question: "Should I let IT install software on my personal device?",
+    answer:
+      "Be cautious. Some company software includes monitoring or MDM that gives IT control over your machine. Understand exactly what the software does before saying yes. Decide if you're comfortable with that access.",
   },
   {
-    question: 'What if my laptop isn\'t powerful enough?',
-    answer: 'You have grounds to ask for company equipment. Document specific problems. Lag during video calls. Slow applications. Present these to your manager or IT.'
+    question: "What if my laptop isn't powerful enough?",
+    answer:
+      "You have grounds to ask for company equipment. Document specific problems. Lag during video calls. Slow applications. Present these to your manager or IT.",
   },
   {
-    question: 'Who pays if my laptop breaks doing work?',
-    answer: 'Depends on your agreement. Many companies offer stipends that could cover repairs. Check company policy or your contract. Clarify before using personal equipment if nothing exists.'
+    question: "Who pays if my laptop breaks doing work?",
+    answer:
+      "Depends on your agreement. Many companies offer stipends that could cover repairs. Check company policy or your contract. Clarify before using personal equipment if nothing exists.",
   },
   {
-    question: 'Can I write off my laptop as a work expense?',
-    answer: 'Sometimes. If you use it for work and don\'t get reimbursed, you might deduct part of the cost on taxes. Talk to a tax professional for your specific situation.'
+    question: "Can I write off my laptop as a work expense?",
+    answer:
+      "Sometimes. If you use it for work and don't get reimbursed, you might deduct part of the cost on taxes. Talk to a tax professional for your specific situation.",
   },
   {
-    question: 'What happens to work data when I leave the company?',
-    answer: 'You typically have to delete all company data. If you kept work and personal separate with different accounts or browsers, easy. If everything\'s mixed together, complicated.'
-  }
+    question: "What happens to work data when I leave the company?",
+    answer:
+      "You typically have to delete all company data. If you kept work and personal separate with different accounts or browsers, easy. If everything's mixed together, complicated.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Best Laptops for Remote Work',
-    excerpt: 'Top laptop picks for productivity and portability.',
-    href: '/gear/best-laptops-remote-work',
-    image: '/images/unsplash/photo-1517336714731-489689fd1ca8-800w.webp',
-    imageAlt: 'Laptop on desk for remote work'
+    title: "Best Laptops for Remote Work",
+    excerpt: "Top laptop picks for productivity and portability.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1517336714731-489689fd1ca8-800w.webp",
+    imageAlt: "Laptop on desk for remote work",
   },
   {
-    title: 'Best VPN for Digital Nomads',
-    excerpt: 'Secure your connection when working remotely.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'VPN security on laptop'
+    title: "Best VPN for Digital Nomads",
+    excerpt: "Secure your connection when working remotely.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
+    imageAlt: "VPN security on laptop",
   },
   {
-    title: 'Best Password Managers',
-    excerpt: 'Keep your accounts secure and organized.',
-    href: '/tools/best-password-manager-remote-work',
-    image: '/images/unsplash/photo-1555949963-ff9fe0c870eb-800w.webp',
-    imageAlt: 'Password security concept'
-  }
+    title: "Best Password Managers",
+    excerpt: "Keep your accounts secure and organized.",
+    href: "/tools/best-password-manager-remote-work",
+    image: "/images/unsplash/photo-1555949963-ff9fe0c870eb-800w.webp",
+    imageAlt: "Password security concept",
+  },
 ];
 ---
 

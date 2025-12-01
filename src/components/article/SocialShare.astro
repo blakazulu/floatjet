@@ -1,26 +1,32 @@
 ---
 import {
-  TwitterShareButton,
-  LinkedInShareButton,
   FacebookShareButton,
+  LinkedInShareButton,
   RedditShareButton,
+  SocialShare as SocialShareButtons,
+  TwitterShareButton,
   WhatsAppShareButton,
-  SocialShare as SocialShareButtons
-} from 'astro-social-share';
+} from "astro-social-share";
 
 interface Props {
   title: string;
   description?: string;
 }
 
-const {title, description = ''} = Astro.props;
+const { title, description = "" } = Astro.props;
 
 // Always use production URL for sharing (localhost won't work with social platforms)
 const currentUrl = Astro.url.href;
-const shareUrl = currentUrl.replace(/^https?:\/\/localhost:\d+/, 'https://floatjet.com');
+const shareUrl = currentUrl.replace(/^https?:\/\/localhost:\d+/, "https://floatjet.com");
 
 // Select which buttons to show
-const buttons = [TwitterShareButton, LinkedInShareButton, FacebookShareButton, RedditShareButton, WhatsAppShareButton];
+const buttons = [
+  TwitterShareButton,
+  LinkedInShareButton,
+  FacebookShareButton,
+  RedditShareButton,
+  WhatsAppShareButton,
+];
 ---
 
 <!-- Desktop: Floating sidebar on left -->

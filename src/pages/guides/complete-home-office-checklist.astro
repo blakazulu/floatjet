@@ -1,76 +1,83 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import {FAQSection, RelatedArticles} from '../../components/article';
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
-const title = 'Complete Home Office Checklist: Everything You Need';
-const description = 'The ultimate home office checklist for remote workers. From essential furniture to tech equipment, lighting, and ergonomics—build your perfect workspace.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2024-12-15');
+const title = "Complete Home Office Checklist: Everything You Need";
+const description =
+  "The ultimate home office checklist for remote workers. From essential furniture to tech equipment, lighting, and ergonomics—build your perfect workspace.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2024-12-15");
 const readingTime = 16;
-const image = '/images/unsplash/photo-1518455027359-f3f8164ba6bd-1200w.webp';
-const imageAlt = 'Well-organized home office setup with desk, chair, and equipment';
+const image = "/images/unsplash/photo-1518455027359-f3f8164ba6bd-1200w.webp";
+const imageAlt = "Well-organized home office setup with desk, chair, and equipment";
 
 const headings = [
-  {depth: 2, slug: 'furniture-checklist', text: 'Your Desk and Chair'},
-  {depth: 2, slug: 'tech-equipment', text: 'Tech Stuff'},
-  {depth: 2, slug: 'lighting-checklist', text: 'Getting the Light Right'},
-  {depth: 2, slug: 'organization-storage', text: 'Keeping Things Organized'},
-  {depth: 2, slug: 'comfort-ergonomics', text: 'Making It Comfortable'},
-  {depth: 2, slug: 'budget-tiers', text: 'What It Costs'},
-  {depth: 2, slug: 'printable-checklist', text: 'Short Version'},
-  {depth: 2, slug: 'faq', text: 'Common Questions'}
+  { depth: 2, slug: "furniture-checklist", text: "Your Desk and Chair" },
+  { depth: 2, slug: "tech-equipment", text: "Tech Stuff" },
+  { depth: 2, slug: "lighting-checklist", text: "Getting the Light Right" },
+  { depth: 2, slug: "organization-storage", text: "Keeping Things Organized" },
+  { depth: 2, slug: "comfort-ergonomics", text: "Making It Comfortable" },
+  { depth: 2, slug: "budget-tiers", text: "What It Costs" },
+  { depth: 2, slug: "printable-checklist", text: "Short Version" },
+  { depth: 2, slug: "faq", text: "Common Questions" },
 ];
 
 const faqData = [
   {
-    question: 'How much should I budget?',
-    answer: 'Functional home office runs five hundred to eight hundred with budget options. Comfortable mid-range setup runs fifteen hundred to twenty five hundred. Premium setups with high-end ergonomic furniture and equipment hit three thousand to five thousand or beyond.'
+    question: "How much should I budget?",
+    answer:
+      "Functional home office runs five hundred to eight hundred with budget options. Comfortable mid-range setup runs fifteen hundred to twenty five hundred. Premium setups with high-end ergonomic furniture and equipment hit three thousand to five thousand or beyond.",
   },
   {
-    question: 'What matters most?',
-    answer: 'Your chair. You spend eight plus hours a day sitting. Bad chair leads to back pain and long-term health issues. Invest in a quality ergonomic chair first even if you save money elsewhere.'
+    question: "What matters most?",
+    answer:
+      "Your chair. You spend eight plus hours a day sitting. Bad chair leads to back pain and long-term health issues. Invest in a quality ergonomic chair first even if you save money elsewhere.",
   },
   {
-    question: 'Need a dedicated room?',
-    answer: 'Nope. Many people work fine from a corner of a bedroom or living room. I\'ve even seen people convert large closets into office nooks. Just need a space that feels like work mode when you\'re there. And somewhere you can mentally walk away from at the end of the day.'
+    question: "Need a dedicated room?",
+    answer:
+      "Nope. Many people work fine from a corner of a bedroom or living room. I've even seen people convert large closets into office nooks. Just need a space that feels like work mode when you're there. And somewhere you can mentally walk away from at the end of the day.",
   },
   {
-    question: 'Worth getting a standing desk?',
-    answer: 'Standing desks let you alternate sitting and standing which has real health benefits. Not essential but if budget allows, sit-stand desk is worthwhile investment for the long haul.'
+    question: "Worth getting a standing desk?",
+    answer:
+      "Standing desks let you alternate sitting and standing which has real health benefits. Not essential but if budget allows, sit-stand desk is worthwhile investment for the long haul.",
   },
   {
-    question: 'Best monitor size?',
-    answer: 'Twenty seven inches hits the sweet spot for most remote workers. Big enough for comfortable viewing and juggling windows without being overwhelming. Dual monitors or ultrawide at thirty four inches or more is great if you run multiple applications all day.'
+    question: "Best monitor size?",
+    answer:
+      "Twenty seven inches hits the sweet spot for most remote workers. Big enough for comfortable viewing and juggling windows without being overwhelming. Dual monitors or ultrawide at thirty four inches or more is great if you run multiple applications all day.",
   },
   {
-    question: 'How important is lighting?',
-    answer: 'Very. Bad lighting wrecks your eyes and gives you headaches. Pair natural light with a good desk lamp when possible. Watch out for screen glare and make sure your face looks decent on video calls.'
-  }
+    question: "How important is lighting?",
+    answer:
+      "Very. Bad lighting wrecks your eyes and gives you headaches. Pair natural light with a good desk lamp when possible. Watch out for screen glare and make sure your face looks decent on video calls.",
+  },
 ];
 
 const relatedArticles = [
   {
-    title: 'Ultimate Home Office Setup',
-    excerpt: 'Complete guide to building your ideal remote workspace.',
-    href: '/blog/ultimate-home-office-setup',
-    image: '/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp',
-    imageAlt: 'Modern home office setup'
+    title: "Ultimate Home Office Setup",
+    excerpt: "Complete guide to building your ideal remote workspace.",
+    href: "/blog/ultimate-home-office-setup",
+    image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp",
+    imageAlt: "Modern home office setup",
   },
   {
-    title: 'Best Standing Desks',
-    excerpt: 'Top standing desks for health and productivity.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1593062096033-9a26b09da705-800w.webp',
-    imageAlt: 'Standing desk in home office'
+    title: "Best Standing Desks",
+    excerpt: "Top standing desks for health and productivity.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593062096033-9a26b09da705-800w.webp",
+    imageAlt: "Standing desk in home office",
   },
   {
-    title: 'Best Ergonomic Chairs',
-    excerpt: 'Find the perfect chair for long work sessions.',
-    href: '/gear/best-ergonomic-chairs',
-    image: '/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp',
-    imageAlt: 'Ergonomic office chair'
-  }
+    title: "Best Ergonomic Chairs",
+    excerpt: "Find the perfect chair for long work sessions.",
+    href: "/gear/best-ergonomic-chairs",
+    image: "/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp",
+    imageAlt: "Ergonomic office chair",
+  },
 ];
 ---
 

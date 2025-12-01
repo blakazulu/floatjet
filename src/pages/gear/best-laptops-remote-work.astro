@@ -1,217 +1,229 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'Best Laptops for Remote Work & Digital Nomads (2025)';
-const description = 'I tested ten laptops to find the best for remote work. MacBook Air M3, ThinkPad X1 Carbon, Dell XPS compared with real battery tests and honest takes.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-23');
+const title = "Best Laptops for Remote Work & Digital Nomads (2025)";
+const description =
+  "I tested ten laptops to find the best for remote work. MacBook Air M3, ThinkPad X1 Carbon, Dell XPS compared with real battery tests and honest takes.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-23");
 const readingTime = 8;
-const image = '/images/unsplash/photo-1496181133206-80ce9b88a853-1200w.webp';
-const imageAlt = 'Modern laptop on minimalist desk for remote work';
+const image = "/images/unsplash/photo-1496181133206-80ce9b88a853-1200w.webp";
+const imageAlt = "Modern laptop on minimalist desk for remote work";
 
 // Table of contents headings
 const headings = [
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Why This Matters', slug: 'why-laptop-matters', depth: 2},
-  {text: 'MacBook Air M3', slug: 'macbook-air-m3', depth: 2},
-  {text: 'ThinkPad X1 Carbon', slug: 'thinkpad-x1-carbon', depth: 2},
-  {text: 'Dell XPS 13', slug: 'dell-xps-13', depth: 2},
-  {text: 'Framework 13', slug: 'framework-13', depth: 2},
-  {text: 'ASUS ZenBook 14', slug: 'asus-zenbook-14', depth: 2},
-  {text: 'HP Spectre x360', slug: 'hp-spectre-x360', depth: 2},
-  {text: 'Surface Laptop 5', slug: 'surface-laptop-5', depth: 2},
-  {text: 'Acer Swift 3', slug: 'acer-swift-3', depth: 2},
-  {text: 'How to Choose', slug: 'how-to-choose', depth: 2},
-  {text: 'Complete Your Setup', slug: 'remote-work-essentials', depth: 2},
-  {text: 'Questions', slug: 'faq', depth: 2},
-  {text: 'Bottom Line', slug: 'conclusion', depth: 2},
-  {text: 'Full Comparison', slug: 'full-comparison', depth: 2},
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why This Matters", slug: "why-laptop-matters", depth: 2 },
+  { text: "MacBook Air M3", slug: "macbook-air-m3", depth: 2 },
+  { text: "ThinkPad X1 Carbon", slug: "thinkpad-x1-carbon", depth: 2 },
+  { text: "Dell XPS 13", slug: "dell-xps-13", depth: 2 },
+  { text: "Framework 13", slug: "framework-13", depth: 2 },
+  { text: "ASUS ZenBook 14", slug: "asus-zenbook-14", depth: 2 },
+  { text: "HP Spectre x360", slug: "hp-spectre-x360", depth: 2 },
+  { text: "Surface Laptop 5", slug: "surface-laptop-5", depth: 2 },
+  { text: "Acer Swift 3", slug: "acer-swift-3", depth: 2 },
+  { text: "How to Choose", slug: "how-to-choose", depth: 2 },
+  { text: "Complete Your Setup", slug: "remote-work-essentials", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "Bottom Line", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'laptop', label: 'Laptop', width: '140px'},
-  {key: 'bestFor', label: 'Best For', width: '140px'},
-  {key: 'price', label: 'Price'},
-  {key: 'rating', label: 'Rating'},
-  {key: 'action', label: ''},
+  { key: "laptop", label: "Laptop", width: "140px" },
+  { key: "bestFor", label: "Best For", width: "140px" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    laptop: '<strong>MacBook Air M3</strong>',
-    bestFor: 'Best Overall',
-    price: '$1,099+',
-    rating: '9.5/10',
-    action: '<a href="/go/amazon/macbook-air-m3" rel="nofollow sponsored">Check Price</a>'
+    laptop: "<strong>MacBook Air M3</strong>",
+    bestFor: "Best Overall",
+    price: "$1,099+",
+    rating: "9.5/10",
+    action: '<a href="/go/amazon/macbook-air-m3" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    laptop: '<strong>ThinkPad X1 Carbon</strong>',
-    bestFor: 'Business Users',
-    price: '$1,299+',
-    rating: '9.3/10',
-    action: '<a href="/go/amazon/thinkpad-x1-carbon" rel="nofollow sponsored">Check Price</a>'
+    laptop: "<strong>ThinkPad X1 Carbon</strong>",
+    bestFor: "Business Users",
+    price: "$1,299+",
+    rating: "9.3/10",
+    action: '<a href="/go/amazon/thinkpad-x1-carbon" rel="nofollow sponsored">Check Price</a>',
   },
   {
-    laptop: '<strong>Dell XPS 13</strong>',
-    bestFor: 'Windows Ultrabook',
-    price: '$999+',
-    rating: '9.0/10',
-    action: '<a href="/go/amazon/dell-xps-13" rel="nofollow sponsored">Check Price</a>'
+    laptop: "<strong>Dell XPS 13</strong>",
+    bestFor: "Windows Ultrabook",
+    price: "$999+",
+    rating: "9.0/10",
+    action: '<a href="/go/amazon/dell-xps-13" rel="nofollow sponsored">Check Price</a>',
   },
 ];
 
 // Full comparison table
 const fullComparisonColumns = [
-  {key: 'laptop', label: 'Laptop', width: '130px'},
-  {key: 'bestFor', label: 'Best For', width: '120px'},
-  {key: 'price', label: 'Starting Price'},
-  {key: 'weight', label: 'Weight'},
-  {key: 'battery', label: 'Battery'},
-  {key: 'display', label: 'Display'},
-  {key: 'action', label: ''},
+  { key: "laptop", label: "Laptop", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "120px" },
+  { key: "price", label: "Starting Price" },
+  { key: "weight", label: "Weight" },
+  { key: "battery", label: "Battery" },
+  { key: "display", label: "Display" },
+  { key: "action", label: "" },
 ];
 
 const fullComparisonRows = [
   {
-    laptop: '<strong>MacBook Air M3</strong>',
-    bestFor: 'Best Overall',
-    price: '$1,099',
-    weight: '2.7 lbs',
-    battery: '18 hours',
+    laptop: "<strong>MacBook Air M3</strong>",
+    bestFor: "Best Overall",
+    price: "$1,099",
+    weight: "2.7 lbs",
+    battery: "18 hours",
     display: '13.6" Liquid Retina',
-    action: '<a href="/go/amazon/macbook-air-m3" rel="nofollow sponsored">Buy</a>'
+    action: '<a href="/go/amazon/macbook-air-m3" rel="nofollow sponsored">Buy</a>',
   },
   {
-    laptop: '<strong>ThinkPad X1 Carbon</strong>',
-    bestFor: 'Business',
-    price: '$1,299',
-    weight: '2.48 lbs',
-    battery: '15 hours',
+    laptop: "<strong>ThinkPad X1 Carbon</strong>",
+    bestFor: "Business",
+    price: "$1,299",
+    weight: "2.48 lbs",
+    battery: "15 hours",
     display: '14" 2.8K OLED',
-    action: '<a href="/go/amazon/thinkpad-x1-carbon" rel="nofollow sponsored">Buy</a>'
+    action: '<a href="/go/amazon/thinkpad-x1-carbon" rel="nofollow sponsored">Buy</a>',
   },
   {
-    laptop: '<strong>Dell XPS 13</strong>',
-    bestFor: 'Windows Ultrabook',
-    price: '$999',
-    weight: '2.59 lbs',
-    battery: '12 hours',
+    laptop: "<strong>Dell XPS 13</strong>",
+    bestFor: "Windows Ultrabook",
+    price: "$999",
+    weight: "2.59 lbs",
+    battery: "12 hours",
     display: '13.4" OLED 3.5K',
-    action: '<a href="/go/amazon/dell-xps-13" rel="nofollow sponsored">Buy</a>'
+    action: '<a href="/go/amazon/dell-xps-13" rel="nofollow sponsored">Buy</a>',
   },
   {
-    laptop: '<strong>Framework 13</strong>',
-    bestFor: 'Repairability',
-    price: '$849',
-    weight: '2.87 lbs',
-    battery: '10 hours',
+    laptop: "<strong>Framework 13</strong>",
+    bestFor: "Repairability",
+    price: "$849",
+    weight: "2.87 lbs",
+    battery: "10 hours",
     display: '13.5" 2256x1504',
-    action: '<a href="/go/amazon/framework-13" rel="nofollow sponsored">Buy</a>'
+    action: '<a href="/go/amazon/framework-13" rel="nofollow sponsored">Buy</a>',
   },
   {
-    laptop: '<strong>ASUS ZenBook 14</strong>',
-    bestFor: 'Value',
-    price: '$699',
-    weight: '2.87 lbs',
-    battery: '13 hours',
+    laptop: "<strong>ASUS ZenBook 14</strong>",
+    bestFor: "Value",
+    price: "$699",
+    weight: "2.87 lbs",
+    battery: "13 hours",
     display: '14" 2.8K OLED',
-    action: '<a href="/go/amazon/asus-zenbook-14" rel="nofollow sponsored">Buy</a>'
+    action: '<a href="/go/amazon/asus-zenbook-14" rel="nofollow sponsored">Buy</a>',
   },
   {
-    laptop: '<strong>HP Spectre x360</strong>',
-    bestFor: '2-in-1 Flexibility',
-    price: '$999',
-    weight: '3.01 lbs',
-    battery: '15 hours',
+    laptop: "<strong>HP Spectre x360</strong>",
+    bestFor: "2-in-1 Flexibility",
+    price: "$999",
+    weight: "3.01 lbs",
+    battery: "15 hours",
     display: '13.5" 3K2K OLED',
-    action: '<a href="/go/amazon/hp-spectre-x360" rel="nofollow sponsored">Buy</a>'
+    action: '<a href="/go/amazon/hp-spectre-x360" rel="nofollow sponsored">Buy</a>',
   },
   {
-    laptop: '<strong>Surface Laptop 5</strong>',
-    bestFor: 'Microsoft Users',
-    price: '$999',
-    weight: '2.8 lbs',
-    battery: '18 hours',
+    laptop: "<strong>Surface Laptop 5</strong>",
+    bestFor: "Microsoft Users",
+    price: "$999",
+    weight: "2.8 lbs",
+    battery: "18 hours",
     display: '13.5" PixelSense',
-    action: '<a href="/go/amazon/surface-laptop-5" rel="nofollow sponsored">Buy</a>'
+    action: '<a href="/go/amazon/surface-laptop-5" rel="nofollow sponsored">Buy</a>',
   },
   {
-    laptop: '<strong>Acer Swift 3</strong>',
-    bestFor: 'Budget',
-    price: '$549',
-    weight: '2.65 lbs',
-    battery: '11 hours',
+    laptop: "<strong>Acer Swift 3</strong>",
+    bestFor: "Budget",
+    price: "$549",
+    weight: "2.65 lbs",
+    battery: "11 hours",
     display: '14" 1920x1080',
-    action: '<a href="/go/amazon/acer-swift-3" rel="nofollow sponsored">Buy</a>'
+    action: '<a href="/go/amazon/acer-swift-3" rel="nofollow sponsored">Buy</a>',
   },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'Best laptop for remote work?',
-    answer: '<p>MacBook Air M3 for most people. Eighteen hour battery. 2.7 pounds. Silent. Handles video calls, documents, light creative work. Just works.</p><p>Windows users: ThinkPad X1 Carbon. Legendary keyboard. Durable. Enterprise security.</p>'
+    question: "Best laptop for remote work?",
+    answer:
+      "<p>MacBook Air M3 for most people. Eighteen hour battery. 2.7 pounds. Silent. Handles video calls, documents, light creative work. Just works.</p><p>Windows users: ThinkPad X1 Carbon. Legendary keyboard. Durable. Enterprise security.</p>",
   },
   {
-    question: 'How much to spend?',
-    answer: '<p>Eight hundred to fifteen hundred for a laptop lasting four to five years. Under eight hundred means compromises in build, battery, or performance.</p><p>Sweet spot: thousand to twelve hundred. Premium features without overpaying for gaming specs you won\'t use.</p><p>Budget: Swift 3 at five-fifty. Premium: Air M3 at eleven hundred.</p>'
+    question: "How much to spend?",
+    answer:
+      "<p>Eight hundred to fifteen hundred for a laptop lasting four to five years. Under eight hundred means compromises in build, battery, or performance.</p><p>Sweet spot: thousand to twelve hundred. Premium features without overpaying for gaming specs you won't use.</p><p>Budget: Swift 3 at five-fifty. Premium: Air M3 at eleven hundred.</p>",
   },
   {
-    question: 'Mac or Windows?',
-    answer: '<p>Both work great. Choose Mac if battery life matters, you use iPhone/iPad, work in creative fields, or want hassle-free. M-series chips are incredibly efficient.</p><p>Choose Windows if you need specific Windows software, want more hardware choices, like touchscreens, or your company uses Windows IT.</p><p>Most tools work the same on both.</p>'
+    question: "Mac or Windows?",
+    answer:
+      "<p>Both work great. Choose Mac if battery life matters, you use iPhone/iPad, work in creative fields, or want hassle-free. M-series chips are incredibly efficient.</p><p>Choose Windows if you need specific Windows software, want more hardware choices, like touchscreens, or your company uses Windows IT.</p><p>Most tools work the same on both.</p>",
   },
   {
-    question: 'What specs matter?',
-    answer: '<p>In order: Battery life eight plus hours. Weight under 3.5 pounds. Webcam quality 1080p minimum. RAM sixteen gig. SSD two-fifty-six plus.</p><p>You\'ll carry this everywhere. Cafes don\'t have outlets. Bad webcams look unprofessional.</p>'
+    question: "What specs matter?",
+    answer:
+      "<p>In order: Battery life eight plus hours. Weight under 3.5 pounds. Webcam quality 1080p minimum. RAM sixteen gig. SSD two-fifty-six plus.</p><p>You'll carry this everywhere. Cafes don't have outlets. Bad webcams look unprofessional.</p>",
   },
   {
-    question: 'Need dedicated graphics?',
-    answer: '<p>Nope. Integrated graphics in M3, Intel Iris, AMD Radeon handle video calls, 4K displays, light editing, browsing.</p><p>Only for video editing, 3D design, or GPU software. Then look at MacBook Pro 14 or XPS 15.</p>'
+    question: "Need dedicated graphics?",
+    answer:
+      "<p>Nope. Integrated graphics in M3, Intel Iris, AMD Radeon handle video calls, 4K displays, light editing, browsing.</p><p>Only for video editing, 3D design, or GPU software. Then look at MacBook Pro 14 or XPS 15.</p>",
   },
   {
-    question: 'Best for digital nomads?',
-    answer: '<p>Air M3: Eighteen hour battery, silent in cafes, 2.7 pounds, solid build.</p><p>Windows: ThinkPad X1. Military durability testing. Spill-resistant. 2.48 pounds. Survives rough travel.</p><p>Budget: ZenBook 14. OLED, good battery, under eight hundred. Easier to replace if stolen.</p>'
+    question: "Best for digital nomads?",
+    answer:
+      "<p>Air M3: Eighteen hour battery, silent in cafes, 2.7 pounds, solid build.</p><p>Windows: ThinkPad X1. Military durability testing. Spill-resistant. 2.48 pounds. Survives rough travel.</p><p>Budget: ZenBook 14. OLED, good battery, under eight hundred. Easier to replace if stolen.</p>",
   },
   {
-    question: 'Webcam quality matter?',
-    answer: '<p>Yes. You\'re on video daily. Grainy dark webcam looks unprofessional. Minimum 1080p.</p><p>Many laptops still ship with 720p. Air M3, XPS 13, and Spectre x360 have good ones. Otherwise get external Logitech C920 for seventy bucks.</p>'
+    question: "Webcam quality matter?",
+    answer:
+      "<p>Yes. You're on video daily. Grainy dark webcam looks unprofessional. Minimum 1080p.</p><p>Many laptops still ship with 720p. Air M3, XPS 13, and Spectre x360 have good ones. Otherwise get external Logitech C920 for seventy bucks.</p>",
   },
   {
-    question: 'Need touchscreen?',
-    answer: '<p>Nice to have, not essential. Adds weight. Drains battery. Collects fingerprints.</p><p>Worth it if you take stylus notes, annotate documents, want tablet mode, or do design work. Spectre x360 and Surface Laptop 5 are best touch options.</p>'
-  }
+    question: "Need touchscreen?",
+    answer:
+      "<p>Nice to have, not essential. Adds weight. Drains battery. Collects fingerprints.</p><p>Worth it if you take stylus notes, annotate documents, want tablet mode, or do design work. Spectre x360 and Surface Laptop 5 are best touch options.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best VPNs for Digital Nomads',
-    excerpt: 'Protect your data on public WiFi. We tested 12 VPNs to find the best for remote workers and digital nomads.',
-    href: '/tools/best-vpn-digital-nomads',
-    image: '/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp',
-    imageAlt: 'Digital security concept with encrypted data'
+    title: "Best VPNs for Digital Nomads",
+    excerpt:
+      "Protect your data on public WiFi. We tested 12 VPNs to find the best for remote workers and digital nomads.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept with encrypted data",
   },
   {
-    title: 'Best Project Management Software',
-    excerpt: 'Compare Notion, ClickUp, Asana, and more to organize your remote work and boost productivity.',
-    href: '/tools/best-project-management-software',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Modern workspace with project management dashboard'
+    title: "Best Project Management Software",
+    excerpt:
+      "Compare Notion, ClickUp, Asana, and more to organize your remote work and boost productivity.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Modern workspace with project management dashboard",
   },
   {
-    title: 'Best Standing Desks for Home Office',
-    excerpt: 'Complete your home office setup with an ergonomic standing desk. Reviews of FlexiSpot, Uplift, and more.',
-    href: '/gear/best-standing-desks',
-    image: '/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp',
-    imageAlt: 'Modern standing desk home office setup'
-  }
+    title: "Best Standing Desks for Home Office",
+    excerpt:
+      "Complete your home office setup with an ergonomic standing desk. Reviews of FlexiSpot, Uplift, and more.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern standing desk home office setup",
+  },
 ];
 ---
 

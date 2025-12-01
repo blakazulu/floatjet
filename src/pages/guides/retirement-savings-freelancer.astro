@@ -1,91 +1,100 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 
 // Article metadata
-const title = 'How to Set Up Retirement Savings as a Freelancer (2025)';
-const description = 'No employer 401(k)? No problem. Learn about Solo 401(k), SEP IRA, and other retirement options for self-employed workers to build wealth and reduce taxes.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "How to Set Up Retirement Savings as a Freelancer (2025)";
+const description =
+  "No employer 401(k)? No problem. Learn about Solo 401(k), SEP IRA, and other retirement options for self-employed workers to build wealth and reduce taxes.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 14;
-const image = '/images/unsplash/photo-1579621970563-ebec7560ff3e-1200w.webp';
-const imageAlt = 'Retirement savings jar with coins representing freelancer investing';
+const image = "/images/unsplash/photo-1579621970563-ebec7560ff3e-1200w.webp";
+const imageAlt = "Retirement savings jar with coins representing freelancer investing";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Why This Can\'t Wait', slug: 'why-prioritize', depth: 2},
-  {text: 'Solo 401(k)', slug: 'solo-401k', depth: 2},
-  {text: 'SEP IRAs', slug: 'sep-ira', depth: 2},
-  {text: 'SIMPLE IRAs', slug: 'simple-ira', depth: 2},
-  {text: 'Old School IRAs', slug: 'ira', depth: 2},
-  {text: 'Which One Fits You', slug: 'comparison', depth: 2},
-  {text: 'How to Do This', slug: 'how-to-open', depth: 2},
-  {text: 'Making It Automatic', slug: 'automation', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Why This Can't Wait", slug: "why-prioritize", depth: 2 },
+  { text: "Solo 401(k)", slug: "solo-401k", depth: 2 },
+  { text: "SEP IRAs", slug: "sep-ira", depth: 2 },
+  { text: "SIMPLE IRAs", slug: "simple-ira", depth: 2 },
+  { text: "Old School IRAs", slug: "ira", depth: 2 },
+  { text: "Which One Fits You", slug: "comparison", depth: 2 },
+  { text: "How to Do This", slug: "how-to-open", depth: 2 },
+  { text: "Making It Automatic", slug: "automation", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: 'What\'s the best retirement account for freelancers?',
-    answer: '<p>It depends on your income level and goals:</p><ul><li><strong>Solo 401(k):</strong> Best for high earners who want maximum contributions ($69,000 for 2024)</li><li><strong>SEP IRA:</strong> Simpler to manage, good for variable income</li><li><strong>Traditional/Roth IRA:</strong> Best as supplement, lower contribution limits ($7,000 for 2024)</li></ul><p>For most freelancers earning over $50,000, a Solo 401(k) offers the best combination of high limits and flexibility.</p>'
+    question: "What's the best retirement account for freelancers?",
+    answer:
+      "<p>It depends on your income level and goals:</p><ul><li><strong>Solo 401(k):</strong> Best for high earners who want maximum contributions ($69,000 for 2024)</li><li><strong>SEP IRA:</strong> Simpler to manage, good for variable income</li><li><strong>Traditional/Roth IRA:</strong> Best as supplement, lower contribution limits ($7,000 for 2024)</li></ul><p>For most freelancers earning over $50,000, a Solo 401(k) offers the best combination of high limits and flexibility.</p>",
   },
   {
-    question: 'Can I have both a Solo 401(k) and an IRA?',
-    answer: '<p><strong>Yes!</strong> You can contribute to both a Solo 401(k) (or SEP IRA) AND a Traditional or Roth IRA. The contribution limits are separate.</p><p>For example, you could contribute $23,000 as employee + employer profit-sharing to your Solo 401(k), AND contribute $7,000 to a Roth IRA. This maximizes both tax-deferred and tax-free growth.</p>'
+    question: "Can I have both a Solo 401(k) and an IRA?",
+    answer:
+      "<p><strong>Yes!</strong> You can contribute to both a Solo 401(k) (or SEP IRA) AND a Traditional or Roth IRA. The contribution limits are separate.</p><p>For example, you could contribute $23,000 as employee + employer profit-sharing to your Solo 401(k), AND contribute $7,000 to a Roth IRA. This maximizes both tax-deferred and tax-free growth.</p>",
   },
   {
-    question: 'What happens if my income varies a lot?',
-    answer: '<p>Variable income is common for freelancers. Strategies to handle it:</p><ul><li><strong>SEP IRA:</strong> Contribute a percentage of income (up to 25%), adjusting with your earnings</li><li><strong>Solo 401(k):</strong> Use the employer contribution component (percentage-based) for variable income</li><li><strong>Wait until year-end:</strong> You can make prior-year contributions until tax filing deadline</li></ul><p>Don\'t let income variability stop you—start small and increase contributions as income stabilizes.</p>'
+    question: "What happens if my income varies a lot?",
+    answer:
+      "<p>Variable income is common for freelancers. Strategies to handle it:</p><ul><li><strong>SEP IRA:</strong> Contribute a percentage of income (up to 25%), adjusting with your earnings</li><li><strong>Solo 401(k):</strong> Use the employer contribution component (percentage-based) for variable income</li><li><strong>Wait until year-end:</strong> You can make prior-year contributions until tax filing deadline</li></ul><p>Don't let income variability stop you—start small and increase contributions as income stabilizes.</p>",
   },
   {
-    question: 'Should I choose Traditional (pre-tax) or Roth (post-tax)?',
-    answer: '<p>Consider your current vs. future tax situation:</p><ul><li><strong>Traditional:</strong> Tax deduction now, pay taxes in retirement. Best if you\'re in a higher tax bracket now than you expect in retirement.</li><li><strong>Roth:</strong> No deduction now, tax-free withdrawals later. Best if you expect higher taxes in retirement or want tax diversification.</li></ul><p>Many advisors recommend a mix of both for flexibility. If unsure, Traditional contributions provide immediate tax savings.</p>'
+    question: "Should I choose Traditional (pre-tax) or Roth (post-tax)?",
+    answer:
+      "<p>Consider your current vs. future tax situation:</p><ul><li><strong>Traditional:</strong> Tax deduction now, pay taxes in retirement. Best if you're in a higher tax bracket now than you expect in retirement.</li><li><strong>Roth:</strong> No deduction now, tax-free withdrawals later. Best if you expect higher taxes in retirement or want tax diversification.</li></ul><p>Many advisors recommend a mix of both for flexibility. If unsure, Traditional contributions provide immediate tax savings.</p>",
   },
   {
-    question: 'What if I miss the contribution deadline?',
-    answer: '<p>Deadlines vary by account type:</p><ul><li><strong>Solo 401(k) employee contribution:</strong> December 31 of tax year</li><li><strong>Solo 401(k) employer contribution:</strong> Tax filing deadline (including extensions)</li><li><strong>SEP IRA:</strong> Tax filing deadline (including extensions)</li><li><strong>Traditional/Roth IRA:</strong> Tax filing deadline (no extensions)</li></ul><p>If you miss a deadline, you can\'t make up the contribution—it\'s lost for that year. Set calendar reminders.</p>'
+    question: "What if I miss the contribution deadline?",
+    answer:
+      "<p>Deadlines vary by account type:</p><ul><li><strong>Solo 401(k) employee contribution:</strong> December 31 of tax year</li><li><strong>Solo 401(k) employer contribution:</strong> Tax filing deadline (including extensions)</li><li><strong>SEP IRA:</strong> Tax filing deadline (including extensions)</li><li><strong>Traditional/Roth IRA:</strong> Tax filing deadline (no extensions)</li></ul><p>If you miss a deadline, you can't make up the contribution—it's lost for that year. Set calendar reminders.</p>",
   },
   {
-    question: 'How do I calculate my contribution limit?',
-    answer: '<p>For self-employed individuals, it\'s based on net self-employment income:</p><ol><li>Start with Schedule C net profit</li><li>Subtract half of self-employment tax (the "employer" portion)</li><li>This is your "net self-employment income"</li><li>Apply contribution limits (25% for SEP, more complex for Solo 401k)</li></ol><p>Most accounting software or a CPA can calculate this accurately. Online calculators from Fidelity, Vanguard, or Schwab can also help.</p>'
+    question: "How do I calculate my contribution limit?",
+    answer:
+      '<p>For self-employed individuals, it\'s based on net self-employment income:</p><ol><li>Start with Schedule C net profit</li><li>Subtract half of self-employment tax (the "employer" portion)</li><li>This is your "net self-employment income"</li><li>Apply contribution limits (25% for SEP, more complex for Solo 401k)</li></ol><p>Most accounting software or a CPA can calculate this accurately. Online calculators from Fidelity, Vanguard, or Schwab can also help.</p>',
   },
   {
-    question: 'What if I also have a part-time job with a 401(k)?',
-    answer: '<p>You can have both, but there are coordination rules:</p><ul><li>Total employee contributions across all 401(k)s can\'t exceed $23,000 (2024)</li><li>Employer contributions from self-employment are calculated separately</li><li>Total additions across all plans can\'t exceed $69,000</li></ul><p>Track contributions carefully to avoid exceeding limits. Excess contributions result in penalties.</p>'
+    question: "What if I also have a part-time job with a 401(k)?",
+    answer:
+      "<p>You can have both, but there are coordination rules:</p><ul><li>Total employee contributions across all 401(k)s can't exceed $23,000 (2024)</li><li>Employer contributions from self-employment are calculated separately</li><li>Total additions across all plans can't exceed $69,000</li></ul><p>Track contributions carefully to avoid exceeding limits. Excess contributions result in penalties.</p>",
   },
   {
-    question: 'When should I start contributing?',
-    answer: '<p><strong>As soon as possible.</strong> Compound growth makes early contributions incredibly valuable:</p><ul><li>$10,000 invested at age 25 could grow to $217,000 by 65 (7% return)</li><li>The same $10,000 at age 35 would only reach $109,000</li><li>Starting just 10 years earlier doubles your retirement savings</li></ul><p>Even small contributions ($100-200/month) make a significant difference over decades.</p>'
-  }
+    question: "When should I start contributing?",
+    answer:
+      "<p><strong>As soon as possible.</strong> Compound growth makes early contributions incredibly valuable:</p><ul><li>$10,000 invested at age 25 could grow to $217,000 by 65 (7% return)</li><li>The same $10,000 at age 35 would only reach $109,000</li><li>Starting just 10 years earlier doubles your retirement savings</li></ul><p>Even small contributions ($100-200/month) make a significant difference over decades.</p>",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Freelancer Tax Deductions Guide',
-    excerpt: 'Discover every tax deduction available to reduce your tax burden.',
-    href: '/guides/freelancer-tax-deductions-guide',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Tax deduction documents'
+    title: "Freelancer Tax Deductions Guide",
+    excerpt: "Discover every tax deduction available to reduce your tax burden.",
+    href: "/guides/freelancer-tax-deductions-guide",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Tax deduction documents",
   },
   {
-    title: 'Tax Tips for Remote Workers',
-    excerpt: 'Navigate taxes as a remote worker or digital nomad.',
-    href: '/blog/tax-tips-remote-workers',
-    image: '/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp',
-    imageAlt: 'Tax planning documents'
+    title: "Tax Tips for Remote Workers",
+    excerpt: "Navigate taxes as a remote worker or digital nomad.",
+    href: "/blog/tax-tips-remote-workers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Tax planning documents",
   },
   {
-    title: 'Best Banking for Digital Nomads',
-    excerpt: 'Find the right international-friendly bank accounts for your freelance business.',
-    href: '/blog/best-banking-digital-nomads',
-    image: '/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp',
-    imageAlt: 'Digital banking interface'
-  }
+    title: "Best Banking for Digital Nomads",
+    excerpt: "Find the right international-friendly bank accounts for your freelance business.",
+    href: "/blog/best-banking-digital-nomads",
+    image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
+    imageAlt: "Digital banking interface",
+  },
 ];
 ---
 

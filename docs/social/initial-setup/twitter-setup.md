@@ -18,30 +18,30 @@ Complete setup and optimization guide for @FloatJetWebsite.
 
 ### 1. Profile Photo (Logo)
 
-**Status:** ⏳ Pending logo design
+**Status:** ✅ READY TO UPLOAD
 
-**Requirements:**
-
-- **Size:** 400x400px minimum (Twitter displays at 200x200px but uses higher res for quality)
-- **Format:** PNG with transparent background
-- **Design:** FloatJet logo centered
-- **Important:** Twitter crops to circle - keep logo elements centered, avoid text near edges
-- **File size:** Under 2MB
+**File to Use:**
+- **Location:** `/docs/assets/social/1/icon_no_circle_logo_no_bg.png`
+- **Specs:** 300x300px, PNG, transparent background
+- **Design:** FloatJet F + jet trail (no circle border)
+- **Quality:** Perfect for Twitter's circular crop
 
 **How to Upload:**
 
-1. Go to Profile → Edit Profile
-2. Click profile photo
-3. Upload 400x400px PNG
-4. Adjust positioning if needed
-5. Save
+1. Go to https://twitter.com/FloatJetWebsite
+2. Click "Edit profile" button
+3. Click on current profile photo
+4. Upload `icon_no_circle_logo_no_bg.png`
+5. Position/zoom if needed (should be centered automatically)
+6. Click "Apply"
+7. Click "Save" to save profile changes
 
-**Design Notes:**
+**Important Notes:**
 
-- Use Ocean Deep (#0F4C5C) as primary color
-- Ensure logo is recognizable at small sizes (people will see it at ~48px in timeline)
-- Test how it looks in circle crop before finalizing
-- Avoid thin lines that disappear when small
+- Twitter automatically crops to circle - your logo is designed for this
+- No circle border in logo (Twitter adds the circle frame)
+- Will display at ~200x200px on profile, ~48x48px in timeline
+- Transparent background works on Twitter's various background colors
 
 ---
 

@@ -5,63 +5,177 @@ import {Image} from 'astro:assets';
 
 <div id="loading-overlay" class="fixed inset-0 z-[100] pointer-events-none opacity-0 transition-opacity duration-300"
      transition:persist="loading-overlay">
-  <!-- Backdrop -->
-  <div class="absolute inset-0 bg-ocean-deep/90 backdrop-blur-sm"></div>
+  <!-- Animated gradient backdrop -->
+  <div class="absolute inset-0 bg-gradient-to-br from-ocean-deep via-ocean-deep/95 to-jet-stream/20 backdrop-blur-md">
+    <!-- Animated wave background -->
+    <div class="wave-bg"></div>
+  </div>
 
-  <!-- Logo Container -->
+  <!-- Logo Container with enhanced visibility -->
   <div class="absolute inset-0 flex items-center justify-center">
-    <div class="loading-logo">
-      <Image
-          src="/images/big-logo.webp"
-          alt="FloatJet logo"
-          width={120}
-          height={120}
-          loading="eager"
-          class="w-24 h-24 md:w-32 md:h-32 object-contain"
-      />
+    <div class="loading-content">
+      <!-- Glow circle behind logo -->
+      <div class="glow-circle"></div>
+
+      <!-- Logo -->
+      <div class="loading-logo">
+        <Image
+            src="/images/big-logo.webp"
+            alt="FloatJet logo"
+            width={420}
+            height={120}
+            loading="eager"
+            class="h-24 md:h-32 w-auto object-contain brightness-0 invert"
+        />
+      </div>
+
+      <!-- Loading text -->
+      <div class="loading-text">
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
-  .loading-logo {
-    animation: float 1.5s ease-in-out infinite;
+  /* Wave background animation */
+  .wave-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg,
+      transparent 30%,
+      rgba(56, 163, 165, 0.1) 50%,
+      transparent 70%
+    );
+    background-size: 200% 200%;
+    animation: wave-move 3s ease-in-out infinite;
   }
 
-  @keyframes float {
+  @keyframes wave-move {
     0%, 100% {
-      transform: translateY(0) translateX(0);
-    }
-    25% {
-      transform: translateY(-10px) translateX(5px);
+      background-position: 0% 50%;
     }
     50% {
-      transform: translateY(-5px) translateX(10px);
-    }
-    75% {
-      transform: translateY(-12px) translateX(3px);
+      background-position: 100% 50%;
     }
   }
 
-  /* Add a subtle glow effect */
+  /* Loading content container */
+  .loading-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* Glowing circle behind logo */
+  .glow-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(128, 206, 215, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0.8;
+    }
+  }
+
+  /* Logo animations - smooth bounce */
+  .loading-logo {
+    position: relative;
+    z-index: 2;
+    animation: smooth-bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes smooth-bounce {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-12px) scale(1.02);
+    }
+  }
+
+  /* Enhanced logo visibility with glow */
   .loading-logo img {
-    filter: drop-shadow(0 0 20px rgba(128, 206, 215, 0.5));
-    animation: glow 1.5s ease-in-out infinite alternate;
+    filter: brightness(0) invert(1) drop-shadow(0 0 30px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 60px rgba(128, 206, 215, 0.4));
+    animation: logo-glow 2s ease-in-out infinite;
   }
 
-  @keyframes glow {
-    0% {
-      filter: drop-shadow(0 0 15px rgba(128, 206, 215, 0.4));
+  @keyframes logo-glow {
+    0%, 100% {
+      filter: brightness(0) invert(1) drop-shadow(0 0 25px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 50px rgba(128, 206, 215, 0.3));
     }
-    100% {
-      filter: drop-shadow(0 0 30px rgba(128, 206, 215, 0.8));
+    50% {
+      filter: brightness(0) invert(1) drop-shadow(0 0 40px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 80px rgba(128, 206, 215, 0.6));
     }
   }
 
-  /* Active state */
+  /* Loading dots animation */
+  .loading-text {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+  }
+
+  .loading-text .dot {
+    animation: dot-bounce 1.4s infinite;
+    animation-fill-mode: both;
+  }
+
+  .loading-text .dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .loading-text .dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes dot-bounce {
+    0%, 60%, 100% {
+      transform: translateY(0);
+      opacity: 0.5;
+    }
+    30% {
+      transform: translateY(-15px);
+      opacity: 1;
+    }
+  }
+
+  /* Active state with smoother transition */
   #loading-overlay.active {
     opacity: 1;
     pointer-events: auto;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .glow-circle {
+      width: 150px;
+      height: 150px;
+    }
+
+    .loading-text {
+      font-size: 1.5rem;
+    }
   }
 </style>
 

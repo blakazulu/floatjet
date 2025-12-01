@@ -19,37 +19,32 @@ Complete setup and optimization guide for FloatJet's LinkedIn presence.
 
 ### 1. Company Logo
 
-**Status:** ⏳ Pending logo design
+**Status:** ✅ READY TO UPLOAD
 
-**Requirements:**
-
-- **Size:** 300x300px (minimum), 400x400px (recommended for quality)
-- **Format:** PNG with transparent background
-- **Aspect ratio:** 1:1 (square)
-- **File size:** Under 4MB
-- **Display:** LinkedIn crops to circle for profile, shows square in some contexts
-
-**Design Guidelines:**
-
-- Keep logo centered (LinkedIn crops to circle in many views)
-- Ensure recognizable at small sizes (shows as 48x48px in many places)
-- Use brand colors: Ocean Deep (#0F4C5C) primary
-- Avoid thin lines or small text (won't be readable when small)
-- Test how it looks in both square and circle crops
+**File to Use:**
+- **Location:** `/docs/assets/social/1/icon_no_circle_logo_no_bg.png`
+- **Specs:** 300x300px, PNG, transparent background
+- **Design:** FloatJet F + jet trail (no circle border)
+- **Quality:** Perfect for LinkedIn's circular and square display
 
 **How to Upload:**
 
-1. Go to Admin Dashboard → Edit page
-2. Click "Logo" section
-3. Upload 300x300px PNG (transparent background)
-4. Adjust positioning if cropping options appear
-5. Click "Save"
+1. Go to https://www.linkedin.com/company/110340950/admin/dashboard/
+2. Click "Edit page" (top right)
+3. Click on "Logo" section
+4. Click "Upload logo"
+5. Select `icon_no_circle_logo_no_bg.png`
+6. LinkedIn may ask you to crop/position - keep centered
+7. Click "Save"
+8. Preview how it looks on your company page
 
-**Alternative if no logo yet:**
+**Important Notes:**
 
-- Use temporary text-based logo (FloatJet wordmark on Ocean Deep background)
-- Replace when professional logo is designed
-- Consistency across platforms is critical
+- LinkedIn displays logo as circle in most places (news feed, profile header)
+- Also shows square in some contexts (company search results)
+- Your logo works for both (designed with circle-crop in mind)
+- Transparent background adapts to LinkedIn's white/light backgrounds
+- Will display at various sizes: 48x48px (feed), 100x100px (profile), etc.
 
 ---
 

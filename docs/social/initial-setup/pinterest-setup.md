@@ -48,28 +48,30 @@ Pinterest is **exceptional** for affiliate content sites:
 
 ### 1. Profile Photo
 
-**Status:** ⏳ Pending logo design
+**Status:** ✅ READY TO UPLOAD
 
-**Requirements:**
-
-- **Size:** 165x165px (minimum), 300x300px (recommended)
-- **Format:** PNG with transparent background or solid brand color
-- **Display:** Shows as circle in most views
-- **File size:** Under 10MB
-
-**Design Guidelines:**
-
-- Keep logo/icon centered (Pinterest crops to circle)
-- Ensure recognizable at tiny sizes (shows as 32x32px in many places)
-- Use Ocean Deep background or transparent
-- Avoid thin lines or small text
+**File to Use:**
+- **Location:** `/docs/assets/social/1/icon_no_circle_logo_no_bg.png`
+- **Specs:** 300x300px, PNG, transparent background
+- **Design:** FloatJet F + jet trail (no circle border)
+- **Quality:** Perfect for Pinterest's circular crop
 
 **How to Upload:**
 
-1. Settings → Public profile → Profile picture
-2. Upload 300x300px PNG
-3. Adjust if cropping options appear
-4. Save
+1. Log into Pinterest business account
+2. Click profile icon (top right) → Settings
+3. Go to "Public profile" section
+4. Click "Change" next to profile picture
+5. Upload `icon_no_circle_logo_no_bg.png`
+6. Adjust position/zoom if needed (keep centered)
+7. Click "Save"
+
+**Important Notes:**
+
+- Pinterest displays profile photos as circles
+- Your logo is designed for circle crop (no border needed)
+- Will show at various sizes: 32x32px (small), 75x75px (medium), 165x165px (profile)
+- Transparent background works well on Pinterest's light interface
 
 ---
 

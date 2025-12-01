@@ -39,49 +39,61 @@ const description = 'Discover the best software, gear, and strategies to work ef
     }
   </style>
 
-  <script>
-    let headlineInterval: ReturnType<typeof setInterval> | null = null;
+  <script is:inline>
+    // Headline rotation with proper cleanup for View Transitions
 
-    function initHeadlineRotation() {
-      const headlines = [
-        'Work From Anywhere, Like a Pro',
-        'Your Remote Work Toolkit',
-        'Find Your Perfect Remote Setup',
-        'The Tools That Power Remote Work',
-        'Work Smarter, From Anywhere'
-      ];
+    if (!window.__headlineInit) {
+      window.__headlineInit = true;
+      window.__headlineInterval = null;
 
-      // Shuffle array (Fisher-Yates)
-      function shuffle(array: string[]) {
-        const arr = [...array];
-        for (let i = arr.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [arr[i], arr[j]] = [arr[j], arr[i]];
+      function cleanupHeadlineRotation() {
+        if (window.__headlineInterval) {
+          clearInterval(window.__headlineInterval);
+          window.__headlineInterval = null;
         }
-        return arr;
       }
 
-      // Clear any existing interval
-      if (headlineInterval) {
-        clearInterval(headlineInterval);
-        headlineInterval = null;
-      }
+      function initHeadlineRotation() {
+        // Clean up first
+        cleanupHeadlineRotation();
 
-      const shuffled = shuffle(headlines);
-      let currentIndex = 0;
-      const element = document.getElementById('rotating-headline');
+        // Check if element exists on this page
+        var element = document.getElementById('rotating-headline');
+        if (!element) return;
 
-      if (element) {
+        var headlines = [
+          'Work From Anywhere, Like a Pro',
+          'Your Remote Work Toolkit',
+          'Find Your Perfect Remote Setup',
+          'The Tools That Power Remote Work',
+          'Work Smarter, From Anywhere'
+        ];
+
+        // Shuffle array (Fisher-Yates)
+        function shuffle(array) {
+          var arr = array.slice();
+          for (var i = arr.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+          }
+          return arr;
+        }
+
+        var shuffled = shuffle(headlines);
+        var currentIndex = 0;
+
         element.textContent = shuffled[0];
         element.classList.remove('headline-exit', 'headline-enter');
         element.classList.add('headline-visible');
 
-        headlineInterval = setInterval(() => {
+        window.__headlineInterval = setInterval(function() {
           // Exit animation - slide up + blur + fade
           element.classList.remove('headline-visible');
           element.classList.add('headline-exit');
 
-          setTimeout(() => {
+          setTimeout(function() {
             // Change text and prepare for enter
             currentIndex = (currentIndex + 1) % shuffled.length;
             element.textContent = shuffled[currentIndex];
@@ -92,30 +104,18 @@ const description = 'Discover the best software, gear, and strategies to work ef
             element.offsetHeight;
 
             // Enter animation - slide up from below + unblur + fade in
-            requestAnimationFrame(() => {
+            requestAnimationFrame(function() {
               element.classList.remove('headline-enter');
               element.classList.add('headline-visible');
             });
           }, 700);
         }, 8000);
       }
+
+      // Register event listeners once
+      document.addEventListener('astro:page-load', initHeadlineRotation);
+      document.addEventListener('astro:before-swap', cleanupHeadlineRotation);
     }
-
-    function cleanupHeadlineRotation() {
-      if (headlineInterval) {
-        clearInterval(headlineInterval);
-        headlineInterval = null;
-      }
-    }
-
-    // Initialize on first load
-    document.addEventListener('DOMContentLoaded', initHeadlineRotation);
-
-    // Re-initialize on Astro page navigation
-    document.addEventListener('astro:page-load', initHeadlineRotation);
-
-    // Cleanup before navigating away
-    document.addEventListener('astro:before-swap', cleanupHeadlineRotation);
   </script>
   <CategorySelector/>
   <ArticleCarousel/>

@@ -313,31 +313,37 @@ const buttons = [TwitterShareButton, LinkedInShareButton, FacebookShareButton, R
   }
 </style>
 
-<script>
-  function initCopyLink() {
-    const copyButtons = document.querySelectorAll('.copy-link-btn, .copy-link-btn-mobile');
+<script is:inline>
+  // SocialShare with proper deduplication for View Transitions
 
-    copyButtons.forEach(button => {
-      button.addEventListener('click', async () => {
-        const url = button.getAttribute('data-url');
-        if (!url) return;
+  if (!window.__socialShareInit) {
+    window.__socialShareInit = true;
 
-        try {
-          await navigator.clipboard.writeText(url);
-          button.classList.add('copied');
+    function initCopyLink() {
+      var copyButtons = document.querySelectorAll('.copy-link-btn, .copy-link-btn-mobile');
 
-          // Reset after 2 seconds
-          setTimeout(() => {
-            button.classList.remove('copied');
-          }, 2000);
-        } catch (err) {
-          console.error('Failed to copy:', err);
-        }
+      copyButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+          var url = button.getAttribute('data-url');
+          if (!url) return;
+
+          navigator.clipboard.writeText(url)
+            .then(function() {
+              button.classList.add('copied');
+
+              // Reset after 2 seconds
+              setTimeout(function() {
+                button.classList.remove('copied');
+              }, 2000);
+            })
+            .catch(function(err) {
+              console.error('Failed to copy:', err);
+            });
+        });
       });
-    });
-  }
+    }
 
-  // Run on initial load and View Transitions
-  document.addEventListener('DOMContentLoaded', initCopyLink);
-  document.addEventListener('astro:page-load', initCopyLink);
+    // Register event listener once
+    document.addEventListener('astro:page-load', initCopyLink);
+  }
 </script>

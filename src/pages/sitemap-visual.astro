@@ -331,60 +331,91 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
   };
 </script>
 
-<script>
-  // Main initialization function
-  function initSitemapVisualization() {
-    // Check if D3 is loaded
-    if (typeof d3 === 'undefined') {
-      console.error('D3 not loaded');
-      return;
+<script is:inline>
+  // Sitemap Visualization with proper cleanup for View Transitions
+
+  if (!window.__sitemapInit) {
+    window.__sitemapInit = true;
+    window.__sitemapHandlers = { resize: null, keydown: null };
+    window.__sitemapState = { simulation: null, isFullscreen: false };
+
+    function cleanupSitemap() {
+      // Remove global listeners
+      if (window.__sitemapHandlers.resize) {
+        window.removeEventListener('resize', window.__sitemapHandlers.resize);
+        window.__sitemapHandlers.resize = null;
+      }
+      if (window.__sitemapHandlers.keydown) {
+        document.removeEventListener('keydown', window.__sitemapHandlers.keydown);
+        window.__sitemapHandlers.keydown = null;
+      }
+      // Stop simulation
+      if (window.__sitemapState.simulation) {
+        window.__sitemapState.simulation.stop();
+        window.__sitemapState.simulation = null;
+      }
+      // Reset fullscreen state
+      window.__sitemapState.isFullscreen = false;
     }
 
-    // Check if container exists (we're on the right page)
-    const container = document.getElementById('sitemap-container');
-    if (!container) return;
+    function initSitemapVisualization() {
+      // Clean up first
+      cleanupSitemap();
 
-    // Parse data
-    const siteStructure = JSON.parse(window.__sitemapData.siteData);
-    const categoryColors = JSON.parse(window.__sitemapData.colorData);
+      // Check if D3 is loaded
+      if (typeof d3 === 'undefined') {
+        console.error('D3 not loaded');
+        return;
+      }
 
-    // State
-    let currentLayout = 'force';
-    let simulation = null;
-    let linkStatus = new Map();
+      // Check if container exists (we're on the right page)
+      var container = document.getElementById('sitemap-container');
+      if (!container) return;
+
+      // Check if data exists
+      if (!window.__sitemapData) return;
+
+      // Parse data
+      var siteStructure = JSON.parse(window.__sitemapData.siteData);
+      var categoryColors = JSON.parse(window.__sitemapData.colorData);
+
+      // State
+      var currentLayout = 'force';
+      var simulation = null;
+      var linkStatus = new Map();
 
     // DOM Elements
-    const svgEl = document.getElementById('sitemap-svg');
-    const loading = document.getElementById('loading');
-    const tooltip = document.getElementById('tooltip');
+    var svgEl = document.getElementById('sitemap-svg');
+    var loading = document.getElementById('loading');
+    var tooltip = document.getElementById('tooltip');
 
     // Clear any existing SVG content
     svgEl.innerHTML = '';
 
-    const svg = d3.select('#sitemap-svg');
+    var svg = d3.select('#sitemap-svg');
 
     // Dimensions
-    let width = container.clientWidth;
-    let height = container.clientHeight;
+    var width = container.clientWidth;
+    var height = container.clientHeight;
 
     // Create main group for zoom/pan
-    const g = svg.append('g');
+    var g = svg.append('g');
 
     // Initialize zoom behavior
-    const zoom = d3
+    var zoom = d3
       .zoom()
       .scaleExtent([0.1, 4])
-      .on('zoom', (event) => {
+      .on('zoom', function(event) {
         g.attr('transform', event.transform);
       });
 
     svg.call(zoom);
 
     // Define gradients and filters
-    const defs = svg.append('defs');
+    var defs = svg.append('defs');
 
     // Glow filter for nodes
-    const glow = defs
+    var glow = defs
       .append('filter')
       .attr('id', 'glow')
       .attr('x', '-50%')
@@ -397,7 +428,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       .attr('stdDeviation', '3')
       .attr('result', 'coloredBlur');
 
-    const glowMerge = glow.append('feMerge');
+    var glowMerge = glow.append('feMerge');
     glowMerge.append('feMergeNode').attr('in', 'coloredBlur');
     glowMerge.append('feMergeNode').attr('in', 'SourceGraphic');
 
@@ -423,7 +454,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       if (node.type === 'page') return '#64748B';
 
       // Article colors by category
-      const categoryColorMap = {
+      var categoryColorMap = {
         security: '#10B981',
         saas: '#3B82F6',
         hosting: '#8B5CF6',
@@ -453,9 +484,9 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
           'link',
           d3
             .forceLink(links)
-            .id((d) => d.id)
-            .distance((d) => {
-              const sourceType = d.source.type || 'article';
+            .id(function(d) { return d.id; })
+            .distance(function(d) {
+              var sourceType = d.source.type || 'article';
               if (sourceType === 'root') return 150;
               if (sourceType === 'hub') return 100;
               return 70;
@@ -464,7 +495,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         )
         .force(
           'charge',
-          d3.forceManyBody().strength((d) => {
+          d3.forceManyBody().strength(function(d) {
             if (d.type === 'root') return -800;
             if (d.type === 'hub') return -400;
             return -150;
@@ -473,23 +504,23 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .force('center', d3.forceCenter(width / 2, height / 2))
         .force(
           'collision',
-          d3.forceCollide().radius((d) => getNodeSize(d) + 10),
+          d3.forceCollide().radius(function(d) { return getNodeSize(d) + 10; }),
         );
     }
 
     // Build hierarchy from flat structure
     function buildHierarchy() {
-      const nodeMap = new Map();
+      var nodeMap = new Map();
 
       // Create node objects
-      siteStructure.nodes.forEach((n) => {
-        nodeMap.set(n.id, {...n, children: []});
+      siteStructure.nodes.forEach(function(n) {
+        nodeMap.set(n.id, Object.assign({}, n, { children: [] }));
       });
 
       // Build parent-child relationships
-      siteStructure.links.forEach((link) => {
-        const parent = nodeMap.get(link.source);
-        const child = nodeMap.get(link.target);
+      siteStructure.links.forEach(function(link) {
+        var parent = nodeMap.get(link.source);
+        var child = nodeMap.get(link.target);
         if (parent && child) {
           parent.children.push(child);
         }
@@ -499,7 +530,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     }
 
     // Render the visualization
-    function render(layout = 'force') {
+    function render(layout) {
+      layout = layout || 'force';
       // Clear previous content
       g.selectAll('*').remove();
 
@@ -527,14 +559,16 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Force-directed layout
     function renderForceLayout() {
-      const nodes = siteStructure.nodes.map((d) => ({...d}));
-      const links = siteStructure.links.map((d) => ({
-        source: d.source,
-        target: d.target,
-        type: d.type,
-      }));
+      var nodes = siteStructure.nodes.map(function(d) { return Object.assign({}, d); });
+      var links = siteStructure.links.map(function(d) {
+        return {
+          source: d.source,
+          target: d.target,
+          type: d.type
+        };
+      });
 
-      const link = g
+      var link = g
         .append('g')
         .attr('class', 'links')
         .selectAll('line')
@@ -545,7 +579,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .attr('stroke-width', 1.5)
         .attr('marker-end', 'url(#arrowhead)');
 
-      const node = g
+      var node = g
         .append('g')
         .attr('class', 'nodes')
         .selectAll('g')
@@ -566,14 +600,15 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       addNodeInteractions(node, link);
 
       simulation = createForceSimulation(nodes, links);
+      window.__sitemapState.simulation = simulation;
 
-      simulation.on('tick', () => {
+      simulation.on('tick', function() {
         link
-          .attr('x1', (d) => d.source.x)
-          .attr('y1', (d) => d.source.y)
-          .attr('x2', (d) => d.target.x)
-          .attr('y2', (d) => d.target.y);
-        node.attr('transform', (d) => `translate(${d.x},${d.y})`);
+          .attr('x1', function(d) { return d.source.x; })
+          .attr('y1', function(d) { return d.source.y; })
+          .attr('x2', function(d) { return d.target.x; })
+          .attr('y2', function(d) { return d.target.y; });
+        node.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
       });
 
       animateIn(node, link);
@@ -582,23 +617,23 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Radial tree layout
     function renderRadialLayout() {
-      const hierarchy = buildHierarchy();
-      const root = d3.hierarchy(hierarchy);
+      var hierarchy = buildHierarchy();
+      var root = d3.hierarchy(hierarchy);
 
-      const radius = Math.min(width, height) / 2 - 100;
+      var radius = Math.min(width, height) / 2 - 100;
 
-      const treeLayout = d3
+      var treeLayout = d3
         .tree()
         .size([2 * Math.PI, radius])
-        .separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth);
+        .separation(function(a, b) { return (a.parent === b.parent ? 1 : 2) / a.depth; });
 
       treeLayout(root);
 
       // Create curved links
-      const link = g
+      var link = g
         .append('g')
         .attr('class', 'links')
-        .attr('transform', `translate(${width / 2},${height / 2})`)
+        .attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')')
         .selectAll('path')
         .data(root.links())
         .enter()
@@ -610,14 +645,14 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
           'd',
           d3
             .linkRadial()
-            .angle((d) => d.x)
-            .radius((d) => d.y),
+            .angle(function(d) { return d.x; })
+            .radius(function(d) { return d.y; }),
         );
 
-      const node = g
+      var node = g
         .append('g')
         .attr('class', 'nodes')
-        .attr('transform', `translate(${width / 2},${height / 2})`)
+        .attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')')
         .selectAll('g')
         .data(root.descendants())
         .enter()
@@ -626,7 +661,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .style('cursor', 'pointer')
         .attr(
           'transform',
-          (d) => `rotate(${(d.x * 180) / Math.PI - 90}) translate(${d.y},0)`,
+          function(d) { return 'rotate(' + ((d.x * 180) / Math.PI - 90) + ') translate(' + d.y + ',0)'; },
         );
 
       addNodeElements(node, true);
@@ -636,15 +671,15 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       node
         .append('text')
         .attr('dy', '0.31em')
-        .attr('x', (d) => (d.x < Math.PI === !d.children ? 6 : -6))
-        .attr('text-anchor', (d) =>
-          d.x < Math.PI === !d.children ? 'start' : 'end',
-        )
-        .attr('transform', (d) => (d.x >= Math.PI ? 'rotate(180)' : null))
+        .attr('x', function(d) { return (d.x < Math.PI === !d.children ? 6 : -6); })
+        .attr('text-anchor', function(d) {
+          return d.x < Math.PI === !d.children ? 'start' : 'end';
+        })
+        .attr('transform', function(d) { return d.x >= Math.PI ? 'rotate(180)' : null; })
         .attr('fill', 'white')
-        .attr('font-size', (d) => (d.data.type === 'root' ? '12px' : '10px'))
+        .attr('font-size', function(d) { return d.data.type === 'root' ? '12px' : '10px'; })
         .attr('font-family', 'Outfit, sans-serif')
-        .text((d) => d.data.name)
+        .text(function(d) { return d.data.name; })
         .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)')
         .clone(true)
         .lower()
@@ -657,15 +692,15 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Hierarchical tree layout
     function renderTreeLayout() {
-      const hierarchy = buildHierarchy();
-      const root = d3.hierarchy(hierarchy);
+      var hierarchy = buildHierarchy();
+      var root = d3.hierarchy(hierarchy);
 
-      const treeLayout = d3.tree().size([width - 200, height - 150]);
+      var treeLayout = d3.tree().size([width - 200, height - 150]);
 
       treeLayout(root);
 
       // Create curved links
-      const link = g
+      var link = g
         .append('g')
         .attr('class', 'links')
         .attr('transform', 'translate(100, 50)')
@@ -680,11 +715,11 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
           'd',
           d3
             .linkVertical()
-            .x((d) => d.x)
-            .y((d) => d.y),
+            .x(function(d) { return d.x; })
+            .y(function(d) { return d.y; }),
         );
 
-      const node = g
+      var node = g
         .append('g')
         .attr('class', 'nodes')
         .attr('transform', 'translate(100, 50)')
@@ -694,7 +729,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .append('g')
         .attr('class', 'node')
         .style('cursor', 'pointer')
-        .attr('transform', (d) => `translate(${d.x},${d.y})`);
+        .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
 
       addNodeElements(node, true);
       addNodeInteractions(node, link, true);
@@ -702,14 +737,14 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       // Add labels below nodes
       node
         .append('text')
-        .attr('dy', (d) => getNodeSize(d.data || d) + 14)
+        .attr('dy', function(d) { return getNodeSize(d.data || d) + 14; })
         .attr('text-anchor', 'middle')
         .attr('fill', 'white')
-        .attr('font-size', (d) =>
-          (d.data || d).type === 'root' ? '11px' : '9px',
-        )
+        .attr('font-size', function(d) {
+          return (d.data || d).type === 'root' ? '11px' : '9px';
+        })
         .attr('font-family', 'Outfit, sans-serif')
-        .text((d) => (d.data || d).name)
+        .text(function(d) { return (d.data || d).name; })
         .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)');
 
       animateIn(node, link);
@@ -717,15 +752,16 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     }
 
     // Shared function to add node visual elements
-    function addNodeElements(node, isHierarchy = false) {
+    function addNodeElements(node, isHierarchy) {
+      isHierarchy = isHierarchy || false;
       node
         .append('circle')
-        .attr('r', (d) => getNodeSize(isHierarchy ? d.data : d))
-        .attr('fill', (d) => getNodeColor(isHierarchy ? d.data : d))
+        .attr('r', function(d) { return getNodeSize(isHierarchy ? d.data : d); })
+        .attr('fill', function(d) { return getNodeColor(isHierarchy ? d.data : d); })
         .attr('stroke', 'rgba(255, 255, 255, 0.5)')
         .attr('stroke-width', 2)
-        .attr('filter', (d) => {
-          const data = isHierarchy ? d.data : d;
+        .attr('filter', function(d) {
+          var data = isHierarchy ? d.data : d;
           return data.type === 'root' || data.type === 'hub'
             ? 'url(#glow)'
             : null;
@@ -736,17 +772,18 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .append('circle')
         .attr('class', 'status-indicator')
         .attr('r', 5)
-        .attr('cx', (d) => getNodeSize(isHierarchy ? d.data : d) - 2)
-        .attr('cy', (d) => -getNodeSize(isHierarchy ? d.data : d) + 2)
+        .attr('cx', function(d) { return getNodeSize(isHierarchy ? d.data : d) - 2; })
+        .attr('cy', function(d) { return -getNodeSize(isHierarchy ? d.data : d) + 2; })
         .attr('fill', 'transparent')
         .attr('stroke', 'transparent');
     }
 
     // Shared function to add hover/click interactions
-    function addNodeInteractions(node, link, isHierarchy = false) {
+    function addNodeInteractions(node, link, isHierarchy) {
+      isHierarchy = isHierarchy || false;
       node
         .on('mouseover', function (event, d) {
-          const data = isHierarchy ? d.data : d;
+          var data = isHierarchy ? d.data : d;
           d3.select(this)
             .select('circle')
             .attr('stroke', 'white')
@@ -755,14 +792,14 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
           if (!isHierarchy) {
             link
-              .attr('stroke', (l) =>
-                l.source.id === data.id || l.target.id === data.id
+              .attr('stroke', function(l) {
+                return l.source.id === data.id || l.target.id === data.id
                   ? 'rgba(128, 206, 215, 0.8)'
-                  : 'rgba(128, 206, 215, 0.15)',
-              )
-              .attr('stroke-width', (l) =>
-                l.source.id === data.id || l.target.id === data.id ? 3 : 1,
-              );
+                  : 'rgba(128, 206, 215, 0.15)';
+              })
+              .attr('stroke-width', function(l) {
+                return l.source.id === data.id || l.target.id === data.id ? 3 : 1;
+              });
           }
         })
         .on('mouseout', function (event, d) {
@@ -779,7 +816,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
           }
         })
         .on('click', function (event, d) {
-          const data = isHierarchy ? d.data : d;
+          var data = isHierarchy ? d.data : d;
           if (data.path) {
             window.location.href = data.path;
           }
@@ -872,25 +909,24 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     }
 
     // Fullscreen state
-    let isFullscreen = false;
-    const wrapper = document.getElementById('sitemap-wrapper');
-    const fullscreenControls = document.getElementById('fullscreen-controls');
-    const iconExpand = document.getElementById('icon-expand');
-    const iconCollapse = document.getElementById('icon-collapse');
-    const layoutSelectFs = document.getElementById('layout-select-fs');
-    const layoutSelect = document.getElementById('layout-select');
+    var wrapper = document.getElementById('sitemap-wrapper');
+    var fullscreenControls = document.getElementById('fullscreen-controls');
+    var iconExpand = document.getElementById('icon-expand');
+    var iconCollapse = document.getElementById('icon-collapse');
+    var layoutSelectFs = document.getElementById('layout-select-fs');
+    var layoutSelect = document.getElementById('layout-select');
 
     function enterFullscreen() {
-      isFullscreen = true;
+      window.__sitemapState.isFullscreen = true;
 
       // Hide page content, navbar, footer, and affiliate disclosure
       document.body.style.overflow = 'hidden';
-      const header = document.querySelector('header');
+      var header = document.querySelector('header');
       if (header) header.style.display = 'none';
-      const footer = document.querySelector('footer');
+      var footer = document.querySelector('footer');
       if (footer) footer.style.display = 'none';
-      const affiliateDisclosure = document.querySelector(
-        '.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure',
+      var affiliateDisclosure = document.querySelector(
+        '.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure'
       );
       if (affiliateDisclosure) affiliateDisclosure.style.display = 'none';
 
@@ -914,7 +950,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       layoutSelectFs.value = currentLayout;
 
       // Update dimensions and re-render
-      setTimeout(() => {
+      setTimeout(function() {
         width = container.clientWidth;
         height = container.clientHeight;
         render(currentLayout);
@@ -922,16 +958,16 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     }
 
     function exitFullscreen() {
-      isFullscreen = false;
+      window.__sitemapState.isFullscreen = false;
 
       // Restore page scroll, navbar, footer, and affiliate disclosure
       document.body.style.overflow = '';
-      const header = document.querySelector('header');
+      var header = document.querySelector('header');
       if (header) header.style.display = '';
-      const footer = document.querySelector('footer');
+      var footer = document.querySelector('footer');
       if (footer) footer.style.display = '';
-      const affiliateDisclosure = document.querySelector(
-        '.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure',
+      var affiliateDisclosure = document.querySelector(
+        '.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure'
       );
       if (affiliateDisclosure) affiliateDisclosure.style.display = '';
 
@@ -955,7 +991,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       layoutSelect.value = currentLayout;
 
       // Update dimensions and re-render
-      setTimeout(() => {
+      setTimeout(function() {
         width = container.clientWidth;
         height = container.clientHeight;
         render(currentLayout);
@@ -963,10 +999,10 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     }
 
     // Fullscreen toggle button
-    document.getElementById('btn-fullscreen').addEventListener('click', (e) => {
+    document.getElementById('btn-fullscreen').addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      if (isFullscreen) {
+      if (window.__sitemapState.isFullscreen) {
         exitFullscreen();
       } else {
         enterFullscreen();
@@ -978,24 +1014,25 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       .getElementById('btn-exit-fullscreen')
       .addEventListener('click', exitFullscreen);
 
-    // ESC key to exit fullscreen
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && isFullscreen) {
+    // ESC key to exit fullscreen - store for cleanup
+    window.__sitemapHandlers.keydown = function(e) {
+      if (e.key === 'Escape' && window.__sitemapState.isFullscreen) {
         exitFullscreen();
       }
-    });
+    };
+    document.addEventListener('keydown', window.__sitemapHandlers.keydown);
 
     // Reset view (both normal and fullscreen)
-    document.getElementById('btn-reset').addEventListener('click', () => {
+    document.getElementById('btn-reset').addEventListener('click', function() {
       svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
     });
 
-    document.getElementById('btn-reset-fs').addEventListener('click', () => {
+    document.getElementById('btn-reset-fs').addEventListener('click', function() {
       svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
     });
 
     // Layout change (both normal and fullscreen)
-    document.getElementById('layout-select').addEventListener('change', (e) => {
+    document.getElementById('layout-select').addEventListener('change', function(e) {
       currentLayout = e.target.value;
       layoutSelectFs.value = currentLayout;
       render(currentLayout);
@@ -1003,14 +1040,14 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     document
       .getElementById('layout-select-fs')
-      .addEventListener('change', (e) => {
+      .addEventListener('change', function(e) {
         currentLayout = e.target.value;
         layoutSelect.value = currentLayout;
         render(currentLayout);
       });
 
     // Link checking function
-    async function checkLinks(btn, btnFs) {
+    function checkLinks(btn, btnFs) {
       btn.textContent = 'Checking...';
       btn.disabled = true;
       if (btnFs) {
@@ -1018,100 +1055,110 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         btnFs.disabled = true;
       }
 
-      let healthy = 0;
-      let broken = 0;
-      let pending = siteStructure.nodes.length;
+      var healthy = 0;
+      var broken = 0;
+      var pending = siteStructure.nodes.length;
 
       document.getElementById('stat-pending').textContent = pending;
       document.getElementById('stat-healthy').textContent = healthy;
       document.getElementById('stat-broken').textContent = broken;
 
-      const results = [];
+      var results = [];
+      var nodeIndex = 0;
 
-      for (const node of siteStructure.nodes) {
-        try {
-          linkStatus.set(node.path, 'checking');
-          updateNodeStatus(node.path, 'checking');
+      function checkNextNode() {
+        if (nodeIndex >= siteStructure.nodes.length) {
+          // All done
+          btn.textContent = 'Check Links';
+          btn.disabled = false;
+          if (btnFs) {
+            btnFs.textContent = 'Check Links';
+            btnFs.disabled = false;
+          }
+          showResults();
+          return;
+        }
 
-          const response = await fetch(node.path, {method: 'HEAD'});
+        var node = siteStructure.nodes[nodeIndex];
+        linkStatus.set(node.path, 'checking');
+        updateNodeStatus(node.path, 'checking');
 
-          if (response.ok) {
-            linkStatus.set(node.path, 'ok');
-            updateNodeStatus(node.path, 'ok');
-            healthy++;
-          } else {
+        fetch(node.path, { method: 'HEAD' })
+          .then(function(response) {
+            if (response.ok) {
+              linkStatus.set(node.path, 'ok');
+              updateNodeStatus(node.path, 'ok');
+              healthy++;
+            } else {
+              linkStatus.set(node.path, 'error');
+              updateNodeStatus(node.path, 'error');
+              broken++;
+              results.push({
+                path: node.path,
+                status: response.status,
+                name: node.name
+              });
+            }
+            pending--;
+            document.getElementById('stat-pending').textContent = pending;
+            document.getElementById('stat-healthy').textContent = healthy;
+            document.getElementById('stat-broken').textContent = broken;
+            nodeIndex++;
+            checkNextNode();
+          })
+          .catch(function(err) {
             linkStatus.set(node.path, 'error');
             updateNodeStatus(node.path, 'error');
             broken++;
             results.push({
               path: node.path,
-              status: response.status,
-              name: node.name,
+              status: 'Network Error',
+              name: node.name
             });
-          }
-        } catch (err) {
-          linkStatus.set(node.path, 'error');
-          updateNodeStatus(node.path, 'error');
-          broken++;
-          results.push({
-            path: node.path,
-            status: 'Network Error',
-            name: node.name,
+            pending--;
+            document.getElementById('stat-pending').textContent = pending;
+            document.getElementById('stat-healthy').textContent = healthy;
+            document.getElementById('stat-broken').textContent = broken;
+            nodeIndex++;
+            checkNextNode();
           });
+      }
+
+      function showResults() {
+        var resultsEl = document.getElementById('link-results');
+        var contentEl = document.getElementById('link-results-content');
+
+        if (results.length > 0) {
+          contentEl.innerHTML = results
+            .map(function(r) {
+              return '<div class="flex items-center justify-between p-3 bg-red-500/20 rounded-lg border border-red-500/30">' +
+                '<div>' +
+                '<div class="text-white font-medium">' + r.name + '</div>' +
+                '<div class="text-red-300 text-sm font-mono">' + r.path + '</div>' +
+                '</div>' +
+                '<div class="text-red-400 font-mono">' + r.status + '</div>' +
+                '</div>';
+            })
+            .join('');
+        } else {
+          contentEl.innerHTML = '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
         }
-
-        pending--;
-        document.getElementById('stat-pending').textContent = pending;
-        document.getElementById('stat-healthy').textContent = healthy;
-        document.getElementById('stat-broken').textContent = broken;
-      }
-
-      btn.textContent = 'Check Links';
-      btn.disabled = false;
-      if (btnFs) {
-        btnFs.textContent = 'Check Links';
-        btnFs.disabled = false;
-      }
-
-      // Show results if there are broken links
-      if (results.length > 0) {
-        const resultsEl = document.getElementById('link-results');
-        const contentEl = document.getElementById('link-results-content');
-
-        contentEl.innerHTML = results
-          .map(
-            (r) => `
-        <div class="flex items-center justify-between p-3 bg-red-500/20 rounded-lg border border-red-500/30">
-          <div>
-            <div class="text-white font-medium">${r.name}</div>
-            <div class="text-red-300 text-sm font-mono">${r.path}</div>
-          </div>
-          <div class="text-red-400 font-mono">${r.status}</div>
-        </div>
-      `,
-          )
-          .join('');
-
-        resultsEl.classList.remove('hidden');
-      } else {
-        const resultsEl = document.getElementById('link-results');
-        const contentEl = document.getElementById('link-results-content');
-        contentEl.innerHTML =
-          '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
         resultsEl.classList.remove('hidden');
       }
+
+      checkNextNode();
     }
 
     // Link check button handlers
-    const btnCheckLinks = document.getElementById('btn-check-links');
-    const btnCheckLinksFs = document.getElementById('btn-check-links-fs');
+    var btnCheckLinks = document.getElementById('btn-check-links');
+    var btnCheckLinksFs = document.getElementById('btn-check-links-fs');
 
-    btnCheckLinks.addEventListener('click', () =>
-      checkLinks(btnCheckLinks, btnCheckLinksFs),
-    );
-    btnCheckLinksFs.addEventListener('click', () =>
-      checkLinks(btnCheckLinksFs, btnCheckLinks),
-    );
+    btnCheckLinks.addEventListener('click', function() {
+      checkLinks(btnCheckLinks, btnCheckLinksFs);
+    });
+    btnCheckLinksFs.addEventListener('click', function() {
+      checkLinks(btnCheckLinksFs, btnCheckLinks);
+    });
 
     // Update node visual status
     function updateNodeStatus(path, status) {
@@ -1131,8 +1178,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .attr('stroke', 'white');
     }
 
-    // Handle resize
-    function handleResize() {
+    // Handle resize - store for cleanup
+    window.__sitemapHandlers.resize = function() {
       width = container.clientWidth;
       height = container.clientHeight;
 
@@ -1140,23 +1187,17 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         simulation.force('center', d3.forceCenter(width / 2, height / 2));
         simulation.alpha(0.3).restart();
       }
-    }
-
-    window.addEventListener('resize', handleResize);
+    };
+    window.addEventListener('resize', window.__sitemapHandlers.resize);
 
     // Initial render
     render('force');
   } // End of initSitemapVisualization function
 
-  // Initialize on first load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSitemapVisualization);
-  } else {
-    initSitemapVisualization();
-  }
-
-  // Re-initialize on View Transitions navigation
+  // Register event listeners once
   document.addEventListener('astro:page-load', initSitemapVisualization);
+  document.addEventListener('astro:before-swap', cleanupSitemap);
+}
 </script>
 
 <style>

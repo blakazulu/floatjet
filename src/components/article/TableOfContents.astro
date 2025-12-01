@@ -64,105 +64,143 @@ const filteredHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 </div>
   )}
 
-<script>
-  // Mobile TOC toggle functionality
-  // Use astro:page-load for ViewTransitions compatibility
-  function initTableOfContents() {
-    const toggleBtn = document.querySelector('.toc-toggle');
-    const closeBtn = document.querySelector('.toc-close');
-    const overlay = document.querySelector('.toc-overlay');
-    const backdrop = document.querySelector('.toc-backdrop');
-    const links = overlay?.querySelectorAll('a');
+{/* Script only included once via mobile prop - mobile version is rendered second */}
+{mobile && (
+<script is:inline>
+  // Mobile TOC toggle functionality with proper cleanup
+  // Script only included once (in mobile version of component)
 
-    function openTOC() {
-      overlay?.removeAttribute('hidden');
-      backdrop?.removeAttribute('hidden');
-      toggleBtn?.setAttribute('aria-expanded', 'true');
-    }
+  if (!window.__tocInit) {
+    window.__tocInit = true;
 
-    function closeTOC() {
-      overlay?.setAttribute('hidden', '');
-      backdrop?.setAttribute('hidden', '');
-      toggleBtn?.setAttribute('aria-expanded', 'false');
-    }
+    // Persistent handlers stored on window
+    window.__tocHandlers = {
+      escapeKey: null,
+      scroll: null
+    };
 
-    toggleBtn?.addEventListener('click', openTOC);
-    closeBtn?.addEventListener('click', closeTOC);
-    backdrop?.addEventListener('click', closeTOC);
-
-    // Close when clicking a link
-    links?.forEach(link => {
-      link.addEventListener('click', closeTOC);
-    });
-
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !overlay?.hasAttribute('hidden')) {
-        closeTOC();
+    function cleanupTOC() {
+      // Remove global listeners using stored references
+      if (window.__tocHandlers.escapeKey) {
+        document.removeEventListener('keydown', window.__tocHandlers.escapeKey);
+        window.__tocHandlers.escapeKey = null;
       }
-    });
+      if (window.__tocHandlers.scroll) {
+        window.removeEventListener('scroll', window.__tocHandlers.scroll);
+        window.__tocHandlers.scroll = null;
+      }
+    }
 
-    // Active link tracking - scroll-based approach for reliability
-    const headingElements = Array.from(document.querySelectorAll('h2[id], h3[id]'));
-    const tocLinks = document.querySelectorAll('.toc-list a, .toc-overlay-nav a');
+    function initTOC() {
+      // Clean up any existing listeners first
+      cleanupTOC();
 
-    function setActiveLink(id) {
-      tocLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${id}`) {
-          link.classList.add('active');
-        }
+      // Only run on pages with TOC elements
+      var toggleBtn = document.querySelector('.toc-toggle');
+      var closeBtn = document.querySelector('.toc-close');
+      var overlay = document.querySelector('.toc-overlay');
+      var backdrop = document.querySelector('.toc-backdrop');
+
+      // Exit early if no TOC elements exist on this page
+      if (!toggleBtn && !overlay && !document.querySelector('.toc-sidebar')) {
+        return;
+      }
+
+      var links = overlay ? overlay.querySelectorAll('a') : [];
+
+      function openTOC() {
+        if (overlay) overlay.removeAttribute('hidden');
+        if (backdrop) backdrop.removeAttribute('hidden');
+        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeTOC() {
+        if (overlay) overlay.setAttribute('hidden', '');
+        if (backdrop) backdrop.setAttribute('hidden', '');
+        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      // Element listeners - these get cleaned up automatically when DOM is replaced
+      if (toggleBtn) toggleBtn.addEventListener('click', openTOC);
+      if (closeBtn) closeBtn.addEventListener('click', closeTOC);
+      if (backdrop) backdrop.addEventListener('click', closeTOC);
+      links.forEach(function(link) {
+        link.addEventListener('click', closeTOC);
       });
-    }
 
-    function updateActiveHeading() {
-      // Get the scroll position with offset for header
-      const scrollY = window.scrollY + 120;
+      // Global escape key handler - store reference for cleanup
+      window.__tocHandlers.escapeKey = function(e) {
+        if (e.key === 'Escape' && overlay && !overlay.hasAttribute('hidden')) {
+          closeTOC();
+        }
+      };
+      document.addEventListener('keydown', window.__tocHandlers.escapeKey);
 
-      // Find the current heading
-      let currentHeading = null;
+      // Active link tracking
+      var headingElements = Array.from(document.querySelectorAll('h2[id], h3[id]'));
+      var tocLinks = document.querySelectorAll('.toc-list a, .toc-overlay-nav a');
 
-      for (const heading of headingElements) {
-        const rect = heading.getBoundingClientRect();
-        const headingTop = rect.top + window.scrollY;
+      if (headingElements.length === 0) {
+        return;
+      }
 
-        if (headingTop <= scrollY) {
-          currentHeading = heading;
-        } else {
-          break;
+      function setActiveLink(id) {
+        tocLinks.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + id) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      function updateActiveHeading() {
+        var scrollY = window.scrollY + 120;
+        var currentHeading = null;
+
+        for (var i = 0; i < headingElements.length; i++) {
+          var heading = headingElements[i];
+          var rect = heading.getBoundingClientRect();
+          var headingTop = rect.top + window.scrollY;
+
+          if (headingTop <= scrollY) {
+            currentHeading = heading;
+          } else {
+            break;
+          }
+        }
+
+        if (currentHeading) {
+          var id = currentHeading.getAttribute('id');
+          if (id) setActiveLink(id);
+        } else if (headingElements.length > 0) {
+          var firstId = headingElements[0].getAttribute('id');
+          if (firstId) setActiveLink(firstId);
         }
       }
 
-      // Set active link
-      if (currentHeading) {
-        const id = currentHeading.getAttribute('id');
-        if (id) setActiveLink(id);
-      } else if (headingElements.length > 0) {
-        // If we're above all headings, activate the first one
-        const firstId = headingElements[0].getAttribute('id');
-        if (firstId) setActiveLink(firstId);
-      }
+      // Throttled scroll handler - store reference for cleanup
+      var ticking = false;
+      window.__tocHandlers.scroll = function() {
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            updateActiveHeading();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+      window.addEventListener('scroll', window.__tocHandlers.scroll, { passive: true });
+
+      // Initial check
+      updateActiveHeading();
     }
 
-    // Throttle scroll events for performance
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          updateActiveHeading();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
-
-    // Initial check
-    updateActiveHeading();
+    // Register once - these persist across View Transitions
+    document.addEventListener('astro:page-load', initTOC);
+    document.addEventListener('astro:before-swap', cleanupTOC);
   }
-
-  // Initialize on page load and on Astro navigation (ViewTransitions)
-  document.addEventListener('astro:page-load', initTableOfContents);
 </script>
+)}
 
 <style>
   /* Desktop Sidebar */

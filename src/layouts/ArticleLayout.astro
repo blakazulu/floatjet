@@ -384,79 +384,86 @@ const articleSchema = {
   }
 </style>
 
-<script>
-  // Hero image blur placeholder - fade in when loaded
-  function initHeroImage() {
-    const heroImage = document.querySelector('.hero-image') as HTMLImageElement;
-    if (heroImage) {
-      // Check if already loaded (cached)
-      if (heroImage.complete && heroImage.naturalHeight !== 0) {
-        heroImage.classList.add('loaded');
-      } else {
-        heroImage.addEventListener('load', () => {
+<script is:inline>
+  // ArticleLayout with proper cleanup for View Transitions
+
+  if (!window.__articleLayoutInit) {
+    window.__articleLayoutInit = true;
+    window.__articleLayoutHandlers = { scroll: null, resize: null };
+
+    function initHeroImage() {
+      var heroImage = document.querySelector('.hero-image');
+      if (heroImage) {
+        if (heroImage.complete && heroImage.naturalHeight !== 0) {
           heroImage.classList.add('loaded');
-        });
+        } else {
+          heroImage.addEventListener('load', function() {
+            heroImage.classList.add('loaded');
+          }, { once: true });
+        }
       }
     }
-  }
 
-  // Run on initial load and View Transitions
-  document.addEventListener('DOMContentLoaded', initHeroImage);
-  document.addEventListener('astro:page-load', initHeroImage);
-
-  // Stop TOC sticky at end of article content
-  function initTocSticky() {
-    const tocSidebar = document.getElementById('toc-sidebar');
-    const articleGrid = document.querySelector('.article-grid');
-    const tocContent = tocSidebar?.querySelector('.toc-sidebar') as HTMLElement;
-
-    if (!tocSidebar || !articleGrid || !tocContent) return;
-
-    // Store the natural width of the TOC
-    let tocWidth = tocContent.offsetWidth;
-
-    const handleScroll = () => {
-      const sidebarRect = tocSidebar.getBoundingClientRect();
-      const tocHeight = tocContent.offsetHeight;
-      const stickyTop = 100;
-
-      // Calculate where TOC would be if sticky
-      const tocBottomIfSticky = stickyTop + tocHeight;
-
-      // If the sidebar container's bottom is above where the sticky TOC bottom would be,
-      // we need to stop the sticky behavior and position at bottom
-      if (sidebarRect.bottom < tocBottomIfSticky) {
-        // Position TOC at the bottom of the sidebar with fixed width
-        tocContent.style.position = 'absolute';
-        tocContent.style.top = 'auto';
-        tocContent.style.bottom = '0';
-        tocContent.style.width = `${tocWidth}px`;
-      } else {
-        // Normal sticky behavior
-        tocContent.style.position = 'sticky';
-        tocContent.style.top = `${stickyTop}px`;
-        tocContent.style.bottom = 'auto';
-        tocContent.style.width = 'auto';
+    function cleanupTocSticky() {
+      if (window.__articleLayoutHandlers.scroll) {
+        window.removeEventListener('scroll', window.__articleLayoutHandlers.scroll);
+        window.__articleLayoutHandlers.scroll = null;
       }
-    };
+      if (window.__articleLayoutHandlers.resize) {
+        window.removeEventListener('resize', window.__articleLayoutHandlers.resize);
+        window.__articleLayoutHandlers.resize = null;
+      }
+    }
 
-    const handleResize = () => {
-      // Reset to sticky to get natural width
-      tocContent.style.position = 'sticky';
-      tocContent.style.width = 'auto';
-      tocWidth = tocContent.offsetWidth;
-      handleScroll();
-    };
+    function initTocSticky() {
+      cleanupTocSticky();
 
-    // Initial check
-    handleScroll();
+      var tocSidebar = document.getElementById('toc-sidebar');
+      var articleGrid = document.querySelector('.article-grid');
+      var tocContent = tocSidebar ? tocSidebar.querySelector('.toc-sidebar') : null;
 
-    // Listen to scroll and resize
-    window.addEventListener('scroll', handleScroll, {passive: true});
-    window.addEventListener('resize', handleResize, {passive: true});
+      if (!tocSidebar || !articleGrid || !tocContent) return;
+
+      var tocWidth = tocContent.offsetWidth;
+
+      window.__articleLayoutHandlers.scroll = function() {
+        var sidebarRect = tocSidebar.getBoundingClientRect();
+        var tocHeight = tocContent.offsetHeight;
+        var stickyTop = 100;
+        var tocBottomIfSticky = stickyTop + tocHeight;
+
+        if (sidebarRect.bottom < tocBottomIfSticky) {
+          tocContent.style.position = 'absolute';
+          tocContent.style.top = 'auto';
+          tocContent.style.bottom = '0';
+          tocContent.style.width = tocWidth + 'px';
+        } else {
+          tocContent.style.position = 'sticky';
+          tocContent.style.top = stickyTop + 'px';
+          tocContent.style.bottom = 'auto';
+          tocContent.style.width = 'auto';
+        }
+      };
+
+      window.__articleLayoutHandlers.resize = function() {
+        tocContent.style.position = 'sticky';
+        tocContent.style.width = 'auto';
+        tocWidth = tocContent.offsetWidth;
+        window.__articleLayoutHandlers.scroll();
+      };
+
+      // Initial check
+      window.__articleLayoutHandlers.scroll();
+
+      window.addEventListener('scroll', window.__articleLayoutHandlers.scroll, {passive: true});
+      window.addEventListener('resize', window.__articleLayoutHandlers.resize, {passive: true});
+    }
+
+    // Register event listeners once
+    document.addEventListener('astro:page-load', function() {
+      initHeroImage();
+      initTocSticky();
+    });
+    document.addEventListener('astro:before-swap', cleanupTocSticky);
   }
-
-  // Run on initial load and View Transitions
-  document.addEventListener('DOMContentLoaded', initTocSticky);
-  document.addEventListener('astro:page-load', initTocSticky);
 </script>

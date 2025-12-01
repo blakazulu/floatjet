@@ -10,8 +10,7 @@ Affiliate marketing platform for remote work and productivity tools. Mobile-firs
 
 ## Critical Constraints
 
-- **NEVER run build commands** (per user instructions)
-- **NEVER commit to git** (per user instructions)
+- **only commit to git after the user approved** (per user instructions)
 - **Always follow accessibility-guidelines.md** (WCAG 2.2 Level AA compliance)
 - **Always follow design-guidelines.md** (color palette, typography, glassmorphism)
 - **Always follow all guidelines in the docs/ folder**

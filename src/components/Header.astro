@@ -125,83 +125,86 @@ const isActive = (href: string) =>
   </div>
 </header>
 
-<script>
-  function updateActiveNav() {
-    const currentPath = window.location.pathname;
-    const isActive = (href: string) => {
-      // Special handling for home page - only match exact path
-      if (href === "/") {
-        return currentPath === "/";
-      }
-      // For other pages, match exact path or subpaths
-      return currentPath === href || currentPath.startsWith(href + "/");
-    };
+<script is:inline>
+  // Header with proper deduplication for View Transitions
 
-    // Desktop nav links
-    const desktopLinks = document.querySelectorAll(
-      'nav[aria-label="Main navigation"] a',
-    );
-    desktopLinks.forEach((link) => {
-      const href = link.getAttribute("href");
-      if (href) {
-        if (isActive(href)) {
-          link.classList.remove("text-white/90", "hover:text-white");
-          link.classList.add("text-sky-light");
-          link.setAttribute("aria-current", "page");
-        } else {
-          link.classList.remove("text-sky-light");
-          link.classList.add("text-white/90", "hover:text-white");
-          link.removeAttribute("aria-current");
+  if (!window.__headerInit) {
+    window.__headerInit = true;
+
+    function updateActiveNav() {
+      var currentPath = window.location.pathname;
+
+      function isActive(href) {
+        // Special handling for home page - only match exact path
+        if (href === '/') {
+          return currentPath === '/';
         }
+        // For other pages, match exact path or subpaths
+        return currentPath === href || currentPath.startsWith(href + '/');
       }
-    });
-  }
 
-  // Prevent navigation when clicking on the active link
-  function preventActiveNavigation(e: Event) {
-    const link = e.currentTarget as HTMLAnchorElement;
-    const href = link.getAttribute("href");
-    const currentPath = window.location.pathname;
+      // Desktop nav links
+      var desktopLinks = document.querySelectorAll(
+        'nav[aria-label="Main navigation"] a'
+      );
+      desktopLinks.forEach(function(link) {
+        var href = link.getAttribute('href');
+        if (href) {
+          if (isActive(href)) {
+            link.classList.remove('text-white/90', 'hover:text-white');
+            link.classList.add('text-sky-light');
+            link.setAttribute('aria-current', 'page');
+          } else {
+            link.classList.remove('text-sky-light');
+            link.classList.add('text-white/90', 'hover:text-white');
+            link.removeAttribute('aria-current');
+          }
+        }
+      });
+    }
 
-    // Check if this link is currently active
-    const isActive = (href: string) => {
-      if (href === "/") {
-        return currentPath === "/";
+    // Prevent navigation when clicking on the active link
+    function preventActiveNavigation(e) {
+      var link = e.currentTarget;
+      var href = link.getAttribute('href');
+      var currentPath = window.location.pathname;
+
+      // Check if this link is currently active
+      function isActive(href) {
+        if (href === '/') {
+          return currentPath === '/';
+        }
+        return currentPath === href || currentPath.startsWith(href + '/');
       }
-      return currentPath === href || currentPath.startsWith(href + "/");
-    };
 
-    if (href && isActive(href)) {
-      e.preventDefault();
-      e.stopPropagation();
+      if (href && isActive(href)) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
     }
-  }
 
-  // Attach click handlers to navigation links and logo
-  function attachNavClickHandlers() {
-    const navLinks = document.querySelectorAll(
-      'nav[aria-label="Main navigation"] a',
-    );
-    navLinks.forEach((link) => {
-      link.addEventListener("click", preventActiveNavigation);
-    });
+    // Attach click handlers to navigation links and logo
+    function attachNavClickHandlers() {
+      var navLinks = document.querySelectorAll(
+        'nav[aria-label="Main navigation"] a'
+      );
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', preventActiveNavigation);
+      });
 
-    // Also attach to logo link
-    const logoLink = document.getElementById("logo-link");
-    if (logoLink) {
-      logoLink.addEventListener("click", preventActiveNavigation);
+      // Also attach to logo link
+      var logoLink = document.getElementById('logo-link');
+      if (logoLink) {
+        logoLink.addEventListener('click', preventActiveNavigation);
+      }
     }
+
+    function initHeader() {
+      updateActiveNav();
+      attachNavClickHandlers();
+    }
+
+    // Register event listener once
+    document.addEventListener('astro:page-load', initHeader);
   }
-
-  // Initialize on first load
-  document.addEventListener("DOMContentLoaded", () => {
-    updateActiveNav();
-    attachNavClickHandlers();
-  });
-
-  // Re-initialize on Astro page navigation (View Transitions)
-  document.addEventListener("astro:page-load", () => {
-    updateActiveNav();
-    attachNavClickHandlers();
-  });
 </script>

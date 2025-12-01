@@ -300,340 +300,313 @@ import Search from 'astro-pagefind/components/Search';
   }
 </style>
 
-<script>
-  // Recent Searches Manager
-  const RECENT_SEARCHES_KEY = 'floatjet_recent_searches';
-  const MAX_RECENT_SEARCHES = 5;
+<script is:inline>
+  // Search Modal with proper cleanup for View Transitions
 
-  interface RecentSearch {
-    query: string;
-    timestamp: number;
-  }
+  if (!window.__searchInit) {
+    window.__searchInit = true;
+    window.__searchState = { isOpen: false };
+    window.__searchHandlers = { keydown: null };
 
-  function getRecentSearches(): RecentSearch[] {
-    try {
-      const stored = localStorage.getItem(RECENT_SEARCHES_KEY);
-      return stored ? JSON.parse(stored) : [];
-    } catch {
-      return [];
-    }
-  }
+    var RECENT_SEARCHES_KEY = 'floatjet_recent_searches';
+    var MAX_RECENT_SEARCHES = 5;
+    var debounceTimer = null;
+    var POPULAR_SEARCHES = [
+      'best vpn',
+      'password manager',
+      'standing desk',
+      'project management',
+      'remote work tools',
+      'laptops for remote work',
+      'time tracking',
+      'video conferencing'
+    ];
 
-  function saveRecentSearch(query: string) {
-    if (!query.trim()) return;
-
-    const recent = getRecentSearches();
-    // Remove duplicate if exists
-    const filtered = recent.filter(s => s.query !== query);
-    // Add to front
-    filtered.unshift({query, timestamp: Date.now()});
-    // Keep only max items
-    const trimmed = filtered.slice(0, MAX_RECENT_SEARCHES);
-
-    try {
-      localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(trimmed));
-    } catch (e) {
-      console.error('Failed to save recent search:', e);
-    }
-  }
-
-  function removeRecentSearch(query: string) {
-    const recent = getRecentSearches();
-    const filtered = recent.filter(s => s.query !== query);
-    try {
-      localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(filtered));
-    } catch (e) {
-      console.error('Failed to remove recent search:', e);
-    }
-  }
-
-  function clearAllRecentSearches() {
-    try {
-      localStorage.removeItem(RECENT_SEARCHES_KEY);
-    } catch (e) {
-      console.error('Failed to clear recent searches:', e);
-    }
-  }
-
-  function renderRecentSearches() {
-    const container = document.getElementById('recent-searches');
-    const list = document.getElementById('recent-searches-list');
-    if (!container || !list) return;
-
-    const recent = getRecentSearches();
-
-    if (recent.length === 0) {
-      container.classList.add('hidden');
-      return;
+    function getRecentSearches() {
+      try {
+        var stored = localStorage.getItem(RECENT_SEARCHES_KEY);
+        return stored ? JSON.parse(stored) : [];
+      } catch (e) {
+        return [];
+      }
     }
 
-    list.innerHTML = recent.map(({query}) => `
-      <div class="recent-search-chip" data-query="${escapeHtml(query)}">
-        <span>${escapeHtml(query)}</span>
-        <button class="remove-btn" data-remove="${escapeHtml(query)}" aria-label="Remove">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
-    `).join('');
+    function saveRecentSearch(query) {
+      if (!query.trim()) return;
+      var recent = getRecentSearches();
+      var filtered = recent.filter(function(s) { return s.query !== query; });
+      filtered.unshift({query: query, timestamp: Date.now()});
+      var trimmed = filtered.slice(0, MAX_RECENT_SEARCHES);
+      try {
+        localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(trimmed));
+      } catch (e) {
+        console.error('Failed to save recent search:', e);
+      }
+    }
 
-    container.classList.remove('hidden');
+    function removeRecentSearch(query) {
+      var recent = getRecentSearches();
+      var filtered = recent.filter(function(s) { return s.query !== query; });
+      try {
+        localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(filtered));
+      } catch (e) {
+        console.error('Failed to remove recent search:', e);
+      }
+    }
 
-    // Attach event listeners
-    list.querySelectorAll('.recent-search-chip').forEach(chip => {
-      const query = chip.getAttribute('data-query');
-      chip.addEventListener('click', (e) => {
-        const target = e.target as HTMLElement;
-        if (!target.closest('.remove-btn') && query) {
-          performSearch(query);
-        }
+    function clearAllRecentSearches() {
+      try {
+        localStorage.removeItem(RECENT_SEARCHES_KEY);
+      } catch (e) {
+        console.error('Failed to clear recent searches:', e);
+      }
+    }
+
+    function escapeHtml(text) {
+      var div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function renderRecentSearches() {
+      var container = document.getElementById('recent-searches');
+      var list = document.getElementById('recent-searches-list');
+      if (!container || !list) return;
+
+      var recent = getRecentSearches();
+      if (recent.length === 0) {
+        container.classList.add('hidden');
+        return;
+      }
+
+      list.innerHTML = recent.map(function(item) {
+        return '<div class="recent-search-chip" data-query="' + escapeHtml(item.query) + '">' +
+          '<span>' + escapeHtml(item.query) + '</span>' +
+          '<button class="remove-btn" data-remove="' + escapeHtml(item.query) + '" aria-label="Remove">' +
+            '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+              '<path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' +
+            '</svg>' +
+          '</button>' +
+        '</div>';
+      }).join('');
+
+      container.classList.remove('hidden');
+
+      list.querySelectorAll('.recent-search-chip').forEach(function(chip) {
+        var query = chip.getAttribute('data-query');
+        chip.addEventListener('click', function(e) {
+          if (!e.target.closest('.remove-btn') && query) {
+            performSearch(query);
+          }
+        });
       });
-    });
 
-    list.querySelectorAll('[data-remove]').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const query = (btn as HTMLElement).getAttribute('data-remove');
-        if (query) {
-          removeRecentSearch(query);
-          renderRecentSearches();
-        }
+      list.querySelectorAll('[data-remove]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var query = btn.getAttribute('data-remove');
+          if (query) {
+            removeRecentSearch(query);
+            renderRecentSearches();
+          }
+        });
       });
-    });
-  }
-
-  function performSearch(query: string) {
-    const input = document.querySelector('.pagefind-ui__search-input') as HTMLInputElement;
-    if (input) {
-      input.value = query;
-      input.dispatchEvent(new Event('input', {bubbles: true}));
-      saveRecentSearch(query);
-      hideRecentSearches();
-    }
-  }
-
-  function hideRecentSearches() {
-    const container = document.getElementById('recent-searches');
-    container?.classList.add('hidden');
-  }
-
-  function showRecentSearches() {
-    renderRecentSearches();
-  }
-
-  function escapeHtml(text: string): string {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-  }
-
-  // Autocomplete/Suggestions (mock implementation - can be enhanced with Pagefind API)
-  let debounceTimer: number;
-  const POPULAR_SEARCHES = [
-    'best vpn',
-    'password manager',
-    'standing desk',
-    'project management',
-    'remote work tools',
-    'laptops for remote work',
-    'time tracking',
-    'video conferencing'
-  ];
-
-  function showSuggestions(query: string) {
-    const container = document.getElementById('search-suggestions');
-    const list = document.getElementById('suggestions-list');
-    if (!container || !list || !query.trim()) {
-      container?.classList.add('hidden');
-      return;
     }
 
-    // Filter popular searches that match the query
-    const matches = POPULAR_SEARCHES.filter(s =>
-      s.toLowerCase().includes(query.toLowerCase())
-    ).slice(0, 5);
-
-    if (matches.length === 0) {
-      container.classList.add('hidden');
-      return;
+    function performSearch(query) {
+      var input = document.querySelector('.pagefind-ui__search-input');
+      if (input) {
+        input.value = query;
+        input.dispatchEvent(new Event('input', {bubbles: true}));
+        saveRecentSearch(query);
+        hideRecentSearches();
+      }
     }
 
-    list.innerHTML = matches.map(suggestion => {
-      const highlighted = highlightMatch(suggestion, query);
-      return `
-        <div class="suggestion-item" data-suggestion="${escapeHtml(suggestion)}">
-          ${highlighted}
-        </div>
-      `;
-    }).join('');
+    function hideRecentSearches() {
+      var container = document.getElementById('recent-searches');
+      if (container) container.classList.add('hidden');
+    }
 
-    container.classList.remove('hidden');
+    function showRecentSearches() {
+      renderRecentSearches();
+    }
 
-    // Attach click handlers
-    list.querySelectorAll('.suggestion-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const suggestion = item.getAttribute('data-suggestion');
-        if (suggestion) {
-          performSearch(suggestion);
-        }
+    function highlightMatch(text, query) {
+      var index = text.toLowerCase().indexOf(query.toLowerCase());
+      if (index === -1) return escapeHtml(text);
+      var before = escapeHtml(text.slice(0, index));
+      var match = escapeHtml(text.slice(index, index + query.length));
+      var after = escapeHtml(text.slice(index + query.length));
+      return before + '<mark>' + match + '</mark>' + after;
+    }
+
+    function showSuggestions(query) {
+      var container = document.getElementById('search-suggestions');
+      var list = document.getElementById('suggestions-list');
+      if (!container || !list || !query.trim()) {
+        if (container) container.classList.add('hidden');
+        return;
+      }
+
+      var matches = POPULAR_SEARCHES.filter(function(s) {
+        return s.toLowerCase().includes(query.toLowerCase());
+      }).slice(0, 5);
+
+      if (matches.length === 0) {
+        container.classList.add('hidden');
+        return;
+      }
+
+      list.innerHTML = matches.map(function(suggestion) {
+        return '<div class="suggestion-item" data-suggestion="' + escapeHtml(suggestion) + '">' +
+          highlightMatch(suggestion, query) +
+        '</div>';
+      }).join('');
+
+      container.classList.remove('hidden');
+
+      list.querySelectorAll('.suggestion-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+          var suggestion = item.getAttribute('data-suggestion');
+          if (suggestion) performSearch(suggestion);
+        });
       });
-    });
-  }
-
-  function highlightMatch(text: string, query: string): string {
-    const index = text.toLowerCase().indexOf(query.toLowerCase());
-    if (index === -1) return escapeHtml(text);
-
-    const before = escapeHtml(text.slice(0, index));
-    const match = escapeHtml(text.slice(index, index + query.length));
-    const after = escapeHtml(text.slice(index + query.length));
-
-    return `${before}<mark>${match}</mark>${after}`;
-  }
-
-  function initSearch() {
-    const searchButtons = document.querySelectorAll('[data-search-trigger]');
-    const closeButton = document.getElementById('search-close');
-    const clearRecentBtn = document.getElementById('clear-recent-searches');
-    const modal = document.getElementById('search-modal');
-    const overlay = document.getElementById('search-overlay');
-    let isOpen = false;
+    }
 
     function openSearch() {
-      isOpen = true;
-      overlay?.classList.remove('hidden');
-      modal?.classList.remove('hidden');
-      setTimeout(() => {
-        overlay?.classList.remove('opacity-0');
-        modal?.classList.remove('opacity-0', 'scale-95');
+      var modal = document.getElementById('search-modal');
+      var overlay = document.getElementById('search-overlay');
+      window.__searchState.isOpen = true;
+      if (overlay) overlay.classList.remove('hidden');
+      if (modal) modal.classList.remove('hidden');
+      setTimeout(function() {
+        if (overlay) overlay.classList.remove('opacity-0');
+        if (modal) modal.classList.remove('opacity-0', 'scale-95');
       }, 10);
       document.body.style.overflow = 'hidden';
-
-      // Show recent searches initially
       showRecentSearches();
-
-      // Focus the search input
-      setTimeout(() => {
-        const input = modal?.querySelector('.pagefind-ui__search-input') as HTMLInputElement;
-        input?.focus();
+      setTimeout(function() {
+        var input = modal ? modal.querySelector('.pagefind-ui__search-input') : null;
+        if (input) input.focus();
       }, 100);
     }
 
     function closeSearch() {
-      isOpen = false;
-      overlay?.classList.add('opacity-0');
-      modal?.classList.add('opacity-0', 'scale-95');
-      setTimeout(() => {
-        overlay?.classList.add('hidden');
-        modal?.classList.add('hidden');
+      var modal = document.getElementById('search-modal');
+      var overlay = document.getElementById('search-overlay');
+      window.__searchState.isOpen = false;
+      if (overlay) overlay.classList.add('opacity-0');
+      if (modal) modal.classList.add('opacity-0', 'scale-95');
+      setTimeout(function() {
+        if (overlay) overlay.classList.add('hidden');
+        if (modal) modal.classList.add('hidden');
       }, 300);
       document.body.style.overflow = '';
-
-      // Clear input and hide suggestions
-      const input = modal?.querySelector('.pagefind-ui__search-input') as HTMLInputElement;
+      var input = modal ? modal.querySelector('.pagefind-ui__search-input') : null;
       if (input) input.value = '';
-      document.getElementById('search-suggestions')?.classList.add('hidden');
+      var suggestions = document.getElementById('search-suggestions');
+      if (suggestions) suggestions.classList.add('hidden');
     }
 
-    // Open search on button click
-    searchButtons.forEach(btn => {
-      btn.addEventListener('click', openSearch);
-    });
+    function cleanupSearch() {
+      if (window.__searchHandlers.keydown) {
+        document.removeEventListener('keydown', window.__searchHandlers.keydown);
+        window.__searchHandlers.keydown = null;
+      }
+    }
 
-    // Close on close button click
-    closeButton?.addEventListener('click', closeSearch);
+    function initSearch() {
+      cleanupSearch();
 
-    // Close on overlay click
-    overlay?.addEventListener('click', closeSearch);
+      var searchButtons = document.querySelectorAll('[data-search-trigger]');
+      var closeButton = document.getElementById('search-close');
+      var clearRecentBtn = document.getElementById('clear-recent-searches');
+      var modal = document.getElementById('search-modal');
+      var overlay = document.getElementById('search-overlay');
 
-    // Clear all recent searches
-    clearRecentBtn?.addEventListener('click', () => {
-      clearAllRecentSearches();
-      renderRecentSearches();
-    });
-
-    // Monitor search input for autocomplete
-    const setupInputListener = () => {
-      const input = modal?.querySelector('.pagefind-ui__search-input') as HTMLInputElement;
-      if (!input) return;
-
-      input.addEventListener('input', (e) => {
-        const query = (e.target as HTMLInputElement).value;
-
-        if (query.trim()) {
-          hideRecentSearches();
-          clearTimeout(debounceTimer);
-          debounceTimer = window.setTimeout(() => {
-            showSuggestions(query);
-          }, 300);
-        } else {
-          document.getElementById('search-suggestions')?.classList.add('hidden');
-          showRecentSearches();
-        }
+      // Element listeners - auto-cleaned on DOM swap
+      searchButtons.forEach(function(btn) {
+        btn.addEventListener('click', openSearch);
       });
+      if (closeButton) closeButton.addEventListener('click', closeSearch);
+      if (overlay) overlay.addEventListener('click', closeSearch);
+      if (clearRecentBtn) {
+        clearRecentBtn.addEventListener('click', function() {
+          clearAllRecentSearches();
+          renderRecentSearches();
+        });
+      }
 
-      // Save search when user hits enter or clicks a result
-      input.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-          const query = (e.target as HTMLInputElement).value;
+      // Setup input listeners after delay for Pagefind
+      setTimeout(function() {
+        var input = modal ? modal.querySelector('.pagefind-ui__search-input') : null;
+        if (!input) return;
+
+        input.addEventListener('input', function(e) {
+          var query = e.target.value;
           if (query.trim()) {
-            saveRecentSearch(query);
+            hideRecentSearches();
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(function() {
+              showSuggestions(query);
+            }, 300);
+          } else {
+            var suggestions = document.getElementById('search-suggestions');
+            if (suggestions) suggestions.classList.add('hidden');
+            showRecentSearches();
+          }
+        });
+
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            var query = e.target.value;
+            if (query.trim()) saveRecentSearch(query);
+          }
+        });
+      }, 500);
+
+      // Global keydown handler - store for cleanup
+      window.__searchHandlers.keydown = function(e) {
+        if (e.key === 'Escape' && window.__searchState.isOpen) {
+          closeSearch();
+        }
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+          e.preventDefault();
+          if (window.__searchState.isOpen) {
+            closeSearch();
+          } else {
+            openSearch();
           }
         }
-      });
-    };
+      };
+      document.addEventListener('keydown', window.__searchHandlers.keydown);
+    }
 
-    // Setup listener after a delay to ensure Pagefind has rendered
-    setTimeout(setupInputListener, 500);
+    function checkPagefind() {
+      fetch('/pagefind/pagefind.js', {method: 'HEAD'})
+        .then(function(response) {
+          if (!response.ok) showFallback();
+        })
+        .catch(function() {
+          showFallback();
+        });
+    }
 
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && isOpen) {
-        closeSearch();
+    function showFallback() {
+      var fallback = document.getElementById('search-fallback');
+      var wrapper = document.getElementById('search-wrapper');
+      if (fallback && wrapper) {
+        fallback.classList.remove('hidden');
+        wrapper.classList.add('hidden');
       }
-      // Open search on Cmd/Ctrl + K
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        if (isOpen) {
-          closeSearch();
-        } else {
-          openSearch();
-        }
-      }
+    }
+
+    // Register event listeners once
+    document.addEventListener('astro:page-load', function() {
+      initSearch();
+      checkPagefind();
     });
+    document.addEventListener('astro:before-swap', cleanupSearch);
   }
-
-  // Check if Pagefind is available (it won't be in dev mode)
-  async function checkPagefind() {
-    try {
-      const response = await fetch('/pagefind/pagefind.js', {method: 'HEAD'});
-      if (!response.ok) {
-        showFallback();
-      }
-    } catch {
-      showFallback();
-    }
-  }
-
-  function showFallback() {
-    const fallback = document.getElementById('search-fallback');
-    const wrapper = document.getElementById('search-wrapper');
-    if (fallback && wrapper) {
-      fallback.classList.remove('hidden');
-      wrapper.classList.add('hidden');
-    }
-  }
-
-  // Initialize on first load
-  document.addEventListener('DOMContentLoaded', () => {
-    initSearch();
-    checkPagefind();
-  });
-
-  // Re-initialize on Astro page navigation
-  document.addEventListener('astro:page-load', () => {
-    initSearch();
-    checkPagefind();
-  });
 </script>

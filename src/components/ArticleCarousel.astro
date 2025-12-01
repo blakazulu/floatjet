@@ -388,154 +388,230 @@ const categoryNames: Record<string, string> = {
   }
 </style>
 
-<script>
-  // Category and carousel state
-  let currentCategory = 'saas';
-  let currentSlide = 0;
-  let previousSlide = 0;
-  let slideDirection: 'left' | 'right' = 'right';
-  let autoRotateInterval: ReturnType<typeof setInterval> | null = null;
-  let isAnimating = false;
+<script is:inline>
+  // ArticleCarousel with proper cleanup for View Transitions
 
-  const categoryNames: Record<string, string> = {
-    saas: 'SaaS',
-    vpn: 'VPN',
-    hosting: 'Hosting',
-    gear: 'Gear',
-    finance: 'Finance',
-    travel: 'Travel'
-  };
+  if (!window.__carouselInit) {
+    window.__carouselInit = true;
+    window.__carouselState = {
+      currentCategory: 'saas',
+      currentSlide: 0,
+      previousSlide: 0,
+      slideDirection: 'right',
+      autoRotateInterval: null,
+      isAnimating: false
+    };
 
-  const categoryUrls: Record<string, string> = {
-    saas: '/tools/saas',
-    vpn: '/tools/vpn',
-    hosting: '/tools/hosting',
-    gear: '/gear',
-    finance: '/tools/finance',
-    travel: '/guides/travel'
-  };
+    var categoryNames = {
+      saas: 'SaaS',
+      vpn: 'VPN',
+      hosting: 'Hosting',
+      gear: 'Gear',
+      finance: 'Finance',
+      travel: 'Travel'
+    };
 
-  // Initialize carousel
-  function initCarousel() {
-    // Reset state
-    currentCategory = 'saas';
-    currentSlide = 0;
-    previousSlide = 0;
-    isAnimating = false;
+    var categoryUrls = {
+      saas: '/tools/saas',
+      vpn: '/tools/vpn',
+      hosting: '/tools/hosting',
+      gear: '/gear',
+      finance: '/tools/finance',
+      travel: '/guides/travel'
+    };
 
-    // Clear any existing interval
-    if (autoRotateInterval) {
-      clearInterval(autoRotateInterval);
-      autoRotateInterval = null;
+    function cleanupCarousel() {
+      if (window.__carouselState.autoRotateInterval) {
+        clearInterval(window.__carouselState.autoRotateInterval);
+        window.__carouselState.autoRotateInterval = null;
+      }
     }
 
-    initializeSlides();
-    initCarouselImages();
-    setupCategoryTabs();
-    setupCarouselNavigation();
-    setupDotNavigation();
-    startAutoRotate();
-  }
+    // Initialize carousel
+    function initCarousel() {
+      // Cleanup first
+      cleanupCarousel();
 
-  // Initialize carousel image blur placeholders
-  function initCarouselImages() {
-    const images = document.querySelectorAll('.carousel-image') as NodeListOf<HTMLImageElement>;
-    images.forEach(img => {
-      if (img.complete && img.naturalHeight !== 0) {
-        img.classList.add('loaded');
-      } else {
-        img.addEventListener('load', () => {
+      // Check if carousel exists on this page
+      var carouselPrev = document.getElementById('carousel-prev');
+      if (!carouselPrev) return;
+
+      // Reset state
+      window.__carouselState.currentCategory = 'saas';
+      window.__carouselState.currentSlide = 0;
+      window.__carouselState.previousSlide = 0;
+      window.__carouselState.isAnimating = false;
+
+      initializeSlides();
+      initCarouselImages();
+      setupCategoryTabs();
+      setupCarouselNavigation();
+      setupDotNavigation();
+      startAutoRotate();
+    }
+
+    // Initialize carousel image blur placeholders
+    function initCarouselImages() {
+      var images = document.querySelectorAll('.carousel-image');
+      images.forEach(function(img) {
+        if (img.complete && img.naturalHeight !== 0) {
           img.classList.add('loaded');
-        }, {once: true});
-      }
-    });
-  }
-
-  // Cleanup function
-  function cleanupCarousel() {
-    if (autoRotateInterval) {
-      clearInterval(autoRotateInterval);
-      autoRotateInterval = null;
+        } else {
+          img.addEventListener('load', function() {
+            img.classList.add('loaded');
+          }, { once: true });
+        }
+      });
     }
-  }
 
-  // Initialize on first load
-  document.addEventListener('DOMContentLoaded', initCarousel);
+    function startAutoRotate() {
+      if (window.__carouselState.autoRotateInterval) {
+        clearInterval(window.__carouselState.autoRotateInterval);
+      }
+      window.__carouselState.autoRotateInterval = setInterval(function() {
+        if (window.__carouselState.isAnimating) return;
+        window.__carouselState.previousSlide = window.__carouselState.currentSlide;
+        window.__carouselState.currentSlide = window.__carouselState.currentSlide === 2 ? 0 : window.__carouselState.currentSlide + 1;
+        window.__carouselState.slideDirection = 'right';
+        animateSlide();
+      }, 15000);
+    }
 
-  // Re-initialize on Astro page navigation (View Transitions)
-  document.addEventListener('astro:page-load', initCarousel);
+    function resetAutoRotate() {
+      startAutoRotate();
+    }
 
-  // Cleanup before navigating away
-  document.addEventListener('astro:before-swap', cleanupCarousel);
+    function setupCategoryTabs() {
+      var tabs = document.querySelectorAll('.category-tab');
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var category = tab.getAttribute('data-category');
+          if (category && category !== window.__carouselState.currentCategory) {
+            switchCategory(category);
+          }
+        });
+      });
+    }
 
-  function startAutoRotate() {
-    if (autoRotateInterval) clearInterval(autoRotateInterval);
-    autoRotateInterval = setInterval(() => {
-      if (isAnimating) return;
-      previousSlide = currentSlide;
-      currentSlide = currentSlide === 2 ? 0 : currentSlide + 1;
-      slideDirection = 'right';
-      animateSlide();
-    }, 15000);
-  }
-
-  function resetAutoRotate() {
-    startAutoRotate();
-  }
-
-  function setupCategoryTabs() {
-    const tabs = document.querySelectorAll('.category-tab');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const category = tab.getAttribute('data-category');
-        if (category && category !== currentCategory) {
-          switchCategory(category);
+    function switchCategory(newCategory) {
+      // Update tabs
+      document.querySelectorAll('.category-tab').forEach(function(tab) {
+        var isSelected = tab.getAttribute('data-category') === newCategory;
+        tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+        if (isSelected) {
+          tab.classList.remove('bg-white/10', 'text-white/80');
+          tab.classList.add('bg-jet-stream', 'text-white', 'shadow-lg');
+        } else {
+          tab.classList.remove('bg-jet-stream', 'shadow-lg');
+          tab.classList.add('bg-white/10', 'text-white/80');
         }
       });
-    });
-  }
 
-  function switchCategory(newCategory: string) {
-    // Update tabs
-    document.querySelectorAll('.category-tab').forEach(tab => {
-      const isSelected = tab.getAttribute('data-category') === newCategory;
-      tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
-      if (isSelected) {
-        tab.classList.remove('bg-white/10', 'text-white/80');
-        tab.classList.add('bg-jet-stream', 'text-white', 'shadow-lg');
-      } else {
-        tab.classList.remove('bg-jet-stream', 'shadow-lg');
-        tab.classList.add('bg-white/10', 'text-white/80');
-      }
-    });
-
-    // Hide current panel, show new panel
-    document.querySelectorAll('.carousel-panel').forEach(panel => {
-      if (panel.getAttribute('data-category') === newCategory) {
-        panel.classList.remove('hidden');
-        panel.classList.add('block');
-      } else {
-        panel.classList.remove('block');
-        panel.classList.add('hidden');
-      }
-    });
-
-    // Reset to first slide
-    currentCategory = newCategory;
-    currentSlide = 0;
-    previousSlide = 0;
-
-    // Reset slides in new panel
-    const newPanel = document.querySelector(`.carousel-panel[data-category="${newCategory}"]`);
-    if (newPanel) {
-      newPanel.querySelectorAll('.carousel-slide').forEach((slide, index) => {
-        slide.classList.remove('active', 'animating-in', 'animating-out', 'from-left', 'from-right', 'to-left', 'to-right');
-        if (index === 0) {
-          slide.classList.add('active');
+      // Hide current panel, show new panel
+      document.querySelectorAll('.carousel-panel').forEach(function(panel) {
+        if (panel.getAttribute('data-category') === newCategory) {
+          panel.classList.remove('hidden');
+          panel.classList.add('block');
+        } else {
+          panel.classList.remove('block');
+          panel.classList.add('hidden');
         }
       });
-      newPanel.querySelectorAll('.carousel-dot').forEach((dot, index) => {
-        if (index === 0) {
+
+      // Reset to first slide
+      window.__carouselState.currentCategory = newCategory;
+      window.__carouselState.currentSlide = 0;
+      window.__carouselState.previousSlide = 0;
+
+      // Reset slides in new panel
+      var newPanel = document.querySelector('.carousel-panel[data-category="' + newCategory + '"]');
+      if (newPanel) {
+        newPanel.querySelectorAll('.carousel-slide').forEach(function(slide, index) {
+          slide.classList.remove('active', 'animating-in', 'animating-out', 'from-left', 'from-right', 'to-left', 'to-right');
+          if (index === 0) {
+            slide.classList.add('active');
+          }
+        });
+        newPanel.querySelectorAll('.carousel-dot').forEach(function(dot, index) {
+          if (index === 0) {
+            dot.classList.remove('bg-white/30', 'w-2.5');
+            dot.classList.add('bg-jet-stream', 'w-8');
+          } else {
+            dot.classList.remove('bg-jet-stream', 'w-8');
+            dot.classList.add('bg-white/30', 'w-2.5');
+          }
+        });
+      }
+
+      updateMoreButton();
+      resetAutoRotate();
+    }
+
+    function setupCarouselNavigation() {
+      var prevBtn = document.getElementById('carousel-prev');
+      var nextBtn = document.getElementById('carousel-next');
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+          if (window.__carouselState.isAnimating) return;
+          window.__carouselState.previousSlide = window.__carouselState.currentSlide;
+          window.__carouselState.currentSlide = window.__carouselState.currentSlide === 0 ? 2 : window.__carouselState.currentSlide - 1;
+          window.__carouselState.slideDirection = 'left';
+          animateSlide();
+          resetAutoRotate();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+          if (window.__carouselState.isAnimating) return;
+          window.__carouselState.previousSlide = window.__carouselState.currentSlide;
+          window.__carouselState.currentSlide = window.__carouselState.currentSlide === 2 ? 0 : window.__carouselState.currentSlide + 1;
+          window.__carouselState.slideDirection = 'right';
+          animateSlide();
+          resetAutoRotate();
+        });
+      }
+    }
+
+    function setupDotNavigation() {
+      document.querySelectorAll('.carousel-dot').forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          if (window.__carouselState.isAnimating) return;
+          var slideIndex = parseInt(dot.getAttribute('data-slide') || '0');
+          if (slideIndex === window.__carouselState.currentSlide) return;
+          window.__carouselState.previousSlide = window.__carouselState.currentSlide;
+          window.__carouselState.slideDirection = slideIndex > window.__carouselState.currentSlide ? 'right' : 'left';
+          window.__carouselState.currentSlide = slideIndex;
+          animateSlide();
+          resetAutoRotate();
+        });
+      });
+    }
+
+    function animateSlide() {
+      var currentPanel = document.querySelector('.carousel-panel[data-category="' + window.__carouselState.currentCategory + '"]');
+      if (!currentPanel) return;
+
+      window.__carouselState.isAnimating = true;
+      var slides = currentPanel.querySelectorAll('.carousel-slide');
+      var exitSlide = slides[window.__carouselState.previousSlide];
+      var enterSlide = slides[window.__carouselState.currentSlide];
+
+      // Exit animation
+      if (exitSlide) {
+        exitSlide.classList.remove('active');
+        exitSlide.classList.add('animating-out', window.__carouselState.slideDirection === 'right' ? 'to-left' : 'to-right');
+      }
+
+      // Enter animation
+      if (enterSlide) {
+        enterSlide.classList.add('animating-in', window.__carouselState.slideDirection === 'right' ? 'from-right' : 'from-left');
+      }
+
+      // Update dots
+      currentPanel.querySelectorAll('.carousel-dot').forEach(function(dot, index) {
+        if (index === window.__carouselState.currentSlide) {
           dot.classList.remove('bg-white/30', 'w-2.5');
           dot.classList.add('bg-jet-stream', 'w-8');
         } else {
@@ -543,114 +619,45 @@ const categoryNames: Record<string, string> = {
           dot.classList.add('bg-white/30', 'w-2.5');
         }
       });
-    }
 
-    updateMoreButton();
-    resetAutoRotate();
-  }
-
-  function setupCarouselNavigation() {
-    const prevBtn = document.getElementById('carousel-prev');
-    const nextBtn = document.getElementById('carousel-next');
-
-    prevBtn?.addEventListener('click', () => {
-      if (isAnimating) return;
-      previousSlide = currentSlide;
-      currentSlide = currentSlide === 0 ? 2 : currentSlide - 1;
-      slideDirection = 'left';
-      animateSlide();
-      resetAutoRotate();
-    });
-
-    nextBtn?.addEventListener('click', () => {
-      if (isAnimating) return;
-      previousSlide = currentSlide;
-      currentSlide = currentSlide === 2 ? 0 : currentSlide + 1;
-      slideDirection = 'right';
-      animateSlide();
-      resetAutoRotate();
-    });
-  }
-
-  function setupDotNavigation() {
-    document.querySelectorAll('.carousel-dot').forEach(dot => {
-      dot.addEventListener('click', () => {
-        if (isAnimating) return;
-        const slideIndex = parseInt(dot.getAttribute('data-slide') || '0');
-        if (slideIndex === currentSlide) return;
-        previousSlide = currentSlide;
-        slideDirection = slideIndex > currentSlide ? 'right' : 'left';
-        currentSlide = slideIndex;
-        animateSlide();
-        resetAutoRotate();
-      });
-    });
-  }
-
-  function animateSlide() {
-    const currentPanel = document.querySelector(`.carousel-panel[data-category="${currentCategory}"]`);
-    if (!currentPanel) return;
-
-    isAnimating = true;
-    const slides = currentPanel.querySelectorAll('.carousel-slide');
-    const exitSlide = slides[previousSlide];
-    const enterSlide = slides[currentSlide];
-
-    // Exit animation
-    if (exitSlide) {
-      exitSlide.classList.remove('active');
-      exitSlide.classList.add('animating-out', slideDirection === 'right' ? 'to-left' : 'to-right');
-    }
-
-    // Enter animation
-    if (enterSlide) {
-      enterSlide.classList.add('animating-in', slideDirection === 'right' ? 'from-right' : 'from-left');
-    }
-
-    // Update dots
-    currentPanel.querySelectorAll('.carousel-dot').forEach((dot, index) => {
-      if (index === currentSlide) {
-        dot.classList.remove('bg-white/30', 'w-2.5');
-        dot.classList.add('bg-jet-stream', 'w-8');
-      } else {
-        dot.classList.remove('bg-jet-stream', 'w-8');
-        dot.classList.add('bg-white/30', 'w-2.5');
-      }
-    });
-
-    // Clean up after animation
-    setTimeout(() => {
-      if (exitSlide) {
-        exitSlide.classList.remove('animating-out', 'to-left', 'to-right');
-      }
-      if (enterSlide) {
-        enterSlide.classList.remove('animating-in', 'from-left', 'from-right');
-        enterSlide.classList.add('active');
-      }
-      isAnimating = false;
-    }, 500);
-  }
-
-  function initializeSlides() {
-    document.querySelectorAll('.carousel-panel').forEach(panel => {
-      panel.querySelectorAll('.carousel-slide').forEach((slide, index) => {
-        slide.classList.remove('animating-in', 'animating-out', 'from-left', 'from-right', 'to-left', 'to-right');
-        if (index === 0) {
-          slide.classList.add('active');
-        } else {
-          slide.classList.remove('active');
+      // Clean up after animation
+      setTimeout(function() {
+        if (exitSlide) {
+          exitSlide.classList.remove('animating-out', 'to-left', 'to-right');
         }
-      });
-    });
-  }
-
-  function updateMoreButton() {
-    const btn = document.getElementById('more-articles-btn') as HTMLAnchorElement;
-    const categoryNameSpan = document.getElementById('selected-category-name');
-
-    if (btn && categoryNameSpan) {
-      btn.href = categoryUrls[currentCategory];
-      categoryNameSpan.textContent = categoryNames[currentCategory];
+        if (enterSlide) {
+          enterSlide.classList.remove('animating-in', 'from-left', 'from-right');
+          enterSlide.classList.add('active');
+        }
+        window.__carouselState.isAnimating = false;
+      }, 500);
     }
+
+    function initializeSlides() {
+      document.querySelectorAll('.carousel-panel').forEach(function(panel) {
+        panel.querySelectorAll('.carousel-slide').forEach(function(slide, index) {
+          slide.classList.remove('animating-in', 'animating-out', 'from-left', 'from-right', 'to-left', 'to-right');
+          if (index === 0) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+      });
+    }
+
+    function updateMoreButton() {
+      var btn = document.getElementById('more-articles-btn');
+      var categoryNameSpan = document.getElementById('selected-category-name');
+
+      if (btn && categoryNameSpan) {
+        btn.href = categoryUrls[window.__carouselState.currentCategory];
+        categoryNameSpan.textContent = categoryNames[window.__carouselState.currentCategory];
+      }
+    }
+
+    // Register event listeners once
+    document.addEventListener('astro:page-load', initCarousel);
+    document.addEventListener('astro:before-swap', cleanupCarousel);
   }
 </script>

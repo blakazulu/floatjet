@@ -245,29 +245,58 @@ const {columns, rows, caption, highlight} = Astro.props;
   }
 </style>
 
-<script>
-  // Hide scroll hint when scrolled to end
-  document.addEventListener('DOMContentLoaded', () => {
-    const wrappers = document.querySelectorAll('.table-wrapper');
+<script is:inline>
+  // Comparison Table scroll hint with proper cleanup for View Transitions
 
-    wrappers.forEach((wrapper) => {
-      const hint = wrapper.querySelector('.scroll-hint') as HTMLElement;
+  if (!window.__comparisonTableInit) {
+    window.__comparisonTableInit = true;
+    window.__comparisonTableHandlers = { resize: null };
 
-      const checkScroll = () => {
-        const isScrolledToEnd =
-          wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 10;
-        const hasScroll = wrapper.scrollWidth > wrapper.clientWidth;
+    function cleanupComparisonTable() {
+      if (window.__comparisonTableHandlers.resize) {
+        window.removeEventListener('resize', window.__comparisonTableHandlers.resize);
+        window.__comparisonTableHandlers.resize = null;
+      }
+    }
 
-        if (hint) {
-          hint.style.opacity = hasScroll && !isScrolledToEnd ? '1' : '0';
-        }
+    function initComparisonTable() {
+      cleanupComparisonTable();
+
+      var wrappers = document.querySelectorAll('.table-wrapper');
+      if (wrappers.length === 0) return;
+
+      // Store all checkScroll functions for resize handler
+      var checkScrollFns = [];
+
+      wrappers.forEach(function(wrapper) {
+        var hint = wrapper.querySelector('.scroll-hint');
+
+        var checkScroll = function() {
+          var isScrolledToEnd =
+            wrapper.scrollLeft + wrapper.clientWidth >= wrapper.scrollWidth - 10;
+          var hasScroll = wrapper.scrollWidth > wrapper.clientWidth;
+
+          if (hint) {
+            hint.style.opacity = hasScroll && !isScrolledToEnd ? '1' : '0';
+          }
+        };
+
+        // Element listener - auto-cleaned on DOM swap
+        wrapper.addEventListener('scroll', checkScroll);
+        checkScroll(); // Initial check
+
+        checkScrollFns.push(checkScroll);
+      });
+
+      // Single global resize handler for all tables
+      window.__comparisonTableHandlers.resize = function() {
+        checkScrollFns.forEach(function(fn) { fn(); });
       };
+      window.addEventListener('resize', window.__comparisonTableHandlers.resize);
+    }
 
-      wrapper.addEventListener('scroll', checkScroll);
-      checkScroll(); // Initial check
-
-      // Recheck on window resize
-      window.addEventListener('resize', checkScroll);
-    });
-  });
+    // Register event listeners once
+    document.addEventListener('astro:page-load', initComparisonTable);
+    document.addEventListener('astro:before-swap', cleanupComparisonTable);
+  }
 </script>

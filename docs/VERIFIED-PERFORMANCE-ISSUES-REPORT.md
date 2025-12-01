@@ -14,7 +14,7 @@
 
 ### ✅ FIX STATUS (Updated 2025-12-01)
 
-**ALL 10 CRITICAL/HIGH PRIORITY ISSUES FIXED:**
+**ALL 13 ISSUES FIXED:**
 
 | Component | Status | Fix Details |
 |-----------|--------|-------------|
@@ -26,8 +26,10 @@
 | sitemap-visual.astro | ✅ FIXED | Deduplication, resize/keydown cleanup, simulation cleanup |
 | ArticleCarousel.astro | ✅ FIXED | Deduplication flag, state management via window |
 | Header.astro | ✅ FIXED | Deduplication flag, removed dual initialization |
-| index.astro | ✅ FIXED | Deduplication flag, interval cleanup |
+| index.astro | ✅ FIXED | Deduplication flag, interval cleanup, forced reflow removed |
 | SocialShare.astro | ✅ FIXED | Deduplication flag |
+| FeaturedContent.astro | ✅ FIXED | Deduplication flag, removed DOMContentLoaded |
+| RelatedArticles.astro | ✅ FIXED | Deduplication flag, removed DOMContentLoaded |
 
 **Verification Test Results (after fix):**
 - resize: 5 (stable after navigation)

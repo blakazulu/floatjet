@@ -122,21 +122,26 @@ const featuredArticles = [
   }
 </style>
 
-<script>
-  // Blur placeholder fade-in effect
-  function initBlurPlaceholders() {
-    const images = document.querySelectorAll('.blur-placeholder') as NodeListOf<HTMLImageElement>;
-    images.forEach(img => {
-      if (img.complete && img.naturalHeight !== 0) {
-        img.classList.add('loaded');
-      } else {
-        img.addEventListener('load', () => {
-          img.classList.add('loaded');
-        }, {once: true});
-      }
-    });
-  }
+<script is:inline>
+  // FeaturedContent with proper deduplication for View Transitions
 
-  document.addEventListener('DOMContentLoaded', initBlurPlaceholders);
-  document.addEventListener('astro:page-load', initBlurPlaceholders);
+  if (!window.__featuredContentInit) {
+    window.__featuredContentInit = true;
+
+    function initBlurPlaceholders() {
+      var images = document.querySelectorAll('.blur-placeholder');
+      images.forEach(function(img) {
+        if (img.complete && img.naturalHeight !== 0) {
+          img.classList.add('loaded');
+        } else {
+          img.addEventListener('load', function() {
+            img.classList.add('loaded');
+          }, {once: true});
+        }
+      });
+    }
+
+    // Register event listener once
+    document.addEventListener('astro:page-load', initBlurPlaceholders);
+  }
 </script>

@@ -100,13 +100,12 @@ const description = 'Discover the best software, gear, and strategies to work ef
             element.classList.remove('headline-exit');
             element.classList.add('headline-enter');
 
-            // Trigger reflow for animation
-            element.offsetHeight;
-
-            // Enter animation - slide up from below + unblur + fade in
+            // Use double rAF to ensure browser processes class change before transition
             requestAnimationFrame(function() {
-              element.classList.remove('headline-enter');
-              element.classList.add('headline-visible');
+              requestAnimationFrame(function() {
+                element.classList.remove('headline-enter');
+                element.classList.add('headline-visible');
+              });
             });
           }, 700);
         }, 8000);

@@ -90,21 +90,26 @@ const {articles} = Astro.props;
   }
 </style>
 
-<script>
-  // Related articles image blur placeholder fade-in
-  function initRelatedImages() {
-    const images = document.querySelectorAll('.related-image') as NodeListOf<HTMLImageElement>;
-    images.forEach(img => {
-      if (img.complete && img.naturalHeight !== 0) {
-        img.classList.add('loaded');
-      } else {
-        img.addEventListener('load', () => {
-          img.classList.add('loaded');
-        }, {once: true});
-      }
-    });
-  }
+<script is:inline>
+  // RelatedArticles with proper deduplication for View Transitions
 
-  document.addEventListener('DOMContentLoaded', initRelatedImages);
-  document.addEventListener('astro:page-load', initRelatedImages);
+  if (!window.__relatedArticlesInit) {
+    window.__relatedArticlesInit = true;
+
+    function initRelatedImages() {
+      var images = document.querySelectorAll('.related-image');
+      images.forEach(function(img) {
+        if (img.complete && img.naturalHeight !== 0) {
+          img.classList.add('loaded');
+        } else {
+          img.addEventListener('load', function() {
+            img.classList.add('loaded');
+          }, {once: true});
+        }
+      });
+    }
+
+    // Register event listener once
+    document.addEventListener('astro:page-load', initRelatedImages);
+  }
 </script>

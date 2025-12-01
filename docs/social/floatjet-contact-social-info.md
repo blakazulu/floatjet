@@ -105,9 +105,17 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 
 ### Pinterest
 
-- **Profile:** [Add URL]
-- **Purpose:** Home office setups, productivity infographics
-- **Status:** ⏳ To be created
+- **Profile:** [Add URL when available]
+- **Account Type:** Business
+- **Email:** social@floatjet.com
+- **Brand Focus:** Travel
+- **Business Goals:** Drive traffic to site, Grow brand awareness, Create content
+- **Website:** https://floatjet.com (✅ Verified via TXT record)
+- **Verification:** pinterest-site-verification=f2d710a419ee71e24df8fd24cea2e0cb
+- **Purpose:** Visual tool comparisons, home office setups, productivity infographics, affiliate traffic
+- **Target Audience:** Remote workers, digital nomads, home office enthusiasts
+- **Posting Schedule:** 5-10 pins/week (batch creation)
+- **Status:** ✅ Active (Created Dec 1, 2025)
 
 ### Reddit
 

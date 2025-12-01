@@ -144,25 +144,25 @@ Why it works: Question opening, contractions ("what's"), casual language, person
 For each article verify the following SEO + Humanization checklist:
 
 - [ ] **Title tag** (50-60 chars, includes keyword, SOUNDS HUMAN)
-  - Test: Read out loud. Conversational? Question format works great.
-  - ✅ "Do You Really Need a Password Manager?"
-  - ❌ "Complete Guide to Password Managers for Remote Workers"
+    - Test: Read out loud. Conversational? Question format works great.
+    - ✅ "Do You Really Need a Password Manager?"
+    - ❌ "Complete Guide to Password Managers for Remote Workers"
 
 - [ ] **Meta description** (150-160 chars, compelling, SOUNDS HUMAN)
-  - Test: Would you say this to a friend? Contractions? Personal voice?
-  - ✅ "You're using the same password everywhere, aren't you? Here's why..."
-  - ❌ "Discover the comprehensive guide to password manager solutions..."
+    - Test: Would you say this to a friend? Contractions? Personal voice?
+    - ✅ "You're using the same password everywhere, aren't you? Here's why..."
+    - ❌ "Discover the comprehensive guide to password manager solutions..."
 
 - [ ] **H1 tag** (one per page, includes keyword, natural language)
 - [ ] **Heading hierarchy** (H1 → H2 → H3, casual headers not formulaic)
 - [ ] **Keyword usage** (natural, not stuffed, flows conversationally)
 - [ ] **Internal links** (2-5 per article, NATURAL anchor text)
-  - ✅ "I talked about this in my [VPN guide](link)"
-  - ❌ "Learn more [here](link)" or "Click here"
+    - ✅ "I talked about this in my [VPN guide](link)"
+    - ❌ "Learn more [here](link)" or "Click here"
 
 - [ ] **External links** (authoritative sources, CASUAL citations)
-  - ✅ "The IRS says..." or "NIST tested this..."
-  - ❌ "According to research conducted by..."
+    - ✅ "The IRS says..." or "NIST tested this..."
+    - ❌ "According to research conducted by..."
 
 - [ ] **Image alt text** (descriptive, keyword where relevant)
 - [ ] **Affiliate disclosure** present (where applicable)
@@ -171,83 +171,83 @@ For each article verify the following SEO + Humanization checklist:
 **Audit by Category:**
 
 - [ ] 1.1 Audit Blog articles (16 articles)
-  - [ ] /blog/best-team-communication-tools
-  - [ ] /blog/async-communication-remote-teams
-  - [ ] /blog/best-banking-digital-nomads
-  - [ ] /blog/crypto-friendly-banks
-  - [ ] /blog/tax-tips-remote-workers
-  - [ ] /blog/cloud-vs-traditional-hosting
-  - [ ] /blog/managed-wordpress-hosting-compared
-  - [ ] /blog/managing-time-zones-remote-teams
-  - [ ] /blog/best-crm-software-small-business
-  - [ ] /blog/vpn-speed-comparison
-  - [ ] /blog/vpn-public-wifi-guide
-  - [ ] /blog/ultimate-home-office-setup
-  - [ ] /blog/find-reliable-wifi-anywhere
-  - [ ] /blog/essential-travel-tech-nomads
-  - [ ] /blog/best-travel-insurance-remote-workers
-  - [ ] /blog/top-destinations-digital-nomads
+    - [ ] /blog/best-team-communication-tools
+    - [ ] /blog/async-communication-remote-teams
+    - [ ] /blog/best-banking-digital-nomads
+    - [ ] /blog/crypto-friendly-banks
+    - [ ] /blog/tax-tips-remote-workers
+    - [ ] /blog/cloud-vs-traditional-hosting
+    - [ ] /blog/managed-wordpress-hosting-compared
+    - [ ] /blog/managing-time-zones-remote-teams
+    - [ ] /blog/best-crm-software-small-business
+    - [ ] /blog/vpn-speed-comparison
+    - [ ] /blog/vpn-public-wifi-guide
+    - [ ] /blog/ultimate-home-office-setup
+    - [ ] /blog/find-reliable-wifi-anywhere
+    - [ ] /blog/essential-travel-tech-nomads
+    - [ ] /blog/best-travel-insurance-remote-workers
+    - [ ] /blog/top-destinations-digital-nomads
 
 - [ ] 1.2 Audit Gear articles (23 articles)
-  - Accessories (5), Audio (6), Computers (6), Furniture (6)
-  - See full list in article-summey.md
+    - Accessories (5), Audio (6), Computers (6), Furniture (6)
+    - See full list in article-summey.md
 
 - [ ] 1.3 Audit Guides articles (35 articles)
-  - Communication (5), Finance (5), Productivity (5), Security (5), Setup (5), Travel (5)
-  - See full list in article-summey.md
+    - Communication (5), Finance (5), Productivity (5), Security (5), Setup (5), Travel (5)
+    - See full list in article-summey.md
 
 - [ ] 1.4 Audit Tools articles (28 articles)
-  - Finance (5), Hosting (6), SaaS (11), VPN (6)
-  - See full list in article-summey.md
+    - Finance (5), Hosting (6), SaaS (11), VPN (6)
+    - See full list in article-summey.md
 
 - [ ] 1.5 Fix P1 Issues (Following Humanization Rules)
-  - [ ] **Meta descriptions <150 chars** (~60% of articles, ~6 hours)
-    - Rewrite to 150-160 chars while maintaining human voice
-    - Use contractions, personal voice, specific details
-    - Test: "Would I say this to a friend?"
+    - [ ] **Meta descriptions <150 chars** (~60% of articles, ~6 hours)
+        - Rewrite to 150-160 chars while maintaining human voice
+        - Use contractions, personal voice, specific details
+        - Test: "Would I say this to a friend?"
 
-  - [ ] **Title tags >60 chars** (~20% of articles, ~2 hours)
-    - Shorten to 50-60 chars using question format where possible
-    - Keep conversational tone
+    - [ ] **Title tags >60 chars** (~20% of articles, ~2 hours)
+        - Shorten to 50-60 chars using question format where possible
+        - Keep conversational tone
 
-  - [x] **Add internal links** (All 120 articles, ~4 hours) ✅ COMPLETE
-    - 3-6 relevant links per article
-    - Natural anchor text in conversational prose
-    - Money pages linked from supporting content
-    - Completed: 120/120 articles (100%)
+    - [x] **Add internal links** (All 120 articles, ~4 hours) ✅ COMPLETE
+        - 3-6 relevant links per article
+        - Natural anchor text in conversational prose
+        - Money pages linked from supporting content
+        - Completed: 120/120 articles (100%)
 
-  - [x] **Add external authoritative links** (~30 articles, ~1.5 hours) ✅ COMPLETE
-    - Tax articles → IRS.gov citations
-    - Security articles → NIST, security research
-    - Casual citation style: "The IRS says..." not "According to research..."
-    - Completed: 29 articles, 79+ authoritative citations
+    - [x] **Add external authoritative links** (~30 articles, ~1.5 hours) ✅ COMPLETE
+        - Tax articles → IRS.gov citations
+        - Security articles → NIST, security research
+        - Casual citation style: "The IRS says..." not "According to research..."
+        - Completed: 29 articles, 79+ authoritative citations
 
 - [ ] 1.6 Document all issues found
-  - Create comprehensive list with issues by article
-  - Prioritize: P0 (launch blockers) vs. P1 (high priority) vs. P2 (nice-to-have)
+    - Create comprehensive list with issues by article
+    - Prioritize: P0 (launch blockers) vs. P1 (high priority) vs. P2 (nice-to-have)
 
 ### Phase 2: Technical SEO Audit (2 hours - expanded for 102 pages)
 
 - [x] 2.1 Site-wide technical checks (Reviewed - 95% complete)
-  - [x] XML sitemap exists and is accurate (Verified in config)
-  - [x] robots.txt allows important pages (Created & verified)
-  - [x] robots.txt allows AI crawlers (All AI bots allowed)
-  - [x] Canonical URLs set correctly (Verified in Head.astro)
-  - [x] No duplicate content issues (Verified)
-  - [x] HTTPS working on all pages (Netlify default)
-  - [x] Mobile-friendly (responsive) (Verified in base styles)
-  - [ ] Page speed acceptable (<3s load) (Needs Lighthouse testing)
+    - [x] XML sitemap exists and is accurate (Verified in config)
+    - [x] robots.txt allows important pages (Created & verified)
+    - [x] robots.txt allows AI crawlers (All AI bots allowed)
+    - [x] Canonical URLs set correctly (Verified in Head.astro)
+    - [x] No duplicate content issues (Verified)
+    - [x] HTTPS working on all pages (Netlify default)
+    - [x] Mobile-friendly (responsive) (Verified in base styles)
+    - [ ] Page speed acceptable (<3s load) (Needs Lighthouse testing)
 
 - [x] 2.2 Run Lighthouse audits ✅ COMPLETE
-  - [x] Run on homepage (Perf: 69, A11y: 93, Best: 100, SEO: 100)
-  - [x] Run on 3 money pages (sample)
-    - Online Courses: Perf 66, A11y 96, Best 100, SEO 100
-    - Ergonomic Chairs: Perf 53, A11y 96, Best 100, SEO 100
-  - [x] Run on 2 supporting articles (sample)
-    - Tax Tips Blog: Perf 74, A11y 96, Best 100, SEO 100
-    - Blog Index: Perf 65, A11y 94, Best 100, SEO 100
-    - Guides Index: Perf 73, A11y 94, Best 100, SEO 100
-  - [x] Document scores and issues (see Progress Log)
+    - [x] Run on homepage (Perf: 69, A11y: 93, Best: 100, SEO: 100)
+    - [x] Run on 3 money pages (sample)
+        - Online Courses: Perf 66, A11y 96, Best 100, SEO 100
+        - Ergonomic Chairs: Perf 53, A11y 96, Best 100, SEO 100
+    - [x] Run on 2 supporting articles (sample)
+        - Tax Tips Blog: Perf 74, A11y 96, Best 100, SEO 100
+        - Blog Index: Perf 65, A11y 94, Best 100, SEO 100
+        - Guides Index: Perf 73, A11y 94, Best 100, SEO 100
+    - [x] Document scores and issues (see Progress Log)
 
 - [ ] 2.3 Check Google Search Console
     - [ ] Verify no crawl errors
@@ -296,19 +296,19 @@ For each article verify the following SEO + Humanization checklist:
 Before marking this task complete:
 
 - [ ] All 102 articles audited against SEO checklist
-  - [ ] Blog articles (16) - 100% pass rate
-  - [ ] Gear articles (23) - 100% pass rate
-  - [ ] Guides articles (35) - 100% pass rate
-  - [ ] Tools articles (28) - 100% pass rate
+    - [ ] Blog articles (16) - 100% pass rate
+    - [ ] Gear articles (23) - 100% pass rate
+    - [ ] Guides articles (35) - 100% pass rate
+    - [ ] Tools articles (28) - 100% pass rate
 - [ ] No critical technical issues remaining
 - [ ] Lighthouse scores documented (sample of 10+ pages)
 - [ ] Schema markup validated across all article types
 - [ ] All broken links fixed (internal and external)
 - [ ] Sitemap submitted to Google Search Console
 - [ ] Comprehensive audit report documented with:
-  - [ ] Issues found by severity (critical/high/medium/low)
-  - [ ] Issues fixed before launch
-  - [ ] Issues deferred to post-launch (with task references)
+    - [ ] Issues found by severity (critical/high/medium/low)
+    - [ ] Issues fixed before launch
+    - [ ] Issues deferred to post-launch (with task references)
 
 ## Progress Log
 
@@ -372,23 +372,26 @@ Before marking this task complete:
 **Key Achievements:**
 
 1. **Humanization Success:** All 122 articles now have human-sounding metadata
-  - Zero AI-sounding patterns ("comprehensive", "optimal", "exceptional")
-  - Conversational tone with contractions and personal voice
-  - Specific details over vague corporate speak
-  - Passes "say it to a friend" test
+
+- Zero AI-sounding patterns ("comprehensive", "optimal", "exceptional")
+- Conversational tone with contractions and personal voice
+- Specific details over vague corporate speak
+- Passes "say it to a friend" test
 
 2. **SEO Foundation Solid:**
-  - 100/100 Lighthouse SEO scores across all tested pages
-  - Complete Schema.org implementation
-  - All metadata within Google's recommended ranges
-  - Internal linking complete (120/120 articles)
-  - External authoritative citations (29 articles, 79+ citations)
+
+- 100/100 Lighthouse SEO scores across all tested pages
+- Complete Schema.org implementation
+- All metadata within Google's recommended ranges
+- Internal linking complete (120/120 articles)
+- External authoritative citations (29 articles, 79+ citations)
 
 3. **Launch-Ready:**
-  - Zero P0 blocking issues
-  - All critical SEO requirements met
-  - Performance optimizations (P1) can be addressed post-launch
-  - Site ready for public launch from SEO perspective
+
+- Zero P0 blocking issues
+- All critical SEO requirements met
+- Performance optimizations (P1) can be addressed post-launch
+- Site ready for public launch from SEO perspective
 
 **Non-Blocking Issues (Post-Launch):**
 
@@ -406,31 +409,36 @@ Before marking this task complete:
 **Root Causes Identified:**
 
 1. **LCP (Largest Contentful Paint): 4.8-6.0s** ❌
-  - Target: <2.5s
-  - Actual: 4.8-6.0s (almost 2x too slow)
-  - Impact: Main content takes too long to appear
-  - Likely culprit: Hero images not optimized, font loading blocking
+
+- Target: <2.5s
+- Actual: 4.8-6.0s (almost 2x too slow)
+- Impact: Main content takes too long to appear
+- Likely culprit: Hero images not optimized, font loading blocking
 
 2. **Font Loading Issues**
-  - Google Fonts (Outfit + Inter) blocking render
-  - Not using `font-display: swap`
-  - No font preloading for critical fonts
-  - Estimated impact: 0.5-1.0s on LCP
+
+- Google Fonts (Outfit + Inter) blocking render
+- Not using `font-display: swap`
+- No font preloading for critical fonts
+- Estimated impact: 0.5-1.0s on LCP
 
 3. **Unused JavaScript: ~53 KiB**
-  - Scripts loading but not executed on page
-  - Wasted bandwidth on mobile connections
-  - Contributes to TBT (Total Blocking Time: 70-310ms)
+
+- Scripts loading but not executed on page
+- Wasted bandwidth on mobile connections
+- Contributes to TBT (Total Blocking Time: 70-310ms)
 
 4. **First Contentful Paint: 3.0-3.5s**
-  - Target: <1.8s
-  - Actual: Almost 2x too slow
-  - Related to font loading and initial render blocking
+
+- Target: <1.8s
+- Actual: Almost 2x too slow
+- Related to font loading and initial render blocking
 
 5. **Cumulative Layout Shift (CLS)**
-  - Ergonomic Chairs page: 0.263 (target <0.1)
-  - Likely caused by images loading without dimensions
-  - Other pages: 0-0.017 (good)
+
+- Ergonomic Chairs page: 0.263 (target <0.1)
+- Likely caused by images loading without dimensions
+- Other pages: 0-0.017 (good)
 
 **Performance Metrics Summary:**
 
@@ -447,42 +455,49 @@ Before marking this task complete:
 **Quick Wins (2-3 hours):**
 
 1. Font optimization (30 min)
-  - Add `font-display: swap` to Google Fonts
-  - Preload critical fonts (Outfit Bold, Inter Regular)
-  - Expected improvement: -0.5 to -1.0s LCP
+
+- Add `font-display: swap` to Google Fonts
+- Preload critical fonts (Outfit Bold, Inter Regular)
+- Expected improvement: -0.5 to -1.0s LCP
 
 2. Hero image optimization (1 hour)
-  - Audit hero images (likely the LCP element)
-  - Ensure proper sizing and format (WebP with fallback)
-  - Add explicit width/height to prevent CLS
-  - Consider using `loading="eager"` for above-fold images
-  - Expected improvement: -1.0 to -2.0s LCP
+
+- Audit hero images (likely the LCP element)
+- Ensure proper sizing and format (WebP with fallback)
+- Add explicit width/height to prevent CLS
+- Consider using `loading="eager"` for above-fold images
+- Expected improvement: -1.0 to -2.0s LCP
 
 3. Remove unused JavaScript (30 min)
-  - Audit bundled scripts
-  - Defer non-critical JavaScript
-  - Consider code splitting for route-specific code
-  - Expected improvement: -50 to -150ms TBT
+
+- Audit bundled scripts
+- Defer non-critical JavaScript
+- Consider code splitting for route-specific code
+- Expected improvement: -50 to -150ms TBT
 
 4. Critical CSS inlining (30 min)
-  - Inline critical above-the-fold CSS
-  - Defer non-critical stylesheets
-  - Expected improvement: -0.3 to -0.5s FCP
+
+- Inline critical above-the-fold CSS
+- Defer non-critical stylesheets
+- Expected improvement: -0.3 to -0.5s FCP
 
 **Medium-Term Optimizations (4-6 hours):**
 
 5. Image lazy loading audit
-  - Verify below-fold images use `loading="lazy"`
-  - Consider using progressive JPEGs or AVIF format
+
+- Verify below-fold images use `loading="lazy"`
+- Consider using progressive JPEGs or AVIF format
 
 6. Third-party script optimization
-  - Review analytics loading strategy
-  - Consider using `partytown` for third-party scripts
+
+- Review analytics loading strategy
+- Consider using `partytown` for third-party scripts
 
 7. Server-side optimizations (Netlify)
-  - Enable HTTP/2 Server Push for critical resources
-  - Verify Brotli compression is enabled
-  - Review edge caching headers
+
+- Enable HTTP/2 Server Push for critical resources
+- Verify Brotli compression is enabled
+- Review edge caching headers
 
 **Impact Assessment:**
 
@@ -805,30 +820,30 @@ they don't impact SEO scores.
 
 - ✅ Audited 5 sample articles from different categories
 - ✅ Reviewed all technical SEO infrastructure:
-  - Meta tags implementation (Head.astro)
-  - Schema.org markup (Article, Organization, FAQ, Breadcrumb)
-  - Sitemap configuration
-  - Semantic HTML & accessibility
-  - Image optimization
-  - Mobile responsiveness
+    - Meta tags implementation (Head.astro)
+    - Schema.org markup (Article, Organization, FAQ, Breadcrumb)
+    - Sitemap configuration
+    - Semantic HTML & accessibility
+    - Image optimization
+    - Mobile responsiveness
 - 📝 Created comprehensive SEO Audit Report (SEO-AUDIT-REPORT.md)
 - 🔴 **CRITICAL ISSUE FOUND:** robots.txt missing (P0 launch blocker)
 - ✅ **FIXED:** Created /public/robots.txt with AI crawler allowances
 - ⚠️ **P1 ISSUES IDENTIFIED:**
-  - Meta descriptions too short (60% of sample <150 chars)
-  - Title lengths need audit (20% >60 chars)
-  - Internal linking needs verification
-  - External authoritative links missing
+    - Meta descriptions too short (60% of sample <150 chars)
+    - Title lengths need audit (20% >60 chars)
+    - Internal linking needs verification
+    - External authoritative links missing
 - 📊 Overall SEO Health: **8.5/10** - Excellent foundation, content fixes needed
 
 **Task Updated with Humanization Priority:**
 
 - ⚠️ **CRITICAL CONSTRAINT ADDED:** All SEO fixes must follow humanization rules
 - 📋 Added detailed examples of human-friendly vs AI-sounding SEO fixes:
-  - Meta description examples (question format, contractions, personal voice)
-  - Title tag examples (conversational, <60 chars, natural language)
-  - Internal link examples (natural anchor text in prose)
-  - External citation examples (casual citations, not formal academic)
+    - Meta description examples (question format, contractions, personal voice)
+    - Title tag examples (conversational, <60 chars, natural language)
+    - Internal link examples (natural anchor text in prose)
+    - External citation examples (casual citations, not formal academic)
 - ✅ Updated checklist to include humanization verification for each item
 - 📝 Added specific fix workflow with humanization tests ("Would I say this to a friend?")
 
@@ -862,10 +877,10 @@ Meta descriptions and titles can't be standard "SEO-optimized" corporate speak. 
 - ✅ All blocking tasks completed (FJ-016, FJ-017, FJ-018, FJ-019)
 - 📊 Task updated to reflect actual scope: 102 articles (not 20)
 - 📋 Article breakdown confirmed:
-  - Blog: 16 articles
-  - Gear: 23 articles
-  - Guides: 35 articles
-  - Tools: 28 articles
+    - Blog: 16 articles
+    - Gear: 23 articles
+    - Guides: 35 articles
+    - Tools: 28 articles
 - ⏱️ Estimated hours updated: 3h → 12h (reflects 5x content volume)
 - 🟢 Status changed to "ready" - all blockers cleared
 - 📝 Audit checklist updated with category-specific breakdowns
@@ -890,50 +905,59 @@ Meta descriptions and titles can't be standard "SEO-optimized" corporate speak. 
 **Recommended approach:**
 
 1. **Sample-based Lighthouse testing** (Phase 2): Don't run Lighthouse on all 102 pages
-  - Test 10-15 representative pages across categories
-  - Focus on: homepage, 2-3 from each category, longest/shortest articles
+
+- Test 10-15 representative pages across categories
+- Focus on: homepage, 2-3 from each category, longest/shortest articles
 
 2. **Automated link checking** (Phase 3): Use tools for efficiency
-  - Consider using broken link checker tools (online or npm packages)
-  - Manual spot-checking for critical money pages
+
+- Consider using broken link checker tools (online or npm packages)
+- Manual spot-checking for critical money pages
 
 3. **Batch processing** (Phase 1): Group similar articles
-  - Audit all articles in same category together (consistency)
-  - Create category-specific issue templates
+
+- Audit all articles in same category together (consistency)
+- Create category-specific issue templates
 
 4. **Priority tiers:**
-  - **P0 (Critical):** Money pages, top traffic articles, homepage
-  - **P1 (High):** Supporting content with affiliate links
-  - **P2 (Medium):** SEO traffic builders
-  - **P3 (Low):** Edge cases, minor optimizations
+
+- **P0 (Critical):** Money pages, top traffic articles, homepage
+- **P1 (High):** Supporting content with affiliate links
+- **P2 (Medium):** SEO traffic builders
+- **P3 (Low):** Edge cases, minor optimizations
 
 ### Humanization Notes for SEO Fixes
 
 **Common Mistakes to Avoid:**
 
 1. **Don't sacrifice humanization for SEO metrics**
-  - ❌ "Learn the comprehensive strategies for optimizing your workspace" (hits keywords but sounds like AI)
-  - ✅ "Your home office setup matters more than you think. Here's what actually works." (conversational AND
-    SEO-friendly)
+
+- ❌ "Learn the comprehensive strategies for optimizing your workspace" (hits keywords but sounds like AI)
+- ✅ "Your home office setup matters more than you think. Here's what actually works." (conversational AND
+  SEO-friendly)
 
 2. **Meta descriptions aren't corporate ad copy**
-  - ❌ "Discover premium solutions" / "Unlock your potential" / "Transform your workflow"
-  - ✅ Real benefits in real language: "Spent three grand on office gear. Here's what was worth it and what wasn't."
+
+- ❌ "Discover premium solutions" / "Unlock your potential" / "Transform your workflow"
+- ✅ Real benefits in real language: "Spent three grand on office gear. Here's what was worth it and what wasn't."
 
 3. **Question format titles work great for SEO AND humanization**
-  - Questions naturally include keywords
-  - Sound conversational, not corporate
-  - People actually search using questions
-  - Examples: "Do I Need...?", "Can You...?", "Are ... Worth It?"
+
+- Questions naturally include keywords
+- Sound conversational, not corporate
+- People actually search using questions
+- Examples: "Do I Need...?", "Can You...?", "Are ... Worth It?"
 
 4. **Internal links must feel natural**
-  - Don't interrupt flow with "Click here to learn more"
-  - Weave links into storytelling: "After I spent way too long researching [standing desks](link)..."
+
+- Don't interrupt flow with "Click here to learn more"
+- Weave links into storytelling: "After I spent way too long researching [standing desks](link)..."
 
 5. **External citations add authority without sounding academic**
-  - Tax articles: "The IRS says you can deduct..." (direct, casual)
-  - Tech articles: "NIST tested this. Here's what they found..." (specific, conversational)
-  - Product specs: "Straight from the manufacturer's site..." (honest, direct)
+
+- Tax articles: "The IRS says you can deduct..." (direct, casual)
+- Tech articles: "NIST tested this. Here's what they found..." (specific, conversational)
+- Product specs: "Straight from the manufacturer's site..." (honest, direct)
 
 **The "Out Loud" Test:**
 Before finalizing ANY SEO fix, read it out loud. If it sounds like:

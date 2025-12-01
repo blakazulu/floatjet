@@ -1,399 +1,461 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
 
 // Article metadata
-const title = 'Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)';
-const description = 'Tested Notion, ClickUp, and Monday.com side-by-side. Compare features, pricing, ease of use, and performance to find the best project management tool.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)";
+const description =
+  "Tested Notion, ClickUp, and Monday.com side-by-side. Compare features, pricing, ease of use, and performance to find the best project management tool.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 14;
-const image = '/images/unsplash/photo-1557804506-669a67965ba0-1200w.webp';
-const imageAlt = 'Three computer screens showing different project management interfaces';
+const image = "/images/unsplash/photo-1557804506-669a67965ba0-1200w.webp";
+const imageAlt =
+  "Three computer screens showing different project management interfaces";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Comparison Table', slug: 'quick-comparison', depth: 2},
-  {text: 'Notion Deep Dive', slug: 'notion', depth: 2},
-  {text: 'ClickUp Deep Dive', slug: 'clickup', depth: 2},
-  {text: 'Monday.com Deep Dive', slug: 'monday', depth: 2},
-  {text: 'Head-to-Head Feature Comparison', slug: 'feature-comparison', depth: 2},
-  {text: 'Performance and Speed', slug: 'performance', depth: 2},
-  {text: 'Learning Curve Comparison', slug: 'learning-curve', depth: 2},
-  {text: 'Integration Ecosystem', slug: 'integrations', depth: 2},
-  {text: 'Which Should You Choose?', slug: 'decision-framework', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Comparison Table", slug: "quick-comparison", depth: 2 },
+  { text: "Notion Deep Dive", slug: "notion", depth: 2 },
+  { text: "ClickUp Deep Dive", slug: "clickup", depth: 2 },
+  { text: "Monday.com Deep Dive", slug: "monday", depth: 2 },
+  {
+    text: "Head-to-Head Feature Comparison",
+    slug: "feature-comparison",
+    depth: 2,
+  },
+  { text: "Performance and Speed", slug: "performance", depth: 2 },
+  { text: "Learning Curve Comparison", slug: "learning-curve", depth: 2 },
+  { text: "Integration Ecosystem", slug: "integrations", depth: 2 },
+  { text: "Which Should You Choose?", slug: "decision-framework", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // Quick comparison table
 const quickComparisonColumns = [
-  {key: 'feature', label: 'Feature', width: '150px'},
-  {key: 'notion', label: 'Notion'},
-  {key: 'clickup', label: 'ClickUp'},
-  {key: 'monday', label: 'Monday.com'},
+  { key: "feature", label: "Feature", width: "150px" },
+  { key: "notion", label: "Notion" },
+  { key: "clickup", label: "ClickUp" },
+  { key: "monday", label: "Monday.com" },
 ];
 
 const quickComparisonRows = [
   {
-    feature: '<strong>Best For</strong>',
-    notion: 'Docs + flexible workspace',
-    clickup: 'Power users + everything',
-    monday: 'Visual workflows + simple teams'
+    feature: "<strong>Best For</strong>",
+    notion: "Docs + flexible workspace",
+    clickup: "Power users + everything",
+    monday: "Visual workflows + simple teams",
   },
   {
-    feature: '<strong>Starting Price</strong>',
-    notion: '$10/user/mo',
-    clickup: '$10/user/mo',
-    monday: '$9/seat/mo'
+    feature: "<strong>Starting Price</strong>",
+    notion: "$10/user/mo",
+    clickup: "$10/user/mo",
+    monday: "$9/seat/mo",
   },
   {
-    feature: '<strong>Free Tier</strong>',
-    notion: 'Generous (unlimited)',
-    clickup: 'Best free plan',
-    monday: 'Limited (2 users)'
+    feature: "<strong>Free Tier</strong>",
+    notion: "Generous (unlimited)",
+    clickup: "Best free plan",
+    monday: "Limited (2 users)",
   },
   {
-    feature: '<strong>Ease of Use</strong>',
-    notion: '★★★★☆ (4/5)',
-    clickup: '★★★☆☆ (3/5)',
-    monday: '★★★★★ (5/5)'
+    feature: "<strong>Ease of Use</strong>",
+    notion: "★★★★☆ (4/5)",
+    clickup: "★★★☆☆ (3/5)",
+    monday: "★★★★★ (5/5)",
   },
   {
-    feature: '<strong>Customization</strong>',
-    notion: '★★★★★ (5/5)',
-    clickup: '★★★★★ (5/5)',
-    monday: '★★★☆☆ (3/5)'
+    feature: "<strong>Customization</strong>",
+    notion: "★★★★★ (5/5)",
+    clickup: "★★★★★ (5/5)",
+    monday: "★★★☆☆ (3/5)",
   },
   {
-    feature: '<strong>Performance</strong>',
-    notion: 'Can be slow',
-    clickup: 'Can be slow',
-    monday: 'Fast & reliable'
+    feature: "<strong>Performance</strong>",
+    notion: "Can be slow",
+    clickup: "Can be slow",
+    monday: "Fast & reliable",
   },
 ];
 
 // Feature comparison table
 const featureComparisonColumns = [
-  {key: 'feature', label: 'Feature', width: '140px'},
-  {key: 'notion', label: 'Notion', width: '90px'},
-  {key: 'clickup', label: 'ClickUp', width: '90px'},
-  {key: 'monday', label: 'Monday', width: '90px'},
+  { key: "feature", label: "Feature", width: "140px" },
+  { key: "notion", label: "Notion", width: "90px" },
+  { key: "clickup", label: "ClickUp", width: "90px" },
+  { key: "monday", label: "Monday", width: "90px" },
 ];
 
 const featureComparisonRows = [
   {
-    feature: '<strong>Task Management</strong>',
-    notion: '✓ Good',
-    clickup: '✓✓ Excellent',
-    monday: '✓ Good'
+    feature: "<strong>Task Management</strong>",
+    notion: "✓ Good",
+    clickup: "✓✓ Excellent",
+    monday: "✓ Good",
   },
   {
-    feature: '<strong>Docs & Wiki</strong>',
-    notion: '✓✓ Excellent',
-    clickup: '✓ Good',
-    monday: '✗ Basic'
+    feature: "<strong>Docs & Wiki</strong>",
+    notion: "✓✓ Excellent",
+    clickup: "✓ Good",
+    monday: "✗ Basic",
   },
   {
-    feature: '<strong>Databases</strong>',
-    notion: '✓✓ Excellent',
-    clickup: '✓ Good',
-    monday: '✗ Limited'
+    feature: "<strong>Databases</strong>",
+    notion: "✓✓ Excellent",
+    clickup: "✓ Good",
+    monday: "✗ Limited",
   },
   {
-    feature: '<strong>Kanban Boards</strong>',
-    notion: '✓ Good',
-    clickup: '✓✓ Excellent',
-    monday: '✓ Good'
+    feature: "<strong>Kanban Boards</strong>",
+    notion: "✓ Good",
+    clickup: "✓✓ Excellent",
+    monday: "✓ Good",
   },
   {
-    feature: '<strong>Gantt Charts</strong>',
-    notion: '✓ Basic',
-    clickup: '✓✓ Excellent',
-    monday: '✓✓ Excellent'
+    feature: "<strong>Gantt Charts</strong>",
+    notion: "✓ Basic",
+    clickup: "✓✓ Excellent",
+    monday: "✓✓ Excellent",
   },
   {
-    feature: '<strong>Time Tracking</strong>',
-    notion: '✗ No',
-    clickup: '✓ Built-in',
-    monday: '✗ Via integration'
+    feature: "<strong>Time Tracking</strong>",
+    notion: "✗ No",
+    clickup: "✓ Built-in",
+    monday: "✗ Via integration",
   },
   {
-    feature: '<strong>Automation</strong>',
-    notion: '✗ No',
-    clickup: '✓ Advanced',
-    monday: '✓✓ Excellent'
+    feature: "<strong>Automation</strong>",
+    notion: "✗ No",
+    clickup: "✓ Advanced",
+    monday: "✓✓ Excellent",
   },
   {
-    feature: '<strong>Mobile Apps</strong>',
-    notion: '✓ Good',
-    clickup: '✓ Good',
-    monday: '✓✓ Excellent'
+    feature: "<strong>Mobile Apps</strong>",
+    notion: "✓ Good",
+    clickup: "✓ Good",
+    monday: "✓✓ Excellent",
   },
   {
-    feature: '<strong>API Access</strong>',
-    notion: '✓ Good',
-    clickup: '✓✓ Excellent',
-    monday: '✓✓ Excellent'
+    feature: "<strong>API Access</strong>",
+    notion: "✓ Good",
+    clickup: "✓✓ Excellent",
+    monday: "✓✓ Excellent",
   },
 ];
 
 // FAQ data with schema markup
 const faqs = [
   {
-    question: 'Is Notion better than ClickUp?',
-    answer: '<strong>Notion</strong> is better for teams that prioritize documentation, wikis, and flexible workspaces with beautiful design. <strong>ClickUp</strong> is better for complex project management with time tracking, sprint planning, and everything-in-one-app approach. Choose Notion for docs-first teams, ClickUp for project-first teams.'
+    question: "Is Notion better than ClickUp?",
+    answer:
+      "<strong>Notion</strong> is better for teams that prioritize documentation, wikis, and flexible workspaces with beautiful design. <strong>ClickUp</strong> is better for complex project management with time tracking, sprint planning, and everything-in-one-app approach. Choose Notion for docs-first teams, ClickUp for project-first teams.",
   },
   {
-    question: 'Is Monday.com easier to use than Notion?',
-    answer: 'Yes, <strong>Monday.com</strong> is significantly easier to learn and use than Notion. Its drag-and-drop interface and visual workflows are intuitive for non-technical teams. <strong>Notion</strong> has a steeper learning curve due to its flexibility and block-based system. If your team struggles with complex tools, Monday.com is the safer choice.'
+    question: "Is Monday.com easier to use than Notion?",
+    answer:
+      "Yes, <strong>Monday.com</strong> is significantly easier to learn and use than Notion. Its drag-and-drop interface and visual workflows are intuitive for non-technical teams. <strong>Notion</strong> has a steeper learning curve due to its flexibility and block-based system. If your team struggles with complex tools, Monday.com is the safer choice.",
   },
   {
-    question: 'Which is cheapest: Notion, ClickUp, or Monday?',
-    answer: 'For <strong>free tiers</strong>: ClickUp wins (unlimited tasks, unlimited users). For <strong>paid plans</strong>: Monday.com starts at $9/seat/mo, Notion at $10/user/mo, ClickUp at $10/user/mo. However, ClickUp limits free to 100MB storage, while Notion offers unlimited. Long-term, <strong>Notion</strong> and <strong>ClickUp</strong> offer better value than Monday.com.'
+    question: "Which is cheapest: Notion, ClickUp, or Monday?",
+    answer:
+      "For <strong>free tiers</strong>: ClickUp wins (unlimited tasks, unlimited users). For <strong>paid plans</strong>: Monday.com starts at $9/seat/mo, Notion at $10/user/mo, ClickUp at $10/user/mo. However, ClickUp limits free to 100MB storage, while Notion offers unlimited. Long-term, <strong>Notion</strong> and <strong>ClickUp</strong> offer better value than Monday.com.",
   },
   {
-    question: 'Can Notion replace ClickUp?',
-    answer: 'For <strong>small teams</strong> focused on documentation and simple task tracking, yes. But Notion lacks key project management features like time tracking, native automations, sprint planning, and detailed dependency management. <strong>ClickUp</strong> is purpose-built for complex project management, while <strong>Notion</strong> is a flexible workspace that can handle projects.'
+    question: "Can Notion replace ClickUp?",
+    answer:
+      "For <strong>small teams</strong> focused on documentation and simple task tracking, yes. But Notion lacks key project management features like time tracking, native automations, sprint planning, and detailed dependency management. <strong>ClickUp</strong> is purpose-built for complex project management, while <strong>Notion</strong> is a flexible workspace that can handle projects.",
   },
   {
-    question: 'Which is fastest: Notion, ClickUp, or Monday?',
-    answer: '<strong>Monday.com</strong> is the fastest and most responsive. <strong>Notion</strong> and <strong>ClickUp</strong> can both lag with large workspaces or complex views. Users frequently complain about Notion loading times and ClickUp feeling sluggish. If speed is critical, choose Monday.com.'
+    question: "Which is fastest: Notion, ClickUp, or Monday?",
+    answer:
+      "<strong>Monday.com</strong> is the fastest and most responsive. <strong>Notion</strong> and <strong>ClickUp</strong> can both lag with large workspaces or complex views. Users frequently complain about Notion loading times and ClickUp feeling sluggish. If speed is critical, choose Monday.com.",
   },
   {
-    question: 'Do I need project management software if I use Notion?',
-    answer: 'Depends on your needs. <strong>Notion</strong> handles basic project management well (tasks, kanban, timelines). But if you need time tracking, automations, dependencies, sprint planning, or detailed reporting, a dedicated tool like <strong>ClickUp</strong> or <strong>Monday.com</strong> is better. Many teams use Notion for docs + another tool for projects.'
+    question: "Do I need project management software if I use Notion?",
+    answer:
+      "Depends on your needs. <strong>Notion</strong> handles basic project management well (tasks, kanban, timelines). But if you need time tracking, automations, dependencies, sprint planning, or detailed reporting, a dedicated tool like <strong>ClickUp</strong> or <strong>Monday.com</strong> is better. Many teams use Notion for docs + another tool for projects.",
   },
   {
-    question: 'Can I migrate from Notion to ClickUp or Monday.com?',
-    answer: '<strong>Notion → ClickUp</strong>: ClickUp has a Notion import tool, though databases don\'t transfer perfectly. <strong>Notion → Monday.com</strong>: No direct import - you\'ll need to export as CSV and manually rebuild. <strong>ClickUp → Monday</strong>: Limited import support. Plan for 1-2 weeks of migration work for established workspaces.'
+    question: "Can I migrate from Notion to ClickUp or Monday.com?",
+    answer:
+      "<strong>Notion → ClickUp</strong>: ClickUp has a Notion import tool, though databases don't transfer perfectly. <strong>Notion → Monday.com</strong>: No direct import - you'll need to export as CSV and manually rebuild. <strong>ClickUp → Monday</strong>: Limited import support. Plan for 1-2 weeks of migration work for established workspaces.",
   },
   {
-    question: 'Which has the best free plan?',
-    answer: '<strong>ClickUp</strong> has the most generous free plan: unlimited users, unlimited tasks, 100MB storage. <strong>Notion</strong> free plan is great for individuals but limits collaboration. <strong>Monday.com</strong> free plan only allows 2 users, making it essentially a trial. For teams on a budget, ClickUp Free is unbeatable.'
-  }
+    question: "Which has the best free plan?",
+    answer:
+      "<strong>ClickUp</strong> has the most generous free plan: unlimited users, unlimited tasks, 100MB storage. <strong>Notion</strong> free plan is great for individuals but limits collaboration. <strong>Monday.com</strong> free plan only allows 2 users, making it essentially a trial. For teams on a budget, ClickUp Free is unbeatable.",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Project Management Software',
-    href: '/tools/best-project-management-software',
-    excerpt: 'Find the perfect project management tool for your remote team with our comprehensive guide.',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Project management dashboard on computer screen'
+    title: "Best Project Management Software",
+    href: "/tools/best-project-management-software",
+    excerpt:
+      "Find the perfect project management tool for your remote team with our comprehensive guide.",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Project management dashboard on computer screen",
   },
   {
-    title: 'Is Notion Worth It?',
-    href: '/tools/is-notion-worth-it',
-    excerpt: 'An honest look at whether Notion is worth the hype for remote workers and teams.',
-    image: '/images/unsplash/photo-1517842645767-c639042777db-800w.webp',
-    imageAlt: 'Notion workspace on laptop screen'
+    title: "Is Notion Worth It?",
+    href: "/tools/is-notion-worth-it",
+    excerpt:
+      "An honest look at whether Notion is worth the hype for remote workers and teams.",
+    image: "/images/unsplash/photo-1517842645767-c639042777db-800w.webp",
+    imageAlt: "Notion workspace on laptop screen",
   },
   {
-    title: 'Best Note-Taking Apps',
-    href: '/tools/best-note-taking-apps',
-    excerpt: 'Compare the best note-taking apps for remote workers including Notion, Obsidian, and more.',
-    image: '/images/unsplash/photo-1501504905252-473c47e087f8-800w.webp',
-    imageAlt: 'Note-taking app on tablet with stylus'
-  }
+    title: "Best Note-Taking Apps",
+    href: "/tools/best-note-taking-apps",
+    excerpt:
+      "Compare the best note-taking apps for remote workers including Notion, Obsidian, and more.",
+    image: "/images/unsplash/photo-1501504905252-473c47e087f8-800w.webp",
+    imageAlt: "Note-taking app on tablet with stylus",
+  },
 ];
 ---
 
 <ArticleLayout
-    title={title}
-    description={description}
-    author={author}
-    authorUrl={authorUrl}
-    pubDate={pubDate}
-    readingTime={readingTime}
-    image={image}
-    imageAlt={imageAlt}
-    headings={headings}
-    category="Tools"
-    categorySlug="tools"
+  title={title}
+  description={description}
+  author={author}
+  authorUrl={authorUrl}
+  pubDate={pubDate}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  headings={headings}
+  category="Tools"
+  categorySlug="tools"
 >
   <h2 id="introduction">The Big Three</h2>
   <p>
-    <strong>Notion</strong>, <strong>ClickUp</strong>, <strong>Monday.com</strong>. Everyone's using one of these now.
+    <strong>Notion</strong>, <strong>ClickUp</strong>, <strong
+      >Monday.com</strong
+    >. Everyone's using one of these now.
   </p>
   <p>
-    They all promise the same thing—one tool to rule them all. Project management, docs, wikis, databases, whatever. But
-    they work completely different.
+    They all promise the same thing—one tool to rule them all. Project
+    management, docs, wikis, databases, whatever. But they work completely
+    different.
   </p>
   <p>
-    I've used all three for real projects. Not demo accounts—actual work. Managing tasks, building wikis, onboarding
-    teammates, tracking everything. Spent 3+ months with each to see which one actually delivers.
+    I've used all three for real projects. Not demo accounts—actual work.
+    Managing tasks, building wikis, onboarding teammates, tracking everything.
+    Spent 3+ months with each to see which one actually delivers.
   </p>
   <p>
-    <strong>Short version:</strong> Notion if you write docs. ClickUp if you're technical and want every feature
-    possible. Monday if you hate complexity and have budget.
+    <strong>Short version:</strong> Notion if you write docs. ClickUp if you're technical
+    and want every feature possible. Monday if you hate complexity and have budget.
   </p>
 
   <h2 id="quick-comparison">Quick Comparison Table</h2>
   <ComparisonTable
-      columns={quickComparisonColumns}
-      rows={quickComparisonRows}
-      caption="Quick comparison of Notion, ClickUp, and Monday.com"
+    columns={quickComparisonColumns}
+    rows={quickComparisonRows}
+    caption="Quick comparison of Notion, ClickUp, and Monday.com"
   />
 
   <h2 id="notion">Notion</h2>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/notion" variant="affiliate">Try Notion Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/notion"
+    text="Try Notion Free"
+    variant="primary"
+    program="notion"
+  />
 
-  <p>Free plan exists. Plus costs $10/user/mo. Business is $15/user/mo. Enterprise pricing is custom.</p>
+  <p>
+    Free plan exists. Plus costs $10/user/mo. Business is $15/user/mo.
+    Enterprise pricing is custom.
+  </p>
 
   <p>Been using Notion for about eight months now.</p>
 
   <p>
-    Beautiful. Everything's drag-and-drop blocks. Want a database? Drop a block. Want to embed Figma? Drop a block. The
-    flexibility is stupid high.
+    Beautiful. Everything's drag-and-drop blocks. Want a database? Drop a block.
+    Want to embed Figma? Drop a block. The flexibility is stupid high.
   </p>
   <p>
-    Best documentation tool I've tested. Writing team wikis, SOPs, product specs—Notion makes it easy and looks good
-    doing it. The free tier is generous too. Unlimited pages for personal use.
+    Best documentation tool I've tested. Writing team wikis, SOPs, product
+    specs—Notion makes it easy and looks good doing it. The free tier is
+    generous too. Unlimited pages for personal use.
   </p>
   <p>
-    Where it falls short: Speed. Large workspaces load slow. Sometimes painfully slow. And project management feels like
-    an afterthought—it's clearly a docs tool with tasks bolted on.
+    Where it falls short: Speed. Large workspaces load slow. Sometimes painfully
+    slow. And project management feels like an afterthought—it's clearly a docs
+    tool with tasks bolted on.
   </p>
   <p>
-    No native automations either. You need Zapier or Make for that. No time tracking unless you integrate with something
-    else.
+    No native automations either. You need Zapier or Make for that. No time
+    tracking unless you integrate with something else.
   </p>
 
   <h3>Who should use it</h3>
   <p>
-    Teams under 50 people work well with Notion. Content teams, agencies, <a href="/tools/best-invoicing-tools">consultants</a>.
-    Anyone building a company wiki.
-    Startups on a budget (that free tier is generous). Anyone who values aesthetics.
+    Teams under 50 people work well with Notion. Content teams, agencies, <a
+      href="/tools/best-invoicing-tools">consultants</a
+    >. Anyone building a company wiki. Startups on a budget (that free tier is
+    generous). Anyone who values aesthetics.
   </p>
 
   <h3>What you get at each tier</h3>
   <p>
-    Free version gives unlimited pages, 7-day history, 10 guests. Plus tier ($10/user/mo) adds unlimited uploads, 30-day
-    history, 100 guests. Business tier ($15/user/mo) adds advanced permissions, SSO, audit log. Enterprise (custom
-    pricing) gives you dedicated support and advanced security.
+    Free version gives unlimited pages, 7-day history, 10 guests. Plus tier
+    ($10/user/mo) adds unlimited uploads, 30-day history, 100 guests. Business
+    tier ($15/user/mo) adds advanced permissions, SSO, audit log. Enterprise
+    (custom pricing) gives you dedicated support and advanced security.
   </p>
 
   <h2 id="clickup">ClickUp</h2>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/clickup" variant="affiliate">Try ClickUp Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/clickup"
+    text="Try ClickUp Free"
+    variant="primary"
+    program="clickup"
+  />
 
-  <p>Free plan available. Unlimited costs $10/user/mo. Business is $19/user/mo. Enterprise has custom pricing.</p>
+  <p>
+    Free plan available. Unlimited costs $10/user/mo. Business is $19/user/mo.
+    Enterprise has custom pricing.
+  </p>
 
   <p>Feature overload. That's ClickUp.</p>
 
   <p>
-    List view. Board view. Calendar. Gantt charts. Timeline. Workload. Map view. Mind maps. Whiteboards. Goals. Time
-    tracking. Automations. Custom fields with formulas. It has everything.
+    List view. Board view. Calendar. Gantt charts. Timeline. Workload. Map view.
+    Mind maps. Whiteboards. Goals. Time tracking. Automations. Custom fields
+    with formulas. It has everything.
   </p>
   <p>
-    The free plan is unbeatable—unlimited users and tasks. Just 100MB storage but still.
+    The free plan is unbeatable—unlimited users and tasks. Just 100MB storage
+    but still.
   </p>
   <p>
-    Here's the catch: Features overwhelm teams. New people get lost in options. Takes a week or two before your team
-    feels comfortable, not an afternoon. And performance suffers with large workspaces.
+    Here's the catch: Features overwhelm teams. New people get lost in options.
+    Takes a week or two before your team feels comfortable, not an afternoon.
+    And performance suffers with large workspaces.
   </p>
   <p>
     Docs exist but they're not as polished as Notion. Interface feels cluttered.
   </p>
   <p>
-    But if you're technical and want total control, ClickUp delivers. Software teams running Agile love it. <a
-      href="/tools/best-time-tracking-software">Time
-    tracking built-in</a> is huge for agencies.
+    But if you're technical and want total control, ClickUp delivers. Software
+    teams running Agile love it. <a href="/tools/best-time-tracking-software"
+      >Time tracking built-in</a
+    > is huge for agencies.
   </p>
 
   <h3>Who should use it</h3>
   <p>
     Power users who love customization. Dev teams running Scrum and sprints. <a
-      href="/tools/best-crm-software-small-business">Agencies juggling multiple clients</a>. Anyone
-    replacing five or more tools. Budget-conscious teams (that free tier beats everyone).
+      href="/tools/best-crm-software-small-business"
+      >Agencies juggling multiple clients</a
+    >. Anyone replacing five or more tools. Budget-conscious teams (that free
+    tier beats everyone).
   </p>
 
   <h3>What you get</h3>
   <p>
-    Free plan gives unlimited tasks and users, 100MB storage, limited features. Unlimited ($10/user/mo) adds unlimited
-    storage, integrations, Gantt, timeline views. Business ($19/user/mo) gets you SSO, advanced automations, workload
-    views. Enterprise (custom pricing) gives white labeling, advanced permissions, dedicated support.
+    Free plan gives unlimited tasks and users, 100MB storage, limited features.
+    Unlimited ($10/user/mo) adds unlimited storage, integrations, Gantt,
+    timeline views. Business ($19/user/mo) gets you SSO, advanced automations,
+    workload views. Enterprise (custom pricing) gives white labeling, advanced
+    permissions, dedicated support.
   </p>
 
   <h2 id="monday">Monday.com</h2>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/monday" variant="affiliate">Try Monday.com Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/monday"
+    text="Try Monday.com Free"
+    variant="primary"
+    program="monday"
+  />
 
-  <p>Free for 2 users. Basic starts at $9/seat/mo. Standard is $12/seat/mo. Pro is $19/seat/mo.</p>
+  <p>
+    Free for 2 users. Basic starts at $9/seat/mo. Standard is $12/seat/mo. Pro
+    is $19/seat/mo.
+  </p>
 
   <p>Easiest tool of the bunch. Hands down.</p>
 
   <p>
-    Colorful, visual, drag-and-drop everything. New teammates are productive in 30 minutes. Compare that to ClickUp's
-    week-plus.
+    Colorful, visual, drag-and-drop everything. New teammates are productive in
+    30 minutes. Compare that to ClickUp's week-plus.
   </p>
   <p>
-    Fast too. Snappiest of the three. Pages load instantly. Mobile apps are smooth. Automations are easy to set
-    up—visual builder, no coding.
+    Fast too. Snappiest of the three. Pages load instantly. Mobile apps are
+    smooth. Automations are easy to set up—visual builder, no coding.
   </p>
   <p>
-    The downside? Expensive. Free tier supports just 2 users (basically a trial). Paid plans start at nine bucks per
-    seat and climb fast. Get a medium-sized team? That's serious monthly spend.
+    The downside? Expensive. Free tier supports just 2 users (basically a
+    trial). Paid plans start at nine bucks per seat and climb fast. Get a
+    medium-sized team? That's serious monthly spend.
   </p>
   <p>
-    Also less customizable than Notion or ClickUp. More opinionated. And weak for documentation—not built for wikis or
-    long-form content.
+    Also less customizable than Notion or ClickUp. More opinionated. And weak
+    for documentation—not built for wikis or long-form content.
   </p>
 
   <h3>Who should use it</h3>
   <p>
-    <a href="/tools/best-email-marketing-tools">Marketing teams</a>, sales teams, HR, operations—basically anyone
-    non-technical. Medium or large companies with budget.
-    Anyone valuing ease over flexibility. Visual thinkers. Teams willing to pay for simplicity.
+    <a href="/tools/best-email-marketing-tools">Marketing teams</a>, sales
+    teams, HR, operations—basically anyone non-technical. Medium or large
+    companies with budget. Anyone valuing ease over flexibility. Visual
+    thinkers. Teams willing to pay for simplicity.
   </p>
 
   <h3>What you get</h3>
   <p>
-    Free (Individual) supports 2 users, 3 boards, limited features. Basic ($9/seat/mo) gives unlimited viewers, 5GB
-    storage, mobile apps. Standard ($12/seat/mo) adds timeline, calendar, integrations, automations. Pro ($19/seat/mo)
-    gets you time tracking, formulas, dependencies. Enterprise (custom pricing) gives advanced security and permissions.
+    Free (Individual) supports 2 users, 3 boards, limited features. Basic
+    ($9/seat/mo) gives unlimited viewers, 5GB storage, mobile apps. Standard
+    ($12/seat/mo) adds timeline, calendar, integrations, automations. Pro
+    ($19/seat/mo) gets you time tracking, formulas, dependencies. Enterprise
+    (custom pricing) gives advanced security and permissions.
   </p>
 
   <h2 id="feature-comparison">Head-to-Head Feature Comparison</h2>
   <ComparisonTable
-      columns={featureComparisonColumns}
-      rows={featureComparisonRows}
-      caption="Detailed feature comparison"
+    columns={featureComparisonColumns}
+    rows={featureComparisonRows}
+    caption="Detailed feature comparison"
   />
 
   <h3>Task Management</h3>
   <p>
-    <strong>ClickUp</strong> wins. Subtasks, checklists, dependencies, custom statuses—everything's there. <strong>Notion</strong>
-    handles basic tasks but it's not built for complex PM. <strong>Monday</strong> is visual and intuitive but less
-    powerful than ClickUp.
+    <strong>ClickUp</strong> wins. Subtasks, checklists, dependencies, custom statuses—everything's
+    there. <strong>Notion</strong>
+    handles basic tasks but it's not built for complex PM. <strong
+      >Monday</strong
+    > is visual and intuitive but less powerful than ClickUp.
   </p>
 
   <h3>Docs & Wikis</h3>
   <p>
-    <strong>Notion</strong> crushes this. Beautiful editor, powerful linking, flexible databases.
-    <strong>ClickUp</strong> has docs but they're clunky. <strong>Monday</strong> barely tries—basic text columns, not
-    for long-form.
+    <strong>Notion</strong> crushes this. Beautiful editor, powerful linking, flexible
+    databases.
+    <strong>ClickUp</strong> has docs but they're clunky. <strong>Monday</strong
+    > barely tries—basic text columns, not for long-form.
   </p>
 
   <h3>Automation</h3>
   <p>
-    <strong>Monday</strong> easiest (visual builder, no code). <strong>ClickUp</strong> most powerful (conditional
-    logic, advanced workflows). <strong>Notion</strong> has zero native automation—you need Zapier or Make.
+    <strong>Monday</strong> easiest (visual builder, no code). <strong
+      >ClickUp</strong
+    > most powerful (conditional logic, advanced workflows). <strong
+      >Notion</strong
+    > has zero native automation—you need Zapier or Make.
   </p>
 
   <h3>Time Tracking</h3>
   <p>
-    <strong>ClickUp</strong> has it built-in. <strong>Monday</strong> needs integrations like Clockify or Everhour.
+    <strong>ClickUp</strong> has it built-in. <strong>Monday</strong> needs integrations
+    like Clockify or Everhour.
     <strong>Notion</strong> needs integrations or manual workarounds.
   </p>
 
@@ -401,105 +463,133 @@ const relatedArticles = [
   <p>Tested all three for load times, responsiveness, reliability:</p>
 
   <p>
-    <strong>Monday</strong> loads fastest. Pages in half a second to one second. Smooth interactions. Rarely down.
-    Mobile apps snappy.
+    <strong>Monday</strong> loads fastest. Pages in half a second to one second.
+    Smooth interactions. Rarely down. Mobile apps snappy.
   </p>
 
   <p>
-    <strong>Notion</strong> loads slowest. Pages take 2-5 seconds. Large databases feel sluggish. Users complain about
-    speed constantly. Mobile app lags.
+    <strong>Notion</strong> loads slowest. Pages take 2-5 seconds. Large databases
+    feel sluggish. Users complain about speed constantly. Mobile app lags.
   </p>
 
   <p>
-    <strong>ClickUp</strong> sits in the middle. Performance varies by workspace size and customization. Generally
-    acceptable but not fast. Getting better with updates.
+    <strong>ClickUp</strong> sits in the middle. Performance varies by workspace
+    size and customization. Generally acceptable but not fast. Getting better with
+    updates.
   </p>
 
   <p>
-    If speed matters, <strong>Monday</strong> wins. <strong>Notion</strong> and <strong>ClickUp</strong> struggle at
-    scale.
+    If speed matters, <strong>Monday</strong> wins. <strong>Notion</strong> and <strong
+      >ClickUp</strong
+    > struggle at scale.
   </p>
 
   <h2 id="learning-curve">How Long to Learn</h2>
 
   <p>
-    <strong>Monday</strong> takes 30 minutes. Drag-and-drop interface guides you naturally. Visual design makes sense
-    immediately.
+    <strong>Monday</strong> takes 30 minutes. Drag-and-drop interface guides you
+    naturally. Visual design makes sense immediately.
   </p>
 
   <p>
-    <strong>Notion</strong> takes 2-3 days. Block-based system takes practice. Building databases requires learning. But
-    once you get it, incredibly powerful.
+    <strong>Notion</strong> takes 2-3 days. Block-based system takes practice. Building
+    databases requires learning. But once you get it, incredibly powerful.
   </p>
 
   <p>
-    <strong>ClickUp</strong> takes 1-2 weeks. Features create decision paralysis. Customization options require time
-    investment. Power users love it after. Beginners struggle at first.
+    <strong>ClickUp</strong> takes 1-2 weeks. Features create decision paralysis.
+    Customization options require time investment. Power users love it after. Beginners
+    struggle at first.
   </p>
 
   <h2 id="integrations">Integrations</h2>
 
   <p>
-    <strong>ClickUp</strong> connects to over a thousand tools—<a href="/tools/best-team-communication-tools">Slack</a>,
-    Google Drive, GitHub, GitLab, Figma, Zoom,
-    Salesforce, HubSpot, Zapier, and more. Robust API.
+    <strong>ClickUp</strong> connects to over a thousand tools—<a
+      href="/tools/best-team-communication-tools">Slack</a
+    >, Google Drive, GitHub, GitLab, Figma, Zoom, Salesforce, HubSpot, Zapier,
+    and more. Robust API.
   </p>
 
   <p>
-    <strong>Monday</strong> connects to over 200 tools including Slack, Gmail, Outlook, <a
-      href="/tools/best-video-conferencing-tools">Zoom, Teams</a>, Google Drive,
-    Dropbox, Jira, Salesforce. Strong API.
+    <strong>Monday</strong> connects to over 200 tools including Slack, Gmail, Outlook,
+    <a href="/tools/best-video-conferencing-tools">Zoom, Teams</a>, Google
+    Drive, Dropbox, Jira, Salesforce. Strong API.
   </p>
 
   <p>
-    <strong>Notion</strong> connects to over 100 tools like Slack, Google Drive, Figma, GitHub, Trello. API less mature.
-    But embeds work great for Google Docs, Figma, Miro.
+    <strong>Notion</strong> connects to over 100 tools like Slack, Google Drive,
+    Figma, GitHub, Trello. API less mature. But embeds work great for Google Docs,
+    Figma, Miro.
   </p>
 
   <h2 id="decision-framework">Which One?</h2>
 
   <h3>Pick Notion if:</h3>
   <p>
-    You write lots of docs. You want beautiful, flexible workspaces. Building a wiki or knowledge base. You value
-    aesthetics. Team size under 50 people. Budget's limited. You're okay with learning curves.
+    You write lots of docs. You want beautiful, flexible workspaces. Building a
+    wiki or knowledge base. You value aesthetics. Team size under 50 people.
+    Budget's limited. You're okay with learning curves.
   </p>
 
   <h3>Pick ClickUp if:</h3>
   <p>
-    You want every feature in one tool. Team is tech-savvy and loves customization. Need native time tracking. Running
-    Agile or Scrum processes. Want best free tier. Willing to invest setup time. Performance quirks won't frustrate you.
+    You want every feature in one tool. Team is tech-savvy and loves
+    customization. Need native time tracking. Running Agile or Scrum processes.
+    Want best free tier. Willing to invest setup time. Performance quirks won't
+    frustrate you.
   </p>
 
   <h3>Pick Monday if:</h3>
   <p>
-    Team avoids technical tools. Value ease over customization. Need fast onboarding. Have budget for per-seat pricing.
-    Visual, colorful interfaces appeal to your team. Want reliable, fast performance. Don't need extensive docs.
+    Team avoids technical tools. Value ease over customization. Need fast
+    onboarding. Have budget for per-seat pricing. Visual, colorful interfaces
+    appeal to your team. Want reliable, fast performance. Don't need extensive
+    docs.
   </p>
 
   <h2 id="faq">Frequently Asked Questions</h2>
-  <FAQSection faqs={faqs}/>
+  <FAQSection faqs={faqs} />
 
   <h3>My Take</h3>
   <p>
-    Most small-medium remote teams should grab <strong>Notion</strong>. Flexibility, design, generous free tier make it
-    best value. Documentation features alone justify it.
+    Most small-medium remote teams should grab <strong>Notion</strong>.
+    Flexibility, design, generous free tier make it best value. Documentation
+    features alone justify it.
   </p>
   <p>
-    Technical teams and power users should grab <strong>ClickUp</strong>. Incredible depth, best free tier. Just prepare
-    for learning curve and performance issues.
+    Technical teams and power users should grab <strong>ClickUp</strong>.
+    Incredible depth, best free tier. Just prepare for learning curve and
+    performance issues.
   </p>
   <p>
-    Non-technical teams with budget should grab <strong>Monday</strong>. Easiest to adopt, most reliable. Costs more but
-    time savings from lower learning curve may be worth it.
+    Non-technical teams with budget should grab <strong>Monday</strong>. Easiest
+    to adopt, most reliable. Costs more but time savings from lower learning
+    curve may be worth it.
   </p>
 
   <div class="mt-8 flex gap-4 flex-wrap">
-    <AffiliateButton href="/go/notion" variant="affiliate">Try Notion Free</AffiliateButton>
-    <AffiliateButton href="/go/clickup" variant="secondary">Try ClickUp Free</AffiliateButton>
-    <AffiliateButton href="/go/monday" variant="secondary">Try Monday.com</AffiliateButton>
+    <AffiliateButton
+      href="/go/notion"
+      text="Try Notion Free"
+      variant="primary"
+      program="notion"
+    />
+    <AffiliateButton
+      href="/go/clickup"
+      text="Try ClickUp Free"
+      variant="secondary"
+      program="clickup"
+    />
+    <AffiliateButton
+      href="/go/monday"
+      text="Try Monday.com"
+      variant="secondary"
+      program="monday"
+    />
   </div>
 
   <Fragment slot="full-width">
-    <RelatedArticles articles={relatedArticles}/>
+    <RelatedArticles articles={relatedArticles} />
   </Fragment>
 </ArticleLayout>

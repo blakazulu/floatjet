@@ -1,274 +1,303 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
 
 // Article metadata
-const title = 'Best Video Conferencing Tools for Remote Teams (2025)';
-const description = 'I tested ten video conferencing tools for remote teams. Zoom, Google Meet, Teams compared with real pricing, features that actually matter, and honest takes.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Best Video Conferencing Tools for Remote Teams (2025)";
+const description =
+  "I tested ten video conferencing tools for remote teams. Zoom, Google Meet, Teams compared with real pricing, features that actually matter, and honest takes.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 18;
-const image = '/images/unsplash/photo-1588196749597-9ff075ee6b5b-1200w.webp';
-const imageAlt = 'Remote team video conference call on laptop screen';
+const image = "/images/unsplash/photo-1588196749597-9ff075ee6b5b-1200w.webp";
+const imageAlt = "Remote team video conference call on laptop screen";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'What to Look For', slug: 'what-to-look-for', depth: 2},
-  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Zoom', slug: 'zoom', depth: 3},
-  {text: 'Google Meet', slug: 'google-meet', depth: 3},
-  {text: 'Microsoft Teams', slug: 'microsoft-teams', depth: 3},
-  {text: 'Webex', slug: 'webex', depth: 3},
-  {text: 'GoToMeeting', slug: 'gotomeeting', depth: 3},
-  {text: 'Around', slug: 'around', depth: 3},
-  {text: 'Whereby', slug: 'whereby', depth: 3},
-  {text: 'Discord', slug: 'discord', depth: 3},
-  {text: 'Loom', slug: 'loom', depth: 3},
-  {text: 'Riverside', slug: 'riverside', depth: 3},
-  {text: 'Feature Comparison', slug: 'feature-comparison', depth: 2},
-  {text: 'Free vs Paid', slug: 'free-vs-paid', depth: 2},
-  {text: 'Integration Capabilities', slug: 'integration-capabilities', depth: 2},
-  {text: 'Security Features', slug: 'security-features', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
-  {text: 'Final Recommendations', slug: 'final-recommendations', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "What to Look For", slug: "what-to-look-for", depth: 2 },
+  { text: "Detailed Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Zoom", slug: "zoom", depth: 3 },
+  { text: "Google Meet", slug: "google-meet", depth: 3 },
+  { text: "Microsoft Teams", slug: "microsoft-teams", depth: 3 },
+  { text: "Webex", slug: "webex", depth: 3 },
+  { text: "GoToMeeting", slug: "gotomeeting", depth: 3 },
+  { text: "Around", slug: "around", depth: 3 },
+  { text: "Whereby", slug: "whereby", depth: 3 },
+  { text: "Discord", slug: "discord", depth: 3 },
+  { text: "Loom", slug: "loom", depth: 3 },
+  { text: "Riverside", slug: "riverside", depth: 3 },
+  { text: "Feature Comparison", slug: "feature-comparison", depth: 2 },
+  { text: "Free vs Paid", slug: "free-vs-paid", depth: 2 },
+  {
+    text: "Integration Capabilities",
+    slug: "integration-capabilities",
+    depth: 2,
+  },
+  { text: "Security Features", slug: "security-features", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Final Recommendations", slug: "final-recommendations", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'tool', label: 'Tool', width: '120px'},
-  {key: 'bestFor', label: 'Best For', width: '150px'},
-  {key: 'price', label: 'Price'},
-  {key: 'participants', label: 'Max Participants'},
-  {key: 'action', label: ''},
+  { key: "tool", label: "Tool", width: "120px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "price", label: "Price" },
+  { key: "participants", label: "Max Participants" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    tool: '<strong>Zoom</strong>',
-    bestFor: 'Best overall',
-    price: 'Free - $15.99/host/mo',
-    participants: '100-1000',
-    action: '<a href="/go/zoom" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>Zoom</strong>",
+    bestFor: "Best overall",
+    price: "Free - $15.99/host/mo",
+    participants: "100-1000",
+    action: '<a href="/go/zoom" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    tool: '<strong>Google Meet</strong>',
-    bestFor: 'Google Workspace users',
-    price: 'Free - $18/user/mo',
-    participants: '100-500',
-    action: '<a href="/go/google-meet" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>Google Meet</strong>",
+    bestFor: "Google Workspace users",
+    price: "Free - $18/user/mo",
+    participants: "100-500",
+    action: '<a href="/go/google-meet" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    tool: '<strong>Microsoft Teams</strong>',
-    bestFor: 'Microsoft 365 users',
-    price: 'Free - $12.50/user/mo',
-    participants: '100-10,000',
-    action: '<a href="/go/microsoft-teams" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>Microsoft Teams</strong>",
+    bestFor: "Microsoft 365 users",
+    price: "Free - $12.50/user/mo",
+    participants: "100-10,000",
+    action:
+      '<a href="/go/microsoft-teams" rel="nofollow sponsored">Try Free</a>',
   },
 ];
 
 // Feature comparison table
 const featureComparisonColumns = [
-  {key: 'tool', label: 'Tool', width: '110px'},
-  {key: 'freeTier', label: 'Free Tier'},
-  {key: 'timeLimit', label: 'Time Limit (Free)'},
-  {key: 'recording', label: 'Recording'},
-  {key: 'breakout', label: 'Breakout Rooms'},
-  {key: 'action', label: ''},
+  { key: "tool", label: "Tool", width: "110px" },
+  { key: "freeTier", label: "Free Tier" },
+  { key: "timeLimit", label: "Time Limit (Free)" },
+  { key: "recording", label: "Recording" },
+  { key: "breakout", label: "Breakout Rooms" },
+  { key: "action", label: "" },
 ];
 
 const featureComparisonRows = [
   {
-    tool: '<strong>Zoom</strong>',
-    freeTier: 'Yes',
-    timeLimit: '40 min (3+ people)',
-    recording: 'Local (Free) / Cloud (Paid)',
-    breakout: 'Paid only',
-    action: '<a href="/go/zoom" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>Zoom</strong>",
+    freeTier: "Yes",
+    timeLimit: "40 min (3+ people)",
+    recording: "Local (Free) / Cloud (Paid)",
+    breakout: "Paid only",
+    action: '<a href="/go/zoom" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    tool: '<strong>Google Meet</strong>',
-    freeTier: 'Yes',
-    timeLimit: '60 min',
-    recording: 'Paid only',
-    breakout: 'Paid only',
-    action: '<a href="/go/google-meet" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>Google Meet</strong>",
+    freeTier: "Yes",
+    timeLimit: "60 min",
+    recording: "Paid only",
+    breakout: "Paid only",
+    action: '<a href="/go/google-meet" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    tool: '<strong>Teams</strong>',
-    freeTier: 'Yes',
-    timeLimit: '60 min',
-    recording: 'Yes (all tiers)',
-    breakout: 'Yes (all tiers)',
-    action: '<a href="/go/microsoft-teams" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>Teams</strong>",
+    freeTier: "Yes",
+    timeLimit: "60 min",
+    recording: "Yes (all tiers)",
+    breakout: "Yes (all tiers)",
+    action:
+      '<a href="/go/microsoft-teams" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    tool: '<strong>Webex</strong>',
-    freeTier: 'Yes',
-    timeLimit: '40 min',
-    recording: 'Local only',
-    breakout: 'Paid only',
-    action: '<a href="/go/webex" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>Webex</strong>",
+    freeTier: "Yes",
+    timeLimit: "40 min",
+    recording: "Local only",
+    breakout: "Paid only",
+    action: '<a href="/go/webex" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    tool: '<strong>GoToMeeting</strong>',
-    freeTier: 'No (14-day trial)',
-    timeLimit: 'N/A',
-    recording: 'Yes',
-    breakout: 'No',
-    action: '<a href="/go/gotomeeting" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>GoToMeeting</strong>",
+    freeTier: "No (14-day trial)",
+    timeLimit: "N/A",
+    recording: "Yes",
+    breakout: "No",
+    action: '<a href="/go/gotomeeting" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    tool: '<strong>Around</strong>',
-    freeTier: 'No (14-day trial)',
-    timeLimit: 'N/A',
-    recording: 'No',
-    breakout: 'No',
-    action: '<a href="/go/around" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>Around</strong>",
+    freeTier: "No (14-day trial)",
+    timeLimit: "N/A",
+    recording: "No",
+    breakout: "No",
+    action: '<a href="/go/around" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    tool: '<strong>Whereby</strong>',
-    freeTier: 'Yes',
-    timeLimit: 'Unlimited',
-    recording: 'Paid only',
-    breakout: 'No',
-    action: '<a href="/go/whereby" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>Whereby</strong>",
+    freeTier: "Yes",
+    timeLimit: "Unlimited",
+    recording: "Paid only",
+    breakout: "No",
+    action: '<a href="/go/whereby" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    tool: '<strong>Discord</strong>',
-    freeTier: 'Yes',
-    timeLimit: 'Unlimited',
-    recording: 'No (3rd party)',
-    breakout: 'No',
-    action: '<a href="/go/discord" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>Discord</strong>",
+    freeTier: "Yes",
+    timeLimit: "Unlimited",
+    recording: "No (3rd party)",
+    breakout: "No",
+    action: '<a href="/go/discord" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    tool: '<strong>Loom</strong>',
-    freeTier: 'Yes (limited)',
-    timeLimit: '5 min/video',
-    recording: 'Yes (async only)',
-    breakout: 'N/A',
-    action: '<a href="/go/loom" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>Loom</strong>",
+    freeTier: "Yes (limited)",
+    timeLimit: "5 min/video",
+    recording: "Yes (async only)",
+    breakout: "N/A",
+    action: '<a href="/go/loom" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    tool: '<strong>Riverside</strong>',
-    freeTier: 'Yes (limited)',
-    timeLimit: 'Up to 2 hours',
-    recording: 'Yes (local 4K)',
-    breakout: 'No',
-    action: '<a href="/go/riverside" rel="nofollow sponsored">Try Free</a>'
+    tool: "<strong>Riverside</strong>",
+    freeTier: "Yes (limited)",
+    timeLimit: "Up to 2 hours",
+    recording: "Yes (local 4K)",
+    breakout: "No",
+    action: '<a href="/go/riverside" rel="nofollow sponsored">Try Free</a>',
   },
 ];
 
 // FAQ data with schema markup
 const faqs = [
   {
-    question: 'Best for small teams?',
-    answer: 'For teams of two to ten people, <strong>Zoom</strong> offers best balance. Free tier gives unlimited one-on-ones and forty-minute group calls. Often enough. <strong>Google Meet</strong> also excellent if you\'re in Google Workspace—sixty-minute meetings free.'
+    question: "Best for small teams?",
+    answer:
+      "For teams of two to ten people, <strong>Zoom</strong> offers best balance. Free tier gives unlimited one-on-ones and forty-minute group calls. Often enough. <strong>Google Meet</strong> also excellent if you're in Google Workspace—sixty-minute meetings free.",
   },
   {
-    question: 'Best free plan?',
-    answer: '<strong>Microsoft Teams</strong> has the most generous free plan. Sixty-minute meetings, up to a hundred people, recording, breakout rooms. Features competitors lock behind paid tiers. <strong>Discord</strong> also offers unlimited video calls free, though better for informal teams.'
+    question: "Best free plan?",
+    answer:
+      "<strong>Microsoft Teams</strong> has the most generous free plan. Sixty-minute meetings, up to a hundred people, recording, breakout rooms. Features competitors lock behind paid tiers. <strong>Discord</strong> also offers unlimited video calls free, though better for informal teams.",
   },
   {
-    question: 'Record for free?',
-    answer: 'Yes, with limits. <strong>Zoom</strong> allows local recording on free—saves to your computer. <strong>Microsoft Teams</strong> includes cloud recording even on free accounts. <strong>Google Meet</strong> and most others need paid plans for recording. For professional podcast recording, <strong>Riverside</strong> offers best quality.'
+    question: "Record for free?",
+    answer:
+      "Yes, with limits. <strong>Zoom</strong> allows local recording on free—saves to your computer. <strong>Microsoft Teams</strong> includes cloud recording even on free accounts. <strong>Google Meet</strong> and most others need paid plans for recording. For professional podcast recording, <strong>Riverside</strong> offers best quality.",
   },
   {
-    question: 'Zoom versus Google Meet?',
-    answer: '<strong>Zoom</strong> is more feature-rich. Better breakout rooms, virtual backgrounds, webinar stuff. The standard for large meetings and webinars. <strong>Google Meet</strong> integrates seamlessly with Google Workspace—Gmail, Calendar, Drive. Interface is simpler, more intuitive. Choose Zoom for features, Meet for simplicity and Google integration.'
+    question: "Zoom versus Google Meet?",
+    answer:
+      "<strong>Zoom</strong> is more feature-rich. Better breakout rooms, virtual backgrounds, webinar stuff. The standard for large meetings and webinars. <strong>Google Meet</strong> integrates seamlessly with Google Workspace—Gmail, Calendar, Drive. Interface is simpler, more intuitive. Choose Zoom for features, Meet for simplicity and Google integration.",
   },
   {
-    question: 'Teams free?',
-    answer: 'Yes. Microsoft Teams has generous free plan. Video meetings sixty minutes, chat, file sharing, five gig cloud storage. Free version often better than competitors\' paid plans. However, you\'ll need paid Microsoft 365 plan—six to twelve-fifty per user monthly—for longer meetings, more storage, advanced features like recordings over sixty days.'
+    question: "Teams free?",
+    answer:
+      "Yes. Microsoft Teams has generous free plan. Video meetings sixty minutes, chat, file sharing, five gig cloud storage. Free version often better than competitors' paid plans. However, you'll need paid Microsoft 365 plan—six to twelve-fifty per user monthly—for longer meetings, more storage, advanced features like recordings over sixty days.",
   },
   {
-    question: 'Most secure?',
-    answer: '<strong>Zoom</strong> and <strong>Webex</strong> lead in enterprise security. Both offer end-to-end encryption, HIPAA compliance, SOC two certification. After security concerns in twenty-twenty, Zoom significantly improved encryption and now offers E2EE for all meetings. For highly sensitive calls, enable waiting rooms and passwords on any platform.'
+    question: "Most secure?",
+    answer:
+      "<strong>Zoom</strong> and <strong>Webex</strong> lead in enterprise security. Both offer end-to-end encryption, HIPAA compliance, SOC two certification. After security concerns in twenty-twenty, Zoom significantly improved encryption and now offers E2EE for all meetings. For highly sensitive calls, enable waiting rooms and passwords on any platform.",
   },
   {
-    question: 'Use without downloading?',
-    answer: 'Yep. <strong>Whereby</strong>, <strong>Google Meet</strong>, and <strong>Zoom</strong> (with limitations) all work in web browsers without downloads. Whereby specifically designed for browser-based calls with no app required. However, downloading the app usually provides better performance and more features.'
+    question: "Use without downloading?",
+    answer:
+      "Yep. <strong>Whereby</strong>, <strong>Google Meet</strong>, and <strong>Zoom</strong> (with limitations) all work in web browsers without downloads. Whereby specifically designed for browser-based calls with no app required. However, downloading the app usually provides better performance and more features.",
   },
   {
-    question: 'Best for webinars?',
-    answer: '<strong>Zoom</strong> is industry standard for webinars. Supports up to ten thousand participants with Q&A, polling, registration. <strong>GoToMeeting</strong> also excellent for webinars and corporate events. For smaller stuff under a hundred attendees, Google Meet or Teams work at lower cost.'
-  }
+    question: "Best for webinars?",
+    answer:
+      "<strong>Zoom</strong> is industry standard for webinars. Supports up to ten thousand participants with Q&A, polling, registration. <strong>GoToMeeting</strong> also excellent for webinars and corporate events. For smaller stuff under a hundred attendees, Google Meet or Teams work at lower cost.",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Team Communication Tools',
-    href: '/blog/best-team-communication-tools',
-    excerpt: 'Compare Slack, Microsoft Teams, Discord, and more for remote team communication.',
-    image: '/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp',
-    imageAlt: 'Remote team collaborating via communication tools'
+    title: "Best Team Communication Tools",
+    href: "/blog/best-team-communication-tools",
+    excerpt:
+      "Compare Slack, Microsoft Teams, Discord, and more for remote team communication.",
+    image: "/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp",
+    imageAlt: "Remote team collaborating via communication tools",
   },
   {
-    title: 'Best Project Management Software',
-    href: '/tools/best-project-management-software',
-    excerpt: 'Find the perfect project management tool for your remote team with our comprehensive guide.',
-    image: '/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp',
-    imageAlt: 'Project management dashboard on computer screen'
+    title: "Best Project Management Software",
+    href: "/tools/best-project-management-software",
+    excerpt:
+      "Find the perfect project management tool for your remote team with our comprehensive guide.",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Project management dashboard on computer screen",
   },
   {
-    title: 'Best Webcams for Video Calls',
-    href: '/gear/best-webcams-video-calls',
-    excerpt: 'Upgrade your video quality with the best webcams for remote work and professional calls.',
-    image: '/images/unsplash/photo-1587826080692-f439cd0b70da-800w.webp',
-    imageAlt: 'Professional webcam mounted on monitor'
-  }
+    title: "Best Webcams for Video Calls",
+    href: "/gear/best-webcams-video-calls",
+    excerpt:
+      "Upgrade your video quality with the best webcams for remote work and professional calls.",
+    image: "/images/unsplash/photo-1587826080692-f439cd0b70da-800w.webp",
+    imageAlt: "Professional webcam mounted on monitor",
+  },
 ];
 ---
 
 <ArticleLayout
-    title={title}
-    description={description}
-    author={author}
-    authorUrl={authorUrl}
-    pubDate={pubDate}
-    readingTime={readingTime}
-    image={image}
-    imageAlt={imageAlt}
-    headings={headings}
-    category="Tools"
-    categorySlug="tools"
+  title={title}
+  description={description}
+  author={author}
+  authorUrl={authorUrl}
+  pubDate={pubDate}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  headings={headings}
+  category="Tools"
+  categorySlug="tools"
 >
   <h2 id="introduction">Video Meetings Are the New Normal</h2>
   <p>
     Video calls went from nice-to-have to can't-work-without in like two years. <a
-      href="/guides/how-to-run-effective-remote-meetings">Daily standups</a>? Client presentations?
-    All-hands? Your video tool can make or break how your <a href="/guides/remote-team-collaboration-best-practices">remote
-    team</a> actually communicates.
+      href="/guides/how-to-run-effective-remote-meetings">Daily standups</a
+    >? Client presentations? All-hands? Your video tool can make or break how
+    your <a href="/guides/remote-team-collaboration-best-practices"
+      >remote team</a
+    > actually communicates.
   </p>
   <p>
-    But choosing one? Dozens of options. <strong>Zoom</strong> everyone knows. <strong>Microsoft Teams</strong> if
-    you're corporate.
-    <strong>Google Meet</strong> if you live in Gmail. Then there's newer stuff like <strong>Around</strong> and
+    But choosing one? Dozens of options. <strong>Zoom</strong> everyone knows. <strong
+      >Microsoft Teams</strong
+    > if you're corporate.
+    <strong>Google Meet</strong> if you live in Gmail. Then there's newer stuff like
+    <strong>Around</strong> and
     <strong>Whereby</strong>
     that do things differently.
   </p>
   <p>
-    Spent over forty hours testing ten different platforms. Small team standups, big webinars, podcast recordings, async
-    videos.
-    Tested video quality, audio quality, ease of use, features, pricing. Whether they actually work when you need them.
+    Spent over forty hours testing ten different platforms. Small team standups,
+    big webinars, podcast recordings, async videos. Tested video quality, audio
+    quality, ease of use, features, pricing. Whether they actually work when you
+    need them.
   </p>
-  <p><strong>Short version:</strong> <strong>Zoom</strong> for most teams. <strong>Google Meet</strong> if you're
+  <p>
+    <strong>Short version:</strong>
+    <strong>Zoom</strong> for most teams. <strong>Google Meet</strong> if you're
     already in Google Workspace.
-    <strong>Teams</strong> if you use Microsoft stuff. <strong>Whereby</strong> if you want dead simple.
-    <strong>Loom</strong> for async.</p>
+    <strong>Teams</strong> if you use Microsoft stuff. <strong>Whereby</strong> if
+    you want dead simple.
+    <strong>Loom</strong> for async.
+  </p>
 
-  <h2 id="quick-picks">Quick Picks: Best Video Conferencing Tools at a Glance</h2>
+  <h2 id="quick-picks">
+    Quick Picks: Best Video Conferencing Tools at a Glance
+  </h2>
   <ComparisonTable
-      columns={quickPicksColumns}
-      rows={quickPicksRows}
-      caption="Quick comparison of top video conferencing tools"
+    columns={quickPicksColumns}
+    rows={quickPicksRows}
+    caption="Quick comparison of top video conferencing tools"
   />
 
   <h2 id="what-to-look-for">What to Look For</h2>
@@ -276,61 +305,76 @@ const relatedArticles = [
 
   <h3>Video and Audio Quality</h3>
   <p>
-    Most important thing. HD video, good audio leveling. Most modern platforms handle this fine. But it depends on your
-    internet too. A good <a href="/gear/best-webcams-video-calls">webcam</a> and <a
-      href="/gear/best-microphones-remote-meetings">microphone</a> make a huge difference.
+    Most important thing. HD video, good audio leveling. Most modern platforms
+    handle this fine. But it depends on your internet too. A good <a
+      href="/gear/best-webcams-video-calls">webcam</a
+    > and <a href="/gear/best-microphones-remote-meetings">microphone</a> make a
+    huge difference.
   </p>
 
   <h3>Participant Limits</h3>
   <p>
-    How many people can join? Free plans usually cap at a hundred. Paid goes from three hundred up to ten thousand for
-    webinars.
-    Think about your biggest meetings.
+    How many people can join? Free plans usually cap at a hundred. Paid goes
+    from three hundred up to ten thousand for webinars. Think about your biggest
+    meetings.
   </p>
 
   <h3>Time Limits</h3>
   <p>
-    Free plans often limit group calls to forty or sixty minutes. Fine for quick syncs. Annoying for workshops or long
-    client calls.
+    Free plans often limit group calls to forty or sixty minutes. Fine for quick
+    syncs. Annoying for workshops or long client calls.
   </p>
 
   <h3>Recording</h3>
   <p>
-    Can you record? Where do recordings save—cloud or local? Who can access them? Matters for async teams and
-    documentation.
+    Can you record? Where do recordings save—cloud or local? Who can access
+    them? Matters for async teams and documentation.
   </p>
 
   <h3>Screen Sharing</h3>
   <p>
-    Everyone offers basic screen sharing. Look for multiple shares, annotation tools, remote control, whiteboarding.
+    Everyone offers basic screen sharing. Look for multiple shares, annotation
+    tools, remote control, whiteboarding.
   </p>
 
   <h3>Integrations</h3>
   <p>
-    Works with your calendar? Google Calendar, Outlook—that's essential. <a href="/blog/best-team-communication-tools">Slack</a>,
-    <a href="/tools/best-project-management-software">project management tools</a>, CRM
-    stuff—bonuses.
+    Works with your calendar? Google Calendar, Outlook—that's essential. <a
+      href="/blog/best-team-communication-tools">Slack</a
+    >,
+    <a href="/tools/best-project-management-software"
+      >project management tools</a
+    >, CRM stuff—bonuses.
   </p>
 
   <h3>Security</h3>
   <p>
-    End-to-end encryption. Waiting rooms. Password protection. Ability to lock meetings. HIPAA and SOC two compliance if
-    you're in healthcare or finance.
+    End-to-end encryption. Waiting rooms. Password protection. Ability to lock
+    meetings. HIPAA and SOC two compliance if you're in healthcare or finance.
   </p>
 
   <h3>Ease of Use</h3>
   <p>
-    Can guests join without accounts? Intuitive interface? Mobile apps? Easier for guests means less friction.
+    Can guests join without accounts? Intuitive interface? Mobile apps? Easier
+    for guests means less friction.
   </p>
 
-  <h2 id="detailed-reviews">Detailed Reviews: Top 10 Video Conferencing Tools</h2>
+  <h2 id="detailed-reviews">
+    Detailed Reviews: Top 10 Video Conferencing Tools
+  </h2>
 
   <h3 id="zoom">1. Zoom</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/zoom" variant="affiliate">Try Zoom Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/zoom"
+    text="Try Zoom Free"
+    variant="primary"
+    program="zoom"
+  />
 
-  <p>Free with forty-minute limit. Pro is sixteen bucks per host monthly. Business is twenty.</p>
+  <p>
+    Free with forty-minute limit. Pro is sixteen bucks per host monthly.
+    Business is twenty.
+  </p>
   <p>Free plan: up to a hundred people</p>
   <p>Paid: up to a thousand (or ten thousand-plus with Zoom Webinar)</p>
 
@@ -352,15 +396,22 @@ const relatedArticles = [
   </ul>
 
   <p>
-    Teams needing reliable video with advanced features. Agencies, consultants, educators, webinar hosts.
+    Teams needing reliable video with advanced features. Agencies, consultants,
+    educators, webinar hosts.
   </p>
 
   <h3 id="google-meet">2. Google Meet</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/google-meet" variant="affiliate">Try Google Meet</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/google-meet"
+    text="Try Google Meet"
+    variant="primary"
+    program="google-meet"
+  />
 
-  <p>Free with sixty-minute limit. Workspace Individual is eight bucks monthly. Business is twelve per user.</p>
+  <p>
+    Free with sixty-minute limit. Workspace Individual is eight bucks monthly.
+    Business is twelve per user.
+  </p>
   <p>Free plan: up to a hundred</p>
   <p>Paid: up to five hundred on Enterprise</p>
 
@@ -382,21 +433,31 @@ const relatedArticles = [
   </ul>
 
   <p>
-    Teams already using Google Workspace. If your email and calendar are Google, Meet makes sense.
+    Teams already using Google Workspace. If your email and calendar are Google,
+    Meet makes sense.
   </p>
 
   <h3 id="microsoft-teams">3. Microsoft Teams</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/microsoft-teams" variant="affiliate">Try Teams Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/microsoft-teams"
+    text="Try Teams Free"
+    variant="primary"
+    program="microsoft-teams"
+  />
 
-  <p>Free with sixty-minute limit. Essentials is four bucks per user monthly. Business is twelve-fifty.</p>
+  <p>
+    Free with sixty-minute limit. Essentials is four bucks per user monthly.
+    Business is twelve-fifty.
+  </p>
   <p>Free plan: up to a hundred</p>
   <p>Paid: up to ten thousand</p>
 
   <h4>What works:</h4>
   <ul>
-    <li>Most generous free plan. Recording, breakout rooms, sixty minutes—all free.</li>
+    <li>
+      Most generous free plan. Recording, breakout rooms, sixty minutes—all
+      free.
+    </li>
     <li>All-in-one. Video, chat, files, project management.</li>
     <li>Microsoft 365 integration. Outlook, OneDrive, Office.</li>
     <li>Can handle up to ten thousand people on enterprise plans.</li>
@@ -411,16 +472,22 @@ const relatedArticles = [
   </ul>
 
   <p>
-    Organizations using Microsoft 365. Larger companies. Teams wanting all-in-one. Budget-conscious teams—free tier is
-    generous.
+    Organizations using Microsoft 365. Larger companies. Teams wanting
+    all-in-one. Budget-conscious teams—free tier is generous.
   </p>
 
   <h3 id="webex">4. Webex</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/webex" variant="affiliate">Try Webex Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/webex"
+    text="Try Webex Free"
+    variant="primary"
+    program="webex"
+  />
 
-  <p>Free with forty-minute limit. Starter is fourteen-fifty per host monthly. Business is thirty.</p>
+  <p>
+    Free with forty-minute limit. Starter is fourteen-fifty per host monthly.
+    Business is thirty.
+  </p>
   <p>Free plan: up to a hundred</p>
   <p>Paid: up to a thousand</p>
 
@@ -440,21 +507,29 @@ const relatedArticles = [
   </ul>
 
   <p>
-    Large enterprises with strict security needs. Think healthcare, finance, government sectors.
+    Large enterprises with strict security needs. Think healthcare, finance,
+    government sectors.
   </p>
 
   <h3 id="gotomeeting">5. GoToMeeting</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/gotomeeting" variant="affiliate">Try GoToMeeting</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/gotomeeting"
+    text="Try GoToMeeting"
+    variant="primary"
+    program="gotomeeting"
+  />
 
-  <p>Professional is fourteen bucks per organizer monthly. Business is nineteen. No free plan, just fourteen-day
-    trial.</p>
+  <p>
+    Professional is fourteen bucks per organizer monthly. Business is nineteen.
+    No free plan, just fourteen-day trial.
+  </p>
   <p>Up to two hundred fifty participants.</p>
 
   <h4>What works:</h4>
   <ul>
-    <li>Professional webinar stuff. Registration, polls, handouts, analytics.</li>
+    <li>
+      Professional webinar stuff. Registration, polls, handouts, analytics.
+    </li>
     <li>Good drawing tools. Better annotation than most.</li>
     <li>Personal meeting rooms. Same URL every time.</li>
     <li>Solid mobile apps.</li>
@@ -470,11 +545,17 @@ const relatedArticles = [
   <p>Consultants and coaches running frequent webinars use this.</p>
 
   <h3 id="around">6. Around</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/around" variant="affiliate">Try Around</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/around"
+    text="Try Around"
+    variant="primary"
+    program="around"
+  />
 
-  <p>Pro is ten bucks per user monthly. Business is sixteen. No free plan, fourteen-day trial.</p>
+  <p>
+    Pro is ten bucks per user monthly. Business is sixteen. No free plan,
+    fourteen-day trial.
+  </p>
   <p>Up to fifty participants.</p>
 
   <h4>What works:</h4>
@@ -495,11 +576,17 @@ const relatedArticles = [
   <p>Small, design-focused teams that want casual, less invasive video.</p>
 
   <h3 id="whereby">7. Whereby</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/whereby" variant="affiliate">Try Whereby Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/whereby"
+    text="Try Whereby Free"
+    variant="primary"
+    program="whereby"
+  />
 
-  <p>Free for four participants. Pro is ten bucks per host monthly. Business is sixteen.</p>
+  <p>
+    Free for four participants. Pro is ten bucks per host monthly. Business is
+    sixteen.
+  </p>
   <p>Free plan: four people</p>
   <p>Paid: up to two hundred</p>
 
@@ -518,12 +605,18 @@ const relatedArticles = [
     <li>Fewer features than competitors.</li>
   </ul>
 
-  <p>One-on-ones and small meetings. Therapists, coaches. Anyone wanting simplest possible video.</p>
+  <p>
+    One-on-ones and small meetings. Therapists, coaches. Anyone wanting simplest
+    possible video.
+  </p>
 
   <h3 id="discord">8. Discord</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/discord" variant="affiliate">Try Discord Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/discord"
+    text="Try Discord Free"
+    variant="primary"
+    program="discord"
+  />
 
   <p>Free. Nitro is ten bucks monthly for perks.</p>
   <p>Up to fifty in video. Unlimited voice.</p>
@@ -532,27 +625,38 @@ const relatedArticles = [
   <ul>
     <li>Totally free. No time limits, no caps on voice.</li>
     <li>Always-on channels. Drop-in collaboration.</li>
-    <li>Great for gaming and creative teams. Screen share with audio works well.</li>
+    <li>
+      Great for gaming and creative teams. Screen share with audio works well.
+    </li>
     <li>Community features. Forums, roles.</li>
   </ul>
 
   <h4>What's annoying:</h4>
   <ul>
-    <li>Doesn't look professional. Gaming branding doesn't suit corporate clients.</li>
+    <li>
+      Doesn't look professional. Gaming branding doesn't suit corporate clients.
+    </li>
     <li>No native recording. Need bots or third-party stuff.</li>
     <li>Video capped at fifty. Voice unlimited though.</li>
   </ul>
 
   <p>
-    Creative teams, game studios, developer communities. Anyone wanting persistent voice channels.
+    Creative teams, game studios, developer communities. Anyone wanting
+    persistent voice channels.
   </p>
 
   <h3 id="loom">9. Loom</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/loom" variant="affiliate">Try Loom Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/loom"
+    text="Try Loom Free"
+    variant="primary"
+    program="loom"
+  />
 
-  <p>Free for twenty-five videos, five minutes each. Business is twelve-fifty per creator monthly.</p>
+  <p>
+    Free for twenty-five videos, five minutes each. Business is twelve-fifty per
+    creator monthly.
+  </p>
   <p>Async video messages, not live calls.</p>
 
   <h4>What works:</h4>
@@ -572,13 +676,17 @@ const relatedArticles = [
   </ul>
 
   <p>
-    Async teams use this. Product demos, customer support, code reviews. Reducing meeting overhead.
+    Async teams use this. Product demos, customer support, code reviews.
+    Reducing meeting overhead.
   </p>
 
   <h3 id="riverside">10. Riverside</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/riverside" variant="affiliate">Try Riverside</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/riverside"
+    text="Try Riverside"
+    variant="primary"
+    program="riverside"
+  />
 
   <p>Free but limited. Standard is nineteen monthly. Pro is twenty-nine.</p>
   <p>Up to eight participants.</p>
@@ -598,13 +706,16 @@ const relatedArticles = [
     <li>More expensive than general video tools.</li>
   </ul>
 
-  <p>Podcasters, YouTubers, content creators. Recording interviews and shows remotely.</p>
+  <p>
+    Podcasters, YouTubers, content creators. Recording interviews and shows
+    remotely.
+  </p>
 
   <h2 id="feature-comparison">Feature Comparison: Free vs Paid Tiers</h2>
   <ComparisonTable
-      columns={featureComparisonColumns}
-      rows={featureComparisonRows}
-      caption="Feature comparison across free and paid tiers"
+    columns={featureComparisonColumns}
+    rows={featureComparisonRows}
+    caption="Feature comparison across free and paid tiers"
   />
 
   <h2 id="free-vs-paid">Free or Paid?</h2>
@@ -628,9 +739,17 @@ const relatedArticles = [
 
   <p>Best value paid plans:</p>
   <ul>
-    <li>Zoom Pro at sixteen bucks per host monthly. Best features for the price.</li>
-    <li>Microsoft Teams Essentials at four per user monthly. Cheapest with good features.</li>
-    <li>Google Workspace Individual at eight monthly. Great if you need other Google tools.</li>
+    <li>
+      Zoom Pro at sixteen bucks per host monthly. Best features for the price.
+    </li>
+    <li>
+      Microsoft Teams Essentials at four per user monthly. Cheapest with good
+      features.
+    </li>
+    <li>
+      Google Workspace Individual at eight monthly. Great if you need other
+      Google tools.
+    </li>
   </ul>
 
   <h2 id="integration-capabilities">Integrations</h2>
@@ -639,7 +758,9 @@ const relatedArticles = [
   <ul>
     <li>Google Meet—native Google Calendar integration.</li>
     <li>Microsoft Teams—native Outlook.</li>
-    <li>Zoom—works with Google Calendar, Outlook, most calendars via plugins.</li>
+    <li>
+      Zoom—works with Google Calendar, Outlook, most calendars via plugins.
+    </li>
   </ul>
 
   <h3>Slack:</h3>
@@ -681,65 +802,86 @@ const relatedArticles = [
   </ul>
 
   <h2 id="faq">Frequently Asked Questions</h2>
-  <FAQSection faqs={faqs}/>
+  <FAQSection faqs={faqs} />
 
   <h2 id="final-recommendations">Which One?</h2>
 
   <h3>For most teams: Zoom</h3>
   <p>
-    <strong>Zoom</strong> remains gold standard. Reliable, feature-rich, everyone knows how to use it. Forty-minute
-    limit on free is annoying,
-    but <strong>Zoom Pro at sixteen bucks per host monthly</strong> is worth it for most professional teams.
+    <strong>Zoom</strong> remains gold standard. Reliable, feature-rich, everyone
+    knows how to use it. Forty-minute limit on free is annoying, but <strong
+      >Zoom Pro at sixteen bucks per host monthly</strong
+    > is worth it for most professional teams.
   </p>
 
   <h3>If you use Google Workspace: Google Meet</h3>
   <p>
-    <strong>Google Meet</strong> is obvious. Integration with Gmail and Google Calendar just works. Simpler than Zoom.
-    Generous sixty-minute free tier.
+    <strong>Google Meet</strong> is obvious. Integration with Gmail and Google Calendar
+    just works. Simpler than Zoom. Generous sixty-minute free tier.
   </p>
 
   <h3>If you use Microsoft 365: Microsoft Teams</h3>
   <p>
-    <strong>Microsoft Teams</strong> offers incredible value, especially on free plan. If you're already paying for
-    Microsoft 365, Teams is included and beats most competitors' paid plans.
+    <strong>Microsoft Teams</strong> offers incredible value, especially on free
+    plan. If you're already paying for Microsoft 365, Teams is included and beats
+    most competitors' paid plans.
   </p>
 
   <h3>If you want simplicity: Whereby</h3>
   <p>
-    <strong>Whereby</strong> can't be beat for small teams, coaches, anyone wanting zero-friction video calls. No
-    downloads, beautiful interface, custom URLs.
+    <strong>Whereby</strong> can't be beat for small teams, coaches, anyone wanting
+    zero-friction video calls. No downloads, beautiful interface, custom URLs.
   </p>
 
   <h3>If you run webinars: Zoom or GoToMeeting</h3>
   <p>
-    <strong>Zoom</strong> or <strong>GoToMeeting</strong> both excel at webinars—registration, Q&A, polls, analytics.
-    Zoom is more popular.
-    GoToMeeting has better drawing tools.
+    <strong>Zoom</strong> or <strong>GoToMeeting</strong> both excel at webinars—registration,
+    Q&A, polls, analytics. Zoom is more popular. GoToMeeting has better drawing tools.
   </p>
 
   <h3>If you want async: Loom</h3>
   <p>
-    <strong>Loom</strong> isn't a Zoom replacement—it's a meeting reducer. Use it to record updates, demos,
-    feedback instead of scheduling yet another call. Your team will thank you.
+    <strong>Loom</strong> isn't a Zoom replacement—it's a meeting reducer. Use it
+    to record updates, demos, feedback instead of scheduling yet another call. Your
+    team will thank you.
   </p>
 
   <h3>If you're budget-conscious: Discord or Microsoft Teams Free</h3>
   <p>
-    <strong>Discord</strong> is totally free with unlimited calling—fifty video participants. <strong>Microsoft Teams
-    Free</strong> offers sixty-minute meetings with recording and breakout rooms.
+    <strong>Discord</strong> is totally free with unlimited calling—fifty video participants.
+    <strong>Microsoft Teams Free</strong> offers sixty-minute meetings with recording
+    and breakout rooms.
   </p>
 
-  <p class="mt-8">Bottom line: Can't go wrong with <strong>Zoom</strong>, <strong>Google
-    Meet</strong>, or <strong>Teams</strong>. Choose based on which ecosystem you're already using. For most
-    independent teams, <strong>Zoom Pro</strong> is the best investment.</p>
+  <p class="mt-8">
+    Bottom line: Can't go wrong with <strong>Zoom</strong>, <strong
+      >Google Meet</strong
+    >, or <strong>Teams</strong>. Choose based on which ecosystem you're already
+    using. For most independent teams, <strong>Zoom Pro</strong> is the best investment.
+  </p>
 
   <div class="mt-8 flex gap-4 flex-wrap">
-    <AffiliateButton href="/go/zoom" variant="affiliate">Try Zoom Free</AffiliateButton>
-    <AffiliateButton href="/go/google-meet" variant="secondary">Try Google Meet</AffiliateButton>
-    <AffiliateButton href="/go/microsoft-teams" variant="secondary">Try Teams Free</AffiliateButton>
+    <AffiliateButton
+      href="/go/zoom"
+      text="Try Zoom Free"
+      variant="primary"
+      program="zoom"
+    />
+    <AffiliateButton
+      href="/go/google-meet"
+      text="Try Google Meet"
+      variant="secondary"
+      program="google-meet"
+    />
+    <AffiliateButton
+      href="/go/microsoft-teams"
+      text="Try Teams Free"
+      variant="secondary"
+      program="microsoft-teams"
+    />
   </div>
 
   <Fragment slot="full-width">
-    <RelatedArticles articles={relatedArticles}/>
+    <RelatedArticles articles={relatedArticles} />
   </Fragment>
 </ArticleLayout>

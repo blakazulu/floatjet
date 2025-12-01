@@ -1,273 +1,297 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
-import ComparisonTable from '@components/article/ComparisonTable.astro';
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
 
 // Article metadata
-const title = 'Best Note-Taking Apps for Remote Professionals (2025)';
-const description = 'We tested 10 note-taking apps to find the best for remote workers. Compare Notion, Obsidian, Evernote & more with pricing, features, and sync capabilities.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Best Note-Taking Apps for Remote Professionals (2025)";
+const description =
+  "We tested 10 note-taking apps to find the best for remote workers. Compare Notion, Obsidian, Evernote & more with pricing, features, and sync capabilities.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 17;
-const image = '/images/unsplash/photo-1488190211105-8b0e65b80b4e-1200w.webp';
-const imageAlt = 'Person taking digital notes on laptop with coffee';
+const image = "/images/unsplash/photo-1488190211105-8b0e65b80b4e-1200w.webp";
+const imageAlt = "Person taking digital notes on laptop with coffee";
 
 // Table of contents headings
 const headings = [
-  {text: 'Introduction', slug: 'introduction', depth: 2},
-  {text: 'Quick Picks', slug: 'quick-picks', depth: 2},
-  {text: 'Types of Note-Taking Approaches', slug: 'note-taking-approaches', depth: 2},
-  {text: 'Detailed Reviews', slug: 'detailed-reviews', depth: 2},
-  {text: 'Notion', slug: 'notion', depth: 3},
-  {text: 'Obsidian', slug: 'obsidian', depth: 3},
-  {text: 'Roam Research', slug: 'roam-research', depth: 3},
-  {text: 'Evernote', slug: 'evernote', depth: 3},
-  {text: 'Apple Notes', slug: 'apple-notes', depth: 3},
-  {text: 'Bear', slug: 'bear', depth: 3},
-  {text: 'Craft', slug: 'craft', depth: 3},
-  {text: 'Logseq', slug: 'logseq', depth: 3},
-  {text: 'Mem', slug: 'mem', depth: 3},
-  {text: 'OneNote', slug: 'onenote', depth: 3},
-  {text: 'Feature Comparison', slug: 'feature-comparison', depth: 2},
-  {text: 'Pricing Breakdown', slug: 'pricing-breakdown', depth: 2},
-  {text: 'Sync & Cross-Platform Support', slug: 'sync-cross-platform', depth: 2},
-  {text: 'Best for Specific Use Cases', slug: 'best-for-use-cases', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  {
+    text: "Types of Note-Taking Approaches",
+    slug: "note-taking-approaches",
+    depth: 2,
+  },
+  { text: "Detailed Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Notion", slug: "notion", depth: 3 },
+  { text: "Obsidian", slug: "obsidian", depth: 3 },
+  { text: "Roam Research", slug: "roam-research", depth: 3 },
+  { text: "Evernote", slug: "evernote", depth: 3 },
+  { text: "Apple Notes", slug: "apple-notes", depth: 3 },
+  { text: "Bear", slug: "bear", depth: 3 },
+  { text: "Craft", slug: "craft", depth: 3 },
+  { text: "Logseq", slug: "logseq", depth: 3 },
+  { text: "Mem", slug: "mem", depth: 3 },
+  { text: "OneNote", slug: "onenote", depth: 3 },
+  { text: "Feature Comparison", slug: "feature-comparison", depth: 2 },
+  { text: "Pricing Breakdown", slug: "pricing-breakdown", depth: 2 },
+  {
+    text: "Sync & Cross-Platform Support",
+    slug: "sync-cross-platform",
+    depth: 2,
+  },
+  { text: "Best for Specific Use Cases", slug: "best-for-use-cases", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // Quick picks comparison table
 const quickPicksColumns = [
-  {key: 'app', label: 'App', width: '120px'},
-  {key: 'bestFor', label: 'Best For', width: '150px'},
-  {key: 'price', label: 'Price'},
-  {key: 'platforms', label: 'Platforms'},
-  {key: 'action', label: ''},
+  { key: "app", label: "App", width: "120px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "price", label: "Price" },
+  { key: "platforms", label: "Platforms" },
+  { key: "action", label: "" },
 ];
 
 const quickPicksRows = [
   {
-    app: '<strong>Notion</strong>',
-    bestFor: 'Best all-in-one',
-    price: 'Free - $10/user/mo',
-    platforms: 'All platforms',
-    action: '<a href="/go/notion" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Notion</strong>",
+    bestFor: "Best all-in-one",
+    price: "Free - $10/user/mo",
+    platforms: "All platforms",
+    action: '<a href="/go/notion" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    app: '<strong>Obsidian</strong>',
-    bestFor: 'Best for linking ideas',
-    price: 'Free (local only)',
-    platforms: 'All platforms',
-    action: '<a href="/go/obsidian" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Obsidian</strong>",
+    bestFor: "Best for linking ideas",
+    price: "Free (local only)",
+    platforms: "All platforms",
+    action: '<a href="/go/obsidian" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    app: '<strong>Evernote</strong>',
-    bestFor: 'Best for capture',
-    price: 'Free - $10.83/mo',
-    platforms: 'All platforms',
-    action: '<a href="/go/evernote" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Evernote</strong>",
+    bestFor: "Best for capture",
+    price: "Free - $10.83/mo",
+    platforms: "All platforms",
+    action: '<a href="/go/evernote" rel="nofollow sponsored">Try Free</a>',
   },
 ];
 
 // Feature comparison table
 const featureComparisonColumns = [
-  {key: 'app', label: 'App', width: '110px'},
-  {key: 'pricing', label: 'Free Plan'},
-  {key: 'offline', label: 'Offline'},
-  {key: 'linking', label: 'Linking'},
-  {key: 'databases', label: 'Databases'},
-  {key: 'action', label: ''},
+  { key: "app", label: "App", width: "110px" },
+  { key: "pricing", label: "Free Plan" },
+  { key: "offline", label: "Offline" },
+  { key: "linking", label: "Linking" },
+  { key: "databases", label: "Databases" },
+  { key: "action", label: "" },
 ];
 
 const featureComparisonRows = [
   {
-    app: '<strong>Notion</strong>',
-    pricing: 'Yes (generous)',
-    offline: 'Limited',
-    linking: 'Good',
-    databases: 'Excellent',
-    action: '<a href="/go/notion" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Notion</strong>",
+    pricing: "Yes (generous)",
+    offline: "Limited",
+    linking: "Good",
+    databases: "Excellent",
+    action: '<a href="/go/notion" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    app: '<strong>Obsidian</strong>',
-    pricing: 'Yes (local)',
-    offline: 'Excellent',
-    linking: 'Best-in-class',
-    databases: 'Via plugins',
-    action: '<a href="/go/obsidian" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Obsidian</strong>",
+    pricing: "Yes (local)",
+    offline: "Excellent",
+    linking: "Best-in-class",
+    databases: "Via plugins",
+    action: '<a href="/go/obsidian" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    app: '<strong>Roam Research</strong>',
-    pricing: 'No ($15/mo)',
-    offline: 'Limited',
-    linking: 'Excellent',
-    databases: 'No',
-    action: '<a href="/go/roam" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Roam Research</strong>",
+    pricing: "No ($15/mo)",
+    offline: "Limited",
+    linking: "Excellent",
+    databases: "No",
+    action: '<a href="/go/roam" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    app: '<strong>Evernote</strong>',
-    pricing: 'Yes (limited)',
-    offline: 'Good',
-    linking: 'Basic',
-    databases: 'No',
-    action: '<a href="/go/evernote" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Evernote</strong>",
+    pricing: "Yes (limited)",
+    offline: "Good",
+    linking: "Basic",
+    databases: "No",
+    action: '<a href="/go/evernote" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    app: '<strong>Apple Notes</strong>',
-    pricing: 'Yes (free)',
-    offline: 'Excellent',
-    linking: 'Basic',
-    databases: 'No',
-    action: 'Built-in to iOS/Mac'
+    app: "<strong>Apple Notes</strong>",
+    pricing: "Yes (free)",
+    offline: "Excellent",
+    linking: "Basic",
+    databases: "No",
+    action: "Built-in to iOS/Mac",
   },
   {
-    app: '<strong>Bear</strong>',
-    pricing: 'Yes (iOS only)',
-    offline: 'Excellent',
-    linking: 'Good',
-    databases: 'No',
-    action: '<a href="/go/bear" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Bear</strong>",
+    pricing: "Yes (iOS only)",
+    offline: "Excellent",
+    linking: "Good",
+    databases: "No",
+    action: '<a href="/go/bear" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    app: '<strong>Craft</strong>',
-    pricing: 'Yes (limited)',
-    offline: 'Excellent',
-    linking: 'Good',
-    databases: 'No',
-    action: '<a href="/go/craft" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Craft</strong>",
+    pricing: "Yes (limited)",
+    offline: "Excellent",
+    linking: "Good",
+    databases: "No",
+    action: '<a href="/go/craft" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    app: '<strong>Logseq</strong>',
-    pricing: 'Yes (open source)',
-    offline: 'Excellent',
-    linking: 'Excellent',
-    databases: 'Via plugins',
-    action: '<a href="/go/logseq" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Logseq</strong>",
+    pricing: "Yes (open source)",
+    offline: "Excellent",
+    linking: "Excellent",
+    databases: "Via plugins",
+    action: '<a href="/go/logseq" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    app: '<strong>Mem</strong>',
-    pricing: 'No ($15/mo)',
-    offline: 'No',
-    linking: 'AI-powered',
-    databases: 'No',
-    action: '<a href="/go/mem" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>Mem</strong>",
+    pricing: "No ($15/mo)",
+    offline: "No",
+    linking: "AI-powered",
+    databases: "No",
+    action: '<a href="/go/mem" rel="nofollow sponsored">Try Free</a>',
   },
   {
-    app: '<strong>OneNote</strong>',
-    pricing: 'Yes (free)',
-    offline: 'Excellent',
-    linking: 'Basic',
-    databases: 'No',
-    action: '<a href="/go/onenote" rel="nofollow sponsored">Try Free</a>'
+    app: "<strong>OneNote</strong>",
+    pricing: "Yes (free)",
+    offline: "Excellent",
+    linking: "Basic",
+    databases: "No",
+    action: '<a href="/go/onenote" rel="nofollow sponsored">Try Free</a>',
   },
 ];
 
 // FAQ data with schema markup
 const faqs = [
   {
-    question: 'What is the best note-taking app for productivity?',
-    answer: '<strong>Notion</strong> is the best all-around note-taking and productivity app, combining notes, tasks, databases, and wikis in one flexible workspace. For knowledge workers who want to connect ideas, <strong>Obsidian</strong> excels with its powerful linking and local-first approach. For simple, fast note capture, <strong>Apple Notes</strong> (iOS/Mac) or <strong>Evernote</strong> (all platforms) are excellent.'
+    question: "What is the best note-taking app for productivity?",
+    answer:
+      "<strong>Notion</strong> is the best all-around note-taking and productivity app, combining notes, tasks, databases, and wikis in one flexible workspace. For knowledge workers who want to connect ideas, <strong>Obsidian</strong> excels with its powerful linking and local-first approach. For simple, fast note capture, <strong>Apple Notes</strong> (iOS/Mac) or <strong>Evernote</strong> (all platforms) are excellent.",
   },
   {
-    question: 'Is Notion better than Obsidian?',
-    answer: '<strong>Notion</strong> is better for teams, databases, and project management with a beautiful interface and cloud sync. <strong>Obsidian</strong> is better for personal knowledge management, linking ideas, and offline-first workflows - plus your notes are stored as plain text files you own. Choose Notion for collaboration and structure, Obsidian for thinking and linking ideas.'
+    question: "Is Notion better than Obsidian?",
+    answer:
+      "<strong>Notion</strong> is better for teams, databases, and project management with a beautiful interface and cloud sync. <strong>Obsidian</strong> is better for personal knowledge management, linking ideas, and offline-first workflows - plus your notes are stored as plain text files you own. Choose Notion for collaboration and structure, Obsidian for thinking and linking ideas.",
   },
   {
-    question: 'What happened to Evernote?',
-    answer: '<strong>Evernote</strong> lost market dominance to Notion, Obsidian, and Apple Notes after years of slow development and frequent price increases. However, after being acquired by Bending Spoons in 2022, Evernote has improved significantly with faster apps, better sync, and a redesigned interface. It\'s still a solid choice, especially for document scanning and web clipping.'
+    question: "What happened to Evernote?",
+    answer:
+      "<strong>Evernote</strong> lost market dominance to Notion, Obsidian, and Apple Notes after years of slow development and frequent price increases. However, after being acquired by Bending Spoons in 2022, Evernote has improved significantly with faster apps, better sync, and a redesigned interface. It's still a solid choice, especially for document scanning and web clipping.",
   },
   {
-    question: 'Can I use Obsidian for free?',
-    answer: 'Yes, <strong>Obsidian</strong> is completely free for personal use. Your notes are stored locally on your devices as plain Markdown files. However, if you want cloud sync across devices, you need <strong>Obsidian Sync</strong> ($10/mo) or you can use third-party sync services like iCloud, Dropbox, or Syncthing. Publish (website hosting) is $8/mo extra.'
+    question: "Can I use Obsidian for free?",
+    answer:
+      "Yes, <strong>Obsidian</strong> is completely free for personal use. Your notes are stored locally on your devices as plain Markdown files. However, if you want cloud sync across devices, you need <strong>Obsidian Sync</strong> ($10/mo) or you can use third-party sync services like iCloud, Dropbox, or Syncthing. Publish (website hosting) is $8/mo extra.",
   },
   {
-    question: 'What is the best free note-taking app?',
-    answer: '<strong>Apple Notes</strong> is the best free option for iPhone/Mac users - completely free, fast, and syncs seamlessly. <strong>Obsidian</strong> is free for local note-taking (add your own sync). <strong>Notion</strong> has a generous free tier with unlimited pages for personal use. <strong>OneNote</strong> is free with Microsoft account. All are excellent zero-cost options.'
+    question: "What is the best free note-taking app?",
+    answer:
+      "<strong>Apple Notes</strong> is the best free option for iPhone/Mac users - completely free, fast, and syncs seamlessly. <strong>Obsidian</strong> is free for local note-taking (add your own sync). <strong>Notion</strong> has a generous free tier with unlimited pages for personal use. <strong>OneNote</strong> is free with Microsoft account. All are excellent zero-cost options.",
   },
   {
-    question: 'Should I take notes in Markdown?',
-    answer: 'Yes, <strong>Markdown</strong> is increasingly popular for note-taking because it\'s: portable (plain text works everywhere), future-proof (won\'t be locked to one app), fast to write (no formatting toolbar needed), and widely supported. <strong>Obsidian</strong>, <strong>Logseq</strong>, <strong>Bear</strong>, and <strong>Craft</strong> all use Markdown. <strong>Notion</strong> uses Markdown-like syntax but stores in proprietary format.'
+    question: "Should I take notes in Markdown?",
+    answer:
+      "Yes, <strong>Markdown</strong> is increasingly popular for note-taking because it's: portable (plain text works everywhere), future-proof (won't be locked to one app), fast to write (no formatting toolbar needed), and widely supported. <strong>Obsidian</strong>, <strong>Logseq</strong>, <strong>Bear</strong>, and <strong>Craft</strong> all use Markdown. <strong>Notion</strong> uses Markdown-like syntax but stores in proprietary format.",
   },
   {
-    question: 'Can I sync my notes across devices?',
-    answer: 'Yes, most note apps offer cloud sync: <strong>Notion</strong>, <strong>Evernote</strong>, <strong>Roam</strong>, <strong>Mem</strong>, <strong>Apple Notes</strong> (iCloud), <strong>OneNote</strong> (OneDrive) all sync automatically. <strong>Obsidian</strong> and <strong>Logseq</strong> require paid sync ($8-10/mo) or third-party services. <strong>Bear</strong> requires Pro subscription ($1.49/mo) for sync.'
+    question: "Can I sync my notes across devices?",
+    answer:
+      "Yes, most note apps offer cloud sync: <strong>Notion</strong>, <strong>Evernote</strong>, <strong>Roam</strong>, <strong>Mem</strong>, <strong>Apple Notes</strong> (iCloud), <strong>OneNote</strong> (OneDrive) all sync automatically. <strong>Obsidian</strong> and <strong>Logseq</strong> require paid sync ($8-10/mo) or third-party services. <strong>Bear</strong> requires Pro subscription ($1.49/mo) for sync.",
   },
   {
-    question: 'What is a Zettelkasten and do I need it?',
-    answer: '<strong>Zettelkasten</strong> is a note-taking method focusing on atomic notes (one idea per note) connected via links to build a "second brain." Apps like <strong>Obsidian</strong>, <strong>Roam Research</strong>, and <strong>Logseq</strong> are designed for this approach. You don\'t need it - simple folders and search work fine for most people. But if you\'re a researcher, writer, or knowledge worker building complex ideas, Zettelkasten is powerful.'
-  }
+    question: "What is a Zettelkasten and do I need it?",
+    answer:
+      "<strong>Zettelkasten</strong> is a note-taking method focusing on atomic notes (one idea per note) connected via links to build a \"second brain.\" Apps like <strong>Obsidian</strong>, <strong>Roam Research</strong>, and <strong>Logseq</strong> are designed for this approach. You don't need it - simple folders and search work fine for most people. But if you're a researcher, writer, or knowledge worker building complex ideas, Zettelkasten is powerful.",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Best Project Management Software',
-    href: '/tools/best-project-management-software',
-    excerpt: 'Compare top project management tools for remote teams and freelancers.',
-    image: '/images/unsplash/photo-1507925921958-8a62f3d1a50d-800w.webp',
-    imageAlt: 'Project management dashboard on computer'
+    title: "Best Project Management Software",
+    href: "/tools/best-project-management-software",
+    excerpt:
+      "Compare top project management tools for remote teams and freelancers.",
+    image: "/images/unsplash/photo-1507925921958-8a62f3d1a50d-800w.webp",
+    imageAlt: "Project management dashboard on computer",
   },
   {
-    title: 'Notion vs ClickUp vs Monday',
-    href: '/tools/notion-vs-clickup-vs-monday',
-    excerpt: 'Ultimate comparison of the top 3 productivity platforms for remote teams.',
-    image: '/images/unsplash/photo-1611224923853-80b023f02d71-800w.webp',
-    imageAlt: 'Productivity apps comparison on laptop screen'
+    title: "Notion vs ClickUp vs Monday",
+    href: "/tools/notion-vs-clickup-vs-monday",
+    excerpt:
+      "Ultimate comparison of the top 3 productivity platforms for remote teams.",
+    image: "/images/unsplash/photo-1611224923853-80b023f02d71-800w.webp",
+    imageAlt: "Productivity apps comparison on laptop screen",
   },
   {
-    title: 'Best Productivity Apps',
-    href: '/tools/best-productivity-apps',
-    excerpt: 'Boost your efficiency with the best productivity apps for remote workers.',
-    image: '/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp',
-    imageAlt: 'Productivity apps on mobile device'
-  }
+    title: "Best Productivity Apps",
+    href: "/tools/best-productivity-apps",
+    excerpt:
+      "Boost your efficiency with the best productivity apps for remote workers.",
+    image: "/images/unsplash/photo-1484480974693-6ca0a78fb36b-800w.webp",
+    imageAlt: "Productivity apps on mobile device",
+  },
 ];
 ---
 
 <ArticleLayout
-    title={title}
-    description={description}
-    author={author}
-    authorUrl={authorUrl}
-    pubDate={pubDate}
-    readingTime={readingTime}
-    image={image}
-    imageAlt={imageAlt}
-    headings={headings}
-    category="Tools"
-    categorySlug="tools"
+  title={title}
+  description={description}
+  author={author}
+  authorUrl={authorUrl}
+  pubDate={pubDate}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  headings={headings}
+  category="Tools"
+  categorySlug="tools"
 >
   <h2 id="introduction">Digital Note-Taking for Remote Productivity</h2>
   <p>
-    Look your note-taking app is basically your second brain. Capturing ideas during <a
-      href="/guides/how-to-run-effective-remote-meetings">meetings</a>. Organizing research.
-    Building a knowledge base. Managing <a href="/tools/best-project-management-software">projects</a>. The right tool
-    changes everything about how you work.
+    Look your note-taking app is basically your second brain. Capturing ideas
+    during <a href="/guides/how-to-run-effective-remote-meetings">meetings</a>.
+    Organizing research. Building a knowledge base. Managing <a
+      href="/tools/best-project-management-software">projects</a
+    >. The right tool changes everything about how you work.
   </p>
   <p>
-    The note-taking world exploded over the past few years. Notion turned simple notes into entire databases. Obsidian
-    and Roam Research brought us networked thinking. Evernote rebuilt itself after years of going nowhere. Apple Notes
+    The note-taking world exploded over the past few years. Notion turned simple
+    notes into entire databases. Obsidian and Roam Research brought us networked
+    thinking. Evernote rebuilt itself after years of going nowhere. Apple Notes
     became surprisingly powerful when nobody was looking.
   </p>
   <p>
-    Spent over sixty hours testing ten different note-taking apps across different workflows. Meeting notes, project
-    documentation, personal knowledge management, team collaboration. Looked at ease of use, organization systems, sync
-    reliability, pricing, and unique features.
+    Spent over sixty hours testing ten different note-taking apps across
+    different workflows. Meeting notes, project documentation, personal
+    knowledge management, team collaboration. Looked at ease of use,
+    organization systems, sync reliability, pricing, and unique features.
   </p>
   <p>
-    Short version if you're in a hurry: <a href="/tools/is-notion-worth-it">Notion</a> for most remote workers. Obsidian
-    if you're building a personal knowledge
-    base. Apple Notes for iPhone and Mac users who want simple and free. Evernote for capturing everything. Roam
-    Research for researchers and networked thought.
+    Short version if you're in a hurry: <a href="/tools/is-notion-worth-it"
+      >Notion</a
+    > for most remote workers. Obsidian if you're building a personal knowledge base.
+    Apple Notes for iPhone and Mac users who want simple and free. Evernote for capturing
+    everything. Roam Research for researchers and networked thought.
   </p>
 
   <h2 id="quick-picks">Quick Picks: Best Note-Taking Apps at a Glance</h2>
   <ComparisonTable
-      columns={quickPicksColumns}
-      rows={quickPicksRows}
-      caption="Quick comparison of top note-taking apps"
+    columns={quickPicksColumns}
+    rows={quickPicksRows}
+    caption="Quick comparison of top note-taking apps"
   />
 
   <h2 id="note-taking-approaches">Types of Note-Taking Approaches</h2>
@@ -276,319 +300,408 @@ const relatedArticles = [
   <h3>Hierarchical / Folder-Based</h3>
   <p>Evernote OneNote Apple Notes Bear.</p>
   <p>
-    Traditional organization with notebooks folders and tags. Easy to understand works like physical notebooks. Good fit
-    for simple note-taking document storage beginners.
+    Traditional organization with notebooks folders and tags. Easy to understand
+    works like physical notebooks. Good fit for simple note-taking document
+    storage beginners.
   </p>
 
   <h3>Database / Structured</h3>
   <p>Notion Coda.</p>
   <p>
-    Notes as database entries with properties filters and multiple views. Powerful for project management and structured
-    information. Makes sense for teams project documentation CRM-like note systems.
+    Notes as database entries with properties filters and multiple views.
+    Powerful for project management and structured information. Makes sense for
+    teams project documentation CRM-like note systems.
   </p>
 
   <h3>Networked / Linked Thinking</h3>
   <p>Obsidian Roam Research Logseq.</p>
   <p>
-    Bidirectional links between notes create a second brain knowledge graph. Every note can link to any other. Right for
-    researchers writers <a href="/guides/productivity">knowledge workers</a> building complex ideas.
+    Bidirectional links between notes create a second brain knowledge graph.
+    Every note can link to any other. Right for researchers writers <a
+      href="/guides/productivity">knowledge workers</a
+    > building complex ideas.
   </p>
 
   <h3>AI-Powered / Auto-Linking</h3>
   <p>Mem Reflect.</p>
   <p>
-    AI automatically surfaces related notes and creates connections. Less manual linking required. Fits people who want
-    the benefits of linked notes without manual work.
+    AI automatically surfaces related notes and creates connections. Less manual
+    linking required. Fits people who want the benefits of linked notes without
+    manual work.
   </p>
 
   <h2 id="detailed-reviews">Detailed Reviews: Top 10 Note-Taking Apps</h2>
 
   <h3 id="notion">Notion — Best All-in-One Workspace</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/notion" variant="affiliate">Try Notion Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/notion"
+    text="Try Notion Free"
+    variant="primary"
+    program="notion"
+  />
 
-  <p>Free for personal use. Plus ten bucks per user monthly. Business fifteen. Enterprise custom.<br/>Web Windows Mac
-    iOS Android.</p>
+  <p>
+    Free for personal use. Plus ten bucks per user monthly. Business fifteen.
+    Enterprise custom.<br />Web Windows Mac iOS Android.
+  </p>
 
   <p>What's good</p>
 
   <p>
-    Incredible flexibility. Notes databases wikis task boards calendars in one app.<br/>Beautiful design. Clean modern
-    interface that makes note-taking enjoyable.<br/>Generous free tier. Unlimited pages and blocks for personal
-    use.<br/>Templates galore. Thousands of pre-built templates for every use case.<br/>Database views. View same data
-    as table kanban calendar gallery timeline.<br/>Great for teams. Collaboration permissions and commenting
-    built-in.<br/>Embeds and integrations. Embed Google Docs Figma Miro PDFs and more.
+    Incredible flexibility. Notes databases wikis task boards calendars in one
+    app.<br />Beautiful design. Clean modern interface that makes note-taking
+    enjoyable.<br />Generous free tier. Unlimited pages and blocks for personal
+    use.<br />Templates galore. Thousands of pre-built templates for every use
+    case.<br />Database views. View same data as table kanban calendar gallery
+    timeline.<br />Great for teams. Collaboration permissions and commenting
+    built-in.<br />Embeds and integrations. Embed Google Docs Figma Miro PDFs
+    and more.
   </p>
 
   <p>What bugs me</p>
 
   <p>
-    Offline mode is limited. Requires internet for full functionality.<br/>Can be slow. Large workspaces with many
-    blocks load slowly.<br/>Steep learning curve. So many features it can be overwhelming at first.<br/>Markdown export
-    issues. Proprietary format makes migration difficult.
+    Offline mode is limited. Requires internet for full functionality.<br />Can
+    be slow. Large workspaces with many blocks load slowly.<br />Steep learning
+    curve. So many features it can be overwhelming at first.<br />Markdown
+    export issues. Proprietary format makes migration difficult.
   </p>
 
   <p>
-    Makes sense for <a href="/tools/best-team-communication-tools">remote teams</a> wanting an all-in-one workspace <a
-      href="/tools/best-project-management-software">project managers</a> anyone who wants notes plus tasks plus
-    databases in one beautiful app.
+    Makes sense for <a href="/tools/best-team-communication-tools"
+      >remote teams</a
+    > wanting an all-in-one workspace <a
+      href="/tools/best-project-management-software">project managers</a
+    > anyone who wants notes plus tasks plus databases in one beautiful app.
   </p>
 
   <h3 id="obsidian">Obsidian — Best for Linking Ideas</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/obsidian" variant="affiliate">Try Obsidian Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/obsidian"
+    text="Try Obsidian Free"
+    variant="primary"
+    program="obsidian"
+  />
 
-  <p>Free for personal use. Sync ten monthly. Publish eight monthly. Commercial fifty per user yearly.<br/>Windows Mac
-    Linux iOS Android.</p>
+  <p>
+    Free for personal use. Sync ten monthly. Publish eight monthly. Commercial
+    fifty per user yearly.<br />Windows Mac Linux iOS Android.
+  </p>
 
   <p>What I like</p>
 
   <p>
-    Your notes equal your files. Plain text Markdown files stored locally you own everything.<br/>Best-in-class linking.
-    Bidirectional links backlinks graph view shows connections.<br/>Lightning fast. No cloud lag everything is
-    local.<br/>Extensible. Thousands of community plugins for any workflow.<br/>Perfect offline. Works without internet
-    since files are local.<br/>Free forever. No paywalls for core features sync and publish are optional.<br/>Privacy-focused.
-    Your notes never leave your devices unless you enable sync.
+    Your notes equal your files. Plain text Markdown files stored locally you
+    own everything.<br />Best-in-class linking. Bidirectional links backlinks
+    graph view shows connections.<br />Lightning fast. No cloud lag everything
+    is local.<br />Extensible. Thousands of community plugins for any workflow.<br
+    />Perfect offline. Works without internet since files are local.<br />Free
+    forever. No paywalls for core features sync and publish are optional.<br
+    />Privacy-focused. Your notes never leave your devices unless you enable
+    sync.
   </p>
 
   <p>What's not great</p>
 
   <p>
-    Sync costs extra. Ten monthly for official sync or use iCloud or Dropbox.<br/>Steeper learning curve. More technical
-    than Notion or Evernote.<br/>Not great for teams. Designed for personal knowledge management.<br/>No databases.
-    Can't replicate Notion's structured data features.
+    Sync costs extra. Ten monthly for official sync or use iCloud or Dropbox.<br
+    />Steeper learning curve. More technical than Notion or Evernote.<br />Not
+    great for teams. Designed for personal knowledge management.<br />No
+    databases. Can't replicate Notion's structured data features.
   </p>
 
   <p>
-    Good fit for knowledge workers researchers writers developers anyone building a second brain and connecting ideas
-    over time.
+    Good fit for knowledge workers researchers writers developers anyone
+    building a second brain and connecting ideas over time.
   </p>
 
   <h3 id="roam-research">Roam Research — Best for Networked Thought</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/roam" variant="affiliate">Try Roam Research</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/roam"
+    text="Try Roam Research"
+    variant="primary"
+    program="roam"
+  />
 
-  <p>Professional fifteen monthly. Believer five hundred for five years.<br/>Web iOS Android.</p>
+  <p>
+    Professional fifteen monthly. Believer five hundred for five years.<br />Web
+    iOS Android.
+  </p>
 
   <p>You get</p>
 
   <p>
-    Daily notes paradigm. Every day is a page encourages journaling and reflection.<br/>Bidirectional linking. Pioneered
-    the networked note-taking movement.<br/>Block-level references. Link to specific paragraphs not just pages.<br/>Cult
-    following. Active community of power users and researchers.<br/>Graph view. Visualize connections between notes.
+    Daily notes paradigm. Every day is a page encourages journaling and
+    reflection.<br />Bidirectional linking. Pioneered the networked note-taking
+    movement.<br />Block-level references. Link to specific paragraphs not just
+    pages.<br />Cult following. Active community of power users and researchers.<br
+    />Graph view. Visualize connections between notes.
   </p>
 
   <p>The tradeoffs</p>
 
   <p>
-    Expensive. Fifteen monthly with no free tier only thirty-one-day trial.<br/>Dated interface. Looks less polished
-    than Notion or Craft.<br/>Buggy at times. Occasional sync issues and performance problems.<br/>Outshined by
+    Expensive. Fifteen monthly with no free tier only thirty-one-day trial.<br
+    />Dated interface. Looks less polished than Notion or Craft.<br />Buggy at
+    times. Occasional sync issues and performance problems.<br />Outshined by
     Obsidian. Obsidian offers similar features for free.
   </p>
 
   <p>
-    Academics researchers and early adopters who bought in before Obsidian or Logseq existed. Hard to recommend over
-    Obsidian now unless you're deeply committed to Roam's workflow.
+    Academics researchers and early adopters who bought in before Obsidian or
+    Logseq existed. Hard to recommend over Obsidian now unless you're deeply
+    committed to Roam's workflow.
   </p>
 
   <h3 id="evernote">Evernote — Best for Capturing Everything</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/evernote" variant="affiliate">Try Evernote Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/evernote"
+    text="Try Evernote Free"
+    variant="primary"
+    program="evernote"
+  />
 
-  <p>Free limited. Personal ten eighty-three monthly. Professional fourteen seventeen monthly.<br/>Web Windows Mac iOS
-    Android.</p>
+  <p>
+    Free limited. Personal ten eighty-three monthly. Professional fourteen
+    seventeen monthly.<br />Web Windows Mac iOS Android.
+  </p>
 
   <p>What works</p>
 
   <p>
-    Web Clipper. Best browser extension for saving articles and research.<br/>Document scanning. Excellent mobile
-    scanner with OCR text recognition.<br/>Email to Evernote. Forward emails directly to your notebooks.<br/>Powerful
-    search. Searches text inside PDFs and images.<br/>Reliable sync. After years of issues sync is now solid.<br/>Tasks
-    integration. Built-in task management with reminders.
+    Web Clipper. Best browser extension for saving articles and research.<br
+    />Document scanning. Excellent mobile scanner with OCR text recognition.<br
+    />Email to Evernote. Forward emails directly to your notebooks.<br
+    />Powerful search. Searches text inside PDFs and images.<br />Reliable sync.
+    After years of issues sync is now solid.<br />Tasks integration. Built-in
+    task management with reminders.
   </p>
 
   <p>What doesn't</p>
 
   <p>
-    Free tier is very limited. Sixty MB upload monthly two devices only.<br/>Expensive. Ten eighty-three monthly is
-    pricey compared to alternatives.<br/>Bloated. Tries to do everything feels less focused than competitors.<br/>Lost
-    market share. No longer the default choice it once was.
+    Free tier is very limited. Sixty MB upload monthly two devices only.<br
+    />Expensive. Ten eighty-three monthly is pricey compared to alternatives.<br
+    />Bloated. Tries to do everything feels less focused than competitors.<br
+    />Lost market share. No longer the default choice it once was.
   </p>
 
   <p>
-    People who clip lots of web articles scan documents frequently or have years of notes locked in Evernote.
+    People who clip lots of web articles scan documents frequently or have years
+    of notes locked in Evernote.
   </p>
 
   <h3 id="apple-notes">Apple Notes — Best Free Option Apple Users</h3>
 
-  <p>Free included with iCloud.<br/>iOS iPadOS macOS Web at iCloud dot com.</p>
+  <p>Free included with iCloud.<br />iOS iPadOS macOS Web at iCloud dot com.</p>
 
   <p>What's great</p>
 
   <p>
-    Completely free. No premium tiers no upsells.<br/>Seamless Apple integration. Syncs instantly across iPhone iPad
-    Mac.<br/>Fast and simple. Opens in milliseconds zero learning curve.<br/>Smart Folders. Auto-organize notes with
-    tags and filters.<br/>Document scanning. Excellent built-in scanner on iPhone.<br/>Collaboration. Share and co-edit
-    notes with others.<br/>Locked notes. Password or Face ID protection for sensitive notes.
+    Completely free. No premium tiers no upsells.<br />Seamless Apple
+    integration. Syncs instantly across iPhone iPad Mac.<br />Fast and simple.
+    Opens in milliseconds zero learning curve.<br />Smart Folders. Auto-organize
+    notes with tags and filters.<br />Document scanning. Excellent built-in
+    scanner on iPhone.<br />Collaboration. Share and co-edit notes with others.<br
+    />Locked notes. Password or Face ID protection for sensitive notes.
   </p>
 
   <p>Downsides</p>
 
   <p>
-    Apple ecosystem only. Terrible on Android or Windows.<br/>No advanced linking. Can't build knowledge graphs like
-    Obsidian.<br/>Limited export. No Markdown export hard to migrate away.<br/>Basic formatting. Less formatting options
-    than competitors.
+    Apple ecosystem only. Terrible on Android or Windows.<br />No advanced
+    linking. Can't build knowledge graphs like Obsidian.<br />Limited export. No
+    Markdown export hard to migrate away.<br />Basic formatting. Less formatting
+    options than competitors.
   </p>
 
   <p>
-    iPhone and Mac users who want simple fast free note-taking without learning a complex app. Perfect for casual notes
-    lists and quick capture.
+    iPhone and Mac users who want simple fast free note-taking without learning
+    a complex app. Perfect for casual notes lists and quick capture.
   </p>
 
   <h3 id="bear">Bear — Best for Apple Users Who Want More</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/bear" variant="affiliate">Try Bear Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/bear"
+    text="Try Bear Free"
+    variant="primary"
+    program="bear"
+  />
 
-  <p>Free iOS and Mac only. Pro one forty-nine monthly or fourteen ninety-nine yearly.<br/>iOS iPadOS macOS only.</p>
+  <p>
+    Free iOS and Mac only. Pro one forty-nine monthly or fourteen ninety-nine
+    yearly.<br />iOS iPadOS macOS only.
+  </p>
 
   <p>In the package</p>
 
   <p>
-    Beautiful design. Stunning minimal interface with gorgeous themes.<br/>Markdown native. Write in clean Markdown
-    perfect for writers.<br/>Fast and lightweight. Feels snappier than Apple Notes.<br/>Tag-based organization. Nested
-    tags like work slash projects.<br/>Export anywhere. Export to PDF DOCX HTML Markdown.<br/>Affordable. One forty-nine
-    monthly is one of the cheapest premium note apps.
+    Beautiful design. Stunning minimal interface with gorgeous themes.<br
+    />Markdown native. Write in clean Markdown perfect for writers.<br />Fast
+    and lightweight. Feels snappier than Apple Notes.<br />Tag-based
+    organization. Nested tags like work slash projects.<br />Export anywhere.
+    Export to PDF DOCX HTML Markdown.<br />Affordable. One forty-nine monthly is
+    one of the cheapest premium note apps.
   </p>
 
   <p>What's annoying</p>
 
   <p>
-    Apple only. No Windows Android or web version.<br/>Sync requires Pro. Free tier doesn't sync across devices.<br/>No
-    bidirectional links. Can't build knowledge graphs.<br/>Limited collaboration. Not designed for teams.
+    Apple only. No Windows Android or web version.<br />Sync requires Pro. Free
+    tier doesn't sync across devices.<br />No bidirectional links. Can't build
+    knowledge graphs.<br />Limited collaboration. Not designed for teams.
   </p>
 
   <p>
-    Apple users who want a beautiful Markdown-focused writing experience and are willing to pay one forty-nine monthly
-    for sync.
+    Apple users who want a beautiful Markdown-focused writing experience and are
+    willing to pay one forty-nine monthly for sync.
   </p>
 
   <h3 id="craft">Craft — Best for Beautiful Notes</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/craft" variant="affiliate">Try Craft Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/craft"
+    text="Try Craft Free"
+    variant="primary"
+    program="craft"
+  />
 
-  <p>Free limited. Pro five monthly. Business ten per user monthly.<br/>iOS iPadOS macOS Windows Web.</p>
+  <p>
+    Free limited. Pro five monthly. Business ten per user monthly.<br />iOS
+    iPadOS macOS Windows Web.
+  </p>
 
   <p>What's in there</p>
 
   <p>
-    Stunning design. Most beautiful note-taking app hands down.<br/>Daily notes. Roam-style daily notes with
-    linking.<br/>Share as web pages. Publish notes as beautiful public pages.<br/>Markdown support. Write in Markdown
-    with live preview.<br/>Great free tier. One thousand blocks daily is generous.
+    Stunning design. Most beautiful note-taking app hands down.<br />Daily
+    notes. Roam-style daily notes with linking.<br />Share as web pages. Publish
+    notes as beautiful public pages.<br />Markdown support. Write in Markdown
+    with live preview.<br />Great free tier. One thousand blocks daily is
+    generous.
   </p>
 
   <p>What's not</p>
 
   <p>
-    Expensive. Five monthly for features others offer free.<br/>Limited export. Hard to migrate notes out.<br/>Not as
-    powerful as Notion. Lacks databases and advanced features.<br/>Small user base. Smaller community than Notion or
-    Obsidian.
+    Expensive. Five monthly for features others offer free.<br />Limited export.
+    Hard to migrate notes out.<br />Not as powerful as Notion. Lacks databases
+    and advanced features.<br />Small user base. Smaller community than Notion
+    or Obsidian.
   </p>
 
   <p>
-    Creatives designers and anyone who values aesthetics. Great for documentation and sharing beautiful notes publicly.
+    Creatives designers and anyone who values aesthetics. Great for
+    documentation and sharing beautiful notes publicly.
   </p>
 
   <h3 id="logseq">Logseq — Best Open-Source Alternative</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/logseq" variant="affiliate">Try Logseq Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/logseq"
+    text="Try Logseq Free"
+    variant="primary"
+    program="logseq"
+  />
 
-  <p>Free open source.<br/>Windows Mac Linux iOS Android.</p>
+  <p>Free open source.<br />Windows Mac Linux iOS Android.</p>
 
   <p>You get</p>
 
   <p>
-    Completely free and open-source. No paywalls community-driven.<br/>Outliner-based. Every note is an outline great
-    for structured thinking.<br/>Bidirectional linking. Roam-style networked notes.<br/>Local-first like Obsidian. Your
-    files stored locally as Markdown.<br/>Graph view. Visualize connections between notes.<br/>Plugin ecosystem.
-    Extensible with community plugins.
+    Completely free and open-source. No paywalls community-driven.<br
+    />Outliner-based. Every note is an outline great for structured thinking.<br
+    />Bidirectional linking. Roam-style networked notes.<br />Local-first like
+    Obsidian. Your files stored locally as Markdown.<br />Graph view. Visualize
+    connections between notes.<br />Plugin ecosystem. Extensible with community
+    plugins.
   </p>
 
   <p>What could be better</p>
 
   <p>
-    Less polished. Rougher edges than commercial apps.<br/>Sync is manual. Use Git iCloud or Dropbox for sync.<br/>Steeper
-    learning curve. Outliner paradigm takes getting used to.
+    Less polished. Rougher edges than commercial apps.<br />Sync is manual. Use
+    Git iCloud or Dropbox for sync.<br />Steeper learning curve. Outliner
+    paradigm takes getting used to.
   </p>
 
   <p>
-    Privacy advocates open-source enthusiasts people who want Roam-style notes without the fifteen monthly cost.
+    Privacy advocates open-source enthusiasts people who want Roam-style notes
+    without the fifteen monthly cost.
   </p>
 
   <h3 id="mem">Mem — Best AI-Powered Notes</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/mem" variant="affiliate">Try Mem</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/mem"
+    text="Try Mem"
+    variant="primary"
+    program="mem"
+  />
 
-  <p>Fifteen monthly no free tier.<br/>Web iOS Android.</p>
+  <p>Fifteen monthly no free tier.<br />Web iOS Android.</p>
 
   <p>Features</p>
 
   <p>
-    AI-powered connections. Automatically surfaces related notes.<br/>Smart Search. Natural language queries find
-    relevant notes.<br/>No folders. Just dump notes AI organizes them.<br/>Email to Mem. Forward emails and they become
-    notes.
+    AI-powered connections. Automatically surfaces related notes.<br />Smart
+    Search. Natural language queries find relevant notes.<br />No folders. Just
+    dump notes AI organizes them.<br />Email to Mem. Forward emails and they
+    become notes.
   </p>
 
   <p>Downsides</p>
 
   <p>
-    Expensive. Fifteen monthly with no free tier or trial.<br/>Requires internet. Cloud-only no offline mode.<br/>Less
-    control. AI organization means less manual structure.<br/>Small feature set. Simpler than Notion or Obsidian.
+    Expensive. Fifteen monthly with no free tier or trial.<br />Requires
+    internet. Cloud-only no offline mode.<br />Less control. AI organization
+    means less manual structure.<br />Small feature set. Simpler than Notion or
+    Obsidian.
   </p>
 
   <p>
-    Early adopters who want AI to do the heavy lifting people who hate manual organization.
+    Early adopters who want AI to do the heavy lifting people who hate manual
+    organization.
   </p>
 
   <h3 id="onenote">OneNote — Best Free Microsoft Alternative</h3>
-  <div class="flex gap-4 mt-4">
-    <AffiliateButton href="/go/onenote" variant="affiliate">Try OneNote Free</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/onenote"
+    text="Try OneNote Free"
+    variant="primary"
+    program="onenote"
+  />
 
-  <p>Free includes five GB OneDrive storage.<br/>Windows Mac iOS Android Web.</p>
+  <p>
+    Free includes five GB OneDrive storage.<br />Windows Mac iOS Android Web.
+  </p>
 
   <p>What works</p>
 
   <p>
-    Completely free. No premium tiers or paywalls.<br/>Infinite canvas. Place notes anywhere on the page not just
-    top-to-bottom.<br/>Great for stylus users. Excellent handwriting and drawing on iPad or Surface.<br/>Microsoft
-    integration. Works with Office Teams Outlook.<br/>OCR in images. Search for text inside handwritten notes.
+    Completely free. No premium tiers or paywalls.<br />Infinite canvas. Place
+    notes anywhere on the page not just top-to-bottom.<br />Great for stylus
+    users. Excellent handwriting and drawing on iPad or Surface.<br />Microsoft
+    integration. Works with Office Teams Outlook.<br />OCR in images. Search for
+    text inside handwritten notes.
   </p>
 
   <p>What's not great</p>
 
   <p>
-    Dated interface. Feels old compared to modern apps.<br/>Sync can be slow. OneDrive sync is less reliable than
-    competitors.<br/>No Markdown. Can't write in plain text.<br/>Confusing organization. Notebooks sections pages can be
-    hard to manage.
+    Dated interface. Feels old compared to modern apps.<br />Sync can be slow.
+    OneDrive sync is less reliable than competitors.<br />No Markdown. Can't
+    write in plain text.<br />Confusing organization. Notebooks sections pages
+    can be hard to manage.
   </p>
 
   <p>
-    Windows users Microsoft three sixty-five subscribers students who need free note-taking with handwriting support.
+    Windows users Microsoft three sixty-five subscribers students who need free
+    note-taking with handwriting support.
   </p>
 
   <h2 id="feature-comparison">Feature Comparison Matrix</h2>
   <ComparisonTable
-      columns={featureComparisonColumns}
-      rows={featureComparisonRows}
-      caption="Feature comparison across note-taking apps"
+    columns={featureComparisonColumns}
+    rows={featureComparisonRows}
+    caption="Feature comparison across note-taking apps"
   />
 
   <h2 id="pricing-breakdown">Pricing Breakdown</h2>
@@ -596,21 +709,24 @@ const relatedArticles = [
   <h3>Free Options</h3>
 
   <p>
-    Apple Notes completely free Apple devices only.<br/>OneNote completely free all platforms.<br/>Notion free for
-    personal use unlimited pages.<br/>Obsidian free for personal use sync costs extra.<br/>Logseq free and open-source.
+    Apple Notes completely free Apple devices only.<br />OneNote completely free
+    all platforms.<br />Notion free for personal use unlimited pages.<br
+    />Obsidian free for personal use sync costs extra.<br />Logseq free and
+    open-source.
   </p>
 
   <h3>Budget Options Zero to Five Monthly</h3>
 
   <p>
-    Bear Pro one forty-nine monthly Apple only.<br/>Craft Pro five monthly.
+    Bear Pro one forty-nine monthly Apple only.<br />Craft Pro five monthly.
   </p>
 
   <h3>Premium Options Ten to Fifteen Monthly</h3>
 
   <p>
-    Notion Plus ten per user monthly for teams.<br/>Evernote Personal ten eighty-three monthly.<br/>Obsidian Sync ten
-    monthly optional add-on.<br/>Roam Research fifteen monthly.<br/>Mem fifteen monthly.
+    Notion Plus ten per user monthly for teams.<br />Evernote Personal ten
+    eighty-three monthly.<br />Obsidian Sync ten monthly optional add-on.<br
+    />Roam Research fifteen monthly.<br />Mem fifteen monthly.
   </p>
 
   <h2 id="sync-cross-platform">Sync and Cross-Platform Support</h2>
@@ -618,21 +734,24 @@ const relatedArticles = [
   <h3>Works on All Platforms</h3>
 
   <p>
-    Notion. Web Windows Mac Linux unofficially iOS Android.<br/>Obsidian. Windows Mac Linux iOS Android.<br/>Evernote.
-    All major platforms.<br/>OneNote. All major platforms.<br/>Logseq. All major platforms.
+    Notion. Web Windows Mac Linux unofficially iOS Android.<br />Obsidian.
+    Windows Mac Linux iOS Android.<br />Evernote. All major platforms.<br
+    />OneNote. All major platforms.<br />Logseq. All major platforms.
   </p>
 
   <h3>Apple Ecosystem Only</h3>
 
   <p>
-    Apple Notes. iOS iPadOS macOS basic web version.<br/>Bear. iOS iPadOS macOS only.
+    Apple Notes. iOS iPadOS macOS basic web version.<br />Bear. iOS iPadOS macOS
+    only.
   </p>
 
   <h3>Sync Reliability</h3>
 
   <p>
-    Best: Apple Notes instant on Apple devices. Google Keep instant.<br/>Good: Notion Evernote Bear Craft.<br/>DIY:
-    Obsidian requires iCloud or Dropbox or paid Sync. Logseq manual.
+    Best: Apple Notes instant on Apple devices. Google Keep instant.<br />Good:
+    Notion Evernote Bear Craft.<br />DIY: Obsidian requires iCloud or Dropbox or
+    paid Sync. Logseq manual.
   </p>
 
   <h2 id="best-for-use-cases">Best for Specific Use Cases</h2>
@@ -640,57 +759,79 @@ const relatedArticles = [
   <h3>Best for Teams: Notion</h3>
 
   <p>
-    Built-in collaboration permissions commenting and databases make Notion the obvious choice for remote teams.
+    Built-in collaboration permissions commenting and databases make Notion the
+    obvious choice for remote teams.
   </p>
 
   <h3>Best for Writers: Obsidian or Bear</h3>
 
   <p>
-    Distraction-free Markdown writing with powerful linking Obsidian or beautiful themes Bear.
+    Distraction-free Markdown writing with powerful linking Obsidian or
+    beautiful themes Bear.
   </p>
 
   <h3>Best for Students: OneNote or Notion</h3>
 
   <p>
-    OneNote's free handwriting support or Notion's flexibility for class notes assignments and research.
+    OneNote's free handwriting support or Notion's flexibility for class notes
+    assignments and research.
   </p>
 
   <h3>Best for Researchers: Obsidian or Roam</h3>
 
   <p>
-    Bidirectional linking and graph views excel at connecting research and building knowledge over time.
+    Bidirectional linking and graph views excel at connecting research and
+    building knowledge over time.
   </p>
 
   <h3>Best for Simplicity: Apple Notes</h3>
 
   <p>
-    Zero learning curve instant sync and completely free for quick notes and lists.
+    Zero learning curve instant sync and completely free for quick notes and
+    lists.
   </p>
 
   <h3>Best for Privacy: Obsidian or Logseq</h3>
 
   <p>
-    Local-first storage means your notes never leave your devices unless you explicitly sync them.
+    Local-first storage means your notes never leave your devices unless you
+    explicitly sync them.
   </p>
 
   <h2 id="faq">Frequently Asked Questions</h2>
-  <FAQSection faqs={faqs}/>
+  <FAQSection faqs={faqs} />
 
   <h2>Bottom line</h2>
 
   <p>
-    For most remote workers Notion offers the best balance of features flexibility and collaboration. If you're building
-    a personal knowledge base Obsidian is unbeatable and free. For Apple users who want simple and fast Apple Notes is
-    perfect. Choose based on your workflow not hype.
+    For most remote workers Notion offers the best balance of features
+    flexibility and collaboration. If you're building a personal knowledge base
+    Obsidian is unbeatable and free. For Apple users who want simple and fast
+    Apple Notes is perfect. Choose based on your workflow not hype.
   </p>
 
   <div class="mt-8 flex gap-4 flex-wrap">
-    <AffiliateButton href="/go/notion" variant="affiliate">Try Notion Free</AffiliateButton>
-    <AffiliateButton href="/go/obsidian" variant="secondary">Try Obsidian Free</AffiliateButton>
-    <AffiliateButton href="/go/evernote" variant="secondary">Try Evernote Free</AffiliateButton>
+    <AffiliateButton
+      href="/go/notion"
+      text="Try Notion Free"
+      variant="primary"
+      program="notion"
+    />
+    <AffiliateButton
+      href="/go/obsidian"
+      text="Try Obsidian Free"
+      variant="secondary"
+      program="obsidian"
+    />
+    <AffiliateButton
+      href="/go/evernote"
+      text="Try Evernote Free"
+      variant="secondary"
+      program="evernote"
+    />
   </div>
 
   <Fragment slot="full-width">
-    <RelatedArticles articles={relatedArticles}/>
+    <RelatedArticles articles={relatedArticles} />
   </Fragment>
 </ArticleLayout>

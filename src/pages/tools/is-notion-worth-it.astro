@@ -1,117 +1,147 @@
 ---
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import FAQSection from '@components/article/FAQSection.astro';
-import RelatedArticles from '@components/article/RelatedArticles.astro';
-import AffiliateButton from '@components/article/AffiliateButton.astro';
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import AffiliateButton from "@components/article/AffiliateButton.astro";
 
 // Article metadata
-const title = 'Is Notion Worth It? Honest Review for Remote Workers (2025)';
-const description = 'Wondering if Notion is worth the hype? We break down the pros, cons, pricing, and who should actually use it versus other productivity tools for work.';
-const author = 'FloatJet Team';
-const authorUrl = '/about';
-const pubDate = new Date('2025-11-24');
+const title = "Is Notion Worth It? Honest Review for Remote Workers (2025)";
+const description =
+  "Wondering if Notion is worth the hype? We break down the pros, cons, pricing, and who should actually use it versus other productivity tools for work.";
+const author = "FloatJet Team";
+const authorUrl = "/about";
+const pubDate = new Date("2025-11-24");
 const readingTime = 9;
-const image = '/images/unsplash/photo-1484480974693-6ca0a78fb36b-1200w.webp';
-const imageAlt = 'Laptop showing Notion interface with workspace pages';
+const image = "/images/unsplash/photo-1484480974693-6ca0a78fb36b-1200w.webp";
+const imageAlt = "Laptop showing Notion interface with workspace pages";
 
 // Table of contents headings
 const headings = [
-  {text: 'Quick Answer', slug: 'quick-answer', depth: 2},
-  {text: 'What Notion Does Well', slug: 'what-notion-does-well', depth: 2},
-  {text: 'What Notion Struggles With', slug: 'what-notion-struggles-with', depth: 2},
-  {text: 'Free vs Paid: What Do You Actually Need?', slug: 'free-vs-paid', depth: 2},
-  {text: 'Who Notion Is Perfect For', slug: 'who-notion-is-perfect-for', depth: 2},
-  {text: 'Who Should Look Elsewhere', slug: 'who-should-look-elsewhere', depth: 2},
-  {text: 'Real Cost Breakdown', slug: 'cost-breakdown', depth: 2},
-  {text: 'Verdict', slug: 'verdict', depth: 2},
-  {text: 'FAQ', slug: 'faq', depth: 2},
+  { text: "Quick Answer", slug: "quick-answer", depth: 2 },
+  { text: "What Notion Does Well", slug: "what-notion-does-well", depth: 2 },
+  {
+    text: "What Notion Struggles With",
+    slug: "what-notion-struggles-with",
+    depth: 2,
+  },
+  {
+    text: "Free vs Paid: What Do You Actually Need?",
+    slug: "free-vs-paid",
+    depth: 2,
+  },
+  {
+    text: "Who Notion Is Perfect For",
+    slug: "who-notion-is-perfect-for",
+    depth: 2,
+  },
+  {
+    text: "Who Should Look Elsewhere",
+    slug: "who-should-look-elsewhere",
+    depth: 2,
+  },
+  { text: "Real Cost Breakdown", slug: "cost-breakdown", depth: 2 },
+  { text: "Verdict", slug: "verdict", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
 ];
 
 // FAQ data with schema markup
 const faqs = [
   {
-    question: 'Actually free?',
-    answer: 'Yep. Completely free for personal use with unlimited pages and blocks. Incredibly generous. Build wikis, databases, task lists, notes without paying. Only need paid plan (ten per user monthly) if you want unlimited file uploads, longer version history (thirty days versus seven), or collaborative workspaces with more than ten guests.'
+    question: "Actually free?",
+    answer:
+      "Yep. Completely free for personal use with unlimited pages and blocks. Incredibly generous. Build wikis, databases, task lists, notes without paying. Only need paid plan (ten per user monthly) if you want unlimited file uploads, longer version history (thirty days versus seven), or collaborative workspaces with more than ten guests.",
   },
   {
-    question: 'Why so slow?',
-    answer: 'Loads all content from cloud. Larger workspaces with many blocks, databases, embedded content take time to render. Unlike local-first apps like Obsidian, requires internet and fetches data on-demand. Team is actively working on improvements but speed remains common complaint, especially for power users with complex workspaces.'
+    question: "Why so slow?",
+    answer:
+      "Loads all content from cloud. Larger workspaces with many blocks, databases, embedded content take time to render. Unlike local-first apps like Obsidian, requires internet and fetches data on-demand. Team is actively working on improvements but speed remains common complaint, especially for power users with complex workspaces.",
   },
   {
-    question: 'Use offline?',
-    answer: 'Limited offline mode. View recently accessed pages offline. Can\'t create new content or sync changes until you reconnect. True offline-first note-taking? Obsidian, Apple Notes, OneNote are better. Work without internet a lot—flights, remote areas—Notion will frustrate you.'
+    question: "Use offline?",
+    answer:
+      "Limited offline mode. View recently accessed pages offline. Can't create new content or sync changes until you reconnect. True offline-first note-taking? Obsidian, Apple Notes, OneNote are better. Work without internet a lot—flights, remote areas—Notion will frustrate you.",
   },
   {
-    question: 'Worth it for students?',
-    answer: 'Excellent for students. Free Personal plan includes everything students need. Class notes, assignment trackers, research databases, study schedules. Many students use it for all academic work. Learning curve is worth it—skills translate to future remote work. Plus completely free forever for personal use.'
+    question: "Worth it for students?",
+    answer:
+      "Excellent for students. Free Personal plan includes everything students need. Class notes, assignment trackers, research databases, study schedules. Many students use it for all academic work. Learning curve is worth it—skills translate to future remote work. Plus completely free forever for personal use.",
   },
   {
-    question: 'Better than Notion?',
-    answer: 'Depends on needs. Obsidian is better for linking ideas and offline-first note-taking. ClickUp is better for project management with time tracking and automations. Monday.com is easier for non-technical teams. Apple Notes is faster for quick note capture. Notion is best for flexible workspaces combining docs and databases.'
+    question: "Better than Notion?",
+    answer:
+      "Depends on needs. Obsidian is better for linking ideas and offline-first note-taking. ClickUp is better for project management with time tracking and automations. Monday.com is easier for non-technical teams. Apple Notes is faster for quick note capture. Notion is best for flexible workspaces combining docs and databases.",
   },
   {
-    question: 'Plus worth ten monthly?',
-    answer: 'For individuals, probably not. Free plan is enough. For teams, yes. Ten per user monthly for unlimited file uploads, thirty-day version history, a hundred guests is reasonable. Only need Plus if: (one) you upload lots of large files, (two) you need longer version history, or (three) you collaborate with ten-plus external people. Most solo users stick with free forever.'
+    question: "Plus worth ten monthly?",
+    answer:
+      "For individuals, probably not. Free plan is enough. For teams, yes. Ten per user monthly for unlimited file uploads, thirty-day version history, a hundred guests is reasonable. Only need Plus if: (one) you upload lots of large files, (two) you need longer version history, or (three) you collaborate with ten-plus external people. Most solo users stick with free forever.",
   },
   {
-    question: 'Sell your data?',
-    answer: 'Nope. Notion does not sell data. But your content lives on Notion\'s servers (AWS). They can access it technically. Zero-knowledge encryption means provider can\'t access your files. Want that? Obsidian stores files locally. Sync.com encrypts cloud storage. Notion is secure for most stuff but not ideal for highly sensitive information.'
+    question: "Sell your data?",
+    answer:
+      "Nope. Notion does not sell data. But your content lives on Notion's servers (AWS). They can access it technically. Zero-knowledge encryption means provider can't access your files. Want that? Obsidian stores files locally. Sync.com encrypts cloud storage. Notion is secure for most stuff but not ideal for highly sensitive information.",
   },
   {
-    question: 'How long to learn?',
-    answer: 'Basic proficiency: two to three hours (creating pages, basic formatting). Comfortable usage: two to three days (databases, templates, linking). Advanced usage: one to two weeks (complex databases, relations, rollups). Learning curve is real but flexibility makes it worth the investment. Start with simple notes and gradually explore advanced features as needed.'
-  }
+    question: "How long to learn?",
+    answer:
+      "Basic proficiency: two to three hours (creating pages, basic formatting). Comfortable usage: two to three days (databases, templates, linking). Advanced usage: one to two weeks (complex databases, relations, rollups). Learning curve is real but flexibility makes it worth the investment. Start with simple notes and gradually explore advanced features as needed.",
+  },
 ];
 
 // Related articles
 const relatedArticles = [
   {
-    title: 'Notion vs ClickUp vs Monday',
-    href: '/tools/notion-vs-clickup-vs-monday',
-    excerpt: 'Ultimate comparison of the top 3 productivity platforms for remote teams.',
-    image: '/images/unsplash/photo-1611224923853-80b023f02d71-800w.webp',
-    imageAlt: 'Productivity apps comparison on laptop screen'
+    title: "Notion vs ClickUp vs Monday",
+    href: "/tools/notion-vs-clickup-vs-monday",
+    excerpt:
+      "Ultimate comparison of the top 3 productivity platforms for remote teams.",
+    image: "/images/unsplash/photo-1611224923853-80b023f02d71-800w.webp",
+    imageAlt: "Productivity apps comparison on laptop screen",
   },
   {
-    title: 'Best Project Management Software',
-    href: '/tools/best-project-management-software',
-    excerpt: 'Compare top project management tools for remote teams and freelancers.',
-    image: '/images/unsplash/photo-1507925921958-8a62f3d1a50d-800w.webp',
-    imageAlt: 'Project management dashboard on computer'
+    title: "Best Project Management Software",
+    href: "/tools/best-project-management-software",
+    excerpt:
+      "Compare top project management tools for remote teams and freelancers.",
+    image: "/images/unsplash/photo-1507925921958-8a62f3d1a50d-800w.webp",
+    imageAlt: "Project management dashboard on computer",
   },
   {
-    title: 'Best Note-Taking Apps',
-    href: '/tools/best-note-taking-apps',
-    excerpt: 'Find the perfect note-taking app for your remote work workflow.',
-    image: '/images/unsplash/photo-1517842645767-c639042777db-800w.webp',
-    imageAlt: 'Digital notes and notebooks'
-  }
+    title: "Best Note-Taking Apps",
+    href: "/tools/best-note-taking-apps",
+    excerpt: "Find the perfect note-taking app for your remote work workflow.",
+    image: "/images/unsplash/photo-1517842645767-c639042777db-800w.webp",
+    imageAlt: "Digital notes and notebooks",
+  },
 ];
 ---
 
 <ArticleLayout
-    title={title}
-    description={description}
-    author={author}
-    authorUrl={authorUrl}
-    pubDate={pubDate}
-    readingTime={readingTime}
-    image={image}
-    imageAlt={imageAlt}
-    headings={headings}
-    category="Tools"
-    categorySlug="tools"
+  title={title}
+  description={description}
+  author={author}
+  authorUrl={authorUrl}
+  pubDate={pubDate}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  headings={headings}
+  category="Tools"
+  categorySlug="tools"
 >
   <h2 id="quick-answer">Is Notion Worth It?</h2>
   <p>
-    <strong>Yep.</strong> For remote workers, students, small teams who want a flexible workspace. The free plan is
-    insanely generous. Learning curve pays off.
+    <strong>Yep.</strong> For remote workers, students, small teams who want a flexible
+    workspace. The free plan is insanely generous. Learning curve pays off.
   </p>
   <p><strong>But skip it if you:</strong></p>
   <ul>
     <li>Need offline-first notes (Obsidian or Apple Notes instead)</li>
     <li>Want quick note capture (Apple Notes or Google Keep)</li>
-    <li>Need <a href="/tools/best-project-management-software">serious project management</a> (ClickUp or Monday.com)
+    <li>
+      Need <a href="/tools/best-project-management-software"
+        >serious project management</a
+      > (ClickUp or Monday.com)
     </li>
     <li>Hate learning curves (Monday.com is easier)</li>
     <li>Work with ultra-sensitive data (Obsidian with local storage)</li>
@@ -121,78 +151,89 @@ const relatedArticles = [
 
   <h3>Beautiful Design</h3>
   <p>
-    Most aesthetic productivity tool out there. Clean interface, customizable layouts, endless design possibilities. If
-    you care about beautiful tools, nothing beats it.
+    Most aesthetic productivity tool out there. Clean interface, customizable
+    layouts, endless design possibilities. If you care about beautiful tools,
+    nothing beats it.
   </p>
 
   <h3>All-in-One Thing</h3>
   <p>
-    Replaces five to ten apps. Notes. Wikis. Tasks. Databases. Calendars. CRMs. More. Got <a
-      href="/tools/best-productivity-apps">Evernote, Trello, Airtable,
-    Google Docs</a> spread everywhere? Do everything in Notion instead. Consolidates your workflow.
+    Replaces five to ten apps. Notes. Wikis. Tasks. Databases. Calendars. CRMs.
+    More. Got <a href="/tools/best-productivity-apps"
+      >Evernote, Trello, Airtable, Google Docs</a
+    > spread everywhere? Do everything in Notion instead. Consolidates your workflow.
   </p>
 
   <h3>Databases</h3>
   <p>
-    Game-changing. Build custom tools for anything. Content calendars, CRM, product roadmaps, habit trackers, book logs.
-    No other tool offers this flexibility at this price. Once you get databases, Notion becomes limitless.
+    Game-changing. Build custom tools for anything. Content calendars, CRM,
+    product roadmaps, habit trackers, book logs. No other tool offers this
+    flexibility at this price. Once you get databases, Notion becomes limitless.
   </p>
 
   <h3>Free Tier</h3>
   <p>
-    Unlike competitors, free plan isn't a trial. Unlimited pages and blocks forever. Use it for years without paying.
-    Only teams or heavy file uploaders need paid plans.
+    Unlike competitors, free plan isn't a trial. Unlimited pages and blocks
+    forever. Use it for years without paying. Only teams or heavy file uploaders
+    need paid plans.
   </p>
 
   <h3>Templates</h3>
   <p>
-    Tons of free templates. Meeting notes, project trackers, resume builders, budget planners. You rarely start from
-    scratch—duplicate and customize.
+    Tons of free templates. Meeting notes, project trackers, resume builders,
+    budget planners. You rarely start from scratch—duplicate and customize.
   </p>
 
   <h3>Collaboration</h3>
   <p>
-    Real-time editing, comments, mentions, permissions. Share pages publicly or privately. Control who edits versus who
-    views. Literally keeps everyone on the same page.
+    Real-time editing, comments, mentions, permissions. Share pages publicly or
+    privately. Control who edits versus who views. Literally keeps everyone on
+    the same page.
   </p>
 
   <h2 id="what-notion-struggles-with">What's Annoying</h2>
 
   <h3>Performance</h3>
   <p>
-    Biggest weakness. Large workspaces load slowly. Databases with hundreds of entries lag. Scrolling feels janky. Build
-    complex setups, expect frustration. Actively improving but speed remains a complaint in twenty twenty-five.
+    Biggest weakness. Large workspaces load slowly. Databases with hundreds of
+    entries lag. Scrolling feels janky. Build complex setups, expect
+    frustration. Actively improving but speed remains a complaint in twenty
+    twenty-five.
   </p>
 
   <h3>Offline Mode</h3>
   <p>
-    Requires internet for full functionality. View recently accessed pages offline but can't create new content or sync
-    changes. Work offline frequently? Flights, remote areas? Dealbreaker.
+    Requires internet for full functionality. View recently accessed pages
+    offline but can't create new content or sync changes. Work offline
+    frequently? Flights, remote areas? Dealbreaker.
   </p>
 
   <h3>No Automations</h3>
   <p>
-    ClickUp and Monday.com have built-in automation. Notion doesn't. You need third-party stuff like Zapier or Make.
-    Adds cost and complexity.
+    ClickUp and Monday.com have built-in automation. Notion doesn't. You need
+    third-party stuff like Zapier or Make. Adds cost and complexity.
   </p>
 
   <h3>Learning Curve</h3>
   <p>
-    Flexibility is strength and weakness. Beginners feel overwhelmed. Blocks, databases, relations, rollups—takes days
-    to grasp. Want instant productivity? This isn't it.
+    Flexibility is strength and weakness. Beginners feel overwhelmed. Blocks,
+    databases, relations, rollups—takes days to grasp. Want instant
+    productivity? This isn't it.
   </p>
 
   <h3>Project Management</h3>
   <p>
-    Docs tool first, project management second. Lacks native time tracking, dependencies, Gantt charts, resource
-    management. <a href="/tools/notion-vs-clickup-vs-monday">Dedicated PM tools like ClickUp</a> more powerful for
-    complex projects.
+    Docs tool first, project management second. Lacks native time tracking,
+    dependencies, Gantt charts, resource management. <a
+      href="/tools/notion-vs-clickup-vs-monday"
+      >Dedicated PM tools like ClickUp</a
+    > more powerful for complex projects.
   </p>
 
   <h3>Mobile App</h3>
   <p>
-    Works but clunky. Creating complex pages on mobile is painful. Do lots of mobile work? You'll miss simpler apps like
-    Apple Notes or Evernote.
+    Works but clunky. Creating complex pages on mobile is painful. Do lots of
+    mobile work? You'll miss simpler apps like Apple Notes or Evernote.
   </p>
 
   <h2 id="free-vs-paid">Free vs Paid</h2>
@@ -216,7 +257,10 @@ const relatedArticles = [
     <li>Up to a hundred guests (versus ten)</li>
     <li>Unlimited file uploads (versus five MB)</li>
   </ul>
-  <p>Worth it if you collaborate with many people, upload large files, need longer version history.</p>
+  <p>
+    Worth it if you collaborate with many people, upload large files, need
+    longer version history.
+  </p>
 
   <h3>Business - Fifteen Per User Monthly</h3>
   <p><strong>What you get:</strong></p>
@@ -231,74 +275,82 @@ const relatedArticles = [
 
   <h3>Our Take</h3>
   <p>
-    Ninety percent of individuals use Free forever. Only upgrade to Plus if you hit guest limit or file size limits.
-    Most small teams (under five people) stick with free for months before upgrading.
+    Ninety percent of individuals use Free forever. Only upgrade to Plus if you
+    hit guest limit or file size limits. Most small teams (under five people)
+    stick with free for months before upgrading.
   </p>
 
   <h2 id="who-notion-is-perfect-for">Who It's Perfect For</h2>
 
   <h3>Remote Workers Building a "Second Brain"</h3>
   <p>
-    Want to consolidate notes, docs, tasks, research into one workspace? Notion excels. Perfect for knowledge workers
-    who think in systems.
+    Want to consolidate notes, docs, tasks, research into one workspace? Notion
+    excels. Perfect for knowledge workers who think in systems.
   </p>
 
   <h3>Content Creators and Writers</h3>
   <p>
-    Content calendars, idea databases, research libraries, writing drafts. Bloggers use it. YouTubers use it. <a
-      href="/tools/best-email-marketing-tools">Newsletter
-    writers</a> use it. Creative workflows thrive here.
+    Content calendars, idea databases, research libraries, writing drafts.
+    Bloggers use it. YouTubers use it. <a
+      href="/tools/best-email-marketing-tools">Newsletter writers</a
+    > use it. Creative workflows thrive here.
   </p>
 
   <h3>Small Teams</h3>
   <p>
-    Startups, agencies, small remote teams love it for internal wikis, project docs, knowledge bases. Free tier works
-    until you grow beyond ten guests.
+    Startups, agencies, small remote teams love it for internal wikis, project
+    docs, knowledge bases. Free tier works until you grow beyond ten guests.
   </p>
 
   <h3>Students</h3>
   <p>
-    Class notes, assignment trackers, study schedules, research databases. Handles all academic needs. Completely free
-    for personal use. Learning it in school sets you up for remote work success.
+    Class notes, assignment trackers, study schedules, research databases.
+    Handles all academic needs. Completely free for personal use. Learning it in
+    school sets you up for remote work success.
   </p>
 
   <h3>People Who Love Customization</h3>
   <p>
-    Enjoy tinkering, building systems, optimizing workflows? Endlessly rewarding. The Reddit community r/Notion is full
-    of power users sharing incredible setups.
+    Enjoy tinkering, building systems, optimizing workflows? Endlessly
+    rewarding. The Reddit community r/Notion is full of power users sharing
+    incredible setups.
   </p>
 
   <h2 id="who-should-look-elsewhere">Who Should Skip It</h2>
 
   <h3>Need Speed</h3>
   <p>
-    Want instant load times and snappy performance? Try Apple Notes, Obsidian, Monday.com. Cloud-based architecture
-    means lag, especially with large workspaces.
+    Want instant load times and snappy performance? Try Apple Notes, Obsidian,
+    Monday.com. Cloud-based architecture means lag, especially with large
+    workspaces.
   </p>
 
   <h3>Offline-First Workers</h3>
   <p>
-    Fly a lot? Digital nomad in remote areas? Unreliable internet? Obsidian is local-first. Apple Notes has excellent
-    offline sync. Both better choices.
+    Fly a lot? Digital nomad in remote areas? Unreliable internet? Obsidian is
+    local-first. Apple Notes has excellent offline sync. Both better choices.
   </p>
 
   <h3>Teams Needing Advanced PM</h3>
   <p>
-    Run Agile sprints, need time tracking, dependencies, Gantt charts, resource management? <a
-      href="/tools/notion-vs-clickup-vs-monday">Use ClickUp or Monday.com</a>.
-    Notion works for basic PM but lacks power features.
+    Run Agile sprints, need time tracking, dependencies, Gantt charts, resource
+    management? <a href="/tools/notion-vs-clickup-vs-monday"
+      >Use ClickUp or Monday.com</a
+    >. Notion works for basic PM but lacks power features.
   </p>
 
   <h3>Non-Technical Teams</h3>
   <p>
-    Team struggles with tech? Learning curve causes adoption problems. Monday.com is easier to learn (thirty minutes
-    versus three days).
+    Team struggles with tech? Learning curve causes adoption problems.
+    Monday.com is easier to learn (thirty minutes versus three days).
   </p>
 
   <h3>Privacy-Paranoid Users</h3>
   <p>
-    Notion stores data on their servers. They can technically access it. Zero-knowledge encryption where provider can't
-    access files? Obsidian keeps files local. Sync.com encrypts cloud storage. Better for highly sensitive stuff.
+    Notion stores data on their servers. They can technically access it.
+    Zero-knowledge encryption where provider can't access files? Obsidian keeps
+    files local. Sync.com encrypts cloud storage. Better for highly sensitive
+    stuff.
   </p>
 
   <h2 id="cost-breakdown">Real Cost Breakdown</h2>
@@ -317,71 +369,92 @@ const relatedArticles = [
 
   <h3>Growing Team (Twenty People)</h3>
   <ul>
-    <li>Plus - twenty-four hundred yearly (ten per user monthly times twenty)</li>
-    <li>Business - thirty-six hundred yearly (fifteen per user monthly times twenty)</li>
+    <li>
+      Plus - twenty-four hundred yearly (ten per user monthly times twenty)
+    </li>
+    <li>
+      Business - thirty-six hundred yearly (fifteen per user monthly times
+      twenty)
+    </li>
   </ul>
 
   <h3>Compared to Others</h3>
   <ul>
     <li>ClickUp Unlimited: ten per user monthly (same as Notion Plus)</li>
-    <li>Monday.com Standard: twelve per seat monthly (twenty percent more expensive)</li>
-    <li>Evernote Personal: ten eighty-three monthly per user (similar cost, less features)</li>
+    <li>
+      Monday.com Standard: twelve per seat monthly (twenty percent more
+      expensive)
+    </li>
+    <li>
+      Evernote Personal: ten eighty-three monthly per user (similar cost, less
+      features)
+    </li>
   </ul>
 
   <p>
-    Verdict: Pricing is competitive. Free tier is best-in-class. Paid plans are on par with competitors.
+    Verdict: Pricing is competitive. Free tier is best-in-class. Paid plans are
+    on par with competitors.
   </p>
 
   <h2 id="verdict">Is It Worth the Investment?</h2>
 
   <h3>Financial Investment - Yes (It's Free for Most)</h3>
   <p>
-    For ninety percent of users, Notion costs zero bucks. Free plan is so generous that individuals and small teams
-    rarely upgrade. Even paid plans (ten to fifteen per user monthly) are priced competitively.
+    For ninety percent of users, Notion costs zero bucks. Free plan is so
+    generous that individuals and small teams rarely upgrade. Even paid plans
+    (ten to fifteen per user monthly) are priced competitively.
   </p>
 
   <h3>Time Investment - Yes (If You Value Flexibility)</h3>
   <p>
-    Two to three day learning curve is real but pays off. Once you understand Notion, you can build custom systems for
-    any workflow. Time saved from consolidating five-plus apps justifies initial learning.
+    Two to three day learning curve is real but pays off. Once you understand
+    Notion, you can build custom systems for any workflow. Time saved from
+    consolidating five-plus apps justifies initial learning.
   </p>
 
   <h3>Performance Frustration - Maybe</h3>
   <p>
-    Slow load times drive you crazy? Notion will frustrate you. Power users with complex workspaces experience lag
-    regularly. Improving but speed remains an issue in twenty twenty-five.
+    Slow load times drive you crazy? Notion will frustrate you. Power users with
+    complex workspaces experience lag regularly. Improving but speed remains an
+    issue in twenty twenty-five.
   </p>
 
   <h3>Final Answer</h3>
   <p>
-    Worth it for remote workers, students, content creators, small teams. Beautiful, flexible workspace. Learning curve
-    required but pays off.
+    Worth it for remote workers, students, content creators, small teams.
+    Beautiful, flexible workspace. Learning curve required but pays off.
   </p>
   <p>
-    Not worth it if you need offline-first notes, lightning-fast performance, or advanced project management.
+    Not worth it if you need offline-first notes, lightning-fast performance, or
+    advanced project management.
   </p>
 
   <div class="mt-8 p-6 bg-ocean-deep/20 border border-ocean-deep/30 rounded-xl">
     <h3 class="text-white text-lg font-semibold mb-3">Our Recommendation</h3>
     <p class="text-white/90 mb-4">
-      Start with free plan for two weeks. Build a simple workspace. Meeting notes, task list, small database. If it
-      clicks, you'll know. Feels slow or confusing? <a href="/tools/best-note-taking-apps"
-                                                       class="text-sky-light hover:text-white">Obsidian works for
-      notes</a>. ClickUp for projects.
+      Start with free plan for two weeks. Build a simple workspace. Meeting
+      notes, task list, small database. If it clicks, you'll know. Feels slow or
+      confusing? <a
+        href="/tools/best-note-taking-apps"
+        class="text-sky-light hover:text-white">Obsidian works for notes</a
+      >. ClickUp for projects.
     </p>
     <p class="text-white/90">
       Not for everyone. But for those who get it, it becomes irreplaceable.
     </p>
   </div>
 
-  <div class="flex gap-4 mt-8">
-    <AffiliateButton href="/go/notion" variant="affiliate">Try Notion Free (No Credit Card)</AffiliateButton>
-  </div>
+  <AffiliateButton
+    href="/go/notion"
+    text="Try Notion Free (No Credit Card)"
+    variant="primary"
+    program="notion"
+  />
 
   <h2 id="faq">Frequently Asked Questions</h2>
-  <FAQSection faqs={faqs}/>
+  <FAQSection faqs={faqs} />
 
   <Fragment slot="full-width">
-    <RelatedArticles articles={relatedArticles}/>
+    <RelatedArticles articles={relatedArticles} />
   </Fragment>
 </ArticleLayout>

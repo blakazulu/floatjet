@@ -6,10 +6,10 @@ Complete setup and optimization guide for FloatJet's LinkedIn presence.
 
 ## Account Information
 
-**Company Page:** https://www.linkedin.com/company/110340950
-**Admin Dashboard:** https://www.linkedin.com/company/110340950/admin/dashboard/
+**Company Page:** <https://www.linkedin.com/company/110340950>
+**Admin Dashboard:** <https://www.linkedin.com/company/110340950/admin/dashboard/>
 **Industry:** Online Media
-**Email:** social@floatjet.com (managed via personal LinkedIn account)
+**Email:** <social@floatjet.com> (managed via personal LinkedIn account)
 **Created:** December 1, 2025
 **Status:** ✅ Active
 
@@ -22,6 +22,7 @@ Complete setup and optimization guide for FloatJet's LinkedIn presence.
 **Status:** ✅ READY TO UPLOAD
 
 **File to Use:**
+
 - **Location:** `/docs/assets/social/1/icon_no_circle_logo_no_bg.png`
 - **Specs:** 300x300px, PNG, transparent background
 - **Design:** FloatJet F + jet trail (no circle border)
@@ -29,7 +30,7 @@ Complete setup and optimization guide for FloatJet's LinkedIn presence.
 
 **How to Upload:**
 
-1. Go to https://www.linkedin.com/company/110340950/admin/dashboard/
+1. Go to <https://www.linkedin.com/company/110340950/admin/dashboard/>
 2. Click "Edit page" (top right)
 3. Click on "Logo" section
 4. Click "Upload logo"
@@ -197,15 +198,15 @@ current version is strong.
 
 ### 5. Website & Contact Info
 
-**Website:** https://floatjet.com ✅ (Set)
+**Website:** <https://floatjet.com> ✅ (Set)
 
 **How to Add Additional Links:**
 
 1. Admin Dashboard → Edit page
 2. "Contact info" section
 3. Add:
-    - **Website:** https://floatjet.com (primary)
-    - **Email:** hello@floatjet.com
+    - **Website:** <https://floatjet.com> (primary)
+    - **Email:** <hello@floatjet.com>
     - **Phone:** (optional, not required for digital business)
 
 **Social Media Links:**
@@ -312,19 +313,19 @@ current version is strong.
 
 **Button Options:**
 
-- **"Visit website"** → https://floatjet.com (Recommended)
+- **"Visit website"** → <https://floatjet.com> (Recommended)
 - **"Sign up"** → Email newsletter page (when you have one)
 - **"Learn more"** → About page
 - **"Contact us"** → Contact form
 
-**Recommendation:** "Visit website" → https://floatjet.com
+**Recommendation:** "Visit website" → <https://floatjet.com>
 
 **How to Add:**
 
 1. Admin Dashboard → Edit page
 2. Scroll to "Custom button"
 3. Select button type: "Visit website"
-4. Enter URL: https://floatjet.com
+4. Enter URL: <https://floatjet.com>
 5. Save
 
 **Benefit:** Direct call-to-action, increases click-through rate to site
@@ -645,9 +646,9 @@ What's your biggest productivity tool pain point?
 - [x] Create company page
 - [x] Set basic info (name, industry, tagline, about)
 - [x] Add specialties
-- [ ] Design and upload logo (300x300px)
-- [ ] Design and upload cover image (1128x191px)
-- [ ] Add custom "Visit website" button
+- [x] Design and upload logo (300x300px)
+- [x] Design and upload cover image (1128x191px)
+- [x] Add custom "Visit website" button
 
 ### Week 2: Content Preparation
 
@@ -901,7 +902,7 @@ Have you tested [Tool C]? Curious how it compares.
 
 ## Common Mistakes to Avoid
 
-### Don't:
+### Don't
 
 ❌ **Only post promotional content** - Add value, share insights, engage authentically
 
@@ -917,7 +918,7 @@ Have you tested [Tool C]? Curious how it compares.
 
 ❌ **Repost Twitter content verbatim** - LinkedIn audience wants more professional, in-depth content
 
-### Do:
+### Do
 
 ✅ **Native content performs best** - Don't just link to blog posts, add context
 

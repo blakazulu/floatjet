@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Header Image Generator - FloatJet</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 1200px;
+        }
+        
+        h1 {
+            margin: 0 0 10px 0;
+            color: #0F4C5C;
+        }
+        
+        .info {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        #canvas {
+            border: 1px solid #ddd;
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .canvas-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .safe-zone-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 75px;
+            border: 3px dashed #1DA1F2;
+            border-bottom: none;
+            background: rgba(29, 161, 242, 0.1);
+            pointer-events: none;
+            box-sizing: border-box;
+        }
+        
+        .safe-zone-overlay-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 75px;
+            border: 3px dashed #1DA1F2;
+            border-top: none;
+            background: rgba(29, 161, 242, 0.1);
+            pointer-events: none;
+            box-sizing: border-box;
+        }
+        
+        .safe-zone-label {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1DA1F2;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            background: #0F4C5C;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        button:hover {
+            background: #0d3d4a;
+        }
+        
+        button.secondary {
+            background: #1DA1F2;
+        }
+        
+        button.secondary:hover {
+            background: #1a8cd8;
+        }
+        
+        .specs {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .warning {
+            background: #e7f5ff;
+            border-left: 4px solid #1DA1F2;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FloatJet Twitter/X Header Image</h1>
+        <p class="info">Exact dimensions: 1500 × 500 pixels (3:1 aspect ratio)</p>
+        
+        <div class="canvas-wrapper">
+            <canvas id="canvas" width="1500" height="500"></canvas>
+            <div class="safe-zone-overlay"></div>
+            <div class="safe-zone-overlay-bottom"></div>
+            <div class="safe-zone-label">Safe Zone (1500×350px)</div>
+        </div>
+        
+        <div class="controls">
+            <button onclick="_downloadImage()">Download Image (PNG)</button>
+            <button onclick="_regenerate()">Regenerate</button>
+            <button class="secondary" onclick="_toggleSafeZone()">Toggle Safe Zone</button>
+        </div>
+        
+        <div class="specs">
+            <strong>Specifications:</strong><br>
+            • Size: 1500 × 500 pixels (Twitter/X recommended)<br>
+            • Format: PNG with high quality<br>
+            • Design: Ocean Deep gradient with professional typography<br>
+            • Text: "Tools & Gear for Remote Work Success" + floatjet.com<br>
+            • Safe zone: Keep important content in center 1500×350px (mobile crops top/bottom 75px each)
+        </div>
+        
+        <div class="warning">
+            ℹ️ <strong>Safe Zone:</strong> The blue dashed areas show where mobile devices may crop the header. 
+            Important text is positioned in the safe center zone.
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let showSafeZone = true;
+
+        function drawCoverImage() {
+            // Create gradient background (Ocean Deep to lighter teal)
+            const gradient = ctx.createLinearGradient(0, 0, 1500, 0);
+            gradient.addColorStop(0, '#0F4C5C');      // Ocean Deep
+            gradient.addColorStop(0.4, '#1a6d7f');    // Mid tone
+            gradient.addColorStop(0.7, '#2d8fa3');    // Lighter teal
+            gradient.addColorStop(1, '#4db8c9');      // Light blue
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1500, 500);
+            
+            // Add subtle wave patterns
+            ctx.globalAlpha = 0.15;
+            
+            // Wave 1
+            ctx.beginPath();
+            ctx.moveTo(0, 250);
+            for (let x = 0; x <= 1500; x += 10) {
+                const y = 250 + Math.sin(x / 120) * 50;
+                ctx.lineTo(x, y);
+            }
+            ctx.lineTo(1500, 500);
+            ctx.lineTo(0, 500);
+            ctx.closePath();
+            ctx.fillStyle = '#ffffff';
+            ctx.fill();
+            
+            // Wave 2
+            ctx.beginPath();
+            ctx.moveTo(0, 180);
+            for (let x = 0; x <= 1500; x += 10) {
+                const y = 180 + Math.sin((x / 90) + 1.5) * 40;
+                ctx.lineTo(x, y);
+            }
+            ctx.lineTo(1500, 500);
+            ctx.lineTo(0, 500);
+            ctx.closePath();
+            ctx.fillStyle = '#ffffff';
+            ctx.fill();
+            
+            // Wave 3 - subtle top wave
+            ctx.globalAlpha = 0.08;
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(1500, 0);
+            for (let x = 1500; x >= 0; x -= 10) {
+                const y = 120 + Math.sin((x / 80) + 3) * 30;
+                ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+            ctx.fillStyle = '#ffffff';
+            ctx.fill();
+            
+            ctx.globalAlpha = 1.0;
+            
+            // Add main text - positioned in safe zone (center 350px height)
+            ctx.fillStyle = '#ffffff';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Main headline
+            ctx.font = 'bold 56px "Segoe UI", Arial, sans-serif';
+            
+            // Add text shadow for better readability
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+            ctx.shadowBlur = 8;
+            ctx.shadowOffsetX = 3;
+            ctx.shadowOffsetY = 3;
+            
+            ctx.fillText('Tools & Gear for', 750, 200);
+            ctx.fillText('Remote Work Success', 750, 270);
+            
+            // Add website URL
+            ctx.font = 'bold 28px "Segoe UI", Arial, sans-serif';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            ctx.shadowBlur = 6;
+            ctx.fillText('floatjet.com', 750, 340);
+            
+            // Add subtle tagline at top (in safe zone)
+            ctx.font = '22px "Segoe UI", Arial, sans-serif';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.shadowBlur = 4;
+            ctx.fillText('Honest Reviews • Real Testing', 750, 130);
+            
+            // Reset shadow
+            ctx.shadowColor = 'transparent';
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+        }
+
+        function _downloadImage() {
+            const link = document.createElement('a');
+            link.download = 'floatjet-twitter-header-1500x500.png';
+            link.href = canvas.toDataURL('image/png', 1.0);
+            link.click();
+        }
+
+        function _regenerate() {
+            ctx.clearRect(0, 0, 1500, 500);
+            drawCoverImage();
+        }
+
+        function _toggleSafeZone() {
+            const overlayTop = document.querySelector('.safe-zone-overlay');
+            const overlayBottom = document.querySelector('.safe-zone-overlay-bottom');
+            const label = document.querySelector('.safe-zone-label');
+            showSafeZone = !showSafeZone;
+            
+            if (showSafeZone) {
+                overlayTop.style.display = 'block';
+                overlayBottom.style.display = 'block';
+                label.style.display = 'block';
+            } else {
+                overlayTop.style.display = 'none';
+                overlayBottom.style.display = 'none';
+                label.style.display = 'none';
+            }
+        }
+
+        // Initial draw
+        drawCoverImage();
+    </script>
+</body>
+</html>

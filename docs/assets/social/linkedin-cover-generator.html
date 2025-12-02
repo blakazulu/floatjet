@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Cover Image Generator - FloatJet</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            margin: 0 0 10px 0;
+            color: #0F4C5C;
+        }
+        
+        .info {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        #canvas {
+            border: 1px solid #ddd;
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        button {
+            background: #0F4C5C;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        button:hover {
+            background: #0d3d4a;
+        }
+        
+        .specs {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FloatJet LinkedIn Cover Image</h1>
+        <p class="info">Exact dimensions: 1128 × 191 pixels</p>
+        
+        <canvas id="canvas" width="1128" height="191"></canvas>
+        
+        <div class="controls">
+            <button onclick="_downloadImage()">Download Image (PNG)</button>
+            <button onclick="_regenerate()">Regenerate</button>
+        </div>
+        
+        <div class="specs">
+            <strong>Specifications:</strong><br>
+            • Size: 1128 × 191 pixels (exactly as required by LinkedIn)<br>
+            • Format: PNG with transparency support<br>
+            • Design: Ocean Deep gradient with professional typography<br>
+            • Text: "Tools & Gear for Remote Work Success"
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawCoverImage() {
+            // Create gradient background (Ocean Deep to lighter teal)
+            const gradient = ctx.createLinearGradient(0, 0, 1128, 0);
+            gradient.addColorStop(0, '#0F4C5C');      // Ocean Deep
+            gradient.addColorStop(0.5, '#1a6d7f');    // Mid tone
+            gradient.addColorStop(1, '#2d8fa3');      // Lighter teal
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1128, 191);
+            
+            // Add subtle wave patterns
+            ctx.globalAlpha = 0.1;
+            
+            // Wave 1
+            ctx.beginPath();
+            ctx.moveTo(0, 95);
+            for (let x = 0; x <= 1128; x += 10) {
+                const y = 95 + Math.sin(x / 80) * 20;
+                ctx.lineTo(x, y);
+            }
+            ctx.lineTo(1128, 191);
+            ctx.lineTo(0, 191);
+            ctx.closePath();
+            ctx.fillStyle = '#ffffff';
+            ctx.fill();
+            
+            // Wave 2
+            ctx.beginPath();
+            ctx.moveTo(0, 70);
+            for (let x = 0; x <= 1128; x += 10) {
+                const y = 70 + Math.sin((x / 60) + 1) * 15;
+                ctx.lineTo(x, y);
+            }
+            ctx.lineTo(1128, 191);
+            ctx.lineTo(0, 191);
+            ctx.closePath();
+            ctx.fillStyle = '#ffffff';
+            ctx.fill();
+            
+            ctx.globalAlpha = 1.0;
+            
+            // Add text - "Tools & Gear for Remote Work Success"
+            ctx.fillStyle = '#ffffff';
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'middle';
+            
+            // Main text
+            ctx.font = 'bold 32px "Segoe UI", Arial, sans-serif';
+            ctx.fillText('Tools & Gear for', 1078, 75);
+            ctx.fillText('Remote Work Success', 1078, 115);
+            
+            // Add subtle shadow for text depth
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+            ctx.shadowBlur = 4;
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText('Tools & Gear for', 1078, 75);
+            ctx.fillText('Remote Work Success', 1078, 115);
+            
+            // Reset shadow
+            ctx.shadowColor = 'transparent';
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+            
+            // Optional: Add small "floatjet.com" in bottom right
+            ctx.font = '14px "Segoe UI", Arial, sans-serif';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+            ctx.fillText('floatjet.com', 1078, 170);
+        }
+
+        function _downloadImage() {
+            const link = document.createElement('a');
+            link.download = 'floatjet-linkedin-cover-1128x191.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        function _regenerate() {
+            ctx.clearRect(0, 0, 1128, 191);
+            drawCoverImage();
+        }
+
+        // Initial draw
+        drawCoverImage();
+    </script>
+</body>
+</html>

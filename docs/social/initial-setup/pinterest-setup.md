@@ -48,30 +48,17 @@ Pinterest is **exceptional** for affiliate content sites:
 
 ### 1. Profile Photo
 
-**Status:** ✅ READY TO UPLOAD
+**Status:** ✅ UPLOADED
 
-**File to Use:**
+**File Used:**
 - **Location:** `/docs/assets/social/1/icon_no_circle_logo_no_bg.png`
 - **Specs:** 300x300px, PNG, transparent background
 - **Design:** FloatJet F + jet trail (no circle border)
-- **Quality:** Perfect for Pinterest's circular crop
 
-**How to Upload:**
-
-1. Log into Pinterest business account
-2. Click profile icon (top right) → Settings
-3. Go to "Public profile" section
-4. Click "Change" next to profile picture
-5. Upload `icon_no_circle_logo_no_bg.png`
-6. Adjust position/zoom if needed (keep centered)
-7. Click "Save"
-
-**Important Notes:**
+**Notes:**
 
 - Pinterest displays profile photos as circles
-- Your logo is designed for circle crop (no border needed)
-- Will show at various sizes: 32x32px (small), 75x75px (medium), 165x165px (profile)
-- Transparent background works well on Pinterest's light interface
+- Shows at various sizes: 32x32px (small), 75x75px (medium), 165x165px (profile)
 
 ---
 
@@ -175,7 +162,7 @@ floatjet.com
 
 ### 5. Enable Rich Pins
 
-**Status:** ⏳ To be enabled (requires article pages to be live)
+**Status:** ✅ READY - Meta tags already configured
 
 **What Are Rich Pins:**
 
@@ -191,140 +178,154 @@ floatjet.com
 - Product Rich Pins - physical products (less relevant)
 - Recipe Rich Pins - not relevant
 
-**Requirements for Article Rich Pins:**
+**FloatJet's Meta Tag Status:** ✅ All configured in `src/components/layout/Head.astro`
 
-Your Astro pages need these meta tags:
+| Required Tag | Status | Implementation |
+|--------------|--------|----------------|
+| `og:title` | ✅ | Dynamic from page title |
+| `og:description` | ✅ | Dynamic from description |
+| `og:image` | ✅ | Auto-generated via astro-opengraph-images |
+| `og:type` | ✅ | "article" for articles, "website" for other pages |
+| `og:url` | ✅ | Canonical URL |
 
-```html
-<meta property="og:title" content="Best VPNs for Remote Work 2025" />
-<meta property="og:description" content="Tested 7 VPNs over 60 days..." />
-<meta property="og:image" content="https://floatjet.com/images/articles/vpn-comparison.jpg" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://floatjet.com/tools/best-vpn-digital-nomads" />
-```
+**How Rich Pins Work Now (2025):**
 
-**How to Enable Rich Pins:**
+Pinterest automated the validation process. No manual application needed.
 
-1. **Add meta tags to article template** (in Astro layout)
-2. **Validate a URL:** https://developers.pinterest.com/tools/url-debugger/
-3. Enter any article URL from floatjet.com
-4. Pinterest will scan and confirm meta tags detected
-5. **Apply for Rich Pins** (automatic once validation succeeds)
-6. Wait 24 hours for Pinterest to approve
+1. Your site already has Open Graph metadata ✅
+2. When anyone saves a pin from floatjet.com, Pinterest automatically scans the page
+3. If metadata is detected, it becomes a Rich Pin automatically
+4. May take up to 24 hours for content to sync
 
-**When to Do This:**
+**To Verify It's Working:**
 
-- After publishing first 5-10 articles
-- Once article template is finalized
-- Before creating first Pinterest pins
+- Create a pin from one of your articles
+- Wait 24 hours
+- Check if it displays headline/description from your site
+
+**Optional Debugger:** https://developers.pinterest.com/tools/url-debugger/ (may redirect to docs)
 
 **Note:** Rich Pins are critical for affiliate sites - they boost credibility and CTR significantly.
 
 ---
 
+### 6. Profile Cover Image
+
+**Status:** ✅ UPLOADED
+
+**File Used:**
+- **Location:** `/docs/assets/social/pinterest-cover.png`
+- **Specs:** 1920 x 1080px, PNG, 16:9 aspect ratio
+- **Design:** Ocean wave gradient + tagline + URL
+
+**Notes:**
+
+- Pinterest overlays profile photo on bottom-left of cover
+- Text positioned to avoid overlap
+
+---
+
 ## Board Strategy
+
+**Status:** ✅ 7 PRIMARY BOARDS CREATED
 
 ### What Are Boards?
 
 Boards organize your pins by topic (like folders). Users follow boards, not just accounts.
 
-**Strategy:** Create 10-15 boards covering your content pillars.
+### Board Structure
 
-### Recommended Board Structure
+**Primary Boards (✅ Created):**
 
-**Primary Boards (Create First):**
+These boards align with FloatJet's actual content categories: SaaS, VPN, Hosting, Gear, Finance, Travel.
 
-1. **Best Remote Work Tools** (Main board)
-    - Description: "Top productivity tools, VPNs, and software for remote workers and digital nomads. Honest reviews and
-      comparisons."
-    - Covers: Broad tool recommendations
+1. **Remote Work Tools I Actually Use** ✅
+    - Description: "Productivity apps, project management, CRM—stuff I've tested for months, not just downloaded once. Notion, ClickUp, Asana, the works. Real reviews from someone who works from cafes worldwide."
+    - Covers: SaaS category (project management, CRM, team communication)
+    - Category: Technology
 
-2. **Productivity Software Reviews**
-    - Description: "In-depth reviews of project management, note-taking, and time tracking tools. Notion, ClickUp,
-      Asana, Todoist, and more."
-    - Covers: Software reviews
+2. **VPNs for Digital Nomads** ✅
+    - Description: "I test VPNs from airports, cafes, and countries that block everything. Speed tests, security breakdowns, which ones actually work in China. No sponsored fluff."
+    - Covers: VPN category
+    - Category: Technology
 
-3. **VPNs for Remote Work & Travel**
-    - Description: "Best VPN services for remote workers, digital nomads, and travelers. Speed tests, security reviews,
-      and honest comparisons."
-    - Covers: VPN content
+3. **Home Office Setup Ideas** ✅
+    - Description: "Desk setups from budget to bougie. Standing desks, monitors, chairs, lighting—what actually makes a difference when you're working 8+ hours a day."
+    - Covers: Gear category (furniture, ergonomics, workspace)
+    - Category: Home Decor
 
-4. **Home Office Setup Ideas**
-    - Description: "Home office inspiration, desk setups, and workspace organization for remote workers. Budget-friendly
-      to premium setups."
-    - Covers: Visual office setups
+4. **Laptops & Tech Gear** ✅
+    - Description: "What's in my bag. Laptops, monitors, webcams, keyboards for remote work. Tested on the road and at home."
+    - Covers: Gear category (hardware, tech accessories)
+    - Category: Technology
 
-5. **Standing Desks & Ergonomics**
-    - Description: "Standing desk reviews, ergonomic furniture, and workspace health tips. Chairs, desks, monitor arms,
-      and accessories."
-    - Covers: Furniture reviews
+5. **Web Hosting for Remote Businesses** ✅
+    - Description: "WordPress hosting, cloud vs traditional, what actually matters for speed and uptime. Running sites from anywhere means I notice when hosting sucks."
+    - Covers: Hosting category
+    - Category: Technology
 
-6. **Best Monitors & Tech Gear**
-    - Description: "Monitor reviews, webcams, microphones, keyboards, and tech accessories for remote work."
-    - Covers: Hardware reviews
+6. **Digital Nomad Finance** ✅
+    - Description: "Banking that works internationally, crypto-friendly options, tax stuff for location-independent people. The boring-but-important stuff."
+    - Covers: Finance category
+    - Category: Finance
 
-7. **Digital Nomad Gear**
-    - Description: "Travel-friendly tech, portable gear, and essentials for working remotely while traveling."
-    - Covers: Nomad-specific content
-
-8. **Productivity Tips & Hacks**
-    - Description: "Time management tips, productivity systems, and workflow optimization for remote workers."
-    - Covers: Guides and tips
-
-9. **Freelance Business Tools**
-    - Description: "Invoicing, accounting, contracts, and business tools for freelancers and solopreneurs."
-    - Covers: Business tools
-
-10. **Video Conferencing & Remote Collaboration**
-    - Description: "Zoom tips, virtual meeting tools, and remote team collaboration software."
-    - Covers: Communication tools
+7. **Travel for Remote Workers** ✅
+    - Description: "Best destinations, finding reliable WiFi, travel insurance that actually covers laptop theft. The logistics side of working from anywhere."
+    - Covers: Travel category
+    - Category: Travel
 
 **Secondary Boards (Add Later):**
 
-11. Work From Home Tips
-12. Remote Work Essentials
-13. Budget Home Office Setups
-14. Premium Remote Work Gear
-15. Cable Management & Desk Organization
+8. **Productivity Tips That Work**
+    - Description: "Time management, focus techniques, workflow hacks. Skip the hustle culture nonsense—just what actually helps you get stuff done."
+    - Category: Education
+
+9. **Freelance Business Tools**
+    - Description: "Invoicing, contracts, accounting software. The backend stuff nobody talks about but everyone needs."
+    - Category: Business
+
+10. **Budget Home Office Builds**
+    - Description: "Good setups under $500. You don't need a $2000 chair to be comfortable. Proof included."
+    - Category: Home Decor
 
 ### Board Best Practices
 
 **Board Naming:**
 
-- Use keywords people search ("Best Standing Desks" not "Desks I Like")
+- Front-load keywords people search
 - Keep under 50 characters
-- Front-load important words
-- Match search intent
+- First-person adds authenticity ("I Actually Use" vs generic "Best")
+- Match your actual content—don't create boards you can't fill
 
-**Board Descriptions (150-500 characters):**
+**Board Descriptions (150-300 characters ideal):**
 
-- Include keywords naturally
-- Describe what's on the board
-- Add call-to-action if relevant
-- Update quarterly based on performance
+- Write like you talk—conversational, first person
+- Include keywords naturally, not stuffed
+- Skip superlatives ("comprehensive", "ultimate", "best-in-class")
+- Mention what makes your perspective different (tested, real experience)
 
 **Board Covers:**
 
-- Create custom covers for branded look (600x600px)
-- Use consistent style across boards
-- Or let Pinterest auto-select from pins
+- Custom covers for branded look (600x600px)
+- Use FloatJet wave gradient + board name
+- Or let Pinterest auto-select from pins initially
 
 **Board Settings:**
 
 - **Public** (not secret) - want discovery
 - **Collaborators:** None initially (just you)
-- **Category:** Choose relevant category (Technology, Business, Home Decor)
+- **Category:** Choose relevant category per board (see above)
 
 ### How to Create Boards
 
 1. Profile → Boards → Create board
 2. Enter board name
-3. Write description (keywords!)
+3. Paste description from above
 4. Select category
 5. Keep public
 6. Save
 
-**Create 10 boards before publishing first pins** - gives structure and improves SEO.
+**Create all 7 primary boards before publishing first pins** - gives structure and improves SEO.
 
 ---
 
@@ -701,26 +702,27 @@ Pinterest is a **visual search engine**. Optimize for discovery:
 
 ## First Month Action Plan
 
-### Week 1: Profile Setup ✅
+### Week 1: Profile Setup ✅ COMPLETE
 
 - [x] Create business account
 - [x] Verify website (TXT record)
-- [ ] Complete profile (photo, display name, about)
-- [ ] Add website link
-- [ ] Enable Rich Pins (once articles are live)
+- [x] Upload profile photo (logo)
+- [x] Upload cover image (1920x1080px)
+- [x] Set display name
+- [x] Add website link
+- [x] Rich Pins ready (meta tags configured)
 
-### Week 2: Board Creation
+### Week 2: Board Creation ✅ COMPLETE
 
-- [ ] Create 10 boards with keyword-optimized names
-- [ ] Write 150-300 char descriptions for each
-- [ ] Add board covers (optional, branded)
-- [ ] Organize by topic relevance
+- [x] Create 7 primary boards with keyword-optimized names
+- [x] Write descriptions for each (conversational, first-person)
+- [x] Set categories per board
+- [ ] Add board covers (optional, branded) - can do later
 
 ### Week 3: Pin Design & Creation
 
 - [ ] Create 3-5 pin templates in Canva (1000x1500px)
 - [ ] Design 20 pins for existing content
-    - If no content yet: Create placeholder pins for planned articles
 - [ ] Write optimized descriptions (100-300 chars each)
 - [ ] Schedule pins over next 3-4 weeks
 

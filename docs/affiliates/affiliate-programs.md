@@ -433,11 +433,11 @@ accessible after reapplication once site is launched. ClickUp application alread
 | Program    | Commission | Cookie  | Network | Status      |
 |------------|------------|---------|---------|-------------|
 | NordVPN    | 30-40%     | 30 days | Direct  | ✅ Approved  |
-| ExpressVPN | 35-50%     | 90 days | Direct  | Not Applied |
-| Surfshark  | 40%        | 30 days | Direct  | Not Applied |
-| CyberGhost | 45%        | 45 days | Direct  | Not Applied |
-| ProtonVPN  | 30%        | 30 days | Direct  | Not Applied |
-| IPVanish   | 100% (1st) | 45 days | Direct  | Not Applied |
+| ExpressVPN | 35-50%     | 90 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
+| Surfshark  | 40%        | 30 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
+| CyberGhost | 45%        | 45 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
+| ProtonVPN  | 30%        | 30 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
+| IPVanish   | 100% (1st) | 45 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
 
 **Used in:** FJ-007 (VPN article), best-vpn-streaming-travel, free-vpn-vs-paid-vpn, vpn-kill-switch-explained,
 how-to-setup-vpn-all-devices

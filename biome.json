@@ -37,5 +37,17 @@
   },
   "files": {
     "includes": ["src/**", "docs/**", "scripts/**"]
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["src/lib/og-image-renderer.tsx"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    }
+  ]
 }

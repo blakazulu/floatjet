@@ -69,7 +69,11 @@
       "Bash(git -C \"C:\\My Stuff\\floatjet\" status)",
       "Bash(git -C \"C:\\My Stuff\\floatjet\" diff src/components/Footer.astro src/pages/contact.astro docs/social/floatjet-contact-social-info.md)",
       "Bash(git -C \"C:\\My Stuff\\floatjet\" log --oneline -5)",
-      "WebFetch(domain:developers.pinterest.com)"
+      "WebFetch(domain:developers.pinterest.com)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" show f4bc338:src/lib/og-image-renderer.tsx)",
+      "Bash(npm run build:*)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" add -A)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" commit -m \"fix: restore React import in OG image renderer\n\nBiome''s noUnusedImports rule incorrectly converted the React import\nto type-only, breaking the build. Added override in biome.json to\nprevent this from happening again.\")"
     ],
     "deny": [],
     "ask": []

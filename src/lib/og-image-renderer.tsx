@@ -1,5 +1,5 @@
 import type { RenderFunctionInput } from "astro-opengraph-images";
-import type React from "react";
+import React from "react";
 
 /**
  * FloatJet branded Open Graph image renderer

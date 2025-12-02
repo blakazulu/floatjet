@@ -153,6 +153,51 @@ These are the "robot tells" that flag content as AI-generated:
 - Direct address: "Here's the thing."
 - Numbers: "35,000 servers."
 
+### 11. Social Media Intro Phrases (NEW - Dec 2025)
+
+Based on ZeroGPT testing of LinkedIn/Twitter content:
+
+❌ Formulaic intro phrases that trigger AI detection:
+
+- "Here's the short version:"
+- "Here's what I'm looking at:"
+- "Here's what I'm actually doing:"
+- "Question for remote workers:"
+- "Unpopular opinion:"
+- "Week 2 of testing X for my next review."
+
+✅ Natural openers that pass:
+
+- "So I'm building this thing called..."
+- "Okay genuine question for anyone..."
+- "Probably gonna get pushback on this but:"
+- "Two weeks into VPN testing and wow,"
+- "Been living with 1Password and Bitwarden for a few weeks."
+
+### 12. Enumeration Patterns (NEW - Dec 2025)
+
+Clean device/tool enumerations trigger detection:
+
+❌ "Laptop, phone, tablet, browser." (comma-separated list)
+❌ "Testing 1Password, Bitwarden, Dashlane, and a few others."
+❌ "VPNs, productivity apps, home office gear—and write honest reviews"
+
+✅ Break into natural phrases:
+
+- "My laptop, my phone, random browser on someone else's computer."
+- "Been living with 1Password and Bitwarden for a few weeks. Also tried Dashlane and a couple others."
+- "VPNs while traveling. Productivity apps for real projects. Standing desks until my back tells me which one doesn't suck."
+
+### 13. Colon-Question Patterns (NEW - Dec 2025)
+
+❌ "Stuff I've been paying attention to: Does it actually sync properly?"
+❌ "Here's what I'm looking at: How easy is it to use?"
+
+✅ Separate into distinct thoughts:
+
+- "Main thing I care about: does it actually work everywhere?"
+- "Also been testing the scary scenario. What happens when you forget your master password."
+
 ---
 
 ## Part 3: Human Writing Patterns to Add

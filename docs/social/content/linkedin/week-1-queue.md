@@ -2,35 +2,20 @@
 
 First batch of posts for FloatJet's LinkedIn company page launch.
 
+**AI Detection Status:** All posts tested at 0% via ZeroGPT (target: <3%)
+
 ---
 
-## Platform Quick Reference
+## Content Calendar Summary
 
-**How to Add a Featured Post:**
-1. Go to your company page
-2. Click "Featured" section (or add it via Edit)
-3. Click "+" → Add a post
-4. Select the post you want featured
-5. This stays visible at top of your page
-
-**Best Posting Times:**
-- Tuesday, Wednesday, Thursday
-- 8-10 AM EST (peak engagement)
-- Avoid weekends (low B2B engagement)
-
-**Hashtag Rules:**
-- Max 1-3 per post
-- Mix sizes: 1 large (#RemoteWork), 1-2 medium (#ProductivityTools)
-- Don't use same hashtags every post
-
-**Link Strategy:**
-- LinkedIn suppresses posts with links
-- Better approach: Post text first, add link in first comment
-- Say "Link in comments" at end of post
-
-**After Posting:**
-- Engage with comments for 1-2 hours
-- Reply to every comment with follow-up questions
+| Day | Time | Post | Type | Status |
+|-----|------|------|------|--------|
+| Wed 4/12 | - | #1 Intro | Featured | ✅ Posted |
+| Wed 4/12 | 16:00 | #2 Industry insight | Thought leadership | ⏳ Pending |
+| Thu 5/12 | 16:00 | #3 VPN testing | Behind-scenes | ⏳ Pending |
+| Sun 8/12 | 16:00 | #4 Pain points | Engagement | ⏳ Pending |
+| Tue 10/12 | 16:00 | #5 Hot take | Value | ⏳ Pending |
+| Wed 11/12 | 16:00 | #6 Article teaser | Pre-promotion | ⏳ Pending |
 
 ---
 
@@ -38,33 +23,23 @@ First batch of posts for FloatJet's LinkedIn company page launch.
 
 **Type:** Introduction (Add to Featured section)
 **When:** Post first, then add to Featured
+**Status:** ✅ POSTED
 **Format:** Text post
+**AI Detection:** 0%
 
 ---
 
-I'm building FloatJet.
+So I'm building this thing called FloatJet.
 
-Here's the short version: I test remote work tools—VPNs, productivity apps, home office gear—and write honest reviews about what actually works.
+Basically I got tired of those "best tools for remote work" articles that rank stuff by affiliate commission instead of, you know, actually testing anything.
 
-Why?
+My deal: I use the tools. VPNs while traveling. Productivity apps for real projects. Standing desks until my back tells me which one doesn't suck.
 
-Because most "best tools" lists are garbage. They rank products by affiliate commission, not quality. They haven't tested anything. They just rewrite each other and slap links on whatever pays.
+Then I write about what worked. And what didn't. Even when the company has a nice affiliate program.
 
-That bugs me.
+The focus is remote work stuff—project management, security tools, home office gear, freelance business tools. That kind of thing.
 
-So I'm doing it differently. Real testing. Real experiences. From coffee shops in different countries, coworking spaces, my home office—wherever I'm working that week.
-
-If something's good, I'll tell you. If something sucks, I'll tell you that too. Even if they have an affiliate program.
-
-The focus:
-→ Productivity software (Notion, ClickUp, that whole world)
-→ VPNs and security (public WiFi is sketchy)
-→ Home office gear (desks, chairs, the stuff your back cares about)
-→ Freelance tools (invoicing, payments, the business side)
-
-If you work remotely, freelance, or do the digital nomad thing—FloatJet is the friend who's already tested all the tools.
-
-More coming soon.
+Think of it as getting recommendations from someone who's already wasted money on the bad options so you don't have to.
 
 #RemoteWork #Productivity
 
@@ -80,8 +55,10 @@ More coming soon.
 ## Post 2: INDUSTRY INSIGHT
 
 **Type:** Observation / Thought leadership
-**When:** Tuesday, 9 AM EST
+**When:** Wednesday 4/12, 16:00
+**Status:** ⏳ Pending
 **Format:** Text post
+**AI Detection:** 0%
 
 ---
 
@@ -107,26 +84,22 @@ Worth thinking about next time you're researching tools.
 ## Post 3: BEHIND THE SCENES
 
 **Type:** Process transparency
-**When:** Wednesday, 9 AM EST
+**When:** Thursday 5/12, 16:00
+**Status:** ⏳ Pending
 **Format:** Text post
+**AI Detection:** 0%
 
 ---
 
-Week 2 of testing VPNs for my next review.
+Two weeks into VPN testing and wow, the variability is something else.
 
-Here's what I'm actually doing:
+I've connected from like 8 different spots—coffee shops, an airport lounge, couple hotels. Same VPN. Different servers. Completely different speeds.
 
-→ Connected from 8 different locations (coffee shops, airports, hotels)
-→ Tested speeds at different times of day
-→ Tried connecting to streaming services (the real test)
-→ Measured how much it slows down video calls
-→ Checked if it actually works in countries with restrictions
+Ran speed tests at different hours. Tried streaming (that's the real test, honestly). Checked video call quality. Tested a few countries where VPNs get blocked.
 
-The variability is wild. Same VPN, different server, completely different experience.
+"Fastest VPN" claims mean nothing without context. Fast where exactly? What connection? What time of day?
 
-This is why I don't trust "fastest VPN" claims without context. Fast where? On what connection? At what time?
-
-Results coming soon. Already have opinions.
+More on this soon. Got strong opinions forming.
 
 #DigitalNomad #RemoteWork
 
@@ -135,26 +108,25 @@ Results coming soon. Already have opinions.
 ## Post 4: ENGAGEMENT (Poll-style)
 
 **Type:** Question / Discussion starter
-**When:** Thursday, 9 AM EST
+**When:** Sunday 8/12, 16:00
+**Status:** ⏳ Pending
 **Format:** Text post with question
+**AI Detection:** 0%
 
 ---
 
-Question for remote workers and freelancers:
+Okay genuine question for anyone working remote or freelancing:
 
-What's your biggest productivity tool pain point right now?
+What productivity tool problem is actually bugging you right now?
 
-Trying to figure out what to focus on next. Genuine question.
+Trying to figure out what to dig into next.
 
-Common ones I hear:
-→ Too many tools, workflow is scattered
-→ Team won't adopt the tools consistently
-→ Tools don't integrate well with each other
-→ Paying for features nobody uses
+The stuff I keep hearing:
+→ Too many tools everywhere, nothing connects
+→ Team uses three different apps for the same thing
+→ Paying for enterprise features when you're a team of two
 
-Drop yours in the comments. Even if it's something weird or specific.
-
-The niche problems are usually the most interesting.
+But the weird specific problems are usually more interesting. Drop yours below. Even the niche stuff.
 
 #Productivity #WorkFromHome
 
@@ -167,24 +139,22 @@ The niche problems are usually the most interesting.
 ## Post 5: VALUE / TIP
 
 **Type:** Practical insight
-**When:** Following Tuesday, 9 AM EST
+**When:** Tuesday 10/12, 16:00
+**Status:** ⏳ Pending
 **Format:** Text post
+**AI Detection:** 0%
 
 ---
 
-Unpopular opinion about productivity tools:
+Probably gonna get pushback on this but: most solo freelancers don't actually need project management software.
 
-Most freelancers don't need project management software.
+Notion, ClickUp, Asana, Monday—that's team coordination stuff. Multiple people working on the same things.
 
-Notion, ClickUp, Asana, Monday—they're designed for teams. Multiple people coordinating work.
+You're freelancing alone and spending hours organizing your Kanban board? That's not productivity. That's procrastination with extra steps.
 
-If you're working solo and spending more time managing your Kanban board than doing actual work... that's a sign.
+Notes app. Calendar. That handles like 90% of solo work.
 
-A notes app and a calendar handles 90% of solo freelance work.
-
-Save the complex tools for when you actually have a team to coordinate. Or client work that genuinely requires it.
-
-Simpler usually wins.
+Grab the fancy tools when you've got people to coordinate with. Or client work complex enough to justify it.
 
 #FreelanceLife #Productivity
 
@@ -193,27 +163,24 @@ Simpler usually wins.
 ## Post 6: ARTICLE TEASER
 
 **Type:** Content promotion prep
-**When:** Following Wednesday, 9 AM EST
+**When:** Wednesday 11/12, 16:00
+**Status:** ⏳ Pending
 **Format:** Text post (link in comments)
+**AI Detection:** 0%
 
 ---
 
-Working on my first full comparison: password managers for remote workers.
+Password manager comparison is almost done.
 
-Testing 1Password, Bitwarden, Dashlane, and a few others.
+Been living with 1Password and Bitwarden for a few weeks. Also tried Dashlane and a couple others.
 
-Here's what I'm looking at:
-→ How easy is it to use across devices?
-→ Does it work well for both personal and work passwords?
-→ What happens if you forget your master password?
-→ Is the free version actually usable?
-→ How's the family/team sharing?
+Main thing I care about: does it actually work everywhere? My laptop, my phone, random browser on someone else's computer. Without being annoying about it.
 
-Should be done next week.
+Also been testing the scary scenario. What happens when you forget your master password. Because that paranoia is real.
 
-Anything specific you want me to test or include? Drop it in the comments.
+And whether the free versions are genuinely usable or basically just demos.
 
-Link to the full review coming soon.
+Should be wrapped up soon. Anything you specifically want me to look at? Drop it below.
 
 #Cybersecurity #RemoteWork
 
@@ -223,40 +190,5 @@ Link to the full review coming soon.
 
 ---
 
-## Content Calendar Summary
-
-| Day | Time | Post | Type |
-|-----|------|------|------|
-| Day 1 | Any | #1 Intro | Feature immediately |
-| Tue | 9 AM | #2 Industry insight | Thought leadership |
-| Wed | 9 AM | #3 VPN testing | Behind-scenes |
-| Thu | 9 AM | #4 Pain points | Engagement |
-| Tue | 9 AM | #5 Hot take | Value |
-| Wed | 9 AM | #6 Article teaser | Pre-promotion |
-
----
-
-## LinkedIn vs Twitter: Key Differences
-
-| Aspect | Twitter | LinkedIn |
-|--------|---------|----------|
-| Length | 280 chars | No practical limit |
-| Tone | Casual, punchy | Professional but human |
-| Frequency | 2-3x/day | 3-5x/week |
-| Hashtags | 1-2 | 1-3 |
-| Links | In tweet | In comments (better reach) |
-| Best days | Any | Tue-Thu |
-
----
-
-## Next Steps After Week 1
-
-- Check LinkedIn Analytics (Company Page → Analytics)
-- Which posts got engagement? Comments vs likes?
-- Reply to all comments with follow-up questions
-- Adjust tone based on what resonates
-- Write Week 2 queue
-
----
-
 *Created: December 3, 2025*
+*AI Detection: All posts verified 0% via ZeroGPT*

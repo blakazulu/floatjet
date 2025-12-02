@@ -137,14 +137,14 @@ Full guide: `/docs/writing_style_guide.md`
 
 ## Platform Comparison
 
-| Aspect | Twitter | LinkedIn |
-|--------|---------|----------|
-| Length | 280 chars | No practical limit |
-| Tone | Casual, punchy | Professional but human |
-| Frequency | 2-3x/day | 3-5x/week |
-| Hashtags | 1-2 | 1-3 |
-| Links | In tweet | In comments (better reach) |
-| Best days | Any | Tue-Thu |
+| Aspect    | Twitter        | LinkedIn                   |
+| --------- | -------------- | -------------------------- |
+| Length    | 280 chars      | No practical limit         |
+| Tone      | Casual, punchy | Professional but human     |
+| Frequency | 2-3x/day       | 3-5x/week                  |
+| Hashtags  | 1-2            | 1-3                        |
+| Links     | In tweet       | In comments (better reach) |
+| Best days | Any            | Tue-Thu                    |
 
 ---
 

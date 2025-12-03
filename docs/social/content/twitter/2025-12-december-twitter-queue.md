@@ -11,7 +11,7 @@ Full month of tweets for @FloatJetWebsite.
 | Day       | Time  | Tweet                   | Type           | Status    | AI % | Article |
 | --------- | ----- | ----------------------- | -------------- | --------- | ---- | ------- |
 | Wed 4/12  | -     | #1 Intro                | Pinned         | ✅ Posted  | 0%   | No      |
-| Wed 4/12  | 15:00 | #2 Tool tip             | Value          | ⏳ Pending | 0%   | No      |
+| Wed 4/12  | 15:00 | #2 Tool tip             | Value          | ✅ Posted  | 0%   | No      |
 | Thu 5/12  | 01:00 | #3 Poll                 | Engagement     | ⏳ Pending | 0%   | No      |
 | Thu 5/12  | 19:00 | #4 Hot take             | Value          | ⏳ Pending | 0%   | Yes     |
 | Fri 6/12  | 15:00 | #5 Testing update       | Behind-scenes  | ⏳ Pending | 0%   | No      |
@@ -79,7 +79,7 @@ floatjet.com
 
 **Type:** Productivity tip
 **When:** Wednesday, 15:00
-**Status:** ⏳ Pending
+**Status:** ✅ POSTED
 **Character Count:** 248
 
 ```text

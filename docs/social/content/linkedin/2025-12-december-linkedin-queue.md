@@ -11,7 +11,7 @@ Full month of posts for FloatJet's LinkedIn company page.
 | Day       | Time  | Post                  | Type               | Status    | AI % | Article |
 | --------- | ----- | --------------------- | ------------------ | --------- | ---- | ------- |
 | Wed 4/12  | -     | #1 Intro              | Featured           | ✅ Posted  | 0%   | No      |
-| Wed 4/12  | 16:00 | #2 Industry insight   | Thought leadership | ⏳ Pending | 0%   | No      |
+| Wed 4/12  | 16:00 | #2 Industry insight   | Thought leadership | ✅ Posted  | 0%   | No      |
 | Thu 5/12  | 16:00 | #3 VPN testing        | Behind-scenes      | ⏳ Pending | 0%   | No      |
 | Sun 8/12  | 16:00 | #4 Pain points        | Engagement         | ⏳ Pending | 0%   | No      |
 | Tue 10/12 | 16:00 | #5 Hot take           | Value              | ⏳ Pending | 0%   | Yes     |
@@ -68,7 +68,7 @@ Think of it as getting recommendations from someone who's already wasted money o
 
 **Type:** Observation / Thought leadership
 **When:** Wednesday 4/12, 16:00
-**Status:** ⏳ Pending
+**Status:** ✅ POSTED
 **Format:** Text post
 **AI Detection:** 0%
 

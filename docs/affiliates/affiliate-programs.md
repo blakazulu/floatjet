@@ -38,6 +38,7 @@
 | Impact Radius        | Impact Radius | 2025-11-28   | Site not live, no traffic             | End of Month 2 (Jan 2026)     | Launch site, publish 20+ articles, generate traffic |
 | PartnerStack Network | PartnerStack  | 2025-11-30   | Profile not a fit (network expansion) | Month 2-3 (After site launch) | Reapply with live site and content                  |
 | ClickUp              | PartnerStack  | 2025-12-01   | Application declined by brand         | Month 2-3 (After site launch) | Reapply with live site, traffic, and published PM content |
+| ExpressVPN           | Impact Radius | 2025-12-03   | Low reach (traffic, followers)        | Month 2-3 (After site launch) | Build traffic, reapply via Impact once approved     |
 
 **Impact Note:** Application declined on 2025-11-28 (Account ID: 6717334). Impact requires established sites with
 published content and actual traffic. Will reapply in Month 2-3 once FloatJet has:
@@ -433,7 +434,7 @@ accessible after reapplication once site is launched. ClickUp application alread
 | Program    | Commission | Cookie  | Network | Status      |
 |------------|------------|---------|---------|-------------|
 | NordVPN    | 30-40%     | 30 days | Direct  | ✅ Approved  |
-| ExpressVPN | 35-50%     | 90 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
+| ExpressVPN | 35-50%     | 90 days | Impact  | ❌ Declined (Low traffic)       |
 | Surfshark  | 40%        | 30 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
 | CyberGhost | 45%        | 45 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
 | ProtonVPN  | 30%        | 30 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
@@ -1269,7 +1270,11 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** 2025-11-30 - Amazon Associates APPROVED! Store ID: floatjet-20. Automatically discovered 25 product
+**Last Action:** 2025-12-03 - ExpressVPN application DECLINED via Impact Radius. Reason: "Low reach (traffic, followers)".
+This was expected since Impact Radius network access was declined earlier. Will reapply in Month 2-3 once site has
+established traffic. NordVPN remains our primary VPN affiliate (already approved with 30-40% commission).
+
+**Previous Action:** 2025-11-30 - Amazon Associates APPROVED! Store ID: floatjet-20. Automatically discovered 25 product
 ASINs from published articles (laptops, desks, chairs, webcams, headphones, keyboards). Created amazon-products-asins.md
 reference document. Added 25 affiliate redirects to netlify.toml. Critical: Must make 3 qualifying sales within 180 days
 to stay active. Updated Applied Programs table and registration guide.

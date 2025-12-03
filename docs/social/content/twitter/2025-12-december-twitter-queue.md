@@ -8,43 +8,43 @@ Full month of tweets for @FloatJetWebsite.
 
 ## Content Calendar Summary
 
-| Day       | Time  | Tweet                   | Type           | Status    | AI % | Article |
-| --------- | ----- | ----------------------- | -------------- | --------- | ---- | ------- |
-| Wed 4/12  | -     | #1 Intro                | Pinned         | ✅ Posted  | 0%   | No      |
-| Wed 4/12  | 15:00 | #2 Tool tip             | Value          | ✅ Posted  | 0%   | No      |
-| Thu 5/12  | 01:00 | #3 Poll                 | Engagement     | ⏳ Pending | 0%   | No      |
-| Thu 5/12  | 19:00 | #4 Hot take             | Value          | ⏳ Pending | 0%   | Yes     |
-| Fri 6/12  | 15:00 | #5 Testing update       | Behind-scenes  | ⏳ Pending | 0%   | No      |
-| Sat 7/12  | 01:00 | #6 Question             | Engagement     | ⏳ Pending | 0%   | No      |
-| Sun 8/12  | 15:00 | #7 Standing desk        | Personal story | ⏳ Pending | 0%   | Yes     |
-| Mon 9/12  | 01:00 | #8 Home office          | Hot take       | ⏳ Pending | 0%   | Yes     |
-| Mon 9/12  | 19:00 | #9 Free VPNs            | Value          | ⏳ Pending | 0%   | Yes     |
-| Tue 10/12 | 15:00 | #10 Coffee shop WiFi    | Behind-scenes  | ⏳ Pending | 0%   | Yes     |
-| Wed 11/12 | 01:00 | #11 Physical notebook   | Value          | ⏳ Pending | 0%   | Yes     |
-| Thu 12/12 | 15:00 | #12 Cafe video calls    | Personal story | ⏳ Pending | 0%   | No      |
-| Fri 13/12 | 01:00 | #13 Notion rabbit hole  | Relatable      | ⏳ Pending | 0%   | No      |
-| Fri 13/12 | 19:00 | #14 VPN kill switch     | Value          | ⏳ Pending | 0%   | Yes     |
-| Sat 14/12 | 15:00 | #15 Slack offline hack  | Value          | ⏳ Pending | 0%   | No      |
-| Sun 15/12 | 01:00 | #16 Terms of service    | Engagement     | ⏳ Pending | 0%   | No      |
-| Sun 15/12 | 19:00 | #17 Cloud storage       | Personal story | ⏳ Pending | 0%   | Yes     |
-| Mon 16/12 | 15:00 | #18 Meetings ratio      | Relatable      | ⏳ Pending | 0%   | No      |
-| Tue 17/12 | 01:00 | #19 Password manager    | Personal story | ⏳ Pending | 0%   | Yes     |
-| Tue 17/12 | 19:00 | #20 Monitor broke       | Personal story | ⏳ Pending | 0%   | Yes     |
-| Wed 18/12 | 15:00 | #21 2FA warning         | Value          | ⏳ Pending | 0%   | Yes     |
-| Thu 19/12 | 01:00 | #22 Slack from bed      | Relatable      | ⏳ Pending | 0%   | No      |
-| Thu 19/12 | 19:00 | #23 Net-60 payments     | Freelance tip  | ⏳ Pending | 0%   | Yes     |
-| Fri 20/12 | 15:00 | #24 Webcam upgrade      | Value          | ⏳ Pending | 0%   | Yes     |
-| Sat 21/12 | 01:00 | #25 Keyboard backup     | Personal story | ⏳ Pending | 0%   | No      |
-| Sat 21/12 | 19:00 | #26 Time zone fail      | Relatable      | ⏳ Pending | 0%   | Yes     |
-| Sun 22/12 | 15:00 | #27 Coworking math      | Personal story | ⏳ Pending | 0%   | No      |
-| Mon 23/12 | 01:00 | #28 Phone as monitor    | Relatable      | ⏳ Pending | 0%   | No      |
-| Mon 23/12 | 19:00 | #29 Invoice software    | Value          | ⏳ Pending | 0%   | Yes     |
-| Tue 24/12 | 15:00 | #30 Backup reminder     | Value          | ⏳ Pending | 0%   | Yes     |
-| Wed 25/12 | 15:00 | #31 Expense tracking    | Freelance tip  | ⏳ Pending | 0%   | Yes     |
-| Thu 26/12 | 15:00 | #32 Headphones ranking  | Value          | ⏳ Pending | 0%   | Yes     |
-| Fri 27/12 | 15:00 | #33 Email marketing     | Value          | ⏳ Pending | 0%   | Yes     |
-| Sat 28/12 | 15:00 | #34 New Year resolution | Engagement     | ⏳ Pending | 0%   | No      |
-| Sun 29/12 | 15:00 | #35 Year wrap-up        | Behind-scenes  | ⏳ Pending | 0%   | No      |
+| Day       | Time  | Tweet                   | Type           | Status      | AI % | Article |
+| --------- | ----- | ----------------------- | -------------- | ----------- | ---- | ------- |
+| Tue 2/12  | -     | #1 Intro                | Pinned         | ✅ Posted    | 0%   | No      |
+| Tue 2/12  | 15:00 | #2 Tool tip             | Value          | ✅ Posted    | 0%   | No      |
+| Wed 3/12  | 19:00 | #3 Hot take             | Value          | ✅ Posted    | 0%   | Yes     |
+| Thu 4/12  | 15:00 | #4 Testing update       | Behind-scenes  | ⏳ Scheduled | 0%   | No      |
+| Fri 5/12  | 01:00 | #5 Question             | Engagement     | ⏳ Pending   | 0%   | No      |
+| Sat 6/12  | 15:00 | #6 Standing desk        | Personal story | ⏳ Pending   | 0%   | Yes     |
+| Sun 7/12  | 01:00 | #7 Home office          | Hot take       | ⏳ Pending   | 0%   | Yes     |
+| Sun 7/12  | 19:00 | #8 Free VPNs            | Value          | ⏳ Pending   | 0%   | Yes     |
+| Mon 8/12  | 15:00 | #9 Coffee shop WiFi     | Behind-scenes  | ⏳ Pending   | 0%   | Yes     |
+| Tue 9/12  | 01:00 | #10 Physical notebook   | Value          | ⏳ Pending   | 0%   | Yes     |
+| Wed 10/12 | 15:00 | #11 Cafe video calls    | Personal story | ⏳ Pending   | 0%   | No      |
+| Thu 11/12 | 01:00 | #12 Notion rabbit hole  | Relatable      | ⏳ Pending   | 0%   | No      |
+| Thu 11/12 | 19:00 | #13 VPN kill switch     | Value          | ⏳ Pending   | 0%   | Yes     |
+| Fri 12/12 | 15:00 | #14 Slack offline hack  | Value          | ⏳ Pending   | 0%   | No      |
+| Sat 13/12 | 01:00 | #15 Terms of service    | Engagement     | ⏳ Pending   | 0%   | No      |
+| Sat 13/12 | 19:00 | #16 Cloud storage       | Personal story | ⏳ Pending   | 0%   | Yes     |
+| Sun 14/12 | 15:00 | #17 Meetings ratio      | Relatable      | ⏳ Pending   | 0%   | No      |
+| Mon 15/12 | 01:00 | #18 Password manager    | Personal story | ⏳ Pending   | 0%   | Yes     |
+| Mon 15/12 | 19:00 | #19 Monitor broke       | Personal story | ⏳ Pending   | 0%   | Yes     |
+| Tue 16/12 | 15:00 | #20 2FA warning         | Value          | ⏳ Pending   | 0%   | Yes     |
+| Wed 17/12 | 01:00 | #21 Slack from bed      | Relatable      | ⏳ Pending   | 0%   | No      |
+| Wed 17/12 | 19:00 | #22 Net-60 payments     | Freelance tip  | ⏳ Pending   | 0%   | Yes     |
+| Thu 18/12 | 15:00 | #23 Webcam upgrade      | Value          | ⏳ Pending   | 0%   | Yes     |
+| Fri 19/12 | 01:00 | #24 Keyboard backup     | Personal story | ⏳ Pending   | 0%   | No      |
+| Fri 19/12 | 19:00 | #25 Time zone fail      | Relatable      | ⏳ Pending   | 0%   | Yes     |
+| Sat 20/12 | 15:00 | #26 Coworking math      | Personal story | ⏳ Pending   | 0%   | No      |
+| Sun 21/12 | 01:00 | #27 Phone as monitor    | Relatable      | ⏳ Pending   | 0%   | No      |
+| Sun 21/12 | 19:00 | #28 Invoice software    | Value          | ⏳ Pending   | 0%   | Yes     |
+| Mon 22/12 | 15:00 | #29 Backup reminder     | Value          | ⏳ Pending   | 0%   | Yes     |
+| Tue 23/12 | 15:00 | #30 Expense tracking    | Freelance tip  | ⏳ Pending   | 0%   | Yes     |
+| Wed 24/12 | 15:00 | #31 Headphones ranking  | Value          | ⏳ Pending   | 0%   | Yes     |
+| Thu 25/12 | 15:00 | #32 Email marketing     | Value          | ⏳ Pending   | 0%   | Yes     |
+| Fri 26/12 | 15:00 | #33 New Year resolution | Engagement     | ⏳ Pending   | 0%   | No      |
+| Sat 27/12 | 15:00 | #34 Year wrap-up        | Behind-scenes  | ⏳ Pending   | 0%   | No      |
+| Sun 28/12 | 15:00 | #35 Poll                | Engagement     | ⏳ Pending   | 0%   | No      |
 
 ---
 
@@ -78,7 +78,7 @@ floatjet.com
 ## Tweet 2: VALUE TIP
 
 **Type:** Productivity tip
-**When:** Wednesday, 15:00
+**When:** Tuesday 2/12, 15:00
 **Status:** ✅ POSTED
 **Character Count:** 248
 
@@ -98,36 +98,10 @@ Stop defaulting to meetings. Most things are a Slack message.
 
 ---
 
-## Tweet 3: ENGAGEMENT (Poll)
-
-**Type:** Poll / Question
-**When:** Thursday, 01:00
-**Status:** ⏳ Pending
-**Character Count:** 178
-
-```text
-What kills your remote work productivity the most?
-
-Genuinely curious—testing tools in all these categories right now.
-
-Drop your answer or vote below.
-```
-
-**Poll Options:**
-
-- Slack notification chaos
-- Too many video calls
-- No dedicated workspace
-- Time zone coordination
-
-**Hashtags:** #WorkFromHome
-
----
-
-## Tweet 4: VALUE TIP (Tool-related)
+## Tweet 3: VALUE TIP (Tool-related)
 
 **Type:** Tool insight
-**When:** Thursday, 19:00
+**When:** Wednesday 3/12, 19:00
 **Status:** ⏳ Pending
 **Character Count:** 271
 
@@ -146,10 +120,10 @@ https://floatjet.com/tools/best-project-management-software/
 
 ---
 
-## Tweet 5: BEHIND THE SCENES
+## Tweet 4: BEHIND THE SCENES
 
 **Type:** Transparency / What I'm working on
-**When:** Friday, 15:00
+**When:** Thursday 4/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 253
 
@@ -169,10 +143,10 @@ What should I test next?
 
 ---
 
-## Tweet 6: ENGAGEMENT (Question)
+## Tweet 5: ENGAGEMENT (Question)
 
 **Type:** Audience question
-**When:** Saturday, 01:00
+**When:** Friday 5/12, 01:00
 **Status:** ⏳ Pending
 **Character Count:** 186
 
@@ -190,10 +164,10 @@ Building a list of stuff that's worth the money.
 
 ---
 
-## Tweet 7: PERSONAL STORY
+## Tweet 6: PERSONAL STORY
 
 **Type:** Honest experience
-**When:** Sunday 8/12, 15:00
+**When:** Saturday 6/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 274
 
@@ -212,10 +186,10 @@ https://floatjet.com/guides/are-standing-desks-actually-worth-it/
 
 ---
 
-## Tweet 8: HOT TAKE
+## Tweet 7: HOT TAKE
 
 **Type:** Opinion / Value
-**When:** Monday 9/12, 01:00
+**When:** Sunday 7/12, 01:00
 **Status:** ⏳ Pending
 **Character Count:** 256
 
@@ -232,10 +206,10 @@ https://floatjet.com/guides/budget-home-office-setup-500/
 
 ---
 
-## Tweet 9: VALUE TIP
+## Tweet 8: VALUE TIP
 
 **Type:** Security advice
-**When:** Monday 9/12, 19:00
+**When:** Sunday 7/12, 19:00
 **Status:** ⏳ Pending
 **Character Count:** 241
 
@@ -254,10 +228,10 @@ https://floatjet.com/tools/free-vpn-vs-paid-vpn/
 
 ---
 
-## Tweet 10: BEHIND THE SCENES
+## Tweet 9: BEHIND THE SCENES
 
 **Type:** Honest confession
-**When:** Tuesday 10/12, 15:00
+**When:** Monday 8/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 253
 
@@ -276,10 +250,10 @@ https://floatjet.com/guides/do-i-need-vpn-cafes/
 
 ---
 
-## Tweet 11: VALUE TIP
+## Tweet 10: VALUE TIP
 
 **Type:** Productivity insight
-**When:** Wednesday 11/12, 01:00
+**When:** Tuesday 9/12, 01:00
 **Status:** ⏳ Pending
 **Character Count:** 238
 
@@ -298,10 +272,10 @@ https://floatjet.com/tools/best-note-taking-apps/
 
 ---
 
-## Tweet 12: PERSONAL STORY
+## Tweet 11: PERSONAL STORY
 
 **Type:** Relatable experience
-**When:** Thursday 12/12, 15:00
+**When:** Wednesday 10/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 235
 
@@ -317,10 +291,10 @@ My apartment is boring but at least I'm not explaining espresso machine sounds.
 
 ---
 
-## Tweet 13: RELATABLE
+## Tweet 12: RELATABLE
 
 **Type:** Procrastination confession
-**When:** Friday 13/12, 01:00
+**When:** Thursday 11/12, 01:00
 **Status:** ⏳ Pending
 **Character Count:** 160
 
@@ -336,10 +310,10 @@ The productivity tool became the procrastination tool. Classic.
 
 ---
 
-## Tweet 14: VALUE
+## Tweet 13: VALUE
 
 **Type:** Security insight
-**When:** Friday 13/12, 19:00
+**When:** Thursday 11/12, 19:00
 **Status:** ⏳ Pending
 **Character Count:** 186
 
@@ -356,10 +330,10 @@ https://floatjet.com/tools/vpn-kill-switch-explained/
 
 ---
 
-## Tweet 15: VALUE
+## Tweet 14: VALUE
 
 **Type:** Productivity hack
-**When:** Saturday 14/12, 15:00
+**When:** Friday 12/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 186
 
@@ -375,10 +349,10 @@ Wild how much work happens when nobody can ping you for two hours.
 
 ---
 
-## Tweet 16: ENGAGEMENT
+## Tweet 15: ENGAGEMENT
 
 **Type:** Question
-**When:** Sunday 15/12, 01:00
+**When:** Saturday 13/12, 01:00
 **Status:** ⏳ Pending
 **Character Count:** 167
 
@@ -394,10 +368,10 @@ I scrolled and clicked accept like everyone else.
 
 ---
 
-## Tweet 17: PERSONAL STORY
+## Tweet 16: PERSONAL STORY
 
 **Type:** Experience
-**When:** Sunday 15/12, 19:00
+**When:** Saturday 13/12, 19:00
 **Status:** ⏳ Pending
 **Character Count:** 208
 
@@ -416,10 +390,10 @@ https://floatjet.com/tools/best-cloud-storage-remote-work/
 
 ---
 
-## Tweet 18: RELATABLE
+## Tweet 17: RELATABLE
 
 **Type:** Work life observation
-**When:** Monday 16/12, 15:00
+**When:** Sunday 14/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 122
 
@@ -435,10 +409,10 @@ The ratio is always bad.
 
 ---
 
-## Tweet 19: PERSONAL STORY
+## Tweet 18: PERSONAL STORY
 
 **Type:** Tool experience
-**When:** Tuesday 17/12, 01:00
+**When:** Monday 15/12, 01:00
 **Status:** ⏳ Pending
 **Character Count:** 179
 
@@ -455,10 +429,10 @@ https://floatjet.com/tools/best-password-manager-remote-work/
 
 ---
 
-## Tweet 20: PERSONAL STORY
+## Tweet 19: PERSONAL STORY
 
 **Type:** Setup observation
-**When:** Tuesday 17/12, 19:00
+**When:** Monday 15/12, 19:00
 **Status:** ⏳ Pending
 **Character Count:** 188
 
@@ -475,10 +449,10 @@ https://floatjet.com/guides/how-many-monitors-do-you-actually-need/
 
 ---
 
-## Tweet 21: VALUE
+## Tweet 20: VALUE
 
 **Type:** Security warning
-**When:** Wednesday 18/12, 15:00
+**When:** Tuesday 16/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 177
 
@@ -495,10 +469,10 @@ https://floatjet.com/guides/two-factor-authentication-guide/
 
 ---
 
-## Tweet 22: RELATABLE
+## Tweet 21: RELATABLE
 
 **Type:** Confession
-**When:** Thursday 19/12, 01:00
+**When:** Wednesday 17/12, 01:00
 **Status:** ⏳ Pending
 **Character Count:** 141
 
@@ -512,10 +486,10 @@ It's either efficient or problematic. Haven't decided which.
 
 ---
 
-## Tweet 23: FREELANCE TIP
+## Tweet 22: FREELANCE TIP
 
 **Type:** Business advice
-**When:** Thursday 19/12, 19:00
+**When:** Wednesday 17/12, 19:00
 **Status:** ⏳ Pending
 **Character Count:** 188
 
@@ -532,10 +506,10 @@ https://floatjet.com/guides/invoice-payment-terms-guide/
 
 ---
 
-## Tweet 24: VALUE
+## Tweet 23: VALUE
 
 **Type:** Gear recommendation
-**When:** Friday 20/12, 15:00
+**When:** Thursday 18/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 192
 
@@ -552,10 +526,10 @@ https://floatjet.com/gear/best-webcams-video-calls/
 
 ---
 
-## Tweet 25: PERSONAL STORY
+## Tweet 24: PERSONAL STORY
 
 **Type:** Lesson learned
-**When:** Saturday 21/12, 01:00
+**When:** Friday 19/12, 01:00
 **Status:** ⏳ Pending
 **Character Count:** 155
 
@@ -571,10 +545,10 @@ Learn from my panic.
 
 ---
 
-## Tweet 26: RELATABLE
+## Tweet 25: RELATABLE
 
 **Type:** Time zone fail
-**When:** Saturday 21/12, 19:00
+**When:** Friday 19/12, 19:00
 **Status:** ⏳ Pending
 **Character Count:** 176
 
@@ -596,7 +570,7 @@ https://floatjet.com/guides/work-remotely-different-time-zones/
 ## Tweet 27: PERSONAL STORY
 
 **Type:** Cost analysis
-**When:** Sunday 22/12, 15:00
+**When:** Saturday 20/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 175
 
@@ -612,10 +586,10 @@ Might be time to cancel.
 
 ---
 
-## Tweet 28: RELATABLE
+## Tweet 27: RELATABLE
 
 **Type:** Experiment
-**When:** Monday 23/12, 01:00
+**When:** Sunday 21/12, 01:00
 **Status:** ⏳ Pending
 **Character Count:** 156
 
@@ -631,10 +605,10 @@ Back to my laptop screen like a normal person.
 
 ---
 
-## Tweet 29: VALUE
+## Tweet 28: VALUE
 
 **Type:** Tool recommendation
-**When:** Monday 23/12, 19:00
+**When:** Sunday 21/12, 19:00
 **Status:** ⏳ Pending
 **Character Count:** 195
 
@@ -651,10 +625,10 @@ https://floatjet.com/tools/best-invoicing-tools/
 
 ---
 
-## Tweet 30: VALUE
+## Tweet 29: VALUE
 
 **Type:** Holiday reminder
-**When:** Tuesday 24/12, 15:00
+**When:** Monday 22/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 198
 
@@ -671,10 +645,10 @@ https://floatjet.com/tools/best-cloud-storage-remote-work/
 
 ---
 
-## Tweet 31: FREELANCE TIP
+## Tweet 30: FREELANCE TIP
 
 **Type:** Tax reminder
-**When:** Wednesday 25/12, 15:00
+**When:** Tuesday 23/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 197
 
@@ -693,10 +667,10 @@ https://floatjet.com/guides/freelancer-tax-deductions-guide/
 
 ---
 
-## Tweet 32: VALUE
+## Tweet 31: VALUE
 
 **Type:** Gear ranking
-**When:** Thursday 26/12, 15:00
+**When:** Wednesday 24/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 198
 
@@ -713,10 +687,10 @@ https://floatjet.com/gear/best-noise-canceling-headphones/
 
 ---
 
-## Tweet 33: VALUE
+## Tweet 32: VALUE
 
 **Type:** Tool advice
-**When:** Friday 27/12, 15:00
+**When:** Thursday 25/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 196
 
@@ -733,10 +707,10 @@ https://floatjet.com/tools/best-email-marketing-tools/
 
 ---
 
-## Tweet 34: ENGAGEMENT
+## Tweet 33: ENGAGEMENT
 
 **Type:** New Year
-**When:** Saturday 28/12, 15:00
+**When:** Friday 26/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 180
 
@@ -752,10 +726,10 @@ Revolutionary concept.
 
 ---
 
-## Tweet 35: BEHIND THE SCENES
+## Tweet 34: BEHIND THE SCENES
 
 **Type:** Year wrap-up
-**When:** Sunday 29/12, 15:00
+**When:** Saturday 27/12, 15:00
 **Status:** ⏳ Pending
 **Character Count:** 190
 
@@ -766,6 +740,32 @@ Full reviews dropping January.
 ```
 
 **Hashtags:** #Productivity
+
+---
+
+## Tweet 35: ENGAGEMENT (Poll)
+
+**Type:** Poll / Question
+**When:** Sunday 28/12, 15:00
+**Status:** ⏳ Pending
+**Character Count:** 178
+
+```text
+What kills your remote work productivity the most?
+
+Genuinely curious—testing tools in all these categories right now.
+
+Drop your answer or vote below.
+```
+
+**Poll Options:**
+
+- Slack notification chaos
+- Too many video calls
+- No dedicated workspace
+- Time zone coordination
+
+**Hashtags:** #WorkFromHome
 
 ---
 

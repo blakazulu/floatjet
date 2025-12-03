@@ -8,25 +8,25 @@ Full month of posts for FloatJet's LinkedIn company page.
 
 ## Content Calendar Summary
 
-| Day       | Time  | Post                  | Type               | Status    | AI % | Article |
-| --------- | ----- | --------------------- | ------------------ | --------- | ---- | ------- |
-| Wed 4/12  | -     | #1 Intro              | Featured           | ✅ Posted  | 0%   | No      |
-| Wed 4/12  | 16:00 | #2 Industry insight   | Thought leadership | ✅ Posted  | 0%   | No      |
-| Thu 5/12  | 16:00 | #3 VPN testing        | Behind-scenes      | ⏳ Pending | 0%   | No      |
-| Sun 8/12  | 16:00 | #4 Pain points        | Engagement         | ⏳ Pending | 0%   | No      |
-| Tue 10/12 | 16:00 | #5 Hot take           | Value              | ⏳ Pending | 0%   | Yes     |
-| Wed 11/12 | 16:00 | #6 Article teaser     | Pre-promotion      | ⏳ Pending | 0%   | Yes     |
-| Thu 12/12 | 16:00 | #7 Standing desk      | Personal story     | ⏳ Pending | 0%   | Yes     |
-| Sun 15/12 | 16:00 | #8 Free VPNs          | Value              | ⏳ Pending | 0%   | Yes     |
-| Tue 17/12 | 16:00 | #9 Coffee shop WiFi   | Behind-scenes      | ⏳ Pending | 0%   | Yes     |
-| Wed 18/12 | 16:00 | #10 Physical notebook | Value              | ⏳ Pending | 0%   | Yes     |
-| Thu 19/12 | 16:00 | #11 Password manager  | Testing update     | ⏳ Pending | 0%   | Yes     |
-| Sun 22/12 | 16:00 | #12 VPN wrap-up       | Testing results    | ⏳ Pending | 0%   | Yes     |
-| Tue 24/12 | 16:00 | #13 Holiday travel    | Personal story     | ⏳ Pending | 0%   | Yes     |
-| Thu 26/12 | 16:00 | #14 Expense audit     | Behind-scenes      | ⏳ Pending | 0%   | Yes     |
-| Sun 29/12 | 16:00 | #15 Holiday week      | Thought leadership | ⏳ Pending | 0%   | No      |
-| Tue 31/12 | 16:00 | #16 Year reflection   | Value              | ⏳ Pending | 0%   | No      |
-| Wed 1/1   | 16:00 | #17 Tool verdict      | Year wrap-up       | ⏳ Pending | 0%   | Yes     |
+| Day       | Time  | Post                  | Type               | Status      | AI % | Article |
+| --------- | ----- | --------------------- | ------------------ | ----------- | ---- | ------- |
+| Tue 2/12  | -     | #1 Intro              | Featured           | ✅ Posted    | 0%   | No      |
+| Tue 2/12  | 16:00 | #2 Industry insight   | Thought leadership | ✅ Posted    | 0%   | No      |
+| Wed 3/12  | 16:00 | #3 VPN testing        | Behind-scenes      | ✅ Posted    | 0%   | No      |
+| Sun 7/12  | 16:00 | #4 Pain points        | Engagement         | ⏳ Scheduled | 0%   | No      |
+| Tue 9/12  | 16:00 | #5 Hot take           | Value              | ⏳ Pending   | 0%   | Yes     |
+| Wed 10/12 | 16:00 | #6 Article teaser     | Pre-promotion      | ⏳ Pending   | 0%   | Yes     |
+| Thu 11/12 | 16:00 | #7 Standing desk      | Personal story     | ⏳ Pending   | 0%   | Yes     |
+| Sun 14/12 | 16:00 | #8 Free VPNs          | Value              | ⏳ Pending   | 0%   | Yes     |
+| Tue 16/12 | 16:00 | #9 Coffee shop WiFi   | Behind-scenes      | ⏳ Pending   | 0%   | Yes     |
+| Wed 17/12 | 16:00 | #10 Physical notebook | Value              | ⏳ Pending   | 0%   | Yes     |
+| Thu 18/12 | 16:00 | #11 Password manager  | Testing update     | ⏳ Pending   | 0%   | Yes     |
+| Sun 21/12 | 16:00 | #12 VPN wrap-up       | Testing results    | ⏳ Pending   | 0%   | Yes     |
+| Tue 23/12 | 16:00 | #13 Holiday travel    | Personal story     | ⏳ Pending   | 0%   | Yes     |
+| Thu 25/12 | 16:00 | #14 Expense audit     | Behind-scenes      | ⏳ Pending   | 0%   | Yes     |
+| Sun 28/12 | 16:00 | #15 Holiday week      | Thought leadership | ⏳ Pending   | 0%   | No      |
+| Tue 30/12 | 16:00 | #16 Year reflection   | Value              | ⏳ Pending   | 0%   | No      |
+| Wed 31/12 | 16:00 | #17 Tool verdict      | Year wrap-up       | ⏳ Pending   | 0%   | Yes     |
 
 ---
 
@@ -67,7 +67,7 @@ Think of it as getting recommendations from someone who's already wasted money o
 ## Post 2: INDUSTRY INSIGHT
 
 **Type:** Observation / Thought leadership
-**When:** Wednesday 4/12, 16:00
+**When:** Tuesday 2/12, 16:00
 **Status:** ✅ POSTED
 **Format:** Text post
 **AI Detection:** 0%
@@ -96,7 +96,7 @@ Worth thinking about next time you're researching tools.
 ## Post 3: BEHIND THE SCENES
 
 **Type:** Process transparency
-**When:** Thursday 5/12, 16:00
+**When:** Wednesday 3/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%
@@ -120,7 +120,7 @@ More on this soon. Got strong opinions forming.
 ## Post 4: ENGAGEMENT (Poll-style)
 
 **Type:** Question / Discussion starter
-**When:** Sunday 8/12, 16:00
+**When:** Sunday 7/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post with question
 **AI Detection:** 0%
@@ -151,7 +151,7 @@ But the weird specific problems are usually more interesting. Drop yours below. 
 ## Post 5: VALUE / TIP
 
 **Type:** Practical insight
-**When:** Tuesday 10/12, 16:00
+**When:** Tuesday 9/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%
@@ -182,7 +182,7 @@ Link in comments.
 ## Post 6: ARTICLE TEASER
 
 **Type:** Content promotion prep
-**When:** Wednesday 11/12, 16:00
+**When:** Wednesday 10/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post (link in comments)
 **AI Detection:** 0%
@@ -215,7 +215,7 @@ Link in comments.
 ## Post 7: PERSONAL STORY
 
 **Type:** Honest experience
-**When:** Thursday 12/12, 16:00
+**When:** Thursday 11/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%
@@ -246,7 +246,7 @@ Link in comments.
 ## Post 8: VALUE
 
 **Type:** Security insight
-**When:** Sunday 15/12, 16:00
+**When:** Sunday 14/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%
@@ -279,7 +279,7 @@ Link in comments.
 ## Post 9: BEHIND THE SCENES
 
 **Type:** Honest confession
-**When:** Tuesday 17/12, 16:00
+**When:** Tuesday 16/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%
@@ -310,7 +310,7 @@ Link in comments.
 ## Post 10: VALUE
 
 **Type:** Productivity insight
-**When:** Wednesday 18/12, 16:00
+**When:** Wednesday 17/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%
@@ -343,7 +343,7 @@ Link in comments.
 ## Post 11: TESTING UPDATE
 
 **Type:** Process transparency
-**When:** Thursday 19/12, 16:00
+**When:** Thursday 18/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%
@@ -376,7 +376,7 @@ Link in comments.
 ## Post 12: TESTING RESULTS
 
 **Type:** VPN wrap-up
-**When:** Sunday 22/12, 16:00
+**When:** Sunday 21/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%
@@ -405,7 +405,7 @@ Link in comments.
 ## Post 13: PERSONAL STORY
 
 **Type:** Holiday travel gear
-**When:** Tuesday 24/12, 16:00
+**When:** Tuesday 23/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%
@@ -437,7 +437,7 @@ What's your essential travel work setup?
 ## Post 14: BEHIND THE SCENES
 
 **Type:** Expense audit
-**When:** Thursday 26/12, 16:00
+**When:** Thursday 25/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%
@@ -469,7 +469,7 @@ Link in comments.
 ## Post 15: THOUGHT LEADERSHIP
 
 **Type:** Holiday week advice
-**When:** Sunday 29/12, 16:00
+**When:** Sunday 28/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%
@@ -495,7 +495,7 @@ What's your holiday work plan?
 ## Post 16: VALUE
 
 **Type:** Year reflection
-**When:** Tuesday 31/12, 16:00
+**When:** Tuesday 30/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%
@@ -523,7 +523,7 @@ Anyone else getting tool fatigue?
 ## Post 17: YEAR WRAP-UP
 
 **Type:** Tool verdict
-**When:** Wednesday 1/1/2025, 16:00
+**When:** Wednesday 31/12, 16:00
 **Status:** ⏳ Pending
 **Format:** Text post
 **AI Detection:** 0%

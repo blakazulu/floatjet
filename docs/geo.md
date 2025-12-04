@@ -177,7 +177,7 @@ Most complex change. Requires new pages and schema updates.
 | 2 | KeyTakeaways component | 2 hours | High | Todo |
 | 3 | Definition boxes component | 2 hours | Medium | Todo |
 | 4 | HowTo schema for guides | 3-4 hours | Medium | Todo |
-| 5 | Author pages & enhanced schema | 4-5 hours | Medium | Todo |
+| ~~5~~ | ~~Author pages & enhanced schema~~ | ~~4-5 hours~~ | ~~Medium~~ | Done |
 
 ---
 

@@ -77,10 +77,7 @@ export const team: TeamMember[] = [
         "System Architecture",
         "Remote Work Tools",
       ],
-      sameAs: [
-        "https://www.linkedin.com/in/liraz-amir/",
-        "https://github.com/blakazulu",
-      ],
+      sameAs: ["https://www.linkedin.com/in/liraz-amir/", "https://github.com/blakazulu"],
       url: "https://floatjet.com/authors/liraz-amir",
     },
   },
@@ -91,7 +88,7 @@ export const team: TeamMember[] = [
     role: "writer",
     location: "Portland, Oregon",
     email: "marcus@floatjet.com",
-    image: "/images/team/marcus-chen.jpg",
+    image: "/images/team/marcus-chen.png",
     bioShort:
       "I've spent 12 years in tech—5 as a software engineer, the rest testing products and writing about them. 500+ reviews at this point. I read the benchmark data so you don't have to. My job is figuring out what actually works versus what just looks good in a press release.",
     bioLong:
@@ -149,7 +146,7 @@ export const team: TeamMember[] = [
     role: "writer",
     location: "Asheville, North Carolina",
     email: "sarah@floatjet.com",
-    image: "/images/team/sarah-mitchell.jpg",
+    image: "/images/team/sarah-mitchell.png",
     bioShort:
       "Eight years doing HR and operations for remote teams. Onboarded hundreds of people. Then I threw out my back in 2019 and spent six months talking to physical therapists about chairs. Now I write about workspaces and productivity—mostly so other people don't have to learn the hard way like I did.",
     bioLong:

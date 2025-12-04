@@ -78,42 +78,42 @@
 
 | #   | Name                                                                 | Sub-Category | Category | Link                                            | Word Count | Voice Intro | Status      |
 | --- | -------------------------------------------------------------------- | ------------ | -------- | ----------------------------------------------- | ---------- | ----------- | ----------- |
-| 003 | Best Banking for Digital Nomads: Multi-Currency Accounts (2025)      | Finance      | Blog     | /blog/best-banking-digital-nomads               | 700        | false       | not started |
-| 004 | Crypto-Friendly Banks for Remote Workers (2025)                      | Finance      | Blog     | /blog/crypto-friendly-banks                     | 600        | false       | not started |
-| 005 | Remote Work Taxes: The No-BS Guide (2025)                            | Finance      | Blog     | /blog/tax-tips-remote-workers                   | 800        | false       | not started |
-| 010 | 500 Speed Tests Later, Here's What Actually Happened                 | Security     | Blog     | /blog/vpn-speed-comparison                      | 600        | false       | not started |
-| 011 | Someone's Watching You Work Right Now (Probably)                     | Security     | Blog     | /blog/vpn-public-wifi-guide                     | 800        | false       | not started |
-| 014 | Essential Travel Tech for Digital Nomads (2025)                      | Travel       | Blog     | /blog/essential-travel-tech-nomads              | 1450       | false       | not started |
-| 015 | Best Travel Insurance for Remote Workers & Digital Nomads (2025)     | Travel       | Blog     | /blog/best-travel-insurance-remote-workers      | 1420       | false       | not started |
-| 016 | Top 10 Destinations for Digital Nomads (2025)                        | Travel       | Blog     | /blog/top-destinations-digital-nomads           | 2100       | false       | not started |
-| 017 | Best Laptop Bags & Backpacks for Digital Nomads (2025)               | Accessories  | Gear     | /gear/best-laptop-bags-backpacks                | 1850       | false       | not started |
-| 021 | Best Travel Adapters for International Nomads (2025)                 | Accessories  | Gear     | /gear/best-travel-adapters                      | 1542       | false       | not started |
-| 045 | Invoice Payment Terms: Net 30 vs Net 15 vs Due on Receipt (2025)     | Finance      | Guides   | /guides/invoice-payment-terms-guide             | 1620       | false       | not started |
-| 046 | How to Set Up Retirement Savings as a Freelancer (2025)              | Finance      | Guides   | /guides/retirement-savings-freelancer           | 2551       | false       | not started |
-| 047 | Freelancer Tax Deductions: Complete Guide (2025)                     | Finance      | Guides   | /guides/freelancer-tax-deductions-guide         | 2238       | false       | not started |
-| 048 | Multi-Currency Banking for Digital Nomads (2025)                     | Finance      | Guides   | /guides/multi-currency-banking-nomads           | 2038       | false       | not started |
-| 055 | Phishing Scams: How Remote Workers Can Stay Safe                     | Security     | Guides   | /guides/phishing-scams-remote-workers           | 1481       | false       | not started |
-| 056 | Two-Factor Authentication Setup Guide for Remote Workers (2025)      | Security     | Guides   | /guides/two-factor-authentication-guide         | 1431       | false       | not started |
-| 057 | Do I Need a VPN When Working from Cafes?                             | Security     | Guides   | /guides/do-i-need-vpn-cafes                     | 1548       | false       | not started |
-| 058 | How to Secure Your Home WiFi Network for Remote Work (2025)          | Security     | Guides   | /guides/secure-home-wifi-network                | 1889       | false       | not started |
-| 059 | VPN vs Proxy: Which is Better for Remote Work?                       | Security     | Guides   | /guides/vpn-vs-proxy-remote-work                | 1623       | false       | not started |
-| 065 | Can You Work Remotely from Another Country? A Legal Guide            | Travel       | Guides   | /guides/can-you-work-remotely-another-country   | 1300       | false       | not started |
-| 067 | Best Coworking Spaces in Lisbon 2025: A Digital Nomad's Guide        | Travel       | Guides   | /guides/best-coworking-spaces-lisbon            | 1712       | false       | not started |
-| 068 | Spain Digital Nomad Visa Guide 2025: Requirements & Application      | Travel       | Guides   | /guides/digital-nomad-visa-spain                | 1746       | false       | not started |
-| 069 | Portugal Digital Nomad Visa Guide 2025: Requirements & Application   | Travel       | Guides   | /guides/digital-nomad-visa-portugal             | 1813       | false       | not started |
-| 070 | Best Expense Tracking Apps for Digital Nomads in 2025                | Finance      | Tools    | /tools/best-expense-tracking-apps               | 1775       | false       | not started |
-| 071 | Wise vs PayPal vs Payoneer: Which Is Best for Remote Workers? (2025) | Finance      | Tools    | /tools/wise-vs-paypal-vs-payoneer               | 850        | false       | not started |
-| 072 | How to Accept International Payments (Without Losing 5% to Fees)     | Finance      | Tools    | /tools/accept-international-payments-freelancer | 939        | false       | not started |
-| 073 | Best Accounting Software for Freelancers in 2025: Complete Guide     | Finance      | Tools    | /tools/best-accounting-software-freelancers     | 2327       | false       | not started |
-| 074 | Best Invoicing Tools for Remote Professionals in 2025                | Finance      | Tools    | /tools/best-invoicing-tools                     | 1530       | false       | not started |
-| 092 | Best VPNs for Digital Nomads & Remote Workers (2025)                 | VPN          | Tools    | /tools/best-vpn-digital-nomads                  | 1743       | false       | not started |
-| 093 | Best VPN for Streaming While Traveling (2025)                        | VPN          | Tools    | /tools/best-vpn-streaming-travel                | 1450       | false       | not started |
-| 094 | Best Business VPN Solutions for Remote Teams (2025)                  | VPN          | Tools    | /tools/best-business-vpn-remote-teams           | 1550       | false       | not started |
-| 095 | Free VPN vs Paid VPN: What Remote Workers Need to Know (2025)        | VPN          | Tools    | /tools/free-vpn-vs-paid-vpn                     | 1400       | false       | not started |
-| 096 | How to Set Up a VPN on All Your Devices (2025)                       | VPN          | Tools    | /tools/how-to-setup-vpn-all-devices             | 1200       | false       | not started |
-| 097 | VPN Kill Switch Explained: Why Remote Workers Need It (2025)         | VPN          | Tools    | /tools/vpn-kill-switch-explained                | 600        | false       | not started |
-| 098 | Can You Write Off Home Office Equipment? Tax Deduction Guide (2025)  | Finance      | Guides   | /guides/can-you-write-off-home-office-equipment | 2200       | false       | not started |
-| 099 | Do I Really Need a Password Manager? Honest Answer (2025)            | Security     | Guides   | /guides/do-i-really-need-password-manager       | 2000       | false       | not started |
+| 003 | Best Banking for Digital Nomads: Multi-Currency Accounts (2025)      | Finance      | Blog     | /blog/best-banking-digital-nomads               | 700        | true        | done        |
+| 004 | Crypto-Friendly Banks for Remote Workers (2025)                      | Finance      | Blog     | /blog/crypto-friendly-banks                     | 600        | true        | done        |
+| 005 | Remote Work Taxes: The No-BS Guide (2025)                            | Finance      | Blog     | /blog/tax-tips-remote-workers                   | 800        | true        | done        |
+| 010 | 500 Speed Tests Later, Here's What Actually Happened                 | Security     | Blog     | /blog/vpn-speed-comparison                      | 600        | true        | done        |
+| 011 | Someone's Watching You Work Right Now (Probably)                     | Security     | Blog     | /blog/vpn-public-wifi-guide                     | 800        | true        | done        |
+| 014 | Essential Travel Tech for Digital Nomads (2025)                      | Travel       | Blog     | /blog/essential-travel-tech-nomads              | 1450       | true        | done        |
+| 015 | Best Travel Insurance for Remote Workers & Digital Nomads (2025)     | Travel       | Blog     | /blog/best-travel-insurance-remote-workers      | 1420       | true        | done        |
+| 016 | Top 10 Destinations for Digital Nomads (2025)                        | Travel       | Blog     | /blog/top-destinations-digital-nomads           | 2100       | true        | done        |
+| 017 | Best Laptop Bags & Backpacks for Digital Nomads (2025)               | Accessories  | Gear     | /gear/best-laptop-bags-backpacks                | 1850       | true        | done        |
+| 021 | Best Travel Adapters for International Nomads (2025)                 | Accessories  | Gear     | /gear/best-travel-adapters                      | 1542       | true        | done        |
+| 045 | Invoice Payment Terms: Net 30 vs Net 15 vs Due on Receipt (2025)     | Finance      | Guides   | /guides/invoice-payment-terms-guide             | 1620       | true        | done        |
+| 046 | How to Set Up Retirement Savings as a Freelancer (2025)              | Finance      | Guides   | /guides/retirement-savings-freelancer           | 2551       | true        | done        |
+| 047 | Freelancer Tax Deductions: Complete Guide (2025)                     | Finance      | Guides   | /guides/freelancer-tax-deductions-guide         | 2238       | true        | done        |
+| 048 | Multi-Currency Banking for Digital Nomads (2025)                     | Finance      | Guides   | /guides/multi-currency-banking-nomads           | 2038       | true        | done        |
+| 055 | Phishing Scams: How Remote Workers Can Stay Safe                     | Security     | Guides   | /guides/phishing-scams-remote-workers           | 1481       | true        | done        |
+| 056 | Two-Factor Authentication Setup Guide for Remote Workers (2025)      | Security     | Guides   | /guides/two-factor-authentication-guide         | 1431       | true        | done        |
+| 057 | Do I Need a VPN When Working from Cafes?                             | Security     | Guides   | /guides/do-i-need-vpn-cafes                     | 1548       | true        | done        |
+| 058 | How to Secure Your Home WiFi Network for Remote Work (2025)          | Security     | Guides   | /guides/secure-home-wifi-network                | 1889       | true        | done        |
+| 059 | VPN vs Proxy: Which is Better for Remote Work?                       | Security     | Guides   | /guides/vpn-vs-proxy-remote-work                | 1623       | true        | done        |
+| 065 | Can You Work Remotely from Another Country? A Legal Guide            | Travel       | Guides   | /guides/can-you-work-remotely-another-country   | 1300       | true        | done        |
+| 067 | Best Coworking Spaces in Lisbon 2025: A Digital Nomad's Guide        | Travel       | Guides   | /guides/best-coworking-spaces-lisbon            | 1712       | true        | done        |
+| 068 | Spain Digital Nomad Visa Guide 2025: Requirements & Application      | Travel       | Guides   | /guides/digital-nomad-visa-spain                | 1746       | true        | done        |
+| 069 | Portugal Digital Nomad Visa Guide 2025: Requirements & Application   | Travel       | Guides   | /guides/digital-nomad-visa-portugal             | 1813       | true        | done        |
+| 070 | Best Expense Tracking Apps for Digital Nomads in 2025                | Finance      | Tools    | /tools/best-expense-tracking-apps               | 1775       | true        | done        |
+| 071 | Wise vs PayPal vs Payoneer: Which Is Best for Remote Workers? (2025) | Finance      | Tools    | /tools/wise-vs-paypal-vs-payoneer               | 850        | true        | done        |
+| 072 | How to Accept International Payments (Without Losing 5% to Fees)     | Finance      | Tools    | /tools/accept-international-payments-freelancer | 939        | true        | done        |
+| 073 | Best Accounting Software for Freelancers in 2025: Complete Guide     | Finance      | Tools    | /tools/best-accounting-software-freelancers     | 2327       | true        | done        |
+| 074 | Best Invoicing Tools for Remote Professionals in 2025                | Finance      | Tools    | /tools/best-invoicing-tools                     | 1530       | true        | done        |
+| 092 | Best VPNs for Digital Nomads & Remote Workers (2025)                 | VPN          | Tools    | /tools/best-vpn-digital-nomads                  | 1743       | true        | done        |
+| 093 | Best VPN for Streaming While Traveling (2025)                        | VPN          | Tools    | /tools/best-vpn-streaming-travel                | 1450       | true        | done        |
+| 094 | Best Business VPN Solutions for Remote Teams (2025)                  | VPN          | Tools    | /tools/best-business-vpn-remote-teams           | 1550       | true        | done        |
+| 095 | Free VPN vs Paid VPN: What Remote Workers Need to Know (2025)        | VPN          | Tools    | /tools/free-vpn-vs-paid-vpn                     | 1400       | true        | done        |
+| 096 | How to Set Up a VPN on All Your Devices (2025)                       | VPN          | Tools    | /tools/how-to-setup-vpn-all-devices             | 1200       | true        | done        |
+| 097 | VPN Kill Switch Explained: Why Remote Workers Need It (2025)         | VPN          | Tools    | /tools/vpn-kill-switch-explained                | 600        | true        | done        |
+| 098 | Can You Write Off Home Office Equipment? Tax Deduction Guide (2025)  | Finance      | Guides   | /guides/can-you-write-off-home-office-equipment | 2200       | true        | done        |
+| 099 | Do I Really Need a Password Manager? Honest Answer (2025)            | Security     | Guides   | /guides/do-i-really-need-password-manager       | 2000       | true        | done        |
 
 ### Marcus Chen Articles (43)
 
@@ -208,10 +208,10 @@
 
 | Writer          | Total         | Intro Done  | Full Rewrite   | Completed    |
 | --------------- | ------------- | ----------- | -------------- | ------------ |
-| Daniel Brooks   | 31            | 0           | 0/5            | 0%           |
+| Daniel Brooks   | 31            | 31          | 0/5            | 100%         |
 | Marcus Chen     | 43            | 0           | 0/7            | 0%           |
 | Sarah Mitchell  | 28            | 0           | 0/3            | 0%           |
-| **Total** | **102** | **0** | **0/15** | **0%** |
+| **Total** | **102** | **31** | **0/15** | **30%** |
 
 ---
 

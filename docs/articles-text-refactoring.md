@@ -74,7 +74,7 @@
 
 ## All Articles Tracking
 
-### Daniel Brooks Articles (31)
+### Daniel Brooks Articles (36)
 
 | #   | Name                                                                 | Sub-Category | Category | Link                                            | Word Count | Voice Intro | Status      |
 | --- | -------------------------------------------------------------------- | ------------ | -------- | ----------------------------------------------- | ---------- | ----------- | ----------- |
@@ -115,7 +115,7 @@
 | 098 | Can You Write Off Home Office Equipment? Tax Deduction Guide (2025)  | Finance      | Guides   | /guides/can-you-write-off-home-office-equipment | 2200       | true        | done        |
 | 099 | Do I Really Need a Password Manager? Honest Answer (2025)            | Security     | Guides   | /guides/do-i-really-need-password-manager       | 2000       | true        | done        |
 
-### Marcus Chen Articles (43)
+### Marcus Chen Articles (39)
 
 | #   | Name                                                                       | Sub-Category  | Category | Link                                           | Word Count | Voice Intro | Status      |
 | --- | -------------------------------------------------------------------------- | ------------- | -------- | ---------------------------------------------- | ---------- | ----------- | ----------- |
@@ -127,7 +127,6 @@
 | 018 | Best Mechanical Keyboards for Remote Work (2025)                           | Accessories   | Gear     | /gear/best-mechanical-keyboards                | 1763       | true        | done        |
 | 019 | Best Portable Chargers & Power Banks for Travel (2025)                     | Accessories   | Gear     | /gear/best-portable-chargers-power-banks       | 3250       | true        | done        |
 | 020 | Best Webcams for Professional Video Calls (2025)                           | Accessories   | Gear     | /gear/best-webcams-video-calls                 | 2266       | true        | done        |
-| 022 | Best Microphones for Remote Meetings (2025)                                | Audio         | Gear     | /gear/best-microphones-remote-meetings         | 1168       | true        | done        |
 | 023 | How to Reduce Background Noise on Video Calls (2025)                       | Audio         | Gear     | /gear/reduce-background-noise-calls            | 704        | true        | done        |
 | 024 | Best Wireless Earbuds for Remote Work Calls (2025)                         | Audio         | Gear     | /gear/best-wireless-earbuds-remote-work        | 1680       | true        | done        |
 | 026 | Best Noise-Canceling Headphones for Remote Work (2025)                     | Audio         | Gear     | /gear/best-noise-canceling-headphones          | 2046       | true        | done        |
@@ -208,10 +207,10 @@
 
 | Writer          | Total         | Intro Done  | Full Rewrite   | Completed    |
 | --------------- | ------------- | ----------- | -------------- | ------------ |
-| Daniel Brooks   | 31            | 31          | 0/5            | 100%         |
-| Marcus Chen     | 43            | 43          | 0/7            | 100%         |
+| Daniel Brooks   | 36            | 36          | 0/5            | 100%         |
+| Marcus Chen     | 39            | 39          | 0/7            | 100%         |
 | Sarah Mitchell  | 27            | 27          | 0/3            | 100%         |
-| **Total** | **101** | **101** | **0/15** | **100%** |
+| **Total** | **102** | **102** | **0/15** | **100%** |
 
 ---
 

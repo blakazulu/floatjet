@@ -209,14 +209,22 @@ const organizationSchema = {
   }
 
   .founder-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
     padding: 2rem;
-    background: linear-gradient(135deg, rgba(15, 76, 92, 0.5), rgba(10, 50, 60, 0.6));
+    background:
+      linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05), transparent),
+      rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 1.5rem;
-    border: 1px solid rgba(56, 163, 165, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top-color: rgba(255, 255, 255, 0.2);
+    border-left-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   }
 
   @media (min-width: 768px) {
@@ -410,20 +418,31 @@ const organizationSchema = {
   }
 
   .writer-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 1.5rem;
-    background: rgba(10, 50, 60, 0.7);
-    border-radius: 1rem;
-    border: 1px solid rgba(56, 163, 165, 0.2);
-    transition: all 0.2s ease;
+    background:
+      linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05), transparent),
+      rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top-color: rgba(255, 255, 255, 0.2);
+    border-left-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
   }
 
   .writer-card:hover {
-    background: rgba(10, 50, 60, 0.8);
-    border-color: rgba(56, 163, 165, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    background:
+      linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+      rgba(15, 23, 42, 0.85);
   }
 
   .writer-image-link {
@@ -547,9 +566,16 @@ const organizationSchema = {
   .join-section {
     text-align: center;
     padding: 2.5rem;
-    background: linear-gradient(135deg, rgba(15, 76, 92, 0.3), rgba(56, 163, 165, 0.15));
+    background:
+      linear-gradient(to bottom right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05), transparent),
+      rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 1.5rem;
-    border: 1px solid rgba(56, 163, 165, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top-color: rgba(255, 255, 255, 0.2);
+    border-left-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   }
 
   .join-title {

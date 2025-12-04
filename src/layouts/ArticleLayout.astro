@@ -6,11 +6,15 @@ import SocialShare from "@components/article/SocialShare.astro";
 import TableOfContents from "@components/article/TableOfContents.astro";
 import ImageLoader from "@components/ui/ImageLoader.astro";
 import BaseLayout from "./BaseLayout.astro";
+import { getTeamMember } from "@data/team";
 
 interface Props {
   title: string;
   description: string;
-  author: string;
+  authorSlug?: string;
+  /** @deprecated Use authorSlug instead */
+  author?: string;
+  /** @deprecated Use authorSlug instead */
   authorUrl?: string;
   pubDate: Date;
   updatedDate?: Date;
@@ -25,8 +29,9 @@ interface Props {
 const {
   title,
   description,
-  author,
-  authorUrl,
+  authorSlug,
+  author: legacyAuthor,
+  authorUrl: legacyAuthorUrl,
   pubDate,
   updatedDate,
   readingTime,
@@ -37,12 +42,34 @@ const {
   headings = [],
 } = Astro.props;
 
+// Get author from team data or fall back to legacy props
+const teamMember = authorSlug ? getTeamMember(authorSlug) : undefined;
+const author = teamMember?.name || legacyAuthor || "FloatJet Team";
+const authorUrl = teamMember ? `/authors/${teamMember.slug}` : legacyAuthorUrl || "/about";
+
 // Build breadcrumb items
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: category, href: `/${categorySlug}` },
   { label: title },
 ];
+
+// Build author schema - use full Person schema if team member, otherwise simple
+const authorSchema = teamMember ? {
+  "@type": "Person",
+  name: teamMember.name,
+  url: `https://floatjet.com/authors/${teamMember.slug}`,
+  jobTitle: teamMember.title,
+  description: teamMember.bioShort,
+  knowsAbout: teamMember.schema.knowsAbout,
+  ...(teamMember.schema.alumniOf && { alumniOf: teamMember.schema.alumniOf }),
+  ...(teamMember.schema.hasCredential && { hasCredential: teamMember.schema.hasCredential }),
+  sameAs: teamMember.social ? Object.values(teamMember.social).filter(Boolean) : undefined,
+} : {
+  "@type": "Person",
+  name: author,
+  url: authorUrl ? `https://floatjet.com${authorUrl}` : undefined,
+};
 
 // Article Schema markup
 const articleSchema = {
@@ -51,11 +78,7 @@ const articleSchema = {
   headline: title,
   description: description,
   image: image ? `https://floatjet.com${image}` : undefined,
-  author: {
-    "@type": "Person",
-    name: author,
-    url: authorUrl,
-  },
+  author: authorSchema,
   publisher: {
     "@type": "Organization",
     name: "FloatJet",

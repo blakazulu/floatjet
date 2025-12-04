@@ -7,7 +7,7 @@
 
 ---
 
-## Full Article List (Sorted by Writer � Category)
+## Full Article List (Sorted by Writer � Category)
 
 | Writer | Category | File | Link |
 |--------|----------|------|------|
@@ -153,9 +153,56 @@
 
 ---
 
-## Implementation Notes
+## Implementation Status
 
-1. Update each article's frontmatter with `author: "writer-slug"`
-2. Ensure ArticleLayout pulls author data from `src/data/team.ts`
-3. Add author card to article pages
-4. Update Schema.org Article markup with author Person schema
+**Status: COMPLETED** (December 4, 2025)
+
+### What Was Done
+
+1. **ArticleLayout.astro updated** (`src/layouts/ArticleLayout.astro`)
+   - Added `authorSlug` prop (optional, backward compatible)
+   - Imports `getTeamMember()` from `@data/team`
+   - Looks up full author data when `authorSlug` provided
+   - Falls back to legacy `author`/`authorUrl` props if no slug
+
+2. **Enhanced Person Schema for E-E-A-T**
+   - Full author schema includes: `name`, `url`, `jobTitle`, `description`, `knowsAbout`
+   - Adds `alumniOf` (education credentials) when available
+   - Adds `hasCredential` (professional licenses like CPA) when available
+   - Includes `sameAs` array with social profile links
+
+3. **All 102 articles updated**
+   - Changed `const author = "FloatJet Team"` → `const authorSlug = "writer-slug"`
+   - Removed `const authorUrl = "/about"` lines
+   - Updated ArticleLayout props: `author={author} authorUrl={authorUrl}` → `authorSlug={authorSlug}`
+
+### Files Modified
+
+- `src/layouts/ArticleLayout.astro` - Core layout with author system
+- 102 article files in `src/pages/{blog,tools,gear,guides}/`
+
+### How It Works
+
+```astro
+// In article file:
+const authorSlug = "marcus-chen";
+
+// In ArticleLayout:
+<ArticleLayout
+  title={title}
+  authorSlug={authorSlug}
+  ...
+>
+```
+
+ArticleLayout automatically:
+1. Looks up `marcus-chen` in `src/data/team.ts`
+2. Gets full name, title, bio, credentials, social links
+3. Displays author name linking to `/authors/marcus-chen`
+4. Generates rich Person schema for SEO
+
+### Backward Compatibility
+
+Legacy articles without `authorSlug` still work:
+- Uses `author` and `authorUrl` props if provided
+- Falls back to "FloatJet Team" with `/about` link if nothing provided

@@ -119,78 +119,78 @@
 
 | #   | Name                                                                       | Sub-Category  | Category | Link                                           | Word Count | Voice Intro | Status      |
 | --- | -------------------------------------------------------------------------- | ------------- | -------- | ---------------------------------------------- | ---------- | ----------- | ----------- |
-| 001 | Best Team Communication Tools for Remote Work (2025)                       | Communication | Blog     | /blog/best-team-communication-tools            | 650        | false       | not started |
-| 006 | Cloud vs Traditional Hosting: What Actually Matters (2025)                 | Hosting       | Blog     | /blog/cloud-vs-traditional-hosting             | 750        | false       | not started |
-| 007 | Managed WordPress Hosting: Who's Actually Worth It (2025)                  | Hosting       | Blog     | /blog/managed-wordpress-hosting-compared       | 650        | false       | not started |
-| 009 | I Lost a $15K Client Because of a Spreadsheet                              | SaaS          | Blog     | /blog/best-crm-software-small-business         | 650        | false       | not started |
-| 013 | How to Find Reliable WiFi Anywhere in the World (2025)                     | Travel        | Blog     | /blog/find-reliable-wifi-anywhere              | 1087       | false       | not started |
-| 018 | Best Mechanical Keyboards for Remote Work (2025)                           | Accessories   | Gear     | /gear/best-mechanical-keyboards                | 1763       | false       | not started |
-| 019 | Best Portable Chargers & Power Banks for Travel (2025)                     | Accessories   | Gear     | /gear/best-portable-chargers-power-banks       | 3250       | false       | not started |
-| 020 | Best Webcams for Professional Video Calls (2025)                           | Accessories   | Gear     | /gear/best-webcams-video-calls                 | 2266       | false       | not started |
-| 022 | Best Microphones for Remote Meetings (2025)                                | Audio         | Gear     | /gear/best-microphones-remote-meetings         | 1168       | false       | not started |
-| 023 | How to Reduce Background Noise on Video Calls (2025)                       | Audio         | Gear     | /gear/reduce-background-noise-calls            | 704        | false       | not started |
-| 024 | Best Wireless Earbuds for Remote Work Calls (2025)                         | Audio         | Gear     | /gear/best-wireless-earbuds-remote-work        | 1680       | false       | not started |
-| 026 | Best Noise-Canceling Headphones for Remote Work (2025)                     | Audio         | Gear     | /gear/best-noise-canceling-headphones          | 2046       | false       | not started |
-| 027 | Best Speakers for Home Office (2025)                                       | Audio         | Gear     | /gear/best-speakers-home-office                | 1037       | false       | not started |
-| 028 | Best Laptops for Remote Work & Digital Nomads (2025)                       | Computers     | Gear     | /gear/best-laptops-remote-work                 | 1756       | false       | not started |
-| 029 | How Much RAM Do You Really Need for Remote Work? (2025)                    | Computers     | Gear     | /gear/how-much-ram-remote-work                 | 750        | false       | not started |
-| 030 | MacBook vs Windows Laptop for Remote Work: Which Should You Choose? (2025) | Computers     | Gear     | /gear/macbook-vs-windows-remote-work           | 1100       | false       | not started |
-| 031 | Best Portable Monitors for Digital Nomads (2025)                           | Computers     | Gear     | /gear/best-portable-monitors                   | 1463       | false       | not started |
-| 032 | Best Budget Laptops Under $800 for Remote Work (2025)                      | Computers     | Gear     | /gear/best-budget-laptops-remote-work          | 1102       | false       | not started |
-| 033 | Best Monitors for Remote Work (2025)                                       | Computers     | Gear     | /gear/best-monitors-remote-work                | 1054       | false       | not started |
-| 051 | What Internet Speed Do You Need for Remote Work? (2025 Guide)              | Productivity  | Guides   | /guides/internet-speed-remote-work             | 1442       | false       | not started |
-| 062 | Can You Use Your Personal Laptop for Remote Work?                          | Setup         | Guides   | /guides/personal-laptop-remote-work            | 1199       | false       | not started |
-| 075 | Best Web Hosting for Remote Businesses (2025)                              | Hosting       | Tools    | /tools/best-web-hosting-remote-business        | 2480       | false       | not started |
-| 076 | How to Migrate Your Website Without Downtime (2025)                        | Hosting       | Tools    | /tools/migrate-website-without-downtime        | 2347       | false       | not started |
-| 077 | Website Speed Optimization: Complete Guide (2025)                          | Hosting       | Tools    | /tools/website-speed-optimization-guide        | 2560       | false       | not started |
-| 078 | Best VPS Hosting for Remote Businesses (2025)                              | Hosting       | Tools    | /tools/best-vps-hosting-remote-business        | 3155       | false       | not started |
-| 079 | Shared vs VPS vs Dedicated Hosting: Which Do You Need? (2025)              | Hosting       | Tools    | /tools/shared-vs-vps-vs-dedicated-hosting      | 1510       | false       | not started |
-| 080 | Best E-commerce Hosting for Remote Entrepreneurs (2025)                    | Hosting       | Tools    | /tools/best-ecommerce-hosting                  | 3096       | false       | not started |
-| 081 | Best Cloud Storage for Remote Work (2025)                                  | SaaS          | Tools    | /tools/best-cloud-storage-remote-work          | 2138       | false       | not started |
-| 082 | Best Email Marketing Tools for Creators & Small Business (2025)            | SaaS          | Tools    | /tools/best-email-marketing-tools              | 3121       | false       | not started |
-| 083 | Best Note-Taking Apps for Remote Professionals (2025)                      | SaaS          | Tools    | /tools/best-note-taking-apps                   | 1802       | false       | not started |
-| 084 | Best Online Course Platforms for Creators (2025)                           | SaaS          | Tools    | /tools/best-online-course-platforms            | 3174       | false       | not started |
-| 085 | Best Password Managers for Remote Workers (2025)                           | SaaS          | Tools    | /tools/best-password-manager-remote-work       | 2156       | false       | not started |
-| 086 | Best Productivity Apps for Remote Workers (2025)                           | SaaS          | Tools    | /tools/best-productivity-apps                  | 4256       | false       | not started |
-| 087 | Best Project Management Software for Remote Teams (2025)                   | SaaS          | Tools    | /tools/best-project-management-software        | 3600       | false       | not started |
-| 088 | Best Time Tracking Software for Freelancers (2025)                         | SaaS          | Tools    | /tools/best-time-tracking-software             | 2032       | false       | not started |
-| 089 | Best Video Conferencing Tools for Remote Teams (2025)                      | SaaS          | Tools    | /tools/best-video-conferencing-tools           | 3026       | false       | not started |
-| 090 | Is Notion Worth It? Honest Review for Remote Workers (2025)                | SaaS          | Tools    | /tools/is-notion-worth-it                      | 1818       | false       | not started |
-| 091 | Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)                | SaaS          | Tools    | /tools/notion-vs-clickup-vs-monday             | 1800       | false       | not started |
-| 101 | What Makes a Laptop Good for Remote Work? (2025)                           | Setup         | Guides   | /guides/what-makes-laptop-good-remote-work     | 2400       | false       | not started |
-| 102 | How Many Monitors Do You Actually Need? Honest Answer (2025)               | Setup         | Guides   | /guides/how-many-monitors-do-you-actually-need | 2600       | false       | not started |
+| 001 | Best Team Communication Tools for Remote Work (2025)                       | Communication | Blog     | /blog/best-team-communication-tools            | 650        | true        | done        |
+| 006 | Cloud vs Traditional Hosting: What Actually Matters (2025)                 | Hosting       | Blog     | /blog/cloud-vs-traditional-hosting             | 750        | true        | done        |
+| 007 | Managed WordPress Hosting: Who's Actually Worth It (2025)                  | Hosting       | Blog     | /blog/managed-wordpress-hosting-compared       | 650        | true        | done        |
+| 009 | I Lost a $15K Client Because of a Spreadsheet                              | SaaS          | Blog     | /blog/best-crm-software-small-business         | 650        | true        | done        |
+| 013 | How to Find Reliable WiFi Anywhere in the World (2025)                     | Travel        | Blog     | /blog/find-reliable-wifi-anywhere              | 1087       | true        | done        |
+| 018 | Best Mechanical Keyboards for Remote Work (2025)                           | Accessories   | Gear     | /gear/best-mechanical-keyboards                | 1763       | true        | done        |
+| 019 | Best Portable Chargers & Power Banks for Travel (2025)                     | Accessories   | Gear     | /gear/best-portable-chargers-power-banks       | 3250       | true        | done        |
+| 020 | Best Webcams for Professional Video Calls (2025)                           | Accessories   | Gear     | /gear/best-webcams-video-calls                 | 2266       | true        | done        |
+| 022 | Best Microphones for Remote Meetings (2025)                                | Audio         | Gear     | /gear/best-microphones-remote-meetings         | 1168       | true        | done        |
+| 023 | How to Reduce Background Noise on Video Calls (2025)                       | Audio         | Gear     | /gear/reduce-background-noise-calls            | 704        | true        | done        |
+| 024 | Best Wireless Earbuds for Remote Work Calls (2025)                         | Audio         | Gear     | /gear/best-wireless-earbuds-remote-work        | 1680       | true        | done        |
+| 026 | Best Noise-Canceling Headphones for Remote Work (2025)                     | Audio         | Gear     | /gear/best-noise-canceling-headphones          | 2046       | true        | done        |
+| 027 | Best Speakers for Home Office (2025)                                       | Audio         | Gear     | /gear/best-speakers-home-office                | 1037       | true        | done        |
+| 028 | Best Laptops for Remote Work & Digital Nomads (2025)                       | Computers     | Gear     | /gear/best-laptops-remote-work                 | 1756       | true        | done        |
+| 029 | How Much RAM Do You Really Need for Remote Work? (2025)                    | Computers     | Gear     | /gear/how-much-ram-remote-work                 | 750        | true        | done        |
+| 030 | MacBook vs Windows Laptop for Remote Work: Which Should You Choose? (2025) | Computers     | Gear     | /gear/macbook-vs-windows-remote-work           | 1100       | true        | done        |
+| 031 | Best Portable Monitors for Digital Nomads (2025)                           | Computers     | Gear     | /gear/best-portable-monitors                   | 1463       | true        | done        |
+| 032 | Best Budget Laptops Under $800 for Remote Work (2025)                      | Computers     | Gear     | /gear/best-budget-laptops-remote-work          | 1102       | true        | done        |
+| 033 | Best Monitors for Remote Work (2025)                                       | Computers     | Gear     | /gear/best-monitors-remote-work                | 1054       | true        | done        |
+| 051 | What Internet Speed Do You Need for Remote Work? (2025 Guide)              | Productivity  | Guides   | /guides/internet-speed-remote-work             | 1442       | true        | done        |
+| 062 | Can You Use Your Personal Laptop for Remote Work?                          | Setup         | Guides   | /guides/personal-laptop-remote-work            | 1199       | true        | done        |
+| 075 | Best Web Hosting for Remote Businesses (2025)                              | Hosting       | Tools    | /tools/best-web-hosting-remote-business        | 2480       | true        | done        |
+| 076 | How to Migrate Your Website Without Downtime (2025)                        | Hosting       | Tools    | /tools/migrate-website-without-downtime        | 2347       | true        | done        |
+| 077 | Website Speed Optimization: Complete Guide (2025)                          | Hosting       | Tools    | /tools/website-speed-optimization-guide        | 2560       | true        | done        |
+| 078 | Best VPS Hosting for Remote Businesses (2025)                              | Hosting       | Tools    | /tools/best-vps-hosting-remote-business        | 3155       | true        | done        |
+| 079 | Shared vs VPS vs Dedicated Hosting: Which Do You Need? (2025)              | Hosting       | Tools    | /tools/shared-vs-vps-vs-dedicated-hosting      | 1510       | true        | done        |
+| 080 | Best E-commerce Hosting for Remote Entrepreneurs (2025)                    | Hosting       | Tools    | /tools/best-ecommerce-hosting                  | 3096       | true        | done        |
+| 081 | Best Cloud Storage for Remote Work (2025)                                  | SaaS          | Tools    | /tools/best-cloud-storage-remote-work          | 2138       | true        | done        |
+| 082 | Best Email Marketing Tools for Creators & Small Business (2025)            | SaaS          | Tools    | /tools/best-email-marketing-tools              | 3121       | true        | done        |
+| 083 | Best Note-Taking Apps for Remote Professionals (2025)                      | SaaS          | Tools    | /tools/best-note-taking-apps                   | 1802       | true        | done        |
+| 084 | Best Online Course Platforms for Creators (2025)                           | SaaS          | Tools    | /tools/best-online-course-platforms            | 3174       | true        | done        |
+| 085 | Best Password Managers for Remote Workers (2025)                           | SaaS          | Tools    | /tools/best-password-manager-remote-work       | 2156       | true        | done        |
+| 086 | Best Productivity Apps for Remote Workers (2025)                           | SaaS          | Tools    | /tools/best-productivity-apps                  | 4256       | true        | done        |
+| 087 | Best Project Management Software for Remote Teams (2025)                   | SaaS          | Tools    | /tools/best-project-management-software        | 3600       | true        | done        |
+| 088 | Best Time Tracking Software for Freelancers (2025)                         | SaaS          | Tools    | /tools/best-time-tracking-software             | 2032       | true        | done        |
+| 089 | Best Video Conferencing Tools for Remote Teams (2025)                      | SaaS          | Tools    | /tools/best-video-conferencing-tools           | 3026       | true        | done        |
+| 090 | Is Notion Worth It? Honest Review for Remote Workers (2025)                | SaaS          | Tools    | /tools/is-notion-worth-it                      | 1818       | true        | done        |
+| 091 | Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)                | SaaS          | Tools    | /tools/notion-vs-clickup-vs-monday             | 1800       | true        | done        |
+| 101 | What Makes a Laptop Good for Remote Work? (2025)                           | Setup         | Guides   | /guides/what-makes-laptop-good-remote-work     | 2400       | true        | done        |
+| 102 | How Many Monitors Do You Actually Need? Honest Answer (2025)               | Setup         | Guides   | /guides/how-many-monitors-do-you-actually-need | 2600       | true        | done        |
 
-### Sarah Mitchell Articles (28)
+### Sarah Mitchell Articles (27)
 
 | #   | Name                                                                      | Sub-Category  | Category | Link                                             | Word Count | Voice Intro | Status      |
 | --- | ------------------------------------------------------------------------- | ------------- | -------- | ------------------------------------------------ | ---------- | ----------- | ----------- |
-| 002 | The Complete Guide to Async Communication for Remote Teams (2025)         | Communication | Blog     | /blog/async-communication-remote-teams           | 700        | false       | not started |
-| 008 | Time Zones Are Killing Your Remote Team (Here's the Fix)                  | Productivity  | Blog     | /blog/managing-time-zones-remote-teams           | 750        | false       | not started |
-| 012 | How to Set Up a Productive Home Office on Any Budget (2025)               | Setup         | Blog     | /blog/ultimate-home-office-setup                 | 1069       | false       | not started |
-| 022 | Best Microphones for Remote Meetings (2025)                               | Audio         | Gear     | /gear/best-microphones-remote-meetings           | 1168       | false       | not started |
-| 025 | USB vs XLR Microphones: Which Is Better for Remote Work?                  | Audio         | Gear     | /gear/usb-vs-xlr-microphones                     | 1085       | false       | not started |
-| 034 | Ergonomic Desk Setup: Complete Guide (2025)                               | Furniture     | Gear     | /gear/ergonomic-desk-setup-guide                 | 1110       | false       | not started |
-| 035 | Best Standing Desk Converters (2025)                                      | Furniture     | Gear     | /gear/best-desk-converters                       | 904        | false       | not started |
-| 036 | Best Ergonomic Chairs for Home Office (2025)                              | Furniture     | Gear     | /gear/best-ergonomic-chairs                      | 2478       | false       | not started |
-| 037 | How Much Does a Standing Desk Really Cost? (2025 Guide)                   | Furniture     | Gear     | /gear/standing-desk-cost-guide                   | 1693       | false       | not started |
-| 038 | Best Compact Desks for Small Home Offices (2025)                          | Furniture     | Gear     | /gear/best-compact-desks-small-office            | 1965       | false       | not started |
-| 039 | Best Standing Desks for Home Office (2025)                                | Furniture     | Gear     | /gear/best-standing-desks                        | 5095       | false       | not started |
-| 040 | How to Avoid Miscommunication in Remote Teams (2025)                      | Communication | Guides   | /guides/avoid-miscommunication-remote-teams      | 1805       | false       | not started |
-| 041 | Slack vs Teams vs Discord for Remote Work: Complete Comparison (2025)     | Communication | Guides   | /guides/slack-vs-teams-vs-discord                | 1782       | false       | not started |
-| 042 | How to Run Effective Remote Meetings: A Complete Guide (2025)             | Communication | Guides   | /guides/how-to-run-effective-remote-meetings     | 1829       | false       | not started |
-| 043 | Email Etiquette for Remote Teams: Professional Communication Guide (2025) | Communication | Guides   | /guides/email-etiquette-remote-teams             | 1786       | false       | not started |
-| 044 | Remote Team Collaboration Best Practices: The Complete Guide (2025)       | Communication | Guides   | /guides/remote-team-collaboration-best-practices | 1873       | false       | not started |
-| 049 | How to Expense Home Office Furniture: Complete Guide (2025)               | Finance       | Guides   | /guides/expense-home-office-furniture            | 1923       | false       | not started |
-| 050 | Time Blocking vs Time Tracking: Which Method Works Better? (2025)         | Productivity  | Guides   | /guides/time-blocking-vs-time-tracking           | 2353       | false       | not started |
-| 052 | How to Stay Focused Working from Home: Proven Strategies (2025)           | Productivity  | Guides   | /guides/how-to-stay-focused-working-from-home    | 2327       | false       | not started |
-| 053 | Building a Morning Routine for Remote Work: Complete Guide (2025)         | Productivity  | Guides   | /guides/morning-routine-remote-work              | 2166       | false       | not started |
-| 054 | Pomodoro Technique for Remote Workers: Complete Guide (2025)              | Productivity  | Guides   | /guides/pomodoro-technique-remote-workers        | 2547       | false       | not started |
-| 060 | Minimalist Home Office Setup: Less Stuff, More Focus                      | Setup         | Guides   | /guides/minimalist-home-office-setup             | 1602       | false       | not started |
-| 061 | Home Office Cable Management: Tame the Wire Chaos                         | Setup         | Guides   | /guides/cable-management-guide                   | 1507       | false       | not started |
-| 063 | Budget Home Office Setup Under $500: Everything You Need                  | Setup         | Guides   | /guides/budget-home-office-setup-500             | 1668       | false       | not started |
-| 064 | Complete Home Office Checklist: Everything You Need                       | Setup         | Guides   | /guides/complete-home-office-checklist           | 1281       | false       | not started |
-| 066 | How to Work Remotely from Different Time Zones: A Complete Guide          | Travel        | Guides   | /guides/work-remotely-different-time-zones       | 1772       | false       | not started |
-| 100 | Are Standing Desks Actually Worth It? (2025)                              | Setup         | Guides   | /guides/are-standing-desks-actually-worth-it     | 2300       | false       | not started |
+| 002 | The Complete Guide to Async Communication for Remote Teams (2025)         | Communication | Blog     | /blog/async-communication-remote-teams           | 700        | true        | done        |
+| 008 | Time Zones Are Killing Your Remote Team (Here's the Fix)                  | Productivity  | Blog     | /blog/managing-time-zones-remote-teams           | 750        | true        | done        |
+| 012 | How to Set Up a Productive Home Office on Any Budget (2025)               | Setup         | Blog     | /blog/ultimate-home-office-setup                 | 1069       | true        | done        |
+| 022 | Best Microphones for Remote Meetings (2025)                               | Audio         | Gear     | /gear/best-microphones-remote-meetings           | 1168       | true        | done        |
+| 025 | USB vs XLR Microphones: Which Is Better for Remote Work?                  | Audio         | Gear     | /gear/usb-vs-xlr-microphones                     | 1085       | true        | done        |
+| 034 | Ergonomic Desk Setup: Complete Guide (2025)                               | Furniture     | Gear     | /gear/ergonomic-desk-setup-guide                 | 1110       | true        | done        |
+| 035 | Best Standing Desk Converters (2025)                                      | Furniture     | Gear     | /gear/best-desk-converters                       | 904        | true        | done        |
+| 036 | Best Ergonomic Chairs for Home Office (2025)                              | Furniture     | Gear     | /gear/best-ergonomic-chairs                      | 2478       | true        | done        |
+| 037 | How Much Does a Standing Desk Really Cost? (2025 Guide)                   | Furniture     | Gear     | /gear/standing-desk-cost-guide                   | 1693       | true        | done        |
+| 038 | Best Compact Desks for Small Home Offices (2025)                          | Furniture     | Gear     | /gear/best-compact-desks-small-office            | 1965       | true        | done        |
+| 039 | Best Standing Desks for Home Office (2025)                                | Furniture     | Gear     | /gear/best-standing-desks                        | 5095       | true        | done        |
+| 040 | How to Avoid Miscommunication in Remote Teams (2025)                      | Communication | Guides   | /guides/avoid-miscommunication-remote-teams      | 1805       | true        | done        |
+| 041 | Slack vs Teams vs Discord for Remote Work: Complete Comparison (2025)     | Communication | Guides   | /guides/slack-vs-teams-vs-discord                | 1782       | true        | done        |
+| 042 | How to Run Effective Remote Meetings: A Complete Guide (2025)             | Communication | Guides   | /guides/how-to-run-effective-remote-meetings     | 1829       | true        | done        |
+| 043 | Email Etiquette for Remote Teams: Professional Communication Guide (2025) | Communication | Guides   | /guides/email-etiquette-remote-teams             | 1786       | true        | done        |
+| 044 | Remote Team Collaboration Best Practices: The Complete Guide (2025)       | Communication | Guides   | /guides/remote-team-collaboration-best-practices | 1873       | true        | done        |
+| 049 | How to Expense Home Office Furniture: Complete Guide (2025)               | Finance       | Guides   | /guides/expense-home-office-furniture            | 1923       | true        | done        |
+| 050 | Time Blocking vs Time Tracking: Which Method Works Better? (2025)         | Productivity  | Guides   | /guides/time-blocking-vs-time-tracking           | 2353       | true        | done        |
+| 052 | How to Stay Focused Working from Home: Proven Strategies (2025)           | Productivity  | Guides   | /guides/how-to-stay-focused-working-from-home    | 2327       | true        | done        |
+| 053 | Building a Morning Routine for Remote Work: Complete Guide (2025)         | Productivity  | Guides   | /guides/morning-routine-remote-work              | 2166       | true        | done        |
+| 054 | Pomodoro Technique for Remote Workers: Complete Guide (2025)              | Productivity  | Guides   | /guides/pomodoro-technique-remote-workers        | 2547       | true        | done        |
+| 060 | Minimalist Home Office Setup: Less Stuff, More Focus                      | Setup         | Guides   | /guides/minimalist-home-office-setup             | 1602       | true        | done        |
+| 061 | Home Office Cable Management: Tame the Wire Chaos                         | Setup         | Guides   | /guides/cable-management-guide                   | 1507       | true        | done        |
+| 063 | Budget Home Office Setup Under $500: Everything You Need                  | Setup         | Guides   | /guides/budget-home-office-setup-500             | 1668       | true        | done        |
+| 064 | Complete Home Office Checklist: Everything You Need                       | Setup         | Guides   | /guides/complete-home-office-checklist           | 1281       | true        | done        |
+| 066 | How to Work Remotely from Different Time Zones: A Complete Guide          | Travel        | Guides   | /guides/work-remotely-different-time-zones       | 1772       | true        | done        |
+| 100 | Are Standing Desks Actually Worth It? (2025)                              | Setup         | Guides   | /guides/are-standing-desks-actually-worth-it     | 2300       | true        | done        |
 
 ---
 
@@ -209,10 +209,10 @@
 | Writer          | Total         | Intro Done  | Full Rewrite   | Completed    |
 | --------------- | ------------- | ----------- | -------------- | ------------ |
 | Daniel Brooks   | 31            | 31          | 0/5            | 100%         |
-| Marcus Chen     | 43            | 0           | 0/7            | 0%           |
-| Sarah Mitchell  | 28            | 0           | 0/3            | 0%           |
-| **Total** | **102** | **31** | **0/15** | **30%** |
+| Marcus Chen     | 43            | 43          | 0/7            | 100%         |
+| Sarah Mitchell  | 27            | 27          | 0/3            | 100%         |
+| **Total** | **101** | **101** | **0/15** | **100%** |
 
 ---
 
-*Last updated: 2025-12-04*
+*Last updated: 2025-12-05*

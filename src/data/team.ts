@@ -203,7 +203,7 @@ export const team: TeamMember[] = [
     role: "writer",
     location: "Currently Lisbon, Portugal (nomadic)",
     email: "daniel@floatjet.com",
-    image: "/images/team/daniel-brooks.jpg",
+    image: "/images/team/daniel-brooks.png",
     bioShort:
       "So there I was in a Chiang Mai coworking space, realizing I'd just made a $4,200 tax mistake. That was year one. Seven years and 34 countries later, I've figured out freelancer taxes, international banking, and why you never use café WiFi without a VPN. Former CPA. Current nomad. Here to save you the tuition I paid.",
     bioLong:

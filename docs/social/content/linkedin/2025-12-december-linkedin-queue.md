@@ -8,8 +8,8 @@ Full month of posts for FloatJet's LinkedIn company page.
 
 ## Content Calendar Summary
 
-| Day       | Time  | Post                  | Type               | Status      | AI % | Article |
-| --------- | ----- | --------------------- | ------------------ | ----------- | ---- | ------- |
+| Day       | Time  | Post                  | Type               | Status       | AI % | Article |
+| --------- | ----- | --------------------- | ------------------ | ------------ | ---- | ------- |
 | Tue 2/12  | -     | #1 Intro              | Featured           | ✅ Posted    | 0%   | No      |
 | Tue 2/12  | 16:00 | #2 Industry insight   | Thought leadership | ✅ Posted    | 0%   | No      |
 | Wed 3/12  | 16:00 | #3 VPN testing        | Behind-scenes      | ✅ Posted    | 0%   | No      |
@@ -97,7 +97,7 @@ Worth thinking about next time you're researching tools.
 
 **Type:** Process transparency
 **When:** Wednesday 3/12, 16:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Format:** Text post
 **AI Detection:** 0%
 
@@ -174,7 +174,7 @@ Link in comments.
 
 ---
 
-**Article:** <https://floatjet.com/tools/best-project-management-software/>
+**Article:** [https://floatjet.com/tools/best-project-management-software/](https://floatjet.com/tools/best-project-management-software/)
 **Post link in first comment** (LinkedIn suppresses posts with links in body)
 
 ---
@@ -207,7 +207,7 @@ Link in comments.
 
 ---
 
-**Article:** <https://floatjet.com/tools/best-password-manager-remote-work/>
+**Article:** [https://floatjet.com/tools/best-password-manager-remote-work/](https://floatjet.com/tools/best-password-manager-remote-work/)
 **Post link in first comment** (LinkedIn suppresses posts with links in body)
 
 ---
@@ -238,7 +238,7 @@ Link in comments.
 
 ---
 
-**Article:** <https://floatjet.com/guides/are-standing-desks-actually-worth-it/>
+**Article:** [https://floatjet.com/guides/are-standing-desks-actually-worth-it/](https://floatjet.com/guides/are-standing-desks-actually-worth-it/)
 **Post link in first comment** (LinkedIn suppresses posts with links in body)
 
 ---
@@ -271,7 +271,7 @@ Link in comments.
 
 ---
 
-**Article:** <https://floatjet.com/tools/free-vpn-vs-paid-vpn/>
+**Article:** [https://floatjet.com/tools/free-vpn-vs-paid-vpn/](https://floatjet.com/tools/free-vpn-vs-paid-vpn/)
 **Post link in first comment** (LinkedIn suppresses posts with links in body)
 
 ---
@@ -302,7 +302,7 @@ Link in comments.
 
 ---
 
-**Article:** <https://floatjet.com/guides/do-i-need-vpn-cafes/>
+**Article:** [https://floatjet.com/guides/do-i-need-vpn-cafes/](https://floatjet.com/guides/do-i-need-vpn-cafes/)
 **Post link in first comment** (LinkedIn suppresses posts with links in body)
 
 ---
@@ -335,7 +335,7 @@ Link in comments.
 
 ---
 
-**Article:** <https://floatjet.com/tools/best-note-taking-apps/>
+**Article:** [https://floatjet.com/tools/best-note-taking-apps/](https://floatjet.com/tools/best-note-taking-apps/)
 **Post link in first comment** (LinkedIn suppresses posts with links in body)
 
 ---
@@ -368,7 +368,7 @@ Link in comments.
 
 ---
 
-**Article:** <https://floatjet.com/tools/best-password-manager-remote-work/>
+**Article:** [https://floatjet.com/tools/best-password-manager-remote-work/](https://floatjet.com/tools/best-password-manager-remote-work/)
 **Post link in first comment** (LinkedIn suppresses posts with links in body)
 
 ---
@@ -397,7 +397,7 @@ Link in comments.
 
 ---
 
-**Article:** <https://floatjet.com/tools/best-vpn-digital-nomads/>
+**Article:** [https://floatjet.com/tools/best-vpn-digital-nomads/](https://floatjet.com/tools/best-vpn-digital-nomads/)
 **Post link in first comment** (LinkedIn suppresses posts with links in body)
 
 ---
@@ -429,7 +429,7 @@ What's your essential travel work setup?
 
 ---
 
-**Article:** <https://floatjet.com/blog/essential-travel-tech-nomads/>
+**Article:** [https://floatjet.com/blog/essential-travel-tech-nomads/](https://floatjet.com/blog/essential-travel-tech-nomads/)
 **Post link in first comment** (LinkedIn suppresses posts with links in body)
 
 ---
@@ -461,7 +461,7 @@ Link in comments.
 
 ---
 
-**Article:** <https://floatjet.com/guides/can-you-write-off-home-office-equipment/>
+**Article:** [https://floatjet.com/guides/can-you-write-off-home-office-equipment/](https://floatjet.com/guides/can-you-write-off-home-office-equipment/)
 **Post link in first comment** (LinkedIn suppresses posts with links in body)
 
 ---
@@ -550,7 +550,7 @@ What are you keeping or dropping for next year?
 
 ---
 
-**Article:** <https://floatjet.com/tools/best-productivity-apps/>
+**Article:** [https://floatjet.com/tools/best-productivity-apps/](https://floatjet.com/tools/best-productivity-apps/)
 **Post link in first comment** (LinkedIn suppresses posts with links in body)
 
 ---

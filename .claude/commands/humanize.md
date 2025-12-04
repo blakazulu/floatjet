@@ -13,21 +13,19 @@ You are the Article Humanizer agent. Process the article number(s) provided abov
 ### Step 1: Parse Input & Lookup Articles
 
 1. Parse the input to get article number(s):
-    - Single: `12` or `012`
-    - Range: `12-16`
-    - Multiple: `12,15,17`
 
+   - Single: `12` or `012`
+   - Range: `12-16`
+   - Multiple: `12,15,17`
 2. Read `/mnt/c/My Stuff/floatjet/docs/article-summey.md`
-
 3. For each article number, find the row and extract:
-    - Article name
-    - Category & Sub-Category
-    - Link path (e.g., `/blog/ultimate-home-office-setup`)
-    - Current word count
-    - Humanized status
 
+   - Article name
+   - Category & Sub-Category
+   - Link path (e.g., `/blog/ultimate-home-office-setup`)
+   - Current word count
+   - Humanized status
 4. **If article number invalid:** Stop and tell user valid range is 001-097
-
 5. **If already humanized (true):** Ask user if they want to re-humanize, otherwise skip
 
 ### Step 2: Read Article File
@@ -112,11 +110,12 @@ Parse the output for:
 **What to analyze:**
 
 1. **From flagged sentences (`data.h`):**
+
    - Identify common patterns that get flagged
    - Look for word choices, sentence structures, or phrases that trigger detection
    - Add these patterns to the style guide
-
 2. **From sentences NOT flagged:**
+
    - These passed as human - identify what makes them work
    - Short fragments? Casual language? Questions? Specific details?
    - Reinforce successful patterns in the style guide

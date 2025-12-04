@@ -8,43 +8,43 @@ Full month of tweets for @FloatJetWebsite.
 
 ## Content Calendar Summary
 
-| Day       | Time  | Tweet                   | Type           | Status      | AI % | Article |
-| --------- | ----- | ----------------------- | -------------- | ----------- | ---- | ------- |
-| Tue 2/12  | -     | #1 Intro                | Pinned         | ✅ Posted    | 0%   | No      |
-| Tue 2/12  | 15:00 | #2 Tool tip             | Value          | ✅ Posted    | 0%   | No      |
-| Wed 3/12  | 19:00 | #3 Hot take             | Value          | ✅ Posted    | 0%   | Yes     |
-| Thu 4/12  | 15:00 | #4 Testing update       | Behind-scenes  | ⏳ Scheduled | 0%   | No      |
-| Fri 5/12  | 01:00 | #5 Question             | Engagement     | ⏳ Pending   | 0%   | No      |
-| Sat 6/12  | 15:00 | #6 Standing desk        | Personal story | ⏳ Pending   | 0%   | Yes     |
-| Sun 7/12  | 01:00 | #7 Home office          | Hot take       | ⏳ Pending   | 0%   | Yes     |
-| Sun 7/12  | 19:00 | #8 Free VPNs            | Value          | ⏳ Pending   | 0%   | Yes     |
-| Mon 8/12  | 15:00 | #9 Coffee shop WiFi     | Behind-scenes  | ⏳ Pending   | 0%   | Yes     |
-| Tue 9/12  | 01:00 | #10 Physical notebook   | Value          | ⏳ Pending   | 0%   | Yes     |
-| Wed 10/12 | 15:00 | #11 Cafe video calls    | Personal story | ⏳ Pending   | 0%   | No      |
-| Thu 11/12 | 01:00 | #12 Notion rabbit hole  | Relatable      | ⏳ Pending   | 0%   | No      |
-| Thu 11/12 | 19:00 | #13 VPN kill switch     | Value          | ⏳ Pending   | 0%   | Yes     |
-| Fri 12/12 | 15:00 | #14 Slack offline hack  | Value          | ⏳ Pending   | 0%   | No      |
-| Sat 13/12 | 01:00 | #15 Terms of service    | Engagement     | ⏳ Pending   | 0%   | No      |
-| Sat 13/12 | 19:00 | #16 Cloud storage       | Personal story | ⏳ Pending   | 0%   | Yes     |
-| Sun 14/12 | 15:00 | #17 Meetings ratio      | Relatable      | ⏳ Pending   | 0%   | No      |
-| Mon 15/12 | 01:00 | #18 Password manager    | Personal story | ⏳ Pending   | 0%   | Yes     |
-| Mon 15/12 | 19:00 | #19 Monitor broke       | Personal story | ⏳ Pending   | 0%   | Yes     |
-| Tue 16/12 | 15:00 | #20 2FA warning         | Value          | ⏳ Pending   | 0%   | Yes     |
-| Wed 17/12 | 01:00 | #21 Slack from bed      | Relatable      | ⏳ Pending   | 0%   | No      |
-| Wed 17/12 | 19:00 | #22 Net-60 payments     | Freelance tip  | ⏳ Pending   | 0%   | Yes     |
-| Thu 18/12 | 15:00 | #23 Webcam upgrade      | Value          | ⏳ Pending   | 0%   | Yes     |
-| Fri 19/12 | 01:00 | #24 Keyboard backup     | Personal story | ⏳ Pending   | 0%   | No      |
-| Fri 19/12 | 19:00 | #25 Time zone fail      | Relatable      | ⏳ Pending   | 0%   | Yes     |
-| Sat 20/12 | 15:00 | #26 Coworking math      | Personal story | ⏳ Pending   | 0%   | No      |
-| Sun 21/12 | 01:00 | #27 Phone as monitor    | Relatable      | ⏳ Pending   | 0%   | No      |
-| Sun 21/12 | 19:00 | #28 Invoice software    | Value          | ⏳ Pending   | 0%   | Yes     |
-| Mon 22/12 | 15:00 | #29 Backup reminder     | Value          | ⏳ Pending   | 0%   | Yes     |
-| Tue 23/12 | 15:00 | #30 Expense tracking    | Freelance tip  | ⏳ Pending   | 0%   | Yes     |
-| Wed 24/12 | 15:00 | #31 Headphones ranking  | Value          | ⏳ Pending   | 0%   | Yes     |
-| Thu 25/12 | 15:00 | #32 Email marketing     | Value          | ⏳ Pending   | 0%   | Yes     |
-| Fri 26/12 | 15:00 | #33 New Year resolution | Engagement     | ⏳ Pending   | 0%   | No      |
-| Sat 27/12 | 15:00 | #34 Year wrap-up        | Behind-scenes  | ⏳ Pending   | 0%   | No      |
-| Sun 28/12 | 15:00 | #35 Poll                | Engagement     | ⏳ Pending   | 0%   | No      |
+| Day       | Time  | Tweet                   | Type           | Status    | AI % | Article |
+| --------- | ----- | ----------------------- | -------------- | --------- | ---- | ------- |
+| Tue 2/12  | -     | #1 Intro                | Pinned         | ✅ Posted  | 0%   | No      |
+| Tue 2/12  | 15:00 | #2 Tool tip             | Value          | ✅ Posted  | 0%   | No      |
+| Wed 3/12  | 19:00 | #3 Hot take             | Value          | ✅ Posted  | 0%   | Yes     |
+| Thu 4/12  | 15:00 | #4 Testing update       | Behind-scenes  | ✅ Posted  | 0%   | No      |
+| Fri 5/12  | 01:00 | #5 Question             | Engagement     | ⏳ Pending | 0%   | No      |
+| Sat 6/12  | 15:00 | #6 Standing desk        | Personal story | ⏳ Pending | 0%   | Yes     |
+| Sun 7/12  | 01:00 | #7 Home office          | Hot take       | ⏳ Pending | 0%   | Yes     |
+| Sun 7/12  | 19:00 | #8 Free VPNs            | Value          | ⏳ Pending | 0%   | Yes     |
+| Mon 8/12  | 15:00 | #9 Coffee shop WiFi     | Behind-scenes  | ⏳ Pending | 0%   | Yes     |
+| Tue 9/12  | 01:00 | #10 Physical notebook   | Value          | ⏳ Pending | 0%   | Yes     |
+| Wed 10/12 | 15:00 | #11 Cafe video calls    | Personal story | ⏳ Pending | 0%   | No      |
+| Thu 11/12 | 01:00 | #12 Notion rabbit hole  | Relatable      | ⏳ Pending | 0%   | No      |
+| Thu 11/12 | 19:00 | #13 VPN kill switch     | Value          | ⏳ Pending | 0%   | Yes     |
+| Fri 12/12 | 15:00 | #14 Slack offline hack  | Value          | ⏳ Pending | 0%   | No      |
+| Sat 13/12 | 01:00 | #15 Terms of service    | Engagement     | ⏳ Pending | 0%   | No      |
+| Sat 13/12 | 19:00 | #16 Cloud storage       | Personal story | ⏳ Pending | 0%   | Yes     |
+| Sun 14/12 | 15:00 | #17 Meetings ratio      | Relatable      | ⏳ Pending | 0%   | No      |
+| Mon 15/12 | 01:00 | #18 Password manager    | Personal story | ⏳ Pending | 0%   | Yes     |
+| Mon 15/12 | 19:00 | #19 Monitor broke       | Personal story | ⏳ Pending | 0%   | Yes     |
+| Tue 16/12 | 15:00 | #20 2FA warning         | Value          | ⏳ Pending | 0%   | Yes     |
+| Wed 17/12 | 01:00 | #21 Slack from bed      | Relatable      | ⏳ Pending | 0%   | No      |
+| Wed 17/12 | 19:00 | #22 Net-60 payments     | Freelance tip  | ⏳ Pending | 0%   | Yes     |
+| Thu 18/12 | 15:00 | #23 Webcam upgrade      | Value          | ⏳ Pending | 0%   | Yes     |
+| Fri 19/12 | 01:00 | #24 Keyboard backup     | Personal story | ⏳ Pending | 0%   | No      |
+| Fri 19/12 | 19:00 | #25 Time zone fail      | Relatable      | ⏳ Pending | 0%   | Yes     |
+| Sat 20/12 | 15:00 | #26 Coworking math      | Personal story | ⏳ Pending | 0%   | No      |
+| Sun 21/12 | 01:00 | #27 Phone as monitor    | Relatable      | ⏳ Pending | 0%   | No      |
+| Sun 21/12 | 19:00 | #28 Invoice software    | Value          | ⏳ Pending | 0%   | Yes     |
+| Mon 22/12 | 15:00 | #29 Backup reminder     | Value          | ⏳ Pending | 0%   | Yes     |
+| Tue 23/12 | 15:00 | #30 Expense tracking    | Freelance tip  | ⏳ Pending | 0%   | Yes     |
+| Wed 24/12 | 15:00 | #31 Headphones ranking  | Value          | ⏳ Pending | 0%   | Yes     |
+| Thu 25/12 | 15:00 | #32 Email marketing     | Value          | ⏳ Pending | 0%   | Yes     |
+| Fri 26/12 | 15:00 | #33 New Year resolution | Engagement     | ⏳ Pending | 0%   | No      |
+| Sat 27/12 | 15:00 | #34 Year wrap-up        | Behind-scenes  | ⏳ Pending | 0%   | No      |
+| Sun 28/12 | 15:00 | #35 Poll                | Engagement     | ⏳ Pending | 0%   | No      |
 
 ---
 
@@ -102,7 +102,7 @@ Stop defaulting to meetings. Most things are a Slack message.
 
 **Type:** Tool insight
 **When:** Wednesday 3/12, 19:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Character Count:** 271
 
 ```text
@@ -116,7 +116,7 @@ https://floatjet.com/tools/best-project-management-software/
 ```
 
 **Hashtags:** #Productivity
-**Article:** <https://floatjet.com/tools/best-project-management-software/>
+**Article:** [https://floatjet.com/tools/best-project-management-software/](https://floatjet.com/tools/best-project-management-software/)
 
 ---
 
@@ -124,7 +124,7 @@ https://floatjet.com/tools/best-project-management-software/
 
 **Type:** Transparency / What I'm working on
 **When:** Thursday 4/12, 15:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Character Count:** 253
 
 ```text
@@ -182,7 +182,7 @@ https://floatjet.com/guides/are-standing-desks-actually-worth-it/
 ```
 
 **Hashtags:** #HomeOffice
-**Article:** <https://floatjet.com/guides/are-standing-desks-actually-worth-it/>
+**Article:** [https://floatjet.com/guides/are-standing-desks-actually-worth-it/](https://floatjet.com/guides/are-standing-desks-actually-worth-it/)
 
 ---
 
@@ -202,7 +202,7 @@ https://floatjet.com/guides/budget-home-office-setup-500/
 ```
 
 **Hashtags:** #RemoteWork
-**Article:** <https://floatjet.com/guides/budget-home-office-setup-500/>
+**Article:** [https://floatjet.com/guides/budget-home-office-setup-500/](https://floatjet.com/guides/budget-home-office-setup-500/)
 
 ---
 
@@ -224,7 +224,7 @@ https://floatjet.com/tools/free-vpn-vs-paid-vpn/
 ```
 
 **Hashtags:** #Cybersecurity
-**Article:** <https://floatjet.com/tools/free-vpn-vs-paid-vpn/>
+**Article:** [https://floatjet.com/tools/free-vpn-vs-paid-vpn/](https://floatjet.com/tools/free-vpn-vs-paid-vpn/)
 
 ---
 
@@ -246,7 +246,7 @@ https://floatjet.com/guides/do-i-need-vpn-cafes/
 ```
 
 **Hashtags:** #DigitalNomad
-**Article:** <https://floatjet.com/guides/do-i-need-vpn-cafes/>
+**Article:** [https://floatjet.com/guides/do-i-need-vpn-cafes/](https://floatjet.com/guides/do-i-need-vpn-cafes/)
 
 ---
 
@@ -268,7 +268,7 @@ https://floatjet.com/tools/best-note-taking-apps/
 ```
 
 **Hashtags:** #Productivity
-**Article:** <https://floatjet.com/tools/best-note-taking-apps/>
+**Article:** [https://floatjet.com/tools/best-note-taking-apps/](https://floatjet.com/tools/best-note-taking-apps/)
 
 ---
 
@@ -326,7 +326,7 @@ https://floatjet.com/tools/vpn-kill-switch-explained/
 ```
 
 **Hashtags:** #Cybersecurity
-**Article:** <https://floatjet.com/tools/vpn-kill-switch-explained/>
+**Article:** [https://floatjet.com/tools/vpn-kill-switch-explained/](https://floatjet.com/tools/vpn-kill-switch-explained/)
 
 ---
 
@@ -386,7 +386,7 @@ https://floatjet.com/tools/best-cloud-storage-remote-work/
 ```
 
 **Hashtags:** #Productivity
-**Article:** <https://floatjet.com/tools/best-cloud-storage-remote-work/>
+**Article:** [https://floatjet.com/tools/best-cloud-storage-remote-work/](https://floatjet.com/tools/best-cloud-storage-remote-work/)
 
 ---
 
@@ -425,7 +425,7 @@ https://floatjet.com/tools/best-password-manager-remote-work/
 ```
 
 **Hashtags:** #Cybersecurity
-**Article:** <https://floatjet.com/tools/best-password-manager-remote-work/>
+**Article:** [https://floatjet.com/tools/best-password-manager-remote-work/](https://floatjet.com/tools/best-password-manager-remote-work/)
 
 ---
 
@@ -445,7 +445,7 @@ https://floatjet.com/guides/how-many-monitors-do-you-actually-need/
 ```
 
 **Hashtags:** #HomeOffice
-**Article:** <https://floatjet.com/guides/how-many-monitors-do-you-actually-need/>
+**Article:** [https://floatjet.com/guides/how-many-monitors-do-you-actually-need/](https://floatjet.com/guides/how-many-monitors-do-you-actually-need/)
 
 ---
 
@@ -465,7 +465,7 @@ https://floatjet.com/guides/two-factor-authentication-guide/
 ```
 
 **Hashtags:** #Cybersecurity
-**Article:** <https://floatjet.com/guides/two-factor-authentication-guide/>
+**Article:** [https://floatjet.com/guides/two-factor-authentication-guide/](https://floatjet.com/guides/two-factor-authentication-guide/)
 
 ---
 
@@ -502,7 +502,7 @@ https://floatjet.com/guides/invoice-payment-terms-guide/
 ```
 
 **Hashtags:** #FreelanceLife
-**Article:** <https://floatjet.com/guides/invoice-payment-terms-guide/>
+**Article:** [https://floatjet.com/guides/invoice-payment-terms-guide/](https://floatjet.com/guides/invoice-payment-terms-guide/)
 
 ---
 
@@ -522,7 +522,7 @@ https://floatjet.com/gear/best-webcams-video-calls/
 ```
 
 **Hashtags:** #RemoteWork
-**Article:** <https://floatjet.com/gear/best-webcams-video-calls/>
+**Article:** [https://floatjet.com/gear/best-webcams-video-calls/](https://floatjet.com/gear/best-webcams-video-calls/)
 
 ---
 
@@ -563,7 +563,7 @@ https://floatjet.com/guides/work-remotely-different-time-zones/
 ```
 
 **Hashtags:** #RemoteWork
-**Article:** <https://floatjet.com/guides/work-remotely-different-time-zones/>
+**Article:** [https://floatjet.com/guides/work-remotely-different-time-zones/](https://floatjet.com/guides/work-remotely-different-time-zones/)
 
 ---
 
@@ -621,7 +621,7 @@ https://floatjet.com/tools/best-invoicing-tools/
 ```
 
 **Hashtags:** #FreelanceLife
-**Article:** <https://floatjet.com/tools/best-invoicing-tools/>
+**Article:** [https://floatjet.com/tools/best-invoicing-tools/](https://floatjet.com/tools/best-invoicing-tools/)
 
 ---
 
@@ -641,7 +641,7 @@ https://floatjet.com/tools/best-cloud-storage-remote-work/
 ```
 
 **Hashtags:** #DigitalNomad
-**Article:** <https://floatjet.com/tools/best-cloud-storage-remote-work/>
+**Article:** [https://floatjet.com/tools/best-cloud-storage-remote-work/](https://floatjet.com/tools/best-cloud-storage-remote-work/)
 
 ---
 
@@ -663,7 +663,7 @@ https://floatjet.com/guides/freelancer-tax-deductions-guide/
 ```
 
 **Hashtags:** #FreelanceLife
-**Article:** <https://floatjet.com/guides/freelancer-tax-deductions-guide/>
+**Article:** [https://floatjet.com/guides/freelancer-tax-deductions-guide/](https://floatjet.com/guides/freelancer-tax-deductions-guide/)
 
 ---
 
@@ -683,7 +683,7 @@ https://floatjet.com/gear/best-noise-canceling-headphones/
 ```
 
 **Hashtags:** #RemoteWork
-**Article:** <https://floatjet.com/gear/best-noise-canceling-headphones/>
+**Article:** [https://floatjet.com/gear/best-noise-canceling-headphones/](https://floatjet.com/gear/best-noise-canceling-headphones/)
 
 ---
 
@@ -703,7 +703,7 @@ https://floatjet.com/tools/best-email-marketing-tools/
 ```
 
 **Hashtags:** #FreelanceLife
-**Article:** <https://floatjet.com/tools/best-email-marketing-tools/>
+**Article:** [https://floatjet.com/tools/best-email-marketing-tools/](https://floatjet.com/tools/best-email-marketing-tools/)
 
 ---
 

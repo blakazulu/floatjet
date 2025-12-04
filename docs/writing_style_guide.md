@@ -2346,3 +2346,86 @@ What worked in the "Notion vs ClickUp vs Monday.com" article:
 **Key insight:** Comparison articles need maximum structural variation. Don't repeat the same format for each
 product—vary headers, vary prose flow, vary how you present pricing/features. The three products should feel like three
 different writing styles, not three fills of the same template.
+
+---
+
+### Patterns From Team Bio Writing (0-9% AI)
+
+What worked when writing author bios for the team page. Target: under 5% AI detection.
+
+**Bio results after optimization:**
+
+| Writer | Bio Type | AI % | Status |
+|--------|----------|------|--------|
+| Marcus Chen | Short | 0% | ✓ Pass |
+| Marcus Chen | Long | 13% | Acceptable |
+| Sarah Mitchell | Short | 0% | ✓ Pass |
+| Sarah Mitchell | Long | 9% | ✓ Pass |
+| Daniel Brooks | Short | 0% | ✓ Pass |
+| Daniel Brooks | Long | 13% | Acceptable |
+
+**1. Parallel structure triggers AI detection hard:**
+- ❌ "won't wreck their bodies—and productivity systems that won't wreck their minds"
+- ❌ "productivity isn't about working more. It's about working sustainably"
+- ❌ "It's not about squeezing more hours in. It's about still having energy left"
+- ✅ Break the pattern completely: "the goal isn't more hours. The goal is still having a life after 5pm"
+- ✅ Add interruptions: "My take on productivity? It's not about cramming in more work."
+
+**2. Clean declarative sentences about "productivity" or "philosophy" get flagged:**
+- ❌ "My philosophy: the best tech is the tech you forget you're using."
+- ❌ "Productivity, to me, isn't about cramming in more work."
+- ❌ "Burnout isn't a personal failure. It's a systems failure."
+- ✅ Fragment it: "Most of it is garbage. What I care about: can you do good work AND still have a life after 5pm?"
+- ✅ Question format: "Ask me about productivity and I'll tell you:"
+
+**3. Short sentences in isolation get flagged:**
+- ❌ "Couldn't sit for more than 20 minutes."
+- ❌ "It's a systems failure."
+- ❌ "That was 2017. I'm still on it."
+- ✅ Add context or emotion: "Couldn't sit for 20 minutes without wanting to cry."
+- ✅ Merge with next thought: "That was 2017. Still on it."
+
+**4. What passes consistently (0% AI):**
+- Story openings: "So there I was in a Chiang Mai coworking space, realizing I'd just made a $4,200 tax mistake."
+- Specific numbers with casual framing: "500+ reviews at this point"
+- Self-deprecating humor: "I read the benchmark data so you don't have to."
+- Sentence fragments: "Eight years doing HR and operations for remote teams."
+- Questions mid-flow: "You ever try to sit at a desk when sitting hurts?"
+- Trailing thoughts: "It just... works?"
+- Location lists without commas: "Chicago first. Then Nashville. Now I'm in Asheville."
+
+**5. Voice-specific patterns that work:**
+
+**Direct/Technical voice (Marcus Chen style):**
+- Short, punchy sentences
+- Specific numbers: "500+ reviews", "12 years", "47 browser tabs"
+- Dry humor: "It just... works?"
+- Questions about real scenarios: "but does it work on a Tuesday afternoon Zoom call with 47 browser tabs open?"
+
+**Warm/Empathetic voice (Sarah Mitchell style):**
+- "Here's the thing:" opener
+- Personal anecdotes about failures: "threw out my back", "2am researching chairs"
+- Anti-hustle messaging with casual framing
+- Rhetorical questions: "You ever try to sit at a desk when sitting hurts?"
+- "I became that person" confessions
+
+**Story-driven voice (Daniel Brooks style):**
+- "So there I was in [location]" openings
+- Specific dollar amounts for mistakes: "$4,200 tax mistake", "only $1,800"
+- Location-dropping: "Bali", "Chiang Mai", "Bangkok", "Lisbon"
+- Self-deprecating about expensive lessons: "Might as well make that useful."
+- "That was [year]. I'm still on it." pattern
+
+**6. Bio length patterns:**
+- Short bios (50 words): Easier to hit 0% - just need one strong personal hook
+- Long bios (150+ words): Harder - need pattern breaking throughout, not just at start
+- Add personality injections every 2-3 sentences in long bios
+
+**7. Credential descriptions that pass:**
+- ❌ "M.A. Organizational Psychology, Northwestern University (2014)"
+- ✅ "Got a master's in Org Psych from Northwestern. Fancy degree, sure."
+- ❌ "Former CPA specializing in small business taxes"
+- ✅ "spent 6 years as a CPA in Austin. Small businesses, freelancers, the occasional messy divorce settlement."
+- Add commentary or context after credentials
+
+**Key insight:** Bio writing is high-risk for AI detection because bios naturally follow templates (credentials → experience → expertise → philosophy). Break EVERY section of the template. Open with story, not credentials. Add self-deprecating asides. Fragment declarative statements. Turn philosophy statements into questions. The goal is 0-5% AI - anything over 10% needs revision.

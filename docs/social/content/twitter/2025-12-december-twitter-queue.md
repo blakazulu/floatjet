@@ -14,7 +14,7 @@ Full month of tweets for @FloatJetWebsite.
 | Tue 2/12  | 15:00 | #2 Tool tip             | Value          | ✅ Posted  | 0%   | No      |
 | Wed 3/12  | 19:00 | #3 Hot take             | Value          | ✅ Posted  | 0%   | Yes     |
 | Thu 4/12  | 15:00 | #4 Testing update       | Behind-scenes  | ✅ Posted  | 0%   | No      |
-| Fri 5/12  | 01:00 | #5 Question             | Engagement     | ⏳ Pending | 0%   | No      |
+| Fri 5/12  | 01:00 | #5 Question             | Engagement     | ✅ Posted  | 0%   | No      |
 | Sat 6/12  | 15:00 | #6 Standing desk        | Personal story | ⏳ Pending | 0%   | Yes     |
 | Sun 7/12  | 01:00 | #7 Home office          | Hot take       | ⏳ Pending | 0%   | Yes     |
 | Sun 7/12  | 19:00 | #8 Free VPNs            | Value          | ⏳ Pending | 0%   | Yes     |
@@ -147,7 +147,7 @@ What should I test next?
 
 **Type:** Audience question
 **When:** Friday 5/12, 01:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Character Count:** 186
 
 ```text

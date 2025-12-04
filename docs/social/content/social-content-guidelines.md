@@ -1,6 +1,6 @@
 # Social Content Guidelines
 
-Quick reference for FloatJet social media content (Twitter & LinkedIn).
+Quick reference for FloatJet social media content (Twitter, LinkedIn & Pinterest).
 
 ---
 
@@ -135,16 +135,120 @@ Full guide: `/docs/writing_style_guide.md`
 
 ---
 
+## Pinterest Guidelines
+
+### Why Pinterest?
+
+- 600M+ monthly users, 75% of weekly users are always shopping
+- Visual search engine (pins live for months/years, unlike social posts)
+- Perfect for affiliate marketing content
+- 80%+ traffic comes from mobile
+
+### Account Setup
+
+- Business account required (analytics access)
+- Enable Rich Pins (auto-pulls article metadata from your site)
+- Yoast SEO handles this automatically if Open Graph is enabled
+
+### Pin Design Specifications
+
+| Format         | Dimensions      | Aspect Ratio |
+| -------------- | --------------- | ------------ |
+| Standard Pin   | 1000 x 1500 px  | 2:3          |
+| Video/Idea Pin | 1080 x 1920 px  | 9:16         |
+| Infographic    | 1000 x 2100 px  | 1:2          |
+
+**Technical specs:**
+- File type: JPG or PNG
+- Max file size: 20MB (recommended <5MB)
+- Min 24pt font for mobile readability
+- Keep text away from edges (cropping occurs in feed)
+- Videos: 6-15 seconds is the sweet spot
+
+**Design tips:**
+- Vertical format gets 67% more engagement than square
+- Clean design, legible text
+- On-brand colors from design system
+
+### Best Posting Times (Israel)
+
+- Weekdays: 22:00-01:00 (8-11 PM US time)
+- Weekends: 12:00-15:00 (morning US time)
+- Best days: Sunday, Monday, Tuesday
+- Avoid: Thursday, Friday (lower engagement)
+
+### Posting Frequency
+
+- 1-5 fresh pins daily
+- Quality over quantity always
+- Limit repins to <30% of activity
+- Weekly consistency > daily perfection
+
+### SEO Strategy (2025 - CRITICAL UPDATE)
+
+**Keywords drive Pinterest in 2025, NOT hashtags.**
+
+Pinterest no longer recommends hashtags. Only 19% of viral pins used them. Keyword-focused pins see up to 70% better reach.
+
+**Where to use keywords:**
+- Pin title (primary keyword first)
+- Pin description (2-4 natural variations + call to action)
+- Board names (reinforce the theme)
+- On-image text (main benefit or term)
+
+**Keyword tips:**
+- Use long-tail keywords (3+ words)
+- Include qualifiers: "easy", "budget-friendly", "beginner", "for remote workers"
+- Find keywords users actually search for
+- Avoid keyword stuffing (algorithm detects it)
+
+**Hashtags:** Skip them entirely. They're outdated on Pinterest.
+
+### Content Strategy
+
+- 80/20 rule: 80% valuable content, 20% promotional
+- Create multiple pin variations for top-performing articles
+- Save pins to relevant boards only (unrelated boards hurt distribution)
+- Focus on evergreen content (productivity tips, tool guides)
+- Don't make every pin a sales pitch
+
+### Affiliate Disclosure
+
+- Required on all affiliate pins (FTC compliance)
+- Add disclosure in pin description
+- Example: "Contains affiliate links" or "I may earn a commission"
+- Pinterest allows direct affiliate links
+- Don't turn your profile into an ad company
+
+### After Posting
+
+- Check Pinterest Analytics weekly
+- Note which pins drive clicks (not just saves)
+- Create more variations of top performers
+- Update board organization as content grows
+- Rich Pins auto-update when you change article titles
+
+### Next Steps After Each Week
+
+- Review Pinterest Analytics (Business account → Analytics)
+- Which pins got clicks vs saves?
+- Create 2-3 new pin designs for top-performing articles
+- Optimize underperforming pin descriptions with better keywords
+- Plan next week's pins based on what worked
+
+---
+
 ## Platform Comparison
 
-| Aspect    | Twitter        | LinkedIn                   |
-| --------- | -------------- | -------------------------- |
-| Length    | 280 chars      | No practical limit         |
-| Tone      | Casual, punchy | Professional but human     |
-| Frequency | 2-3x/day       | 3-5x/week                  |
-| Hashtags  | 1-2            | 1-3                        |
-| Links     | In tweet       | In comments (better reach) |
-| Best days | Any            | Tue-Thu                    |
+| Aspect    | Twitter        | LinkedIn                   | Pinterest                    |
+| --------- | -------------- | -------------------------- | ---------------------------- |
+| Length    | 280 chars      | No practical limit         | 500 chars (description)      |
+| Tone      | Casual, punchy | Professional but human     | Helpful, inspirational       |
+| Frequency | 2-3x/day       | 3-5x/week                  | 1-5 pins/day                 |
+| Hashtags  | 1-2            | 1-3                        | None (use keywords instead)  |
+| Links     | In tweet       | In comments (better reach) | Direct link on pin           |
+| Best days | Any            | Tue-Thu                    | Sun-Tue                      |
+| Lifespan  | Hours          | Days                       | Months to years              |
 
 ---
 

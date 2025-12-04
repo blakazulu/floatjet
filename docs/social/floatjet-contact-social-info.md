@@ -10,17 +10,17 @@ Central repository for all FloatJet contact details, social media accounts, and 
 
 All emails forward to: `liraz.amir.1982@gmail.com`
 
-| Email Address           | Purpose                               | Status   | Notes                         |
-|-------------------------|---------------------------------------|----------|-------------------------------|
-| hello@floatjet.com      | General inquiries, primary contact    | ✅ Active | Use for general communication |
-| support@floatjet.com    | Customer support, technical questions | ✅ Active | Help & troubleshooting        |
-| affiliates@floatjet.com | Partnership & affiliate inquiries     | ✅ Active | Business partnerships         |
-| social@floatjet.com     | Social media, marketing               | ✅ Active | Marketing & social outreach   |
+| Email Address             | Purpose                               | Status   | Notes                         |
+| ------------------------- | ------------------------------------- | -------- | ----------------------------- |
+| <hello@floatjet.com>      | General inquiries, primary contact    | ✅ Active | Use for general communication |
+| <support@floatjet.com>    | Customer support, technical questions | ✅ Active | Help & troubleshooting        |
+| <affiliates@floatjet.com> | Partnership & affiliate inquiries     | ✅ Active | Business partnerships         |
+| <social@floatjet.com>     | Social media, marketing               | ✅ Active | Marketing & social outreach   |
 
 ### Email Configuration
 
 - **Provider:** Cloudflare Email Routing (Free)
-- **Forwarding to:** liraz.amir.1982@gmail.com
+- **Forwarding to:** <liraz.amir.1982@gmail.com>
 - **SMTP (Sending):** Gmail SMTP (smtp.gmail.com:587)
 - **Email Client:** eM Client
 - **Backup/Access:** Gmail Web Interface
@@ -39,16 +39,16 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 - **Renewal Date:** [Add date]
 - **DNS Provider:** Cloudflare
 - **Nameservers:**
-    - cris.ns.cloudflare.com
-    - stella.ns.cloudflare.com
+  - cris.ns.cloudflare.com
+  - stella.ns.cloudflare.com
 
 ### Hosting
 
 - **Primary Hosting:** Netlify
 - **Plan:** Free (Team Dev)
 - **Site ID:** 359e2937-036f-4212-8e9e-1035e5e4d74a
-- **Live URL:** https://floatjet.com
-- **Netlify URL:** https://floatjet.netlify.app
+- **Live URL:** <https://floatjet.com>
+- **Netlify URL:** <https://floatjet.netlify.app>
 - **Deploy Branch:** main
 - **Repository:** GitHub (blakazulu/floatjet or similar)
 
@@ -65,8 +65,8 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 ### Twitter / X
 
 - **Handle:** @FloatJetWebsite
-- **URL:** https://x.com/FloatJetWebsite
-- **Email:** social@floatjet.com
+- **URL:** <https://x.com/FloatJetWebsite>
+- **Email:** <social@floatjet.com>
 - **Purpose:** Remote work tips, tool reviews, community engagement
 - **Target Audience:** Digital nomads, remote workers, freelancers
 - **Posting Schedule:** 2-3 posts/day
@@ -74,8 +74,8 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 
 ### LinkedIn
 
-- **Company Page:** https://www.linkedin.com/company/110340950
-- **Admin Dashboard:** https://www.linkedin.com/company/110340950/admin/dashboard/
+- **Company Page:** <https://www.linkedin.com/company/110340950>
+- **Admin Dashboard:** <https://www.linkedin.com/company/110340950/admin/dashboard/>
 - **Industry:** Online Media
 - **Specialties:** Remote Work Tools, Productivity Software, Digital Nomad Resources, VPN Reviews, Project Management
   Software, Team Collaboration Tools, and 14 others
@@ -105,12 +105,12 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 
 ### Pinterest
 
-- **Profile:** https://www.pinterest.com/floatjet/
+- **Profile:** <https://www.pinterest.com/floatjet/>
 - **Account Type:** Business
-- **Email:** social@floatjet.com
+- **Email:** <social@floatjet.com>
 - **Brand Focus:** Travel
 - **Business Goals:** Drive traffic to site, Grow brand awareness, Create content
-- **Website:** https://floatjet.com (✅ Verified via TXT record)
+- **Website:** <https://floatjet.com> (✅ Verified via TXT record)
 - **Verification:** pinterest-site-verification=f2d710a419ee71e24df8fd24cea2e0cb
 - **Purpose:** Visual tool comparisons, home office setups, productivity infographics, affiliate traffic
 - **Target Audience:** Remote workers, digital nomads, home office enthusiasts
@@ -121,11 +121,11 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 
 - **Username:** u/floatjet _(if available)_
 - **Relevant Subreddits:**
-    - r/digitalnomad
-    - r/remotework
-    - r/freelance
-    - r/WorkOnline
-    - r/productivity
+  - r/digitalnomad
+  - r/remotework
+  - r/freelance
+  - r/WorkOnline
+  - r/productivity
 - **Status:** ⏳ To be created
 
 ### Discord
@@ -138,17 +138,17 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 
 ### Live Site
 
-- **Main Site:** https://floatjet.com
-- **Blog:** https://floatjet.com/blog
-- **Tools Section:** https://floatjet.com/tools
-- **Gear Section:** https://floatjet.com/gear
-- **Guides Section:** https://floatjet.com/guides
+- **Main Site:** <https://floatjet.com>
+- **Blog:** <https://floatjet.com/blog>
+- **Tools Section:** <https://floatjet.com/tools>
+- **Gear Section:** <https://floatjet.com/gear>
+- **Guides Section:** <https://floatjet.com/guides>
 
 ### Dashboard & Admin
 
-- **Netlify Dashboard:** https://app.netlify.com/sites/floatjet
-- **Cloudflare Dashboard:** https://dash.cloudflare.com (floatjet.com)
-- **GoDaddy:** https://dcc.godaddy.com/domains
+- **Netlify Dashboard:** <https://app.netlify.com/sites/floatjet>
+- **Cloudflare Dashboard:** <https://dash.cloudflare.com> (floatjet.com)
+- **GoDaddy:** <https://dcc.godaddy.com/domains>
 - **Google Search Console:** [Add URL after setup]
 - **Google Analytics:** [Add URL after setup]
 - **PostHog Analytics:** [Add URL after setup]
@@ -168,8 +168,8 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 ### Primary Contact
 
 - **Name:** Liraz Amir
-- **Primary Email:** liraz.amir.1982@gmail.com
-- **Netlify Account:** blakazulu@gmail.com
+- **Primary Email:** <liraz.amir.1982@gmail.com>
+- **Netlify Account:** <blakazulu@gmail.com>
 - **Role:** Owner/Developer
 
 ---
@@ -195,9 +195,9 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 - **Location:** `/public/images/logo/` _(when created)_
 - **Formats:** SVG (primary), PNG (fallback)
 - **Variations:**
-    - Full logo (text + icon)
-    - Icon only
-    - Wordmark only
+  - Full logo (text + icon)
+  - Icon only
+  - Wordmark only
 
 ### Tagline
 
@@ -237,8 +237,8 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 ### Email Management
 
 - **Platform:** Cloudflare Email Routing
-- **Dashboard:** https://dash.cloudflare.com → floatjet.com → Email
-- **Login:** liraz.amir.1982@gmail.com
+- **Dashboard:** <https://dash.cloudflare.com> → floatjet.com → Email
+- **Login:** <liraz.amir.1982@gmail.com>
 - **2FA:** ✅ Enabled
 
 ### Domain Management
@@ -250,14 +250,14 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 ### Hosting
 
 - **Platform:** Netlify
-- **Login:** blakazulu@gmail.com
+- **Login:** <blakazulu@gmail.com>
 - **2FA:** [Status]
 - **Team:** blakazulu's team
 
 ### DNS
 
 - **Provider:** Cloudflare
-- **Login:** liraz.amir.1982@gmail.com
+- **Login:** <liraz.amir.1982@gmail.com>
 - **2FA:** ✅ Enabled
 
 ### Repository
@@ -272,22 +272,22 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 
 ### For Business Inquiries
 
-- **Email:** hello@floatjet.com
+- **Email:** <hello@floatjet.com>
 - **Response Time:** Within 24-48 hours
 
 ### For Support
 
-- **Email:** support@floatjet.com
+- **Email:** <support@floatjet.com>
 - **Response Time:** Within 24-48 hours
 
 ### For Partnerships
 
-- **Email:** affiliates@floatjet.com
+- **Email:** <affiliates@floatjet.com>
 - **Response Time:** Within 48-72 hours
 
 ### For Press/Media
 
-- **Email:** social@floatjet.com
+- **Email:** <social@floatjet.com>
 - **Press Kit:** [Add URL when created]
 
 ---
@@ -409,10 +409,10 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 - **Income:** $40k-$120k/year
 - **Tech Savvy:** Moderate to high
 - **Pain Points:**
-    - Finding reliable tools
-    - Optimizing home office
-    - Staying productive
-    - Managing remote work challenges
+  - Finding reliable tools
+  - Optimizing home office
+  - Staying productive
+  - Managing remote work challenges
 
 ### Secondary Audience
 
@@ -426,7 +426,7 @@ All emails forward to: `liraz.amir.1982@gmail.com`
 ## 📅 Important Dates
 
 | Date         | Event                      | Notes                 |
-|--------------|----------------------------|-----------------------|
+| ------------ | -------------------------- | --------------------- |
 | Nov 20, 2025 | Domain registered          | GoDaddy               |
 | Nov 20, 2025 | Netlify site created       | Initial deployment    |
 | Nov 28, 2025 | Amazon Associates approved | Store ID: floatjet-20 |
@@ -489,9 +489,9 @@ Tools & Gear for Remote Work Success
 
 ### Email Notifications
 
-- **Cloudflare:** Alerts to liraz.amir.1982@gmail.com
-- **Netlify:** Deploy notifications to blakazulu@gmail.com
-- **Analytics:** Weekly summary to liraz.amir.1982@gmail.com
+- **Cloudflare:** Alerts to <liraz.amir.1982@gmail.com>
+- **Netlify:** Deploy notifications to <blakazulu@gmail.com>
+- **Analytics:** Weekly summary to <liraz.amir.1982@gmail.com>
 - **Comments:** [Set up when comment system added]
 
 ### Social Media Notifications
@@ -516,10 +516,10 @@ Tools & Gear for Remote Work Success
 
 ### External Resources
 
-- **Astro Docs:** https://docs.astro.build
-- **Netlify Docs:** https://docs.netlify.com
-- **Cloudflare Docs:** https://developers.cloudflare.com
-- **Amazon Associates:** https://affiliate-program.amazon.com
+- **Astro Docs:** <https://docs.astro.build>
+- **Netlify Docs:** <https://docs.netlify.com>
+- **Cloudflare Docs:** <https://developers.cloudflare.com>
+- **Amazon Associates:** <https://affiliate-program.amazon.com>
 
 ---
 
@@ -533,15 +533,15 @@ Tools & Gear for Remote Work Success
 
 ### Account Recovery
 
-- **Email access:** liraz.amir.1982@gmail.com (main recovery)
+- **Email access:** <liraz.amir.1982@gmail.com> (main recovery)
 - **2FA backup codes:** Stored securely [location]
 - **Password manager:** [Which service you use]
 
 ### Community Support
 
-- **Cloudflare Community:** https://community.cloudflare.com
-- **Netlify Community:** https://answers.netlify.com
-- **Astro Discord:** https://astro.build/chat
+- **Cloudflare Community:** <https://community.cloudflare.com>
+- **Netlify Community:** <https://answers.netlify.com>
+- **Astro Discord:** <https://astro.build/chat>
 
 ---
 
@@ -557,13 +557,13 @@ Tools & Gear for Remote Work Success
 ### Social Media
 
 - **Twitter Followers:**
-    - Month 1: 100
-    - Month 3: 500
-    - Month 6: 1,500
+  - Month 1: 100
+  - Month 3: 500
+  - Month 6: 1,500
 - **Instagram Followers:**
-    - Month 1: 200
-    - Month 3: 1,000
-    - Month 6: 3,000
+  - Month 1: 200
+  - Month 3: 1,000
+  - Month 6: 3,000
 
 ### Revenue
 
@@ -575,8 +575,8 @@ Tools & Gear for Remote Work Success
 ### Engagement
 
 - **Email List:**
-    - Month 1: 100 subscribers
-    - Month 6: 1,000 subscribers
+  - Month 1: 100 subscribers
+  - Month 6: 1,000 subscribers
 - **Comments/Interactions:** Track monthly
 - **Affiliate Click-Through Rate:** Target 3-5%
 
@@ -586,7 +586,7 @@ Tools & Gear for Remote Work Success
 
 ### Daily
 
-- [ ] Check email (hello@floatjet.com)
+- [ ] Check email (<hello@floatjet.com>)
 - [ ] Monitor social media mentions
 - [ ] Respond to comments/DMs
 - [ ] Check website status

@@ -65,30 +65,30 @@ const deals = [
 
     <!-- Deals Grid -->
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-      {deals.map(deal => (
+      {deals. Map(deal => (
           <a
-              href={deal.link}
+              href={deal. Link}
               class={`group relative bg-white/5 hover:bg-white/10 border rounded-xl p-6 transition-all duration-300 ${
-                deal.highlight ? 'border-jet-stream/50 hover:border-jet-stream' : 'border-white/10 hover:border-white/20'
+                deal. Highlight ? 'border-jet-stream/50 hover:border-jet-stream' : 'border-white/10 hover:border-white/20'
               }`}
           >
-            {deal.highlight && (
+            {deal. Highlight && (
                 <span
                     class="absolute -top-3 left-4 px-3 py-1 bg-jet-stream text-ocean-deep text-xs font-bold rounded-full">
               Popular
             </span>
             )}
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-medium text-white/50 uppercase tracking-wider">{deal.category}</span>
+              <span class="text-xs font-medium text-white/50 uppercase tracking-wider">{deal. Category}</span>
               <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs font-semibold rounded">
-              {deal.discount}
+              {deal. Discount}
             </span>
             </div>
             <h2 class="text-xl font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
-              {deal.name}
+              {deal. Name}
             </h2>
             <p class="text-white/70 text-sm mb-4">
-              {deal.description}
+              {deal. Description}
             </p>
             <span class="text-jet-stream text-sm font-medium flex items-center">
             View Deal

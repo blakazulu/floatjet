@@ -168,9 +168,9 @@ const allGuides = [
 ];
 
 // Shuffle and limit articles - render all 9, CSS handles responsive visibility
-const shuffled = [...allGuides].sort(() => Math.random() - 0.5);
-const displayGuides = shuffled.slice(0, 9);
-const totalArticles = allGuides.length;
+const shuffled = [... AllGuides]. Sort(() => Math. Random() - 0.5);
+const displayGuides = shuffled. Slice(0, 9);
+const totalArticles = allGuides. Length;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -185,23 +185,23 @@ const totalArticles = allGuides.length;
 
     <!-- Category Links -->
     <div class="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 mb-12 max-w-5xl mx-auto">
-      {categories.map(cat => (
+      {categories. Map(cat => (
           <a
-              href={cat.href}
+              href={cat. Href}
               class="group flex flex-col items-center text-center p-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-jet-stream/50 rounded-xl transition-all duration-300"
           >
-            <span class="text-2xl mb-2">{cat.icon}</span>
-            <span class="text-white font-medium group-hover:text-jet-stream transition-colors">{cat.name}</span>
-            <span class="text-white/50 text-xs mt-1 hidden sm:block">{cat.description}</span>
+            <span class="text-2xl mb-2">{cat. Icon}</span>
+            <span class="text-white font-medium group-hover:text-jet-stream transition-colors">{cat. Name}</span>
+            <span class="text-white/50 text-xs mt-1 hidden sm:block">{cat. Description}</span>
           </a>
       ))}
     </div>
 
     <!-- Guides Grid - Responsive: 3 mobile, 6 tablet, 9 desktop -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {displayGuides.map((guide, index) => (
+      {displayGuides. Map((guide, index) => (
           <a
-              href={guide.href}
+              href={guide. Href}
               class:list={[
                 'group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300',
                 // Mobile: show first 3
@@ -213,19 +213,19 @@ const totalArticles = allGuides.length;
               ]}
           >
             <div class="flex items-start gap-4">
-              <span class="text-3xl">{guide.icon}</span>
+              <span class="text-3xl">{guide. Icon}</span>
               <div class="flex-1">
                 <div class="flex items-center gap-2 mb-2">
                 <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
-                  {guide.category}
+                  {guide. Category}
                 </span>
-                  <span class="text-white/40 text-xs">{guide.readTime} min</span>
+                  <span class="text-white/40 text-xs">{guide. ReadTime} min</span>
                 </div>
                 <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
-                  {guide.title}
+                  {guide. Title}
                 </h2>
                 <p class="text-white/70 text-sm">
-                  {guide.description}
+                  {guide. Description}
                 </p>
               </div>
             </div>

@@ -346,7 +346,7 @@ High detection risk patterns from technical content:
 
 **Casual Punctuation:**
 
-- Em dashes for interruption—like this
+- NEVER use em dashes (—). No human actually types these. Use periods instead.
 - Ellipses for trailing thoughts...
 - Question marks after statements for uncertainty?
 
@@ -1132,11 +1132,12 @@ articles:
      - Example: "First point.<br/>Second point.<br/>Third point."
      - Flows more naturally than structured lists
 
-3. **Remove em-dashes, use periods instead:**
+3. **NEVER use em-dashes (—). No human actually types these:**
      - ❌ "The price—while steep—is worth it"
      - ✅ "The price is steep. Worth it though."
      - ❌ "Multiple back-and-forths—if you've gone more than 3-4 exchanges"
      - ✅ "Multiple back-and-forths. If you've gone more than 3-4 exchanges"
+     - Use periods, commas, or just start a new sentence instead
 
 4. **Product review label variations for furniture/gear:**
      - Mix these across products: "What's good:", "What bugs me:", "What works:", "What doesn't:", "What I like:", "

@@ -7,14 +7,14 @@ const description =
   "Explore the FloatJet site structure with our interactive visualization. Navigate through tools, gear, guides, and articles.";
 
 // Dynamically get all pages using Astro's glob
-const allPages = import.meta.glob("/src/pages/**/*.astro");
+const allPages = import. Meta. Glob("/src/pages/**/*.astro");
 
 // Generate site structure dynamically
 const SITE_STRUCTURE = generateSiteStructure(allPages);
 
 // Pass data to client
-const siteData = JSON.stringify(SITE_STRUCTURE);
-const colorData = JSON.stringify(CATEGORY_COLORS);
+const siteData = JSON. Stringify(SITE_STRUCTURE);
+const colorData = JSON. Stringify(CATEGORY_COLORS);
 ---
 
 <BaseLayout title={title} description={description}>
@@ -318,7 +318,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 </BaseLayout>
 
 <!-- D3.js CDN -->
-<script is:inline src="https://d3js.org/d3.v7.min.js"></script>
+<script is:inline src="https://d3js. Org/d3. V7. Min.js"></script>
 
 <script define:vars={{siteData, colorData}}>
   // Store data globally for reinitialization
@@ -338,21 +338,21 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     function cleanupSitemap() {
       // Remove global listeners
-      if (window.__sitemapHandlers.resize) {
-        window.removeEventListener('resize', window.__sitemapHandlers.resize);
-        window.__sitemapHandlers.resize = null;
+      if (window.__sitemapHandlers. Resize) {
+        window. RemoveEventListener('resize', window.__sitemapHandlers. Resize);
+        window.__sitemapHandlers. Resize = null;
       }
-      if (window.__sitemapHandlers.keydown) {
-        document.removeEventListener('keydown', window.__sitemapHandlers.keydown);
-        window.__sitemapHandlers.keydown = null;
+      if (window.__sitemapHandlers. Keydown) {
+        document. RemoveEventListener('keydown', window.__sitemapHandlers. Keydown);
+        window.__sitemapHandlers. Keydown = null;
       }
       // Stop simulation
-      if (window.__sitemapState.simulation) {
-        window.__sitemapState.simulation.stop();
-        window.__sitemapState.simulation = null;
+      if (window.__sitemapState. Simulation) {
+        window.__sitemapState. Simulation. Stop();
+        window.__sitemapState. Simulation = null;
       }
       // Reset fullscreen state
-      window.__sitemapState.isFullscreen = false;
+      window.__sitemapState. IsFullscreen = false;
     }
 
     function initSitemapVisualization() {
@@ -361,20 +361,20 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
       // Check if D3 is loaded
       if (typeof d3 === 'undefined') {
-        console.error('D3 not loaded');
+        console. Error('D3 not loaded');
         return;
       }
 
       // Check if container exists (we're on the right page)
-      var container = document.getElementById('sitemap-container');
+      var container = document. GetElementById('sitemap-container');
       if (!container) return;
 
       // Check if data exists
       if (!window.__sitemapData) return;
 
       // Parse data
-      var siteStructure = JSON.parse(window.__sitemapData.siteData);
-      var categoryColors = JSON.parse(window.__sitemapData.colorData);
+      var siteStructure = JSON. Parse(window.__sitemapData. SiteData);
+      var categoryColors = JSON. Parse(window.__sitemapData. ColorData);
 
       // State
       var currentLayout = 'force';
@@ -382,73 +382,73 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       var linkStatus = new Map();
 
     // DOM Elements
-    var svgEl = document.getElementById('sitemap-svg');
-    var loading = document.getElementById('loading');
-    var tooltip = document.getElementById('tooltip');
+    var svgEl = document. GetElementById('sitemap-svg');
+    var loading = document. GetElementById('loading');
+    var tooltip = document. GetElementById('tooltip');
 
     // Clear any existing SVG content
-    svgEl.innerHTML = '';
+    svgEl. InnerHTML = '';
 
-    var svg = d3.select('#sitemap-svg');
+    var svg = d3. Select('#sitemap-svg');
 
     // Dimensions
-    var width = container.clientWidth;
-    var height = container.clientHeight;
+    var width = container. ClientWidth;
+    var height = container. ClientHeight;
 
     // Create main group for zoom/pan
-    var g = svg.append('g');
+    var g = svg. Append('g');
 
     // Initialize zoom behavior
     var zoom = d3
-      .zoom()
-      .scaleExtent([0.1, 4])
-      .on('zoom', function(event) {
-        g.attr('transform', event.transform);
+      . Zoom()
+      . ScaleExtent([0.1, 4])
+      . On('zoom', function(event) {
+        g. Attr('transform', event. Transform);
       });
 
-    svg.call(zoom);
+    svg. Call(zoom);
 
     // Define gradients and filters
-    var defs = svg.append('defs');
+    var defs = svg. Append('defs');
 
     // Glow filter for nodes
     var glow = defs
-      .append('filter')
-      .attr('id', 'glow')
-      .attr('x', '-50%')
-      .attr('y', '-50%')
-      .attr('width', '200%')
-      .attr('height', '200%');
+      . Append('filter')
+      . Attr('id', 'glow')
+      . Attr('x', '-50%')
+      . Attr('y', '-50%')
+      . Attr('width', '200%')
+      . Attr('height', '200%');
 
     glow
-      .append('feGaussianBlur')
-      .attr('stdDeviation', '3')
-      .attr('result', 'coloredBlur');
+      . Append('feGaussianBlur')
+      . Attr('stdDeviation', '3')
+      . Attr('result', 'coloredBlur');
 
-    var glowMerge = glow.append('feMerge');
-    glowMerge.append('feMergeNode').attr('in', 'coloredBlur');
-    glowMerge.append('feMergeNode').attr('in', 'SourceGraphic');
+    var glowMerge = glow. Append('feMerge');
+    glowMerge. Append('feMergeNode'). Attr('in', 'coloredBlur');
+    glowMerge. Append('feMergeNode'). Attr('in', 'SourceGraphic');
 
     // Create arrow marker for links
     defs
-      .append('marker')
-      .attr('id', 'arrowhead')
-      .attr('viewBox', '-0 -5 10 10')
-      .attr('refX', 20)
-      .attr('refY', 0)
-      .attr('orient', 'auto')
-      .attr('markerWidth', 6)
-      .attr('markerHeight', 6)
-      .append('path')
-      .attr('d', 'M 0,-5 L 10,0 L 0,5')
-      .attr('fill', 'rgba(128, 206, 215, 0.5)');
+      . Append('marker')
+      . Attr('id', 'arrowhead')
+      . Attr('viewBox', '-0 -5 10 10')
+      . Attr('refX', 20)
+      . Attr('refY', 0)
+      . Attr('orient', 'auto')
+      . Attr('markerWidth', 6)
+      . Attr('markerHeight', 6)
+      . Append('path')
+      . Attr('d', 'M 0,-5 L 10,0 L 0,5')
+      . Attr('fill', 'rgba(128, 206, 215, 0.5)');
 
     // Get node color based on type and category
     function getNodeColor(node) {
-      if (node.type === 'root') return '#0F4C5C';
-      if (node.type === 'hub') return '#38A3A5';
-      if (node.type === 'category') return '#80CED7';
-      if (node.type === 'page') return '#64748B';
+      if (node. Type === 'root') return '#0F4C5C';
+      if (node. Type === 'hub') return '#38A3A5';
+      if (node. Type === 'category') return '#80CED7';
+      if (node. Type === 'page') return '#64748B';
 
       // Article colors by category
       var categoryColorMap = {
@@ -462,46 +462,46 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         tools: '#38A3A5',
       };
 
-      return categoryColorMap[node.category] || '#38A3A5';
+      return categoryColorMap[node. Category] || '#38A3A5';
     }
 
     // Get node size based on type
     function getNodeSize(node) {
-      if (node.type === 'root') return 30;
-      if (node.type === 'hub') return 20;
-      if (node.type === 'category') return 15;
+      if (node. Type === 'root') return 30;
+      if (node. Type === 'hub') return 20;
+      if (node. Type === 'category') return 15;
       return 10;
     }
 
     // Initialize force simulation
     function createForceSimulation(nodes, links) {
       return d3
-        .forceSimulation(nodes)
-        .force(
+        . ForceSimulation(nodes)
+        . Force(
           'link',
           d3
-            .forceLink(links)
-            .id(function(d) { return d.id; })
-            .distance(function(d) {
-              var sourceType = d.source.type || 'article';
+            . ForceLink(links)
+            . Id(function(d) { return d. Id; })
+            . Distance(function(d) {
+              var sourceType = d. Source. Type || 'article';
               if (sourceType === 'root') return 150;
               if (sourceType === 'hub') return 100;
               return 70;
             })
-            .strength(0.5),
+            . Strength(0.5),
         )
-        .force(
+        . Force(
           'charge',
-          d3.forceManyBody().strength(function(d) {
-            if (d.type === 'root') return -800;
-            if (d.type === 'hub') return -400;
+          d3. ForceManyBody(). Strength(function(d) {
+            if (d. Type === 'root') return -800;
+            if (d. Type === 'hub') return -400;
             return -150;
           }),
         )
-        .force('center', d3.forceCenter(width / 2, height / 2))
-        .force(
+        . Force('center', d3. ForceCenter(width / 2, height / 2))
+        . Force(
           'collision',
-          d3.forceCollide().radius(function(d) { return getNodeSize(d) + 10; }),
+          d3. ForceCollide(). Radius(function(d) { return getNodeSize(d) + 10; }),
         );
     }
 
@@ -510,37 +510,37 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       var nodeMap = new Map();
 
       // Create node objects
-      siteStructure.nodes.forEach(function(n) {
-        nodeMap.set(n.id, Object.assign({}, n, { children: [] }));
+      siteStructure. Nodes. ForEach(function(n) {
+        nodeMap. Set(n. Id, Object. Assign({}, n, { children: [] }));
       });
 
       // Build parent-child relationships
-      siteStructure.links.forEach(function(link) {
-        var parent = nodeMap.get(link.source);
-        var child = nodeMap.get(link.target);
+      siteStructure. Links. ForEach(function(link) {
+        var parent = nodeMap. Get(link. Source);
+        var child = nodeMap. Get(link. Target);
         if (parent && child) {
-          parent.children.push(child);
+          parent. Children. Push(child);
         }
       });
 
-      return nodeMap.get('/');
+      return nodeMap. Get('/');
     }
 
     // Render the visualization
     function render(layout) {
       layout = layout || 'force';
       // Clear previous content
-      g.selectAll('*').remove();
+      g. SelectAll('*'). Remove();
 
       // Stop any running simulation
       if (simulation) {
-        simulation.stop();
+        simulation. Stop();
         simulation = null;
       }
 
       // Update stats
-      document.getElementById('stat-total').textContent =
-        siteStructure.nodes.length;
+      document. GetElementById('stat-total'). TextContent =
+        siteStructure. Nodes. Length;
 
       if (layout === 'force') {
         renderForceLayout();
@@ -551,114 +551,114 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       }
 
       // Remove loading state
-      loading.classList.add('hidden');
+      loading. ClassList. Add('hidden');
     }
 
     // Force-directed layout
     function renderForceLayout() {
-      var nodes = siteStructure.nodes.map(function(d) { return Object.assign({}, d); });
-      var links = siteStructure.links.map(function(d) {
+      var nodes = siteStructure. Nodes. Map(function(d) { return Object. Assign({}, d); });
+      var links = siteStructure. Links. Map(function(d) {
         return {
-          source: d.source,
-          target: d.target,
-          type: d.type
+          source: d. Source,
+          target: d. Target,
+          type: d. Type
         };
       });
 
       var link = g
-        .append('g')
-        .attr('class', 'links')
-        .selectAll('line')
-        .data(links)
-        .enter()
-        .append('line')
-        .attr('stroke', 'rgba(128, 206, 215, 0.3)')
-        .attr('stroke-width', 1.5)
-        .attr('marker-end', 'url(#arrowhead)');
+        . Append('g')
+        . Attr('class', 'links')
+        . SelectAll('line')
+        . Data(links)
+        . Enter()
+        . Append('line')
+        . Attr('stroke', 'rgba(128, 206, 215, 0.3)')
+        . Attr('stroke-width', 1.5)
+        . Attr('marker-end', 'url(#arrowhead)');
 
       var node = g
-        .append('g')
-        .attr('class', 'nodes')
-        .selectAll('g')
-        .data(nodes)
-        .enter()
-        .append('g')
-        .attr('class', 'node')
-        .style('cursor', 'pointer')
-        .call(
+        . Append('g')
+        . Attr('class', 'nodes')
+        . SelectAll('g')
+        . Data(nodes)
+        . Enter()
+        . Append('g')
+        . Attr('class', 'node')
+        . Style('cursor', 'pointer')
+        . Call(
           d3
-            .drag()
-            .on('start', dragstarted)
-            .on('drag', dragged)
-            .on('end', dragended),
+            . Drag()
+            . On('start', dragstarted)
+            . On('drag', dragged)
+            . On('end', dragended),
         );
 
       addNodeElements(node);
       addNodeInteractions(node, link);
 
       simulation = createForceSimulation(nodes, links);
-      window.__sitemapState.simulation = simulation;
+      window.__sitemapState. Simulation = simulation;
 
-      simulation.on('tick', function() {
+      simulation. On('tick', function() {
         link
-          .attr('x1', function(d) { return d.source.x; })
-          .attr('y1', function(d) { return d.source.y; })
-          .attr('x2', function(d) { return d.target.x; })
-          .attr('y2', function(d) { return d.target.y; });
-        node.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+          . Attr('x1', function(d) { return d. Source. X; })
+          . Attr('y1', function(d) { return d. Source. Y; })
+          . Attr('x2', function(d) { return d. Target. X; })
+          . Attr('y2', function(d) { return d. Target. Y; });
+        node. Attr('transform', function(d) { return 'translate(' + d. X + ',' + d. Y + ')'; });
       });
 
       animateIn(node, link);
-      window.currentNodes = node;
+      window. CurrentNodes = node;
     }
 
     // Radial tree layout
     function renderRadialLayout() {
       var hierarchy = buildHierarchy();
-      var root = d3.hierarchy(hierarchy);
+      var root = d3. Hierarchy(hierarchy);
 
-      var radius = Math.min(width, height) / 2 - 100;
+      var radius = Math. Min(width, height) / 2 - 100;
 
       var treeLayout = d3
-        .tree()
-        .size([2 * Math.PI, radius])
-        .separation(function(a, b) { return (a.parent === b.parent ? 1 : 2) / a.depth; });
+        . Tree()
+        . Size([2 * Math.PI, radius])
+        . Separation(function(a, b) { return (a. Parent === b. Parent ? 1 : 2) / a. Depth; });
 
       treeLayout(root);
 
       // Create curved links
       var link = g
-        .append('g')
-        .attr('class', 'links')
-        .attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')')
-        .selectAll('path')
-        .data(root.links())
-        .enter()
-        .append('path')
-        .attr('fill', 'none')
-        .attr('stroke', 'rgba(128, 206, 215, 0.4)')
-        .attr('stroke-width', 1.5)
-        .attr(
+        . Append('g')
+        . Attr('class', 'links')
+        . Attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')')
+        . SelectAll('path')
+        . Data(root. Links())
+        . Enter()
+        . Append('path')
+        . Attr('fill', 'none')
+        . Attr('stroke', 'rgba(128, 206, 215, 0.4)')
+        . Attr('stroke-width', 1.5)
+        . Attr(
           'd',
           d3
-            .linkRadial()
-            .angle(function(d) { return d.x; })
-            .radius(function(d) { return d.y; }),
+            . LinkRadial()
+            . Angle(function(d) { return d. X; })
+            . Radius(function(d) { return d. Y; }),
         );
 
       var node = g
-        .append('g')
-        .attr('class', 'nodes')
-        .attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')')
-        .selectAll('g')
-        .data(root.descendants())
-        .enter()
-        .append('g')
-        .attr('class', 'node')
-        .style('cursor', 'pointer')
-        .attr(
+        . Append('g')
+        . Attr('class', 'nodes')
+        . Attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')')
+        . SelectAll('g')
+        . Data(root. Descendants())
+        . Enter()
+        . Append('g')
+        . Attr('class', 'node')
+        . Style('cursor', 'pointer')
+        . Attr(
           'transform',
-          function(d) { return 'rotate(' + ((d.x * 180) / Math.PI - 90) + ') translate(' + d.y + ',0)'; },
+          function(d) { return 'rotate(' + ((d. X * 180) / Math.PI - 90) + ') translate(' + d. Y + ',0)'; },
         );
 
       addNodeElements(node, true);
@@ -666,156 +666,156 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
       // Add labels with proper rotation
       node
-        .append('text')
-        .attr('dy', '0.31em')
-        .attr('x', function(d) { return (d.x < Math.PI === !d.children ? 6 : -6); })
-        .attr('text-anchor', function(d) {
-          return d.x < Math.PI === !d.children ? 'start' : 'end';
+        . Append('text')
+        . Attr('dy', '0.31em')
+        . Attr('x', function(d) { return (d. X < Math.PI === !d. Children ? 6 : -6); })
+        . Attr('text-anchor', function(d) {
+          return d. X < Math.PI === !d. Children ? 'start' : 'end';
         })
-        .attr('transform', function(d) { return d.x >= Math.PI ? 'rotate(180)' : null; })
-        .attr('fill', 'white')
-        .attr('font-size', function(d) { return d.data.type === 'root' ? '12px' : '10px'; })
-        .attr('font-family', 'Outfit, sans-serif')
-        .text(function(d) { return d.data.name; })
-        .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)')
-        .clone(true)
-        .lower()
-        .attr('stroke', 'rgba(0,0,0,0.5)')
-        .attr('stroke-width', 3);
+        . Attr('transform', function(d) { return d. X >= Math.PI ? 'rotate(180)' : null; })
+        . Attr('fill', 'white')
+        . Attr('font-size', function(d) { return d. Data. Type === 'root' ? '12px' : '10px'; })
+        . Attr('font-family', 'Outfit, sans-serif')
+        . Text(function(d) { return d. Data. Name; })
+        . Style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)')
+        . Clone(true)
+        . Lower()
+        . Attr('stroke', 'rgba(0,0,0,0.5)')
+        . Attr('stroke-width', 3);
 
       animateIn(node, link);
-      window.currentNodes = node;
+      window. CurrentNodes = node;
     }
 
     // Hierarchical tree layout
     function renderTreeLayout() {
       var hierarchy = buildHierarchy();
-      var root = d3.hierarchy(hierarchy);
+      var root = d3. Hierarchy(hierarchy);
 
-      var treeLayout = d3.tree().size([width - 200, height - 150]);
+      var treeLayout = d3. Tree(). Size([width - 200, height - 150]);
 
       treeLayout(root);
 
       // Create curved links
       var link = g
-        .append('g')
-        .attr('class', 'links')
-        .attr('transform', 'translate(100, 50)')
-        .selectAll('path')
-        .data(root.links())
-        .enter()
-        .append('path')
-        .attr('fill', 'none')
-        .attr('stroke', 'rgba(128, 206, 215, 0.4)')
-        .attr('stroke-width', 1.5)
-        .attr(
+        . Append('g')
+        . Attr('class', 'links')
+        . Attr('transform', 'translate(100, 50)')
+        . SelectAll('path')
+        . Data(root. Links())
+        . Enter()
+        . Append('path')
+        . Attr('fill', 'none')
+        . Attr('stroke', 'rgba(128, 206, 215, 0.4)')
+        . Attr('stroke-width', 1.5)
+        . Attr(
           'd',
           d3
-            .linkVertical()
-            .x(function(d) { return d.x; })
-            .y(function(d) { return d.y; }),
+            . LinkVertical()
+            . X(function(d) { return d. X; })
+            . Y(function(d) { return d. Y; }),
         );
 
       var node = g
-        .append('g')
-        .attr('class', 'nodes')
-        .attr('transform', 'translate(100, 50)')
-        .selectAll('g')
-        .data(root.descendants())
-        .enter()
-        .append('g')
-        .attr('class', 'node')
-        .style('cursor', 'pointer')
-        .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+        . Append('g')
+        . Attr('class', 'nodes')
+        . Attr('transform', 'translate(100, 50)')
+        . SelectAll('g')
+        . Data(root. Descendants())
+        . Enter()
+        . Append('g')
+        . Attr('class', 'node')
+        . Style('cursor', 'pointer')
+        . Attr('transform', function(d) { return 'translate(' + d. X + ',' + d. Y + ')'; });
 
       addNodeElements(node, true);
       addNodeInteractions(node, link, true);
 
       // Add labels below nodes
       node
-        .append('text')
-        .attr('dy', function(d) { return getNodeSize(d.data || d) + 14; })
-        .attr('text-anchor', 'middle')
-        .attr('fill', 'white')
-        .attr('font-size', function(d) {
-          return (d.data || d).type === 'root' ? '11px' : '9px';
+        . Append('text')
+        . Attr('dy', function(d) { return getNodeSize(d. Data || d) + 14; })
+        . Attr('text-anchor', 'middle')
+        . Attr('fill', 'white')
+        . Attr('font-size', function(d) {
+          return (d. Data || d). Type === 'root' ? '11px' : '9px';
         })
-        .attr('font-family', 'Outfit, sans-serif')
-        .text(function(d) { return (d.data || d).name; })
-        .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)');
+        . Attr('font-family', 'Outfit, sans-serif')
+        . Text(function(d) { return (d. Data || d). Name; })
+        . Style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)');
 
       animateIn(node, link);
-      window.currentNodes = node;
+      window. CurrentNodes = node;
     }
 
     // Shared function to add node visual elements
     function addNodeElements(node, isHierarchy) {
       isHierarchy = isHierarchy || false;
       node
-        .append('circle')
-        .attr('r', function(d) { return getNodeSize(isHierarchy ? d.data : d); })
-        .attr('fill', function(d) { return getNodeColor(isHierarchy ? d.data : d); })
-        .attr('stroke', 'rgba(255, 255, 255, 0.5)')
-        .attr('stroke-width', 2)
-        .attr('filter', function(d) {
-          var data = isHierarchy ? d.data : d;
-          return data.type === 'root' || data.type === 'hub'
+        . Append('circle')
+        . Attr('r', function(d) { return getNodeSize(isHierarchy ? d. Data : d); })
+        . Attr('fill', function(d) { return getNodeColor(isHierarchy ? d. Data : d); })
+        . Attr('stroke', 'rgba(255, 255, 255, 0.5)')
+        . Attr('stroke-width', 2)
+        . Attr('filter', function(d) {
+          var data = isHierarchy ? d. Data : d;
+          return data. Type === 'root' || data. Type === 'hub'
             ? 'url(#glow)'
             : null;
         })
-        .style('transition', 'all 0.3s ease');
+        . Style('transition', 'all 0.3s ease');
 
       node
-        .append('circle')
-        .attr('class', 'status-indicator')
-        .attr('r', 5)
-        .attr('cx', function(d) { return getNodeSize(isHierarchy ? d.data : d) - 2; })
-        .attr('cy', function(d) { return -getNodeSize(isHierarchy ? d.data : d) + 2; })
-        .attr('fill', 'transparent')
-        .attr('stroke', 'transparent');
+        . Append('circle')
+        . Attr('class', 'status-indicator')
+        . Attr('r', 5)
+        . Attr('cx', function(d) { return getNodeSize(isHierarchy ? d. Data : d) - 2; })
+        . Attr('cy', function(d) { return -getNodeSize(isHierarchy ? d. Data : d) + 2; })
+        . Attr('fill', 'transparent')
+        . Attr('stroke', 'transparent');
     }
 
     // Shared function to add hover/click interactions
     function addNodeInteractions(node, link, isHierarchy) {
       isHierarchy = isHierarchy || false;
       node
-        .on('mouseover', function (event, d) {
-          var data = isHierarchy ? d.data : d;
-          d3.select(this)
-            .select('circle')
-            .attr('stroke', 'white')
-            .attr('stroke-width', 3);
+        . On('mouseover', function (event, d) {
+          var data = isHierarchy ? d. Data : d;
+          d3. Select(this)
+            . Select('circle')
+            . Attr('stroke', 'white')
+            . Attr('stroke-width', 3);
           showTooltip(event, data);
 
           if (!isHierarchy) {
             link
-              .attr('stroke', function(l) {
-                return l.source.id === data.id || l.target.id === data.id
+              . Attr('stroke', function(l) {
+                return l. Source. Id === data. Id || l. Target. Id === data. Id
                   ? 'rgba(128, 206, 215, 0.8)'
                   : 'rgba(128, 206, 215, 0.15)';
               })
-              .attr('stroke-width', function(l) {
-                return l.source.id === data.id || l.target.id === data.id ? 3 : 1;
+              . Attr('stroke-width', function(l) {
+                return l. Source. Id === data. Id || l. Target. Id === data. Id ? 3 : 1;
               });
           }
         })
-        .on('mouseout', function (event, d) {
-          d3.select(this)
-            .select('circle')
-            .attr('stroke', 'rgba(255, 255, 255, 0.5)')
-            .attr('stroke-width', 2);
+        . On('mouseout', function (event, d) {
+          d3. Select(this)
+            . Select('circle')
+            . Attr('stroke', 'rgba(255, 255, 255, 0.5)')
+            . Attr('stroke-width', 2);
           hideTooltip();
 
           if (!isHierarchy) {
             link
-              .attr('stroke', 'rgba(128, 206, 215, 0.3)')
-              .attr('stroke-width', 1.5);
+              . Attr('stroke', 'rgba(128, 206, 215, 0.3)')
+              . Attr('stroke-width', 1.5);
           }
         })
-        .on('click', function (event, d) {
-          var data = isHierarchy ? d.data : d;
-          if (data.path) {
-            window.location.href = data.path;
+        . On('click', function (event, d) {
+          var data = isHierarchy ? d. Data : d;
+          if (data. Path) {
+            window. Location. Href = data. Path;
           }
         });
     }
@@ -823,183 +823,183 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     // Animate nodes and links in
     function animateIn(node, link) {
       node
-        .style('opacity', 0)
-        .transition()
-        .duration(800)
-        .delay((d, i) => i * 15)
-        .style('opacity', 1);
+        . Style('opacity', 0)
+        . Transition()
+        . Duration(800)
+        . Delay((d, i) => i * 15)
+        . Style('opacity', 1);
 
       link
-        .style('opacity', 0)
-        .transition()
-        .duration(800)
-        .delay(300)
-        .style('opacity', 1);
+        . Style('opacity', 0)
+        . Transition()
+        . Duration(800)
+        . Delay(300)
+        . Style('opacity', 1);
     }
 
     // Drag functions
     function dragstarted(event, d) {
-      if (!event.active) simulation.alphaTarget(0.3).restart();
-      d.fx = d.x;
-      d.fy = d.y;
+      if (!event. Active) simulation. AlphaTarget(0.3). Restart();
+      d. Fx = d. X;
+      d. Fy = d. Y;
     }
 
     function dragged(event, d) {
-      d.fx = event.x;
-      d.fy = event.y;
+      d. Fx = event. X;
+      d. Fy = event. Y;
     }
 
     function dragended(event, d) {
-      if (!event.active) simulation.alphaTarget(0);
-      d.fx = null;
-      d.fy = null;
+      if (!event. Active) simulation. AlphaTarget(0);
+      d. Fx = null;
+      d. Fy = null;
     }
 
     // Tooltip functions
     function showTooltip(event, d) {
-      const rect = container.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
+      const rect = container. GetBoundingClientRect();
+      const x = event. ClientX - rect. Left;
+      const y = event. ClientY - rect. Top;
 
-      document.getElementById('tooltip-name').textContent = d.name;
-      document.getElementById('tooltip-path').textContent = d.path;
-      document.getElementById('tooltip-type').textContent =
-        `${d.type}${d.category ? ' • ' + d.category : ''}`;
+      document. GetElementById('tooltip-name'). TextContent = d. Name;
+      document. GetElementById('tooltip-path'). TextContent = d. Path;
+      document. GetElementById('tooltip-type'). TextContent =
+        `${d. Type}${d. Category ? ' • ' + d. Category : ''}`;
 
       // Show link status if available
-      const statusEl = document.getElementById('tooltip-status');
-      const statusIconEl = document.getElementById('tooltip-status-icon');
-      const statusTextEl = document.getElementById('tooltip-status-text');
+      const statusEl = document. GetElementById('tooltip-status');
+      const statusIconEl = document. GetElementById('tooltip-status-icon');
+      const statusTextEl = document. GetElementById('tooltip-status-text');
 
-      if (linkStatus.has(d.path)) {
-        const status = linkStatus.get(d.path);
-        statusEl.classList.remove('hidden');
+      if (linkStatus. Has(d. Path)) {
+        const status = linkStatus. Get(d. Path);
+        statusEl. ClassList. Remove('hidden');
         if (status === 'ok') {
-          statusIconEl.textContent = '✓ ';
-          statusIconEl.className = 'text-emerald-400';
-          statusTextEl.textContent = 'Link OK';
-          statusTextEl.className = 'text-emerald-400';
+          statusIconEl. TextContent = '✓ ';
+          statusIconEl. ClassName = 'text-emerald-400';
+          statusTextEl. TextContent = 'Link OK';
+          statusTextEl. ClassName = 'text-emerald-400';
         } else if (status === 'error') {
-          statusIconEl.textContent = '✗ ';
-          statusIconEl.className = 'text-red-400';
-          statusTextEl.textContent = 'Link broken';
-          statusTextEl.className = 'text-red-400';
+          statusIconEl. TextContent = '✗ ';
+          statusIconEl. ClassName = 'text-red-400';
+          statusTextEl. TextContent = 'Link broken';
+          statusTextEl. ClassName = 'text-red-400';
         } else {
-          statusIconEl.textContent = '○ ';
-          statusIconEl.className = 'text-amber-400';
-          statusTextEl.textContent = 'Checking...';
-          statusTextEl.className = 'text-amber-400';
+          statusIconEl. TextContent = '○ ';
+          statusIconEl. ClassName = 'text-amber-400';
+          statusTextEl. TextContent = 'Checking...';
+          statusTextEl. ClassName = 'text-amber-400';
         }
       } else {
-        statusEl.classList.add('hidden');
+        statusEl. ClassList. Add('hidden');
       }
 
-      tooltip.style.left = `${Math.min(x + 10, width - 200)}px`;
-      tooltip.style.top = `${Math.min(y + 10, height - 100)}px`;
-      tooltip.classList.remove('opacity-0');
-      tooltip.classList.add('opacity-100');
+      tooltip. Style. Left = `${Math. Min(x + 10, width - 200)}px`;
+      tooltip. Style. Top = `${Math. Min(y + 10, height - 100)}px`;
+      tooltip. ClassList. Remove('opacity-0');
+      tooltip. ClassList. Add('opacity-100');
     }
 
     function hideTooltip() {
-      tooltip.classList.remove('opacity-100');
-      tooltip.classList.add('opacity-0');
+      tooltip. ClassList. Remove('opacity-100');
+      tooltip. ClassList. Add('opacity-0');
     }
 
     // Fullscreen state
-    var wrapper = document.getElementById('sitemap-wrapper');
-    var fullscreenControls = document.getElementById('fullscreen-controls');
-    var iconExpand = document.getElementById('icon-expand');
-    var iconCollapse = document.getElementById('icon-collapse');
-    var layoutSelectFs = document.getElementById('layout-select-fs');
-    var layoutSelect = document.getElementById('layout-select');
+    var wrapper = document. GetElementById('sitemap-wrapper');
+    var fullscreenControls = document. GetElementById('fullscreen-controls');
+    var iconExpand = document. GetElementById('icon-expand');
+    var iconCollapse = document. GetElementById('icon-collapse');
+    var layoutSelectFs = document. GetElementById('layout-select-fs');
+    var layoutSelect = document. GetElementById('layout-select');
 
     function enterFullscreen() {
-      window.__sitemapState.isFullscreen = true;
+      window.__sitemapState. IsFullscreen = true;
 
       // Hide page content, navbar, footer, and affiliate disclosure
-      document.body.style.overflow = 'hidden';
-      var header = document.querySelector('header');
-      if (header) header.style.display = 'none';
-      var footer = document.querySelector('footer');
-      if (footer) footer.style.display = 'none';
-      var affiliateDisclosure = document.querySelector(
-        '.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure'
+      document. Body. Style. Overflow = 'hidden';
+      var header = document. QuerySelector('header');
+      if (header) header. Style. Display = 'none';
+      var footer = document. QuerySelector('footer');
+      if (footer) footer. Style. Display = 'none';
+      var affiliateDisclosure = document. QuerySelector(
+        '. Affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure'
       );
-      if (affiliateDisclosure) affiliateDisclosure.style.display = 'none';
+      if (affiliateDisclosure) affiliateDisclosure. Style. Display = 'none';
 
       // Make wrapper fullscreen with highest z-index
-      wrapper.classList.remove('max-w-7xl', 'mx-auto');
-      wrapper.classList.add('fixed', 'inset-0');
-      wrapper.style.zIndex = '9999';
+      wrapper. ClassList. Remove('max-w-7xl', 'mx-auto');
+      wrapper. ClassList. Add('fixed', 'inset-0');
+      wrapper. Style. ZIndex = '9999';
 
       // Make container fullscreen
-      container.classList.remove('rounded-3xl', 'border', 'border-white/20');
-      container.style.height = '100vh';
-      container.style.minHeight = '100vh';
-      container.style.borderRadius = '0';
+      container. ClassList. Remove('rounded-3xl', 'border', 'border-white/20');
+      container. Style. Height = '100vh';
+      container. Style. MinHeight = '100vh';
+      container. Style. BorderRadius = '0';
 
       // Show fullscreen controls, hide normal controls
-      fullscreenControls.classList.remove('hidden');
-      iconExpand.classList.add('hidden');
-      iconCollapse.classList.remove('hidden');
+      fullscreenControls. ClassList. Remove('hidden');
+      iconExpand. ClassList. Add('hidden');
+      iconCollapse. ClassList. Remove('hidden');
 
       // Sync layout select
-      layoutSelectFs.value = currentLayout;
+      layoutSelectFs. Value = currentLayout;
 
       // Update dimensions and re-render
       setTimeout(function() {
-        width = container.clientWidth;
-        height = container.clientHeight;
+        width = container. ClientWidth;
+        height = container. ClientHeight;
         render(currentLayout);
       }, 350);
     }
 
     function exitFullscreen() {
-      window.__sitemapState.isFullscreen = false;
+      window.__sitemapState. IsFullscreen = false;
 
       // Restore page scroll, navbar, footer, and affiliate disclosure
-      document.body.style.overflow = '';
-      var header = document.querySelector('header');
-      if (header) header.style.display = '';
-      var footer = document.querySelector('footer');
-      if (footer) footer.style.display = '';
-      var affiliateDisclosure = document.querySelector(
-        '.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure'
+      document. Body. Style. Overflow = '';
+      var header = document. QuerySelector('header');
+      if (header) header. Style. Display = '';
+      var footer = document. QuerySelector('footer');
+      if (footer) footer. Style. Display = '';
+      var affiliateDisclosure = document. QuerySelector(
+        '. Affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure'
       );
-      if (affiliateDisclosure) affiliateDisclosure.style.display = '';
+      if (affiliateDisclosure) affiliateDisclosure. Style. Display = '';
 
       // Restore wrapper
-      wrapper.classList.add('max-w-7xl', 'mx-auto');
-      wrapper.classList.remove('fixed', 'inset-0');
-      wrapper.style.zIndex = '';
+      wrapper. ClassList. Add('max-w-7xl', 'mx-auto');
+      wrapper. ClassList. Remove('fixed', 'inset-0');
+      wrapper. Style. ZIndex = '';
 
       // Restore container
-      container.classList.add('rounded-3xl', 'border', 'border-white/20');
-      container.style.height = '70vh';
-      container.style.minHeight = '500px';
-      container.style.borderRadius = '';
+      container. ClassList. Add('rounded-3xl', 'border', 'border-white/20');
+      container. Style. Height = '70vh';
+      container. Style. MinHeight = '500px';
+      container. Style. BorderRadius = '';
 
       // Hide fullscreen controls
-      fullscreenControls.classList.add('hidden');
-      iconExpand.classList.remove('hidden');
-      iconCollapse.classList.add('hidden');
+      fullscreenControls. ClassList. Add('hidden');
+      iconExpand. ClassList. Remove('hidden');
+      iconCollapse. ClassList. Add('hidden');
 
       // Sync layout select
-      layoutSelect.value = currentLayout;
+      layoutSelect. Value = currentLayout;
 
       // Update dimensions and re-render
       setTimeout(function() {
-        width = container.clientWidth;
-        height = container.clientHeight;
+        width = container. ClientWidth;
+        height = container. ClientHeight;
         render(currentLayout);
       }, 350);
     }
 
     // Fullscreen toggle button
-    document.getElementById('btn-fullscreen').addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      if (window.__sitemapState.isFullscreen) {
+    document. GetElementById('btn-fullscreen'). AddEventListener('click', function(e) {
+      e. PreventDefault();
+      e. StopPropagation();
+      if (window.__sitemapState. IsFullscreen) {
         exitFullscreen();
       } else {
         enterFullscreen();
@@ -1008,163 +1008,163 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Exit fullscreen button
     document
-      .getElementById('btn-exit-fullscreen')
-      .addEventListener('click', exitFullscreen);
+      . GetElementById('btn-exit-fullscreen')
+      . AddEventListener('click', exitFullscreen);
 
     // ESC key to exit fullscreen - store for cleanup
-    window.__sitemapHandlers.keydown = function(e) {
-      if (e.key === 'Escape' && window.__sitemapState.isFullscreen) {
+    window.__sitemapHandlers. Keydown = function(e) {
+      if (e. Key === 'Escape' && window.__sitemapState. IsFullscreen) {
         exitFullscreen();
       }
     };
-    document.addEventListener('keydown', window.__sitemapHandlers.keydown);
+    document. AddEventListener('keydown', window.__sitemapHandlers. Keydown);
 
     // Reset view (both normal and fullscreen)
-    document.getElementById('btn-reset').addEventListener('click', function() {
-      svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
+    document. GetElementById('btn-reset'). AddEventListener('click', function() {
+      svg. Transition(). Duration(750). Call(zoom. Transform, d3. ZoomIdentity);
     });
 
-    document.getElementById('btn-reset-fs').addEventListener('click', function() {
-      svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
+    document. GetElementById('btn-reset-fs'). AddEventListener('click', function() {
+      svg. Transition(). Duration(750). Call(zoom. Transform, d3. ZoomIdentity);
     });
 
     // Layout change (both normal and fullscreen)
-    document.getElementById('layout-select').addEventListener('change', function(e) {
-      currentLayout = e.target.value;
-      layoutSelectFs.value = currentLayout;
+    document. GetElementById('layout-select'). AddEventListener('change', function(e) {
+      currentLayout = e. Target. Value;
+      layoutSelectFs. Value = currentLayout;
       render(currentLayout);
     });
 
     document
-      .getElementById('layout-select-fs')
-      .addEventListener('change', function(e) {
-        currentLayout = e.target.value;
-        layoutSelect.value = currentLayout;
+      . GetElementById('layout-select-fs')
+      . AddEventListener('change', function(e) {
+        currentLayout = e. Target. Value;
+        layoutSelect. Value = currentLayout;
         render(currentLayout);
       });
 
     // Link checking function
     function checkLinks(btn, btnFs) {
-      btn.textContent = 'Checking...';
-      btn.disabled = true;
+      btn. TextContent = 'Checking...';
+      btn. Disabled = true;
       if (btnFs) {
-        btnFs.textContent = 'Checking...';
-        btnFs.disabled = true;
+        btnFs. TextContent = 'Checking...';
+        btnFs. Disabled = true;
       }
 
       var healthy = 0;
       var broken = 0;
-      var pending = siteStructure.nodes.length;
+      var pending = siteStructure. Nodes. Length;
 
-      document.getElementById('stat-pending').textContent = pending;
-      document.getElementById('stat-healthy').textContent = healthy;
-      document.getElementById('stat-broken').textContent = broken;
+      document. GetElementById('stat-pending'). TextContent = pending;
+      document. GetElementById('stat-healthy'). TextContent = healthy;
+      document. GetElementById('stat-broken'). TextContent = broken;
 
       var results = [];
       var nodeIndex = 0;
 
       function checkNextNode() {
-        if (nodeIndex >= siteStructure.nodes.length) {
+        if (nodeIndex >= siteStructure. Nodes. Length) {
           // All done
-          btn.textContent = 'Check Links';
-          btn.disabled = false;
+          btn. TextContent = 'Check Links';
+          btn. Disabled = false;
           if (btnFs) {
-            btnFs.textContent = 'Check Links';
-            btnFs.disabled = false;
+            btnFs. TextContent = 'Check Links';
+            btnFs. Disabled = false;
           }
           showResults();
           return;
         }
 
-        var node = siteStructure.nodes[nodeIndex];
-        linkStatus.set(node.path, 'checking');
-        updateNodeStatus(node.path, 'checking');
+        var node = siteStructure. Nodes[nodeIndex];
+        linkStatus. Set(node. Path, 'checking');
+        updateNodeStatus(node. Path, 'checking');
 
-        fetch(node.path, { method: 'HEAD' })
-          .then(function(response) {
-            if (response.ok) {
-              linkStatus.set(node.path, 'ok');
-              updateNodeStatus(node.path, 'ok');
+        fetch(node. Path, { method: 'HEAD' })
+          . Then(function(response) {
+            if (response. Ok) {
+              linkStatus. Set(node. Path, 'ok');
+              updateNodeStatus(node. Path, 'ok');
               healthy++;
             } else {
-              linkStatus.set(node.path, 'error');
-              updateNodeStatus(node.path, 'error');
+              linkStatus. Set(node. Path, 'error');
+              updateNodeStatus(node. Path, 'error');
               broken++;
-              results.push({
-                path: node.path,
-                status: response.status,
-                name: node.name
+              results. Push({
+                path: node. Path,
+                status: response. Status,
+                name: node. Name
               });
             }
             pending--;
-            document.getElementById('stat-pending').textContent = pending;
-            document.getElementById('stat-healthy').textContent = healthy;
-            document.getElementById('stat-broken').textContent = broken;
+            document. GetElementById('stat-pending'). TextContent = pending;
+            document. GetElementById('stat-healthy'). TextContent = healthy;
+            document. GetElementById('stat-broken'). TextContent = broken;
             nodeIndex++;
             checkNextNode();
           })
-          .catch(function(err) {
-            linkStatus.set(node.path, 'error');
-            updateNodeStatus(node.path, 'error');
+          . Catch(function(err) {
+            linkStatus. Set(node. Path, 'error');
+            updateNodeStatus(node. Path, 'error');
             broken++;
-            results.push({
-              path: node.path,
+            results. Push({
+              path: node. Path,
               status: 'Network Error',
-              name: node.name
+              name: node. Name
             });
             pending--;
-            document.getElementById('stat-pending').textContent = pending;
-            document.getElementById('stat-healthy').textContent = healthy;
-            document.getElementById('stat-broken').textContent = broken;
+            document. GetElementById('stat-pending'). TextContent = pending;
+            document. GetElementById('stat-healthy'). TextContent = healthy;
+            document. GetElementById('stat-broken'). TextContent = broken;
             nodeIndex++;
             checkNextNode();
           });
       }
 
       function showResults() {
-        var resultsEl = document.getElementById('link-results');
-        var contentEl = document.getElementById('link-results-content');
+        var resultsEl = document. GetElementById('link-results');
+        var contentEl = document. GetElementById('link-results-content');
 
-        if (results.length > 0) {
-          contentEl.innerHTML = results
-            .map(function(r) {
+        if (results. Length > 0) {
+          contentEl. InnerHTML = results
+            . Map(function(r) {
               return '<div class="flex items-center justify-between p-3 bg-red-500/20 rounded-lg border border-red-500/30">' +
                 '<div>' +
-                '<div class="text-white font-medium">' + r.name + '</div>' +
-                '<div class="text-red-300 text-sm font-mono">' + r.path + '</div>' +
+                '<div class="text-white font-medium">' + r. Name + '</div>' +
+                '<div class="text-red-300 text-sm font-mono">' + r. Path + '</div>' +
                 '</div>' +
-                '<div class="text-red-400 font-mono">' + r.status + '</div>' +
+                '<div class="text-red-400 font-mono">' + r. Status + '</div>' +
                 '</div>';
             })
-            .join('');
+            . Join('');
         } else {
-          contentEl.innerHTML = '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
+          contentEl. InnerHTML = '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
         }
-        resultsEl.classList.remove('hidden');
+        resultsEl. ClassList. Remove('hidden');
       }
 
       checkNextNode();
     }
 
     // Link check button handlers
-    var btnCheckLinks = document.getElementById('btn-check-links');
-    var btnCheckLinksFs = document.getElementById('btn-check-links-fs');
+    var btnCheckLinks = document. GetElementById('btn-check-links');
+    var btnCheckLinksFs = document. GetElementById('btn-check-links-fs');
 
-    btnCheckLinks.addEventListener('click', function() {
+    btnCheckLinks. AddEventListener('click', function() {
       checkLinks(btnCheckLinks, btnCheckLinksFs);
     });
-    btnCheckLinksFs.addEventListener('click', function() {
+    btnCheckLinksFs. AddEventListener('click', function() {
       checkLinks(btnCheckLinksFs, btnCheckLinks);
     });
 
     // Update node visual status
     function updateNodeStatus(path, status) {
-      if (!window.currentNodes) return;
+      if (!window. CurrentNodes) return;
 
-      window.currentNodes
-        .filter((d) => d.path === path)
-        .select('.status-indicator')
-        .attr(
+      window. CurrentNodes
+        . Filter((d) => d. Path === path)
+        . Select('. Status-indicator')
+        . Attr(
           'fill',
           status === 'ok'
             ? '#10B981'
@@ -1172,37 +1172,37 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
               ? '#EF4444'
               : '#F59E0B',
         )
-        .attr('stroke', 'white');
+        . Attr('stroke', 'white');
     }
 
     // Handle resize - store for cleanup
-    window.__sitemapHandlers.resize = function() {
-      width = container.clientWidth;
-      height = container.clientHeight;
+    window.__sitemapHandlers. Resize = function() {
+      width = container. ClientWidth;
+      height = container. ClientHeight;
 
       if (simulation) {
-        simulation.force('center', d3.forceCenter(width / 2, height / 2));
-        simulation.alpha(0.3).restart();
+        simulation. Force('center', d3. ForceCenter(width / 2, height / 2));
+        simulation. Alpha(0.3). Restart();
       }
     };
-    window.addEventListener('resize', window.__sitemapHandlers.resize);
+    window. AddEventListener('resize', window.__sitemapHandlers. Resize);
 
     // Initial render
     render('force');
   } // End of initSitemapVisualization function
 
   // Register event listeners once
-  document.addEventListener('astro:page-load', initSitemapVisualization);
-  document.addEventListener('astro:before-swap', cleanupSitemap);
+  document. AddEventListener('astro:page-load', initSitemapVisualization);
+  document. AddEventListener('astro:before-swap', cleanupSitemap);
 }
 </script>
 
 <style>
-  .node circle {
+  . Node circle {
     transition: all 0.3s ease;
   }
 
-  .node:hover circle {
+  . Node:hover circle {
     transform: scale(1.1);
   }
 

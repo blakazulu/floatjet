@@ -21,19 +21,19 @@ const description =
       transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .headline-visible {
+    . Headline-visible {
       opacity: 1;
       transform: translateY(0) scale(1);
       filter: blur(0);
     }
 
-    .headline-exit {
+    . Headline-exit {
       opacity: 0;
       transform: translateY(-30px) scale(0.95);
       filter: blur(8px);
     }
 
-    .headline-enter {
+    . Headline-enter {
       opacity: 0;
       transform: translateY(30px) scale(0.95);
       filter: blur(8px);
@@ -59,7 +59,7 @@ const description =
         cleanupHeadlineRotation();
 
         // Check if element exists on this page
-        var element = document.getElementById('rotating-headline');
+        var element = document. GetElementById('rotating-headline');
         if (!element) return;
 
         var headlines = [
@@ -72,9 +72,9 @@ const description =
 
         // Shuffle array (Fisher-Yates)
         function shuffle(array) {
-          var arr = array.slice();
-          for (var i = arr.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
+          var arr = array. Slice();
+          for (var i = arr. Length - 1; i > 0; i--) {
+            var j = Math. Floor(Math. Random() * (i + 1));
             var temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
@@ -85,27 +85,27 @@ const description =
         var shuffled = shuffle(headlines);
         var currentIndex = 0;
 
-        element.textContent = shuffled[0];
-        element.classList.remove('headline-exit', 'headline-enter');
-        element.classList.add('headline-visible');
+        element. TextContent = shuffled[0];
+        element. ClassList. Remove('headline-exit', 'headline-enter');
+        element. ClassList. Add('headline-visible');
 
         window.__headlineInterval = setInterval(function() {
           // Exit animation - slide up + blur + fade
-          element.classList.remove('headline-visible');
-          element.classList.add('headline-exit');
+          element. ClassList. Remove('headline-visible');
+          element. ClassList. Add('headline-exit');
 
           setTimeout(function() {
             // Change text and prepare for enter
-            currentIndex = (currentIndex + 1) % shuffled.length;
-            element.textContent = shuffled[currentIndex];
-            element.classList.remove('headline-exit');
-            element.classList.add('headline-enter');
+            currentIndex = (currentIndex + 1) % shuffled. Length;
+            element. TextContent = shuffled[currentIndex];
+            element. ClassList. Remove('headline-exit');
+            element. ClassList. Add('headline-enter');
 
             // Use double rAF to ensure browser processes class change before transition
             requestAnimationFrame(function() {
               requestAnimationFrame(function() {
-                element.classList.remove('headline-enter');
-                element.classList.add('headline-visible');
+                element. ClassList. Remove('headline-enter');
+                element. ClassList. Add('headline-visible');
               });
             });
           }, 700);
@@ -113,8 +113,8 @@ const description =
       }
 
       // Register event listeners once
-      document.addEventListener('astro:page-load', initHeadlineRotation);
-      document.addEventListener('astro:before-swap', cleanupHeadlineRotation);
+      document. AddEventListener('astro:page-load', initHeadlineRotation);
+      document. AddEventListener('astro:before-swap', cleanupHeadlineRotation);
     }
   </script>
   <CategorySelector/>

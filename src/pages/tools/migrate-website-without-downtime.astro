@@ -109,7 +109,7 @@ const relatedArticles = [
       Classic rookie mistake.
     </p>
     <p>
-      Since then I've moved maybe forty or fifty sites—tiny blogs, <a href="/tools/best-ecommerce-hosting">WooCommerce
+      Since then I've moved maybe forty or fifty sites. Tiny blogs, <a href="/tools/best-ecommerce-hosting">WooCommerce
       stores</a> doing real volume, that kind of thing. You copy files, test on a staging URL, update DNS when everything
       looks good. That's basically it.
     </p>
@@ -118,7 +118,7 @@ const relatedArticles = [
   <!-- Pre-Migration Checklist -->
   <section id="pre-migration-checklist">
     <h2>Pre-Migration Checklist</h2>
-    <p>Before you touch anything, grab a coffee and work through this list. Trust me — ten minutes of prep work saves
+    <p>Before you touch anything, grab a coffee and work through this list. Trust me . ten minutes of prep work saves
       hours of headaches later.</p>
 
     <div class="bg-white/5 border border-white/10 rounded-lg p-6 my-6">
@@ -142,7 +142,7 @@ const relatedArticles = [
         </li>
         <li class="flex items-start">
           <span class="text-jet-stream mr-2">[ ]</span>
-          <span><strong>Turn off caching plugins:</strong> WP Rocket, W3 Total Cache, whatever you use — disable it temporarily. Caching and migrations do not play nice together.</span>
+          <span><strong>Turn off caching plugins:</strong> WP Rocket, W3 Total Cache, whatever you use . disable it temporarily. Caching and migrations do not play nice together.</span>
         </li>
         <li class="flex items-start">
           <span class="text-jet-stream mr-2">[ ]</span>
@@ -172,7 +172,7 @@ const relatedArticles = [
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">The Old-School Way: Manual Backup</h4>
         <p class="text-white/70 text-sm mt-2">Connect with FileZilla or use your host's File Manager. Download
-          everything from public_html. Then hop into phpMyAdmin and export your database. Save both somewhere safe — not
+          everything from public_html. Then hop into phpMyAdmin and export your database. Save both somewhere safe . not
           just on your desktop that your cat likes to walk across.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
@@ -194,21 +194,21 @@ const relatedArticles = [
   <section id="setup-new-hosting">
     <h2>Step 2: Set Up New Hosting</h2>
     <p>
-      Now we get the new place ready. Think of it like setting up an apartment before you move in — you want the lights
+      Now we get the new place ready. Think of it like setting up an apartment before you move in . you want the lights
       working and the fridge plugged in before the moving truck arrives.
     </p>
 
     <h3 class="text-xl font-semibold text-white mt-6 mb-4">What You Need to Do</h3>
     <ul class="text-white/80 space-y-2 ml-4">
       <li><strong>Sign up for your new host</strong> if you have not already (obviously)</li>
-      <li><strong>Add your domain to the account</strong> — but do not touch DNS yet. Seriously. Leave it alone for now.
+      <li><strong>Add your domain to the account</strong> . but do not touch DNS yet. Seriously. Leave it alone for now.
       </li>
       <li><strong>Create a fresh database</strong> and write down the name, username, and password somewhere. You will
         need these later.
       </li>
       <li><strong>Set the PHP version</strong> to match what you are running now, or go higher if your site supports it
       </li>
-      <li><strong>Ask for a temporary URL</strong> — most hosts give you something like yoursite.tempurl.host so you can
+      <li><strong>Ask for a temporary URL</strong> . most hosts give you something like yoursite. Tempurl. Host so you can
         test before going live
       </li>
     </ul>
@@ -241,7 +241,7 @@ const relatedArticles = [
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">FTP/SFTP Upload</h4>
         <p class="text-white/70 text-sm mt-2">Fire up FileZilla, connect to your new server, and start uploading. Drop
-          everything into public_html or www. Fair warning though — if your site has a lot of images or files, you might
+          everything into public_html or www. Fair warning though . if your site has a lot of images or files, you might
           be waiting a while. I once had a 15GB site that took the better part of a day to transfer.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
@@ -265,13 +265,13 @@ const relatedArticles = [
       <li>Log into phpMyAdmin on your new server</li>
       <li>Click on the empty database you created earlier</li>
       <li>Hit the "Import" tab at the top</li>
-      <li>Choose your .sql backup file and click "Go"</li>
+      <li>Choose your . Sql backup file and click "Go"</li>
       <li>Wait for it to finish (big databases can take a minute)</li>
     </ol>
 
     <h3 class="text-xl font-semibold text-white mt-6 mb-4">Do Not Forget This Part</h3>
     <p>
-      If your database credentials changed (they probably did), you need to update wp-config.php. Open it up and change
+      If your database credentials changed (they probably did), you need to update wp-config. Php. Open it up and change
       these lines to match your new setup:
     </p>
     <div class="bg-white/5 border border-white/10 rounded-lg p-4 my-4 font-mono text-sm text-white/70">
@@ -297,13 +297,13 @@ const relatedArticles = [
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">Use the Temporary URL</h4>
         <p class="text-white/70 text-sm mt-2">Your host should have given you a temporary address like
-          yoursite.tempurl.host or something similar. Pop that into your browser and see if your site loads. This is the
+          yoursite. Tempurl. Host or something similar. Pop that into your browser and see if your site loads. This is the
           easiest way to test.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">Edit Your Hosts File (Advanced)</h4>
         <p class="text-white/70 text-sm mt-2">Want to test with your actual domain? You can edit your computer's hosts
-          file to point yourdomain.com to the new server IP. Only you will see the new site — everyone else still sees
+          file to point yourdomain. Com to the new server IP. Only you will see the new site . everyone else still sees
           the old one. Google "edit hosts file" plus your operating system for instructions.</p>
       </div>
     </div>
@@ -314,10 +314,10 @@ const relatedArticles = [
       <li>[ ] Does the homepage look right? No weird formatting issues?</li>
       <li>[ ] Can you access your older blog posts? Check a few random ones.</li>
       <li>[ ] Do images load properly or are they broken?</li>
-      <li>[ ] Submit a test contact form — does it go through?</li>
+      <li>[ ] Submit a test contact form . does it go through?</li>
       <li>[ ] Can you log into wp-admin? Sometimes permissions get weird.</li>
       <li>[ ] If you have a store, try the full checkout process</li>
-      <li>[ ] Look for the padlock icon — SSL working?</li>
+      <li>[ ] Look for the padlock icon . SSL working?</li>
       <li>[ ] Click around and watch for any 404 errors</li>
     </ul>
   </section>
@@ -326,14 +326,14 @@ const relatedArticles = [
   <section id="update-dns">
     <h2>Step 5: Update DNS Settings</h2>
     <p>
-      Everything working on the test site? Good. Now comes the moment of truth — pointing your domain to the new server.
+      Everything working on the test site? Good. Now comes the moment of truth . pointing your domain to the new server.
       Take a deep breath. This part sounds scarier than it actually is.
     </p>
 
     <h3 class="text-xl font-semibold text-white mt-6 mb-4">The Actual Steps</h3>
     <ol class="text-white/80 space-y-2 ml-4 list-decimal">
       <li>Log into wherever your DNS lives (Cloudflare, your domain registrar, wherever)</li>
-      <li>Find the DNS records section — usually called DNS Management or something similar</li>
+      <li>Find the DNS records section . usually called DNS Management or something similar</li>
       <li>Look for the A record pointing to your old server's IP and change it to the new one</li>
       <li>Update any CNAME records if your host tells you to</li>
       <li>Pro move: lower your TTL to 300 seconds a day before migrating. This makes the switch faster.</li>
@@ -349,9 +349,9 @@ const relatedArticles = [
     </div>
 
     <p>
-      Obsessively checking if DNS has propagated yet? <a href="https://dnschecker.org" target="_blank" rel="noopener"
-                                                         class="text-jet-stream hover:underline">DNSChecker.org</a>
-      shows you propagation status from servers around the world. Fair warning — you will probably refresh it fifty
+      Obsessively checking if DNS has propagated yet? <a href="https://dnschecker. Org" target="_blank" rel="noopener"
+                                                         class="text-jet-stream hover:underline">DNSChecker. Org</a>
+      shows you propagation status from servers around the world. Fair warning . you will probably refresh it fifty
       times.
     </p>
   </section>
@@ -366,19 +366,19 @@ const relatedArticles = [
 
     <h3 class="text-xl font-semibold text-white mt-6 mb-4">Keep an Eye on These Things</h3>
     <ul class="text-white/80 space-y-2 ml-4">
-      <li>[ ] Double-check SSL is working — that padlock should be there on every page</li>
+      <li>[ ] Double-check SSL is working . that padlock should be there on every page</li>
       <li>[ ] Check Search Console for any new crawl errors</li>
       <li>[ ] Set up free uptime monitoring (UptimeRobot takes two minutes)</li>
-      <li>[ ] Run through your site again — things that worked on the temp URL sometimes break on the real domain</li>
+      <li>[ ] Run through your site again . things that worked on the temp URL sometimes break on the real domain</li>
       <li>[ ] If your email was on the old host, make sure it is still working</li>
       <li>[ ] Search your content for any hardcoded old URLs that need updating</li>
       <li>[ ] Turn your caching plugins back on</li>
-      <li>[ ] Clear every cache you can find — server cache, plugin cache, CDN cache, even your browser cache</li>
+      <li>[ ] Clear every cache you can find . server cache, plugin cache, CDN cache, even your browser cache</li>
     </ul>
 
     <h3 class="text-xl font-semibold text-white mt-6 mb-4">Do Not Cancel Your Old Host Yet</h3>
     <p>
-      I get it — you do not want to pay for two hosting accounts. But keep the old one running for at least two weeks.
+      I get it . you do not want to pay for two hosting accounts. But keep the old one running for at least two weeks.
       If something goes wrong, you have a fallback. If you cancel immediately and then realize you missed something, you
       are stuck scrambling to restore from backups. Not fun.
     </p>
@@ -403,7 +403,7 @@ const relatedArticles = [
           first.</p>
       </div>
       <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
-        <h4 class="text-white font-semibold">Forgetting wp-config.php</h4>
+        <h4 class="text-white font-semibold">Forgetting wp-config. Php</h4>
         <p class="text-white/70 text-sm mt-2">Your database credentials changed. You forgot to update the config file.
           Now your site just says "Error establishing database connection" and you are panicking. Been there.
           Double-check those credentials.</p>
@@ -418,7 +418,7 @@ const relatedArticles = [
         <h4 class="text-white font-semibold">Completely Forgetting About Email</h4>
         <p class="text-white/70 text-sm mt-2">If your email runs on your web hosting, it needs to move too. People
           forget this constantly. Suddenly your business email stops working and you are missing important messages.
-          Consider using Google Workspace or Microsoft 365 instead — keeps email separate from hosting and saves this
+          Consider using Google Workspace or Microsoft 365 instead . keeps email separate from hosting and saves this
           headache in future migrations.</p>
       </div>
     </div>
@@ -433,7 +433,7 @@ const relatedArticles = [
     </p>
 
     <ul class="text-white/80 space-y-2 ml-4 my-4">
-      <li>Your site is massive — we are talking 10GB+ of files or a database that makes phpMyAdmin choke</li>
+      <li>Your site is massive . we are talking 10GB+ of files or a database that makes phpMyAdmin choke</li>
       <li>You have a WooCommerce store with orders coming in constantly (migration timing gets tricky)</li>
       <li>The previous developer did weird custom stuff to the server that you do not fully understand</li>
       <li>Your business loses real money every minute the site is down</li>
@@ -467,7 +467,7 @@ const relatedArticles = [
   <section id="conclusion">
     <h2>Wrapping Up</h2>
     <p>
-      Migrated maybe thirty sites over the years. Lost one to a corrupted database back in 2019—forgot to verify
+      Migrated maybe thirty sites over the years. Lost one to a corrupted database back in 2019. Forgot to verify
       the backup was actually complete before deleting the old server. Learned that lesson the expensive way.
     </p>
     <p>
@@ -481,7 +481,7 @@ const relatedArticles = [
     </p>
     <p>
       Fresh hosting is also a good excuse to finally <a href="/tools/website-speed-optimization-guide">set up proper caching</a>.
-      Your site's already down for maintenance in your head—might as well fix everything while you're at it.
+      Your site's already down for maintenance in your head. Might as well fix everything while you're at it.
     </p>
 
     <div class="bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-jet-stream/30 rounded-xl p-6 mt-6">

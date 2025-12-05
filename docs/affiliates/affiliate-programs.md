@@ -69,7 +69,7 @@ application) are not impacted. Will reapply after FloatJet has:
 
 | Program    | Network       | Priority | Target Date                         | Required For      |
 |------------|---------------|----------|-------------------------------------|-------------------|
-| ConvertKit | Direct        | **HIGH** | Week 2 (after launch)               | Email Marketing   |
+| ConvertKit | Direct        | **HIGH** | ⏳ Applied 2025-12-05               | Email Marketing   |
 | Beehiiv    | Direct        | **HIGH** | Week 2 (after launch)               | Email Marketing   |
 | FlexiSpot  | Direct        | **HIGH** | Week 3                              | Standing Desks    |
 | 1Password  | Impact Radius | **HIGH** | Month 2-3 (after Impact reapproval) | Password Managers |
@@ -478,7 +478,7 @@ how-to-setup-vpn-all-devices
 
 | Program        | Commission                  | Cookie  | Network       | Status                      |
 |----------------|-----------------------------|---------|---------------|-----------------------------|
-| ConvertKit     | $100 + 40% recurring (24mo) | 60 days | Direct        | Not Applied                 |
+| ConvertKit     | $100 + 40% recurring (24mo) | 60 days | Direct        | ⏳ Pending (Applied 2025-12-05) |
 | Beehiiv        | 50% recurring (12mo)        | 60 days | Direct        | Not Applied                 |
 | ActiveCampaign | 20-30% recurring            | 90 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
 | Drip           | 20% recurring               | 90 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
@@ -1270,7 +1270,10 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** 2025-12-03 - ExpressVPN application DECLINED via Impact Radius. Reason: "Low reach (traffic, followers)".
+**Last Action:** 2025-12-05 - ConvertKit affiliate application SUBMITTED. Direct program with $100 signup bonus + 40%
+recurring for 24 months. Approval expected within 1-3 days. Will update netlify.toml redirect once approved.
+
+**Previous Action:** 2025-12-03 - ExpressVPN application DECLINED via Impact Radius. Reason: "Low reach (traffic, followers)".
 This was expected since Impact Radius network access was declined earlier. Will reapply in Month 2-3 once site has
 established traffic. NordVPN remains our primary VPN affiliate (already approved with 30-40% commission).
 

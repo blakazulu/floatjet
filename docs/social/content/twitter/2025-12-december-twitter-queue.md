@@ -15,11 +15,11 @@ Full month of tweets for @FloatJetWebsite.
 | Wed 3/12  | 19:00 | #3 Hot take             | Value          | ✅ Posted  | 0%   | Yes     |
 | Thu 4/12  | 15:00 | #4 Testing update       | Behind-scenes  | ✅ Posted  | 0%   | No      |
 | Fri 5/12  | 01:00 | #5 Question             | Engagement     | ✅ Posted  | 0%   | No      |
-| Sat 6/12  | 15:00 | #6 Standing desk        | Personal story | ⏳ Pending | 0%   | Yes     |
-| Sun 7/12  | 01:00 | #7 Home office          | Hot take       | ⏳ Pending | 0%   | Yes     |
-| Sun 7/12  | 19:00 | #8 Free VPNs            | Value          | ⏳ Pending | 0%   | Yes     |
-| Mon 8/12  | 15:00 | #9 Coffee shop WiFi     | Behind-scenes  | ⏳ Pending | 0%   | Yes     |
-| Tue 9/12  | 01:00 | #10 Physical notebook   | Value          | ⏳ Pending | 0%   | Yes     |
+| Sat 6/12  | 15:00 | #6 Standing desk        | Personal story | 📅 Scheduled | 0%   | Yes     |
+| Sun 7/12  | 01:00 | #7 Home office          | Hot take       | 📅 Scheduled | 0%   | Yes     |
+| Sun 7/12  | 19:00 | #8 Free VPNs            | Value          | 📅 Scheduled | 0%   | Yes     |
+| Mon 8/12  | 15:00 | #9 Coffee shop WiFi     | Behind-scenes  | 📅 Scheduled | 0%   | Yes     |
+| Tue 9/12  | 01:00 | #10 Physical notebook   | Value          | 📅 Scheduled | 0%   | Yes     |
 | Wed 10/12 | 15:00 | #11 Cafe video calls    | Personal story | ⏳ Pending | 0%   | No      |
 | Thu 11/12 | 01:00 | #12 Notion rabbit hole  | Relatable      | ⏳ Pending | 0%   | No      |
 | Thu 11/12 | 19:00 | #13 VPN kill switch     | Value          | ⏳ Pending | 0%   | Yes     |
@@ -168,7 +168,7 @@ Building a list of stuff that's worth the money.
 
 **Type:** Honest experience
 **When:** Saturday 6/12, 15:00
-**Status:** ⏳ Pending
+**Status:** 📅 Scheduled
 **Character Count:** 274
 
 ```text
@@ -190,7 +190,7 @@ https://floatjet.com/guides/are-standing-desks-actually-worth-it/
 
 **Type:** Opinion / Value
 **When:** Sunday 7/12, 01:00
-**Status:** ⏳ Pending
+**Status:** 📅 Scheduled
 **Character Count:** 256
 
 ```text
@@ -210,7 +210,7 @@ https://floatjet.com/guides/budget-home-office-setup-500/
 
 **Type:** Security advice
 **When:** Sunday 7/12, 19:00
-**Status:** ⏳ Pending
+**Status:** 📅 Scheduled
 **Character Count:** 241
 
 ```text
@@ -232,7 +232,7 @@ https://floatjet.com/tools/free-vpn-vs-paid-vpn/
 
 **Type:** Honest confession
 **When:** Monday 8/12, 15:00
-**Status:** ⏳ Pending
+**Status:** 📅 Scheduled
 **Character Count:** 253
 
 ```text
@@ -254,7 +254,7 @@ https://floatjet.com/guides/do-i-need-vpn-cafes/
 
 **Type:** Productivity insight
 **When:** Tuesday 9/12, 01:00
-**Status:** ⏳ Pending
+**Status:** 📅 Scheduled
 **Character Count:** 238
 
 ```text

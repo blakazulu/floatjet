@@ -18,8 +18,8 @@ const organizationSchema = {
   "description": "FloatJet helps remote workers find the best tools, gear, and guides for productive work-from-anywhere lifestyles.",
   "employee": team.map(member => ({
     "@type": "Person",
-    "name": member. Name,
-    "jobTitle": member. Title,
+    "name": member.name,
+    "jobTitle": member.title,
     "url": `https://floatjet.com/authors/${member.slug}`
   }))
 };
@@ -66,8 +66,8 @@ const organizationSchema = {
                 </svg>
                 {founder.location}
               </p>
-              <p class="founder-bio">{founder. BioShort}</p>
-              {founder. Social && (
+              <p class="founder-bio">{founder.bioShort}</p>
+              {founder.social && (
                 <div class="founder-social">
                   {founder.social.linkedin && (
                     <a href={founder.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${founder.name} on LinkedIn`} class="social-link">
@@ -165,7 +165,7 @@ const organizationSchema = {
 
 <style>
   /* Page Header */
-  . Page-title {
+  .page-title {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
@@ -174,12 +174,12 @@ const organizationSchema = {
   }
 
   @media (min-width: 640px) {
-    . Page-title {
+    .page-title {
       font-size: 3rem;
     }
   }
 
-  . Page-subtitle {
+  .page-subtitle {
     font-size: 1.125rem;
     color: rgba(255, 255, 255, 0.7);
     max-width: 600px;
@@ -188,7 +188,7 @@ const organizationSchema = {
   }
 
   /* Section Title */
-  . Section-title {
+  .section-title {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
@@ -196,7 +196,7 @@ const organizationSchema = {
     margin: 0 0 1rem 0;
   }
 
-  . Section-description {
+  .section-description {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.7);
     margin: 0 0 2rem 0;
@@ -204,11 +204,11 @@ const organizationSchema = {
   }
 
   /* Founder Section */
-  . Founder-section {
+  .founder-section {
     margin-bottom: 4rem;
   }
 
-  . Founder-card {
+  .founder-card {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -228,19 +228,19 @@ const organizationSchema = {
   }
 
   @media (min-width: 768px) {
-    . Founder-card {
+    .founder-card {
       flex-direction: row;
       align-items: flex-start;
       padding: 2.5rem;
     }
   }
 
-  . Founder-image-wrap {
+  .founder-image-wrap {
     position: relative;
     flex-shrink: 0;
   }
 
-  . Founder-image {
+  .founder-image {
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -250,17 +250,17 @@ const organizationSchema = {
   }
 
   @media (min-width: 768px) {
-    . Founder-image {
+    .founder-image {
       width: 200px;
       height: 200px;
     }
   }
 
-  . Founder-image-wrap:hover . Founder-image {
+  .founder-image-wrap:hover .founder-image {
     border-color: #80CED7;
   }
 
-  . Founder-badge {
+  .founder-badge {
     position: absolute;
     bottom: 8px;
     left: 50%;
@@ -275,18 +275,18 @@ const organizationSchema = {
     letter-spacing: 0.05em;
   }
 
-  . Founder-content {
+  .founder-content {
     flex: 1;
     text-align: center;
   }
 
   @media (min-width: 768px) {
-    . Founder-content {
+    .founder-content {
       text-align: left;
     }
   }
 
-  . Founder-name {
+  .founder-name {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
@@ -294,23 +294,23 @@ const organizationSchema = {
     margin: 0 0 0.25rem 0;
   }
 
-  . Founder-name a {
+  .founder-name a {
     color: white;
     text-decoration: none;
   }
 
-  . Founder-name a:hover {
+  .founder-name a:hover {
     color: #80CED7;
   }
 
-  . Founder-title {
+  .founder-title {
     font-size: 1.125rem;
     color: #38A3A5;
     margin: 0 0 0.5rem 0;
     font-weight: 500;
   }
 
-  . Founder-location {
+  .founder-location {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -321,24 +321,24 @@ const organizationSchema = {
   }
 
   @media (min-width: 768px) {
-    . Founder-location {
+    .founder-location {
       justify-content: flex-start;
     }
   }
 
-  . Location-icon {
+  .location-icon {
     width: 18px;
     height: 18px;
   }
 
-  . Founder-bio {
+  .founder-bio {
     font-size: 1rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
     margin: 0 0 1.25rem 0;
   }
 
-  . Founder-social {
+  .founder-social {
     display: flex;
     gap: 0.75rem;
     justify-content: center;
@@ -346,12 +346,12 @@ const organizationSchema = {
   }
 
   @media (min-width: 768px) {
-    . Founder-social {
+    .founder-social {
       justify-content: flex-start;
     }
   }
 
-  . Social-link {
+  .social-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -364,18 +364,18 @@ const organizationSchema = {
     transition: all 0.2s ease;
   }
 
-  . Social-link:hover {
+  .social-link:hover {
     color: #80CED7;
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(128, 206, 215, 0.3);
   }
 
-  . Social-link svg {
+  .social-link svg {
     width: 20px;
     height: 20px;
   }
 
-  . View-profile-link {
+  .view-profile-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -386,38 +386,38 @@ const organizationSchema = {
     transition: gap 0.2s ease;
   }
 
-  . View-profile-link:hover {
+  .view-profile-link:hover {
     gap: 0.75rem;
   }
 
-  . View-profile-link svg {
+  .view-profile-link svg {
     width: 18px;
     height: 18px;
   }
 
   /* Writers Section */
-  . Writers-section {
+  .writers-section {
     margin-bottom: 4rem;
   }
 
-  . Writers-grid {
+  .writers-grid {
     display: grid;
     gap: 1.5rem;
   }
 
   @media (min-width: 768px) {
-    . Writers-grid {
+    .writers-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media (min-width: 1024px) {
-    . Writers-grid {
+    .writers-grid {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  . Writer-card {
+  .writer-card {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -437,7 +437,7 @@ const organizationSchema = {
     transition: all 0.3s ease;
   }
 
-  . Writer-card:hover {
+  .writer-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
     background:
@@ -445,12 +445,12 @@ const organizationSchema = {
       rgba(15, 23, 42, 0.85);
   }
 
-  . Writer-image-link {
+  .writer-image-link {
     display: block;
     margin-bottom: 1rem;
   }
 
-  . Writer-image {
+  .writer-image {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -460,23 +460,23 @@ const organizationSchema = {
   }
 
   @media (min-width: 640px) {
-    . Writer-image {
+    .writer-image {
       width: 120px;
       height: 120px;
     }
   }
 
-  . Writer-image-link:hover . Writer-image {
+  .writer-image-link:hover .writer-image {
     border-color: #80CED7;
   }
 
-  . Writer-content {
+  .writer-content {
     flex: 1;
     display: flex;
     flex-direction: column;
   }
 
-  . Writer-name {
+  .writer-name {
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
     font-size: 1.25rem;
@@ -484,23 +484,23 @@ const organizationSchema = {
     margin: 0 0 0.25rem 0;
   }
 
-  . Writer-name a {
+  .writer-name a {
     color: white;
     text-decoration: none;
   }
 
-  . Writer-name a:hover {
+  .writer-name a:hover {
     color: #80CED7;
   }
 
-  . Writer-title {
+  .writer-title {
     font-size: 0.875rem;
     color: #38A3A5;
     margin: 0 0 0.5rem 0;
     font-weight: 500;
   }
 
-  . Writer-location {
+  .writer-location {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -510,12 +510,12 @@ const organizationSchema = {
     margin: 0 0 0.75rem 0;
   }
 
-  . Location-icon-sm {
+  .location-icon-sm {
     width: 14px;
     height: 14px;
   }
 
-  . Writer-bio {
+  .writer-bio {
     font-size: 0.875rem;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.7);
@@ -523,7 +523,7 @@ const organizationSchema = {
     flex: 1;
   }
 
-  . Writer-categories {
+  .writer-categories {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -531,7 +531,7 @@ const organizationSchema = {
     margin-bottom: 1rem;
   }
 
-  . Category-tag {
+  .category-tag {
     display: inline-block;
     padding: 0.25rem 0.625rem;
     background: rgba(56, 163, 165, 0.15);
@@ -542,7 +542,7 @@ const organizationSchema = {
     font-weight: 500;
   }
 
-  . View-profile-link-sm {
+  .view-profile-link-sm {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -553,17 +553,17 @@ const organizationSchema = {
     transition: color 0.2s ease;
   }
 
-  . View-profile-link-sm:hover {
+  .view-profile-link-sm:hover {
     color: #80CED7;
   }
 
-  . View-profile-link-sm svg {
+  .view-profile-link-sm svg {
     width: 16px;
     height: 16px;
   }
 
   /* Join Section */
-  . Join-section {
+  .join-section {
     text-align: center;
     padding: 2.5rem;
     background:
@@ -578,7 +578,7 @@ const organizationSchema = {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   }
 
-  . Join-title {
+  .join-title {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
@@ -586,7 +586,7 @@ const organizationSchema = {
     margin: 0 0 1rem 0;
   }
 
-  . Join-text {
+  .join-text {
     font-size: 1rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
@@ -594,7 +594,7 @@ const organizationSchema = {
     margin: 0 auto 1.5rem auto;
   }
 
-  . Join-link {
+  .join-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -608,7 +608,7 @@ const organizationSchema = {
     transition: background 0.2s ease;
   }
 
-  . Join-link:hover {
+  .join-link:hover {
     background: #80CED7;
     color: #0F4C5C;
   }

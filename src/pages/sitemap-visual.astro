@@ -373,8 +373,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       if (!window.__sitemapData) return;
 
       // Parse data
-      var siteStructure = JSON.parse(window.__sitemapData. SiteData);
-      var categoryColors = JSON.parse(window.__sitemapData. ColorData);
+      var siteStructure = JSON.parse(window.__sitemapData.siteData);
+      var categoryColors = JSON.parse(window.__sitemapData.colorData);
 
       // State
       var currentLayout = 'force';
@@ -392,8 +392,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     var svg = d3.select('#sitemap-svg');
 
     // Dimensions
-    var width = container. ClientWidth;
-    var height = container. ClientHeight;
+    var width = container.clientWidth;
+    var height = container.clientHeight;
 
     // Create main group for zoom/pan
     var g = svg.append('g');
@@ -401,7 +401,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     // Initialize zoom behavior
     var zoom = d3
       .zoom()
-      . ScaleExtent([0.1, 4])
+      .scaleExtent([0.1, 4])
       .on('zoom', function(event) {
         g.attr('transform', event.transform);
       });
@@ -483,7 +483,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
             .forceLink(links)
             .id(function(d) { return d.id; })
             .distance(function(d) {
-              var sourceType = d. Source.type || 'article';
+              var sourceType = d.source.type || 'article';
               if (sourceType === 'root') return 150;
               if (sourceType === 'hub') return 100;
               return 70;
@@ -510,16 +510,16 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       var nodeMap = new Map();
 
       // Create node objects
-      siteStructure.nodes. ForEach(function(n) {
+      siteStructure.nodes.forEach(function(n) {
         nodeMap.set(n.id, Object.assign({}, n, { children: [] }));
       });
 
       // Build parent-child relationships
-      siteStructure.links. ForEach(function(link) {
+      siteStructure.links.forEach(function(link) {
         var parent = nodeMap.get(link.source);
         var child = nodeMap.get(link.target);
         if (parent && child) {
-          parent. Children.push(child);
+          parent.children.push(child);
         }
       });
 
@@ -559,8 +559,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       var nodes = siteStructure.nodes.map(function(d) { return Object.assign({}, d); });
       var links = siteStructure.links.map(function(d) {
         return {
-          source: d. Source,
-          target: d. Target,
+          source: d.source,
+          target: d.target,
           type: d.type
         };
       });
@@ -601,15 +601,15 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
       simulation.on('tick', function() {
         link
-          .attr('x1', function(d) { return d. Source. X; })
-          .attr('y1', function(d) { return d. Source. Y; })
-          .attr('x2', function(d) { return d. Target. X; })
-          .attr('y2', function(d) { return d. Target. Y; });
+          .attr('x1', function(d) { return d.source.x; })
+          .attr('y1', function(d) { return d.source.y; })
+          .attr('x2', function(d) { return d.target.x; })
+          .attr('y2', function(d) { return d.target.y; });
         node.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
       });
 
       animateIn(node, link);
-      window. CurrentNodes = node;
+      window.currentNodes = node;
     }
 
     // Radial tree layout
@@ -684,7 +684,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .attr('stroke-width', 3);
 
       animateIn(node, link);
-      window. CurrentNodes = node;
+      window.currentNodes = node;
     }
 
     // Hierarchical tree layout
@@ -711,7 +711,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .attr(
           'd',
           d3
-            . LinkVertical()
+            .linkVertical()
             .x(function(d) { return d.x; })
             .y(function(d) { return d.y; }),
         );
@@ -741,11 +741,11 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
           return (d.data || d).type === 'root' ? '11px' : '9px';
         })
         .attr('font-family', 'Outfit, sans-serif')
-        .text(function(d) { return (d.data || d). Name; })
+        .text(function(d) { return (d.data || d).name; })
         .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)');
 
       animateIn(node, link);
-      window. CurrentNodes = node;
+      window.currentNodes = node;
     }
 
     // Shared function to add node visual elements
@@ -790,12 +790,12 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
           if (!isHierarchy) {
             link
               .attr('stroke', function(l) {
-                return l. Source.id === data.id || l. Target.id === data.id
+                return l.source.id === data.id || l.target.id === data.id
                   ? 'rgba(128, 206, 215, 0.8)'
                   : 'rgba(128, 206, 215, 0.15)';
               })
               .attr('stroke-width', function(l) {
-                return l. Source.id === data.id || l. Target.id === data.id ? 3 : 1;
+                return l.source.id === data.id || l.target.id === data.id ? 3 : 1;
               });
           }
         })
@@ -815,7 +815,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         .on('click', function (event, d) {
           var data = isHierarchy ? d.data : d;
           if (data.path) {
-            window. Location.href = data. Path;
+            window.location.href = data.path;
           }
         });
     }
@@ -989,16 +989,16 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
       // Update dimensions and re-render
       setTimeout(function() {
-        width = container. ClientWidth;
-        height = container. ClientHeight;
+        width = container.clientWidth;
+        height = container.clientHeight;
         render(currentLayout);
       }, 350);
     }
 
     // Fullscreen toggle button
     document.getElementById('btn-fullscreen').addEventListener('click', function(e) {
-      e. PreventDefault();
-      e. StopPropagation();
+      e.preventDefault();
+      e.stopPropagation();
       if (window.__sitemapState.isFullscreen) {
         exitFullscreen();
       } else {
@@ -1077,21 +1077,21 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         }
 
         var node = siteStructure.nodes[nodeIndex];
-        linkStatus.set(node. Path, 'checking');
-        updateNodeStatus(node. Path, 'checking');
+        linkStatus.set(node.path, 'checking');
+        updateNodeStatus(node.path, 'checking');
 
-        fetch(node. Path, { method: 'HEAD' })
+        fetch(node.path, { method: 'HEAD' })
           .then(function(response) {
             if (response.ok) {
-              linkStatus.set(node. Path, 'ok');
-              updateNodeStatus(node. Path, 'ok');
+              linkStatus.set(node.path, 'ok');
+              updateNodeStatus(node.path, 'ok');
               healthy++;
             } else {
-              linkStatus.set(node. Path, 'error');
-              updateNodeStatus(node. Path, 'error');
+              linkStatus.set(node.path, 'error');
+              updateNodeStatus(node.path, 'error');
               broken++;
               results.push({
-                path: node. Path,
+                path: node.path,
                 status: response.status,
                 name: node.name
               });
@@ -1104,11 +1104,11 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
             checkNextNode();
           })
           .catch(function(err) {
-            linkStatus.set(node. Path, 'error');
-            updateNodeStatus(node. Path, 'error');
+            linkStatus.set(node.path, 'error');
+            updateNodeStatus(node.path, 'error');
             broken++;
             results.push({
-              path: node. Path,
+              path: node.path,
               status: 'Network Error',
               name: node.name
             });
@@ -1159,11 +1159,11 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Update node visual status
     function updateNodeStatus(path, status) {
-      if (!window. CurrentNodes) return;
+      if (!window.currentNodes) return;
 
-      window. CurrentNodes
+      window.currentNodes
         .filter((d) => d.path === path)
-        .select('. Status-indicator')
+        .select('.status-indicator')
         .attr(
           'fill',
           status === 'ok'
@@ -1177,8 +1177,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Handle resize - store for cleanup
     window.__sitemapHandlers.resize = function() {
-      width = container. ClientWidth;
-      height = container. ClientHeight;
+      width = container.clientWidth;
+      height = container.clientHeight;
 
       if (simulation) {
         simulation.force('center', d3.forceCenter(width / 2, height / 2));
@@ -1198,11 +1198,11 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 </script>
 
 <style>
-  . Node circle {
+  .node circle {
     transition: all 0.3s ease;
   }
 
-  . Node:hover circle {
+  .node:hover circle {
     transform: scale(1.1);
   }
 

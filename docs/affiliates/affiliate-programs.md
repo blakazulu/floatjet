@@ -26,6 +26,7 @@
 |----------------------|---------------|--------------|-------------------|--------------|--------------------------------------|
 | Amazon Associates    | Direct        | 2025-11-28   | ✅ Approved        | floatjet-20  | Store ID, 180-day 3-sale requirement |
 | NordVPN + NordPass   | Direct        | 2025-11-22   | ✅ Approved        | 135757       | B2C bundle                           |
+| Proton (All Products)| Tune          | 2025-12-05   | ✅ Approved        | 15204        | Mail, Pass, Drive, VPN               |
 | Impact Radius        | Impact Radius | 2025-11-22   | ❌ Declined        | 6717334      | Reapply after Month 2 with traffic   |
 | Notion               | Impact Radius | 2025-11-22   | ⏸️ Deferred       | -            | Pending Impact approval              |
 | ClickUp              | PartnerStack  | 2025-11-22   | ❌ Declined        | -            | Reapply after site launch            |
@@ -434,10 +435,10 @@ accessible after reapplication once site is launched. ClickUp application alread
 | Program    | Commission | Cookie  | Network | Status      |
 |------------|------------|---------|---------|-------------|
 | NordVPN    | 30-40%     | 30 days | Direct  | ✅ Approved  |
+| ProtonVPN  | 30%        | 30 days | Tune    | ✅ Approved (2025-12-05) |
 | ExpressVPN | 35-50%     | 90 days | Impact  | ❌ Declined (Low traffic)       |
 | Surfshark  | 40%        | 30 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
 | CyberGhost | 45%        | 45 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
-| ProtonVPN  | 30%        | 30 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
 | IPVanish   | 100% (1st) | 45 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
 
 **Used in:** FJ-007 (VPN article), best-vpn-streaming-travel, free-vpn-vs-paid-vpn, vpn-kill-switch-explained,
@@ -461,14 +462,15 @@ how-to-setup-vpn-all-devices
 
 ### Password Managers
 
-| Program   | Commission  | Cookie  | Network        | Status      |
-|-----------|-------------|---------|----------------|-------------|
-| NordPass  | 30-40%      | 30 days | NordVPN Direct | ✅ Approved  |
-| 1Password | 25%         | 30 days | Impact Radius  | Not Applied |
-| Bitwarden | Unknown     | Unknown | Direct         | Not Applied |
-| Dashlane  | $3-5/signup | 30 days | CJ Affiliate   | Not Applied |
-| Keeper    | 25-40%      | 45 days | Direct         | Not Applied |
-| LastPass  | 25%         | 30 days | CJ Affiliate   | Not Applied |
+| Program    | Commission  | Cookie  | Network        | Status      |
+|------------|-------------|---------|----------------|-------------|
+| NordPass   | 30-40%      | 30 days | NordVPN Direct | ✅ Approved  |
+| Proton Pass| 30%         | 30 days | Tune           | ✅ Approved (2025-12-05) |
+| 1Password  | 25%         | 30 days | Impact Radius  | Not Applied |
+| Bitwarden  | Unknown     | Unknown | Direct         | Not Applied |
+| Dashlane   | $3-5/signup | 30 days | CJ Affiliate   | Not Applied |
+| Keeper     | 25-40%      | 45 days | Direct         | Not Applied |
+| LastPass   | 25%         | 30 days | CJ Affiliate   | Not Applied |
 
 **Used in:** FJ-011 (Password Manager article)
 
@@ -1270,7 +1272,11 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** 2025-12-05 - ConvertKit affiliate application SUBMITTED. Direct program with $100 signup bonus + 40%
+**Last Action:** 2025-12-05 - Proton affiliate program APPROVED! All 4 products available (Mail, Pass, Drive, VPN).
+Affiliate ID: 15204 via Tune network. Account Manager: Dominik (partners@proton.me). Updated VPN and Password Manager
+tables. Added all Proton affiliate redirects to netlify.toml.
+
+**Previous Action:** 2025-12-05 - ConvertKit affiliate application SUBMITTED. Direct program with $100 signup bonus + 40%
 recurring for 24 months. Approval expected within 1-3 days. Will update netlify.toml redirect once approved.
 
 **Previous Action:** 2025-12-03 - ExpressVPN application DECLINED via Impact Radius. Reason: "Low reach (traffic, followers)".

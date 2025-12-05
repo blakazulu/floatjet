@@ -93,7 +93,14 @@
       "Bash(git -C \"C:\\My Stuff\\floatjet\" add docs/affiliates/affiliate-programs.md netlify.toml src/pages/tools/free-vpn-vs-paid-vpn.astro src/pages/tools/vpn-kill-switch-explained.astro docs/backlog.md)",
       "Bash(git -C \"C:\\My Stuff\\floatjet\" commit -m \"feat: add Proton affiliate program integration\n\n- Add Proton as approved affiliate (ID: 15204) via Tune network\n- Add 8 redirects for all Proton products (VPN, Mail, Pass, Drive)\n- Add ProtonVPN CTA buttons to free-vpn-vs-paid-vpn article\n- Add ProtonVPN CTA button to vpn-kill-switch-explained article\n- Create backlog.md with Proton Pass integration tasks\")",
       "Bash(git -C \"C:\\My Stuff\\floatjet\" commit -m \"style: remove all em-dashes from articles and update style guide\n\n- Remove 792 em-dashes across 72+ article files\n- Replace with periods and proper capitalization\n- Update writing_style_guide.md to ban em-dashes\n- No human actually types em-dashes, use periods instead\")",
-      "Bash(git -C \"C:\\My Stuff\\floatjet\" commit -m \"feat: add Proton Pass as privacy-focused alternative\n\n- Add Proton Pass to Full Comparison table (7 managers total)\n- Add mention in How to Choose section\n- Add paragraph in do-i-really-need guide article\n- All new content passes AI detection at 0%\")"
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" commit -m \"feat: add Proton Pass as privacy-focused alternative\n\n- Add Proton Pass to Full Comparison table (7 managers total)\n- Add mention in How to Choose section\n- Add paragraph in do-i-really-need guide article\n- All new content passes AI detection at 0%\")",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" log --oneline -20 -- src/pages/tools.astro)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" show 2d1574b:src/pages/tools.astro)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" show de34bab:src/pages/tools.astro)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" diff de34bab 2d1574b -- src/pages/tools.astro)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" diff-tree --no-commit-id --name-only -r 2d1574b)",
+      "Bash(python fix_js_syntax.py:*)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" commit -m \"fix: restore broken JavaScript syntax in 79 files\n\nThe em-dash removal script incorrectly treated dots in code as sentence\nendings, breaking JavaScript/Astro syntax by adding spaces and\ncapitalizing method names (e.g., .map() became . Map()).\n\nFixed patterns include:\n- Method calls: . Map( → .map(), . Sort( → .sort()\n- Global objects: Math. Random → Math.random, JSON. Stringify → JSON.stringify\n- Variable names: AllTools → allTools, AllArticles → allArticles\n- Property access: tool. Href → tool.href, cat. Name → cat.name\n- D3.js methods in sitemap-visual.astro\n- Domain names: Monday. Com → Monday.com\")"
     ],
     "deny": [],
     "ask": []

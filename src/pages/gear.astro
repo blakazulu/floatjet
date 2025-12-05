@@ -234,9 +234,9 @@ const allGear = [
 ];
 
 // Shuffle and limit articles - render all 9, CSS handles responsive visibility
-const shuffled = [... AllGear]. Sort(() => Math. Random() - 0.5);
-const displayGear = shuffled. Slice(0, 9);
-const totalArticles = allGear. Length;
+const shuffled = [...allGear].sort(() => Math.random() - 0.5);
+const displayGear = shuffled.slice(0, 9);
+const totalArticles = allGear.length;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -252,23 +252,23 @@ const totalArticles = allGear. Length;
 
     <!-- Category Links -->
     <div class="grid gap-3 grid-cols-2 sm:grid-cols-4 mb-12 max-w-4xl mx-auto">
-      {categories. Map(cat => (
+      {categories.map(cat => (
           <a
-              href={cat. Href}
+              href={cat.href}
               class="group flex flex-col items-center text-center p-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-jet-stream/50 rounded-xl transition-all duration-300"
           >
-            <span class="text-2xl mb-2">{cat. Icon}</span>
-            <span class="text-white font-medium group-hover:text-jet-stream transition-colors">{cat. Name}</span>
-            <span class="text-white/50 text-xs mt-1 hidden sm:block">{cat. Description}</span>
+            <span class="text-2xl mb-2">{cat.icon}</span>
+            <span class="text-white font-medium group-hover:text-jet-stream transition-colors">{cat.name}</span>
+            <span class="text-white/50 text-xs mt-1 hidden sm:block">{cat.description}</span>
           </a>
       ))}
     </div>
 
     <!-- Gear Grid - Responsive: 3 mobile, 6 tablet, 9 desktop -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {displayGear. Map((item, index) => (
+      {displayGear.map((item, index) => (
           <a
-              href={item. Href}
+              href={item.href}
               class:list={[
                 'group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300',
                 // Mobile: show first 3
@@ -280,19 +280,19 @@ const totalArticles = allGear. Length;
               ]}
           >
             <div class="flex items-start gap-4">
-              <span class="text-3xl">{item. Icon}</span>
+              <span class="text-3xl">{item.icon}</span>
               <div class="flex-1">
                 <div class="flex items-center gap-2 mb-2">
                 <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
-                  {item. Category}
+                  {item.category}
                 </span>
-                  <span class="text-white/40 text-xs">{item. ReadTime} min</span>
+                  <span class="text-white/40 text-xs">{item.readTime} min</span>
                 </div>
                 <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
-                  {item. Title}
+                  {item.title}
                 </h2>
                 <p class="text-white/70 text-sm">
-                  {item. Description}
+                  {item.description}
                 </p>
               </div>
             </div>

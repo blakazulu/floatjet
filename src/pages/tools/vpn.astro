@@ -117,7 +117,7 @@ const topPicks = [
 
     <!-- Main Article Card -->
     <a
-        href={mainArticle. Href}
+        href={mainArticle.href}
         class="block max-w-3xl mx-auto mb-12 group bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-white/20 hover:border-jet-stream/50 rounded-xl p-8 transition-all duration-300"
     >
       <div class="flex items-center gap-2 mb-4">
@@ -125,13 +125,13 @@ const topPicks = [
         <span class="px-3 py-1 bg-jet-stream text-ocean-deep text-xs font-bold rounded-full">Featured Guide</span>
       </div>
       <h2 class="text-2xl md:text-3xl font-bold text-white group-hover:text-jet-stream transition-colors mb-3">
-        {mainArticle. Title}
+        {mainArticle.title}
       </h2>
       <p class="text-white/70 mb-4">
-        {mainArticle. Description}
+        {mainArticle.description}
       </p>
       <div class="flex items-center justify-between">
-        <span class="text-white/50 text-sm">{mainArticle. ReadTime} read</span>
+        <span class="text-white/50 text-sm">{mainArticle.readTime} read</span>
         <span class="text-jet-stream font-medium flex items-center">
           Read Full Guide
           <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
@@ -143,15 +143,15 @@ const topPicks = [
     <div class="max-w-3xl mx-auto mb-12">
       <h2 class="text-xl font-semibold text-white text-center mb-6">Our Top Picks</h2>
       <div class="grid gap-4 sm:grid-cols-3">
-        {topPicks. Map(pick => (
+        {topPicks.map(pick => (
             <a
-                href={`${mainArticle. Href}#${pick. Name. ToLowerCase(). Replace(' ', '-')}`}
+                href={`${mainArticle.href}#${pick. Name.toLowerCase().replace(' ', '-')}`}
                 class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-4 text-center transition-colors"
             >
             <span class={`inline-block px-2 py-0.5 ${pick. Color} text-xs font-medium rounded mb-2`}>
               {pick. Tag}
             </span>
-              <p class="text-white font-semibold">{pick. Name}</p>
+              <p class="text-white font-semibold">{pick.name}</p>
             </a>
         ))}
       </div>
@@ -161,24 +161,24 @@ const topPicks = [
     <div class="mb-12">
       <h2 class="text-xl font-semibold text-white text-center mb-8">VPN Guides & Reviews</h2>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {vpnArticles. Map(article => (
+        {vpnArticles.map(article => (
             <a
-                href={article. Href}
+                href={article.href}
                 class="group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
             >
               <div class="flex items-start gap-4">
-                <span class="text-3xl flex-shrink-0">{article. Icon}</span>
+                <span class="text-3xl flex-shrink-0">{article.icon}</span>
                 <div class="flex-1 min-w-0">
                   <div class="flex items-center gap-2 mb-2">
                     <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
-                      {article. Category}
+                      {article.category}
                     </span>
-                    <span class="text-white/40 text-xs">{article. ReadTime} min</span>
+                    <span class="text-white/40 text-xs">{article.readTime} min</span>
                   </div>
                   <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
-                    {article. Title}
+                    {article.title}
                   </h2>
-                  <p class="text-white/70 text-sm">{article. Description}</p>
+                  <p class="text-white/70 text-sm">{article.description}</p>
                 </div>
               </div>
               <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
@@ -194,24 +194,24 @@ const topPicks = [
     <div class="mb-12">
       <h2 class="text-xl font-semibold text-white text-center mb-8">Related Security Tools</h2>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {relatedTools. Map(tool => (
+        {relatedTools.map(tool => (
             <a
-                href={tool. Href}
+                href={tool.href}
                 class="group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300"
             >
               <div class="flex items-start gap-4">
-                <span class="text-3xl flex-shrink-0">{tool. Icon}</span>
+                <span class="text-3xl flex-shrink-0">{tool.icon}</span>
                 <div class="flex-1 min-w-0">
                   <div class="flex items-center gap-2 mb-2">
                     <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
-                      {tool. Category}
+                      {tool.category}
                     </span>
-                    <span class="text-white/40 text-xs">{tool. ReadTime} min</span>
+                    <span class="text-white/40 text-xs">{tool.readTime} min</span>
                   </div>
                   <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
-                    {tool. Title}
+                    {tool.title}
                   </h2>
-                  <p class="text-white/70 text-sm">{tool. Description}</p>
+                  <p class="text-white/70 text-sm">{tool.description}</p>
                 </div>
               </div>
               <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
@@ -227,12 +227,12 @@ const topPicks = [
     <div class="max-w-4xl mx-auto mb-12">
       <h2 class="text-xl font-semibold text-white text-center mb-8">Why Remote Workers Need a VPN</h2>
       <div class="grid gap-6 sm:grid-cols-2">
-        {whyVpn. Map(item => (
+        {whyVpn.map(item => (
             <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
-              <span class="text-2xl">{item. Icon}</span>
+              <span class="text-2xl">{item.icon}</span>
               <div>
-                <h3 class="text-white font-semibold mb-1">{item. Title}</h3>
-                <p class="text-white/60 text-sm">{item. Description}</p>
+                <h3 class="text-white font-semibold mb-1">{item.title}</h3>
+                <p class="text-white/60 text-sm">{item.description}</p>
               </div>
             </div>
         ))}
@@ -242,7 +242,7 @@ const topPicks = [
     <!-- CTA -->
     <div class="mt-12 text-center">
       <a
-          href={mainArticle. Href}
+          href={mainArticle.href}
           class="inline-flex items-center justify-center px-6 py-3 bg-jet-stream text-ocean-deep font-semibold rounded-lg hover:bg-sky-light transition-colors"
       >
         View Full VPN Comparison

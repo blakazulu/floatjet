@@ -7,14 +7,14 @@ const description =
   "Explore the FloatJet site structure with our interactive visualization. Navigate through tools, gear, guides, and articles.";
 
 // Dynamically get all pages using Astro's glob
-const allPages = import. Meta. Glob("/src/pages/**/*.astro");
+const allPages = import.meta.glob("/src/pages/**/*.astro");
 
 // Generate site structure dynamically
 const SITE_STRUCTURE = generateSiteStructure(allPages);
 
 // Pass data to client
-const siteData = JSON. Stringify(SITE_STRUCTURE);
-const colorData = JSON. Stringify(CATEGORY_COLORS);
+const siteData = JSON.stringify(SITE_STRUCTURE);
+const colorData = JSON.stringify(CATEGORY_COLORS);
 ---
 
 <BaseLayout title={title} description={description}>
@@ -347,9 +347,9 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
         window.__sitemapHandlers. Keydown = null;
       }
       // Stop simulation
-      if (window.__sitemapState. Simulation) {
-        window.__sitemapState. Simulation. Stop();
-        window.__sitemapState. Simulation = null;
+      if (window.__sitemapState.simulation) {
+        window.__sitemapState.simulation.stop();
+        window.__sitemapState.simulation = null;
       }
       // Reset fullscreen state
       window.__sitemapState. IsFullscreen = false;
@@ -361,7 +361,7 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
 
       // Check if D3 is loaded
       if (typeof d3 === 'undefined') {
-        console. Error('D3 not loaded');
+        console.error('D3 not loaded');
         return;
       }
 
@@ -373,8 +373,8 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
       if (!window.__sitemapData) return;
 
       // Parse data
-      var siteStructure = JSON. Parse(window.__sitemapData. SiteData);
-      var categoryColors = JSON. Parse(window.__sitemapData. ColorData);
+      var siteStructure = JSON.parse(window.__sitemapData. SiteData);
+      var categoryColors = JSON.parse(window.__sitemapData. ColorData);
 
       // State
       var currentLayout = 'force';
@@ -389,66 +389,66 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
     // Clear any existing SVG content
     svgEl. InnerHTML = '';
 
-    var svg = d3. Select('#sitemap-svg');
+    var svg = d3.select('#sitemap-svg');
 
     // Dimensions
     var width = container. ClientWidth;
     var height = container. ClientHeight;
 
     // Create main group for zoom/pan
-    var g = svg. Append('g');
+    var g = svg.append('g');
 
     // Initialize zoom behavior
     var zoom = d3
-      . Zoom()
+      .zoom()
       . ScaleExtent([0.1, 4])
-      . On('zoom', function(event) {
-        g. Attr('transform', event. Transform);
+      .on('zoom', function(event) {
+        g.attr('transform', event.transform);
       });
 
-    svg. Call(zoom);
+    svg.call(zoom);
 
     // Define gradients and filters
-    var defs = svg. Append('defs');
+    var defs = svg.append('defs');
 
     // Glow filter for nodes
     var glow = defs
-      . Append('filter')
-      . Attr('id', 'glow')
-      . Attr('x', '-50%')
-      . Attr('y', '-50%')
-      . Attr('width', '200%')
-      . Attr('height', '200%');
+      .append('filter')
+      .attr('id', 'glow')
+      .attr('x', '-50%')
+      .attr('y', '-50%')
+      .attr('width', '200%')
+      .attr('height', '200%');
 
     glow
-      . Append('feGaussianBlur')
-      . Attr('stdDeviation', '3')
-      . Attr('result', 'coloredBlur');
+      .append('feGaussianBlur')
+      .attr('stdDeviation', '3')
+      .attr('result', 'coloredBlur');
 
-    var glowMerge = glow. Append('feMerge');
-    glowMerge. Append('feMergeNode'). Attr('in', 'coloredBlur');
-    glowMerge. Append('feMergeNode'). Attr('in', 'SourceGraphic');
+    var glowMerge = glow.append('feMerge');
+    glowMerge.append('feMergeNode').attr('in', 'coloredBlur');
+    glowMerge.append('feMergeNode').attr('in', 'SourceGraphic');
 
     // Create arrow marker for links
     defs
-      . Append('marker')
-      . Attr('id', 'arrowhead')
-      . Attr('viewBox', '-0 -5 10 10')
-      . Attr('refX', 20)
-      . Attr('refY', 0)
-      . Attr('orient', 'auto')
-      . Attr('markerWidth', 6)
-      . Attr('markerHeight', 6)
-      . Append('path')
-      . Attr('d', 'M 0,-5 L 10,0 L 0,5')
-      . Attr('fill', 'rgba(128, 206, 215, 0.5)');
+      .append('marker')
+      .attr('id', 'arrowhead')
+      .attr('viewBox', '-0 -5 10 10')
+      .attr('refX', 20)
+      .attr('refY', 0)
+      .attr('orient', 'auto')
+      .attr('markerWidth', 6)
+      .attr('markerHeight', 6)
+      .append('path')
+      .attr('d', 'M 0,-5 L 10,0 L 0,5')
+      .attr('fill', 'rgba(128, 206, 215, 0.5)');
 
     // Get node color based on type and category
     function getNodeColor(node) {
-      if (node. Type === 'root') return '#0F4C5C';
-      if (node. Type === 'hub') return '#38A3A5';
-      if (node. Type === 'category') return '#80CED7';
-      if (node. Type === 'page') return '#64748B';
+      if (node.type === 'root') return '#0F4C5C';
+      if (node.type === 'hub') return '#38A3A5';
+      if (node.type === 'category') return '#80CED7';
+      if (node.type === 'page') return '#64748B';
 
       // Article colors by category
       var categoryColorMap = {
@@ -462,46 +462,46 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
         tools: '#38A3A5',
       };
 
-      return categoryColorMap[node. Category] || '#38A3A5';
+      return categoryColorMap[node.category] || '#38A3A5';
     }
 
     // Get node size based on type
     function getNodeSize(node) {
-      if (node. Type === 'root') return 30;
-      if (node. Type === 'hub') return 20;
-      if (node. Type === 'category') return 15;
+      if (node.type === 'root') return 30;
+      if (node.type === 'hub') return 20;
+      if (node.type === 'category') return 15;
       return 10;
     }
 
     // Initialize force simulation
     function createForceSimulation(nodes, links) {
       return d3
-        . ForceSimulation(nodes)
-        . Force(
+        .forceSimulation(nodes)
+        .force(
           'link',
           d3
-            . ForceLink(links)
-            . Id(function(d) { return d. Id; })
-            . Distance(function(d) {
-              var sourceType = d. Source. Type || 'article';
+            .forceLink(links)
+            .id(function(d) { return d.id; })
+            .distance(function(d) {
+              var sourceType = d. Source.type || 'article';
               if (sourceType === 'root') return 150;
               if (sourceType === 'hub') return 100;
               return 70;
             })
-            . Strength(0.5),
+            .strength(0.5),
         )
-        . Force(
+        .force(
           'charge',
-          d3. ForceManyBody(). Strength(function(d) {
-            if (d. Type === 'root') return -800;
-            if (d. Type === 'hub') return -400;
+          d3.forceManyBody().strength(function(d) {
+            if (d.type === 'root') return -800;
+            if (d.type === 'hub') return -400;
             return -150;
           }),
         )
-        . Force('center', d3. ForceCenter(width / 2, height / 2))
-        . Force(
+        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force(
           'collision',
-          d3. ForceCollide(). Radius(function(d) { return getNodeSize(d) + 10; }),
+          d3.forceCollide().radius(function(d) { return getNodeSize(d) + 10; }),
         );
     }
 
@@ -511,36 +511,36 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
 
       // Create node objects
       siteStructure. Nodes. ForEach(function(n) {
-        nodeMap. Set(n. Id, Object. Assign({}, n, { children: [] }));
+        nodeMap.set(n.id, Object.assign({}, n, { children: [] }));
       });
 
       // Build parent-child relationships
       siteStructure. Links. ForEach(function(link) {
-        var parent = nodeMap. Get(link. Source);
-        var child = nodeMap. Get(link. Target);
+        var parent = nodeMap.get(link.source);
+        var child = nodeMap.get(link.target);
         if (parent && child) {
-          parent. Children. Push(child);
+          parent. Children.push(child);
         }
       });
 
-      return nodeMap. Get('/');
+      return nodeMap.get('/');
     }
 
     // Render the visualization
     function render(layout) {
       layout = layout || 'force';
       // Clear previous content
-      g. SelectAll('*'). Remove();
+      g.selectAll('*').remove();
 
       // Stop any running simulation
       if (simulation) {
-        simulation. Stop();
+        simulation.stop();
         simulation = null;
       }
 
       // Update stats
       document. GetElementById('stat-total'). TextContent =
-        siteStructure. Nodes. Length;
+        siteStructure. Nodes.length;
 
       if (layout === 'force') {
         renderForceLayout();
@@ -551,61 +551,61 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
       }
 
       // Remove loading state
-      loading. ClassList. Add('hidden');
+      loading.classList.add('hidden');
     }
 
     // Force-directed layout
     function renderForceLayout() {
-      var nodes = siteStructure. Nodes. Map(function(d) { return Object. Assign({}, d); });
-      var links = siteStructure. Links. Map(function(d) {
+      var nodes = siteStructure. Nodes.map(function(d) { return Object.assign({}, d); });
+      var links = siteStructure. Links.map(function(d) {
         return {
           source: d. Source,
           target: d. Target,
-          type: d. Type
+          type: d.type
         };
       });
 
       var link = g
-        . Append('g')
-        . Attr('class', 'links')
-        . SelectAll('line')
-        . Data(links)
-        . Enter()
-        . Append('line')
-        . Attr('stroke', 'rgba(128, 206, 215, 0.3)')
-        . Attr('stroke-width', 1.5)
-        . Attr('marker-end', 'url(#arrowhead)');
+        .append('g')
+        .attr('class', 'links')
+        .selectAll('line')
+        .data(links)
+        .enter()
+        .append('line')
+        .attr('stroke', 'rgba(128, 206, 215, 0.3)')
+        .attr('stroke-width', 1.5)
+        .attr('marker-end', 'url(#arrowhead)');
 
       var node = g
-        . Append('g')
-        . Attr('class', 'nodes')
-        . SelectAll('g')
-        . Data(nodes)
-        . Enter()
-        . Append('g')
-        . Attr('class', 'node')
-        . Style('cursor', 'pointer')
-        . Call(
+        .append('g')
+        .attr('class', 'nodes')
+        .selectAll('g')
+        .data(nodes)
+        .enter()
+        .append('g')
+        .attr('class', 'node')
+        .style('cursor', 'pointer')
+        .call(
           d3
-            . Drag()
-            . On('start', dragstarted)
-            . On('drag', dragged)
-            . On('end', dragended),
+            .drag()
+            .on('start', dragstarted)
+            .on('drag', dragged)
+            .on('end', dragended),
         );
 
       addNodeElements(node);
       addNodeInteractions(node, link);
 
       simulation = createForceSimulation(nodes, links);
-      window.__sitemapState. Simulation = simulation;
+      window.__sitemapState.simulation = simulation;
 
-      simulation. On('tick', function() {
+      simulation.on('tick', function() {
         link
-          . Attr('x1', function(d) { return d. Source. X; })
-          . Attr('y1', function(d) { return d. Source. Y; })
-          . Attr('x2', function(d) { return d. Target. X; })
-          . Attr('y2', function(d) { return d. Target. Y; });
-        node. Attr('transform', function(d) { return 'translate(' + d. X + ',' + d. Y + ')'; });
+          .attr('x1', function(d) { return d. Source. X; })
+          .attr('y1', function(d) { return d. Source. Y; })
+          .attr('x2', function(d) { return d. Target. X; })
+          .attr('y2', function(d) { return d. Target. Y; });
+        node.attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
       });
 
       animateIn(node, link);
@@ -615,50 +615,50 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
     // Radial tree layout
     function renderRadialLayout() {
       var hierarchy = buildHierarchy();
-      var root = d3. Hierarchy(hierarchy);
+      var root = d3.hierarchy(hierarchy);
 
-      var radius = Math. Min(width, height) / 2 - 100;
+      var radius = Math.min(width, height) / 2 - 100;
 
       var treeLayout = d3
-        . Tree()
-        . Size([2 * Math.PI, radius])
-        . Separation(function(a, b) { return (a. Parent === b. Parent ? 1 : 2) / a. Depth; });
+        .tree()
+        .size([2 * Math.PI, radius])
+        .separation(function(a, b) { return (a.parent === b.parent ? 1 : 2) / a.depth; });
 
       treeLayout(root);
 
       // Create curved links
       var link = g
-        . Append('g')
-        . Attr('class', 'links')
-        . Attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')')
-        . SelectAll('path')
-        . Data(root. Links())
-        . Enter()
-        . Append('path')
-        . Attr('fill', 'none')
-        . Attr('stroke', 'rgba(128, 206, 215, 0.4)')
-        . Attr('stroke-width', 1.5)
-        . Attr(
+        .append('g')
+        .attr('class', 'links')
+        .attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')')
+        .selectAll('path')
+        .data(root.links())
+        .enter()
+        .append('path')
+        .attr('fill', 'none')
+        .attr('stroke', 'rgba(128, 206, 215, 0.4)')
+        .attr('stroke-width', 1.5)
+        .attr(
           'd',
           d3
-            . LinkRadial()
-            . Angle(function(d) { return d. X; })
-            . Radius(function(d) { return d. Y; }),
+            .linkRadial()
+            .angle(function(d) { return d.x; })
+            .radius(function(d) { return d.y; }),
         );
 
       var node = g
-        . Append('g')
-        . Attr('class', 'nodes')
-        . Attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')')
-        . SelectAll('g')
-        . Data(root. Descendants())
-        . Enter()
-        . Append('g')
-        . Attr('class', 'node')
-        . Style('cursor', 'pointer')
-        . Attr(
+        .append('g')
+        .attr('class', 'nodes')
+        .attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')')
+        .selectAll('g')
+        .data(root.descendants())
+        .enter()
+        .append('g')
+        .attr('class', 'node')
+        .style('cursor', 'pointer')
+        .attr(
           'transform',
-          function(d) { return 'rotate(' + ((d. X * 180) / Math.PI - 90) + ') translate(' + d. Y + ',0)'; },
+          function(d) { return 'rotate(' + ((d.x * 180) / Math.PI - 90) + ') translate(' + d.y + ',0)'; },
         );
 
       addNodeElements(node, true);
@@ -666,22 +666,22 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
 
       // Add labels with proper rotation
       node
-        . Append('text')
-        . Attr('dy', '0.31em')
-        . Attr('x', function(d) { return (d. X < Math.PI === !d. Children ? 6 : -6); })
-        . Attr('text-anchor', function(d) {
-          return d. X < Math.PI === !d. Children ? 'start' : 'end';
+        .append('text')
+        .attr('dy', '0.31em')
+        .attr('x', function(d) { return (d.x < Math.PI === !d.children ? 6 : -6); })
+        .attr('text-anchor', function(d) {
+          return d.x < Math.PI === !d.children ? 'start' : 'end';
         })
-        . Attr('transform', function(d) { return d. X >= Math.PI ? 'rotate(180)' : null; })
-        . Attr('fill', 'white')
-        . Attr('font-size', function(d) { return d. Data. Type === 'root' ? '12px' : '10px'; })
-        . Attr('font-family', 'Outfit, sans-serif')
-        . Text(function(d) { return d. Data. Name; })
-        . Style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)')
-        . Clone(true)
-        . Lower()
-        . Attr('stroke', 'rgba(0,0,0,0.5)')
-        . Attr('stroke-width', 3);
+        .attr('transform', function(d) { return d.x >= Math.PI ? 'rotate(180)' : null; })
+        .attr('fill', 'white')
+        .attr('font-size', function(d) { return d.data.type === 'root' ? '12px' : '10px'; })
+        .attr('font-family', 'Outfit, sans-serif')
+        .text(function(d) { return d.data.name; })
+        .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)')
+        .clone(true)
+        .lower()
+        .attr('stroke', 'rgba(0,0,0,0.5)')
+        .attr('stroke-width', 3);
 
       animateIn(node, link);
       window. CurrentNodes = node;
@@ -690,59 +690,59 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
     // Hierarchical tree layout
     function renderTreeLayout() {
       var hierarchy = buildHierarchy();
-      var root = d3. Hierarchy(hierarchy);
+      var root = d3.hierarchy(hierarchy);
 
-      var treeLayout = d3. Tree(). Size([width - 200, height - 150]);
+      var treeLayout = d3.tree().size([width - 200, height - 150]);
 
       treeLayout(root);
 
       // Create curved links
       var link = g
-        . Append('g')
-        . Attr('class', 'links')
-        . Attr('transform', 'translate(100, 50)')
-        . SelectAll('path')
-        . Data(root. Links())
-        . Enter()
-        . Append('path')
-        . Attr('fill', 'none')
-        . Attr('stroke', 'rgba(128, 206, 215, 0.4)')
-        . Attr('stroke-width', 1.5)
-        . Attr(
+        .append('g')
+        .attr('class', 'links')
+        .attr('transform', 'translate(100, 50)')
+        .selectAll('path')
+        .data(root.links())
+        .enter()
+        .append('path')
+        .attr('fill', 'none')
+        .attr('stroke', 'rgba(128, 206, 215, 0.4)')
+        .attr('stroke-width', 1.5)
+        .attr(
           'd',
           d3
             . LinkVertical()
-            . X(function(d) { return d. X; })
-            . Y(function(d) { return d. Y; }),
+            .x(function(d) { return d.x; })
+            .y(function(d) { return d.y; }),
         );
 
       var node = g
-        . Append('g')
-        . Attr('class', 'nodes')
-        . Attr('transform', 'translate(100, 50)')
-        . SelectAll('g')
-        . Data(root. Descendants())
-        . Enter()
-        . Append('g')
-        . Attr('class', 'node')
-        . Style('cursor', 'pointer')
-        . Attr('transform', function(d) { return 'translate(' + d. X + ',' + d. Y + ')'; });
+        .append('g')
+        .attr('class', 'nodes')
+        .attr('transform', 'translate(100, 50)')
+        .selectAll('g')
+        .data(root.descendants())
+        .enter()
+        .append('g')
+        .attr('class', 'node')
+        .style('cursor', 'pointer')
+        .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
 
       addNodeElements(node, true);
       addNodeInteractions(node, link, true);
 
       // Add labels below nodes
       node
-        . Append('text')
-        . Attr('dy', function(d) { return getNodeSize(d. Data || d) + 14; })
-        . Attr('text-anchor', 'middle')
-        . Attr('fill', 'white')
-        . Attr('font-size', function(d) {
-          return (d. Data || d). Type === 'root' ? '11px' : '9px';
+        .append('text')
+        .attr('dy', function(d) { return getNodeSize(d.data || d) + 14; })
+        .attr('text-anchor', 'middle')
+        .attr('fill', 'white')
+        .attr('font-size', function(d) {
+          return (d.data || d).type === 'root' ? '11px' : '9px';
         })
-        . Attr('font-family', 'Outfit, sans-serif')
-        . Text(function(d) { return (d. Data || d). Name; })
-        . Style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)');
+        .attr('font-family', 'Outfit, sans-serif')
+        .text(function(d) { return (d.data || d). Name; })
+        .style('text-shadow', '0 2px 4px rgba(0,0,0,0.8)');
 
       animateIn(node, link);
       window. CurrentNodes = node;
@@ -752,70 +752,70 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
     function addNodeElements(node, isHierarchy) {
       isHierarchy = isHierarchy || false;
       node
-        . Append('circle')
-        . Attr('r', function(d) { return getNodeSize(isHierarchy ? d. Data : d); })
-        . Attr('fill', function(d) { return getNodeColor(isHierarchy ? d. Data : d); })
-        . Attr('stroke', 'rgba(255, 255, 255, 0.5)')
-        . Attr('stroke-width', 2)
-        . Attr('filter', function(d) {
-          var data = isHierarchy ? d. Data : d;
-          return data. Type === 'root' || data. Type === 'hub'
+        .append('circle')
+        .attr('r', function(d) { return getNodeSize(isHierarchy ? d.data : d); })
+        .attr('fill', function(d) { return getNodeColor(isHierarchy ? d.data : d); })
+        .attr('stroke', 'rgba(255, 255, 255, 0.5)')
+        .attr('stroke-width', 2)
+        .attr('filter', function(d) {
+          var data = isHierarchy ? d.data : d;
+          return data.type === 'root' || data.type === 'hub'
             ? 'url(#glow)'
             : null;
         })
-        . Style('transition', 'all 0.3s ease');
+        .style('transition', 'all 0.3s ease');
 
       node
-        . Append('circle')
-        . Attr('class', 'status-indicator')
-        . Attr('r', 5)
-        . Attr('cx', function(d) { return getNodeSize(isHierarchy ? d. Data : d) - 2; })
-        . Attr('cy', function(d) { return -getNodeSize(isHierarchy ? d. Data : d) + 2; })
-        . Attr('fill', 'transparent')
-        . Attr('stroke', 'transparent');
+        .append('circle')
+        .attr('class', 'status-indicator')
+        .attr('r', 5)
+        .attr('cx', function(d) { return getNodeSize(isHierarchy ? d.data : d) - 2; })
+        .attr('cy', function(d) { return -getNodeSize(isHierarchy ? d.data : d) + 2; })
+        .attr('fill', 'transparent')
+        .attr('stroke', 'transparent');
     }
 
     // Shared function to add hover/click interactions
     function addNodeInteractions(node, link, isHierarchy) {
       isHierarchy = isHierarchy || false;
       node
-        . On('mouseover', function (event, d) {
-          var data = isHierarchy ? d. Data : d;
-          d3. Select(this)
-            . Select('circle')
-            . Attr('stroke', 'white')
-            . Attr('stroke-width', 3);
+        .on('mouseover', function (event, d) {
+          var data = isHierarchy ? d.data : d;
+          d3.select(this)
+            .select('circle')
+            .attr('stroke', 'white')
+            .attr('stroke-width', 3);
           showTooltip(event, data);
 
           if (!isHierarchy) {
             link
-              . Attr('stroke', function(l) {
-                return l. Source. Id === data. Id || l. Target. Id === data. Id
+              .attr('stroke', function(l) {
+                return l. Source.id === data.id || l. Target.id === data.id
                   ? 'rgba(128, 206, 215, 0.8)'
                   : 'rgba(128, 206, 215, 0.15)';
               })
-              . Attr('stroke-width', function(l) {
-                return l. Source. Id === data. Id || l. Target. Id === data. Id ? 3 : 1;
+              .attr('stroke-width', function(l) {
+                return l. Source.id === data.id || l. Target.id === data.id ? 3 : 1;
               });
           }
         })
-        . On('mouseout', function (event, d) {
-          d3. Select(this)
-            . Select('circle')
-            . Attr('stroke', 'rgba(255, 255, 255, 0.5)')
-            . Attr('stroke-width', 2);
+        .on('mouseout', function (event, d) {
+          d3.select(this)
+            .select('circle')
+            .attr('stroke', 'rgba(255, 255, 255, 0.5)')
+            .attr('stroke-width', 2);
           hideTooltip();
 
           if (!isHierarchy) {
             link
-              . Attr('stroke', 'rgba(128, 206, 215, 0.3)')
-              . Attr('stroke-width', 1.5);
+              .attr('stroke', 'rgba(128, 206, 215, 0.3)')
+              .attr('stroke-width', 1.5);
           }
         })
-        . On('click', function (event, d) {
-          var data = isHierarchy ? d. Data : d;
-          if (data. Path) {
-            window. Location. Href = data. Path;
+        .on('click', function (event, d) {
+          var data = isHierarchy ? d.data : d;
+          if (data.path) {
+            window. Location.href = data. Path;
           }
         });
     }
@@ -823,25 +823,25 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
     // Animate nodes and links in
     function animateIn(node, link) {
       node
-        . Style('opacity', 0)
-        . Transition()
-        . Duration(800)
-        . Delay((d, i) => i * 15)
-        . Style('opacity', 1);
+        .style('opacity', 0)
+        .transition()
+        .duration(800)
+        .delay((d, i) => i * 15)
+        .style('opacity', 1);
 
       link
-        . Style('opacity', 0)
-        . Transition()
-        . Duration(800)
-        . Delay(300)
-        . Style('opacity', 1);
+        .style('opacity', 0)
+        .transition()
+        .duration(800)
+        .delay(300)
+        .style('opacity', 1);
     }
 
     // Drag functions
     function dragstarted(event, d) {
-      if (!event. Active) simulation. AlphaTarget(0.3). Restart();
-      d. Fx = d. X;
-      d. Fy = d. Y;
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d. Fx = d.x;
+      d. Fy = d.y;
     }
 
     function dragged(event, d) {
@@ -850,7 +850,7 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
     }
 
     function dragended(event, d) {
-      if (!event. Active) simulation. AlphaTarget(0);
+      if (!event.active) simulation.alphaTarget(0);
       d. Fx = null;
       d. Fy = null;
     }
@@ -864,16 +864,16 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
       document. GetElementById('tooltip-name'). TextContent = d. Name;
       document. GetElementById('tooltip-path'). TextContent = d. Path;
       document. GetElementById('tooltip-type'). TextContent =
-        `${d. Type}${d. Category ? ' • ' + d. Category : ''}`;
+        `${d.type}${d.category ? ' • ' + d.category : ''}`;
 
       // Show link status if available
       const statusEl = document. GetElementById('tooltip-status');
       const statusIconEl = document. GetElementById('tooltip-status-icon');
       const statusTextEl = document. GetElementById('tooltip-status-text');
 
-      if (linkStatus. Has(d. Path)) {
-        const status = linkStatus. Get(d. Path);
-        statusEl. ClassList. Remove('hidden');
+      if (linkStatus.has(d.path)) {
+        const status = linkStatus.get(d.path);
+        statusEl.classList.remove('hidden');
         if (status === 'ok') {
           statusIconEl. TextContent = '✓ ';
           statusIconEl. ClassName = 'text-emerald-400';
@@ -891,18 +891,18 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
           statusTextEl. ClassName = 'text-amber-400';
         }
       } else {
-        statusEl. ClassList. Add('hidden');
+        statusEl.classList.add('hidden');
       }
 
-      tooltip. Style. Left = `${Math. Min(x + 10, width - 200)}px`;
-      tooltip. Style. Top = `${Math. Min(y + 10, height - 100)}px`;
-      tooltip. ClassList. Remove('opacity-0');
-      tooltip. ClassList. Add('opacity-100');
+      tooltip. Style. Left = `${Math.min(x + 10, width - 200)}px`;
+      tooltip. Style. Top = `${Math.min(y + 10, height - 100)}px`;
+      tooltip.classList.remove('opacity-0');
+      tooltip.classList.add('opacity-100');
     }
 
     function hideTooltip() {
-      tooltip. ClassList. Remove('opacity-100');
-      tooltip. ClassList. Add('opacity-0');
+      tooltip.classList.remove('opacity-100');
+      tooltip.classList.add('opacity-0');
     }
 
     // Fullscreen state
@@ -928,23 +928,23 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
       if (affiliateDisclosure) affiliateDisclosure. Style. Display = 'none';
 
       // Make wrapper fullscreen with highest z-index
-      wrapper. ClassList. Remove('max-w-7xl', 'mx-auto');
-      wrapper. ClassList. Add('fixed', 'inset-0');
+      wrapper.classList.remove('max-w-7xl', 'mx-auto');
+      wrapper.classList.add('fixed', 'inset-0');
       wrapper. Style. ZIndex = '9999';
 
       // Make container fullscreen
-      container. ClassList. Remove('rounded-3xl', 'border', 'border-white/20');
+      container.classList.remove('rounded-3xl', 'border', 'border-white/20');
       container. Style. Height = '100vh';
       container. Style. MinHeight = '100vh';
       container. Style. BorderRadius = '0';
 
       // Show fullscreen controls, hide normal controls
-      fullscreenControls. ClassList. Remove('hidden');
-      iconExpand. ClassList. Add('hidden');
-      iconCollapse. ClassList. Remove('hidden');
+      fullscreenControls.classList.remove('hidden');
+      iconExpand.classList.add('hidden');
+      iconCollapse.classList.remove('hidden');
 
       // Sync layout select
-      layoutSelectFs. Value = currentLayout;
+      layoutSelectFs.value = currentLayout;
 
       // Update dimensions and re-render
       setTimeout(function() {
@@ -969,23 +969,23 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
       if (affiliateDisclosure) affiliateDisclosure. Style. Display = '';
 
       // Restore wrapper
-      wrapper. ClassList. Add('max-w-7xl', 'mx-auto');
-      wrapper. ClassList. Remove('fixed', 'inset-0');
+      wrapper.classList.add('max-w-7xl', 'mx-auto');
+      wrapper.classList.remove('fixed', 'inset-0');
       wrapper. Style. ZIndex = '';
 
       // Restore container
-      container. ClassList. Add('rounded-3xl', 'border', 'border-white/20');
+      container.classList.add('rounded-3xl', 'border', 'border-white/20');
       container. Style. Height = '70vh';
       container. Style. MinHeight = '500px';
       container. Style. BorderRadius = '';
 
       // Hide fullscreen controls
-      fullscreenControls. ClassList. Add('hidden');
-      iconExpand. ClassList. Remove('hidden');
-      iconCollapse. ClassList. Add('hidden');
+      fullscreenControls.classList.add('hidden');
+      iconExpand.classList.remove('hidden');
+      iconCollapse.classList.add('hidden');
 
       // Sync layout select
-      layoutSelect. Value = currentLayout;
+      layoutSelect.value = currentLayout;
 
       // Update dimensions and re-render
       setTimeout(function() {
@@ -1013,7 +1013,7 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
 
     // ESC key to exit fullscreen - store for cleanup
     window.__sitemapHandlers. Keydown = function(e) {
-      if (e. Key === 'Escape' && window.__sitemapState. IsFullscreen) {
+      if (e.key === 'Escape' && window.__sitemapState. IsFullscreen) {
         exitFullscreen();
       }
     };
@@ -1021,17 +1021,17 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
 
     // Reset view (both normal and fullscreen)
     document. GetElementById('btn-reset'). AddEventListener('click', function() {
-      svg. Transition(). Duration(750). Call(zoom. Transform, d3. ZoomIdentity);
+      svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
     });
 
     document. GetElementById('btn-reset-fs'). AddEventListener('click', function() {
-      svg. Transition(). Duration(750). Call(zoom. Transform, d3. ZoomIdentity);
+      svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
     });
 
     // Layout change (both normal and fullscreen)
     document. GetElementById('layout-select'). AddEventListener('change', function(e) {
       currentLayout = e. Target. Value;
-      layoutSelectFs. Value = currentLayout;
+      layoutSelectFs.value = currentLayout;
       render(currentLayout);
     });
 
@@ -1039,22 +1039,22 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
       . GetElementById('layout-select-fs')
       . AddEventListener('change', function(e) {
         currentLayout = e. Target. Value;
-        layoutSelect. Value = currentLayout;
+        layoutSelect.value = currentLayout;
         render(currentLayout);
       });
 
     // Link checking function
     function checkLinks(btn, btnFs) {
       btn. TextContent = 'Checking...';
-      btn. Disabled = true;
+      btn.disabled = true;
       if (btnFs) {
         btnFs. TextContent = 'Checking...';
-        btnFs. Disabled = true;
+        btnFs.disabled = true;
       }
 
       var healthy = 0;
       var broken = 0;
-      var pending = siteStructure. Nodes. Length;
+      var pending = siteStructure. Nodes.length;
 
       document. GetElementById('stat-pending'). TextContent = pending;
       document. GetElementById('stat-healthy'). TextContent = healthy;
@@ -1064,36 +1064,36 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
       var nodeIndex = 0;
 
       function checkNextNode() {
-        if (nodeIndex >= siteStructure. Nodes. Length) {
+        if (nodeIndex >= siteStructure. Nodes.length) {
           // All done
           btn. TextContent = 'Check Links';
-          btn. Disabled = false;
+          btn.disabled = false;
           if (btnFs) {
             btnFs. TextContent = 'Check Links';
-            btnFs. Disabled = false;
+            btnFs.disabled = false;
           }
           showResults();
           return;
         }
 
         var node = siteStructure. Nodes[nodeIndex];
-        linkStatus. Set(node. Path, 'checking');
+        linkStatus.set(node. Path, 'checking');
         updateNodeStatus(node. Path, 'checking');
 
         fetch(node. Path, { method: 'HEAD' })
-          . Then(function(response) {
+          .then(function(response) {
             if (response. Ok) {
-              linkStatus. Set(node. Path, 'ok');
+              linkStatus.set(node. Path, 'ok');
               updateNodeStatus(node. Path, 'ok');
               healthy++;
             } else {
-              linkStatus. Set(node. Path, 'error');
+              linkStatus.set(node. Path, 'error');
               updateNodeStatus(node. Path, 'error');
               broken++;
-              results. Push({
+              results.push({
                 path: node. Path,
                 status: response. Status,
-                name: node. Name
+                name: node.name
               });
             }
             pending--;
@@ -1103,14 +1103,14 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
             nodeIndex++;
             checkNextNode();
           })
-          . Catch(function(err) {
-            linkStatus. Set(node. Path, 'error');
+          .catch(function(err) {
+            linkStatus.set(node. Path, 'error');
             updateNodeStatus(node. Path, 'error');
             broken++;
-            results. Push({
+            results.push({
               path: node. Path,
               status: 'Network Error',
-              name: node. Name
+              name: node.name
             });
             pending--;
             document. GetElementById('stat-pending'). TextContent = pending;
@@ -1125,22 +1125,22 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
         var resultsEl = document. GetElementById('link-results');
         var contentEl = document. GetElementById('link-results-content');
 
-        if (results. Length > 0) {
+        if (results.length > 0) {
           contentEl. InnerHTML = results
-            . Map(function(r) {
+            .map(function(r) {
               return '<div class="flex items-center justify-between p-3 bg-red-500/20 rounded-lg border border-red-500/30">' +
                 '<div>' +
-                '<div class="text-white font-medium">' + r. Name + '</div>' +
-                '<div class="text-red-300 text-sm font-mono">' + r. Path + '</div>' +
+                '<div class="text-white font-medium">' + r.name + '</div>' +
+                '<div class="text-red-300 text-sm font-mono">' + r.path + '</div>' +
                 '</div>' +
-                '<div class="text-red-400 font-mono">' + r. Status + '</div>' +
+                '<div class="text-red-400 font-mono">' + r.status + '</div>' +
                 '</div>';
             })
-            . Join('');
+            .join('');
         } else {
           contentEl. InnerHTML = '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
         }
-        resultsEl. ClassList. Remove('hidden');
+        resultsEl.classList.remove('hidden');
       }
 
       checkNextNode();
@@ -1162,9 +1162,9 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
       if (!window. CurrentNodes) return;
 
       window. CurrentNodes
-        . Filter((d) => d. Path === path)
-        . Select('. Status-indicator')
-        . Attr(
+        .filter((d) => d.path === path)
+        .select('. Status-indicator')
+        .attr(
           'fill',
           status === 'ok'
             ? '#10B981'
@@ -1172,7 +1172,7 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
               ? '#EF4444'
               : '#F59E0B',
         )
-        . Attr('stroke', 'white');
+        .attr('stroke', 'white');
     }
 
     // Handle resize - store for cleanup
@@ -1181,8 +1181,8 @@ const colorData = JSON. Stringify(CATEGORY_COLORS);
       height = container. ClientHeight;
 
       if (simulation) {
-        simulation. Force('center', d3. ForceCenter(width / 2, height / 2));
-        simulation. Alpha(0.3). Restart();
+        simulation.force('center', d3.forceCenter(width / 2, height / 2));
+        simulation.alpha(0.3).restart();
       }
     };
     window. AddEventListener('resize', window.__sitemapHandlers. Resize);

@@ -72,9 +72,9 @@ const description =
 
         // Shuffle array (Fisher-Yates)
         function shuffle(array) {
-          var arr = array. Slice();
-          for (var i = arr. Length - 1; i > 0; i--) {
-            var j = Math. Floor(Math. Random() * (i + 1));
+          var arr = array.slice();
+          for (var i = arr.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
             var temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
@@ -86,26 +86,26 @@ const description =
         var currentIndex = 0;
 
         element. TextContent = shuffled[0];
-        element. ClassList. Remove('headline-exit', 'headline-enter');
-        element. ClassList. Add('headline-visible');
+        element.classList.remove('headline-exit', 'headline-enter');
+        element.classList.add('headline-visible');
 
         window.__headlineInterval = setInterval(function() {
           // Exit animation - slide up + blur + fade
-          element. ClassList. Remove('headline-visible');
-          element. ClassList. Add('headline-exit');
+          element.classList.remove('headline-visible');
+          element.classList.add('headline-exit');
 
           setTimeout(function() {
             // Change text and prepare for enter
-            currentIndex = (currentIndex + 1) % shuffled. Length;
+            currentIndex = (currentIndex + 1) % shuffled.length;
             element. TextContent = shuffled[currentIndex];
-            element. ClassList. Remove('headline-exit');
-            element. ClassList. Add('headline-enter');
+            element.classList.remove('headline-exit');
+            element.classList.add('headline-enter');
 
             // Use double rAF to ensure browser processes class change before transition
             requestAnimationFrame(function() {
               requestAnimationFrame(function() {
-                element. ClassList. Remove('headline-enter');
-                element. ClassList. Add('headline-visible');
+                element.classList.remove('headline-enter');
+                element.classList.add('headline-visible');
               });
             });
           }, 700);

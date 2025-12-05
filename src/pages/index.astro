@@ -59,7 +59,7 @@ const description =
         cleanupHeadlineRotation();
 
         // Check if element exists on this page
-        var element = document. GetElementById('rotating-headline');
+        var element = document.getElementById('rotating-headline');
         if (!element) return;
 
         var headlines = [
@@ -85,7 +85,7 @@ const description =
         var shuffled = shuffle(headlines);
         var currentIndex = 0;
 
-        element. TextContent = shuffled[0];
+        element.textContent = shuffled[0];
         element.classList.remove('headline-exit', 'headline-enter');
         element.classList.add('headline-visible');
 
@@ -97,7 +97,7 @@ const description =
           setTimeout(function() {
             // Change text and prepare for enter
             currentIndex = (currentIndex + 1) % shuffled.length;
-            element. TextContent = shuffled[currentIndex];
+            element.textContent = shuffled[currentIndex];
             element.classList.remove('headline-exit');
             element.classList.add('headline-enter');
 
@@ -113,8 +113,8 @@ const description =
       }
 
       // Register event listeners once
-      document. AddEventListener('astro:page-load', initHeadlineRotation);
-      document. AddEventListener('astro:before-swap', cleanupHeadlineRotation);
+      document.addEventListener('astro:page-load', initHeadlineRotation);
+      document.addEventListener('astro:before-swap', cleanupHeadlineRotation);
     }
   </script>
   <CategorySelector/>

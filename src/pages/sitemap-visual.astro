@@ -338,13 +338,13 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     function cleanupSitemap() {
       // Remove global listeners
-      if (window.__sitemapHandlers. Resize) {
-        window. RemoveEventListener('resize', window.__sitemapHandlers. Resize);
-        window.__sitemapHandlers. Resize = null;
+      if (window.__sitemapHandlers.resize) {
+        window.removeEventListener('resize', window.__sitemapHandlers.resize);
+        window.__sitemapHandlers.resize = null;
       }
-      if (window.__sitemapHandlers. Keydown) {
-        document. RemoveEventListener('keydown', window.__sitemapHandlers. Keydown);
-        window.__sitemapHandlers. Keydown = null;
+      if (window.__sitemapHandlers.keydown) {
+        document.removeEventListener('keydown', window.__sitemapHandlers.keydown);
+        window.__sitemapHandlers.keydown = null;
       }
       // Stop simulation
       if (window.__sitemapState.simulation) {
@@ -352,7 +352,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         window.__sitemapState.simulation = null;
       }
       // Reset fullscreen state
-      window.__sitemapState. IsFullscreen = false;
+      window.__sitemapState.isFullscreen = false;
     }
 
     function initSitemapVisualization() {
@@ -366,7 +366,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       }
 
       // Check if container exists (we're on the right page)
-      var container = document. GetElementById('sitemap-container');
+      var container = document.getElementById('sitemap-container');
       if (!container) return;
 
       // Check if data exists
@@ -382,12 +382,12 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       var linkStatus = new Map();
 
     // DOM Elements
-    var svgEl = document. GetElementById('sitemap-svg');
-    var loading = document. GetElementById('loading');
-    var tooltip = document. GetElementById('tooltip');
+    var svgEl = document.getElementById('sitemap-svg');
+    var loading = document.getElementById('loading');
+    var tooltip = document.getElementById('tooltip');
 
     // Clear any existing SVG content
-    svgEl. InnerHTML = '';
+    svgEl.innerHTML = '';
 
     var svg = d3.select('#sitemap-svg');
 
@@ -510,12 +510,12 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       var nodeMap = new Map();
 
       // Create node objects
-      siteStructure. Nodes. ForEach(function(n) {
+      siteStructure.nodes. ForEach(function(n) {
         nodeMap.set(n.id, Object.assign({}, n, { children: [] }));
       });
 
       // Build parent-child relationships
-      siteStructure. Links. ForEach(function(link) {
+      siteStructure.links. ForEach(function(link) {
         var parent = nodeMap.get(link.source);
         var child = nodeMap.get(link.target);
         if (parent && child) {
@@ -539,8 +539,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       }
 
       // Update stats
-      document. GetElementById('stat-total'). TextContent =
-        siteStructure. Nodes.length;
+      document.getElementById('stat-total').textContent =
+        siteStructure.nodes.length;
 
       if (layout === 'force') {
         renderForceLayout();
@@ -556,8 +556,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Force-directed layout
     function renderForceLayout() {
-      var nodes = siteStructure. Nodes.map(function(d) { return Object.assign({}, d); });
-      var links = siteStructure. Links.map(function(d) {
+      var nodes = siteStructure.nodes.map(function(d) { return Object.assign({}, d); });
+      var links = siteStructure.links.map(function(d) {
         return {
           source: d. Source,
           target: d. Target,
@@ -861,41 +861,41 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       const x = event. ClientX - rect. Left;
       const y = event. ClientY - rect. Top;
 
-      document. GetElementById('tooltip-name'). TextContent = d. Name;
-      document. GetElementById('tooltip-path'). TextContent = d. Path;
-      document. GetElementById('tooltip-type'). TextContent =
+      document.getElementById('tooltip-name').textContent = d. Name;
+      document.getElementById('tooltip-path').textContent = d. Path;
+      document.getElementById('tooltip-type').textContent =
         `${d.type}${d.category ? ' • ' + d.category : ''}`;
 
       // Show link status if available
-      const statusEl = document. GetElementById('tooltip-status');
-      const statusIconEl = document. GetElementById('tooltip-status-icon');
-      const statusTextEl = document. GetElementById('tooltip-status-text');
+      const statusEl = document.getElementById('tooltip-status');
+      const statusIconEl = document.getElementById('tooltip-status-icon');
+      const statusTextEl = document.getElementById('tooltip-status-text');
 
       if (linkStatus.has(d.path)) {
         const status = linkStatus.get(d.path);
         statusEl.classList.remove('hidden');
         if (status === 'ok') {
-          statusIconEl. TextContent = '✓ ';
+          statusIconEl.textContent = '✓ ';
           statusIconEl. ClassName = 'text-emerald-400';
-          statusTextEl. TextContent = 'Link OK';
+          statusTextEl.textContent = 'Link OK';
           statusTextEl. ClassName = 'text-emerald-400';
         } else if (status === 'error') {
-          statusIconEl. TextContent = '✗ ';
+          statusIconEl.textContent = '✗ ';
           statusIconEl. ClassName = 'text-red-400';
-          statusTextEl. TextContent = 'Link broken';
+          statusTextEl.textContent = 'Link broken';
           statusTextEl. ClassName = 'text-red-400';
         } else {
-          statusIconEl. TextContent = '○ ';
+          statusIconEl.textContent = '○ ';
           statusIconEl. ClassName = 'text-amber-400';
-          statusTextEl. TextContent = 'Checking...';
+          statusTextEl.textContent = 'Checking...';
           statusTextEl. ClassName = 'text-amber-400';
         }
       } else {
         statusEl.classList.add('hidden');
       }
 
-      tooltip. Style. Left = `${Math.min(x + 10, width - 200)}px`;
-      tooltip. Style. Top = `${Math.min(y + 10, height - 100)}px`;
+      tooltip.style. Left = `${Math.min(x + 10, width - 200)}px`;
+      tooltip.style. Top = `${Math.min(y + 10, height - 100)}px`;
       tooltip.classList.remove('opacity-0');
       tooltip.classList.add('opacity-100');
     }
@@ -906,37 +906,37 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     }
 
     // Fullscreen state
-    var wrapper = document. GetElementById('sitemap-wrapper');
-    var fullscreenControls = document. GetElementById('fullscreen-controls');
-    var iconExpand = document. GetElementById('icon-expand');
-    var iconCollapse = document. GetElementById('icon-collapse');
-    var layoutSelectFs = document. GetElementById('layout-select-fs');
-    var layoutSelect = document. GetElementById('layout-select');
+    var wrapper = document.getElementById('sitemap-wrapper');
+    var fullscreenControls = document.getElementById('fullscreen-controls');
+    var iconExpand = document.getElementById('icon-expand');
+    var iconCollapse = document.getElementById('icon-collapse');
+    var layoutSelectFs = document.getElementById('layout-select-fs');
+    var layoutSelect = document.getElementById('layout-select');
 
     function enterFullscreen() {
-      window.__sitemapState. IsFullscreen = true;
+      window.__sitemapState.isFullscreen = true;
 
       // Hide page content, navbar, footer, and affiliate disclosure
-      document. Body. Style. Overflow = 'hidden';
-      var header = document. QuerySelector('header');
-      if (header) header. Style. Display = 'none';
-      var footer = document. QuerySelector('footer');
-      if (footer) footer. Style. Display = 'none';
-      var affiliateDisclosure = document. QuerySelector(
+      document. Body.style. Overflow = 'hidden';
+      var header = document.querySelector('header');
+      if (header) header.style. Display = 'none';
+      var footer = document.querySelector('footer');
+      if (footer) footer.style. Display = 'none';
+      var affiliateDisclosure = document.querySelector(
         '. Affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure'
       );
-      if (affiliateDisclosure) affiliateDisclosure. Style. Display = 'none';
+      if (affiliateDisclosure) affiliateDisclosure.style. Display = 'none';
 
       // Make wrapper fullscreen with highest z-index
       wrapper.classList.remove('max-w-7xl', 'mx-auto');
       wrapper.classList.add('fixed', 'inset-0');
-      wrapper. Style. ZIndex = '9999';
+      wrapper.style. ZIndex = '9999';
 
       // Make container fullscreen
       container.classList.remove('rounded-3xl', 'border', 'border-white/20');
-      container. Style. Height = '100vh';
-      container. Style. MinHeight = '100vh';
-      container. Style. BorderRadius = '0';
+      container.style. Height = '100vh';
+      container.style. MinHeight = '100vh';
+      container.style. BorderRadius = '0';
 
       // Show fullscreen controls, hide normal controls
       fullscreenControls.classList.remove('hidden');
@@ -955,29 +955,29 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     }
 
     function exitFullscreen() {
-      window.__sitemapState. IsFullscreen = false;
+      window.__sitemapState.isFullscreen = false;
 
       // Restore page scroll, navbar, footer, and affiliate disclosure
-      document. Body. Style. Overflow = '';
-      var header = document. QuerySelector('header');
-      if (header) header. Style. Display = '';
-      var footer = document. QuerySelector('footer');
-      if (footer) footer. Style. Display = '';
-      var affiliateDisclosure = document. QuerySelector(
+      document. Body.style. Overflow = '';
+      var header = document.querySelector('header');
+      if (header) header.style. Display = '';
+      var footer = document.querySelector('footer');
+      if (footer) footer.style. Display = '';
+      var affiliateDisclosure = document.querySelector(
         '. Affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure'
       );
-      if (affiliateDisclosure) affiliateDisclosure. Style. Display = '';
+      if (affiliateDisclosure) affiliateDisclosure.style. Display = '';
 
       // Restore wrapper
       wrapper.classList.add('max-w-7xl', 'mx-auto');
       wrapper.classList.remove('fixed', 'inset-0');
-      wrapper. Style. ZIndex = '';
+      wrapper.style. ZIndex = '';
 
       // Restore container
       container.classList.add('rounded-3xl', 'border', 'border-white/20');
-      container. Style. Height = '70vh';
-      container. Style. MinHeight = '500px';
-      container. Style. BorderRadius = '';
+      container.style. Height = '70vh';
+      container.style. MinHeight = '500px';
+      container.style. BorderRadius = '';
 
       // Hide fullscreen controls
       fullscreenControls.classList.add('hidden');
@@ -996,10 +996,10 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     }
 
     // Fullscreen toggle button
-    document. GetElementById('btn-fullscreen'). AddEventListener('click', function(e) {
+    document.getElementById('btn-fullscreen').addEventListener('click', function(e) {
       e. PreventDefault();
       e. StopPropagation();
-      if (window.__sitemapState. IsFullscreen) {
+      if (window.__sitemapState.isFullscreen) {
         exitFullscreen();
       } else {
         enterFullscreen();
@@ -1008,81 +1008,81 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
     // Exit fullscreen button
     document
-      . GetElementById('btn-exit-fullscreen')
-      . AddEventListener('click', exitFullscreen);
+      .getElementById('btn-exit-fullscreen')
+      .addEventListener('click', exitFullscreen);
 
     // ESC key to exit fullscreen - store for cleanup
-    window.__sitemapHandlers. Keydown = function(e) {
-      if (e.key === 'Escape' && window.__sitemapState. IsFullscreen) {
+    window.__sitemapHandlers.keydown = function(e) {
+      if (e.key === 'Escape' && window.__sitemapState.isFullscreen) {
         exitFullscreen();
       }
     };
-    document. AddEventListener('keydown', window.__sitemapHandlers. Keydown);
+    document.addEventListener('keydown', window.__sitemapHandlers.keydown);
 
     // Reset view (both normal and fullscreen)
-    document. GetElementById('btn-reset'). AddEventListener('click', function() {
+    document.getElementById('btn-reset').addEventListener('click', function() {
       svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
     });
 
-    document. GetElementById('btn-reset-fs'). AddEventListener('click', function() {
+    document.getElementById('btn-reset-fs').addEventListener('click', function() {
       svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
     });
 
     // Layout change (both normal and fullscreen)
-    document. GetElementById('layout-select'). AddEventListener('change', function(e) {
-      currentLayout = e. Target. Value;
+    document.getElementById('layout-select').addEventListener('change', function(e) {
+      currentLayout = e.target.value;
       layoutSelectFs.value = currentLayout;
       render(currentLayout);
     });
 
     document
-      . GetElementById('layout-select-fs')
-      . AddEventListener('change', function(e) {
-        currentLayout = e. Target. Value;
+      .getElementById('layout-select-fs')
+      .addEventListener('change', function(e) {
+        currentLayout = e.target.value;
         layoutSelect.value = currentLayout;
         render(currentLayout);
       });
 
     // Link checking function
     function checkLinks(btn, btnFs) {
-      btn. TextContent = 'Checking...';
+      btn.textContent = 'Checking...';
       btn.disabled = true;
       if (btnFs) {
-        btnFs. TextContent = 'Checking...';
+        btnFs.textContent = 'Checking...';
         btnFs.disabled = true;
       }
 
       var healthy = 0;
       var broken = 0;
-      var pending = siteStructure. Nodes.length;
+      var pending = siteStructure.nodes.length;
 
-      document. GetElementById('stat-pending'). TextContent = pending;
-      document. GetElementById('stat-healthy'). TextContent = healthy;
-      document. GetElementById('stat-broken'). TextContent = broken;
+      document.getElementById('stat-pending').textContent = pending;
+      document.getElementById('stat-healthy').textContent = healthy;
+      document.getElementById('stat-broken').textContent = broken;
 
       var results = [];
       var nodeIndex = 0;
 
       function checkNextNode() {
-        if (nodeIndex >= siteStructure. Nodes.length) {
+        if (nodeIndex >= siteStructure.nodes.length) {
           // All done
-          btn. TextContent = 'Check Links';
+          btn.textContent = 'Check Links';
           btn.disabled = false;
           if (btnFs) {
-            btnFs. TextContent = 'Check Links';
+            btnFs.textContent = 'Check Links';
             btnFs.disabled = false;
           }
           showResults();
           return;
         }
 
-        var node = siteStructure. Nodes[nodeIndex];
+        var node = siteStructure.nodes[nodeIndex];
         linkStatus.set(node. Path, 'checking');
         updateNodeStatus(node. Path, 'checking');
 
         fetch(node. Path, { method: 'HEAD' })
           .then(function(response) {
-            if (response. Ok) {
+            if (response.ok) {
               linkStatus.set(node. Path, 'ok');
               updateNodeStatus(node. Path, 'ok');
               healthy++;
@@ -1092,14 +1092,14 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
               broken++;
               results.push({
                 path: node. Path,
-                status: response. Status,
+                status: response.status,
                 name: node.name
               });
             }
             pending--;
-            document. GetElementById('stat-pending'). TextContent = pending;
-            document. GetElementById('stat-healthy'). TextContent = healthy;
-            document. GetElementById('stat-broken'). TextContent = broken;
+            document.getElementById('stat-pending').textContent = pending;
+            document.getElementById('stat-healthy').textContent = healthy;
+            document.getElementById('stat-broken').textContent = broken;
             nodeIndex++;
             checkNextNode();
           })
@@ -1113,20 +1113,20 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
               name: node.name
             });
             pending--;
-            document. GetElementById('stat-pending'). TextContent = pending;
-            document. GetElementById('stat-healthy'). TextContent = healthy;
-            document. GetElementById('stat-broken'). TextContent = broken;
+            document.getElementById('stat-pending').textContent = pending;
+            document.getElementById('stat-healthy').textContent = healthy;
+            document.getElementById('stat-broken').textContent = broken;
             nodeIndex++;
             checkNextNode();
           });
       }
 
       function showResults() {
-        var resultsEl = document. GetElementById('link-results');
-        var contentEl = document. GetElementById('link-results-content');
+        var resultsEl = document.getElementById('link-results');
+        var contentEl = document.getElementById('link-results-content');
 
         if (results.length > 0) {
-          contentEl. InnerHTML = results
+          contentEl.innerHTML = results
             .map(function(r) {
               return '<div class="flex items-center justify-between p-3 bg-red-500/20 rounded-lg border border-red-500/30">' +
                 '<div>' +
@@ -1138,7 +1138,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
             })
             .join('');
         } else {
-          contentEl. InnerHTML = '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
+          contentEl.innerHTML = '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
         }
         resultsEl.classList.remove('hidden');
       }
@@ -1147,13 +1147,13 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     }
 
     // Link check button handlers
-    var btnCheckLinks = document. GetElementById('btn-check-links');
-    var btnCheckLinksFs = document. GetElementById('btn-check-links-fs');
+    var btnCheckLinks = document.getElementById('btn-check-links');
+    var btnCheckLinksFs = document.getElementById('btn-check-links-fs');
 
-    btnCheckLinks. AddEventListener('click', function() {
+    btnCheckLinks.addEventListener('click', function() {
       checkLinks(btnCheckLinks, btnCheckLinksFs);
     });
-    btnCheckLinksFs. AddEventListener('click', function() {
+    btnCheckLinksFs.addEventListener('click', function() {
       checkLinks(btnCheckLinksFs, btnCheckLinks);
     });
 
@@ -1176,7 +1176,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     }
 
     // Handle resize - store for cleanup
-    window.__sitemapHandlers. Resize = function() {
+    window.__sitemapHandlers.resize = function() {
       width = container. ClientWidth;
       height = container. ClientHeight;
 
@@ -1185,15 +1185,15 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         simulation.alpha(0.3).restart();
       }
     };
-    window. AddEventListener('resize', window.__sitemapHandlers. Resize);
+    window.addEventListener('resize', window.__sitemapHandlers.resize);
 
     // Initial render
     render('force');
   } // End of initSitemapVisualization function
 
   // Register event listeners once
-  document. AddEventListener('astro:page-load', initSitemapVisualization);
-  document. AddEventListener('astro:before-swap', cleanupSitemap);
+  document.addEventListener('astro:page-load', initSitemapVisualization);
+  document.addEventListener('astro:before-swap', cleanupSitemap);
 }
 </script>
 

@@ -840,29 +840,29 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     // Drag functions
     function dragstarted(event, d) {
       if (!event.active) simulation.alphaTarget(0.3).restart();
-      d. Fx = d.x;
-      d. Fy = d.y;
+      d.fx = d.x;
+      d.fy = d.y;
     }
 
     function dragged(event, d) {
-      d. Fx = event. X;
-      d. Fy = event. Y;
+      d.fx = event.x;
+      d.fy = event.y;
     }
 
     function dragended(event, d) {
       if (!event.active) simulation.alphaTarget(0);
-      d. Fx = null;
-      d. Fy = null;
+      d.fx = null;
+      d.fy = null;
     }
 
     // Tooltip functions
     function showTooltip(event, d) {
-      const rect = container. GetBoundingClientRect();
-      const x = event. ClientX - rect. Left;
-      const y = event. ClientY - rect. Top;
+      const rect = container.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
 
-      document.getElementById('tooltip-name').textContent = d. Name;
-      document.getElementById('tooltip-path').textContent = d. Path;
+      document.getElementById('tooltip-name').textContent = d.name;
+      document.getElementById('tooltip-path').textContent = d.path;
       document.getElementById('tooltip-type').textContent =
         `${d.type}${d.category ? ' • ' + d.category : ''}`;
 
@@ -876,26 +876,26 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         statusEl.classList.remove('hidden');
         if (status === 'ok') {
           statusIconEl.textContent = '✓ ';
-          statusIconEl. ClassName = 'text-emerald-400';
+          statusIconEl.className = 'text-emerald-400';
           statusTextEl.textContent = 'Link OK';
-          statusTextEl. ClassName = 'text-emerald-400';
+          statusTextEl.className = 'text-emerald-400';
         } else if (status === 'error') {
           statusIconEl.textContent = '✗ ';
-          statusIconEl. ClassName = 'text-red-400';
+          statusIconEl.className = 'text-red-400';
           statusTextEl.textContent = 'Link broken';
-          statusTextEl. ClassName = 'text-red-400';
+          statusTextEl.className = 'text-red-400';
         } else {
           statusIconEl.textContent = '○ ';
-          statusIconEl. ClassName = 'text-amber-400';
+          statusIconEl.className = 'text-amber-400';
           statusTextEl.textContent = 'Checking...';
-          statusTextEl. ClassName = 'text-amber-400';
+          statusTextEl.className = 'text-amber-400';
         }
       } else {
         statusEl.classList.add('hidden');
       }
 
-      tooltip.style. Left = `${Math.min(x + 10, width - 200)}px`;
-      tooltip.style. Top = `${Math.min(y + 10, height - 100)}px`;
+      tooltip.style.left = `${Math.min(x + 10, width - 200)}px`;
+      tooltip.style.top = `${Math.min(y + 10, height - 100)}px`;
       tooltip.classList.remove('opacity-0');
       tooltip.classList.add('opacity-100');
     }
@@ -917,26 +917,26 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       window.__sitemapState.isFullscreen = true;
 
       // Hide page content, navbar, footer, and affiliate disclosure
-      document. Body.style. Overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
       var header = document.querySelector('header');
-      if (header) header.style. Display = 'none';
+      if (header) header.style.display = 'none';
       var footer = document.querySelector('footer');
-      if (footer) footer.style. Display = 'none';
+      if (footer) footer.style.display = 'none';
       var affiliateDisclosure = document.querySelector(
-        '. Affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure'
+        '.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure'
       );
-      if (affiliateDisclosure) affiliateDisclosure.style. Display = 'none';
+      if (affiliateDisclosure) affiliateDisclosure.style.display = 'none';
 
       // Make wrapper fullscreen with highest z-index
       wrapper.classList.remove('max-w-7xl', 'mx-auto');
       wrapper.classList.add('fixed', 'inset-0');
-      wrapper.style. ZIndex = '9999';
+      wrapper.style.zIndex = '9999';
 
       // Make container fullscreen
       container.classList.remove('rounded-3xl', 'border', 'border-white/20');
-      container.style. Height = '100vh';
-      container.style. MinHeight = '100vh';
-      container.style. BorderRadius = '0';
+      container.style.height = '100vh';
+      container.style.minHeight = '100vh';
+      container.style.borderRadius = '0';
 
       // Show fullscreen controls, hide normal controls
       fullscreenControls.classList.remove('hidden');
@@ -948,8 +948,8 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
       // Update dimensions and re-render
       setTimeout(function() {
-        width = container. ClientWidth;
-        height = container. ClientHeight;
+        width = container.clientWidth;
+        height = container.clientHeight;
         render(currentLayout);
       }, 350);
     }
@@ -958,26 +958,26 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       window.__sitemapState.isFullscreen = false;
 
       // Restore page scroll, navbar, footer, and affiliate disclosure
-      document. Body.style. Overflow = '';
+      document.body.style.overflow = '';
       var header = document.querySelector('header');
-      if (header) header.style. Display = '';
+      if (header) header.style.display = '';
       var footer = document.querySelector('footer');
-      if (footer) footer.style. Display = '';
+      if (footer) footer.style.display = '';
       var affiliateDisclosure = document.querySelector(
-        '. Affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure'
+        '.affiliate-disclosure, [class*="affiliate"], #affiliate-disclosure'
       );
-      if (affiliateDisclosure) affiliateDisclosure.style. Display = '';
+      if (affiliateDisclosure) affiliateDisclosure.style.display = '';
 
       // Restore wrapper
       wrapper.classList.add('max-w-7xl', 'mx-auto');
       wrapper.classList.remove('fixed', 'inset-0');
-      wrapper.style. ZIndex = '';
+      wrapper.style.zIndex = '';
 
       // Restore container
       container.classList.add('rounded-3xl', 'border', 'border-white/20');
-      container.style. Height = '70vh';
-      container.style. MinHeight = '500px';
-      container.style. BorderRadius = '';
+      container.style.height = '70vh';
+      container.style.minHeight = '500px';
+      container.style.borderRadius = '';
 
       // Hide fullscreen controls
       fullscreenControls.classList.add('hidden');

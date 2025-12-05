@@ -2,7 +2,18 @@
   "permissions": {
     "allow": [
       "Bash(python fix_remaining.py:*)",
-      "Bash(git -C \"C:\\My Stuff\\floatjet\" commit -m \"fix: additional JavaScript syntax fixes from em-dash script damage\n\nFixed remaining broken patterns in 20 files:\n- DOM methods: getElementById, addEventListener, removeEventListener\n- Object properties: writer.bioShort, writer.categories, pick.color\n- Window/document events and handlers\n- CSS class selectors in style blocks\n- Domain names in content (floatjet.com, nordcdn.com)\")"
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" commit -m \"fix: additional JavaScript syntax fixes from em-dash script damage\n\nFixed remaining broken patterns in 20 files:\n- DOM methods: getElementById, addEventListener, removeEventListener\n- Object properties: writer.bioShort, writer.categories, pick.color\n- Window/document events and handlers\n- CSS class selectors in style blocks\n- Domain names in content (floatjet.com, nordcdn.com)\")",
+      "Bash(python fix_links.py:*)",
+      "Bash(python fix_target_blank.py:*)",
+      "Bash(python:*)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" add src/pages/)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" diff --cached --stat)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" commit -m \"fix: repair broken URLs from em-dash removal script\n\nFixed 64 files with corrupted URLs and domain names:\n- Government sites: www.cdc.gov, www.irs.gov, www.bls.gov, etc.\n- Schema URLs: schema.org\n- Product domains: haveibeenpwned.com, 2fa.directory, sync.com\n- File extensions: .docx, .pdf, .xlsx\n- Spanish gov URL: www.boe.es/diario_boe/txt.php\")",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" push)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" show --name-only --pretty=format: 2d1574b)",
+      "Bash(npm run build:*)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" status --short)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" commit -m \"fix: repair remaining broken JavaScript and URLs from em-dash script\n\nFixed 5 files with additional damage from em-dash removal:\n- sitemap-visual.astro: D3.js properties (d.fx, d.fy, event.x, event.y)\n- sitemap-visual.astro: DOM style properties (style.display, style.height, etc.)\n- sitemap-visual.astro: CSS selector (.affiliate-disclosure)\n- deals.astro: property access (deal.highlight)\n- best-online-course-platforms.astro: URLs (udemy.com, skillshare.com)\n- secure-home-wifi-network.astro: URLs (wi-fi.org, us-cert.gov)\n- vpn-vs-proxy-remote-work.astro: URL (wireguard.com)\")"
     ],
     "deny": [],
     "ask": []

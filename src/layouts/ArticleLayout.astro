@@ -23,6 +23,8 @@ interface Props {
   imageAlt?: string;
   category: string;
   categorySlug: string;
+  /** Optional subcategory slug for breadcrumb link (e.g., "furniture" links to /gear/furniture) */
+  subcategorySlug?: string;
   headings?: Array<{ text: string; slug: string; depth: number }>;
 }
 
@@ -39,6 +41,7 @@ const {
   imageAlt = "",
   category,
   categorySlug,
+  subcategorySlug,
   headings = [],
 } = Astro.props;
 
@@ -48,9 +51,14 @@ const author = teamMember?.name || legacyAuthor || "FloatJet Team";
 const authorUrl = teamMember ? `/authors/${teamMember.slug}` : legacyAuthorUrl || "/about";
 
 // Build breadcrumb items
+// If subcategorySlug is provided, link to /categorySlug/subcategorySlug (e.g., /gear/furniture)
+// Otherwise, link to just /categorySlug (e.g., /gear)
+const categoryHref = subcategorySlug
+  ? `/${categorySlug}/${subcategorySlug}`
+  : `/${categorySlug}`;
 const breadcrumbItems = [
   { label: "Home", href: "/" },
-  { label: category, href: `/${categorySlug}` },
+  { label: category, href: categoryHref },
   { label: title },
 ];
 

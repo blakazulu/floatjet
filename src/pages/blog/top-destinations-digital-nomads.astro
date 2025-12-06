@@ -3,16 +3,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Top 10 Destinations for Digital Nomads (2025)";
-const description =
-  "Lived in twelve cities across four continents. Here are the ones with fast internet, affordable rent, and visas that won't make you want to quit the nomad life.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-09-05");
-const readingTime = 14;
-const image = "/images/unsplash/photo-1528181304800-259b08848526-1200w.webp";
-const imageAlt = "Digital nomad working from tropical location";
+// Get article metadata from central data file
+const article = getArticleBySlug("top-destinations-digital-nomads", "blog")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents
 const headings = [

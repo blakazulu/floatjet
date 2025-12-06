@@ -1,24 +1,22 @@
 ---
 import {
-  AffiliateButton,
+AffiliateButton,
   ComparisonTable,
   FAQSection,
   RelatedArticles,
 } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Best Wireless Earbuds for Remote Work Calls (2025)";
-const description =
-  "Top wireless earbuds tested for video calls and remote work. We evaluated call quality, comfort for all-day wear, and noise cancellation across 10 models.";
-const pubDate = new Date("2025-07-19");
+// Get article metadata from central data file
+const article = getArticleBySlug("best-wireless-earbuds-remote-work", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
 const updatedDate = new Date("2024-11-24");
-const authorSlug = "marcus-chen";
 const category = "Audio";
 const categorySlug = "gear";
 const subcategorySlug = "audio";
-const readingTime = 14;
-const image = "/images/unsplash/photo-1590658268037-6bf12165a8df-1200w.webp";
-const imageAlt = "Wireless earbuds in charging case for remote work";
 
 const headings = [
   { text: "My Three Picks", slug: "quick-picks" },

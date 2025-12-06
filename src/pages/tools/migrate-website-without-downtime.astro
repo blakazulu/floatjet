@@ -3,16 +3,12 @@ import AffiliateButton from "@components/article/AffiliateButton.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "How to Migrate Your Website Without Downtime (2025)";
-const description =
-  "Step-by-step guide to migrating your website to a new host without downtime. Covers backups, DNS changes, testing, and common migration mistakes to avoid.";
-const authorSlug = "marcus-chen";
-const pubDate = new Date("2025-07-04");
-const readingTime = 12;
-const image = "/images/unsplash/photo-1551288049-bebda4e38f71-1200w.webp";
-const imageAlt = "Website migration and data transfer concept";
+// Get article metadata from central data file
+const article = getArticleBySlug("migrate-website-without-downtime", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

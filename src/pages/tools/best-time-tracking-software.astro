@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best Time Tracking Software for Freelancers (2025)";
-const description =
-  "I tested Toggl, Harvest, Clockify for freelancers. Here's which time tracking software works without micromanaging yourself into productivity hell daily.";
-const authorSlug = "marcus-chen";
-const pubDate = new Date("2025-09-25");
-const readingTime = 15;
-const image = "/images/unsplash/photo-1508962914676-134849a727f0-1200w.webp";
-const imageAlt = "Timer and clock concept for time tracking productivity";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-time-tracking-software", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

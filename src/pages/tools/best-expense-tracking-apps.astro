@@ -1,15 +1,12 @@
 ---
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Best Expense Tracking Apps for Digital Nomads in 2025";
-const description =
-  "Compare the top expense tracking apps for freelancers and digital nomads. Track expenses, scan receipts, and maximize tax deductions with the right tool.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-04-02");
-const readingTime = 14;
-const image = "/images/unsplash/photo-1553729459-efe14ef6055d-1200w.webp";
-const imageAlt = "Expense tracking and financial management apps";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-expense-tracking-apps", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "why-expense-tracking", text: "Why It Matters" },

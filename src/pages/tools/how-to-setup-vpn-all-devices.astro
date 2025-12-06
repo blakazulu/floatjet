@@ -3,16 +3,12 @@ import AffiliateButton from "@components/article/AffiliateButton.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "How to Set Up a VPN on All Your Devices (2025 Guide)";
-const description =
-  "VPN setup used to be technical. Not anymore. Five minutes per device. Here's the step-by-step for laptop, phone, tablet, and router setup without confusion.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-05-31");
-const readingTime = 11;
-const image = "/images/unsplash/photo-1562577309-4932fdd64cd1-1200w.webp";
-const imageAlt = "VPN setup on multiple devices";
+// Get article metadata from central data file
+const article = getArticleBySlug("how-to-setup-vpn-all-devices", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Can You Write Off Home Office Equipment? | FloatJet";
-const description =
-  "Can you write off that standing desk? Yeah, if you're self-employed. Here's what qualifies, what doesn't, and how to track it without losing your mind.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-11-28");
-const readingTime = 7;
-const image = "/images/unsplash/photo-1531403009284-440f080d1e12-1200w.webp";
-const imageAlt = "Home office equipment for tax deduction";
+// Get article metadata from central data file
+const article = getArticleBySlug("can-you-write-off-home-office-equipment", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

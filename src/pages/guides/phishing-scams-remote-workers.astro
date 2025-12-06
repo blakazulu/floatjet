@@ -1,15 +1,12 @@
 ---
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Phishing Scams: How Remote Workers Can Stay Safe";
-const description =
-  "Learn how to identify and avoid phishing scams targeting remote workers. Protect yourself from email scams, business email compromise, and social engineering.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-01-17");
-const readingTime = 11;
-const image = "/images/unsplash/photo-1550751827-4bd374c3f58b-1200w.webp";
-const imageAlt = "Remote worker identifying phishing email on laptop screen";
+// Get article metadata from central data file
+const article = getArticleBySlug("phishing-scams-remote-workers", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "why-easy-targets", text: "Why We're Easy Targets" },

@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Remote Team Collaboration: What Actually Works (2025)";
-const description =
-  "Build a high-performing distributed team with proven collaboration strategies. Learn tools, processes, and culture tips for seamless remote teamwork success.";
-const authorSlug = "sarah-mitchell";
-const pubDate = new Date("2025-07-13");
-const readingTime = 15;
-const image = "/images/unsplash/photo-1542744094-3a31f272c490-1200w.webp";
-const imageAlt = "Remote team collaboration video meeting";
+// Get article metadata from central data file
+const article = getArticleBySlug("remote-team-collaboration-best-practices", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

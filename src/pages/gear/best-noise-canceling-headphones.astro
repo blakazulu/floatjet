@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best Noise-Canceling Headphones for Remote Work (2025)";
-const description =
-  "I tested ten noise-canceling headphones for remote workers. Sony, Bose, Apple compared with ANC tests, sound quality, and honest takes on what actually works.";
-const authorSlug = "marcus-chen";
-const pubDate = new Date("2025-08-11");
-const readingTime = 18;
-const image = "/images/unsplash/photo-1505740420928-5e560c06d30e-1200w.webp";
-const imageAlt = "Premium noise-canceling headphones on wooden desk";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-noise-canceling-headphones", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

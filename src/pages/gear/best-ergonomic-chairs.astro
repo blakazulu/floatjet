@@ -1,24 +1,22 @@
 ---
 import {
-  AffiliateButton,
+AffiliateButton,
   ComparisonTable,
   FAQSection,
   RelatedArticles,
 } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Best Ergonomic Chairs for Home Office (2025)";
-const description =
-  "Tested ten ergonomic office chairs for home offices. Herman Miller, Steelcase, Secretlab compared with honest reviews on comfort, durability, and value.";
-const pubDate = new Date("2025-04-26");
+// Get article metadata from central data file
+const article = getArticleBySlug("best-ergonomic-chairs", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
 const updatedDate = new Date("2024-11-24");
-const authorSlug = "sarah-mitchell";
 const category = "Furniture";
 const categorySlug = "gear";
 const subcategorySlug = "furniture";
-const readingTime = 18;
-const image = "/images/unsplash/photo-1580480055273-228ff5388ef8-1200w.webp";
-const imageAlt = "Modern ergonomic office chair in a home office setup";
 
 const headings = [
   { text: "Why Your Chair Matters", slug: "why-chair-matters", depth: 2 },

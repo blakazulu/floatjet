@@ -3,16 +3,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Crypto-Friendly Banks for Remote Workers (2025)";
-const description =
-  "Some banks will freeze your account the moment they see Coinbase or Binance transactions. It happened to me twice. Here's which banks work with crypto.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-06-10");
-const readingTime = 3;
-const image = "/images/unsplash/photo-1518546305927-5a555bb7020d-1200w.webp";
-const imageAlt = "Bitcoin and cryptocurrency concept with digital technology";
+// Get article metadata from central data file
+const article = getArticleBySlug("crypto-friendly-banks", "blog")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents
 const headings = [

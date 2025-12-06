@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Pomodoro Technique for Remote Workers: Complete Guide (2025)";
-const description =
-  "Master the Pomodoro Technique for remote work. Learn optimal intervals, handling interruptions, best apps, and how to adapt this focus method for deep work.";
-const authorSlug = "sarah-mitchell";
-const pubDate = new Date("2025-06-03");
-const readingTime = 12;
-const image = "/images/unsplash/photo-1434626881859-194d67b2b86f-1200w.webp";
-const imageAlt = "Timer and clock for pomodoro productivity technique";
+// Get article metadata from central data file
+const article = getArticleBySlug("pomodoro-technique-remote-workers", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

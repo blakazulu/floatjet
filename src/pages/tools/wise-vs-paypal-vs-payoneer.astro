@@ -2,15 +2,12 @@
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ComparisonTable from "../../components/article/ComparisonTable.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Wise vs PayPal vs Payoneer: Best for Remote Workers?";
-const description =
-  "Compare Wise, PayPal, and Payoneer for international payments. Fees, exchange rates, speed, and features to help freelancers choose the right platform.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-07-06");
-const readingTime = 10;
-const image = "/images/unsplash/photo-1580894894513-541e068a3e2b-1200w.webp";
-const imageAlt = "International money transfer and payment apps";
+// Get article metadata from central data file
+const article = getArticleBySlug("wise-vs-paypal-vs-payoneer", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   {

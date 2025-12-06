@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Slack vs Teams vs Discord: Which for Remote Work? (2025)";
-const description =
-  "Compare Slack, Microsoft Teams, and Discord for team communication. Find the best chat app for your remote team based on features, pricing, and use case.";
-const authorSlug = "sarah-mitchell";
-const pubDate = new Date("2025-04-02");
-const readingTime = 16;
-const image = "/images/unsplash/photo-1611746872915-64382b5c76da-1200w.webp";
-const imageAlt = "Team communication apps displayed on multiple devices";
+// Get article metadata from central data file
+const article = getArticleBySlug("slack-vs-teams-vs-discord", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

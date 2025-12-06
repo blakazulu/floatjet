@@ -1,24 +1,22 @@
 ---
 import {
-  AffiliateButton,
+AffiliateButton,
   ComparisonTable,
   FAQSection,
   RelatedArticles,
 } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "How Much RAM Do You Really Need for Remote Work? (2025)";
-const description =
-  "Is 8GB RAM enough for working from home? We break down RAM requirements for video calls, browser tabs, Office apps, and more to help you choose wisely.";
-const pubDate = new Date("2025-09-21");
+// Get article metadata from central data file
+const article = getArticleBySlug("how-much-ram-remote-work", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
 const updatedDate = new Date("2024-11-24");
-const authorSlug = "marcus-chen";
 const category = "Computers";
 const categorySlug = "gear";
 const subcategorySlug = "computers";
-const readingTime = 5;
-const image = "/images/unsplash/photo-1518770660439-4636190af475-1200w.webp";
-const imageAlt = "Computer RAM memory modules";
 
 const headings = [
   { text: "Quick Answer", slug: "quick-answer", depth: 2 },

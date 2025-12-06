@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Email Etiquette for Remote Teams: Write Better (2025)";
-const description =
-  "Master professional email communication for remote work. Learn when to email, how to write clearly, and best practices for distributed teams without mistakes.";
-const authorSlug = "sarah-mitchell";
-const pubDate = new Date("2025-10-20");
-const readingTime = 10;
-const image = "/images/unsplash/photo-1596526131083-e8c633c948d2-1200w.webp";
-const imageAlt = "Professional working on email communication at home office";
+// Get article metadata from central data file
+const article = getArticleBySlug("email-etiquette-remote-teams", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

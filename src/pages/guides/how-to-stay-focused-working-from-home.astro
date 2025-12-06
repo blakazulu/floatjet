@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "How to Stay Focused Working from Home (2025)";
-const description =
-  "Struggling with focus while working remotely? Learn environment design, digital distraction management, and practical techniques to concentrate better at home.";
-const authorSlug = "sarah-mitchell";
-const pubDate = new Date("2025-11-26");
-const readingTime = 11;
-const image = "/images/unsplash/photo-1499750310107-5fef28a66643-1200w.webp";
-const imageAlt = "Focused remote worker at home office desk with laptop";
+// Get article metadata from central data file
+const article = getArticleBySlug("how-to-stay-focused-working-from-home", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

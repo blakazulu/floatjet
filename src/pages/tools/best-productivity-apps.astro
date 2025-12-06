@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best Productivity Apps for Remote Workers (2025)";
-const description =
-  "Compare the top productivity apps for remote work. We tested Notion, Todoist, Obsidian and more to find the best tools for focus and task management daily.";
-const authorSlug = "marcus-chen";
-const pubDate = new Date("2025-10-27");
-const readingTime = 16;
-const image = "/images/unsplash/photo-1484480974693-6ca0a78fb36b-1200w.webp";
-const imageAlt = "Organized workspace with productivity tools on screen";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-productivity-apps", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

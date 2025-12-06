@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best Travel Adapters for International Nomads (2025)";
-const description =
-  "I tested 8 universal travel adapters across four continents. Here's which ones actually work, charge fast, and don't break after two months of travel.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-06-21");
-const readingTime = 10;
-const image = "/images/unsplash/photo-1558618666-fcd25c85cd64-1200w.webp";
-const imageAlt = "Universal travel adapter for international power outlets";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-travel-adapters", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

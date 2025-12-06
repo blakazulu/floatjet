@@ -2,15 +2,12 @@
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ComparisonTable from "../../components/article/ComparisonTable.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Accept International Payments Without Losing 5%";
-const description =
-  "Learn the best ways to receive payments from international clients. Compare Wise, PayPal, Payoneer, and more to find the cheapest and fastest payment method.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-01-09");
-const readingTime = 12;
-const image = "/images/unsplash/photo-1526304640581-d334cdbbf45e-1200w.webp";
-const imageAlt = "International currency exchange and global payments";
+// Get article metadata from central data file
+const article = getArticleBySlug("accept-international-payments-freelancer", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "hidden-tax", text: 'The "Hidden Tax" on Your Work' },

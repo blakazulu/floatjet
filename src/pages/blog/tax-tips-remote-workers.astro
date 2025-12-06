@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Remote Work Taxes: The No-BS Guide (2025)";
-const description =
-  "Taxes as a nomad are confusing as hell. Tax home, residency, foreign income - here's what actually matters and what you can ignore without IRS trouble.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-02-09");
-const readingTime = 4;
-const image = "/images/unsplash/photo-1554224155-6726b3ff858f-1200w.webp";
-const imageAlt = "Calculator and financial documents for tax planning";
+// Get article metadata from central data file
+const article = getArticleBySlug("tax-tips-remote-workers", "blog")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

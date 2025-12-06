@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Are Standing Desks Actually Worth It? Honest Answer (2025)";
-const description =
-  "Thinking about dropping $600 on a desk that goes up and down? Here's what standing desks do, what they don't, and whether you'll actually use the damn thing.";
-const authorSlug = "sarah-mitchell";
-const pubDate = new Date("2025-02-04");
-const readingTime = 9;
-const image = "/images/unsplash/photo-1611224923853-80b023f02d71-1200w.webp";
-const imageAlt = "Standing desk in modern home office";
+// Get article metadata from central data file
+const article = getArticleBySlug("are-standing-desks-actually-worth-it", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

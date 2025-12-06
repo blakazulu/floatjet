@@ -1,24 +1,22 @@
 ---
 import {
-  AffiliateButton,
+AffiliateButton,
   ComparisonTable,
   FAQSection,
   RelatedArticles,
 } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Ergonomic Desk Setup: Complete Guide (2025)";
-const description =
-  "Learn how to set up your home office for maximum comfort and productivity. Step-by-step guide to proper chair, desk, monitor, and keyboard positioning.";
-const pubDate = new Date("2025-11-18");
+// Get article metadata from central data file
+const article = getArticleBySlug("ergonomic-desk-setup-guide", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
 const updatedDate = new Date("2024-11-24");
-const authorSlug = "sarah-mitchell";
 const category = "Furniture";
 const categorySlug = "gear";
 const subcategorySlug = "furniture";
-const readingTime = 12;
-const image = "/images/unsplash/photo-1498050108023-c5249f4df085-1200w.webp";
-const imageAlt = "Properly configured ergonomic workstation with monitor at eye level";
 
 const headings = [
   { text: "Why Ergonomics Matter", slug: "why-ergonomics", depth: 2 },

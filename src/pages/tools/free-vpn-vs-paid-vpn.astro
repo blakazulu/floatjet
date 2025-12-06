@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Free VPN vs Paid VPN: What You Need to Know (2025)";
-const description =
-  "I tried free VPNs. Bad idea. They sell your data. Here's the actual difference between free and paid VPNs and why the $5 monthly matters for security.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-06-30");
-const readingTime = 12;
-const image = "/images/unsplash/photo-1565688534245-05d6b5be184a-1200w.webp";
-const imageAlt = "VPN service comparison and security";
+// Get article metadata from central data file
+const article = getArticleBySlug("free-vpn-vs-paid-vpn", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

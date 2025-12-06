@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
+import { blogArticles, getArticlePath } from "../data/articles";
 
 // Import category background images (reusing from guides)
 import categoryCommunication from "../images/categories/category-communication.webp";
@@ -25,112 +26,22 @@ const categories = [
   { name: "Travel", href: "/blog/travel", gradient: "from-sky-400 to-blue-500" },
 ];
 
-// All blog articles with images
-const allArticles = [
-  {
-    title: "Best Team Communication Tools",
-    description: "Compare Slack, Teams, Discord and more for remote teams.",
-    href: "/blog/best-team-communication-tools",
-    category: "Communication",
-    readTime: 12,
-    image: "/images/unsplash/photo-1600880292203-757bb62b4baf-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Async Communication for Remote Teams",
-    description: "Master asynchronous communication to boost productivity.",
-    href: "/blog/async-communication-remote-teams",
-    category: "Communication",
-    readTime: 10,
-    image: "/images/unsplash/photo-1522071820081-009f0129c71c-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best Banking for Digital Nomads",
-    description: "Find the best banks and accounts for location-independent workers.",
-    href: "/blog/best-banking-digital-nomads",
-    category: "Finance",
-    readTime: 14,
-    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Tax Tips for Remote Workers",
-    description: "Essential tax advice for freelancers and remote employees.",
-    href: "/blog/tax-tips-remote-workers",
-    category: "Finance",
-    readTime: 13,
-    image: "/images/unsplash/photo-1554224155-6726b3ff858f-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Cloud vs Traditional Hosting",
-    description: "Compare cloud and traditional hosting for your remote business.",
-    href: "/blog/cloud-vs-traditional-hosting",
-    category: "Hosting",
-    readTime: 11,
-    image: "/images/unsplash/photo-1451187580459-43490279c0fa-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best CRM Software for Small Business",
-    description: "Compare top CRM tools for managing customer relationships.",
-    href: "/blog/best-crm-software-small-business",
-    category: "Productivity",
-    readTime: 14,
-    image: "/images/unsplash/photo-1552664730-d307ca884978-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Ultimate Home Office Setup Guide",
-    description: "Create the perfect workspace for maximum productivity.",
-    href: "/blog/ultimate-home-office-setup",
-    category: "Productivity",
-    readTime: 15,
-    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "VPN Speed Comparison",
-    description: "We tested VPN speeds across 20+ countries.",
-    href: "/blog/vpn-speed-comparison",
-    category: "Security",
-    readTime: 10,
-    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "VPN on Public WiFi Guide",
-    description: "How to stay safe when using public WiFi networks.",
-    href: "/blog/vpn-public-wifi-guide",
-    category: "Security",
-    readTime: 8,
-    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Top Destinations for Digital Nomads",
-    description: "Best cities for remote work based on cost, internet, and community.",
-    href: "/blog/top-destinations-digital-nomads",
-    category: "Travel",
-    readTime: 14,
-    image: "/images/unsplash/photo-1528181304800-259b08848526-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best Travel Insurance for Remote Workers",
-    description: "Compare travel insurance options designed for digital nomads.",
-    href: "/blog/best-travel-insurance-remote-workers",
-    category: "Travel",
-    readTime: 12,
-    image: "/images/unsplash/photo-1436491865332-7a61a109cc05-1200w.webp",
-    featured: false,
-  },
-];
+// Transform articles from data file into bento grid format
+const allArticles = blogArticles.map((article) => ({
+  title: article.title,
+  description: article.description,
+  href: getArticlePath(article),
+  category: article.category.charAt(0).toUpperCase() + article.category.slice(1),
+  readTime: article.readingTime,
+  image: article.image,
+  featured: article.featured || false,
+}));
 
 // Pick random hero from featured articles
 const featuredArticles = allArticles.filter((a) => a.featured);
-const hero = featuredArticles[Math.floor(Math.random() * featuredArticles.length)];
+const hero = featuredArticles.length > 0
+  ? featuredArticles[Math.floor(Math.random() * featuredArticles.length)]
+  : allArticles[0];
 
 // Remaining articles shuffled
 const remaining = allArticles.filter((a) => a.href !== hero.href);

@@ -1,15 +1,12 @@
 ---
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Minimalist Home Office Setup: Less Stuff, More Focus";
-const description =
-  "Create a distraction-free workspace with minimal gear. Learn how to build a productive minimalist home office that helps you focus on what matters most.";
-const authorSlug = "sarah-mitchell";
-const pubDate = new Date("2025-06-16");
-const readingTime = 12;
-const image = "/images/unsplash/photo-1449824913935-59a10b8d2000-1200w.webp";
-const imageAlt = "Minimalist home office workspace design";
+// Get article metadata from central data file
+const article = getArticleBySlug("minimalist-home-office-setup", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "introduction", text: "Why Less Stuff Actually Works" },

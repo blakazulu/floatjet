@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best VPS Hosting for Remote Businesses (2025)";
-const description =
-  "Compare the best VPS hosting providers for remote teams. DigitalOcean, Vultr, Linode, Cloudways and more with pricing, performance, and honest reviews.";
-const authorSlug = "marcus-chen";
-const pubDate = new Date("2025-05-12");
-const readingTime = 18;
-const image = "/images/unsplash/photo-1544197150-b99a580bb7a8-1200w.webp";
-const imageAlt = "VPS server infrastructure with network cables and rack servers";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-vps-hosting-remote-business", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

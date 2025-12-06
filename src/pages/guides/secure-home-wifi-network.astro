@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "How to Secure Your Home WiFi Network for Remote Work (2025)";
-const description =
-  "Secure your home WiFi network. Learn router security settings, WPA3 encryption, guest networks, firmware updates, and VPN setup for remote workers today.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-10-28");
-const readingTime = 11;
-const image = "/images/unsplash/photo-1560472354-b33ff0c44a43-1200w.webp";
-const imageAlt = "Home WiFi router for secure network setup";
+// Get article metadata from central data file
+const article = getArticleBySlug("secure-home-wifi-network", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

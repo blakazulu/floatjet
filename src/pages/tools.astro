@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
+import { toolsArticles, getArticlePath } from "../data/articles";
 
 // Import category background images (from src/images for Astro Image optimization)
 import categoryVpn from "../images/categories/category-vpn-security.webp";
@@ -21,121 +22,22 @@ const categories = [
   { name: "Finance", href: "/tools/finance", gradient: "from-amber-500 to-orange-500" },
 ];
 
-// All tools with images and featured flag
-const allTools = [
-  {
-    title: "Best Project Management Software",
-    description: "Compare Notion, ClickUp, Asana, Monday.com and more for remote teams.",
-    href: "/tools/best-project-management-software",
-    category: "SaaS",
-    readTime: 14,
-    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best VPN for Digital Nomads",
-    description: "Secure your connection while working from anywhere in the world.",
-    href: "/tools/best-vpn-digital-nomads",
-    category: "VPN",
-    readTime: 15,
-    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best Email Marketing Tools",
-    description: "Grow your audience with the right email marketing platform.",
-    href: "/tools/best-email-marketing-tools",
-    category: "SaaS",
-    readTime: 14,
-    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Password Managers",
-    description: "Keep your accounts secure with a reliable password manager.",
-    href: "/tools/best-password-manager-remote-work",
-    category: "VPN",
-    readTime: 14,
-    image: "/images/unsplash/photo-1633265486064-086b219458ec-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Web Hosting",
-    description: "Reliable hosting for your remote business or side project.",
-    href: "/tools/best-web-hosting-remote-business",
-    category: "Hosting",
-    readTime: 15,
-    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best Time Tracking Software",
-    description: "Track billable hours and boost productivity.",
-    href: "/tools/best-time-tracking-software",
-    category: "SaaS",
-    readTime: 15,
-    image: "/images/unsplash/photo-1611532736597-de2d4265fba3-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Online Course Platforms",
-    description: "Learn new skills or create courses to share your expertise.",
-    href: "/tools/best-online-course-platforms",
-    category: "SaaS",
-    readTime: 16,
-    image: "/images/unsplash/photo-1501504905252-473c47e087f8-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Productivity Apps",
-    description: "Apps to help you focus, organize, and get more done.",
-    href: "/tools/best-productivity-apps",
-    category: "SaaS",
-    readTime: 16,
-    image: "/images/unsplash/photo-1484480974693-6ca0a78fb36b-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best Video Conferencing Tools",
-    description: "Compare Zoom, Google Meet, Teams and more for remote meetings.",
-    href: "/tools/best-video-conferencing-tools",
-    category: "SaaS",
-    readTime: 18,
-    image: "/images/unsplash/photo-1587825140708-dfaf72ae4b04-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Cloud Storage",
-    description: "Find the perfect cloud storage solution for your team.",
-    href: "/tools/best-cloud-storage-remote-work",
-    category: "SaaS",
-    readTime: 16,
-    image: "/images/unsplash/photo-1544197150-b99a580bb7a8-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Note-Taking Apps",
-    description: "Compare Notion, Obsidian, Evernote and more.",
-    href: "/tools/best-note-taking-apps",
-    category: "SaaS",
-    readTime: 17,
-    image: "/images/unsplash/photo-1517842645767-c639042777db-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Notion vs ClickUp vs Monday",
-    description: "Ultimate comparison of top productivity platforms.",
-    href: "/tools/notion-vs-clickup-vs-monday",
-    category: "SaaS",
-    readTime: 14,
-    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-1200w.webp",
-    featured: false,
-  },
-];
+// Transform articles from data file into bento grid format
+const allTools = toolsArticles.map((article) => ({
+  title: article.title,
+  description: article.description,
+  href: getArticlePath(article),
+  category: article.category.toUpperCase() === "VPN" ? "VPN" : article.category.charAt(0).toUpperCase() + article.category.slice(1),
+  readTime: article.readingTime,
+  image: article.image,
+  featured: article.featured || false,
+}));
 
 // Pick random hero from featured articles
 const featuredTools = allTools.filter((t) => t.featured);
-const hero = featuredTools[Math.floor(Math.random() * featuredTools.length)];
+const hero = featuredTools.length > 0
+  ? featuredTools[Math.floor(Math.random() * featuredTools.length)]
+  : allTools[0];
 
 // Remaining tools shuffled
 const remaining = allTools.filter((t) => t.href !== hero.href);

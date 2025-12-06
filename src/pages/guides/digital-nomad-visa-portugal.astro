@@ -1,15 +1,12 @@
 ---
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Portugal Digital Nomad Visa 2025: How to Apply";
-const description =
-  "Complete guide to Portugal's digital nomad visa. Learn about eligibility, required documents, application process, costs, and best cities for remote workers.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-09-04");
-const readingTime = 15;
-const image = "/images/unsplash/photo-1555881400-74d7acaacd8b-1200w.webp";
-const imageAlt = "Lisbon Portugal cityscape with colorful buildings and tram";
+// Get article metadata from central data file
+const article = getArticleBySlug("digital-nomad-visa-portugal", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "introduction", text: "Why Portugal" },

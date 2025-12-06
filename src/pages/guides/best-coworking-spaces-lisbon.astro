@@ -1,15 +1,12 @@
 ---
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Best Coworking Spaces in Lisbon: Digital Nomad Guide";
-const description =
-  "Worked from twelve Lisbon coworking spaces. Here's where digital nomads actually get work done - fast wifi, good coffee, and reasonable monthly rates included.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-11-27");
-const readingTime = 13;
-const image = "/images/unsplash/photo-1497366811353-6870744d04b2-1200w.webp";
-const imageAlt = "Modern coworking space in Lisbon";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-coworking-spaces-lisbon", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "introduction", text: "What the Scene Looks Like" },

@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best Laptop Bags & Backpacks for Digital Nomads (2025)";
-const description =
-  "I tested twelve laptop bags across three continents. Nomatic, Peak Design, Aer compared - plus a forty-five dollar budget pick that actually worked really well.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-11-17");
-const readingTime = 10;
-const image = "/images/unsplash/photo-1553062407-98eeb64c6a62-1200w.webp";
-const imageAlt = "Professional laptop backpack for digital nomads";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-laptop-bags-backpacks", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best Business VPN Solutions for Remote Teams (2025)";
-const description =
-  "I deployed business VPNs for remote teams. NordLayer for most companies. Perimeter 81 for complex setups. Twingate for zero-trust. Real deployment tests.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-02-15");
-const readingTime = 16;
-const image = "/images/unsplash/photo-1551434678-e076c223a692-1200w.webp";
-const imageAlt = "Remote team collaborating on video call with secure connection";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-business-vpn-remote-teams", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

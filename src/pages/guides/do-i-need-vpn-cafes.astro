@@ -1,15 +1,12 @@
 ---
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Do I Need a VPN When Working from Cafes?";
-const description =
-  "Short answer: yes. Learn why VPNs are essential for cafe WiFi security, what risks you face on public networks, and how to stay safe while working remotely.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-07-02");
-const readingTime = 7;
-const image = "/images/unsplash/photo-1521017432531-fbd92d768814-1200w.webp";
-const imageAlt = "Remote worker using laptop at coffee shop with VPN protection";
+// Get article metadata from central data file
+const article = getArticleBySlug("do-i-need-vpn-cafes", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "short-answer", text: "The Short Answer" },

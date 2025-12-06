@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best VPNs for Digital Nomads & Remote Workers (2025)";
-const description =
-  "I tested 12 VPNs across 15 countries to find the best for digital nomads. NordVPN, ExpressVPN, Surfshark compared with real speed tests and honest takes.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-09-24");
-const readingTime = 15;
-const image = "/images/unsplash/photo-1526374965328-7f61d4dc18c5-1200w.webp";
-const imageAlt = "Digital security concept with encrypted data visualization";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-vpn-digital-nomads", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

@@ -8,7 +8,7 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 
 ## Articles Table
 
-| #   | Name                                                                       | Author          | Sub-Category  | Category | Link                                             | Word Count | Humanized | Image |
+| #   | Name                                                                       | Author          | Sub-Category  | Category | Link                                             | Word Count | Humanized | Hero Image |
 |-----|----------------------------------------------------------------------------|-----------------|---------------|----------|--------------------------------------------------|------------|-----------|-------|
 | 001 | Best Team Communication Tools for Remote Work (2025)                       | Marcus Chen     | Communication | Blog     | /blog/best-team-communication-tools              | 557        | true      | /images/unsplash/photo-1600880292203-757bb62b4baf-1200w.webp |
 | 002 | The Complete Guide to Async Communication for Remote Teams (2025)          | Sarah Mitchell  | Communication | Blog     | /blog/async-communication-remote-teams           | 546        | true      | /images/unsplash/photo-1522071820081-009f0129c71c-1200w.webp |

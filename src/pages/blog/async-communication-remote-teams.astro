@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Async Communication for Remote Teams: The Guide (2025)";
-const description =
-  "Meetings that could've been emails. Slack pings at midnight pulling you back to work. Here's how to fix communication without ruining your life or sanity.";
-const authorSlug = "sarah-mitchell";
-const pubDate = new Date("2025-03-31");
-const readingTime = 3;
-const image = "/images/unsplash/photo-1522071820081-009f0129c71c-1200w.webp";
-const imageAlt = "Remote team collaborating through digital communication tools";
+// Get article metadata from central data file
+const article = getArticleBySlug("async-communication-remote-teams", "blog")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

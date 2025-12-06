@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best Portable Chargers & Power Banks for Travel (2025)";
-const description =
-  "Tested ten portable chargers over four months of travel. Here are the ones that deliver on their promises, which died after two months, and what I actually use.";
-const authorSlug = "marcus-chen";
-const pubDate = new Date("2025-01-19");
-const readingTime = 13;
-const image = "/images/unsplash/photo-1609091839311-d5365f9ff1c5-1200w.webp";
-const imageAlt = "Power bank portable charger with USB cables";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-portable-chargers-power-banks", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

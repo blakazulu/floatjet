@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best Project Management Software for Remote Teams (2025)";
-const description =
-  "I tested fifteen project management tools for remote teams. Notion, ClickUp, Asana compared with real pricing, features, and honest takes on what works.";
-const authorSlug = "marcus-chen";
-const pubDate = new Date("2025-11-02");
-const readingTime = 14;
-const image = "/images/unsplash/photo-1454165804606-c3d57bc86b40-1200w.webp";
-const imageAlt = "Modern workspace with laptop displaying project management dashboard";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-project-management-software", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

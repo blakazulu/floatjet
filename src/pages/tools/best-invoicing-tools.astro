@@ -1,15 +1,12 @@
 ---
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Best Invoicing Tools for Remote Professionals in 2025";
-const description =
-  "Compare the top invoicing software for freelancers and remote workers. Get paid faster with professional invoices, automatic reminders, and online payments.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-06-12");
-const readingTime = 15;
-const image = "/images/unsplash/photo-1554774853-719586f82d77-1200w.webp";
-const imageAlt = "Invoicing and billing calculator workspace";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-invoicing-tools", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "why-this-matters", text: "Why This Matters" },

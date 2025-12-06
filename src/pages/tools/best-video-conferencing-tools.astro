@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best Video Conferencing Tools for Remote Teams (2025)";
-const description =
-  "I tested ten video conferencing tools for remote teams. Zoom, Google Meet, Teams compared with real pricing, features that actually matter, and honest takes.";
-const authorSlug = "marcus-chen";
-const pubDate = new Date("2025-08-05");
-const readingTime = 18;
-const image = "/images/unsplash/photo-1588196749597-9ff075ee6b5b-1200w.webp";
-const imageAlt = "Remote team video conference call on laptop screen";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-video-conferencing-tools", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

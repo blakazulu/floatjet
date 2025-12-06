@@ -50,7 +50,10 @@
       "Bash(do echo \"=== $img ===\")",
       "Bash(done)",
       "Bash(find:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(for f in src/pages/{blog,gear,guides,tools}/*.astro)",
+      "Bash(do grep -oP 'const image = \"\"/images/unsplash/[^\"\"]+\"\"' \"$f\")",
+      "Bash(npx tsc:*)"
     ],
     "deny": [],
     "ask": []

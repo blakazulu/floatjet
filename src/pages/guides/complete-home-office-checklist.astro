@@ -1,15 +1,12 @@
 ---
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Complete Home Office Checklist: Everything You Need";
-const description =
-  "The ultimate home office checklist for remote workers. From essential furniture to tech equipment, lighting, and ergonomics. Build your perfect workspace.";
-const authorSlug = "sarah-mitchell";
-const pubDate = new Date("2025-06-08");
-const readingTime = 16;
-const image = "/images/unsplash/photo-1497215842964-222b430dc094-1200w.webp";
-const imageAlt = "Organized home office workspace checklist";
+// Get article metadata from central data file
+const article = getArticleBySlug("complete-home-office-checklist", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "furniture-checklist", text: "Your Desk and Chair" },

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
+import { gearArticles, getArticlePath } from "../data/articles";
 
 // Import category background images
 import categoryComputers from "../images/categories/category-computers.webp";
@@ -21,112 +22,22 @@ const categories = [
   { name: "Accessories", href: "/gear/accessories", gradient: "from-emerald-500 to-teal-500" },
 ];
 
-// All gear articles with images
-const allGear = [
-  {
-    title: "Best Laptops for Remote Work",
-    description: "Find the perfect laptop for productivity on the go.",
-    href: "/gear/best-laptops-remote-work",
-    category: "Computers",
-    readTime: 18,
-    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best Monitors for Remote Work",
-    description: "Find the best 4K, ultrawide, and budget monitors.",
-    href: "/gear/best-monitors-remote-work",
-    category: "Computers",
-    readTime: 16,
-    image: "/images/unsplash/photo-1527443224154-c4a3942d3acf-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best Standing Desks",
-    description: "Ergonomic standing desks for healthier workdays.",
-    href: "/gear/best-standing-desks",
-    category: "Furniture",
-    readTime: 18,
-    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best Ergonomic Chairs",
-    description: "Find the perfect chair for all-day comfort.",
-    href: "/gear/best-ergonomic-chairs",
-    category: "Furniture",
-    readTime: 18,
-    image: "/images/unsplash/photo-1580480055273-228ff5388ef8-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best Noise-Canceling Headphones",
-    description: "Block out distractions with premium headphones.",
-    href: "/gear/best-noise-canceling-headphones",
-    category: "Audio",
-    readTime: 18,
-    image: "/images/unsplash/photo-1505740420928-5e560c06d30e-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best Microphones for Remote Meetings",
-    description: "USB and XLR microphones for video call clarity.",
-    href: "/gear/best-microphones-remote-meetings",
-    category: "Audio",
-    readTime: 16,
-    image: "/images/unsplash/photo-1590602847861-f357a9332bbc-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Laptop Bags & Backpacks",
-    description: "Protect your gear while traveling light.",
-    href: "/gear/best-laptop-bags-backpacks",
-    category: "Accessories",
-    readTime: 16,
-    image: "/images/unsplash/photo-1553062407-98eeb64c6a62-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Webcams for Video Calls",
-    description: "Look professional on every video call.",
-    href: "/gear/best-webcams-video-calls",
-    category: "Accessories",
-    readTime: 14,
-    image: "/images/unsplash/photo-1587825140708-dfaf72ae4b04-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Mechanical Keyboards",
-    description: "Type faster and more comfortably.",
-    href: "/gear/best-mechanical-keyboards",
-    category: "Accessories",
-    readTime: 14,
-    image: "/images/unsplash/photo-1595225476474-87563907a212-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Portable Monitors",
-    description: "Dual-screen productivity on the go.",
-    href: "/gear/best-portable-monitors",
-    category: "Computers",
-    readTime: 14,
-    image: "/images/unsplash/photo-1587829741301-dc798b83add3-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Desk Converters",
-    description: "Transform your desk into a standing desk.",
-    href: "/gear/best-desk-converters",
-    category: "Furniture",
-    readTime: 14,
-    image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-1200w.webp",
-    featured: false,
-  },
-];
+// Transform articles from data file into bento grid format
+const allGear = gearArticles.map((article) => ({
+  title: article.title,
+  description: article.description,
+  href: getArticlePath(article),
+  category: article.category.charAt(0).toUpperCase() + article.category.slice(1),
+  readTime: article.readingTime,
+  image: article.image,
+  featured: article.featured || false,
+}));
 
 // Pick random hero from featured articles
 const featuredGear = allGear.filter((g) => g.featured);
-const hero = featuredGear[Math.floor(Math.random() * featuredGear.length)];
+const hero = featuredGear.length > 0
+  ? featuredGear[Math.floor(Math.random() * featuredGear.length)]
+  : allGear[0];
 
 // Remaining gear shuffled
 const remaining = allGear.filter((g) => g.href !== hero.href);

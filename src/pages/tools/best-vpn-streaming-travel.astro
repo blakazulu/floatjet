@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best VPN for Streaming While Traveling (2025)";
-const description =
-  "Tested 10 VPNs for streaming while traveling. NordVPN works with everything. Surfshark is best value. ExpressVPN for premium speed. Real results from trips.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-09-15");
-const readingTime = 14;
-const image = "/images/unsplash/photo-1522199755839-a2bacb67c546-1200w.webp";
-const imageAlt = "Person streaming video content on laptop while traveling";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-vpn-streaming-travel", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

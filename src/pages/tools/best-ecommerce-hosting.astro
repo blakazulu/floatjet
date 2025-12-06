@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best E-commerce Hosting for Remote Entrepreneurs (2025)";
-const description =
-  "Compare the best e-commerce hosting platforms. Shopify, WooCommerce, BigCommerce, and more with features, pricing, and honest reviews for online stores.";
-const authorSlug = "marcus-chen";
-const pubDate = new Date("2025-10-29");
-const readingTime = 16;
-const image = "/images/unsplash/photo-1556742049-0cfed4f6a45d-1200w.webp";
-const imageAlt = "E-commerce shopping cart and online store concept";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-ecommerce-hosting", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

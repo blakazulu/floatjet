@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "How Many Monitors Do You Actually Need? Honest Answer (2025)";
-const description =
-  "One monitor works fine. Two is the sweet spot. Three starts costing more than it helps. Here's what actually matters beyond just counting screens on your desk.";
-const authorSlug = "marcus-chen";
-const pubDate = new Date("2025-06-12");
-const readingTime = 8;
-const image = "/images/unsplash/photo-1547658719-da2b51169166-1200w.webp";
-const imageAlt = "Dual monitor workspace setup for remote work";
+// Get article metadata from central data file
+const article = getArticleBySlug("how-many-monitors-do-you-actually-need", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

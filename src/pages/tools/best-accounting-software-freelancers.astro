@@ -1,15 +1,12 @@
 ---
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Best Accounting Software for Freelancers (2025)";
-const description =
-  "I tested QuickBooks, FreshBooks, Wave for freelancers. Here's which accounting software actually works without costing a fortune or confusing you daily.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-07-29");
-const readingTime = 18;
-const image = "/images/unsplash/photo-1450101499163-c8848c66ca85-1200w.webp";
-const imageAlt = "Accounting software and bookkeeping workspace";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-accounting-software-freelancers", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "why-you-need-this", text: "Why You Need This" },

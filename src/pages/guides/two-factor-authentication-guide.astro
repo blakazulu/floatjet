@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Two-Factor Authentication Guide for Remote Workers (2025)";
-const description =
-  "Guide to setting up 2FA on all your accounts. Learn about authenticator apps, hardware keys, backup codes, and best practices for remote work security.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-11-13");
-const readingTime = 11;
-const image = "/images/unsplash/photo-1614064641938-3bbee52942c7-1200w.webp";
-const imageAlt = "Smartphone showing two-factor authentication code for secure login";
+// Get article metadata from central data file
+const article = getArticleBySlug("two-factor-authentication-guide", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

@@ -1,24 +1,22 @@
 ---
 import {
-  AffiliateButton,
+AffiliateButton,
   ComparisonTable,
   FAQSection,
   RelatedArticles,
 } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "How Much Does a Standing Desk Really Cost? (2025 Guide)";
-const description =
-  "Complete price breakdown for standing desks at every budget. Learn what you get at $200, $500, and $1,000+ price points and whether expensive desks worth it.";
-const pubDate = new Date("2025-03-24");
+// Get article metadata from central data file
+const article = getArticleBySlug("standing-desk-cost-guide", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
 const updatedDate = new Date("2024-11-24");
-const authorSlug = "sarah-mitchell";
 const category = "Furniture";
 const categorySlug = "gear";
 const subcategorySlug = "furniture";
-const readingTime = 8;
-const image = "/images/unsplash/photo-1497366216548-37526070297c-1200w.webp";
-const imageAlt = "Various standing desks at different price points";
 
 const headings = [
   { text: "Short Answer", slug: "quick-answer", depth: 2 },

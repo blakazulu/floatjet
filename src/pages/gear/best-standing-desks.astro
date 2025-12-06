@@ -4,16 +4,12 @@ import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Best Standing Desks for Home Office (2025)";
-const description =
-  "We tested 10 standing desks to find the best for home offices. Compare Uplift, FlexiSpot, Autonomous & more with honest reviews, specs, and buying advice.";
-const authorSlug = "sarah-mitchell";
-const pubDate = new Date("2025-11-13");
-const readingTime = 18;
-const image = "/images/unsplash/photo-1611532736579-6b16e2b50449-1200w.webp";
-const imageAlt = "Ergonomic standing desk for home office";
+// Get article metadata from central data file
+const article = getArticleBySlug("best-standing-desks", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

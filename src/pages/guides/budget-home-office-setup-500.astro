@@ -1,15 +1,12 @@
 ---
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Budget Home Office Setup Under $500: Everything You Need";
-const description =
-  "Build a complete, comfortable home office for under $500. Smart shopping tips and specific product recommendations on where to spend and where to save money.";
-const authorSlug = "sarah-mitchell";
-const pubDate = new Date("2025-06-30");
-const readingTime = 14;
-const image = "/images/unsplash/photo-1486312338219-ce68d2c6f44d-1200w.webp";
-const imageAlt = "Budget-friendly home office setup with laptop and basic equipment";
+// Get article metadata from central data file
+const article = getArticleBySlug("budget-home-office-setup-500", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "budget-breakdown", text: "Where Your Money Goes" },

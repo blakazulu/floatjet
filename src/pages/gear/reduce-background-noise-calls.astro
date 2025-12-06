@@ -1,24 +1,22 @@
 ---
 import {
-  AffiliateButton,
+AffiliateButton,
   ComparisonTable,
   FAQSection,
   RelatedArticles,
 } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "How to Reduce Background Noise on Video Calls (2025)";
-const description =
-  "Practical tips and software solutions to eliminate background noise during remote meetings. From free apps to hardware upgrades for professional call quality.";
-const pubDate = new Date("2025-05-12");
+// Get article metadata from central data file
+const article = getArticleBySlug("reduce-background-noise-calls", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
 const updatedDate = new Date("2024-11-24");
-const authorSlug = "marcus-chen";
 const category = "Audio";
 const categorySlug = "gear";
 const subcategorySlug = "audio";
-const readingTime = 8;
-const image = "/images/unsplash/photo-1587560699334-cc4ff634909a-1200w.webp";
-const imageAlt = "Person on video call with noise-canceling setup";
 
 const headings = [
   { text: "Free Stuff That Helps", slug: "free-stuff" },

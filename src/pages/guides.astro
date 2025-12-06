@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
+import { guidesArticles, getArticlePath } from "../data/articles";
 
 // Import category background images
 import categoryTravel from "../images/categories/category-travel.webp";
@@ -25,112 +26,22 @@ const categories = [
   { name: "Finance", href: "/guides/finance", gradient: "from-green-500 to-emerald-600" },
 ];
 
-// All guides with images
-const allGuides = [
-  {
-    title: "Top Destinations for Digital Nomads",
-    description: "Best places to work remotely with great WiFi and community.",
-    href: "/blog/top-destinations-digital-nomads",
-    category: "Travel",
-    readTime: 14,
-    image: "/images/unsplash/photo-1528181304800-259b08848526-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Async Communication for Remote Teams",
-    description: "Master asynchronous communication to boost productivity.",
-    href: "/blog/async-communication-remote-teams",
-    category: "Communication",
-    readTime: 12,
-    image: "/images/unsplash/photo-1522071820081-009f0129c71c-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best Team Communication Tools",
-    description: "Compare Slack, Teams, Discord, and more.",
-    href: "/blog/best-team-communication-tools",
-    category: "Communication",
-    readTime: 11,
-    image: "/images/unsplash/photo-1600880292203-757bb62b4baf-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Managing Time Zones in Remote Teams",
-    description: "Strategies for effective collaboration across time zones.",
-    href: "/blog/managing-time-zones-remote-teams",
-    category: "Productivity",
-    readTime: 11,
-    image: "/images/unsplash/photo-1524522173746-f628baad3644-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "VPN & Public WiFi Security",
-    description: "Essential cybersecurity practices for working anywhere.",
-    href: "/blog/vpn-public-wifi-guide",
-    category: "Security",
-    readTime: 13,
-    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Ultimate Home Office Setup",
-    description: "Build the perfect home office on any budget.",
-    href: "/blog/ultimate-home-office-setup",
-    category: "Setup",
-    readTime: 11,
-    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Tax Tips for Remote Workers",
-    description: "Navigate taxes as a remote worker or digital nomad.",
-    href: "/blog/tax-tips-remote-workers",
-    category: "Finance",
-    readTime: 12,
-    image: "/images/unsplash/photo-1554224155-6726b3ff858f-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Banking for Digital Nomads",
-    description: "Compare international banking options.",
-    href: "/blog/best-banking-digital-nomads",
-    category: "Finance",
-    readTime: 12,
-    image: "/images/unsplash/photo-1601597111158-2fceff292cdc-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Find Reliable WiFi Anywhere",
-    description: "Tips and tools for finding fast internet on the road.",
-    href: "/blog/find-reliable-wifi-anywhere",
-    category: "Travel",
-    readTime: 9,
-    image: "/images/unsplash/photo-1521791136064-7986c2920216-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Travel Insurance for Remote Workers",
-    description: "Compare travel insurance options for digital nomads.",
-    href: "/blog/best-travel-insurance-remote-workers",
-    category: "Travel",
-    readTime: 11,
-    image: "/images/unsplash/photo-1436491865332-7a61a109cc05-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "VPN Speed Comparison",
-    description: "Real-world speed tests of popular VPNs.",
-    href: "/blog/vpn-speed-comparison",
-    category: "Security",
-    readTime: 10,
-    image: "/images/unsplash/photo-1555949963-ff9fe0c870eb-1200w.webp",
-    featured: false,
-  },
-];
+// Transform articles from data file into bento grid format
+const allGuides = guidesArticles.map((article) => ({
+  title: article.title,
+  description: article.description,
+  href: getArticlePath(article),
+  category: article.category.charAt(0).toUpperCase() + article.category.slice(1),
+  readTime: article.readingTime,
+  image: article.image,
+  featured: article.featured || false,
+}));
 
 // Pick random hero from featured articles
 const featuredGuides = allGuides.filter((g) => g.featured);
-const hero = featuredGuides[Math.floor(Math.random() * featuredGuides.length)];
+const hero = featuredGuides.length > 0
+  ? featuredGuides[Math.floor(Math.random() * featuredGuides.length)]
+  : allGuides[0];
 
 // Remaining guides shuffled
 const remaining = allGuides.filter((g) => g.href !== hero.href);

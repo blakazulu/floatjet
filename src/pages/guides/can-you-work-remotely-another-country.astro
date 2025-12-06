@@ -1,15 +1,12 @@
 ---
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Can You Work Remotely from Another Country? A Legal Guide";
-const description =
-  "Legal guide to working remotely abroad. Learn about visa requirements, tax obligations, and how to approach your employer about international remote work.";
-const authorSlug = "daniel-brooks";
-const pubDate = new Date("2025-06-05");
-const readingTime = 10;
-const image = "/images/unsplash/photo-1569154941061-e231b4725ef1-1200w.webp";
-const imageAlt = "Passport and travel documents for remote work abroad";
+// Get article metadata from central data file
+const article = getArticleBySlug("can-you-work-remotely-another-country", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "quick-answer", text: "Quick Answer" },

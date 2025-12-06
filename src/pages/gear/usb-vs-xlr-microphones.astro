@@ -1,24 +1,22 @@
 ---
 import {
-  AffiliateButton,
+AffiliateButton,
   ComparisonTable,
   FAQSection,
   RelatedArticles,
 } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "USB vs XLR Microphones: Which Is Better for Remote Work?";
-const description =
-  "USB or XLR microphone? We break down the pros and cons of each type to help you choose the right microphone for your remote work setup and budget needs.";
-const pubDate = new Date("2025-10-04");
+// Get article metadata from central data file
+const article = getArticleBySlug("usb-vs-xlr-microphones", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
 const updatedDate = new Date("2024-11-24");
-const authorSlug = "sarah-mitchell";
 const category = "Audio";
 const categorySlug = "gear";
 const subcategorySlug = "audio";
-const readingTime = 10;
-const image = "/images/unsplash/photo-1598653222000-6b7b7a552625-1200w.webp";
-const imageAlt = "Professional microphone setup comparing USB and XLR connections";
 
 const headings = [
   { text: "Quick Comparison", slug: "quick-comparison" },

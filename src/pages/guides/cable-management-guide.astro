@@ -1,15 +1,12 @@
 ---
 import { FAQSection, RelatedArticles } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Home Office Cable Management: Tame the Wire Chaos";
-const description =
-  "Transform your messy workspace into a clean, organized setup. Complete guide to cable management solutions and routing techniques for a tangle-free desk.";
-const authorSlug = "sarah-mitchell";
-const pubDate = new Date("2025-11-12");
-const readingTime = 11;
-const image = "/images/unsplash/photo-1597733336794-12d05021d510-1200w.webp";
-const imageAlt = "Organized cables and desk cable management";
+// Get article metadata from central data file
+const article = getArticleBySlug("cable-management-guide", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 const headings = [
   { depth: 2, slug: "introduction", text: "Why This Even Matters" },

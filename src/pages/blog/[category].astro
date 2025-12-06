@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { blogArticles, getArticlePath } from "../../data/articles";
 
 // Category configuration with metadata
 const categoryConfig: Record<string, {
@@ -14,42 +15,42 @@ const categoryConfig: Record<string, {
     title: "Communication Articles",
     subtitle: "Connect with your remote team",
     description: "Articles on remote team communication. Async collaboration, video calls, messaging tools, and best practices.",
-    filterKey: "Communication",
+    filterKey: "communication",
   },
   finance: {
     name: "Finance",
     title: "Finance Articles",
     subtitle: "Manage money as a remote worker",
     description: "Financial articles for remote workers and digital nomads. Banking, taxes, invoicing, and money management.",
-    filterKey: "Finance",
+    filterKey: "finance",
   },
   hosting: {
     name: "Hosting",
     title: "Hosting Articles",
     subtitle: "Host your remote business online",
     description: "Web hosting articles for remote businesses. Cloud hosting, VPS, and managed hosting comparisons.",
-    filterKey: "Hosting",
+    filterKey: "hosting",
   },
   productivity: {
     name: "Productivity",
     title: "Productivity Articles",
     subtitle: "Get more done remotely",
     description: "Boost your remote work productivity. Time management, focus techniques, tools, and workflow tips.",
-    filterKey: "Productivity",
+    filterKey: "productivity",
   },
   security: {
     name: "Security",
     title: "Security Articles",
     subtitle: "Protect your digital life",
     description: "Stay secure while working remotely. VPN guides, public WiFi safety, and cybersecurity tips.",
-    filterKey: "Security",
+    filterKey: "security",
   },
   travel: {
     name: "Travel",
     title: "Travel Articles",
     subtitle: "Work from anywhere in the world",
     description: "Travel articles for digital nomads. Best destinations, WiFi tips, travel insurance, and remote work locations.",
-    filterKey: "Travel",
+    filterKey: "travel",
   },
 };
 
@@ -64,160 +65,16 @@ const categories = [
   { name: "Travel", href: "/blog/travel", gradient: "from-sky-400 to-blue-500", slug: "travel" },
 ];
 
-// All articles data - complete list of all blog articles (16 total)
-const allArticles = [
-  // === COMMUNICATION (2 articles) ===
-  {
-    title: "Best Team Communication Tools",
-    description: "Compare Slack, Teams, Discord and more for remote teams.",
-    href: "/blog/best-team-communication-tools",
-    category: "Communication",
-    readTime: 12,
-    image: "/images/unsplash/photo-1600880292203-757bb62b4baf-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Async Communication for Remote Teams",
-    description: "Master asynchronous communication to boost productivity.",
-    href: "/blog/async-communication-remote-teams",
-    category: "Communication",
-    readTime: 10,
-    image: "/images/unsplash/photo-1522071820081-009f0129c71c-1200w.webp",
-    featured: true,
-  },
-  // === FINANCE (3 articles) ===
-  {
-    title: "Best Banking for Digital Nomads",
-    description: "Find the best banks and accounts for location-independent workers.",
-    href: "/blog/best-banking-digital-nomads",
-    category: "Finance",
-    readTime: 14,
-    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Crypto-Friendly Banks for Remote Workers",
-    description: "Which banks work with crypto without freezing your account.",
-    href: "/blog/crypto-friendly-banks",
-    category: "Finance",
-    readTime: 3,
-    image: "/images/unsplash/photo-1518546305927-5a555bb7020d-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Tax Tips for Remote Workers",
-    description: "Essential tax advice for freelancers and remote employees.",
-    href: "/blog/tax-tips-remote-workers",
-    category: "Finance",
-    readTime: 13,
-    image: "/images/unsplash/photo-1554224155-6726b3ff858f-1200w.webp",
-    featured: false,
-  },
-  // === HOSTING (2 articles) ===
-  {
-    title: "Cloud vs Traditional Hosting",
-    description: "Compare cloud and traditional hosting for your remote business.",
-    href: "/blog/cloud-vs-traditional-hosting",
-    category: "Hosting",
-    readTime: 11,
-    image: "/images/unsplash/photo-1451187580459-43490279c0fa-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Managed WordPress Hosting Compared",
-    description: "Which managed WordPress hosts are worth the premium.",
-    href: "/blog/managed-wordpress-hosting-compared",
-    category: "Hosting",
-    readTime: 4,
-    image: "/images/unsplash/photo-1504639725590-34d0984388bd-1200w.webp",
-    featured: false,
-  },
-  // === PRODUCTIVITY (2 articles) ===
-  {
-    title: "Time Zones Are Killing Your Remote Team",
-    description: "How to run remote teams across time zones without killing morale.",
-    href: "/blog/managing-time-zones-remote-teams",
-    category: "Productivity",
-    readTime: 4,
-    image: "/images/unsplash/photo-1524522173746-f628baad3644-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "Best CRM Software for Small Business",
-    description: "Compare top CRM tools for managing customer relationships.",
-    href: "/blog/best-crm-software-small-business",
-    category: "Productivity",
-    readTime: 14,
-    image: "/images/unsplash/photo-1552664730-d307ca884978-1200w.webp",
-    featured: true,
-  },
-  // === SETUP (1 article) - note: this category exists in blog ===
-  {
-    title: "Ultimate Home Office Setup Guide",
-    description: "Create the perfect workspace for maximum productivity.",
-    href: "/blog/ultimate-home-office-setup",
-    category: "Productivity",
-    readTime: 15,
-    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-1200w.webp",
-    featured: false,
-  },
-  // === SECURITY (2 articles) ===
-  {
-    title: "VPN Speed Comparison",
-    description: "We tested VPN speeds across 20+ countries.",
-    href: "/blog/vpn-speed-comparison",
-    category: "Security",
-    readTime: 10,
-    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "VPN on Public WiFi Guide",
-    description: "How to stay safe when using public WiFi networks.",
-    href: "/blog/vpn-public-wifi-guide",
-    category: "Security",
-    readTime: 8,
-    image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp",
-    featured: false,
-  },
-  // === TRAVEL (4 articles) ===
-  {
-    title: "Top Destinations for Digital Nomads",
-    description: "Best cities for remote work based on cost, internet, and community.",
-    href: "/blog/top-destinations-digital-nomads",
-    category: "Travel",
-    readTime: 14,
-    image: "/images/unsplash/photo-1528181304800-259b08848526-1200w.webp",
-    featured: true,
-  },
-  {
-    title: "How to Find Reliable WiFi Anywhere",
-    description: "Tips and tools for finding fast internet on the road.",
-    href: "/blog/find-reliable-wifi-anywhere",
-    category: "Travel",
-    readTime: 9,
-    image: "/images/unsplash/photo-1521791136064-7986c2920216-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Essential Travel Tech for Digital Nomads",
-    description: "Compact tech that earns its weight in your backpack.",
-    href: "/blog/essential-travel-tech-nomads",
-    category: "Travel",
-    readTime: 10,
-    image: "/images/unsplash/photo-1519389950473-47ba0277781c-1200w.webp",
-    featured: false,
-  },
-  {
-    title: "Best Travel Insurance for Remote Workers",
-    description: "Compare travel insurance options designed for digital nomads.",
-    href: "/blog/best-travel-insurance-remote-workers",
-    category: "Travel",
-    readTime: 12,
-    image: "/images/unsplash/photo-1436491865332-7a61a109cc05-1200w.webp",
-    featured: false,
-  },
-];
+// Transform articles from data file into bento grid format
+const allArticles = blogArticles.map((article) => ({
+  title: article.title,
+  description: article.description,
+  href: getArticlePath(article),
+  category: article.category.toLowerCase(),
+  readTime: article.readingTime,
+  image: article.image,
+  featured: article.featured || false,
+}));
 
 // Generate static paths for all categories
 export function getStaticPaths() {

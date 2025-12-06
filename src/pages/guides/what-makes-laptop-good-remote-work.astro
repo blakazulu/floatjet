@@ -2,16 +2,12 @@
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "What Makes a Laptop Good for Remote Work?";
-const description =
-  "Real talk about laptop specs. Battery life matters way more than processor speed. Here's what actually counts for remote work beyond marketing specs daily.";
-const authorSlug = "marcus-chen";
-const pubDate = new Date("2025-04-30");
-const readingTime = 10;
-const image = "/images/unsplash/photo-1588872657578-7efd1f1555ed-1200w.webp";
-const imageAlt = "Laptop on desk for remote work";
+// Get article metadata from central data file
+const article = getArticleBySlug("what-makes-laptop-good-remote-work", "guides")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

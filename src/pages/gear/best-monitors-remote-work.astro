@@ -6,19 +6,17 @@ import {
   RelatedArticles,
 } from "../../components/article";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-const title = "Best Monitors for Remote Work (2025)";
-const description =
-  "I tested ten monitors for remote workers. 4K, ultrawide, budget displays compared with color tests, desk space, and what actually matters for productivity work.";
-const pubDate = new Date("2025-09-16");
+// Get article metadata from central data file
+const article = getArticleBySlug("best-monitors-remote-work", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
 const updatedDate = new Date("2024-11-24");
-const authorSlug = "marcus-chen";
 const category = "Computers";
 const categorySlug = "gear";
 const subcategorySlug = "computers";
-const readingTime = 16;
-const image = "/images/unsplash/photo-1527443224154-c4a3942d3acf-1200w.webp";
-const imageAlt = "Modern monitor setup on clean desk for remote work";
 
 const headings = [
   { text: "Why Your Monitor Matters", slug: "why-monitor-matters", depth: 2 },

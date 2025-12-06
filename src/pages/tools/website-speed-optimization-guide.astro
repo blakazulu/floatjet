@@ -3,16 +3,12 @@ import AffiliateButton from "@components/article/AffiliateButton.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
 
-// Article metadata
-const title = "Website Speed Optimization: Complete Guide (2025)";
-const description =
-  "Learn how to speed up your website with this comprehensive guide. Covers hosting, images, caching, CDNs, Core Web Vitals, and optimization tools that work.";
-const authorSlug = "marcus-chen";
-const pubDate = new Date("2025-06-20");
-const readingTime = 15;
-const image = "/images/unsplash/photo-1586281380349-632531db7ed4-1200w.webp";
-const imageAlt = "Website speed analytics and optimization dashboard";
+// Get article metadata from central data file
+const article = getArticleBySlug("website-speed-optimization-guide", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
 const headings = [

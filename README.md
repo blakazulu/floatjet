@@ -70,9 +70,7 @@ Most review sites are affiliate link factories. They'll recommend 15 different V
 page you land on.
 
 This site? I use this stuff. I test it in actual situations—terrible cafe wifi, international banking nightmares, trying
-to look professional on video calls while my neighbor mows his lawn.
-
-Then I tell you what works.
+to look professional on video calls while my neighbor mows his lawn.hen I tell you what works.
 
 ---
 

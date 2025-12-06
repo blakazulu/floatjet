@@ -13,12 +13,13 @@
 | 3 | Check AI detection | `node scripts/zerogpt-detect.js` |
 | 4 | Update style guide with patterns | `docs/writing/writing-style-guide.md` |
 | 5 | Repeat until <4% AI detected | - |
-| 6 | Create article page | Use existing article as template |
-| 7 | Ensure SEO/AEO/GEO compliance | Match existing articles |
-| 8 | Download hero image | `node scripts/download-unsplash-images.cjs` |
-| 9 | Optimize image | `node scripts/optimize-images.cjs` |
-| 10 | Update articles metadata | `src/data/articles.ts` |
-| 11 | Regenerate article summary | `npm run docs:articles` |
+| 6 | Find unique hero image | Unsplash + check `src/data/articles.ts` |
+| 7 | Download hero image | `node scripts/download-unsplash-images.cjs` |
+| 8 | Optimize image | `node scripts/optimize-images.cjs` |
+| 9 | Create article page | Use existing article as template |
+| 10 | Ensure SEO/AEO/GEO compliance | Match existing articles |
+| 11 | Update articles metadata | `src/data/articles.ts` |
+| 12 | Regenerate article summary | `npm run docs:articles` |
 
 ---
 
@@ -153,7 +154,86 @@ Repeat steps 2-4 until the article passes with <4% AI detection.
 
 ---
 
-## Step 6: Create the Article Page
+## Step 6: Find Unique Hero Image
+
+**IMPORTANT:** Each article must have a unique hero image that is not used by any other article.
+
+### Check Existing Images
+
+Before selecting an Unsplash image, verify it's not already in use:
+
+1. Open `src/data/articles.ts`
+2. Search for the Unsplash photo ID you want to use
+3. If found, choose a different image
+
+### Find an Image on Unsplash
+
+1. Go to [unsplash.com](https://unsplash.com)
+2. Search for relevant topic
+3. Copy the photo ID from the URL
+   - URL: `https://unsplash.com/photos/abc123xyz`
+   - Photo ID: `photo-abc123xyz` (add `photo-` prefix)
+4. **Verify the ID is not already used** in `src/data/articles.ts`
+
+### Quick Check Command
+
+```bash
+# Search for a photo ID in articles.ts
+grep "photo-YOUR-ID" src/data/articles.ts
+```
+
+If no results, the image is available to use.
+
+---
+
+## Step 7: Download Hero Image
+
+### Add to Download Script
+
+Edit `scripts/download-unsplash-images.cjs` and add your photo ID:
+
+```javascript
+const photoIds = [
+  // ... existing IDs ...
+  "photo-YOUR-NEW-ID",  // Add your new photo ID
+];
+```
+
+### Run Download Script
+
+```bash
+node scripts/download-unsplash-images.cjs
+```
+
+This downloads the image to `public/images/unsplash/` as a JPG.
+
+### Remove ID from Script
+
+**After the image downloads successfully**, remove the photo ID from the `photoIds` array in `scripts/download-unsplash-images.cjs`. This keeps the script clean and prevents re-downloading the same images.
+
+---
+
+## Step 8: Optimize Image
+
+```bash
+node scripts/optimize-images.cjs
+```
+
+This script:
+1. Converts JPG to WebP format
+2. Optimizes for web (quality 80, effort 6)
+3. Deletes the original JPG automatically
+
+### Image Path Format
+
+After optimization, your image path will be:
+```
+/images/unsplash/photo-YOUR-ID-1200w.webp
+```
+
+---
+
+## Step 9: Create the Article Page
 
 ### File Location
 
@@ -230,7 +310,7 @@ const pubDate = new Date(article.pubDate);
 
 ---
 
-## Step 7: SEO/AEO/GEO Compliance
+## Step 10: SEO/AEO/GEO Compliance
 
 ### SEO Checklist
 
@@ -260,58 +340,7 @@ const pubDate = new Date(article.pubDate);
 
 ---
 
-## Step 8: Download Hero Image
-
-### Find an Image on Unsplash
-
-1. Go to [unsplash.com](https://unsplash.com)
-2. Search for relevant topic
-3. Copy the photo ID from the URL
-   - URL: `https://unsplash.com/photos/abc123xyz`
-   - Photo ID: `photo-abc123xyz` (add `photo-` prefix)
-
-### Add to Download Script
-
-Edit `scripts/download-unsplash-images.cjs`:
-
-```javascript
-const photoIds = [
-  // ... existing IDs ...
-  "photo-YOUR-NEW-ID",  // Add your new photo ID
-];
-```
-
-### Run Download Script
-
-```bash
-node scripts/download-unsplash-images.cjs
-```
-
-This downloads the image to `public/images/unsplash/` as a JPG.
-
----
-
-## Step 9: Optimize Image
-
-```bash
-node scripts/optimize-images.cjs
-```
-
-This script:
-1. Converts JPG to WebP format
-2. Optimizes for web (quality 80, effort 6)
-3. Deletes the original JPG automatically
-
-### Image Path Format
-
-After optimization, your image path will be:
-```
-/images/unsplash/photo-YOUR-ID-1200w.webp
-```
-
----
-
-## Step 10: Update Articles Metadata
+## Step 11: Update Articles Metadata
 
 Add the new article to `src/data/articles.ts`:
 
@@ -353,7 +382,7 @@ Add the new article to `src/data/articles.ts`:
 
 ---
 
-## Step 11: Regenerate Article Summary
+## Step 12: Regenerate Article Summary
 
 After adding the article to `articles.ts`, regenerate the documentation:
 
@@ -389,7 +418,7 @@ node scripts/zerogpt-detect.js --file article.txt
 # Download new Unsplash images
 node scripts/download-unsplash-images.cjs
 
-# Optimize images (JPG ’ WebP)
+# Optimize images (JPG ï¿½ WebP)
 node scripts/optimize-images.cjs
 
 # Regenerate article summary

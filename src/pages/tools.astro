@@ -1,5 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+
+// Import category background images (from src/images for Astro Image optimization)
+import categoryVpn from "../images/categories/category-vpn-security.webp";
+import categorySaas from "../images/categories/category-saas-dashboard.webp";
+import categoryHosting from "../images/categories/category-hosting-cloud.webp";
+import categoryFinance from "../images/categories/category-finance-charts.webp";
 
 const title = "Best Remote Work Tools & Software | FloatJet";
 const description =
@@ -191,40 +198,64 @@ const shuffled = [...remaining].sort(() => Math.random() - 0.5);
         </div>
       </a>
 
-      <!-- CATEGORY MINI CELLS: All 4 visible on mobile as compact tiles -->
-      <a href="/tools/vpn" class="group col-span-1 row-span-1 relative overflow-hidden bg-gradient-to-br from-violet-900/80 to-purple-900/60 border border-violet-500/20 rounded-xl p-3 md:p-4 flex flex-col justify-between transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-violet-500/20 hover:border-violet-400/40">
-        <div class="absolute -right-4 -top-4 w-20 h-20 bg-violet-500/10 rounded-full blur-xl group-hover:bg-violet-500/20 transition-all"></div>
-        <span class="text-2xl md:text-3xl relative z-10">🔒</span>
-        <div class="relative z-10">
-          <span class="text-white font-semibold text-sm md:text-base block leading-tight">VPN</span>
-          <span class="text-violet-300/70 text-[10px] md:text-xs">5 guides</span>
+      <!-- CATEGORY MINI CELLS: Glassmorphic with accent line + image background -->
+      <a href="/tools/vpn" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+        <Image src={categoryVpn} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-violet-400 to-violet-600 rounded-l-xl"></div>
+        <div class="relative z-10 h-full p-3 md:p-4 flex flex-col justify-between">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-violet-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+          </svg>
+          <div>
+            <span class="text-white font-semibold text-sm md:text-base block leading-tight">VPN</span>
+            <span class="text-white/50 text-[10px] md:text-xs">5 guides</span>
+          </div>
         </div>
       </a>
 
-      <a href="/tools/saas" class="group col-span-1 row-span-1 relative overflow-hidden bg-gradient-to-br from-blue-900/80 to-cyan-900/60 border border-blue-500/20 rounded-xl p-3 md:p-4 flex flex-col justify-between transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-blue-500/20 hover:border-blue-400/40">
-        <div class="absolute -right-4 -top-4 w-20 h-20 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all"></div>
-        <span class="text-2xl md:text-3xl relative z-10">📋</span>
-        <div class="relative z-10">
-          <span class="text-white font-semibold text-sm md:text-base block leading-tight">SaaS</span>
-          <span class="text-blue-300/70 text-[10px] md:text-xs">8 guides</span>
+      <a href="/tools/saas" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+        <Image src={categorySaas} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-cyan-500 rounded-l-xl"></div>
+        <div class="relative z-10 h-full p-3 md:p-4 flex flex-col justify-between">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-cyan-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+          </svg>
+          <div>
+            <span class="text-white font-semibold text-sm md:text-base block leading-tight">SaaS</span>
+            <span class="text-white/50 text-[10px] md:text-xs">8 guides</span>
+          </div>
         </div>
       </a>
 
-      <a href="/tools/hosting" class="group col-span-1 row-span-1 relative overflow-hidden bg-gradient-to-br from-emerald-900/80 to-teal-900/60 border border-emerald-500/20 rounded-xl p-3 md:p-4 flex flex-col justify-between transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-emerald-500/20 hover:border-emerald-400/40">
-        <div class="absolute -right-4 -top-4 w-20 h-20 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all"></div>
-        <span class="text-2xl md:text-3xl relative z-10">🌐</span>
-        <div class="relative z-10">
-          <span class="text-white font-semibold text-sm md:text-base block leading-tight">Hosting</span>
-          <span class="text-emerald-300/70 text-[10px] md:text-xs">4 guides</span>
+      <a href="/tools/hosting" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+        <Image src={categoryHosting} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 to-teal-500 rounded-l-xl"></div>
+        <div class="relative z-10 h-full p-3 md:p-4 flex flex-col justify-between">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-emerald-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z" />
+          </svg>
+          <div>
+            <span class="text-white font-semibold text-sm md:text-base block leading-tight">Hosting</span>
+            <span class="text-white/50 text-[10px] md:text-xs">4 guides</span>
+          </div>
         </div>
       </a>
 
-      <a href="/tools/finance" class="group col-span-1 row-span-1 relative overflow-hidden bg-gradient-to-br from-amber-900/80 to-orange-900/60 border border-amber-500/20 rounded-xl p-3 md:p-4 flex flex-col justify-between transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:shadow-amber-500/20 hover:border-amber-400/40">
-        <div class="absolute -right-4 -top-4 w-20 h-20 bg-amber-500/10 rounded-full blur-xl group-hover:bg-amber-500/20 transition-all"></div>
-        <span class="text-2xl md:text-3xl relative z-10">💰</span>
-        <div class="relative z-10">
-          <span class="text-white font-semibold text-sm md:text-base block leading-tight">Finance</span>
-          <span class="text-amber-300/70 text-[10px] md:text-xs">3 guides</span>
+      <a href="/tools/finance" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+        <Image src={categoryFinance} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-400 to-orange-500 rounded-l-xl"></div>
+        <div class="relative z-10 h-full p-3 md:p-4 flex flex-col justify-between">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-amber-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+          </svg>
+          <div>
+            <span class="text-white font-semibold text-sm md:text-base block leading-tight">Finance</span>
+            <span class="text-white/50 text-[10px] md:text-xs">3 guides</span>
+          </div>
         </div>
       </a>
 

@@ -797,7 +797,7 @@ Worth the patience.
 ## Related Resources
 
 - **Main social info:** `/docs/floatjet-contact-social-info.md`
-- **Writing style guide:** `/docs/writing_style_guide.md` (adapt for Reddit - more casual, conversational)
+- **Writing style guide:** `/docs/writing/writing-style-guide.md` (adapt for Reddit - more casual, conversational)
 - **Content guidelines:** `/docs/02-content/content-guidelines.md`
 
 ---

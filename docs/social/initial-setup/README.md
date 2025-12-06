@@ -152,7 +152,7 @@ Use across ALL platforms:
 ### Voice & Messaging
 
 - **Tagline:** "Tools and gear for remote work success"
-- **Voice:** Conversational, honest, slightly edgy (see `/docs/writing_style_guide.md`)
+- **Voice:** Conversational, honest, slightly edgy (see `/docs/writing/writing-style-guide.md`)
 - **Tone:** Professional but approachable, real experiences, no corporate speak
 
 ### Contact Info
@@ -229,7 +229,7 @@ Use this to track progress across all platforms:
 ## Related Documentation
 
 - **Main contact info:** `/docs/floatjet-contact-social-info.md`
-- **Writing style guide:** `/docs/writing_style_guide.md`
+- **Writing style guide:** `/docs/writing/writing-style-guide.md`
 - **Brand guidelines:** `/docs/03-design/design-guidelines.md`
 - **Content strategy:** `/docs/02-content/content-guidelines.md`
 

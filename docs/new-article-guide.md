@@ -8,10 +8,10 @@
 
 | Step | Action | Tool/File |
 |------|--------|-----------|
-| 1 | Choose writer based on topic | `docs/writers/writers-summery.md` |
-| 2 | Write article content | `docs/writing_style_guide.md` |
+| 1 | Choose writer based on topic | `docs/writing/writers-summery.md` |
+| 2 | Write article content | `docs/writing/writing-style-guide.md` |
 | 3 | Check AI detection | `node scripts/zerogpt-detect.js` |
-| 4 | Update style guide with patterns | `docs/writing_style_guide.md` |
+| 4 | Update style guide with patterns | `docs/writing/writing-style-guide.md` |
 | 5 | Repeat until <4% AI detected | - |
 | 6 | Create article page | Use existing article as template |
 | 7 | Ensure SEO/AEO/GEO compliance | Match existing articles |
@@ -24,7 +24,7 @@
 
 ## Step 1: Choose the Writer
 
-Based on the article topic, select the appropriate writer from `docs/writers/writers-summery.md`:
+Based on the article topic, select the appropriate writer from `docs/writing/writers-summery.md`:
 
 | Writer | Slug | Categories |
 |--------|------|------------|
@@ -58,7 +58,7 @@ Based on the article topic, select the appropriate writer from `docs/writers/wri
 
 ### Use the Writer's Style Guide
 
-Each writer has a unique voice. Reference `docs/writers/writers-summery.md` for:
+Each writer has a unique voice. Reference `docs/writing/writers-summery.md` for:
 
 - **Tone & Voice** - How they speak
 - **Sentence Structure** - Length, rhythm
@@ -117,7 +117,7 @@ node scripts/zerogpt-detect.js --file article.txt --debug
 
 When you discover patterns that reduce AI detection:
 
-1. Open `docs/writing_style_guide.md`
+1. Open `docs/writing/writing-style-guide.md`
 2. Add successful patterns to "What Works" sections
 3. Add flagged patterns to "What to Avoid" sections
 
@@ -424,7 +424,7 @@ npm run preview
 2. Add specific numbers, dates, places
 3. Include personal anecdotes and failures
 4. Use more contractions and informal language
-5. Reference the writer's style guide in `docs/writers/writers-summery.md`
+5. Reference the writer's style guide in `docs/writing/writers-summery.md`
 
 ---
 

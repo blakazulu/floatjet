@@ -25,7 +25,7 @@ If a post fails (>3%), rewrite using the patterns in the writing style guide.
 
 ## Writing Style Guide Reference
 
-Full guide: `/docs/writing_style_guide.md`
+Full guide: `/docs/writing/writing-style-guide.md`
 
 ### Key Rules for Social Posts
 

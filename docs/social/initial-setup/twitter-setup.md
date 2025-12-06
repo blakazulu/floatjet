@@ -819,7 +819,7 @@ The difference in [specific feature] alone saved me 5 hours/week.
 ## Related Resources
 
 - **Main social info:** `/docs/floatjet-contact-social-info.md`
-- **Writing style guide:** `/docs/writing_style_guide.md`
+- **Writing style guide:** `/docs/writing/writing-style-guide.md`
 - **Content guidelines:** `/docs/02-content/content-guidelines.md`
 - **Brand design:** `/docs/03-design/design-guidelines.md`
 

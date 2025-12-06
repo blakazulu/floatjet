@@ -24,7 +24,7 @@ progress.
 
 ## ⚠️ CRITICAL CONSTRAINT: Humanization Takes Priority Over SEO
 
-**ALL SEO fixes MUST follow humanization rules from `/docs/writing_style_guide.md`**
+**ALL SEO fixes MUST follow humanization rules from `/docs/writing/writing-style-guide.md`**
 
 When fixing meta descriptions, titles, or any text content:
 

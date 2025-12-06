@@ -10,13 +10,6 @@ Ideas and tasks for future implementation. Not yet scheduled.
 
 Proton affiliate program approved (ID: 15204).
 
-#### Medium Priority - Proton Mail
-
-**Potential articles to create or update:**
-- Best secure email for remote workers
-- Email privacy guide
-- Could mention in security-focused articles
-
 #### Medium Priority - Proton Drive
 
 **Potential articles to create or update:**
@@ -49,6 +42,11 @@ Proton affiliate program approved (ID: 15204).
 ### Proton Pass Integration (Done 2025-12-06)
 - Added to `best-password-manager-remote-work.astro` with comparison table and CTA
 - Updated `do-i-really-need-password-manager.astro` with privacy-focused mention
+
+### Proton Mail Article (Done 2025-12-07)
+- Created `tools/best-secure-email-providers.astro`
+- Features Proton Mail as top pick, also covers Tutanota and Fastmail
+- Added to articles.ts and article summary
 
 ### ProtonVPN CTAs (Done 2025-12-05)
 - Added CTA to `free-vpn-vs-paid-vpn.astro`

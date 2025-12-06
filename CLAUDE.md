@@ -306,3 +306,4 @@ Unauthorized use, copying, modification, or distribution is strictly prohibited.
 - always use Astro's Image component for better performance
 - when creating a new page - look at docs/new-page-creation.md for correct way to do it
 - when creating a new article-card please refer to docs/03-design/article-card-guide.md
+- when creating a new article or updating it - follow the rules in docs/new-article-guide.md

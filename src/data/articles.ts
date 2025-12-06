@@ -1066,6 +1066,18 @@ export const toolsArticles: Article[] = [
     category: "vpn",
   },
   {
+    slug: "best-secure-email-providers",
+    section: "tools",
+    title: "Best Secure Email Providers for Remote Workers (2025)",
+    description: "I tested encrypted email for four months. Proton Mail, Tutanota, Fastmail compared with real security tests, migration tips, and honest takes.",
+    authorSlug: "daniel-brooks",
+    pubDate: "2025-12-07",
+    readingTime: 12,
+    image: "/images/unsplash/secure-email-padlock-1200w.webp",
+    imageAlt: "Padlock on keyboard representing email security and encryption",
+    category: "vpn",
+  },
+  {
     slug: "best-productivity-apps",
     section: "tools",
     title: "Best Productivity Apps for Remote Workers (2025)",

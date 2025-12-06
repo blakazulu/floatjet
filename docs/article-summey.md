@@ -1,11 +1,11 @@
 # FloatJet Article Summary
 
 > **Auto-generated** from `src/data/articles.ts`
-> Last updated: 2025-12-07 00:22
+> Last updated: 2025-12-07 01:11
 >
 > To regenerate: `python scripts/generate-article-summary.py`
 
-**Total Articles:** 102
+**Total Articles:** 103
 
 ---
 
@@ -100,7 +100,7 @@
 | 034 | [Portugal Digital Nomad Visa 2025: How to Apply](/guides/digital-nomad-visa-portugal) | Daniel Brooks | Travel | 15 min | `photo-1555881400-74d7acaacd8b-...` |
 | 035 | [Spain Digital Nomad Visa 2025: How to Apply](/guides/digital-nomad-visa-spain) | Daniel Brooks | Travel | 14 min | `photo-1539037116277-4db20889f2...` |
 
-### Tools (28 articles)
+### Tools (29 articles)
 
 | # | Title | Author | Category | Read Time | Hero Image |
 |---|-------|--------|----------|-----------|------------|
@@ -127,11 +127,12 @@
 | 021 | [Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)](/tools/notion-vs-clickup-vs-monday) | Marcus Chen | Saas | 14 min | `photo-1557804506-669a67965ba0-...` |
 | 022 | [Best Business VPN Solutions for Remote Teams (2025)](/tools/best-business-vpn-remote-teams) | Daniel Brooks | Vpn | 16 min | `photo-1551434678-e076c223a692-...` |
 | 023 | [Best Password Managers for Remote Workers (2025)](/tools/best-password-manager-remote-work) | Daniel Brooks | Vpn | 14 min | `photo-1633265486064-086b219458...` |
-| 024 | [Best VPN for Streaming While Traveling (2025)](/tools/best-vpn-streaming-travel) | Daniel Brooks | Vpn | 14 min | `photo-1522199755839-a2bacb67c5...` |
-| 025 | [Best VPNs for Digital Nomads & Remote Workers (2025)](/tools/best-vpn-digital-nomads) | Daniel Brooks | Vpn | 15 min | `photo-1526374965328-7f61d4dc18...` |
-| 026 | [Free VPN vs Paid VPN: What You Need to Know (2025)](/tools/free-vpn-vs-paid-vpn) | Daniel Brooks | Vpn | 12 min | `photo-1565688534245-05d6b5be18...` |
-| 027 | [How to Set Up a VPN on All Your Devices (2025 Guide)](/tools/how-to-setup-vpn-all-devices) | Daniel Brooks | Vpn | 11 min | `photo-1562577309-4932fdd64cd1-...` |
-| 028 | [VPN Kill Switch Explained: Why Remote Workers Need It (2025)](/tools/vpn-kill-switch-explained) | Daniel Brooks | Vpn | 7 min | `photo-1542744173-8e7e53415bb0-...` |
+| 024 | [Best Secure Email Providers for Remote Workers (2025)](/tools/best-secure-email-providers) | Daniel Brooks | Vpn | 12 min | `secure-email-padlock-1200w.web...` |
+| 025 | [Best VPN for Streaming While Traveling (2025)](/tools/best-vpn-streaming-travel) | Daniel Brooks | Vpn | 14 min | `photo-1522199755839-a2bacb67c5...` |
+| 026 | [Best VPNs for Digital Nomads & Remote Workers (2025)](/tools/best-vpn-digital-nomads) | Daniel Brooks | Vpn | 15 min | `photo-1526374965328-7f61d4dc18...` |
+| 027 | [Free VPN vs Paid VPN: What You Need to Know (2025)](/tools/free-vpn-vs-paid-vpn) | Daniel Brooks | Vpn | 12 min | `photo-1565688534245-05d6b5be18...` |
+| 028 | [How to Set Up a VPN on All Your Devices (2025 Guide)](/tools/how-to-setup-vpn-all-devices) | Daniel Brooks | Vpn | 11 min | `photo-1562577309-4932fdd64cd1-...` |
+| 029 | [VPN Kill Switch Explained: Why Remote Workers Need It (2025)](/tools/vpn-kill-switch-explained) | Daniel Brooks | Vpn | 7 min | `photo-1542744173-8e7e53415bb0-...` |
 
 ---
 
@@ -143,8 +144,8 @@
 | Blog | 16 |
 | Gear | 23 |
 | Guides | 35 |
-| Tools | 28 |
-| **Total** | **102** |
+| Tools | 29 |
+| **Total** | **103** |
 
 ### By Category
 | Category | Count |
@@ -155,8 +156,8 @@
 | Communication | 8 |
 | Hosting | 8 |
 | Security | 8 |
+| Vpn | 8 |
 | Productivity | 7 |
-| Vpn | 7 |
 | Audio | 6 |
 | Computers | 6 |
 | Furniture | 6 |
@@ -168,5 +169,5 @@
 | Author | Count |
 |--------|-------|
 | Marcus Chen | 38 |
-| Daniel Brooks | 37 |
+| Daniel Brooks | 38 |
 | Sarah Mitchell | 27 |

@@ -75,6 +75,11 @@ function pathToRoute(filePath: string): string {
   );
 }
 
+// Check if route is a dynamic route pattern (contains [param])
+function isDynamicRoute(route: string): boolean {
+  return route.includes("[") && route.includes("]");
+}
+
 // Convert route to readable name
 function routeToName(route: string): string {
   if (PAGE_METADATA[route]) {
@@ -127,8 +132,11 @@ export function generateSiteStructure(pageModules: Record<string, unknown>): Sit
   const links: SiteLink[] = [];
   const routeSet = new Set<string>();
 
-  // Extract routes from page modules
-  const routes = Object.keys(pageModules).map(pathToRoute).sort();
+  // Extract routes from page modules, filtering out dynamic route patterns
+  const routes = Object.keys(pageModules)
+    .map(pathToRoute)
+    .filter((route) => !isDynamicRoute(route))
+    .sort();
 
   // Create nodes for each route
   routes.forEach((route) => {

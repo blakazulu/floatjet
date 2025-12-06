@@ -1,320 +1,361 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+
+// Import category background images
+import categoryComputers from "../images/categories/category-computers.webp";
+import categoryFurniture from "../images/categories/category-furniture.webp";
+import categoryAudio from "../images/categories/category-audio.webp";
+import categoryAccessories from "../images/categories/category-accessories.webp";
 
 const title = "Best Remote Work Gear & Equipment | FloatJet";
 const description =
   "Find the best gear for your home office or mobile setup. Reviews of standing desks, headphones, monitors, and essential remote work equipment.";
 
-// Category pages
+// Category filters with gradients
 const categories = [
-  {
-    name: "Computers",
-    href: "/gear/computers",
-    icon: "💻",
-    description: "Laptops, tablets & monitors",
-  },
-  {
-    name: "Furniture",
-    href: "/gear/furniture",
-    icon: "🪑",
-    description: "Desks, chairs & ergonomics",
-  },
-  { name: "Audio", href: "/gear/audio", icon: "🎧", description: "Headphones, mics & speakers" },
-  {
-    name: "Accessories",
-    href: "/gear/accessories",
-    icon: "🎒",
-    description: "Bags, cables & travel gear",
-  },
+  { name: "All", href: "/gear", gradient: "from-jet-stream to-sky-light" },
+  { name: "Computers", href: "/gear/computers", gradient: "from-blue-500 to-indigo-600" },
+  { name: "Furniture", href: "/gear/furniture", gradient: "from-amber-500 to-orange-500" },
+  { name: "Audio", href: "/gear/audio", gradient: "from-pink-500 to-rose-500" },
+  { name: "Accessories", href: "/gear/accessories", gradient: "from-emerald-500 to-teal-500" },
 ];
 
-// All gear articles data with correct reading times from articles
+// All gear articles with images
 const allGear = [
   {
     title: "Best Laptops for Remote Work",
-    description:
-      "Find the perfect laptop for productivity on the go. Our top picks for every budget and work style.",
+    description: "Find the perfect laptop for productivity on the go.",
     href: "/gear/best-laptops-remote-work",
     category: "Computers",
-    icon: "💻",
     readTime: 18,
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-1200w.webp",
+    featured: true,
   },
   {
     title: "Best Monitors for Remote Work",
-    description: "Find the best 4K, ultrawide, and budget monitors for your home office setup.",
+    description: "Find the best 4K, ultrawide, and budget monitors.",
     href: "/gear/best-monitors-remote-work",
     category: "Computers",
-    icon: "🖥️",
     readTime: 16,
-  },
-  {
-    title: "Best Portable Monitors",
-    description:
-      "Dual-screen productivity on the go with the best portable monitors for digital nomads.",
-    href: "/gear/best-portable-monitors",
-    category: "Computers",
-    icon: "📱",
-    readTime: 14,
-  },
-  {
-    title: "Best Budget Laptops Under $800",
-    description:
-      "Great remote work laptops that do not break the bank. Top picks for every budget.",
-    href: "/gear/best-budget-laptops-remote-work",
-    category: "Computers",
-    icon: "💻",
-    readTime: 14,
-  },
-  {
-    title: "MacBook vs Windows for Remote Work",
-    description:
-      "The definitive comparison to help you choose the right platform for your work style.",
-    href: "/gear/macbook-vs-windows-remote-work",
-    category: "Computers",
-    icon: "💻",
-    readTime: 12,
-  },
-  {
-    title: "How Much RAM Do You Need?",
-    description: "Is 8GB enough? Find out how much RAM you really need for remote work.",
-    href: "/gear/how-much-ram-remote-work",
-    category: "Computers",
-    icon: "💾",
-    readTime: 8,
+    image: "/images/unsplash/photo-1527443224154-c4a3942d3acf-1200w.webp",
+    featured: true,
   },
   {
     title: "Best Standing Desks",
-    description:
-      "Upgrade your workspace with an ergonomic standing desk for healthier, more productive workdays.",
+    description: "Ergonomic standing desks for healthier workdays.",
     href: "/gear/best-standing-desks",
     category: "Furniture",
-    icon: "🪑",
     readTime: 18,
+    image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-1200w.webp",
+    featured: true,
   },
   {
     title: "Best Ergonomic Chairs",
-    description:
-      "Find the perfect chair for all-day comfort. From premium Herman Miller to budget-friendly options.",
+    description: "Find the perfect chair for all-day comfort.",
     href: "/gear/best-ergonomic-chairs",
     category: "Furniture",
-    icon: "🪑",
     readTime: 18,
-  },
-  {
-    title: "Best Desk Converters",
-    description:
-      "Transform your existing desk into a standing desk with these top-rated converters.",
-    href: "/gear/best-desk-converters",
-    category: "Furniture",
-    icon: "🪑",
-    readTime: 14,
-  },
-  {
-    title: "Best Compact Desks for Small Offices",
-    description: "Maximize your small workspace with these space-saving desks for home offices.",
-    href: "/gear/best-compact-desks-small-office",
-    category: "Furniture",
-    icon: "🪑",
-    readTime: 14,
-  },
-  {
-    title: "Ergonomic Desk Setup Guide",
-    description:
-      "Complete guide to setting up your home office for maximum comfort and productivity.",
-    href: "/gear/ergonomic-desk-setup-guide",
-    category: "Furniture",
-    icon: "🪑",
-    readTime: 12,
-  },
-  {
-    title: "Standing Desk Cost Guide",
-    description:
-      "How much should you spend on a standing desk? Price breakdown at every budget level.",
-    href: "/gear/standing-desk-cost-guide",
-    category: "Furniture",
-    icon: "🪑",
-    readTime: 8,
+    image: "/images/unsplash/photo-1580480055273-228ff5388ef8-1200w.webp",
+    featured: true,
   },
   {
     title: "Best Noise-Canceling Headphones",
-    description:
-      "Block out distractions and focus on your work with premium noise-canceling headphones.",
+    description: "Block out distractions with premium headphones.",
     href: "/gear/best-noise-canceling-headphones",
     category: "Audio",
-    icon: "🎧",
     readTime: 18,
+    image: "/images/unsplash/photo-1505740420928-5e560c06d30e-1200w.webp",
+    featured: true,
   },
   {
     title: "Best Microphones for Remote Meetings",
-    description:
-      "USB and XLR microphones tested for video call clarity and background noise rejection.",
+    description: "USB and XLR microphones for video call clarity.",
     href: "/gear/best-microphones-remote-meetings",
     category: "Audio",
-    icon: "🎙️",
     readTime: 16,
-  },
-  {
-    title: "Best Speakers for Home Office",
-    description:
-      "Desktop speakers for music, calls, and all-day listening comfort while working from home.",
-    href: "/gear/best-speakers-home-office",
-    category: "Audio",
-    icon: "🔊",
-    readTime: 14,
-  },
-  {
-    title: "Best Wireless Earbuds for Remote Work",
-    description: "Top earbuds for video calls, noise cancellation, and comfortable all-day wear.",
-    href: "/gear/best-wireless-earbuds-remote-work",
-    category: "Audio",
-    icon: "🎧",
-    readTime: 14,
-  },
-  {
-    title: "USB vs XLR Microphones",
-    description:
-      "Which microphone type is right for your remote work setup? We break down the pros and cons.",
-    href: "/gear/usb-vs-xlr-microphones",
-    category: "Audio",
-    icon: "🎤",
-    readTime: 10,
-  },
-  {
-    title: "How to Reduce Background Noise on Calls",
-    description:
-      "Tips, software, and gear to eliminate distracting background noise from your video meetings.",
-    href: "/gear/reduce-background-noise-calls",
-    category: "Audio",
-    icon: "🔇",
-    readTime: 8,
+    image: "/images/unsplash/photo-1590602847861-f357a9332bbc-1200w.webp",
+    featured: false,
   },
   {
     title: "Best Laptop Bags & Backpacks",
-    description:
-      "Protect your gear while traveling light. Top picks for digital nomads and remote workers.",
+    description: "Protect your gear while traveling light.",
     href: "/gear/best-laptop-bags-backpacks",
     category: "Accessories",
-    icon: "🎒",
     readTime: 16,
+    image: "/images/unsplash/photo-1553062407-98eeb64c6a62-1200w.webp",
+    featured: false,
   },
   {
     title: "Best Webcams for Video Calls",
-    description:
-      "Look professional on every video call with these top-rated webcams for remote work.",
+    description: "Look professional on every video call.",
     href: "/gear/best-webcams-video-calls",
     category: "Accessories",
-    icon: "📹",
     readTime: 14,
-  },
-  {
-    title: "Best Portable Chargers & Power Banks",
-    description: "Never run out of battery on the go. Compare the best power banks for travel.",
-    href: "/gear/best-portable-chargers-power-banks",
-    category: "Accessories",
-    icon: "🔋",
-    readTime: 13,
+    image: "/images/unsplash/photo-1587825140708-dfaf72ae4b04-1200w.webp",
+    featured: false,
   },
   {
     title: "Best Mechanical Keyboards",
-    description:
-      "Type faster and more comfortably with these mechanical keyboards for remote work.",
+    description: "Type faster and more comfortably.",
     href: "/gear/best-mechanical-keyboards",
     category: "Accessories",
-    icon: "⌨️",
     readTime: 14,
+    image: "/images/unsplash/photo-1618384887929-16ec33fab9ef-1200w.webp",
+    featured: false,
   },
   {
-    title: "Best Travel Adapters",
-    description: "Power up anywhere in the world with these universal travel adapters.",
-    href: "/gear/best-travel-adapters",
-    category: "Accessories",
-    icon: "🔌",
-    readTime: 10,
+    title: "Best Portable Monitors",
+    description: "Dual-screen productivity on the go.",
+    href: "/gear/best-portable-monitors",
+    category: "Computers",
+    readTime: 14,
+    image: "/images/unsplash/photo-1527443224154-c4a3942d3acf-1200w.webp",
+    featured: false,
+  },
+  {
+    title: "Best Desk Converters",
+    description: "Transform your desk into a standing desk.",
+    href: "/gear/best-desk-converters",
+    category: "Furniture",
+    readTime: 14,
+    image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-1200w.webp",
+    featured: false,
   },
 ];
 
-// Shuffle and limit articles - render all 9, CSS handles responsive visibility
-const shuffled = [...allGear].sort(() => Math.random() - 0.5);
-const displayGear = shuffled.slice(0, 9);
-const totalArticles = allGear.length;
+// Pick random hero from featured articles
+const featuredGear = allGear.filter((g) => g.featured);
+const hero = featuredGear[Math.floor(Math.random() * featuredGear.length)];
+
+// Remaining gear shuffled
+const remaining = allGear.filter((g) => g.href !== hero.href);
+const shuffled = [...remaining].sort(() => Math.random() - 0.5);
 ---
 
 <BaseLayout title={title} description={description}>
   <div class="container mx-auto px-4 pt-24 md:pt-28 pb-16 md:pb-20">
-    <!-- Header -->
-    <div class="text-center mb-12">
-      <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Remote Work Gear</h1>
-      <p class="text-lg text-white/80 max-w-2xl mx-auto">
-        In-depth reviews and comparisons of the best hardware and equipment for remote workers, freelancers, and digital
-        nomads.
-      </p>
-    </div>
-
-    <!-- Category Links -->
-    <div class="grid gap-3 grid-cols-2 sm:grid-cols-4 mb-12 max-w-4xl mx-auto">
-      {categories.map(cat => (
-          <a
+    <!-- Compact Header + Filter Bar -->
+    <div class="max-w-6xl mx-auto mb-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+        <div>
+          <h1 class="text-2xl md:text-3xl font-bold text-white">Remote Work Gear</h1>
+          <p class="text-white/60 text-sm mt-1">In-depth reviews & buyer's guides</p>
+        </div>
+        <!-- Filter Pills -->
+        <div class="flex flex-wrap gap-2">
+          {categories.map((cat, i) => (
+            <a
               href={cat.href}
-              class="group flex flex-col items-center text-center p-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-jet-stream/50 rounded-xl transition-all duration-300"
-          >
-            <span class="text-2xl mb-2">{cat.icon}</span>
-            <span class="text-white font-medium group-hover:text-jet-stream transition-colors">{cat.name}</span>
-            <span class="text-white/50 text-xs mt-1 hidden sm:block">{cat.description}</span>
-          </a>
-      ))}
-    </div>
-
-    <!-- Gear Grid - Responsive: 3 mobile, 6 tablet, 9 desktop -->
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {displayGear.map((item, index) => (
-          <a
-              href={item.href}
               class:list={[
-                'group bg-black/40 hover:bg-black/50 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300',
-                // Mobile: show first 3
-
-                index >= 3 && 'hidden sm:block',
-                // Tablet: show first 6
-
-                index >= 6 && 'sm:hidden lg:block'
+                "px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300",
+                i === 0
+                  ? `bg-gradient-to-r ${cat.gradient} text-ocean-deep`
+                  : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10"
               ]}
-          >
-            <div class="flex items-start gap-4">
-              <span class="text-3xl">{item.icon}</span>
-              <div class="flex-1">
-                <div class="flex items-center gap-2 mb-2">
-                <span class="inline-block px-2 py-0.5 bg-jet-stream/20 text-jet-stream text-xs font-medium rounded">
-                  {item.category}
-                </span>
-                  <span class="text-white/40 text-xs">{item.readTime} min</span>
-                </div>
-                <h2 class="text-lg font-semibold text-white group-hover:text-jet-stream transition-colors mb-2">
-                  {item.title}
-                </h2>
-                <p class="text-white/70 text-sm">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-            <div class="mt-4 flex items-center text-jet-stream text-sm font-medium">
-              Read Review
-              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
-            </div>
-          </a>
-      ))}
+            >
+              {cat.name}
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
 
-    <!-- View All Link -->
-    <div class="mt-8 text-center">
-      <p class="text-white/60 text-sm">Browse by category above to see all articles</p>
-    </div>
+    <!-- Bento Mosaic Grid -->
+    <div class="max-w-6xl mx-auto grid grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-3 auto-rows-[100px] md:auto-rows-[140px] lg:auto-rows-[160px]">
 
-    <!-- CTA Section -->
-    <div class="mt-12 text-center">
-      <a href="/contact" class="inline-flex items-center text-jet-stream hover:text-sky-light transition-colors">
-        Suggest gear for us to review
-        <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+      <!-- HERO CELL: Large featured article -->
+      <a
+        href={hero.href}
+        class="group col-span-4 md:col-span-2 lg:col-span-3 row-span-2 md:row-span-2 relative overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-xl hover:shadow-jet-stream/10"
+      >
+        <img src={hero.image} alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10"></div>
+        <div class="absolute inset-0 p-4 md:p-6 flex flex-col justify-end">
+          <span class="inline-block w-fit px-2 py-0.5 md:px-2.5 md:py-1 bg-jet-stream text-ocean-deep text-[10px] md:text-xs font-bold rounded-full mb-2">
+            Featured
+          </span>
+          <h2 class="text-base md:text-2xl font-bold text-white group-hover:text-jet-stream transition-colors mb-1">
+            {hero.title}
+          </h2>
+          <p class="text-white/70 text-sm line-clamp-2 hidden md:block mb-2">{hero.description}</p>
+          <div class="flex items-center gap-3 text-[10px] md:text-xs">
+            <span class="text-white/50">{hero.readTime} min</span>
+            <span class="text-jet-stream font-medium flex items-center">
+              Read
+              <svg class="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+            </span>
+          </div>
+        </div>
       </a>
+
+      <!-- CATEGORY MINI CELLS: Glassmorphic with accent line + image background -->
+      <a href="/gear/computers" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+        <Image src={categoryComputers} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-indigo-600 rounded-l-xl"></div>
+        <div class="relative z-10 h-full p-3 md:p-4 flex flex-col justify-between">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-blue-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+          </svg>
+          <div>
+            <span class="text-white font-semibold text-sm md:text-base block leading-tight">Computers</span>
+            <span class="text-white/50 text-[10px] md:text-xs">6 reviews</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/gear/furniture" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+        <Image src={categoryFurniture} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-400 to-orange-500 rounded-l-xl"></div>
+        <div class="relative z-10 h-full p-3 md:p-4 flex flex-col justify-between">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-amber-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+          </svg>
+          <div>
+            <span class="text-white font-semibold text-sm md:text-base block leading-tight">Furniture</span>
+            <span class="text-white/50 text-[10px] md:text-xs">6 reviews</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/gear/audio" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+        <Image src={categoryAudio} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-400 to-rose-500 rounded-l-xl"></div>
+        <div class="relative z-10 h-full p-3 md:p-4 flex flex-col justify-between">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-pink-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+          </svg>
+          <div>
+            <span class="text-white font-semibold text-sm md:text-base block leading-tight">Audio</span>
+            <span class="text-white/50 text-[10px] md:text-xs">6 reviews</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/gear/accessories" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+        <Image src={categoryAccessories} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
+        <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
+        <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 to-teal-500 rounded-l-xl"></div>
+        <div class="relative z-10 h-full p-3 md:p-4 flex flex-col justify-between">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-emerald-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          <div>
+            <span class="text-white font-semibold text-sm md:text-base block leading-tight">Accessories</span>
+            <span class="text-white/50 text-[10px] md:text-xs">5 reviews</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ROW: 2 small + 1 wide -->
+      <a
+        href={shuffled[0]?.href}
+        class="group col-span-2 md:col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg"
+      >
+        <img src={shuffled[0]?.image} alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+        <div class="absolute inset-0 p-2 md:p-3 flex flex-col justify-end">
+          <span class="text-white/50 text-[8px] md:text-[10px] uppercase tracking-wide mb-0.5">{shuffled[0]?.category}</span>
+          <h3 class="text-[10px] md:text-sm font-semibold text-white group-hover:text-jet-stream transition-colors line-clamp-2 leading-tight">{shuffled[0]?.title}</h3>
+        </div>
+      </a>
+
+      <a
+        href={shuffled[1]?.href}
+        class="group col-span-2 md:col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg"
+      >
+        <img src={shuffled[1]?.image} alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+        <div class="absolute inset-0 p-2 md:p-3 flex flex-col justify-end">
+          <span class="text-white/50 text-[8px] md:text-[10px] uppercase tracking-wide mb-0.5">{shuffled[1]?.category}</span>
+          <h3 class="text-[10px] md:text-sm font-semibold text-white group-hover:text-jet-stream transition-colors line-clamp-2 leading-tight">{shuffled[1]?.title}</h3>
+        </div>
+      </a>
+
+      <!-- Wide article -->
+      <a
+        href={shuffled[2]?.href}
+        class="group col-span-4 md:col-span-2 lg:col-span-4 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg"
+      >
+        <img src={shuffled[2]?.image} alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+        <div class="absolute inset-0 p-3 md:p-4 flex items-center">
+          <div class="max-w-md">
+            <span class="text-jet-stream text-[10px] md:text-xs font-medium mb-1 block">{shuffled[2]?.category}</span>
+            <h3 class="text-xs md:text-lg font-semibold text-white group-hover:text-jet-stream transition-colors line-clamp-2">{shuffled[2]?.title}</h3>
+            <p class="text-white/60 text-[10px] md:text-xs mt-1 line-clamp-1 hidden md:block">{shuffled[2]?.description}</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- ROW: 4 small cells -->
+      {shuffled.slice(3, 7).map((item, i) => (
+        <a
+          href={item.href}
+          class:list={[
+            "group col-span-2 md:col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg",
+            i >= 2 && "hidden md:block"
+          ]}
+        >
+          <img src={item.image} alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+          <div class="absolute inset-0 p-2 md:p-3 flex flex-col justify-end">
+            <span class="text-white/50 text-[8px] md:text-[10px] uppercase tracking-wide mb-0.5">{item.category}</span>
+            <h3 class="text-[10px] md:text-sm font-semibold text-white group-hover:text-jet-stream transition-colors line-clamp-2 leading-tight">{item.title}</h3>
+          </div>
+        </a>
+      ))}
+
+      <!-- Desktop only: wide + small combo -->
+      <a
+        href={shuffled[7]?.href}
+        class="group hidden lg:block col-span-2 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg"
+      >
+        <img src={shuffled[7]?.image} alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+        <div class="absolute inset-0 p-3 flex items-center">
+          <div>
+            <span class="text-jet-stream text-[10px] font-medium mb-1 block">{shuffled[7]?.category}</span>
+            <h3 class="text-sm font-semibold text-white group-hover:text-jet-stream transition-colors line-clamp-2">{shuffled[7]?.title}</h3>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop only: 2 more small cells -->
+      {shuffled.slice(8, 10).map((item) => (
+        <a
+          href={item?.href}
+          class="group hidden lg:block col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg"
+        >
+          <img src={item?.image} alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+          <div class="absolute inset-0 p-2 md:p-3 flex flex-col justify-end">
+            <span class="text-white/50 text-[8px] md:text-[10px] uppercase tracking-wide mb-0.5">{item?.category}</span>
+            <h3 class="text-[10px] md:text-sm font-semibold text-white group-hover:text-jet-stream transition-colors line-clamp-2 leading-tight">{item?.title}</h3>
+          </div>
+        </a>
+      ))}
+
+      <!-- Info cell + CTA cell -->
+      <div class="col-span-2 md:col-span-1 row-span-1 bg-white/5 border border-white/10 rounded-xl p-3 md:p-4 flex flex-col justify-center items-center text-center">
+        <span class="text-xl md:text-2xl mb-1">🎯</span>
+        <span class="text-white/80 text-[10px] md:text-xs font-medium">23+ Reviews</span>
+        <span class="text-white/40 text-[8px] md:text-[10px]">Updated weekly</span>
+      </div>
+
+      <a href="/contact" class="group col-span-2 md:col-span-1 row-span-1 bg-gradient-to-br from-jet-stream/20 to-sky-light/10 border border-jet-stream/30 rounded-xl p-3 md:p-4 flex flex-col justify-center items-center text-center transition-all duration-300 hover:border-jet-stream/50 hover:bg-jet-stream/30">
+        <span class="text-xl md:text-2xl mb-1">💡</span>
+        <span class="text-white/90 text-[10px] md:text-xs font-medium">Suggest Gear</span>
+        <span class="text-jet-stream text-[8px] md:text-[10px] flex items-center mt-0.5">
+          Contact us
+          <svg class="w-2.5 h-2.5 ml-0.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </span>
+      </a>
+
     </div>
+
   </div>
 </BaseLayout>

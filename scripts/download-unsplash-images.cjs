@@ -10,9 +10,6 @@ const path = require("path");
 
 // All unique Unsplash photo IDs from the codebase
 const photoIds = [
-  // Secure email providers article (Dec 2025)
-  // Padlock on keyboard - email/encryption security by Sasun Bughdaryan
-  "2T4l02ZYj-k",
 ];
 
 const OUTPUT_DIR = path.join(__dirname, "..", "public", "images", "unsplash");

@@ -64,7 +64,10 @@
       "WebFetch(domain:unsplash.com)",
       "Bash(findstr:*)",
       "WebFetch(domain:api.unsplash.com)",
-      "Bash(del \"C:\\My Stuff\\floatjet\\temp-article-secure-email.txt\")"
+      "Bash(del \"C:\\My Stuff\\floatjet\\temp-article-secure-email.txt\")",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" commit -m \"$(cat <<''EOF''\nfeat: add Best Secure Email Providers article featuring Proton Mail\n\n- Created comprehensive secure email guide for remote workers\n- Covers Proton Mail (top pick), Tutanota, and Fastmail\n- Includes comparison tables, FAQs, and migration tips\n- Added new hero image (padlock on keyboard)\n- Updated backlog to mark Proton Mail integration complete\nEOF\n)\")",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" add docs/new-article-guide.md)",
+      "Bash(git -C \"C:\\My Stuff\\floatjet\" commit -m \"docs: reorder article guide steps and add unique image requirement\n\n- Moved hero image steps earlier (now steps 6-8)\n- Added Step 6: Find Unique Hero Image with uniqueness check\n- Updated Step 7: Download Hero Image with cleanup instruction\n- Renumbered remaining steps (9-12)\")"
     ],
     "deny": [],
     "ask": []

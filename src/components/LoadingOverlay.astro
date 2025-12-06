@@ -214,7 +214,31 @@ import { Image } from "astro:assets";
       showOverlay();
     });
 
-    // Hide overlay when new page is ready
+    // Watch for loading indicator to finish (astro-loading-indicator)
+    // The indicator has data-astro-transition-persist="astro-loading-indicator"
+    function watchLoadingIndicator() {
+      const indicator = document.querySelector('[data-astro-transition-persist="astro-loading-indicator"]');
+      if (indicator) {
+        // Use MutationObserver to detect when indicator hides (opacity changes)
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+              const style = indicator.getAttribute('style') || '';
+              // When indicator finishes, it sets opacity to 0
+              if (style.includes('opacity: 0') || style.includes('opacity:0')) {
+                hideOverlay();
+              }
+            }
+          });
+        });
+        observer.observe(indicator, { attributes: true, attributeFilter: ['style'] });
+      }
+    }
+
+    // Initialize indicator watcher on page load
+    document.addEventListener('astro:page-load', watchLoadingIndicator);
+
+    // Hide overlay when new page is ready (fallback)
     document.addEventListener('astro:after-swap', hideOverlay);
 
     // Hide on page load (direct navigation or browser back/forward)
@@ -230,5 +254,6 @@ import { Image } from "astro:assets";
 
     // Ensure overlay is hidden on initial page load
     hideOverlay();
+    watchLoadingIndicator();
   }
 </script>

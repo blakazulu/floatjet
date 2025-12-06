@@ -2532,3 +2532,49 @@ Testing and updating conclusions across 102 articles revealed consistent pattern
 - ✅ "This is what I use" - Personal ownership claim
 
 **Key insight:** Article conclusions are generally well-humanized if the intro was already rewritten. The main fixes needed are removing cliché motivational phrases ("Figure it out", "Your future self will thank you"), replacing generic comparison language ("Choose X if you value Y"), avoiding common sayings ("you get what you pay for"), and adding conversational openers or personal contrast examples.
+
+---
+
+### Patterns From Password Manager Articles #101-102 (Dec 2025)
+
+What worked adding Proton Pass to password manager roundup articles:
+
+1. **Product ecosystem integration phrases get flagged:**
+   - ❌ "Integrated with ProtonMail and ProtonVPN if you're already in that ecosystem."
+   - ✅ "Already using ProtonMail or ProtonVPN? Connects with all of it."
+   - Question format + shorter phrasing passes better
+
+2. **Feature labels as questions:**
+   - ❌ "Hide-my-email aliases for signups you don't trust."
+   - ✅ "Email aliases for sketchy signups. Give sites a throwaway address."
+   - Break into two sentences, add casual description of use case
+
+3. **Privacy/security product openings:**
+   - ✅ "Swiss privacy. Open source. The company that made ProtonMail and ProtonVPN. You know what you're getting here."
+   - Short punchy fragments establish the brand identity immediately
+   - "You know what you're getting here" adds personal commentary
+
+4. **Location-specific paranoia story:**
+   - ✅ "So I was in Lisbon last year and got paranoid about a weird phishing attempt. Started thinking about who actually has access to my password vault data."
+   - Personal security concern + specific location adds authenticity
+   - "Got paranoid" is more human than "became concerned"
+
+5. **Jurisdiction emphasis as fragments:**
+   - ✅ "Swiss data protection laws are no joke. Not US jurisdiction. Not EU jurisdiction. Swiss."
+   - Repetition with period breaks creates emphasis without formal structure
+
+6. **Open-source credibility:**
+   - ✅ "Their code is public. You can literally verify it yourself. Or just trust that thousands of security researchers already have."
+   - Offers two options to reader, second adds social proof casually
+
+7. **Price spelled out as words:**
+   - ✅ "One ninety-nine monthly on the annual plan"
+   - ✅ "Four ninety-nine monthly if you go month-to-month"
+   - ✅ "about ten bucks monthly"
+   - ALL prices as spelled-out words, consistent with other successful articles
+
+8. **"What's not great" section patterns:**
+   - ✅ "Newer than 1Password and Bitwarden so fewer browser integrations. No secure file storage yet. Sharing features still catching up to the competition."
+   - Multiple short sentences, vary sentence length, end with conditional
+
+**Key insight:** Privacy-focused product descriptions benefit from short fragments that establish credibility (Swiss, open-source) followed by personal paranoia stories. Feature lists with formal labels like "Integrated with X if you're in Y ecosystem" trigger detection. Convert to question format or two-sentence casual descriptions.

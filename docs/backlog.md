@@ -10,17 +10,17 @@ Ideas and tasks for future implementation. Not yet scheduled.
 
 Now that Proton affiliate program is approved (ID: 15204), add their products to relevant articles.
 
-#### High Priority - Proton Pass
+#### ~~High Priority - Proton Pass~~ ✅ Done 2025-12-06
 
-**Add to `best-password-manager-remote-work.astro`:**
-- Add Proton Pass as a recommended option
-- Highlight: Swiss privacy, open-source, integrated with Proton ecosystem
-- Include comparison table entry
-- Add CTA button with `/go/proton-pass`
+~~**Add to `best-password-manager-remote-work.astro`:**~~
+- ~~Add Proton Pass as a recommended option~~ ✅
+- ~~Highlight: Swiss privacy, open-source, integrated with Proton ecosystem~~ ✅
+- ~~Include comparison table entry~~ ✅
+- ~~Add CTA button with `/go/proton-pass`~~ ✅
 
-**Add to `do-i-really-need-password-manager.astro`:**
-- Mention Proton Pass as privacy-focused alternative
-- Good for users already in Proton ecosystem (Mail, VPN, Drive)
+~~**Add to `do-i-really-need-password-manager.astro`:**~~
+- ~~Mention Proton Pass as privacy-focused alternative~~ ✅ (already existed, updated number formatting)
+- ~~Good for users already in Proton ecosystem (Mail, VPN, Drive)~~ ✅
 
 #### Medium Priority - Proton Mail
 

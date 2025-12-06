@@ -1,7 +1,7 @@
 # FloatJet Article Summary
 
 > **Auto-generated** from `src/data/articles.ts`
-> Last updated: 2025-12-07 00:20
+> Last updated: 2025-12-07 00:22
 >
 > To regenerate: `python scripts/generate-article-summary.py`
 

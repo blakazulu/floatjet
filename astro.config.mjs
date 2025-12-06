@@ -9,7 +9,6 @@ import opengraphImages from "astro-opengraph-images";
 import {floatjetRenderer} from "./src/lib/og-image-renderer";
 import partytown from "@astrojs/partytown";
 import compress from "astro-compress";
-import purgecss from "astro-purgecss";
 import pagefind from "astro-pagefind";
 import * as fs from "fs";
 
@@ -70,10 +69,7 @@ export default defineConfig({
       },
     }),
 
-    // 6. PurgeCSS - Remove unused CSS (50-90% CSS size reduction)
-    purgecss(),
-
-    // 7. Compress - Gzip/Brotli compression for HTML, CSS, JS, images, SVG
+    // 6. Compress - Gzip/Brotli compression for HTML, CSS, JS, images, SVG
     compress({
       CSS: true,
       HTML: true,
@@ -82,7 +78,7 @@ export default defineConfig({
       SVG: true,
     }),
 
-    // 8. Pagefind - Static site search (indexes content at build time)
+    // 7. Pagefind - Static site search (indexes content at build time)
     pagefind(),
   ],
   vite: {

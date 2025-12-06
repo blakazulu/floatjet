@@ -140,24 +140,35 @@ This document contains a comprehensive list of all articles on the FloatJet webs
 
 ---
 
-## Summary by Sub-Category
+## Summary by Category & Sub-Category
 
-| Sub-Category  | Count |
-|---------------|-------|
-| Finance       | 14    |
-| Communication | 7     |
-| Travel        | 9     |
-| Security      | 8     |
-| Productivity  | 6     |
-| Setup         | 9     |
-| Hosting       | 8     |
-| SaaS          | 12    |
-| VPN           | 6     |
-| Audio         | 6     |
-| Furniture     | 6     |
-| Computers     | 6     |
-| Accessories   | 5     |
+| Category | Sub-Category  | Count |
+|----------|---------------|-------|
+| Blog     | Communication | 2     |
+| Blog     | Finance       | 3     |
+| Blog     | Hosting       | 2     |
+| Blog     | Productivity  | 1     |
+| Blog     | Security      | 2     |
+| Blog     | Setup         | 1     |
+| Blog     | Travel        | 4     |
+|          |               |       |
+| Gear     | Accessories   | 5     |
+| Gear     | Audio         | 6     |
+| Gear     | Computers     | 6     |
+| Gear     | Furniture     | 6     |
+|          |               |       |
+| Guides   | Communication | 5     |
+| Guides   | Finance       | 6     |
+| Guides   | Productivity  | 5     |
+| Guides   | Security      | 6     |
+| Guides   | Setup         | 8     |
+| Guides   | Travel        | 5     |
+|          |               |       |
+| Tools    | Finance       | 5     |
+| Tools    | Hosting       | 6     |
+| Tools    | SaaS          | 11    |
+| Tools    | VPN           | 6     |
 
 ---
 
-*Last updated: 2025-12-05*
+*Last updated: 2025-12-06*

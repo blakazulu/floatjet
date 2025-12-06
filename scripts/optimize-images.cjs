@@ -44,6 +44,10 @@ async function convertToWebP() {
       const percent = ((saved / inputStats.size) * 100).toFixed(1);
       console.log(`[OK] ${file} → ${file.replace(".jpg", ".webp")} (-${percent}%)`);
       converted++;
+
+      // Delete the original JPG file after successful conversion
+      fs.unlinkSync(inputPath);
+      console.log(`[DEL] ${file}`);
     } catch (err) {
       console.error(`[FAIL] ${file}: ${err.message}`);
     }

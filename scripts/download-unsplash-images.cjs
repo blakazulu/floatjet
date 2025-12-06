@@ -110,6 +110,68 @@ const photoIds = [
   "photo-1611532736579-6b16e2b50449",
   "photo-1547658719-da2b51169166",
   "photo-1586201375761-83865001e31c",
+  // New images for deduplication (Dec 2025)
+  "photo-1560732488-6b0df240254a", // Internet speed - fiber optic cables
+  "photo-1544197150-b99a580bb7a8", // Already in list - VPS hosting (keep)
+  "photo-1560472354-b33ff0c44a43", // WiFi router home network
+  "photo-1451187580459-43490279c0fa", // Already in list - Cloud hosting (keep for web hosting)
+  "photo-1558494949-ef010cbdcc31", // Already in list - VPN speed (keep)
+  "photo-1483478550801-ceba5fe50e8e", // Shared hosting server room
+  "photo-1580894894513-541e068a3e2b", // Banking international transfer
+  "photo-1516321497487-e288fb19713f", // Public wifi cafe security
+  "photo-1563986768494-4dee2763ff3f", // Already in list - Banking nomads (keep)
+  "photo-1432888498266-38ffec3eaf0a", // Email marketing automation
+  "photo-1554224155-6726b3ff858f", // Already in list - Tax tips (keep)
+  "photo-1460925895917-afdab827c52f", // Already in list (keep for tax deductions)
+  "photo-1450101499163-c8848c66ca85", // Accounting invoicing (already in list)
+  "photo-1518455027359-f3f8164ba6bd", // Already in list - Desk converters (keep)
+  "photo-1611269154421-4e27233ac5c7", // Home office furniture expense
+  "photo-1497215842964-222b430dc094", // Home office checklist organized
+  "photo-1593062096033-9a26b09da705", // Already in list - Compact desks (keep)
+  "photo-1518455027359-f3f8164ba6bd", // Already in list (keep for minimalist)
+  "photo-1611224923853-80b023f02d71", // Standing desk worth it
+  "photo-1614064641938-3bbee52942c7", // Already in list - 2FA guide (keep)
+  "photo-1633265486064-086b219458ec", // Password manager digital security
+  "photo-1510511459019-5dda7724fd87", // Password need question
+  "photo-1563013544-824ae1b704d3", // Already in list - VPN vs Proxy (keep)
+  "photo-1526304640581-d334cdbbf45e", // Wise PayPal payment transfer
+  "photo-1565688534245-05d6b5be184a", // Free VPN vs Paid comparison
+  "photo-1552664730-d307ca884978", // Already in list - CRM (keep)
+  "photo-1522071820081-009f0129c71c", // Remote collaboration teamwork
+  "photo-1593642632559-0c6d3fc62b89", // Already in list - Home office setup (keep)
+  "photo-1611532736579-6b16e2b50449", // Standing desk home office
+  "photo-1436491865332-7a61a109cc05", // Already in list - Travel insurance (keep)
+  "photo-1569154941061-e231b4725ef1", // Work remotely another country passport
+  "photo-1558618666-fcd25c85cd64", // Already in list - Travel adapters (keep)
+  "photo-1597733336794-12d05021d510", // Cable management desk
+  "photo-1496181133206-80ce9b88a853", // Already in list - Best laptops (keep)
+  "photo-1484788984921-03950022c9ef", // Personal laptop WFH
+  "photo-1497366216548-37526070297c", // Already in list - Standing desk cost (keep)
+  "photo-1497366811353-6870744d04b2", // Coworking space Lisbon
+  "photo-1516321318423-f06f85e504b3", // Already in list - Miscommunication (keep)
+  "photo-1562577309-4932fdd64cd1", // VPN setup all devices
+  "photo-1554224154-26032ffc0d07", // Already in list - Invoice terms (keep)
+  "photo-1553729459-efe14ef6055d", // Expense tracking apps
+  "photo-1611532736597-de2d4265fba3", // Already in list - Time blocking (keep)
+  "photo-1434626881859-194d67b2b86f", // Pomodoro timer clock
+  "photo-1550751827-4bd374c3f58b", // Already in list - Phishing (keep)
+  "photo-1526374965328-7f61d4dc18c5", // VPN kill switch security
+  "photo-1544197150-b99a580bb7a8", // Already in list - VPS hosting (keep)
+  "photo-1451187580459-43490279c0fa", // Cloud storage files
+  "photo-1484480974693-6ca0a78fb36b", // Already in list - Productivity (keep)
+  "photo-1517694712202-14dd9538aa97", // Notion app productivity
+  "photo-1454165804606-c3d57bc86b40", // Already in list - Project management (keep)
+  "photo-1531403009284-440f080d1e12", // Tax deduction home office
+  // Additional unique images for remaining duplicates
+  "photo-1573164713988-8665fc963095", // Cloud storage files sync
+  "photo-1544197150-b99a580bb7a8", // Already in list - VPS (keep)
+  // More unique images for final deduplication
+  "photo-1542744173-8e7e53415bb0", // VPN kill switch (network protection)
+  "photo-1542744094-3a31f272c490", // Remote collaboration (team meeting)
+  "photo-1449824913935-59a10b8d2000", // Minimalist workspace
+  "photo-1586281380349-632531db7ed4", // Website speed analytics
+  "photo-1517248135467-4c7edcad34c4", // Web hosting modern
+  "photo-1554774853-719586f82d77", // Invoicing calculator
 ];
 
 const OUTPUT_DIR = path.join(__dirname, "..", "public", "images", "unsplash");

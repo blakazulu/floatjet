@@ -1,0 +1,340 @@
+---
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
+
+// Get article metadata from central data file
+const article = getArticleBySlug("best-budgeting-apps-for-remote-workers", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
+const headings = [
+  { depth: 2, slug: "why-budgeting-matters", text: "Why It Matters More When Remote" },
+  { depth: 2, slug: "ynab", text: "YNAB (You Need A Budget)" },
+  { depth: 2, slug: "rocket-money", text: "Rocket Money" },
+  { depth: 2, slug: "mint-rip", text: "Mint (RIP)" },
+  { depth: 2, slug: "comparison-table", text: "Quick Comparison" },
+  { depth: 2, slug: "multi-currency", text: "Multi-Currency for Nomads" },
+  { depth: 2, slug: "my-setup", text: "My Actual Setup" },
+  { depth: 2, slug: "faq", text: "Questions" },
+];
+
+const faqData = [
+  {
+    question: "Is YNAB worth it if I'm not in the US?",
+    answer:
+      "Yes with caveats. Bank sync works best in US UK and Canada. Elsewhere you might be entering transactions manually. The methodology still works. Just more manual effort.",
+  },
+  {
+    question: "Can Rocket Money actually lower my bills?",
+    answer:
+      "Sometimes. They negotiate with service providers and take a percentage of first year savings. I've seen it work for phone and internet bills. Won't work for everything.",
+  },
+  {
+    question: "What happened to Mint users?",
+    answer:
+      "Data moved to Credit Karma. You can still see your accounts there. It's not the same experience though. If you liked Mint try YNAB for serious budgeting or Rocket Money for passive tracking.",
+  },
+  {
+    question: "Do I need both apps?",
+    answer:
+      "I'd start with one. If you want to change your relationship with money start with YNAB. If you just want visibility and to kill subscriptions Rocket Money. You don't need both unless you're really into this stuff.",
+  },
+  {
+    question: "Best free option?",
+    answer:
+      "Credit Karma for basic tracking. Rocket Money free tier for subscription detection. Neither is a full budgeting solution though.",
+  },
+  {
+    question: "How does YNAB handle multiple currencies?",
+    answer:
+      "You can set up accounts in different currencies and it tracks them separately. When you transfer money it handles the conversion. My main account is USD with a euro account for daily spending. Works well.",
+  },
+];
+
+const relatedArticles = [
+  {
+    title: "Best Expense Tracking Apps",
+    excerpt: "Track every expense and never miss a deduction.",
+    href: "/tools/best-expense-tracking-apps",
+    image: "/images/unsplash/photo-1553729459-efe14ef6055d-800w.webp",
+    imageAlt: "Expense tracking and financial management apps",
+  },
+  {
+    title: "Tax Tips for Remote Workers",
+    excerpt: "Maximize deductions as a remote worker or digital nomad.",
+    href: "/blog/tax-tips-remote-workers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Calculator and financial documents for tax planning",
+  },
+  {
+    title: "Wise vs PayPal vs Payoneer",
+    excerpt: "Compare international payment platforms for freelancers.",
+    href: "/tools/wise-vs-paypal-vs-payoneer",
+    image: "/images/unsplash/photo-1580894894513-541e068a3e2b-800w.webp",
+    imageAlt: "International money transfer and payment apps",
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    authorSlug={authorSlug}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Finance"
+    categorySlug="tools"
+    subcategorySlug="finance"
+    headings={headings}
+>
+  <p class="lead">
+    The first time I tried to budget from a hostel in Chiang Mai, I used a spreadsheet. Two months
+    later I had no idea where 2,400 went. Turns out coffee shops and coworking day passes and random
+    Grab rides add up when you're not watching. The spreadsheet told me nothing until I checked it.
+    Which was never.
+  </p>
+
+  <p>
+    Good budgeting apps fix this. They track automatically, send alerts when you're overspending,
+    and show you patterns before your bank account does. I've tested probably a dozen over six years
+    of nomad life. Here's what actually works.
+  </p>
+
+  <p>
+    <strong>Short version if you're in a hurry:</strong> YNAB if you want to change how you think
+    about money. Rocket Money if you just want to see where it's going and kill subscriptions you
+    forgot about.
+  </p>
+
+  <h2 id="why-budgeting-matters">Why It Matters More When Remote</h2>
+
+  <p>Your income might be stable. Your expenses are anything but.</p>
+
+  <p>
+    Month in Lisbon: 1,800. Month in London: 3,200. Same lifestyle, completely different numbers.
+    Add in fluctuating exchange rates and random visa fees and coworking memberships in different
+    currencies. Without a system, you're guessing.
+  </p>
+
+  <p>
+    I've met nomads earning 8k a month with no savings. Also met people earning 3k who invest
+    consistently. Difference is usually whether they actually know where the money goes.
+  </p>
+
+  <h2 id="ynab">YNAB (You Need A Budget)</h2>
+
+  <p>This is what's on my phone right now. Has been for about three years.</p>
+
+  <p>
+    YNAB works differently than other apps. Instead of tracking where money went, you plan where it
+    goes before you spend it. Every dollar gets assigned a job. Rent, groceries, fun money, emergency
+    fund. Whatever.
+  </p>
+
+  <p>
+    The concept feels weird at first. Took me maybe two weeks to stop fighting the system and just
+    follow it. Now I can't imagine going back.
+  </p>
+
+  <h3>What I actually use it for</h3>
+
+  <p>
+    Assigning income to categories the moment it hits my account. Rolling with irregular freelance
+    payments. Budgeting for annual expenses monthly so they don't surprise me. Tracking multiple
+    currencies since I get paid in USD but spend in EUR.
+  </p>
+
+  <h3>The good stuff</h3>
+
+  <p>
+    Zero-based budgeting actually works. You see exactly where money goes. Multi-currency handling
+    is solid. Works offline which matters when WiFi is garbage. Educational resources are genuinely
+    helpful. The methodology changes behavior, not just tracking.
+  </p>
+
+  <h3>What's annoying</h3>
+
+  <p>
+    Learning curve is real. Takes two to four weeks to click. No bill negotiation. Costs around 15
+    monthly or 99 yearly. Bank sync can be temperamental outside the US.
+  </p>
+
+  <p>
+    <strong>YNAB is best for:</strong> People who want to transform how they handle money, not just
+    track it.
+  </p>
+
+  <h2 id="rocket-money">Rocket Money</h2>
+
+  <p>Used to be called Truebill. Rebranded but same core features.</p>
+
+  <p>
+    This is the opposite of YNAB. Instead of planning forward, it looks backward. Connects to your
+    accounts, categorizes spending automatically, spots subscriptions you forgot about.
+  </p>
+
+  <p>
+    The subscription finder is the killer feature. Rocket Money found 847 in annual subscriptions
+    I'd forgotten about. Gym membership in a city I left two years ago. Cloud storage I didn't
+    need. Three different streaming services.
+  </p>
+
+  <h3>What I use it for</h3>
+
+  <p>
+    Finding forgotten subscriptions. That alone paid for itself immediately. Getting spending alerts
+    when I'm going over budget. Seeing patterns. Apparently I spend way more on food delivery than
+    I thought.
+  </p>
+
+  <h3>The good stuff</h3>
+
+  <p>
+    Automatic categorization saves time. Subscription detection is excellent. Bill negotiation
+    service will haggle your internet and phone bills. Clean interface that just works. Free tier
+    is actually useful.
+  </p>
+
+  <h3>What's annoying</h3>
+
+  <p>
+    Premium features require subscription of 4 to 12 monthly. Bill negotiation takes a cut of
+    savings. Not great for planning ahead. Limited outside the US.
+  </p>
+
+  <p>
+    <strong>Rocket Money is best for:</strong> People who want to see where money went and kill
+    wasteful subscriptions.
+  </p>
+
+  <h2 id="mint-rip">Mint (RIP)</h2>
+
+  <p>
+    Have to mention this because people still ask. Mint was the free option everyone used. Intuit
+    killed it in early 2024.
+  </p>
+
+  <p>
+    If you were a Mint user, your options are basically Credit Karma (where your data went anyway)
+    or one of the apps above.
+  </p>
+
+  <p>
+    Credit Karma is fine for basic tracking. Free. Shows your credit score. But it's not really a
+    budgeting tool. More of a financial overview.
+  </p>
+
+  <h2 id="comparison-table">Quick Comparison</h2>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full">
+      <thead>
+      <tr>
+        <th>App</th>
+        <th>Price</th>
+        <th>Best For</th>
+        <th>Multi-Currency</th>
+        <th>Subscription Detection</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><strong>YNAB</strong></td>
+        <td>$15/mo or $99/yr</td>
+        <td>Proactive budgeting</td>
+        <td>Yes</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td><strong>Rocket Money</strong></td>
+        <td>Free/$4-12/mo</td>
+        <td>Finding waste</td>
+        <td>Limited</td>
+        <td>Excellent</td>
+      </tr>
+      <tr>
+        <td><strong>Credit Karma</strong></td>
+        <td>Free</td>
+        <td>Basic tracking</td>
+        <td>No</td>
+        <td>No</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="multi-currency">Multi-Currency for Nomads</h2>
+
+  <p>This matters a lot if you're earning in one currency and spending in another.</p>
+
+  <p>
+    YNAB handles this well. You can set up accounts in different currencies and it tracks them
+    separately. When you transfer money, it handles the conversion. My main account is USD. I have
+    a euro account for daily spending. YNAB keeps them straight.
+  </p>
+
+  <p>
+    Rocket Money is US-focused. Works fine if you're just tracking US accounts. Not great for
+    international.
+  </p>
+
+  <p>
+    If you're doing serious multi-currency stuff, consider pairing your budgeting app with <a
+      href="/tools/wise-vs-paypal-vs-payoneer">Wise</a>. I use Wise for holding and converting
+    currencies, YNAB for budgeting. Works well together.
+  </p>
+
+  <h2 id="my-setup">My Actual Setup</h2>
+
+  <p>Here's exactly what I do:</p>
+
+  <p>
+    Income hits my US account. I use YNAB to assign every dollar to a category. Transfer what I
+    need to Wise in local currency. Spend using Wise card. YNAB tracks the USD side, Wise shows me
+    the local spend.
+  </p>
+
+  <p>
+    Takes maybe 20 minutes a week to keep everything updated. Most of that is just approving
+    transactions YNAB imported.
+  </p>
+
+  <h2 id="faq">Questions</h2>
+
+  <FAQSection faqs={faqData}/>
+
+  <h2>Recommendations</h2>
+
+  <p>Three years of testing. Probably 15 different apps. So:</p>
+
+  <p>
+    <strong>YNAB</strong> if you want to actually budget. The learning curve is worth it.
+    Transformed how I think about money. I know exactly where every dollar goes and why.
+  </p>
+
+  <p>
+    <strong>Rocket Money</strong> if you want passive tracking and subscription hunting. Found me
+    847 in yearly waste. That's real money.
+  </p>
+
+  <p>
+    <strong>Credit Karma</strong> if you just need free basic tracking after Mint died.
+  </p>
+
+  <p>
+    The best budgeting app is the one you'll actually use. YNAB requires commitment. Rocket Money
+    works if you're hands-off. Pick based on your actual behavior, not what you wish you'd do.
+  </p>
+
+  <p>
+    Start today. Seriously. Every month you wait is another month of not knowing where the money
+    goes. I waited too long and it cost me.
+  </p>
+
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

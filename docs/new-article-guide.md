@@ -6,20 +6,20 @@
 
 ## Quick Reference
 
-| Step | Action | Tool/File |
-|------|--------|-----------|
-| 1 | Choose writer based on topic | `docs/writing/writers-summery.md` |
-| 2 | Write article content | `docs/writing/writing-style-guide.md` |
-| 3 | Check AI detection | `node scripts/zerogpt-detect.js` |
-| 4 | Update style guide with patterns | `docs/writing/writing-style-guide.md` |
-| 5 | Repeat until <4% AI detected | - |
-| 6 | Find unique hero image | Unsplash + check `src/data/articles.ts` |
-| 7 | Download hero image | `node scripts/download-unsplash-images.cjs` |
-| 8 | Optimize image | `node scripts/optimize-images.cjs` |
-| 9 | Create article page | Use existing article as template |
-| 10 | Ensure SEO/AEO/GEO compliance | Match existing articles |
-| 11 | Update articles metadata | `src/data/articles.ts` |
-| 12 | Regenerate article summary | `npm run docs:articles` |
+| Step | Action                           | Tool/File                                     |
+| ---- | -------------------------------- | --------------------------------------------- |
+| 1    | Choose writer based on topic     | `docs/writing/writers-summery.md`           |
+| 2    | Write article content            | `docs/writing/writing-style-guide.md`       |
+| 3    | Check AI detection               | `node scripts/zerogpt-detect.js`            |
+| 4    | Update style guide with patterns | `docs/writing/writing-style-guide.md`       |
+| 5    | Repeat until <4% AI detected     | -                                             |
+| 6    | Find unique hero image           | Unsplash + check `src/data/articles.ts`     |
+| 7    | Download hero image              | `node scripts/download-unsplash-images.cjs` |
+| 8    | Optimize image                   | `node scripts/optimize-images.cjs`          |
+| 9    | Create article page              | Use existing article as template              |
+| 10   | Ensure SEO/AEO/GEO compliance    | Match existing articles                       |
+| 11   | Update articles metadata         | `src/data/articles.ts`                      |
+| 12   | Regenerate article summary       | `npm run docs:articles`                     |
 
 ---
 
@@ -27,31 +27,31 @@
 
 Based on the article topic, select the appropriate writer from `docs/writing/writers-summery.md`:
 
-| Writer | Slug | Categories |
-|--------|------|------------|
-| **Marcus Chen** | `marcus-chen` | SaaS, Hosting, Computers, Audio, Accessories |
+| Writer                   | Slug               | Categories                                    |
+| ------------------------ | ------------------ | --------------------------------------------- |
+| **Marcus Chen**    | `marcus-chen`    | SaaS, Hosting, Computers, Audio, Accessories  |
 | **Sarah Mitchell** | `sarah-mitchell` | Communication, Productivity, Setup, Furniture |
-| **Daniel Brooks** | `daniel-brooks` | Travel, Finance, Security, VPN |
+| **Daniel Brooks**  | `daniel-brooks`  | Travel, Finance, Security, VPN                |
 
 ### Writer Assignment Matrix
 
-| Section | Sub-Category | Writer |
-|---------|--------------|--------|
-| Tools | VPN | Daniel Brooks |
-| Tools | SaaS | Marcus Chen |
-| Tools | Hosting | Marcus Chen |
-| Tools | Finance | Daniel Brooks |
-| Gear | Computers | Marcus Chen |
-| Gear | Audio | Marcus Chen |
-| Gear | Furniture | Sarah Mitchell |
-| Gear | Accessories | Marcus Chen |
-| Guides | Communication | Sarah Mitchell |
-| Guides | Productivity | Sarah Mitchell |
-| Guides | Security | Daniel Brooks |
-| Guides | Finance | Daniel Brooks |
-| Guides | Travel | Daniel Brooks |
-| Guides | Setup | Sarah Mitchell |
-| Blog | * | Same as Guides mapping |
+| Section | Sub-Category  | Writer                 |
+| ------- | ------------- | ---------------------- |
+| Tools   | VPN           | Daniel Brooks          |
+| Tools   | SaaS          | Marcus Chen            |
+| Tools   | Hosting       | Marcus Chen            |
+| Tools   | Finance       | Daniel Brooks          |
+| Gear    | Computers     | Marcus Chen            |
+| Gear    | Audio         | Marcus Chen            |
+| Gear    | Furniture     | Sarah Mitchell         |
+| Gear    | Accessories   | Marcus Chen            |
+| Guides  | Communication | Sarah Mitchell         |
+| Guides  | Productivity  | Sarah Mitchell         |
+| Guides  | Security      | Daniel Brooks          |
+| Guides  | Finance       | Daniel Brooks          |
+| Guides  | Travel        | Daniel Brooks          |
+| Guides  | Setup         | Sarah Mitchell         |
+| Blog    | *             | Same as Guides mapping |
 
 ---
 
@@ -67,6 +67,8 @@ Each writer has a unique voice. Reference `docs/writing/writers-summery.md` for:
 - **Words to Avoid** - Banned terms
 - **Article Structure** - Hook, body, conclusion
 
+And reference `docs/writing/writing-style-guide.md` for general writing guidelines
+
 ### Key Writing Rules (All Writers)
 
 1. **First person only** - Use "I", never corporate "we"
@@ -78,12 +80,15 @@ Each writer has a unique voice. Reference `docs/writing/writers-summery.md` for:
 ### Example Opening by Writer
 
 **Marcus Chen (Tech):**
+
 > I've tested 23 webcams in the past two years, and most of them end up in a drawer after a week.
 
 **Sarah Mitchell (Productivity):**
+
 > I used to think standing desks were a Silicon Valley gimmick. Then I spent six months unable to sit for more than 20 minutes without pain.
 
 **Daniel Brooks (Finance/Travel):**
+
 > The first time I tried to file US taxes from Bali, I made three mistakes that cost me $4,200.
 
 ---
@@ -105,12 +110,12 @@ node scripts/zerogpt-detect.js --file article.txt --debug
 
 ### Understanding Results
 
-| AI % | Verdict | Action |
-|------|---------|--------|
-| 0-4% | Human written | Ready to publish |
-| 4-10% | Mostly human | Minor revisions needed |
+| AI %   | Verdict       | Action                       |
+| ------ | ------------- | ---------------------------- |
+| 0-4%   | Human written | Ready to publish             |
+| 4-10%  | Mostly human  | Minor revisions needed       |
 | 10-50% | Mixed content | Significant rewriting needed |
-| 50%+ | AI generated | Complete rewrite required |
+| 50%+   | AI generated  | Complete rewrite required    |
 
 ---
 
@@ -220,6 +225,7 @@ node scripts/optimize-images.cjs
 ```
 
 This script:
+
 1. Converts JPG to WebP format
 2. Optimizes for web (quality 80, effort 6)
 3. Deletes the original JPG automatically
@@ -227,6 +233,7 @@ This script:
 ### Image Path Format
 
 After optimization, your image path will be:
+
 ```
 /images/unsplash/photo-YOUR-ID-1200w.webp
 ```
@@ -346,12 +353,12 @@ Add the new article to `src/data/articles.ts`:
 
 ### Find the Correct Array
 
-| Section | Array Name |
-|---------|------------|
-| Tools | `toolsArticles` |
-| Gear | `gearArticles` |
-| Guides | `guidesArticles` |
-| Blog | `blogArticles` |
+| Section | Array Name         |
+| ------- | ------------------ |
+| Tools   | `toolsArticles`  |
+| Gear    | `gearArticles`   |
+| Guides  | `guidesArticles` |
+| Blog    | `blogArticles`   |
 
 ### Add Article Entry
 
@@ -373,12 +380,12 @@ Add the new article to `src/data/articles.ts`:
 
 ### Category Values by Section
 
-| Section | Valid Categories |
-|---------|------------------|
-| Tools | `vpn`, `saas`, `hosting`, `finance` |
-| Gear | `computers`, `audio`, `furniture`, `accessories` |
-| Guides | `travel`, `communication`, `productivity`, `security`, `setup`, `finance`, `gear` |
-| Blog | `communication`, `finance`, `hosting`, `productivity`, `security`, `travel` |
+| Section | Valid Categories                                                                                |
+| ------- | ----------------------------------------------------------------------------------------------- |
+| Tools   | `vpn`, `saas`, `hosting`, `finance`                                                     |
+| Gear    | `computers`, `audio`, `furniture`, `accessories`                                        |
+| Guides  | `travel`, `communication`, `productivity`, `security`, `setup`, `finance`, `gear` |
+| Blog    | `communication`, `finance`, `hosting`, `productivity`, `security`, `travel`         |
 
 ---
 

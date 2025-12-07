@@ -2,6 +2,50 @@
 /**
  * Script to download all Unsplash images and save them locally
  * This eliminates external dependencies and prevents build failures from network issues
+ *
+ * ============================================================================
+ * HOW TO FIND UNSPLASH IMAGES
+ * ============================================================================
+ *
+ * This script expects photo IDs in the format: "photo-TIMESTAMP-UNIQUEID"
+ * Example: "photo-1633158829875-e5316a358c6f"
+ *
+ * IMPORTANT: Not all Unsplash URLs use this format! There are TWO types:
+ *
+ * 1. LONG FORMAT (works with this script):
+ *    URL: https://unsplash.com/photos/photo-1633158829875-e5316a358c6f
+ *    ID to use: "photo-1633158829875-e5316a358c6f"
+ *
+ * 2. SHORT FORMAT (does NOT work with this script):
+ *    URL: https://unsplash.com/photos/jZnvn5x08BE
+ *    These short IDs will return 404 errors!
+ *
+ * HOW TO DOWNLOAD IMAGES:
+ *
+ * Option A: Use this script (for long-format IDs only)
+ *   1. Add the photo ID to the photoIds array below
+ *   2. Run: node scripts/download-unsplash-images.cjs
+ *   3. Run: node scripts/optimize-images.cjs
+ *   4. Remove the ID from photoIds array (keep it clean)
+ *
+ * Option B: Use curl directly (works for ANY Unsplash image)
+ *   This is the RECOMMENDED method since it works with all ID formats:
+ *
+ *   curl -L "https://images.unsplash.com/photo-ID?auto=format&fit=crop&w=1200&q=80" \
+ *        -o "public/images/unsplash/photo-ID-1200w.jpg"
+ *   curl -L "https://images.unsplash.com/photo-ID?auto=format&fit=crop&w=800&q=80" \
+ *        -o "public/images/unsplash/photo-ID-800w.jpg"
+ *
+ *   Then run: node scripts/optimize-images.cjs
+ *
+ * FINDING UNIQUE IMAGES:
+ *   1. Search Unsplash for your topic
+ *   2. Copy the photo ID from the URL
+ *   3. Check it's not already used: grep "photo-ID" src/data/articles.ts
+ *   4. Download using curl (Option B above)
+ *   5. Optimize with: node scripts/optimize-images.cjs
+ *
+ * ============================================================================
  */
 
 const https = require("https");
@@ -9,6 +53,7 @@ const fs = require("fs");
 const path = require("path");
 
 // All unique Unsplash photo IDs from the codebase
+// example: https://images.unsplash.com/photo-1511485977113-f34c92461ad9
 const photoIds = [
 ];
 

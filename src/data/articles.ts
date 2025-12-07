@@ -958,6 +958,18 @@ export const toolsArticles: Article[] = [
     category: "finance",
   },
   {
+    slug: "best-budgeting-apps-for-remote-workers",
+    section: "tools",
+    title: "Best Budgeting Apps for Remote Workers (2025)",
+    description: "I tested YNAB, Rocket Money, and more over six years of nomad life. Here's what actually helps when your expenses change every month.",
+    authorSlug: "daniel-brooks",
+    pubDate: "2025-12-07",
+    readingTime: 11,
+    image: "/images/unsplash/photo-1633158829875-e5316a358c6f-1200w.webp",
+    imageAlt: "Person budgeting with smartphone and financial planning apps",
+    category: "finance",
+  },
+  {
     slug: "best-business-vpn-remote-teams",
     section: "tools",
     title: "Best Business VPN Solutions for Remote Teams (2025)",

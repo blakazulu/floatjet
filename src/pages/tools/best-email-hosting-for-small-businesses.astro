@@ -14,53 +14,53 @@ const pubDate = new Date(article.pubDate);
 const headings = [
   { text: "Why Email Hosting Matters", slug: "why-email-hosting-matters", depth: 2 },
   { text: "The Options", slug: "options", depth: 2 },
-  { text: "Which One to Pick", slug: "which-one", depth: 2 },
-  { text: "Migration Tips", slug: "migration", depth: 2 },
+  { text: "Okay But Which One", slug: "which-one", depth: 2 },
+  { text: "Actually Moving Your Email", slug: "migration", depth: 2 },
   { text: "Questions", slug: "faq", depth: 2 },
-  { text: "My Take", slug: "my-take", depth: 2 },
+  { text: "After All That", slug: "my-take", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
   {
-    question: "Google Workspace vs Microsoft 365?",
+    question: "Google or Microsoft though?",
     answer:
-      "Google Workspace if your team already lives in Chrome and uses Google Drive. Microsoft 365 if you need desktop Office apps or your clients expect Word and Excel files. Both work great. Pick based on what your team already knows. Switching costs are real.",
+      "If your team's already in Chrome using Google stuff go Google. If you need actual desktop Office apps or your clients always send Word files go Microsoft. Both are solid. Pick whatever your people already know how to use because switching habits is the actual hard part.",
   },
   {
-    question: "Can I use my own domain?",
+    question: "Can I use my own domain name?",
     answer:
-      "Yes, all three support custom domains. You'll add some DNS records and verify ownership. Takes about fifteen minutes. Google and Microsoft both have decent setup wizards. Zoho's is slightly more technical but still manageable.",
+      "Yeah all three do this. You add some DNS records and verify you own the domain. Takes maybe fifteen minutes if you know where your DNS settings are. Google and Microsoft have wizards that walk you through it. Zoho's a little more DIY but still doable.",
   },
   {
-    question: "How much storage do I get?",
+    question: "How much storage am I getting?",
     answer:
-      "Google Workspace starts at 30GB per user on Business Starter, goes up to 5TB on Business Plus. Microsoft 365 gives you 1TB per user on all business plans. Zoho Mail starts at 5GB on free, goes to 50GB on Workplace Standard. For most people, any of these is plenty.",
+      "Google starts at 30GB and goes up to 5TB on expensive plans. Microsoft gives everyone 1TB which is honestly pretty generous. Zoho is 5GB on free and cheap plans, 50GB on premium. Unless you're archiving everything forever any of these should be fine.",
   },
   {
-    question: "Is there a free option?",
+    question: "Anything actually free?",
     answer:
-      "Zoho Mail has a free tier for up to five users with 5GB storage each. No custom domain on free, though. Google and Microsoft don't offer free business email anymore. If budget is extremely tight, Zoho free works. Just know you'll outgrow it.",
+      "Zoho has a legit free tier for up to five people with 5GB each. You can't use custom domains on free though. Google and Microsoft stopped doing free business email years ago. If money is super tight Zoho free works. You'll probably outgrow it eventually but it's a start.",
   },
   {
-    question: "What about email security?",
+    question: "How's the security?",
     answer:
-      "All three include spam filtering, phishing protection, and encryption in transit. Google and Microsoft have more advanced threat detection on higher tiers. Two-factor authentication is available on all. For most small businesses, default security on any of these is solid.",
+      "Spam filtering and phishing protection come standard on all of them. Encryption in transit too. Google and Microsoft have fancier threat detection on pricier plans. Two-factor auth works on all three. For a typical small business the defaults are probably fine.",
   },
   {
-    question: "Can I migrate from Gmail or Outlook?",
+    question: "Can I bring my old emails over?",
     answer:
-      "Yes. All three have migration tools. Google has a data migration service that pulls from other email providers. Microsoft has a migration wizard. Zoho has ZohoMigration tool. Expect a few hours for small mailboxes, longer for years of email. I've done migrations with all three. None are painful.",
+      "Yep all three have migration tools that pull in your old stuff. Google's data migration service works. Microsoft has a wizard. Zoho has their own tool. Small mailboxes take a few hours. Years of email takes longer. I've done it with all three and none were particularly painful.",
   },
   {
-    question: "Do I need IT support to set this up?",
+    question: "Do I need someone technical to set this up?",
     answer:
-      "Not really. If you can follow instructions and update DNS records, you can handle it. Google and Microsoft have helpful setup guides. Budget about two hours for first-time setup. The hardest part is usually figuring out where your domain DNS settings live.",
+      "Nah probably not. If you can follow directions and figure out where your domain host keeps its DNS settings you're fine. Give yourself a couple hours the first time. DNS is the tricky part but Google and Microsoft have walkthroughs that help.",
   },
   {
-    question: "What happens if I outgrow the starter plan?",
+    question: "What if I outgrow the cheap plan?",
     answer:
-      "You upgrade. All three make it easy to move up to higher tiers. No data loss, no migration needed. Your email, contacts, and calendar just get more features. Pricing goes up but it's usually worth it when you need the extra storage or admin controls.",
+      "You upgrade. All three make this pretty painless. Nothing gets lost, no migration required. You just get more storage and fancier features. Costs more obviously but when you need it you need it.",
   },
 ];
 
@@ -104,21 +104,15 @@ const relatedArticles = [
     headings={headings}
 >
   <p class="lead">
-    Lost a client because my email went to their spam folder. Using a free email address with my domain name looked
-    unprofessional. That was the push I needed to figure out proper business email hosting.
+    So I lost a client once because my email went straight to their spam folder. They never saw my proposal. Found out two weeks later when they'd already signed with someone else. Turns out sending business emails from a free Gmail address with a bunch of numbers in it doesn't exactly scream professional.
   </p>
 
   <p>
-    Spent three months testing Google Workspace, Microsoft 365, and Zoho Mail across two small businesses. Set up
-    custom domains, migrated existing emails, and dealt with the actual day-to-day stuff that matters. Calendar
-    invites, file sharing, mobile apps.
+    That stung enough to make me actually figure this stuff out. Ended up setting up Google Workspace for one business and Microsoft 365 for another over a few months. Had to migrate old emails, mess with DNS for domains, troubleshoot calendar invites that randomly broke, deal with mobile apps that wouldn't sync properly.
   </p>
 
   <p>
-    The short version? Google Workspace wins for most small businesses. The Gmail interface is familiar, the
-    integration with Google Drive is seamless, and the admin console actually makes sense. Microsoft 365 is better
-    if you need desktop Office apps or your industry runs on Excel. Zoho is the budget option that works better
-    than you'd expect.
+    <strong>Too long won't read?</strong> Google Workspace for most people. Gmail is Gmail and that's not a bad thing. Microsoft 365 if your industry runs on Excel or clients expect actual Word docs. Zoho if you're watching every dollar and okay with some rough edges.
   </p>
 
   <h2 id="why-email-hosting-matters">Why Business Email Hosting Matters</h2>
@@ -128,16 +122,10 @@ const relatedArticles = [
     against you.
   </p>
 
-  <h3>Credibility is Real</h3>
+  <h3>People Actually Judge This</h3>
 
   <p>
-    marcus@yourbusiness.com looks more professional than marcus.chen.business.2024@gmail.com. Clients notice.
-    Partners notice. It's a small thing that signals you're serious about what you do.
-  </p>
-
-  <p>
-    I've seen potential clients hesitate when they get emails from random Gmail addresses. Not always, but enough
-    that fixing it for twenty bucks a month is an obvious call.
+    marcus@yourbusiness.com versus marcus.chen.business.2024@gmail.com. Which one would you take more seriously? I've watched potential clients pause on calls when they realize my email isn't from a business domain. Not everyone cares but enough do that fixing it for twenty bucks a month is kind of a no-brainer.
   </p>
 
   <h3>Deliverability Matters</h3>
@@ -173,40 +161,31 @@ const relatedArticles = [
   <h3>Google Workspace</h3>
 
   <p>
-    This is Gmail, but for your business domain. If you already know Gmail, the learning curve is basically zero.
+    It's Gmail but with your business domain attached. If you already know how to use Gmail you're basically done learning.
   </p>
 
   <p>
-    The integration is what sells it. Google Drive, Google Docs, Google Meet, Google Calendar. Everything talks to
-    everything else. Search works the way you expect. The mobile apps are solid.
+    What actually sells it is how everything connects. Drive and Docs and Meet and Calendar all talk to each other. Search actually finds things. Mobile apps work properly which sounds basic but somehow isn't always true.
   </p>
 
   <p>
-    What you get: Custom email with your domain. 30GB cloud storage on Business Starter, more on higher plans.
-    Google Meet video conferencing. Shared calendars and contacts. Admin console for user management.
-    <a href="/guides/two-factor-authentication-guide">Two-factor authentication</a> built in.
+    You're getting custom email with your domain, 30GB of cloud storage on the starter plan, video calls through Meet, shared calendars, and an admin panel that doesn't require a CS degree. <a href="/guides/two-factor-authentication-guide">Two-factor auth</a> is built in too.
   </p>
 
   <p>
-    Pricing runs seven bucks per user monthly for Business Starter. Fourteen for Business Standard with more
-    storage and recording in Meet. Twenty-two for Business Plus with 5TB storage and advanced security. Enterprise
-    pricing if you need it.
+    Pricing starts at seven bucks per user per month. Fourteen gets you more storage and recording in Meet. Twenty-two for 5TB storage and better security features. Enterprise exists but if you need it you probably have an IT person figuring this out for you.
   </p>
 
   <p>
-    My experience? Google Workspace just works. Set it up once, forget about it. The admin console is clean enough
-    that non-technical people can handle basic user management. Support is decent but not amazing on lower tiers.
+    I set it up once about two years ago and haven't really thought about it since. The admin console makes sense even to people who aren't technical. Support could be better on the cheap plans but I've rarely needed it.
   </p>
 
   <p>
-    Best for teams already in the Google ecosystem, startups and small businesses, and anyone who prioritizes
-    clean interface and search.
+    Works best if your team's already living in Chrome and Google Drive. Startups seem to love it. Clean interface people especially.
   </p>
 
   <p>
-    The tradeoffs? No desktop email app included. You'll need to use webmail or set up a third-party client. Some
-    people still prefer Outlook's desktop experience. Support on cheaper plans can be slow.
-  </p>
+    Downsides? No desktop email app comes with it. You're using the browser or setting up something like Spark or Apple Mail yourself. Some people really miss Outlook's desktop experience. And yeah support on Business Starter is whatever.</p>
 
   <AffiliateButton
       href="/go/google-workspace"
@@ -218,42 +197,31 @@ const relatedArticles = [
   <h3>Microsoft 365</h3>
 
   <p>
-    Microsoft's answer to Google Workspace. Outlook email, OneDrive storage, Teams for video calls, and the
-    desktop Office apps that some industries still insist on.
+    Microsoft's version of the same idea. Outlook for email, OneDrive for files, Teams for calls, and the desktop Office apps that certain industries absolutely refuse to give up.
   </p>
 
   <p>
-    The desktop apps are the killer feature. If you need actual Word, Excel, and PowerPoint installed on your
-    computer, Microsoft 365 includes them. Google's web apps are good but not identical.
+    The desktop apps are honestly the main reason people pick this. Need actual Word installed on your computer? Excel that isn't a browser tab? PowerPoint that works offline? This is the only option that includes all that. Google's web apps are good but they're not the same thing.
   </p>
 
   <p>
-    What you get: Outlook email with your domain. 1TB OneDrive storage on all business plans. Desktop Office apps
-    on Business Basic and above. Microsoft Teams for chat and video. SharePoint for document collaboration.
-    Comprehensive admin center.
+    You get Outlook email on your domain, 1TB of OneDrive storage on every business plan which is pretty generous, the desktop Office suite on most plans, Teams for video and chat, and SharePoint if you need it. Admin center is thorough but takes some getting used to.
   </p>
 
   <p>
-    Pricing runs six bucks per user monthly for Business Basic with web-only apps. Twelve fifty for Business
-    Standard with desktop apps. Twenty-two for Business Premium with advanced security. Annual commitment usually
-    required for best pricing.
+    Six bucks per month per user for Business Basic gets you web apps only. Twelve fifty for Standard adds the desktop apps. Twenty-two for Premium with better security. They usually want annual commitment for the best prices.
   </p>
 
   <p>
-    My experience? Microsoft 365 is heavier. More features, more complexity. The admin center has a steeper
-    learning curve than Google's. But if your team needs desktop Office or you're in an industry that expects
-    Excel spreadsheets, it's the obvious choice.
+    It's heavier than Google. More buttons, more settings, more stuff to figure out. The admin panel made me want to close my laptop the first time I opened it. But if your clients send Word docs and expect Word docs back, or your industry lives in Excel, this is probably what you need.
   </p>
 
   <p>
-    Best for industries that run on Excel (finance, consulting), teams that need desktop Office apps, and
-    companies already using Microsoft products.
+    Accountants love it. Lawyers love it. Finance people love it. Anyone who learned Office in the 90s and never stopped.
   </p>
 
   <p>
-    The tradeoffs? More complex than Google. The admin experience can be overwhelming. Some features feel like
-    they were designed for enterprises and scaled down awkwardly for small business.
-  </p>
+    The downside is complexity. Feels like everything was designed for huge enterprises and then someone tried to scale it down for five people. Results are... mixed.</p>
 
   <AffiliateButton
       href="/go/microsoft-365"
@@ -265,39 +233,31 @@ const relatedArticles = [
   <h3>Zoho Mail</h3>
 
   <p>
-    The underdog that actually works. Zoho Mail is part of Zoho's larger suite of business apps. Cheaper than
-    Google and Microsoft, and more capable than you'd expect.
+    The underdog nobody talks about but probably should. Part of Zoho's massive suite of business apps. Way cheaper than Google or Microsoft and honestly better than you'd expect from the price.
   </p>
 
   <p>
-    The interface is clean. Not as polished as Gmail, but not far off. The free tier for up to five users makes
-    it a real option for bootstrap businesses.
+    Interface is clean enough. Not Gmail pretty but not ugly either. And they have a free tier for up to five users which is kind of wild when everyone else wants money immediately.
   </p>
 
   <p>
-    What you get: Custom email on your domain. 5GB to 50GB storage depending on plan. Zoho Docs for document
-    collaboration. Zoho Meeting for video calls. Calendar and contacts. Admin panel for user management.
+    You get email on your domain, anywhere from 5GB to 50GB storage depending on plan, docs and meetings through other Zoho apps, calendars, contacts, and an admin panel. Pretty complete actually.
   </p>
 
   <p>
-    Pricing starts at one dollar per user monthly for Mail Lite. Four dollars for Mail Premium with more storage.
-    Zoho Workplace bundles with docs and meeting start at three dollars. Free tier available for up to five users.
+    One dollar per user per month for Mail Lite. Four dollars for Premium with more storage. Zoho Workplace bundles start at three bucks. Or free for up to five people if you're just getting started.
   </p>
 
   <p>
-    My experience? Zoho Mail punches above its weight. The email experience is solid. The integrations with other
-    Zoho apps work well if you're in that ecosystem. It's not as refined as Google, but it's also a fraction of
-    the price.
+    I ran it for a side project for about six months. Email worked fine. The Zoho app integrations are good if you're using their CRM or other tools. It's just... not as smooth as Google. Rougher around the edges. But for a fraction of the price that's probably fair.
   </p>
 
   <p>
-    Best for budget-conscious small businesses, solo entrepreneurs, and teams already using other Zoho products.
+    Makes sense for freelancers and tiny teams who count every dollar. Also for people already using Zoho CRM or their other products.
   </p>
 
   <p>
-    The tradeoffs? Less polished than Google and Microsoft. Smaller ecosystem means fewer third-party integrations.
-    Some people find the interface dated. Support can be hit or miss.
-  </p>
+    Rough spots? Interface feels a little dated in places. Fewer third-party apps connect to it. Support is inconsistent. But again. One dollar.</p>
 
   <AffiliateButton
       href="/go/zoho-mail"
@@ -306,152 +266,122 @@ const relatedArticles = [
       program="zoho-mail"
   />
 
-  <h3>Quick Comparison</h3>
+  <h3>Quick Numbers</h3>
 
   <p>
-    Here's the reality check across all three options.
+    Just so you can compare without scrolling back up:
   </p>
 
   <p>
-    <strong>Starting price per user:</strong> Google Workspace at seven dollars monthly. Microsoft 365 at six
-    dollars monthly. Zoho Mail at one dollar monthly (or free for up to five users).
+    <strong>What it costs:</strong> Google is seven bucks per person per month. Microsoft is six to start. Zoho is one buck or literally free for small teams.
   </p>
 
   <p>
-    <strong>Storage included:</strong> Google starts at 30GB per user. Microsoft gives 1TB on all business plans.
-    Zoho starts at 5GB on cheap plans, 50GB on premium.
+    <strong>Storage:</strong> Google gives you 30GB to start. Microsoft gives everyone 1TB which is generous. Zoho starts at 5GB on cheap plans but goes up to 50GB.
   </p>
 
   <p>
-    <strong>Desktop apps:</strong> Google has web apps only. Microsoft includes full desktop Office suite on most
-    plans. Zoho has web apps and basic desktop apps.
+    <strong>Desktop apps:</strong> Only Microsoft includes actual Office installed on your computer. Google and Zoho are browser-based with some exceptions.
   </p>
 
   <p>
-    <strong>Video conferencing:</strong> Google Meet included. Microsoft Teams included. Zoho Meeting included
-    on Workplace plans.
+    <strong>Video calls:</strong> Google has Meet. Microsoft has Teams. Zoho has Meeting on certain plans. All work.
   </p>
 
   <p>
-    <strong>Best for:</strong> Google Workspace wins on simplicity and Gmail familiarity. Microsoft 365 wins if
-    you need desktop Office. Zoho wins on price.
-  </p>
+    <strong>Bottom line:</strong> Google for simplicity and search. Microsoft for desktop Office. Zoho for saving money.</p>
 
-  <h2 id="which-one">Which One Should You Actually Pick</h2>
+  <h2 id="which-one">Okay But Which One</h2>
 
   <p>
-    Stop overthinking this. Here's my honest take.
+    You're probably overcomplicating this. My honest take:
   </p>
 
-  <h3>Go With Google Workspace If...</h3>
+  <h3>Google Workspace makes sense when...</h3>
 
   <p>
-    Your team already uses Gmail and Google Drive. You value clean, simple interfaces. You don't need desktop
-    Office apps. You want the easiest possible admin experience.
+    Your team's already in Gmail and Drive. You like clean and simple. Desktop Office apps don't matter to you. You want admin panels that don't require a manual.
   </p>
 
   <p>
-    This is probably the right choice for most small businesses. The Gmail interface is familiar, the search
-    actually works, and everything integrates smoothly.
+    This is probably the right call for most small businesses honestly. Gmail is Gmail. Search works. Things connect to each other without drama.
   </p>
 
-  <h3>Go With Microsoft 365 If...</h3>
+  <h3>Microsoft 365 makes sense when...</h3>
 
   <p>
-    Your clients expect Word documents and Excel files. Your industry runs on Office (accounting, legal, finance).
-    You need desktop apps, not just web versions. You're already in the Microsoft ecosystem.
-  </p>
-
-  <p>
-    Don't fight it. If everyone you work with uses Office, just use Office.
-  </p>
-
-  <h3>Go With Zoho If...</h3>
-
-  <p>
-    Budget is your primary concern. You're a solo founder or tiny team. You already use other Zoho products. You
-    need the free tier to get started.
+    Clients send you Word docs and expect Word docs back. Your industry runs on Excel and PowerPoint (accounting, legal, finance, consulting). You actually want desktop apps not browser tabs. Everyone you know is already using Microsoft stuff.
   </p>
 
   <p>
-    Zoho is genuinely good enough. It's not as polished, but it gets the job done at a fraction of the cost.
+    Don't fight the current. If your whole world uses Office just use Office.
   </p>
 
-  <h3>The Real Answer</h3>
+  <h3>Zoho makes sense when...</h3>
 
   <p>
-    Try the free trials. All three offer them. Set up a test account, send some emails, play with the calendar.
-    You'll know pretty quickly which one feels right.
-  </p>
-
-  <p>
-    Most people who already use Gmail end up on Google Workspace. Most people in traditional industries end up
-    on Microsoft 365. Most people watching every dollar end up on Zoho. All three work fine.
-  </p>
-
-  <h2 id="migration">Moving Your Email</h2>
-
-  <p>
-    Switching email providers sounds scary. It's actually not that bad.
-  </p>
-
-  <h3>Before You Start</h3>
-
-  <p>
-    Export your current email if possible. Note any important filters or rules you've set up. Make a list of
-    anyone who needs to know your address is changing (it's not, you're keeping the domain). Budget a few hours
-    for the actual migration.
-  </p>
-
-  <h3>The Process</h3>
-
-  <p>
-    Sign up for your new email hosting. Verify your domain by adding DNS records. Use the migration tool to
-    import existing email. Update your DNS MX records to point to the new provider. Wait for propagation
-    (a few hours to a day). Test by sending emails to yourself from different accounts.
-  </p>
-
-  <h3>Tips From Experience</h3>
-
-  <p>
-    Do this on a Friday afternoon. You'll have the weekend to fix any issues before Monday emails start flowing.
-    Don't delete your old email immediately. Keep it accessible for a week in case something got missed. Tell
-    your team ahead of time so they're not surprised when their email looks different.
+    Every dollar matters right now. You're solo or have like three people. You're already using Zoho CRM or their other tools. You need to start with free and upgrade later.
   </p>
 
   <p>
-    I've migrated three small businesses across these providers. Longest one took about four hours including
-    troubleshooting a DNS issue. Most were done in under two hours.
+    It works. Not as slick, not as pretty, but gets the job done for almost no money.
+  </p>
+
+  <h3>Still stuck?</h3>
+
+  <p>
+    All three have trial periods. Sign up, mess around, send test emails, check the calendar. Within a day you'll know which one bugs you least.
+  </p>
+
+  <p>
+    In my experience people who already use Gmail pick Google. People in traditional industries pick Microsoft. People counting pennies pick Zoho. All three are fine choices.</p>
+
+  <h2 id="migration">Actually Moving Your Email</h2>
+
+  <p>
+    This sounds scarier than it is. I've done it three times now and the longest one took maybe four hours including troubleshooting a weird DNS thing. Most take under two.
+  </p>
+
+  <h3>Before you do anything</h3>
+
+  <p>
+    Export your old email if you can. Write down any filters or rules you set up because you'll forget. Your email address isn't changing by the way since you're keeping the domain. Just the backend stuff.
+  </p>
+
+  <h3>The basic steps</h3>
+
+  <p>
+    Sign up for whichever one you picked. Add some DNS records to prove you own the domain. Run their migration tool to pull over old emails. Change your MX records to point at the new servers. Wait an annoying amount of time for DNS to propagate. Send test emails to yourself from other accounts to make sure it works.
+  </p>
+
+  <h3>Stuff I learned the hard way</h3>
+
+  <p>
+    Do this Friday afternoon. Seriously. If something breaks you have the weekend to fix it before Monday's emails start piling up. Don't delete your old provider immediately. Keep it running for a week just in case something got missed. And tell your team it's happening so nobody panics when their inbox looks different.
   </p>
 
   <FAQSection faqs={faqs}/>
 
-  <h2 id="my-take">My Take</h2>
+  <h2 id="my-take">After All That</h2>
 
   <p>
-    Three months testing, two businesses migrated, hundreds of emails sent.
+    Three months of testing. Two business migrations. Way more emails than I want to think about.
   </p>
 
   <p>
-    Google Workspace is what I recommend for most small businesses. The Gmail experience is genuinely good. The
-    admin console makes sense. The integration with Google Drive means you're not juggling multiple platforms.
-    Seven bucks per user per month is reasonable for what you get.
+    <strong>Google Workspace</strong> is what I tell most people to get. Gmail works the way you expect. The admin stuff isn't confusing. Everything connects to Drive without extra setup. Seven bucks a month per person is fair.
   </p>
 
   <p>
-    Microsoft 365 is the right call if your work requires Office documents. Not Google Docs exports to Word.
-    Actual Word documents. Some industries just work this way. Don't swim upstream.
+    <strong>Microsoft 365</strong> when your job requires actual Office documents. Not Google Docs exported as Word files. Real Word documents that need to look exactly right. Some industries are just like this and fighting it wastes energy.
   </p>
 
   <p>
-    Zoho Mail is solid for budget-conscious founders. The free tier is genuinely usable. The paid plans are
-    cheap. It's not as polished, but polish isn't everything when you're watching cash flow.
+    <strong>Zoho</strong> when you're bootstrapping and watching every expense. The free tier actually works. Paid plans are dirt cheap. It's rougher around the edges but edges don't pay rent.
   </p>
 
   <p>
-    Pick one. Set it up this week. Professional email from your domain is one of those small things that makes
-    a bigger difference than you'd expect.
-  </p>
+    Just pick one and set it up this week. Stop sending business emails from yourname.randomnumbers@gmail.com. It's a small thing but people notice more than you think.</p>
 
   <AffiliateButton
       href="/go/google-workspace"

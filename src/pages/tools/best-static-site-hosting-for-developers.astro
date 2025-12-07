@@ -20,16 +20,16 @@ const headings = [
   { text: "Netlify", slug: "netlify", depth: 3 },
   { text: "Vercel", slug: "vercel", depth: 3 },
   { text: "Cloudflare Pages", slug: "cloudflare-pages", depth: 3 },
-  { text: "Other Options Worth Considering", slug: "other-options", depth: 2 },
+  { text: "Other Options Worth Knowing About", slug: "other-options", depth: 2 },
   { text: "GitHub Pages", slug: "github-pages", depth: 3 },
   { text: "Render", slug: "render", depth: 3 },
   { text: "Surge", slug: "surge", depth: 3 },
   { text: "Build Time Comparison", slug: "build-times", depth: 2 },
   { text: "Pricing Breakdown", slug: "pricing-breakdown", depth: 2 },
   { text: "Framework Support", slug: "framework-support", depth: 2 },
-  { text: "How to Choose", slug: "how-to-choose", depth: 2 },
+  { text: "Okay Which One Though", slug: "how-to-choose", depth: 2 },
   { text: "FAQ", slug: "faq", depth: 2 },
-  { text: "Conclusion", slug: "conclusion", depth: 2 },
+  { text: "After 50+ Projects", slug: "conclusion", depth: 2 },
 ];
 
 // Quick picks comparison table
@@ -125,34 +125,34 @@ const fullComparisonRows = [
 // FAQ data
 const faqItems = [
   {
-    question: "What is static site hosting and why does it matter?",
+    question: "Wait what even is static site hosting?",
     answer:
-      "Static site hosting serves pre-built HTML, CSS, and JavaScript files directly from a CDN. No servers running PHP or Node.js on every request. This means way faster load times, better security since there is no database to hack, and costs that scale better. Most developer portfolios, documentation sites, and blogs are perfect for static hosting.",
+      "Your site gets built once and then it's just files on a CDN. No PHP or Node running on every page view. No database to hack. Loads way faster because there's nothing to compute. Portfolios and doc sites and blogs are perfect for this. Anything that doesn't need real-time data basically.",
   },
   {
-    question: "Is Netlify or Vercel better for React projects?",
+    question: "Netlify or Vercel for React stuff?",
     answer:
-      "Honestly, both work great. If you are using Next.js specifically, Vercel has an edge since they made it. But Netlify handles React, Gatsby, and pretty much everything else just as well. I have React sites on both and the difference is minimal. Pick based on which dashboard you prefer.",
+      "Both work fine honestly. If you're specifically using Next.js then Vercel has an edge since they built it. But for plain React or Gatsby or whatever Netlify handles it just as well. I've got React sites on both and they're basically the same experience. Just pick whichever dashboard you like better.",
   },
   {
-    question: "Can I use static hosting for e-commerce?",
+    question: "Can I sell stuff on a static site?",
     answer:
-      "Sort of. You can build a static frontend with something like Astro or Next.js and connect it to a headless commerce backend like Shopify or Snipcart. Works great for catalogs and checkout flows. But if you need real-time inventory or complex cart logic, you will want serverless functions which Netlify and Vercel both support.",
+      "Kind of? You can build a static frontend with Astro or Next.js and hook it up to Shopify or Snipcart for the commerce bits. Works great for product catalogs and checkout. But if you need real-time inventory tracking or complicated cart rules you'll want serverless functions which both Netlify and Vercel have.",
   },
   {
-    question: "What happens if I exceed the free tier limits?",
+    question: "What if I go over the free limits?",
     answer:
-      "They do not just shut you off. Usually you get a warning email and a grace period to upgrade or reduce usage. Netlify charges by the GB after 100GB. Vercel is similar. Cloudflare's unlimited bandwidth is genuinely unlimited, no catches there.",
+      "They don't just kill your site. You get warning emails first and usually a grace period to upgrade or cut back. Netlify and Vercel charge by the GB after you hit 100GB. Cloudflare's unlimited thing is actually unlimited. No surprise bills there.",
   },
   {
-    question: "Do I need to know DevOps to use these platforms?",
+    question: "Do I need to know DevOps stuff?",
     answer:
-      "Not really. The whole point is they abstract away server management. Connect your Git repo, push code, they build and deploy. That said, understanding basic CI/CD concepts helps when things break. But you do not need to be a sysadmin.",
+      "Nope that's the whole point. Connect your git repo and push code and it builds and deploys. You don't need to SSH into anything or manage servers. Knowing basic CI/CD concepts helps when builds fail but you definitely don't need to be a sysadmin.",
   },
   {
-    question: "Which platform has the best edge functions?",
+    question: "Who has the best edge functions?",
     answer:
-      "Cloudflare Workers are the most powerful since they run on Cloudflare's massive network. Vercel Edge Functions are tightly integrated with Next.js middleware. Netlify Edge Functions use Deno and work well but have fewer global locations. For pure performance, Cloudflare wins.",
+      "Cloudflare Workers are the most powerful because they run on Cloudflare's huge network. Vercel's edge stuff is nice if you're using Next.js middleware. Netlify's edge functions use Deno and work fine but fewer locations globally. For raw performance Cloudflare wins.",
   },
 ];
 
@@ -198,19 +198,13 @@ const relatedArticles = [
   <!-- Introduction -->
   <section id="introduction">
     <p class="lead">
-      I pushed my first site to Netlify in 2019. Coming from shared hosting where deploys meant FTPing files and praying,
-      it felt like magic. Git push, wait 30 seconds, site is live. I have since deployed probably 50 projects across
-      Netlify, Vercel, and Cloudflare Pages. Here is what actually matters.
+      First site I pushed to Netlify was back in 2019. Before that I was FTPing files to shared hosting and crossing my fingers. So when I connected my git repo and watched it deploy in 30 seconds I was like... wait that's it? Where's the suffering?
     </p>
     <p>
-      The good news is all three major players are genuinely good. The bad news is choosing between them can spiral into
-      hours of research when you should just be shipping your project. I have done that research so you do not have to.
+      Fifty-ish projects later across Netlify, Vercel, and Cloudflare Pages and I've got opinions. Good news is all three are legit good. Bad news is you can waste hours reading comparisons when you should just be shipping. So let me save you some time.
     </p>
     <p>
-      <strong>Short version:</strong> Netlify is my go-to for most projects. Great DX, solid free tier, works with
-      everything. Vercel if you are all-in on Next.js. Cloudflare Pages if you want unlimited bandwidth and crazy fast edge
-      performance. For more on <a href="/tools/best-web-hosting-remote-business">traditional hosting options</a>, check
-      that guide.
+      <strong>Don't want to read?</strong> Netlify for most projects. Works with everything, good free tier, I like the dashboard. Vercel if you're all-in on Next.js since they made it. Cloudflare Pages if you want unlimited bandwidth and don't mind a rougher experience. For <a href="/tools/best-web-hosting-remote-business">traditional hosting stuff</a> check that guide instead.
     </p>
   </section>
 
@@ -242,32 +236,26 @@ const relatedArticles = [
   <section id="why-static-hosting">
     <h2>Why Static Site Hosting Matters</h2>
     <p>
-      Static hosting is not just cheaper shared hosting with a modern name. It is fundamentally different architecture.
-      Your site gets built once and served as plain files from a global CDN. No PHP running on every page load. No
-      WordPress database to get hacked.
+      This isn't just shared hosting with better marketing. The architecture is completely different. Your site builds once and then it's just files sitting on a CDN. No PHP executing on every page view. No WordPress database waiting to get pwned.
     </p>
 
     <div class="space-y-4 my-6">
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">Speed</h4>
-        <p class="text-white/70 text-sm mt-2">Files served from the closest edge location. No server-side rendering delay.
-          Sub-100ms TTFB is normal. Compare that to WordPress sites that regularly hit 500ms or more.</p>
+        <p class="text-white/70 text-sm mt-2">Files come from the closest edge location to whoever's loading your site. No waiting for a server to render anything. Sub-100ms TTFB is totally normal. Meanwhile WordPress sites are regularly hitting 500ms or worse.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">Security</h4>
-        <p class="text-white/70 text-sm mt-2">No database means no SQL injection. No PHP means no PHP vulnerabilities. The
-          attack surface is basically your CDN provider, and they have entire security teams.</p>
+        <p class="text-white/70 text-sm mt-2">No database to SQL inject. No PHP to exploit. Your attack surface is basically just... your CDN provider. And they employ actual security teams unlike you or me.</p>
       </div>
       <div class="bg-jet-stream/20 border border-jet-stream/40 rounded-lg p-4">
         <h4 class="text-white font-semibold">Developer Experience</h4>
-        <p class="text-white/70 text-sm mt-2">This is the real win. Push to Git, deploys happen automatically. Preview URLs
-          for every branch. Rollback with one click. It just works. Compare with <a
-              href="/tools/migrate-website-without-downtime">traditional hosting migration</a>.</p>
+        <p class="text-white/70 text-sm mt-2">This is the real reason people switch. Push to git and deploys just happen. Preview URLs for every branch automatically. One-click rollbacks when you break something. It's the future we were promised. Compare with <a
+              href="/tools/migrate-website-without-downtime">traditional hosting migration pain</a>.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">Cost</h4>
-        <p class="text-white/70 text-sm mt-2">The free tiers are genuinely generous. Most personal projects and small
-          business sites never need to pay anything. And when you do scale, costs are predictable.</p>
+        <p class="text-white/70 text-sm mt-2">Free tiers are actually generous not just teasers. Most personal projects and small business sites never pay anything. And if you do scale up the pricing makes sense.</p>
       </div>
     </div>
   </section>
@@ -290,9 +278,7 @@ const relatedArticles = [
       </div>
 
       <p class="text-white/80 mt-4">
-        This is what I use for most projects. The FloatJet site you are reading right now? Netlify. I have had sites
-        running on it for five years with maybe two issues total. The dashboard makes sense. The build logs are
-        readable. Deploy previews for every PR just work.
+        This is what runs most of my projects. The site you're reading right now? Netlify. Been using it about five years and I can count the problems I've had on one hand. Dashboard actually makes sense which is rarer than you'd think. Build logs tell you what went wrong. Deploy previews just show up for every PR without configuring anything.
       </p>
 
       <div class="grid gap-4 sm:grid-cols-2 mt-4">
@@ -339,9 +325,7 @@ const relatedArticles = [
       </div>
 
       <p class="text-white/80 mt-4">
-        Vercel made Next.js, so naturally it is optimized for it. ISR, middleware, image optimization. All the Next.js
-        features work perfectly. If your stack is React plus Next.js, this is probably where you should be. The deploy
-        experience is slick. Maybe even slicker than Netlify honestly.
+        Vercel literally made Next.js so unsurprisingly it's optimized for it. ISR and middleware and image optimization all work without any configuration. If you're building with React and Next.js this is probably the obvious choice. The deploy experience is slick too. Might even be smoother than Netlify if I'm being honest.
       </p>
 
       <div class="grid gap-4 sm:grid-cols-2 mt-4">
@@ -388,9 +372,7 @@ const relatedArticles = [
       </div>
 
       <p class="text-white/80 mt-4">
-        Cloudflare is the CDN that powers like a quarter of the internet. Pages is their static hosting product and it is
-        kind of ridiculous. Unlimited bandwidth on the free tier. Not 100GB, unlimited. Plus access to Workers for edge
-        compute. The catch is it is newer and rougher around the edges than Netlify.
+        Cloudflare runs like a quarter of the internet's traffic. Pages is their static hosting thing and honestly it's kind of absurd. Unlimited bandwidth on the free tier. Not 100GB. Unlimited. Plus you get access to Workers for edge compute stuff. The catch? It's newer than Netlify and you can tell. Dashboard is rougher. Some framework integrations are still catching up.
       </p>
 
       <div class="grid gap-4 sm:grid-cols-2 mt-4">
@@ -426,9 +408,9 @@ const relatedArticles = [
 
   <!-- Other Options -->
   <section id="other-options">
-    <h2>Other Options Worth Considering</h2>
+    <h2>Other Options Worth Knowing About</h2>
     <p>
-      The big three are not the only game in town. These alternatives have their place depending on your needs.
+      Not everything has to be Netlify or Vercel or Cloudflare. These work too depending on what you're building.
     </p>
 
     <!-- GitHub Pages -->
@@ -445,9 +427,7 @@ const relatedArticles = [
       </div>
 
       <p class="text-white/80 mt-4">
-        If your project is already on GitHub and it is open source, Pages is zero-friction. Documentation sites, project
-        landing pages, personal sites. No extra account needed. Push to a branch, site updates. The limitations only hurt
-        if you need more than basic static files.
+        Project already on GitHub? Open source? Pages is zero friction. Doc sites and project landing pages and personal portfolios. You don't need another account. Push to a branch and it updates. The limits only start mattering when you need serverless functions or fancy build stuff.
       </p>
 
       <div class="grid gap-4 sm:grid-cols-2 mt-4">
@@ -525,9 +505,7 @@ const relatedArticles = [
       </div>
 
       <p class="text-white/80 mt-4">
-        Surge is the OG of simple static deploys. One command in your terminal and your site is live. No Git integration
-        needed. Great for prototypes, quick demos, or when you just need something online in 30 seconds. Less features but
-        also less complexity.
+        Surge is old school simple static deploys. Type one command in your terminal and boom the site is live. No git setup required. Perfect for quick prototypes or demos or when you need something online in literally 30 seconds. Way fewer features than the others but also way less to learn.
       </p>
 
       <div class="grid gap-4 sm:grid-cols-2 mt-4">
@@ -556,8 +534,7 @@ const relatedArticles = [
   <section id="build-times">
     <h2>Build Time Comparison</h2>
     <p>
-      I timed builds of the same Astro site across all three major platforms. Nothing huge, about 50 pages with image
-      optimization. Real-world numbers, not cherry-picked demos.
+      Ran the same Astro site through each platform to see how they compare. 50 pages with image optimization. Actual numbers from actual deploys not marketing claims.
     </p>
 
     <div class="bg-white/5 border border-white/10 rounded-lg p-4 my-6">
@@ -696,39 +673,33 @@ const relatedArticles = [
     </div>
 
     <p>
-      Vercel obviously wins for Next.js. Netlify has the best general support across different frameworks. Cloudflare is
-      catching up but some framework adapters are still community-maintained.
+      Vercel obviously wins for Next.js since they made it. Netlify is the most consistent across all the different frameworks. Cloudflare is catching up but some of their framework adapters are still maintained by random community members which makes me nervous.
     </p>
   </section>
 
   <!-- How to Choose -->
   <section id="how-to-choose">
-    <h2>How to Choose</h2>
+    <h2>Okay Which One Though</h2>
     <p>
-      Let me make this simple. Pick based on your primary use case:
+      Here's how I think about it:
     </p>
 
     <div class="space-y-4 my-6">
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-white font-semibold">Choose Netlify if...</h4>
-        <p class="text-white/70 text-sm mt-2">You want the most polished experience that works with everything. Great
-          for agencies, freelancers, and anyone who deploys lots of different projects. Form handling and identity are
-          nice bonuses.</p>
+        <h4 class="text-white font-semibold">Netlify makes sense when...</h4>
+        <p class="text-white/70 text-sm mt-2">You want the most polished experience and you're not tied to a specific framework. Agencies and freelancers love it because you can deploy like 50 different projects without learning 50 different platforms. Built-in forms are clutch too.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-white font-semibold">Choose Vercel if...</h4>
-        <p class="text-white/70 text-sm mt-2">You are building with Next.js or want the absolute smoothest React deploy
-          experience. The integration is unbeatable. Just be aware of the commercial use restrictions on free tier.</p>
+        <h4 class="text-white font-semibold">Vercel makes sense when...</h4>
+        <p class="text-white/70 text-sm mt-2">You're building with Next.js. Period. The integration is just too good to ignore. ISR and image optimization and edge middleware all work without touching config files. Watch the commercial use thing on free tier though.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-white font-semibold">Choose Cloudflare Pages if...</h4>
-        <p class="text-white/70 text-sm mt-2">Bandwidth costs matter or you need edge compute with Workers. The free tier
-          is unbeatable. Also great if you already use Cloudflare for DNS or CDN.</p>
+        <h4 class="text-white font-semibold">Cloudflare Pages makes sense when...</h4>
+        <p class="text-white/70 text-sm mt-2">Bandwidth is a concern or you want Workers for edge logic. Unlimited bandwidth on free is absurd. Also makes sense if you're already using Cloudflare for DNS or their CDN stuff.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-        <h4 class="text-white font-semibold">Choose GitHub Pages if...</h4>
-        <p class="text-white/70 text-sm mt-2">Your project is open source and you just want it online with zero extra
-          accounts. Documentation sites especially. Cannot beat the simplicity.</p>
+        <h4 class="text-white font-semibold">GitHub Pages makes sense when...</h4>
+        <p class="text-white/70 text-sm mt-2">Open source project that just needs to be online with zero extra accounts or setup. Documentation sites are perfect for this. Dead simple.</p>
       </div>
     </div>
   </section>
@@ -747,23 +718,18 @@ const relatedArticles = [
 
   <!-- Conclusion -->
   <section id="conclusion">
-    <h2>Conclusion</h2>
+    <h2>After 50+ Projects</h2>
     <p>
-      Five years, 50+ projects, three platforms. <strong>Netlify</strong> is still my default. Solid across the board, works
-      with everything, never really lets me down. The form handling alone saves me from setting up backends.
+      Five years of deploying stuff. Fifty-ish projects across these platforms. <strong>Netlify</strong> is still what I reach for first. Works with everything, dashboard doesn't annoy me, and the built-in form handling has saved me from spinning up backends more times than I can count.
     </p>
     <p>
-      <strong>Vercel</strong> when it is a Next.js project. The integration is just too smooth to ignore. ISR, image
-      optimization, edge middleware. It all just works.
+      <strong>Vercel</strong> when the project is Next.js. Their integration is just too smooth to pass up. ISR works, image optimization works, edge middleware works. All without config files.
     </p>
     <p>
-      <strong>Cloudflare Pages</strong> when I need that unlimited bandwidth or Workers for edge logic. The free tier is
-      genuinely the best value if you can deal with the slightly rougher experience.
+      <strong>Cloudflare Pages</strong> when bandwidth matters or I want to mess with Workers. That unlimited free tier is hard to argue with even if the experience is a bit rougher.
     </p>
     <p>
-      Honestly though, you cannot really go wrong with any of them. They are all light-years ahead of traditional hosting.
-      Pick one, start deploying, and switch later if you need to. It is not a permanent decision.
-    </p>
+      Real talk though? You can't really screw this up. All three are miles ahead of what hosting used to be. Pick one and start shipping. You can always switch later. It's not like picking a database where migration is a nightmare.</p>
 
     <div class="bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-jet-stream/30 rounded-xl p-6 mt-6">
       <p class="text-white font-semibold">My Top Pick: Netlify</p>

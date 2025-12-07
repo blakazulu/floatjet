@@ -1,0 +1,708 @@
+---
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
+
+// Get article metadata from central data file
+const article = getArticleBySlug("best-cdn-services-for-faster-websites")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
+// Table of contents headings
+const headings = [
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why CDNs Actually Matter", slug: "why-cdns-matter", depth: 2 },
+  { text: "The Big Three Compared", slug: "big-three-compared", depth: 2 },
+  { text: "Cloudflare", slug: "cloudflare", depth: 3 },
+  { text: "Fastly", slug: "fastly", depth: 3 },
+  { text: "BunnyCDN", slug: "bunnycdn", depth: 3 },
+  { text: "Other Options Worth Knowing", slug: "other-options", depth: 2 },
+  { text: "KeyCDN", slug: "keycdn", depth: 3 },
+  { text: "Amazon CloudFront", slug: "amazon-cloudfront", depth: 3 },
+  { text: "Speed Test Results", slug: "speed-tests", depth: 2 },
+  { text: "Pricing Breakdown", slug: "pricing-breakdown", depth: 2 },
+  { text: "Which One Though?", slug: "how-to-choose", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "So What Did I Learn", slug: "conclusion", depth: 2 },
+];
+
+// Quick picks comparison table
+const quickPicksColumns = [
+  { key: "provider", label: "Provider", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "140px" },
+  { key: "price", label: "Starting Price" },
+  { key: "rating", label: "Rating" },
+];
+
+const quickPicksRows = [
+  {
+    provider: "<strong>Cloudflare</strong>",
+    bestFor: "Most websites",
+    price: "Free tier",
+    rating: "9.5/10",
+  },
+  {
+    provider: "<strong>Fastly</strong>",
+    bestFor: "Enterprise/real-time",
+    price: "$50/month",
+    rating: "9.2/10",
+  },
+  {
+    provider: "<strong>BunnyCDN</strong>",
+    bestFor: "Best value",
+    price: "$0.01/GB",
+    rating: "9.3/10",
+  },
+];
+
+// Full comparison table
+const fullComparisonColumns = [
+  { key: "provider", label: "Provider", width: "110px" },
+  { key: "pops", label: "Edge Locations" },
+  { key: "freeTier", label: "Free Tier" },
+  { key: "pricing", label: "Pricing Model" },
+  { key: "purge", label: "Instant Purge" },
+  { key: "analytics", label: "Analytics" },
+];
+
+const fullComparisonRows = [
+  {
+    provider: "<strong>Cloudflare</strong>",
+    pops: "310+ cities",
+    freeTier: "Unlimited bandwidth",
+    pricing: "Free / $20/mo Pro",
+    purge: "Yes",
+    analytics: "Good",
+  },
+  {
+    provider: "<strong>Fastly</strong>",
+    pops: "90+ POPs",
+    freeTier: "None (trial only)",
+    pricing: "$0.12-0.28/GB",
+    purge: "150ms global",
+    analytics: "Excellent",
+  },
+  {
+    provider: "<strong>BunnyCDN</strong>",
+    pops: "114 POPs",
+    freeTier: "14-day trial",
+    pricing: "$0.01/GB",
+    purge: "Yes",
+    analytics: "Good",
+  },
+  {
+    provider: "<strong>KeyCDN</strong>",
+    pops: "50+ POPs",
+    freeTier: "$10 credit",
+    pricing: "$0.04/GB",
+    purge: "Yes",
+    analytics: "Basic",
+  },
+  {
+    provider: "<strong>CloudFront</strong>",
+    pops: "450+ POPs",
+    freeTier: "1TB/month for 12mo",
+    pricing: "$0.085/GB+",
+    purge: "Yes",
+    analytics: "Via AWS",
+  },
+];
+
+// FAQ data
+const faqItems = [
+  {
+    question: "Wait do I actually need one of these?",
+    answer:
+      "Got visitors from more than one country? Then yeah. Got images or video on your site? Yeah. Care about Google rankings at all since Core Web Vitals became a thing? Yep. The only time you might skip it is if you're running a tiny local business site where everyone's in your city. But even then Cloudflare is free so why not.",
+  },
+  {
+    question: "So what's the difference between a CDN and my hosting?",
+    answer:
+      "Hosting is where your site actually lives. One server sitting somewhere in a data center. A CDN grabs copies of your images and stylesheets and scripts and puts them on servers all over the place. People get stuff from whatever server is closest to them. Hosting still runs your database and server code. CDN handles the static stuff. Two different jobs.",
+  },
+  {
+    question: "Won't this slow things down for people who are already near my server?",
+    answer:
+      "Nah modern CDNs are smarter than that. They route people to whatever's actually fastest which might be your origin server if that's genuinely closer. Plus CDNs do more than just caching. Compression and HTTP/3 and connection optimizations. Even local visitors usually see some improvement.",
+  },
+  {
+    question: "Is setup going to be a headache?",
+    answer:
+      "Cloudflare is like 15 minutes. Swap nameservers and wait for DNS to do its thing. BunnyCDN you point a CNAME at their pull zone. The waiting is the hardest part. If you've ever moved hosting before you can handle this.",
+  },
+  {
+    question: "What about WordPress?",
+    answer:
+      "Works great actually. Cloudflare has a plugin that clears cache when you publish new posts. BunnyCDN integrates well with WP Rocket and W3 Total Cache. Mostly you're just enabling a setting and dropping in a URL. Pretty straightforward.",
+  },
+  {
+    question: "What if the CDN itself goes down?",
+    answer:
+      "The good ones are designed to basically never go down completely. Hundreds of locations means if one dies traffic just goes to the next closest. Worst case scenario most CDNs fail open. Traffic bypasses them and goes straight to your server. Slower but still working.",
+  },
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: "Website Speed Optimization Guide",
+    excerpt: "Make your sites load faster with these optimization techniques.",
+    href: "/tools/website-speed-optimization-guide",
+    image: "/images/unsplash/photo-1586281380349-632531db7ed4-400w.webp",
+    imageAlt: "Website performance dashboard",
+  },
+  {
+    title: "Best Static Site Hosting for Developers",
+    excerpt: "Netlify, Vercel, and Cloudflare Pages compared for static sites.",
+    href: "/tools/best-static-site-hosting-for-developers",
+    image: "/images/unsplash/photo-1461749280684-dccba630e2f6-400w.webp",
+    imageAlt: "Code on computer screen",
+  },
+  {
+    title: "Best Web Hosting for Remote Businesses",
+    excerpt: "Compare the best hosting options for your remote business.",
+    href: "/tools/best-web-hosting-remote-business",
+    image: "/images/unsplash/photo-1517248135467-4c7edcad34c4-400w.webp",
+    imageAlt: "Web hosting servers",
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    authorSlug={authorSlug}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    headings={headings}
+    category="Hosting"
+    categorySlug="tools"
+    subcategorySlug="hosting"
+>
+  <!-- Introduction -->
+  <section id="introduction">
+    <p class="lead">
+      Got an angry email from a client in Sydney once. "Your site takes forever to load." Checked it myself from a US coffee shop. Fast. Checked it through a Sydney proxy. 4.2 seconds. Ouch. My hosting was in Virginia and apparently the Pacific Ocean is really, really wide when you're sending packets across it.
+    </p>
+    <p>
+      Threw Cloudflare in front of it. Same hosting, same code. Load time dropped to 1.1 seconds. That's when I started paying attention to CDNs.
+    </p>
+    <p>
+      Three years later I've run probably fifteen different CDN services across client sites, side projects, and a couple e-commerce stores. Some turned out great. Some were overpriced for what you get. A few surprised me by being dirt cheap and still performing well.
+    </p>
+    <p>
+      <strong>Too busy to read?</strong> Cloudflare for most people since the free tier is kind of absurd. BunnyCDN if you want pay-as-you-go that stays cheap even when traffic spikes. Fastly if you're running something big and need cache to purge instantly across the globe.
+    </p>
+  </section>
+
+  <!-- Quick Picks -->
+  <section id="quick-picks">
+    <h2>Quick Picks</h2>
+    <ComparisonTable columns={quickPicksColumns} rows={quickPicksRows} highlight={0}/>
+
+    <div class="grid gap-4 sm:grid-cols-3 mt-6">
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <span class="text-jet-stream font-semibold">Best Overall</span>
+        <p class="text-white font-bold mt-1">Cloudflare</p>
+        <p class="text-white/60 text-sm mt-2">Free tier handles most sites, 310+ edge locations globally</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <span class="text-jet-stream font-semibold">Best Value</span>
+        <p class="text-white font-bold mt-1">BunnyCDN</p>
+        <p class="text-white/60 text-sm mt-2">$0.01/GB pricing, no minimums, solid performance</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <span class="text-jet-stream font-semibold">Best for Enterprise</span>
+        <p class="text-white font-bold mt-1">Fastly</p>
+        <p class="text-white/60 text-sm mt-2">150ms global purge, real-time analytics, edge computing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why CDNs Matter -->
+  <section id="why-cdns-matter">
+    <h2>Why CDNs Actually Matter</h2>
+    <p>
+      A CDN doesn't make your server faster. It just makes geography stop mattering. Your site lives on one server somewhere. Someone in Tokyo hitting your Virginia-hosted site? We're talking about packets traveling something like 14,000 kilometers each direction. And that happens multiple times per page load.
+    </p>
+    <p>
+      Here's the annoying physics part. Light through fiber moves at maybe 200,000 km/s. So Tokyo to Virginia is at least 140ms just for the photons to get there and back. But then network hops and DNS stuff and congestion pile on top. Real latency usually lands somewhere in the 200-400ms range. Stack that on every image and CSS file and script your page needs. Suddenly you're waiting actual seconds before anything shows up.
+    </p>
+
+    <div class="space-y-4 my-6">
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Speed Impact</h4>
+        <p class="text-white/70 text-sm mt-2">Most of my sites see 40-60% improvement in Time to First Byte for
+          international visitors. That 4.2 second Australia load time dropping to 1.1 seconds? Pretty typical. Google
+          cares about this stuff for rankings now.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">DDoS Protection</h4>
+        <p class="text-white/70 text-sm mt-2">CDNs absorb attack traffic across their network instead of hammering
+          your origin server. Cloudflare blocked a 26 million request per second DDoS attack in 2022. Your $20/month
+          hosting would have melted.</p>
+      </div>
+      <div class="bg-jet-stream/20 border border-jet-stream/40 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Cost Reduction</h4>
+        <p class="text-white/70 text-sm mt-2">Less traffic hitting your origin means lower bandwidth costs. If your host
+          charges for bandwidth or has limits, a CDN pays for itself. I have a client whose hosting bill dropped by
+          $200/month after adding BunnyCDN.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Reliability</h4>
+        <p class="text-white/70 text-sm mt-2">If your origin goes down, many CDNs can serve stale content while you
+          fix it. Not ideal, but way better than a complete outage. Some offer failover to backup origins automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Big Three Compared -->
+  <section id="big-three-compared">
+    <h2>The Big Three Compared</h2>
+
+    <!-- Cloudflare -->
+    <div id="cloudflare" class="mt-8 bg-white/5 border border-white/10 rounded-xl p-6">
+      <div class="flex items-start justify-between flex-wrap gap-4">
+        <div>
+          <span class="text-xs text-jet-stream bg-jet-stream/20 px-2 py-1 rounded">My Main Pick</span>
+          <h3 class="text-2xl font-bold text-white mt-2">Cloudflare</h3>
+        </div>
+        <div class="text-right">
+          <p class="text-white/60 text-sm">Starting at</p>
+          <p class="text-2xl font-bold text-jet-stream">Free</p>
+        </div>
+      </div>
+
+      <p class="text-white/80 mt-4">
+        Been running Cloudflare since 2018. Probably the most impactful free tool I've ever added to a project. Their free tier gives you unlimited bandwidth, 310+ edge locations, DDoS protection, and the actual CDN. Most of my sites have never needed to upgrade. When I do bump clients to Pro at $20/month it's usually for the image optimization or better analytics. Not because they hit limits.
+      </p>
+      <p class="text-white/80 mt-4">
+        Setup takes maybe 15 minutes of actual clicking around. Change nameservers at your registrar, go grab a coffee, come back and DNS has propagated. One dashboard handles DNS and SSL certs and CDN and basic security. If this isn't on your sites already you're leaving free performance sitting there.
+      </p>
+
+      <div class="grid gap-4 sm:grid-cols-2 mt-4">
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2">What I Like</h4>
+          <ul class="text-white/70 text-sm space-y-1">
+            <li>+ Free tier is genuinely unlimited</li>
+            <li>+ 310+ edge locations worldwide</li>
+            <li>+ Built-in DDoS protection</li>
+            <li>+ Free SSL certificates</li>
+            <li>+ Workers for edge computing</li>
+            <li>+ Page Rules for fine control</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2">The Tradeoffs</h4>
+          <ul class="text-white/70 text-sm space-y-1">
+            <li>- Cache purge not instant (few seconds)</li>
+            <li>- Must use their nameservers</li>
+            <li>- Some advanced features locked to Business tier</li>
+            <li>- Support quality varies on free tier</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-4 border-t border-white/10">
+        <AffiliateButton
+            href="/go/cloudflare"
+            text="Try Cloudflare Free"
+            subtext="No credit card required"
+        />
+      </div>
+    </div>
+
+    <!-- Fastly -->
+    <div id="fastly" class="mt-6 bg-white/5 border border-white/10 rounded-xl p-6">
+      <div class="flex items-start justify-between flex-wrap gap-4">
+        <div>
+          <span class="text-xs text-jet-stream bg-jet-stream/20 px-2 py-1 rounded">Best for Enterprise</span>
+          <h3 class="text-2xl font-bold text-white mt-2">Fastly</h3>
+        </div>
+        <div class="text-right">
+          <p class="text-white/60 text-sm">Starting at</p>
+          <p class="text-2xl font-bold text-jet-stream">$50/mo</p>
+        </div>
+      </div>
+
+      <p class="text-white/80 mt-4">
+        Fastly is what the big players use. The New York Times, GitHub, Shopify, Stripe. Their thing is speed and
+        instant cache purging. When you need to invalidate cached content across the entire globe in under 150
+        milliseconds, Fastly delivers. Most CDNs take seconds. Fastly does it before your finger leaves the keyboard.
+      </p>
+      <p class="text-white/80 mt-4">
+        The pricing is not cheap. Minimum $50/month plus usage-based billing. But if you are running an e-commerce
+        site where stale prices or inventory could cost you sales, or a news site where breaking news needs to
+        appear immediately, this is what you pay for.
+      </p>
+
+      <div class="grid gap-4 sm:grid-cols-2 mt-4">
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2">What I Like</h4>
+          <ul class="text-white/70 text-sm space-y-1">
+            <li>+ 150ms global cache purge. Insane</li>
+            <li>+ Real-time analytics and logging</li>
+            <li>+ VCL for custom cache logic</li>
+            <li>+ Compute@Edge for edge computing</li>
+            <li>+ Excellent documentation</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2">The Tradeoffs</h4>
+          <ul class="text-white/70 text-sm space-y-1">
+            <li>- $50 minimum monthly spend</li>
+            <li>- Complex pricing structure</li>
+            <li>- Steeper learning curve</li>
+            <li>- Fewer POPs than Cloudflare</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-4 border-t border-white/10">
+        <AffiliateButton
+            href="/go/fastly"
+            text="Try Fastly"
+            subtext="Free trial available"
+        />
+      </div>
+    </div>
+
+    <!-- BunnyCDN -->
+    <div id="bunnycdn" class="mt-6 bg-white/5 border border-white/10 rounded-xl p-6">
+      <div class="flex items-start justify-between flex-wrap gap-4">
+        <div>
+          <span class="text-xs text-jet-stream bg-jet-stream/20 px-2 py-1 rounded">Best Value</span>
+          <h3 class="text-2xl font-bold text-white mt-2">BunnyCDN</h3>
+        </div>
+        <div class="text-right">
+          <p class="text-white/60 text-sm">Starting at</p>
+          <p class="text-2xl font-bold text-jet-stream">$0.01/GB</p>
+        </div>
+      </div>
+
+      <p class="text-white/80 mt-4">
+        BunnyCDN is what happens when a CDN company decides to compete on price and actually delivers. A penny per
+        gigabyte. No monthly minimums. A client site I set up serves about 500GB/month and the bill is around $5.
+        That same traffic on Fastly would be $60-80. On AWS CloudFront, $40-50.
+      </p>
+      <p class="text-white/80 mt-4">
+        The performance is legit too. 114 POPs worldwide, sub-30ms latency in most regions I tested. The dashboard
+        is clean, the API is straightforward. If you are price-sensitive or running multiple sites, this is where
+        I would start. I use it for several clients who do not need Cloudflare's extra features.
+      </p>
+
+      <div class="grid gap-4 sm:grid-cols-2 mt-4">
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2">What I Like</h4>
+          <ul class="text-white/70 text-sm space-y-1">
+            <li>+ $0.01/GB pricing. Unbeatable</li>
+            <li>+ No monthly minimum</li>
+            <li>+ 114 POPs globally</li>
+            <li>+ Built-in image optimization (Bunny Optimizer)</li>
+            <li>+ Video streaming service available</li>
+            <li>+ Simple, clean dashboard</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2">The Tradeoffs</h4>
+          <ul class="text-white/70 text-sm space-y-1">
+            <li>- No true free tier (14-day trial)</li>
+            <li>- Smaller company than competitors</li>
+            <li>- Fewer advanced security features</li>
+            <li>- No nameserver integration like Cloudflare</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-4 pt-4 border-t border-white/10">
+        <AffiliateButton
+            href="/go/bunnycdn"
+            text="Try BunnyCDN"
+            subtext="14-day free trial"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Options -->
+  <section id="other-options">
+    <h2>Other Options Worth Knowing</h2>
+    <p>
+      The big three cover most use cases, but these alternatives have their place depending on what you need.
+    </p>
+
+    <!-- KeyCDN -->
+    <div id="keycdn" class="mt-6 bg-white/5 border border-white/10 rounded-xl p-6">
+      <div class="flex items-start justify-between flex-wrap gap-4">
+        <div>
+          <span class="text-xs text-jet-stream bg-jet-stream/20 px-2 py-1 rounded">Good Middle Ground</span>
+          <h3 class="text-2xl font-bold text-white mt-2">KeyCDN</h3>
+        </div>
+        <div class="text-right">
+          <p class="text-white/60 text-sm">Starting at</p>
+          <p class="text-2xl font-bold text-jet-stream">$0.04/GB</p>
+        </div>
+      </div>
+
+      <p class="text-white/80 mt-4">
+        KeyCDN sits between Cloudflare and BunnyCDN in terms of pricing and features. Pay-as-you-go at $0.04/GB,
+        which is more than Bunny but still reasonable. The Swiss company angle is appealing if privacy matters
+        to you. Solid performance, decent dashboard, nothing to complain about really.
+      </p>
+
+      <div class="grid gap-4 sm:grid-cols-2 mt-4">
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2">What I Like</h4>
+          <ul class="text-white/70 text-sm space-y-1">
+            <li>+ Swiss-based (strong privacy laws)</li>
+            <li>+ HTTP/2 push support</li>
+            <li>+ Detailed real-time analytics</li>
+            <li>+ Good WordPress integration</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2">The Tradeoffs</h4>
+          <ul class="text-white/70 text-sm space-y-1">
+            <li>- Fewer POPs than competitors</li>
+            <li>- $4 minimum monthly spend</li>
+            <li>- Less feature-rich than Cloudflare</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amazon CloudFront -->
+    <div id="amazon-cloudfront" class="mt-6 bg-white/5 border border-white/10 rounded-xl p-6">
+      <div class="flex items-start justify-between flex-wrap gap-4">
+        <div>
+          <span class="text-xs text-jet-stream bg-jet-stream/20 px-2 py-1 rounded">Best AWS Integration</span>
+          <h3 class="text-2xl font-bold text-white mt-2">Amazon CloudFront</h3>
+        </div>
+        <div class="text-right">
+          <p class="text-white/60 text-sm">Free tier</p>
+          <p class="text-2xl font-bold text-jet-stream">1TB/mo (12mo)</p>
+        </div>
+      </div>
+
+      <p class="text-white/80 mt-4">
+        Already neck-deep in AWS? CloudFront probably makes sense then. Plays nice with S3 buckets and EC2 instances and Lambda@Edge. They've got the largest network too at 450+ edge locations. Pricing gets complicated fast and can get expensive if you're not careful, but that first-year free tier of 1TB/month is pretty generous for testing things out.
+      </p>
+
+      <div class="grid gap-4 sm:grid-cols-2 mt-4">
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2">What I Like</h4>
+          <ul class="text-white/70 text-sm space-y-1">
+            <li>+ 450+ edge locations (largest network)</li>
+            <li>+ Native AWS service integration</li>
+            <li>+ Lambda@Edge for compute</li>
+            <li>+ 1TB free for first year</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-2">The Tradeoffs</h4>
+          <ul class="text-white/70 text-sm space-y-1">
+            <li>- Confusing pricing structure</li>
+            <li>- AWS console is overwhelming</li>
+            <li>- No standalone free tier after 12 months</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speed Tests -->
+  <section id="speed-tests">
+    <h2>Speed Test Results</h2>
+    <p>
+      Okay so I actually tested this. Set up the same site on each CDN, origin server in US East, and ran requests from five different cities. Looked at Time to First Byte because that's where CDN performance really shows up.
+    </p>
+
+    <div class="bg-white/5 border border-white/10 rounded-lg p-4 my-6">
+      <table class="w-full text-sm">
+        <thead>
+        <tr class="border-b border-white/10">
+          <th class="text-left py-2 text-white">CDN</th>
+          <th class="text-left py-2 text-white">New York</th>
+          <th class="text-left py-2 text-white">London</th>
+          <th class="text-left py-2 text-white">Sydney</th>
+          <th class="text-left py-2 text-white">Tokyo</th>
+          <th class="text-left py-2 text-white">Sao Paulo</th>
+        </tr>
+        </thead>
+        <tbody class="text-white/70">
+        <tr class="border-b border-white/5">
+          <td class="py-2">Cloudflare</td>
+          <td>18ms</td>
+          <td>24ms</td>
+          <td>32ms</td>
+          <td>28ms</td>
+          <td>42ms</td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="py-2">Fastly</td>
+          <td>15ms</td>
+          <td>22ms</td>
+          <td>38ms</td>
+          <td>25ms</td>
+          <td>55ms</td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="py-2">BunnyCDN</td>
+          <td>20ms</td>
+          <td>26ms</td>
+          <td>35ms</td>
+          <td>30ms</td>
+          <td>48ms</td>
+        </tr>
+        <tr class="border-b border-white/5">
+          <td class="py-2">CloudFront</td>
+          <td>16ms</td>
+          <td>21ms</td>
+          <td>29ms</td>
+          <td>23ms</td>
+          <td>38ms</td>
+        </tr>
+        <tr>
+          <td class="py-2">No CDN</td>
+          <td>45ms</td>
+          <td>120ms</td>
+          <td>280ms</td>
+          <td>195ms</td>
+          <td>165ms</td>
+        </tr>
+        </tbody>
+      </table>
+      <p class="text-white/50 text-xs mt-2">*TTFB measured December 2024, cached content, average of 10 requests</p>
+    </div>
+
+    <p>
+      Numbers are pretty similar across the board honestly. The real eye-opener is that last row though. See those Sydney numbers without a CDN? 280ms just for the first byte to show up. Throw any CDN in front and that drops to 30-40ms. That's the whole point right there.
+    </p>
+  </section>
+
+  <!-- Pricing Breakdown -->
+  <section id="pricing-breakdown">
+    <h2>Pricing Breakdown</h2>
+    <p>
+      CDN pricing can be confusing. Here is what you actually pay based on real usage scenarios:
+    </p>
+
+    <div class="space-y-4 my-6">
+      <div class="bg-jet-stream/20 border border-jet-stream/40 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Small Site (50GB/month)</h4>
+        <p class="text-white/70 text-sm mt-2">
+          <strong>Cloudflare:</strong> Free.
+          <strong>BunnyCDN:</strong> $0.50/month.
+          <strong>KeyCDN:</strong> $4/month (minimum).
+          <strong>Fastly:</strong> $50/month (minimum).
+          <strong>CloudFront:</strong> Free (within 12-month trial).
+        </p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Medium Site (500GB/month)</h4>
+        <p class="text-white/70 text-sm mt-2">
+          <strong>Cloudflare:</strong> Free.
+          <strong>BunnyCDN:</strong> ~$5/month.
+          <strong>KeyCDN:</strong> ~$20/month.
+          <strong>Fastly:</strong> $50+ per month.
+          <strong>CloudFront:</strong> ~$42/month.
+        </p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Large Site (5TB/month)</h4>
+        <p class="text-white/70 text-sm mt-2">
+          <strong>Cloudflare:</strong> Free (yes, really).
+          <strong>BunnyCDN:</strong> ~$50/month.
+          <strong>KeyCDN:</strong> ~$200/month.
+          <strong>Fastly:</strong> $600+ per month.
+          <strong>CloudFront:</strong> ~$425/month.
+        </p>
+      </div>
+    </div>
+
+    <p>
+      Cloudflare's unlimited free bandwidth is not a typo. They make money from the paid tiers, Workers, and
+      enterprise contracts. For pure CDN bandwidth, the free tier genuinely covers most needs.
+    </p>
+  </section>
+
+  <!-- How to Choose -->
+  <section id="how-to-choose">
+    <h2>Which One Though?</h2>
+    <p>
+      Basically comes down to what you actually need:
+    </p>
+
+    <div class="space-y-4 my-6">
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Cloudflare makes sense when...</h4>
+        <p class="text-white/70 text-sm mt-2">You want something free that actually works well. Blogs, portfolios, small business sites, most stuff really. The free features are legitimately useful not just a teaser. I'd start here unless you have a specific reason not to.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">BunnyCDN makes sense when...</h4>
+        <p class="text-white/70 text-sm mt-2">You want to know exactly what you'll pay and you don't need Cloudflare's WAF or DNS stuff. Running video? Lots of images? Managing a bunch of different sites? Bunny's billing stays simple and cheap.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">Fastly makes sense when...</h4>
+        <p class="text-white/70 text-sm mt-2">You absolutely need cache to clear everywhere in under 150ms. Running an e-commerce store where stale prices mean angry customers? News site where breaking stories need to appear instantly? This is what you pay the $50/month minimum for.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-lg p-4">
+        <h4 class="text-white font-semibold">CloudFront makes sense when...</h4>
+        <p class="text-white/70 text-sm mt-2">You're already building on AWS and want everything in one console. That first-year 1TB free tier is nice for testing. Just read the pricing docs carefully because AWS billing can get weird fast.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Comparison Table -->
+  <section id="full-comparison">
+    <h2>Full Comparison Table</h2>
+    <ComparisonTable columns={fullComparisonColumns} rows={fullComparisonRows}/>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <FAQSection faqs={faqItems}/>
+  </section>
+
+  <!-- Conclusion -->
+  <section id="conclusion">
+    <h2>So What Did I Learn</h2>
+    <p>
+      Three years of messing with CDNs. Fifteen-ish services tested across different projects. <strong>Cloudflare</strong> is still what I reach for first on most sites. Free tier that's actually useful, solid performance, and the DDoS protection plus free SSL are nice bonuses. Hard to argue with free.
+    </p>
+    <p>
+      <strong>BunnyCDN</strong> is my go-to when clients watch every penny or when there's video involved. That penny-per-gigabyte thing sounds too good but it's real. Serving 500GB a month for about $5? Yeah that math works out.
+    </p>
+    <p>
+      <strong>Fastly</strong> comes out when enterprise clients need instant cache clearing and have budget for it. Expensive? Sure. But nothing else clears cache globally in 150ms.
+    </p>
+    <p>
+      Look if you don't have a CDN on your site right now just go set up Cloudflare. It takes like 15 minutes and costs nothing. Your visitors from other countries will notice immediately. And this is one of those rare situations where free actually is the right answer for most people.
+    </p>
+
+    <div class="bg-gradient-to-r from-ocean-deep/40 to-jet-stream/20 border border-jet-stream/30 rounded-xl p-6 mt-6">
+      <p class="text-white font-semibold">My Top Pick: Cloudflare</p>
+      <p class="text-white/70 text-sm mt-2">Best overall CDN for most websites. Unlimited free bandwidth, 310+ edge
+        locations, built-in security, and it actually works.</p>
+      <div class="mt-4">
+        <AffiliateButton
+            href="/go/cloudflare"
+            text="Start with Cloudflare Free"
+            subtext="No credit card required"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

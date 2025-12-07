@@ -3,7 +3,7 @@ task_id: "FJ-A006"
 title: "Write Article: Best CDN Services for Faster Websites"
 category: "Content"
 priority: "P2"
-status: "review"
+status: "completed"
 created_date: "2025-12-07"
 due_date: ""
 estimated_hours: 6
@@ -47,7 +47,7 @@ Write a money page article about Cloudflare vs Fastly vs BunnyCDN for the Tools 
 - [x] SEO/AEO/GEO requirements met
 - [x] Unique hero image downloaded and optimized
 - [x] Article added to `src/data/articles.ts`
-- [ ] Build passes without errors (user to test)
+- [x] Build passes without errors
 
 ## Subtasks
 
@@ -113,8 +113,7 @@ Write a money page article about Cloudflare vs Fastly vs BunnyCDN for the Tools 
 
 - [x] 4.3 Final verification
     - Ran `npm run docs:articles`
-    - [ ] User to run dev server and preview
-    - [ ] User to verify article renders correctly
+    - [x] User verified article renders correctly
 
 ## Resources
 
@@ -131,8 +130,8 @@ Before marking this task complete:
 - [x] Hero image is unique and optimized
 - [x] Article added to articles.ts
 - [x] Article summary regenerated
-- [ ] Preview looks correct (user to verify)
-- [ ] Build passes (user to verify)
+- [x] Preview looks correct
+- [x] Build passes
 
 
 ## Affiliate Opportunities
@@ -174,6 +173,11 @@ Before marking this task complete:
 - Added article to articles.ts
 - Regenerated article summary
 - Task ready for user review and testing
+
+### 2025-12-08
+
+- Task marked as completed
+- Moved to completed folder
 
 ## Notes
 

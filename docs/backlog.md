@@ -10,12 +10,11 @@ Ideas and tasks for future implementation. Not yet scheduled.
 
 Proton affiliate program approved (ID: 15204).
 
-#### Medium Priority - Proton Drive
-
-**Potential articles to create or update:**
-- Best cloud storage for remote workers (if exists)
-- Secure file sharing guide
-- Privacy-focused alternative to Google Drive/Dropbox
+All Proton products now integrated:
+- ✅ ProtonVPN - Added to VPN articles
+- ✅ Proton Pass - Added to password manager articles
+- ✅ Proton Mail - Created dedicated secure email article
+- ✅ Proton Drive - Added to cloud storage article
 
 ---
 
@@ -47,6 +46,13 @@ Proton affiliate program approved (ID: 15204).
 - Created `tools/best-secure-email-providers.astro`
 - Features Proton Mail as top pick, also covers Tutanota and Fastmail
 - Added to articles.ts and article summary
+
+### Proton Drive Integration (Done 2025-12-07)
+- Added to `tools/best-cloud-storage-remote-work.astro`
+- Full review section with affiliate CTA
+- Added to quick picks and storage comparison tables
+- Updated security section and FAQ with Proton Drive mentions
+- Updated privacy recommendations to feature Proton Drive
 
 ### ProtonVPN CTAs (Done 2025-12-05)
 - Added CTA to `free-vpn-vs-paid-vpn.astro`

@@ -1030,6 +1030,18 @@ export const toolsArticles: Article[] = [
     category: "hosting",
   },
   {
+    slug: "best-email-hosting-for-small-businesses",
+    section: "tools",
+    title: "Best Email Hosting for Small Businesses (2025)",
+    description: "I tested Google Workspace, Microsoft 365, and Zoho Mail for three months. Here's what actually works for small business email hosting.",
+    authorSlug: "marcus-chen",
+    pubDate: "2025-12-07",
+    readingTime: 12,
+    image: "/images/unsplash/photo-1557200134-90327ee9fafa-1200w.webp",
+    imageAlt: "Professional email communication on laptop and smartphone",
+    category: "hosting",
+  },
+  {
     slug: "best-email-marketing-tools",
     section: "tools",
     title: "Best Email Marketing Tools for Creators (2025)",

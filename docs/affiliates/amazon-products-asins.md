@@ -1,8 +1,8 @@
 # Amazon Products & ASINs Reference
 
 **Store ID:** floatjet-20
-**Last Updated:** 2025-11-30
-**Status:** ✅ Amazon Associates Approved (18 monitors + 6 laptops + 9 chairs + 7 standing desks added)
+**Last Updated:** 2025-12-07
+**Status:** ✅ Amazon Associates Approved (18 monitors + 20 laptops + 12 chairs + 9 standing desks + 8 bags)
 
 This document contains all Amazon product ASINs for FloatJet affiliate links.
 
@@ -25,6 +25,18 @@ This document contains all Amazon product ASINs for FloatJet affiliate links.
 | **Acer Swift 3 OLED (i7-12700H/16GB/1TB)**      | B0B1VYQ6XG | ~$999       | `/go/amazon/acer-swift-3-oled`             |
 | **MacBook Pro 14" M3 Pro (11-core/18GB/512GB)** | B0CM5JV26D | ~$1,999     | `/go/amazon/macbook-pro-14-m3`             |
 | **Dell XPS 15 9530 (i7-13700H/16GB/1TB)**       | B0CDNTRB2V | ~$1,799     | `/go/amazon/dell-xps-15`                   |
+
+### Budget Laptops
+
+| Product                                         | ASIN       | Price Range | Link Format                                |
+|-------------------------------------------------|------------|-------------|--------------------------------------------|
+| **Acer Aspire 5 (Ryzen 7/16GB/512GB)**          | B0F1MYBZJF | ~$549       | `/go/acer-aspire-5`                        |
+| **Dell Inspiron 15 (i5/16GB/512GB)**            | B0CDRFPKYY | ~$599       | `/go/dell-inspiron-15`                     |
+| **HP 15 Laptop (i5/16GB/256GB)**                | B0CSJK12L4 | ~$479       | `/go/hp-15`                                |
+| **Lenovo IdeaPad 5 (Ryzen 5/8GB/256GB)**        | B08VWCKN51 | ~$549       | `/go/lenovo-ideapad-5`                     |
+| **ASUS VivoBook 15 (i5/8GB/512GB)**             | B0DS2BQ4W7 | ~$449       | `/go/asus-vivobook-15`                     |
+| **Lenovo ThinkPad E14 (i5/16GB/512GB)**         | B0DWSHSF99 | ~$699       | `/go/thinkpad-e14`                         |
+| **HP Pavilion 15 (i7/16GB/512GB)**              | B0CRT1GTHG | ~$649       | `/go/hp-pavilion-15`                       |
 
 ---
 
@@ -127,6 +139,21 @@ This document contains all Amazon product ASINs for FloatJet affiliate links.
 
 ---
 
+## Laptop Bags & Backpacks
+
+| Product                                    | ASIN       | Price Range | Link Format                          |
+|--------------------------------------------|------------|-------------|--------------------------------------|
+| **Nomatic Travel Pack 30L**                | B07N14BXRW | ~$299       | `/go/amazon/nomatic-travel-pack`     |
+| **Peak Design Everyday Backpack 30L**      | B07ZTQQGLP | ~$299       | `/go/amazon/peak-design-everyday`    |
+| **Aer Travel Pack 3**                      | B09GK8DQHF | ~$249       | `/go/amazon/aer-travel-pack-3`       |
+| **Thule Subterra 30L**                     | B0CQ8TY6RW | ~$179       | `/go/amazon/thule-subterra-30l`      |
+| **Tortuga Outbreaker 45L**                 | B08LHF9WPM | ~$299       | `/go/amazon/tortuga-outbreaker`      |
+| **WANDRD PRVKE 31L**                       | B095FH92J1 | ~$259       | `/go/amazon/wandrd-prvke`            |
+| **Targus Drifter II 17"**                  | B00507NAYQ | ~$45        | `/go/amazon/targus-drifter-ii`       |
+| **Bellroy Transit Backpack**               | B07XY9V8MV | ~$259       | `/go/amazon/bellroy-transit`         |
+
+---
+
 ## How to Use These ASINs
 
 ### Link Format:
@@ -171,14 +198,7 @@ These products are mentioned in articles but need ASINs to be found manually:
 
 ### Laptop Bags:
 
-- Nomatic Travel Pack
-- Peak Design Everyday Backpack
-- Aer Travel Pack 3
-- Thule Subterra
-- Tortuga Outbreaker
-- WANDRD PRVKE
-- Targus Drifter II
-- Bellroy Transit
+- ✅ All laptop bags now added (8 products)
 
 ---
 

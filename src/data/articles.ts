@@ -970,6 +970,18 @@ export const toolsArticles: Article[] = [
     category: "finance",
   },
   {
+    slug: "best-retirement-planning-apps-for-freelancers",
+    section: "tools",
+    title: "Best Retirement Planning Apps for Freelancers (2025)",
+    description: "I tested Betterment, Wealthfront, and Acorns for three years. Here's what actually works for freelancer retirement when there's no employer match.",
+    authorSlug: "daniel-brooks",
+    pubDate: "2025-12-07",
+    readingTime: 12,
+    image: "/images/unsplash/photo-1607863680198-23d4b2565df0-1200w.webp",
+    imageAlt: "Piggy bank savings and retirement planning concept",
+    category: "finance",
+  },
+  {
     slug: "best-time-tracking-software-for-billing-clients",
     section: "tools",
     title: "Best Time Tracking Software for Billing Clients (2025)",

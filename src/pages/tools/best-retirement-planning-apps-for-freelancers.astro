@@ -1,0 +1,380 @@
+---
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ComparisonTable from "../../components/article/ComparisonTable.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
+
+// Get article metadata from central data file
+const article = getArticleBySlug("best-retirement-planning-apps-for-freelancers", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
+// Comparison Table Data
+const comparisonColumns = [
+  { key: "app", label: "App" },
+  { key: "price", label: "Price" },
+  { key: "minimum", label: "Minimum" },
+  { key: "sepIra", label: "SEP IRA" },
+  { key: "taxLoss", label: "Tax-Loss Harvesting" },
+];
+
+const comparisonRows = [
+  {
+    app: "<strong>Betterment</strong>",
+    price: "$4/mo or 0.25%/yr",
+    minimum: "None",
+    sepIra: "Yes",
+    taxLoss: "Yes",
+  },
+  {
+    app: "<strong>Wealthfront</strong>",
+    price: "0.25%/yr",
+    minimum: "$500",
+    sepIra: "Yes",
+    taxLoss: "Yes",
+  },
+  {
+    app: "<strong>Acorns</strong>",
+    price: "$3-5/mo",
+    minimum: "None",
+    sepIra: "No",
+    taxLoss: "No",
+  },
+];
+
+const headings = [
+  { depth: 2, slug: "why-different", text: "Why Freelancer Retirement Is Different" },
+  { depth: 2, slug: "betterment", text: "Betterment" },
+  { depth: 2, slug: "wealthfront", text: "Wealthfront" },
+  { depth: 2, slug: "acorns", text: "Acorns" },
+  { depth: 2, slug: "comparison-table", text: "Quick Comparison" },
+  { depth: 2, slug: "solo-401k", text: "What About Solo 401(k)?" },
+  { depth: 2, slug: "my-setup", text: "My Actual Setup" },
+  { depth: 2, slug: "faq", text: "Questions" },
+];
+
+const faqData = [
+  {
+    question: "How much should freelancers save for retirement?",
+    answer:
+      "The standard advice is 15% of income. But freelancers need to save more since there's no employer match. I aim for 20% minimum. Some months I hit 25% when cash flow allows.",
+  },
+  {
+    question: "Can I still contribute if my income varies wildly?",
+    answer:
+      "Yes. With SEP IRAs, you contribute based on what you actually earn. Low income month? Contribute less. Big month? Max it out. The limit is 25% of net self-employment income up to 69,000 for 2024.",
+  },
+  {
+    question: "What if I can only afford small amounts?",
+    answer:
+      "Start anyway. Even 50 bucks a month builds the habit. Use Acorns initially if you need the round-up feature, but graduate to Betterment once you're past 1k or so.",
+  },
+  {
+    question: "SEP IRA or Roth IRA?",
+    answer:
+      "SEP IRA contributions are pre-tax, reducing current taxes. Roth contributions are after-tax, but withdrawals are tax-free in retirement. If you're in a lower tax bracket now, Roth often makes sense. Higher bracket? SEP. I do both, prioritizing SEP when income is high.",
+  },
+  {
+    question: "What about Bitcoin and crypto for retirement?",
+    answer:
+      "I'd keep crypto under 5% of retirement savings. Maybe 10% if you're young and aggressive. These platforms offer traditional diversified portfolios, which is what most of your retirement money should be in.",
+  },
+  {
+    question: "Is Betterment worth the monthly fee?",
+    answer:
+      "At small balances, the 4 dollar monthly fee hurts. But once you're past 20k or set up 250 monthly deposits, you switch to 0.25% annually. At that point, the tax-loss harvesting and RetireGuide features easily pay for themselves.",
+  },
+];
+
+const relatedArticles = [
+  {
+    title: "Best Budgeting Apps for Remote Workers",
+    excerpt: "Track where your money goes before you save it.",
+    href: "/tools/best-budgeting-apps-for-remote-workers",
+    image: "/images/unsplash/photo-1526304640581-d334cdbbf45e-1200w.webp",
+    imageAlt: "Budgeting apps for remote workers",
+  },
+  {
+    title: "Wise vs PayPal vs Payoneer",
+    excerpt: "Compare international payment platforms for freelancers.",
+    href: "/tools/wise-vs-paypal-vs-payoneer",
+    image: "/images/unsplash/photo-1580894894513-541e068a3e2b-800w.webp",
+    imageAlt: "International money transfer and payment apps",
+  },
+  {
+    title: "Tax Tips for Remote Workers",
+    excerpt: "Maximize deductions as a remote worker or digital nomad.",
+    href: "/blog/tax-tips-remote-workers",
+    image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
+    imageAlt: "Calculator and financial documents for tax planning",
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    authorSlug={authorSlug}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Finance"
+    categorySlug="tools"
+    subcategorySlug="finance"
+    headings={headings}
+>
+  <p class="lead">
+    The first time I tried to set up retirement savings as a freelancer, I nearly gave up. No HR
+    department to auto-enroll me. No employer match. Just me, a pile of confusing options, and the
+    creeping fear that I'd be working until I was 80.
+  </p>
+
+  <p>
+    Traditional 401(k) providers wanted nothing to do with my irregular income. Banks pushed
+    products with fees that would eat my savings alive. I spent three months paralyzed by options
+    before finally just picking something. That something cost me around 1,800 in unnecessary fees
+    over two years.
+  </p>
+
+  <p>
+    The good news: it's way easier now. Robo-advisors have gotten actually good at handling
+    freelancer retirement. They understand irregular income. They offer SEP IRAs. They don't
+    require you to have a finance degree.
+  </p>
+
+  <p>
+    <strong>Short version if you're in a hurry:</strong> Betterment for most freelancers. Low fees,
+    SEP IRA option, and their RetireGuide tool actually understands freelancer finances. Wealthfront
+    if you want more hands-off automation. Acorns only if you're just starting out with spare change.
+  </p>
+
+  <h2 id="why-different">Why Freelancer Retirement Is Different</h2>
+
+  <p>Regular employees have it easy. Money gets pulled from their paycheck before they see it.
+    Employer matches feel like free money. Automatic increases happen without thinking.</p>
+
+  <p>Freelancers get none of that.</p>
+
+  <p>
+    You pay both halves of Social Security. Your income varies month to month. You need to actively
+    choose to set money aside. And the options are more complicated. Traditional IRA, Roth IRA,
+    SEP IRA, Solo 401(k). Each has different contribution limits and tax implications.
+  </p>
+
+  <p>
+    The contribution limits are actually better for freelancers. SEP IRAs let you put away up to
+    25% of net self-employment income, maxing at 69,000 for 2024. Compare that to the 23,000 limit
+    on a regular 401(k). The opportunity is there. You just need the right tools.
+  </p>
+
+  <h2 id="betterment">Betterment</h2>
+
+  <p>This is what I use. Have been for about three years now.</p>
+
+  <p>
+    Betterment gets freelancers. They offer SEP IRAs, which most robo-advisors skip. Their
+    RetireGuide tool pulls in all your accounts, including that old 401(k) you forgot about, and
+    shows you if you're on track. It's not just numbers in a vacuum. It accounts for irregular income.
+  </p>
+
+  <p>
+    The fee structure changed recently. You either pay 4 bucks a month or 0.25% annually if you
+    have 20k or set up recurring deposits of 250 monthly. For most freelancers, the annual
+    percentage works out better once you're past about 20k invested.
+  </p>
+
+  <h3>What I actually use it for</h3>
+
+  <p>
+    Automatic deposits when income comes in. I set up transfers for 15% of every client payment.
+    Tax-loss harvesting happens automatically, which saved me around 400 last year in taxes. Their
+    goal-based projections show me when I can realistically retire based on actual numbers, not
+    fantasies.
+  </p>
+
+  <h3>The good stuff</h3>
+
+  <p>
+    No minimum to start. SEP IRA available. Tax-coordinated portfolio across all your accounts.
+    RetireGuide actually useful. The app doesn't overwhelm you with options. Human advisor access
+    if you pay more.
+  </p>
+
+  <h3>What's annoying</h3>
+
+  <p>
+    The 4 dollar monthly fee hits hard when you're just starting with small balances. Interface
+    could be simpler. Premium tier with human advisors costs 0.65% plus 299 yearly, which adds up fast.
+  </p>
+
+  <p>
+    <strong>Betterment is best for:</strong> Freelancers serious about retirement who want hands-off
+    investing with solid tax optimization.
+  </p>
+
+  <h2 id="wealthfront">Wealthfront</h2>
+
+  <p>
+    Wealthfront takes the opposite approach from Betterment. Fully automated. No human advisors.
+    Just algorithms doing their thing.
+  </p>
+
+  <p>
+    Their Path tool is genuinely impressive for planning. It connects to all your accounts and runs
+    scenarios. What if you retire at 55? What if the market tanks? What if you move somewhere
+    cheaper? All modeled out.
+  </p>
+
+  <p>
+    The catch: you need 500 to start. For a freelancer just getting going, that's a real barrier.
+    But once you're past that threshold, the experience is smooth.
+  </p>
+
+  <h3>How it works</h3>
+
+  <p>
+    Connect your accounts. Answer questions about your goals. Wealthfront builds a diversified
+    portfolio across ETFs. Tax-loss harvesting kicks in automatically. You basically forget about
+    it until you need the money.
+  </p>
+
+  <h3>The good stuff</h3>
+
+  <p>
+    Excellent tax optimization, including direct indexing for larger accounts. Path planning tool
+    is best in class. 0.25% annual fee is straightforward. Good variety of account types including
+    Roth IRA, traditional IRA, SEP IRA.
+  </p>
+
+  <h3>What's annoying</h3>
+
+  <p>
+    500 minimum is a barrier for beginners. No human advisors ever. The automation means less
+    flexibility. Their SEP IRA offering is less prominent than Betterment's.
+  </p>
+
+  <p>
+    <strong>Wealthfront is best for:</strong> Freelancers with steady income who want fully
+    automated investing and don't need to talk to humans.
+  </p>
+
+  <h2 id="acorns">Acorns</h2>
+
+  <p>Acorns is the starter option. Not necessarily for serious retirement planning, but for building the habit.</p>
+
+  <p>
+    The idea is simple. Round up your purchases and invest the difference. Buy a 3.50 coffee,
+    round up to 4, invest the 50 cents. It sounds trivial, and honestly, it kind of is. But for
+    people who've never invested anything, it removes the mental barrier.
+  </p>
+
+  <p>
+    The problem: at 3 bucks a month, those fees hurt when you're only investing spare change. If
+    you invest 20 bucks through round-ups, you're paying 15% in fees that month. That's brutal.
+  </p>
+
+  <h3>What it's actually good for</h3>
+
+  <p>
+    Getting started. Building the habit of seeing investment accounts grow. Learning what a
+    portfolio looks like. Then graduating to something with lower percentage fees once you have
+    real money to invest.
+  </p>
+
+  <h3>The good stuff</h3>
+
+  <p>
+    No minimum investment. Retirement account option included in Personal tier. The round-up
+    feature is genuinely clever. Simple enough that anyone can use it.
+  </p>
+
+  <h3>What's annoying</h3>
+
+  <p>
+    3 to 5 dollar monthly fee is expensive for small balances. No tax-loss harvesting. No SEP IRA
+    for freelancers. Limited customization. You'll outgrow it fast.
+  </p>
+
+  <p>
+    <strong>Acorns is best for:</strong> Complete beginners who need to build the investing habit
+    before they're ready for serious retirement planning.
+  </p>
+
+  <h2 id="comparison-table">Quick Comparison</h2>
+
+  <ComparisonTable columns={comparisonColumns} rows={comparisonRows} />
+
+  <h2 id="solo-401k">What About Solo 401(k)?</h2>
+
+  <p>
+    This is the other option freelancers hear about. Solo 401(k) plans let you contribute even more
+    than SEP IRAs in some cases, and you can do both employer and employee contributions.
+  </p>
+
+  <p>
+    The downside: more paperwork. Annual filings once you hit 250k. More complexity in general.
+  </p>
+
+  <p>
+    None of the robo-advisors handle Solo 401(k) well. If you want that route, you're looking at
+    Fidelity, Schwab, or Vanguard directly. More work, but potentially more tax-advantaged space.
+  </p>
+
+  <p>For most freelancers, a SEP IRA through Betterment or Wealthfront is simpler and good enough.</p>
+
+  <h2 id="my-setup">My Actual Setup</h2>
+
+  <p>Here's exactly what I do.</p>
+
+  <p>
+    Client payment comes in. 15% goes to Betterment automatically. Within Betterment, my SEP IRA
+    gets priority contributions up to the limit. The rest goes to a taxable brokerage account.
+    Tax-loss harvesting happens in the background.
+  </p>
+
+  <p>
+    Every quarter, I check the RetireGuide projections. Adjust contribution percentage if income
+    changed significantly. Takes maybe 20 minutes a quarter.
+  </p>
+
+  <p>
+    I kept my old employer 401(k) at Fidelity because the fees are low and rolling it over wasn't
+    worth the hassle. Betterment's RetireGuide still factors it into my projections.
+  </p>
+
+  <h2 id="faq">Questions</h2>
+
+  <FAQSection faqs={faqData}/>
+
+  <h2>Recommendations</h2>
+
+  <p>Three years of freelancing. Four different apps tested. Way too much time on retirement forums. So:</p>
+
+  <p>
+    <strong>Betterment</strong> if you're serious about freelancer retirement. The SEP IRA, tax
+    optimization, and RetireGuide make it the best overall choice. I use it. It works.
+  </p>
+
+  <p>
+    <strong>Wealthfront</strong> if you want maximum automation and already have 500 to start.
+    Their planning tools are slightly better. No human support though.
+  </p>
+
+  <p>
+    <strong>Acorns</strong> only as a stepping stone. Great for building habits. Bad for actual
+    long-term retirement savings due to fees.
+  </p>
+
+  <p>
+    The best retirement app is the one you'll actually use. But at some point you need to graduate
+    from round-ups to real contributions. Start with whatever gets you going, but have a plan to
+    move to Betterment or Wealthfront once you're past the beginner phase.
+  </p>
+
+  <p>Future you will thank current you. Or curse you. Depends on whether you read this and did nothing.</p>
+
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

@@ -1,0 +1,419 @@
+---
+import { FAQSection, RelatedArticles } from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
+
+// Get article metadata from central data file
+const article = getArticleBySlug("best-time-tracking-software-for-billing-clients")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
+const headings = [
+  { depth: 2, slug: "why-this-matters", text: "Why This Matters for Billing" },
+  { depth: 2, slug: "features", text: "What Features Actually Matter" },
+  { depth: 2, slug: "tools", text: "The Tools I've Actually Used" },
+  { depth: 2, slug: "workflow", text: "Setting Up for Client Billing" },
+  { depth: 2, slug: "pricing", text: "Comparing Prices" },
+  { depth: 2, slug: "clients", text: "Getting Clients On Board" },
+  { depth: 2, slug: "faq", text: "Questions" },
+  { depth: 2, slug: "picks", text: "My Recommendations" },
+];
+
+const faqData = [
+  {
+    question: "Is free time tracking software good enough for client billing?",
+    answer:
+      "For solo freelancers, absolutely. Toggl's free plan and Clockify both have professional-quality reports you can share with clients. Paid features add things like longer report history, advanced integrations, and team management. If you're one person billing a few clients, free works fine.",
+  },
+  {
+    question: "How do I track time across multiple clients?",
+    answer:
+      "Set up each client as a separate project. When you start a timer, pick the client from a dropdown. All the tools I mentioned support this. Some let you nest sub-projects within client projects for additional organization.",
+  },
+  {
+    question: "What's the best way to present time tracking to clients?",
+    answer:
+      "Include your tracking method in your contract upfront. Something like 'time is tracked in six-minute increments using Toggl Track, detailed reports available upon request.' Then share reports with your invoices if they want itemization. Most clients appreciate the transparency.",
+  },
+  {
+    question: "Can I use time tracking data in legal disputes?",
+    answer:
+      "I'm not a lawyer, but yes, documented time tracking has been used as evidence in payment disputes. The more detailed your entries, the stronger your records. Timestamps, descriptions, project assignments all help establish what work was done and when.",
+  },
+  {
+    question: "Should I track non-billable time too?",
+    answer:
+      "I track everything and tag it as billable or not. Helps me understand where my time actually goes. That thirty minutes of email you think is ten minutes? Track it. That admin work you forget about? Track it. Even if you don't bill for it, knowing is useful.",
+  },
+  {
+    question: "How accurate does time tracking need to be?",
+    answer:
+      "Good enough that you'd be comfortable showing it to the client. I don't track to the second, but I'm honest with myself about minutes. If I worked about forty minutes, I log forty-two. Not twenty. Not sixty. Close enough matters but don't cheat yourself.",
+  },
+];
+
+const relatedArticles = [
+  {
+    title: "Best Invoicing Tools for Remote Professionals",
+    excerpt: "Send professional invoices and get paid faster.",
+    href: "/tools/best-invoicing-tools",
+    image: "/images/unsplash/photo-1554774853-719586f82d77-800w.webp",
+    imageAlt: "Invoicing and billing workspace",
+  },
+  {
+    title: "Best Accounting Software for Freelancers",
+    excerpt: "Complete guide to bookkeeping tools for the self-employed.",
+    href: "/tools/best-accounting-software-freelancers",
+    image: "/images/unsplash/photo-1450101499163-c8848c66ca85-800w.webp",
+    imageAlt: "Accounting software workspace",
+  },
+  {
+    title: "How to Accept International Payments",
+    excerpt: "Get paid from clients anywhere in the world.",
+    href: "/tools/accept-international-payments-freelancer",
+    image: "/images/unsplash/photo-1526304640581-d334cdbbf45e-800w.webp",
+    imageAlt: "International currency and payments",
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    authorSlug={authorSlug}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Finance"
+    categorySlug="tools"
+    subcategorySlug="finance"
+    headings={headings}
+>
+  <p class="lead">
+    The first month I billed clients without tracking my time, I lost somewhere around eight hundred dollars. Not
+    because I didn't work. I worked plenty. I just couldn't prove how long anything took, so when a client pushed back
+    on my invoice saying "that seems high," I caved and knocked off hours I'd actually worked.
+  </p>
+
+  <p>That was the wake-up call.</p>
+
+  <p>
+    When you're billing clients by the hour, your time tracking software isn't just a productivity tool. It's your
+    receipts. It's the paper trail that lets you send accurate invoices without second-guessing yourself. Get this
+    wrong and you'll bleed money slowly every month without realizing it.
+  </p>
+
+  <p>I've tried way too many time trackers at this point. Here's what actually works when your livelihood depends on
+    accurate billing.</p>
+
+  <h2 id="why-this-matters">Why This Matters for Billing</h2>
+
+  <p>Skip this if you already know. But if you're still billing from memory or rough estimates, consider this.</p>
+
+  <p>
+    Look, I was convinced I could remember what I worked on each week. My memory isn't that bad, right? Except... it
+    kind of is. When I finally started tracking properly, my logged hours were two to three less per week than I
+    thought. Three hundred bucks just vanishing every month because I trusted my brain.
+  </p>
+
+  <p>
+    Clients ask questions. "What did that twenty-seven hours cover?" Show up without specifics and you look like you're
+    guessing. Pull up a detailed log and suddenly the conversation shifts in your favor.
+  </p>
+
+  <p>
+    Project scope creep becomes visible. When you can show a client the tracked hours versus the original estimate,
+    conversations about additional payment get a lot easier. Numbers don't argue.
+  </p>
+
+  <p>
+    Your own billing psychology changes. Something weird happens when you track time. You start actually billing for
+    the small stuff. That fifteen-minute email chain? Worth tracking. That "quick" call that ate forty-five minutes of
+    your afternoon? Now it's on record.
+  </p>
+
+  <h2 id="features">What Features Actually Matter</h2>
+
+  <p>Here's what I look for. Forget the marketing buzzwords.</p>
+
+  <p>
+    <strong>One-click timers.</strong> Real talk: if starting a timer takes more than two clicks, you'll "forget" to do
+    it. I know because I did. The ones that work have a big obvious button you can hit without thinking. Desktop
+    widgets or keyboard shortcuts help too.
+  </p>
+
+  <p>
+    <strong>Project and client organization.</strong> You need a way to assign time to specific clients. Sounds
+    obvious, yeah? Some tools make it weirdly complicated though. Give me a dropdown that takes two seconds, not a
+    wizard with six screens.
+  </p>
+
+  <p>
+    <strong>Detailed reports.</strong> Come invoice time, you gotta pull a report showing what you worked on. By date.
+    By project. Maybe by task if you're that granular. Has to look professional enough that you'd actually attach it to
+    an invoice.
+  </p>
+
+  <p>
+    <strong>Rounding options.</strong> I round to six-minute increments. Point one of an hour. Some clients prefer
+    fifteen-minute blocks. Whatever method you pick, your tool should handle the math automatically.
+  </p>
+
+  <p>
+    <strong>Integrations.</strong> Does it connect with your <a href="/tools/best-invoicing-tools">invoicing
+    software</a>? Your project management tool? Your calendar? Integrations save manual data entry, which means fewer
+    mistakes.
+  </p>
+
+  <p>
+    <strong>Mobile app.</strong> Because you'll want to track time from your phone sometimes. Client calls. Work from
+    coffee shops. Travel.
+  </p>
+
+  <h2 id="tools">The Tools I've Actually Used</h2>
+
+  <p>Starting with what worked best for billing specifically.</p>
+
+  <h3>Toggl Track</h3>
+
+  <p>This is what I use. Has been for about four years now.</p>
+
+  <p>
+    The interface is dead simple. Big start button. Click it. Pick the project. Done. Click again when you're finished.
+    Everything logs automatically. I can see my week at a glance and know exactly where my hours went.
+  </p>
+
+  <p>
+    For billing, the reports are excellent. I can pull a PDF showing every entry, organized by project and date, with
+    descriptions of what I worked on. I've attached these directly to invoices when clients wanted itemization.
+  </p>
+
+  <p>
+    The free plan covers most solo freelancers. One hundred million time entries. Five users. Reports up to ninety days
+    back. The paid plan at nine bucks per user monthly gets you longer report history, rounding, and more integrations.
+  </p>
+
+  <p>
+    Good stuff: Keyboard shortcuts let me start a timer in under two seconds without touching my mouse. The Pomodoro
+    mode is nice if you work that way. Browser extension tracks what websites you're on if you want that level of
+    detail.
+  </p>
+
+  <p>
+    Not so good: Syncing on the desktop app lags sometimes. Also the project setup throws a bunch of options at you,
+    which took me a couple days to figure out.
+  </p>
+
+  <h3>Harvest</h3>
+
+  <p>The go-to if you want time tracking and invoicing in one place.</p>
+
+  <p>
+    Harvest tracks your time, then converts it directly into invoices without any export-import nonsense. The
+    connection is seamless. Tracked hours flow right into invoice line items with descriptions and rates already filled
+    in.
+  </p>
+
+  <p>
+    Team features are solid too. If you have contractors working under you, Harvest handles multiple people tracking
+    against the same projects. Approval workflows if you need them.
+  </p>
+
+  <p>Free for one person with two projects. Twelve bucks per seat monthly for unlimited everything.</p>
+
+  <p>
+    Good stuff: The invoicing integration is genuinely useful. I've cut my invoice prep time by maybe thirty minutes
+    per client per month. The expense tracking is also built in, which is nice for client reimbursables.
+  </p>
+
+  <p>
+    Not so good: The design feels kind of old compared to Toggl. And hey, if you already have separate invoicing
+    software like <a href="/tools/best-invoicing-tools">FreshBooks</a>, you're basically paying for a feature you'll
+    never touch.
+  </p>
+
+  <h3>Clockify</h3>
+
+  <p>The best free option if you don't want to pay anything.</p>
+
+  <p>
+    Completely free for unlimited users and unlimited tracking. I'm not entirely sure how they stay in business, but it
+    works. The core functionality is solid. Timer, projects, clients, reports. Everything you need for billing is
+    there.
+  </p>
+
+  <p>The interface is clean. Maybe not quite as polished as Toggl but close enough that most people won't notice.</p>
+
+  <p>
+    Paid tiers add features like time off tracking, scheduling, GPS tracking, and approval flows. Seven bucks per user
+    monthly for Pro features. Twelve for the full enterprise package.
+  </p>
+
+  <p>
+    Good stuff: Free is free. If you're starting out or watching every dollar, Clockify gives you professional time
+    tracking at zero cost. The reports are good enough to share with clients.
+  </p>
+
+  <p>Not so good: Some features feel buried in menus. And the mobile app is functional but not as smooth as Toggl's.
+  </p>
+
+  <h3>Time Doctor</h3>
+
+  <p>For when you need more accountability than just tracking.</p>
+
+  <p>
+    Time Doctor is part time tracker, part productivity monitor. It takes optional screenshots, tracks app usage, and
+    can alert you when you've been idle too long. Sounds intense. Some clients specifically want this level of
+    verification.
+  </p>
+
+  <p>
+    Used it for a contract that required proof-of-work screenshots. The client could log in and see exactly what I was
+    working on during billed hours. Made the trust conversation way simpler.
+  </p>
+
+  <p>Pricing starts at seven bucks per user monthly for basic features. Fourteen for the full monitoring suite.</p>
+
+  <p>
+    Good stuff: The screenshots actually helped me land a skeptical client once. They could see exactly what I did
+    during billed hours. Built trust fast. Also the distraction alerts were kind of humbling—I checked email way more
+    than I thought.
+  </p>
+
+  <p>
+    Not so good: Felt a bit Big Brother, even though I set it up myself. If privacy matters to you, this might be
+    overkill for regular freelance work.
+  </p>
+
+  <h3>Timing</h3>
+
+  <p>Mac-only, but if you're on Mac and hate manual tracking, this is interesting.</p>
+
+  <p>
+    Here's how it works. Timing sits in the background watching which documents you open, websites you visit, apps you
+    use. At the end of the day, you go through everything and assign chunks of time to projects. Different from the
+    "hit a timer" approach.
+  </p>
+
+  <p>Starts at seven bucks monthly for the basic version. Fourteen for Pro.</p>
+
+  <p>
+    Good stuff: The automatic tracking catches stuff I would have forgotten to log manually. Good for people who hate
+    timers but still need accurate records.
+  </p>
+
+  <p>Not so good: Mac only. No Windows, no mobile. And the automatic categorization sometimes needs cleanup.</p>
+
+  <h2 id="workflow">Setting Up for Client Billing</h2>
+
+  <p>A quick workflow that works.</p>
+
+  <p>
+    <strong>Create a project per client.</strong> I keep it simple. One project equals one client. Sometimes I'll add
+    sub-projects for different work types. But mainly it's organized by who's paying.
+  </p>
+
+  <p>
+    <strong>Use descriptive entries.</strong> "Development work" is useless on an invoice. "Implemented user
+    authentication system" or "Fixed checkout bug" gives clients something specific. Takes an extra five seconds per
+    entry but makes invoicing much smoother.
+  </p>
+
+  <p>
+    <strong>Round consistently.</strong> I round to six-minute increments, always up. Seven minutes becomes twelve.
+    Some folks do fifteen-minute blocks instead. Doesn't matter which, just don't switch it up mid-project. I mention
+    my rounding in the contract so nobody's caught off guard later.
+  </p>
+
+  <p>
+    <strong>Friday cleanups.</strong> I spend ten minutes every Friday fixing up my time entries. Typos. Missing
+    descriptions. Entries that should've been combined. Way easier than trying to remember everything two weeks later
+    at invoice time.
+  </p>
+
+  <p>
+    <strong>Export before invoicing.</strong> Pull the report first. Check the hours. Make sure nothing looks off. Then
+    build your invoice based on that report. Attach the detailed report if your client wants itemization.
+  </p>
+
+  <h2 id="pricing">Comparing Prices</h2>
+
+  <p>Quick breakdown of what you'll pay.</p>
+
+  <p>Toggl Track: Free for basics. Nine bucks per user monthly for Starter. Eighteen for Premium.</p>
+
+  <p>Harvest: Free for one user and two projects. Twelve bucks per seat for Pro with unlimited projects.</p>
+
+  <p>Clockify: Free forever for core features. Seven bucks for Pro. Twelve for Enterprise.</p>
+
+  <p>Time Doctor: Seven bucks for Basic. Fourteen for Standard with screenshots.</p>
+
+  <p>Timing: Seven bucks for Productivity. Fourteen for Professional.</p>
+
+  <p>
+    For most freelancers billing clients, Toggl's free plan or Clockify will handle everything. Harvest makes sense if
+    you want integrated invoicing. The others solve specific problems like automatic tracking or screenshot
+    verification.
+  </p>
+
+  <h2 id="clients">Getting Clients On Board</h2>
+
+  <p>Some clients want to see your time tracking. Others don't care as long as the invoice makes sense.</p>
+
+  <p>
+    If they want reports, most tools let you share a filtered view. Toggl has shared project dashboards. Harvest has
+    client invoices with optional detail. Clockify can generate public report links.
+  </p>
+
+  <p>
+    For clients who are time-sensitive, I send weekly updates showing hours logged. Takes two minutes and prevents any
+    surprises at invoice time. They know exactly where things stand and can raise concerns early if the project is
+    running over estimate.
+  </p>
+
+  <p>
+    For clients who just want results, I track everything internally but only share if asked. The tracking still helps
+    me build accurate invoices and answer questions when they come up.
+  </p>
+
+  <h2 id="faq">Questions</h2>
+
+  <FAQSection faqs={faqData}/>
+
+  <h2 id="picks">My Recommendations</h2>
+
+  <p>
+    For most freelancers billing clients: <strong>Toggl Track</strong>. The free plan handles everything. The interface
+    is the cleanest. The reports look professional. Four years in and I haven't needed to switch.
+  </p>
+
+  <p>
+    If you want invoicing built in: <strong>Harvest</strong>. Time tracking flows directly into invoices without any
+    export steps. Worth the twelve bucks if it saves you thirty minutes per client per month.
+  </p>
+
+  <p>
+    If you want completely free: <strong>Clockify</strong>. No limits that matter. Professional enough for client work.
+    Hard to argue with zero dollars.
+  </p>
+
+  <p>
+    If clients need screenshot verification: <strong>Time Doctor</strong>. The monitoring features build trust with
+    clients who want proof of work. Not for everyone, but solves a specific problem.
+  </p>
+
+  <p>
+    If you hate timers and use Mac: <strong>Timing</strong>. The automatic tracking catches everything. Review and
+    assign later. Different approach that works for certain people.
+  </p>
+
+  <p>
+    Your situation might be different from mine. But the right tool usually pays for itself in recovered billable hours
+    within the first month or two.
+  </p>
+
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

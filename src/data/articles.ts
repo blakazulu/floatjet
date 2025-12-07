@@ -970,6 +970,18 @@ export const toolsArticles: Article[] = [
     category: "finance",
   },
   {
+    slug: "best-time-tracking-software-for-billing-clients",
+    section: "tools",
+    title: "Best Time Tracking Software for Billing Clients (2025)",
+    description: "I tested Toggl, Harvest, Clockify for client billing. Here's what actually helps when you need to prove your hours and get paid what you're worth.",
+    authorSlug: "daniel-brooks",
+    pubDate: "2025-12-07",
+    readingTime: 14,
+    image: "/images/unsplash/photo-1501139083538-0139583c060f-1200w.webp",
+    imageAlt: "Hourglass timer for time tracking and client billing",
+    category: "finance",
+  },
+  {
     slug: "best-business-vpn-remote-teams",
     section: "tools",
     title: "Best Business VPN Solutions for Remote Teams (2025)",

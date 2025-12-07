@@ -900,7 +900,7 @@ how-much-ram-remote-work articles
 
 | Program      | Commission   | Cookie  | Network | Status      |
 |--------------|--------------|---------|---------|-------------|
-| YNAB         | $8/signup    | 30 days | Direct  | Not Applied |
+| YNAB         | $8/signup    | 30 days | Direct  | Applied 2025-12-07 |
 | Rocket Money | Unknown      | Unknown | Direct  | Not Applied |
 | Mint         | N/A          | N/A     | N/A     | No program (free) |
 | Copilot      | Unknown      | Unknown | Direct  | Not Applied |
@@ -926,7 +926,7 @@ how-much-ram-remote-work articles
 
 | Program          | Commission    | Cookie  | Network | Status      |
 |------------------|---------------|---------|---------|-------------|
-| Netlify          | Unknown       | Unknown | Direct  | Not Applied |
+| Netlify          | Unknown       | Unknown | Direct  | Applied 2025-12-07 |
 | Vercel           | Unknown       | Unknown | Direct  | Not Applied |
 | Cloudflare Pages | Partner prog  | Unknown | Direct  | Not Applied |
 | Fastly           | Partner prog  | Unknown | Direct  | Not Applied |

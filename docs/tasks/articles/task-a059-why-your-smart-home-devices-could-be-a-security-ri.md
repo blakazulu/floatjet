@@ -134,6 +134,25 @@ Before marking this task complete:
 - [ ] Preview looks correct
 - [ ] `docs/writing/writing-style-guide.md` updated with new patterns
 
+
+## Affiliate Opportunities
+
+**Status:** ✅ Has affiliate programs
+
+| Program | Status | Network | Commission |
+|---------|--------|---------|------------|
+| NordVPN | ✅ Approved | Direct | 30-40% |
+| NordPass | ✅ Approved | NordVPN Direct | 30-40% |
+| ProtonVPN | ✅ Approved | Tune | 30% |
+
+**Notes:** Multiple approved security programs! Include VPN and password manager CTAs.
+
+**Reference:** `docs/affiliates/affiliate-programs.md`
+
+**Action:** Update `docs/affiliates/affiliate-programs.md` with any new programs discovered or applied for.
+
+---
+
 ## Progress Log
 
 ### 2025-12-07

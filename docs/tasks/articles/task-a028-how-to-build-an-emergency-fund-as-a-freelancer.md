@@ -134,6 +134,24 @@ Before marking this task complete:
 - [ ] Preview looks correct
 - [ ] `docs/writing/writing-style-guide.md` updated with new patterns
 
+
+## Affiliate Opportunities
+
+**Status:** ✅ Has affiliate programs
+
+| Program | Status | Network | Commission |
+|---------|--------|---------|------------|
+| Wise | Not Applied | Direct | £15-50/referral |
+| Betterment | Not Applied | Direct | $50-75/signup |
+
+**Notes:** Link to banking and budgeting articles. Apply to Wise and Betterment.
+
+**Reference:** `docs/affiliates/affiliate-programs.md`
+
+**Action:** Update `docs/affiliates/affiliate-programs.md` with any new programs discovered or applied for.
+
+---
+
 ## Progress Log
 
 ### 2025-12-07

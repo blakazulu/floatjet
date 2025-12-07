@@ -134,6 +134,25 @@ Before marking this task complete:
 - [ ] Preview looks correct
 - [ ] `docs/writing/writing-style-guide.md` updated with new patterns
 
+
+## Affiliate Opportunities
+
+**Status:** ✅ Has affiliate programs
+
+| Program | Status | Network | Commission |
+|---------|--------|---------|------------|
+| YNAB | Not Applied | Direct | - |
+| Mint | No program | N/A | - |
+| Rocket Money | Not Applied | Direct | - |
+
+**Notes:** Consider YNAB affiliate program. Mint is free (no program). Research Rocket Money partnership.
+
+**Reference:** `docs/affiliates/affiliate-programs.md`
+
+**Action:** Update `docs/affiliates/affiliate-programs.md` with any new programs discovered or applied for.
+
+---
+
 ## Progress Log
 
 ### 2025-12-07

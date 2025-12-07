@@ -134,6 +134,25 @@ Before marking this task complete:
 - [ ] Preview looks correct
 - [ ] `docs/writing/writing-style-guide.md` updated with new patterns
 
+
+## Affiliate Opportunities
+
+**Status:** ✅ Has affiliate programs
+
+| Program | Status | Network | Commission |
+|---------|--------|---------|------------|
+| Bitwarden | Not Applied | Direct | - |
+| NordPass | ✅ Approved | NordVPN Direct | 30-40% |
+| Proton Pass | ✅ Approved | Tune | 30% |
+
+**Notes:** NordPass and Proton Pass already approved! Include affiliate CTAs for password managers.
+
+**Reference:** `docs/affiliates/affiliate-programs.md`
+
+**Action:** Update `docs/affiliates/affiliate-programs.md` with any new programs discovered or applied for.
+
+---
+
 ## Progress Log
 
 ### 2025-12-07

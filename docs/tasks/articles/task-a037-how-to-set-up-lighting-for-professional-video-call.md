@@ -134,6 +134,25 @@ Before marking this task complete:
 - [ ] Preview looks correct
 - [ ] `docs/writing/writing-style-guide.md` updated with new patterns
 
+
+## Affiliate Opportunities
+
+**Status:** ✅ Has affiliate programs
+
+| Program | Status | Network | Commission |
+|---------|--------|---------|------------|
+| Amazon | ✅ Approved | Amazon | 3% |
+| B&H Photo | Not Applied | Direct | 2-8% |
+| Apple | Not Applied | Apple | 2-4% |
+
+**Notes:** Use Amazon Associates. Apply to B&H Photo for higher-end products.
+
+**Reference:** `docs/affiliates/affiliate-programs.md`
+
+**Action:** Update `docs/affiliates/affiliate-programs.md` with any new programs discovered or applied for.
+
+---
+
 ## Progress Log
 
 ### 2025-12-07

@@ -1,6 +1,6 @@
 # FloatJet Affiliate Programs Master Guide
 
-**Last Updated:** 2025-11-28
+**Last Updated:** 2025-12-07
 **Purpose:** Complete reference for all affiliate programs, registration guides, and tracking
 
 ---
@@ -882,6 +882,240 @@ how-much-ram-remote-work articles
 
 ---
 
+### AI Writing Tools
+
+| Program    | Commission | Cookie  | Network | Status      |
+|------------|------------|---------|---------|-------------|
+| Jasper     | 30%        | 30 days | Direct  | Not Applied |
+| Copy.ai    | 45%        | 30 days | Direct  | Not Applied |
+| Writesonic | 30%        | 30 days | Direct  | Not Applied |
+| Surfer SEO | 25%        | 60 days | Direct  | Not Applied |
+| Frase      | 30%        | 30 days | Direct  | Not Applied |
+
+**Used in:** best-ai-writing-assistants-content-creators (NEW)
+
+---
+
+### Budgeting & Personal Finance Apps
+
+| Program      | Commission   | Cookie  | Network | Status      |
+|--------------|--------------|---------|---------|-------------|
+| YNAB         | $8/signup    | 30 days | Direct  | Not Applied |
+| Rocket Money | Unknown      | Unknown | Direct  | Not Applied |
+| Mint         | N/A          | N/A     | N/A     | No program (free) |
+| Copilot      | Unknown      | Unknown | Direct  | Not Applied |
+| Monarch      | 30%          | 30 days | Direct  | Not Applied |
+
+**Used in:** best-budgeting-apps-remote-workers (NEW)
+
+---
+
+### DNS & Privacy Services
+
+| Program     | Commission | Cookie  | Network | Status      |
+|-------------|------------|---------|---------|-------------|
+| NextDNS     | 20%        | 30 days | Direct  | Not Applied |
+| AdGuard     | 40%        | 30 days | Direct  | Not Applied |
+| Cloudflare  | Partner    | Unknown | Direct  | Not Applied |
+
+**Used in:** best-dns-services-privacy-speed (NEW)
+
+---
+
+### Static Site Hosting & CDN
+
+| Program          | Commission    | Cookie  | Network | Status      |
+|------------------|---------------|---------|---------|-------------|
+| Netlify          | Unknown       | Unknown | Direct  | Not Applied |
+| Vercel           | Unknown       | Unknown | Direct  | Not Applied |
+| Cloudflare Pages | Partner prog  | Unknown | Direct  | Not Applied |
+| Fastly           | Partner prog  | Unknown | Direct  | Not Applied |
+| BunnyCDN         | 20%           | 30 days | Direct  | Not Applied |
+| KeyCDN           | 10%           | 30 days | Direct  | Not Applied |
+
+**Used in:** best-static-site-hosting-developers (NEW), best-cdn-services-faster-websites (NEW)
+
+---
+
+### Email & Productivity Suites
+
+| Program          | Commission | Cookie  | Network | Status      |
+|------------------|------------|---------|---------|-------------|
+| Google Workspace | 10-20%     | 30 days | Direct  | Not Applied |
+| Microsoft 365    | Varies     | 30 days | Direct  | Not Applied |
+| Zoho             | 15-20%     | 45 days | Direct  | Not Applied |
+
+**Used in:** best-email-hosting-small-businesses (NEW)
+
+---
+
+### Scheduling & Calendar Tools
+
+| Program   | Commission | Cookie  | Network      | Status                      |
+|-----------|------------|---------|--------------|-----------------------------|
+| Calendly  | 15-20%     | 90 days | PartnerStack | ⚠️ Unavailable (PS Network) |
+| Acuity    | 20%        | 30 days | Direct       | Not Applied                 |
+| Cal.com   | Unknown    | Unknown | Direct       | Not Applied                 |
+| SavvyCal  | 25%        | 30 days | Direct       | Not Applied                 |
+
+**Used in:** best-scheduling-tools-remote-teams (NEW)
+
+---
+
+### Encrypted Messaging
+
+| Program  | Commission | Cookie  | Network | Status         |
+|----------|------------|---------|---------|----------------|
+| Signal   | N/A        | N/A     | N/A     | No program     |
+| Telegram | N/A        | N/A     | N/A     | No program     |
+| Element  | Unknown    | Unknown | Direct  | Not Applied    |
+| Wire     | Unknown    | Unknown | Direct  | Not Applied    |
+
+**Used in:** best-encrypted-messaging-apps-remote-teams (NEW)
+
+---
+
+### Soundproofing & Acoustic Treatment
+
+| Program          | Commission | Cookie  | Network | Status      |
+|------------------|------------|---------|---------|-------------|
+| Acoustic Panels  | 5-10%      | 30 days | Amazon  | Use Amazon  |
+| GIK Acoustics    | 5-10%      | 30 days | Direct  | Not Applied |
+| Auralex          | Unknown    | Unknown | Direct  | Not Applied |
+
+**Used in:** best-soundproofing-solutions-home-office (NEW)
+
+---
+
+### External Storage (SSDs)
+
+| Program      | Commission | Cookie  | Network | Status      |
+|--------------|------------|---------|---------|-------------|
+| Samsung      | 2-4%       | 30 days | Direct  | Not Applied |
+| SanDisk/WD   | 3-5%       | 30 days | Direct  | Not Applied |
+| Crucial      | 3-5%       | 30 days | Direct  | Not Applied |
+| Seagate      | 3-5%       | 30 days | Direct  | Not Applied |
+| Amazon       | 3-4%       | 24h     | Amazon  | ✅ Approved  |
+
+**Used in:** best-external-ssds-remote-workers (NEW)
+
+---
+
+### Laptop Cooling & Stands
+
+| Program    | Commission | Cookie  | Network | Status      |
+|------------|------------|---------|---------|-------------|
+| Rain Design | 8%        | 30 days | Direct  | Not Applied |
+| Twelve South | 8%       | 30 days | Direct  | Not Applied |
+| Amazon      | 3-4%      | 24h     | Amazon  | ✅ Approved  |
+
+**Used in:** best-laptop-cooling-pads-stands (NEW)
+
+---
+
+### Monitor Arms & Mounts
+
+| Program    | Commission | Cookie  | Network | Status      |
+|------------|------------|---------|---------|-------------|
+| Ergotron   | 5-8%       | 30 days | Direct  | Not Applied |
+| VIVO       | 5%         | 30 days | Amazon  | Use Amazon  |
+| AmazonBasics | 3-4%     | 24h     | Amazon  | ✅ Approved  |
+| Fully      | 5-8%       | 30 days | ShareASale | Not Applied |
+
+**Used in:** best-monitor-arms-mounts (NEW)
+
+---
+
+### Ergonomic Footrests & Accessories
+
+| Program    | Commission | Cookie  | Network | Status      |
+|------------|------------|---------|---------|-------------|
+| Humanscale | 3-5%       | 30 days | Direct  | Not Applied |
+| Amazon     | 4-6%       | 24h     | Amazon  | ✅ Approved  |
+
+**Used in:** best-footrests-desk-workers (NEW), best-kneeling-chairs-posture (NEW)
+
+---
+
+### USB Hubs & Docking Stations
+
+| Program    | Commission | Cookie  | Network | Status      |
+|------------|------------|---------|---------|-------------|
+| CalDigit   | 5-8%       | 30 days | Direct  | Not Applied |
+| Anker      | 4%         | 24h     | Amazon  | ✅ Approved  |
+| Twelve South | 8%       | 30 days | Direct  | Not Applied |
+| Belkin     | 4-6%       | 30 days | Direct  | Not Applied |
+| Satechi    | 5-8%       | 30 days | Direct  | Not Applied |
+
+**Used in:** best-usb-hubs-docking-stations (NEW)
+
+---
+
+### Blue Light Glasses
+
+| Program     | Commission | Cookie  | Network | Status      |
+|-------------|------------|---------|---------|-------------|
+| Felix Gray  | 10%        | 30 days | Direct  | Not Applied |
+| GUNNAR      | 10%        | 30 days | Direct  | Not Applied |
+| Zenni       | 8%         | 30 days | Direct  | Not Applied |
+| Amazon      | 3-4%       | 24h     | Amazon  | ✅ Approved  |
+
+**Used in:** best-blue-light-blocking-glasses (NEW)
+
+---
+
+### AI Meeting & Transcription Tools
+
+| Program   | Commission | Cookie  | Network | Status      |
+|-----------|------------|---------|---------|-------------|
+| Otter.ai  | 20-25%     | 30 days | Direct  | Not Applied |
+| Fireflies | 20%        | 30 days | Direct  | Not Applied |
+| Grain     | 20%        | 30 days | Direct  | Not Applied |
+| Fathom    | Unknown    | Unknown | Direct  | Not Applied |
+| tl;dv     | 20%        | 30 days | Direct  | Not Applied |
+
+**Used in:** future-remote-meetings-ai-replace-video-calls (NEW)
+
+---
+
+### Virtual Office Platforms
+
+| Program   | Commission | Cookie  | Network | Status      |
+|-----------|------------|---------|---------|-------------|
+| Gather    | Unknown    | Unknown | Direct  | Not Applied |
+| Teamflow  | Unknown    | Unknown | Direct  | Not Applied |
+| Kumospace | Unknown    | Unknown | Direct  | Not Applied |
+| SpatialChat | Unknown  | Unknown | Direct  | Not Applied |
+
+**Used in:** rise-virtual-offices-gather-teamflow (NEW)
+
+---
+
+### Health Insurance (Nomads)
+
+| Program        | Commission | Cookie  | Network | Status      |
+|----------------|------------|---------|---------|-------------|
+| SafetyWing     | 10%        | 30 days | Direct  | Not Applied |
+| World Nomads   | 10-15%     | 30 days | Direct  | Not Applied |
+| Insured Nomads | 10-15%     | 30 days | Direct  | Not Applied |
+| Genki          | Unknown    | Unknown | Direct  | Not Applied |
+
+**Used in:** health-insurance-biggest-remote-work-pain-point (NEW)
+
+---
+
+### Credit Cards (Travel/Rewards)
+
+| Program   | Commission    | Cookie  | Network      | Status      |
+|-----------|---------------|---------|--------------|-------------|
+| NerdWallet | $50-200/lead | 30 days | Direct       | Not Applied |
+| Bankrate  | $25-100/lead  | 30 days | Direct       | Not Applied |
+| The Points Guy | Unknown  | Unknown | Direct       | Not Applied |
+
+**Used in:** best-travel-credit-cards-remote-workers (NEW)
+
+---
+
 ## Alternative/Backup Programs
 
 If primary programs reject your application:
@@ -1196,48 +1430,161 @@ Assuming modest traffic and 1% conversion:
 
 ## Application Checklist
 
-### Immediate Priority (This Week)
+### ✅ Already Approved
 
-- [ ] Amazon Associates - Required for laptops/desks articles
-- [ ] ConvertKit - Best recurring commission
-- [ ] 1Password (via Impact Radius) - Already have account
-- [ ] Beehiiv - Fast approval, good commissions
-- [ ] SafetyWing - Travel insurance, nomad-focused
-- [ ] Wise - Banking, high priority for nomad content
+- [x] Amazon Associates - floatjet-20 (laptops, desks, all hardware)
+- [x] NordVPN + NordPass - ID: 135757 (VPNs, password managers)
+- [x] Proton (All Products) - ID: 15204 (Mail, Pass, Drive, VPN)
 
-### Next Week
+### ⏳ Pending Applications
 
-- [ ] FlexiSpot - Standing desk coverage
-- [ ] ActiveCampaign - Email marketing segment
-- [ ] Autonomous - Budget desk segment
-- [ ] HubSpot - CRM coverage
-- [ ] Revolut - Banking/finance content
-- [ ] World Nomads - Travel insurance alternative
+- [ ] ConvertKit - Applied 2025-12-05, awaiting approval
+- [ ] Surfshark - Applied 2025-12-02
+- [ ] CyberGhost - Applied 2025-12-02
+- [ ] IPVanish - Applied 2025-12-02
 
-### When Approved
+### 🔴 Immediate Priority (Apply This Week)
+
+**High-Commission Direct Programs:**
+- [ ] Beehiiv - 50% recurring (12mo) - Email marketing
+- [ ] Wise - £15-50/referral - Digital banking for nomads
+- [ ] SafetyWing - 10% - Travel/health insurance
+- [ ] YNAB - $8/signup - Budgeting apps article
+
+**Hardware & Gear (Direct Programs):**
+- [ ] FlexiSpot - 8-10% - Standing desks, furniture
+- [ ] Logitech - 4-6% - Mice, keyboards, webcams, headsets
+- [ ] CalDigit - 5-8% - Docking stations, USB hubs
+- [ ] Keychron - 5% - Mechanical keyboards
+
+### 🟡 Week 2 Priority
+
+**AI & Productivity Tools:**
+- [ ] Jasper - 30% - AI writing tools
+- [ ] Copy.ai - 45% - AI writing tools
+- [ ] Otter.ai - 20-25% - AI meeting transcription
+- [ ] Fireflies - 20% - AI meeting notes
+
+**Finance & Tax:**
+- [ ] Betterment - $50-75/signup - Retirement planning
+- [ ] Wealthfront - $50/signup - Retirement planning
+- [ ] Revolut - Banking for nomads
+
+**Audio & Video:**
+- [ ] Focusrite - 5-8% - Audio interfaces
+- [ ] Rode - 5% - Microphones
+- [ ] Elgato - 5-8% - Webcams, streaming gear
+
+### 🟢 Week 3-4 Priority
+
+**Ergonomics & Accessories:**
+- [ ] Felix Gray - 10% - Blue light glasses
+- [ ] GUNNAR - 10% - Blue light glasses
+- [ ] Ergotron - 5-8% - Monitor arms
+- [ ] Twelve South - 8% - Laptop stands, docking
+
+**DNS & Privacy:**
+- [ ] NextDNS - 20% - DNS privacy
+- [ ] AdGuard - 40% - Ad blocking, DNS
+
+**Hosting & CDN:**
+- [ ] BunnyCDN - 20% - CDN services
+- [ ] Cloudways - $50-125/signup - Web hosting
+
+### 🔵 Month 2-3 (After Traffic)
+
+**Requires Impact Radius Reapproval:**
+- [ ] Notion - $100-500/sale
+- [ ] 1Password - 25%
+- [ ] Mailchimp - 20-30% first payment
+- [ ] HubSpot - 30% recurring
+
+**Requires PartnerStack Reapproval:**
+- [ ] ClickUp - $50-200 + 20% recurring
+- [ ] Calendly - 15-20%
+- [ ] Toggl Track - 20% recurring
+- [ ] Loom - 20%
+
+### 📋 Networks to Join
+
+- [ ] CJ Affiliate - For QuickBooks, TurboTax, Dashlane
+- [ ] ShareASale - For FreshBooks, WPEngine, Fully, Uplift
+
+### ✅ When Any Program Approved
 
 - [ ] Update netlify.toml with actual affiliate URLs
 - [ ] Test all redirect links
 - [ ] Update this tracker with affiliate IDs
-- [ ] Set up commission tracking spreadsheet
+- [ ] Add to revenue tracking spreadsheet
 
 ---
 
 ## Quick Reference Links
 
-| Program           | Application URL                        |
-|-------------------|----------------------------------------|
+### Affiliate Networks
+
+| Network           | Application URL                          |
+|-------------------|------------------------------------------|
 | Amazon Associates | <https://affiliate-program.amazon.com>   |
-| NordVPN/NordPass  | <https://nordvpn.com/affiliate/>         |
 | Impact Radius     | <https://impact.com>                     |
 | PartnerStack      | <https://partnerstack.com>               |
-| ConvertKit        | <https://convertkit.com/affiliates>      |
-| Beehiiv           | <https://www.beehiiv.com/partners>       |
-| FlexiSpot         | <https://www.flexispot.com/affiliate>    |
-| ActiveCampaign    | <https://www.activecampaign.com/partner> |
-| Autonomous        | <https://www.autonomous.ai/affiliate>    |
 | CJ Affiliate      | <https://www.cj.com>                     |
 | ShareASale        | <https://www.shareasale.com>             |
+
+### Direct Programs - High Priority
+
+| Program           | Application URL                          |
+|-------------------|------------------------------------------|
+| NordVPN/NordPass  | <https://nordvpn.com/affiliate/>         |
+| Proton            | <https://proton.me/partners>             |
+| ConvertKit        | <https://convertkit.com/affiliates>      |
+| Beehiiv           | <https://www.beehiiv.com/partners>       |
+| Wise              | <https://wise.com/partner>               |
+| SafetyWing        | <https://safetywing.com/affiliates>      |
+| FlexiSpot         | <https://www.flexispot.com/affiliate>    |
+
+### Direct Programs - AI & Productivity
+
+| Program           | Application URL                          |
+|-------------------|------------------------------------------|
+| Jasper            | <https://www.jasper.ai/partners>         |
+| Copy.ai           | <https://www.copy.ai/affiliates>         |
+| Otter.ai          | <https://otter.ai/affiliates>            |
+| Fireflies         | <https://fireflies.ai/affiliates>        |
+
+### Direct Programs - Hardware & Gear
+
+| Program           | Application URL                          |
+|-------------------|------------------------------------------|
+| Logitech          | <https://www.logitech.com/affiliates>    |
+| CalDigit          | <https://www.caldigit.com/affiliates>    |
+| Keychron          | <https://www.keychron.com/affiliate>     |
+| Focusrite         | <https://focusrite.com/affiliate>        |
+| Elgato            | <https://www.elgato.com/affiliate>       |
+
+### Direct Programs - Finance
+
+| Program           | Application URL                          |
+|-------------------|------------------------------------------|
+| YNAB              | <https://www.ynab.com/referral>          |
+| Betterment        | <https://www.betterment.com/partners>    |
+| Wealthfront       | <https://www.wealthfront.com/referral>   |
+| Revolut           | <https://www.revolut.com/affiliates>     |
+
+### Direct Programs - DNS & Privacy
+
+| Program           | Application URL                          |
+|-------------------|------------------------------------------|
+| NextDNS           | <https://nextdns.io/affiliate>           |
+| AdGuard           | <https://adguard.com/affiliate>          |
+
+### Direct Programs - Hosting
+
+| Program           | Application URL                          |
+|-------------------|------------------------------------------|
+| BunnyCDN          | <https://bunny.net/affiliate>            |
+| Cloudways         | <https://www.cloudways.com/affiliate>    |
+| Autonomous        | <https://www.autonomous.ai/affiliate>    |
 
 ---
 
@@ -1272,7 +1619,27 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** 2025-12-05 - Proton affiliate program APPROVED! All 4 products available (Mail, Pass, Drive, VPN).
+**Last Action:** 2025-12-07 - Added 18 NEW affiliate program categories for 63 new backlog articles:
+- AI Writing Tools (Jasper, Copy.ai, Writesonic, Surfer SEO, Frase)
+- Budgeting Apps (YNAB, Rocket Money, Monarch)
+- DNS & Privacy Services (NextDNS, AdGuard, Cloudflare)
+- Static Site Hosting & CDN (Netlify, Vercel, BunnyCDN, KeyCDN)
+- Email & Productivity Suites (Google Workspace, Microsoft 365, Zoho)
+- Scheduling Tools (Acuity, Cal.com, SavvyCal)
+- Soundproofing & Acoustic Treatment (GIK Acoustics, Auralex)
+- External Storage SSDs (Samsung, SanDisk/WD, Crucial, Seagate)
+- Laptop Cooling & Stands (Rain Design, Twelve South)
+- Monitor Arms & Mounts (Ergotron, VIVO, Fully)
+- Ergonomic Footrests & Accessories (Humanscale)
+- USB Hubs & Docking Stations (CalDigit, Twelve South, Belkin, Satechi)
+- Blue Light Glasses (Felix Gray, GUNNAR, Zenni)
+- AI Meeting & Transcription Tools (Otter.ai, Fireflies, Grain, Fathom, tl;dv)
+- Virtual Office Platforms (Gather, Teamflow, Kumospace)
+- Health Insurance for Nomads (SafetyWing, Insured Nomads, Genki)
+- Credit Cards/Travel Rewards (NerdWallet, Bankrate)
+Updated Application Checklist with prioritized timeline. Updated Quick Reference Links with application URLs.
+
+**Previous Action:** 2025-12-05 - Proton affiliate program APPROVED! All 4 products available (Mail, Pass, Drive, VPN).
 Affiliate ID: 15204 via Tune network. Account Manager: Dominik (partners@proton.me). Updated VPN and Password Manager
 tables. Added all Proton affiliate redirects to netlify.toml.
 
@@ -1283,26 +1650,21 @@ recurring for 24 months. Approval expected within 1-3 days. Will update netlify.
 This was expected since Impact Radius network access was declined earlier. Will reapply in Month 2-3 once site has
 established traffic. NordVPN remains our primary VPN affiliate (already approved with 30-40% commission).
 
-**Previous Action:** 2025-11-30 - Amazon Associates APPROVED! Store ID: floatjet-20. Automatically discovered 25 product
-ASINs from published articles (laptops, desks, chairs, webcams, headphones, keyboards). Created amazon-products-asins.md
-reference document. Added 25 affiliate redirects to netlify.toml. Critical: Must make 3 qualifying sales within 180 days
-to stay active. Updated Applied Programs table and registration guide.
-
 **Previous Actions:**
 
-- 2025-11-30: PartnerStack Network Profile access limited. Marketplace access to new programs
-  restricted. Reason: "Profile not a great fit, but may be in the future." ClickUp application (already submitted) not
-  affected. Updated all PartnerStack program statuses to "⚠️ Unavailable (PS Network)" throughout affiliate-programs.md.
-  Can reapply once site is launched with content and traffic.
-- 2025-11-28: Impact Radius application declined (Account ID: 6717334). Reason: Site not live, no published content, no
-  traffic. Updated affiliate-programs.md with decline details and deferral of Notion, 1Password, Mailchimp, HubSpot
-  programs until Month 2-3 reapplication.
-- 2025-11-24: Added new affiliate program categories: Accounting & Tax Software (QuickBooks, FreshBooks, Xero, TurboTax,
-  Expensify, Dext), Investment & Retirement Platforms (Fidelity, Schwab, Betterment, Wealthfront, M1 Finance). Updated
-  Digital Banking with N26. Five new finance guide articles written: freelancer-tax-deductions-guide,
-  retirement-savings-freelancer, invoice-payment-terms-guide, multi-currency-banking-nomads,
-  expense-home-office-furniture.
+- 2025-11-30: Amazon Associates APPROVED! Store ID: floatjet-20. 25 product ASINs configured.
+- 2025-11-30: PartnerStack Network Profile access limited. Will reapply Month 2-3.
+- 2025-11-28: Impact Radius application declined. Will reapply Month 2-3 with traffic.
+- 2025-11-24: Added Accounting & Tax Software and Investment & Retirement Platform categories.
 
-**Next Action:** Focus on site launch (Week 2-4). **Priority: Apply to direct programs and other networks first** -
-Amazon Associates, ConvertKit, Beehiiv, FlexiSpot, Wise, Revolut, ShareASale, CJ Affiliate. Reapply to Impact Radius AND
-PartnerStack Network in Month 2-3 (January 2026) once site has 20+ articles and traffic.
+**Next Action:** Apply to high-priority direct programs this week:
+1. Beehiiv (50% recurring) - Email marketing
+2. Wise (£15-50/referral) - Digital banking
+3. SafetyWing (10%) - Travel/health insurance
+4. YNAB ($8/signup) - Budgeting apps
+5. FlexiSpot (8-10%) - Standing desks
+6. Logitech (4-6%) - Hardware (mice, keyboards, webcams)
+7. CalDigit (5-8%) - Docking stations
+8. Keychron (5%) - Mechanical keyboards
+
+Then join CJ Affiliate and ShareASale networks for additional programs.

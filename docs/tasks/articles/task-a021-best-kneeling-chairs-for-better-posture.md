@@ -134,6 +134,25 @@ Before marking this task complete:
 - [ ] Preview looks correct
 - [ ] `docs/writing/writing-style-guide.md` updated with new patterns
 
+
+## Affiliate Opportunities
+
+**Status:** ✅ Has affiliate programs
+
+| Program | Status | Network | Commission |
+|---------|--------|---------|------------|
+| Jasper | Not Applied | Direct | - |
+| Copy.ai | Not Applied | Direct | - |
+| Writesonic | Not Applied | Direct | - |
+
+**Notes:** Research AI writing tool affiliate programs. Growing category with good commissions.
+
+**Reference:** `docs/affiliates/affiliate-programs.md`
+
+**Action:** Update `docs/affiliates/affiliate-programs.md` with any new programs discovered or applied for.
+
+---
+
 ## Progress Log
 
 ### 2025-12-07

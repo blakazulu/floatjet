@@ -134,6 +134,24 @@ Before marking this task complete:
 - [ ] Preview looks correct
 - [ ] `docs/writing/writing-style-guide.md` updated with new patterns
 
+
+## Affiliate Opportunities
+
+**Status:** ✅ Has affiliate programs
+
+| Program | Status | Network | Commission |
+|---------|--------|---------|------------|
+| WPEngine | Not Applied | ShareASale | $200 + $50/mo lifetime |
+| SiteGround | Not Applied | Direct | $50-100/signup |
+
+**Notes:** Apply to premium hosting programs to contrast with free hosting.
+
+**Reference:** `docs/affiliates/affiliate-programs.md`
+
+**Action:** Update `docs/affiliates/affiliate-programs.md` with any new programs discovered or applied for.
+
+---
+
 ## Progress Log
 
 ### 2025-12-07

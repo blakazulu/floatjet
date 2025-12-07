@@ -134,6 +134,19 @@ Before marking this task complete:
 - [ ] Preview looks correct
 - [ ] `docs/writing/writing-style-guide.md` updated with new patterns
 
+
+## Affiliate Opportunities
+
+**Status:** Limited/No affiliate programs
+
+This is primarily educational content with limited direct affiliate opportunities.
+
+**Notes:** Educational content. Internal link to collaboration tools articles.
+
+**Action:** Focus on internal links to money pages with affiliate products. Check `docs/affiliates/affiliate-programs.md` for related opportunities.
+
+---
+
 ## Progress Log
 
 ### 2025-12-07

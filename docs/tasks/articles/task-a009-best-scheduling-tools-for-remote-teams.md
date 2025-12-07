@@ -134,6 +134,25 @@ Before marking this task complete:
 - [ ] Preview looks correct
 - [ ] `docs/writing/writing-style-guide.md` updated with new patterns
 
+
+## Affiliate Opportunities
+
+**Status:** ✅ Has affiliate programs
+
+| Program | Status | Network | Commission |
+|---------|--------|---------|------------|
+| Calendly | ⚠️ Unavailable (PS Network) | PartnerStack | 15-20% |
+| Acuity | Not Applied | Direct | - |
+| Cal.com | Not Applied | Direct | - |
+
+**Notes:** Calendly via PartnerStack (unavailable). Research Acuity and Cal.com programs.
+
+**Reference:** `docs/affiliates/affiliate-programs.md`
+
+**Action:** Update `docs/affiliates/affiliate-programs.md` with any new programs discovered or applied for.
+
+---
+
 ## Progress Log
 
 ### 2025-12-07

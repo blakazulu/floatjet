@@ -134,6 +134,26 @@ Before marking this task complete:
 - [ ] Preview looks correct
 - [ ] `docs/writing/writing-style-guide.md` updated with new patterns
 
+
+## Affiliate Opportunities
+
+**Status:** ✅ Has affiliate programs
+
+| Program | Status | Network | Commission |
+|---------|--------|---------|------------|
+| Amazon | ✅ Approved | Amazon | 3-4% |
+| Shure | Not Applied | Direct | 5-8% |
+| Rode | Not Applied | Direct | 5% |
+| Focusrite | Not Applied | Direct | 5-8% |
+
+**Notes:** Use Amazon Associates (floatjet-20) for product links. Apply to Focusrite for audio interfaces.
+
+**Reference:** `docs/affiliates/affiliate-programs.md`
+
+**Action:** Update `docs/affiliates/affiliate-programs.md` with any new programs discovered or applied for.
+
+---
+
 ## Progress Log
 
 ### 2025-12-07

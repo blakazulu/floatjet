@@ -1,11 +1,11 @@
 # FloatJet Article Summary
 
 > **Auto-generated** from `src/data/articles.ts`
-> Last updated: 2025-12-08 00:34
+> Last updated: 2025-12-08 00:49
 >
 > To regenerate: `python scripts/generate-article-summary.py`
 
-**Total Articles:** 111
+**Total Articles:** 112
 
 ---
 
@@ -100,7 +100,7 @@
 | 034 | [Portugal Digital Nomad Visa 2025: How to Apply](/guides/digital-nomad-visa-portugal) | Daniel Brooks | Travel | 15 min | `photo-1555881400-74d7acaacd8b-...` |
 | 035 | [Spain Digital Nomad Visa 2025: How to Apply](/guides/digital-nomad-visa-spain) | Daniel Brooks | Travel | 14 min | `photo-1539037116277-4db20889f2...` |
 
-### Tools (37 articles)
+### Tools (38 articles)
 
 | # | Title | Author | Category | Read Time | Hero Image |
 |---|-------|--------|----------|-----------|------------|
@@ -129,18 +129,19 @@
 | 023 | [Best Online Course Platforms for Creators (2025)](/tools/best-online-course-platforms) | Marcus Chen | Saas | 16 min | `photo-1501504905252-473c47e087...` |
 | 024 | [Best Productivity Apps for Remote Workers (2025)](/tools/best-productivity-apps) | Marcus Chen | Saas | 16 min | `photo-1484480974693-6ca0a78fb3...` |
 | 025 | [Best Project Management Software for Remote Teams (2025)](/tools/best-project-management-software) | Marcus Chen | Saas | 14 min | `photo-1454165804606-c3d57bc86b...` |
-| 026 | [Best Time Tracking Software for Freelancers (2025)](/tools/best-time-tracking-software) | Marcus Chen | Saas | 15 min | `photo-1508962914676-134849a727...` |
-| 027 | [Best Video Conferencing Tools for Remote Teams (2025)](/tools/best-video-conferencing-tools) | Marcus Chen | Saas | 18 min | `photo-1588196749597-9ff075ee6b...` |
-| 028 | [Is Notion Worth It? Honest Review for Remote Workers (2025)](/tools/is-notion-worth-it) | Marcus Chen | Saas | 9 min | `photo-1517694712202-14dd9538aa...` |
-| 029 | [Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)](/tools/notion-vs-clickup-vs-monday) | Marcus Chen | Saas | 14 min | `photo-1557804506-669a67965ba0-...` |
-| 030 | [Best Business VPN Solutions for Remote Teams (2025)](/tools/best-business-vpn-remote-teams) | Daniel Brooks | Vpn | 16 min | `photo-1551434678-e076c223a692-...` |
-| 031 | [Best Password Managers for Remote Workers (2025)](/tools/best-password-manager-remote-work) | Daniel Brooks | Vpn | 14 min | `photo-1633265486064-086b219458...` |
-| 032 | [Best Secure Email Providers for Remote Workers (2025)](/tools/best-secure-email-providers) | Daniel Brooks | Vpn | 12 min | `secure-email-padlock-1200w.web...` |
-| 033 | [Best VPN for Streaming While Traveling (2025)](/tools/best-vpn-streaming-travel) | Daniel Brooks | Vpn | 14 min | `photo-1522199755839-a2bacb67c5...` |
-| 034 | [Best VPNs for Digital Nomads & Remote Workers (2025)](/tools/best-vpn-digital-nomads) | Daniel Brooks | Vpn | 15 min | `photo-1526374965328-7f61d4dc18...` |
-| 035 | [Free VPN vs Paid VPN: What You Need to Know (2025)](/tools/free-vpn-vs-paid-vpn) | Daniel Brooks | Vpn | 12 min | `photo-1565688534245-05d6b5be18...` |
-| 036 | [How to Set Up a VPN on All Your Devices (2025 Guide)](/tools/how-to-setup-vpn-all-devices) | Daniel Brooks | Vpn | 11 min | `photo-1562577309-4932fdd64cd1-...` |
-| 037 | [VPN Kill Switch Explained: Why Remote Workers Need It (2025)](/tools/vpn-kill-switch-explained) | Daniel Brooks | Vpn | 7 min | `photo-1542744173-8e7e53415bb0-...` |
+| 026 | [Best Scheduling Tools for Remote Teams (2025)](/tools/best-scheduling-tools-for-remote-teams) | Marcus Chen | Saas | 13 min | `photo-1517430816045-df4b7de11d...` |
+| 027 | [Best Time Tracking Software for Freelancers (2025)](/tools/best-time-tracking-software) | Marcus Chen | Saas | 15 min | `photo-1508962914676-134849a727...` |
+| 028 | [Best Video Conferencing Tools for Remote Teams (2025)](/tools/best-video-conferencing-tools) | Marcus Chen | Saas | 18 min | `photo-1588196749597-9ff075ee6b...` |
+| 029 | [Is Notion Worth It? Honest Review for Remote Workers (2025)](/tools/is-notion-worth-it) | Marcus Chen | Saas | 9 min | `photo-1517694712202-14dd9538aa...` |
+| 030 | [Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)](/tools/notion-vs-clickup-vs-monday) | Marcus Chen | Saas | 14 min | `photo-1557804506-669a67965ba0-...` |
+| 031 | [Best Business VPN Solutions for Remote Teams (2025)](/tools/best-business-vpn-remote-teams) | Daniel Brooks | Vpn | 16 min | `photo-1551434678-e076c223a692-...` |
+| 032 | [Best Password Managers for Remote Workers (2025)](/tools/best-password-manager-remote-work) | Daniel Brooks | Vpn | 14 min | `photo-1633265486064-086b219458...` |
+| 033 | [Best Secure Email Providers for Remote Workers (2025)](/tools/best-secure-email-providers) | Daniel Brooks | Vpn | 12 min | `secure-email-padlock-1200w.web...` |
+| 034 | [Best VPN for Streaming While Traveling (2025)](/tools/best-vpn-streaming-travel) | Daniel Brooks | Vpn | 14 min | `photo-1522199755839-a2bacb67c5...` |
+| 035 | [Best VPNs for Digital Nomads & Remote Workers (2025)](/tools/best-vpn-digital-nomads) | Daniel Brooks | Vpn | 15 min | `photo-1526374965328-7f61d4dc18...` |
+| 036 | [Free VPN vs Paid VPN: What You Need to Know (2025)](/tools/free-vpn-vs-paid-vpn) | Daniel Brooks | Vpn | 12 min | `photo-1565688534245-05d6b5be18...` |
+| 037 | [How to Set Up a VPN on All Your Devices (2025 Guide)](/tools/how-to-setup-vpn-all-devices) | Daniel Brooks | Vpn | 11 min | `photo-1562577309-4932fdd64cd1-...` |
+| 038 | [VPN Kill Switch Explained: Why Remote Workers Need It (2025)](/tools/vpn-kill-switch-explained) | Daniel Brooks | Vpn | 7 min | `photo-1542744173-8e7e53415bb0-...` |
 
 ---
 
@@ -152,14 +153,14 @@
 | Blog | 16 |
 | Gear | 23 |
 | Guides | 35 |
-| Tools | 37 |
-| **Total** | **111** |
+| Tools | 38 |
+| **Total** | **112** |
 
 ### By Category
 | Category | Count |
 |----------|-------|
 | Finance | 17 |
-| Saas | 12 |
+| Saas | 13 |
 | Hosting | 11 |
 | Travel | 9 |
 | Communication | 8 |
@@ -176,6 +177,6 @@
 ### By Author
 | Author | Count |
 |--------|-------|
-| Marcus Chen | 43 |
+| Marcus Chen | 44 |
 | Daniel Brooks | 41 |
 | Sarah Mitchell | 27 |

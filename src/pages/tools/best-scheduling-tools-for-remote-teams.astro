@@ -1,0 +1,472 @@
+---
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
+
+// Get article metadata from central data file
+const article = getArticleBySlug("best-scheduling-tools-for-remote-teams", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
+// Table of contents headings
+const headings = [
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why Scheduling Tools Matter", slug: "why-scheduling-tools", depth: 2 },
+  { text: "Calendly", slug: "calendly", depth: 3 },
+  { text: "Acuity Scheduling", slug: "acuity", depth: 3 },
+  { text: "Cal.com", slug: "calcom", depth: 3 },
+  { text: "Other Tools", slug: "other-tools", depth: 2 },
+  { text: "Comparison", slug: "comparison", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Conclusion", slug: "conclusion", depth: 2 },
+];
+
+// Quick picks comparison table
+const quickPicksColumns = [
+  { key: "tool", label: "Tool", width: "120px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "price", label: "Price" },
+  { key: "freeTier", label: "Free Tier" },
+  { key: "action", label: "" },
+];
+
+const quickPicksRows = [
+  {
+    tool: "<strong>Calendly</strong>",
+    bestFor: "Video meetings",
+    price: "$12-20/user",
+    freeTier: true,
+    action: '<a href="/go/calendly" rel="nofollow sponsored" target="_blank">Try Free</a>',
+  },
+  {
+    tool: "<strong>Acuity</strong>",
+    bestFor: "Paid appointments",
+    price: "$20-61/mo flat",
+    freeTier: false,
+    action: '<a href="/go/acuity" rel="nofollow sponsored" target="_blank">Try Free</a>',
+  },
+  {
+    tool: "<strong>Cal.com</strong>",
+    bestFor: "Technical teams",
+    price: "$15/user",
+    freeTier: true,
+    action: '<a href="/go/calcom" rel="nofollow sponsored" target="_blank">Try Free</a>',
+  },
+];
+
+// Full comparison table
+const fullComparisonColumns = [
+  { key: "tool", label: "Tool", width: "110px" },
+  { key: "bestFor", label: "Best For", width: "130px" },
+  { key: "pricing", label: "Pricing Model" },
+  { key: "freeTier", label: "Free Tier" },
+  { key: "payments", label: "Payments" },
+  { key: "integrations", label: "Integrations" },
+];
+
+const fullComparisonRows = [
+  {
+    tool: "<strong>Calendly</strong>",
+    bestFor: "Video meetings",
+    pricing: "Per user",
+    freeTier: true,
+    payments: "Basic",
+    integrations: "1,000+",
+  },
+  {
+    tool: "<strong>Acuity</strong>",
+    bestFor: "Service business",
+    pricing: "Flat rate",
+    freeTier: false,
+    payments: "Advanced",
+    integrations: "Moderate",
+  },
+  {
+    tool: "<strong>Cal.com</strong>",
+    bestFor: "Developers",
+    pricing: "Per user",
+    freeTier: true,
+    payments: "Via integrations",
+    integrations: "Growing",
+  },
+  {
+    tool: "SavvyCal",
+    bestFor: "Calendar overlay",
+    pricing: "Per user",
+    freeTier: false,
+    payments: false,
+    integrations: "Limited",
+  },
+  {
+    tool: "Doodle",
+    bestFor: "Group polling",
+    pricing: "Per user",
+    freeTier: true,
+    payments: false,
+    integrations: "Basic",
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: "Does Calendly's free version actually work?",
+    answer:
+      "<p>For bare minimum scheduling, yes. You get one event type and one calendar connection. Most people hit the limits within two weeks of regular use. The $12/month Standard plan unlocks multiple event types and makes sense if you schedule meetings regularly.</p>",
+  },
+  {
+    question: "Can Calendly handle appointment payments?",
+    answer:
+      "<p>It can process payments via Stripe or PayPal, but only simple per-booking charges. No session packages, subscriptions, or deposit requirements. If you need robust payment features, <strong>Acuity</strong> does this dramatically better with built-in support for packages, memberships, and gift certificates.</p>",
+  },
+  {
+    question: "Is Cal.com genuinely free?",
+    answer:
+      "<p>The individual tier is free with unlimited event types. Team features cost $15/user/month. Self-hosting is completely free but requires technical setup and server infrastructure. For most individuals, the free tier covers everything needed.</p>",
+  },
+  {
+    question: "Which scheduling tool has the best integrations?",
+    answer:
+      "<p><strong>Calendly</strong>, without question. Over 1,000 integrations including deep connections to Salesforce, HubSpot, Zoom, Microsoft Teams, and Slack. Cal.com is building out their integration library but hasn't caught up yet. Acuity leans heavily toward the Squarespace ecosystem.</p>",
+  },
+  {
+    question: "Do automated reminders actually reduce no-shows?",
+    answer:
+      "<p>Substantially. Adding email and SMS reminders dropped my no-show rate from roughly 15% to under 5%. The reminder automation alone can justify the subscription cost, especially for paid appointments where no-shows directly cost money.</p>",
+  },
+  {
+    question: "What about Google Calendar's built-in scheduling?",
+    answer:
+      "<p>It exists and it's free. It also offers zero customization, generic appearance, no buffer times between meetings, and weak integrations. Acceptable for casual personal use, but not professional enough for business contexts where first impressions matter.</p>",
+  },
+  {
+    question: "Which tool supports white-labeling?",
+    answer:
+      "<p><strong>Cal.com</strong> offers extensive white-labeling and custom branding. Calendly only provides this on enterprise plans. Acuity has some branding options but they're limited. If white-labeling is a requirement, Cal.com is the clear choice.</p>",
+  },
+  {
+    question: "What's the best choice for a team of 5-10 people?",
+    answer:
+      "<p>Depends on your use case. <strong>Calendly Teams</strong> at $20/user runs $100-200 monthly total for meeting coordination. <strong>Acuity</strong> at $34/month flat works better for service businesses with payments. <strong>Cal.com Teams</strong> at $15/user lands between $75-150 monthly for technical teams wanting open-source control.</p>",
+  },
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: "Best Project Management Software",
+    excerpt:
+      "Compare Notion, ClickUp, Asana, and more for managing remote team projects and workflows.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Project management dashboard",
+  },
+  {
+    title: "Best Team Communication Tools",
+    excerpt:
+      "Slack, Teams, Discord compared for remote team communication and collaboration.",
+    href: "/blog/best-team-communication-tools",
+    image: "/images/unsplash/photo-1552664730-d307ca884978-800w.webp",
+    imageAlt: "Team communication and collaboration",
+  },
+  {
+    title: "Managing Time Zones in Remote Teams",
+    excerpt:
+      "Practical strategies for coordinating work across multiple time zones without burning out.",
+    href: "/blog/managing-time-zones-remote-teams",
+    image: "/images/unsplash/photo-1501139083538-0139583c060f-800w.webp",
+    imageAlt: "World clock showing multiple time zones",
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    authorSlug={authorSlug}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="SaaS"
+    categorySlug="tools"
+    subcategorySlug="saas"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">The 47-Minute Scheduling Disaster</h2>
+  <p>
+    Spent 47 minutes last Tuesday trying to find a meeting time with a client in Singapore.
+  </p>
+  <p>
+    Fourteen emails. Three time zone conversions I got wrong. One accidentally scheduled call at 3am my time. The meeting itself lasted twenty minutes. The scheduling circus beforehand? Nearly an hour gone.
+  </p>
+  <p>
+    That pushed me over the edge. Started testing scheduling tools the following day. Seven of them over three weeks. Most are fine. Three are worth actual money.
+  </p>
+  <p>
+    <strong>Short version:</strong> <a href="#calendly">Calendly</a> if you mostly book video calls and want something that works immediately. <a href="#acuity">Acuity</a> if you run a service business and need payments baked in. <a href="#calcom">Cal.com</a> if you're technical and want complete control.
+  </p>
+
+  <!-- Quick Picks -->
+  <h2 id="quick-picks">Quick Picks</h2>
+  <p>Short on time? Here's what works:</p>
+  <ComparisonTable
+      columns={quickPicksColumns}
+      rows={quickPicksRows}
+      caption="Top 3 scheduling tools for remote teams"
+  />
+  <p>
+    All three offer free trials or free tiers. Test with real scheduling before committing.
+  </p>
+
+  <!-- Why Scheduling Tools -->
+  <h2 id="why-scheduling-tools">Why Bother With Scheduling Tools</h2>
+  <p>
+    Google Calendar has appointment scheduling built in now. So why pay for anything else?
+  </p>
+  <p>
+    I tried Google's version for a month. It works, technically. But it looks amateur, offers zero customization, and the experience feels like an afterthought. Send someone a Google scheduling link and they'll notice you're cutting corners.
+  </p>
+  <p>
+    <strong>What dedicated tools actually fix:</strong>
+  </p>
+  <ul>
+    <li>Time zone conversion happens automatically. No more doing math in your head at 11pm.</li>
+    <li>The back-and-forth email chains disappear. "Does Tuesday work?" "Which time zone?" "How about Thursday?" All gone.</li>
+    <li>Automated reminders get people to actually show up. My no-show rate dropped from maybe 15% to under 5%.</li>
+    <li>Buffer time between meetings. I finally learned to stop scheduling calls back-to-back.</li>
+    <li>Professional appearance. Branded booking pages make you look like you have things together.</li>
+  </ul>
+  <p>
+    Quick math on ROI: Ten meetings weekly, 15 minutes saved per meeting in scheduling overhead. That's 10+ hours monthly. Any of these tools pays for itself immediately.
+  </p>
+
+  <!-- Calendly -->
+  <h3 id="calendly">Calendly</h3>
+  <p>
+    Running this for about two years now. It's what I send to most people.
+  </p>
+  <p>
+    Calendly owns this market for a reason. The interface is clean and obvious. Someone clicks your link, picks a slot, both calendars get updated. Nothing confusing about it.
+  </p>
+  <p>
+    The free version handles basic scheduling. One event type, one calendar connection. Enough to figure out if this fits how you work. Most people upgrade within a couple weeks once they start depending on it.
+  </p>
+  <p>
+    <strong>Stuff I actually use:</strong>
+  </p>
+  <ul>
+    <li>Different event types for different meetings. Quick 15-minute intro, standard 30-minute call, longer 60-minute deep dive.</li>
+    <li>Round-robin distribution across my small team</li>
+    <li>Zoom integration that creates meeting links automatically</li>
+    <li>Buffer time settings (learned that lesson the hard way)</li>
+    <li>Reminders via email and SMS that dramatically cut no-shows</li>
+  </ul>
+  <p>
+    <strong>On pricing:</strong> Free gets you started but feels limiting fast. Standard runs $12/month per person and unlocks multiple event types. Teams at $20/month adds round-robin and analytics. Enterprise pricing is custom.
+  </p>
+  <p>
+    <strong>What bugs me:</strong> Per-seat pricing scales painfully. Six people on the Teams plan means $120/month just for scheduling. That stings. And the free tier clearly exists to push you toward paying, which is annoying even if it's standard practice.
+  </p>
+  <p>
+    Good fit for people who book lots of video meetings. Sales folks, recruiters, consultants. The <a href="/tools/best-crm-software-for-freelancers">CRM integrations</a> to Salesforce and HubSpot actually matter if you track where meetings come from.
+  </p>
+  <p>
+    Not the right choice for anyone who needs clients to pay at booking time. Calendly has payment options but they're basic compared to Acuity.
+  </p>
+  <AffiliateButton
+      href="/go/calendly"
+      text="Try Calendly Free"
+      variant="primary"
+      program="calendly"
+  />
+
+  <!-- Acuity -->
+  <h3 id="acuity">Acuity Scheduling</h3>
+  <p>
+    If your clients pay when they book, start here instead.
+  </p>
+  <p>
+    Acuity belongs to Squarespace now. The tool was designed for service businesses from the beginning. Coaches, therapists, fitness instructors, hair salons. People whose appointments involve money changing hands.
+  </p>
+  <p>
+    Payment integration is where Acuity pulls ahead. Stripe, Square, PayPal—all native. Require deposits before booking. Sell session packages. Create gift certificates. Run membership programs. This isn't bolted on like Calendly's payment option feels.
+  </p>
+  <p>
+    <strong>What Acuity handles well:</strong>
+  </p>
+  <ul>
+    <li>Payment processing on every paid plan, not as an extra charge</li>
+    <li>Packages and subscription billing for recurring clients</li>
+    <li>Intake forms that gather client details before the appointment</li>
+    <li>Client records with full booking history</li>
+    <li>HIPAA compliance for healthcare providers</li>
+    <li>Flat monthly fee regardless of how many people use it</li>
+  </ul>
+  <p>
+    That pricing structure deserves emphasis. Acuity charges $20, $34, or $61 monthly based on features. Not per person. A team of six pays $34 total on the Growing tier. The same team on Calendly pays $120.
+  </p>
+  <p>
+    <strong>The downsides:</strong> Interface feels older than Calendly. More options crammed into more menus. Learning curve is steeper. And since Squarespace bought them, integrations favor that world heavily.
+  </p>
+  <p>
+    Good fit for businesses built around paid appointments. Coaching practices, therapy offices, salons, gyms, consultants billing by the hour.
+  </p>
+  <p>
+    Not the right choice for teams that just need basic meeting coordination. You'd be paying for payment features that sit unused.
+  </p>
+  <AffiliateButton
+      href="/go/acuity"
+      text="Try Acuity Free for 7 Days"
+      variant="secondary"
+      program="acuity"
+  />
+
+  <!-- Cal.com -->
+  <h3 id="calcom">Cal.com</h3>
+  <p>
+    The open-source answer. Sounds niche but genuinely matters for certain users.
+  </p>
+  <p>
+    Honest disclosure: I tested Cal.com thoroughly but don't use it as my primary tool. It's impressive. It also needs more technical comfort than most people bring to the table.
+  </p>
+  <p>
+    The promise: Everything Calendly does, but open source, self-hostable, customizable down to the code. No vendor lock-in. Data stays on your servers if you want. White-label everything.
+  </p>
+  <p>
+    <strong>What Cal.com brings:</strong>
+  </p>
+  <ul>
+    <li>Free tier with unlimited event types (Calendly caps you at one)</li>
+    <li>Code you can actually examine and modify</li>
+    <li>Self-hosting for full data ownership</li>
+    <li>Team pricing at $15/user/month</li>
+    <li>Complete white-labeling and branding control</li>
+    <li>Developer API for building on top of it</li>
+  </ul>
+  <p>
+    For developers and technical teams, Cal.com is genuinely appealing. You can read the source code, understand the mechanics, even contribute fixes. That transparency carries weight with certain crowds.
+  </p>
+  <p>
+    <strong>The reality check:</strong> Fewer integrations than Calendly currently. Interface is clean but not quite as refined. Self-hosting takes real technical knowledge. And a smaller team means development moves at a different pace than well-funded Calendly.
+  </p>
+  <p>
+    Good fit for technical users, developer teams, companies that prioritize open source, organizations with strict data residency rules.
+  </p>
+  <p>
+    Not the right choice for people who want to sign up and start booking immediately without configuration.
+  </p>
+  <AffiliateButton
+      href="/go/calcom"
+      text="Try Cal.com Free"
+      variant="ghost"
+      program="calcom"
+  />
+
+  <!-- Other Tools -->
+  <h2 id="other-tools">What Else I Tried</h2>
+  <p>
+    Quick takes on tools that didn't crack the top three:
+  </p>
+  <p>
+    <strong>SavvyCal</strong> charges $12/month per person. Different concept—invitees overlay their calendar to find mutual openings instead of picking from your available slots. Interesting approach but confusing for people encountering it cold.
+  </p>
+  <p>
+    <strong>Doodle</strong> handles group polls well. "What time works for everyone?" scenarios. Not really the same category as these booking tools. Fine for finding times when many people need to coordinate.
+  </p>
+  <p>
+    <strong>Chili Piper</strong> goes after enterprise sales specifically. Instant meeting booking from web forms, lead routing logic, that territory. Way more than most people need. They don't publish pricing, which usually signals expensive.
+  </p>
+  <p>
+    <strong>Microsoft Bookings</strong> ships with Microsoft 365 Business. Reasonable if you already live in that ecosystem. Teams integration works smoothly. But the design screams "designed by committee."
+  </p>
+  <p>
+    <strong>YouCanBook.me</strong> has existed forever. Functions adequately. Nothing makes it stand out against the top three.
+  </p>
+
+  <!-- Comparison -->
+  <h2 id="comparison">How They Stack Up</h2>
+  <p>
+    What matters for most remote teams:
+  </p>
+  <p>
+    <strong>Calendly</strong> charges per user, $12-20 monthly. Has a workable free version. Excels at video meeting booking and team scheduling. Integrates with practically everything. Gets pricey as headcount grows.
+  </p>
+  <p>
+    <strong>Acuity</strong> charges flat rates, $20-61 monthly regardless of users. No free option. Excels at service businesses handling payments. Much cheaper for larger teams. Interface needs updating.
+  </p>
+  <p>
+    <strong>Cal.com</strong> offers a generous free tier, then $15/user/month for teams. Excels for technical users wanting control. Open source. Integration library is smaller.
+  </p>
+  <p>
+    For straightforward meeting booking, Calendly takes it. Cleaner experience, deeper integration options, better team scheduling features.
+  </p>
+  <p>
+    For paid appointments and services, Acuity takes it. The payment capabilities alone justify the cost if you're charging clients.
+  </p>
+  <p>
+    For technical teams prioritizing control, Cal.com takes it. Open source matters if you care about it.
+  </p>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">What I Actually Use</h2>
+  <p>
+    After testing everything, my setup:
+  </p>
+  <ul>
+    <li>Calendly Professional at $12 monthly for consulting calls. Multiple meeting types, buffer time between appointments, automatic Zoom links. Does exactly what I need.</li>
+    <li>Cal.com free account as backup and for experimentation. Unlimited event types on the free tier makes it useful for overflow.</li>
+    <li>Never adopted Acuity since I don't charge for appointments directly. If I started a coaching practice tomorrow, I'd switch.</li>
+  </ul>
+  <p>
+    Monthly spend: $12. Time recovered: 10+ hours monthly minimum. Math works out.
+  </p>
+  <p>
+    Should have started using scheduling tools years earlier. The time savings pile up fast.
+  </p>
+  <p>
+    Match the tool to what you actually do:
+  </p>
+  <ul>
+    <li>External meeting bookings? Calendly.</li>
+    <li>Service business with payments? Acuity.</li>
+    <li>Technical team wanting ownership? Cal.com.</li>
+  </ul>
+  <p>
+    The 47-minute Singapore scheduling disaster that kicked this off? Hasn't happened since.
+  </p>
+
+  <AffiliateButton
+      href="/go/calendly"
+      text="Try Calendly Free - Top Pick"
+      variant="primary"
+      program="calendly"
+  />
+
+  <!-- Full Width Content Slot -->
+  <Fragment slot="full-width">
+    <!-- Full Comparison Table -->
+    <section class="py-8" id="full-comparison">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center font-heading">Complete Comparison Table</h2>
+        <p class="text-white/80 text-center mb-8 max-w-2xl mx-auto">How all the scheduling tools compare on features that matter for remote teams:</p>
+        <ComparisonTable
+            columns={fullComparisonColumns}
+            rows={fullComparisonRows}
+            caption="Complete comparison of scheduling tools"
+        />
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

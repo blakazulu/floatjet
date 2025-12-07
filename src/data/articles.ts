@@ -994,6 +994,18 @@ export const toolsArticles: Article[] = [
     category: "finance",
   },
   {
+    slug: "best-scheduling-tools-for-remote-teams",
+    section: "tools",
+    title: "Best Scheduling Tools for Remote Teams (2025)",
+    description: "Spent 47 minutes scheduling one meeting. Never again. Tested seven scheduling tools to find the best. Calendly, Acuity, Cal.com compared.",
+    authorSlug: "marcus-chen",
+    pubDate: "2025-12-08",
+    readingTime: 13,
+    image: "/images/unsplash/photo-1517430816045-df4b7de11d1d-1200w.webp",
+    imageAlt: "Calendar and scheduling workspace for remote team coordination",
+    category: "saas",
+  },
+  {
     slug: "best-time-tracking-software-for-billing-clients",
     section: "tools",
     title: "Best Time Tracking Software for Billing Clients (2025)",

@@ -1114,6 +1114,18 @@ export const toolsArticles: Article[] = [
     category: "vpn",
   },
   {
+    slug: "best-static-site-hosting-for-developers",
+    section: "tools",
+    title: "Best Static Site Hosting for Developers (2025)",
+    description: "I deployed 50+ projects across Netlify, Vercel, and Cloudflare Pages. Here is what actually matters for static site hosting in 2025.",
+    authorSlug: "marcus-chen",
+    pubDate: "2025-12-07",
+    readingTime: 14,
+    image: "/images/unsplash/photo-1461749280684-dccba630e2f6-1200w.webp",
+    imageAlt: "Computer code on screen representing web development and static site hosting",
+    category: "hosting",
+  },
+  {
     slug: "best-productivity-apps",
     section: "tools",
     title: "Best Productivity Apps for Remote Workers (2025)",

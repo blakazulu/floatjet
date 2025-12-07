@@ -1030,6 +1030,18 @@ export const toolsArticles: Article[] = [
     category: "hosting",
   },
   {
+    slug: "best-crm-software-for-freelancers",
+    section: "tools",
+    title: "Best CRM Software for Freelancers (2025)",
+    description: "Lost a $3,200 client because of a spreadsheet. Never again. I tested nine CRM tools to find the best for freelancers. HubSpot, Pipedrive, Notion compared.",
+    authorSlug: "marcus-chen",
+    pubDate: "2025-12-08",
+    readingTime: 12,
+    image: "/images/unsplash/photo-1556761175-5973dc0f32e7-1200w.webp",
+    imageAlt: "Business team discussing client relationship management strategy",
+    category: "saas",
+  },
+  {
     slug: "best-ecommerce-hosting",
     section: "tools",
     title: "Best E-commerce Hosting for Remote Entrepreneurs (2025)",

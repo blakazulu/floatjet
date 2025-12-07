@@ -1,0 +1,471 @@
+---
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
+
+// Get article metadata from central data file
+const article = getArticleBySlug("best-crm-software-for-freelancers", "tools")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
+// Table of contents headings
+const headings = [
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why Salesforce Is Not For You", slug: "why-not-salesforce", depth: 2 },
+  { text: "HubSpot Free", slug: "hubspot", depth: 3 },
+  { text: "Pipedrive", slug: "pipedrive", depth: 3 },
+  { text: "Notion as a CRM", slug: "notion", depth: 3 },
+  { text: "How They Compare", slug: "comparison", depth: 2 },
+  { text: "What I Didn't Pick", slug: "didnt-pick", depth: 2 },
+  { text: "Getting Started", slug: "getting-started", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Conclusion", slug: "conclusion", depth: 2 },
+];
+
+// Quick picks comparison table
+const quickPicksColumns = [
+  { key: "tool", label: "Tool", width: "120px" },
+  { key: "bestFor", label: "Best For", width: "150px" },
+  { key: "price", label: "Price" },
+  { key: "freeTier", label: "Free Tier" },
+  { key: "action", label: "" },
+];
+
+const quickPicksRows = [
+  {
+    tool: "<strong>HubSpot</strong>",
+    bestFor: "Most freelancers",
+    price: "$0-15/mo",
+    freeTier: true,
+    action: '<a href="/go/hubspot" rel="nofollow sponsored" target="_blank">Try Free</a>',
+  },
+  {
+    tool: "<strong>Pipedrive</strong>",
+    bestFor: "Sales-focused",
+    price: "$14.90/mo",
+    freeTier: false,
+    action: '<a href="/go/pipedrive" rel="nofollow sponsored" target="_blank">Try Free</a>',
+  },
+  {
+    tool: "<strong>Notion</strong>",
+    bestFor: "Notion users",
+    price: "$0-10/mo",
+    freeTier: true,
+    action: '<a href="/go/notion" rel="nofollow sponsored" target="_blank">Try Free</a>',
+  },
+];
+
+// Full comparison table
+const fullComparisonColumns = [
+  { key: "tool", label: "Tool", width: "110px" },
+  { key: "bestFor", label: "Best For", width: "130px" },
+  { key: "price", label: "Starting Price" },
+  { key: "freeTier", label: "Free Tier" },
+  { key: "emailIntegration", label: "Email Integration" },
+  { key: "pipeline", label: "Pipeline View" },
+  { key: "action", label: "" },
+];
+
+const fullComparisonRows = [
+  {
+    tool: "<strong>HubSpot</strong>",
+    bestFor: "Most freelancers",
+    price: "Free / $15/mo",
+    freeTier: true,
+    emailIntegration: "Built-in",
+    pipeline: true,
+    action: '<a href="/go/hubspot" rel="nofollow sponsored" target="_blank">Try Free</a>',
+  },
+  {
+    tool: "<strong>Pipedrive</strong>",
+    bestFor: "Sales tracking",
+    price: "$14.90/mo",
+    freeTier: false,
+    emailIntegration: "Add-on",
+    pipeline: true,
+    action: '<a href="/go/pipedrive" rel="nofollow sponsored" target="_blank">Try Free</a>',
+  },
+  {
+    tool: "<strong>Notion</strong>",
+    bestFor: "DIY builders",
+    price: "Free / $10/mo",
+    freeTier: true,
+    emailIntegration: "Manual",
+    pipeline: "DIY",
+    action: '<a href="/go/notion" rel="nofollow sponsored" target="_blank">Try Free</a>',
+  },
+  {
+    tool: "Zoho CRM",
+    bestFor: "Enterprise",
+    price: "Free / $14/mo",
+    freeTier: true,
+    emailIntegration: "Built-in",
+    pipeline: true,
+    action: '<a href="https://www.zoho.com/crm/" rel="nofollow" target="_blank">Learn More</a>',
+  },
+  {
+    tool: "Freshsales",
+    bestFor: "Freshworks users",
+    price: "Free / $15/mo",
+    freeTier: true,
+    emailIntegration: "Built-in",
+    pipeline: true,
+    action: '<a href="https://www.freshworks.com/crm/" rel="nofollow" target="_blank">Learn More</a>',
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: "Do I need a CRM if I only have five clients?",
+    answer:
+      "<p>Probably not. But if you're planning to grow, having a system in place helps. Free tiers from HubSpot and Notion mean there's zero risk in starting early. The bigger question is whether you're missing follow-ups or losing track of conversations. If yes, a CRM helps even with five clients.</p>",
+  },
+  {
+    question: "Can I just use a spreadsheet instead?",
+    answer:
+      "<p>Sure. I used Google Sheets for two years. Then I lost a $3,200 project because I forgot to follow up on a lead. Spreadsheets don't send reminders or track email conversations automatically. They work until something slips through. A CRM adds that safety net.</p>",
+  },
+  {
+    question: "Which CRM is fastest to set up?",
+    answer:
+      "<p><strong>HubSpot</strong> wins here. Twenty minutes from signup to actually using it. Import a CSV of contacts, connect your email, done. Pipedrive takes maybe an hour to customize your pipeline stages properly. Notion as a CRM requires a weekend if you're building everything from scratch.</p>",
+  },
+  {
+    question: "Are the AI features worth paying attention to?",
+    answer:
+      "<p>HubSpot has AI writing helpers and some predictive features. Honestly? I've used them maybe twice total. The core CRM functionality matters way more than AI bells and whistles. Get the basics working first before worrying about AI.</p>",
+  },
+  {
+    question: "Can I switch CRMs later without losing data?",
+    answer:
+      "<p>Yes. All major CRMs support CSV export. Moving from one tool to another takes a few hours max. Don't let fear of commitment stop you from picking something. The best CRM is the one you'll actually use, and you can always migrate later.</p>",
+  },
+  {
+    question: "What's the difference between CRM and project management software?",
+    answer:
+      "<p>CRM focuses on client relationships: contact info, communication history, sales pipeline, follow-ups. <a href='/tools/best-project-management-software'>Project management software</a> like Asana or Monday.com focuses on tasks, deadlines, and team collaboration. Some overlap exists, but CRM is specifically about managing people you're selling to or working with.</p>",
+  },
+  {
+    question: "Is HubSpot's free tier actually useful?",
+    answer:
+      "<p>Genuinely yes. You get contact management, deal tracking, email scheduling, meeting links, and basic automations. The main limitations are HubSpot branding on forms and constant upsell prompts. For a freelancer managing clients, the free tier covers everything you actually need.</p>",
+  },
+  {
+    question: "Should I use Monday.com as a CRM?",
+    answer:
+      "<p>Monday.com is project management software, not a CRM. You <em>can</em> twist it into contact tracking if you want, but you'll be fighting the tool the entire time. If you need both project management and CRM features, consider <a href='/tools/is-notion-worth-it'>Notion</a> which handles both or use separate specialized tools.</p>",
+  },
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: "Best Project Management Software",
+    excerpt:
+      "Compare Notion, ClickUp, Asana, and more for managing your freelance projects and client work.",
+    href: "/tools/best-project-management-software",
+    image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
+    imageAlt: "Project management dashboard",
+  },
+  {
+    title: "Best Invoicing Tools for Freelancers",
+    excerpt:
+      "Get paid faster with the right invoicing software. Compare top options for freelancers.",
+    href: "/tools/best-invoicing-tools",
+    image: "/images/unsplash/photo-1554774853-719586f82d77-800w.webp",
+    imageAlt: "Invoice and payment processing",
+  },
+  {
+    title: "Is Notion Worth It?",
+    excerpt:
+      "Honest review of Notion for remote workers. When it makes sense and when to look elsewhere.",
+    href: "/tools/is-notion-worth-it",
+    image: "/images/unsplash/photo-1517694712202-14dd9538aa97-800w.webp",
+    imageAlt: "Notion productivity app",
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    authorSlug={authorSlug}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="SaaS"
+    categorySlug="tools"
+    subcategorySlug="saas"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">Lost a Client to a Spreadsheet</h2>
+  <p>
+    Lost a client last month. Not because of bad work. Because I forgot to follow up.
+  </p>
+  <p>
+    Had their info in a Google Sheet somewhere. Three sheets, maybe four. Leads were in one. Projects in another. The third... I have no idea anymore. Their request sat there for two weeks before I noticed. Found it on a Tuesday. They'd hired someone the Friday before.
+  </p>
+  <p>
+    $3,200. Gone.
+  </p>
+  <p>
+    If you're juggling multiple clients with spreadsheets, sticky notes, or "I'll definitely remember this," you're probably bleeding money too. A decent CRM changes that. Not by adding complexity. By keeping everything visible so nothing slips through.
+  </p>
+  <p>
+    Tested nine CRM tools over the past two months. Most are way overkill for freelancers. Some are so basic they barely help. Three of them actually made sense.
+  </p>
+  <p>
+    <strong>Short version:</strong> <a href="#hubspot">HubSpot Free</a> if you want something that works out of the box. <a href="#pipedrive">Pipedrive</a> if you care about visual pipelines. <a href="#notion">Notion</a> if you already live there and want to build your own system.
+  </p>
+
+  <!-- Quick Picks -->
+  <h2 id="quick-picks">Quick Picks</h2>
+  <p>Short on time? Here's what works:</p>
+  <ComparisonTable
+      columns={quickPicksColumns}
+      rows={quickPicksRows}
+      caption="Top 3 CRM tools for freelancers"
+  />
+  <p>
+    All three have free tiers (HubSpot and Notion) or free trials (Pipedrive). Test with real clients before committing.
+  </p>
+
+  <!-- Why Not Salesforce -->
+  <h2 id="why-not-salesforce">Salesforce Is Not For You</h2>
+  <p>
+    Getting this out of the way first. Enterprise CRMs are built for sales teams with quotas, managers, territory assignments, and complex approval chains. You probably don't have any of that. Neither do I.
+  </p>
+  <p>
+    What freelancers actually need:
+  </p>
+  <ul>
+    <li>Somewhere to see all clients and leads in one list</li>
+    <li>Reminders to follow up (this is where I kept screwing up)</li>
+    <li>Notes on each person so you remember conversations from six months back</li>
+    <li>Maybe some basic pipeline stuff if you juggle multiple proposals</li>
+  </ul>
+  <p>
+    That's basically it. Anything beyond this is features you'll set up once and never touch again.
+  </p>
+
+  <!-- HubSpot -->
+  <h3 id="hubspot">HubSpot Free</h3>
+  <p>
+    Running this on my laptop right now. Four months and counting.
+  </p>
+  <p>
+    HubSpot's free tier gives you more than you'd expect from something that costs nothing. Contact management, deal tracking, email scheduling, meeting links, basic automations. All free.
+  </p>
+  <p>
+    Setting it up took maybe twenty minutes. Imported contacts from a CSV, connected my Gmail, done. The interface doesn't overwhelm you, which is more than I can say for some of the enterprise tools I tried and immediately abandoned.
+  </p>
+  <p>
+    The thing I use daily: contact timeline. Every email, meeting, and note about a client shows up in one scrollable feed. No more digging through Gmail threads trying to remember what we discussed back in March.
+  </p>
+  <p>
+    <strong>Other stuff I appreciate:</strong>
+  </p>
+  <ul>
+    <li>Free tier is actually useful. Not some stripped-down demo version</li>
+    <li>Email templates save me from writing the same follow-up over and over</li>
+    <li>Meeting scheduler killed the "what time works for you" email chains</li>
+    <li>Mobile app is decent. Not amazing, but works</li>
+    <li>Connects to pretty much everything</li>
+  </ul>
+  <p>
+    <strong>What gets on my nerves:</strong> HubSpot really, really wants you on a paid plan. The upsell prompts are constant. Some features feel artificially crippled to push you toward upgrading. Free tier also has HubSpot branding on forms and emails, which looks slightly unprofessional.
+  </p>
+  <p>
+    <strong>Price:</strong> Genuinely free. Paid tiers start at $15/month per seat (Starter) if you want more.
+  </p>
+  <p>
+    Best for freelancers who want real CRM features without paying. Also makes sense if you might grow to a small team later since HubSpot scales with you.
+  </p>
+  <AffiliateButton
+      href="/go/hubspot"
+      text="Try HubSpot Free - No Credit Card"
+      variant="primary"
+      program="hubspot"
+  />
+
+  <!-- Pipedrive -->
+  <h3 id="pipedrive">Pipedrive</h3>
+  <p>
+    Pipedrive is all about the visual pipeline. Everything revolves around stages. Lead comes in, drag it to "Contacted." Get a response, drag to "Proposal Sent." Close the deal, drag to "Won."
+  </p>
+  <p>
+    Some folks love this approach. Watching deals move across columns feels satisfying. Like a progress bar for your entire business.
+  </p>
+  <p>
+    The pipeline focus makes Pipedrive better at one specific thing: not letting deals slip away. Every contact has a "next action" field. Miss it, and Pipedrive bugs you about it. In a good way.
+  </p>
+  <p>
+    Ran it for three weeks while managing an active project pipeline. Genuinely helpful for knowing where each potential client stood. Less helpful for managing clients after they've already hired you.
+  </p>
+  <p>
+    <strong>What I liked:</strong>
+  </p>
+  <ul>
+    <li>Pipeline view is legitimately the best I've used</li>
+    <li>Activity reminders saved me from forgotten follow-ups multiple times</li>
+    <li>Simple enough to configure in an afternoon</li>
+    <li>Reports show where deals are getting stuck</li>
+    <li>API is solid if you want custom integrations</li>
+  </ul>
+  <p>
+    <strong>Where it falls short:</strong>
+  </p>
+  <ul>
+    <li>No free tier. Just a 14-day trial, then you're paying</li>
+    <li>$14.90/user/month minimum. Adds up fast once you start adding features</li>
+    <li>Not as flexible as HubSpot outside of sales tracking</li>
+    <li>Mobile app is fine. Nothing special</li>
+  </ul>
+  <p>
+    Best for freelancers who send lots of proposals and need to track deal stages. If you're constantly following up on potential projects and want a visual way to see everything, this is the one.
+  </p>
+  <AffiliateButton
+      href="/go/pipedrive"
+      text="Try Pipedrive Free for 14 Days"
+      variant="secondary"
+      program="pipedrive"
+  />
+
+  <!-- Notion -->
+  <h3 id="notion">Notion as a CRM</h3>
+  <p>
+    Controversial, I know. But if you already spend eight hours a day in <a href="/tools/is-notion-worth-it">Notion</a>, building your own CRM there might actually make sense.
+  </p>
+  <p>
+    Spent a weekend building one. Clients database linked to projects database linked to notes. Custom views for "needs follow-up" and "active projects." Surprisingly effective.
+  </p>
+  <p>
+    <strong>The upside:</strong> Everything lives in one app. No context switching between tools. Client notes, project plans, invoices, meeting notes. All connected through relations.
+  </p>
+  <p>
+    <strong>The downside:</strong> You're building the whole thing yourself. No built-in email integration. No automatic contact syncing. No reminders unless you set up your own notification system using formulas or Zapier.
+  </p>
+  <p>
+    <strong>Notion works as a CRM if:</strong>
+  </p>
+  <ul>
+    <li>You're already in Notion constantly anyway</li>
+    <li>You enjoy building systems (some of us actually do)</li>
+    <li>Your needs are straightforward enough that a database handles it</li>
+    <li>You don't care about email tracking or fancy automations</li>
+  </ul>
+  <p>
+    Notion fails as a CRM if you want something that works immediately without tinkering. Pipedrive and HubSpot will be faster to set up and more powerful for actual CRM functionality.
+  </p>
+  <p>
+    <strong>Price:</strong> Free for one person. $10/month per user for teams.
+  </p>
+  <AffiliateButton
+      href="/go/notion"
+      text="Try Notion Free"
+      variant="ghost"
+      program="notion"
+  />
+
+  <!-- Comparison -->
+  <h2 id="comparison">How They Compare</h2>
+  <p>
+    Freelancer priorities vary. Here's the breakdown:
+  </p>
+  <p>
+    <strong>HubSpot</strong> costs nothing and covers most bases. Email integration baked in. Pipeline views included. Works for 90% of freelancers I've talked to.
+  </p>
+  <p>
+    <strong>Pipedrive</strong> runs $14.90/month. No free option. Email integration is an add-on. But the pipeline visualization? Best I've seen. Makes sense if tracking deal stages is your main concern.
+  </p>
+  <p>
+    <strong>Notion</strong> is free or $10/month. Email connections are manual. Pipelines require building from scratch. Only consider this if you already use Notion for everything else.
+  </p>
+  <p>
+    Value? HubSpot. Visual pipelines? Pipedrive. Maximum flexibility and you don't mind building? Notion.
+  </p>
+
+  <!-- What I Didn't Pick -->
+  <h2 id="didnt-pick">What I Didn't Pick</h2>
+  <p>
+    Tested others. They didn't work out.
+  </p>
+  <p>
+    <strong>Zoho CRM</strong> is powerful but the interface feels ancient. Setup took ages and I never got comfortable with the workflow. Gave up after eight days.
+  </p>
+  <p>
+    <strong>Freshsales</strong> is actually decent. Lost to HubSpot mainly because the free tier is stingier and Freshworks is less well-known. Might work if you're already in their ecosystem.
+  </p>
+  <p>
+    <strong>Monday.com</strong> isn't a CRM. It's <a href="/tools/best-project-management-software">project management software</a> you can bend into contact tracking. Possible, but frustrating.
+  </p>
+
+  <!-- Getting Started -->
+  <h2 id="getting-started">Three Weeks To A Working System</h2>
+  <p>
+    Here's what I did:
+  </p>
+  <p>
+    <strong>Week one:</strong> Import contacts. Just dump your existing client list into whatever tool you pick. Names, emails, maybe which project you worked on together. Call it done.
+  </p>
+  <p>
+    <strong>Week two:</strong> Use it normally. No customization. Notice what's annoying. Notice what's missing. Resist the urge to tweak yet.
+  </p>
+  <p>
+    <strong>Week three:</strong> Add one automation. Mine was follow-up reminders. Seven days without contact on a lead? Notification hits my phone. That single change probably saved the next project from vanishing like the $3,200 one.
+  </p>
+  <p>
+    That's the entire process. Three weeks. No elaborate pipelines, no complex automations, no weekend lost to over-engineering.
+  </p>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">Six Months Later</h2>
+  <p>
+    Six months on HubSpot now. Zero lost leads.
+  </p>
+  <p>
+    The routine isn't fancy. Import contacts, set follow-up reminders, check it every morning. Ten minutes max. That's it.
+  </p>
+  <p>
+    If HubSpot feels like overkill for your situation, start with Notion. If visual pipeline tracking is your priority, Pipedrive. But for most freelancers? HubSpot's free tier covers everything you actually need.
+  </p>
+  <p>
+    Best CRM is the one you'll open every day. Pick something, move your contacts over, stop watching projects disappear because they got buried in a spreadsheet.
+  </p>
+
+  <AffiliateButton
+      href="/go/hubspot"
+      text="Try HubSpot Free - Our Top Pick"
+      variant="primary"
+      program="hubspot"
+  />
+
+  <!-- Full Width Content Slot -->
+  <Fragment slot="full-width">
+    <!-- Full Comparison Table -->
+    <section class="py-8" id="full-comparison">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center font-heading">Complete Comparison Table</h2>
+        <p class="text-white/80 text-center mb-8 max-w-2xl mx-auto">How all the CRM tools compare on features that matter most to freelancers:</p>
+        <ComparisonTable
+            columns={fullComparisonColumns}
+            rows={fullComparisonRows}
+            caption="Complete comparison of CRM tools for freelancers"
+        />
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

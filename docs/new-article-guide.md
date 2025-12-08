@@ -316,6 +316,63 @@ const pubDate = new Date(article.pubDate);
 </ArticleLayout>
 ```
 
+### Using AffiliateButton for CTAs
+
+**IMPORTANT:** Always use the `AffiliateButton` component for affiliate call-to-action buttons. Never use inline `<a>` tags with custom styling.
+
+#### Basic Usage
+
+```astro
+<AffiliateButton href="/go/product-name" text="Try Product Free" program="product-name"/>
+```
+
+#### Props
+
+| Prop | Required | Description |
+|------|----------|-------------|
+| `href` | Yes | The `/go/` redirect path (e.g., `/go/netlify`) |
+| `text` | Yes | Button text (e.g., "Try Netlify Free") |
+| `program` | Yes | Program identifier for tracking (e.g., `netlify`) |
+
+#### Examples
+
+```astro
+<!-- Single product CTA -->
+<AffiliateButton href="/go/nordvpn" text="Try NordVPN Risk-Free" program="nordvpn"/>
+
+<!-- After a product review section -->
+<AffiliateButton href="/go/notion" text="Try Notion Free" program="notion"/>
+
+<!-- Amazon product -->
+<AffiliateButton href="/go/amazon/focusrite-scarlett-solo" text="Check Price on Amazon" program="amazon"/>
+
+<!-- Top pick at end of article -->
+<AffiliateButton href="/go/netlify" text="Start Deploying Free" program="netlify"/>
+```
+
+#### Placement Guidelines
+
+1. **After each product review** - Place one CTA button after describing each product
+2. **End of article** - Include a final CTA for the top recommended product
+3. **In comparison sections** - Use table links with `/go/` paths, not AffiliateButton
+
+#### What NOT to Do
+
+```astro
+<!-- ❌ WRONG: Inline anchor tags -->
+<div class="not-prose my-8">
+  <a href="https://www.netlify.com/" target="_blank" class="inline-flex...">
+    Try Netlify <svg>...</svg>
+  </a>
+</div>
+
+<!-- ❌ WRONG: Direct external URLs -->
+<AffiliateButton href="https://www.netlify.com/" text="Try Netlify" program="netlify"/>
+
+<!-- ✅ CORRECT: Use /go/ redirect path -->
+<AffiliateButton href="/go/netlify" text="Try Netlify Free" program="netlify"/>
+```
+
 ---
 
 ## Step 10: Verify Affiliate Links
@@ -474,7 +531,9 @@ Before committing:
 - [ ] Article passes AI detection (<4%)
 - [ ] Writer style matches assigned author
 - [ ] Hero image downloaded and optimized (unique, not used elsewhere)
-- [ ] All affiliate links verified in `netlify.toml`
+- [ ] All CTA buttons use `AffiliateButton` component (no inline `<a>` tags)
+- [ ] All affiliate links use `/go/` redirect paths (no direct external URLs)
+- [ ] All `/go/` redirects verified in `netlify.toml`
 - [ ] All SEO/AEO/GEO requirements met
 - [ ] Article added to `src/data/articles.ts`
 - [ ] Article summary regenerated

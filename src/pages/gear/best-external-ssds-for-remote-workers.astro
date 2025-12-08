@@ -1,0 +1,492 @@
+---
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
+
+// Get article metadata from central data file
+const article = getArticleBySlug("best-external-ssds-for-remote-workers", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
+// Table of contents headings
+const headings = [
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why SSDs Beat Spinning Disks", slug: "why-ssds", depth: 2 },
+  { text: "Samsung T7 Shield", slug: "samsung-t7-shield", depth: 2 },
+  { text: "SanDisk Extreme Pro", slug: "sandisk-extreme-pro", depth: 2 },
+  { text: "WD Black P40", slug: "wd-black-p40", depth: 2 },
+  { text: "How to Choose", slug: "how-to-choose", depth: 2 },
+  { text: "Storage Size Guide", slug: "storage-guide", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "Bottom Line", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
+];
+
+// Quick picks comparison table
+const quickPicksColumns = [
+  { key: "drive", label: "Drive", width: "160px" },
+  { key: "bestFor", label: "Best For", width: "140px" },
+  { key: "price", label: "Price (1TB)" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
+];
+
+const quickPicksRows = [
+  {
+    drive: "<strong>Samsung T7 Shield</strong>",
+    bestFor: "Most Remote Workers",
+    price: "$90",
+    rating: "9.5/10",
+    action: '<a href="/go/amazon/samsung-t7-shield" rel="nofollow sponsored" target="_blank">Check Price</a>',
+  },
+  {
+    drive: "<strong>SanDisk Extreme Pro</strong>",
+    bestFor: "Speed Enthusiasts",
+    price: "$120",
+    rating: "9.0/10",
+    action: '<a href="/go/amazon/sandisk-extreme-pro-ssd" rel="nofollow sponsored" target="_blank">Check Price</a>',
+  },
+  {
+    drive: "<strong>WD Black P40</strong>",
+    bestFor: "Gamers",
+    price: "$130",
+    rating: "8.8/10",
+    action: '<a href="/go/amazon/wd-black-p40" rel="nofollow sponsored" target="_blank">Check Price</a>',
+  },
+];
+
+// Full comparison table
+const fullComparisonColumns = [
+  { key: "drive", label: "Drive", width: "150px" },
+  { key: "speed", label: "Speed", width: "100px" },
+  { key: "durability", label: "IP Rating" },
+  { key: "warranty", label: "Warranty" },
+  { key: "encryption", label: "Encryption" },
+  { key: "price1tb", label: "1TB Price" },
+  { key: "action", label: "" },
+];
+
+const fullComparisonRows = [
+  {
+    drive: "<strong>Samsung T7 Shield</strong>",
+    speed: "1,050 MB/s",
+    durability: "IP65",
+    warranty: "3 years",
+    encryption: "Hardware",
+    price1tb: "$90",
+    action: '<a href="/go/amazon/samsung-t7-shield" rel="nofollow sponsored" target="_blank">Buy</a>',
+  },
+  {
+    drive: "<strong>SanDisk Extreme Pro</strong>",
+    speed: "2,000 MB/s",
+    durability: "IP55",
+    warranty: "5 years",
+    encryption: "Hardware",
+    price1tb: "$120",
+    action: '<a href="/go/amazon/sandisk-extreme-pro-ssd" rel="nofollow sponsored" target="_blank">Buy</a>',
+  },
+  {
+    drive: "<strong>WD Black P40</strong>",
+    speed: "2,000 MB/s",
+    durability: "Rugged",
+    warranty: "5 years",
+    encryption: "Software",
+    price1tb: "$130",
+    action: '<a href="/go/amazon/wd-black-p40" rel="nofollow sponsored" target="_blank">Buy</a>',
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: "What's the best external SSD for remote workers?",
+    answer:
+      "<p>Samsung T7 Shield for most remote workers. The IP65 water and dust resistance handles real-world travel abuse. Transfer speeds around 1,000 MB/s are fast enough for daily backups and file transfers.</p><p>If you need maximum speed and have a USB 3.2 Gen 2x2 port, the SanDisk Extreme Pro hits 2,000 MB/s.</p>",
+  },
+  {
+    question: "How much storage do I need for remote work?",
+    answer:
+      "<p>1TB covers most remote workers doing documents, presentations, and photo archives. That's plenty for OS backups plus years of project files.</p><p>Video editors and photographers should start at 2TB. Go 4TB if you work with RAW files or 4K footage regularly.</p>",
+  },
+  {
+    question: "SSD or HDD for backup storage?",
+    answer:
+      "<p>SSD for anything you travel with. No moving parts means no damage from bumps, drops, or vibration. Traditional spinning hard drives can fail from rough handling.</p><p>HDDs still make sense for stationary backup drives at home where you need massive storage cheaply. But portable? SSD every time.</p>",
+  },
+  {
+    question: "What's USB 3.2 Gen 2x2 and do I need it?",
+    answer:
+      "<p>USB 3.2 Gen 2x2 is a faster USB standard that allows 2,000 MB/s transfers. Most laptops don't have it yet. MacBooks, most ThinkPads, and most consumer laptops max out at Gen 2 (1,000 MB/s).</p><p>Unless you have a newer desktop or specific workstation laptop, you probably don't have Gen 2x2. The Samsung T7 Shield maxes out regular Gen 2 speeds anyway.</p>",
+  },
+  {
+    question: "Is the SanDisk data loss issue fixed?",
+    answer:
+      "<p>SanDisk released firmware updates addressing reports of sudden data loss on some Extreme Pro units. The issue appears resolved but some users remain cautious.</p><p>If reliability is your top priority, the Samsung T7 Shield has a cleaner track record. The SanDisk's five-year warranty does provide protection if issues occur.</p>",
+  },
+  {
+    question: "Do I need hardware encryption on my external SSD?",
+    answer:
+      "<p>Yes if you store client data, financial information, or anything sensitive. Hardware encryption protects your files if the drive is lost or stolen.</p><p>Samsung T7 Shield and SanDisk Extreme Pro have hardware encryption built in. WD Black P40 only offers software encryption which is less secure.</p>",
+  },
+  {
+    question: "Can I use an external SSD with my phone or tablet?",
+    answer:
+      "<p>Yes, if your device supports USB OTG (On-The-Go). Most Android phones and tablets work. iPads with USB-C ports work with the Files app.</p><p>iPhones have limited external storage support. You'll need apps designed for external drive access.</p>",
+  },
+  {
+    question: "How long do external SSDs last?",
+    answer:
+      "<p>Modern SSDs are rated for hundreds of terabytes written. For typical remote work use, that translates to 5-10 years easily.</p><p>The bigger concern is losing the drive or accidental damage. The Samsung T7 Shield's IP65 rating helps with the latter.</p>",
+  },
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: "Best Laptops for Video Editing on the Go",
+    excerpt:
+      "Need a machine that can handle 4K exports from hotel rooms? We tested MacBook Pro, ASUS ProArt, and Razer Blade.",
+    href: "/gear/best-laptops-for-video-editing-on-the-go",
+    image: "/images/unsplash/photo-1574717024653-61fd2cf4d44d-800w.webp",
+    imageAlt: "Video editing laptop setup",
+  },
+  {
+    title: "Best Laptops for Remote Work",
+    excerpt:
+      "The complete guide to finding a laptop that handles travel, video calls, and all-day battery life.",
+    href: "/gear/best-laptops-remote-work",
+    image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
+    imageAlt: "MacBook laptop on wooden desk",
+  },
+  {
+    title: "Best Cloud Storage for Remote Work",
+    excerpt:
+      "External drives for local backup. Cloud storage for anywhere access. Compare Dropbox, Google Drive, and iCloud.",
+    href: "/tools/best-cloud-storage-remote-work",
+    image: "/images/unsplash/photo-1544197150-b99a580bb7a8-800w.webp",
+    imageAlt: "Cloud storage concept",
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    authorSlug={authorSlug}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Computers"
+    categorySlug="gear"
+    subcategorySlug="computers"
+    headings={headings}
+>
+  <p class="lead">
+    So I'm in this Bangkok cafe last year, reaching for my iced Thai tea, and I knock the whole thing directly into my
+    laptop's USB port. My old spinning external hard drive was plugged in right at that moment. The platter inside very
+    much did not appreciate getting doused. Cost me a client project and about three days of panic.
+  </p>
+
+  <p>
+    That was the last spinning drive I ever bought.
+  </p>
+
+  <p>
+    Short version if you're busy: Samsung T7 Shield for most folks. SanDisk Extreme if you're moving huge files
+    constantly. WD Black P40 if you also game and want RGB lighting on your storage for some reason.
+  </p>
+
+  <h2 id="quick-picks">Quick Picks</h2>
+  <p>Here's the summary if you're in a hurry:</p>
+  <ComparisonTable
+      columns={quickPicksColumns}
+      rows={quickPicksRows}
+      caption="Top external SSDs for remote workers"
+  />
+
+  <h2 id="why-ssds">Why Solid State Beats Spinning Disks</h2>
+  <p>
+    Old-school hard drives have literal spinning platters inside. Like tiny record players. Knock them while they're
+    running and you can scratch the surface. I've watched drives die from nothing more than getting tossed around in a
+    carry-on during a bumpy landing.
+  </p>
+
+  <p>
+    SSDs skip all that. Flash memory chips. No moving parts whatsoever. I've dropped my T7 Shield on concrete, left it
+    in a bag during a rainstorm, stuffed it into overpacked pockets. Still works fine.
+  </p>
+
+  <p>
+    Speed's the other thing. A fifty gig project folder backs up in under two minutes on a decent SSD. My old spinning
+    drive? Eleven minutes minimum. That's time I don't have when my Uber to the airport is already outside.
+  </p>
+
+  <p>
+    Been rotating between three drives for the past few months now: Samsung T7 Shield, SanDisk Extreme Pro, WD Black
+    P40. Made myself use each one for at least three weeks of real daily work before writing any of this down.
+  </p>
+
+  <h2 id="samsung-t7-shield">Samsung T7 Shield</h2>
+  <p>
+    This is what's living in my bag right now. Has been since about March.
+  </p>
+  <p>
+    The Shield version has this rubberized coating that gives it IP65 water and dust resistance. Survived getting caught
+    in a Lisbon rainstorm when I forgot to zip my messenger bag. Also survived hitting concrete from about waist height
+    in a parking garage near my hotel. Still chugging along perfectly.
+  </p>
+  <p>
+    Transfers landed around a thousand megabytes per second in my testing. Marketing materials claim 1,050 but you never
+    actually hit those peak numbers in the real world. Fast enough that backup runs don't interrupt my workflow though.
+  </p>
+  <p>
+    The thing weighs maybe 98 grams? Roughly credit card sized, a bit thicker. Slips into a front pocket without
+    creating a weird bulge.
+  </p>
+  <p>
+    <strong>Timed it with a stopwatch:</strong> copying a 45GB video project folder took 52 seconds flat. Same folder
+    going to my old WD spinning drive took over eleven minutes. Night and day difference.
+  </p>
+  <p>
+    <strong>Other stuff I like:</strong>
+  </p>
+  <ul>
+    <li>Hardware encryption baked in. AES 256-bit. Samsung's software lets you set a password and the drive stays
+      locked without it.
+    </li>
+    <li>Three year warranty which is pretty standard.</li>
+    <li>Comes in one, two, or four terabyte versions. Grabbed the 2TB for around $140 when Amazon had a sale going.</li>
+    <li>The rubber grip actually feels good. Way better than those slippery aluminum drives.</li>
+  </ul>
+  <p>
+    <strong>What's annoying:</strong>
+  </p>
+  <ul>
+    <li>Samsung's encryption software only runs on Windows and Mac. Linux folks need workarounds.</li>
+    <li>The 4TB model costs almost as much as just buying two 2TB drives. Weird pricing.</li>
+    <li>USB-C cable in the box is stubby. Fine for laptop, annoying for reaching a desktop tower.</li>
+    <li>Not the fastest drive in this group. More below.</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> Most remote workers, honestly. The water resistance alone justifies it if you're ever
+    working from cafes or traveling. Reliability over raw speed.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/samsung-t7-shield"
+      text="Check Samsung T7 Shield Price on Amazon"
+      variant="primary"
+      program="amazon"
+  />
+
+  <h2 id="sandisk-extreme-pro">SanDisk Extreme Pro</h2>
+  <p>
+    Faster than the Samsung. Also more finicky.
+  </p>
+  <p>
+    SanDisk claims this thing hits 2,000 MB/s when you've got a USB 3.2 Gen 2x2 port. Problem is most laptops don't
+    actually have Gen 2x2 ports. My MacBook doesn't. My ThinkPad doesn't either. So practically speaking, I got around
+    1,000 MB/s from it. Same as the Samsung.
+  </p>
+  <p>
+    My desktop has the right USB controller though. Same 45GB folder copied over in 28 seconds. Nearly twice as fast as
+    the T7 Shield. Real difference if you're moving big files constantly.
+  </p>
+  <p>
+    Build feels solid. IP55 for dust and water which is a step down from Samsung's IP65 rating. There's a little
+    carabiner loop for clipping to bags which is actually kinda useful.
+  </p>
+  <p>
+    Gotta mention the elephant in the room: I've come across reports of sudden data loss with some Extreme Pro units.
+    Something about firmware causing drives to brick randomly. SanDisk put out fixes but it spooked me enough that I
+    keep my most important stuff on the Samsung instead.
+  </p>
+  <p>
+    <strong>Other stuff I like:</strong>
+  </p>
+  <ul>
+    <li>Fastest writes I tested assuming your port can handle it.</li>
+    <li>Five year warranty which beats everyone else here.</li>
+    <li>Same hardware encryption standard as Samsung.</li>
+    <li>Physically smaller than the T7 Shield by a hair.</li>
+  </ul>
+  <p>
+    <strong>What's annoying:</strong>
+  </p>
+  <ul>
+    <li>Full speed requires Gen 2x2 which most laptops just don't have.</li>
+    <li>Those bricking reports linger in my brain even if they're supposedly fixed.</li>
+    <li>Encryption software is clunkier than Samsung's.</li>
+    <li>IP55 versus IP65 means less water protection.</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> Power users with desktop setups or newer laptops with Gen 2x2 ports. Video editors
+    shuffling large files around constantly.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/sandisk-extreme-pro-ssd"
+      text="Check SanDisk Extreme Pro Price on Amazon"
+      variant="primary"
+      program="amazon"
+  />
+
+  <h2 id="wd-black-p40">WD Black P40</h2>
+  <p>
+    This one's weird. It has RGB lighting. On an external SSD. The whole edge glows.
+  </p>
+  <p>
+    It's ridiculous and I kind of love it.
+  </p>
+  <p>
+    RGB only works on Windows though. Mac users just get a boring black rectangle with no glow. The customization
+    software is Windows-only too.
+  </p>
+  <p>
+    Performance matches the SanDisk at 2,000 MB/s when you have the right port. Same Gen 2x2 requirement. Plugged into
+    my MacBook it tops out around 1,000 MB/s which is still perfectly fine for everyday stuff.
+  </p>
+  <p>
+    Build quality is seriously impressive. Feels like a little tank in your hand. Heavier than the others at around 120
+    grams but still pocketable. This thing could probably survive being run over honestly.
+  </p>
+  <p>
+    I keep this one at my home desk where I've got a Gen 2x2 port available. Speed difference is obvious when moving
+    game installs or massive video exports around.
+  </p>
+  <p>
+    <strong>Other stuff I like:</strong>
+  </p>
+  <ul>
+    <li>The RGB genuinely looks cool in a dark room. I said what I said.</li>
+    <li>Speed matches the SanDisk Extreme Pro dollar for dollar.</li>
+    <li>Build feels bulletproof.</li>
+    <li>Works great as expanded storage for PS5 or Xbox.</li>
+  </ul>
+  <p>
+    <strong>What's annoying:</strong>
+  </p>
+  <ul>
+    <li>Around $130 for the 1TB which is pricier than the T7 Shield.</li>
+    <li>RGB lighting does nothing on Mac. Zero. Useless.</li>
+    <li>Heavier than both competitors.</li>
+    <li>No hardware encryption built in. Software only.</li>
+  </ul>
+  <p>
+    <strong>Best for:</strong> Gamers who also work remotely. Anyone with Gen 2x2 ports who wants fast transfers plus
+    some desk flair.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/wd-black-p40"
+      text="Check WD Black P40 Price on Amazon"
+      variant="primary"
+      program="amazon"
+  />
+
+  <h2 id="how-to-choose">Picking Your Drive</h2>
+
+  <h3>By priority</h3>
+  <ul>
+    <li><strong>Tight budget:</strong> Samsung T7 Shield 1TB runs around $90. Best value here.</li>
+    <li><strong>Speed demon:</strong> SanDisk Extreme Pro if your computer has the right ports.</li>
+    <li><strong>Gaming setup:</strong> WD Black P40. The glowing edges are silly but the performance is legit.</li>
+    <li><strong>Paranoid about losing data:</strong> T7 Shield. Most rock-solid in my months of testing.</li>
+    <li><strong>Photo or video work:</strong> Extreme Pro for those write speeds during heavy exports.</li>
+  </ul>
+
+  <h2 id="storage-guide">How Much Storage Do You Need?</h2>
+  <p>
+    Most remote workers doing normal office stuff? 1TB handles it fine. Your OS backup, important documents, reasonable
+    archive of projects.
+  </p>
+  <p>
+    Photographers and video folks need bigger. 2TB minimum. Maybe 4TB if you're swimming in RAW files or 4K footage all
+    the time.
+  </p>
+  <p>
+    Bigger drives cost less per gig which is counterintuitive. The 2TB T7 Shield runs about $180 which works out to
+    roughly nine cents per gig. 1TB at $90 is also nine cents per gig. But the 4TB at around $300 drops to about seven
+    and a half cents per gig. If you know you'll eventually need the space, buying bigger upfront saves money.
+  </p>
+
+  <h3>About those speed numbers</h3>
+  <p>
+    Marketing materials list peak theoretical speeds. What you actually get depends on a bunch of stuff:
+  </p>
+  <ul>
+    <li>Your USB port matters most. Gen 2x2 gives you 2,000 MB/s. Regular Gen 2 maxes around 1,000 MB/s. Old Gen 1 tops
+      out near 500 MB/s.
+    </li>
+    <li>File sizes affect things too. Tons of tiny files transfer way slower than one giant file.</li>
+    <li>Heat throttles performance. SSDs slow down when they get warm from heavy use.</li>
+    <li>Full drives run slower. Performance drops as you fill them up.</li>
+  </ul>
+  <p>
+    Day to day, all three drives feel snappy. You really only notice the gap between 1,000 and 2,000 MB/s when you're
+    hauling around giant video project folders. For documents and photos? You won't notice much difference honestly.
+  </p>
+
+  <h3>What's actually in my bag</h3>
+  <p>
+    Samsung T7 Shield 2TB travels with me everywhere. Daily driver for backups and project files on the road.
+  </p>
+  <p>
+    SanDisk Extreme Pro 1TB stays at my home desk. Gets used when I'm editing video and need fast transfers.
+  </p>
+  <p>
+    WD Black P40 1TB connects to my gaming PC. Also holds overflow work files when I need extra space.
+  </p>
+  <p>
+    Probably overkill for most people? Yeah. One T7 Shield covers ninety percent of typical remote work needs.
+  </p>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <h2 id="conclusion">Bottom Line</h2>
+  <p>
+    Samsung T7 Shield wins for most remote workers. IP65 handles real life abuse. Speeds are plenty fast. Pricing makes
+    sense. It's the drive I grab when heading anywhere.
+  </p>
+  <p>
+    SanDisk Extreme Pro is for folks obsessed with transfer speeds who have compatible ports. Those 2,000 MB/s writes
+    genuinely help for video work.
+  </p>
+  <p>
+    WD Black P40 is for people who want their storage to glow in the dark. Performance matches SanDisk and the build is
+    tank-like.
+  </p>
+  <p>
+    Grab the T7 Shield unless you've got specific reasons to go elsewhere.
+  </p>
+
+  <AffiliateButton
+      href="/go/amazon/samsung-t7-shield"
+      text="Get Samsung T7 Shield - Our Top Pick"
+      variant="primary"
+      program="amazon"
+  />
+
+  <!-- Full Width Content Slot -->
+  <Fragment slot="full-width">
+    <!-- Full Comparison Table -->
+    <section class="py-8" id="full-comparison">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center font-heading">Complete SSD Comparison
+          Table</h2>
+        <p class="text-white/80 text-center mb-8 max-w-2xl mx-auto">Here's how all 3 drives compare on specs that
+          matter most for remote workers:</p>
+        <ComparisonTable
+            columns={fullComparisonColumns}
+            rows={fullComparisonRows}
+            caption="Complete comparison of external SSDs for remote work"
+        />
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

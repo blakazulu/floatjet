@@ -1,11 +1,11 @@
 # FloatJet Article Summary
 
 > **Auto-generated** from `src/data/articles.ts`
-> Last updated: 2025-12-08 14:49
+> Last updated: 2025-12-08 15:15
 >
 > To regenerate: `python scripts/generate-article-summary.py`
 
-**Total Articles:** 119
+**Total Articles:** 120
 
 ---
 
@@ -32,7 +32,7 @@
 | 015 | [How to Find Reliable WiFi Anywhere in the World (2025)](/blog/find-reliable-wifi-anywhere) | Marcus Chen | Travel | 9 min | `photo-1521791136064-7986c29202...` |
 | 016 | [Top 10 Destinations for Digital Nomads (2025)](/blog/top-destinations-digital-nomads) | Daniel Brooks | Travel | 14 min | `photo-1528181304800-259b088485...` |
 
-### Gear (27 articles)
+### Gear (28 articles)
 
 | # | Title | Author | Category | Read Time | Hero Image |
 |---|-------|--------|----------|-----------|------------|
@@ -51,18 +51,19 @@
 | 013 | [How to Reduce Background Noise on Video Calls (2025)](/gear/reduce-background-noise-calls) | Marcus Chen | Audio | 8 min | `photo-1587560699334-cc4ff63490...` |
 | 014 | [USB vs XLR Microphones: Which Is Better for Remote Work?](/gear/usb-vs-xlr-microphones) | Sarah Mitchell | Audio | 10 min | `photo-1598653222000-6b7b7a5526...` |
 | 015 | [Best Budget Laptops Under $800 for Remote Work (2025)](/gear/best-budget-laptops-remote-work) | Marcus Chen | Computers | 14 min | `photo-1525547719571-a2d4ac8945...` |
-| 016 | [Best Laptops for Remote Work & Digital Nomads (2025)](/gear/best-laptops-remote-work) | Marcus Chen | Computers | 8 min | `photo-1496181133206-80ce9b88a8...` |
-| 017 | [Best Laptops for Video Editing on the Go (2025)](/gear/best-laptops-for-video-editing-on-the-go) | Marcus Chen | Computers | 14 min | `photo-1574717024653-61fd2cf4d4...` |
-| 018 | [Best Monitors for Remote Work (2025)](/gear/best-monitors-remote-work) | Marcus Chen | Computers | 16 min | `photo-1527443224154-c4a3942d3a...` |
-| 019 | [Best Portable Monitors for Digital Nomads (2025)](/gear/best-portable-monitors) | Marcus Chen | Computers | 14 min | `photo-1587829741301-dc798b83ad...` |
-| 020 | [How Much RAM Do You Really Need for Remote Work? (2025)](/gear/how-much-ram-remote-work) | Marcus Chen | Computers | 5 min | `photo-1518770660439-4636190af4...` |
-| 021 | [MacBook vs Windows for Remote Work: Which One? (2025)](/gear/macbook-vs-windows-remote-work) | Marcus Chen | Computers | 7 min | `photo-1517336714731-489689fd1c...` |
-| 022 | [Best Compact Desks for Small Home Offices (2025)](/gear/best-compact-desks-small-office) | Sarah Mitchell | Furniture | 14 min | `photo-1593062096033-9a26b09da7...` |
-| 023 | [Best Ergonomic Chairs for Home Office (2025)](/gear/best-ergonomic-chairs) | Sarah Mitchell | Furniture | 18 min | `photo-1580480055273-228ff5388e...` |
-| 024 | [Best Standing Desk Converters (2025)](/gear/best-desk-converters) | Sarah Mitchell | Furniture | 14 min | `photo-1518455027359-f3f8164ba6...` |
-| 025 | [Best Standing Desks for Home Office (2025)](/gear/best-standing-desks) | Sarah Mitchell | Furniture | 18 min | `photo-1611532736579-6b16e2b504...` |
-| 026 | [Ergonomic Desk Setup: Complete Guide (2025)](/gear/ergonomic-desk-setup-guide) | Sarah Mitchell | Furniture | 12 min | `photo-1498050108023-c5249f4df0...` |
-| 027 | [How Much Does a Standing Desk Really Cost? (2025 Guide)](/gear/standing-desk-cost-guide) | Sarah Mitchell | Furniture | 8 min | `photo-1497366216548-3752607029...` |
+| 016 | [Best External SSDs for Remote Workers (2025)](/gear/best-external-ssds-for-remote-workers) | Marcus Chen | Computers | 14 min | `photo-1597852074816-d933c7d2b9...` |
+| 017 | [Best Laptops for Remote Work & Digital Nomads (2025)](/gear/best-laptops-remote-work) | Marcus Chen | Computers | 8 min | `photo-1496181133206-80ce9b88a8...` |
+| 018 | [Best Laptops for Video Editing on the Go (2025)](/gear/best-laptops-for-video-editing-on-the-go) | Marcus Chen | Computers | 14 min | `photo-1574717024653-61fd2cf4d4...` |
+| 019 | [Best Monitors for Remote Work (2025)](/gear/best-monitors-remote-work) | Marcus Chen | Computers | 16 min | `photo-1527443224154-c4a3942d3a...` |
+| 020 | [Best Portable Monitors for Digital Nomads (2025)](/gear/best-portable-monitors) | Marcus Chen | Computers | 14 min | `photo-1587829741301-dc798b83ad...` |
+| 021 | [How Much RAM Do You Really Need for Remote Work? (2025)](/gear/how-much-ram-remote-work) | Marcus Chen | Computers | 5 min | `photo-1518770660439-4636190af4...` |
+| 022 | [MacBook vs Windows for Remote Work: Which One? (2025)](/gear/macbook-vs-windows-remote-work) | Marcus Chen | Computers | 7 min | `photo-1517336714731-489689fd1c...` |
+| 023 | [Best Compact Desks for Small Home Offices (2025)](/gear/best-compact-desks-small-office) | Sarah Mitchell | Furniture | 14 min | `photo-1593062096033-9a26b09da7...` |
+| 024 | [Best Ergonomic Chairs for Home Office (2025)](/gear/best-ergonomic-chairs) | Sarah Mitchell | Furniture | 18 min | `photo-1580480055273-228ff5388e...` |
+| 025 | [Best Standing Desk Converters (2025)](/gear/best-desk-converters) | Sarah Mitchell | Furniture | 14 min | `photo-1518455027359-f3f8164ba6...` |
+| 026 | [Best Standing Desks for Home Office (2025)](/gear/best-standing-desks) | Sarah Mitchell | Furniture | 18 min | `photo-1611532736579-6b16e2b504...` |
+| 027 | [Ergonomic Desk Setup: Complete Guide (2025)](/gear/ergonomic-desk-setup-guide) | Sarah Mitchell | Furniture | 12 min | `photo-1498050108023-c5249f4df0...` |
+| 028 | [How Much Does a Standing Desk Really Cost? (2025 Guide)](/gear/standing-desk-cost-guide) | Sarah Mitchell | Furniture | 8 min | `photo-1497366216548-3752607029...` |
 
 ### Guides (35 articles)
 
@@ -158,10 +159,10 @@
 | Section | Count |
 |---------|-------|
 | Blog | 16 |
-| Gear | 27 |
+| Gear | 28 |
 | Guides | 35 |
 | Tools | 41 |
-| **Total** | **119** |
+| **Total** | **120** |
 
 ### By Category
 | Category | Count |
@@ -174,8 +175,8 @@
 | Audio | 9 |
 | Communication | 8 |
 | Security | 8 |
+| Computers | 8 |
 | Productivity | 7 |
-| Computers | 7 |
 | Furniture | 6 |
 | Setup | 6 |
 | Accessories | 5 |
@@ -184,6 +185,6 @@
 ### By Author
 | Author | Count |
 |--------|-------|
-| Marcus Chen | 48 |
+| Marcus Chen | 49 |
 | Daniel Brooks | 44 |
 | Sarah Mitchell | 27 |

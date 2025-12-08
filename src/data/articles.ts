@@ -304,6 +304,18 @@ export const gearArticles: Article[] = [
     featured: true,
   },
   {
+    slug: "best-external-ssds-for-remote-workers",
+    section: "gear",
+    title: "Best External SSDs for Remote Workers (2025)",
+    description: "Tested Samsung T7 Shield, SanDisk Extreme Pro, and WD Black P40 for months of travel. Real speed tests, durability reviews, and honest takes on what survives nomad life.",
+    authorSlug: "marcus-chen",
+    pubDate: "2025-12-08",
+    readingTime: 14,
+    image: "/images/unsplash/photo-1597852074816-d933c7d2b988-1200w.webp",
+    imageAlt: "External SSD portable drive for remote work and travel",
+    category: "computers",
+  },
+  {
     slug: "best-laptops-for-video-editing-on-the-go",
     section: "gear",
     title: "Best Laptops for Video Editing on the Go (2025)",

@@ -1,11 +1,11 @@
 # FloatJet Article Summary
 
 > **Auto-generated** from `src/data/articles.ts`
-> Last updated: 2025-12-08 09:53
+> Last updated: 2025-12-08 10:18
 >
 > To regenerate: `python scripts/generate-article-summary.py`
 
-**Total Articles:** 116
+**Total Articles:** 117
 
 ---
 
@@ -32,7 +32,7 @@
 | 015 | [How to Find Reliable WiFi Anywhere in the World (2025)](/blog/find-reliable-wifi-anywhere) | Marcus Chen | Travel | 9 min | `photo-1521791136064-7986c29202...` |
 | 016 | [Top 10 Destinations for Digital Nomads (2025)](/blog/top-destinations-digital-nomads) | Daniel Brooks | Travel | 14 min | `photo-1528181304800-259b088485...` |
 
-### Gear (24 articles)
+### Gear (25 articles)
 
 | # | Title | Author | Category | Read Time | Hero Image |
 |---|-------|--------|----------|-----------|------------|
@@ -44,22 +44,23 @@
 | 006 | [Best Microphones for Remote Meetings (2025)](/gear/best-microphones-remote-meetings) | Sarah Mitchell | Audio | 16 min | `photo-1590602847861-f357a9332b...` |
 | 007 | [Best Noise-Canceling Headphones for Remote Work (2025)](/gear/best-noise-canceling-headphones) | Marcus Chen | Audio | 18 min | `photo-1505740420928-5e560c06d3...` |
 | 008 | [Best Podcast Equipment Starter Kits Under $300 (2025)](/gear/best-podcast-equipment-starter-kits) | Marcus Chen | Audio | 14 min | `photo-1598488035139-bdbb2231ce...` |
-| 009 | [Best Speakers for Home Office (2025)](/gear/best-speakers-home-office) | Marcus Chen | Audio | 5 min | `photo-1545454675-3531b543be5d-...` |
-| 010 | [Best Wireless Earbuds for Remote Work Calls (2025)](/gear/best-wireless-earbuds-remote-work) | Marcus Chen | Audio | 14 min | `photo-1590658268037-6bf12165a8...` |
-| 011 | [How to Reduce Background Noise on Video Calls (2025)](/gear/reduce-background-noise-calls) | Marcus Chen | Audio | 8 min | `photo-1587560699334-cc4ff63490...` |
-| 012 | [USB vs XLR Microphones: Which Is Better for Remote Work?](/gear/usb-vs-xlr-microphones) | Sarah Mitchell | Audio | 10 min | `photo-1598653222000-6b7b7a5526...` |
-| 013 | [Best Budget Laptops Under $800 for Remote Work (2025)](/gear/best-budget-laptops-remote-work) | Marcus Chen | Computers | 14 min | `photo-1525547719571-a2d4ac8945...` |
-| 014 | [Best Laptops for Remote Work & Digital Nomads (2025)](/gear/best-laptops-remote-work) | Marcus Chen | Computers | 8 min | `photo-1496181133206-80ce9b88a8...` |
-| 015 | [Best Monitors for Remote Work (2025)](/gear/best-monitors-remote-work) | Marcus Chen | Computers | 16 min | `photo-1527443224154-c4a3942d3a...` |
-| 016 | [Best Portable Monitors for Digital Nomads (2025)](/gear/best-portable-monitors) | Marcus Chen | Computers | 14 min | `photo-1587829741301-dc798b83ad...` |
-| 017 | [How Much RAM Do You Really Need for Remote Work? (2025)](/gear/how-much-ram-remote-work) | Marcus Chen | Computers | 5 min | `photo-1518770660439-4636190af4...` |
-| 018 | [MacBook vs Windows for Remote Work: Which One? (2025)](/gear/macbook-vs-windows-remote-work) | Marcus Chen | Computers | 7 min | `photo-1517336714731-489689fd1c...` |
-| 019 | [Best Compact Desks for Small Home Offices (2025)](/gear/best-compact-desks-small-office) | Sarah Mitchell | Furniture | 14 min | `photo-1593062096033-9a26b09da7...` |
-| 020 | [Best Ergonomic Chairs for Home Office (2025)](/gear/best-ergonomic-chairs) | Sarah Mitchell | Furniture | 18 min | `photo-1580480055273-228ff5388e...` |
-| 021 | [Best Standing Desk Converters (2025)](/gear/best-desk-converters) | Sarah Mitchell | Furniture | 14 min | `photo-1518455027359-f3f8164ba6...` |
-| 022 | [Best Standing Desks for Home Office (2025)](/gear/best-standing-desks) | Sarah Mitchell | Furniture | 18 min | `photo-1611532736579-6b16e2b504...` |
-| 023 | [Ergonomic Desk Setup: Complete Guide (2025)](/gear/ergonomic-desk-setup-guide) | Sarah Mitchell | Furniture | 12 min | `photo-1498050108023-c5249f4df0...` |
-| 024 | [How Much Does a Standing Desk Really Cost? (2025 Guide)](/gear/standing-desk-cost-guide) | Sarah Mitchell | Furniture | 8 min | `photo-1497366216548-3752607029...` |
+| 009 | [Best Soundproofing Solutions for Home Office (2025)](/gear/best-soundproofing-solutions-home-office) | Marcus Chen | Audio | 15 min | `photo-Y20JJ_ddy9M-1200w.webp` |
+| 010 | [Best Speakers for Home Office (2025)](/gear/best-speakers-home-office) | Marcus Chen | Audio | 5 min | `photo-1545454675-3531b543be5d-...` |
+| 011 | [Best Wireless Earbuds for Remote Work Calls (2025)](/gear/best-wireless-earbuds-remote-work) | Marcus Chen | Audio | 14 min | `photo-1590658268037-6bf12165a8...` |
+| 012 | [How to Reduce Background Noise on Video Calls (2025)](/gear/reduce-background-noise-calls) | Marcus Chen | Audio | 8 min | `photo-1587560699334-cc4ff63490...` |
+| 013 | [USB vs XLR Microphones: Which Is Better for Remote Work?](/gear/usb-vs-xlr-microphones) | Sarah Mitchell | Audio | 10 min | `photo-1598653222000-6b7b7a5526...` |
+| 014 | [Best Budget Laptops Under $800 for Remote Work (2025)](/gear/best-budget-laptops-remote-work) | Marcus Chen | Computers | 14 min | `photo-1525547719571-a2d4ac8945...` |
+| 015 | [Best Laptops for Remote Work & Digital Nomads (2025)](/gear/best-laptops-remote-work) | Marcus Chen | Computers | 8 min | `photo-1496181133206-80ce9b88a8...` |
+| 016 | [Best Monitors for Remote Work (2025)](/gear/best-monitors-remote-work) | Marcus Chen | Computers | 16 min | `photo-1527443224154-c4a3942d3a...` |
+| 017 | [Best Portable Monitors for Digital Nomads (2025)](/gear/best-portable-monitors) | Marcus Chen | Computers | 14 min | `photo-1587829741301-dc798b83ad...` |
+| 018 | [How Much RAM Do You Really Need for Remote Work? (2025)](/gear/how-much-ram-remote-work) | Marcus Chen | Computers | 5 min | `photo-1518770660439-4636190af4...` |
+| 019 | [MacBook vs Windows for Remote Work: Which One? (2025)](/gear/macbook-vs-windows-remote-work) | Marcus Chen | Computers | 7 min | `photo-1517336714731-489689fd1c...` |
+| 020 | [Best Compact Desks for Small Home Offices (2025)](/gear/best-compact-desks-small-office) | Sarah Mitchell | Furniture | 14 min | `photo-1593062096033-9a26b09da7...` |
+| 021 | [Best Ergonomic Chairs for Home Office (2025)](/gear/best-ergonomic-chairs) | Sarah Mitchell | Furniture | 18 min | `photo-1580480055273-228ff5388e...` |
+| 022 | [Best Standing Desk Converters (2025)](/gear/best-desk-converters) | Sarah Mitchell | Furniture | 14 min | `photo-1518455027359-f3f8164ba6...` |
+| 023 | [Best Standing Desks for Home Office (2025)](/gear/best-standing-desks) | Sarah Mitchell | Furniture | 18 min | `photo-1611532736579-6b16e2b504...` |
+| 024 | [Ergonomic Desk Setup: Complete Guide (2025)](/gear/ergonomic-desk-setup-guide) | Sarah Mitchell | Furniture | 12 min | `photo-1498050108023-c5249f4df0...` |
+| 025 | [How Much Does a Standing Desk Really Cost? (2025 Guide)](/gear/standing-desk-cost-guide) | Sarah Mitchell | Furniture | 8 min | `photo-1497366216548-3752607029...` |
 
 ### Guides (35 articles)
 
@@ -155,10 +156,10 @@
 | Section | Count |
 |---------|-------|
 | Blog | 16 |
-| Gear | 24 |
+| Gear | 25 |
 | Guides | 35 |
 | Tools | 41 |
-| **Total** | **116** |
+| **Total** | **117** |
 
 ### By Category
 | Category | Count |
@@ -170,8 +171,8 @@
 | Travel | 9 |
 | Communication | 8 |
 | Security | 8 |
+| Audio | 8 |
 | Productivity | 7 |
-| Audio | 7 |
 | Computers | 6 |
 | Furniture | 6 |
 | Setup | 6 |
@@ -181,6 +182,6 @@
 ### By Author
 | Author | Count |
 |--------|-------|
-| Marcus Chen | 45 |
+| Marcus Chen | 46 |
 | Daniel Brooks | 44 |
 | Sarah Mitchell | 27 |

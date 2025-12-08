@@ -1114,6 +1114,18 @@ export const toolsArticles: Article[] = [
     category: "saas",
   },
   {
+    slug: "best-dns-services-for-privacy-and-speed",
+    section: "tools",
+    title: "Best DNS Services for Privacy and Speed (2025)",
+    description: "ISP DNS was killing my Bali internet. Switched to Cloudflare and pages loaded instantly. Comparing Cloudflare, NextDNS, AdGuard, and Quad9 for speed and privacy.",
+    authorSlug: "daniel-brooks",
+    pubDate: "2025-12-08",
+    readingTime: 13,
+    image: "/images/unsplash/photo-1606765962248-7ff407b51667-1200w.webp",
+    imageAlt: "Server room with blue network cables and fiber optics",
+    category: "vpn",
+  },
+  {
     slug: "best-encrypted-messaging-apps-for-remote-teams",
     section: "tools",
     title: "Best Encrypted Messaging Apps for Remote Teams (2025)",

@@ -1,0 +1,497 @@
+---
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
+
+// Get article metadata from central data file
+const article = getArticleBySlug("best-dns-services-for-privacy-and-speed")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
+// Table of contents headings
+const headings = [
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "What DNS Actually Does", slug: "what-dns-does", depth: 2 },
+  { text: "Cloudflare", slug: "cloudflare", depth: 2 },
+  { text: "NextDNS", slug: "nextdns", depth: 2 },
+  { text: "AdGuard DNS", slug: "adguard", depth: 2 },
+  { text: "Quad9", slug: "quad9", depth: 2 },
+  { text: "My Actual Setup", slug: "my-setup", depth: 2 },
+  { text: "Setup Guide", slug: "setup-guide", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Conclusion", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
+];
+
+// Quick picks comparison table
+const quickPicksColumns = [
+  { key: "service", label: "Service", width: "120px" },
+  { key: "bestFor", label: "Best For", width: "160px" },
+  { key: "price", label: "Price" },
+  { key: "speed", label: "Speed" },
+];
+
+const quickPicksRows = [
+  {
+    service: "<strong>Cloudflare</strong>",
+    bestFor: "Raw speed",
+    price: "Free",
+    speed: "14.5ms",
+  },
+  {
+    service: "<strong>NextDNS</strong>",
+    bestFor: "Custom blocking",
+    price: "Free/Paid",
+    speed: "20-40ms",
+  },
+  {
+    service: "<strong>AdGuard</strong>",
+    bestFor: "Easy ad blocking",
+    price: "Free/Paid",
+    speed: "25-45ms",
+  },
+];
+
+// Full comparison table
+const fullComparisonColumns = [
+  { key: "service", label: "Service", width: "100px" },
+  { key: "bestFor", label: "Best For", width: "140px" },
+  { key: "price", label: "Price" },
+  { key: "speed", label: "Avg Speed" },
+  { key: "adBlocking", label: "Ad Blocking" },
+  { key: "analytics", label: "Analytics" },
+];
+
+const fullComparisonRows = [
+  {
+    service: "<strong>Cloudflare</strong>",
+    bestFor: "Maximum speed",
+    price: "Free",
+    speed: "14.5ms",
+    adBlocking: "Families variants",
+    analytics: false,
+  },
+  {
+    service: "<strong>NextDNS</strong>",
+    bestFor: "Custom control",
+    price: "$1.99/mo",
+    speed: "20-40ms",
+    adBlocking: true,
+    analytics: true,
+  },
+  {
+    service: "<strong>AdGuard</strong>",
+    bestFor: "Simple setup",
+    price: "$3/mo",
+    speed: "25-45ms",
+    adBlocking: true,
+    analytics: "Paid only",
+  },
+  {
+    service: "<strong>Quad9</strong>",
+    bestFor: "Security focus",
+    price: "Free",
+    speed: "25-35ms",
+    adBlocking: false,
+    analytics: false,
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: "Does DNS really speed up browsing?",
+    answer:
+      "<p>Depends where you're starting. Slow ISP DNS? Switching to Cloudflare is immediately noticeable. Already on decent DNS? Improvement is more subtle. Either way, faster DNS affects every single site you visit.</p>",
+  },
+  {
+    question: "Will this break stuff?",
+    answer:
+      "<p>Rarely. Corporate networks sometimes need their internal DNS to work. If you're on a work VPN, leave DNS settings alone. Personal devices on home networks? Almost never causes problems.</p>",
+  },
+  {
+    question: "What if I'm already running a VPN?",
+    answer:
+      "<p>Most VPNs route DNS through their own servers. Your VPN's DNS takes over. When not on VPN, your custom DNS kicks in. Either way, your ISP isn't seeing DNS queries.</p>",
+  },
+  {
+    question: "Which option protects privacy best?",
+    answer:
+      "<p>Cloudflare keeps the least data. NextDNS logs exactly what you tell it to—configure zero logging if you want. AdGuard stores aggregate stats. All three beat your ISP.</p>",
+  },
+  {
+    question: "Can my ISP still track which sites I visit?",
+    answer:
+      "<p>They see IP addresses you connect to. But with encrypted DNS, they can't watch your DNS lookups. Regular unencrypted DNS lets them snoop on queries even when you're using third-party DNS. Encrypted DNS blocks that.</p>",
+  },
+  {
+    question: "Is free tier enough for me?",
+    answer:
+      "<p>Single device? Probably. Household with multiple phones, tablets, streaming boxes, smart home stuff? You'll likely hit 300K queries. Watch your usage for a month before committing.</p>",
+  },
+  {
+    question: "Does this work on cellular?",
+    answer:
+      "<p>Yep. NextDNS and AdGuard both have apps that handle mobile configuration. Cloudflare has the 1.1.1.1 app too—works the same way.</p>",
+  },
+  {
+    question: "What's the difference between encrypted DNS options?",
+    answer:
+      "<p>Both protect your queries. DoH runs on port 443, same as regular HTTPS, so it blends with normal traffic. DoT uses port 853 and is easier for networks to block. Either works fine for most people. DoH just hides better.</p>",
+  },
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: "Best VPNs for Digital Nomads & Remote Workers",
+    excerpt:
+      "Protect your data on public WiFi with these top-rated VPNs tested across 15 countries.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept with encrypted data visualization",
+  },
+  {
+    title: "Best Browser Extensions for Privacy",
+    excerpt:
+      "Got hacked on hostel WiFi. Three years later, this is what runs on every machine I own.",
+    href: "/tools/best-browser-extensions-for-privacy",
+    image: "/images/unsplash/photo-1618060932014-4deda4932554-800w.webp",
+    imageAlt: "Laptop with privacy lock screen",
+  },
+  {
+    title: "Best Encrypted Messaging Apps for Remote Teams",
+    excerpt:
+      "Signal vs Telegram vs Element vs Wire. Which encrypted messenger actually protects remote team conversations?",
+    href: "/tools/best-encrypted-messaging-apps-for-remote-teams",
+    image: "/images/unsplash/photo-1563986768609-322da13575f3-800w.webp",
+    imageAlt: "Encrypted messaging on smartphone",
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    authorSlug={authorSlug}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="VPN"
+    categorySlug="tools"
+    subcategorySlug="vpn"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">The Bali Discovery</h2>
+  <p>
+    Noticed something weird in Bali last year. Same websites loading way slower than they should, even on decent WiFi.
+    Ran some tests and figured out the ISP's DNS servers were crawling. Switched to Cloudflare and pages started loading
+    instantly. That twenty-second delay on every site? Gone.
+  </p>
+  <p>
+    Most people never think about DNS. It's the thing that turns website names into actual addresses your browser can
+    find. Your ISP gives you one by default. That default is usually slow, sometimes logs your browsing history, and
+    occasionally gets used to redirect you to ads or block content.
+  </p>
+  <p>
+    Changing DNS takes about two minutes. Speed difference can be dramatic. Privacy implications too, which I didn't
+    think about until later.
+  </p>
+  <p>
+    <strong>For those skimming:</strong> Cloudflare if you just want fast. NextDNS when you want network-level ad
+    blocking with granular control. AdGuard DNS for families who want content filtering without touching config files.
+  </p>
+
+  <!-- Quick Picks -->
+  <h2 id="quick-picks">Quick Picks</h2>
+  <p>Top three DNS services for speed and privacy:</p>
+  <ComparisonTable
+      columns={quickPicksColumns}
+      rows={quickPicksRows}
+      caption="Best DNS services for privacy and speed"
+  />
+  <p>
+    All three are more private than whatever your ISP provides. Pick based on whether you want speed, customization, or simplicity.
+  </p>
+
+  <!-- What DNS Actually Does -->
+  <h2 id="what-dns-does">What DNS Actually Does</h2>
+  <p>
+    You type a website address. Your device pings a DNS server asking "hey, where's this thing?" Server shoots back an
+    IP address. Browser connects. Page loads.
+  </p>
+  <p>Your ISP handles this by default. Here's why that's worth caring about:</p>
+  <ul>
+    <li>ISP DNS servers run on aging infrastructure. Millions of queries, not enough hardware upgrades.</li>
+    <li>Your ISP sees every domain you request. HTTPS encrypts the page content, but they still know you went there.</li>
+    <li>Some ISPs sell this data. Others shove targeted ads at you based on your browsing patterns.</li>
+    <li>When governments want browsing records, ISP DNS logs are usually the first stop.</li>
+    <li>Failed lookups sometimes redirect to search pages stuffed with ads.</li>
+  </ul>
+  <p>
+    Using different DNS shifts who sees your traffic. Won't make you invisible online. But your ISP stops building a
+    map of everywhere you browse.
+  </p>
+
+  <!-- Cloudflare -->
+  <h2 id="cloudflare">Cloudflare</h2>
+  <p>
+    Running this on most of my devices. Fastest DNS I've tested across maybe fifteen countries at this point.
+  </p>
+  <p>
+    Cloudflare clocked in at 14.52ms average globally when I last checked. That's roughly twice as fast as Google's DNS
+    and significantly faster than most ISP defaults. Real world difference: pages feel snappier. The delay between
+    clicking a link and something happening shrinks noticeably.
+  </p>
+  <p><strong>What you get with Cloudflare:</strong></p>
+  <ul>
+    <li>Raw speed that consistently beats everything else</li>
+    <li>Privacy commitment—no logging of identifiable data</li>
+    <li>Query records kept 25 hours for debugging, then wiped</li>
+    <li>APNIC runs independent audits to verify their claims</li>
+    <li>Encrypted DNS options available</li>
+    <li>Completely free, no usage caps</li>
+  </ul>
+  <p>
+    Privacy angle is pretty straightforward. Cloudflare made a public commitment to never sell data or target ads. They
+    brought in APNIC to audit and confirm they're actually doing what they say. Query data gets purged after 25 hours.
+  </p>
+  <p><strong>What's missing:</strong></p>
+  <ul>
+    <li>No content filtering or ad blocking in the standard version</li>
+    <li>Can't really customize much</li>
+    <li>No dashboard to see your own traffic</li>
+    <li>Need their Families variants (1.1.1.2 or 1.1.1.3) for any filtering</li>
+  </ul>
+  <p>
+    That filtering gap matters if you want ads blocked at the network level. Cloudflare went all-in on speed and keeping
+    things dead simple. If you want ads nuked across every device without installing stuff on each one, NextDNS or
+    AdGuard handle that better.
+  </p>
+  <p>
+    Cloudflare did add two filtered options. 1.1.1.2 catches malware domains. 1.1.1.3 throws in adult content blocking
+    for families. Free but zero customization.
+  </p>
+  <p><strong>Price:</strong> Free. No paid tier for basic DNS.</p>
+  <p>
+    <strong>Works for:</strong> Speed chasers who don't mind handling ad blocking separately. People using browser
+    extensions already. Anyone who values minimal setup over tweaking options.
+  </p>
+
+  <!-- NextDNS -->
+  <h2 id="nextdns">NextDNS</h2>
+  <p>
+    Cloudflare wins on speed. NextDNS wins on control. You pick exactly what gets filtered, watch traffic analytics,
+    create separate profiles per device.
+  </p>
+  <p>
+    Ran NextDNS for about eight months testing the filtering side. You can block entire ad networks, specific tracking
+    domains, malware sites, adult content, gambling sites. The blocklists go deep and stay updated.
+  </p>
+  <p><strong>What NextDNS packs in:</strong></p>
+  <ul>
+    <li>Build-your-own blocking with stacked filter lists</li>
+    <li>Traffic analytics showing blocked requests and sources</li>
+    <li>Per-device configuration</li>
+    <li>Parental controls with scheduling</li>
+    <li>Native apps for everything</li>
+    <li>Encrypted DNS baked in</li>
+    <li>Logs you own—keep them or delete them entirely</li>
+  </ul>
+  <p>
+    That analytics dashboard surprised me. After a week on NextDNS, you'll see exactly which apps phone home constantly,
+    which sites load tracking garbage, and how much junk your devices were pulling before you started filtering. Found
+    one Android app making hundreds of tracking requests daily. Blocked the domain. Done.
+  </p>
+  <p>
+    Setup takes a bit more effort than Cloudflare. Create account, pick your blocklists, install app or punch in DNS
+    addresses manually. Maybe ten minutes for basic config.
+  </p>
+  <p>
+    Free tier caps you at 300,000 queries monthly. Sounds generous until you realize a household with phones, tablets,
+    smart TVs, and IoT gadgets burns through that fast. After the limit, filtering stops working until next month.
+    Queries still resolve, just unfiltered.
+  </p>
+  <p><strong>The tradeoffs:</strong></p>
+  <ul>
+    <li>Query limits sneak up on you</li>
+    <li>Bit slower than Cloudflare, usually 20-40ms</li>
+    <li>More knobs means more things to figure out</li>
+    <li>You're trusting NextDNS with your logs</li>
+  </ul>
+  <p><strong>Price:</strong> Free under 300K queries. $1.99/month or $19.90/year removes the cap.</p>
+  <p>
+    <strong>Works for:</strong> Network-wide ad blocking enthusiasts. Parents wanting filtering across every household
+    gadget. Privacy folks willing to spend time configuring. People curious about their devices' actual behavior.
+  </p>
+
+  <!-- AdGuard DNS -->
+  <h2 id="adguard">AdGuard DNS</h2>
+  <p>
+    AdGuard comes at this differently. It's basically an ad blocker that routes through DNS. Setup couldn't be
+    simpler—point devices at their servers and ads start vanishing.
+  </p>
+  <p>
+    No account for basic use. No config required. Swap your DNS to AdGuard's addresses and filtering kicks in
+    automatically. They maintain the blocklists and handle the complexity.
+  </p>
+  <p><strong>What AdGuard brings:</strong></p>
+  <ul>
+    <li>Ads and trackers blocked immediately, no setup</li>
+    <li>No registration for basic filtering</li>
+    <li>Family variant adds content filtering</li>
+    <li>Encrypted DNS included</li>
+    <li>Open source blocklists anyone can inspect</li>
+    <li>Mobile apps for quick setup</li>
+  </ul>
+  <p>
+    Simplicity is the whole pitch. You want ads gone but don't want to learn DNS internals. No custom filter lists to
+    build. Just trust AdGuard's defaults to handle things reasonably.
+  </p>
+  <p>
+    Tested AdGuard's blocking against NextDNS with similar filter lists. Results were close. AdGuard caught most major
+    ad networks and trackers. Few things got through that NextDNS would've blocked with its bigger lists, but nothing major.
+  </p>
+  <p>
+    Speed lands between Cloudflare and NextDNS. Response times around 25-45ms typically. You probably won't notice
+    unless you're obsessing over latency numbers.
+  </p>
+  <p>
+    Free tier has that same 300,000 query limit. Paid gets you unlimited plus custom rules and detailed stats.
+  </p>
+  <p>
+    Privacy-wise, AdGuard says they store aggregate performance data but skip individual query logging by default.
+    They're based in Cyprus, different data laws than the US.
+  </p>
+  <p><strong>The tradeoffs:</strong></p>
+  <ul>
+    <li>Less granular than NextDNS</li>
+    <li>Same 300K monthly limit on free</li>
+    <li>Stats require paying</li>
+    <li>Slower than Cloudflare</li>
+  </ul>
+  <p><strong>Price:</strong> Free with query cap. Premium runs about $3/month.</p>
+  <p>
+    <strong>Works for:</strong> Simple ad blocking without learning curves. Families wanting easy content filtering.
+    People who don't care about traffic analytics. Set-and-forget types.
+  </p>
+
+  <!-- Quad9 -->
+  <h2 id="quad9">Quad9</h2>
+  <p>
+    Including this because it's genuinely different. Quad9 runs as a nonprofit purely focused on security. Malware
+    domains, phishing sites, attack infrastructure—blocked. No ad filtering, no content controls. Just threat protection.
+  </p>
+  <p>
+    The nonprofit angle matters for trust. No business model pushing them toward monetizing your data. Funded by IBM,
+    Packet Clearing House, and various tech orgs. Headquartered in Switzerland with those famously strong privacy laws.
+  </p>
+  <p>
+    Speed is solid. Not Cloudflare tier but competitive with NextDNS. Security blocking pulls from over twenty threat
+    intelligence feeds.
+  </p>
+  <p>
+    <strong>Works for:</strong> Security-first people handling ads separately. Those who like the nonprofit approach.
+    Anyone wanting malware protection without ad blocking changing their browsing.
+  </p>
+
+  <!-- My Setup -->
+  <h2 id="my-setup">What I Actually Use</h2>
+  <p>After testing everything, my setup changes by device and location.</p>
+  <p>
+    <strong>Main laptop and phone:</strong> NextDNS with custom blocking. I like seeing what's happening and controlling
+    what gets filtered. Paying for unlimited queries.
+  </p>
+  <p>
+    <strong>Home router:</strong> Cloudflare as backup. Whole network gets fast DNS if NextDNS has issues.
+  </p>
+  <p>
+    <strong>Traveling:</strong> Cloudflare on mobile for raw speed. Random airport WiFi already has latency
+    problems—faster DNS helps offset that.
+  </p>
+  <p>
+    <strong>Family tablets:</strong> AdGuard DNS. Simple content filtering without managing configs.
+  </p>
+  <p>Most people can skip this complexity. Just pick based on what matters:</p>
+  <ul>
+    <li>Want maximum speed: Cloudflare</li>
+    <li>Want ad blocking with visibility: NextDNS</li>
+    <li>Want easy ad blocking, zero config: AdGuard DNS</li>
+    <li>Want security from a nonprofit: Quad9</li>
+  </ul>
+
+  <!-- Setup Guide -->
+  <h2 id="setup-guide">Setting Everything Up</h2>
+  <p>Takes maybe two minutes per device.</p>
+  <p>
+    <strong>iPhone:</strong> Go into Wi-Fi settings, tap the little info icon, then Configure DNS and switch to Manual.
+    Add the addresses there.
+  </p>
+  <p>
+    <strong>Android:</strong> Keeps it under Network & Internet in Private DNS settings. Just type the hostname.
+  </p>
+  <p>
+    <strong>Mac:</strong> Hides it in Network preferences under Advanced, then the DNS tab.
+  </p>
+  <p>
+    <strong>Windows:</strong> Dig through Control Panel to Network Connections, then Properties on your adapter, then
+    Internet Protocol Version 4. Punch in the addresses.
+  </p>
+  <p>
+    <strong>Router level:</strong> Log into your router admin and hunt for DNS settings. Usually under WAN or Internet.
+    Change addresses there and everything on your network uses them automatically.
+  </p>
+  <p>
+    NextDNS and AdGuard accounts? Their apps handle config automatically. Install, log in, you're done.
+  </p>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">Final Thoughts</h2>
+  <p>
+    DNS sits in the background affecting every site you visit. Changing it takes a couple minutes and results range from
+    subtle improvement to dramatic speedup depending on what you're replacing.
+  </p>
+  <p>
+    Cloudflare for speed. NextDNS for control. AdGuard for simplicity. All three beat ISP defaults.
+  </p>
+  <p>
+    That Bali situation forced me to actually learn this stuff. Turned a painful slow connection into something workable
+    with one settings change. The kind of thing you set up once and forget about.
+  </p>
+
+  <AffiliateButton
+      href="/go/nordvpn"
+      text="Get NordVPN - Pair with DNS for Complete Privacy"
+      variant="primary"
+      program="nordvpn"
+  />
+
+  <!-- Full Width Content Slot -->
+  <Fragment slot="full-width">
+    <!-- Full Comparison Table -->
+    <section class="py-8" id="full-comparison">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center font-heading">Complete DNS Service Comparison</h2>
+        <p class="text-white/80 text-center mb-8 max-w-2xl mx-auto">Here's how all the DNS services compare on the
+          features that matter most for privacy and speed:</p>
+        <ComparisonTable
+            columns={fullComparisonColumns}
+            rows={fullComparisonRows}
+            caption="Complete comparison of DNS services for privacy and speed"
+        />
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

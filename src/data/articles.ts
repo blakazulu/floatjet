@@ -970,6 +970,18 @@ export const toolsArticles: Article[] = [
     category: "saas",
   },
   {
+    slug: "best-browser-extensions-for-privacy",
+    section: "tools",
+    title: "Best Browser Extensions for Privacy (2025)",
+    description: "Got hacked on hostel WiFi in Thailand. Three years later, this is the setup running on every machine I own. uBlock Origin, Privacy Badger, and more.",
+    authorSlug: "daniel-brooks",
+    pubDate: "2025-12-08",
+    readingTime: 14,
+    image: "/images/unsplash/photo-1618060932014-4deda4932554-1200w.webp",
+    imageAlt: "Laptop with privacy lock screen showing security protection",
+    category: "vpn",
+  },
+  {
     slug: "best-budgeting-apps-for-remote-workers",
     section: "tools",
     title: "Best Budgeting Apps for Remote Workers (2025)",

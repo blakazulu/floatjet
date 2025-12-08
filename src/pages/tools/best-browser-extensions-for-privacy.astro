@@ -1,0 +1,547 @@
+---
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
+
+// Get article metadata from central data file
+const article = getArticleBySlug("best-browser-extensions-for-privacy")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
+// Table of contents headings
+const headings = [
+  { text: "Introduction", slug: "introduction", depth: 2 },
+  { text: "Quick Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why Extensions Matter on Public WiFi", slug: "why-extensions-matter", depth: 2 },
+  { text: "uBlock Origin", slug: "ublock-origin", depth: 2 },
+  { text: "Privacy Badger", slug: "privacy-badger", depth: 2 },
+  { text: "Password Manager Extensions", slug: "password-managers", depth: 2 },
+  { text: "Other Extensions Worth Knowing", slug: "other-extensions", depth: 2 },
+  { text: "My Actual Setup", slug: "my-setup", depth: 2 },
+  { text: "Browser Choice Matters", slug: "browser-choice", depth: 2 },
+  { text: "Setting Everything Up", slug: "setup-guide", depth: 2 },
+  { text: "FAQ", slug: "faq", depth: 2 },
+  { text: "Conclusion", slug: "conclusion", depth: 2 },
+  { text: "Full Comparison", slug: "full-comparison", depth: 2 },
+];
+
+// Quick picks comparison table
+const quickPicksColumns = [
+  { key: "extension", label: "Extension", width: "130px" },
+  { key: "bestFor", label: "Best For", width: "140px" },
+  { key: "price", label: "Price" },
+  { key: "type", label: "Type" },
+];
+
+const quickPicksRows = [
+  {
+    extension: "<strong>uBlock Origin</strong>",
+    bestFor: "Ad & tracker blocking",
+    price: "Free",
+    type: "Ad blocker",
+  },
+  {
+    extension: "<strong>Privacy Badger</strong>",
+    bestFor: "Learning to block trackers",
+    price: "Free",
+    type: "Tracker blocker",
+  },
+  {
+    extension: "<strong>Bitwarden</strong>",
+    bestFor: "Free password management",
+    price: "Free/$10/yr",
+    type: "Password manager",
+  },
+];
+
+// Full comparison table
+const fullComparisonColumns = [
+  { key: "extension", label: "Extension", width: "120px" },
+  { key: "type", label: "Type", width: "120px" },
+  { key: "price", label: "Price" },
+  { key: "openSource", label: "Open Source" },
+  { key: "firefox", label: "Firefox" },
+  { key: "chrome", label: "Chrome" },
+];
+
+const fullComparisonRows = [
+  {
+    extension: "<strong>uBlock Origin</strong>",
+    type: "Ad blocker",
+    price: "Free",
+    openSource: true,
+    firefox: "Full version",
+    chrome: "Lite only",
+  },
+  {
+    extension: "<strong>Privacy Badger</strong>",
+    type: "Tracker blocker",
+    price: "Free",
+    openSource: true,
+    firefox: "Full",
+    chrome: "Full",
+  },
+  {
+    extension: "<strong>Bitwarden</strong>",
+    type: "Password manager",
+    price: "Free/$10/yr",
+    openSource: true,
+    firefox: "Full",
+    chrome: "Full",
+  },
+  {
+    extension: "<strong>NordPass</strong>",
+    type: "Password manager",
+    price: "$24/yr",
+    openSource: false,
+    firefox: "Full",
+    chrome: "Full",
+  },
+  {
+    extension: "<strong>Proton Pass</strong>",
+    type: "Password manager",
+    price: "Free/$48/yr",
+    openSource: true,
+    firefox: "Full",
+    chrome: "Full",
+  },
+  {
+    extension: "<strong>HTTPS Everywhere</strong>",
+    type: "Connection security",
+    price: "Free",
+    openSource: true,
+    firefox: "Full",
+    chrome: "Full",
+  },
+  {
+    extension: "<strong>DuckDuckGo Essentials</strong>",
+    type: "All-in-one",
+    price: "Free",
+    openSource: false,
+    firefox: "Full",
+    chrome: "Full",
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: "Do these extensions break websites?",
+    answer:
+      "<p>Occasionally. uBlock Origin blocks something a site needs, or Privacy Badger gets overzealous. When it happens, click the extension icon and whitelist that specific site. Five seconds. Happens maybe once a week in my experience.</p>",
+  },
+  {
+    question: "Do I really need all three extensions?",
+    answer:
+      "<p>uBlock Origin alone handles most problems. Privacy Badger catches stuff that slips through. The password manager isn't optional in my opinion. Running all three gives you solid protection without making browsing miserable.</p>",
+  },
+  {
+    question: "What about phones and tablets?",
+    answer:
+      "<p>Firefox mobile supports uBlock Origin. That's honestly the main reason I switched to Firefox on my phone too. Chrome mobile won't allow ad blockers at all. Safari on iOS has content blockers but they're more limited than desktop extensions.</p>",
+  },
+  {
+    question: "Don't these extensions make browsing slower?",
+    answer:
+      "<p>Opposite. Blocking ads and trackers means less stuff downloading. I've actually timed this. News sites load way faster with uBlock running because they're not pulling in megabytes of tracking scripts and video ads.</p>",
+  },
+  {
+    question: "Is this enough or do I need a VPN too?",
+    answer:
+      "<p>Different problems. Extensions stop tracking and ads at the browser level. VPNs encrypt your whole connection and mask your location from networks. You probably want both, especially on public WiFi. Check out our <a href='/tools/best-vpn-digital-nomads'>VPN guide</a> for recommendations.</p>",
+  },
+  {
+    question: "Why not just use Brave browser and skip the extensions?",
+    answer:
+      "<p>Brave's blocking is decent out of the box but uBlock Origin on Firefox catches more. Plus I don't love Brave's crypto integration. Personal call though.</p>",
+  },
+  {
+    question: "Are free extensions safe to install?",
+    answer:
+      "<p>These specific ones? Yeah. Open source code that security researchers have actually audited. uBlock Origin, Privacy Badger, Bitwarden, all been reviewed by independent people. Random free extensions from unknown developers? Way more sketchy. Stick to the big names.</p>",
+  },
+  {
+    question: "If I only install one thing, what should it be?",
+    answer:
+      "<p>uBlock Origin. Most protection for least effort. But seriously, all three takes fifteen minutes. Just do it.</p>",
+  },
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: "Best VPNs for Digital Nomads & Remote Workers",
+    excerpt:
+      "Protect your data on public WiFi with these top-rated VPNs tested across 15 countries.",
+    href: "/tools/best-vpn-digital-nomads",
+    image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
+    imageAlt: "Digital security concept with encrypted data visualization",
+  },
+  {
+    title: "Best Password Managers for Remote Workers",
+    excerpt:
+      "Stop reusing passwords. Compare NordPass, 1Password, Bitwarden and more.",
+    href: "/tools/best-password-manager-remote-work",
+    image: "/images/unsplash/photo-1633265486064-086b219458ec-800w.webp",
+    imageAlt: "Digital security and password protection",
+  },
+  {
+    title: "Two-Factor Authentication Guide for Remote Workers",
+    excerpt:
+      "Guide to setting up 2FA on all your accounts. Authenticator apps, hardware keys, and best practices.",
+    href: "/guides/two-factor-authentication-guide",
+    image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
+    imageAlt: "Smartphone showing two-factor authentication code",
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    authorSlug={authorSlug}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="VPN"
+    categorySlug="tools"
+    subcategorySlug="vpn"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">The Chiang Mai Incident</h2>
+  <p>
+    Got hacked at a hostel in Chiang Mai three years ago. Someone on the shared WiFi grabbed my login cookies for two
+    different accounts. Lost access to my email for about six hours before I got it back. The scary part? I was using
+    Chrome with zero protection. Just raw browsing like an idiot.
+  </p>
+  <p>
+    That pushed me to actually learn about browser privacy. Tested probably fifteen different extensions over the past
+    few years. Most are fine. A handful actually matter. This is what's currently running on my laptop.
+  </p>
+  <p>
+    <strong>If you're in a hurry:</strong> uBlock Origin for ads and trackers, Privacy Badger to catch the sneaky stuff
+    that slips through, and a password manager. Still reusing the same password everywhere? Yeah, we need to talk about that.
+  </p>
+
+  <!-- Quick Picks -->
+  <h2 id="quick-picks">Quick Picks</h2>
+  <p>Three extensions that cover 95% of what you need:</p>
+  <ComparisonTable
+      columns={quickPicksColumns}
+      rows={quickPicksRows}
+      caption="Essential browser extensions for privacy protection"
+  />
+  <p>
+    All free. All open source. Ten minutes to install everything.
+  </p>
+
+  <!-- Why Extensions Matter -->
+  <h2 id="why-extensions-matter">Why This Matters When You're On Random WiFi</h2>
+  <p>
+    Your browser leaks more data than you probably realize. Every site you visit tracks you. Advertisers follow you
+    around the internet. Your search history gets packaged and sold.
+  </p>
+  <p>
+    Working from random WiFi in hostels and coffee shops makes this worse. Public networks are hunting grounds for
+    anyone wanting to grab your session cookies or watch your traffic. I learned this in Thailand the expensive way.
+    Like, lost-access-to-two-accounts expensive.
+  </p>
+  <p>
+    Browser extensions fix most of this without requiring a PhD in security. They run quietly in the background and
+    block the bad stuff automatically.
+  </p>
+  <p><strong>What they actually stop:</strong></p>
+  <ul>
+    <li>Third-party trackers following you across websites</li>
+    <li>Ads that slow down pages and sometimes carry malware</li>
+    <li>Fingerprinting attempts that identify your browser uniquely</li>
+    <li>Cookie tracking that builds profiles about your browsing habits</li>
+    <li>Crypto miners that some sketchy sites try to run in your browser</li>
+  </ul>
+  <p>
+    Seriously. These are free. Ten minutes to install. No excuse not to do this.
+  </p>
+
+  <!-- uBlock Origin -->
+  <h2 id="ublock-origin">uBlock Origin</h2>
+  <p>
+    This one runs on every machine I own. Has been since about 2021.
+  </p>
+  <p>
+    uBlock Origin does the heavy lifting for ad and tracker blocking. The code is open source, so security researchers
+    can actually verify nothing weird is happening under the hood. And here's something I didn't expect: my browser
+    runs faster with it installed. All those tracking scripts and video ads consume serious resources.
+  </p>
+  <p><strong>What I use it for:</strong></p>
+  <ul>
+    <li>Killing those autoplay video ads on news sites (the worst)</li>
+    <li>Blocking trackers that follow me from site to site</li>
+    <li>Stopping malware domains before they even load</li>
+    <li>Getting rid of cookie consent popups (with the right filter list)</li>
+    <li>Making pages load faster since they're not downloading megabytes of garbage</li>
+  </ul>
+  <p>
+    The default settings handle 90% of what you need. Install it and move on with your life. But if you want to go
+    deeper, it offers blocking modes from "barely there" to "burn it all down."
+  </p>
+  <p>
+    One thing that frustrated me last year: Google introduced Manifest V3, which basically handicaps powerful extensions.
+    The full version of uBlock got crippled on Chrome. There's a stripped-down Lite version now, but I ran it for two
+    weeks and it missed a lot of stuff. That's when Firefox became my daily driver for anything involving money or logins.
+  </p>
+  <p>
+    <strong>Price:</strong> Zero dollars. The developer accepts donations but doesn't require them.
+  </p>
+  <p>
+    <strong>Runs on:</strong> Firefox, Edge, Brave, Opera. Chrome gets the weaker Lite version only.
+  </p>
+
+  <!-- Privacy Badger -->
+  <h2 id="privacy-badger">Privacy Badger</h2>
+  <p>
+    The EFF built this one. That's the Electronic Frontier Foundation, the folks who've been suing the government over
+    surveillance since the 90s. Basically the ACLU of the internet.
+  </p>
+  <p>
+    What makes Privacy Badger interesting is the approach. Most blockers use preset lists of known bad domains. These
+    lists need constant updating. By the time a new tracker gets added, it might have followed you for weeks.
+  </p>
+  <p>
+    Privacy Badger learns instead. It watches how trackers behave across sites. When it sees the same tracker appearing
+    on three different websites you visit, it starts blocking. This catches new trackers that haven't made anyone's list yet.
+  </p>
+  <p><strong>Reasons I keep it installed:</strong></p>
+  <ul>
+    <li>Adapts to new trackers without waiting for list updates</li>
+    <li>Breaks fewer websites than aggressive blockers (though still breaks some)</li>
+    <li>Shows exactly who's trying to track you with a little slider interface</li>
+    <li>Built by a nonprofit that actually gives a damn about privacy</li>
+    <li>Plays nice with uBlock Origin, no conflicts</li>
+  </ul>
+  <p>
+    The downside is real though. Sometimes it blocks things that break website functionality. I've had checkout forms
+    stop working, login buttons disappear, that kind of thing. Usually takes five seconds to whitelist the site and
+    move on. Annoying but manageable.
+  </p>
+  <p>
+    <strong>Price:</strong> Also free. EFF takes donations.
+  </p>
+  <p>
+    <strong>Runs on:</strong> Firefox, Chrome, Edge, Opera.
+  </p>
+
+  <!-- Password Managers -->
+  <h2 id="password-managers">Password Manager Extensions</h2>
+  <p>
+    Okay, this section matters more than the ad blocking stuff. No password manager means you're a sitting duck. I've
+    watched other nomads get their accounts hijacked at least eight or nine times over the years. Usually starts with
+    an old breached password.
+  </p>
+  <p>
+    Here's the thing nobody wants to admit: almost everyone reuses passwords. That login you used for some random forum
+    back in 2019? When that site got breached (and odds are it did), attackers fed those credentials into automated tools.
+    These things test thousands of stolen password combinations per hour. Your Netflix login is probably floating around
+    in a database right now.
+  </p>
+  <p>
+    Password managers solve this by generating random unique passwords for every single account. You memorize one master
+    password. The extension handles everything else.
+  </p>
+
+  <h3>Bitwarden</h3>
+  <p>
+    What I've been using for about four years. Open source code, functional free tier, works on every device. Haven't
+    felt the need to switch.
+  </p>
+  <p><strong>What Bitwarden handles for me:</strong></p>
+  <ul>
+    <li>Generates random 24-character passwords I never have to remember</li>
+    <li>Fills login forms automatically</li>
+    <li>Stores credit cards and secure notes</li>
+    <li>Syncs across laptop, phone, tablet</li>
+    <li>Warns me when passwords appear in known breaches</li>
+  </ul>
+  <p>
+    The free version covers everything except some advanced two-factor options and encrypted file storage. Premium costs
+    ten bucks a year. That's less than a mediocre lunch in Lisbon.
+  </p>
+
+  <h3>Other Options I've Tried</h3>
+  <p>
+    <strong>NordPass</strong> charges about $24 yearly. Interface is cleaner than Bitwarden, I'll give it that. The
+    autofill felt a bit smoother when I tested it. Solid choice if the Bitwarden interface bothers you.
+  </p>
+  <AffiliateButton
+      href="/go/nordpass"
+      text="Try NordPass - 50% Off"
+      variant="secondary"
+      program="nordpass"
+  />
+  <p>
+    <strong>Proton Pass</strong> is newer but comes from the Proton Mail team, and those people take privacy seriously.
+    The free tier is surprisingly generous. Paid version runs around $48 yearly but bundles in their VPN and encrypted
+    email, so it's not really a fair comparison.
+  </p>
+  <AffiliateButton
+      href="/go/proton-pass"
+      text="Get Proton Pass - Swiss Privacy"
+      variant="secondary"
+      program="protonpass"
+  />
+  <p>
+    <strong>1Password</strong> charges around $36 per year. Some people absolutely swear by the interface. I found
+    Bitwarden did what I needed and preferred the open source aspect.
+  </p>
+  <p>
+    <strong>Pricing ranges:</strong> Free to $48/year depending on which service and tier.
+  </p>
+
+  <!-- Other Extensions -->
+  <h2 id="other-extensions">Other Extensions Worth Knowing About</h2>
+  <p>These aren't in my essential stack but they solve specific problems.</p>
+  <p>
+    <strong>HTTPS Everywhere</strong> used to be non-negotiable. It forced websites to use encrypted connections. But
+    most sites default to HTTPS now. This extension matters less than it did in like 2018. Keep it around if you
+    frequent older or sketchier parts of the web.
+  </p>
+  <p>
+    <strong>DuckDuckGo Privacy Essentials</strong> combines tracker blocking with their private search. Not bad as an
+    all-in-one if you don't want to manage multiple extensions. Less thorough than running uBlock plus Privacy Badger
+    separately though.
+  </p>
+  <p>
+    <strong>Cookie AutoDelete</strong> wipes cookies when you close tabs. Stops long-term tracking. But it also logs
+    you out of everything constantly. I lasted about a week before turning it off.
+  </p>
+  <p>
+    <strong>NoScript</strong> blocks JavaScript entirely until you explicitly allow it. Maximum paranoia mode. Also
+    completely breaks the modern web. I use it occasionally for sketchy sites but not daily.
+  </p>
+  <p>
+    <strong>Decentraleyes</strong> blocks tracking through content delivery networks. A lot of tracking happens when
+    sites load fonts and scripts from Google or Facebook CDNs. This catches that. Honestly not sure how much it helps
+    in practice, but I keep it running.
+  </p>
+
+  <!-- My Setup -->
+  <h2 id="my-setup">My Actual Setup</h2>
+  <p>After testing all this stuff, here's what I actually use:</p>
+  <p><strong>Firefox with three extensions:</strong></p>
+  <ul>
+    <li>uBlock Origin (the real one, not Lite)</li>
+    <li>Privacy Badger</li>
+    <li>Bitwarden</li>
+  </ul>
+  <p>
+    Three extensions. That's it. They work together without conflicts and handle maybe 95% of tracking and security concerns.
+  </p>
+  <p>
+    I used to run more. At one point I had six or seven privacy extensions installed. Pages loaded slowly. Sites broke
+    constantly. I spent more time tweaking settings than actually getting work done. Totally not worth the hassle.
+  </p>
+  <p>
+    The three-extension approach works better. uBlock catches the obvious ads and trackers. Privacy Badger catches the
+    sneaky ones that learn to dodge blocklists. Bitwarden keeps my passwords unique and secure. Everything else is
+    marginal gains at best.
+  </p>
+
+  <!-- Browser Choice -->
+  <h2 id="browser-choice">The Browser Choice Actually Matters</h2>
+  <p>Quick note because this comes up constantly.</p>
+  <p>
+    Chrome is built by an advertising company. Google makes money by tracking you and showing targeted ads. That's not
+    conspiracy theory stuff, that's literally their business model. Running privacy extensions on Chrome is like...
+    I don't know, wearing a seatbelt while driving off a cliff. Helps a little, sure. Misses the point though.
+  </p>
+  <p>
+    <strong>Firefox</strong> is what I recommend. Mozilla is a nonprofit that doesn't make money selling your data.
+    The full version of uBlock Origin works properly there. Plus the built-in tracking protection is actually decent.
+  </p>
+  <p>
+    <strong>Brave</strong> gets mentioned a lot. Same underlying code as Chrome but with Google's tracking ripped out.
+    Built-in ad blocking that works okay. I tested it for about two months. Found it slightly slower than Firefox and
+    ran into some weird site compatibility issues. Also not crazy about how hard they push their cryptocurrency stuff.
+    Personal preference.
+  </p>
+  <p>
+    If work requires Chrome for specific web apps or whatever, at least throw uBlock Origin Lite and Privacy Badger
+    on there. Damage mitigation.
+  </p>
+
+  <!-- Setup Guide -->
+  <h2 id="setup-guide">Setting Everything Up</h2>
+  <p>Whole process takes about fifteen minutes, including creating a password manager account.</p>
+  <p>
+    <strong>First:</strong> Get Firefox from mozilla.org. The installer is straightforward. Make a Firefox account if
+    you want settings synced across devices.
+  </p>
+  <p>
+    <strong>Then:</strong> Open the Firefox add-ons page. Search for uBlock Origin. Hit the Add to Firefox button. It
+    asks for permissions. Grant them. Move on.
+  </p>
+  <p>
+    <strong>Next:</strong> Search Privacy Badger in the same add-ons page. Same process. Install, grant permissions.
+  </p>
+  <p>
+    <strong>Finally:</strong> Search Bitwarden, install it, create an account at bitwarden.com. Start migrating your
+    important passwords. Do the critical ones first: email, banking, anything touching payment info. This part takes
+    longer but you can spread it out over a few days.
+  </p>
+  <p>
+    Fifteen minutes for the extensions. Maybe an hour total if you're setting up the password manager properly.
+  </p>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">Wrapping Up</h2>
+  <p>
+    Three years of paranoid browsing since that Chiang Mai incident. What I've figured out: you don't need to go crazy
+    with this stuff. uBlock plus Privacy Badger plus a password manager. Firefox instead of Chrome. That combo stops
+    most tracking and makes you dramatically harder to compromise.
+  </p>
+  <p>
+    Could you do more? Sure. VPNs, Tor browser, dedicated security-focused operating systems. At some point you're
+    trading so much convenience for such marginal gains that it stops making sense.
+  </p>
+  <p>
+    The three-extension setup hits the sweet spot. Good enough protection without breaking your workflow.
+  </p>
+  <p>
+    Took getting hacked to make me take this seriously. Hopefully you can skip that part and just install the
+    extensions now. Takes less time than reading this whole thing did.
+  </p>
+
+  <AffiliateButton
+      href="/go/nordpass"
+      text="Get NordPass - Best Password Manager for Remote Workers"
+      variant="primary"
+      program="nordpass"
+  />
+
+  <!-- Full Width Content Slot -->
+  <Fragment slot="full-width">
+    <!-- Full Comparison Table -->
+    <section class="py-8" id="full-comparison">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center font-heading">Complete Extension Comparison</h2>
+        <p class="text-white/80 text-center mb-8 max-w-2xl mx-auto">Here's how all the privacy extensions compare on the
+          features that matter most:</p>
+        <ComparisonTable
+            columns={fullComparisonColumns}
+            rows={fullComparisonRows}
+            caption="Complete comparison of browser privacy extensions"
+        />
+      </div>
+    </section>
+
+    <!-- Related Articles -->
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

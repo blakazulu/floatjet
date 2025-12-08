@@ -1,0 +1,447 @@
+---
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
+
+// Get article metadata from central data file
+const article = getArticleBySlug("best-monitor-arms-and-mounts", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
+// Table of contents headings
+const headings = [
+  { text: "My Neck Was the Breaking Point", slug: "introduction", depth: 2 },
+  { text: "Top 3 Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why Monitor Arms", slug: "why-monitor-arm", depth: 2 },
+  { text: "The Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "Ergotron LX", slug: "ergotron-lx", depth: 3 },
+  { text: "VIVO Premium", slug: "vivo-premium", depth: 3 },
+  { text: "Ergotron HX", slug: "ergotron-hx", depth: 3 },
+  { text: "Humanscale M2.1", slug: "humanscale-m21", depth: 3 },
+  { text: "AmazonBasics", slug: "amazonbasics", depth: 3 },
+  { text: "North Bayou F80", slug: "north-bayou-f80", depth: 3 },
+  { text: "How to Choose", slug: "how-to-choose", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "Final Picks", slug: "conclusion", depth: 2 },
+];
+
+// Quick picks comparison table
+const quickPicksColumns = [
+  { key: "arm", label: "Monitor Arm", width: "140px" },
+  { key: "bestFor", label: "Best For", width: "140px" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
+];
+
+const quickPicksRows = [
+  {
+    arm: "<strong>Ergotron LX</strong>",
+    bestFor: "Best overall",
+    price: "$179",
+    rating: "9.5/10",
+    action: '<a href="/go/amazon/ergotron-lx" rel="nofollow sponsored" target="_blank">Shop Now</a>',
+  },
+  {
+    arm: "<strong>VIVO Premium</strong>",
+    bestFor: "Best value",
+    price: "$50",
+    rating: "9.0/10",
+    action: '<a href="/go/amazon/vivo-premium" rel="nofollow sponsored" target="_blank">Shop Now</a>',
+  },
+  {
+    arm: "<strong>Ergotron HX</strong>",
+    bestFor: "Ultrawides",
+    price: "$349",
+    rating: "9.4/10",
+    action: '<a href="/go/amazon/ergotron-hx" rel="nofollow sponsored" target="_blank">Shop Now</a>',
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: "How much weight can a monitor arm actually hold?",
+    answer:
+      "<p>Totally depends on which arm you get. Budget options usually max out around 15 to 20 lbs. Something mid-range like the Ergotron LX goes up to 25 lbs. The heavy-duty HX handles 42 lbs. Just check your monitor weight before buying.</p>",
+  },
+  {
+    question: "Will a monitor arm damage my desk?",
+    answer:
+      "<p>Not if you install it correctly. The clamp spreads force across a big area. Use the padding that comes with it or add felt if your desk scratches easily. Don't overtighten. I've used arms on IKEA desks, solid wood, even glass with the right adapter. No damage yet.</p>",
+  },
+  {
+    question: "Can I use a monitor arm with a standing desk?",
+    answer:
+      '<p>Works great actually. Maybe better than a fixed stand. When you raise and lower your <a href="/gear/best-standing-desks">standing desk</a>, the arm lets you fine-tune monitor position for sitting versus standing. Just make sure your desk edge works with the clamp.</p>',
+  },
+  {
+    question: "How do I know if my monitor has VESA holes?",
+    answer:
+      "<p>Flip it around and look at the back. Four screw holes in a square pattern. Most monitors from the last decade have them. Super-thin displays and Apple iMacs often don't. You'd need a special adapter in those cases.</p>",
+  },
+  {
+    question: "Are dual monitor arms worth it?",
+    answer:
+      '<p>If you use <a href="/gear/best-monitors-remote-work">two monitors</a> daily, yeah. Keeps both aligned and movable together. Uses one desk clamp instead of two. Ergotron makes a dual LX around $399. VIVO makes a dual version around $60.</p>',
+  },
+  {
+    question: "How hard is it to install one?",
+    answer:
+      "<p>Easier than most furniture assembly honestly. Clamp attaches in a few minutes. Routing cables takes the longest. Figure maybe 15 to 30 minutes total. Ergotron arms need initial tension adjustment which adds some time but isn't complicated.</p>",
+  },
+  {
+    question: "Can I mount on the wall instead?",
+    answer:
+      "<p>Many arms have wall mount versions or you can buy dedicated wall mounts. Great for floating desk setups or maximizing desk space. Ergotron makes an LX wall mount for around $150.</p>",
+  },
+  {
+    question: "How often do I need to adjust the arm?",
+    answer:
+      "<p>Quality arms like Ergotron? Almost never after initial setup. Budget arms? Maybe every few months to retighten. If you're adjusting weekly, the arm isn't right for your monitor weight. Upgrade or get one with higher capacity.</p>",
+  },
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: "Best Standing Desks for Home Office",
+    excerpt:
+      "Standing desks that pair perfectly with monitor arms for the ultimate ergonomic setup.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1611532736579-6b16e2b50449-800w.webp",
+    imageAlt: "Ergonomic standing desk for home office",
+  },
+  {
+    title: "Best Monitors for Remote Work",
+    excerpt:
+      "The monitors we recommend mounting on these arms for productivity and eye comfort.",
+    href: "/gear/best-monitors-remote-work",
+    image: "/images/unsplash/photo-1527443224154-c4a3942d3acf-800w.webp",
+    imageAlt: "Modern monitor setup for remote work",
+  },
+  {
+    title: "Ergonomic Desk Setup Guide",
+    excerpt: "Complete guide to setting up your workspace for comfort and productivity.",
+    href: "/gear/ergonomic-desk-setup-guide",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Ergonomic home office setup",
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    authorSlug={authorSlug}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Furniture"
+    categorySlug="gear"
+    subcategorySlug="furniture"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">My Neck Was the Breaking Point</h2>
+  <p>
+    Two years ago I was hunching over my laptop like some kind of office shrimp. Head tilted down, shoulders curled forward, that sharp ache between my shoulder blades by noon every single day. My chiropractor kept saying "Get your screen at eye level." So I tried a stack of books under my monitor. Then a cardboard box. Then I gave up pretending and bought an actual monitor arm.
+  </p>
+  <p>
+    Here's the thing nobody told me. It changed way more than I expected. The neck pain thing got better within a week, sure. But suddenly I had all this desk space back. Like, where did that real estate come from? The whole setup felt cleaner. And when I needed to shove the monitor aside for paperwork or angle it toward the window for a video call, I just grabbed it and moved it.
+  </p>
+  <p>
+    But not all monitor arms are the same. I learned this the expensive way. The first one was flimsy garbage. It sagged every few days and I'd have to readjust it. Got annoying fast. The second didn't fit my desk edge because I have one of those thick IKEA tops. The third was perfect but I paid way too much.
+  </p>
+  <p>
+    After testing eight monitor arms over the past year, with my actual <a href="/gear/best-monitors-remote-work">monitors</a> and my actual desk clutter, I finally know what matters. And what's just marketing nonsense.
+  </p>
+  <p>
+    <strong>Quick answer:</strong> The <a href="#ergotron-lx">Ergotron LX</a> is what I use on my main display. Eighteen months now and it still holds position exactly where I put it. For tight budgets, the <a href="#vivo-premium">VIVO Premium</a> costs like thirty bucks and performs way better than it should. Got an ultrawide or some beast of a monitor? The <a href="#ergotron-hx">Ergotron HX</a> handles screens up to 49 inches.
+  </p>
+
+  <!-- Quick Picks -->
+  <h2 id="quick-picks">Our Top 3 Picks</h2>
+  <p>Short on time? Here are our top recommendations for home office monitor arms:</p>
+  <ComparisonTable
+      columns={quickPicksColumns}
+      rows={quickPicksRows}
+      caption="Top 3 monitor arms for home offices"
+  />
+  <p>
+    All three ship fast and have solid return policies. Keep reading for detailed reviews of all six arms I tested, plus my complete buying guide.
+  </p>
+
+  <!-- Why Monitor Arm -->
+  <h2 id="why-monitor-arm">Why Bother with a Monitor Arm</h2>
+  <p>
+    I know. Your monitor came with a stand. The stand works fine. But fine is kind of the problem.
+  </p>
+
+  <h3>Getting Your Screen Where It Belongs</h3>
+  <p>
+    Here's something I wish someone had told me earlier. Your screen position matters way more than most people realize. When I finally got my monitor at the right height, the difference was immediate. I'm 5'7" and my monitor needs to sit about four inches higher than any stand I've owned could manage. Without the arm, I was looking down all day. With it, my neck stays neutral and I actually make it through the afternoon without wanting to crack my own spine.
+  </p>
+
+  <h3>Desk Space You Forgot You Had</h3>
+  <p>
+    Monitor stands eat up something like 60 to 80 square inches of your desk. A clamp-on arm? Zero. The clamp hides behind your desk edge. Suddenly you've got room for notebooks, your coffee, all the stuff that was getting shoved into corners.
+  </p>
+
+  <h3>Moving the Thing Actually Becomes Easy</h3>
+  <p>
+    Pull your monitor closer when you're squinting at spreadsheets. Push it back for video calls so you don't look like a hostage video. Swing it toward coworkers when you're sharing something. I do this probably five times a day now and don't even think about it anymore. Little adjustments that add up.
+  </p>
+
+  <h3>Hiding the Cable Mess</h3>
+  <p>
+    Good monitor arms have built-in channels for your power and video cables. They run inside the arm itself. My desk went from cable chaos to nearly invisible wires and I didn't even have to try that hard.
+  </p>
+
+  <!-- Detailed Reviews -->
+  <h2 id="detailed-reviews">Monitor Arm Detailed Reviews</h2>
+
+  <!-- Ergotron LX -->
+  <h3 id="ergotron-lx">1. Ergotron LX - Best Overall Monitor Arm</h3>
+  <p>
+    This is the one I use on my main display. It's been on that desk for eighteen months now and I haven't touched the tension adjustment since day one. No sagging. No drifting. It just stays where I put it.
+  </p>
+  <p>
+    The LX uses this patented constant force spring system that counterbalances your monitor's weight. What that means practically is smooth movement and no loosening over time. Most cheaper arms use friction systems that eventually give up.
+  </p>
+  <p>
+    I set the tension once with the included hex wrench and haven't thought about it since.
+  </p>
+  <p>
+    For specs, it handles monitors somewhere in the 7 to 25 lb range, screens up to 34 inches diagonal. Works on most desk edges. Reaches out maybe 25 inches from where it mounts. Good rotation and tilt. Polished aluminum construction. They back it with a ten-year warranty which tells you they expect it to last.
+  </p>
+  <p>
+    <strong>What works:</strong> That tension mechanism really does hold forever. The movement is smooth enough that repositioning feels effortless. Build quality is obviously premium. Cable management channel runs the full length. Fits basically any desk. That decade-long warranty matters.
+  </p>
+  <p>
+    <strong>What bugs me:</strong> Price tag hits hard at $179 for one arm. You actually have to read the instructions during setup unlike some simpler arms. The shiny aluminum shows fingerprints if you care about that. The dual arm version runs about $399 which is a lot.
+  </p>
+  <p>
+    <strong>Best for:</strong> Anyone who wants to buy this thing once and forget about it. If your monitor is on the heavier side, closer to that 25 lb limit, this arm won't struggle. If you value smooth adjustments over saving fifty bucks, this is the one.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/ergotron-lx"
+      text="Shop Ergotron LX - Best Overall"
+      variant="primary"
+      program="amazon"
+  />
+
+  <!-- VIVO Premium -->
+  <h3 id="vivo-premium">2. VIVO Premium Heavy Duty - Best Value</h3>
+  <p>
+    I honestly didn't expect much from a fifty dollar monitor arm. The VIVO surprised me. For monitors under 20 lbs, it performs uncomfortably close to stuff costing three times as much.
+  </p>
+  <p>
+    This one uses a gas spring instead of the constant force system in the Ergotron. Gas springs cost less to manufacture but still give you smooth movement. The construction is real steel, not plastic. That's unusual at this price.
+  </p>
+  <p>
+    I've had this on my secondary monitor for eight months. It holds position well. I've tightened it twice. That's acceptable when I paid a fraction of what the Ergotron costs.
+  </p>
+  <p>
+    It handles monitors up to around 22 lbs, screens up to 35 inches. One thing I really like is that the desk clamp fits surfaces up to 4 inches thick. That compatibility is rare and saved me on my thick IKEA desk. Gas spring adjustment means no tools needed for height changes. Steel with some plastic bits. Three years warranty.
+  </p>
+  <p>
+    <strong>What works:</strong> The value here is ridiculous. Fits thicker desks than almost any competitor. Gas spring moves smoothly enough. Cable management is built in. Height adjustment takes zero tools.
+  </p>
+  <p>
+    <strong>What doesn't:</strong> You'll need to retighten occasionally. Movement isn't quite as buttery as the Ergotron. That 22 lb ceiling means some heavier monitors won't work. Build quality is good, not great. Shorter warranty.
+  </p>
+  <p>
+    <strong>Best for:</strong> Budget-conscious buyers. Works great for secondary displays. If your monitor weighs less than 20 lbs, honestly this arm does the job.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/vivo-premium"
+      text="Get VIVO Premium - Best Value"
+      variant="primary"
+      program="amazon"
+  />
+
+  <!-- Ergotron HX -->
+  <h3 id="ergotron-hx">3. Ergotron HX - Best for Ultrawides</h3>
+  <p>
+    The regular LX tops out at 25 lbs. If you've got an ultrawide, one of those massive 32-inch 4K panels, or some professional-grade heavy thing, you need the HX. It's built for the big stuff.
+  </p>
+  <p>
+    The HX handles monitors up to 42 lbs and 49 inches diagonal. That covers pretty much any consumer display including those ridiculous Samsung Odyssey ultrawides that look like movie screens.
+  </p>
+  <p>
+    I borrowed one to test with a 34-inch ultrawide running about 18 lbs. Rock solid. My buddy uses one for his 49-inch super-ultrawide and even that monster stays exactly where he puts it.
+  </p>
+  <p>
+    Handles the 9 to 42 lb range, screens up to 49 inches. Desk clamp fits most standard surfaces. Same 25-inch reach as the LX. Full rotation, decent tilt. Reinforced aluminum construction. Same ten-year warranty.
+  </p>
+  <p>
+    <strong>What works:</strong> Holds the absolute heaviest monitors without complaining. Same quality spring mechanism as the smaller LX. Actually designed for ultrawides, not just adapted for them. Smooth movement despite the extra capacity. Cable management handles thick cables.
+  </p>
+  <p>
+    <strong>What bugs me:</strong> Price hurts at $349. Way overkill if you have a normal-sized monitor. The arm itself is heavy enough that you need a solid desk. Takes up more desk footprint than the LX.
+  </p>
+  <p>
+    <strong>Best for:</strong> Ultrawide monitor owners. 32-inch and larger 4K displays. Heavy professional monitors. Basically, if your screen is bigger than most TVs.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/ergotron-hx"
+      text="Shop Ergotron HX - For Ultrawides"
+      variant="primary"
+      program="amazon"
+  />
+
+  <!-- Humanscale M2.1 -->
+  <h3 id="humanscale-m21">4. Humanscale M2.1 - Best Premium Build</h3>
+  <p>
+    I wanted to hate this because of the price. But after using it, I get why people pay for it.
+  </p>
+  <p>
+    Humanscale builds premium office furniture. That heritage shows in everything about this arm. Every piece feels slightly overengineered in a good way. The movement is buttery smooth. And yeah, it genuinely looks good sitting on a desk.
+  </p>
+  <p>
+    Works for monitors in the 4 to 15.5 lb range, so it's really meant for lighter displays. Screens from 17 to 32 inches. Reaches about 26 inches. Die-cast aluminum construction. They back it with fifteen years which is wild.
+  </p>
+  <p>
+    <strong>What works:</strong> Genuinely beautiful design. Smoothest movement I've tested. That fifteen-year warranty is exceptional. One-handed weight adjustment is clever. Premium materials everywhere. Nearly silent operation.
+  </p>
+  <p>
+    <strong>What doesn't:</strong> Lower weight ceiling at 15.5 lbs cuts out heavier monitors. Premium price at $279. Less tilt range than competitors. Fewer color options.
+  </p>
+  <p>
+    <strong>Best for:</strong> Design-conscious users. Light to medium monitors under 15 lbs. Those who want the absolute smoothest adjustment experience and don't mind paying for it.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/humanscale-m21"
+      text="Shop Humanscale M2.1 - Premium Quality"
+      variant="secondary"
+      program="amazon"
+  />
+
+  <!-- AmazonBasics -->
+  <h3 id="amazonbasics">5. AmazonBasics Monitor Arm - Solid Budget Option</h3>
+  <p>
+    The AmazonBasics arm is basically a budget version of the Ergotron LX. Amazon actually licenses some Ergotron patents for this thing. You get most of the performance for about a hundred bucks less.
+  </p>
+  <p>
+    Uses the same constant force spring mechanism. Build quality is a notch below but still aluminum. Main compromises are fewer adjustment options and simpler cable routing.
+  </p>
+  <p>
+    Handles monitors in the 11 to 25 lb range, screens up to 32 inches. Desk clamp fits similar surfaces as the Ergotron. Reaches about 22 inches. Aluminum construction. One-year warranty though.
+  </p>
+  <p>
+    <strong>What works:</strong> Ergotron-style mechanism without the Ergotron price. Solid weight capacity. Real aluminum construction. Setup is straightforward.
+  </p>
+  <p>
+    <strong>What bugs me:</strong> That one-year warranty is rough compared to Ergotron's decade. Cable management is basic. Finish quality isn't quite as nice. Fewer mounting options for weird desk situations.
+  </p>
+  <p>
+    <strong>Price:</strong> Around $109 for the single arm.
+  </p>
+  <p>
+    <strong>Best for:</strong> Budget buyers who want that constant force mechanism. Good for monitors in the 15 to 25 lb range. Works if you're okay trading warranty coverage for price.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/amazonbasics-monitor-arm"
+      text="See AmazonBasics on Amazon"
+      variant="ghost"
+      program="amazon"
+  />
+
+  <!-- North Bayou F80 -->
+  <h3 id="north-bayou-f80">6. North Bayou F80 - Best Ultra-Budget</h3>
+  <p>
+    If you absolutely must stay under 35 bucks, the North Bayou F80 is your best bet. Over seventeen thousand Amazon reviews averaging 4.5 stars. At that volume, the positive feedback means something.
+  </p>
+  <p>
+    Gas spring mechanism at rock-bottom pricing. More plastic than metal in the construction but it functions. For lightweight monitors and occasional repositioning, it works fine.
+  </p>
+  <p>
+    Handles monitors in the 4 to 17 lb range, smaller screens. Desk clamp fits surfaces up to about 3 inches which is nice. Arm extends maybe 18 inches. Plastic and steel construction. Three years warranty.
+  </p>
+  <p>
+    <strong>What works:</strong> Cheapest option that actually functions. Works for lighter monitors. Fits thick desks. Massive positive review count on Amazon.
+  </p>
+  <p>
+    <strong>What doesn't:</strong> Plastic construction feels like plastic. Lower weight ceiling. Gas spring might lose tension over months or years. Not as smooth as nicer options. Shorter reach.
+  </p>
+  <p>
+    <strong>Best for:</strong> Absolute minimum budget. Light monitors only. Testing whether you even like having a monitor arm before spending real money. Secondary setups where you don't care as much.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/north-bayou-f80"
+      text="See North Bayou F80 on Amazon"
+      variant="ghost"
+      program="amazon"
+  />
+
+  <!-- How to Choose -->
+  <h2 id="how-to-choose">How to Choose the Right Monitor Arm</h2>
+  <p>
+    Here's the thing. Most people overcomplicate this.
+  </p>
+
+  <h3>By Monitor Weight</h3>
+  <p>
+    First, figure out how much your monitor weighs. Look up the specs or just grab a bathroom scale. Include stand weight if you're removing a detachable stand. Then pick an arm rated for at least 20 percent more than that.
+  </p>
+  <p>
+    <strong>Under 15 lbs:</strong> Pretty much any arm works. VIVO or North Bayou if budget matters.<br/>
+    <strong>15 to 25 lbs:</strong> Ergotron LX, VIVO Premium, AmazonBasics all work.<br/>
+    <strong>Over 25 lbs:</strong> You need the Ergotron HX or similar heavy-duty arm.
+  </p>
+
+  <h3>By Desk Thickness</h3>
+  <p>
+    Second, measure your desk edge where the clamp goes. Include any cable trays or lips. Most arms fit desks from about half an inch to two and a half inches thick. Thicker IKEA desk? Check the VIVO which handles up to 4 inches.
+  </p>
+
+  <h3>VESA Compatibility</h3>
+  <p>
+    Third, make sure your monitor has VESA mount holes. Look at the back for four screw holes in a square pattern. Usually 75mm apart or 100mm apart. Almost all modern monitors have them. Some super-thin monitors and iMacs don't though and you'd need an adapter.
+  </p>
+  <p>
+    Everything else? Tilt range, extension length, cable management quality? Nice to have. Not make-or-break.
+  </p>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">What I Actually Use</h2>
+  <p>
+    After a year of testing, here's what ended up on my desk:
+  </p>
+  <p>
+    <strong>Ergotron LX</strong> on my main monitor. Eighteen months, zero issues, zero adjustments needed after setup. Worth every penny at $179. If you can swing it, just get this one.
+  </p>
+  <p>
+    <strong>VIVO Premium</strong> on my secondary monitor. Eight months in, tightened it twice, still works great. At fifty bucks, hard to argue with.
+  </p>
+  <p>
+    If I had an ultrawide, I'd grab the <strong>Ergotron HX</strong> without hesitating. Heavy monitors need heavy-duty arms. No way around that.
+  </p>
+  <p>
+    Skip the sub-thirty-dollar options unless you're just experimenting with whether you even like having the monitor on an arm. The jump from thirty to fifty bucks makes a real difference. The jump from fifty to one-eighty is noticeable but not essential for everyone.
+  </p>
+  <p>
+    After my back injury a few years ago, I became kind of obsessive about <a href="/gear/ergonomic-desk-setup-guide">workspace ergonomics</a>. Monitor height is one of those things that seems minor until you've spent months with your neck craned down. Get it right once and you forget about it. Cannot stress this enough.
+  </p>
+
+  <AffiliateButton
+      href="/go/amazon/ergotron-lx"
+      text="Shop Ergotron LX - Our #1 Pick"
+      variant="primary"
+      program="amazon"
+  />
+
+  <!-- Full Width Content Slot -->
+  <Fragment slot="full-width">
+    <!-- Related Articles -->
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

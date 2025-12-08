@@ -1,4 +1,5 @@
 ---
+import AffiliateButton from "@components/article/AffiliateButton.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
@@ -186,19 +187,7 @@ const relatedArticles = [
   <p>
     Downsides? No desktop email app comes with it. You're using the browser or setting up something like Spark or Apple Mail yourself. Some people really miss Outlook's desktop experience. And yeah support on Business Starter is whatever.</p>
 
-  <div class="not-prose my-8">
-    <a
-      href="https://workspace.google.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 px-6 py-3 bg-jet-stream text-white font-semibold rounded-lg hover:bg-jet-stream/90 transition-colors"
-    >
-      Try Google Workspace Free
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
-    </a>
-  </div>
+  <AffiliateButton href="/go/google-workspace" text="Try Google Workspace Free" program="google-workspace"/>
 
   <h3>Microsoft 365</h3>
 
@@ -229,19 +218,7 @@ const relatedArticles = [
   <p>
     The downside is complexity. Feels like everything was designed for huge enterprises and then someone tried to scale it down for five people. Results are... mixed.</p>
 
-  <div class="not-prose my-8">
-    <a
-      href="https://www.microsoft.com/en-us/microsoft-365/business"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 px-6 py-3 bg-jet-stream text-white font-semibold rounded-lg hover:bg-jet-stream/90 transition-colors"
-    >
-      Try Microsoft 365 Free
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
-    </a>
-  </div>
+  <AffiliateButton href="/go/microsoft-365" text="Try Microsoft 365 Free" program="microsoft-365"/>
 
   <h3>Zoho Mail</h3>
 
@@ -272,19 +249,7 @@ const relatedArticles = [
   <p>
     Rough spots? Interface feels a little dated in places. Fewer third-party apps connect to it. Support is inconsistent. But again. One dollar.</p>
 
-  <div class="not-prose my-8">
-    <a
-      href="https://www.zoho.com/mail/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 px-6 py-3 bg-jet-stream text-white font-semibold rounded-lg hover:bg-jet-stream/90 transition-colors"
-    >
-      Try Zoho Mail Free
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
-    </a>
-  </div>
+  <AffiliateButton href="/go/zoho-mail" text="Try Zoho Mail Free" program="zoho-mail"/>
 
   <h3>Quick Numbers</h3>
 
@@ -403,19 +368,7 @@ const relatedArticles = [
   <p>
     Just pick one and set it up this week. Stop sending business emails from yourname.randomnumbers@gmail.com. It's a small thing but people notice more than you think.</p>
 
-  <div class="not-prose my-8">
-    <a
-      href="https://workspace.google.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 px-6 py-3 bg-jet-stream text-white font-semibold rounded-lg hover:bg-jet-stream/90 transition-colors"
-    >
-      Get Google Workspace - Our Top Pick
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
-    </a>
-  </div>
+  <AffiliateButton href="/go/google-workspace" text="Get Google Workspace - Our Top Pick" program="google-workspace"/>
 
   <Fragment slot="full-width">
     <RelatedArticles articles={relatedArticles}/>

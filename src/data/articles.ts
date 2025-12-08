@@ -1114,6 +1114,18 @@ export const toolsArticles: Article[] = [
     category: "saas",
   },
   {
+    slug: "best-encrypted-messaging-apps-for-remote-teams",
+    section: "tools",
+    title: "Best Encrypted Messaging Apps for Remote Teams (2025)",
+    description: "Contractor leaked our strategy to a competitor via WhatsApp. Never again. Signal, Element, Telegram, Wire compared for secure team communication.",
+    authorSlug: "daniel-brooks",
+    pubDate: "2025-12-08",
+    readingTime: 14,
+    image: "/images/unsplash/photo-1563986768609-322da13575f3-1200w.webp",
+    imageAlt: "Secure encrypted messaging on smartphone",
+    category: "vpn",
+  },
+  {
     slug: "best-expense-tracking-apps",
     section: "tools",
     title: "Best Expense Tracking Apps for Digital Nomads in 2025",

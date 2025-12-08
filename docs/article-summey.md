@@ -1,11 +1,11 @@
 # FloatJet Article Summary
 
 > **Auto-generated** from `src/data/articles.ts`
-> Last updated: 2025-12-08 01:12
+> Last updated: 2025-12-08 09:01
 >
 > To regenerate: `python scripts/generate-article-summary.py`
 
-**Total Articles:** 113
+**Total Articles:** 114
 
 ---
 
@@ -100,7 +100,7 @@
 | 034 | [Portugal Digital Nomad Visa 2025: How to Apply](/guides/digital-nomad-visa-portugal) | Daniel Brooks | Travel | 15 min | `photo-1555881400-74d7acaacd8b-...` |
 | 035 | [Spain Digital Nomad Visa 2025: How to Apply](/guides/digital-nomad-visa-spain) | Daniel Brooks | Travel | 14 min | `photo-1539037116277-4db20889f2...` |
 
-### Tools (39 articles)
+### Tools (40 articles)
 
 | # | Title | Author | Category | Read Time | Hero Image |
 |---|-------|--------|----------|-----------|------------|
@@ -136,13 +136,14 @@
 | 030 | [Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)](/tools/notion-vs-clickup-vs-monday) | Marcus Chen | Saas | 14 min | `photo-1557804506-669a67965ba0-...` |
 | 031 | [Best Browser Extensions for Privacy (2025)](/tools/best-browser-extensions-for-privacy) | Daniel Brooks | Vpn | 14 min | `photo-1618060932014-4deda49325...` |
 | 032 | [Best Business VPN Solutions for Remote Teams (2025)](/tools/best-business-vpn-remote-teams) | Daniel Brooks | Vpn | 16 min | `photo-1551434678-e076c223a692-...` |
-| 033 | [Best Password Managers for Remote Workers (2025)](/tools/best-password-manager-remote-work) | Daniel Brooks | Vpn | 14 min | `photo-1633265486064-086b219458...` |
-| 034 | [Best Secure Email Providers for Remote Workers (2025)](/tools/best-secure-email-providers) | Daniel Brooks | Vpn | 12 min | `secure-email-padlock-1200w.web...` |
-| 035 | [Best VPN for Streaming While Traveling (2025)](/tools/best-vpn-streaming-travel) | Daniel Brooks | Vpn | 14 min | `photo-1522199755839-a2bacb67c5...` |
-| 036 | [Best VPNs for Digital Nomads & Remote Workers (2025)](/tools/best-vpn-digital-nomads) | Daniel Brooks | Vpn | 15 min | `photo-1526374965328-7f61d4dc18...` |
-| 037 | [Free VPN vs Paid VPN: What You Need to Know (2025)](/tools/free-vpn-vs-paid-vpn) | Daniel Brooks | Vpn | 12 min | `photo-1565688534245-05d6b5be18...` |
-| 038 | [How to Set Up a VPN on All Your Devices (2025 Guide)](/tools/how-to-setup-vpn-all-devices) | Daniel Brooks | Vpn | 11 min | `photo-1562577309-4932fdd64cd1-...` |
-| 039 | [VPN Kill Switch Explained: Why Remote Workers Need It (2025)](/tools/vpn-kill-switch-explained) | Daniel Brooks | Vpn | 7 min | `photo-1542744173-8e7e53415bb0-...` |
+| 033 | [Best Encrypted Messaging Apps for Remote Teams (2025)](/tools/best-encrypted-messaging-apps-for-remote-teams) | Daniel Brooks | Vpn | 14 min | `photo-1563986768609-322da13575...` |
+| 034 | [Best Password Managers for Remote Workers (2025)](/tools/best-password-manager-remote-work) | Daniel Brooks | Vpn | 14 min | `photo-1633265486064-086b219458...` |
+| 035 | [Best Secure Email Providers for Remote Workers (2025)](/tools/best-secure-email-providers) | Daniel Brooks | Vpn | 12 min | `secure-email-padlock-1200w.web...` |
+| 036 | [Best VPN for Streaming While Traveling (2025)](/tools/best-vpn-streaming-travel) | Daniel Brooks | Vpn | 14 min | `photo-1522199755839-a2bacb67c5...` |
+| 037 | [Best VPNs for Digital Nomads & Remote Workers (2025)](/tools/best-vpn-digital-nomads) | Daniel Brooks | Vpn | 15 min | `photo-1526374965328-7f61d4dc18...` |
+| 038 | [Free VPN vs Paid VPN: What You Need to Know (2025)](/tools/free-vpn-vs-paid-vpn) | Daniel Brooks | Vpn | 12 min | `photo-1565688534245-05d6b5be18...` |
+| 039 | [How to Set Up a VPN on All Your Devices (2025 Guide)](/tools/how-to-setup-vpn-all-devices) | Daniel Brooks | Vpn | 11 min | `photo-1562577309-4932fdd64cd1-...` |
+| 040 | [VPN Kill Switch Explained: Why Remote Workers Need It (2025)](/tools/vpn-kill-switch-explained) | Daniel Brooks | Vpn | 7 min | `photo-1542744173-8e7e53415bb0-...` |
 
 ---
 
@@ -154,8 +155,8 @@
 | Blog | 16 |
 | Gear | 23 |
 | Guides | 35 |
-| Tools | 39 |
-| **Total** | **113** |
+| Tools | 40 |
+| **Total** | **114** |
 
 ### By Category
 | Category | Count |
@@ -163,8 +164,8 @@
 | Finance | 17 |
 | Saas | 13 |
 | Hosting | 11 |
+| Vpn | 10 |
 | Travel | 9 |
-| Vpn | 9 |
 | Communication | 8 |
 | Security | 8 |
 | Productivity | 7 |
@@ -179,5 +180,5 @@
 | Author | Count |
 |--------|-------|
 | Marcus Chen | 44 |
-| Daniel Brooks | 42 |
+| Daniel Brooks | 43 |
 | Sarah Mitchell | 27 |

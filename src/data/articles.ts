@@ -214,10 +214,22 @@ export const blogArticles: Article[] = [
 ];
 
 // =============================================================================
-// GEAR ARTICLES (23)
+// GEAR ARTICLES (24)
 // =============================================================================
 
 export const gearArticles: Article[] = [
+  {
+    slug: "best-audio-interfaces-for-remote-work",
+    section: "gear",
+    title: "Best Audio Interfaces for Remote Work (2025)",
+    description: "Bought my first audio interface in 2019 because my USB mic picked up my keyboard like it was part of the meeting. After testing eight interfaces, here's what actually works.",
+    authorSlug: "marcus-chen",
+    pubDate: "2025-12-08",
+    readingTime: 14,
+    image: "/images/unsplash/photo-j4T_qK7Eumc-1200w.webp",
+    imageAlt: "Audio mixer and sound equipment in black and white",
+    category: "audio",
+  },
   {
     slug: "best-budget-laptops-remote-work",
     section: "gear",

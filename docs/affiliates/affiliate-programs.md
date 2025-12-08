@@ -1619,7 +1619,70 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** 2025-12-07 - Added 18 NEW affiliate program categories for 63 new backlog articles:
+**Last Action:** 2025-12-08 - Added direct affiliate CTA buttons to 14 new articles. Programs to prioritize:
+
+### IMMEDIATE - Apply This Week (Featured in Live Articles):
+
+**Finance/Budgeting:**
+- [ ] YNAB - $8/signup - best-budgeting-apps-for-remote-workers (Applied 2025-12-07)
+- [ ] Rocket Money - Unknown - best-budgeting-apps-for-remote-workers
+- [ ] Betterment - $50-75/signup - best-retirement-planning-apps-for-freelancers
+- [ ] Wealthfront - $50/signup - best-retirement-planning-apps-for-freelancers
+- [ ] Acorns - Unknown - best-retirement-planning-apps-for-freelancers
+
+**Time Tracking:**
+- [ ] Toggl Track - 20% recurring - best-time-tracking-software-for-billing-clients
+- [ ] Harvest - 15% recurring - best-time-tracking-software-for-billing-clients
+- [ ] Clockify - 20% - best-time-tracking-software-for-billing-clients
+- [ ] Time Doctor - Unknown - best-time-tracking-software-for-billing-clients
+- [ ] Timing (Mac) - Unknown - best-time-tracking-software-for-billing-clients
+
+**Hosting/CDN:**
+- [ ] Netlify - Unknown - best-static-site-hosting-for-developers (Applied 2025-12-07)
+- [ ] Vercel - Unknown - best-static-site-hosting-for-developers
+- [ ] Cloudflare Pages - Partner prog - best-static-site-hosting-for-developers
+- [ ] Fastly - Partner prog - best-cdn-services-for-faster-websites
+- [ ] BunnyCDN - 20% - best-cdn-services-for-faster-websites
+- [ ] KeyCDN - 10% - best-cdn-services-for-faster-websites
+
+**Email Hosting:**
+- [ ] Google Workspace - 10-20% - best-email-hosting-for-small-businesses
+- [ ] Microsoft 365 - Varies - best-email-hosting-for-small-businesses
+- [ ] Zoho Mail - 15-20% - best-email-hosting-for-small-businesses
+
+**CRM:**
+- [ ] HubSpot - 30% recurring - best-crm-software-for-freelancers (via Impact, deferred)
+- [ ] Pipedrive - 20-30% recurring - best-crm-software-for-freelancers
+
+**AI Writing:**
+- [ ] Jasper - 30% - best-ai-writing-assistants-for-content-creators
+- [ ] Writesonic - 30% - best-ai-writing-assistants-for-content-creators
+- [ ] Copy.ai - 45% - best-ai-writing-assistants-for-content-creators
+
+**Scheduling:**
+- [ ] Calendly - 15-20% - best-scheduling-tools-for-remote-teams (via PartnerStack)
+- [ ] Acuity - 20% - best-scheduling-tools-for-remote-teams
+- [ ] Cal.com - Unknown - best-scheduling-tools-for-remote-teams
+
+**Privacy/Security:**
+- [ ] NordPass - 30-40% - best-browser-extensions-for-privacy (Already approved!)
+- [ ] Proton Pass - 30% - best-browser-extensions-for-privacy (Already approved!)
+- [ ] NordVPN - 30-40% - best-encrypted-messaging-apps, best-dns-services (Already approved!)
+- [ ] NextDNS - 20% - best-dns-services-for-privacy-and-speed
+- [ ] AdGuard DNS - 40% - best-dns-services-for-privacy-and-speed
+
+**Podcast/Audio Equipment (Amazon):**
+- [x] Samson Q2U - Amazon - best-podcast-equipment-starter-kits (Amazon approved!)
+- [x] Focusrite Scarlett Solo - Amazon - best-podcast-equipment-starter-kits (Amazon approved!)
+- [x] MOVO PodPak-2 - Amazon - best-podcast-equipment-starter-kits (Amazon approved!)
+- [x] Audio-Technica AT2020 - Amazon - best-podcast-equipment-starter-kits (Amazon approved!)
+
+**Soundproofing (Amazon):**
+- [x] Door Seals - Amazon - best-soundproofing-solutions-home-office (Amazon approved!)
+- [x] Acoustic Panels - Amazon - best-soundproofing-solutions-home-office (Amazon approved!)
+- [x] Mass Loaded Vinyl - Amazon - best-soundproofing-solutions-home-office (Amazon approved!)
+
+**Previous Action:** 2025-12-07 - Added 18 NEW affiliate program categories for 63 new backlog articles:
 - AI Writing Tools (Jasper, Copy.ai, Writesonic, Surfer SEO, Frase)
 - Budgeting Apps (YNAB, Rocket Money, Monarch)
 - DNS & Privacy Services (NextDNS, AdGuard, Cloudflare)

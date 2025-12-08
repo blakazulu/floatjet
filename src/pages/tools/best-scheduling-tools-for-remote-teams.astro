@@ -1,5 +1,4 @@
 ---
-import AffiliateButton from "@components/article/AffiliateButton.astro";
 import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
@@ -40,21 +39,21 @@ const quickPicksRows = [
     bestFor: "Video meetings",
     price: "$12-20/user",
     freeTier: true,
-    action: '<a href="/go/calendly" rel="nofollow sponsored" target="_blank">Try Free</a>',
+    action: '<a href="https://calendly.com/" rel="nofollow sponsored" target="_blank">Try Free</a>',
   },
   {
     tool: "<strong>Acuity</strong>",
     bestFor: "Paid appointments",
     price: "$20-61/mo flat",
     freeTier: false,
-    action: '<a href="/go/acuity" rel="nofollow sponsored" target="_blank">Try Free</a>',
+    action: '<a href="https://acuityscheduling.com/" rel="nofollow sponsored" target="_blank">Try Free</a>',
   },
   {
     tool: "<strong>Cal.com</strong>",
     bestFor: "Technical teams",
     price: "$15/user",
     freeTier: true,
-    action: '<a href="/go/calcom" rel="nofollow sponsored" target="_blank">Try Free</a>',
+    action: '<a href="https://cal.com/" rel="nofollow sponsored" target="_blank">Try Free</a>',
   },
 ];
 
@@ -279,12 +278,19 @@ const relatedArticles = [
   <p>
     Not the right choice for anyone who needs clients to pay at booking time. Calendly has payment options but they're basic compared to Acuity.
   </p>
-  <AffiliateButton
-      href="/go/calendly"
-      text="Try Calendly Free"
-      variant="primary"
-      program="calendly"
-  />
+  <div class="not-prose my-8">
+    <a
+      href="https://calendly.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-jet-stream text-white font-semibold rounded-lg hover:bg-jet-stream/90 transition-colors"
+    >
+      Try Calendly Free
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+  </div>
 
   <!-- Acuity -->
   <h3 id="acuity">Acuity Scheduling</h3>
@@ -320,12 +326,19 @@ const relatedArticles = [
   <p>
     Not the right choice for teams that just need basic meeting coordination. You'd be paying for payment features that sit unused.
   </p>
-  <AffiliateButton
-      href="/go/acuity"
-      text="Try Acuity Free for 7 Days"
-      variant="secondary"
-      program="acuity"
-  />
+  <div class="not-prose my-8">
+    <a
+      href="https://acuityscheduling.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-jet-stream text-white font-semibold rounded-lg hover:bg-jet-stream/90 transition-colors"
+    >
+      Try Acuity Free for 7 Days
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+  </div>
 
   <!-- Cal.com -->
   <h3 id="calcom">Cal.com</h3>
@@ -361,12 +374,19 @@ const relatedArticles = [
   <p>
     Not the right choice for people who want to sign up and start booking immediately without configuration.
   </p>
-  <AffiliateButton
-      href="/go/calcom"
-      text="Try Cal.com Free"
-      variant="ghost"
-      program="calcom"
-  />
+  <div class="not-prose my-8">
+    <a
+      href="https://cal.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-jet-stream text-white font-semibold rounded-lg hover:bg-jet-stream/90 transition-colors"
+    >
+      Try Cal.com Free
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+  </div>
 
   <!-- Other Tools -->
   <h2 id="other-tools">What Else I Tried</h2>
@@ -444,12 +464,19 @@ const relatedArticles = [
     The 47-minute Singapore scheduling disaster that kicked this off? Hasn't happened since.
   </p>
 
-  <AffiliateButton
-      href="/go/calendly"
-      text="Try Calendly Free - Top Pick"
-      variant="primary"
-      program="calendly"
-  />
+  <div class="not-prose my-8">
+    <a
+      href="https://calendly.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-jet-stream text-white font-semibold rounded-lg hover:bg-jet-stream/90 transition-colors"
+    >
+      Try Calendly Free - Top Pick
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+  </div>
 
   <!-- Full Width Content Slot -->
   <Fragment slot="full-width">

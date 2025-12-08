@@ -1,5 +1,4 @@
 ---
-import AffiliateButton from "@components/article/AffiliateButton.astro";
 import ComparisonTable from "@components/article/ComparisonTable.astro";
 import FAQSection from "@components/article/FAQSection.astro";
 import RelatedArticles from "@components/article/RelatedArticles.astro";
@@ -501,12 +500,19 @@ const relatedArticles = [
     Skip that lesson if you can.
   </p>
 
-  <AffiliateButton
-      href="/go/nordvpn"
-      text="Get NordVPN - Pair with Encrypted Messaging for Full Protection"
-      variant="primary"
-      program="nordvpn"
-  />
+  <div class="not-prose my-8">
+    <a
+      href="https://nordvpn.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-jet-stream text-white font-semibold rounded-lg hover:bg-jet-stream/90 transition-colors"
+    >
+      Get NordVPN - Full Privacy Protection
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+  </div>
 
   <!-- Full Width Content Slot -->
   <Fragment slot="full-width">

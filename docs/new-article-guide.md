@@ -17,9 +17,10 @@
 | 7    | Download hero image              | `node scripts/download-unsplash-images.cjs` |
 | 8    | Optimize image                   | `node scripts/optimize-images.cjs`          |
 | 9    | Create article page              | Use existing article as template              |
-| 10   | Ensure SEO/AEO/GEO compliance    | Match existing articles                       |
-| 11   | Update articles metadata         | `src/data/articles.ts`                      |
-| 12   | Regenerate article summary       | `npm run docs:articles`                     |
+| 10   | Verify affiliate links           | `netlify.toml` + `docs/affiliates/`         |
+| 11   | Ensure SEO/AEO/GEO compliance    | Match existing articles                       |
+| 12   | Update articles metadata         | `src/data/articles.ts`                      |
+| 13   | Regenerate article summary       | `npm run docs:articles`                     |
 
 ---
 
@@ -317,7 +318,72 @@ const pubDate = new Date(article.pubDate);
 
 ---
 
-## Step 10: SEO/AEO/GEO Compliance
+## Step 10: Verify Affiliate Links
+
+Before publishing, ensure all affiliate links in the article are properly configured.
+
+### Check Each Affiliate Button
+
+For every `<AffiliateButton>` in your article:
+
+1. **Identify the affiliate program** - Is it Amazon, NordVPN, direct, etc.?
+2. **Check if redirect exists** - Search `netlify.toml` for the link path
+3. **Add missing redirects** - If not found, add them
+
+### For Amazon Products
+
+If the affiliate program is Amazon (already approved):
+
+1. **Find the product ASIN** on Amazon
+   - Go to the product page
+   - ASIN is in the URL: `amazon.com/dp/XXXXXXXXXX`
+2. **Add redirect to `netlify.toml`**:
+   ```toml
+   [[redirects]]
+     from = "/go/amazon/product-name"
+     to = "https://amazon.com/dp/ASIN?tag=floatjet-20"
+     status = 301
+     force = true
+   ```
+3. **Update article** to use the correct path format: `/go/amazon/product-name`
+
+### For New Affiliate Programs
+
+If the product requires a new affiliate program we haven't applied to:
+
+1. **Add the program** to `docs/affiliates/affiliate-programs.md`
+2. **Use a direct link temporarily** until approved:
+   ```toml
+   [[redirects]]
+     from = "/go/product-name"
+     to = "https://official-product-website.com"
+     status = 301
+     force = true
+   ```
+3. **Mark as pending** in the affiliate programs doc
+4. **Apply to the program** when possible
+
+### Link Format Convention
+
+| Program | Link Format | Example |
+|---------|-------------|---------|
+| Amazon | `/go/amazon/product-name` | `/go/amazon/focusrite-scarlett-solo` |
+| NordVPN | `/go/nordvpn` | `/go/nordvpn` |
+| Direct (pending) | `/go/product-name` | `/go/notion` |
+
+### Quick Verification
+
+```bash
+# Check if a redirect exists
+grep "/go/your-link" netlify.toml
+
+# List all Amazon redirects
+grep "/go/amazon/" netlify.toml
+```
+
+---
+
+## Step 11: SEO/AEO/GEO Compliance
 
 ### SEO Checklist
 
@@ -347,7 +413,7 @@ const pubDate = new Date(article.pubDate);
 
 ---
 
-## Step 11: Update Articles Metadata
+## Step 12: Update Articles Metadata
 
 Add the new article to `src/data/articles.ts`:
 
@@ -389,7 +455,7 @@ Add the new article to `src/data/articles.ts`:
 
 ---
 
-## Step 12: Regenerate Article Summary
+## Step 13: Regenerate Article Summary
 
 After adding the article to `articles.ts`, regenerate the documentation:
 
@@ -407,8 +473,9 @@ Before committing:
 
 - [ ] Article passes AI detection (<4%)
 - [ ] Writer style matches assigned author
+- [ ] Hero image downloaded and optimized (unique, not used elsewhere)
+- [ ] All affiliate links verified in `netlify.toml`
 - [ ] All SEO/AEO/GEO requirements met
-- [ ] Hero image downloaded and optimized
 - [ ] Article added to `src/data/articles.ts`
 - [ ] Article summary regenerated
 - [ ] Build passes: `npm run build`
@@ -464,4 +531,4 @@ npm run preview
 
 ---
 
-*Last updated: 2025-12-07*
+*Last updated: 2025-12-08*

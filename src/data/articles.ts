@@ -353,6 +353,18 @@ export const gearArticles: Article[] = [
     category: "accessories",
   },
   {
+    slug: "best-podcast-equipment-starter-kits",
+    section: "gear",
+    title: "Best Podcast Equipment Starter Kits Under $300 (2025)",
+    description: "My buddy's $40 Amazon mic sounded like a soup can. After testing 15 setups, here's what actually works for podcast beginners on a budget.",
+    authorSlug: "marcus-chen",
+    pubDate: "2025-12-08",
+    readingTime: 14,
+    image: "/images/unsplash/photo-1598488035139-bdbb2231ce04-1200w.webp",
+    imageAlt: "Podcast microphone and audio recording equipment setup",
+    category: "audio",
+  },
+  {
     slug: "best-portable-monitors",
     section: "gear",
     title: "Best Portable Monitors for Digital Nomads (2025)",

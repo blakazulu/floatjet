@@ -1,6 +1,6 @@
 # FloatJet Affiliate Programs Master Guide
 
-**Last Updated:** 2025-12-07
+**Last Updated:** 2025-12-09
 **Purpose:** Complete reference for all affiliate programs, registration guides, and tracking
 
 ---
@@ -40,6 +40,7 @@
 | PartnerStack Network | PartnerStack  | 2025-11-30   | Profile not a fit (network expansion) | Month 2-3 (After site launch) | Reapply with live site and content                  |
 | ClickUp              | PartnerStack  | 2025-12-01   | Application declined by brand         | Month 2-3 (After site launch) | Reapply with live site, traffic, and published PM content |
 | ExpressVPN           | Impact Radius | 2025-12-03   | Low reach (traffic, followers)        | Month 2-3 (After site launch) | Build traffic, reapply via Impact once approved     |
+| ConvertKit (Kit)     | Direct        | 2025-12-09   | Audience niche mismatch, low content  | Month 2-3 (After site launch) | Build creator-focused content, reapply with traffic |
 
 **Impact Note:** Application declined on 2025-11-28 (Account ID: 6717334). Impact requires established sites with
 published content and actual traffic. Will reapply in Month 2-3 once FloatJet has:
@@ -66,11 +67,17 @@ application) are not impacted. Will reapply after FloatJet has:
 - ✅ 4-6 weeks of content history
 - ℹ️ Can re-apply directly through PartnerStack dashboard
 
+**ConvertKit (Kit) Note:** Application declined on 2025-12-09. Kit partners with creators who help other creators earn a living online. FloatJet's remote work niche didn't align with their target audience. Will reapply in Month 2-3 once FloatJet has:
+
+- ✅ Creator-focused content (course platform comparisons, newsletter monetization)
+- ✅ Audience engagement demonstrating creator overlap
+- ✅ More published content for evaluation
+- ℹ️ Can reply to decline email or reapply through their affiliate page
+
 ### Pending Applications
 
 | Program    | Network       | Priority | Target Date                         | Required For      |
 |------------|---------------|----------|-------------------------------------|-------------------|
-| ConvertKit | Direct        | **HIGH** | ⏳ Applied 2025-12-05               | Email Marketing   |
 | Beehiiv    | Direct        | **HIGH** | Week 2 (after launch)               | Email Marketing   |
 | FlexiSpot  | Direct        | **HIGH** | Week 3                              | Standing Desks    |
 | 1Password  | Impact Radius | **HIGH** | Month 2-3 (after Impact reapproval) | Password Managers |
@@ -480,7 +487,7 @@ how-to-setup-vpn-all-devices
 
 | Program        | Commission                  | Cookie  | Network       | Status                      |
 |----------------|-----------------------------|---------|---------------|-----------------------------|
-| ConvertKit     | $100 + 40% recurring (24mo) | 60 days | Direct        | ⏳ Pending (Applied 2025-12-05) |
+| ConvertKit     | $100 + 40% recurring (24mo) | 60 days | Direct        | ❌ Declined (Reapply M2-3)  |
 | Beehiiv        | 50% recurring (12mo)        | 60 days | Direct        | Not Applied                 |
 | ActiveCampaign | 20-30% recurring            | 90 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
 | Drip           | 20% recurring               | 90 days | PartnerStack  | ⚠️ Unavailable (PS Network) |
@@ -1438,7 +1445,6 @@ Assuming modest traffic and 1% conversion:
 
 ### ⏳ Pending Applications
 
-- [ ] ConvertKit - Applied 2025-12-05, awaiting approval
 - [ ] Surfshark - Applied 2025-12-02
 - [ ] CyberGhost - Applied 2025-12-02
 - [ ] IPVanish - Applied 2025-12-02
@@ -1619,7 +1625,9 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** 2025-12-08 - Added direct affiliate CTA buttons to 14 new articles. Programs to prioritize:
+**Last Action:** 2025-12-09 - ConvertKit (Kit) application DECLINED. Reason: Audience niche mismatch - Kit partners with creators who help other creators earn online, FloatJet's remote work focus doesn't align. Also noted: limited content for evaluation. Will reapply Month 2-3 with creator-focused content and traffic.
+
+**Previous Action:** 2025-12-08 - Added direct affiliate CTA buttons to 14 new articles. Programs to prioritize:
 
 ### IMMEDIATE - Apply This Week (Featured in Live Articles):
 

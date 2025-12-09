@@ -127,6 +127,29 @@ Ideas and tasks for future implementation. Not yet scheduled.
 
 ---
 
+## Affiliate Strategy Recommendations
+
+### ConvertKit (Kit) Reapplication Strategy (Added 2025-12-09)
+
+Kit declined FloatJet's affiliate application because they partner with "creators who help other creators earn a living online" - our remote work niche doesn't directly align. To improve chances on reapplication:
+
+**Content to Create:**
+- [ ] Best Newsletter Platforms for Creators - Beehiiv vs Kit vs Substack (position Kit favorably)
+- [ ] How to Monetize Your Newsletter as a Remote Worker
+- [ ] Building a Personal Brand While Working Remotely
+- [ ] Best Course Platforms for Remote Professionals - Teachable vs Thinkific (our existing article helps)
+
+**Alternative Actions:**
+1. **Prioritize Beehiiv** - 50% recurring for 12 months, more flexible with niches
+2. **Try MailerLite** - 30% recurring, direct program, easier approval
+3. **Angle toward "creators who work remotely"** when reapplying to Kit
+4. **Sign up as a Kit user first** - being a customer improves approval odds
+5. **Wait for traffic** - Kit noted they couldn't evaluate fit without enough content
+
+**Reapply Timeline:** Month 2-3 (January-February 2026) after publishing creator-focused content and building traffic.
+
+---
+
 ## Technical Improvements
 
 (Add future technical tasks here)

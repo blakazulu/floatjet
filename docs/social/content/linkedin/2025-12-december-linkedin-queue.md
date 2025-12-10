@@ -14,7 +14,7 @@ Full month of posts for FloatJet's LinkedIn company page.
 | Tue 2/12  | 16:00 | #2 Industry insight   | Thought leadership | ✅ Posted    | 0%   | No      |
 | Wed 3/12  | 16:00 | #3 VPN testing        | Behind-scenes      | ✅ Posted    | 0%   | No      |
 | Sun 7/12  | 16:00 | #4 Pain points        | Engagement         | ✅ Posted    | 0%   | No      |
-| Tue 9/12  | 16:00 | #5 Hot take           | Value              | ⏳ Pending   | 0%   | Yes     |
+| Tue 9/12  | 16:00 | #5 Hot take           | Value              | ✅ Posted    | 0%   | Yes     |
 | Wed 10/12 | 16:00 | #6 Article teaser     | Pre-promotion      | ⏳ Pending   | 0%   | Yes     |
 | Thu 11/12 | 16:00 | #7 Standing desk      | Personal story     | ⏳ Pending   | 0%   | Yes     |
 | Sun 14/12 | 16:00 | #8 Free VPNs          | Value              | ⏳ Pending   | 0%   | Yes     |
@@ -152,7 +152,7 @@ But the weird specific problems are usually more interesting. Drop yours below. 
 
 **Type:** Practical insight
 **When:** Tuesday 9/12, 16:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Format:** Text post
 **AI Detection:** 0%
 

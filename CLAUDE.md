@@ -307,3 +307,4 @@ Unauthorized use, copying, modification, or distribution is strictly prohibited.
 - when creating a new page - look at docs/new-page-creation.md for correct way to do it
 - when creating a new article-card please refer to docs/03-design/article-card-guide.md
 - when creating a new article or updating it - follow the rules in docs/new-article-guide.md
+- feel free to make a dew design changes to different secions in new articles. not to much.

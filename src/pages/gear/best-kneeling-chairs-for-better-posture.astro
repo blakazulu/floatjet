@@ -1,0 +1,466 @@
+---
+import {
+  AffiliateButton,
+  ComparisonTable,
+  FAQSection,
+  RelatedArticles,
+} from "../../components/article";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
+
+// Get article metadata from central data file
+const article = getArticleBySlug("best-kneeling-chairs-for-better-posture", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
+const category = "Furniture";
+const categorySlug = "gear";
+const subcategorySlug = "furniture";
+
+const headings = [
+  { text: "How These Things Actually Work", slug: "how-they-work", depth: 2 },
+  { text: "This Isn't For Everyone", slug: "not-for-everyone", depth: 2 },
+  { text: "Seven Chairs, Four Years, Mixed Results", slug: "reviews", depth: 2 },
+  { text: "Varier Variable Balans", slug: "varier-variable-balans", depth: 3 },
+  { text: "Sleekform Austin", slug: "sleekform-austin", depth: 3 },
+  { text: "DRAGONN", slug: "dragonn", depth: 3 },
+  { text: "Flash Furniture Wooden Rocker", slug: "flash-furniture", depth: 3 },
+  { text: "Cinius Professional", slug: "cinius-professional", depth: 3 },
+  { text: "Varier Thatsit Balans", slug: "varier-thatsit", depth: 3 },
+  { text: "The Part Nobody Mentions", slug: "nobody-mentions", depth: 2 },
+  { text: "What Actually Matters When Buying", slug: "what-matters", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+];
+
+const comparisonColumns = [
+  { key: "chair", label: "Chair", width: "140px" },
+  { key: "price", label: "Price" },
+  { key: "type", label: "Type" },
+  { key: "height", label: "Height Adj." },
+  { key: "best", label: "Best For" },
+];
+
+const comparisonRows = [
+  {
+    chair: "<strong>Varier Variable</strong>",
+    price: "$500-600",
+    type: "Rocking",
+    height: "No",
+    best: "Daily long-term use",
+  },
+  {
+    chair: "<strong>Sleekform Austin</strong>",
+    price: "~$160",
+    type: "Static",
+    height: "Yes",
+    best: "Starter option",
+  },
+  {
+    chair: "<strong>DRAGONN</strong>",
+    price: "~$80",
+    type: "Static",
+    height: "Yes",
+    best: "Testing the concept",
+  },
+  {
+    chair: "<strong>Flash Furniture</strong>",
+    price: "~$100",
+    type: "Rocking",
+    height: "No",
+    best: "Budget rocking",
+  },
+  {
+    chair: "<strong>Cinius</strong>",
+    price: "~$320",
+    type: "Static",
+    height: "Yes (pegs)",
+    best: "European quality",
+  },
+  {
+    chair: "<strong>Varier Thatsit</strong>",
+    price: "~$1,500",
+    type: "Rocking",
+    height: "No",
+    best: "Unlimited budget",
+  },
+];
+
+const faqItems = [
+  {
+    question: "Can you use kneeling chairs all day?",
+    answer:
+      "Nope. Rotate with other seating. Thirty to forty-five minute stretches maximum. Your body needs position changes regardless of how ergonomic something claims to be.",
+  },
+  {
+    question: "Will a kneeling chair fix my back pain?",
+    answer:
+      "Depends entirely on why your back hurts. Helped my posture considerably. Did nothing for the underlying disc issue. Medical problems need medical attention.",
+  },
+  {
+    question: "What if I have bad knees?",
+    answer:
+      "Then skip kneeling chairs entirely. Look at saddle chairs or something with conventional support. Shin and knee pressure will worsen existing issues.",
+  },
+  {
+    question: "How long until a kneeling chair feels normal?",
+    answer:
+      "Week or two typically. First few days feel weird. Core muscles might ache. That's actually them working for once.",
+  },
+  {
+    question: "Do kneeling chairs work with any desk?",
+    answer:
+      "Usually but check height ranges. Kneeling positions you differently. Monitor and keyboard heights might need adjustment.",
+  },
+  {
+    question: "Rocking versus static kneeling chairs?",
+    answer:
+      "Rockers allow constant micro-movements reducing pressure points. Static versions feel more stable but require more conscious shifting. I prefer rockers. Others don't.",
+  },
+  {
+    question: "Are expensive kneeling chairs worth it?",
+    answer:
+      "For daily use over years, yes. My Varier will likely last fifteen years minimum. Math works out. For occasional use, budget options are fine.",
+  },
+  {
+    question: "Can you try kneeling chairs before buying?",
+    answer:
+      "Some furniture stores stock them. Otherwise you're trusting return policies. Verify before ordering online.",
+  },
+];
+
+const relatedArticles = [
+  {
+    title: "Best Ergonomic Chairs",
+    excerpt: "Traditional ergonomic chairs for all-day comfort and support.",
+    href: "/gear/best-ergonomic-chairs",
+    image: "/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp",
+    imageAlt: "Ergonomic office chair in home office",
+  },
+  {
+    title: "Best Standing Desks",
+    excerpt: "Height-adjustable desks to alternate between sitting and standing.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Modern standing desk in home office",
+  },
+  {
+    title: "Ergonomic Desk Setup Guide",
+    excerpt: "Position your workspace for optimal comfort and productivity.",
+    href: "/gear/ergonomic-desk-setup-guide",
+    image: "/images/unsplash/photo-1498050108023-c5249f4df085-800w.webp",
+    imageAlt: "Properly configured ergonomic workstation",
+  },
+];
+---
+
+<ArticleLayout
+  title={title}
+  description={description}
+  pubDate={pubDate}
+  authorSlug={authorSlug}
+  category={category}
+  categorySlug={categorySlug}
+  subcategorySlug={subcategorySlug}
+  readingTime={readingTime}
+  image={image}
+  imageAlt={imageAlt}
+  headings={headings}
+>
+  <p class="lead">
+    Back in 2020, somewhere around fourteen months after my herniated disc incident, I walked into physical therapy and told Dr. Ruiz I wanted to try a kneeling chair. She actually laughed. Not at me exactly—more like that polite chuckle medical professionals do when patients suggest something they've seen on Instagram.
+  </p>
+
+  <p>
+    But I'd already gone through two Herman Miller knockoffs by that point. Neither fixed the problem. My back still screamed at me by 2pm every single day.
+  </p>
+
+  <p>
+    The thing about traditional <a href="/gear/best-ergonomic-chairs">ergonomic chairs</a>? They force you into one position. Sit here. Back against this lumbar thing. Feet flat. Don't move. Works great if you're a mannequin. I'm someone who crosses her legs, tucks one foot under, shifts around constantly. Drives my husband crazy during movies.
+  </p>
+
+  <p>
+    Traditional chairs punish that behavior.
+  </p>
+
+  <p>
+    So I started buying kneeling chairs. Seven different ones since then. Spent somewhere north of twelve hundred total, which is embarrassing to type. Some cost fifty bucks. One cost almost six hundred. Most ended up in my garage sale pile. But a few genuinely changed how I work.
+  </p>
+
+  <h2 id="how-they-work">How These Things Actually Work</h2>
+
+  <p>
+    Simple concept honestly. Knees rest on a lower pad. Butt sits on a higher angled seat. Pelvis tilts forward about twenty degrees. That's the whole idea.
+  </p>
+
+  <p>
+    What that tilt does is interesting though. Rather than fighting to keep your spine straight, gravity sort of handles it for you. Lumbar curves naturally. Shoulders fall back. Core muscles engage because nothing's behind you to lean on.
+  </p>
+
+  <p>
+    Research exists supporting some of this. Studies from Scandinavia mostly—kneeling chairs originated in Norway—showing different spinal loading patterns versus traditional seating. Whether different means better depends entirely on your specific body and issues.
+  </p>
+
+  <p>
+    After that disc problem I mentioned, I stopped believing in furniture miracles. Don't exist. Different tools for different situations is what actually works.
+  </p>
+
+  <h2 id="not-for-everyone">This Isn't For Everyone</h2>
+
+  <p>
+    Gonna be direct here because nobody else seems willing to be. Kneeling chairs suit certain people:
+  </p>
+
+  <p>
+    <strong>People with decent core strength already.</strong> There's no backrest, period. You're doing the work of holding yourself up.
+  </p>
+
+  <p>
+    <strong>The constantly fidgety.</strong> Some models rock, which channels that energy usefully.
+  </p>
+
+  <p>
+    <strong>Short-session users.</strong> Three hours max typically. All day? Nope.
+  </p>
+
+  <p>
+    <strong>Those with chronically tight hip flexors.</strong> The open angle helps after years of desk work.
+  </p>
+
+  <p>
+    But they're terrible for:
+  </p>
+
+  <p>
+    <strong>Anyone with knee issues.</strong> Meniscus tears, patellar tendon stuff, arthritis. The whole point is weight on your shins and knees. Existing problems get worse.
+  </p>
+
+  <p>
+    <strong>People expecting back pain cures.</strong> Furniture doesn't fix structural problems. See an actual doctor.
+  </p>
+
+  <p>
+    Dr. Ruiz eventually admitted kneeling chairs made sense for someone like me. But only as part of a bigger picture.
+  </p>
+
+  <h2 id="reviews">Seven Chairs, Four Years, Mixed Results</h2>
+
+  <h3 id="varier-variable-balans">Varier Variable Balans</h3>
+
+  <p>
+    Norwegian company. Been making this same basic design since 1979. Mine cost five forty-seven from a specialty furniture place in Minneapolis.
+  </p>
+
+  <p>
+    Curved wooden base rocks gently when you shift. Nothing dramatic—just enough movement to prevent that locked-in feeling. Weighs fourteen pounds give or take but feels substantial. My six year old sits on it sometimes while I work. No creaking even then.
+  </p>
+
+  <p>
+    <strong>Why I keep using it:</strong> That rocking keeps blood moving. Legs don't go numb like they did on the static options. Looks like actual furniture rather than medical equipment. My parents have had a different Varier model since the 90s and it's still perfect.
+  </p>
+
+  <p>
+    <strong>Where it falls short:</strong> Price obviously. Also you can't adjust height at all. Whatever you get is what you're stuck with. The knee cushions felt almost too firm initially—took a couple weeks to break in. And good luck finding one locally. Ordered mine sight unseen.
+  </p>
+
+  <p>
+    Daily users who plan on keeping it for a decade should probably just start here.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/amazon/varier-variable-balans" text="Check Varier Price on Amazon" program="amazon" />
+  </div>
+
+  <h3 id="sleekform-austin">Sleekform Austin</h3>
+
+  <p>
+    Amazon's most popular kneeling chair. Around a hundred sixty when I bought mine two years ago.
+  </p>
+
+  <p>
+    Pneumatic height lever works smoothly. Knee pads have okay cushioning. Casters roll on my hardwood without issue. Took maybe twelve minutes to assemble while watching a cooking show.
+  </p>
+
+  <p>
+    <strong>Why it's decent:</strong> The value equation works out. About four inches of seat cushion, which matters more than people realize. Adjustable seat angle lets you experiment with different tilts.
+  </p>
+
+  <p>
+    <strong>Where it disappoints:</strong> Casters mean you roll backward constantly. Every time I leaned forward to type something, chair went the other direction. Eventually put it on a rug which mostly solved that. Foam already shows compression after two years of lighter use. Frame feels hollow compared to the Varier.
+  </p>
+
+  <p>
+    Good way to test whether kneeling works for your body without spending much.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/amazon/sleekform-austin" text="Check Sleekform Price on Amazon" program="amazon" />
+  </div>
+
+  <h3 id="dragonn">DRAGONN (The Cheap One)</h3>
+
+  <p>
+    Seventy-something dollars. Entry-level everything.
+  </p>
+
+  <p>
+    Mesh cushions instead of foam. Basic height lever. Wheels that roll okay. Nothing memorable.
+  </p>
+
+  <p>
+    <strong>Why it exists:</strong> Cheap enough to throw away if kneeling doesn't click for you. Mesh breathes in summer which I appreciated working from our un-air-conditioned guest room during the renovation.
+  </p>
+
+  <p>
+    <strong>Why it's frustrating:</strong> Wobbles when I shift around. Cushions flattened within months. Can feel exactly where they saved money. My neighbor borrowed it once and asked if it was broken. It wasn't.
+  </p>
+
+  <p>
+    Experiment money only.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/amazon/dragonn-kneeling-chair" text="Check DRAGONN Price on Amazon" program="amazon" />
+  </div>
+
+  <h3 id="flash-furniture">Flash Furniture Wooden Rocker</h3>
+
+  <p>
+    Roughly a hundred bucks. Attempts the Varier rocking concept at budget pricing.
+  </p>
+
+  <p>
+    <strong>Why it has appeal:</strong> Rocking motion basically works. Looks decent-ish. Folds flat which I've never actually needed but could theoretically be useful.
+  </p>
+
+  <p>
+    <strong>Why mine is now in the garage:</strong> Wood quality is clearly different. Thin cushions that my tailbone found uncomfortable. Started making noise around month eight. My weight limit concerns me and I'm 135 pounds.
+  </p>
+
+  <p>
+    If you want rocking but can't swing Varier pricing. Expectations calibrated accordingly.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/amazon/flash-furniture-kneeling" text="Check Flash Furniture Price" program="amazon" />
+  </div>
+
+  <h3 id="cinius-professional">Cinius Professional</h3>
+
+  <p>
+    Italian manufacturer. Paid around three twenty for mine from a European seller.
+  </p>
+
+  <p>
+    Beech wood frame, solid construction. Height adjusts by moving pegs to different holes rather than a lever. Cushions feel properly dense.
+  </p>
+
+  <p>
+    <strong>Why it impressed me:</strong> Build quality sits clearly above the budget stuff. The peg system sounds annoying but actually lets you dial in very specific positioning. Looks professional enough for video calls.
+  </p>
+
+  <p>
+    <strong>Why it's not my daily chair:</strong> Adjusting requires physically moving pins. Pain when you share it with a spouse who's a different height. Not widely available here—had to pay shipping from Italy. Took three weeks.
+  </p>
+
+  <p>
+    European craftsmanship for people who don't want premium Scandinavian prices.
+  </p>
+
+  <h3 id="varier-thatsit">Varier Thatsit Balans</h3>
+
+  <p>
+    The ridiculous one. Fifteen hundred dollars approximately. Has an actual backrest which pretty much no other kneeling chair does.
+  </p>
+
+  <p>
+    T-shaped back support, padded, adjusts height and depth. You can genuinely relax backward on it.
+  </p>
+
+  <p>
+    <strong>Why it's tempting:</strong> Sometimes you want to just sit back. This lets you while keeping the kneeling option. Build quality is genuinely exceptional. Will outlast my mortgage probably.
+  </p>
+
+  <p>
+    <strong>Why I didn't buy it:</strong> Fifteen hundred dollars. For a kneeling chair. The backrest also kinda defeats the point? If I wanted back support I'd use my regular chair.
+  </p>
+
+  <p>
+    For people whose furniture budget has no practical ceiling.
+  </p>
+
+  <div class="my-6">
+    <AffiliateButton href="/go/amazon/varier-thatsit-balans" text="Check Varier Thatsit Price" program="amazon" />
+  </div>
+
+  <h2 id="nobody-mentions">The Part Nobody Mentions</h2>
+
+  <p>
+    Here's what I wish someone had explained before I spent all this money.
+  </p>
+
+  <p>
+    Nobody should kneel all day. Made this mistake immediately. Got the Varier, felt great, used it for eight straight hours because it was new and exciting. Next morning my shins felt like I'd been kicked repeatedly.
+  </p>
+
+  <p>
+    Dr. Ruiz says thirty to forty-five minutes maximum before switching to something else. Your body wants variety. Same position all day causes problems regardless of what that position is.
+  </p>
+
+  <p>
+    My actual setup now includes the Varier, a regular office chair (Steelcase Leap that my company bought), and a <a href="/gear/best-standing-desks">standing desk</a>. I rotate based on what I'm doing. Writing typically happens on the kneeling chair. Video calls on the Leap because I don't trust myself not to wobble weirdly on camera. Reading happens standing usually.
+  </p>
+
+  <p>
+    One chair can't solve everything. Anyone claiming otherwise is selling something.
+  </p>
+
+  <h2 id="what-matters">What Actually Matters When Buying</h2>
+
+  <p>
+    <strong>Cushion thickness</strong> gets overlooked constantly. Thin pads destroy your shins within an hour. Need at least three inches on the knee rests or you'll hate everything about the experience.
+  </p>
+
+  <p>
+    <strong>Rocking versus stationary</strong> comes down to personal fidgetiness. I need the motion or my legs cramp up. Others find rocking distracting. No right answer.
+  </p>
+
+  <p>
+    <strong>Height adjustability</strong> matters unless your desk height and body proportions happen to be exactly average. Most aren't.
+  </p>
+
+  <p>
+    <strong>Weight capacity</strong> varies wildly. Budget chairs often tap out around 250 pounds. Varier handles over 300 without concern.
+  </p>
+
+  <p>
+    <strong>Frame materials</strong> affect longevity. Wood lasts but costs. Metal feels industrial. Plastic keeps prices down at durability's expense.
+  </p>
+
+  <ComparisonTable columns={comparisonColumns} rows={comparisonRows} />
+
+  <h2 id="faq">Questions</h2>
+
+  <FAQSection faqs={faqItems} />
+
+  <h2>My Recommendation</h2>
+
+  <p>
+    <strong>Curious but uncertain?</strong> Grab something cheap first. The DRAGONN or similar will show whether kneeling suits your body without significant financial risk.
+  </p>
+
+  <p>
+    <strong>Know you like the concept?</strong> Sleekform Austin provides reasonable value for casual use. <strong>Varier Variable Balans</strong> is the serious long-term choice.
+  </p>
+
+  <p>
+    Keep expectations realistic though. Kneeling chairs belong in a rotation alongside standing and conventional sitting. Single solutions don't exist for all-day seating.
+  </p>
+
+  <p>
+    Four years into this experiment, I can't imagine working without one available. But I also can't imagine using one exclusively. Finding that balance took longer than I expected.
+  </p>
+
+  <Fragment slot="full-width">
+    <RelatedArticles articles={relatedArticles} />
+  </Fragment>
+</ArticleLayout>

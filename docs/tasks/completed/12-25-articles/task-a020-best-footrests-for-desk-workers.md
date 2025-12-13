@@ -1,28 +1,28 @@
 ---
-task_id: "FJ-A021"
-title: "Write Article: Best Kneeling Chairs for Better Posture"
+task_id: "FJ-A020"
+title: "Write Article: Best Footrests for Desk Workers"
 category: "Content"
 priority: "P2"
-status: "not-started"
+status: "completed"
 created_date: "2025-12-07"
 due_date: ""
 estimated_hours: 6
-actual_hours: 0
+actual_hours: 5
 assigned_to: "sarah-mitchell"
 tags: ["gear", "furniture", "money-page"]
 ---
 
-# Task: Write Article - Best Kneeling Chairs for Better Posture
+# Task: Write Article - Best Footrests for Desk Workers
 
 ## Overview
 
-Write a money page article about ergonomic alternatives to office chairs for the Gear section (furniture subcategory).
+Write a money page article about under-desk ergonomic foot support for the Gear section (furniture subcategory).
 
 **Article Type:** Money Page
 **Section:** Gear
 **Category:** Furniture
 **Assigned Writer:** sarah-mitchell
-**Target Slug:** `best-kneeling-chairs-for-better-posture`
+**Target Slug:** `best-footrests-for-desk-workers`
 
 ## Important References
 
@@ -37,10 +37,10 @@ Write a money page article about ergonomic alternatives to office chairs for the
 
 ## Goals
 
-- [ ] Write compelling money page that ranks for "best kneeling chairs for better posture" keywords
-- [ ] Follow sarah-mitchell's writing style and voice
-- [ ] Pass AI detection (<4% AI-generated)
-- [ ] Include affiliate links where relevant
+- [x] Write compelling money page that ranks for "best footrests for desk workers" keywords
+- [x] Follow sarah-mitchell's writing style and voice
+- [x] Pass AI detection (<4% AI-generated) - **1.74%**
+- [x] Include affiliate links where relevant
 
 ## Success Criteria
 
@@ -54,62 +54,62 @@ Write a money page article about ergonomic alternatives to office chairs for the
 
 ### Phase 1: Research & Planning (1 hour)
 
-- [ ] 1.1 Review writer style guide for sarah-mitchell
+- [x] 1.1 Review writer style guide for sarah-mitchell
     - Read `docs/writing/writers-summery.md`
     - Note signature phrases and tone
 
-- [ ] 1.2 Research competing articles
+- [x] 1.2 Research competing articles
     - Search for similar content
     - Identify gaps to fill
 
-- [ ] 1.3 Outline article structure
+- [x] 1.3 Outline article structure
     - Hook, body sections, conclusion
     - Plan comparison tables and FAQs
 
 ### Phase 2: Writing (2-3 hours)
 
-- [ ] 2.1 Write first draft
+- [x] 2.1 Write first draft
     - Use first person ("I")
     - Include specific numbers and examples
     - Add personal anecdotes
 
-- [ ] 2.2 Run AI detection
+- [x] 2.2 Run AI detection
     - `node scripts/zerogpt-detect.js --file draft.txt`
     - Target: <4% AI-generated
 
-- [ ] 2.3 Revise until passing
+- [x] 2.3 Revise until passing
     - Remove flagged patterns
     - Add more human touches
     - Update `docs/writing/writing-style-guide.md` with findings
 
 ### Phase 3: Media & SEO (1 hour)
 
-- [ ] 3.1 Find unique hero image
+- [x] 3.1 Find unique hero image
     - Search Unsplash for relevant image
     - Verify not used in `src/data/articles.ts`
 
-- [ ] 3.2 Download and optimize image
+- [x] 3.2 Download and optimize image
     - Add to `scripts/download-unsplash-images.cjs`
     - Run download script
     - Run `node scripts/optimize-images.cjs`
     - Remove ID from download script
 
-- [ ] 3.3 Complete SEO checklist
+- [x] 3.3 Complete SEO checklist
     - Title with primary keyword
     - Meta description (150-160 chars)
     - Alt text for images
 
 ### Phase 4: Implementation (1 hour)
 
-- [ ] 4.1 Create article page
+- [x] 4.1 Create article page
     - Copy similar article as template
-    - `src/pages/gear/best-kneeling-chairs-for-better-posture.astro`
+    - `src/pages/gear/best-footrests-for-desk-workers.astro`
 
-- [ ] 4.2 Add article metadata
+- [x] 4.2 Add article metadata
     - Update `src/data/articles.ts`
     - Verify category matches section
 
-- [ ] 4.3 Final verification
+- [x] 4.3 Final verification
     - Run `npm run docs:articles`
     - Run build to verify no errors
     - Preview article locally
@@ -125,14 +125,14 @@ Write a money page article about ergonomic alternatives to office chairs for the
 
 Before marking this task complete:
 
-- [ ] Article passes AI detection (<4%)
-- [ ] Writer style matches sarah-mitchell
-- [ ] Hero image is unique and optimized
-- [ ] Article added to articles.ts
-- [ ] Article summary regenerated
-- [ ] Build passes
-- [ ] Preview looks correct
-- [ ] `docs/writing/writing-style-guide.md` updated with new patterns
+- [x] Article passes AI detection (<4%) - **1.74%**
+- [x] Writer style matches sarah-mitchell
+- [x] Hero image is unique and optimized
+- [x] Article added to articles.ts
+- [x] Article summary regenerated
+- [x] Build passes
+- [x] Preview looks correct
+- [x] `docs/writing/writing-style-guide.md` updated with new patterns
 
 
 ## Affiliate Opportunities
@@ -141,11 +141,9 @@ Before marking this task complete:
 
 | Program | Status | Network | Commission |
 |---------|--------|---------|------------|
-| Jasper | Not Applied | Direct | - |
-| Copy.ai | Not Applied | Direct | - |
-| Writesonic | Not Applied | Direct | - |
+| Amazon | ✅ Approved | Amazon | 4-6% |
 
-**Notes:** Research AI writing tool affiliate programs. Growing category with good commissions.
+**Notes:** Use Amazon Associates for ergonomic footrests.
 
 **Reference:** `docs/affiliates/affiliate-programs.md`
 
@@ -155,6 +153,15 @@ Before marking this task complete:
 
 ## Progress Log
 
+### 2025-12-13
+
+- ✅ Task completed
+- 📝 Article written in Sarah Mitchell's style (warm, direct, personal anecdotes)
+- 🔍 AI detection: 1.74% (passed <4% threshold)
+- 🖼️ Hero image: photo-1598818432717-29f81b9224fd (feet on wooden floor)
+- 🔗 Added 5 Amazon affiliate redirects (ErgoFoam, StrongTek, HUANUO, ComfiLife, CasaZenith)
+- ✅ Build verification passed
+
 ### 2025-12-07
 
 - ⏳ Task created from backlog
@@ -162,6 +169,6 @@ Before marking this task complete:
 
 ## Notes
 
-- **Description:** ergonomic alternatives to office chairs
+- **Description:** under-desk ergonomic foot support
 - Always update `scripts/zerogpt-detect.js` patterns after testing
 - Check `docs/affiliates/` for relevant affiliate links to include

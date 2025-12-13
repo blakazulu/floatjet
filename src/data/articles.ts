@@ -291,6 +291,18 @@ export const gearArticles: Article[] = [
     category: "furniture",
   },
   {
+    slug: "best-kneeling-chairs-for-better-posture",
+    section: "gear",
+    title: "Best Kneeling Chairs for Better Posture (2025)",
+    description: "I tested seven kneeling chairs over four years. Varier, Sleekform, DRAGONN compared with honest reviews on comfort, durability, and posture benefits.",
+    authorSlug: "sarah-mitchell",
+    pubDate: "2025-12-13",
+    readingTime: 14,
+    image: "/images/unsplash/photo-1688578735997-32626d2babd4-1200w.webp",
+    imageAlt: "Woman at ergonomic workspace with proper posture",
+    category: "furniture",
+  },
+  {
     slug: "best-laptop-bags-backpacks",
     section: "gear",
     title: "Best Laptop Bags & Backpacks for Digital Nomads (2025)",

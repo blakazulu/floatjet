@@ -20,10 +20,10 @@ Full month of tweets for @FloatJetWebsite.
 | Sun 7/12  | 19:00 | #8 Free VPNs            | Value          | ✅ Posted    | 0%   | Yes     |
 | Mon 8/12  | 15:00 | #9 Coffee shop WiFi     | Behind-scenes  | ✅ Posted    | 0%   | Yes     |
 | Tue 9/12  | 01:00 | #10 Physical notebook   | Value          | ✅ Posted    | 0%   | Yes     |
-| Wed 10/12 | 15:00 | #11 Cafe video calls    | Personal story | ⏳ Pending | 0%   | No      |
-| Thu 11/12 | 01:00 | #12 Notion rabbit hole  | Relatable      | ⏳ Pending | 0%   | No      |
-| Thu 11/12 | 19:00 | #13 VPN kill switch     | Value          | ⏳ Pending | 0%   | Yes     |
-| Fri 12/12 | 15:00 | #14 Slack offline hack  | Value          | ⏳ Pending | 0%   | No      |
+| Wed 10/12 | 15:00 | #11 Cafe video calls    | Personal story | ✅ Posted  | 0%   | No      |
+| Thu 11/12 | 01:00 | #12 Notion rabbit hole  | Relatable      | ✅ Posted  | 0%   | No      |
+| Thu 11/12 | 19:00 | #13 VPN kill switch     | Value          | ✅ Posted  | 0%   | Yes     |
+| Fri 12/12 | 15:00 | #14 Slack offline hack  | Value          | ✅ Posted  | 0%   | No      |
 | Sat 13/12 | 01:00 | #15 Terms of service    | Engagement     | ⏳ Pending | 0%   | No      |
 | Sat 13/12 | 19:00 | #16 Cloud storage       | Personal story | ⏳ Pending | 0%   | Yes     |
 | Sun 14/12 | 15:00 | #17 Meetings ratio      | Relatable      | ⏳ Pending | 0%   | No      |
@@ -276,7 +276,7 @@ https://floatjet.com/tools/best-note-taking-apps/
 
 **Type:** Relatable experience
 **When:** Wednesday 10/12, 15:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Character Count:** 235
 
 ```text
@@ -295,7 +295,7 @@ My apartment is boring but at least I'm not explaining espresso machine sounds.
 
 **Type:** Procrastination confession
 **When:** Thursday 11/12, 01:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Character Count:** 160
 
 ```text
@@ -314,7 +314,7 @@ The productivity tool became the procrastination tool. Classic.
 
 **Type:** Security insight
 **When:** Thursday 11/12, 19:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Character Count:** 186
 
 ```text
@@ -334,7 +334,7 @@ https://floatjet.com/tools/vpn-kill-switch-explained/
 
 **Type:** Productivity hack
 **When:** Friday 12/12, 15:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Character Count:** 186
 
 ```text

@@ -1,11 +1,11 @@
 # FloatJet Article Summary
 
 > **Auto-generated** from `src/data/articles.ts`
-> Last updated: 2025-12-08 15:15
+> Last updated: 2025-12-13 22:42
 >
 > To regenerate: `python scripts/generate-article-summary.py`
 
-**Total Articles:** 120
+**Total Articles:** 122
 
 ---
 
@@ -32,7 +32,7 @@
 | 015 | [How to Find Reliable WiFi Anywhere in the World (2025)](/blog/find-reliable-wifi-anywhere) | Marcus Chen | Travel | 9 min | `photo-1521791136064-7986c29202...` |
 | 016 | [Top 10 Destinations for Digital Nomads (2025)](/blog/top-destinations-digital-nomads) | Daniel Brooks | Travel | 14 min | `photo-1528181304800-259b088485...` |
 
-### Gear (28 articles)
+### Gear (30 articles)
 
 | # | Title | Author | Category | Read Time | Hero Image |
 |---|-------|--------|----------|-----------|------------|
@@ -60,10 +60,12 @@
 | 022 | [MacBook vs Windows for Remote Work: Which One? (2025)](/gear/macbook-vs-windows-remote-work) | Marcus Chen | Computers | 7 min | `photo-1517336714731-489689fd1c...` |
 | 023 | [Best Compact Desks for Small Home Offices (2025)](/gear/best-compact-desks-small-office) | Sarah Mitchell | Furniture | 14 min | `photo-1593062096033-9a26b09da7...` |
 | 024 | [Best Ergonomic Chairs for Home Office (2025)](/gear/best-ergonomic-chairs) | Sarah Mitchell | Furniture | 18 min | `photo-1580480055273-228ff5388e...` |
-| 025 | [Best Standing Desk Converters (2025)](/gear/best-desk-converters) | Sarah Mitchell | Furniture | 14 min | `photo-1518455027359-f3f8164ba6...` |
-| 026 | [Best Standing Desks for Home Office (2025)](/gear/best-standing-desks) | Sarah Mitchell | Furniture | 18 min | `photo-1611532736579-6b16e2b504...` |
-| 027 | [Ergonomic Desk Setup: Complete Guide (2025)](/gear/ergonomic-desk-setup-guide) | Sarah Mitchell | Furniture | 12 min | `photo-1498050108023-c5249f4df0...` |
-| 028 | [How Much Does a Standing Desk Really Cost? (2025 Guide)](/gear/standing-desk-cost-guide) | Sarah Mitchell | Furniture | 8 min | `photo-1497366216548-3752607029...` |
+| 025 | [Best Footrests for Desk Workers (2025)](/gear/best-footrests-for-desk-workers) | Sarah Mitchell | Furniture | 14 min | `photo-1598818432717-29f81b9224...` |
+| 026 | [Best Monitor Arms and Mounts for Home Office (2025)](/gear/best-monitor-arms-and-mounts) | Sarah Mitchell | Furniture | 14 min | `photo-1588200908342-23b585c03e...` |
+| 027 | [Best Standing Desk Converters (2025)](/gear/best-desk-converters) | Sarah Mitchell | Furniture | 14 min | `photo-1518455027359-f3f8164ba6...` |
+| 028 | [Best Standing Desks for Home Office (2025)](/gear/best-standing-desks) | Sarah Mitchell | Furniture | 18 min | `photo-1611532736579-6b16e2b504...` |
+| 029 | [Ergonomic Desk Setup: Complete Guide (2025)](/gear/ergonomic-desk-setup-guide) | Sarah Mitchell | Furniture | 12 min | `photo-1498050108023-c5249f4df0...` |
+| 030 | [How Much Does a Standing Desk Really Cost? (2025 Guide)](/gear/standing-desk-cost-guide) | Sarah Mitchell | Furniture | 8 min | `photo-1497366216548-3752607029...` |
 
 ### Guides (35 articles)
 
@@ -159,10 +161,10 @@
 | Section | Count |
 |---------|-------|
 | Blog | 16 |
-| Gear | 28 |
+| Gear | 30 |
 | Guides | 35 |
 | Tools | 41 |
-| **Total** | **120** |
+| **Total** | **122** |
 
 ### By Category
 | Category | Count |
@@ -176,8 +178,8 @@
 | Communication | 8 |
 | Security | 8 |
 | Computers | 8 |
+| Furniture | 8 |
 | Productivity | 7 |
-| Furniture | 6 |
 | Setup | 6 |
 | Accessories | 5 |
 | Gear | 2 |
@@ -187,4 +189,4 @@
 |--------|-------|
 | Marcus Chen | 49 |
 | Daniel Brooks | 44 |
-| Sarah Mitchell | 27 |
+| Sarah Mitchell | 29 |

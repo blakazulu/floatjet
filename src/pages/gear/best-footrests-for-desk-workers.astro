@@ -1,0 +1,406 @@
+---
+import AffiliateButton from "@components/article/AffiliateButton.astro";
+import ComparisonTable from "@components/article/ComparisonTable.astro";
+import FAQSection from "@components/article/FAQSection.astro";
+import RelatedArticles from "@components/article/RelatedArticles.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { getArticleBySlug } from "../../data/articles";
+
+// Get article metadata from central data file
+const article = getArticleBySlug("best-footrests-for-desk-workers", "gear")!;
+const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const pubDate = new Date(article.pubDate);
+
+// Table of contents headings
+const headings = [
+  { text: "My Legs Kept Going Numb", slug: "introduction", depth: 2 },
+  { text: "Top 3 Picks", slug: "quick-picks", depth: 2 },
+  { text: "Why Footrests Matter", slug: "why-footrest", depth: 2 },
+  { text: "The Reviews", slug: "detailed-reviews", depth: 2 },
+  { text: "ErgoFoam", slug: "ergofoam", depth: 3 },
+  { text: "StrongTek Wood Rocker", slug: "strongtek", depth: 3 },
+  { text: "HUANUO Adjustable", slug: "huanuo", depth: 3 },
+  { text: "ComfiLife Memory Foam", slug: "comfilife", depth: 3 },
+  { text: "CasaZenith Budget", slug: "casazenith", depth: 3 },
+  { text: "How to Choose", slug: "how-to-choose", depth: 2 },
+  { text: "Questions", slug: "faq", depth: 2 },
+  { text: "Final Picks", slug: "conclusion", depth: 2 },
+];
+
+// Quick picks comparison table
+const quickPicksColumns = [
+  { key: "footrest", label: "Footrest", width: "140px" },
+  { key: "bestFor", label: "Best For", width: "140px" },
+  { key: "price", label: "Price" },
+  { key: "rating", label: "Rating" },
+  { key: "action", label: "" },
+];
+
+const quickPicksRows = [
+  {
+    footrest: "<strong>ErgoFoam</strong>",
+    bestFor: "Best overall",
+    price: "$45",
+    rating: "9.5/10",
+    action: '<a href="/go/amazon/ergofoam-footrest" rel="nofollow sponsored" target="_blank">Shop Now</a>',
+  },
+  {
+    footrest: "<strong>StrongTek</strong>",
+    bestFor: "Standing desks",
+    price: "$55",
+    rating: "9.3/10",
+    action: '<a href="/go/amazon/strongtek-rocker" rel="nofollow sponsored" target="_blank">Shop Now</a>',
+  },
+  {
+    footrest: "<strong>HUANUO</strong>",
+    bestFor: "Best value",
+    price: "$30",
+    rating: "8.8/10",
+    action: '<a href="/go/amazon/huanuo-footrest" rel="nofollow sponsored" target="_blank">Shop Now</a>',
+  },
+];
+
+// FAQ data
+const faqs = [
+  {
+    question: "Do I need a footrest if I have an ergonomic chair?",
+    answer:
+      "<p>Depends on your height and whether your feet reach the floor. Sit in your chair with elbows at 90 degrees for typing. If your feet dangle or your knees point upward, a footrest helps regardless of how fancy your chair is.</p>",
+  },
+  {
+    question: "Can I just use a box or stack of books?",
+    answer:
+      "<p>I did this for almost two years. Books shift around. Stacks collapse. Nothing ends up quite the right height. Works for testing whether you even want a footrest. Not a permanent solution.</p>",
+  },
+  {
+    question: "Should I get a footrest for my standing desk?",
+    answer:
+      '<p>The StrongTek rocker makes sense here since you can shift your weight, stretch your calves, and stay active. A foam footrest at standing height would just be a weird squishy platform you might fall off. Check out our <a href="/gear/best-standing-desks">standing desk guide</a> for setup tips.</p>',
+  },
+  {
+    question: "How do I figure out the right height?",
+    answer:
+      "<p>Sit with your feet on the footrest and look at your thighs. They should be roughly horizontal, maybe sloping down a tiny bit. If your knees are higher than your hips, the footrest is too tall. If your feet aren't flat against the surface, it's too short.</p>",
+  },
+  {
+    question: "Does a footrest help with leg swelling?",
+    answer:
+      "<p>The rocking options might since they encourage circulation. But if you have real swelling issues that go beyond end-of-day heaviness, that's probably worth mentioning to a doctor rather than trying to solve with office accessories.</p>",
+  },
+  {
+    question: "How long do footrests last?",
+    answer:
+      "<p>Cheap foam gets flat in six months to a year. Good high-density foam like the ErgoFoam should go two or three years at least. Plastic lasts a few years depending on quality. Wood basically lasts forever.</p>",
+  },
+  {
+    question: "Can I write off a footrest on my taxes?",
+    answer:
+      '<p>If you have a legit home office and itemize deductions, office furniture typically counts. Check with your accountant since I am definitely not qualified to give tax advice. We have more details in our <a href="/guides/freelancer-tax-deductions-guide">freelancer tax deductions guide</a>.</p>',
+  },
+  {
+    question: "Should I get foam or wood?",
+    answer:
+      "<p>Depends on your shoe habits. I work barefoot ninety percent of the time so foam made sense. If you wear shoes at your home desk, plastic or wood cleans easier and holds up better.</p>",
+  },
+];
+
+// Related articles
+const relatedArticles = [
+  {
+    title: "Best Ergonomic Chairs for Home Office",
+    excerpt:
+      "Ergonomic chairs that pair perfectly with footrests for all-day comfort.",
+    href: "/gear/best-ergonomic-chairs",
+    image: "/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp",
+    imageAlt: "Ergonomic office chair for home office",
+  },
+  {
+    title: "Best Standing Desks for Home Office",
+    excerpt:
+      "Standing desks work great with rocking footrests for active working.",
+    href: "/gear/best-standing-desks",
+    image: "/images/unsplash/photo-1611532736579-6b16e2b50449-800w.webp",
+    imageAlt: "Ergonomic standing desk for home office",
+  },
+  {
+    title: "Ergonomic Desk Setup Guide",
+    excerpt: "Complete guide to setting up your workspace for comfort and productivity.",
+    href: "/gear/ergonomic-desk-setup-guide",
+    image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
+    imageAlt: "Ergonomic home office setup",
+  },
+];
+---
+
+<ArticleLayout
+    title={title}
+    description={description}
+    authorSlug={authorSlug}
+    pubDate={pubDate}
+    readingTime={readingTime}
+    image={image}
+    imageAlt={imageAlt}
+    category="Furniture"
+    categorySlug="gear"
+    subcategorySlug="furniture"
+    headings={headings}
+>
+  <!-- Introduction -->
+  <h2 id="introduction">My Legs Kept Going Numb</h2>
+  <p>
+    Last March I was grinding through a deadline when I realized both feet had completely fallen asleep. Tried to stand up for a coffee break and nearly face-planted into my keyboard. Classic.
+  </p>
+  <p>
+    Every afternoon, same nonsense. That tingling pins and needles thing by 3pm. Lower back screaming at me by 5pm.
+  </p>
+  <p>
+    I'm 5'4". Office furniture hates me. My Herman Miller chair? Fancy. Desk height? Supposedly optimized. But there I was anyway, short legs dangling the way they did when I was eight sitting at the grown-up table during Thanksgiving at my aunt's house.
+  </p>
+  <p>
+    So back in 2019 I threw out my back (herniated disc, super fun) and became one of those annoying people who won't shut up about ergonomics. Standing desks, monitor arms, keyboard trays - I went down every rabbit hole. Spent embarrassing amounts of money. But footrests seemed unnecessary. Like something a CEO in a mahogany corner office would use while dictating memos.
+  </p>
+  <p>
+    I was being dumb.
+  </p>
+  <p>
+    <strong>Quick answer:</strong> The <a href="#ergofoam">ErgoFoam Adjustable</a> is what I use on my main desk. Eight months and the foam hasn't gone flat. For standing desk users or fidgeters, the <a href="#strongtek">StrongTek Wood Rocker</a> lets you stretch and move while working. On a tight budget? The <a href="#huanuo">HUANUO Adjustable</a> at $30 gets the job done.
+  </p>
+
+  <!-- Quick Picks -->
+  <h2 id="quick-picks">Our Top 3 Picks</h2>
+  <p>Short on time? Here are our top footrest recommendations for home office workers:</p>
+  <ComparisonTable
+      columns={quickPicksColumns}
+      rows={quickPicksRows}
+      caption="Top 3 footrests for desk workers"
+  />
+  <p>
+    All three ship fast with solid return policies. Keep reading for detailed reviews of all five footrests I tested, plus my complete buying guide.
+  </p>
+
+  <!-- Why Footrests Matter -->
+  <h2 id="why-footrest">Why Footrests Actually Matter</h2>
+  <p>
+    Most desks are built at 29 inches. Know who that works for? People between 5'8" and 6'0". Shorter than that? Your feet don't reach the floor properly. Taller? You're craning downward all day.
+  </p>
+  <p>
+    Neither situation is great but since I'm on the short end, let me explain what happens when your feet just hang there.
+  </p>
+
+  <h3>The Circulation Problem</h3>
+  <p>
+    Your thighs end up pressing hard against the seat edge. Blood circulation gets weird. Your pelvis tips backward because there's nothing anchoring your lower body. Your back rounds forward without you noticing. Come 4pm your legs feel like sandbags. Your back's complaining. And you're wiped out even though you literally just sat there all day doing nothing physical.
+  </p>
+
+  <h3>The Angle Thing</h3>
+  <p>
+    So my friend Lisa - she's a physical therapist in Denver - drew me this little diagram on a napkin at brunch explaining the ideal angles. Apparently you want everything at roughly 90 degrees. Hips, knees, ankles. Like three L-shapes stacked together. Mine were all wrong. My hips were at maybe 110 degrees, my knees were dangling at who knows what angle.
+  </p>
+  <p>
+    A footrest gives your feet something to push against. That's literally all it is. But fixing that one thing lets everything else line up the way it should.
+  </p>
+
+  <!-- Detailed Reviews -->
+  <h2 id="detailed-reviews">Footrest Detailed Reviews</h2>
+
+  <!-- ErgoFoam -->
+  <h3 id="ergofoam">1. ErgoFoam Adjustable - Best Overall</h3>
+  <p>
+    Been on this thing since April and it's still holding up.
+  </p>
+  <p>
+    It's basically a dense foam block covered in this velvety fabric that sounds fancier than it really is. Flips between two heights - low side is around four inches, high side closer to six. Cover comes off and goes in the washing machine, which became necessary when my golden retriever decided it was his new favorite napping spot while I was making lunch.
+  </p>
+  <p>
+    The foam hasn't gone flat yet. My last foam footrest, some random Amazon purchase from 2021, turned into a pancake within four months. This one still has its shape eight months later.
+  </p>
+  <p>
+    <strong>What makes it work:</strong> Feels nice under bare feet. I work from home and shoes are basically optional here. Hard surfaces make my heels hurt after a while, so the softness matters.
+  </p>
+  <p>
+    <strong>What annoys me:</strong> Zero rocking motion. Some days my legs want to move around and this thing is essentially a very comfortable brick. Also, I can't help wondering how it'll hold up in another year. Foam is foam.
+  </p>
+  <p>
+    <strong>Best for:</strong> Anyone shorter who works barefoot or in socks. If you value comfort over durability and want that machine-washable cover, this is your pick.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/ergofoam-footrest"
+      text="Shop ErgoFoam - Best Overall"
+      variant="primary"
+      program="amazon"
+  />
+
+  <!-- StrongTek -->
+  <h3 id="strongtek">2. StrongTek Wood Rocker - Best for Standing Desks</h3>
+  <p>
+    OK so apparently this company was started by two brothers - one data scientist, one NASA engineer. They both had chronic back pain and decided to solve it with engineering. Very on brand for tech people.
+  </p>
+  <p>
+    What they made is this gorgeous curved wood platform that rocks gently when you put your feet on it. Looks like something from one of those expensive home goods stores. My workspace is mostly functional and ugly but this thing actually elevates the aesthetic.
+  </p>
+  <p>
+    The rocking encourages tiny leg movements throughout the day. Lisa (the PT friend) got visibly excited when I showed her this one. Started going on about venous pooling and keeping leg muscles engaged. I don't fully understand the physiology but I can tell you my legs feel noticeably less dead by end of day when I use it.
+  </p>
+  <p>
+    Bonus: you can actually stand on it. It's a balance board too. I do calf stretches during long video calls. Supports up to 350 pounds so there's no sketchy creaking when you step on it.
+  </p>
+  <p>
+    <strong>What makes it work:</strong> Beautiful design, rocks gently for leg movement, doubles as a standing desk balance board. Build quality is excellent and it should last basically forever.
+  </p>
+  <p>
+    <strong>The downside:</strong> Hard wood under bare feet gets uncomfortable. I keep slippers nearby. And the rocking took adjustment - first week I was fidgeting constantly because it was novel. Eventually settled into this gentle unconscious sway that feels natural now.
+  </p>
+  <p>
+    <strong>Best for:</strong> <a href="/gear/best-standing-desks">Standing desk</a> users, fidgeters who need to move, and anyone who appreciates good woodworking.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/strongtek-rocker"
+      text="Get StrongTek Rocker - For Standing Desks"
+      variant="primary"
+      program="amazon"
+  />
+
+  <!-- HUANUO -->
+  <h3 id="huanuo">3. HUANUO Adjustable - Best Value</h3>
+  <p>
+    If footrests were cars, this would be a Honda Civic. Reliable, boring, gets the job done without drama. Nobody writes poetry about it. Costs thirty bucks.
+  </p>
+  <p>
+    It's plastic, but decent plastic. Three height settings. Textured surface. Slight rocking ability though nothing dramatic. Wipes clean when you inevitably splash coffee nearby.
+  </p>
+  <p>
+    The height options saved me when I was first figuring this out. Started on the middle setting, eventually realized I needed the highest one. Having that flexibility mattered when I had no clue what my legs actually wanted.
+  </p>
+  <p>
+    <strong>What works:</strong> The adjustable heights let you figure out what your legs actually need. Easy to clean. Affordable enough to try without commitment.
+  </p>
+  <p>
+    <strong>Drawbacks:</strong> Plastic surface isn't pleasant for bare feet. The whole thing looks extremely corporate - that beige cubicle farm vibe. And adjusting the height involves wrestling with these little bars that made no sense until I watched a YouTube video about it.
+  </p>
+  <p>
+    <strong>Best for:</strong> First-time footrest buyers who aren't sure what they need. Budget-conscious folks. People who wear shoes while working.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/huanuo-footrest"
+      text="Shop HUANUO - Best Value"
+      variant="primary"
+      program="amazon"
+  />
+
+  <!-- ComfiLife -->
+  <h3 id="comfilife">4. ComfiLife Memory Foam - Maximum Comfort</h3>
+  <p>
+    For pure comfort this one wins. Thick memory foam that squishes around your feet like those mattress commercials promised.
+  </p>
+  <p>
+    Felt incredible the first month. Genuinely luxurious.
+  </p>
+  <p>
+    Then physics happened. Memory foam compresses over time. Month four and mine was noticeably flatter. Still usable, just... less supportive than when I bought it. And the cover doesn't come off so you can't wash it, which... I have thoughts about long-term cleanliness.
+  </p>
+  <p>
+    <strong>What works:</strong> The softest option I tested. Great for long sessions when comfort matters most. Non-slip bottom actually works.
+  </p>
+  <p>
+    <strong>What bugs me:</strong> Memory foam flattens over time. Cover isn't removable for washing. One-height design limits flexibility.
+  </p>
+  <p>
+    <strong>Best for:</strong> People who prioritize immediate comfort over long-term durability. Those who work in socks or bare feet. Anyone with sensitive feet.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/comfilife-footrest"
+      text="See ComfiLife on Amazon"
+      variant="secondary"
+      program="amazon"
+  />
+
+  <!-- CasaZenith -->
+  <h3 id="casazenith">5. CasaZenith Rocking - Budget Pick</h3>
+  <p>
+    Bought this mostly to see what could possibly exist at that price point. Twelve dollars! My coffee order costs more.
+  </p>
+  <p>
+    What you get: a curved plastic platform that rocks. Nothing else. No cushioning, no adjustability, looks like it came from an elementary school supply closet.
+  </p>
+  <p>
+    And... it works? The rocking helps with restless legs. Light enough to kick aside when you need floor space. Will it survive a year of daily use? Probably not. But for testing whether you even want a footrest before committing real money, twelve bucks is nothing.
+  </p>
+  <p>
+    <strong>What works:</strong> The rocking motion helps with restless legs. Dirt cheap. Light enough to move around easily.
+  </p>
+  <p>
+    <strong>What doesn't:</strong> Plastic construction feels cheap because it is cheap. No cushioning at all. Probably won't last more than a year. Surface is slippery without shoes.
+  </p>
+  <p>
+    <strong>Best for:</strong> Testing whether you even want a footrest before investing. Backup for travel or second workspaces. People who just need something basic and temporary.
+  </p>
+  <AffiliateButton
+      href="/go/amazon/casazenith-footrest"
+      text="See CasaZenith on Amazon"
+      variant="ghost"
+      program="amazon"
+  />
+
+  <!-- How to Choose -->
+  <h2 id="how-to-choose">How to Choose the Right Footrest</h2>
+  <p>
+    After months of swapping these around, here's what I've figured out:
+  </p>
+
+  <h3>Height Is Everything</h3>
+  <p>
+    Too low and you're still dangling. Too high and your knees end up above your hips, which creates a whole different set of problems. Most people under 5'6" need at least five inches. I'm at six inches and that finally feels right. Adjustable options let you experiment without buying multiple products.
+  </p>
+
+  <h3>Rocking Is Personal</h3>
+  <p>
+    Some people love the gentle motion - keeps legs active, reduces stiffness. Others find it maddening. I've noticed I like it for calls and reading but find it distracting when doing detailed spreadsheet work. Neither reaction is wrong.
+  </p>
+
+  <h3>Material Depends on Shoes</h3>
+  <p>
+    I'm barefoot ninety percent of my work hours so foam made sense. If you wear shoes at your home desk - some people do that to maintain psychological boundaries between work and life - then plastic or wood cleans easier.
+  </p>
+
+  <h3>Budget vs Longevity</h3>
+  <p>
+    Those $15 Amazon options flatten within months. Higher quality foam lasts years. Think about annual cost, not just upfront price. Wood basically lasts forever if you take care of it.
+  </p>
+
+  <!-- FAQ Section -->
+  <FAQSection faqs={faqs}/>
+
+  <!-- Conclusion -->
+  <h2 id="conclusion">What I Actually Use</h2>
+  <p>
+    After eight months of rotating through these things, here's what ended up under my desk:
+  </p>
+  <p>
+    <strong>ErgoFoam</strong> at the high setting under my regular desk. Eight months in, foam still has its shape, cover has been through the wash twice. Worth every penny at $45 for anyone who works barefoot.
+  </p>
+  <p>
+    <strong>StrongTek rocker</strong> by my standing desk for when I alternate positions. The rocking motion keeps my legs moving and doubles as a balance board. At $55, it's more expensive but built to last forever.
+  </p>
+  <p>
+    Total cost was under a hundred bucks. Took maybe six weeks to figure out this combination worked. No regrets.
+  </p>
+  <p>
+    Your feet need proper support even when you think they're fine. The problems sneak up on you - lousy circulation, unconscious slouching, lower back strain that builds so gradually you don't realize what's happening until you fix it and suddenly feel noticeably better.
+  </p>
+  <p>
+    This is also a pretty cheap experiment compared to most workspace upgrades. <a href="/gear/best-standing-desks">Standing desks</a> cost hundreds or thousands of dollars. Footrests? If your first pick doesn't work out you're down thirty or forty bucks. Try something else.
+  </p>
+
+  <AffiliateButton
+      href="/go/amazon/ergofoam-footrest"
+      text="Shop ErgoFoam - Our #1 Pick"
+      variant="primary"
+      program="amazon"
+  />
+
+  <!-- Full Width Content Slot -->
+  <Fragment slot="full-width">
+    <!-- Related Articles -->
+    <RelatedArticles articles={relatedArticles}/>
+  </Fragment>
+</ArticleLayout>

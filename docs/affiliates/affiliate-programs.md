@@ -27,6 +27,7 @@
 | Amazon Associates    | Direct        | 2025-11-28   | ✅ Approved        | floatjet-20  | Store ID, 180-day 3-sale requirement |
 | NordVPN + NordPass   | Direct        | 2025-11-22   | ✅ Approved        | 135757       | B2C bundle                           |
 | Proton (All Products)| Tune          | 2025-12-05   | ✅ Approved        | 15204        | Mail, Pass, Drive, VPN               |
+| Surfshark (VPN+AV+Ad)| HasOffers     | 2025-12-13   | ✅ Approved        | 42943        | VPN 40%, Antivirus 60%, Adblock 60%  |
 | Impact Radius        | Impact Radius | 2025-11-22   | ❌ Declined        | 6717334      | Reapply after Month 2 with traffic   |
 | Notion               | Impact Radius | 2025-11-22   | ⏸️ Deferred       | -            | Pending Impact approval              |
 | ClickUp              | PartnerStack  | 2025-11-22   | ❌ Declined        | -            | Reapply after site launch            |
@@ -444,7 +445,7 @@ accessible after reapplication once site is launched. ClickUp application alread
 | NordVPN    | 30-40%     | 30 days | Direct  | ✅ Approved  |
 | ProtonVPN  | 30%        | 30 days | Tune    | ✅ Approved (2025-12-05) |
 | ExpressVPN | 35-50%     | 90 days | Impact  | ❌ Declined (Low traffic)       |
-| Surfshark  | 40%        | 30 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
+| Surfshark  | 40%        | 30 days | HasOffers | ✅ Approved (2025-12-13) |
 | CyberGhost | 45%        | 45 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
 | IPVanish   | 100% (1st) | 45 days | Direct  | ⏳ Pending (Applied 2025-12-02) |
 
@@ -1442,10 +1443,10 @@ Assuming modest traffic and 1% conversion:
 - [x] Amazon Associates - floatjet-20 (laptops, desks, all hardware)
 - [x] NordVPN + NordPass - ID: 135757 (VPNs, password managers)
 - [x] Proton (All Products) - ID: 15204 (Mail, Pass, Drive, VPN)
+- [x] Surfshark (VPN + Antivirus + Adblock) - ID: 42943 (40% VPN, 60% AV/Adblock)
 
 ### ⏳ Pending Applications
 
-- [ ] Surfshark - Applied 2025-12-02
 - [ ] CyberGhost - Applied 2025-12-02
 - [ ] IPVanish - Applied 2025-12-02
 
@@ -1625,7 +1626,9 @@ You'll end up with accounts on:
 
 ---
 
-**Last Action:** 2025-12-09 - ConvertKit (Kit) application DECLINED. Reason: Audience niche mismatch - Kit partners with creators who help other creators earn online, FloatJet's remote work focus doesn't align. Also noted: limited content for evaluation. Will reapply Month 2-3 with creator-focused content and traffic.
+**Last Action:** 2025-12-13 - Surfshark affiliate program APPROVED! VPN (40% rev share), Antivirus (60%), Adblock (60%). Affiliate ID: 42943 via HasOffers network. Account Manager: Justina. Tracking links added to netlify.toml for all 3 products. Incogni available separately via their partner page.
+
+**Previous Action:** 2025-12-09 - ConvertKit (Kit) application DECLINED. Reason: Audience niche mismatch - Kit partners with creators who help other creators earn online, FloatJet's remote work focus doesn't align. Also noted: limited content for evaluation. Will reapply Month 2-3 with creator-focused content and traffic.
 
 **Previous Action:** 2025-12-08 - Added direct affiliate CTA buttons to 14 new articles. Programs to prioritize:
 

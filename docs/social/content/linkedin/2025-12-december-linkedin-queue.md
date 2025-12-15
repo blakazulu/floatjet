@@ -17,7 +17,7 @@ Full month of posts for FloatJet's LinkedIn company page.
 | Tue 9/12  | 16:00 | #5 Hot take           | Value              | ✅ Posted    | 0%   | Yes     |
 | Wed 10/12 | 16:00 | #6 Article teaser     | Pre-promotion      | ✅ Posted    | 0%   | Yes     |
 | Thu 11/12 | 16:00 | #7 Standing desk      | Personal story     | ✅ Posted    | 0%   | Yes     |
-| Sun 14/12 | 16:00 | #8 Free VPNs          | Value              | ⏳ Pending   | 0%   | Yes     |
+| Sun 14/12 | 16:00 | #8 Free VPNs          | Value              | ✅ Posted    | 0%   | Yes     |
 | Tue 16/12 | 16:00 | #9 Coffee shop WiFi   | Behind-scenes      | ⏳ Pending   | 0%   | Yes     |
 | Wed 17/12 | 16:00 | #10 Physical notebook | Value              | ⏳ Pending   | 0%   | Yes     |
 | Thu 18/12 | 16:00 | #11 Password manager  | Testing update     | ⏳ Pending   | 0%   | Yes     |
@@ -247,7 +247,7 @@ Link in comments.
 
 **Type:** Security insight
 **When:** Sunday 14/12, 16:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Format:** Text post
 **AI Detection:** 0%
 

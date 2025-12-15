@@ -24,9 +24,9 @@ Full month of tweets for @FloatJetWebsite.
 | Thu 11/12 | 01:00 | #12 Notion rabbit hole  | Relatable      | ✅ Posted  | 0%   | No      |
 | Thu 11/12 | 19:00 | #13 VPN kill switch     | Value          | ✅ Posted  | 0%   | Yes     |
 | Fri 12/12 | 15:00 | #14 Slack offline hack  | Value          | ✅ Posted  | 0%   | No      |
-| Sat 13/12 | 01:00 | #15 Terms of service    | Engagement     | ⏳ Pending | 0%   | No      |
-| Sat 13/12 | 19:00 | #16 Cloud storage       | Personal story | ⏳ Pending | 0%   | Yes     |
-| Sun 14/12 | 15:00 | #17 Meetings ratio      | Relatable      | ⏳ Pending | 0%   | No      |
+| Sat 13/12 | 01:00 | #15 Terms of service    | Engagement     | ✅ Posted  | 0%   | No      |
+| Sat 13/12 | 19:00 | #16 Cloud storage       | Personal story | ✅ Posted  | 0%   | Yes     |
+| Sun 14/12 | 15:00 | #17 Meetings ratio      | Relatable      | ✅ Posted  | 0%   | No      |
 | Mon 15/12 | 01:00 | #18 Password manager    | Personal story | ⏳ Pending | 0%   | Yes     |
 | Mon 15/12 | 19:00 | #19 Monitor broke       | Personal story | ⏳ Pending | 0%   | Yes     |
 | Tue 16/12 | 15:00 | #20 2FA warning         | Value          | ⏳ Pending | 0%   | Yes     |
@@ -353,7 +353,7 @@ Wild how much work happens when nobody can ping you for two hours.
 
 **Type:** Question
 **When:** Saturday 13/12, 01:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Character Count:** 167
 
 ```text
@@ -372,7 +372,7 @@ I scrolled and clicked accept like everyone else.
 
 **Type:** Experience
 **When:** Saturday 13/12, 19:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Character Count:** 208
 
 ```text
@@ -394,7 +394,7 @@ https://floatjet.com/tools/best-cloud-storage-remote-work/
 
 **Type:** Work life observation
 **When:** Sunday 14/12, 15:00
-**Status:** ⏳ Pending
+**Status:** ✅ Posted
 **Character Count:** 122
 
 ```text

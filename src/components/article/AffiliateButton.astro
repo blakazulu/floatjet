@@ -5,10 +5,11 @@ interface Props {
   text: string;
   variant?: "primary" | "secondary" | "ghost";
   program?: string;
+  product?: string;
   fullWidth?: boolean;
 }
 
-const { href, text, variant = "primary", program, fullWidth = false } = Astro.props;
+const { href, text, variant = "primary", program, product, fullWidth = false } = Astro.props;
 
 const classes = ["cta-button", `cta-${variant}`, fullWidth ? "full-width" : ""]
   .filter(Boolean)
@@ -21,10 +22,48 @@ const classes = ["cta-button", `cta-${variant}`, fullWidth ? "full-width" : ""]
     rel="nofollow sponsored noopener"
     target="_blank"
     data-program={program}
+    data-product={product || text}
+    data-affiliate-track
 >
   <span>{text}</span>
   <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
 </a>
+
+<script>
+  // GA4 Affiliate Click Tracking
+  // Uses dataLayer.push which is forwarded to Partytown worker
+  function initAffiliateTracking() {
+    document.querySelectorAll('[data-affiliate-track]').forEach(link => {
+      // Avoid duplicate listeners
+      if (link.hasAttribute('data-tracking-initialized')) return;
+      link.setAttribute('data-tracking-initialized', 'true');
+
+      link.addEventListener('click', function(e) {
+        const target = e.currentTarget as HTMLAnchorElement;
+        const program = target.dataset.program || 'unknown';
+        const product = target.dataset.product || 'unknown';
+        const linkUrl = target.href;
+
+        // Push to dataLayer (forwarded to GA4 via Partytown)
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'affiliate_click',
+          affiliate_name: program,
+          product_name: product,
+          link_url: linkUrl,
+          value: 1.00,
+          currency: 'USD'
+        });
+      });
+    });
+  }
+
+  // Initialize on page load
+  initAffiliateTracking();
+
+  // Re-initialize after Astro view transitions
+  document.addEventListener('astro:page-load', initAffiliateTracking);
+</script>
 
 <style>
   .cta-button {

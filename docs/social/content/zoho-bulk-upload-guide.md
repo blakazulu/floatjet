@@ -30,13 +30,13 @@ Schedule Time,Post Content,Link,Media,GMB Button Name,GMB Link
 
 **Correct:**
 ```
-12/21/2025 15:00,"Tweet content here",https://example.com,,,
+12/21/2025 15:00,"Tweet content here",https://example.com
 ```
 
-### 2. NO LINE BREAKS IN CONTENT
-All content must be on a single line. Replace paragraph breaks with spaces.
+### 2. LINE BREAKS USE `\n`
+Use literal `\n` for line breaks. Do NOT use actual newlines (Zoho treats each line as a separate post).
 
-**Wrong:**
+**Wrong (actual newlines):**
 ```
 12/21/2025 15:00,"First paragraph.
 
@@ -45,32 +45,55 @@ Second paragraph.
 #Hashtag",,,,,
 ```
 
-**Correct:**
+**Correct (literal \n):**
 ```
-12/21/2025 15:00,"First paragraph. Second paragraph. #Hashtag",,,,,
+12/21/2025 15:00,"First paragraph.\n\nSecond paragraph.\n\n#Hashtag"
+```
+
+### 2a. HASHTAG FORMATTING
+Hashtags must start on a new line. Add `\n\n` before hashtags.
+
+```
+12/21/2025 15:00,"Post content here.\n\n#RemoteWork #Productivity"
 ```
 
 ### 3. CONTENT IN DOUBLE QUOTES
 Always wrap post content in double quotes.
 
 ```
-12/21/2025 15:00,"This is the tweet content. #RemoteWork",,,,,
+12/21/2025 15:00,"This is the tweet content.\n\n#RemoteWork"
 ```
 
-### 4. ESCAPE QUOTES INSIDE CONTENT
-If content contains double quotes, escape them with double-double quotes.
+### 4. USE SINGLE QUOTES INSIDE CONTENT
+If content contains quotes, use single quotes—not double quotes. This avoids escaping issues with Zoho.
 
+**Wrong (escaped double quotes):**
 ```
-12/21/2025 15:00,"He said ""hello"" to everyone. #Quote",,,,,
+12/21/2025 15:00,"He said ""hello"" to everyone.\n\n#Quote"
 ```
 
-### 5. EMPTY COLUMNS NEED COMMAS
-Even empty columns need comma placeholders.
+**Correct (single quotes):**
+```
+12/21/2025 15:00,"He said 'hello' to everyone.\n\n#Quote"
+```
 
+### 5. NO TRAILING COMMAS FOR POSTS WITHOUT LINKS
+Posts without links should end after the closing quote. Do NOT add trailing commas.
+
+**Wrong (causes "something wrong with link" error):**
 ```
 12/21/2025 15:00,"Tweet without link",,,,
 ```
-(Note: 4 trailing commas for empty Link, Media, GMB Button, GMB Link)
+
+**Correct:**
+```
+12/21/2025 15:00,"Tweet without link"
+```
+
+**Posts WITH links:**
+```
+12/21/2025 15:00,"Tweet with link",https://example.com
+```
 
 ### 6. TIME FORMAT
 Use 24-hour time format: `HH:MM`
@@ -86,9 +109,9 @@ All posts must be scheduled at least 1 hour in the future from upload time.
 ## Example: Twitter CSV
 
 ```csv
-12/21/2025 15:00,"Switched password managers last month. Migration was annoying but worth it. The old one kept logging me out randomly. #Cybersecurity",https://floatjet.com/tools/best-password-manager-remote-work/,,,
-12/21/2025 19:00,"Remote work tip: backup your files before traveling. #DigitalNomad",,,,
-12/22/2025 15:00,"Two-factor authentication is annoying until you get hacked. #Cybersecurity",https://floatjet.com/guides/two-factor-authentication-guide/,,,
+12/21/2025 15:00,"Switched password managers last month. Migration was annoying but worth it. The old one kept logging me out randomly.\n\n#Cybersecurity",https://floatjet.com/tools/best-password-manager-remote-work/
+12/21/2025 19:00,"Remote work tip: backup your files before traveling.\n\n#DigitalNomad"
+12/22/2025 15:00,"Two-factor authentication is annoying until you get hacked.\n\n#Cybersecurity",https://floatjet.com/guides/two-factor-authentication-guide/
 ```
 
 ---
@@ -102,8 +125,16 @@ Same format, but:
 - Manually add comment with link after posting
 
 ```csv
-12/21/2025 16:00,"Physical notebooks in 2024. Hear me out. Yeah I've got Notion but paper still wins for complex thinking. Link in comments. #Productivity #RemoteWork",,,,
-12/22/2025 16:00,"VPN testing update: ran speed tests from 8 different locations. The differences are wild. Link in comments. #Cybersecurity",,,,
+12/21/2025 16:00,"Physical notebooks in 2024. Hear me out.\n\nYeah I've got Notion but paper still wins for complex thinking.\n\nLink in comments.\n\n#Productivity #RemoteWork"
+12/22/2025 16:00,"VPN testing update: ran speed tests from 8 different locations. The differences are wild.\n\nLink in comments.\n\n#Cybersecurity"
+```
+
+## Example: LinkedIn CSV with Link
+
+For LinkedIn posts that include a direct link (not "link in comments"):
+
+```csv
+12/21/2025 16:00,"Password manager update: still the single best security investment.\n\nThis week it saved me twice.\n\n#Cybersecurity #Productivity",https://floatjet.com/tools/best-password-manager-remote-work/
 ```
 
 ---
@@ -125,20 +156,22 @@ Same format, but:
 | Error | Cause | Fix |
 |-------|-------|-----|
 | "Date not in selected format" | Header row included | Remove header row |
-| "Date not in selected format" | Newlines in content | Put all content on one line |
-| "Forgot to type content" | Newlines split the row | Single line per post |
+| "Date not in selected format" | Newlines in content | Put all content on one line, use `\n` |
+| "Forgot to type content" | Newlines split the row | Single line per post, use `\n` for breaks |
 | "Past date" | Schedule time already passed | Use future dates |
-| "Something wrong with link" | Comma in content parsed as column | Ensure content is in double quotes |
+| "Something wrong with link" | Trailing commas on posts without links | Remove trailing commas (e.g., `,,,,`) |
+| "Something wrong with link" | Content not in double quotes | Wrap content in `"double quotes"` |
+| Multiple posts detected | Actual newlines in content | Use literal `\n` instead of real newlines |
 
 ---
 
 ## File Locations
 
-- **Twitter CSV:** `docs/social/content/twitter/twitter-bulk-upload.csv`
-- **LinkedIn CSV:** `docs/social/content/linkedin/linkedin-bulk-upload.csv`
-- **Twitter Queue:** `docs/social/content/twitter/2025-12-december-twitter-queue.md`
-- **LinkedIn Queue:** `docs/social/content/linkedin/2025-12-december-linkedin-queue.md`
+- **Twitter Dec 2025:** `docs/social/content/twitter/dec-2025-twitter-bulk-upload.csv`
+- **Twitter Jan 2026:** `docs/social/content/twitter/jan-2026-twitter-bulk-upload.csv`
+- **LinkedIn Dec 2025:** `docs/social/content/linkedin/dec-2025-linkedin-bulk-upload.csv`
+- **LinkedIn Jan 2026:** `docs/social/content/linkedin/jan-2026-linkedin-bulk-upload.csv`
 
 ---
 
-*Last updated: December 20, 2025*
+*Last updated: December 21, 2025*

@@ -61,7 +61,7 @@ def process_board(board_name):
 
             # Generate image URL
             slug = link.split('/')[-1] if link else f"pin-{i}"
-            filename = f"{slug}-{i}.webp"
+            filename = f"{slug}-{i}.jpg"
             image_url = f"{IMAGE_BASE_URL}/{board_name}/{filename}"
 
             # Convert time format

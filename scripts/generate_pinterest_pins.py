@@ -441,13 +441,13 @@ def generate_pin(headline, board_name, output_path, index):
     draw.rectangle([PIN_WIDTH - margin - corner_size, PIN_HEIGHT - margin - corner_thickness, PIN_WIDTH - margin, PIN_HEIGHT - margin], fill=accent_color + (200,))
     draw.rectangle([PIN_WIDTH - margin - corner_thickness, PIN_HEIGHT - margin - corner_size, PIN_WIDTH - margin, PIN_HEIGHT - margin], fill=accent_color + (200,))
 
-    # Save as WebP (optimized for small file size)
+    # Save as JPEG (Zoho Social doesn't support WebP)
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     img_rgb = img.convert("RGB")
-    # Change extension to .webp
-    output_path_webp = str(output_path).replace('.png', '.webp')
-    img_rgb.save(output_path_webp, "WEBP", quality=65, method=6)  # method=6 = best compression
-    print(f"  Generated: {output_path_webp}")
+    # Change extension to .jpg
+    output_path_jpg = str(output_path).replace('.png', '.jpg')
+    img_rgb.save(output_path_jpg, "JPEG", quality=82, optimize=True)
+    print(f"  Generated: {output_path_jpg}")
 
 
 def process_board(board_name):
@@ -475,8 +475,8 @@ def process_board(board_name):
 
             # Generate filename from link
             slug = link.split('/')[-1] if link else f"pin-{i}"
-            filename = f"{slug}-{i}.webp"
-            output_path = output_subdir / filename.replace('.webp', '.png')  # generate_pin will convert
+            filename = f"{slug}-{i}.jpg"
+            output_path = output_subdir / filename.replace('.jpg', '.png')  # generate_pin will convert
 
             # Generate pin
             generate_pin(headline, board_name, output_path, i)

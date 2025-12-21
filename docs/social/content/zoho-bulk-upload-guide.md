@@ -165,12 +165,57 @@ For LinkedIn posts that include a direct link (not "link in comments"):
 
 ---
 
+## Pinterest CSV Format
+
+Pinterest uses the same Zoho format as Twitter/LinkedIn, but pins **require images** in Column D.
+
+### Pinterest Column Format (Same as Twitter/LinkedIn)
+
+| Column | Name | Required | Description |
+|--------|------|----------|-------------|
+| A | Schedule Time | Yes | `MM/DD/YYYY HH:MM` format |
+| B | Post Content | Yes | Pin description in double quotes |
+| C | Link | Yes | Destination URL (where clicks go) |
+| D | Media | Yes | Image URL (the pin image) |
+
+### Pinterest CSV Rules
+
+1. **Same format as Twitter/LinkedIn** - no header row
+2. **Image URL required** in Column D (Media)
+3. **No hashtags** - Pinterest deprecated hashtags in 2024
+4. **Use Zoho-formatted CSVs** - `dec-2025-zoho.csv` files (not the raw `dec-2025-pins.csv`)
+
+### Example: Pinterest CSV (Zoho Format)
+
+Same format as Twitter/LinkedIn - no headers, 4 columns:
+
+```csv
+12/21/2025 13:00,"Tested 7 VPNs from airports and cafes. Here's which ones work for remote workers.",https://floatjet.com/tools/best-vpn-digital-nomads,https://floatjet.com/images/pins/vpns-digital-nomads/best-vpn-digital-nomads-1.webp
+12/21/2025 18:00,"Best standing desks under $500. Tested for stability and motor quality.",https://floatjet.com/gear/best-standing-desks,https://floatjet.com/images/pins/home-office-setup/best-standing-desks-2.webp
+```
+
+### Pinterest Upload Steps
+
+1. Go to **Zoho Social → Publishing → Bulk Scheduler**
+2. Click **Upload**
+3. Set Date Format: `MM/DD/YYYY HH:MM`
+4. Upload the board's `dec-2025-zoho.csv` file
+5. Select **Pinterest** channel
+6. **Select the target board** (you choose board in Zoho UI, not CSV)
+7. Review preview
+8. Click **Schedule**
+
+**Note:** Upload one board at a time. Each board has its own `dec-2025-zoho.csv` file.
+
+---
+
 ## File Locations
 
 - **Twitter Dec 2025:** `docs/social/content/twitter/dec-2025-twitter-bulk-upload.csv`
 - **Twitter Jan 2026:** `docs/social/content/twitter/jan-2026-twitter-bulk-upload.csv`
 - **LinkedIn Dec 2025:** `docs/social/content/linkedin/dec-2025-linkedin-bulk-upload.csv`
 - **LinkedIn Jan 2026:** `docs/social/content/linkedin/jan-2026-linkedin-bulk-upload.csv`
+- **Pinterest boards:** `docs/social/content/pinterest/boards/[board-name]/dec-2025-pins.csv`
 
 ---
 

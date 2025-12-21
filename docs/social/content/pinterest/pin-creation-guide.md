@@ -233,16 +233,27 @@ Save each pin to the most relevant board.
 6. Select board
 7. Click **Publish** or **Schedule**
 
-### Scheduling Best Times (Israel)
+### Best Times to Post (US Audience)
 
-| Day       | Best Time   |
-| --------- | ----------- |
-| Sunday    | 22:00-01:00 |
-| Monday    | 22:00-01:00 |
-| Tuesday   | 22:00-01:00 |
-| Wednesday | 22:00-01:00 |
-| Saturday  | 12:00-15:00 |
-| Sunday    | 12:00-15:00 |
+| Time Slot (US) | Israel Time | Performance |
+| -------------- | ----------- | ----------- |
+| 8-11 PM        | 3-6 AM      | 4x engagement (best) |
+| 1-3 PM         | 8-10 PM     | 2x better than average |
+| 8-10 AM        | 3-5 PM      | +320% lift |
+
+**Best Days:** Sunday, Monday, Tuesday
+**Worst Days:** Thursday, Friday, Saturday
+
+### How Many Pins Per Day
+
+| Frequency | Recommendation |
+| --------- | -------------- |
+| Minimum   | 3-5 pins/day |
+| Optimal   | 5-7 pins/day |
+| Pinterest official | 5-25 fresh pins/day |
+| Maximum   | 30 pins/day (avoid audience fatigue) |
+
+**Key insight:** Consistency matters more than volume. Post at predictable times. Mobile-optimized pins perform better during commute hours (7-9 AM, 5-7 PM US).
 
 Schedule 2-4 weeks ahead for consistency.
 
@@ -465,4 +476,109 @@ Check Pinterest Analytics weekly.
 
 ---
 
-*Last Updated: December 3, 2025*
+## Automated Pin Generation (Python Scripts)
+
+Instead of manually creating pins in Canva, use our Python scripts to auto-generate branded pin images.
+
+### Prerequisites
+
+- Python 3.x installed
+- Pillow library: `pip install pillow`
+
+### Scripts Location
+
+```
+scripts/
+  generate_pinterest_pins.py   # Generates pin images
+  update_pinterest_csvs.py     # Updates CSVs with image URLs
+```
+
+### Step 1: Generate Pin Images
+
+Run from the project root:
+
+```bash
+python scripts/generate_pinterest_pins.py
+```
+
+**What it does:**
+- Reads each board's CSV from `docs/social/content/pinterest/boards/[board]/dec-2025-pins.csv`
+- Auto-extracts headlines from pin descriptions
+- Generates branded 800x1200 WebP images (~20KB each)
+- Applies unique template per board (background image, accent colors)
+- Outputs to `public/images/pins/[board]/`
+
+**Output:**
+```
+public/images/pins/
+  vpns-digital-nomads/
+    best-vpn-digital-nomads-1.webp
+    free-vpn-vs-paid-vpn-2.webp
+    ...
+  home-office-setup/
+    budget-home-office-setup-500-1.webp
+    ...
+```
+
+### Step 2: Update CSVs with Image URLs
+
+After generating images, update the CSVs:
+
+```bash
+python scripts/update_pinterest_csvs.py
+```
+
+**What it does:**
+- Adds `imageUrls` column to each board's CSV
+- Points to hosted images at `https://floatjet.com/images/pins/[board]/[filename].webp`
+
+### Step 3: Upload to Zoho Social
+
+1. Deploy site (so images are live at floatjet.com)
+2. Go to Zoho Social → Publishing → Bulk Scheduler
+3. Upload the board's CSV file
+4. Select Pinterest channel
+5. Select target board
+6. Review and schedule
+
+### Board Templates
+
+Each board has a unique visual style:
+
+| Board | Background | Accent Color |
+|-------|------------|--------------|
+| vpns-digital-nomads | Security imagery | Red |
+| home-office-setup | Workspace photo | Teal |
+| budget-home-office | Furniture photo | Gold |
+| laptops-tech-gear | Computer/tech | Light blue |
+| productivity-tips | Productivity | Teal |
+| remote-work-tools | Dashboard/SaaS | Purple |
+| web-hosting | Cloud imagery | Light blue |
+| digital-nomad-finance | Finance charts | Gold |
+| travel-remote-workers | Travel photo | Coral |
+| freelance-business-tools | Communication | Teal |
+
+### Customizing Templates
+
+Edit `scripts/generate_pinterest_pins.py`:
+
+- **Change dimensions:** Modify `PIN_WIDTH` and `PIN_HEIGHT`
+- **Change quality:** Modify `quality=65` in the save line
+- **Change backgrounds:** Update `BOARD_CONFIG` with different images
+- **Change colors:** Update `COLORS` dict or board accent colors
+
+### Regenerating Pins
+
+To regenerate all pins (e.g., after template changes):
+
+```bash
+# Generate new images (clears old ones)
+python scripts/generate_pinterest_pins.py
+
+# Update CSVs with new URLs
+python scripts/update_pinterest_csvs.py
+```
+
+---
+
+*Last Updated: December 21, 2025*

@@ -480,6 +480,31 @@ Check Pinterest Analytics weekly.
 
 Instead of manually creating pins in Canva, use our Python scripts to auto-generate branded pin images.
 
+### Folder Structure
+
+Images are organized by board and month:
+
+```
+public/images/pins/
+  [board-name]/
+    dec/                    # December 2025
+      pin-1.webp
+      pin-2.webp
+    jan/                    # January 2026 (when created)
+      pin-1.webp
+      ...
+```
+
+CSVs are stored by board with month prefix:
+
+```
+docs/social/content/pinterest/boards/
+  [board-name]/
+    dec-2025-pins.csv       # Source data (descriptions, links)
+    dec-2025-zoho.csv       # Zoho-ready format with image URLs
+    jan-2026-pins.csv       # Next month...
+```
+
 ### Prerequisites
 
 - Python 3.x installed
@@ -490,58 +515,114 @@ Instead of manually creating pins in Canva, use our Python scripts to auto-gener
 ```
 scripts/
   generate_pinterest_pins.py   # Generates pin images
-  update_pinterest_csvs.py     # Updates CSVs with image URLs
+  update_pinterest_csvs.py     # Converts CSVs to Zoho format
+  reorganize_pins.py           # Moves images into month folders
 ```
 
-### Step 1: Generate Pin Images
+---
 
-Run from the project root:
+## Creating Pins for a New Month
+
+Follow these steps when starting a new month of pins:
+
+### Step 1: Create Source CSV
+
+Create a new CSV in each board folder:
+
+```
+docs/social/content/pinterest/boards/[board]/jan-2026-pins.csv
+```
+
+**CSV format (with headers):**
+```csv
+text,link,postAtSpecificTime
+"Pin description here",https://floatjet.com/article-url,2026-01-15T14:00:00Z
+```
+
+### Step 2: Update generate_pinterest_pins.py
+
+Edit the script to use the new month's CSV:
+
+```python
+# Change this line (around line 455):
+csv_path = BOARDS_DIR / board_name / "jan-2026-pins.csv"
+
+# And update output folder:
+output_dir = OUTPUT_DIR / board_name / "jan"
+```
+
+### Step 3: Generate Pin Images
 
 ```bash
 python scripts/generate_pinterest_pins.py
 ```
 
 **What it does:**
-- Reads each board's CSV from `docs/social/content/pinterest/boards/[board]/dec-2025-pins.csv`
+- Reads each board's CSV
 - Auto-extracts headlines from pin descriptions
 - Generates branded 800x1200 WebP images (~20KB each)
-- Applies unique template per board (background image, accent colors)
-- Outputs to `public/images/pins/[board]/`
+- Applies unique template per board (background, accent colors)
+- Outputs to `public/images/pins/[board]/jan/`
 
-**Output:**
+### Step 4: Create Zoho CSV
+
+Update `scripts/update_pinterest_csvs.py` for the new month:
+
+```python
+# Change CSV filename:
+csv_path = BOARDS_DIR / board_name / "jan-2026-pins.csv"
+
+# Change output filename:
+output_path = BOARDS_DIR / board_name / "jan-2026-zoho.csv"
+
+# Update image URL path:
+image_url = f"{IMAGE_BASE_URL}/{board_name}/jan/{filename}"
 ```
-public/images/pins/
-  vpns-digital-nomads/
-    best-vpn-digital-nomads-1.webp
-    free-vpn-vs-paid-vpn-2.webp
-    ...
-  home-office-setup/
-    budget-home-office-setup-500-1.webp
-    ...
-```
 
-### Step 2: Update CSVs with Image URLs
-
-After generating images, update the CSVs:
+Then run:
 
 ```bash
 python scripts/update_pinterest_csvs.py
 ```
 
-**What it does:**
-- Adds `imageUrls` column to each board's CSV
-- Points to hosted images at `https://floatjet.com/images/pins/[board]/[filename].webp`
+### Step 5: Deploy and Upload
 
-### Step 3: Upload to Zoho Social
+1. **Commit and push** - so images are live at floatjet.com
+2. **Verify images load** - check a URL like:
+   `https://floatjet.com/images/pins/vpns-digital-nomads/jan/pin-1.webp`
+3. **Upload to Zoho Social:**
+   - Go to Publishing → Bulk Scheduler
+   - Upload `jan-2026-zoho.csv`
+   - Select Pinterest channel
+   - Select target board
+   - Review and schedule
 
-1. Deploy site (so images are live at floatjet.com)
-2. Go to Zoho Social → Publishing → Bulk Scheduler
-3. Upload the board's CSV file
-4. Select Pinterest channel
-5. Select target board
-6. Review and schedule
+---
 
-### Board Templates
+## December 2025 Pins (Current)
+
+The current pin images are in `dec/` folders:
+
+```
+public/images/pins/
+  vpns-digital-nomads/dec/    # 26 pins
+  home-office-setup/dec/      # 15 pins
+  budget-home-office/dec/     # 8 pins
+  laptops-tech-gear/dec/      # 21 pins
+  productivity-tips/dec/      # 22 pins
+  remote-work-tools/dec/      # 19 pins
+  web-hosting/dec/            # 14 pins
+  digital-nomad-finance/dec/  # 25 pins
+  travel-remote-workers/dec/  # 12 pins
+  freelance-business-tools/dec/ # 11 pins
+```
+
+Image URLs format:
+`https://floatjet.com/images/pins/[board]/dec/[filename].webp`
+
+---
+
+## Board Templates
 
 Each board has a unique visual style:
 
@@ -567,17 +648,25 @@ Edit `scripts/generate_pinterest_pins.py`:
 - **Change backgrounds:** Update `BOARD_CONFIG` with different images
 - **Change colors:** Update `COLORS` dict or board accent colors
 
-### Regenerating Pins
+---
 
-To regenerate all pins (e.g., after template changes):
+## Zoho CSV Format
 
-```bash
-# Generate new images (clears old ones)
-python scripts/generate_pinterest_pins.py
+Zoho Social bulk upload requires this exact format (NO HEADERS):
 
-# Update CSVs with new URLs
-python scripts/update_pinterest_csvs.py
+| Column | Name | Required | Description |
+|--------|------|----------|-------------|
+| A | Schedule Time | Yes | `MM/DD/YYYY HH:MM` format |
+| B | Post Content | Yes | Pin description in double quotes |
+| C | Link | Yes | Destination URL |
+| D | Media | Yes | Image URL |
+
+**Example row:**
+```csv
+01/15/2026 14:00,"Pin description here",https://floatjet.com/article,https://floatjet.com/images/pins/board/jan/pin-1.webp
 ```
+
+See `docs/social/content/zoho-bulk-upload-guide.md` for full formatting rules.
 
 ---
 

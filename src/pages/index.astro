@@ -1,520 +1,326 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import DeskScene from "@components/home/DeskScene.astro";
+import ArticleCard from "@components/ui/ArticleCard.astro";
+import { blogArticles, gearArticles, guidesArticles, toolsArticles } from "../data/articles";
 
 const title = "FloatJet | Tools & Resources for Remote Professionals";
 const description =
   "Discover the best software, gear, and strategies to work efficiently from anywhere. Expert reviews on VPNs, project management tools, and home office setups.";
 
-// Categories for exploration grid
-const categories = [
-  {
-    id: "tools",
-    name: "Software & Tools",
-    description: "VPNs, project management, cloud storage",
-    icon: "desktop",
-    href: "/tools/",
-    count: 41,
-    color: "from-jet-stream to-ocean-deep",
-  },
-  {
-    id: "gear",
-    name: "Gear & Equipment",
-    description: "Laptops, monitors, audio, furniture",
-    icon: "laptop",
-    href: "/gear/",
-    count: 31,
-    color: "from-sky-light to-jet-stream",
-  },
-  {
-    id: "guides",
-    name: "Guides & How-Tos",
-    description: "Setup guides, productivity tips, security",
-    icon: "book",
-    href: "/guides/",
-    count: 35,
-    color: "from-ocean-deep to-jet-stream",
-  },
-  {
-    id: "blog",
-    name: "Blog & Insights",
-    description: "Trends, comparisons, nomad lifestyle",
-    icon: "newspaper",
-    href: "/blog/",
-    count: 16,
-    color: "from-jet-stream to-sky-light",
-  },
-];
+const counts = {
+  tools: toolsArticles.length,
+  gear: gearArticles.length,
+  guides: guidesArticles.length,
+  blog: blogArticles.length,
+};
+const totalReviews = counts.tools + counts.gear + counts.guides + counts.blog;
+
+// The laptop screen on the desk: the lead review
+const featured = {
+  title: "Notion vs ClickUp vs Monday",
+  href: "/tools/notion-vs-clickup-vs-monday/",
+  blurb: "Which project tool actually fits a remote team.",
+};
+
+// Tool names shown in the moving strip (all reviewed on the site)
+const toolStrip = ["Notion", "ClickUp", "NordVPN", "Monday.com", "Surfshark", "Kit", "WP Engine", "1Password", "Wise", "ExpressVPN"];
 
 // Start Here guides for new visitors
 const startHereGuides = [
   {
     title: "Complete Home Office Checklist",
-    description: "Everything you need to set up the perfect workspace",
+    description: "Everything you need to set up the perfect workspace, in the order to buy it.",
     href: "/guides/complete-home-office-checklist/",
-    icon: "checklist",
   },
   {
     title: "Best VPNs for Remote Workers",
-    description: "Secure your connection from anywhere in the world",
+    description: "Secure your connection on hotel, airport and cafe networks.",
     href: "/tools/best-vpn-digital-nomads/",
-    icon: "shield",
   },
   {
     title: "Budget Office Setup Under $500",
-    description: "Professional workspace without breaking the bank",
+    description: "A professional workspace without breaking the bank.",
     href: "/guides/budget-home-office-setup-500/",
-    icon: "dollar",
   },
 ];
 
-// Editor's Picks - curated money pages (no overlap with Latest)
+// On our desk this month - curated money pages
 const editorsPicks = [
   {
     title: "Best Project Management Software",
-    excerpt: "Notion, ClickUp, Monday.com - we compare the top platforms for remote teams.",
     image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-1200w.webp",
-    slug: "tools/best-project-management-software",
-    category: "SaaS",
-    readTime: "14 min",
-    featured: true,
+    imageAlt: "Laptop showing a project board on a desk",
+    href: "/tools/best-project-management-software/",
+    category: "Software",
+    readTime: 14,
+    note: "the tools that run our week",
   },
   {
     title: "Best Ergonomic Chairs for Home Office",
-    excerpt: "Your back will thank you. Expert picks for all-day comfort.",
     image: "/images/unsplash/photo-1580480055273-228ff5388ef8-1200w.webp",
-    slug: "gear/best-ergonomic-chairs",
+    imageAlt: "Ergonomic office chair at a home desk",
+    href: "/gear/best-ergonomic-chairs/",
     category: "Gear",
-    readTime: "18 min",
+    readTime: 18,
+    note: "our backs say thanks",
   },
   {
     title: "Best Password Managers",
-    excerpt: "Secure every account with one master password.",
     image: "/images/unsplash/photo-1633265486064-086b219458ec-1200w.webp",
-    slug: "tools/best-password-manager-remote-work",
+    imageAlt: "Padlock icon on a laptop screen",
+    href: "/tools/best-password-manager-remote-work/",
     category: "Security",
-    readTime: "14 min",
+    readTime: 14,
+    note: "one password to remember",
   },
   {
     title: "Best VPNs for Digital Nomads",
-    excerpt: "Stay secure on any network, anywhere in the world.",
     image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-1200w.webp",
-    slug: "tools/best-vpn-digital-nomads",
+    imageAlt: "Code on a dark screen suggesting a secure connection",
+    href: "/tools/best-vpn-digital-nomads/",
     category: "VPN",
-    readTime: "15 min",
+    readTime: 15,
+    note: "safe on airport wifi",
   },
 ];
 
-// Latest Reviews - distinct from Editor's Picks
+// Latest reviews - distinct from the picks above
 const latestReviews = [
   {
     title: "Best Audio Interfaces for Remote Work",
-    excerpt: "Professional audio quality for meetings and podcasts.",
+    description: "Professional audio quality for meetings and podcasts.",
     image: "/images/unsplash/photo-j4T_qK7Eumc-1200w.webp",
-    slug: "gear/best-audio-interfaces-for-remote-work",
+    imageAlt: "Audio interface and microphone on a desk",
+    href: "/gear/best-audio-interfaces-for-remote-work/",
     category: "Audio",
-    readTime: "14 min",
+    readTime: 14,
   },
   {
     title: "Best Footrests for Desk Workers",
-    excerpt: "Improve posture and circulation with these ergonomic picks.",
+    description: "Improve posture and circulation with these ergonomic picks.",
     image: "/images/unsplash/photo-1598818432717-29f81b9224fd-1200w.webp",
-    slug: "gear/best-footrests-for-desk-workers",
+    imageAlt: "Home office desk setup",
+    href: "/gear/best-footrests-for-desk-workers/",
     category: "Furniture",
-    readTime: "14 min",
+    readTime: 14,
   },
   {
     title: "Best External SSDs for Remote Workers",
-    excerpt: "Fast, portable storage for digital nomads.",
+    description: "Fast, portable storage for digital nomads.",
     image: "/images/unsplash/photo-1597852074816-d933c7d2b988-1200w.webp",
-    slug: "gear/best-external-ssds-for-remote-workers",
+    imageAlt: "Portable external SSD next to a laptop",
+    href: "/gear/best-external-ssds-for-remote-workers/",
     category: "Computers",
-    readTime: "14 min",
+    readTime: 14,
   },
   {
     title: "Best DNS Services for Privacy",
-    excerpt: "Faster browsing and better privacy in minutes.",
+    description: "Faster browsing and better privacy in minutes.",
     image: "/images/unsplash/photo-1606765962248-7ff407b51667-1200w.webp",
-    slug: "tools/best-dns-services-for-privacy-and-speed",
+    imageAlt: "Network cables plugged into a router",
+    href: "/tools/best-dns-services-for-privacy-and-speed/",
     category: "Security",
-    readTime: "13 min",
+    readTime: 13,
+  },
+];
+
+const sections = [
+  {
+    name: "Software",
+    count: `${counts.tools} reviews`,
+    blurb: "VPNs, project management, cloud storage",
+    href: "/tools/",
+    classes: "bg-sun text-ink rounded-[32px]",
+  },
+  {
+    name: "Gear",
+    count: `${counts.gear} reviews`,
+    blurb: "Laptops, chairs, audio, desks",
+    href: "/gear/",
+    classes: "bg-sand text-ink rounded-t-[999px] rounded-b-[32px] justify-end",
+  },
+  {
+    name: "Guides",
+    count: `${counts.guides} guides`,
+    blurb: "Setup, productivity, security",
+    href: "/guides/",
+    classes: "bg-ink text-sand rounded-[32px]",
+  },
+  {
+    name: "Blog",
+    count: `${counts.blog} posts`,
+    blurb: "Trends, comparisons, nomad life",
+    href: "/blog/",
+    classes: "bg-coral text-ink rounded-[32px] rounded-br-[120px]",
   },
 ];
 ---
 
 <BaseLayout title={title} description={description}>
-  <!-- Hero Section -->
-  <section class="pt-24 md:pt-32 pb-8 md:pb-12 px-4">
-    <div class="container mx-auto max-w-4xl text-center">
-      <!-- Main Headline -->
-      <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight hero-headline">
-        Your Guide to Working<br class="hidden sm:block" />
-        <span class="text-sky-light">From Anywhere</span>
+  <!-- Hero -->
+  <section class="relative px-4 pt-28 md:pt-36 pb-14 md:pb-20">
+    <div class="mx-auto max-w-5xl text-center">
+      <p class="hand text-2xl md:text-3xl text-teal-ink -rotate-2 mb-3">hi, remote worker</p>
+      <h1 class="font-display font-black text-[40px] leading-[0.98] sm:text-6xl md:text-7xl lg:text-[88px] tracking-[-0.04em] text-ink text-balance">
+        Build a desk you actually want to work at.
       </h1>
-
-      <!-- Subtitle -->
-      <p class="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed hero-subtitle">
-        Curated reviews of the best tools, gear, and resources for remote professionals and digital nomads. Real testing. Honest recommendations.
+      <p class="mt-6 text-lg md:text-xl font-medium text-ink-soft max-w-2xl mx-auto">
+        {totalReviews} honest reviews of the software, gear and setups behind a good remote workday.
       </p>
-
-      <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center hero-cta">
-        <a
-          href="/tools/"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-jet-stream text-white font-semibold text-lg hover:bg-jet-stream/90 hover:scale-105 transition-all duration-300 shadow-lg shadow-jet-stream/30"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
-          Explore Tools
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/tools/" class="btn-pill btn-ink">
+          Find my tools
+          <svg class="h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </a>
-        <a
-          href="/guides/complete-home-office-checklist/"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold text-lg hover:bg-white/20 transition-all duration-300"
-        >
-          Start Here
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
+        <a href="/guides/complete-home-office-checklist/" class="btn-pill btn-outline">Start with the checklist</a>
       </div>
     </div>
   </section>
 
-  <!-- Social Proof Bar -->
-  <section class="py-6 md:py-8">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-wrap justify-center gap-6 md:gap-12 lg:gap-16">
-        <div class="stats-item flex items-center gap-3 text-white/90">
-          <div class="w-10 h-10 rounded-full bg-jet-stream/20 flex items-center justify-center">
-            <svg class="w-5 h-5 text-jet-stream" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-          </div>
-          <div>
-            <span class="text-2xl md:text-3xl font-bold text-white">123</span>
-            <span class="text-sm md:text-base text-white/70 ml-1">Tools Reviewed</span>
-          </div>
-        </div>
-
-        <div class="stats-item flex items-center gap-3 text-white/90">
-          <div class="w-10 h-10 rounded-full bg-sky-light/20 flex items-center justify-center">
-            <svg class="w-5 h-5 text-sky-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-            </svg>
-          </div>
-          <div>
-            <span class="text-2xl md:text-3xl font-bold text-white">14</span>
-            <span class="text-sm md:text-base text-white/70 ml-1">Categories</span>
-          </div>
-        </div>
-
-        <div class="stats-item flex items-center gap-3 text-white/90">
-          <div class="w-10 h-10 rounded-full bg-sand/20 flex items-center justify-center">
-            <svg class="w-5 h-5 text-sand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-            </svg>
-          </div>
-          <div>
-            <span class="text-sm md:text-base text-white/70">Updated</span>
-            <span class="text-lg md:text-xl font-semibold text-white ml-1">Weekly</span>
-          </div>
-        </div>
+  <!-- The desk -->
+  <section class="px-3 md:px-6" aria-labelledby="desk-heading">
+    <h2 id="desk-heading" class="sr-only">Explore FloatJet from the desk</h2>
+    <div class="mx-auto max-w-7xl relative">
+      <div class="hidden lg:flex absolute -top-14 left-10 z-10 items-end gap-1 -rotate-6" aria-hidden="true">
+        <span class="hand text-3xl text-ink">psst, the laptop works</span>
+        <svg class="w-14 h-14" viewBox="0 0 60 60" fill="none" stroke="#082F38" stroke-width="3" stroke-linecap="round"><path d="M5 10c20 0 38 12 44 40"></path><path d="M40 42l9 9 6-12"></path></svg>
       </div>
+      <DeskScene counts={counts} featured={featured} />
     </div>
   </section>
 
-  <!-- Start Here Section (New Visitors) -->
-  <section class="py-10 md:py-16 px-4">
-    <div class="container mx-auto max-w-6xl">
-      <div class="bg-gradient-to-br from-ocean-deep/80 to-ocean-deep/60 backdrop-blur-lg rounded-3xl border border-white/10 p-6 md:p-10 start-here-section">
-        <div class="flex flex-col md:flex-row md:items-center gap-4 mb-8">
-          <div class="w-12 h-12 rounded-2xl bg-jet-stream/20 flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6 text-jet-stream" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
-          </div>
-          <div>
-            <h2 class="text-2xl md:text-3xl font-bold text-white">New to Remote Work?</h2>
-            <p class="text-white/70 mt-1">Start with our most popular guides</p>
-          </div>
-        </div>
+  <!-- Tool strip -->
+  <div class="overflow-hidden py-8 mt-12 md:mt-16" aria-hidden="true">
+  <div class="tool-strip mx-[-5vw] bg-ink text-sand -rotate-2 py-5 md:py-6 overflow-hidden">
+    <div class="tool-strip-track flex w-max whitespace-nowrap font-display font-bold text-2xl md:text-4xl">
+      {[...toolStrip, ...toolStrip].map((name) => (
+        <span class="flex items-center gap-10 md:gap-12 pr-10 md:pr-12">{name}<span class="text-sun">+</span></span>
+      ))}
+    </div>
+  </div>
+  </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {startHereGuides.map((guide, index) => (
-            <a
-              href={guide.href}
-              class="group flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 start-here-card"
-              style={`animation-delay: ${index * 100}ms`}
-            >
-              <div class="w-10 h-10 rounded-xl bg-jet-stream/20 flex items-center justify-center shrink-0 group-hover:bg-jet-stream/30 transition-colors">
-                {guide.icon === 'checklist' && (
-                  <svg class="w-5 h-5 text-jet-stream" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
-                  </svg>
-                )}
-                {guide.icon === 'shield' && (
-                  <svg class="w-5 h-5 text-jet-stream" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                  </svg>
-                )}
-                {guide.icon === 'dollar' && (
-                  <svg class="w-5 h-5 text-jet-stream" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                )}
-              </div>
-              <div class="flex-1 min-w-0">
-                <h3 class="text-white font-semibold group-hover:text-sky-light transition-colors">
-                  {guide.title}
-                </h3>
-                <p class="text-white/60 text-sm mt-1 line-clamp-2">
-                  {guide.description}
-                </p>
-              </div>
-              <svg class="w-5 h-5 text-white/40 group-hover:text-sky-light group-hover:translate-x-1 transition-all shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M9 5l7 7-7 7"/>
-              </svg>
+  <!-- Start here -->
+  <section class="px-4 pt-20 md:pt-28" aria-labelledby="start-heading">
+    <div class="mx-auto max-w-6xl">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-8 md:mb-10">
+        <div>
+          <p class="hand text-2xl text-teal-ink -rotate-1">new here?</p>
+          <h2 id="start-heading" class="font-display font-black text-3xl md:text-5xl tracking-tight">Start with these three</h2>
+        </div>
+        <p class="text-ink-soft md:max-w-sm">Our most-read guides for setting up a remote workday that actually works.</p>
+      </div>
+      <ol class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+        {startHereGuides.map((guide, index) => (
+          <li>
+            <a href={guide.href} class="sticker sticker-hover group flex h-full flex-col gap-3 rounded-[24px] p-6 md:p-7 text-ink">
+              <span class="font-display font-black text-5xl text-jet-stream leading-none" aria-hidden="true">0{index + 1}</span>
+              <h3 class="font-display font-bold text-xl leading-snug group-hover:underline decoration-2 underline-offset-4">{guide.title}</h3>
+              <p class="text-ink-soft text-[15px]">{guide.description}</p>
+              <span class="mt-auto pt-2 inline-flex items-center gap-1 text-sm font-bold text-teal-ink">
+                Read it
+                <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              </span>
             </a>
-          ))}
-        </div>
-      </div>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 
-  <!-- Category Exploration Grid -->
-  <section class="py-10 md:py-16 px-4">
-    <div class="container mx-auto max-w-6xl">
-      <div class="text-center mb-10">
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Browse by Category</h2>
-        <p class="text-white/70 max-w-xl mx-auto">Find exactly what you need for your remote work setup</p>
+  <!-- On our desk this month -->
+  <section class="px-4 pt-20 md:pt-28" aria-labelledby="picks-heading">
+    <div class="mx-auto max-w-7xl">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+        <div>
+          <p class="hand text-2xl text-teal-ink -rotate-1">editor's picks</p>
+          <h2 id="picks-heading" class="font-display font-black text-3xl md:text-5xl tracking-tight">On our desk this month</h2>
+        </div>
+        <a href="/tools/" class="btn-pill btn-outline self-start sm:self-auto">See every review</a>
       </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        {categories.map((category, index) => (
-          <a
-            href={category.href}
-            class="group relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 p-6 hover:bg-white/10 hover:border-white/20 hover:-translate-y-1 transition-all duration-300 category-card"
-            style={`animation-delay: ${index * 75}ms`}
-          >
-            <!-- Gradient accent -->
-            <div class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${category.color}`}></div>
-
-            <!-- Icon -->
-            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              {category.icon === 'desktop' && (
-                <svg class="w-6 h-6 text-jet-stream" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <rect width="20" height="14" x="2" y="3" rx="2"/>
-                  <path d="M8 21h8m-4-4v4"/>
-                </svg>
-              )}
-              {category.icon === 'laptop' && (
-                <svg class="w-6 h-6 text-sky-light" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M20 16V7a2 2 0 00-2-2H6a2 2 0 00-2 2v9m16 0H4m16 0l1.28 2.55a1 1 0 01-.9 1.45H3.62a1 1 0 01-.9-1.45L4 16"/>
-                </svg>
-              )}
-              {category.icon === 'book' && (
-                <svg class="w-6 h-6 text-sand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                </svg>
-              )}
-              {category.icon === 'newspaper' && (
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
-                </svg>
-              )}
-            </div>
-
-            <!-- Content -->
-            <h3 class="text-lg font-bold text-white mb-1 group-hover:text-sky-light transition-colors">
-              {category.name}
-            </h3>
-            <p class="text-white/60 text-sm mb-4">
-              {category.description}
-            </p>
-
-            <!-- Count badge -->
-            <div class="flex items-center justify-between">
-              <span class="text-xs text-white/50">{category.count} articles</span>
-              <svg class="w-5 h-5 text-white/40 group-hover:text-jet-stream group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-            </div>
-          </a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-9">
+        {editorsPicks.map((pick, index) => (
+          <ArticleCard
+            variant="polaroid"
+            index={index}
+            href={pick.href}
+            title={pick.title}
+            image={pick.image}
+            imageAlt={pick.imageAlt}
+            category={pick.category}
+            readTime={pick.readTime}
+            note={pick.note}
+          />
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Editor's Picks -->
-  <section class="py-10 md:py-16 px-4 relative">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ocean-deep/50 to-transparent pointer-events-none"></div>
-
-    <div class="container mx-auto max-w-6xl relative z-10">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-        <div>
-          <div class="flex items-center gap-2 mb-2">
-            <span class="px-3 py-1 text-xs font-semibold bg-jet-stream/20 text-jet-stream rounded-full">Editor's Picks</span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">Top Recommendations</h2>
-        </div>
-        <a href="/tools/" class="text-white/70 hover:text-white flex items-center gap-1 text-sm font-medium transition-colors">
-          View all reviews
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <!-- Featured Large Card -->
-        <div class="lg:col-span-7">
-          <a href={`/${editorsPicks[0].slug}/`} class="group block relative rounded-3xl overflow-hidden h-full min-h-[400px] lg:min-h-[500px] editors-pick-card">
-            <img
-              src={editorsPicks[0].image}
-              alt={editorsPicks[0].title}
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="eager"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-ocean-deep via-ocean-deep/60 to-transparent"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-              <span class="inline-block px-3 py-1 mb-4 text-xs font-semibold bg-jet-stream text-white rounded-full">
-                {editorsPicks[0].category}
-              </span>
-              <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 group-hover:text-sky-light transition-colors">
-                {editorsPicks[0].title}
-              </h3>
-              <p class="text-white/80 text-base md:text-lg mb-4 max-w-xl">
-                {editorsPicks[0].excerpt}
-              </p>
-              <div class="flex items-center gap-4 text-white/60 text-sm">
-                <span>{editorsPicks[0].readTime} read</span>
-                <span class="flex items-center gap-1 text-sky-light group-hover:gap-2 transition-all font-medium">
-                  Read Review
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="m9 18 6-6-6-6"/>
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Smaller Cards Column -->
-        <div class="lg:col-span-5 flex flex-col gap-6">
-          {editorsPicks.slice(1).map((article, index) => (
+  <!-- Browse by section -->
+  <section class="px-4 pt-20 md:pt-28" aria-labelledby="sections-heading">
+    <div class="mx-auto max-w-7xl">
+      <h2 id="sections-heading" class="font-display font-black text-3xl md:text-5xl tracking-tight mb-8 md:mb-10">Pick a drawer</h2>
+      <ul class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        {sections.map((section) => (
+          <li>
             <a
-              href={`/${article.slug}/`}
-              class="group flex gap-4 p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 editors-pick-small"
-              style={`animation-delay: ${(index + 1) * 100}ms`}
+              href={section.href}
+              class:list={[
+                "section-block group flex h-44 sm:h-56 md:h-72 flex-col justify-between gap-3 border-2 border-ink p-5 md:p-8 shadow-[6px_8px_0_0_var(--color-ink)] transition-transform hover:-translate-y-1",
+                section.classes,
+              ]}
             >
-              <div class="w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden shrink-0">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
-              </div>
-              <div class="flex-1 min-w-0 flex flex-col justify-center">
-                <span class="text-xs font-medium text-jet-stream mb-1">{article.category}</span>
-                <h3 class="text-lg font-bold text-white mb-2 group-hover:text-sky-light transition-colors line-clamp-2">
-                  {article.title}
-                </h3>
-                <p class="text-white/60 text-sm line-clamp-2 hidden sm:block">
-                  {article.excerpt}
-                </p>
-                <span class="text-xs text-white/50 mt-2">{article.readTime} read</span>
-              </div>
+              <span class="text-sm md:text-base font-bold">{section.count}</span>
+              <span>
+                <span class="block font-display font-black text-2xl md:text-4xl leading-none">{section.name}</span>
+                <span class="hidden md:block mt-2 text-[15px] opacity-90">{section.blurb}</span>
+              </span>
             </a>
-          ))}
-        </div>
-      </div>
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 
-  <!-- Latest Reviews -->
-  <section class="py-10 md:py-16 px-4">
-    <div class="container mx-auto max-w-6xl">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+  <!-- Latest reviews -->
+  <section class="px-4 pt-20 md:pt-28" aria-labelledby="latest-heading">
+    <div class="mx-auto max-w-7xl">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
         <div>
-          <div class="flex items-center gap-2 mb-2">
-            <span class="px-3 py-1 text-xs font-semibold bg-sky-light/20 text-sky-light rounded-full">Fresh Content</span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white">Latest Reviews</h2>
+          <p class="hand text-2xl text-teal-ink -rotate-1">fresh off the desk</p>
+          <h2 id="latest-heading" class="font-display font-black text-3xl md:text-5xl tracking-tight">Latest reviews</h2>
         </div>
-        <a href="/blog/" class="text-white/70 hover:text-white flex items-center gap-1 text-sm font-medium transition-colors">
-          View all articles
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
+        <a href="/blog/" class="btn-pill btn-outline self-start sm:self-auto">All articles</a>
       </div>
-
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {latestReviews.map((article, index) => (
-          <a
-            href={`/${article.slug}/`}
-            class="group relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-white/20 hover:-translate-y-1 transition-all duration-300 latest-review-card"
-            style={`animation-delay: ${index * 75}ms`}
-          >
-            <div class="aspect-[4/3] overflow-hidden">
-              <img
-                src={article.image}
-                alt={article.title}
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-5">
-              <span class="text-xs font-medium text-jet-stream">{article.category}</span>
-              <h3 class="text-base font-bold text-white mt-1 mb-2 group-hover:text-sky-light transition-colors line-clamp-2">
-                {article.title}
-              </h3>
-              <p class="text-white/60 text-sm line-clamp-2 mb-3">
-                {article.excerpt}
-              </p>
-              <div class="flex items-center justify-between text-xs text-white/50">
-                <span>{article.readTime} read</span>
-                <span class="flex items-center gap-1 text-sky-light opacity-0 group-hover:opacity-100 transition-opacity">
-                  Read
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="m9 18 6-6-6-6"/>
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </a>
+        {latestReviews.map((review) => (
+          <ArticleCard
+            href={review.href}
+            title={review.title}
+            description={review.description}
+            image={review.image}
+            imageAlt={review.imageAlt}
+            category={review.category}
+            readTime={review.readTime}
+          />
         ))}
       </div>
     </div>
   </section>
 
   <!-- Final CTA -->
-  <section class="py-16 md:py-24 px-4">
-    <div class="container mx-auto max-w-4xl">
-      <div class="text-center bg-gradient-to-br from-jet-stream/20 to-sky-light/10 backdrop-blur-lg rounded-3xl border border-white/10 p-8 md:p-12 final-cta">
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
-          Ready to Level Up Your Remote Setup?
-        </h2>
-        <p class="text-white/70 mb-8 max-w-xl mx-auto">
-          Join thousands of remote professionals who use FloatJet to find the best tools for their work.
+  <section class="px-4 pt-20 md:pt-28">
+    <div class="mx-auto max-w-5xl relative">
+      <div class="relative bg-sky-light border-2 border-ink rounded-[40px] px-6 py-12 md:px-16 md:py-16 text-center shadow-[10px_12px_0_0_var(--color-ink)]">
+        <div class="absolute -top-6 -left-2 md:-left-6 rotate-[-10deg] bg-sun border-2 border-ink rounded-full px-5 py-2 font-display font-bold text-sm" aria-hidden="true">no fluff</div>
+        <h2 class="font-display font-black text-3xl md:text-5xl tracking-tight text-balance">Not sure where to start?</h2>
+        <p class="mt-4 text-lg text-ink max-w-xl mx-auto">
+          Grab the home office checklist, then fill the gaps with the tools we would buy again.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/tools/"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-jet-stream text-white font-semibold hover:bg-jet-stream/90 hover:scale-105 transition-all duration-300 shadow-lg shadow-jet-stream/30"
-          >
-            Browse All Tools
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-          <a
-            href="/guides/"
-            class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 transition-all duration-300"
-          >
-            Read Guides
-          </a>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/guides/complete-home-office-checklist/" class="btn-pill btn-ink">Open the checklist</a>
+          <a href="/tools/" class="btn-pill btn-sun">Browse all tools</a>
         </div>
       </div>
     </div>
@@ -522,116 +328,22 @@ const latestReviews = [
 </BaseLayout>
 
 <style>
-  /* Hero animations */
-  .hero-headline {
-    animation: fadeInUp 0.8s ease-out forwards;
+  .tool-strip-track {
+    animation: strip-scroll 40s linear infinite;
   }
 
-  .hero-subtitle {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out 0.2s forwards;
-  }
-
-  .hero-cta {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out 0.4s forwards;
-  }
-
-  /* Stats animation */
-  .stats-item {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-
-  .stats-item:nth-child(1) { animation-delay: 0.5s; }
-  .stats-item:nth-child(2) { animation-delay: 0.6s; }
-  .stats-item:nth-child(3) { animation-delay: 0.7s; }
-
-  /* Start Here section */
-  .start-here-section {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out 0.3s forwards;
-  }
-
-  .start-here-card {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-
-  /* Category cards */
-  .category-card {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-
-  /* Editor's picks */
-  .editors-pick-card {
-    opacity: 0;
-    animation: fadeInScale 0.8s ease-out forwards;
-  }
-
-  .editors-pick-small {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-
-  /* Latest reviews */
-  .latest-review-card {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-
-  /* Final CTA */
-  .final-cta {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-
-  @keyframes fadeInUp {
+  @keyframes strip-scroll {
     from {
-      opacity: 0;
-      transform: translateY(20px);
+      transform: translateX(0);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+      transform: translateX(-50%);
     }
   }
 
-  @keyframes fadeInScale {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
+  @media (prefers-reduced-motion: reduce) {
+    .tool-strip-track {
+      animation: none;
     }
   }
 </style>
-
-<script is:inline>
-  // Scroll animations
-  if (!window.__homepageInit) {
-    window.__homepageInit = true;
-
-    function initScrollAnimations() {
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = 'running';
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '50px' });
-
-      // Observe elements that should animate on scroll
-      document.querySelectorAll('.category-card, .start-here-card, .editors-pick-small, .latest-review-card, .final-cta').forEach(function(el) {
-        el.style.animationPlayState = 'paused';
-        observer.observe(el);
-      });
-    }
-
-    document.addEventListener('astro:page-load', initScrollAnimations);
-  }
-</script>

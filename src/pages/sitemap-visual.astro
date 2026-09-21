@@ -18,14 +18,14 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 ---
 
 <BaseLayout title={title} description={description} noindex>
-  <div class="min-h-screen pt-24 md:pt-28 pb-12 px-4">
+  <div class="min-h-screen pt-28 md:pt-36 pb-12 px-4">
     <!-- Header -->
     <div class="max-w-7xl mx-auto mb-8">
       <div class="text-center">
-        <h1 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
+        <h1 class="font-display font-black text-4xl md:text-6xl tracking-[-0.04em] text-ink mb-4">
           Interactive Site Map
         </h1>
-        <p class="text-sky-100 text-lg max-w-2xl mx-auto">
+        <p class="text-ink-soft text-lg max-w-2xl mx-auto">
           Explore FloatJet's content structure. Click nodes to navigate, drag to
           explore, and scroll to zoom.
         </p>
@@ -35,24 +35,24 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       <div class="flex flex-wrap justify-center gap-3 mt-6">
         <button
             id="btn-reset"
-            class="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm font-medium backdrop-blur-sm border border-white/20 transition-all duration-300"
+            class="min-h-12 px-5 py-2 bg-card hover:bg-sand text-ink rounded-full text-sm font-bold border-2 border-ink transition-colors"
         >
           Reset View
         </button>
         <button
             id="btn-check-links"
-            class="px-4 py-2 bg-jet-stream/80 hover:bg-jet-stream text-white rounded-full text-sm font-medium backdrop-blur-sm transition-all duration-300"
+            class="btn-pill btn-sun !min-h-12 !py-2 text-sm"
         >
           Check Links
         </button>
         <div
-            class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full backdrop-blur-sm border border-white/20"
+            class="flex items-center gap-2 min-h-12 px-4 py-2 bg-card rounded-full border-2 border-ink"
         >
-          <label for="layout-select" class="text-white text-sm">Layout:</label>
+          <label for="layout-select" class="text-ink text-sm">Layout:</label>
           <select
               id="layout-select"
               aria-label="Select visualization layout"
-              class="bg-transparent text-white text-sm border-none outline-none cursor-pointer"
+              class="bg-transparent text-ink text-sm border-none outline-none cursor-pointer"
           >
             <option value="force" class="text-slate-800">Force Graph</option>
             <option value="radial" class="text-slate-800">Radial Tree</option>
@@ -63,33 +63,33 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
 
       <!-- Legend -->
       <div class="flex flex-wrap justify-center gap-4 mt-6" id="legend">
-        <div class="flex items-center gap-2 text-sm text-white/80">
+        <div class="flex items-center gap-2 text-sm text-ink/85">
           <span
-              class="w-4 h-4 rounded-full bg-ocean-deep border-2 border-white/50"
+              class="w-4 h-4 rounded-full bg-ocean-deep border-2 border-ink"
           ></span>
           <span>Home</span>
         </div>
-        <div class="flex items-center gap-2 text-sm text-white/80">
+        <div class="flex items-center gap-2 text-sm text-ink/85">
           <span
-              class="w-4 h-4 rounded-full bg-jet-stream border-2 border-white/50"
+              class="w-4 h-4 rounded-full bg-jet-stream border-2 border-ink"
           ></span>
           <span>Hubs</span>
         </div>
-        <div class="flex items-center gap-2 text-sm text-white/80">
+        <div class="flex items-center gap-2 text-sm text-ink/85">
           <span
-              class="w-4 h-4 rounded-full bg-sky-light border-2 border-white/50"
+              class="w-4 h-4 rounded-full bg-sky-light border-2 border-ink"
           ></span>
           <span>Categories</span>
         </div>
-        <div class="flex items-center gap-2 text-sm text-white/80">
+        <div class="flex items-center gap-2 text-sm text-ink/85">
           <span
-              class="w-4 h-4 rounded-full bg-blue-500 border-2 border-white/50"
+              class="w-4 h-4 rounded-full bg-blue-500 border-2 border-ink"
           ></span>
           <span>Articles</span>
         </div>
-        <div class="flex items-center gap-2 text-sm text-white/80">
+        <div class="flex items-center gap-2 text-sm text-ink/85">
           <span
-              class="w-4 h-4 rounded-full bg-slate-500 border-2 border-white/50"
+              class="w-4 h-4 rounded-full bg-slate-500 border-2 border-ink"
           ></span>
           <span>Pages</span>
         </div>
@@ -103,7 +103,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     >
       <div
           id="sitemap-container"
-          class="relative w-full bg-white/5 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl overflow-hidden transition-all duration-300"
+          class="relative w-full bg-ink rounded-[32px] border-2 border-ink shadow-[10px_12px_0_0_var(--color-jet-stream)] overflow-hidden transition-all duration-300"
           style="height: 70vh; min-height: 500px;"
       >
         <!-- Fullscreen Toggle Button -->
@@ -273,32 +273,32 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     <div class="max-w-7xl mx-auto mt-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div
-            class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center"
+            class="sticker rounded-[22px] p-4 text-center"
         >
-          <div class="text-3xl font-bold text-white" id="stat-total">0</div>
-          <div class="text-sky-100 text-sm">Total Pages</div>
+          <div class="text-3xl font-bold text-ink" id="stat-total">0</div>
+          <div class="text-ink-soft text-sm">Total Pages</div>
         </div>
         <div
-            class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center"
+            class="sticker rounded-[22px] p-4 text-center"
         >
-          <div class="text-3xl font-bold text-emerald-400" id="stat-healthy">
+          <div class="text-3xl font-bold text-emerald-800" id="stat-healthy">
             -
           </div>
-          <div class="text-sky-100 text-sm">Healthy Links</div>
+          <div class="text-ink-soft text-sm">Healthy Links</div>
         </div>
         <div
-            class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center"
+            class="sticker rounded-[22px] p-4 text-center"
         >
-          <div class="text-3xl font-bold text-amber-400" id="stat-pending">
+          <div class="text-3xl font-bold text-amber-800" id="stat-pending">
             -
           </div>
-          <div class="text-sky-100 text-sm">Unchecked</div>
+          <div class="text-ink-soft text-sm">Unchecked</div>
         </div>
         <div
-            class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 text-center"
+            class="sticker rounded-[22px] p-4 text-center"
         >
-          <div class="text-3xl font-bold text-red-400" id="stat-broken">-</div>
-          <div class="text-sky-100 text-sm">Broken Links</div>
+          <div class="text-3xl font-bold text-red-700" id="stat-broken">-</div>
+          <div class="text-ink-soft text-sm">Broken Links</div>
         </div>
       </div>
     </div>
@@ -306,9 +306,9 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
     <!-- Link Check Results -->
     <div id="link-results" class="max-w-7xl mx-auto mt-8 hidden">
       <div
-          class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
+          class="sticker rounded-[22px] p-6"
       >
-        <h2 class="font-heading text-xl font-bold text-white mb-4">
+        <h2 class="font-display text-xl font-bold text-ink mb-4">
           Link Check Results
         </h2>
         <div id="link-results-content" class="space-y-2"></div>
@@ -933,7 +933,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       wrapper.style.zIndex = '9999';
 
       // Make container fullscreen
-      container.classList.remove('rounded-3xl', 'border', 'border-white/20');
+      container.classList.remove('rounded-[32px]', 'border-2', 'border-ink');
       container.style.height = '100vh';
       container.style.minHeight = '100vh';
       container.style.borderRadius = '0';
@@ -974,7 +974,7 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
       wrapper.style.zIndex = '';
 
       // Restore container
-      container.classList.add('rounded-3xl', 'border', 'border-white/20');
+      container.classList.add('rounded-[32px]', 'border-2', 'border-ink');
       container.style.height = '70vh';
       container.style.minHeight = '500px';
       container.style.borderRadius = '';
@@ -1128,17 +1128,17 @@ const colorData = JSON.stringify(CATEGORY_COLORS);
         if (results.length > 0) {
           contentEl.innerHTML = results
             .map(function(r) {
-              return '<div class="flex items-center justify-between p-3 bg-red-500/20 rounded-lg border border-red-500/30">' +
+              return '<div class="flex items-center justify-between p-3 bg-card rounded-xl border-2 border-alert">' +
                 '<div>' +
-                '<div class="text-white font-medium">' + r.name + '</div>' +
-                '<div class="text-red-300 text-sm font-mono">' + r.path + '</div>' +
+                '<div class="text-ink font-medium">' + r.name + '</div>' +
+                '<div class="text-red-700 text-sm font-mono">' + r.path + '</div>' +
                 '</div>' +
-                '<div class="text-red-400 font-mono">' + r.status + '</div>' +
+                '<div class="text-red-700 font-mono">' + r.status + '</div>' +
                 '</div>';
             })
             .join('');
         } else {
-          contentEl.innerHTML = '<div class="text-emerald-400 text-center py-4">All links are healthy!</div>';
+          contentEl.innerHTML = '<div class="text-emerald-800 font-bold text-center py-4">All links are healthy!</div>';
         }
         resultsEl.classList.remove('hidden');
       }

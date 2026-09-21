@@ -2,145 +2,139 @@ import type { RenderFunctionInput } from "astro-opengraph-images";
 import React from "react";
 
 /**
- * FloatJet branded Open Graph image renderer
+ * FloatJet Open Graph image renderer - "Desk Party" style
  *
- * Brand Colors:
- * - Ocean Deep: #0F4C5C (primary background)
- * - Jet Stream: #38A3A5 (accent)
- * - Sky Light: #80CED7 (highlights)
- * - Sand: #E0FBFC (text)
+ * Palette:
+ * - Paper: #F4F1EA (background)
+ * - Ink: #082F38 (text, outlines, sticker shadows)
+ * - Sun: #FFD23F / Coral: #FF8A65 / Sky Light: #80CED7 (stickers)
+ * Fonts (registered in astro.config.mjs): Unbounded 900 (title), Figtree 700 (body)
  */
 export async function floatjetRenderer({
   title,
   description,
 }: RenderFunctionInput): Promise<React.ReactNode> {
+  const cleanTitle = (title ?? "FloatJet").replace(/\s*\|\s*FloatJet$/, "");
+  const titleSize = cleanTitle.length > 70 ? "50px" : cleanTitle.length > 45 ? "58px" : "68px";
+
   return (
     <div
       style={{
         display: "flex",
-        flexDirection: "column",
         width: "100%",
         height: "100%",
-        background: "linear-gradient(135deg, #0F4C5C 0%, #0a3540 100%)",
-        padding: "60px",
+        background: "#F4F1EA",
+        padding: "48px",
         position: "relative",
+        fontFamily: "Figtree",
       }}
     >
-      {/* Decorative accent bar at top */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "8px",
-          background: "linear-gradient(90deg, #38A3A5 0%, #80CED7 100%)",
-        }}
-      />
-
-      {/* Main content container */}
+      {/* Sticker card */}
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
+          width: "100%",
           height: "100%",
+          background: "#FFFFFF",
+          border: "4px solid #082F38",
+          borderRadius: "40px",
+          boxShadow: "14px 16px 0 0 #082F38",
+          padding: "52px 56px",
         }}
       >
-        {/* Title */}
-        <h1
-          style={{
-            fontSize: title && title.length > 50 ? "52px" : "64px",
-            fontWeight: 700,
-            color: "#E0FBFC",
-            lineHeight: 1.2,
-            margin: 0,
-            marginTop: "20px",
-          }}
-        >
-          {title}
-        </h1>
-
-        {/* Description (if available) */}
-        {description && (
-          <p
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <h1
             style={{
-              fontSize: "28px",
-              color: "#80CED7",
-              lineHeight: 1.4,
+              fontFamily: "Unbounded",
+              fontSize: titleSize,
+              fontWeight: 900,
+              color: "#082F38",
+              lineHeight: 1.05,
+              letterSpacing: "-0.03em",
               margin: 0,
-              marginTop: "24px",
-              maxWidth: "90%",
+              maxWidth: "92%",
             }}
           >
-            {description.length > 120 ? description.substring(0, 120) + "..." : description}
-          </p>
-        )}
+            {cleanTitle}
+          </h1>
 
-        {/* Footer with branding */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: "auto",
-          }}
-        >
-          {/* Logo/Brand */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "16px",
-            }}
-          >
-            {/* FloatJet icon - stylized wave/jet */}
-            <div
+          {description && (
+            <p
               style={{
-                width: "48px",
-                height: "48px",
-                borderRadius: "12px",
-                background: "linear-gradient(135deg, #38A3A5 0%, #80CED7 100%)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <span style={{ fontSize: "28px", color: "#0F4C5C" }}>F</span>
-            </div>
-            <span
-              style={{
-                fontSize: "32px",
+                fontSize: "26px",
                 fontWeight: 700,
-                color: "#E0FBFC",
+                color: "#4A6166",
+                lineHeight: 1.4,
+                margin: 0,
+                marginTop: "24px",
+                maxWidth: "85%",
               }}
             >
-              FloatJet.com
-            </span>
-          </div>
+              {description.length > 120 ? description.substring(0, 120) + "..." : description}
+            </p>
+          )}
+        </div>
 
-          {/* Tagline */}
+        {/* Footer */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <span style={{ fontFamily: "Unbounded", fontSize: "34px", fontWeight: 900, color: "#082F38" }}>
+            floatjet
+          </span>
           <span
             style={{
-              fontSize: "20px",
-              color: "#80CED7",
+              display: "flex",
+              background: "#082F38",
+              color: "#FFD23F",
+              borderRadius: "999px",
+              padding: "12px 26px",
+              fontSize: "22px",
+              fontWeight: 700,
             }}
           >
-            Remote Work Tools & Guides
+            Remote work tools, tested
           </span>
         </div>
       </div>
 
-      {/* Decorative corner accent */}
+      {/* Round sticker */}
       <div
         style={{
           position: "absolute",
-          bottom: 0,
-          right: 0,
-          width: "200px",
-          height: "200px",
-          background:
-            "radial-gradient(circle at bottom right, rgba(56, 163, 165, 0.2) 0%, transparent 70%)",
+          top: "22px",
+          right: "34px",
+          width: "132px",
+          height: "132px",
+          borderRadius: "999px",
+          background: "#FFD23F",
+          border: "4px solid #082F38",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          transform: "rotate(12deg)",
+          fontFamily: "Unbounded",
+          fontWeight: 900,
+          fontSize: "20px",
+          color: "#082F38",
+          textAlign: "center",
+          lineHeight: 1.1,
+        }}
+      >
+        FloatJet.com
+      </div>
+
+      {/* Coral dot accent */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "30px",
+          left: "30px",
+          width: "54px",
+          height: "54px",
+          borderRadius: "999px",
+          background: "#FF8A65",
+          border: "4px solid #082F38",
         }}
       />
     </div>

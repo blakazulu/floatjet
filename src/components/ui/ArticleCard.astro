@@ -1,0 +1,93 @@
+---
+/**
+ * ArticleCard - the Desk Party article card.
+ * variant "tile"     : straight sticker card for grids (hub pages, related articles)
+ * variant "polaroid" : tilted photo card with a handwritten caption (homepage features)
+ * See docs/design/article-card-guide.md.
+ */
+import { Image } from "astro:assets";
+
+interface Props {
+  href: string;
+  title: string;
+  description?: string;
+  image: string;
+  imageAlt?: string;
+  category?: string;
+  readTime?: number | string;
+  note?: string;
+  variant?: "tile" | "polaroid";
+  /** Used by the polaroid variant to alternate the tilt */
+  index?: number;
+  /** Heading level for the card title */
+  headingLevel?: "h2" | "h3";
+  eager?: boolean;
+}
+
+const {
+  href,
+  title,
+  description,
+  image,
+  imageAlt = "",
+  category,
+  readTime,
+  note,
+  variant = "tile",
+  index = 0,
+  headingLevel = "h3",
+  eager = false,
+} = Astro.props;
+
+const Heading = headingLevel;
+const readLabel = readTime === undefined ? undefined : typeof readTime === "number" ? `${readTime} min read` : readTime;
+const tilts = ["-rotate-[2deg]", "rotate-[1.5deg]", "-rotate-[1deg]", "rotate-[2deg]"];
+const tilt = variant === "polaroid" ? tilts[index % tilts.length] : "";
+---
+
+<article class:list={["article-card group relative h-full", tilt]}>
+  <a
+    href={href}
+    class:list={[
+      "sticker sticker-hover flex h-full flex-col overflow-hidden text-ink no-underline",
+      variant === "polaroid" ? "rounded-md p-3 pb-5 md:p-4 md:pb-6" : "rounded-[22px]",
+    ]}
+  >
+    <div class:list={["relative overflow-hidden bg-sand", variant === "polaroid" ? "aspect-[4/3] rounded-sm" : "aspect-[16/10] border-b-2 border-ink"]}>
+      <Image
+        src={image}
+        alt={imageAlt}
+        width={800}
+        height={600}
+        loading={eager ? "eager" : "lazy"}
+        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      {category && variant === "tile" && (
+        <span class="tag-pill absolute left-3 top-3">{category}</span>
+      )}
+    </div>
+
+    <div class:list={["flex flex-1 flex-col gap-2", variant === "polaroid" ? "pt-4" : "p-5"]}>
+      {note && variant === "polaroid" && (
+        <span class="hand text-2xl leading-none text-teal-ink">{note}</span>
+      )}
+      <Heading class="font-display text-lg md:text-xl font-bold leading-snug text-ink text-balance group-hover:underline decoration-2 underline-offset-4">
+        {title}
+      </Heading>
+      {description && (
+        <p class="text-[15px] leading-relaxed text-ink-soft line-clamp-2">{description}</p>
+      )}
+      <div class="mt-auto flex items-center justify-between gap-3 pt-2">
+        {variant === "polaroid" && category ? (
+          <span class="tag-pill">{category}</span>
+        ) : (
+          readLabel && <span class="text-sm font-semibold text-ink-soft">{readLabel}</span>
+        )}
+        <span class="inline-flex items-center gap-1 text-sm font-bold text-teal-ink">
+          {variant === "polaroid" && readLabel ? readLabel : "Read"}
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </span>
+      </div>
+    </div>
+  </a>
+</article>

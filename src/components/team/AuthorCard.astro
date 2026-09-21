@@ -99,9 +99,9 @@ const { member, variant = "compact", showLink = true } = Astro.props;
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--color-card);
     border-radius: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--color-ink);
   }
 
   .author-image img {
@@ -109,7 +109,7 @@ const { member, variant = "compact", showLink = true } = Astro.props;
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid rgba(56, 163, 165, 0.3);
+    border: 2px solid var(--color-ink);
   }
 
   .author-info {
@@ -117,40 +117,40 @@ const { member, variant = "compact", showLink = true } = Astro.props;
   }
 
   .author-name {
-    font-family: 'Outfit', sans-serif;
+    font-family: var(--font-display);
     font-weight: 600;
     font-size: 1.125rem;
-    color: white;
+    color: var(--color-ink);
     margin: 0 0 0.25rem 0;
   }
 
   .author-name a {
-    color: white;
+    color: var(--color-ink);
     text-decoration: none;
   }
 
   .author-name a:hover {
-    color: #80CED7;
+    color: var(--color-teal-ink);
   }
 
   .author-title {
     font-size: 0.875rem;
-    color: #38A3A5;
+    color: var(--color-teal-ink);
     margin: 0 0 0.25rem 0;
   }
 
   .author-location {
     font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-ink-soft);
     margin: 0;
   }
 
   /* Full variant */
   .author-card-full {
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--color-card);
     border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--color-ink);
   }
 
   .author-header {
@@ -172,7 +172,7 @@ const { member, variant = "compact", showLink = true } = Astro.props;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(56, 163, 165, 0.4);
+    border: 3px solid var(--color-ink);
   }
 
   @media (min-width: 768px) {
@@ -190,32 +190,32 @@ const { member, variant = "compact", showLink = true } = Astro.props;
   }
 
   .author-name-large {
-    font-family: 'Outfit', sans-serif;
+    font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.5rem;
-    color: white;
+    color: var(--color-ink);
     margin: 0 0 0.25rem 0;
   }
 
   .author-name-large a {
-    color: white;
+    color: var(--color-ink);
     text-decoration: none;
   }
 
   .author-name-large a:hover {
-    color: #80CED7;
+    color: var(--color-teal-ink);
   }
 
   .author-title-large {
     font-size: 1rem;
-    color: #38A3A5;
+    color: var(--color-teal-ink);
     margin: 0 0 0.25rem 0;
     font-weight: 500;
   }
 
   .author-location-large {
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-ink-soft);
     margin: 0 0 0.75rem 0;
   }
 
@@ -231,12 +231,12 @@ const { member, variant = "compact", showLink = true } = Astro.props;
   }
 
   .author-social a {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-ink-soft);
     transition: color 0.2s ease;
   }
 
   .author-social a:hover {
-    color: #80CED7;
+    color: var(--color-teal-ink);
   }
 
   .social-icon {
@@ -247,7 +247,7 @@ const { member, variant = "compact", showLink = true } = Astro.props;
   .author-bio {
     font-size: 0.9375rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-ink);
     margin: 0 0 1rem 0;
   }
 
@@ -260,10 +260,10 @@ const { member, variant = "compact", showLink = true } = Astro.props;
   .category-tag {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background: rgba(56, 163, 165, 0.2);
-    border: 1px solid rgba(56, 163, 165, 0.3);
+    background: var(--color-sand);
+    border: 1px solid var(--color-ink);
     border-radius: 9999px;
     font-size: 0.75rem;
-    color: #80CED7;
+    color: var(--color-teal-ink);
   }
 </style>

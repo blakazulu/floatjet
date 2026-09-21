@@ -3,22 +3,50 @@
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
 
-/* FloatJet Custom Theme */
+/*
+ * FloatJet "Desk Party" theme
+ * Warm paper ground, deep-ocean ink, sticker-style accents (sun + coral) and the brand teals.
+ * See docs/design/design-guidelines.md for usage rules and contrast notes.
+ */
 @theme {
-  /* Custom Colors */
-  --color-ocean-deep: #0F4C5C;
-  --color-jet-stream: #38A3A5;
-  --color-sky-light: #80CED7;
-  --color-sand: #E0FBFC;
-  --color-alert: #EE6C4D;
-  --color-off-white: #F8FAFC;
-  --color-slate: #1E293B;
-  --color-gray: #64748B;
+  /* Surfaces */
+  --color-paper: #F4F1EA;       /* page background */
+  --color-paper-deep: #EAE4D7;  /* alternate band / pressed surface */
+  --color-card: #FFFFFF;        /* cards, tables, inputs */
 
-  /* Font Families */
-  --font-outfit: 'Outfit', system-ui, -apple-system, sans-serif;
-  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  /* Text */
+  --color-ink: #082F38;         /* primary text, outlines, sticker shadows (12.6:1 on paper) */
+  --color-ink-soft: #4A6166;    /* secondary text (5.8:1 on paper) */
+  --color-teal-ink: #176466;    /* teal text + links on light surfaces (6.1:1 on paper) */
+
+  /* Brand teals */
+  --color-ocean-deep: #0F4C5C;
+  --color-jet-stream: #38A3A5;  /* fills only - never small text on paper */
+  --color-sky-light: #80CED7;
+  --color-sand: #E0FBFC;        /* mint desk-mat surface */
+
+  /* Sticker accents */
+  --color-sun: #FFD23F;
+  --color-coral: #FF8A65;
+  --color-alert: #B42318;
+
+  /* Legacy aliases kept for older markup */
+  --color-off-white: #F4F1EA;
+  --color-slate: #082F38;
+  --color-gray: #4A6166;
+
+  /* Font families */
+  --font-display: 'Unbounded', 'Arial Black', system-ui, sans-serif;
+  --font-heading: 'Unbounded', 'Arial Black', system-ui, sans-serif;
+  --font-body: 'Figtree', system-ui, -apple-system, sans-serif;
+  --font-hand: 'Caveat', 'Comic Sans MS', cursive;
   --font-jetbrains: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: 'Figtree', system-ui, -apple-system, sans-serif;
+
+  /* Sticker shadows (solid, offset - no blur) */
+  --shadow-sticker-sm: 4px 5px 0 0 var(--color-ink);
+  --shadow-sticker: 6px 8px 0 0 var(--color-ink);
+  --shadow-sticker-lg: 10px 12px 0 0 var(--color-ink);
 
   /* Breakpoints - Mobile-first */
   --breakpoint-sm: 640px;
@@ -27,71 +55,225 @@
   --breakpoint-xl: 1280px;
 }
 
-/* Base Typography */
 @layer base {
+  html {
+    background-color: var(--color-paper);
+    overflow-x: clip;
+  }
+
   body {
-    font-family: var(--font-inter);
-    color: var(--color-slate);
+    font-family: var(--font-body);
+    color: var(--color-ink);
     line-height: 1.6;
-    background-color: var(--color-ocean-deep);
+    background-color: var(--color-paper);
+    -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-outfit);
+    font-family: var(--font-display);
     font-weight: 700;
-    color: var(--color-ocean-deep);
+    color: var(--color-ink);
+    letter-spacing: -0.02em;
   }
 
   code, pre {
     font-family: var(--font-jetbrains);
   }
+
+  ::selection {
+    background: var(--color-sun);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-ocean-deep);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
 }
 
-/* Custom Utilities */
+@layer components {
+  /* Solid-shadow "sticker" surface: white card, ink outline, offset shadow */
+  .sticker {
+    background: var(--color-card);
+    border: 2px solid var(--color-ink);
+    box-shadow: var(--shadow-sticker);
+  }
+
+  /* Lift on hover for interactive stickers */
+  .sticker-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .sticker-hover:hover {
+    transform: translate(-2px, -3px);
+    box-shadow: 9px 12px 0 0 var(--color-ink);
+  }
+
+  .sticker-hover:active {
+    transform: translate(3px, 4px);
+    box-shadow: 2px 3px 0 0 var(--color-ink);
+  }
+
+  /* Pill buttons */
+  .btn-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+
+  .btn-ink {
+    background: var(--color-ink);
+    color: var(--color-sun);
+    box-shadow: 4px 5px 0 0 var(--color-jet-stream);
+  }
+
+  .btn-ink:hover {
+    transform: translate(-1px, -2px);
+    box-shadow: 6px 8px 0 0 var(--color-jet-stream);
+  }
+
+  .btn-sun {
+    background: var(--color-sun);
+    color: var(--color-ink);
+    border: 2px solid var(--color-ink);
+    box-shadow: var(--shadow-sticker-sm);
+  }
+
+  .btn-sun:hover {
+    transform: translate(-1px, -2px);
+    box-shadow: 6px 8px 0 0 var(--color-ink);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-ink);
+    border: 3px solid var(--color-ink);
+  }
+
+  .btn-outline:hover {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  /* Small category / meta tags */
+  .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background: var(--color-ink);
+    color: var(--color-sun);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /* Handwritten note */
+  .hand {
+    font-family: var(--font-hand);
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  /* Long-form legal/utility pages (privacy, terms) */
+  .legal-page {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .legal-page p,
+  .legal-page ul,
+  .legal-page ol {
+    margin-bottom: 1.25rem;
+  }
+
+  .legal-page ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+
+  .legal-page ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
+  }
+
+  .legal-page li::marker {
+    color: var(--color-teal-ink);
+  }
+
+  .legal-page a:not([class]) {
+    color: var(--color-teal-ink);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  .legal-page a:not([class]):hover {
+    color: var(--color-ink);
+  }
+
+  /* Faint cutting-mat grid, used on the desk surface */
+  .mat-grid {
+    background-color: var(--color-sand);
+    background-image:
+      linear-gradient(#C6ECEF 1px, transparent 1px),
+      linear-gradient(90deg, #C6ECEF 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
 
-  .glass-morphism {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+/* Scrollbar (in the base layer so utilities can override it, e.g. hidden scrollbars on filter rows) */
+@layer base {
+  ::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-paper-deep);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-ink);
+    border-radius: 999px;
+    border: 2px solid var(--color-paper-deep);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ocean-deep);
+  }
+
+  * {
+    scrollbar-color: var(--color-ink) var(--color-paper-deep);
+    scrollbar-width: thin;
   }
 }
 
-/* Custom Scrollbar - Matches Ocean Theme */
-::-webkit-scrollbar {
-  height: 8px;
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(15, 76, 92, 0.3);
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--color-jet-stream), var(--color-ocean-deep));
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--color-sky-light), var(--color-jet-stream));
-}
-
-/* Firefox scrollbar */
-* {
-  scrollbar-color: var(--color-jet-stream) rgba(15, 76, 92, 0.3);
-  scrollbar-width: thin;
-}
-
-/* Subtle grain overlay for depth */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.06;
-  pointer-events: none;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

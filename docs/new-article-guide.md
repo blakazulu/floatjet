@@ -336,6 +336,8 @@ const pubDate = new Date(article.pubDate);
 | `href` | Yes | The `/go/` redirect path (e.g., `/go/netlify`) |
 | `text` | Yes | Button text (e.g., "Try Netlify Free") |
 | `program` | Yes | Program identifier for tracking (e.g., `netlify`) |
+| `variant` | No | `primary` (ink pill, default), `secondary` (sun sticker) or `ghost` (text link) |
+| `subtext` | No | Small second line under the label, e.g. "3-day free trial, no card required" |
 
 #### Examples
 
@@ -375,6 +377,20 @@ const pubDate = new Date(article.pubDate);
 <!-- ✅ CORRECT: Use /go/ redirect path -->
 <AffiliateButton href="/go/netlify" text="Try Netlify Free" program="netlify"/>
 ```
+
+#### Styling Custom Blocks (Callouts, Pros/Cons, Spec Boxes)
+
+Article pages use the "Desk Party" light theme (see `docs/design/design-guidelines.md`). Plain HTML (`h2`, `p`, lists,
+links, blockquotes, tables) is styled automatically by `ArticleLayout.astro`. For custom boxes use these classes:
+
+- Card: `bg-card border border-ink/15 rounded-xl p-6` (or `sticker rounded-[22px] p-6` for a stronger sticker look)
+- Highlight/tip box: `bg-sun border-2 border-ink rounded-2xl p-5`
+- Tinted callout: `bg-sky-light/40 border border-ink/15 rounded-xl p-6` or `bg-green-500/10 border border-green-500/20` etc.
+- Text: `text-ink` (primary), `text-ink-soft` (secondary), `text-teal-ink` (accents and links)
+- Status colours: use the 700/800 shades on light backgrounds (`text-green-800`, `text-red-700`, `text-amber-800`)
+
+Never use `text-white`, `bg-white/5`, `border-white/10` or `text-sky-light` - they come from the old dark theme and are
+unreadable on paper.
 
 ---
 

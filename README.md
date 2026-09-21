@@ -39,7 +39,7 @@ Okay so if you're here to see how this thing is built:
 
 **Making it pretty:** Tailwind CSS 4
 
-**Fonts:** Self-hosted via @fontsource. Outfit for headings, Inter for body text, JetBrains Mono for code. Loaded from
+**Fonts:** Self-hosted via @fontsource. Unbounded for headings, Figtree for body text, Caveat for handwritten notes, JetBrains Mono for code. Loaded from
 my server, not Google's.
 
 **Search:** Pagefind. Static site search that's actually fast.

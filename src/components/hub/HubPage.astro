@@ -1,0 +1,159 @@
+---
+/**
+ * HubPage - shared layout for section hubs (/tools/, /gear/, /guides/, /blog/)
+ * and their category pages (/tools/vpn/ ...). Shows every article, newest first,
+ * with the section's lead review featured on top.
+ */
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CollectionSchema from "@components/seo/CollectionSchema.astro";
+import ArticleCard from "@components/ui/ArticleCard.astro";
+import { getArticlePath, type Article } from "../../data/articles";
+
+interface Filter {
+  name: string;
+  href: string;
+}
+
+interface Props {
+  /** <title> / meta */
+  metaTitle: string;
+  metaDescription: string;
+  /** Visible page heading */
+  heading: string;
+  subtitle: string;
+  /** Short handwritten note above the heading */
+  note: string;
+  articles: Article[];
+  filters: Filter[];
+  /** href of the active filter */
+  activeHref: string;
+  breadcrumbs: Array<{ label: string; href: string }>;
+  /** Label used for the count sticker, e.g. "reviews" */
+  countLabel?: string;
+}
+
+const {
+  metaTitle,
+  metaDescription,
+  heading,
+  subtitle,
+  note,
+  articles,
+  filters,
+  activeHref,
+  breadcrumbs,
+  countLabel = "articles",
+} = Astro.props;
+
+const categoryLabels: Record<string, string> = { vpn: "VPN", saas: "SaaS" };
+const formatCategory = (category: string) =>
+  categoryLabels[category.toLowerCase()] ?? category.charAt(0).toUpperCase() + category.slice(1);
+
+// Newest first; the lead is the newest featured article (or the newest overall)
+const sorted = [...articles].sort((a, b) => b.pubDate.localeCompare(a.pubDate));
+const lead = sorted.find((a) => a.featured) ?? sorted[0];
+const rest = sorted.filter((a) => a !== lead);
+
+const schemaItems = sorted.map((a) => ({ title: a.title, href: getArticlePath(a) }));
+---
+
+<BaseLayout title={metaTitle} description={metaDescription}>
+  <div class="px-4 pt-28 md:pt-36 pb-4">
+    <div class="mx-auto max-w-7xl">
+      <!-- Heading -->
+      <header class="relative flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8 md:mb-10">
+        <div class="max-w-3xl pr-24 sm:pr-0">
+          <p class="hand text-2xl md:text-3xl text-teal-ink -rotate-2 w-fit">{note}</p>
+          <h1 class="mt-1 font-display font-black text-4xl sm:text-5xl md:text-6xl tracking-[-0.04em] leading-[0.95] text-balance">{heading}</h1>
+          <p class="mt-4 text-lg text-ink-soft">{subtitle}</p>
+        </div>
+        <div class="absolute right-0 top-0 sm:static sm:self-start lg:self-auto shrink-0 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-sun border-2 border-ink shadow-[4px_5px_0_0_var(--color-ink)] rotate-[10deg] flex flex-col items-center justify-center text-center">
+          <span class="font-display font-black text-2xl sm:text-3xl md:text-4xl leading-none">{articles.length}</span>
+          <span class="text-xs sm:text-sm font-bold">{countLabel}</span>
+        </div>
+      </header>
+
+      <!-- Filters -->
+      <nav aria-label="Filter by category" class="-mx-4 px-4 overflow-x-auto pb-3 mb-8 md:mb-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <ul class="flex gap-2 md:flex-wrap w-max md:w-auto">
+          {filters.map((filter) => (
+            <li>
+              <a
+                href={filter.href}
+                class="inline-flex items-center min-h-12 px-5 rounded-full border-2 border-ink font-bold text-sm whitespace-nowrap transition-colors bg-card text-ink hover:bg-sand aria-[current=page]:bg-ink aria-[current=page]:text-sun"
+                aria-current={filter.href === activeHref ? "page" : undefined}
+              >
+                {filter.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Lead article -->
+      {lead && (
+        <a
+          href={getArticlePath(lead)}
+          class="sticker sticker-hover group grid md:grid-cols-2 overflow-hidden rounded-[28px] text-ink mb-12 md:mb-16"
+        >
+          <div class="relative aspect-[16/10] md:aspect-auto md:min-h-[360px] border-b-2 md:border-b-0 md:border-r-2 border-ink bg-sand overflow-hidden">
+            <Image
+              src={lead.image}
+              alt={lead.imageAlt}
+              width={1200}
+              height={750}
+              loading="eager"
+              class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+          <div class="flex flex-col justify-center gap-4 p-6 md:p-10 bg-card">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="inline-flex rounded-full bg-sun border-2 border-ink px-3 py-1 text-sm font-bold">Featured</span>
+              <span class="tag-pill">{formatCategory(lead.category)}</span>
+            </div>
+            <h2 class="font-display font-black text-2xl md:text-4xl leading-[1.05] tracking-tight text-balance group-hover:underline decoration-2 underline-offset-4">{lead.title}</h2>
+            <p class="text-ink-soft md:text-lg line-clamp-3">{lead.description}</p>
+            <span class="inline-flex items-center gap-2 font-bold text-teal-ink">
+              {lead.readingTime} min read
+              <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+      )}
+
+      <!-- All articles -->
+      {rest.length > 0 && (
+        <section aria-labelledby="all-heading">
+          <h2 id="all-heading" class="font-display font-black text-2xl md:text-3xl tracking-tight mb-6 md:mb-8">
+            The full list
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
+            {rest.map((article) => (
+              <ArticleCard
+                href={getArticlePath(article)}
+                title={article.title}
+                description={article.description}
+                image={article.image}
+                imageAlt={article.imageAlt}
+                category={formatCategory(article.category)}
+                readTime={article.readingTime}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Suggest a tool -->
+      <div class="mt-16 md:mt-20 flex flex-col md:flex-row md:items-center md:justify-between gap-5 rounded-[28px] border-2 border-dashed border-ink p-6 md:p-8">
+        <div>
+          <p class="font-display font-bold text-xl md:text-2xl">Missing something?</p>
+          <p class="text-ink-soft mt-1">Tell us which tool or gadget you want us to test next.</p>
+        </div>
+        <a href="/contact/" class="btn-pill btn-sun self-start md:self-auto">Suggest a review</a>
+      </div>
+    </div>
+  </div>
+
+  <CollectionSchema name={metaTitle} description={metaDescription} items={schemaItems} breadcrumbs={breadcrumbs} />
+</BaseLayout>

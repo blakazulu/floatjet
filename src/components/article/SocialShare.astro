@@ -57,31 +57,26 @@ const buttons = [
             width: 2.5rem;
             height: 2.5rem;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--color-sand);
+            border: 2px solid var(--color-ink);
             margin: 0;
             transition: all 0.2s ease;
           }
 
           .social-share-desktop .astro-social-share a:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(128, 206, 215, 0.4);
-            transform: scale(1.1);
+            background: var(--color-sun);
+            transform: scale(1.08);
           }
 
           .social-share-desktop .astro-social-share a:focus-visible {
-            outline: 2px solid #80CED7;
+            outline: 3px solid var(--color-ocean-deep);
             outline-offset: 2px;
           }
 
           .social-share-desktop .astro-social-share svg {
             width: 18px;
             height: 18px;
-            fill: rgba(255, 255, 255, 0.8);
-          }
-
-          .social-share-desktop .astro-social-share a:hover svg {
-            fill: white;
+            fill: var(--color-ink);
           }
         </style>
       </SocialShareButtons>
@@ -94,8 +89,8 @@ const buttons = [
           title="Copy link"
           data-url={shareUrl}
       >
-        <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        <svg class="link-icon h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <svg class="check-icon h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
       </button>
     </div>
   </div>
@@ -126,21 +121,21 @@ const buttons = [
           width: 2.75rem;
           height: 2.75rem;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: var(--color-card);
+          border: 2px solid var(--color-ink);
           margin: 0;
           transition: all 0.2s ease;
         }
 
         .social-share-mobile .astro-social-share a:active {
-          background: rgba(255, 255, 255, 0.2);
+          background: var(--color-sun);
           transform: scale(0.95);
         }
 
         .social-share-mobile .astro-social-share svg {
           width: 20px;
           height: 20px;
-          fill: rgba(255, 255, 255, 0.9);
+          fill: var(--color-ink);
         }
       </style>
     </SocialShareButtons>
@@ -153,8 +148,8 @@ const buttons = [
         title="Copy link"
         data-url={shareUrl}
     >
-      <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+      <svg class="link-icon h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      <svg class="check-icon h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
     </button>
   </div>
 </aside>
@@ -181,21 +176,18 @@ const buttons = [
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-    padding: 1rem 0.75rem;
-    background: rgba(15, 76, 92, 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(128, 206, 215, 0.2);
-    border-radius: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 1rem 0.625rem;
+    background: var(--color-card);
+    border: 2px solid var(--color-ink);
+    border-radius: 999px;
+    box-shadow: 4px 5px 0 0 var(--color-ink);
   }
 
   .share-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-hand);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-teal-ink);
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transform: rotate(180deg);
@@ -208,48 +200,50 @@ const buttons = [
     gap: 0.5rem;
   }
 
-  .copy-link-btn {
+  .copy-link-btn,
+  .copy-link-btn-mobile {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.8);
+    background: var(--color-sand);
+    border: 2px solid var(--color-ink);
+    color: var(--color-ink);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
   }
 
   .copy-link-btn:hover {
-    background: rgba(56, 163, 165, 0.2);
-    border-color: rgba(56, 163, 165, 0.5);
-    color: white;
-    transform: scale(1.1);
+    background: var(--color-sun);
+    transform: scale(1.08);
   }
 
-  .copy-link-btn:focus-visible {
-    outline: 2px solid #80CED7;
+  .copy-link-btn:focus-visible,
+  .copy-link-btn-mobile:focus-visible {
+    outline: 3px solid var(--color-ocean-deep);
     outline-offset: 2px;
   }
 
-  .copy-link-btn .check-icon {
+  .copy-link-btn .check-icon,
+  .copy-link-btn-mobile .check-icon {
     display: none;
   }
 
-  .copy-link-btn.copied .link-icon {
+  .copy-link-btn.copied .link-icon,
+  .copy-link-btn-mobile.copied .link-icon {
     display: none;
   }
 
-  .copy-link-btn.copied .check-icon {
+  .copy-link-btn.copied .check-icon,
+  .copy-link-btn-mobile.copied .check-icon {
     display: block;
-    color: #38A3A5;
   }
 
-  .copy-link-btn.copied {
-    background: rgba(56, 163, 165, 0.2);
-    border-color: rgba(56, 163, 165, 0.5);
+  .copy-link-btn.copied,
+  .copy-link-btn-mobile.copied {
+    background: var(--color-sky-light);
   }
 
   /* ==================== MOBILE: Bottom bar ==================== */
@@ -260,12 +254,10 @@ const buttons = [
     right: 0;
     z-index: 40;
     display: block;
-    padding: 0.75rem 1rem;
-    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
-    background: rgba(15, 76, 92, 0.95);
-    backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(128, 206, 215, 0.2);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    padding: 0.625rem 1rem;
+    padding-bottom: calc(0.625rem + env(safe-area-inset-bottom));
+    background: var(--color-paper);
+    border-top: 2px solid var(--color-ink);
   }
 
   @media (min-width: 1280px) {
@@ -274,48 +266,29 @@ const buttons = [
     }
   }
 
+  /* Keep the footer clear of the fixed share bar */
+  @media (max-width: 1279px) {
+    :global(body) {
+      padding-bottom: calc(4.25rem + env(safe-area-inset-bottom));
+    }
+  }
+
   .share-container-mobile {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.625rem;
   }
 
   .copy-link-btn-mobile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 2.75rem;
     height: 2.75rem;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.9);
-    cursor: pointer;
-    transition: all 0.2s ease;
+    background: var(--color-card);
   }
 
   .copy-link-btn-mobile:active {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--color-sun);
     transform: scale(0.95);
-  }
-
-  .copy-link-btn-mobile .check-icon {
-    display: none;
-  }
-
-  .copy-link-btn-mobile.copied .link-icon {
-    display: none;
-  }
-
-  .copy-link-btn-mobile.copied .check-icon {
-    display: block;
-    color: #38A3A5;
-  }
-
-  .copy-link-btn-mobile.copied {
-    background: rgba(56, 163, 165, 0.2);
-    border-color: rgba(56, 163, 165, 0.5);
   }
 </style>
 

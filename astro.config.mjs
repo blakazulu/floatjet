@@ -76,10 +76,16 @@ export default defineConfig({
       options: {
         fonts: [
           {
-            name: "Outfit",
+            name: "Unbounded",
+            weight: 900,
+            style: "normal",
+            data: fs.readFileSync("node_modules/@fontsource/unbounded/files/unbounded-latin-900-normal.woff"),
+          },
+          {
+            name: "Figtree",
             weight: 700,
             style: "normal",
-            data: fs.readFileSync("node_modules/@fontsource/outfit/files/outfit-latin-700-normal.woff"),
+            data: fs.readFileSync("node_modules/@fontsource/figtree/files/figtree-latin-700-normal.woff"),
           },
         ],
       },

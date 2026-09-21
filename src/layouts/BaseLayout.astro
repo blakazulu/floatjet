@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import LoadingOverlay from "@components/LoadingOverlay.astro";
@@ -8,14 +7,14 @@ import MobileMenu from "@components/MobileMenu.astro";
 import SearchModal from "@components/SearchModal.astro";
 import "@styles/global.css";
 
-// Self-hosted fonts via @fontsource (optimized for performance)
-import "@fontsource/outfit/400.css";
-import "@fontsource/outfit/600.css";
-import "@fontsource/outfit/700.css";
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/500.css";
-import "@fontsource/inter/600.css";
-import "@fontsource/jetbrains-mono/400.css";
+// Self-hosted fonts via @fontsource, Latin subset only (Desk Party type system)
+import "@fontsource/unbounded/latin-700.css";
+import "@fontsource/unbounded/latin-900.css";
+import "@fontsource/figtree/latin-400.css";
+import "@fontsource/figtree/latin-500.css";
+import "@fontsource/figtree/latin-700.css";
+import "@fontsource/caveat/latin-700.css";
+import "@fontsource/jetbrains-mono/latin-400.css";
 
 interface Props {
   title: string;
@@ -82,26 +81,13 @@ const siteSchema = {
     canonicalUrl={canonicalUrl}
     noindex={noindex}
 />
-<body class="flex flex-col min-h-screen relative overflow-x-hidden">
-<!-- Background Image -->
-<div class="fixed inset-0 z-[-1]" transition:persist="background">
-  <Image
-      src="/images/background.webp"
-      alt="Abstract gradient background with soft blue and teal tones"
-      width={1920}
-      height={1080}
-      class="w-full h-full object-cover"
-      loading="eager"
-      fetchpriority="high"
-  />
-  <!-- Dark overlay for professional feel -->
-  <div class="absolute inset-0 bg-black/50"></div>
-</div>
+<body class="flex flex-col min-h-screen relative bg-paper text-ink">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[300] btn-pill btn-sun">Skip to content</a>
 
 <div transition:persist="header">
   <Header/>
 </div>
-<main class="flex-grow" transition:animate="fade">
+<main id="main-content" class="flex-grow" transition:animate="fade">
   <slot/>
 </main>
 <!-- TOC Portal - rendered via slot:toc for articles -->

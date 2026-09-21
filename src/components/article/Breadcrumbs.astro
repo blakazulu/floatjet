@@ -43,7 +43,7 @@ const breadcrumbSchema = {
 
 <style>
   .breadcrumbs {
-    margin: 0.5rem 0 1rem;
+    margin: 0 0 1.25rem;
   }
 
   .breadcrumbs ol {
@@ -54,8 +54,9 @@ const breadcrumbSchema = {
     list-style: none;
     padding: 0;
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.875rem;
+    font-weight: 600;
   }
 
   .breadcrumbs li {
@@ -65,19 +66,21 @@ const breadcrumbSchema = {
   }
 
   .breadcrumbs a {
-    color: #80CED7;
-    text-decoration: none;
-    transition: color 0.2s;
+    color: var(--color-teal-ink);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(23, 100, 102, 0.3);
+    transition: color 0.2s, text-decoration-color 0.2s;
   }
 
   .breadcrumbs a:hover {
-    color: white;
-    text-decoration: underline;
+    color: var(--color-ink);
+    text-decoration-color: var(--color-sun);
   }
 
   .breadcrumbs span[aria-current="page"] {
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
+    color: var(--color-ink-soft);
     max-width: 400px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -85,7 +88,7 @@ const breadcrumbSchema = {
   }
 
   .breadcrumbs .separator {
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-ink-soft);
     user-select: none;
   }
 
@@ -96,13 +99,13 @@ const breadcrumbSchema = {
     }
 
     .breadcrumbs li:first-child::after {
-      content: '...';
-      color: rgba(255, 255, 255, 0.4);
+      content: "...";
+      color: var(--color-ink-soft);
       margin-left: 0.5rem;
     }
 
     .breadcrumbs span[aria-current="page"] {
-      max-width: 150px;
+      max-width: 180px;
     }
   }
 </style>

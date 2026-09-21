@@ -29,7 +29,7 @@ const formatDate = (date: Date) => {
     )}
   </span>
 
-  <span class="separator">•</span>
+  <span class="separator" aria-hidden="true">/</span>
 
   {updatedDate ? (
       <time class="metadata-item" datetime={updatedDate.toISOString()}>
@@ -43,7 +43,7 @@ const formatDate = (date: Date) => {
 
   {readingTime && (
       <>
-        <span class="separator">•</span>
+        <span class="separator" aria-hidden="true">/</span>
         <span class="metadata-item reading-time">
         <svg class="clock-icon" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           {readingTime} min read
@@ -58,9 +58,10 @@ const formatDate = (date: Date) => {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.25rem;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.9375rem;
-    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    color: var(--color-ink-soft);
   }
 
   .metadata-item {
@@ -70,25 +71,28 @@ const formatDate = (date: Date) => {
   }
 
   .author-link {
-    color: #80CED7;
-    text-decoration: none;
+    color: var(--color-ink);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--color-sun);
     transition: color 0.2s;
   }
 
   .author-link:hover {
-    color: white;
-    text-decoration: underline;
+    color: var(--color-teal-ink);
   }
 
   .author-name {
-    color: #80CED7;
-    font-weight: 500;
+    color: var(--color-ink);
+    font-weight: 700;
   }
 
   .separator {
     margin: 0 0.5rem;
     user-select: none;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-ink-soft);
   }
 
   .reading-time {
@@ -100,12 +104,12 @@ const formatDate = (date: Date) => {
   .clock-icon {
     width: 1rem;
     height: 1rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-ink-soft);
   }
 
   @media (max-width: 640px) {
     .article-metadata {
-      font-size: 0.8125rem;
+      font-size: 0.875rem;
     }
 
     .separator {

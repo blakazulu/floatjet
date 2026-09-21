@@ -1,0 +1,192 @@
+---
+/**
+ * DeskScene - the homepage hero "desk".
+ * Every object on the desk is a real link into the site. Built from HTML/CSS/SVG only (zero JS).
+ * Mobile: a 2-column pile of objects. Desktop (lg+): a scattered desk laid out with grid areas.
+ */
+
+interface Props {
+  counts: { tools: number; gear: number; guides: number; blog: number };
+  featured: { title: string; href: string; blurb: string };
+}
+
+const { counts, featured } = Astro.props;
+---
+
+<div class="desk-wrap relative">
+  <!-- "Tap anything" sticker -->
+  <div
+    class="absolute -top-10 right-2 md:-top-12 md:right-6 z-20 w-24 h-24 md:w-36 md:h-36 rounded-full bg-coral border-2 border-ink flex items-center justify-center text-center rotate-[14deg] font-display font-bold text-[11px] md:text-base leading-tight p-3 md:p-5 shadow-[4px_5px_0_0_var(--color-ink)]"
+    aria-hidden="true"
+  >
+    Tap anything on the desk
+  </div>
+
+  <!-- Desk (wood-free: a sunny table with a mint cutting mat) -->
+  <div class="desk bg-sun rounded-[32px] md:rounded-[56px] p-3 md:p-8 border-2 border-ink">
+    <div class="mat-grid rounded-[22px] md:rounded-[36px] border-2 border-ink/15 p-4 sm:p-6 lg:p-10">
+      <ul class="desk-grid grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8" role="list">
+
+        <!-- Laptop: the lead review -->
+        <li class="[grid-area:laptop]">
+          <a href={featured.href} class="desk-item group block">
+            <div class="rounded-[22px] bg-ink p-3 md:p-4 shadow-[8px_10px_0_0_var(--color-ocean-deep)]">
+              <div class="rounded-xl bg-card px-5 py-6 md:px-8 md:py-10 flex flex-col gap-3 md:gap-4 min-h-[190px] md:min-h-[250px] justify-center">
+                <span class="self-start rounded-full bg-sun px-3 py-1 text-xs md:text-sm font-bold text-ink">On screen now</span>
+                <span class="font-display font-black text-xl sm:text-2xl lg:text-[34px] leading-[1.05] tracking-tight text-ink text-balance">{featured.title}</span>
+                <span class="text-sm md:text-base text-ink-soft">{featured.blurb}</span>
+                <span class="self-start inline-flex items-center gap-2 rounded-full bg-ink text-sun px-4 py-2 text-sm font-bold group-hover:bg-ocean-deep transition-colors">
+                  Read the showdown
+                  <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="mx-auto h-3 md:h-4 w-[70%] rounded-b-2xl bg-ocean-deep" aria-hidden="true"></div>
+          </a>
+        </li>
+
+        <!-- Notebook: guides -->
+        <li class="[grid-area:note]">
+          <a href="/guides/" class="desk-item block h-full -rotate-[5deg] lg:-rotate-[8deg] rounded-[10px_20px_20px_10px] bg-coral border-l-[10px] border-ink pl-5 pr-4 py-5 lg:py-7 lg:pl-7 shadow-[6px_8px_0_0_var(--color-ink)]">
+            <span class="block font-display font-black text-xl lg:text-3xl text-ink">Guides</span>
+            <span class="hidden sm:block hand text-xl lg:text-2xl leading-snug text-ink mt-2 lg:mt-3">
+              home office checklist<br />setup under $500<br />time zones, sorted
+            </span>
+            <span class="tag-pill mt-3 lg:mt-5">{counts.guides} guides</span>
+          </a>
+        </li>
+
+        <!-- Sticky note: software -->
+        <li class="[grid-area:sticky]">
+          <a href="/tools/" class="desk-item flex flex-col justify-between h-full min-h-[150px] lg:min-h-[210px] rotate-[4deg] lg:rotate-[6deg] bg-sky-light p-4 lg:p-6 shadow-[6px_8px_0_0_var(--color-ink)]">
+            <span class="hand text-2xl lg:text-[34px] leading-none text-ink">Software worth paying for</span>
+            <span class="font-display font-bold text-xs lg:text-sm text-ink mt-3">{counts.tools} reviews</span>
+          </a>
+        </li>
+
+        <!-- Headphones: gear -->
+        <li class="[grid-area:phones]">
+          <a href="/gear/" class="desk-item flex flex-col items-center gap-2 h-full justify-center py-2">
+            <svg class="w-28 h-28 lg:w-44 lg:h-44" viewBox="0 0 230 230" aria-hidden="true">
+              <path d="M40 130 A75 75 0 0 1 190 130" fill="none" stroke="#082F38" stroke-width="18" stroke-linecap="round"></path>
+              <rect x="16" y="116" width="54" height="84" rx="24" fill="#082F38"></rect>
+              <rect x="160" y="116" width="54" height="84" rx="24" fill="#082F38"></rect>
+              <rect x="28" y="130" width="30" height="56" rx="14" fill="#FFD23F"></rect>
+              <rect x="172" y="130" width="30" height="56" rx="14" fill="#FFD23F"></rect>
+            </svg>
+            <span class="-rotate-[6deg] rounded-full bg-ink text-sun px-4 py-2 font-display font-bold text-sm lg:text-base">Gear / {counts.gear}</span>
+          </a>
+        </li>
+
+        <!-- Keyboard: a gear review -->
+        <li class="[grid-area:keys]">
+          <a href="/gear/best-mechanical-keyboards/" class="desk-item block rounded-2xl bg-ink p-3 lg:p-4 shadow-[6px_8px_0_0_var(--color-ocean-deep)]">
+            <span class="flex items-center justify-center rounded-lg bg-sun px-3 py-2.5 text-sm lg:text-[15px] font-bold text-ink text-center">Best Mechanical Keyboards</span>
+            <span class="mt-2 grid grid-cols-12 gap-2" aria-hidden="true">
+              <span class="col-span-3 h-6 lg:h-8 rounded-lg bg-coral"></span>
+              <span class="col-span-6 h-6 lg:h-8 rounded-lg bg-sand"></span>
+              <span class="col-span-3 h-6 lg:h-8 rounded-lg bg-sky-light"></span>
+            </span>
+          </a>
+        </li>
+
+        <!-- Coupon ticket: deals -->
+        <li class="[grid-area:coupon]">
+          <a href="/deals/" class="desk-item flex h-full items-center rotate-[3deg] rounded-xl bg-card border-2 border-dashed border-ink px-4 py-4 lg:px-6 shadow-[5px_6px_0_0_var(--color-ink)]">
+            <span class="flex flex-col gap-1">
+              <span class="font-display font-black text-lg lg:text-2xl text-ink leading-none">Deals</span>
+              <span class="hand text-lg lg:text-xl text-ink-soft leading-tight">current discounts</span>
+            </span>
+          </a>
+        </li>
+
+        <!-- Postcard: blog -->
+        <li class="[grid-area:card]">
+          <a href="/blog/" class="desk-item flex h-full justify-between gap-4 -rotate-[2deg] bg-card p-4 lg:p-6 shadow-[6px_8px_0_0_var(--color-ink)]">
+            <span class="flex flex-col gap-1">
+              <span class="font-display font-black text-xl lg:text-2xl text-ink">Blog</span>
+              <span class="hand text-xl lg:text-2xl text-ink-soft">notes from the road</span>
+              <span class="mt-auto pt-2 text-sm font-bold text-ink">{counts.blog} posts</span>
+            </span>
+            <span class="shrink-0 w-14 h-16 lg:w-16 lg:h-20 border-[3px] border-dashed border-coral flex items-center justify-center font-display font-bold text-xs text-ink" aria-hidden="true">FJ</span>
+          </a>
+        </li>
+
+        <!-- Decorative: plant + mug (desktop only) -->
+        <li class="hidden lg:flex [grid-area:plant] items-start justify-center" aria-hidden="true">
+          <svg class="w-36 h-36" viewBox="0 0 150 150">
+            <ellipse cx="50" cy="55" rx="30" ry="46" fill="#38A3A5" transform="rotate(-35 50 55)"></ellipse>
+            <ellipse cx="100" cy="55" rx="30" ry="46" fill="#0F4C5C" transform="rotate(35 100 55)"></ellipse>
+            <ellipse cx="75" cy="95" rx="28" ry="44" fill="#38A3A5" transform="rotate(180 75 95)"></ellipse>
+            <circle cx="75" cy="78" r="26" fill="#FF8A65"></circle>
+          </svg>
+        </li>
+        <li class="hidden lg:flex [grid-area:mug] items-center justify-center" aria-hidden="true">
+          <span class="relative flex w-32 h-32 items-center justify-center rounded-full bg-coral border-2 border-ink shadow-[6px_8px_0_0_var(--color-ink)]">
+            <span class="w-24 h-24 rounded-full bg-[#5A3B28]"></span>
+            <span class="absolute -top-9 left-1/2 -translate-x-1/2 steam">
+              <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" stroke="#4A6166" stroke-width="2.5" stroke-linecap="round"><path d="M14 34c-6-6 6-10 0-18M26 34c-6-6 6-10 0-18"></path></svg>
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .desk-grid {
+    grid-template-areas:
+      "laptop laptop"
+      "note sticky"
+      "phones coupon"
+      "keys keys"
+      "card card";
+  }
+
+  @media (min-width: 1024px) {
+    .desk-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1.25fr) minmax(0, 1fr);
+      grid-template-areas:
+        "plant laptop laptop phones"
+        "note laptop laptop sticky"
+        "note keys keys sticky"
+        "mug coupon card card";
+      align-items: stretch;
+    }
+  }
+
+  .desk-item {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+    text-decoration: none;
+    color: var(--color-ink);
+  }
+
+  .desk-item:hover {
+    transform: translateY(-6px) scale(1.02);
+  }
+
+  .desk-item:active {
+    transform: translateY(2px) scale(0.99);
+  }
+
+  .desk-item:focus-visible {
+    outline: 3px solid var(--color-ocean-deep);
+    outline-offset: 6px;
+  }
+
+  .steam {
+    animation: steam 3s ease-in-out infinite;
+  }
+
+  @keyframes steam {
+    0%, 100% {
+      opacity: 0.4;
+      transform: translate(-50%, 0);
+    }
+    50% {
+      opacity: 1;
+      transform: translate(-50%, -6px);
+    }
+  }
+</style>

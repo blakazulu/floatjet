@@ -91,7 +91,7 @@ Reference: `docs/03-design/component-specifications.md` (~1,670 lines of product
 2. **Breadcrumbs** - SEO navigation with Schema.org BreadcrumbList
 3. **FAQ Section** - Accordion with FAQ Schema for rich snippets
 4. **Related Articles** - 3-column responsive grid
-5. **Mobile Table of Contents** - Floating button + glassmorphic overlay
+5. **Mobile Table of Contents** - Floating button + bottom-sheet overlay
 6. **Comparison Table** - Mobile horizontal scroll optimization
 7. **CTA Buttons** - 3 variants (Primary, Affiliate, Secondary)
 8. **Article Metadata** - Author, dates, reading time
@@ -102,19 +102,24 @@ Reference: `docs/03-design/component-specifications.md` (~1,670 lines of product
 - WCAG 2.2 AA accessibility
 - Schema.org markup where applicable
 
-## Design System
+## Design System ("Desk Party", since Sept 2026)
+
+Full rules: `docs/design/design-guidelines.md`. Tokens and shared classes: `src/styles/global.css`.
 
 **Color Palette:**
-- Ocean Deep: `#0F4C5C` (primary)
-- Jet Stream: `#38A3A5` (accent)
-- Sky Light: `#80CED7` (highlights)
-- Sand: `#E0FBFC` (backgrounds)
-- Alert: `#C1121F` (errors/warnings)
+- Paper: `#F4F1EA` (page background) / Card: `#FFFFFF`
+- Ink: `#082F38` (text, outlines, solid sticker shadows) / Ink Soft: `#4A6166` (secondary text)
+- Teal Ink: `#176466` (links and teal text on light surfaces)
+- Ocean Deep: `#0F4C5C`, Jet Stream: `#38A3A5` (fills only), Sky Light: `#80CED7`, Sand: `#E0FBFC`
+- Sun: `#FFD23F` and Coral: `#FF8A65` (sticker accents)
+- Alert: `#B42318` (errors)
 
 **Typography:**
-- Headings: Outfit (Google Fonts)
-- Body: Inter (Google Fonts)
+- Headings: Unbounded (`font-display`, 700/900)
+- Body: Figtree
+- Handwritten notes: Caveat (`hand` class, decoration only)
 - Code: JetBrains Mono
+- All self-hosted via @fontsource (Latin subset) in `BaseLayout.astro`
 
 **Breakpoints:**
 - `sm:` 640px (tablets)
@@ -122,7 +127,9 @@ Reference: `docs/03-design/component-specifications.md` (~1,670 lines of product
 - `lg:` 1024px (desktop)
 - `xl:` 1280px (wide desktop)
 
-**Design Philosophy:** Glassmorphism with subtle transparency, soft shadows, rounded corners
+**Design Philosophy:** Tactile desk: warm paper, white sticker cards with 2px ink borders and solid offset shadows, pill buttons (`btn-pill btn-ink|btn-sun|btn-outline`), handwritten notes and a few tilted stickers. No glassmorphism, blur or gradient washes. Never use `text-white` / `bg-white/*` on the paper background.
+
+**Key shared components:** `src/components/home/DeskScene.astro` (homepage desk), `src/components/ui/ArticleCard.astro` (all article cards), `src/components/hub/HubPage.astro` (section + category listing pages, fed by `src/data/articles.ts` and `src/data/sections.ts`).
 
 ## SEO & Performance Requirements
 

@@ -5,46 +5,48 @@ import Search from "astro-pagefind/components/Search";
 <!-- Search Modal Overlay -->
 <div
     id="search-overlay"
-    class="fixed inset-0 bg-black/70 backdrop-blur-md z-[80] hidden opacity-0 transition-opacity duration-300"
+    class="fixed inset-0 bg-ink/60 z-[80] hidden opacity-0 transition-opacity duration-300"
     aria-hidden="true"
 ></div>
 
 <!-- Search Modal -->
 <div
     id="search-modal"
-    class="fixed inset-x-4 top-24 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl z-[90] hidden opacity-0 transform scale-95 transition-all duration-300"
+    class="fixed inset-x-3 top-20 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl z-[90] hidden opacity-0 transform scale-95 transition-all duration-300"
     role="dialog"
     aria-modal="true"
-    aria-label="Search"
+    aria-labelledby="search-modal-title"
 >
-  <div class="bg-[#0a2a33] border border-white/20 rounded-2xl shadow-2xl overflow-hidden">
+  <div class="bg-paper border-2 border-ink rounded-[28px] shadow-[10px_12px_0_0_var(--color-ink)] overflow-hidden">
     <!-- Modal Header -->
-    <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
-      <h2 class="text-lg font-bold text-white">Search FloatJet</h2>
+    <div class="flex items-center justify-between px-5 md:px-6 py-4 border-b-2 border-ink bg-sun">
+      <h2 id="search-modal-title" class="font-display text-lg font-bold text-ink">Search FloatJet</h2>
       <button
           id="search-close"
-          class="text-white/80 hover:text-white p-1 transition-colors"
+          type="button"
+          class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-ink text-sun"
           aria-label="Close search"
       >
-        <svg class="h-6 w-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
     </div>
 
     <!-- Search Component -->
-    <div class="p-4 search-container">
+    <div class="p-4 md:p-5 search-container">
       <div id="search-fallback" class="hidden text-center py-8">
-        <p class="text-white/70 mb-2">Search is not available in development mode.</p>
-        <p class="text-white/50 text-sm">Run <code class="px-2 py-1 bg-white/10 rounded">npm run build</code> to
+        <p class="text-ink mb-2">Search is not available in development mode.</p>
+        <p class="text-ink-soft text-sm">Run <code class="px-2 py-1 bg-ink/10 rounded">npm run build</code> to
           generate the search index.</p>
       </div>
 
       <!-- Recent Searches (shown when input is empty) -->
       <div id="recent-searches" class="hidden mb-4">
         <div class="flex items-center justify-between mb-3">
-          <h3 class="text-sm font-semibold text-white/70">Recent Searches</h3>
+          <h3 class="font-body text-sm font-bold text-ink-soft">Recent searches</h3>
           <button
               id="clear-recent-searches"
-              class="text-xs text-white/50 hover:text-white/80 transition-colors"
+              type="button"
+              class="text-sm font-semibold text-teal-ink underline underline-offset-2 hover:text-ink transition-colors"
           >
             Clear all
           </button>
@@ -74,7 +76,7 @@ import Search from "astro-pagefind/components/Search";
 
       <!-- Search Suggestions (autocomplete) -->
       <div id="search-suggestions" class="hidden mt-2">
-        <p class="text-xs text-white/50 mb-2">Suggestions</p>
+        <p class="text-sm font-semibold text-ink-soft mb-2">Suggestions</p>
         <div id="suggestions-list" class="space-y-1">
           <!-- Suggestions will be inserted here -->
         </div>
@@ -82,58 +84,61 @@ import Search from "astro-pagefind/components/Search";
     </div>
 
     <!-- Keyboard Hint -->
-    <div class="px-6 py-3 border-t border-white/10 flex items-center justify-between text-xs text-white/50">
-      <span>Type to search articles, tools, and guides</span>
-      <span class="hidden md:inline">Press <kbd class="px-2 py-0.5 bg-white/10 rounded">ESC</kbd> to close</span>
+    <div class="px-5 md:px-6 py-3 border-t-2 border-ink flex items-center justify-between text-sm text-ink-soft">
+      <span class="hand text-lg">find the right tool, fast</span>
+      <span class="hidden md:inline">Press <kbd class="px-2 py-0.5 bg-card border border-ink rounded font-jetbrains text-xs text-ink">ESC</kbd> to close</span>
     </div>
   </div>
 </div>
 
 <style is:global>
-  /* Pagefind UI Custom Styles - FloatJet Theme */
+  /* Pagefind UI - Desk Party theme */
   .pagefind-ui {
     --pagefind-ui-scale: 1;
-    --pagefind-ui-primary: #38A3A5;
-    --pagefind-ui-text: #ffffff;
-    --pagefind-ui-background: transparent;
-    --pagefind-ui-border: rgba(255, 255, 255, 0.2);
-    --pagefind-ui-tag: rgba(255, 255, 255, 0.1);
-    --pagefind-ui-border-width: 1px;
-    --pagefind-ui-border-radius: 12px;
-    --pagefind-ui-image-border-radius: 8px;
+    --pagefind-ui-primary: #082F38;
+    --pagefind-ui-text: #082F38;
+    --pagefind-ui-background: #FFFFFF;
+    --pagefind-ui-border: #082F38;
+    --pagefind-ui-tag: #E0FBFC;
+    --pagefind-ui-border-width: 2px;
+    --pagefind-ui-border-radius: 16px;
+    --pagefind-ui-image-border-radius: 10px;
     --pagefind-ui-image-box-ratio: 16 / 9;
-    --pagefind-ui-font: 'Inter', sans-serif;
+    --pagefind-ui-font: 'Figtree', sans-serif;
   }
 
   .pagefind-ui .pagefind-ui__search-input {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background: #FFFFFF;
+    color: #082F38;
     font-size: 1rem;
+    font-weight: 500;
     padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border: 2px solid #082F38;
+    border-radius: 999px;
   }
 
-  /* Hide the default search icon from Pagefind - we style our own input */
   .pagefind-ui .pagefind-ui__search-icon {
     left: 0.75rem;
-    opacity: 0.5;
+    opacity: 0.7;
   }
 
   .pagefind-ui .pagefind-ui__search-input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: #4A6166;
   }
 
   .pagefind-ui .pagefind-ui__search-input:focus {
     outline: none;
-    border-color: #38A3A5;
-    box-shadow: 0 0 0 2px rgba(56, 163, 165, 0.3);
+    border-color: #082F38;
+    box-shadow: 4px 5px 0 0 #FFD23F;
   }
 
   .pagefind-ui .pagefind-ui__search-clear {
-    color: rgba(255, 255, 255, 0.7);
+    color: #082F38;
+    font-weight: 600;
   }
 
   .pagefind-ui .pagefind-ui__search-clear:hover {
-    color: white;
+    color: #176466;
   }
 
   .pagefind-ui .pagefind-ui__results-area {
@@ -142,53 +147,65 @@ import Search from "astro-pagefind/components/Search";
 
   .pagefind-ui .pagefind-ui__result {
     padding: 1rem;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    margin-bottom: 0.5rem;
-    transition: background 0.2s;
+    border-radius: 16px;
+    background: #FFFFFF;
+    border: 2px solid #082F38;
+    margin-bottom: 0.75rem;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .pagefind-ui .pagefind-ui__result:hover {
-    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-1px, -2px);
+    box-shadow: 4px 5px 0 0 #082F38;
   }
 
   .pagefind-ui .pagefind-ui__result-link {
-    color: #80CED7;
-    font-weight: 600;
+    color: #082F38;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 0.9375rem;
     text-decoration: none;
   }
 
   .pagefind-ui .pagefind-ui__result-link:hover {
-    color: #38A3A5;
+    color: #176466;
+    text-decoration: underline;
   }
 
   .pagefind-ui .pagefind-ui__result-excerpt {
-    color: rgba(255, 255, 255, 0.8);
+    color: #4A6166;
     font-size: 0.875rem;
     line-height: 1.5;
   }
 
   .pagefind-ui mark {
-    background: rgba(56, 163, 165, 0.4);
-    color: white;
+    background: #FFD23F;
+    color: #082F38;
     padding: 0 2px;
-    border-radius: 2px;
+    border-radius: 3px;
   }
 
   .pagefind-ui .pagefind-ui__message {
-    color: rgba(255, 255, 255, 0.7);
+    color: #4A6166;
     text-align: center;
     padding: 2rem;
+  }
+
+  .pagefind-ui .pagefind-ui__button {
+    background: #082F38;
+    color: #FFD23F;
+    border: 0;
+    border-radius: 999px;
+    font-weight: 700;
   }
 
   /* Result image loading styles */
   .pagefind-ui .pagefind-ui__result-image {
     position: relative;
-    background: linear-gradient(135deg, rgba(15, 76, 92, 0.6) 0%, rgba(56, 163, 165, 0.4) 100%);
+    background: #E0FBFC;
     overflow: hidden;
   }
 
-  /* Shimmer effect for loading images */
   .pagefind-ui .pagefind-ui__result-image::before {
     content: '';
     position: absolute;
@@ -196,7 +213,7 @@ import Search from "astro-pagefind/components/Search";
     background: linear-gradient(
             90deg,
             transparent 0%,
-            rgba(255, 255, 255, 0.08) 50%,
+            rgba(255, 255, 255, 0.6) 50%,
             transparent 100%
     );
     background-size: 200% 100%;
@@ -230,35 +247,25 @@ import Search from "astro-pagefind/components/Search";
     overflow-y: auto;
   }
 
-  .search-container::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .search-container::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .search-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-  }
-
   /* Recent Searches Styles */
   .recent-search-chip {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    background: rgba(255, 255, 255, 0.1);
+    min-height: 44px;
+    padding: 0.375rem 0.5rem 0.375rem 0.875rem;
+    background: #FFFFFF;
+    border: 2px solid #082F38;
     border-radius: 9999px;
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    color: #082F38;
     cursor: pointer;
     transition: background 0.2s, transform 0.1s;
   }
 
   .recent-search-chip:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: #FFD23F;
     transform: translateY(-1px);
   }
 
@@ -266,37 +273,40 @@ import Search from "astro-pagefind/components/Search";
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
+    background: #082F38;
+    color: #FFD23F;
     transition: background 0.2s;
   }
 
   .recent-search-chip .remove-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: #0F4C5C;
   }
 
   /* Search Suggestions Styles */
   .suggestion-item {
-    padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    background: #FFFFFF;
+    border: 2px solid transparent;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background 0.2s;
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.9);
+    transition: background 0.2s, border-color 0.2s;
+    font-size: 0.9375rem;
+    color: #082F38;
   }
 
   .suggestion-item:hover,
   .suggestion-item.selected {
-    background: rgba(56, 163, 165, 0.2);
+    border-color: #082F38;
+    background: #E0FBFC;
   }
 
   .suggestion-item mark {
     background: transparent;
-    color: #38A3A5;
-    font-weight: 600;
+    color: #176466;
+    font-weight: 700;
   }
 </style>
 

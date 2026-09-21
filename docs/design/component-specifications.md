@@ -1,5 +1,10 @@
 # FloatJet Component Specifications
 
+> **Note (Sept 2026):** The visual styles in this document (glassmorphism, Outfit/Inter, white-on-dark colours) predate
+> the "Desk Party" redesign. The live components in `src/components/article/` are the source of truth for styling, and
+> [design-guidelines.md](./design-guidelines.md) defines the current palette and type. The structure, props, schema
+> markup and accessibility requirements below still apply.
+
 ## Missing Components - Design & Implementation Guide
 
 **Version:** 1.0

@@ -14,7 +14,12 @@ export async function floatjetRenderer({
   title,
   description,
 }: RenderFunctionInput): Promise<React.ReactNode> {
-  const cleanTitle = (title ?? "FloatJet").replace(/\s*\|\s*FloatJet$/, "");
+  const cleanTitle = (title ?? "FloatJet").replace(/\s*\|\s*FloatJet$/, "").replace(/^FloatJet\s*\|\s*/, "");
+  // Trim long descriptions at a word boundary
+  const shortDescription =
+    description && description.length > 120
+      ? description.slice(0, 120).replace(/\s+\S*$/, "").replace(/[,.;:]$/, "") + "..."
+      : description;
   const titleSize = cleanTitle.length > 70 ? "50px" : cleanTitle.length > 45 ? "58px" : "68px";
 
   return (
@@ -72,7 +77,7 @@ export async function floatjetRenderer({
                 maxWidth: "85%",
               }}
             >
-              {description.length > 120 ? description.substring(0, 120) + "..." : description}
+              {shortDescription}
             </p>
           )}
         </div>
@@ -104,8 +109,8 @@ export async function floatjetRenderer({
           position: "absolute",
           top: "22px",
           right: "34px",
-          width: "132px",
-          height: "132px",
+          width: "150px",
+          height: "150px",
           borderRadius: "999px",
           background: "#FFD23F",
           border: "4px solid #082F38",
@@ -115,13 +120,13 @@ export async function floatjetRenderer({
           transform: "rotate(12deg)",
           fontFamily: "Unbounded",
           fontWeight: 900,
-          fontSize: "20px",
+          fontSize: "24px",
           color: "#082F38",
           textAlign: "center",
           lineHeight: 1.1,
         }}
       >
-        FloatJet.com
+        no fluff
       </div>
 
       {/* Coral dot accent */}

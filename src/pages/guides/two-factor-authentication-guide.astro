@@ -6,7 +6,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("two-factor-authentication-guide", "guides")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -71,21 +71,21 @@ const relatedArticles = [
   {
     title: "Best Password Manager for Remote Work",
     excerpt: "Secure all your passwords with the right password manager.",
-    href: "/tools/best-password-manager-remote-work",
+    href: "/tools/best-password-manager-remote-work/",
     image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
     imageAlt: "Password manager interface",
   },
   {
     title: "VPN & Public WiFi Security Guide",
     excerpt: "Stay safe when working from coffee shops and public networks.",
-    href: "/blog/vpn-public-wifi-guide",
+    href: "/blog/vpn-public-wifi-guide/",
     image: "/images/unsplash/photo-1510915228340-29c85a43dcfe-800w.webp",
     imageAlt: "Public WiFi security",
   },
   {
     title: "How to Secure Your Home WiFi Network",
     excerpt: "Protect your home office network from threats.",
-    href: "/guides/secure-home-wifi-network",
+    href: "/guides/secure-home-wifi-network/",
     image: "/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp",
     imageAlt: "Home WiFi router",
   },
@@ -95,7 +95,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -128,8 +127,8 @@ const relatedArticles = [
     physical key. Even when they steal your password, they're stuck.
   </p>
   <p>
-    <a href="/guides/phishing-scams-remote-workers">Remote workers</a> specifically need this. No IT department watching
-    your back. <a href="/blog/vpn-public-wifi-guide">Public WiFi</a> everywhere. Your work
+    <a href="/guides/phishing-scams-remote-workers/">Remote workers</a> specifically need this. No IT department watching
+    your back. <a href="/blog/vpn-public-wifi-guide/">Public WiFi</a> everywhere. Your work
     accounts have access to stuff that affects the whole company. You're basically a prime target.
   </p>
   <p>
@@ -203,7 +202,7 @@ const relatedArticles = [
   <p>
     The built-in authenticator is honestly great. Your codes live right next to your passwords. Everything autofills.
     Three to five bucks a month but you're probably paying for it anyway if you use the <a
-      href="/tools/best-password-manager-remote-work">password manager</a>.
+      href="/tools/best-password-manager-remote-work/">password manager</a>.
   </p>
 
   <h3>Google Authenticator</h3>
@@ -365,8 +364,8 @@ const relatedArticles = [
     for everything else.
   </p>
   <p>
-    This week? <a href="/tools/best-password-manager-remote-work">Password manager</a>. Work accounts. <a
-      href="/blog/best-banking-digital-nomads">Banking</a>.
+    This week? <a href="/tools/best-password-manager-remote-work/">Password manager</a>. Work accounts. <a
+      href="/blog/best-banking-digital-nomads/">Banking</a>.
   </p>
   <p>
     This month? Hit the rest of your accounts. Consider grabbing a hardware key for the stuff that really matters.

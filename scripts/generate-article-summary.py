@@ -15,14 +15,6 @@ PROJECT_ROOT = Path(__file__).parent.parent
 DATA_FILE = PROJECT_ROOT / "src" / "data" / "articles.ts"
 OUTPUT_FILE = PROJECT_ROOT / "docs" / "article-summey.md"
 
-# Author slug to name mapping
-AUTHOR_NAMES = {
-    "daniel-brooks": "Daniel Brooks",
-    "sarah-mitchell": "Sarah Mitchell",
-    "marcus-chen": "Marcus Chen",
-    "liraz-amir": "Liraz Amir",
-}
-
 def parse_articles_ts():
     """Parse articles.ts and extract all article data."""
     content = DATA_FILE.read_text(encoding='utf-8')
@@ -30,10 +22,10 @@ def parse_articles_ts():
     articles = []
 
     # Match each article object
-    pattern = r'\{\s*slug:\s*"([^"]+)",\s*section:\s*"([^"]+)",\s*title:\s*"([^"]+)",\s*description:\s*"([^"]+)",\s*authorSlug:\s*"([^"]+)",\s*pubDate:\s*"([^"]+)",\s*readingTime:\s*(\d+),\s*image:\s*"([^"]+)",\s*imageAlt:\s*"([^"]+)",\s*category:\s*"([^"]+)"'
+    pattern = r'\{\s*slug:\s*"([^"]+)",\s*section:\s*"([^"]+)",\s*title:\s*"([^"]+)",\s*description:\s*"([^"]+)",\s*pubDate:\s*"([^"]+)",\s*readingTime:\s*(\d+),\s*image:\s*"([^"]+)",\s*imageAlt:\s*"([^"]+)",\s*category:\s*"([^"]+)"'
 
     for match in re.finditer(pattern, content, re.DOTALL):
-        slug, section, title, description, authorSlug, pubDate, readingTime, image, imageAlt, category = match.groups()
+        slug, section, title, description, pubDate, readingTime, image, imageAlt, category = match.groups()
 
         # Check if featured
         featured = 'featured: true' in content[match.end():match.end()+50]
@@ -43,8 +35,6 @@ def parse_articles_ts():
             'section': section,
             'title': title,
             'description': description,
-            'authorSlug': authorSlug,
-            'authorName': AUTHOR_NAMES.get(authorSlug, authorSlug),
             'pubDate': pubDate,
             'readingTime': int(readingTime),
             'image': image,
@@ -93,15 +83,15 @@ def generate_markdown(articles):
         section_articles = sections[section]
         lines.append(f"### {section} ({len(section_articles)} articles)")
         lines.append("")
-        lines.append("| # | Title | Author | Category | Read Time | Hero Image |")
-        lines.append("|---|-------|--------|----------|-----------|------------|")
+        lines.append("| # | Title | Category | Read Time | Hero Image |")
+        lines.append("|---|-------|----------|-----------|------------|")
 
         for i, article in enumerate(section_articles, 1):
             title = article['title'][:60] + "..." if len(article['title']) > 60 else article['title']
             link = f"/{article['section']}/{article['slug']}"
             image_name = article['image'].split('/')[-1][:30] + "..." if len(article['image'].split('/')[-1]) > 30 else article['image'].split('/')[-1]
 
-            lines.append(f"| {i:03d} | [{title}]({link}) | {article['authorName']} | {article['category'].capitalize()} | {article['readingTime']} min | `{image_name}` |")
+            lines.append(f"| {i:03d} | [{title}]({link}) | {article['category'].capitalize()} | {article['readingTime']} min | `{image_name}` |")
 
         lines.append("")
 
@@ -130,19 +120,6 @@ def generate_markdown(articles):
     lines.append("|----------|-------|")
     for cat, count in sorted(categories.items(), key=lambda x: -x[1]):
         lines.append(f"| {cat} | {count} |")
-    lines.append("")
-
-    # By author
-    lines.append("### By Author")
-    authors = {}
-    for article in articles:
-        author = article['authorName']
-        authors[author] = authors.get(author, 0) + 1
-
-    lines.append("| Author | Count |")
-    lines.append("|--------|-------|")
-    for author, count in sorted(authors.items(), key=lambda x: -x[1]):
-        lines.append(f"| {author} | {count} |")
     lines.append("")
 
     return "\n".join(lines)

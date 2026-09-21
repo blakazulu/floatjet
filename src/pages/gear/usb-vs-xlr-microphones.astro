@@ -10,10 +10,9 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("usb-vs-xlr-microphones", "gear")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
-const updatedDate = new Date("2024-11-24");
 const category = "Audio";
 const categorySlug = "gear";
 const subcategorySlug = "audio";
@@ -158,21 +157,21 @@ const relatedArticles = [
   {
     title: "Best Microphones for Remote Meetings",
     excerpt: "Our top picks for USB and XLR microphones for video calls.",
-    href: "/gear/best-microphones-remote-meetings",
+    href: "/gear/best-microphones-remote-meetings/",
     image: "/images/unsplash/photo-1590602847861-f357a9332bbc-800w.webp",
     imageAlt: "Professional USB microphone for remote work",
   },
   {
     title: "How to Reduce Background Noise on Calls",
     excerpt: "Tips and techniques to eliminate distracting noise from your meetings.",
-    href: "/gear/reduce-background-noise-calls",
+    href: "/gear/reduce-background-noise-calls/",
     image: "/images/unsplash/photo-1587560699334-cc4ff634909a-800w.webp",
     imageAlt: "Person on video call with noise-canceling setup",
   },
   {
     title: "Ultimate Home Office Setup Guide",
     excerpt: "Build your complete remote workspace including audio gear.",
-    href: "/blog/ultimate-home-office-setup",
+    href: "/blog/ultimate-home-office-setup/",
     image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
     imageAlt: "Modern home office setup",
   },
@@ -183,8 +182,6 @@ const relatedArticles = [
     title={title}
     description={description}
     pubDate={pubDate}
-    updatedDate={updatedDate}
-    authorSlug={authorSlug}
     category={category}
     categorySlug={categorySlug}
     subcategorySlug={subcategorySlug}

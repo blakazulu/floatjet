@@ -6,7 +6,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("slack-vs-teams-vs-discord", "guides")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -73,21 +73,21 @@ const relatedArticles = [
   {
     title: "Best Team Communication Tools",
     excerpt: "Compare top messaging and collaboration platforms for remote teams.",
-    href: "/blog/best-team-communication-tools",
+    href: "/blog/best-team-communication-tools/",
     image: "/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp",
     imageAlt: "Team using communication software",
   },
   {
     title: "Async Communication for Remote Teams",
     excerpt: "Master asynchronous communication to reduce meetings and boost productivity.",
-    href: "/blog/async-communication-remote-teams",
+    href: "/blog/async-communication-remote-teams/",
     image: "/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp",
     imageAlt: "Remote team collaborating through digital tools",
   },
   {
     title: "Best Project Management Software",
     excerpt: "Find the perfect project management tool for organizing your remote team.",
-    href: "/tools/best-project-management-software",
+    href: "/tools/best-project-management-software/",
     image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
     imageAlt: "Modern workspace with project management dashboard",
   },
@@ -97,7 +97,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -455,8 +454,8 @@ const relatedArticles = [
   </p>
   <p>
     For more on building effective team communication, see our
-    <a href="/blog/best-team-communication-tools">guide to team communication tools</a> and
-    <a href="/blog/async-communication-remote-teams">async communication best practices</a>.
+    <a href="/blog/best-team-communication-tools/">guide to team communication tools</a> and
+    <a href="/blog/async-communication-remote-teams/">async communication best practices</a>.
   </p>
 
   <!-- Related Articles -->

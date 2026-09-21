@@ -6,7 +6,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("expense-home-office-furniture", "guides")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -47,7 +47,7 @@ const faqs = [
   {
     question: "What about ergonomic stuff specifically?",
     answer:
-      '<p>Yep, same as any office furniture. <a href="/gear/best-ergonomic-chairs">Ergonomic chairs</a>, standing desks, monitor arms . all deductible if used for business. Doctor prescribed it for medical reasons? Might also qualify as a medical expense.</p>',
+      '<p>Yep, same as any office furniture. <a href="/gear/best-ergonomic-chairs/">Ergonomic chairs</a>, standing desks, monitor arms . all deductible if used for business. Doctor prescribed it for medical reasons? Might also qualify as a medical expense.</p>',
   },
   {
     question: "Can I deduct furniture I already owned?",
@@ -71,21 +71,21 @@ const relatedArticles = [
   {
     title: "Freelancer Tax Deductions Guide",
     excerpt: "Discover every tax deduction available to freelancers and self-employed workers.",
-    href: "/guides/freelancer-tax-deductions-guide",
+    href: "/guides/freelancer-tax-deductions-guide/",
     image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
     imageAlt: "Tax documents",
   },
   {
     title: "Best Standing Desks for Remote Work",
     excerpt: "Find the perfect standing desk for your home office setup.",
-    href: "/gear/best-standing-desks",
+    href: "/gear/best-standing-desks/",
     image: "/images/unsplash/photo-1593642702821-c8da6771f0c6-800w.webp",
     imageAlt: "Standing desk setup",
   },
   {
     title: "Best Ergonomic Chairs",
     excerpt: "Invest in comfort with these top-rated office chairs.",
-    href: "/gear/best-ergonomic-chairs",
+    href: "/gear/best-ergonomic-chairs/",
     image: "/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp",
     imageAlt: "Ergonomic office chair",
   },
@@ -95,7 +95,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -108,8 +107,8 @@ const relatedArticles = [
   <!-- Introduction -->
   <h2 id="introduction">My First Tax Season Mistake Cost Me $1,200</h2>
   <p>
-    Year one of freelancing. I'd upgraded my whole home office. New <a href="/gear/best-standing-desks">standing desk</a>,
-    decent <a href="/gear/best-ergonomic-chairs">ergonomic chair</a>, proper lighting. Spent almost $2,000. Tax season
+    Year one of freelancing. I'd upgraded my whole home office. New <a href="/gear/best-standing-desks/">standing desk</a>,
+    decent <a href="/gear/best-ergonomic-chairs/">ergonomic chair</a>, proper lighting. Spent almost $2,000. Tax season
     came around and I had zero receipts. Just... didn't occur to me to save them. My accountant's face told the whole story.
   </p>
   <p>
@@ -142,9 +141,9 @@ const relatedArticles = [
   <!-- What Furniture Qualifies -->
   <h2 id="what-qualifies">Stuff That Counts (And Stuff That Doesn't)</h2>
   <p>
-    Pretty much any furniture that helps you work counts. <a href="/gear/best-standing-desks">Standing desks</a>,
-    <a href="/gear/best-compact-desks-small-office">compact desks</a>, traditional desks . whatever style you prefer.
-    <a href="/gear/best-ergonomic-chairs">Ergonomic chairs</a>, task chairs, kneeling chairs. Filing cabinets,
+    Pretty much any furniture that helps you work counts. <a href="/gear/best-standing-desks/">Standing desks</a>,
+    <a href="/gear/best-compact-desks-small-office/">compact desks</a>, traditional desks . whatever style you prefer.
+    <a href="/gear/best-ergonomic-chairs/">Ergonomic chairs</a>, task chairs, kneeling chairs. Filing cabinets,
     bookcases, shelving units. Desk lamps and floor lamps that help you see your work. Even monitor stands and
     keyboard trays if you want to get specific about it.
   </p>

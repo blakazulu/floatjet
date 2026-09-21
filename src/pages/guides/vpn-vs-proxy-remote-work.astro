@@ -5,7 +5,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("vpn-vs-proxy-remote-work", "guides")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 const headings = [
@@ -76,21 +76,21 @@ const relatedArticles = [
   {
     title: "Best VPN for Digital Nomads",
     excerpt: "Our top VPN picks for secure remote work anywhere.",
-    href: "/tools/best-vpn-digital-nomads",
+    href: "/tools/best-vpn-digital-nomads/",
     image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
     imageAlt: "VPN security shield on laptop screen",
   },
   {
     title: "VPN & Public WiFi Security Guide",
     excerpt: "Essential security practices for public networks.",
-    href: "/blog/vpn-public-wifi-guide",
+    href: "/blog/vpn-public-wifi-guide/",
     image: "/images/unsplash/photo-1544197150-b99a580bb7a8-800w.webp",
     imageAlt: "Public WiFi hotspot security concept",
   },
   {
     title: "How to Secure Your Home WiFi Network",
     excerpt: "Lock down your home office network properly.",
-    href: "/guides/secure-home-wifi-network",
+    href: "/guides/secure-home-wifi-network/",
     image: "/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp",
     imageAlt: "Modern WiFi router in home office",
   },
@@ -100,7 +100,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -161,7 +160,7 @@ const relatedArticles = [
   </p>
 
   <p>
-    Practical example. Sitting in some random <a href="/blog/vpn-public-wifi-guide">cafe in Berlin</a>. Twenty-something
+    Practical example. Sitting in some random <a href="/blog/vpn-public-wifi-guide/">cafe in Berlin</a>. Twenty-something
     people sharing the network. Maybe one of
     them is bored and running network sniffing software. With VPN running? That person sees encrypted garbage going to a
     server in Stockholm or wherever. Completely useless to them.
@@ -204,7 +203,7 @@ const relatedArticles = [
   </p>
 
   <p><strong>HTTP ones</strong> only work with browser stuff. Your email app, <a
-      href="/blog/best-team-communication-tools">Slack, Zoom</a>? No protection.</p>
+      href="/blog/best-team-communication-tools/">Slack, Zoom</a>? No protection.</p>
 
   <p><strong>SOCKS ones</strong> handle more traffic types. Still no encryption though.</p>
 
@@ -266,7 +265,7 @@ const relatedArticles = [
   </p>
 
   <p>
-    Real world? Barely noticeable. Email works the same. <a href="/tools/best-video-conferencing-tools">Video calls</a>
+    Real world? Barely noticeable. Email works the same. <a href="/tools/best-video-conferencing-tools/">Video calls</a>
     work fine. Files sync at basically the same speed.
     For work tasks, not an issue.
   </p>
@@ -298,7 +297,7 @@ const relatedArticles = [
   </p>
 
   <ul>
-    <li>Your <a href="/guides/secure-home-wifi-network">home network</a> where nobody's trying to spy on you.</li>
+    <li>Your <a href="/guides/secure-home-wifi-network/">home network</a> where nobody's trying to spy on you.</li>
     <li>Entertainment only. No work data touching that connection.</li>
     <li>Games or streaming. Nothing sensitive happening.</li>
   </ul>

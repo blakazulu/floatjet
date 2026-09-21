@@ -12,35 +12,59 @@ import compress from "astro-compress";
 import pagefind from "astro-pagefind";
 import * as fs from "fs";
 
+// Real last-modified dates per article URL, read from src/data/articles.ts
+// (updatedDate when an article was re-reviewed, otherwise pubDate)
+function readArticleLastmods() {
+  const source = fs.readFileSync("src/data/articles.ts", "utf-8");
+  const lastmods = new Map();
+  for (const block of source.split(/\n\s*\{\s*\n/).slice(1)) {
+    const field = (name) => block.match(new RegExp(`\\b${name}:\\s*"([^"]+)"`))?.[1];
+    const slug = field("slug");
+    const section = field("section");
+    const date = field("updatedDate") ?? field("pubDate");
+    if (slug && section && date) lastmods.set(`https://floatjet.com/${section}/${slug}/`, date);
+  }
+  return lastmods;
+}
+const articleLastmods = readArticleLastmods();
+
+// AI and search crawlers we explicitly welcome. Named groups don't inherit the "*" rules,
+// so each one repeats the /go/ disallow.
+const welcomedBots = [
+  "GPTBot",
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "ClaudeBot",
+  "Claude-SearchBot",
+  "Claude-User",
+  "PerplexityBot",
+  "Perplexity-User",
+  "Google-Extended",
+  "Applebot-Extended",
+  "CCBot",
+];
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://floatjet.com',
+  trailingSlash: "always",
   integrations: [
     mdx(),
 
-    // 1. Sitemap for search engines (already installed)
+    // 1. Sitemap for search engines - lastmod only where we know the real date
     sitemap({
-      filter: (page) => !page.includes("/admin/"),
-      changefreq: "weekly",
-      priority: 0.7,
-      lastmod: new Date(),
+      filter: (page) => !page.includes("/admin/") && !page.includes("/sitemap-visual"),
+      serialize(item) {
+        const lastmod = articleLastmods.get(item.url);
+        return lastmod ? {...item, lastmod: new Date(lastmod).toISOString()} : item;
+      },
     }),
 
-    // 2. Robots.txt - ALLOW AI crawlers (ChatGPT, Perplexity, Claude, etc.)
+    // 2. Robots.txt - ALLOW AI crawlers (ChatGPT, Perplexity, Claude, etc.); keep affiliate redirects out
     robotsTxt({
       policy: [
-        {
-          userAgent: "*",
-          allow: "/",
-          crawlDelay: 10,
-        },
-        {userAgent: "ChatGPT-User", allow: "/"},
-        {userAgent: "GPTBot", allow: "/"},
-        {userAgent: "PerplexityBot", allow: "/"},
-        {userAgent: "Claude-Web", allow: "/"},
-        {userAgent: "Anthropic-AI", allow: "/"},
-        {userAgent: "CCBot", allow: "/"},
-        {userAgent: "Google-Extended", allow: "/"},
+        {userAgent: "*", allow: "/", disallow: ["/go/"]},
+        ...welcomedBots.map((userAgent) => ({userAgent, allow: "/", disallow: ["/go/"]})),
       ],
       sitemap: "https://floatjet.com/sitemap-index.xml",
     }),

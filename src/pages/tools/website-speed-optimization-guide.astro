@@ -7,7 +7,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("website-speed-optimization-guide", "tools")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -53,7 +53,7 @@ const faqItems = [
   {
     question: "What causes slow website loading?",
     answer:
-      'Nine times out of ten it is images. People upload these massive files straight from their camera. After that: <a href="/tools/best-ecommerce-hosting">cheap hosting</a>, too many plugins loading too many files, JavaScript blocking everything, no caching set up, no CDN, and databases stuffed with years of junk.',
+      'Nine times out of ten it is images. People upload these massive files straight from their camera. After that: <a href="/tools/best-ecommerce-hosting/">cheap hosting</a>, too many plugins loading too many files, JavaScript blocking everything, no caching set up, no CDN, and databases stuffed with years of junk.',
   },
   {
     question: "How much does website speed affect conversion rates?",
@@ -67,21 +67,21 @@ const relatedArticles = [
   {
     title: "Best Web Hosting for Remote Businesses",
     excerpt: "Fast hosting is the foundation of website speed. Compare top providers.",
-    href: "/tools/best-web-hosting-remote-business",
+    href: "/tools/best-web-hosting-remote-business/",
     image: "/images/unsplash/photo-1558494949-ef010cbdcc31-400w.webp",
     imageAlt: "Server room infrastructure",
   },
   {
     title: "Best VPS Hosting for Remote Businesses",
     excerpt: "When shared hosting is not fast enough, VPS delivers the performance you need.",
-    href: "/tools/best-vps-hosting-remote-business",
+    href: "/tools/best-vps-hosting-remote-business/",
     image: "/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp",
     imageAlt: "VPS server infrastructure",
   },
   {
     title: "How to Migrate Your Website Without Downtime",
     excerpt: "Moving to faster hosting? Learn how to migrate safely.",
-    href: "/tools/migrate-website-without-downtime",
+    href: "/tools/migrate-website-without-downtime/",
     image: "/images/unsplash/photo-1551288049-bebda4e38f71-400w.webp",
     imageAlt: "Website migration process",
   },
@@ -91,7 +91,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -210,7 +209,7 @@ const relatedArticles = [
   <section id="hosting-optimization">
     <h2>Hosting Optimization</h2>
     <p>
-      Here is an uncomfortable truth: if <a href="/tools/migrate-website-without-downtime">your hosting is garbage</a>,
+      Here is an uncomfortable truth: if <a href="/tools/migrate-website-without-downtime/">your hosting is garbage</a>,
       nothing else matters. You can optimize images all day
       and still have a slow site because your $3/month bargain host is running your site on a potato.
     </p>
@@ -218,7 +217,7 @@ const relatedArticles = [
     <div class="bg-jet-stream/20 border border-jet-stream/40 rounded-lg p-4 my-6">
       <h4 class="text-white font-semibold">The Easiest Win in This Entire Guide</h4>
       <p class="text-white/70 text-sm mt-2">Switching from cheap shared hosting to <a
-          href="/tools/best-web-hosting-remote-business">something decent</a> (SiteGround,
+          href="/tools/best-web-hosting-remote-business/">something decent</a> (SiteGround,
         Cloudways, even mid-tier Bluehost) typically cuts your load time by 40-60% immediately. No plugins required. No
         technical knowledge. Just faster servers.</p>
     </div>
@@ -234,7 +233,7 @@ const relatedArticles = [
       <li><strong>Geographic location:</strong> If most of your visitors are in Europe, your server should be in Europe.
         Seems obvious but people miss this.
       </li>
-      <li><strong><a href="/tools/shared-vs-vps-vs-dedicated-hosting">Shared vs VPS</a>:</strong> Shared hosting means
+      <li><strong><a href="/tools/shared-vs-vps-vs-dedicated-hosting/">Shared vs VPS</a>:</strong> Shared hosting means
         fighting for resources with random other sites. VPS gives
         you guaranteed performance.
       </li>
@@ -389,7 +388,7 @@ const relatedArticles = [
   <section id="database-optimization">
     <h2>Database Optimization</h2>
     <p>
-      <a href="/tools/managed-wordpress-hosting-compared">WordPress</a> stores everything in a database . your posts,
+      <a href="/blog/managed-wordpress-hosting-compared/">WordPress</a> stores everything in a database . your posts,
       your settings, and way too much junk you do not need. Over
       time, databases get bloated with thousands of post revisions, old spam comments, and expired temporary data. All
       that extra stuff makes every database query slower.
@@ -489,7 +488,7 @@ const relatedArticles = [
     <div class="bg-white/5 border border-white/10 rounded-lg p-6 my-6">
       <h4 class="text-white font-semibold mb-4">Foundation (Start Here)</h4>
       <ul class="text-white/70 text-sm space-y-2">
-        <li>[ ] Are you on <a href="/tools/best-vps-hosting-remote-business">decent hosting</a> or still on that
+        <li>[ ] Are you on <a href="/tools/best-vps-hosting-remote-business/">decent hosting</a> or still on that
           $3/month plan?
         </li>
         <li>[ ] Is PHP version 8.0 or newer?</li>

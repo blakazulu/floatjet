@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-noise-canceling-headphones", "gear")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -190,7 +190,7 @@ const relatedArticles = [
     title: "Best Standing Desks for Remote Workers",
     excerpt:
       "Upgrade your home office with these top-rated standing desks that boost productivity and reduce back pain.",
-    href: "/gear/best-standing-desks",
+    href: "/gear/best-standing-desks/",
     image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
     imageAlt: "Modern standing desk setup in home office",
   },
@@ -198,7 +198,7 @@ const relatedArticles = [
     title: "Best Laptops for Remote Work",
     excerpt:
       "Find the perfect laptop for working from anywhere with our comprehensive comparison guide.",
-    href: "/gear/best-laptops-remote-work",
+    href: "/gear/best-laptops-remote-work/",
     image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
     imageAlt: "Laptop on desk with coffee and notebook",
   },
@@ -206,7 +206,7 @@ const relatedArticles = [
     title: "Ultimate Home Office Setup Guide",
     excerpt:
       "Create the perfect productive workspace at home with our complete guide to ergonomics and equipment.",
-    href: "/blog/ultimate-home-office-setup",
+    href: "/blog/ultimate-home-office-setup/",
     image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp",
     imageAlt: "Well-organized home office with dual monitors",
   },
@@ -216,7 +216,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

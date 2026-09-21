@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-secure-email-providers", "tools")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -122,12 +122,12 @@ const faqs = [
   {
     question: "Do custom domains work with encrypted email?",
     answer:
-      "<p>Paid tiers on all three providers support custom domains. Means you@yourdomain.com with encryption underneath. Professional look plus security. <a href='/tools/best-password-manager-remote-work'>Combine with a password manager</a> for complete protection.</p>",
+      "<p>Paid tiers on all three providers support custom domains. Means you@yourdomain.com with encryption underneath. Professional look plus security. <a href='/tools/best-password-manager-remote-work/'>Combine with a password manager</a> for complete protection.</p>",
   },
   {
     question: "What if I forget my password?",
     answer:
-      "<p>With Proton and Tutanota: everything's gone. Encryption means no password reset option. They cannot recover your data.</p><p>Save that recovery phrase. Keep it in your <a href='/tools/best-password-manager-remote-work'>password manager</a> AND written on paper in a physical location. Losing access means losing everything—by design.</p>",
+      "<p>With Proton and Tutanota: everything's gone. Encryption means no password reset option. They cannot recover your data.</p><p>Save that recovery phrase. Keep it in your <a href='/tools/best-password-manager-remote-work/'>password manager</a> AND written on paper in a physical location. Losing access means losing everything—by design.</p>",
   },
   {
     question: "Can I migrate from Gmail to Proton Mail?",
@@ -152,7 +152,7 @@ const relatedArticles = [
     title: "Best Password Managers for Remote Workers",
     excerpt:
       "Protect all your accounts with encrypted password storage. NordPass, 1Password, Bitwarden compared.",
-    href: "/tools/best-password-manager-remote-work",
+    href: "/tools/best-password-manager-remote-work/",
     image: "/images/unsplash/photo-1633265486064-086b219458ec-800w.webp",
     imageAlt: "Digital security and password protection",
   },
@@ -160,7 +160,7 @@ const relatedArticles = [
     title: "Best VPNs for Digital Nomads",
     excerpt:
       "Protect your data on public WiFi and access content from anywhere with these top-rated VPNs.",
-    href: "/tools/best-vpn-digital-nomads",
+    href: "/tools/best-vpn-digital-nomads/",
     image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
     imageAlt: "Digital security concept with encrypted data visualization",
   },
@@ -168,7 +168,7 @@ const relatedArticles = [
     title: "Two-Factor Authentication Guide",
     excerpt:
       "Set up 2FA on all your accounts. Authenticator apps, hardware keys, and best practices.",
-    href: "/guides/two-factor-authentication-guide",
+    href: "/guides/two-factor-authentication-guide/",
     image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
     imageAlt: "Smartphone showing two-factor authentication code",
   },
@@ -178,7 +178,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -255,7 +254,7 @@ const relatedArticles = [
     Been using this daily since late 2023. About two years now.
   </p>
   <p>
-    Same team that built <a href="/tools/best-vpn-digital-nomads#protonvpn">ProtonVPN</a>. Based in Switzerland—outside
+    Same team that built <a href="/tools/best-vpn-digital-nomads/#protonvpn">ProtonVPN</a>. Based in Switzerland—outside
     US and EU surveillance agreements. Swiss privacy laws aren't just marketing; they've held up in court multiple
     times. Proton has literally been ordered to hand over data and responded with "we can't, we don't have access to
     decryption keys." Case closed.
@@ -363,7 +362,7 @@ const relatedArticles = [
   <!-- Gmail Hardening -->
   <h2 id="gmail-hardening">Can You Just Harden Gmail?</h2>
   <p>
-    Sort of. Enable <a href="/guides/two-factor-authentication-guide">two-factor authentication</a>. Use a hardware
+    Sort of. Enable <a href="/guides/two-factor-authentication-guide/">two-factor authentication</a>. Use a hardware
     security key (YubiKey costs about $50). Be paranoid about links. This genuinely helps.
   </p>
   <p>
@@ -435,7 +434,7 @@ const relatedArticles = [
   </p>
   <p>
     And save that recovery phrase somewhere safe. Cannot stress this part enough. Keep it in your <a
-      href="/tools/best-password-manager-remote-work">password manager</a> AND written down physically.
+      href="/tools/best-password-manager-remote-work/">password manager</a> AND written down physically.
   </p>
 
   <AffiliateButton

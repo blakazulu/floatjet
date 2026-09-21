@@ -23,26 +23,52 @@ interface Props {
   image?: string;
   type?: "website" | "article";
   canonicalUrl?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
   description,
-  image = "/images/og-default.webp",
+  image,
   type = "website",
-  canonicalUrl = Astro.url.href,
+  canonicalUrl,
+  noindex = false,
 } = Astro.props;
 
-// Schema.org Organization markup
-const organizationSchema = {
+// Schema.org Organization + WebSite markup (site-wide entity graph)
+const siteSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "FloatJet",
-  url: "https://floatjet.com",
-  logo: "https://floatjet.com/logo.png",
-  description:
-    "Find the best remote work and productivity tools for digital nomads and location-independent professionals",
-  sameAs: ["https://twitter.com/floatjet", "https://www.pinterest.com/floatjet"],
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://floatjet.com/#organization",
+      name: "FloatJet",
+      url: "https://floatjet.com/",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://floatjet.com/logo.png",
+        width: 512,
+        height: 512,
+      },
+      description:
+        "Find the best remote work and productivity tools for digital nomads and location-independent professionals",
+      email: "support@floatjet.com",
+      founder: {
+        "@type": "Person",
+        name: "Liraz Amir",
+        url: "https://floatjet.com/authors/liraz-amir/",
+      },
+      sameAs: ["https://x.com/floatjet", "https://www.pinterest.com/floatjet/"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://floatjet.com/#website",
+      name: "FloatJet",
+      url: "https://floatjet.com/",
+      inLanguage: "en-US",
+      publisher: { "@id": "https://floatjet.com/#organization" },
+    },
+  ],
 };
 ---
 
@@ -54,6 +80,7 @@ const organizationSchema = {
     image={image}
     type={type}
     canonicalUrl={canonicalUrl}
+    noindex={noindex}
 />
 <body class="flex flex-col min-h-screen relative overflow-x-hidden">
 <!-- Background Image -->
@@ -92,7 +119,7 @@ const organizationSchema = {
 <!-- Loading Overlay for page transitions -->
 <LoadingOverlay/>
 
-<!-- Schema.org Organization markup -->
-<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}/>
+<!-- Schema.org Organization + WebSite markup -->
+<script type="application/ld+json" set:html={JSON.stringify(siteSchema)}/>
 </body>
 </html>

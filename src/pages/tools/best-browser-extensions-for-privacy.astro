@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-browser-extensions-for-privacy")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -151,7 +151,7 @@ const faqs = [
   {
     question: "Is this enough or do I need a VPN too?",
     answer:
-      "<p>Different problems. Extensions stop tracking and ads at the browser level. VPNs encrypt your whole connection and mask your location from networks. You probably want both, especially on public WiFi. Check out our <a href='/tools/best-vpn-digital-nomads'>VPN guide</a> for recommendations.</p>",
+      "<p>Different problems. Extensions stop tracking and ads at the browser level. VPNs encrypt your whole connection and mask your location from networks. You probably want both, especially on public WiFi. Check out our <a href='/tools/best-vpn-digital-nomads/'>VPN guide</a> for recommendations.</p>",
   },
   {
     question: "Why not just use Brave browser and skip the extensions?",
@@ -176,7 +176,7 @@ const relatedArticles = [
     title: "Best VPNs for Digital Nomads & Remote Workers",
     excerpt:
       "Protect your data on public WiFi with these top-rated VPNs tested across 15 countries.",
-    href: "/tools/best-vpn-digital-nomads",
+    href: "/tools/best-vpn-digital-nomads/",
     image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
     imageAlt: "Digital security concept with encrypted data visualization",
   },
@@ -184,7 +184,7 @@ const relatedArticles = [
     title: "Best Password Managers for Remote Workers",
     excerpt:
       "Stop reusing passwords. Compare NordPass, 1Password, Bitwarden and more.",
-    href: "/tools/best-password-manager-remote-work",
+    href: "/tools/best-password-manager-remote-work/",
     image: "/images/unsplash/photo-1633265486064-086b219458ec-800w.webp",
     imageAlt: "Digital security and password protection",
   },
@@ -192,7 +192,7 @@ const relatedArticles = [
     title: "Two-Factor Authentication Guide for Remote Workers",
     excerpt:
       "Guide to setting up 2FA on all your accounts. Authenticator apps, hardware keys, and best practices.",
-    href: "/guides/two-factor-authentication-guide",
+    href: "/guides/two-factor-authentication-guide/",
     image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
     imageAlt: "Smartphone showing two-factor authentication code",
   },
@@ -202,7 +202,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

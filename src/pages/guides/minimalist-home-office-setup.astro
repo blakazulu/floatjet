@@ -5,7 +5,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("minimalist-home-office-setup", "guides")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 const headings = [
@@ -56,21 +56,21 @@ const relatedArticles = [
   {
     title: "Complete Home Office Checklist",
     excerpt: "Full checklist of everything you might need.",
-    href: "/guides/complete-home-office-checklist",
+    href: "/guides/complete-home-office-checklist/",
     image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp",
     imageAlt: "Well-organized home office setup",
   },
   {
     title: "Cable Management Guide",
     excerpt: "Keep your workspace clean and organized.",
-    href: "/guides/cable-management-guide",
+    href: "/guides/cable-management-guide/",
     image: "/images/unsplash/photo-1558618666-fcd25c85cd64-800w.webp",
     imageAlt: "Organized cables under desk",
   },
   {
     title: "Best Standing Desks",
     excerpt: "Top standing desks for health and productivity.",
-    href: "/gear/best-standing-desks",
+    href: "/gear/best-standing-desks/",
     image: "/images/unsplash/photo-1611269154421-4e27233ac5c7-800w.webp",
     imageAlt: "Standing desk in home office",
   },
@@ -80,7 +80,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -159,7 +158,7 @@ const relatedArticles = [
 
   <h3>Buy Less But Buy Better</h3>
   <p>
-    This is counterintuitive. Minimalism isn't about being cheap. My <a href="/gear/best-ergonomic-chairs">chair</a>
+    This is counterintuitive. Minimalism isn't about being cheap. My <a href="/gear/best-ergonomic-chairs/">chair</a>
     cost real money. But I don't have a chair
     plus a seat cushion plus a lumbar pillow plus a footrest. Just one thing that works.
   </p>
@@ -191,15 +190,15 @@ const relatedArticles = [
   <h3>For People Doing This Full-Time</h3>
   <p>Eight plus hours:</p>
   <ul>
-    <li>External <a href="/gear/best-monitors-remote-work">monitor</a>. Your neck will thank you.</li>
-    <li>Real <a href="/gear/best-mechanical-keyboards">keyboard</a>. Laptop keyboards are tolerable, not great.</li>
+    <li>External <a href="/gear/best-monitors-remote-work/">monitor</a>. Your neck will thank you.</li>
+    <li>Real <a href="/gear/best-mechanical-keyboards/">keyboard</a>. Laptop keyboards are tolerable, not great.</li>
     <li>Mouse. Trackpads work but mice are better for extended use.</li>
-    <li><a href="/gear/best-noise-canceling-headphones">Headphones</a>. For calls and for blocking out the world.</li>
+    <li><a href="/gear/best-noise-canceling-headphones/">Headphones</a>. For calls and for blocking out the world.</li>
   </ul>
 
   <h3>Maybe Nice But Not Required</h3>
   <ul>
-    <li>Better <a href="/gear/best-webcams-video-calls">webcam</a> if you're on video calls constantly.</li>
+    <li>Better <a href="/gear/best-webcams-video-calls/">webcam</a> if you're on video calls constantly.</li>
     <li>One plant. Not five. One.</li>
     <li>Small notebook for quick scribbles during meetings.</li>
   </ul>

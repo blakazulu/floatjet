@@ -125,7 +125,7 @@ def process_article_file(filepath: Path) -> bool:
     # Add article lookup with destructuring
     new_lines.append('// Get article metadata from central data file')
     new_lines.append(f'const article = getArticleBySlug("{slug}", "{section}")!;')
-    new_lines.append('const {{ title, description, authorSlug, readingTime, image, imageAlt }} = article;')
+    new_lines.append('const {{ title, description, readingTime, image, imageAlt }} = article;')
     new_lines.append('const pubDate = new Date(article.pubDate);')
 
     # Add remaining content (headings, faqs, etc.)

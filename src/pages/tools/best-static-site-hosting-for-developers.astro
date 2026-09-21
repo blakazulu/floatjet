@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-static-site-hosting-for-developers")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -161,21 +161,21 @@ const relatedArticles = [
   {
     title: "Best VPS Hosting for Remote Business",
     excerpt: "When you outgrow static hosting, here are your VPS options.",
-    href: "/tools/best-vps-hosting-remote-business",
+    href: "/tools/best-vps-hosting-remote-business/",
     image: "/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp",
     imageAlt: "VPS server infrastructure",
   },
   {
     title: "Website Speed Optimization Guide",
     excerpt: "Make your sites load faster with these optimization techniques.",
-    href: "/tools/website-speed-optimization-guide",
+    href: "/tools/website-speed-optimization-guide/",
     image: "/images/unsplash/photo-1586281380349-632531db7ed4-400w.webp",
     imageAlt: "Website performance dashboard",
   },
   {
     title: "Cloud vs Traditional Hosting",
     excerpt: "Understanding the key differences between hosting types.",
-    href: "/blog/cloud-vs-traditional-hosting",
+    href: "/blog/cloud-vs-traditional-hosting/",
     image: "/images/unsplash/photo-1451187580459-43490279c0fa-400w.webp",
     imageAlt: "Cloud computing concept",
   },
@@ -185,7 +185,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -204,7 +203,7 @@ const relatedArticles = [
       Fifty-ish projects later across Netlify, Vercel, and Cloudflare Pages and I've got opinions. Good news is all three are legit good. Bad news is you can waste hours reading comparisons when you should just be shipping. So let me save you some time.
     </p>
     <p>
-      <strong>Don't want to read?</strong> Netlify for most projects. Works with everything, good free tier, I like the dashboard. Vercel if you're all-in on Next.js since they made it. Cloudflare Pages if you want unlimited bandwidth and don't mind a rougher experience. For <a href="/tools/best-web-hosting-remote-business">traditional hosting stuff</a> check that guide instead.
+      <strong>Don't want to read?</strong> Netlify for most projects. Works with everything, good free tier, I like the dashboard. Vercel if you're all-in on Next.js since they made it. Cloudflare Pages if you want unlimited bandwidth and don't mind a rougher experience. For <a href="/tools/best-web-hosting-remote-business/">traditional hosting stuff</a> check that guide instead.
     </p>
   </section>
 
@@ -251,7 +250,7 @@ const relatedArticles = [
       <div class="bg-jet-stream/20 border border-jet-stream/40 rounded-lg p-4">
         <h4 class="text-white font-semibold">Developer Experience</h4>
         <p class="text-white/70 text-sm mt-2">This is the real reason people switch. Push to git and deploys just happen. Preview URLs for every branch automatically. One-click rollbacks when you break something. It's the future we were promised. Compare with <a
-              href="/tools/migrate-website-without-downtime">traditional hosting migration pain</a>.</p>
+              href="/tools/migrate-website-without-downtime/">traditional hosting migration pain</a>.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">Cost</h4>

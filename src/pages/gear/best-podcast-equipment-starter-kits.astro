@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-podcast-equipment-starter-kits")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -150,21 +150,21 @@ const relatedArticles = [
   {
     title: "Best Microphones for Remote Meetings",
     excerpt: "If you're also doing video calls, here's what works best for meetings specifically.",
-    href: "/gear/best-microphones-remote-meetings",
+    href: "/gear/best-microphones-remote-meetings/",
     image: "/images/unsplash/photo-1590602847861-f357a9332bbc-800w.webp",
     imageAlt: "Professional microphone for remote meetings",
   },
   {
     title: "USB vs XLR Microphones",
     excerpt: "The full breakdown on when XLR is worth the extra complexity.",
-    href: "/gear/usb-vs-xlr-microphones",
+    href: "/gear/usb-vs-xlr-microphones/",
     image: "/images/unsplash/photo-1598653222000-6b7b7a552625-800w.webp",
     imageAlt: "USB and XLR microphone comparison",
   },
   {
     title: "How to Reduce Background Noise on Calls",
     excerpt: "Software and hardware tips for cleaner audio on any setup.",
-    href: "/gear/reduce-background-noise-calls",
+    href: "/gear/reduce-background-noise-calls/",
     image: "/images/unsplash/photo-1587560699334-cc4ff634909a-800w.webp",
     imageAlt: "Person on video call with noise-canceling setup",
   },
@@ -174,7 +174,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

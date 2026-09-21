@@ -6,7 +6,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("email-etiquette-remote-teams", "guides")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -38,7 +38,7 @@ const faqs = [
   {
     question: "How do I write emails that actually get read?",
     answer:
-      '<p>Front-load the ask and put the request or key point in the first paragraph. Use formatting like bullet points and bold text and numbered lists. Keep it short. If it\'s over five paragraphs consider a meeting or document. Clear subject line that summarizes the content accurately. One topic per email since multiple topics get partially addressed or ignored. <a href="/guides/avoid-miscommunication-remote-teams">Clear communication</a> prevents misunderstandings.</p>',
+      '<p>Front-load the ask and put the request or key point in the first paragraph. Use formatting like bullet points and bold text and numbered lists. Keep it short. If it\'s over five paragraphs consider a meeting or document. Clear subject line that summarizes the content accurately. One topic per email since multiple topics get partially addressed or ignored. <a href="/guides/avoid-miscommunication-remote-teams/">Clear communication</a> prevents misunderstandings.</p>',
   },
   {
     question: "When should I reply-all vs reply to sender only?",
@@ -72,21 +72,21 @@ const relatedArticles = [
   {
     title: "Async Communication for Remote Teams",
     excerpt: "Master asynchronous communication to reduce meetings and boost productivity.",
-    href: "/blog/async-communication-remote-teams",
+    href: "/blog/async-communication-remote-teams/",
     image: "/images/unsplash/photo-1522071820081-009f0129c71c-800w.webp",
     imageAlt: "Remote team collaborating through digital tools",
   },
   {
     title: "Best Team Communication Tools",
     excerpt: "Compare top messaging and collaboration platforms for remote teams.",
-    href: "/blog/best-team-communication-tools",
+    href: "/blog/best-team-communication-tools/",
     image: "/images/unsplash/photo-1600880292203-757bb62b4baf-800w.webp",
     imageAlt: "Team using communication software",
   },
   {
     title: "Best Email Marketing Tools",
     excerpt: "Find the right email platform for your business communications and marketing.",
-    href: "/tools/best-email-marketing-tools",
+    href: "/tools/best-email-marketing-tools/",
     image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp",
     imageAlt: "Email marketing dashboard",
   },
@@ -96,7 +96,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -109,7 +108,7 @@ const relatedArticles = [
   <!-- Introduction -->
   <h2 id="introduction">Email Is Still King Sometimes</h2>
   <p>
-    In a world of <a href="/blog/best-team-communication-tools">Slack and Teams</a> and endless notification badges
+    In a world of <a href="/blog/best-team-communication-tools/">Slack and Teams</a> and endless notification badges
     email might seem old-fashioned. But for remote teams
     email remains essential. It's the universal communication channel that works across organizations. Persists as a
     record. Doesn't demand instant attention.
@@ -142,7 +141,7 @@ const relatedArticles = [
   <p>
     Quick questions that need brief answers. Internal updates and status updates and FYIs and announcements. Casual
     conversation and team chat and social interaction. Time-sensitive coordination when you need a response soon.
-    <a href="/blog/async-communication-remote-teams">Collaborative discussion</a> where back-and-forth would clutter
+    <a href="/blog/async-communication-remote-teams/">Collaborative discussion</a> where back-and-forth would clutter
     email.
   </p>
 
@@ -240,7 +239,7 @@ const relatedArticles = [
   <p>
     When you need a response by a specific time say so clearly. Please respond by Thursday at five pm ET so I can
     finalize the proposal. I need to make a decision by Friday and any input before then is appreciated. Be explicit
-    about <a href="/blog/managing-time-zones-remote-teams">time zones</a> when working with distributed teams.
+    about <a href="/blog/managing-time-zones-remote-teams/">time zones</a> when working with distributed teams.
   </p>
 
   <!-- CC and BCC -->
@@ -386,7 +385,7 @@ Next steps:
 - [Name] will [action] by [date]
 - [Name] will [action] by [date]
 
-Questions? <a href="/guides/slack-vs-teams-vs-discord">Reply here or ping me on Slack</a>.
+Questions? <a href="/guides/slack-vs-teams-vs-discord/">Reply here or ping me on Slack</a>.
 
 [Your name]
   </pre>

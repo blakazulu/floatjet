@@ -5,7 +5,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("work-remotely-different-time-zones", "guides")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 const headings = [
@@ -57,21 +57,21 @@ const relatedArticles = [
   {
     title: "Async Communication for Remote Teams",
     excerpt: "Master asynchronous communication skills.",
-    href: "/blog/async-communication-remote-teams",
+    href: "/blog/async-communication-remote-teams/",
     image: "/images/unsplash/photo-1552581234-26160f608093-800w.webp",
     imageAlt: "Team communication concept",
   },
   {
     title: "Managing Time Zones in Remote Teams",
     excerpt: "Tips for managers coordinating global teams.",
-    href: "/blog/managing-time-zones-remote-teams",
+    href: "/blog/managing-time-zones-remote-teams/",
     image: "/images/unsplash/photo-1434626881859-194d67b2b86f-800w.webp",
     imageAlt: "Global team coordination",
   },
   {
     title: "Top Destinations for Digital Nomads",
     excerpt: "Find locations with ideal time zones for your clients.",
-    href: "/blog/top-destinations-digital-nomads",
+    href: "/blog/top-destinations-digital-nomads/",
     image: "/images/unsplash/photo-1488646953014-85cb44e25828-800w.webp",
     imageAlt: "World travel destinations",
   },
@@ -81,7 +81,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

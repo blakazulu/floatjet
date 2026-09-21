@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-ecommerce-hosting", "tools")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -181,21 +181,21 @@ const relatedArticles = [
   {
     title: "Best Web Hosting for Remote Businesses",
     excerpt: "Complete guide to web hosting for remote teams and online businesses.",
-    href: "/tools/best-web-hosting-remote-business",
+    href: "/tools/best-web-hosting-remote-business/",
     image: "/images/unsplash/photo-1558494949-ef010cbdcc31-400w.webp",
     imageAlt: "Server room infrastructure",
   },
   {
     title: "Best VPS Hosting for Remote Businesses",
     excerpt: "Compare VPS providers for scalable e-commerce hosting.",
-    href: "/tools/best-vps-hosting-remote-business",
+    href: "/tools/best-vps-hosting-remote-business/",
     image: "/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp",
     imageAlt: "VPS server infrastructure",
   },
   {
     title: "Best Accounting Software for Freelancers",
     excerpt: "Track sales, expenses, and taxes for your e-commerce business.",
-    href: "/tools/best-accounting-software-freelancers",
+    href: "/tools/best-accounting-software-freelancers/",
     image: "/images/unsplash/photo-1554224155-6726b3ff858f-400w.webp",
     imageAlt: "Accounting and finance software",
   },
@@ -205,7 +205,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

@@ -6,7 +6,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("retirement-savings-freelancer", "guides")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -72,21 +72,21 @@ const relatedArticles = [
   {
     title: "Freelancer Tax Deductions Guide",
     excerpt: "Discover every tax deduction available to reduce your tax burden.",
-    href: "/guides/freelancer-tax-deductions-guide",
+    href: "/guides/freelancer-tax-deductions-guide/",
     image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
     imageAlt: "Tax deduction documents",
   },
   {
     title: "Tax Tips for Remote Workers",
     excerpt: "Navigate taxes as a remote worker or digital nomad.",
-    href: "/blog/tax-tips-remote-workers",
+    href: "/blog/tax-tips-remote-workers/",
     image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
     imageAlt: "Tax planning documents",
   },
   {
     title: "Best Banking for Digital Nomads",
     excerpt: "Find the right international-friendly bank accounts for your freelance business.",
-    href: "/blog/best-banking-digital-nomads",
+    href: "/blog/best-banking-digital-nomads/",
     image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
     imageAlt: "Digital banking interface",
   },
@@ -96,7 +96,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -150,12 +149,12 @@ const relatedArticles = [
   <h3>Today's Tax Break</h3>
   <p>
     Traditional retirement contributions shrink your taxable income. Dollar for dollar. My <a
-      href="/tools/best-accounting-software-freelancers">CPA</a> nearly
+      href="/tools/best-accounting-software-freelancers/">CPA</a> nearly
     hugged me when I maxed out my Solo 401(k) last year.
   </p>
   <p>
     Drop twenty grand into a traditional account while you're in the 24% bracket? That's like $4,800
-    you don't pay in <a href="/blog/tax-tips-remote-workers">taxes</a>. Not eventually. This April.
+    you don't pay in <a href="/blog/tax-tips-remote-workers/">taxes</a>. Not eventually. This April.
   </p>
   <p>
     Had a monster year? Stuff the account full. Slow year? Put in less. Zero required.
@@ -351,7 +350,7 @@ const relatedArticles = [
     which are basically zero if you convert fast.
   </p>
   <p>
-    Totally legal. Just document everything. Talk to a <a href="/tools/best-accounting-software-freelancers">CPA</a> if
+    Totally legal. Just document everything. Talk to a <a href="/tools/best-accounting-software-freelancers/">CPA</a> if
     you've got old traditional IRA money
     sitting around. Pro-rata rules make things messy.
   </p>
@@ -455,7 +454,7 @@ const relatedArticles = [
   <ol>
     <li>Any brokerage. Seriously, they all have these.</li>
     <li>Ten minutes online.</li>
-    <li>Connect your <a href="/blog/best-banking-digital-nomads">bank</a>.</li>
+    <li>Connect your <a href="/blog/best-banking-digital-nomads/">bank</a>.</li>
     <li>Transfer cash.</li>
   </ol>
   <p>

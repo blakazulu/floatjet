@@ -5,7 +5,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("personal-laptop-remote-work", "guides")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 const headings = [
@@ -56,21 +56,21 @@ const relatedArticles = [
   {
     title: "Best Laptops for Remote Work",
     excerpt: "Top laptop picks for productivity and portability.",
-    href: "/gear/best-laptops-remote-work",
+    href: "/gear/best-laptops-remote-work/",
     image: "/images/unsplash/photo-1517336714731-489689fd1ca8-800w.webp",
     imageAlt: "Laptop on desk for remote work",
   },
   {
     title: "Best VPN for Digital Nomads",
     excerpt: "Secure your connection when working remotely.",
-    href: "/tools/best-vpn-digital-nomads",
+    href: "/tools/best-vpn-digital-nomads/",
     image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
     imageAlt: "VPN security on laptop",
   },
   {
     title: "Best Password Managers",
     excerpt: "Keep your accounts secure and organized.",
-    href: "/tools/best-password-manager-remote-work",
+    href: "/tools/best-password-manager-remote-work/",
     image: "/images/unsplash/photo-1555949963-ff9fe0c870eb-800w.webp",
     imageAlt: "Password security concept",
   },
@@ -80,7 +80,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

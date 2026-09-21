@@ -5,7 +5,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("phishing-scams-remote-workers", "guides")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 const headings = [
@@ -57,21 +57,21 @@ const relatedArticles = [
   {
     title: "Best Password Manager for Remote Work",
     excerpt: "Protect all your accounts with a secure password manager.",
-    href: "/tools/best-password-manager-remote-work",
+    href: "/tools/best-password-manager-remote-work/",
     image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
     imageAlt: "Password manager security interface",
   },
   {
     title: "Two-Factor Authentication Setup Guide",
     excerpt: "Add an extra layer of security to all your accounts.",
-    href: "/guides/two-factor-authentication-guide",
+    href: "/guides/two-factor-authentication-guide/",
     image: "/images/unsplash/photo-1633265486064-086b219458ec-800w.webp",
     imageAlt: "Two-factor authentication code on smartphone",
   },
   {
     title: "VPN & Public WiFi Security Guide",
     excerpt: "Stay safe when working from public networks.",
-    href: "/blog/vpn-public-wifi-guide",
+    href: "/blog/vpn-public-wifi-guide/",
     image: "/images/unsplash/photo-1544197150-b99a580bb7a8-800w.webp",
     imageAlt: "Public WiFi hotspot security concept",
   },
@@ -81,7 +81,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -110,14 +109,14 @@ const relatedArticles = [
 
   <p>
     Working from home? Great. Until you realize nobody's watching your back. No IT person down the hall to double-check
-    a weird email. No <a href="/guides/avoid-miscommunication-remote-teams">coworker</a> glancing over your shoulder
+    a weird email. No <a href="/guides/avoid-miscommunication-remote-teams/">coworker</a> glancing over your shoulder
     going "uh, don't click that."
   </p>
 
   <p>Attackers know this.</p>
 
   <p>
-    They know you're juggling a million <a href="/blog/best-team-communication-tools">Slack messages</a> and emails.
+    They know you're juggling a million <a href="/blog/best-team-communication-tools/">Slack messages</a> and emails.
     They know you've never met half your colleagues in
     person. They know you're probably using your personal laptop for some work stuff. They know someone asking you to
     act fast will probably get you to act fast.
@@ -154,7 +153,7 @@ const relatedArticles = [
   <h3>Vishing</h3>
   <p>
     Phone calls. Someone claiming to be from Microsoft tech support or the IRS or your bank. They use pressure and
-    authority. "Your computer has a virus." "You owe <a href="/blog/tax-tips-remote-workers">back taxes</a>." "Your
+    authority. "Your computer has a virus." "You owe <a href="/blog/tax-tips-remote-workers/">back taxes</a>." "Your
     account has been compromised."
   </p>
 
@@ -259,7 +258,7 @@ const relatedArticles = [
 
   <p>
     If you typed in your password somewhere, change it immediately on the real site. And if you use that password
-    anywhere else? Change those too. Turn on <a href="/guides/two-factor-authentication-guide">two-factor
+    anywhere else? Change those too. Turn on <a href="/guides/two-factor-authentication-guide/">two-factor
     authentication</a> while you're at it.
   </p>
 
@@ -296,7 +295,7 @@ const relatedArticles = [
 
   <h3>Email Security</h3>
   <p>Modern spam filters catch a lot. External email warnings flag stuff from outside your organization. Some enterprise
-    tools scan links before you click them. Make sure your <a href="/guides/secure-home-wifi-network">home network is
+    tools scan links before you click them. Make sure your <a href="/guides/secure-home-wifi-network/">home network is
       secure</a> too.</p>
 
   <h3>Browser Protection</h3>
@@ -305,7 +304,7 @@ const relatedArticles = [
 
   <h3>Password Managers</h3>
   <p>
-    Here's a trick. Your <a href="/tools/best-password-manager-remote-work">password manager</a> won't auto-fill on fake
+    Here's a trick. Your <a href="/tools/best-password-manager-remote-work/">password manager</a> won't auto-fill on fake
     sites because the URL doesn't match. If you go to log
     into "PayPaI.com" instead of "PayPal.com," your password manager just sits there. Accidental phishing protection.
   </p>
@@ -343,8 +342,8 @@ const relatedArticles = [
 
   <p>
     You're your own first line of defense out there. Build good habits now. Verify weird requests through different
-    channels. Use a <a href="/tools/best-password-manager-remote-work">password manager</a>. Turn on <a
-      href="/guides/two-factor-authentication-guide">two-factor</a> everywhere. Don't let urgency override your
+    channels. Use a <a href="/tools/best-password-manager-remote-work/">password manager</a>. Turn on <a
+      href="/guides/two-factor-authentication-guide/">two-factor</a> everywhere. Don't let urgency override your
     judgment.
   </p>
 

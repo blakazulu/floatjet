@@ -1,0 +1,52 @@
+---
+// CollectionPage + ItemList + BreadcrumbList JSON-LD for section and category hub pages
+
+interface Props {
+  name: string;
+  description: string;
+  items: Array<{ title: string; href: string }>;
+  breadcrumbs: Array<{ label: string; href: string }>;
+}
+
+const { name, description, items, breadcrumbs } = Astro.props;
+
+const SITE = "https://floatjet.com";
+const pageUrl = new URL(Astro.url.pathname, SITE).href;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${pageUrl}#collection`,
+      url: pageUrl,
+      name: name.replace(/\s*\|\s*FloatJet$/, ""),
+      description,
+      inLanguage: "en-US",
+      isPartOf: { "@id": `${SITE}/#website` },
+      publisher: { "@id": `${SITE}/#organization` },
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: items.length,
+        itemListElement: items.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.title,
+          url: new URL(item.href, SITE).href,
+        })),
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbs.map((crumb, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: crumb.label,
+        item: new URL(crumb.href, SITE).href,
+      })),
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)}/>

@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("shared-vs-vps-vs-dedicated-hosting", "tools")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -86,7 +86,7 @@ const faqItems = [
   {
     question: "When should I upgrade from shared to VPS hosting?",
     answer:
-      'When your site feels slow even after you have optimized everything. When you keep getting downtime errors. When traffic crosses 25,000 visitors a month. When you are selling things online and cannot afford slow checkout pages. When you need to install something your shared host will not allow. If you are migrating anyway, check out our <a href="/tools/migrate-website-without-downtime">guide to migrate without downtime</a>.',
+      'When your site feels slow even after you have optimized everything. When you keep getting downtime errors. When traffic crosses 25,000 visitors a month. When you are selling things online and cannot afford slow checkout pages. When you need to install something your shared host will not allow. If you are migrating anyway, check out our <a href="/tools/migrate-website-without-downtime/">guide to migrate without downtime</a>.',
   },
   {
     question: "Do I need dedicated hosting?",
@@ -96,7 +96,7 @@ const faqItems = [
   {
     question: "Can I upgrade from shared to VPS without downtime?",
     answer:
-      'Totally. Most hosts will even do the <a href="/tools/migrate-website-without-downtime">migration</a> for you. The basic process is: copy everything to the new server, test it on a temporary URL, then switch the DNS. If you do it right, your visitors never know anything changed.',
+      'Totally. Most hosts will even do the <a href="/tools/migrate-website-without-downtime/">migration</a> for you. The basic process is: copy everything to the new server, test it on a temporary URL, then switch the DNS. If you do it right, your visitors never know anything changed.',
   },
 ];
 
@@ -105,21 +105,21 @@ const relatedArticles = [
   {
     title: "Best Web Hosting for Remote Businesses",
     excerpt: "Full comparison of the best hosts across all tiers.",
-    href: "/tools/best-web-hosting-remote-business",
+    href: "/tools/best-web-hosting-remote-business/",
     image: "/images/unsplash/photo-1558494949-ef010cbdcc31-400w.webp",
     imageAlt: "Server room infrastructure",
   },
   {
     title: "Best VPS Hosting for Remote Businesses",
     excerpt: "Detailed VPS provider comparison if you are ready to upgrade.",
-    href: "/tools/best-vps-hosting-remote-business",
+    href: "/tools/best-vps-hosting-remote-business/",
     image: "/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp",
     imageAlt: "VPS server infrastructure",
   },
   {
     title: "Cloud vs Traditional Hosting",
     excerpt: "Understanding the difference between cloud and traditional setups.",
-    href: "/blog/cloud-vs-traditional-hosting",
+    href: "/blog/cloud-vs-traditional-hosting/",
     image: "/images/unsplash/photo-1451187580459-43490279c0fa-400w.webp",
     imageAlt: "Cloud computing concept",
   },
@@ -129,7 +129,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -259,11 +258,11 @@ const relatedArticles = [
 
     <h3 class="text-xl font-semibold text-white mt-6 mb-4">Who Should Use This</h3>
     <ul class="text-white/80 space-y-1 ml-4">
-      <li>Anyone <a href="/tools/best-ecommerce-hosting">selling stuff online</a></li>
+      <li>Anyone <a href="/tools/best-ecommerce-hosting/">selling stuff online</a></li>
       <li>Sites with real traffic (25k to 500k visitors monthly)</li>
       <li>Custom web applications</li>
       <li>Membership sites where uptime matters</li>
-      <li><a href="/tools/best-web-hosting-remote-business">Agencies juggling multiple client sites</a></li>
+      <li><a href="/tools/best-web-hosting-remote-business/">Agencies juggling multiple client sites</a></li>
     </ul>
 
     <div class="mt-6">
@@ -309,7 +308,7 @@ const relatedArticles = [
     <h3 class="text-xl font-semibold text-white mt-6 mb-4">Who Should Use This</h3>
     <ul class="text-white/80 space-y-1 ml-4">
       <li>Sites getting millions of visitors</li>
-      <li><a href="/tools/best-ecommerce-hosting">Major e-commerce operations</a></li>
+      <li><a href="/tools/best-ecommerce-hosting/">Major e-commerce operations</a></li>
       <li>Healthcare, finance, anything with compliance requirements</li>
       <li>Game servers that need consistent performance</li>
       <li>Enterprise-level applications</li>
@@ -331,7 +330,7 @@ const relatedArticles = [
 
     <h3 class="text-xl font-semibold text-white mt-6 mb-4">Time to Jump from Shared to VPS When:</h3>
     <ul class="text-white/80 space-y-2 ml-4">
-      <li><a href="/tools/website-speed-optimization-guide">Your site is slow no matter how much you optimize</a></li>
+      <li><a href="/tools/website-speed-optimization-guide/">Your site is slow no matter how much you optimize</a></li>
       <li>Random downtime keeps happening</li>
       <li>You crossed the 25,000 monthly visitor mark</li>
       <li>You are selling things and slow checkout is killing sales</li>
@@ -351,7 +350,7 @@ const relatedArticles = [
     <div class="bg-jet-stream/20 border border-jet-stream/40 rounded-lg p-4 my-6">
       <h4 class="text-white font-semibold">Real Talk</h4>
       <p class="text-white/70 text-sm mt-2">Before jumping to dedicated, try <a
-          href="/tools/best-vps-hosting-remote-business">managed VPS</a> first (Cloudways is great for
+          href="/tools/best-vps-hosting-remote-business/">managed VPS</a> first (Cloudways is great for
         this). You get VPS performance without the headache of managing a server yourself. Plenty of businesses making
         six figures run just fine on managed VPS.</p>
     </div>

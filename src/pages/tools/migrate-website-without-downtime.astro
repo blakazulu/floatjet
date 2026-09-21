@@ -7,7 +7,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("migrate-website-without-downtime", "tools")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -65,21 +65,21 @@ const relatedArticles = [
   {
     title: "Best Web Hosting for Remote Businesses",
     excerpt: "Found a better host? Compare the best options for your migration.",
-    href: "/tools/best-web-hosting-remote-business",
+    href: "/tools/best-web-hosting-remote-business/",
     image: "/images/unsplash/photo-1558494949-ef010cbdcc31-400w.webp",
     imageAlt: "Server room infrastructure",
   },
   {
     title: "Best VPS Hosting for Remote Businesses",
     excerpt: "Upgrading to VPS? Here are the best options to migrate to.",
-    href: "/tools/best-vps-hosting-remote-business",
+    href: "/tools/best-vps-hosting-remote-business/",
     image: "/images/unsplash/photo-1544197150-b99a580bb7a8-400w.webp",
     imageAlt: "VPS server infrastructure",
   },
   {
     title: "Website Speed Optimization Guide",
     excerpt: "After migration, optimize your new site for maximum speed.",
-    href: "/tools/website-speed-optimization-guide",
+    href: "/tools/website-speed-optimization-guide/",
     image: "/images/unsplash/photo-1460925895917-afdab827c52f-400w.webp",
     imageAlt: "Website performance dashboard",
   },
@@ -89,7 +89,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -106,7 +105,7 @@ const relatedArticles = [
       Classic rookie mistake.
     </p>
     <p>
-      Since then I've moved maybe forty or fifty sites. Tiny blogs, <a href="/tools/best-ecommerce-hosting">WooCommerce
+      Since then I've moved maybe forty or fifty sites. Tiny blogs, <a href="/tools/best-ecommerce-hosting/">WooCommerce
       stores</a> doing real volume, that kind of thing. You copy files, test on a staging URL, update DNS when everything
       looks good. That's basically it.
     </p>
@@ -127,7 +126,7 @@ const relatedArticles = [
         <li class="flex items-start">
           <span class="text-jet-stream mr-2">[ ]</span>
           <span><strong>Make sure <a
-              href="/tools/best-web-hosting-remote-business">your new host</a> can handle it:</strong> Check they support the same PHP version (or newer), have all the extensions you need, and enough storage space for your files.</span>
+              href="/tools/best-web-hosting-remote-business/">your new host</a> can handle it:</strong> Check they support the same PHP version (or newer), have all the extensions you need, and enough storage space for your files.</span>
         </li>
         <li class="flex items-start">
           <span class="text-jet-stream mr-2">[ ]</span>
@@ -211,7 +210,7 @@ const relatedArticles = [
     </ul>
 
     <p class="mt-4">
-      Quick tip: a lot of <a href="/tools/managed-wordpress-hosting-compared">hosts will migrate your site for free</a>
+      Quick tip: a lot of <a href="/blog/managed-wordpress-hosting-compared/">hosts will migrate your site for free</a>
       if you ask nicely. SiteGround, Cloudways, and others
       have migration teams who do this all day. If you are paying for hosting anyway, might as well let the experts
       handle the heavy lifting.
@@ -249,7 +248,7 @@ const relatedArticles = [
       </div>
       <div class="bg-white/5 border border-white/10 rounded-lg p-4">
         <h4 class="text-white font-semibold">Plugin Restore</h4>
-        <p class="text-white/70 text-sm mt-2">Install a fresh <a href="/tools/managed-wordpress-hosting-compared">WordPress</a>
+        <p class="text-white/70 text-sm mt-2">Install a fresh <a href="/blog/managed-wordpress-hosting-compared/">WordPress</a>
           on the new server, add your migration plugin,
           and import your backup file. All-in-One WP Migration makes this almost stupidly simple. Three clicks and
           done.</p>
@@ -438,7 +437,7 @@ const relatedArticles = [
     </ul>
 
     <p>
-      Good news: most <a href="/tools/best-vps-hosting-remote-business">quality hosts</a> include free migration with
+      Good news: most <a href="/tools/best-vps-hosting-remote-business/">quality hosts</a> include free migration with
       your plan. Cloudways and SiteGround both have teams who
       do this stuff all day every day. If you are already paying for hosting, check if migration is included before you
       start DIY-ing it. Professional migrations typically run $50-200 for standard WordPress sites if you need to pay
@@ -477,7 +476,7 @@ const relatedArticles = [
       cancel your old hosting until you're absolutely sure nothing's broken. That's the whole thing really.
     </p>
     <p>
-      Fresh hosting is also a good excuse to finally <a href="/tools/website-speed-optimization-guide">set up proper caching</a>.
+      Fresh hosting is also a good excuse to finally <a href="/tools/website-speed-optimization-guide/">set up proper caching</a>.
       Your site's already down for maintenance in your head. Might as well fix everything while you're at it.
     </p>
 

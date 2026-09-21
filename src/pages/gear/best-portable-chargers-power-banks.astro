@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-portable-chargers-power-banks", "gear")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -201,21 +201,21 @@ const relatedArticles = [
   {
     title: "Best Laptops for Remote Work",
     excerpt: "Find the perfect laptop to pair with your portable charger for productive travel.",
-    href: "/gear/best-laptops-remote-work",
+    href: "/gear/best-laptops-remote-work/",
     image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
     imageAlt: "Modern laptop for remote work",
   },
   {
     title: "Essential Travel Tech for Nomads",
     excerpt: "Complete guide to the must-have tech gadgets for digital nomads.",
-    href: "/blog/essential-travel-tech-nomads",
+    href: "/blog/essential-travel-tech-nomads/",
     image: "/images/unsplash/photo-1488590528505-98d2b5aba04b-800w.webp",
     imageAlt: "Travel tech essentials",
   },
   {
     title: "Best Travel Adapters",
     excerpt: "Power up anywhere in the world with our top universal adapter picks.",
-    href: "/gear/best-travel-adapters",
+    href: "/gear/best-travel-adapters/",
     image: "/images/unsplash/photo-1558618666-fcd25c85cd64-800w.webp",
     imageAlt: "Universal travel adapters",
   },
@@ -225,7 +225,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

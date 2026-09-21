@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-laptops-for-video-editing-on-the-go", "gear")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -148,7 +148,7 @@ const relatedArticles = [
     title: "Best Portable Monitors for Remote Work",
     excerpt:
       "Extend your mobile workstation with a portable second screen. Tested the best USB-C monitors for travel.",
-    href: "/gear/best-portable-monitors",
+    href: "/gear/best-portable-monitors/",
     image: "/images/unsplash/photo-1590658268037-6bf12165a8df-800w.webp",
     imageAlt: "Portable monitor in travel setup",
   },
@@ -156,7 +156,7 @@ const relatedArticles = [
     title: "Best Laptops for Remote Work",
     excerpt:
       "Not everyone needs video editing power. Find the best lightweight laptops for general remote work.",
-    href: "/gear/best-laptops-remote-work",
+    href: "/gear/best-laptops-remote-work/",
     image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
     imageAlt: "MacBook laptop on wooden desk",
   },
@@ -164,7 +164,7 @@ const relatedArticles = [
     title: "Best Audio Interfaces for Remote Work",
     excerpt:
       "Professional audio quality for video calls and voiceovers. USB audio interfaces tested for remote workers.",
-    href: "/gear/best-audio-interfaces-for-remote-work",
+    href: "/gear/best-audio-interfaces-for-remote-work/",
     image: "/images/unsplash/photo-j4T_qK7Eumc-800w.webp",
     imageAlt: "Audio interface on desk",
   },
@@ -174,7 +174,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -448,7 +447,7 @@ const relatedArticles = [
     unplugged runtime.
   </p>
   <p>
-    Just making simple YouTube cuts? A <a href="/gear/best-laptops-remote-work">MacBook Air</a> probably handles that
+    Just making simple YouTube cuts? A <a href="/gear/best-laptops-remote-work/">MacBook Air</a> probably handles that
     fine. These are for folks pushing harder projects who need portable firepower.
   </p>
   <p>

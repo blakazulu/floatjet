@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-external-ssds-for-remote-workers", "gear")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -149,7 +149,7 @@ const relatedArticles = [
     title: "Best Laptops for Video Editing on the Go",
     excerpt:
       "Need a machine that can handle 4K exports from hotel rooms? We tested MacBook Pro, ASUS ProArt, and Razer Blade.",
-    href: "/gear/best-laptops-for-video-editing-on-the-go",
+    href: "/gear/best-laptops-for-video-editing-on-the-go/",
     image: "/images/unsplash/photo-1574717024653-61fd2cf4d44d-800w.webp",
     imageAlt: "Video editing laptop setup",
   },
@@ -157,7 +157,7 @@ const relatedArticles = [
     title: "Best Laptops for Remote Work",
     excerpt:
       "The complete guide to finding a laptop that handles travel, video calls, and all-day battery life.",
-    href: "/gear/best-laptops-remote-work",
+    href: "/gear/best-laptops-remote-work/",
     image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
     imageAlt: "MacBook laptop on wooden desk",
   },
@@ -165,7 +165,7 @@ const relatedArticles = [
     title: "Best Cloud Storage for Remote Work",
     excerpt:
       "External drives for local backup. Cloud storage for anywhere access. Compare Dropbox, Google Drive, and iCloud.",
-    href: "/tools/best-cloud-storage-remote-work",
+    href: "/tools/best-cloud-storage-remote-work/",
     image: "/images/unsplash/photo-1544197150-b99a580bb7a8-800w.webp",
     imageAlt: "Cloud storage concept",
   },
@@ -175,7 +175,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

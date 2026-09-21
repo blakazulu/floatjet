@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("vpn-kill-switch-explained", "tools")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -94,7 +94,7 @@ const faqs = [
   {
     question: "All VPNs have this?",
     answer:
-      '<p>Premium ones, yes. <a href="/tools/free-vpn-vs-paid-vpn">Free VPNs</a> often don\'t. Check before subscribing.</p>',
+      '<p>Premium ones, yes. <a href="/tools/free-vpn-vs-paid-vpn/">Free VPNs</a> often don\'t. Check before subscribing.</p>',
   },
   {
     question: "Kill switch vs. auto-connect?",
@@ -117,21 +117,21 @@ const relatedArticles = [
   {
     title: "Best VPNs for Digital Nomads",
     excerpt: "Our tested recommendations for VPNs that protect remote workers everywhere.",
-    href: "/tools/best-vpn-digital-nomads",
+    href: "/tools/best-vpn-digital-nomads/",
     image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
     imageAlt: "Digital security concept",
   },
   {
     title: "Free VPN vs Paid VPN",
     excerpt: "Why free VPNs often lack essential security features like kill switches.",
-    href: "/tools/free-vpn-vs-paid-vpn",
+    href: "/tools/free-vpn-vs-paid-vpn/",
     image: "/images/unsplash/photo-1563013544-824ae1b704d3-800w.webp",
     imageAlt: "VPN security comparison concept",
   },
   {
     title: "VPN & Public WiFi Security Guide",
     excerpt: "Complete guide to staying secure when working on public networks.",
-    href: "/blog/vpn-public-wifi-guide",
+    href: "/blog/vpn-public-wifi-guide/",
     image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp",
     imageAlt: "Digital security on public WiFi",
   },
@@ -141,7 +141,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -154,7 +153,7 @@ const relatedArticles = [
   <!-- What Is a Kill Switch? -->
   <h2 id="what-is-kill-switch">What Is a Kill Switch?</h2>
   <p>
-    Picture this. You're <a href="/guides/do-i-need-vpn-cafes">in a cafe</a>, connected to VPN, sending client files.
+    Picture this. You're <a href="/guides/do-i-need-vpn-cafes/">in a cafe</a>, connected to VPN, sending client files.
     VPN hiccups for half a second.
     Without a kill switch? Your traffic instantly routes through the open network. Real IP exposed.data
     readable. And you probably didn't even notice it happened.
@@ -183,7 +182,7 @@ const relatedArticles = [
   <p>VPNs drop more than you'd think:</p>
   <ul>
     <li>Server updates (VPN companies do maintenance)</li>
-    <li><a href="/tools/how-to-setup-vpn-all-devices">Switching networks</a> (WiFi to cellular, between access points)
+    <li><a href="/tools/how-to-setup-vpn-all-devices/">Switching networks</a> (WiFi to cellular, between access points)
     </li>
     <li>Crappy WiFi (hotels, airports, cafes)</li>
     <li>Random ISP issues</li>
@@ -198,7 +197,7 @@ const relatedArticles = [
     <li>Every site you're visiting</li>
   </ul>
   <p>
-    On <a href="/blog/vpn-public-wifi-guide">public WiFi</a>, this happens in front of everyone. Including anyone
+    On <a href="/blog/vpn-public-wifi-guide/">public WiFi</a>, this happens in front of everyone. Including anyone
     specifically hunting on that
     network. It happens.
   </p>
@@ -263,7 +262,7 @@ const relatedArticles = [
   <h3>ProtonVPN</h3>
   <p>
     Has a permanent option. Your device literally can't access internet without VPN running. Great
-    for <a href="/guides/secure-home-wifi-network">high-security situations</a>.
+    for <a href="/guides/secure-home-wifi-network/">high-security situations</a>.
   </p>
   <AffiliateButton
       href="/go/protonvpn"
@@ -306,7 +305,7 @@ const relatedArticles = [
     fifteen seconds.
   </p>
   <p>
-    Your VPN doesn't have a reliable one? That's a reason to switch. <a href="/tools/best-vpn-digital-nomads">NordVPN
+    Your VPN doesn't have a reliable one? That's a reason to switch. <a href="/tools/best-vpn-digital-nomads/">NordVPN
     and ExpressVPN</a> both get this right.
   </p>
 

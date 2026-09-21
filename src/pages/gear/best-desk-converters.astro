@@ -10,10 +10,9 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-desk-converters", "gear")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
-const updatedDate = new Date("2024-11-24");
 const category = "Furniture";
 const categorySlug = "gear";
 const subcategorySlug = "furniture";
@@ -181,21 +180,21 @@ const relatedArticles = [
   {
     title: "Best Standing Desks",
     excerpt: "Full standing desks for those ready to replace their entire setup.",
-    href: "/gear/best-standing-desks",
+    href: "/gear/best-standing-desks/",
     image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
     imageAlt: "Modern standing desk in home office",
   },
   {
     title: "How Much Does a Standing Desk Cost?",
     excerpt: "Budget breakdown for standing desks at every price point.",
-    href: "/gear/standing-desk-cost-guide",
+    href: "/gear/standing-desk-cost-guide/",
     image: "/images/unsplash/photo-1497366216548-37526070297c-800w.webp",
     imageAlt: "Various standing desk options at different prices",
   },
   {
     title: "Ergonomic Desk Setup Guide",
     excerpt: "Optimize your converter setup for maximum comfort and health.",
-    href: "/gear/ergonomic-desk-setup-guide",
+    href: "/gear/ergonomic-desk-setup-guide/",
     image: "/images/unsplash/photo-1498050108023-c5249f4df085-800w.webp",
     imageAlt: "Properly configured ergonomic workstation",
   },
@@ -206,8 +205,6 @@ const relatedArticles = [
     title={title}
     description={description}
     pubDate={pubDate}
-    updatedDate={updatedDate}
-    authorSlug={authorSlug}
     category={category}
     categorySlug={categorySlug}
     subcategorySlug={subcategorySlug}

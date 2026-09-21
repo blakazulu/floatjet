@@ -9,9 +9,11 @@ interface Props {
   image?: string;
   type?: "website" | "article";
   canonicalUrl?: string;
+  /** Keep the page out of search indexes (utility pages) */
+  noindex?: boolean;
 }
 
-const { title, description, image, type = "website", canonicalUrl } = Astro.props;
+const { title, description, type = "website", canonicalUrl, noindex = false } = Astro.props;
 
 const siteName = "FloatJet";
 const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
@@ -20,7 +22,8 @@ const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 const { url, site } = Astro;
 const imageUrl = getImagePath({ url, site });
 
-const canonical = canonicalUrl || Astro.url.href;
+// Canonical is built from the site origin + path only, so query strings (UTM etc.) never leak in
+const canonical = canonicalUrl || new URL(Astro.url.pathname, "https://floatjet.com").href;
 ---
 
 <head>
@@ -36,6 +39,7 @@ const canonical = canonicalUrl || Astro.url.href;
   <title>{fullTitle}</title>
   <meta name="description" content={description}/>
   <link rel="canonical" href={canonical}/>
+  <link rel="alternate" type="application/rss+xml" title="FloatJet" href="/rss.xml"/>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content={type}/>
@@ -43,6 +47,9 @@ const canonical = canonicalUrl || Astro.url.href;
   <meta property="og:title" content={fullTitle}/>
   <meta property="og:description" content={description}/>
   <meta property="og:image" content={imageUrl}/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content={title}/>
   <meta property="og:site_name" content={siteName}/>
   <meta property="og:locale" content="en_US"/>
 
@@ -69,7 +76,10 @@ const canonical = canonicalUrl || Astro.url.href;
   <link rel="dns-prefetch" href="https://app.impact.com"/>
 
   <!-- Robots Meta -->
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+  <meta
+      name="robots"
+      content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"}
+  />
 
   <!-- Google Analytics 4 (via Partytown - runs in Web Worker for better performance) -->
   <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-FWYD66CN1E"></script>

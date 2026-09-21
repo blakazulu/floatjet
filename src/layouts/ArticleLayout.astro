@@ -6,16 +6,11 @@ import SocialShare from "@components/article/SocialShare.astro";
 import TableOfContents from "@components/article/TableOfContents.astro";
 import ImageLoader from "@components/ui/ImageLoader.astro";
 import BaseLayout from "./BaseLayout.astro";
-import { getTeamMember } from "@data/team";
+import { getArticleBySlug } from "@data/articles";
 
 interface Props {
   title: string;
   description: string;
-  authorSlug?: string;
-  /** @deprecated Use authorSlug instead */
-  author?: string;
-  /** @deprecated Use authorSlug instead */
-  authorUrl?: string;
   pubDate: Date;
   updatedDate?: Date;
   readingTime?: number;
@@ -31,11 +26,8 @@ interface Props {
 const {
   title,
   description,
-  authorSlug,
-  author: legacyAuthor,
-  authorUrl: legacyAuthorUrl,
   pubDate,
-  updatedDate,
+  updatedDate: updatedDateProp,
   readingTime,
   image,
   imageAlt = "",
@@ -45,38 +37,40 @@ const {
   headings = [],
 } = Astro.props;
 
-// Get author from team data or fall back to legacy props
-const teamMember = authorSlug ? getTeamMember(authorSlug) : undefined;
-const author = teamMember?.name || legacyAuthor || "FloatJet Team";
-const authorUrl = teamMember ? `/authors/${teamMember.slug}` : legacyAuthorUrl || "/about";
+// Review date comes from src/data/articles.ts (updatedDate) unless passed explicitly
+const slug = Astro.url.pathname.split("/").filter(Boolean).pop() ?? "";
+const articleData = getArticleBySlug(slug);
+const updatedDate =
+  updatedDateProp ?? (articleData?.updatedDate ? new Date(articleData.updatedDate) : undefined);
+
+const pageUrl = new URL(Astro.url.pathname, "https://floatjet.com").href;
+
+// All articles are published under the editorial team byline
+const author = "FloatJet Editorial Team";
+const authorUrl = "/team/";
 
 // Build breadcrumb items
-// If subcategorySlug is provided, link to /categorySlug/subcategorySlug (e.g., /gear/furniture)
-// Otherwise, link to just /categorySlug (e.g., /gear)
+// If subcategorySlug is provided, link to /categorySlug/subcategorySlug/ (e.g., /gear/furniture/)
+// Otherwise, link to just /categorySlug/ (e.g., /gear/)
 const categoryHref = subcategorySlug
-  ? `/${categorySlug}/${subcategorySlug}`
-  : `/${categorySlug}`;
+  ? `/${categorySlug}/${subcategorySlug}/`
+  : `/${categorySlug}/`;
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: category, href: categoryHref },
   { label: title },
 ];
 
-// Build author schema - use full Person schema if team member, otherwise simple
-const authorSchema = teamMember ? {
-  "@type": "Person",
-  name: teamMember.name,
-  url: `https://floatjet.com/authors/${teamMember.slug}`,
-  jobTitle: teamMember.title,
-  description: teamMember.bioShort,
-  knowsAbout: teamMember.schema.knowsAbout,
-  ...(teamMember.schema.alumniOf && { alumniOf: teamMember.schema.alumniOf }),
-  ...(teamMember.schema.hasCredential && { hasCredential: teamMember.schema.hasCredential }),
-  sameAs: teamMember.social ? Object.values(teamMember.social).filter(Boolean) : undefined,
-} : {
-  "@type": "Person",
+// Author schema - the editorial team is an Organization, part of FloatJet
+const authorSchema = {
+  "@type": "Organization",
   name: author,
-  url: authorUrl ? `https://floatjet.com${authorUrl}` : undefined,
+  url: `https://floatjet.com${authorUrl}`,
+  parentOrganization: {
+    "@type": "Organization",
+    name: "FloatJet",
+    url: "https://floatjet.com",
+  },
 };
 
 // Article Schema markup
@@ -85,10 +79,14 @@ const articleSchema = {
   "@type": "Article",
   headline: title,
   description: description,
+  mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+  url: pageUrl,
+  inLanguage: "en-US",
   image: image ? `https://floatjet.com${image}` : undefined,
   author: authorSchema,
   publisher: {
     "@type": "Organization",
+    "@id": "https://floatjet.com/#organization",
     name: "FloatJet",
     logo: {
       "@type": "ImageObject",

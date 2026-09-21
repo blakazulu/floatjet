@@ -2,11 +2,65 @@
 # https://docs.netlify.com/configure-builds/file-based-configuration/
 
 [build]
-  command = "npm run build"
+  # Build, then run SEO checks on dist/ (broken links, canonicals, JSON-LD, sitemap)
+  # A failed check blocks the deploy - the previous deploy stays live
+  command = "npm run build && npm run check:dist"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
+  # Headroom for Open Graph image generation (160+ PNGs rendered at build time)
+  NODE_OPTIONS = "--max-old-space-size=4096"
+
+# Removed author profiles - articles are now published under the editorial team
+[[redirects]]
+  from = "/authors/marcus-chen"
+  to = "/team/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/authors/sarah-mitchell"
+  to = "/team/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/authors/daniel-brooks"
+  to = "/team/"
+  status = 301
+  force = true
+
+# Wrong-section URLs that were linked internally - point to the real article
+[[redirects]]
+  from = "/blog/best-coworking-spaces-lisbon"
+  to = "/guides/best-coworking-spaces-lisbon/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/managed-wordpress-hosting-compared"
+  to = "/blog/managed-wordpress-hosting-compared/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/best-team-communication-tools"
+  to = "/blog/best-team-communication-tools/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides/ultimate-home-office-setup"
+  to = "/blog/ultimate-home-office-setup/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tools/best-crm-software-small-business"
+  to = "/blog/best-crm-software-small-business/"
+  status = 301
+  force = true
 
 # Affiliate link redirects
 # Note: Update these with actual affiliate URLs once approved
@@ -14,762 +68,762 @@
 [[redirects]]
   from = "/go/notion"
   to = "https://www.notion.so/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/clickup"
   to = "https://clickup.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/asana"
   to = "https://asana.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/monday"
   to = "https://monday.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/trello"
   to = "https://trello.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/basecamp"
   to = "https://basecamp.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/linear"
   to = "https://linear.app/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/jira"
   to = "https://www.atlassian.com/software/jira"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/nordvpn"
   to = "https://go.nordvpn.net/aff_c?offer_id=15&aff_id=135757&url_id=902"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/expressvpn"
   to = "https://www.expressvpn.com/"
-  status = 301
+  status = 302
   force = true
 
 # Surfshark Products - Approved 2025-12-13 (Affiliate ID: 42943)
 [[redirects]]
   from = "/go/surfshark"
   to = "https://get.surfshark.net/aff_c?offer_id=926&aff_id=42943"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/surfshark-vpn"
   to = "https://get.surfshark.net/aff_c?offer_id=926&aff_id=42943"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/surfshark-antivirus"
   to = "https://get.surfshark.net/aff_c?offer_id=934&aff_id=42943"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/surfshark-adblock"
   to = "https://get.surfshark.net/aff_c?offer_id=1498&aff_id=42943"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/cyberghost"
   to = "https://www.cyberghostvpn.com/"
-  status = 301
+  status = 302
   force = true
 
 # Proton Products - Approved 2025-12-05 (Affiliate ID: 15204)
 [[redirects]]
   from = "/go/protonvpn"
   to = "https://go.getproton.me/aff_c?offer_id=26&aff_id=15204"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/proton-vpn"
   to = "https://go.getproton.me/aff_c?offer_id=26&aff_id=15204"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/proton-mail"
   to = "https://go.getproton.me/aff_c?offer_id=7&aff_id=15204"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/protonmail"
   to = "https://go.getproton.me/aff_c?offer_id=7&aff_id=15204"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/proton-pass"
   to = "https://go.getproton.me/aff_c?offer_id=38&aff_id=15204"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/protonpass"
   to = "https://go.getproton.me/aff_c?offer_id=38&aff_id=15204"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/proton-drive"
   to = "https://go.getproton.me/aff_c?offer_id=43&aff_id=15204"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/protondrive"
   to = "https://go.getproton.me/aff_c?offer_id=43&aff_id=15204"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/pia"
   to = "https://www.privateinternetaccess.com/"
-  status = 301
+  status = 302
   force = true
 
 # Password Manager Affiliate Links
 [[redirects]]
   from = "/go/nordpass"
   to = "https://go.nordpass.io/aff_c?offer_id=488&aff_id=135757&url_id=9356"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/1password"
   to = "https://1password.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/bitwarden"
   to = "https://bitwarden.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/dashlane"
   to = "https://www.dashlane.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/lastpass"
   to = "https://www.lastpass.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/keeper"
   to = "https://www.keepersecurity.com/"
-  status = 301
+  status = 302
   force = true
 
 # Standing Desk Affiliate Links
 [[redirects]]
   from = "/go/uplift"
   to = "https://www.upliftdesk.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/flexispot"
   to = "https://www.flexispot.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/flexispot-e5"
   to = "https://www.flexispot.com/e5-standing-desk"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/autonomous"
   to = "https://www.autonomous.ai/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/fully"
   to = "https://www.fully.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/vari"
   to = "https://www.vari.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/branch"
   to = "https://www.branchfurniture.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/ikea"
   to = "https://www.ikea.com/us/en/cat/height-adjustable-desks-55007/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/secretlab"
   to = "https://secretlab.co/pages/magnus-pro"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/fezibo"
   to = "https://www.amazon.com/s?k=fezibo+standing+desk"
-  status = 301
+  status = 302
   force = true
 
 # Email Marketing Affiliate Links
 [[redirects]]
   from = "/go/convertkit"
   to = "https://convertkit.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/beehiiv"
   to = "https://www.beehiiv.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/mailchimp"
   to = "https://mailchimp.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/activecampaign"
   to = "https://www.activecampaign.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/mailerlite"
   to = "https://www.mailerlite.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/buttondown"
   to = "https://buttondown.email/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/flodesk"
   to = "https://flodesk.com/"
-  status = 301
+  status = 302
   force = true
 
 # Course Platform Affiliate Links
 [[redirects]]
   from = "/go/teachable"
   to = "https://teachable.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/thinkific"
   to = "https://www.thinkific.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/kajabi"
   to = "https://kajabi.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/podia"
   to = "https://www.podia.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/learnworlds"
   to = "https://www.learnworlds.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/gumroad"
   to = "https://gumroad.com/"
-  status = 301
+  status = 302
   force = true
 
 # Web Hosting Affiliate Links
 [[redirects]]
   from = "/go/wpengine"
   to = "https://wpengine.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/cloudways"
   to = "https://www.cloudways.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/siteground"
   to = "https://www.siteground.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/kinsta"
   to = "https://kinsta.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/flywheel"
   to = "https://getflywheel.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/a2hosting"
   to = "https://www.a2hosting.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/bluehost"
   to = "https://www.bluehost.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/digitalocean"
   to = "https://www.digitalocean.com/"
-  status = 301
+  status = 302
   force = true
 
 # Laptop Bags & Backpacks Affiliate Links
 [[redirects]]
   from = "/go/nomatic"
   to = "https://www.nomatic.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/peak-design"
   to = "https://www.peakdesign.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/aer"
   to = "https://www.aersf.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/thule"
   to = "https://www.thule.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/tortuga"
   to = "https://www.tortugabackpacks.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/wandrd"
   to = "https://www.wandrd.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/bellroy"
   to = "https://bellroy.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/incase"
   to = "https://www.incase.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/away"
   to = "https://www.awaytravel.com/"
-  status = 301
+  status = 302
   force = true
 
 # Webcam Affiliate Links
 [[redirects]]
   from = "/go/logitech-brio"
   to = "https://www.logitech.com/en-us/products/webcams/brio-4k-hdr-webcam.html"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/logitech-c920"
   to = "https://www.logitech.com/en-us/products/webcams/c920s-pro-hd-webcam.html"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/razer-kiyo"
   to = "https://www.razer.com/streaming-cameras/razer-kiyo-pro-ultra"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/elgato-facecam"
   to = "https://www.elgato.com/us/en/p/facecam"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/opal-tadpole"
   to = "https://opalcamera.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/obsbot-tiny"
   to = "https://www.obsbot.com/obsbot-tiny-series"
-  status = 301
+  status = 302
   force = true
 
 # Portable Chargers & Power Banks Affiliate Links
 [[redirects]]
   from = "/go/anker-737"
   to = "https://www.anker.com/products/a1289"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/anker-maggo"
   to = "https://www.anker.com/collections/maggo"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/zendure"
   to = "https://zfrca.zfrdr.co/SHmY"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/baseus"
   to = "https://www.baseus.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/ugreen"
   to = "https://www.ugreen.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/mophie"
   to = "https://www.mophie.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/belkin"
   to = "https://www.belkin.com/"
-  status = 301
+  status = 302
   force = true
 
 # Mechanical Keyboard Affiliate Links
 [[redirects]]
   from = "/go/keychron"
   to = "https://www.keychron.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/keychron-k2"
   to = "https://amazon.com/dp/B07QCP491R?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/das-keyboard"
   to = "https://www.daskeyboard.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/logitech-mx"
   to = "https://www.logitech.com/en-us/products/keyboards/mx-mechanical.html"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/nuphy"
   to = "https://nuphy.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/hhkb"
   to = "https://happyhackingkb.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/drop"
   to = "https://drop.com/mechanical-keyboards"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/ducky"
   to = "https://www.duckychannel.com.tw/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/kinesis"
   to = "https://kinesis-ergo.com/"
-  status = 301
+  status = 302
   force = true
 
 # Travel Adapter Affiliate Links
 [[redirects]]
   from = "/go/epicka"
   to = "https://www.amazon.com/stores/EPICKA/page/0F0C99D5-E3A4-4C0C-9A0D-1F3A5BC1A63B"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/anker-511"
   to = "https://www.anker.com/products/a2633"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/satechi"
   to = "https://satechi.net/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/ceptics"
   to = "https://ceptics.com/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/hyper"
   to = "https://www.hypershop.com/"
-  status = 301
+  status = 302
   force = true
 
 # Microphone Affiliate Links
 [[redirects]]
   from = "/go/shure-mv7"
   to = "https://www.amazon.com/Shure-Microphone-Podcasting-Voice-Isolating-Technology/dp/B08G7RG9ML"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/blue-yeti"
   to = "https://www.amazon.com/Blue-Yeti-USB-Microphone-Blackout/dp/B00N1YPXW2"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/rode-nt-usb-mini"
   to = "https://www.amazon.com/Rode-NT-USB-Mini-Microphone-Detachable-Magnetic/dp/B084P1CXFD"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/at2020usb"
   to = "https://www.amazon.com/Audio-Technica-AT2020USB-Cardioid-Condenser-Microphone/dp/B00B5ZX9FM"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/elgato-wave-3"
   to = "https://www.elgato.com/us/en/p/wave-3-black"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/hyperx-quadcast"
   to = "https://hyperx.com/collections/microphones/products/hyperx-quadcast-s"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/samson-q2u"
   to = "https://www.amazon.com/Samson-Q2U-Recording-Podcasting-Microphone/dp/B07MV3D6VH"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/shure-sm7b"
   to = "https://www.amazon.com/Shure-SM7B-Cardioid-Dynamic-Microphone/dp/B0002E4Z8M"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/rode-podmic"
   to = "https://www.amazon.com/Rode-PodMic-Dynamic-Podcasting-Microphone/dp/B07MSCRCVK"
-  status = 301
+  status = 302
   force = true
 
 # Speaker Affiliate Links
 [[redirects]]
   from = "/go/audioengine-a2-plus"
   to = "https://www.amazon.com/Audioengine-A2-Desktop-Speakers-Built/dp/B00DQMJE7E"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/edifier-r1280db"
   to = "https://www.amazon.com/Edifier-R1280DB-Bluetooth-Bookshelf-Speakers/dp/B0719C132V"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/creative-pebble-v3"
   to = "https://www.amazon.com/Creative-Pebble-Minimalistic-Drivers-Passive/dp/B09YY87RZC"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/logitech-z407"
   to = "https://www.logitech.com/en-us/products/speakers/z407-bluetooth-computer-speakers.html"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/bose-companion-2"
   to = "https://www.bose.com/p/speakers/bose-companion-2-series-iii-multimedia-speaker-system/C2S3-SPEAKERSYSTEM.html"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/klipsch-promedia"
   to = "https://www.amazon.com/Klipsch-ProMedia-Certified-Computer-Speaker/dp/B000062VUO"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/edifier-r1280t"
   to = "https://www.amazon.com/Edifier-R1280T-Powered-Bookshelf-Speakers/dp/B016P9HJIA"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/razer-nommo"
   to = "https://www.razer.com/gaming-speakers/razer-nommo"
-  status = 301
+  status = 302
   force = true
 
 # Earbuds Affiliate Links
 [[redirects]]
   from = "/go/airpods-pro-2"
   to = "https://www.apple.com/shop/product/MQD83AM/A/airpods-pro"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/sony-wf-1000xm5"
   to = "https://www.amazon.com/Sony-WF-1000XM5-Bluetooth-Canceling-Headphones/dp/B0C33XXS56"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/galaxy-buds2-pro"
   to = "https://www.samsung.com/us/mobile/audio/headphones/galaxy-buds2-pro-bora-purple-sm-r510nlvaxar/"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/jabra-elite-85t"
   to = "https://www.amazon.com/Jabra-Elite-85t-Cancelling-Adjustable/dp/B08HR82K1F"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/soundcore-liberty-4"
   to = "https://www.amazon.com/Soundcore-Earbuds-Adaptive-Cancellation-Transparency/dp/B0B3GDBXHR"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/bose-qc-earbuds-ii"
   to = "https://www.bose.com/p/earbuds/bose-quietcomfort-earbuds-ii/QCEARBUDSII-EARBUDS.html"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/sony-linkbuds-s"
   to = "https://www.amazon.com/Sony-LinkBuds-TRULY-WIRELESS-HEADPHONES/dp/B09YCQJWNZ"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/airpods-3"
   to = "https://www.apple.com/shop/product/MPNY3AM/A/airpods-3rd-generation"
-  status = 301
+  status = 302
   force = true
 
 # Audio Software Affiliate Links
 [[redirects]]
   from = "/go/krisp"
   to = "https://krisp.ai/"
-  status = 301
+  status = 302
   force = true
 
 # Audio Interface Affiliate Links
 [[redirects]]
   from = "/go/focusrite-scarlett"
   to = "https://www.amazon.com/Focusrite-Scarlett-Audio-Interface-Tools/dp/B07QR6Z1JB"
-  status = 301
+  status = 302
   force = true
 
 # Amazon Associates Affiliate Links
@@ -782,1241 +836,1241 @@
 [[redirects]]
   from = "/go/macbook-air-m3"
   to = "https://amazon.com/dp/B0CX22ZW1T?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/macbook-air"
   to = "https://amazon.com/dp/B0CX22ZW1T?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/dell-xps-13"
   to = "https://amazon.com/dp/B0DJPYW835?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/xps-13"
   to = "https://amazon.com/dp/B0DJPYW835?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/thinkpad-x1-carbon"
   to = "https://amazon.com/dp/B0CCKS8FVL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/x1-carbon"
   to = "https://amazon.com/dp/B0CCKS8FVL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/flexispot-e7"
   to = "https://amazon.com/dp/B08B3X9CKH?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/herman-miller-aeron"
   to = "https://amazon.com/dp/B01N0ZUN15?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/aeron"
   to = "https://amazon.com/dp/B01N0ZUN15?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/logitech-c920"
   to = "https://amazon.com/dp/B07K986YLL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/c920"
   to = "https://amazon.com/dp/B07K986YLL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/logitech-brio"
   to = "https://amazon.com/dp/B01N5UOYC4?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/brio"
   to = "https://amazon.com/dp/B01N5UOYC4?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/sony-wh1000xm5"
   to = "https://amazon.com/dp/B09XS7JWHH?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/sony-xm5"
   to = "https://amazon.com/dp/B09XS7JWHH?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/anker-powerconf-c300"
   to = "https://amazon.com/dp/B08RNHCZ3K?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/anker-c300"
   to = "https://amazon.com/dp/B08RNHCZ3K?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Laptops - Amazon Associates
 [[redirects]]
   from = "/go/amazon/macbook-air-m3"
   to = "https://amazon.com/dp/B0CX22ZW1T?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/macbook-air-m3-16gb"
   to = "https://amazon.com/dp/B0CX24BNQC?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/macbook-air-m3-15"
   to = "https://amazon.com/dp/B0CX23GFMJ?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/dell-xps-13"
   to = "https://amazon.com/dp/B0DJPYW835?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/dell-xps-13-9310"
   to = "https://amazon.com/dp/B08ML2PW6W?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/thinkpad-x1-carbon-gen11"
   to = "https://amazon.com/dp/B0CCKS8FVL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/thinkpad-x1-carbon-gen11-32gb"
   to = "https://amazon.com/dp/B0CKJWP1M8?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Additional Laptops - Amazon Associates
 [[redirects]]
   from = "/go/amazon/asus-zenbook-14"
   to = "https://amazon.com/dp/B0D25TXLLV?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/asus-zenbook-14"
   to = "https://amazon.com/dp/B0D25TXLLV?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/zenbook-14"
   to = "https://amazon.com/dp/B0D25TXLLV?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/hp-spectre-x360-14"
   to = "https://amazon.com/dp/B0DQ51X24V?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/hp-spectre-x360-14"
   to = "https://amazon.com/dp/B0DQ51X24V?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/spectre-x360"
   to = "https://amazon.com/dp/B0DQ51X24V?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/hp-spectre-x360"
   to = "https://amazon.com/dp/B0DQ51X24V?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/surface-laptop-5"
   to = "https://amazon.com/dp/B0B8QCKB5Y?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/surface-laptop-5"
   to = "https://amazon.com/dp/B0B8QCKB5Y?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/surface-5"
   to = "https://amazon.com/dp/B0B8QCKB5Y?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/acer-swift-3-oled"
   to = "https://amazon.com/dp/B0B1VYQ6XG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/acer-swift-3-oled"
   to = "https://amazon.com/dp/B0B1VYQ6XG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/swift-3"
   to = "https://amazon.com/dp/B0B1VYQ6XG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/acer-swift-3"
   to = "https://amazon.com/dp/B0B1VYQ6XG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/macbook-pro-14-m3"
   to = "https://amazon.com/dp/B0CM5JV26D?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/macbook-pro-14-m3"
   to = "https://amazon.com/dp/B0CM5JV26D?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/macbook-pro-14"
   to = "https://amazon.com/dp/B0CM5JV26D?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/dell-xps-15"
   to = "https://amazon.com/dp/B0CDNTRB2V?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/dell-xps-15"
   to = "https://amazon.com/dp/B0CDNTRB2V?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/xps-15"
   to = "https://amazon.com/dp/B0CDNTRB2V?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Standing Desks - Amazon Associates
 [[redirects]]
   from = "/go/amazon/flexispot-e7-black"
   to = "https://amazon.com/dp/B08B3X9CKH?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/flexispot-e7-white"
   to = "https://amazon.com/dp/B08B3SNBF8?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Additional Standing Desks - Amazon Associates
 [[redirects]]
   from = "/go/amazon/uplift-v2"
   to = "https://amazon.com/dp/B07RWQBJ8V?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/uplift-v2"
   to = "https://amazon.com/dp/B07RWQBJ8V?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/uplift"
   to = "https://amazon.com/dp/B07RWQBJ8V?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/autonomous-smartdesk-pro"
   to = "https://amazon.com/dp/B0FL1VY7LS?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/autonomous-smartdesk-pro"
   to = "https://amazon.com/dp/B0FL1VY7LS?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/autonomous-desk"
   to = "https://amazon.com/dp/B0FL1VY7LS?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/fully-jarvis"
   to = "https://amazon.com/dp/B07PDNTS68?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/fully-jarvis"
   to = "https://amazon.com/dp/B07PDNTS68?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/jarvis"
   to = "https://amazon.com/dp/B07PDNTS68?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/vari-electric"
   to = "https://amazon.com/dp/B089CX2F42?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/vari-electric"
   to = "https://amazon.com/dp/B089CX2F42?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/vari"
   to = "https://amazon.com/dp/B089CX2F42?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/branch-standing"
   to = "https://amazon.com/dp/B0C3WVGD4L?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/branch-standing"
   to = "https://amazon.com/dp/B0C3WVGD4L?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/branch-desk"
   to = "https://amazon.com/dp/B0C3WVGD4L?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/ikea-bekant"
   to = "https://amazon.com/dp/B0BW8S93BB?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/ikea-bekant"
   to = "https://amazon.com/dp/B0BW8S93BB?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/bekant"
   to = "https://amazon.com/dp/B0BW8S93BB?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/fezibo-electric"
   to = "https://amazon.com/dp/B08CBVGXZC?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/fezibo-electric"
   to = "https://amazon.com/dp/B08CBVGXZC?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/fezibo"
   to = "https://amazon.com/dp/B08CBVGXZC?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Ergonomic Chairs - Amazon Associates
 [[redirects]]
   from = "/go/amazon/herman-miller-aeron-b"
   to = "https://amazon.com/dp/B01N0ZUN15?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/herman-miller-aeron-c"
   to = "https://amazon.com/dp/B01N32UFNT?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/herman-miller-aeron-loaded"
   to = "https://amazon.com/dp/B01K31X4HG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Additional Ergonomic Chairs - Amazon Associates
 [[redirects]]
   from = "/go/amazon/steelcase-leap"
   to = "https://amazon.com/dp/B006H1QYBA?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/steelcase-leap"
   to = "https://amazon.com/dp/B006H1QYBA?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/steelcase"
   to = "https://amazon.com/dp/B006H1QYBA?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/secretlab-titan-evo"
   to = "https://amazon.com/dp/B0B3RDWTDD?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/secretlab-titan-evo"
   to = "https://amazon.com/dp/B0B3RDWTDD?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/secretlab-titan"
   to = "https://amazon.com/dp/B0B3RDWTDD?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/branch-ergonomic"
   to = "https://amazon.com/dp/B0CK497V2R?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/branch-ergonomic"
   to = "https://amazon.com/dp/B0CK497V2R?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/branch-chair"
   to = "https://amazon.com/dp/B0CK497V2R?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/hon-ignition-2"
   to = "https://amazon.com/dp/B06Y3PGPR2?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/hon-ignition-2"
   to = "https://amazon.com/dp/B06Y3PGPR2?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/hon-ignition"
   to = "https://amazon.com/dp/B06Y3PGPR2?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/autonomous-ergochair-pro"
   to = "https://amazon.com/dp/B0FL2H6GYL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/autonomous-ergochair-pro"
   to = "https://amazon.com/dp/B0FL2H6GYL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/ergochair-pro"
   to = "https://amazon.com/dp/B0FL2H6GYL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/autonomous-ergochair"
   to = "https://amazon.com/dp/B0FL2H6GYL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/humanscale-freedom"
   to = "https://amazon.com/dp/B009WXGTYW?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/humanscale-freedom"
   to = "https://amazon.com/dp/B009WXGTYW?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/humanscale"
   to = "https://amazon.com/dp/B009WXGTYW?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/ikea-markus"
   to = "https://amazon.com/dp/B097Q4GKTK?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/ikea-markus"
   to = "https://amazon.com/dp/B097Q4GKTK?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/markus"
   to = "https://amazon.com/dp/B097Q4GKTK?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/flexispot-c7"
   to = "https://amazon.com/dp/B0DPQQ2L22?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/flexispot-c7"
   to = "https://amazon.com/dp/B0DPQQ2L22?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/flexispot-chair"
   to = "https://amazon.com/dp/B0DPQQ2L22?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/sihoo-m18"
   to = "https://amazon.com/dp/B07GNDDNMW?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/sihoo-m18"
   to = "https://amazon.com/dp/B07GNDDNMW?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/sihoo"
   to = "https://amazon.com/dp/B07GNDDNMW?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Webcams - Amazon Associates
 [[redirects]]
   from = "/go/amazon/logitech-c920s"
   to = "https://amazon.com/dp/B07K986YLL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/logitech-brio-4k"
   to = "https://amazon.com/dp/B01N5UOYC4?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/logitech-brio-4k-new"
   to = "https://amazon.com/dp/B09NBWWP79?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/logitech-mx-brio"
   to = "https://amazon.com/dp/B0BFJ4CRKD?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/anker-powerconf-c300"
   to = "https://amazon.com/dp/B08RNHCZ3K?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Headphones - Amazon Associates
 [[redirects]]
   from = "/go/amazon/sony-wh1000xm5-black"
   to = "https://amazon.com/dp/B09XS7JWHH?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/sony-wh1000xm5-silver"
   to = "https://amazon.com/dp/B09XSDMT4F?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/sony-wh1000xm5-blue"
   to = "https://amazon.com/dp/B0BXYCS74H?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/sony-xm4"
   to = "https://amazon.com/dp/B0863TXGM3?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/sony-wh1000xm4"
   to = "https://amazon.com/dp/B0863TXGM3?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/sony-wh1000xm4-black"
   to = "https://amazon.com/dp/B0863TXGM3?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/sony-wh1000xm4-silver"
   to = "https://amazon.com/dp/B0863FR3S9?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/sony-wh1000xm4-blue"
   to = "https://amazon.com/dp/B08MVGF24M?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Audio Interfaces - Amazon Associates
 [[redirects]]
   from = "/go/amazon/focusrite-scarlett-solo"
   to = "https://amazon.com/dp/B0C5JSHP7M?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/behringer-umc22"
   to = "https://amazon.com/dp/B00FFIGZF6?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/presonus-audiobox-usb96"
   to = "https://amazon.com/dp/B071W6YVDR?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Mechanical Keyboards - Amazon Associates
 [[redirects]]
   from = "/go/amazon/keychron-k2-red"
   to = "https://amazon.com/dp/B07Y9Y69N7?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/keychron-k2-brown"
   to = "https://amazon.com/dp/B07QCP491R?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/keychron-k2-hotswap"
   to = "https://amazon.com/dp/B08742M6VW?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Desktop Monitors - Amazon Associates
 [[redirects]]
   from = "/go/amazon/dell-u2723qe"
   to = "https://amazon.com/dp/B09TQZP9CL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/dell-u2723qe"
   to = "https://amazon.com/dp/B09TQZP9CL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/lg-27uk850"
   to = "https://amazon.com/dp/B078GVTD9N?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/lg-27uk850"
   to = "https://amazon.com/dp/B078GVTD9N?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/samsung-odyssey-g7"
   to = "https://amazon.com/dp/B088HHZBGJ?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/samsung-odyssey-g7"
   to = "https://amazon.com/dp/B088HHZBGJ?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/odyssey-g7"
   to = "https://amazon.com/dp/B088HHZBGJ?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/dell-u3423we"
   to = "https://amazon.com/dp/B0BJZ3YNN5?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/dell-u3423we"
   to = "https://amazon.com/dp/B0BJZ3YNN5?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/lg-34wn80c"
   to = "https://amazon.com/dp/B07YGZ7C1K?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/lg-34wn80c"
   to = "https://amazon.com/dp/B07YGZ7C1K?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/benq-pd2700u"
   to = "https://amazon.com/dp/B07H9XP92N?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/benq-pd2700u"
   to = "https://amazon.com/dp/B07H9XP92N?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/asus-proart-pa278qv"
   to = "https://amazon.com/dp/B088BC5HMM?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/asus-proart-pa278qv"
   to = "https://amazon.com/dp/B088BC5HMM?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/asus-proart"
   to = "https://amazon.com/dp/B088BC5HMM?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/hp-z27k-g3"
   to = "https://amazon.com/dp/B08ZDRYT5J?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/hp-z27k-g3"
   to = "https://amazon.com/dp/B08ZDRYT5J?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/hp-z27k"
   to = "https://amazon.com/dp/B08ZDRYT5J?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/viewsonic-vp2785-4k"
   to = "https://amazon.com/dp/B0748DGHSG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/viewsonic-vp2785-4k"
   to = "https://amazon.com/dp/B0748DGHSG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/viewsonic-vp2785"
   to = "https://amazon.com/dp/B0748DGHSG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/philips-276e8vjsb"
   to = "https://amazon.com/dp/B07JXCR263?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/philips-276e8vjsb"
   to = "https://amazon.com/dp/B07JXCR263?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/philips-4k"
   to = "https://amazon.com/dp/B07JXCR263?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Budget Laptops - Amazon Associates
 [[redirects]]
   from = "/go/acer-aspire-5"
   to = "https://amazon.com/dp/B0F1MYBZJF?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/dell-inspiron-15"
   to = "https://amazon.com/dp/B0CDRFPKYY?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/hp-15"
   to = "https://amazon.com/dp/B0CSJK12L4?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/lenovo-ideapad-5"
   to = "https://amazon.com/dp/B08VWCKN51?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/asus-vivobook-15"
   to = "https://amazon.com/dp/B0DS2BQ4W7?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/thinkpad-e14"
   to = "https://amazon.com/dp/B0DWSHSF99?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/hp-pavilion-15"
   to = "https://amazon.com/dp/B0CRT1GTHG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Laptop Bags & Backpacks - Amazon Associates
 [[redirects]]
   from = "/go/amazon/nomatic-travel-pack"
   to = "https://amazon.com/dp/B07N14BXRW?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/peak-design-everyday"
   to = "https://amazon.com/dp/B07ZTQQGLP?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/aer-travel-pack-3"
   to = "https://amazon.com/dp/B09GK8DQHF?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/thule-subterra-30l"
   to = "https://amazon.com/dp/B0CQ8TY6RW?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/tortuga-outbreaker"
   to = "https://amazon.com/dp/B08LHF9WPM?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/wandrd-prvke"
   to = "https://amazon.com/dp/B095FH92J1?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/targus-drifter-ii"
   to = "https://amazon.com/dp/B00507NAYQ?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/bellroy-transit"
   to = "https://amazon.com/dp/B07XY9V8MV?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Premium Headphones - Amazon Associates
 [[redirects]]
   from = "/go/airpods-max"
   to = "https://amazon.com/dp/B0DGJC52FP?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/bose-700"
   to = "https://amazon.com/dp/B07Q9MJKBV?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/bose-qc-ultra"
   to = "https://amazon.com/dp/B0CCZ1L489?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/jabra-evolve2-85"
   to = "https://amazon.com/dp/B08B8XVBM6?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/sennheiser-momentum-4"
   to = "https://amazon.com/dp/B0B6GHW1SX?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Desk Converters - Amazon Associates
 [[redirects]]
   from = "/go/fezibo-converter"
   to = "https://amazon.com/dp/B06XZS76C7?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/flexispot-m2b"
   to = "https://amazon.com/dp/B01HPE05BM?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/vivo-converter"
   to = "https://amazon.com/dp/B075JYG2TB?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/ergotron-workfit"
   to = "https://amazon.com/dp/B00QL6IGWQ?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Laptop Stands & Desk Accessories - Amazon Associates
 [[redirects]]
   from = "/go/laptop-stand"
   to = "https://amazon.com/dp/B0BLRJ4R8F?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Standing Desks - Amazon Associates
 [[redirects]]
   from = "/go/flexispot-e5"
   to = "https://amazon.com/dp/B093FHBCCG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/flexispot-e7-48"
   to = "https://amazon.com/dp/B08B3X9CKH?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/apexdesk-compact"
   to = "https://amazon.com/dp/B079MGVDFY?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/branch-duo"
   to = "https://amazon.com/dp/B0C3WSTY1T?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Additional Desk Converters - Amazon Associates
 [[redirects]]
   from = "/go/varidesk"
   to = "https://amazon.com/dp/B07Q89QF8V?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/uplift-converter"
   to = "https://amazon.com/dp/B07WX1RV5B?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/mount-it-electric"
   to = "https://amazon.com/dp/B071JWCV9L?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Keyboards - Amazon Associates
 [[redirects]]
   from = "/go/keychron-q1"
   to = "https://amazon.com/dp/B0D4Y3LY4H?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Microphones - Amazon Associates
 [[redirects]]
   from = "/go/audio-technica-at2020"
   to = "https://amazon.com/dp/B00B5ZX9FM?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/at2005usb"
   to = "https://amazon.com/dp/B007JX8O0Y?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Compact Desks - Amazon Associates
 [[redirects]]
   from = "/go/ikea-micke"
   to = "https://amazon.com/dp/B0BW8S1N3C?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Portable Monitors - Amazon Associates
 [[redirects]]
   from = "/go/amazon/asus-zenscreen-mb16ac"
   to = "https://amazon.com/dp/B071S84ZW7?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/asus-zenscreen-mb16ac"
   to = "https://amazon.com/dp/B071S84ZW7?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/asus-zenscreen"
   to = "https://amazon.com/dp/B071S84ZW7?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/lepow-z1"
   to = "https://amazon.com/dp/B0863GM4YR?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/lepow-z1"
   to = "https://amazon.com/dp/B0863GM4YR?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/lepow"
   to = "https://amazon.com/dp/B0863GM4YR?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/viewsonic-vg1655"
   to = "https://amazon.com/dp/B087792CQT?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/viewsonic-vg1655"
   to = "https://amazon.com/dp/B087792CQT?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/innocn-oled-156"
   to = "https://amazon.com/dp/B09L12DGW5?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/innocn-oled-156"
   to = "https://amazon.com/dp/B09L12DGW5?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/innocn-oled"
   to = "https://amazon.com/dp/B09L12DGW5?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/lenovo-thinkvision-m14"
   to = "https://amazon.com/dp/B07YX5NKK2?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/lenovo-thinkvision-m14"
   to = "https://amazon.com/dp/B07YX5NKK2?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/thinkvision-m14"
   to = "https://amazon.com/dp/B07YX5NKK2?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/mobile-pixels-duex-plus"
   to = "https://amazon.com/dp/B092LRR8HT?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/mobile-pixels-duex-plus"
   to = "https://amazon.com/dp/B092LRR8HT?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/duex-plus"
   to = "https://amazon.com/dp/B092LRR8HT?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/mobile-pixels-duex"
   to = "https://amazon.com/dp/B092LRR8HT?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/asus-zenscreen-touch-mb16amt"
   to = "https://amazon.com/dp/B07WC2NL2G?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/asus-zenscreen-touch-mb16amt"
   to = "https://amazon.com/dp/B07WC2NL2G?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/zenscreen-touch"
   to = "https://amazon.com/dp/B07WC2NL2G?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/asus-zenscreen-touch"
   to = "https://amazon.com/dp/B07WC2NL2G?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/espresso-display-15"
   to = "https://amazon.com/dp/B09WMX6442?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/espresso-display-15"
   to = "https://amazon.com/dp/B09WMX6442?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/espresso-display"
   to = "https://amazon.com/dp/B09WMX6442?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # ============================================================================
@@ -2029,510 +2083,510 @@
 [[redirects]]
   from = "/go/zoom"
   to = "https://zoom.us"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/google-meet"
   to = "https://meet.google.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/microsoft-teams"
   to = "https://www.microsoft.com/microsoft-teams"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/slack"
   to = "https://slack.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/discord"
   to = "https://discord.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/webex"
   to = "https://www.webex.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/whereby"
   to = "https://whereby.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/gotomeeting"
   to = "https://www.goto.com/meeting"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/around"
   to = "https://www.around.co"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/loom"
   to = "https://www.loom.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/riverside"
   to = "https://riverside.fm"
-  status = 301
+  status = 302
   force = true
 
 # Cloud Storage - Direct Links
 [[redirects]]
   from = "/go/dropbox"
   to = "https://www.dropbox.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/google-drive"
   to = "https://drive.google.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/onedrive"
   to = "https://www.microsoft.com/microsoft-365/onedrive"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/icloud"
   to = "https://www.icloud.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/box"
   to = "https://www.box.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/mega"
   to = "https://mega.io"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/pcloud"
   to = "https://www.pcloud.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/sync"
   to = "https://www.sync.com"
-  status = 301
+  status = 302
   force = true
 
 # Note-Taking Apps - Direct Links
 [[redirects]]
   from = "/go/bear"
   to = "https://bear.app"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/craft"
   to = "https://www.craft.do"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/logseq"
   to = "https://logseq.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/mem"
   to = "https://get.mem.ai"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/onenote"
   to = "https://www.microsoft.com/microsoft-365/onenote"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/roam"
   to = "https://roamresearch.com"
-  status = 301
+  status = 302
   force = true
 
 # Business VPN - Direct Links
 [[redirects]]
   from = "/go/cisco-anyconnect"
   to = "https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/cloudflare-access"
   to = "https://www.cloudflare.com/products/zero-trust/access"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/goodaccess"
   to = "https://www.goodaccess.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/nordlayer"
   to = "https://nordlayer.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/openvpn"
   to = "https://openvpn.net"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/perimeter81"
   to = "https://www.perimeter81.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/twingate"
   to = "https://www.twingate.com"
-  status = 301
+  status = 302
   force = true
 
 # E-commerce Platforms - Direct Links
 [[redirects]]
   from = "/go/shopify"
   to = "https://www.shopify.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/bigcommerce"
   to = "https://www.bigcommerce.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/squarespace"
   to = "https://www.squarespace.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/wix"
   to = "https://www.wix.com"
-  status = 301
+  status = 302
   force = true
 
 # CRM Tools - Direct Links
 [[redirects]]
   from = "/go/hubspot"
   to = "https://www.hubspot.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/pipedrive"
   to = "https://www.pipedrive.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/zoho-crm"
   to = "https://www.zoho.com/crm"
-  status = 301
+  status = 302
   force = true
 
 # VPS Hosting - Direct Links
 [[redirects]]
   from = "/go/aws-lightsail"
   to = "https://aws.amazon.com/lightsail"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/kamatera"
   to = "https://www.kamatera.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/linode"
   to = "https://www.linode.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/vultr"
   to = "https://www.vultr.com"
-  status = 301
+  status = 302
   force = true
 
 # Web Hosting - Direct Links
 [[redirects]]
   from = "/go/a2hosting"
   to = "https://www.a2hosting.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/hostinger"
   to = "https://www.hostinger.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/nexcess"
   to = "https://www.nexcess.net"
-  status = 301
+  status = 302
   force = true
 
 # Other SaaS Tools - Direct Links
 [[redirects]]
   from = "/go/ipvanish"
   to = "https://www.ipvanish.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/anydo"
   to = "https://www.any.do"
-  status = 301
+  status = 302
   force = true
 
 # Financial & Travel Services - Direct Links
 [[redirects]]
   from = "/go/mercury"
   to = "https://mercury.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/revolut"
   to = "https://www.revolut.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/safetywing"
   to = "https://safetywing.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/wise"
   to = "https://wise.com"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/world-nomads"
   to = "https://www.worldnomads.com"
-  status = 301
+  status = 302
   force = true
 
 # Podcast Equipment - Amazon
 [[redirects]]
   from = "/go/amazon/samson-q2u"
   to = "https://amazon.com/dp/B001R747SG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/movo-podpak-2"
   to = "https://amazon.com/dp/B08MQ82MTL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/audio-technica-at2020"
   to = "https://amazon.com/dp/B0006H92QK?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Soundproofing - Amazon
 [[redirects]]
   from = "/go/amazon/door-sweep-soundproof"
   to = "https://amazon.com/s?k=door+sweep+soundproof&tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/acoustic-panels"
   to = "https://amazon.com/s?k=acoustic+panels+home+office&tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/mass-loaded-vinyl"
   to = "https://amazon.com/s?k=mass+loaded+vinyl+soundproofing&tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Video Editing Laptops
 [[redirects]]
   from = "/go/amazon/macbook-pro-14-m4-pro"
   to = "https://amazon.com/dp/B0DLHY2BJ6?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/asus-proart-p16"
   to = "https://amazon.com/dp/B0DJH2L3WG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/razer-blade-16-4080"
   to = "https://amazon.com/dp/B0CPP9V5WN?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # External SSDs
 [[redirects]]
   from = "/go/amazon/samsung-t7-shield"
   to = "https://amazon.com/dp/B09VLHR4JC?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/sandisk-extreme-pro-ssd"
   to = "https://amazon.com/dp/B08GV4YYV7?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/wd-black-p40"
   to = "https://amazon.com/dp/B09ZRD38D8?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Monitor Arms - Task A019
 [[redirects]]
   from = "/go/amazon/ergotron-lx"
   to = "https://amazon.com/dp/B00689HXI4?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/vivo-premium"
   to = "https://amazon.com/dp/B0155LJATK?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/ergotron-hx"
   to = "https://amazon.com/dp/B01N5FTCJE?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/humanscale-m21"
   to = "https://amazon.com/dp/B07S54Z9JL?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/amazonbasics-monitor-arm"
   to = "https://amazon.com/dp/B00MIBN16O?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/north-bayou-f80"
   to = "https://amazon.com/dp/B01AI2YGK4?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Footrests - Task A020
 [[redirects]]
   from = "/go/amazon/ergofoam-footrest"
   to = "https://amazon.com/dp/B07PWT8X6K?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/strongtek-rocker"
   to = "https://amazon.com/dp/B07N1QCJGZ?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/huanuo-footrest"
   to = "https://amazon.com/dp/B07L3RVF7C?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/comfilife-footrest"
   to = "https://amazon.com/dp/B08DHMMBFF?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/casazenith-footrest"
   to = "https://amazon.com/dp/B0CPFTDT6P?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # Time Tracking Apps
 [[redirects]]
   from = "/go/timing"
   to = "https://timingapp.com/"
-  status = 301
+  status = 302
   force = true
 
 # Kneeling Chairs - Task A021
 [[redirects]]
   from = "/go/amazon/varier-variable-balans"
   to = "https://amazon.com/dp/B071ZM1CKG?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/sleekform-austin"
   to = "https://amazon.com/dp/B0773PMT29?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/dragonn-kneeling-chair"
   to = "https://amazon.com/dp/B073ZN7B52?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/flash-furniture-kneeling"
   to = "https://amazon.com/dp/B000TMK0O0?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 [[redirects]]
   from = "/go/amazon/varier-thatsit-balans"
   to = "https://amazon.com/dp/B07D19KFJS?tag=floatjet-20"
-  status = 301
+  status = 302
   force = true
 
 # ============================================================================

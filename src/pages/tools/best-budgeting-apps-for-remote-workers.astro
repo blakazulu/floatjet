@@ -6,7 +6,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-budgeting-apps-for-remote-workers", "tools")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 const headings = [
@@ -57,21 +57,21 @@ const relatedArticles = [
   {
     title: "Best Expense Tracking Apps",
     excerpt: "Track every expense and never miss a deduction.",
-    href: "/tools/best-expense-tracking-apps",
+    href: "/tools/best-expense-tracking-apps/",
     image: "/images/unsplash/photo-1553729459-efe14ef6055d-800w.webp",
     imageAlt: "Expense tracking and financial management apps",
   },
   {
     title: "Tax Tips for Remote Workers",
     excerpt: "Maximize deductions as a remote worker or digital nomad.",
-    href: "/blog/tax-tips-remote-workers",
+    href: "/blog/tax-tips-remote-workers/",
     image: "/images/unsplash/photo-1554224155-6726b3ff858f-800w.webp",
     imageAlt: "Calculator and financial documents for tax planning",
   },
   {
     title: "Wise vs PayPal vs Payoneer",
     excerpt: "Compare international payment platforms for freelancers.",
-    href: "/tools/wise-vs-paypal-vs-payoneer",
+    href: "/tools/wise-vs-paypal-vs-payoneer/",
     image: "/images/unsplash/photo-1580894894513-541e068a3e2b-800w.webp",
     imageAlt: "International money transfer and payment apps",
   },
@@ -81,7 +81,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -288,7 +287,7 @@ const relatedArticles = [
 
   <p>
     If you're doing serious multi-currency stuff, consider pairing your budgeting app with <a
-      href="/tools/wise-vs-paypal-vs-payoneer">Wise</a>. I use Wise for holding and converting
+      href="/tools/wise-vs-paypal-vs-payoneer/">Wise</a>. I use Wise for holding and converting
     currencies, YNAB for budgeting. Works well together.
   </p>
 

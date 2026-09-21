@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-cdn-services-for-faster-websites")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -151,21 +151,21 @@ const relatedArticles = [
   {
     title: "Website Speed Optimization Guide",
     excerpt: "Make your sites load faster with these optimization techniques.",
-    href: "/tools/website-speed-optimization-guide",
+    href: "/tools/website-speed-optimization-guide/",
     image: "/images/unsplash/photo-1586281380349-632531db7ed4-400w.webp",
     imageAlt: "Website performance dashboard",
   },
   {
     title: "Best Static Site Hosting for Developers",
     excerpt: "Netlify, Vercel, and Cloudflare Pages compared for static sites.",
-    href: "/tools/best-static-site-hosting-for-developers",
+    href: "/tools/best-static-site-hosting-for-developers/",
     image: "/images/unsplash/photo-1461749280684-dccba630e2f6-400w.webp",
     imageAlt: "Code on computer screen",
   },
   {
     title: "Best Web Hosting for Remote Businesses",
     excerpt: "Compare the best hosting options for your remote business.",
-    href: "/tools/best-web-hosting-remote-business",
+    href: "/tools/best-web-hosting-remote-business/",
     image: "/images/unsplash/photo-1517248135467-4c7edcad34c4-400w.webp",
     imageAlt: "Web hosting servers",
   },
@@ -175,7 +175,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

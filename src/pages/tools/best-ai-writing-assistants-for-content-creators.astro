@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-ai-writing-assistants-for-content-creators", "tools")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -144,7 +144,7 @@ const faqs = [
   {
     question: "Do I need SEO tools alongside AI writers?",
     answer:
-      "<p>Writesonic has SEO features built in. With Jasper or Copy.ai, you'll want additional tools like <a href='/tools/website-speed-optimization-guide'>Surfer SEO</a> or Frase for optimization. Budget accordingly when comparing total costs.</p>",
+      "<p>Writesonic has SEO features built in. With Jasper or Copy.ai, you'll want additional tools like <a href='/tools/website-speed-optimization-guide/'>Surfer SEO</a> or Frase for optimization. Budget accordingly when comparing total costs.</p>",
   },
   {
     question: "How accurate are AI writing tools?",
@@ -169,7 +169,7 @@ const relatedArticles = [
     title: "Best Email Marketing Tools for Creators",
     excerpt:
       "ConvertKit, Beehiiv, Mailchimp compared with pricing, features, and honest reviews for content creators.",
-    href: "/tools/best-email-marketing-tools",
+    href: "/tools/best-email-marketing-tools/",
     image: "/images/unsplash/photo-1432888498266-38ffec3eaf0a-800w.webp",
     imageAlt: "Email marketing automation tools",
   },
@@ -177,7 +177,7 @@ const relatedArticles = [
     title: "Best Project Management Software",
     excerpt:
       "Compare Notion, ClickUp, Asana, and more for managing your content creation workflow.",
-    href: "/tools/best-project-management-software",
+    href: "/tools/best-project-management-software/",
     image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-800w.webp",
     imageAlt: "Project management dashboard",
   },
@@ -185,7 +185,7 @@ const relatedArticles = [
     title: "Is Notion Worth It?",
     excerpt:
       "Honest review of Notion for content creators. When it makes sense and when to look elsewhere.",
-    href: "/tools/is-notion-worth-it",
+    href: "/tools/is-notion-worth-it/",
     image: "/images/unsplash/photo-1517694712202-14dd9538aa97-800w.webp",
     imageAlt: "Notion productivity app",
   },
@@ -195,7 +195,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

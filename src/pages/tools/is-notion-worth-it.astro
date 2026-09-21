@@ -7,7 +7,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("is-notion-worth-it", "tools")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -87,21 +87,21 @@ const faqs = [
 const relatedArticles = [
   {
     title: "Notion vs ClickUp vs Monday",
-    href: "/tools/notion-vs-clickup-vs-monday",
+    href: "/tools/notion-vs-clickup-vs-monday/",
     excerpt: "Ultimate comparison of the top 3 productivity platforms for remote teams.",
     image: "/images/unsplash/photo-1611224923853-80b023f02d71-800w.webp",
     imageAlt: "Productivity apps comparison on laptop screen",
   },
   {
     title: "Best Project Management Software",
-    href: "/tools/best-project-management-software",
+    href: "/tools/best-project-management-software/",
     excerpt: "Compare top project management tools for remote teams and freelancers.",
     image: "/images/unsplash/photo-1507925921958-8a62f3d1a50d-800w.webp",
     imageAlt: "Project management dashboard on computer",
   },
   {
     title: "Best Note-Taking Apps",
-    href: "/tools/best-note-taking-apps",
+    href: "/tools/best-note-taking-apps/",
     excerpt: "Find the perfect note-taking app for your remote work workflow.",
     image: "/images/unsplash/photo-1517842645767-c639042777db-800w.webp",
     imageAlt: "Digital notes and notebooks",
@@ -112,7 +112,6 @@ const relatedArticles = [
 <ArticleLayout
   title={title}
   description={description}
-  authorSlug={authorSlug}
   pubDate={pubDate}
   readingTime={readingTime}
   image={image}
@@ -132,7 +131,7 @@ const relatedArticles = [
     <li>Need offline-first notes (Obsidian or Apple Notes instead)</li>
     <li>Want quick note capture (Apple Notes or Google Keep)</li>
     <li>
-      Need <a href="/tools/best-project-management-software"
+      Need <a href="/tools/best-project-management-software/"
         >serious project management</a
       > (ClickUp or Monday.com)
     </li>
@@ -152,7 +151,7 @@ const relatedArticles = [
   <h3>All-in-One Thing</h3>
   <p>
     Replaces five to ten apps. Notes. Wikis. Tasks. Databases. Calendars. CRMs.
-    More. Got <a href="/tools/best-productivity-apps"
+    More. Got <a href="/tools/best-productivity-apps/"
       >Evernote, Trello, Airtable, Google Docs</a
     > spread everywhere? Do everything in Notion instead. Consolidates your workflow.
   </p>
@@ -218,7 +217,7 @@ const relatedArticles = [
   <p>
     Docs tool first, project management second. Lacks native time tracking,
     dependencies, Gantt charts, resource management. <a
-      href="/tools/notion-vs-clickup-vs-monday"
+      href="/tools/notion-vs-clickup-vs-monday/"
       >Dedicated PM tools like ClickUp</a
     > more powerful for complex projects.
   </p>
@@ -285,7 +284,7 @@ const relatedArticles = [
   <p>
     Content calendars, idea databases, research libraries, writing drafts.
     Bloggers use it. YouTubers use it. <a
-      href="/tools/best-email-marketing-tools">Newsletter writers</a
+      href="/tools/best-email-marketing-tools/">Newsletter writers</a
     > use it. Creative workflows thrive here.
   </p>
 
@@ -327,7 +326,7 @@ const relatedArticles = [
   <h3>Teams Needing Advanced PM</h3>
   <p>
     Run Agile sprints, need time tracking, dependencies, Gantt charts, resource
-    management? <a href="/tools/notion-vs-clickup-vs-monday"
+    management? <a href="/tools/notion-vs-clickup-vs-monday/"
       >Use ClickUp or Monday.com</a
     >. Notion works for basic PM but lacks power features.
   </p>
@@ -428,7 +427,7 @@ const relatedArticles = [
       Start with free plan for two weeks. Build a simple workspace. Meeting
       notes, task list, small database. If it clicks, you'll know. Feels slow or
       confusing? <a
-        href="/tools/best-note-taking-apps"
+        href="/tools/best-note-taking-apps/"
         class="text-sky-light hover:text-white">Obsidian works for notes</a
       >. ClickUp for projects.
     </p>

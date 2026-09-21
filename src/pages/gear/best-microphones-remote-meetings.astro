@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-microphones-remote-meetings", "gear")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -154,21 +154,21 @@ const relatedArticles = [
   {
     title: "Best Noise-Canceling Headphones",
     excerpt: "Complete your audio setup with headphones that block distractions.",
-    href: "/gear/best-noise-canceling-headphones",
+    href: "/gear/best-noise-canceling-headphones/",
     image: "/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp",
     imageAlt: "Noise-canceling headphones on desk",
   },
   {
     title: "Best Webcams for Video Calls",
     excerpt: "Pair great audio with professional video quality.",
-    href: "/gear/best-webcams-video-calls",
+    href: "/gear/best-webcams-video-calls/",
     image: "/images/unsplash/photo-1611532736597-de2d4265fba3-800w.webp",
     imageAlt: "Professional webcam for video calls",
   },
   {
     title: "How to Reduce Background Noise on Calls",
     excerpt: "Software and hardware tips for cleaner audio.",
-    href: "/gear/reduce-background-noise-calls",
+    href: "/gear/reduce-background-noise-calls/",
     image: "/images/unsplash/photo-1587560699334-cc4ff634909a-800w.webp",
     imageAlt: "Person on video call with noise-canceling setup",
   },
@@ -178,18 +178,20 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
     imageAlt={imageAlt}
+    category="Audio"
+    categorySlug="gear"
+    subcategorySlug="audio"
     headings={headings}
 >
   <!-- Introduction -->
   <section id="introduction">
     <p class="text-xl text-white/90 mb-6">
       <strong>Last year a client asked me to repeat myself four times on a single <a
-          href="/tools/best-video-conferencing-tools">Zoom call</a>.</strong> Four! I wanted to
+          href="/tools/best-video-conferencing-tools/">Zoom call</a>.</strong> Four! I wanted to
       melt into my chair. So yeah, that's when I finally dealt with my terrible audio.
     </p>
     <p class="text-white/80 mb-6">
@@ -231,7 +233,7 @@ const relatedArticles = [
     </p>
 
     <p class="text-white/80 mb-8">
-      And if you make recordings.<a href="/tools/best-video-conferencing-tools">Loom walkthroughs</a>, training stuff,
+      And if you make recordings.<a href="/tools/best-video-conferencing-tools/">Loom walkthroughs</a>, training stuff,
       maybe a podcast someday. Decent audio means you can
       actually use the raw file. No spending three hours in Audacity fixing things.
     </p>
@@ -318,7 +320,7 @@ const relatedArticles = [
           recording instruments or something. I stick to cardioid 99% of the time but nice knowing the options exist.
         </p>
         <p class="text-white/80 mb-4">
-          <a href="/gear/best-noise-canceling-headphones">Headphone</a> jack built right into the bottom. Monitor
+          <a href="/gear/best-noise-canceling-headphones/">Headphone</a> jack built right into the bottom. Monitor
           yourself with zero delay so you know if you're too far
           away or if something sounds off.
         </p>
@@ -434,12 +436,12 @@ const relatedArticles = [
     </p>
 
     <p class="text-white/80 mb-8">
-      For normal <a href="/tools/best-video-conferencing-tools">video calls</a> and occasional recordings? USB all day.
+      For normal <a href="/tools/best-video-conferencing-tools/">video calls</a> and occasional recordings? USB all day.
       Keep it simple.
     </p>
 
     <p class="text-white/80">
-      For more details, see our guide: <a href="/gear/usb-vs-xlr-microphones"
+      For more details, see our guide: <a href="/gear/usb-vs-xlr-microphones/"
                                           class="text-jet-stream hover:text-sky-light">USB vs XLR Microphones: Which is
       Better for Remote Work?</a>
     </p>

@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-dns-services-for-privacy-and-speed")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -151,7 +151,7 @@ const relatedArticles = [
     title: "Best VPNs for Digital Nomads & Remote Workers",
     excerpt:
       "Protect your data on public WiFi with these top-rated VPNs tested across 15 countries.",
-    href: "/tools/best-vpn-digital-nomads",
+    href: "/tools/best-vpn-digital-nomads/",
     image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
     imageAlt: "Digital security concept with encrypted data visualization",
   },
@@ -159,7 +159,7 @@ const relatedArticles = [
     title: "Best Browser Extensions for Privacy",
     excerpt:
       "Got hacked on hostel WiFi. Three years later, this is what runs on every machine I own.",
-    href: "/tools/best-browser-extensions-for-privacy",
+    href: "/tools/best-browser-extensions-for-privacy/",
     image: "/images/unsplash/photo-1618060932014-4deda4932554-800w.webp",
     imageAlt: "Laptop with privacy lock screen",
   },
@@ -167,7 +167,7 @@ const relatedArticles = [
     title: "Best Encrypted Messaging Apps for Remote Teams",
     excerpt:
       "Signal vs Telegram vs Element vs Wire. Which encrypted messenger actually protects remote team conversations?",
-    href: "/tools/best-encrypted-messaging-apps-for-remote-teams",
+    href: "/tools/best-encrypted-messaging-apps-for-remote-teams/",
     image: "/images/unsplash/photo-1563986768609-322da13575f3-800w.webp",
     imageAlt: "Encrypted messaging on smartphone",
   },
@@ -177,7 +177,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

@@ -7,7 +7,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("how-to-setup-vpn-all-devices", "tools")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -69,21 +69,21 @@ const relatedArticles = [
   {
     title: "Best VPNs for Digital Nomads",
     excerpt: "Our tested recommendations for the best VPN services for remote workers.",
-    href: "/tools/best-vpn-digital-nomads",
+    href: "/tools/best-vpn-digital-nomads/",
     image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-800w.webp",
     imageAlt: "Digital security concept",
   },
   {
     title: "Best VPN for Streaming While Traveling",
     excerpt: "Unblock Netflix, Disney+, and more with these streaming-optimized VPNs.",
-    href: "/tools/best-vpn-streaming-travel",
+    href: "/tools/best-vpn-streaming-travel/",
     image: "/images/unsplash/photo-1522199755839-a2bacb67c546-800w.webp",
     imageAlt: "Person streaming content on laptop",
   },
   {
     title: "VPN & Public WiFi Security Guide",
     excerpt: "Essential security practices for working on public networks.",
-    href: "/blog/vpn-public-wifi-guide",
+    href: "/blog/vpn-public-wifi-guide/",
     image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-800w.webp",
     imageAlt: "Digital security concept",
   },
@@ -93,7 +93,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -122,7 +121,7 @@ const relatedArticles = [
   </p>
   <p>
     <strong>Quick note:</strong> You need a VPN subscription first. If you haven't picked one, check our <a
-      href="/tools/best-vpn-digital-nomads">VPN comparison guide</a>. I use <a
+      href="/tools/best-vpn-digital-nomads/">VPN comparison guide</a>. I use <a
       href="/go/nordvpn" target="_blank">NordVPN</a>. Works everywhere, doesn't slow me down.
   </p>
 
@@ -151,7 +150,7 @@ const relatedArticles = [
   </p>
   <ul>
     <li><strong>Kill switch</strong> . cuts internet if VPN drops. Non-negotiable.</li>
-    <li><strong>Auto-connect</strong> . starts VPN when Windows boots or you join <a href="/blog/vpn-public-wifi-guide">WiFi</a>
+    <li><strong>Auto-connect</strong> . starts VPN when Windows boots or you join <a href="/blog/vpn-public-wifi-guide/">WiFi</a>
     </li>
     <li><strong>Protocol</strong> . set to WireGuard (or NordLynx/Lightway depending on your VPN). Fastest option.</li>
     <li><strong>Start on login</strong> . so you don't forget</li>
@@ -255,7 +254,7 @@ const relatedArticles = [
 
   <h3>Android Bonus</h3>
   <p>
-    Some VPNs (<a href="/tools/free-vpn-vs-paid-vpn">Surfshark</a>) can spoof your GPS to match VPN location. Useful for
+    Some VPNs (<a href="/tools/free-vpn-vs-paid-vpn/">Surfshark</a>) can spoof your GPS to match VPN location. Useful for
     apps that check location. Add widget to
     home screen for one-tap connection.
   </p>
@@ -339,7 +338,7 @@ nordvpn set autoconnect on</code></pre>
     <li>Enable</li>
   </ol>
   <p>
-    Make sure your <a href="/guides/secure-home-wifi-network">router security settings</a> are properly configured
+    Make sure your <a href="/guides/secure-home-wifi-network/">router security settings</a> are properly configured
     before adding VPN.
   </p>
   <p>
@@ -375,7 +374,7 @@ nordvpn set autoconnect on</code></pre>
   <!-- Smart TV & Streaming -->
   <h2 id="smart-tv-setup">Smart TVs and Streaming</h2>
   <p>
-    <a href="/tools/best-vpn-streaming-travel">Streaming devices</a> have weird VPN support. Here's the breakdown:
+    <a href="/tools/best-vpn-streaming-travel/">Streaming devices</a> have weird VPN support. Here's the breakdown:
   </p>
 
   <h3>Fire TV/Fire Stick</h3>
@@ -454,7 +453,7 @@ nordvpn set autoconnect on</code></pre>
     I use NordVPN. Works on everything, setup is painless. 30-day money-back if it doesn't work for you.
   </p>
   <p>
-    Just pick something and do it. Next time you're on <a href="/guides/do-i-need-vpn-cafes">airport WiFi
+    Just pick something and do it. Next time you're on <a href="/guides/do-i-need-vpn-cafes/">airport WiFi
     unprotected</a>, you'll think about this.
   </p>
 

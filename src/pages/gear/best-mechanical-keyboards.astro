@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-mechanical-keyboards", "gear")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -201,21 +201,21 @@ const relatedArticles = [
   {
     title: "Best Standing Desks for Home Office",
     excerpt: "Complete your ergonomic setup with a height-adjustable desk.",
-    href: "/gear/best-standing-desks",
+    href: "/gear/best-standing-desks/",
     image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
     imageAlt: "Modern standing desk setup",
   },
   {
     title: "Best Noise-Canceling Headphones",
     excerpt: "Block distractions and stay focused with the best audio gear.",
-    href: "/gear/best-noise-canceling-headphones",
+    href: "/gear/best-noise-canceling-headphones/",
     image: "/images/unsplash/photo-1505740420928-5e560c06d30e-800w.webp",
     imageAlt: "Professional headphones for remote work",
   },
   {
     title: "Ultimate Home Office Setup Guide",
     excerpt: "Build the perfect workspace for productivity and comfort.",
-    href: "/blog/ultimate-home-office-setup",
+    href: "/blog/ultimate-home-office-setup/",
     image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
     imageAlt: "Complete home office setup",
   },
@@ -225,7 +225,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

@@ -10,10 +10,9 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("macbook-vs-windows-remote-work", "gear")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
-const updatedDate = new Date("2024-11-24");
 const category = "Computers";
 const categorySlug = "gear";
 const subcategorySlug = "computers";
@@ -133,21 +132,21 @@ const relatedArticles = [
   {
     title: "Best Laptops for Remote Work",
     excerpt: "Our complete guide to the best laptops across all platforms.",
-    href: "/gear/best-laptops-remote-work",
+    href: "/gear/best-laptops-remote-work/",
     image: "/images/unsplash/photo-1496181133206-80ce9b88a853-800w.webp",
     imageAlt: "Laptop on desk",
   },
   {
     title: "Best Budget Laptops Under $800",
     excerpt: "Great Windows laptops for remote work on a budget.",
-    href: "/gear/best-budget-laptops-remote-work",
+    href: "/gear/best-budget-laptops-remote-work/",
     image: "/images/unsplash/photo-1525547719571-a2d4ac8945e2-800w.webp",
     imageAlt: "Budget laptop",
   },
   {
     title: "How Much RAM Do You Need?",
     excerpt: "Find the right amount of memory for your workflow.",
-    href: "/gear/how-much-ram-remote-work",
+    href: "/gear/how-much-ram-remote-work/",
     image: "/images/unsplash/photo-1518770660439-4636190af475-800w.webp",
     imageAlt: "Computer RAM",
   },
@@ -158,8 +157,6 @@ const relatedArticles = [
     title={title}
     description={description}
     pubDate={pubDate}
-    updatedDate={updatedDate}
-    authorSlug={authorSlug}
     category={category}
     categorySlug={categorySlug}
     subcategorySlug={subcategorySlug}

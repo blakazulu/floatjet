@@ -6,7 +6,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-time-tracking-software-for-billing-clients")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 const headings = [
@@ -57,21 +57,21 @@ const relatedArticles = [
   {
     title: "Best Invoicing Tools for Remote Professionals",
     excerpt: "Send professional invoices and get paid faster.",
-    href: "/tools/best-invoicing-tools",
+    href: "/tools/best-invoicing-tools/",
     image: "/images/unsplash/photo-1554774853-719586f82d77-800w.webp",
     imageAlt: "Invoicing and billing workspace",
   },
   {
     title: "Best Accounting Software for Freelancers",
     excerpt: "Complete guide to bookkeeping tools for the self-employed.",
-    href: "/tools/best-accounting-software-freelancers",
+    href: "/tools/best-accounting-software-freelancers/",
     image: "/images/unsplash/photo-1450101499163-c8848c66ca85-800w.webp",
     imageAlt: "Accounting software workspace",
   },
   {
     title: "How to Accept International Payments",
     excerpt: "Get paid from clients anywhere in the world.",
-    href: "/tools/accept-international-payments-freelancer",
+    href: "/tools/accept-international-payments-freelancer/",
     image: "/images/unsplash/photo-1526304640581-d334cdbbf45e-800w.webp",
     imageAlt: "International currency and payments",
   },
@@ -81,7 +81,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -162,7 +161,7 @@ const relatedArticles = [
   </p>
 
   <p>
-    <strong>Integrations.</strong> Does it connect with your <a href="/tools/best-invoicing-tools">invoicing
+    <strong>Integrations.</strong> Does it connect with your <a href="/tools/best-invoicing-tools/">invoicing
     software</a>? Your project management tool? Your calendar? Integrations save manual data entry, which means fewer
     mistakes.
   </p>
@@ -232,7 +231,7 @@ const relatedArticles = [
 
   <p>
     Not so good: The design feels kind of old compared to Toggl. And hey, if you already have separate invoicing
-    software like <a href="/tools/best-invoicing-tools">FreshBooks</a>, you're basically paying for a feature you'll
+    software like <a href="/tools/best-invoicing-tools/">FreshBooks</a>, you're basically paying for a feature you'll
     never touch.
   </p>
 

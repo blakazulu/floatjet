@@ -24,15 +24,19 @@
 
 ---
 
-## Step 1: Choose the Writer
+## Step 1: Choose the Writing Voice
 
-Based on the article topic, select the appropriate writer from `docs/writing/writers-summery.md`:
+> **Important:** The writers below are internal style personas, not real people. They are never shown on the site.
+> Every article is published under the **FloatJet Editorial Team** byline (set automatically in `ArticleLayout.astro`).
+> Do not add author names, bios, credentials, or `authorSlug` to articles.
 
-| Writer                   | Slug               | Categories                                    |
-| ------------------------ | ------------------ | --------------------------------------------- |
-| **Marcus Chen**    | `marcus-chen`    | SaaS, Hosting, Computers, Audio, Accessories  |
-| **Sarah Mitchell** | `sarah-mitchell` | Communication, Productivity, Setup, Furniture |
-| **Daniel Brooks**  | `daniel-brooks`  | Travel, Finance, Security, VPN                |
+Based on the article topic, select the writing voice from `docs/writing/writers-summery.md`:
+
+| Voice              | Categories                                    |
+| ------------------ | --------------------------------------------- |
+| **Marcus Chen**    | SaaS, Hosting, Computers, Audio, Accessories  |
+| **Sarah Mitchell** | Communication, Productivity, Setup, Furniture |
+| **Daniel Brooks**  | Travel, Finance, Security, VPN                |
 
 ### Writer Assignment Matrix
 
@@ -279,7 +283,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("your-article-slug", "section")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Page-specific content goes here...
@@ -293,7 +297,6 @@ const pubDate = new Date(article.pubDate);
   title={title}
   description={description}
   pubDate={pubDate}
-  authorSlug={authorSlug}
   readingTime={readingTime}
   image={image}
   imageAlt={imageAlt}
@@ -462,9 +465,9 @@ grep "/go/amazon/" netlify.toml
 
 ### GEO (Generative Engine Optimization)
 
-- [ ] Author attribution with expertise signals
-- [ ] First-person experience statements
-- [ ] Specific data points and test results
+- [ ] Byline is the FloatJet Editorial Team (set automatically by ArticleLayout - never invent named authors or credentials)
+- [ ] No first-person testing or experience claims unless they actually happened - describe the real research method instead
+- [ ] Specific data points with linked primary sources
 - [ ] Clear recommendations with reasoning
 - [ ] Natural, conversational language
 
@@ -491,7 +494,6 @@ Add the new article to `src/data/articles.ts`:
   section: "tools",  // tools | gear | guides | blog
   title: "Your Article Title (2025)",
   description: "Compelling meta description under 160 characters.",
-  authorSlug: "daniel-brooks",  // marcus-chen | sarah-mitchell | daniel-brooks
   pubDate: "2025-01-15",
   readingTime: 12,  // estimated minutes
   image: "/images/unsplash/photo-YOUR-ID-1200w.webp",
@@ -529,7 +531,6 @@ This updates `docs/article-summey.md` with the new article.
 Before committing:
 
 - [ ] Article passes AI detection (<4%)
-- [ ] Writer style matches assigned author
 - [ ] Hero image downloaded and optimized (unique, not used elsewhere)
 - [ ] All CTA buttons use `AffiliateButton` component (no inline `<a>` tags)
 - [ ] All affiliate links use `/go/` redirect paths (no direct external URLs)

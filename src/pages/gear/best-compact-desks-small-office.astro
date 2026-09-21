@@ -10,10 +10,9 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-compact-desks-small-office", "gear")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
-const updatedDate = new Date("2024-11-24");
 const category = "Furniture";
 const categorySlug = "gear";
 const subcategorySlug = "furniture";
@@ -200,21 +199,21 @@ const relatedArticles = [
   {
     title: "Best Standing Desks",
     excerpt: "Full-size standing desks for those with more space.",
-    href: "/gear/best-standing-desks",
+    href: "/gear/best-standing-desks/",
     image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-800w.webp",
     imageAlt: "Modern standing desk in home office",
   },
   {
     title: "Best Ergonomic Chairs",
     excerpt: "Pair your compact desk with a comfortable ergonomic chair.",
-    href: "/gear/best-ergonomic-chairs",
+    href: "/gear/best-ergonomic-chairs/",
     image: "/images/unsplash/photo-1580480055273-228ff5388ef8-800w.webp",
     imageAlt: "Ergonomic office chair",
   },
   {
     title: "Ultimate Home Office Setup",
     excerpt: "Complete guide to building a productive home office.",
-    href: "/blog/ultimate-home-office-setup",
+    href: "/blog/ultimate-home-office-setup/",
     image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-800w.webp",
     imageAlt: "Complete home office setup",
   },
@@ -225,8 +224,6 @@ const relatedArticles = [
     title={title}
     description={description}
     pubDate={pubDate}
-    updatedDate={updatedDate}
-    authorSlug={authorSlug}
     category={category}
     categorySlug={categorySlug}
     subcategorySlug={subcategorySlug}

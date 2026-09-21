@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CollectionSchema from "@components/seo/CollectionSchema.astro";
 import { Image } from "astro:assets";
 import { toolsArticles, getArticlePath } from "../data/articles";
 
@@ -15,11 +16,11 @@ const description =
 
 // Category filters with gradients
 const categories = [
-  { name: "All", href: "/tools", gradient: "from-jet-stream to-sky-light" },
-  { name: "VPN & Security", href: "/tools/vpn", gradient: "from-violet-500 to-purple-600" },
-  { name: "SaaS", href: "/tools/saas", gradient: "from-blue-500 to-cyan-500" },
-  { name: "Hosting", href: "/tools/hosting", gradient: "from-emerald-500 to-teal-500" },
-  { name: "Finance", href: "/tools/finance", gradient: "from-amber-500 to-orange-500" },
+  { name: "All", href: "/tools/", gradient: "from-jet-stream to-sky-light" },
+  { name: "VPN & Security", href: "/tools/vpn/", gradient: "from-violet-500 to-purple-600" },
+  { name: "SaaS", href: "/tools/saas/", gradient: "from-blue-500 to-cyan-500" },
+  { name: "Hosting", href: "/tools/hosting/", gradient: "from-emerald-500 to-teal-500" },
+  { name: "Finance", href: "/tools/finance/", gradient: "from-amber-500 to-orange-500" },
 ];
 
 // Transform articles from data file into bento grid format
@@ -106,7 +107,7 @@ const shuffled = [...remaining].sort(() => Math.random() - 0.5);
       </a>
 
       <!-- CATEGORY MINI CELLS: Glassmorphic with accent line + image background -->
-      <a href="/tools/vpn" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+      <a href="/tools/vpn/" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
         <Image src={categoryVpn} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
         <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
         <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-violet-400 to-violet-600 rounded-l-xl"></div>
@@ -121,7 +122,7 @@ const shuffled = [...remaining].sort(() => Math.random() - 0.5);
         </div>
       </a>
 
-      <a href="/tools/saas" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+      <a href="/tools/saas/" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
         <Image src={categorySaas} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
         <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
         <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-cyan-500 rounded-l-xl"></div>
@@ -136,7 +137,7 @@ const shuffled = [...remaining].sort(() => Math.random() - 0.5);
         </div>
       </a>
 
-      <a href="/tools/hosting" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+      <a href="/tools/hosting/" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
         <Image src={categoryHosting} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
         <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
         <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 to-teal-500 rounded-l-xl"></div>
@@ -151,7 +152,7 @@ const shuffled = [...remaining].sort(() => Math.random() - 0.5);
         </div>
       </a>
 
-      <a href="/tools/finance" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
+      <a href="/tools/finance/" class="group col-span-1 row-span-1 relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]">
         <Image src={categoryFinance} alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity" />
         <div class="absolute inset-0 bg-gradient-to-br from-black/70 to-black/50"></div>
         <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-400 to-orange-500 rounded-l-xl"></div>
@@ -272,7 +273,7 @@ const shuffled = [...remaining].sort(() => Math.random() - 0.5);
         <span class="text-white/60 text-xs md:text-sm">Updated weekly</span>
       </div>
 
-      <a href="/contact" class="group col-span-2 md:col-span-2 lg:col-span-3 row-span-1 bg-black/40 border border-jet-stream/30 border-b-jet-stream/60 rounded-xl p-4 md:p-5 flex flex-col justify-center items-center text-center transition-all duration-300 hover:border-jet-stream/50 hover:bg-black/50">
+      <a href="/contact/" class="group col-span-2 md:col-span-2 lg:col-span-3 row-span-1 bg-black/40 border border-jet-stream/30 border-b-jet-stream/60 rounded-xl p-4 md:p-5 flex flex-col justify-center items-center text-center transition-all duration-300 hover:border-jet-stream/50 hover:bg-black/50">
         <svg class="w-7 h-7 md:w-8 md:h-8 text-sky-light mb-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
         </svg>
@@ -286,4 +287,10 @@ const shuffled = [...remaining].sort(() => Math.random() - 0.5);
     </div>
 
   </div>
+  <CollectionSchema
+      name={title}
+      description={description}
+      items={allTools}
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools", href: "/tools/" }]}
+  />
 </BaseLayout>

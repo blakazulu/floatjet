@@ -6,7 +6,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("secure-home-wifi-network", "guides")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -71,21 +71,21 @@ const relatedArticles = [
   {
     title: "Best VPN for Digital Nomads",
     excerpt: "Top VPN services to protect your connection anywhere.",
-    href: "/tools/best-vpn-digital-nomads",
+    href: "/tools/best-vpn-digital-nomads/",
     image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
     imageAlt: "VPN security illustration",
   },
   {
     title: "Two-Factor Authentication Guide",
     excerpt: "Set up 2FA on all your accounts for better security.",
-    href: "/guides/two-factor-authentication-guide",
+    href: "/guides/two-factor-authentication-guide/",
     image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
     imageAlt: "Two-factor authentication",
   },
   {
     title: "Best Password Manager for Remote Work",
     excerpt: "Secure all your passwords with the right tool.",
-    href: "/tools/best-password-manager-remote-work",
+    href: "/tools/best-password-manager-remote-work/",
     image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
     imageAlt: "Password manager interface",
   },
@@ -95,7 +95,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}
@@ -152,7 +151,7 @@ const relatedArticles = [
   <ul>
     <li>Type 192.168.1.1 or 192.168.0.1 in your browser.</li>
     <li>Poke around for Administration or System settings.</li>
-    <li>New password. Make it good. Store it in your <a href="/tools/best-password-manager-remote-work">password
+    <li>New password. Make it good. Store it in your <a href="/tools/best-password-manager-remote-work/">password
       manager</a>.
     </li>
   </ul>
@@ -168,7 +167,7 @@ const relatedArticles = [
   </ul>
   <p>
     Something like <code>purple-elephant-runs-slowly-99!</code> works. Long, weird, memorable. Use a <a
-      href="/guides/do-i-really-need-password-manager">password manager</a> to generate and store these.
+      href="/guides/do-i-really-need-password-manager/">password manager</a> to generate and store these.
   </p>
 
   <h3>Also Change Your Network Name</h3>
@@ -300,7 +299,7 @@ const relatedArticles = [
   <p>
     Lets you manage your router from anywhere in the world. Most people don't need this. Creates an attack point though.
     Turn off Remote Management and Remote Administration. Same with Cloud Management unless you specifically want it.
-    Need remote access? <a href="/tools/best-vpn-digital-nomads">VPN</a> into your home network instead. Much safer.
+    Need remote access? <a href="/tools/best-vpn-digital-nomads/">VPN</a> into your home network instead. Much safer.
   </p>
 
   <h3>UPnP</h3>
@@ -337,7 +336,7 @@ const relatedArticles = [
     settings, find VPN, then VPN Client. Upload the config. Enable it. Test it.
   </p>
   <p>
-    <a href="/tools/best-vpn-digital-nomads">NordVPN, ExpressVPN, Surfshark</a>, PIA all have decent router support.
+    <a href="/tools/best-vpn-digital-nomads/">NordVPN, ExpressVPN, Surfshark</a>, PIA all have decent router support.
   </p>
 
   <h2 id="segmentation">For the Paranoid: Network Segmentation</h2>

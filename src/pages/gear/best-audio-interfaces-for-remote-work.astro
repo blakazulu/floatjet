@@ -8,7 +8,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("best-audio-interfaces-for-remote-work")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -157,21 +157,21 @@ const relatedArticles = [
   {
     title: "Best Microphones for Remote Meetings",
     excerpt: "Tested 10 USB and XLR microphones for remote workers.",
-    href: "/gear/best-microphones-remote-meetings",
+    href: "/gear/best-microphones-remote-meetings/",
     image: "/images/unsplash/photo-1590602847861-f357a9332bbc-800w.webp",
     imageAlt: "Professional USB microphone for remote work",
   },
   {
     title: "Best Podcast Equipment Starter Kits",
     excerpt: "Microphone and interface bundles under $300 that actually sound good.",
-    href: "/gear/best-podcast-equipment-starter-kits",
+    href: "/gear/best-podcast-equipment-starter-kits/",
     image: "/images/unsplash/photo-1598488035139-bdbb2231ce04-800w.webp",
     imageAlt: "Podcast equipment starter kit with microphone",
   },
   {
     title: "Best Soundproofing Solutions for Home Office",
     excerpt: "Door seals, acoustic panels, and what actually works for noise.",
-    href: "/gear/best-soundproofing-solutions-home-office",
+    href: "/gear/best-soundproofing-solutions-home-office/",
     image: "/images/unsplash/photo-Y20JJ_ddy9M-800w.webp",
     imageAlt: "Condenser microphone in treated home office",
   },
@@ -181,7 +181,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

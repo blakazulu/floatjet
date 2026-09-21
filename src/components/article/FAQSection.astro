@@ -20,7 +20,12 @@ const faqSchema = {
     name: faq.question,
     acceptedAnswer: {
       "@type": "Answer",
-      text: faq.answer.replace(/<[^>]*>/g, ""), // Strip HTML for schema
+      // Strip HTML for schema - block-level tags become spaces so paragraphs don't run together
+      text: faq.answer
+        .replace(/<\/?(p|br|li|ul|ol|div|h[1-6])[^>]*>/gi, " ")
+        .replace(/<[^>]*>/g, "")
+        .replace(/\s+/g, " ")
+        .trim(),
     },
   })),
 };

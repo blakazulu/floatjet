@@ -6,7 +6,7 @@ import { getArticleBySlug } from "../../data/articles";
 
 // Get article metadata from central data file
 const article = getArticleBySlug("internet-speed-remote-work", "guides")!;
-const { title, description, authorSlug, readingTime, image, imageAlt } = article;
+const { title, description, readingTime, image, imageAlt } = article;
 const pubDate = new Date(article.pubDate);
 
 // Table of contents headings
@@ -72,21 +72,21 @@ const relatedArticles = [
     title: "Find Reliable WiFi Anywhere",
     excerpt:
       "Tips for finding fast, secure internet connections as a remote worker or digital nomad.",
-    href: "/blog/find-reliable-wifi-anywhere",
+    href: "/blog/find-reliable-wifi-anywhere/",
     image: "/images/unsplash/photo-1558494949-ef010cbdcc31-800w.webp",
     imageAlt: "WiFi signal and laptop",
   },
   {
     title: "Best VPN for Digital Nomads",
     excerpt: "Secure your connection and access content from anywhere.",
-    href: "/tools/best-vpn-digital-nomads",
+    href: "/tools/best-vpn-digital-nomads/",
     image: "/images/unsplash/photo-1614064641938-3bbee52942c7-800w.webp",
     imageAlt: "VPN security illustration",
   },
   {
     title: "VPN and Public WiFi Security Guide",
     excerpt: "Stay safe when working from coffee shops, airports, and coworking spaces.",
-    href: "/blog/vpn-public-wifi-guide",
+    href: "/blog/vpn-public-wifi-guide/",
     image: "/images/unsplash/photo-1510915228340-29c85a43dcfe-800w.webp",
     imageAlt: "Public WiFi security",
   },
@@ -96,7 +96,6 @@ const relatedArticles = [
 <ArticleLayout
     title={title}
     description={description}
-    authorSlug={authorSlug}
     pubDate={pubDate}
     readingTime={readingTime}
     image={image}

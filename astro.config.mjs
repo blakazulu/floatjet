@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 // import AstroFont from 'astro-font'; // TEMP DISABLED - incompatible with Astro 5.x
 import tailwindcss from "@tailwindcss/vite";
-import opengraphImages from "astro-opengraph-images";
+import ogImages from "./src/lib/og-images.ts";
 import {floatjetRenderer} from "./src/lib/og-image-renderer";
 import partytown from "@astrojs/partytown";
 import compress from "astro-compress";
@@ -71,9 +71,12 @@ export default defineConfig({
 
     // 3. Font optimization - Using @fontsource (imported in BaseLayout.astro)
 
-    // 4. Open Graph image generation - Auto-generates social preview images
-    opengraphImages({
+    // 4. Open Graph image generation - Auto-generates social preview images.
+    //    In-repo replacement for astro-opengraph-images' build hook, which rendered every page at once and ran the
+    //    Netlify build out of memory. Renders a few pages at a time (see src/lib/og-images.ts).
+    ogImages({
       options: {
+        concurrency: 4,
         fonts: [
           {
             name: "Bricolage Grotesque",
@@ -102,7 +105,14 @@ export default defineConfig({
     // 6. Compress - Gzip/Brotli compression for HTML, CSS, JS, images, SVG
     compress({
       CSS: true,
-      HTML: true,
+      // Keep attribute quotes and order: some link-preview scrapers (WhatsApp) misread
+      // unquoted/reordered <meta content=... property=og:image> tags
+      HTML: {
+        "html-minifier-terser": {
+          removeAttributeQuotes: false,
+          sortAttributes: false,
+        },
+      },
       JavaScript: true,
       Image: true,
       SVG: true,

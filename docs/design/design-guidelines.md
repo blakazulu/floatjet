@@ -143,3 +143,19 @@ We adhere to **WCAG 2.2 Level AA** - see [accessibility-guidelines.md](./accessi
 * A "Skip to content" link is the first focusable element on every page.
 * Decorative desk objects (plant, mug, stickers) are `aria-hidden`; every clickable object is a real `<a>` with a text
   label.
+
+## 7. App Icon
+
+The icon is a heavy hand-drawn "f" in ink on a sun rounded square, with an ink outline, a small ink offset shadow
+and a coral dot (option I2 from the design canvas). The "f" is drawn as a path rather than typed, because the static
+Bricolage file ships the small-optical-size glyph, which looks odd at icon size.
+
+| File                           | Size         | Use                                                        |
+|--------------------------------|--------------|------------------------------------------------------------|
+| `public/favicon.svg`           | vector       | Browser tab (sticker version with outline + shadow)        |
+| `public/favicon.ico`           | 16/32/48     | Fallback for older browsers and tools                      |
+| `public/apple-touch-icon.png`  | 180          | iOS home screen (full-bleed sun, OS rounds the corners)    |
+| `public/icon-192.png`, `icon-512.png` | 192 / 512 | Web manifest icons (full-bleed)                     |
+| `public/icon-maskable-512.png` | 512          | Android maskable icon (artwork inside the safe zone)       |
+| `public/logo.png`              | 512          | Schema.org Organization logo (sticker on paper)            |
+| `public/site.webmanifest`      | -            | Name, colours and icon list                                |

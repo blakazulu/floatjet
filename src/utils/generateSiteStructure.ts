@@ -63,6 +63,7 @@ const PAGE_METADATA: Record<string, { name: string; type: SiteNode["type"]; cate
   "/privacy": { name: "Privacy Policy", type: "page" },
   "/terms": { name: "Terms of Service", type: "page" },
   "/sitemap-visual": { name: "Site Map", type: "page" },
+  "/developers": { name: "Developers & API", type: "page" },
 };
 
 // Convert file path to route

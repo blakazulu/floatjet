@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { API_VERSION, SITE, buildArticleDetail, notFoundError } from "../lib/agent-api";
+
+const title = "FloatJet Content API and Developer Docs";
+const description =
+  "FloatJet Content API docs: free read-only JSON for every FloatJet review and guide. No API key. Endpoints, OpenAPI spec, examples, errors and Markdown.";
+const lastUpdated = "September 22, 2026";
+
+const endpoints = [
+  { method: "GET", path: "/api/articles.json", operationId: "listArticles", text: "Every article with section, category, dates, reading time and canonical URL, newest update first." },
+  { method: "GET", path: "/api/articles/{slug}.json", operationId: "getArticle", text: "One article by slug. Slugs come from listArticles." },
+  { method: "GET", path: "/api/sections.json", operationId: "listSections", text: "The four sections (tools, gear, guides, blog) with their categories and article counts." },
+  { method: "GET", path: "/api/index.json", operationId: "getApiIndex", text: "API name, version and links to every endpoint. Also served at /api/." },
+  { method: "GET", path: "/index.md", operationId: "getHomepageMarkdown", text: "The homepage as Markdown, including every article grouped by section." },
+  { method: "GET", path: "/llms.txt", operationId: "getLlmsTxt", text: "The llms.txt index of the site." },
+];
+
+const exampleArticle = JSON.stringify(buildArticleDetail("best-vpn-digital-nomads"), null, 2);
+const exampleError = JSON.stringify(notFoundError, null, 2);
+
+const webApiSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebAPI",
+  name: "FloatJet Content API",
+  description: "Read-only JSON API for FloatJet articles and sections. No authentication required.",
+  url: `${SITE}/developers/`,
+  documentation: `${SITE}/openapi.json`,
+  termsOfService: `${SITE}/terms/`,
+  provider: { "@id": `${SITE}/#organization` },
+};
+
+const code = "text-[0.9em] bg-sand text-ink px-1.5 py-0.5 rounded";
+const pre = "text-sm leading-relaxed bg-ink text-sand rounded-[20px] border-2 border-ink p-5 overflow-x-auto mb-5";
+const h2 = "font-display text-2xl md:text-3xl font-bold tracking-tight text-ink mt-10 mb-4 scroll-mt-28";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="container mx-auto px-4 pt-28 md:pt-36 pb-16 md:pb-20">
+    <article class="max-w-3xl mx-auto legal-page">
+      <p class="hand text-2xl text-teal-ink -rotate-1 mb-2">for developers and agents</p>
+      <h1 class="font-display font-black text-4xl md:text-6xl tracking-[-0.04em] leading-[0.95] text-ink text-balance mb-3">FloatJet Content API</h1>
+      <p class="text-ink-soft text-sm mb-8">Version {API_VERSION} - Last updated: {lastUpdated}</p>
+
+      <p class="text-ink/85 lead">
+        The FloatJet Content API gives you the whole FloatJet catalog of reviews, comparisons and guides as plain JSON.
+        It is read-only, free to use and needs no API key. The files are regenerated on every deploy, so they always
+        match the site.
+      </p>
+
+      <h2 id="quick-start" class={h2}>Quick start</h2>
+      <p class="text-ink/85">Fetch every article, then any single article by its slug:</p>
+      <pre class={pre} tabindex="0" aria-label="Example requests"><code>curl https://floatjet.com/api/articles.json
+curl https://floatjet.com/api/articles/best-vpn-digital-nomads.json</code></pre>
+      <p class="text-ink/85">
+        The full machine-readable description is the OpenAPI 3.1 spec at
+        <a href="/openapi.json">floatjet.com/openapi.json</a>. Every operation has a unique operationId, a description,
+        typed parameters and response schemas, so you can load it straight into an LLM function-calling tool or an
+        OpenAPI client.
+      </p>
+
+      <h2 id="authentication" class={h2}>Authentication and limits</h2>
+      <ul class="text-ink/85">
+        <li>No authentication. There are no API keys or accounts.</li>
+        <li>GET only. Responses are static files served from a CDN with <code class={code}>Access-Control-Allow-Origin: *</code>.</li>
+        <li>There is no hard rate limit. Please cache responses and avoid polling more than once an hour; content changes a few times a week at most.</li>
+        <li>Base URL: <code class={code}>{SITE}</code></li>
+      </ul>
+
+      <h2 id="endpoints" class={h2}>Endpoints</h2>
+      <ul class="text-ink/85 space-y-3">
+        {endpoints.map((endpoint) => (
+          <li>
+            <code class={code}>{endpoint.method} {endpoint.path}</code>
+            <span class="text-ink-soft text-sm"> ({endpoint.operationId})</span>
+            <br />
+            {endpoint.text}
+          </li>
+        ))}
+      </ul>
+      <p class="text-ink/85">
+        Try them: <a href="/api/articles.json">all articles</a>, <a href="/api/sections.json">sections</a>,
+        <a href="/api/articles/best-vpn-digital-nomads.json">one article</a>.
+      </p>
+
+      <h2 id="example-response" class={h2}>Example response</h2>
+      <p class="text-ink/85"><code class={code}>GET /api/articles/best-vpn-digital-nomads.json</code> returns:</p>
+      <pre class={pre} tabindex="0" aria-label="Example article response"><code>{exampleArticle}</code></pre>
+
+      <h2 id="errors" class={h2}>Errors</h2>
+      <p class="text-ink/85">
+        Any unknown path under <code class={code}>/api/</code> returns HTTP 404 with a JSON body instead of an HTML page.
+        Every error has a stable <code class={code}>code</code>, a human-readable <code class={code}>message</code> and a
+        <code class={code}>hint</code> telling you how to fix the request:
+      </p>
+      <pre class={pre} tabindex="0" aria-label="Example error response"><code>{exampleError}</code></pre>
+      <ul class="text-ink/85">
+        <li><code class={code}>not_found</code> (404): the path or slug does not exist. Check the slug against <a href="/api/articles.json">/api/articles.json</a>.</li>
+      </ul>
+
+      <h2 id="markdown" class={h2}>Markdown for agents</h2>
+      <p class="text-ink/85">
+        The FloatJet homepage supports Markdown content negotiation. Send <code class={code}>Accept: text/markdown</code>
+        and you get Markdown with <code class={code}>Content-Type: text/markdown</code>; browsers keep getting HTML. The
+        same Markdown is always available at <a href="/index.md">/index.md</a>.
+      </p>
+      <pre class={pre} tabindex="0" aria-label="Markdown request example"><code>curl -H "Accept: text/markdown" https://floatjet.com/</code></pre>
+      <p class="text-ink/85">
+        For a curated map of the site, read <a href="/llms.txt">/llms.txt</a>.
+      </p>
+
+      <h2 id="usage" class={h2}>Using FloatJet content</h2>
+      <p class="text-ink/85">
+        You are welcome to use the API to find, summarize and link to FloatJet articles. Please link back to the
+        article's canonical <code class={code}>url</code> when you quote or cite it. Article text itself stays under our
+        <a href="/terms/">terms of service</a>.
+      </p>
+
+      <h2 id="contact" class={h2}>Questions and changes</h2>
+      <p class="text-ink/85">
+        Found a bug or need a field we do not expose yet? Email
+        <a href="mailto:hello@floatjet.com">hello@floatjet.com</a> or use the <a href="/contact/">contact page</a>.
+        Breaking changes will bump the major version in the OpenAPI spec.
+      </p>
+    </article>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(webApiSchema)} />
+</BaseLayout>

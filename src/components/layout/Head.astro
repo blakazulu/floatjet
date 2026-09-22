@@ -40,6 +40,8 @@ const canonical = canonicalUrl || new URL(Astro.url.pathname, "https://floatjet.
   <meta name="description" content={description}/>
   <link rel="canonical" href={canonical}/>
   <link rel="alternate" type="application/rss+xml" title="FloatJet" href="/rss.xml"/>
+  {Astro.url.pathname === "/" && <link rel="alternate" type="text/markdown" title="FloatJet (Markdown)" href="/index.md"/>}
+  <link rel="service-desc" type="application/openapi+json" href="/openapi.json"/>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content={type}/>

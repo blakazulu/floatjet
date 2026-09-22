@@ -12,6 +12,27 @@
   # Headroom for Open Graph image generation (160+ PNGs rendered at build time)
   NODE_OPTIONS = "--max-old-space-size=4096"
 
+# Read-only content API (static JSON built from src/lib/agent-api.ts, documented at /developers/)
+# /api and /api/ serve the API index
+[[redirects]]
+  from = "/api"
+  to = "/api/index.json"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/"
+  to = "/api/index.json"
+  status = 200
+  force = true
+
+# Unknown /api/* paths get a structured JSON error instead of the HTML 404 page.
+# Not forced, so real files like /api/articles.json are still served.
+[[redirects]]
+  from = "/api/*"
+  to = "/api/errors/404.json"
+  status = 404
+
 # Removed author profiles - articles are now published under the editorial team
 [[redirects]]
   from = "/authors/marcus-chen"
@@ -2674,6 +2695,32 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com https://d3js.org; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://amazon.com https://www.amazon.com https://cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+# Content API and OpenAPI spec: JSON, readable from any origin (public, read-only data)
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/openapi.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Access-Control-Allow-Origin = "*"
+
+# Markdown version of the homepage (also negotiated at / by netlify/edge-functions/markdown-negotiation.js)
+[[headers]]
+  for = "/index.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
 
 # Cache static assets for 1 year
 [[headers]]

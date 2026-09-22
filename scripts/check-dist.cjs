@@ -7,6 +7,7 @@
  * - JSON-LD blocks that don't parse
  * - floatjet.com assets referenced from JSON-LD that don't exist (logo, images)
  * - sitemap URLs with no built page
+ * - openapi.json, api/*.json, api/errors/404.json or index.md missing, malformed or out of sync
  * Warns on internal links missing the trailing slash (each costs a 301).
  *
  * Usage: node scripts/check-dist.cjs [distDir]
@@ -94,6 +95,54 @@ for (const file of htmlFiles) {
       add(warnings, page, `link without trailing slash ${href}`);
     }
   }
+}
+
+// Machine-readable files for agents: OpenAPI spec, API JSON, JSON 404 body, homepage Markdown
+function readJson(relPath) {
+  const file = path.join(DIST, relPath);
+  if (!fs.existsSync(file)) {
+    add(errors, relPath, "missing");
+    return undefined;
+  }
+  try {
+    return JSON.parse(fs.readFileSync(file, "utf-8"));
+  } catch {
+    add(errors, relPath, "is not valid JSON");
+    return undefined;
+  }
+}
+
+const spec = readJson("openapi.json");
+if (spec) {
+  if (spec.openapi !== "3.1.0") add(errors, "openapi.json", `unexpected openapi version ${spec.openapi}`);
+  for (const specPath of Object.keys(spec.paths || {})) {
+    if (specPath.includes("{")) continue;
+    if (!fs.existsSync(path.join(DIST, specPath))) add(errors, "openapi.json", `documents ${specPath} but no file was built`);
+  }
+}
+
+const articleList = readJson("api/articles.json");
+if (articleList) {
+  if (!Array.isArray(articleList.articles) || articleList.articles.length === 0 || articleList.count !== articleList.articles.length) {
+    add(errors, "api/articles.json", "article list is empty or count does not match");
+  } else {
+    for (const article of articleList.articles) {
+      if (!readJson(`api/articles/${article.slug}.json`)?.article) add(errors, "api/articles.json", `no detail file for ${article.slug}`);
+      if (!resolves(new URL(article.url).pathname)) add(errors, "api/articles.json", `url has no page: ${article.url}`);
+    }
+  }
+}
+
+readJson("api/index.json");
+readJson("api/sections.json");
+const notFound = readJson("api/errors/404.json");
+if (notFound && !(notFound.error && notFound.error.code && notFound.error.message && notFound.error.hint)) {
+  add(errors, "api/errors/404.json", "error body needs code, message and hint");
+}
+
+const markdownFile = path.join(DIST, "index.md");
+if (!fs.existsSync(markdownFile) || !fs.readFileSync(markdownFile, "utf-8").startsWith("# ")) {
+  add(errors, "index.md", "homepage Markdown is missing or does not start with an H1");
 }
 
 // Every sitemap URL must have a built page

@@ -51,7 +51,7 @@ const filteredHeadings = headings
   ) : (
 <div class="toc-sidebar">
   <div class="toc-content">
-    <h2 class="toc-title">in this article</h2>
+    <h2 class="toc-title">In this article</h2>
     <nav>
       <ul class="toc-list">
         {filteredHeadings.map(heading => (
@@ -223,21 +223,22 @@ const filteredHeadings = headings
 
   .toc-content {
     background: var(--color-card);
-    border: 2px solid var(--color-ink);
+    border: 1.5px solid var(--color-ink);
     border-radius: 20px;
-    box-shadow: 6px 8px 0 0 var(--color-ink);
+    box-shadow: 4px 5px 0 0 var(--color-ink);
     padding: 1.25rem 1.25rem 1rem;
   }
 
   .toc-title {
-    display: inline-block;
-    font-family: var(--font-hand);
+    display: block;
+    font-family: var(--font-body);
     font-weight: 700;
-    font-size: 1.625rem;
-    line-height: 1;
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.2;
     color: var(--color-teal-ink);
     margin: 0 0 0.75rem;
-    transform: rotate(-2deg);
   }
 
   .toc-list {
@@ -302,7 +303,7 @@ const filteredHeadings = headings
 
     background: var(--color-ink);
     color: var(--color-sun);
-    border: 2px solid var(--color-ink);
+    border: 1.5px solid var(--color-ink);
     border-radius: 999px;
     padding: 0.75rem 1.25rem;
 

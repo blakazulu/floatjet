@@ -50,23 +50,23 @@ import ArticleCard from "@components/ui/ArticleCard.astro";
 Used on hub/category pages, related articles and "Latest reviews".
 
 ```
-+----------------------------------+   white card, 2px ink border, rounded 22px
++----------------------------------+   white card, 1.5px ink border, rounded 22px
 | [ Audio ]                        |   tag pill over the 16:10 image
 |           image 16:10            |
-|----------------------------------|   2px ink divider
-| Best Audio Interfaces for        |   Unbounded 18-20px, underlines on hover
+|----------------------------------|   1.5px ink divider
+| Best Audio Interfaces for        |   Bricolage 18-20px, underlines on hover
 | Remote Work                      |
 | Professional audio quality...    |   ink-soft, 2 lines max
 | 14 min read               Read ->|   meta + teal-ink CTA with sliding arrow
 +----------------------------------+
-     solid ink shadow 6px 8px, lifts on hover
+     solid ink shadow 4px 5px, lifts on hover
 ```
 
 Cards in grids stay straight (no tilt) so long lists scan cleanly.
 
 ### `polaroid` - curated features
 
-Used for "On our desk this month" on the homepage.
+Not used since the Sept 2026 tone-down (kept for reference; all cards are now straight tiles).
 
 ```
    +----------------------------+     rotated -2 / +1.5 / -1 / +2 deg (by index)
@@ -74,7 +74,7 @@ Used for "On our desk this month" on the homepage.
    | |      image 4:3         | |
    | +------------------------+ |
    |  our backs say thanks      |     Caveat note in teal-ink
-   |  Best Ergonomic Chairs     |     Unbounded title
+   |  Best Ergonomic Chairs     |     Bricolage title
    |  [ Gear ]    18 min read ->|     tag pill + read time
    +----------------------------+
 ```

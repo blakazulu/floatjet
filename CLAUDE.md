@@ -115,9 +115,9 @@ Full rules: `docs/design/design-guidelines.md`. Tokens and shared classes: `src/
 - Alert: `#B42318` (errors)
 
 **Typography:**
-- Headings: Unbounded (`font-display`, 700/900)
+- Headings: Bricolage Grotesque (`font-display`, 700)
 - Body: Figtree
-- Handwritten notes: Caveat (`hand` class, decoration only)
+- Handwritten notes: Caveat (`hand` class, homepage desk + footer sign-off only)
 - Code: JetBrains Mono
 - All self-hosted via @fontsource (Latin subset) in `BaseLayout.astro`
 
@@ -127,7 +127,7 @@ Full rules: `docs/design/design-guidelines.md`. Tokens and shared classes: `src/
 - `lg:` 1024px (desktop)
 - `xl:` 1280px (wide desktop)
 
-**Design Philosophy:** Tactile desk: warm paper, white sticker cards with 2px ink borders and solid offset shadows, pill buttons (`btn-pill btn-ink|btn-sun|btn-outline`), handwritten notes and a few tilted stickers. No glassmorphism, blur or gradient washes. Never use `text-white` / `bg-white/*` on the paper background.
+**Design Philosophy:** Tactile desk, toned down: warm paper, white cards with 1.5px ink borders and small solid offset shadows (max 6px), pill buttons (`btn-pill btn-ink|btn-sun|btn-outline`), `eyebrow` labels above section headings. Personality (tilt, handwriting) only on the homepage desk; floating pill header and postcard footer. No glassmorphism, blur or gradient washes. Never use `text-white` / `bg-white/*` on the paper background.
 
 **Key shared components:** `src/components/home/DeskScene.astro` (homepage desk), `src/components/ui/ArticleCard.astro` (all article cards), `src/components/hub/HubPage.astro` (section + category listing pages, fed by `src/data/articles.ts` and `src/data/sections.ts`).
 

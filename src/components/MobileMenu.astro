@@ -26,14 +26,14 @@ const isActive = (href: string) =>
 <!-- Mobile Menu Panel -->
 <nav
     id="mobile-menu"
-    class="fixed top-0 right-0 h-full w-80 max-w-[88vw] bg-paper border-l-2 border-ink z-[210] transform translate-x-full transition-transform duration-300 ease-out"
+    class="fixed top-0 right-0 h-full w-80 max-w-[88vw] bg-paper border-l-[1.5px] border-ink z-[210] transform translate-x-full transition-transform duration-300 ease-out"
     aria-label="Mobile navigation"
     aria-hidden="true"
 >
   <div class="flex flex-col h-full">
     <!-- Menu Header -->
-    <div class="flex items-center justify-between px-5 h-16 border-b-2 border-ink">
-      <span class="font-display font-black text-xl text-ink">floatjet</span>
+    <div class="flex items-center justify-between px-5 h-16 border-b-[1.5px] border-ink">
+      <span class="font-display font-bold text-xl text-ink">floatjet</span>
       <button
           id="mobile-menu-close"
           type="button"
@@ -50,10 +50,10 @@ const isActive = (href: string) =>
         {navItems.map((item) => (
             <li>
               <a href={item.href}
-                 class="mobile-menu-link group flex items-center justify-between gap-3 px-5 py-3.5 rounded-2xl bg-card border-2 border-ink text-ink shadow-[4px_5px_0_0_var(--color-ink)] transition-transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none aria-[current=page]:bg-sun"
+                 class="mobile-menu-link group flex items-center justify-between gap-3 px-5 py-3.5 rounded-2xl bg-card border-[1.5px] border-ink text-ink shadow-[4px_5px_0_0_var(--color-ink)] transition-transform active:translate-x-[3px] active:translate-y-[3px] active:shadow-none aria-[current=page]:bg-sun"
                  aria-current={isActive(item.href) ? 'page' : undefined}>
                 <span class="font-display font-bold text-lg">{item.name}</span>
-                <span class="hand text-lg text-ink-soft group-aria-[current=page]:text-ink">{item.note}</span>
+                <span class="text-sm text-ink-soft group-aria-[current=page]:text-ink">{item.note}</span>
               </a>
             </li>
         ))}
@@ -61,15 +61,15 @@ const isActive = (href: string) =>
 
       <!-- Secondary Links -->
       <ul class="mt-8 flex flex-wrap gap-2">
-        <li><a href="/about/" class="mobile-menu-link inline-flex items-center min-h-12 px-4 rounded-full border-2 border-ink text-sm font-semibold text-ink hover:bg-ink hover:text-paper transition-colors aria-[current=page]:bg-ink aria-[current=page]:text-paper" aria-current={isActive('/about/') ? 'page' : undefined}>About</a></li>
-        <li><a href="/team/" class="mobile-menu-link inline-flex items-center min-h-12 px-4 rounded-full border-2 border-ink text-sm font-semibold text-ink hover:bg-ink hover:text-paper transition-colors aria-[current=page]:bg-ink aria-[current=page]:text-paper" aria-current={isActive('/team/') ? 'page' : undefined}>Team</a></li>
-        <li><a href="/contact/" class="mobile-menu-link inline-flex items-center min-h-12 px-4 rounded-full border-2 border-ink text-sm font-semibold text-ink hover:bg-ink hover:text-paper transition-colors aria-[current=page]:bg-ink aria-[current=page]:text-paper" aria-current={isActive('/contact/') ? 'page' : undefined}>Contact</a></li>
+        <li><a href="/about/" class="mobile-menu-link inline-flex items-center min-h-12 px-4 rounded-full border-[1.5px] border-ink text-sm font-semibold text-ink hover:bg-ink hover:text-paper transition-colors aria-[current=page]:bg-ink aria-[current=page]:text-paper" aria-current={isActive('/about/') ? 'page' : undefined}>About</a></li>
+        <li><a href="/team/" class="mobile-menu-link inline-flex items-center min-h-12 px-4 rounded-full border-[1.5px] border-ink text-sm font-semibold text-ink hover:bg-ink hover:text-paper transition-colors aria-[current=page]:bg-ink aria-[current=page]:text-paper" aria-current={isActive('/team/') ? 'page' : undefined}>Team</a></li>
+        <li><a href="/contact/" class="mobile-menu-link inline-flex items-center min-h-12 px-4 rounded-full border-[1.5px] border-ink text-sm font-semibold text-ink hover:bg-ink hover:text-paper transition-colors aria-[current=page]:bg-ink aria-[current=page]:text-paper" aria-current={isActive('/contact/') ? 'page' : undefined}>Contact</a></li>
       </ul>
     </div>
 
     <!-- Menu Footer -->
-    <div class="px-5 py-4 border-t-2 border-ink">
-      <p class="hand text-xl text-ink-soft">work from anywhere, with good tools</p>
+    <div class="px-5 py-4 border-t-[1.5px] border-ink">
+      <p class="text-sm text-ink-soft">Honest reviews for remote workers.</p>
     </div>
   </div>
 </nav>

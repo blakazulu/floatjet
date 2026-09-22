@@ -4,8 +4,9 @@
 @plugin "@tailwindcss/forms";
 
 /*
- * FloatJet "Desk Party" theme
+ * FloatJet "Desk Party" theme (toned-down edition, Sept 2026)
  * Warm paper ground, deep-ocean ink, sticker-style accents (sun + coral) and the brand teals.
+ * Personality lives on the homepage desk; everywhere else stays calm.
  * See docs/design/design-guidelines.md for usage rules and contrast notes.
  */
 @theme {
@@ -36,17 +37,17 @@
   --color-gray: #4A6166;
 
   /* Font families */
-  --font-display: 'Unbounded', 'Arial Black', system-ui, sans-serif;
-  --font-heading: 'Unbounded', 'Arial Black', system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
   --font-body: 'Figtree', system-ui, -apple-system, sans-serif;
   --font-hand: 'Caveat', 'Comic Sans MS', cursive;
   --font-jetbrains: 'JetBrains Mono', ui-monospace, monospace;
   --font-sans: 'Figtree', system-ui, -apple-system, sans-serif;
 
   /* Sticker shadows (solid, offset - no blur) */
-  --shadow-sticker-sm: 4px 5px 0 0 var(--color-ink);
-  --shadow-sticker: 6px 8px 0 0 var(--color-ink);
-  --shadow-sticker-lg: 10px 12px 0 0 var(--color-ink);
+  --shadow-sticker-sm: 3px 4px 0 0 var(--color-ink);
+  --shadow-sticker: 4px 5px 0 0 var(--color-ink);
+  --shadow-sticker-lg: 6px 7px 0 0 var(--color-ink);
 
   /* Breakpoints - Mobile-first */
   --breakpoint-sm: 640px;
@@ -73,7 +74,7 @@
     font-family: var(--font-display);
     font-weight: 700;
     color: var(--color-ink);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
   }
 
   code, pre {
@@ -96,7 +97,7 @@
   /* Solid-shadow "sticker" surface: white card, ink outline, offset shadow */
   .sticker {
     background: var(--color-card);
-    border: 2px solid var(--color-ink);
+    border: 1.5px solid var(--color-ink);
     box-shadow: var(--shadow-sticker);
   }
 
@@ -106,13 +107,13 @@
   }
 
   .sticker-hover:hover {
-    transform: translate(-2px, -3px);
-    box-shadow: 9px 12px 0 0 var(--color-ink);
+    transform: translate(-1px, -2px);
+    box-shadow: 5px 7px 0 0 var(--color-ink);
   }
 
   .sticker-hover:active {
-    transform: translate(3px, 4px);
-    box-shadow: 2px 3px 0 0 var(--color-ink);
+    transform: translate(2px, 3px);
+    box-shadow: 1px 2px 0 0 var(--color-ink);
   }
 
   /* Pill buttons */
@@ -124,9 +125,9 @@
     min-height: 48px;
     padding: 0.75rem 1.5rem;
     border-radius: 999px;
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     font-weight: 700;
-    font-size: 0.9375rem;
+    font-size: 1rem;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
   }
@@ -134,30 +135,30 @@
   .btn-ink {
     background: var(--color-ink);
     color: var(--color-sun);
-    box-shadow: 4px 5px 0 0 var(--color-jet-stream);
+    box-shadow: 3px 4px 0 0 var(--color-jet-stream);
   }
 
   .btn-ink:hover {
-    transform: translate(-1px, -2px);
-    box-shadow: 6px 8px 0 0 var(--color-jet-stream);
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 5px 0 0 var(--color-jet-stream);
   }
 
   .btn-sun {
     background: var(--color-sun);
     color: var(--color-ink);
-    border: 2px solid var(--color-ink);
+    border: 1.5px solid var(--color-ink);
     box-shadow: var(--shadow-sticker-sm);
   }
 
   .btn-sun:hover {
-    transform: translate(-1px, -2px);
-    box-shadow: 6px 8px 0 0 var(--color-ink);
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 5px 0 0 var(--color-ink);
   }
 
   .btn-outline {
     background: transparent;
     color: var(--color-ink);
-    border: 3px solid var(--color-ink);
+    border: 1.5px solid var(--color-ink);
   }
 
   .btn-outline:hover {
@@ -179,7 +180,18 @@
     line-height: 1.4;
   }
 
-  /* Handwritten note */
+  /* Small uppercase section label (replaces handwritten notes outside the desk) */
+  .eyebrow {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-teal-ink);
+  }
+
+  /* Handwritten note (homepage desk only) */
   .hand {
     font-family: var(--font-hand);
     font-weight: 700;

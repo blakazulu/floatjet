@@ -11,24 +11,25 @@ const isActive = (href: string) =>
   currentPath === href || (href !== "/" && currentPath.startsWith(href.endsWith("/") ? href : href + "/"));
 ---
 
-<header class="site-header fixed top-0 left-0 right-0 z-50 bg-paper/95 backdrop-blur-sm border-b-2 border-ink">
-  <div class="mx-auto max-w-7xl px-4 md:px-6 h-16 md:h-20 flex items-center justify-between gap-4">
+<!-- Floating pill header -->
+<header class="site-header fixed top-0 left-0 right-0 z-50 px-3 pt-2.5 md:px-6 md:pt-4 pointer-events-none">
+  <div class="pointer-events-auto mx-auto max-w-7xl h-[60px] md:h-[68px] flex items-center justify-between gap-4 pl-5 pr-1.5 md:pl-7 md:pr-2.5 bg-card border-[1.5px] border-ink rounded-full shadow-[3px_4px_0_0_var(--color-ink)]">
     <!-- Wordmark -->
     <a
       href="/"
       id="logo-link"
-      class="font-display font-black text-2xl md:text-[28px] tracking-tight text-ink leading-none hover:text-ocean-deep transition-colors"
+      class="font-display font-bold text-[22px] md:text-[26px] tracking-[-0.03em] text-ink leading-none hover:text-ocean-deep transition-colors"
       aria-label="FloatJet home"
     >
       floatjet
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center gap-1 bg-ink p-1.5 rounded-full" aria-label="Main navigation">
+    <nav class="hidden md:flex items-center gap-1" aria-label="Main navigation">
       {navItems.map((item) => (
         <a
           href={item.href}
-          class="nav-link px-5 py-2.5 rounded-full text-[15px] font-bold text-sand hover:bg-ocean-deep transition-colors aria-[current=page]:bg-sun aria-[current=page]:text-ink"
+          class="nav-link px-[18px] py-2.5 rounded-full text-[15px] font-semibold text-ink hover:bg-paper transition-colors aria-[current=page]:bg-sand aria-[current=page]:font-bold"
           aria-current={isActive(item.href) ? "page" : undefined}
         >
           {item.name}
@@ -37,55 +38,41 @@ const isActive = (href: string) =>
     </nav>
 
     <!-- Utilities -->
-    <div class="flex items-center gap-2 md:gap-3">
+    <div class="flex items-center gap-1.5 md:gap-2">
       <button
         data-search-trigger
         type="button"
-        class="hidden md:inline-flex items-center gap-2 h-12 px-4 rounded-full border-2 border-ink text-ink font-semibold text-sm hover:bg-ink hover:text-paper transition-colors cursor-pointer"
+        class="inline-flex items-center justify-center w-12 h-12 rounded-full border-[1.5px] border-ink text-ink hover:bg-paper transition-colors cursor-pointer"
         aria-label="Search (Ctrl+K)"
       >
-        <svg class="h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <svg class="h-[18px] w-[18px]" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path>
         </svg>
-        <span>Search</span>
       </button>
 
       <a
         href="/deals/"
-        class="hidden md:inline-flex btn-pill btn-sun !min-h-12 !py-2 !px-5 text-sm aria-[current=page]:!bg-coral"
+        class="hidden md:inline-flex items-center h-12 px-5 rounded-full bg-sun border-[1.5px] border-ink text-ink font-bold text-[15px] hover:bg-[#FFDB66] transition-colors aria-[current=page]:bg-coral"
         aria-current={isActive("/deals/") ? "page" : undefined}
       >
         Deals
       </a>
 
-      <!-- Mobile: search -->
-      <button
-        data-search-trigger
-        type="button"
-        class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-ink text-ink cursor-pointer"
-        aria-label="Search"
-      >
-        <svg class="h-5 w-5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path>
-        </svg>
-      </button>
-
       <!-- Mobile: menu -->
       <button
         id="mobile-menu-button"
         type="button"
-        class="md:hidden inline-flex items-center gap-2 h-12 px-4 rounded-full bg-ink text-sun font-display font-bold text-sm"
+        class="md:hidden inline-flex items-center justify-center w-12 h-12 rounded-full bg-sun text-ink"
         aria-label="Open menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
-        <svg class="menu-icon h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <svg class="menu-icon h-[18px] w-[18px]" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path d="M4 8h16M4 16h16"></path>
         </svg>
-        <svg class="close-icon h-4 w-4 hidden" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <svg class="close-icon h-[18px] w-[18px] hidden" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path d="M18 6L6 18M6 6l12 12"></path>
         </svg>
-        <span>Menu</span>
       </button>
     </div>
   </div>

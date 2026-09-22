@@ -1,8 +1,9 @@
-# FloatJet Design Guidelines - "Desk Party"
+# FloatJet Design Guidelines - "Desk Party" (toned-down edition)
 
-The site's visual language since September 2026. Every page sits on warm paper and borrows the look of a real desk:
-sticker-like cards with solid offset shadows, bold rounded display type, handwritten notes and a few loud accent
-colours. The homepage hero is a desk you can explore (every object is a link).
+The site's visual language since September 2026 (toned down on 2026-09-22). Every page sits on warm paper with
+sticker-like cards (thin ink outline, small solid offset shadow) and a few warm accent colours. The personality lives
+in one place: the homepage hero, a desk you can explore where every object is a link. Everything else stays calm so
+readers take the reviews seriously.
 
 Live references:
 
@@ -16,7 +17,7 @@ Live references:
 * **Mobile-first:** every decision starts at 375px. If it does not work on a phone, it does not ship.
 * **Tactile, not glossy:** things look like objects on a desk - paper, stickers, notebooks. No glassmorphism, no blur,
   no soft drop shadows, no gradient washes.
-* **Playful but trustworthy:** personality lives in the accents (stickers, tilt, handwriting). Reading surfaces
+* **Trustworthy first:** personality lives on the homepage desk and a few accents. Reading surfaces
   (article text, tables, FAQs) stay calm, high-contrast and straight.
 * **Honest copy:** no invented stats or claims. Counts come from `src/data/articles.ts`.
 
@@ -63,43 +64,46 @@ All colours are Tailwind v4 theme tokens (`bg-paper`, `text-ink`, `border-ink`, 
 
 | Role                  | Font                  | Weights   | Tailwind        |
 |-----------------------|-----------------------|-----------|-----------------|
-| Display / headings    | **Unbounded**         | 700, 900  | `font-display`  |
+| Display / headings    | **Bricolage Grotesque** | 700     | `font-display`  |
 | Body and UI           | **Figtree**           | 400-700   | default         |
-| Handwritten notes     | **Caveat**            | 700       | `hand` class    |
+| Handwritten notes     | **Caveat**            | 700       | `hand` class (desk + footer sign-off only) |
 | Code                  | **JetBrains Mono**    | 400       | `font-jetbrains`|
 
 Fonts are self-hosted via `@fontsource` (Latin subset only) and imported in `BaseLayout.astro`.
 
 ### Type scale (mobile / desktop)
 
-* **Hero (H1 on homepage):** 40px / 88px, weight 900, letter-spacing -0.04em, leading 0.98
-* **Page H1:** 36px / 60px, weight 900
-* **Article H1:** 34px / 64px, weight 900
+* **Hero (H1 on homepage):** 42px / 80px, weight 700, letter-spacing -0.035em, leading 1.02
+* **Page H1:** 36px / 60px, weight 700
+* **Article H1:** 34px / 64px, weight 700
 * **H2:** 26px / 32px (articles get a sun "tape" bar above every H2)
 * **H3:** 21px
 * **Body:** 18px in articles, 16-17px elsewhere, leading 1.75 for long text
-* **Handwritten notes:** 20-30px, rotated -1 to -2 degrees, `text-teal-ink`
+* **Section labels:** `eyebrow` class (13px, bold, uppercase, tracked, `text-teal-ink`) above section headings
+  ("New here?", "Editor's picks").
 
-Handwriting is decoration: one short lowercase note per section at most ("new here?", "editor's picks"). Never use it
-for body copy or anything a reader must read to use the page.
+Handwriting (Caveat) is reserved for the homepage desk objects (notebook list, sticky note) and the footer
+postcard sign-off. Never use it for labels, body copy or anything a reader must read to use the page.
 
 ## 4. Components
 
 ### Sticker surface (`.sticker`)
 
-White card, `2px` ink border, solid offset shadow `6px 8px 0 0 ink`. Add `.sticker-hover` on interactive cards to lift
+White card, `1.5px` ink border, solid offset shadow `4px 5px 0 0 ink`. Add `.sticker-hover` on interactive cards to lift
 on hover and press on click. Radii: 22-28px for cards, 999px for pills.
 
 ### Shadows
 
-Solid only - no blur. Tokens: `shadow-sticker-sm` (4/5), `shadow-sticker` (6/8), `shadow-sticker-lg` (10/12). Dark
+Solid only - no blur. Tokens: `shadow-sticker-sm` (3/4), `shadow-sticker` (4/5), `shadow-sticker-lg` (6/7). Never
+larger than 6px 7px. Dark
 elements (ink buttons, laptop) cast a `jet-stream` or `ocean-deep` shadow instead of ink.
 
 ### Buttons (`.btn-pill` + variant)
 
 * **`.btn-ink`** - ink pill, sun text, jet-stream shadow. Primary actions.
 * **`.btn-sun`** - sun pill, ink border and shadow. Secondary or "fun" actions (Deals, Suggest a tool).
-* **`.btn-outline`** - transparent with a 3px ink border; fills ink on hover.
+* **`.btn-outline`** - transparent with a 1.5px ink border; fills ink on hover.
+* Buttons use the body font (Figtree 700), not the display font.
 * Affiliate CTAs use `AffiliateButton.astro` (`primary` = ink, `secondary` = sun, `ghost` = teal link) and support an
   optional `subtext` line.
 * Minimum height 48px.
@@ -110,19 +114,22 @@ Ink pill with sun text for categories. Read time and meta stay plain `ink-soft` 
 
 ### Tilt
 
-Rotation is for stickers and objects only (-8 to +8 degrees on the desk, -2 to +2 for polaroid cards). Grids of many
-cards (listing pages, related articles) stay straight so they scan cleanly.
+Rotation is only for objects on the homepage desk and the small hint pill (3 degrees at most). Everything else,
+including all cards, stays straight. The polaroid variant of `ArticleCard` is kept for reference but not used.
 
 ### Motion
 
-Hover lift (`translate -2px`), the scrolling tool strip, the coffee steam and the loading sticker. Everything respects
+Hover lift (`translate -1px/-2px`), the coffee steam and the loading sticker. Everything respects
 `prefers-reduced-motion` (handled globally in `global.css`).
 
 ## 5. Layout & Spacing
 
 * **Page container:** `max-w-7xl` (1280px) with `px-4` mobile / `px-6` desktop; articles use `max-w-6xl` with a 760px
   reading column plus a 280px sticky table of contents.
-* **Fixed header:** 64px mobile / 80px desktop - top padding for pages is `pt-28 md:pt-36`.
+* **Header:** a floating white pill (1.5px ink border, 3px 4px shadow) fixed near the top, 60px mobile / 68px
+  desktop; active nav item gets a sand fill. Top padding for pages is `pt-28 md:pt-36`.
+* **Footer:** a white "postcard" card - message side (logo, tagline, affiliate disclosure, handwritten sign-off),
+  dashed divider, address side (Explore / Company links, stamp, social buttons), legal row at the bottom.
 * **Section rhythm:** `pt-20 md:pt-28` between homepage sections.
 * **Grids:** 1 column mobile, 2 at `sm`, 3-4 at `lg`, gaps 24-28px.
 

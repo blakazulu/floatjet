@@ -8,7 +8,7 @@ import React from "react";
  * - Paper: #F4F1EA (background)
  * - Ink: #082F38 (text, outlines, sticker shadows)
  * - Sun: #FFD23F / Coral: #FF8A65 / Sky Light: #80CED7 (stickers)
- * Fonts (registered in astro.config.mjs): Unbounded 900 (title), Figtree 700 (body)
+ * Fonts (registered in astro.config.mjs): Bricolage Grotesque 700 (title), Figtree 700 (body)
  */
 export async function floatjetRenderer({
   title,
@@ -45,16 +45,16 @@ export async function floatjetRenderer({
           background: "#FFFFFF",
           border: "4px solid #082F38",
           borderRadius: "40px",
-          boxShadow: "14px 16px 0 0 #082F38",
+          boxShadow: "8px 9px 0 0 #082F38",
           padding: "52px 56px",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
           <h1
             style={{
-              fontFamily: "Unbounded",
+              fontFamily: "Bricolage Grotesque",
               fontSize: titleSize,
-              fontWeight: 900,
+              fontWeight: 700,
               color: "#082F38",
               lineHeight: 1.05,
               letterSpacing: "-0.03em",
@@ -84,7 +84,7 @@ export async function floatjetRenderer({
 
         {/* Footer */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <span style={{ fontFamily: "Unbounded", fontSize: "34px", fontWeight: 900, color: "#082F38" }}>
+          <span style={{ fontFamily: "Bricolage Grotesque", fontSize: "34px", fontWeight: 700, color: "#082F38" }}>
             floatjet
           </span>
           <span
@@ -117,9 +117,9 @@ export async function floatjetRenderer({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          transform: "rotate(12deg)",
-          fontFamily: "Unbounded",
-          fontWeight: 900,
+          transform: "rotate(6deg)",
+          fontFamily: "Bricolage Grotesque",
+          fontWeight: 700,
           fontSize: "24px",
           color: "#082F38",
           textAlign: "center",

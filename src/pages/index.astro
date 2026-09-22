@@ -17,10 +17,10 @@ const totalReviews = counts.tools + counts.gear + counts.guides + counts.blog;
 
 // Visual treatment per drawer; names, blurbs and links come from src/data/home.ts
 const drawerClasses: Record<string, string> = {
-  tools: "bg-sun text-ink rounded-[32px]",
-  gear: "bg-sand text-ink rounded-t-[999px] rounded-b-[32px] justify-end",
-  guides: "bg-ink text-sand rounded-[32px]",
-  blog: "bg-coral text-ink rounded-[32px] rounded-br-[120px]",
+  tools: "bg-sun text-ink",
+  gear: "bg-sand text-ink",
+  guides: "bg-ink text-sand",
+  blog: "bg-coral text-ink",
 };
 
 const sections = drawers.map((drawer) => ({
@@ -36,8 +36,8 @@ const sections = drawers.map((drawer) => ({
   <!-- Hero -->
   <section class="relative px-4 pt-28 md:pt-36 pb-14 md:pb-20">
     <div class="mx-auto max-w-5xl text-center">
-      <p class="hand text-2xl md:text-3xl text-teal-ink -rotate-2 mb-3">hi, remote worker</p>
-      <h1 class="font-display font-black text-[40px] leading-[0.98] sm:text-6xl md:text-7xl lg:text-[88px] tracking-[-0.04em] text-ink text-balance">
+      <span class="inline-flex items-center rounded-full bg-card border-[1.5px] border-ink px-4 py-1.5 text-sm font-bold text-ink mb-5">Independent, reader-supported reviews</span>
+      <h1 class="font-display font-bold text-[42px] leading-[1.02] sm:text-6xl md:text-7xl lg:text-[80px] tracking-[-0.035em] text-ink text-balance">
         {homeMeta.headline}
       </h1>
       <p class="mt-6 text-lg md:text-xl font-medium text-ink-soft max-w-2xl mx-auto">
@@ -57,32 +57,25 @@ const sections = drawers.map((drawer) => ({
   <section class="px-3 md:px-6" aria-labelledby="desk-heading">
     <h2 id="desk-heading" class="sr-only">Explore FloatJet from the desk</h2>
     <div class="mx-auto max-w-7xl relative">
-      <div class="hidden lg:flex absolute -top-14 left-10 z-10 items-end gap-1 -rotate-6" aria-hidden="true">
-        <span class="hand text-3xl text-ink">psst, the laptop works</span>
-        <svg class="w-14 h-14" viewBox="0 0 60 60" fill="none" stroke="#082F38" stroke-width="3" stroke-linecap="round"><path d="M5 10c20 0 38 12 44 40"></path><path d="M40 42l9 9 6-12"></path></svg>
-      </div>
       <DeskScene counts={counts} featured={featured} />
     </div>
   </section>
 
-  <!-- Tool strip -->
-  <div class="overflow-hidden py-8 mt-12 md:mt-16" aria-hidden="true">
-  <div class="tool-strip mx-[-5vw] bg-ink text-sand -rotate-2 py-5 md:py-6 overflow-hidden">
-    <div class="tool-strip-track flex w-max whitespace-nowrap font-display font-bold text-2xl md:text-4xl">
-      {[...toolStrip, ...toolStrip].map((name) => (
-        <span class="flex items-center gap-10 md:gap-12 pr-10 md:pr-12">{name}<span class="text-sun">+</span></span>
-      ))}
-    </div>
-  </div>
-  </div>
+  <!-- Tools we review -->
+  <section class="px-4 pt-12 md:pt-14" aria-label="Tools we review">
+    <p class="mx-auto max-w-5xl flex flex-wrap justify-center gap-x-6 gap-y-2 text-[15px] font-semibold text-ink-soft">
+      <span class="text-ink font-bold">Tools we review:</span>
+      {toolStrip.map((name) => <span>{name}</span>)}
+    </p>
+  </section>
 
   <!-- Start here -->
   <section class="px-4 pt-20 md:pt-28" aria-labelledby="start-heading">
     <div class="mx-auto max-w-6xl">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-8 md:mb-10">
         <div>
-          <p class="hand text-2xl text-teal-ink -rotate-1">new here?</p>
-          <h2 id="start-heading" class="font-display font-black text-3xl md:text-5xl tracking-tight">Start with these three</h2>
+          <p class="eyebrow mb-2">New here?</p>
+          <h2 id="start-heading" class="font-display font-bold text-3xl md:text-[44px] tracking-tight">Start with these three</h2>
         </div>
         <p class="text-ink-soft md:max-w-sm">Our most-read guides for setting up a remote workday that actually works.</p>
       </div>
@@ -90,7 +83,7 @@ const sections = drawers.map((drawer) => ({
         {startHereGuides.map((guide, index) => (
           <li>
             <a href={guide.href} class="sticker sticker-hover group flex h-full flex-col gap-3 rounded-[24px] p-6 md:p-7 text-ink">
-              <span class="font-display font-black text-5xl text-jet-stream leading-none" aria-hidden="true">0{index + 1}</span>
+              <span class="font-display font-bold text-5xl text-jet-stream leading-none" aria-hidden="true">0{index + 1}</span>
               <h3 class="font-display font-bold text-xl leading-snug group-hover:underline decoration-2 underline-offset-4">{guide.title}</h3>
               <p class="text-ink-soft text-[15px]">{guide.description}</p>
               <span class="mt-auto pt-2 inline-flex items-center gap-1 text-sm font-bold text-teal-ink">
@@ -109,23 +102,20 @@ const sections = drawers.map((drawer) => ({
     <div class="mx-auto max-w-7xl">
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
         <div>
-          <p class="hand text-2xl text-teal-ink -rotate-1">editor's picks</p>
-          <h2 id="picks-heading" class="font-display font-black text-3xl md:text-5xl tracking-tight">On our desk this month</h2>
+          <p class="eyebrow mb-2">Editor's picks</p>
+          <h2 id="picks-heading" class="font-display font-bold text-3xl md:text-[44px] tracking-tight">On our desk this month</h2>
         </div>
         <a href="/tools/" class="btn-pill btn-outline self-start sm:self-auto">See every review</a>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-9">
-        {editorsPicks.map((pick, index) => (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {editorsPicks.map((pick) => (
           <ArticleCard
-            variant="polaroid"
-            index={index}
             href={pick.href}
             title={pick.title}
             image={pick.image}
             imageAlt={pick.imageAlt}
             category={pick.category}
             readTime={pick.readTime}
-            note={pick.note}
           />
         ))}
       </div>
@@ -135,20 +125,20 @@ const sections = drawers.map((drawer) => ({
   <!-- Browse by section -->
   <section class="px-4 pt-20 md:pt-28" aria-labelledby="sections-heading">
     <div class="mx-auto max-w-7xl">
-      <h2 id="sections-heading" class="font-display font-black text-3xl md:text-5xl tracking-tight mb-8 md:mb-10">Pick a drawer</h2>
+      <h2 id="sections-heading" class="font-display font-bold text-3xl md:text-[44px] tracking-tight mb-8 md:mb-10">Pick a drawer</h2>
       <ul class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
         {sections.map((section) => (
           <li>
             <a
               href={section.href}
               class:list={[
-                "section-block group flex h-44 sm:h-56 md:h-72 flex-col justify-between gap-3 border-2 border-ink p-5 md:p-8 shadow-[6px_8px_0_0_var(--color-ink)] transition-transform hover:-translate-y-1",
+                "section-block group flex h-40 sm:h-48 md:h-56 flex-col justify-between gap-3 rounded-[24px] border-[1.5px] border-ink p-5 md:p-7 transition-transform hover:-translate-y-1",
                 section.classes,
               ]}
             >
               <span class="text-sm md:text-base font-bold">{section.count}</span>
               <span>
-                <span class="block font-display font-black text-2xl md:text-4xl leading-none">{section.name}</span>
+                <span class="block font-display font-bold text-2xl md:text-4xl leading-none">{section.name}</span>
                 <span class="hidden md:block mt-2 text-[15px] opacity-90">{section.blurb}</span>
               </span>
             </a>
@@ -163,8 +153,8 @@ const sections = drawers.map((drawer) => ({
     <div class="mx-auto max-w-7xl">
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
         <div>
-          <p class="hand text-2xl text-teal-ink -rotate-1">fresh off the desk</p>
-          <h2 id="latest-heading" class="font-display font-black text-3xl md:text-5xl tracking-tight">Latest reviews</h2>
+          <p class="eyebrow mb-2">Fresh off the desk</p>
+          <h2 id="latest-heading" class="font-display font-bold text-3xl md:text-[44px] tracking-tight">Latest reviews</h2>
         </div>
         <a href="/blog/" class="btn-pill btn-outline self-start sm:self-auto">All articles</a>
       </div>
@@ -187,9 +177,8 @@ const sections = drawers.map((drawer) => ({
   <!-- Final CTA -->
   <section class="px-4 pt-20 md:pt-28">
     <div class="mx-auto max-w-5xl relative">
-      <div class="relative bg-sky-light border-2 border-ink rounded-[40px] px-6 py-12 md:px-16 md:py-16 text-center shadow-[10px_12px_0_0_var(--color-ink)]">
-        <div class="absolute -top-6 -left-2 md:-left-6 rotate-[-10deg] bg-sun border-2 border-ink rounded-full px-5 py-2 font-display font-bold text-sm" aria-hidden="true">no fluff</div>
-        <h2 class="font-display font-black text-3xl md:text-5xl tracking-tight text-balance">Not sure where to start?</h2>
+      <div class="relative bg-sky-light border-[1.5px] border-ink rounded-[32px] px-6 py-12 md:px-16 md:py-14 text-center shadow-[5px_6px_0_0_var(--color-ink)]">
+        <h2 class="font-display font-bold text-3xl md:text-[44px] tracking-tight text-balance">Not sure where to start?</h2>
         <p class="mt-4 text-lg text-ink max-w-xl mx-auto">
           Grab the home office checklist, then fill the gaps with the tools we would buy again.
         </p>
@@ -202,23 +191,3 @@ const sections = drawers.map((drawer) => ({
   </section>
 </BaseLayout>
 
-<style>
-  .tool-strip-track {
-    animation: strip-scroll 40s linear infinite;
-  }
-
-  @keyframes strip-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .tool-strip-track {
-      animation: none;
-    }
-  }
-</style>

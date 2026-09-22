@@ -76,10 +76,10 @@ export default defineConfig({
       options: {
         fonts: [
           {
-            name: "Unbounded",
-            weight: 900,
+            name: "Bricolage Grotesque",
+            weight: 700,
             style: "normal",
-            data: fs.readFileSync("node_modules/@fontsource/unbounded/files/unbounded-latin-900-normal.woff"),
+            data: fs.readFileSync("node_modules/@fontsource/bricolage-grotesque/files/bricolage-grotesque-latin-700-normal.woff"),
           },
           {
             name: "Figtree",

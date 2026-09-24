@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "How do I check my website speed?",
     answer:
-      "Start with Google PageSpeed Insights . it is free and tells you exactly what Google thinks. GTmetrix shows you a cool waterfall of everything loading on your page. WebPageTest lets you test from real browsers in different cities. Always check both mobile and desktop.",
+      "Start with Google PageSpeed Insights. It is free and tells you exactly what Google thinks. GTmetrix shows you a cool waterfall of everything loading on your page. WebPageTest lets you test from real browsers in different cities. Always check both mobile and desktop.",
   },
   {
     question: "Is a CDN necessary for website speed?",
@@ -58,7 +58,7 @@ const faqItems = [
   {
     question: "How much does website speed affect conversion rates?",
     answer:
-      "More than most people realize. A one-second delay typically drops conversions by about 7%. Sites loading in 2 seconds have around 9% bounce rate . but stretch that to 5 seconds and bounce rate shoots up to 38%. Amazon actually calculated that 100 milliseconds of extra load time cost them 1% in sales. At their scale, that is billions.",
+      "More than most people realize. A one-second delay typically drops conversions by about 7%. Sites loading in 2 seconds have around 9% bounce rate. But stretch that to 5 seconds and bounce rate shoots up to 38%. Amazon actually calculated that 100 milliseconds of extra load time cost them 1% in sales. At their scale, that is billions.",
   },
 ];
 
@@ -108,7 +108,7 @@ const relatedArticles = [
       are impatient. Who knew?
     </p>
     <p>
-      Here is the thing . speed affects everything. Your Google rankings. Your conversion rates. Whether people actually
+      Here is the thing. Speed affects everything. Your Google rankings. Your conversion rates. Whether people actually
       stick around long enough to read what you wrote. I have spent years figuring out what actually moves the needle
       versus what just wastes time. This guide is everything I wish someone had told me when I was staring at a
       PageSpeed score of 23 wondering where to even start.
@@ -190,18 +190,18 @@ const relatedArticles = [
     </p>
     <ul class="text-ink/85 space-y-2 ml-4">
       <li><strong><a href="https://web.dev/articles/lcp" target="_blank" rel="nofollow">LCP (Largest Contentful
-        Paint)</a>:</strong> Under 2.5 seconds . this is how fast your main content
+        Paint)</a>:</strong> Under 2.5 seconds. This is how fast your main content
         appears
       </li>
-      <li><strong><a href="https://web.dev/articles/inp" target="_blank" rel="nofollow">FID (First Input
-        Delay)</a>:</strong> Under 100 milliseconds . how quickly your page responds when someone
+      <li><strong><a href="https://web.dev/articles/inp" target="_blank" rel="nofollow">INP (Interaction to Next
+        Paint)</a>:</strong> Under 200 milliseconds. How quickly your page responds when someone
         clicks something
       </li>
       <li><strong><a href="https://web.dev/articles/cls" target="_blank" rel="nofollow">CLS (Cumulative Layout
-        Shift)</a>:</strong> Under 0.1 . whether stuff jumps around while loading (so
+        Shift)</a>:</strong> Under 0.1. Whether stuff jumps around while loading (so
         annoying)
       </li>
-      <li><strong>TTFB (Time to First Byte):</strong> Under 600 milliseconds . how fast your server responds</li>
+      <li><strong>TTFB (Time to First Byte):</strong> Under 600 milliseconds. How fast your server responds</li>
     </ul>
   </section>
 
@@ -256,7 +256,7 @@ const relatedArticles = [
     <h2>Image Optimization</h2>
     <p>
       If I could only give you one piece of advice in this whole guide, it would be about images. They are usually the
-      biggest thing on your pages . often 50-80% of total page weight. Fix your images and you fix half your speed
+      biggest thing on your pages. Often 50-80% of total page weight. Fix your images and you fix half your speed
       problems.
     </p>
 
@@ -276,7 +276,7 @@ const relatedArticles = [
       </div>
       <div class="bg-card border border-ink/15 rounded-lg p-4">
         <h4 class="text-ink font-semibold">Stop Uploading Giant Images</h4>
-        <p class="text-ink-soft text-sm mt-2">I see this constantly . someone uploads a 4000px wide image for a spot
+        <p class="text-ink-soft text-sm mt-2">I see this constantly. Someone uploads a 4000px wide image for a spot
           that only displays at 600px. All that extra data loads for nothing. Resize before uploading, or use plugins
           that generate multiple sizes automatically.</p>
       </div>
@@ -312,7 +312,7 @@ const relatedArticles = [
     <p>
       Think of this like zipping files before sending them. The browser unzips automatically on the other end. GZIP has
       been around forever and works great. Brotli is newer and about 15-20% better if your server supports it. Most
-      decent hosts enable one of these by default . but double-check.
+      decent hosts enable one of these by default. But double-check.
     </p>
 
     <p class="mt-4">
@@ -325,7 +325,7 @@ const relatedArticles = [
   <section id="browser-caching">
     <h2>Browser Caching</h2>
     <p>
-      When someone visits your site, their browser downloads your images, CSS, JavaScript, fonts . everything. Browser
+      When someone visits your site, their browser downloads your images, CSS, JavaScript, fonts. Everything. Browser
       caching tells the browser to save those files locally, so next time they visit, their browser already has
       everything. Repeat visits become almost instant.
     </p>
@@ -333,16 +333,16 @@ const relatedArticles = [
     <div class="bg-card border border-ink/15 rounded-lg p-4 my-6">
       <h4 class="text-ink font-semibold">How Long to Cache Different Stuff</h4>
       <ul class="text-ink-soft text-sm mt-2 space-y-1">
-        <li>Images: 1 year . they almost never change</li>
-        <li>CSS and JavaScript: 1 year . when you update them, change the filename to bust the cache</li>
-        <li>Fonts: 1 year . same logic</li>
-        <li>HTML pages: Short or none . your actual content changes more often</li>
+        <li>Images: 1 year. They almost never change</li>
+        <li>CSS and JavaScript: 1 year. When you update them, change the filename to bust the cache</li>
+        <li>Fonts: 1 year. Same logic</li>
+        <li>HTML pages: Short or none. Your actual content changes more often</li>
       </ul>
     </div>
 
     <p>
       If you are using a caching plugin on WordPress, this is probably already configured. If you are doing it manually,
-      you will need to mess with Cache-Control headers in your . Htaccess or nginx config.
+      you will need to mess with Cache-Control headers in your .htaccess or nginx config.
     </p>
   </section>
 
@@ -359,7 +359,7 @@ const relatedArticles = [
     <ul class="text-ink/85 space-y-2 ml-4">
       <li>Visitors get files from whichever server is closest to them</li>
       <li>When you go viral, the CDN absorbs the traffic instead of crashing your server</li>
-      <li>Most CDNs include DDoS protection . bonus security</li>
+      <li>Most CDNs include DDoS protection. Bonus security</li>
       <li>Your hosting bill stays lower because the CDN handles most of the bandwidth</li>
     </ul>
 
@@ -388,7 +388,7 @@ const relatedArticles = [
   <section id="database-optimization">
     <h2>Database Optimization</h2>
     <p>
-      <a href="/blog/managed-wordpress-hosting-compared/">WordPress</a> stores everything in a database . your posts,
+      <a href="/blog/managed-wordpress-hosting-compared/">WordPress</a> stores everything in a database. Your posts,
       your settings, and way too much junk you do not need. Over
       time, databases get bloated with thousands of post revisions, old spam comments, and expired temporary data. All
       that extra stuff makes every database query slower.
@@ -418,7 +418,7 @@ const relatedArticles = [
   <section id="core-web-vitals">
     <h2>Core Web Vitals Explained</h2>
     <p>
-      Google came up with three specific metrics they call Core Web Vitals. They are not just vanity numbers . they are
+      Google came up with three specific metrics they call Core Web Vitals. They are not just vanity numbers. They are
       actual ranking factors. Fix these and you help both your speed scores and your SEO.
     </p>
 
@@ -448,13 +448,13 @@ const relatedArticles = [
   <!-- Speed Optimization Tools -->
   <section id="optimization-tools">
     <h2>Speed Optimization Tools</h2>
-    <p>Here are the tools I actually use and recommend . not every plugin on the market, just the ones that work.</p>
+    <p>Here are the tools I actually use and recommend. Not every plugin on the market, just the ones that work.</p>
 
     <h3 class="text-xl font-semibold text-ink mt-6 mb-4">WordPress Caching Plugins</h3>
     <div class="space-y-4 my-6">
       <div class="bg-card border border-ink/15 rounded-lg p-4">
         <h4 class="text-ink font-semibold">WP Rocket ($49/year)</h4>
-        <p class="text-ink-soft text-sm mt-2">This is what I use on most client sites. Does everything . caching,
+        <p class="text-ink-soft text-sm mt-2">This is what I use on most client sites. Does everything. Caching,
           minification, lazy loading, database cleanup. You turn it on and things get faster. Worth every penny for most
           sites.</p>
       </div>
@@ -465,7 +465,7 @@ const relatedArticles = [
       </div>
       <div class="bg-card border border-ink/15 rounded-lg p-4">
         <h4 class="text-ink font-semibold">Perfmatters ($24.95/year)</h4>
-        <p class="text-ink-soft text-sm mt-2">Not a caching plugin . it turns off all the stuff WordPress loads that you
+        <p class="text-ink-soft text-sm mt-2">Not a caching plugin. It turns off all the stuff WordPress loads that you
           do not need. Emoji scripts, heartbeat API, unused features. Use it alongside a caching plugin.</p>
       </div>
     </div>

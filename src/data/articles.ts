@@ -1120,9 +1120,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-cdn-services-for-faster-websites",
     section: "tools",
-    title: "Best CDN Services for Faster Websites (2025)",
+    title: "Best CDN Services for Faster Websites (2026)",
     description: "I tested Cloudflare, Fastly, and BunnyCDN for three years. Here's what actually matters for website speed and which CDN is right for your site.",
     pubDate: "2025-12-07",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1639322537228-f710d846310a-1200w.webp",
     imageAlt: "Global network visualization representing CDN edge locations",

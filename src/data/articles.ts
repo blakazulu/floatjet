@@ -409,9 +409,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-soundproofing-solutions-home-office",
     section: "gear",
-    title: "Best Soundproofing Solutions for Home Office (2025)",
+    title: "Best Soundproofing Solutions for Home Office (2026)",
     description: "My neighbor's Tuesday table saw ruined client calls for months. After testing door seals, acoustic panels, and foam, here's what actually works for home office soundproofing.",
     pubDate: "2025-12-08",
+    updatedDate: "2026-09-24",
     readingTime: 15,
     image: "/images/unsplash/photo-Y20JJ_ddy9M-1200w.webp",
     imageAlt: "Condenser microphone in a treated home office space",

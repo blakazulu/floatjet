@@ -433,9 +433,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-standing-desks",
     section: "gear",
-    title: "Best Standing Desks for Home Office (2025)",
-    description: "We tested 10 standing desks to find the best for home offices. Compare Uplift, FlexiSpot, Autonomous & more with honest reviews, specs, and buying advice.",
+    title: "Best Standing Desks for Home Office (2026)",
+    description: "We tested 10 standing desks and updated every price for 2026. Uplift V3, FlexiSpot, Autonomous, Branch Duo, IKEA MITTZON and more, with honest reviews and specs.",
     pubDate: "2025-11-13",
+    updatedDate: "2026-09-24",
     readingTime: 18,
     image: "/images/unsplash/photo-1611532736579-6b16e2b50449-1200w.webp",
     imageAlt: "Ergonomic standing desk for home office",

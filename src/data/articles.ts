@@ -822,9 +822,10 @@ export const guidesArticles: Article[] = [
   {
     slug: "pomodoro-technique-remote-workers",
     section: "guides",
-    title: "Pomodoro Technique for Remote Workers: Complete Guide (2025)",
+    title: "Pomodoro Technique for Remote Workers: Complete Guide (2026)",
     description: "Master the Pomodoro Technique for remote work. Learn optimal intervals, handling interruptions, best apps, and how to adapt this focus method for deep work.",
     pubDate: "2025-06-03",
+    updatedDate: "2026-09-24",
     readingTime: 12,
     image: "/images/unsplash/photo-1434626881859-194d67b2b86f-1200w.webp",
     imageAlt: "Timer and clock for pomodoro productivity technique",
@@ -877,9 +878,10 @@ export const guidesArticles: Article[] = [
   {
     slug: "time-blocking-vs-time-tracking",
     section: "guides",
-    title: "Time Blocking vs Time Tracking: Which Works? (2025)",
+    title: "Time Blocking vs Time Tracking: Which Works? (2026)",
     description: "Compare time blocking and time tracking for remote work. Learn when each method works best, how to combine them, and which suits your work personality best.",
     pubDate: "2025-11-19",
+    updatedDate: "2026-09-24",
     readingTime: 9,
     image: "/images/unsplash/photo-1611532736597-de2d4265fba3-1200w.webp",
     imageAlt: "Calendar and timer representing time blocking and time tracking methods",

@@ -506,9 +506,10 @@ export const gearArticles: Article[] = [
   {
     slug: "macbook-vs-windows-remote-work",
     section: "gear",
-    title: "MacBook vs Windows for Remote Work: Which One? (2025)",
+    title: "MacBook vs Windows for Remote Work: Which One? (2026)",
     description: "The definitive comparison of MacBook vs Windows laptops for remote work. We break down performance, software compatibility, price, and more to help you decide.",
     pubDate: "2025-11-24",
+    updatedDate: "2026-09-24",
     readingTime: 7,
     image: "/images/unsplash/photo-1517336714731-489689fd1ca8-1200w.webp",
     imageAlt: "MacBook and Windows laptop side by side comparison",

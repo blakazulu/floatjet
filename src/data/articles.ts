@@ -530,9 +530,10 @@ export const gearArticles: Article[] = [
   {
     slug: "standing-desk-cost-guide",
     section: "gear",
-    title: "How Much Does a Standing Desk Really Cost? (2025 Guide)",
+    title: "How Much Does a Standing Desk Really Cost? (2026 Guide)",
     description: "Complete price breakdown for standing desks at every budget. Learn what you get at $200, $500, and $1,000+ price points and whether expensive desks worth it.",
     pubDate: "2025-03-24",
+    updatedDate: "2026-09-24",
     readingTime: 8,
     image: "/images/unsplash/photo-1497366216548-37526070297c-1200w.webp",
     imageAlt: "Various standing desks at different price points",

@@ -229,9 +229,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-ergonomic-chairs",
     section: "gear",
-    title: "Best Ergonomic Chairs for Home Office (2025)",
+    title: "Best Ergonomic Chairs for Home Office (2026)",
     description: "Tested ten ergonomic office chairs for home offices. Herman Miller, Steelcase, Secretlab compared with honest reviews on comfort, durability, and value.",
     pubDate: "2025-04-26",
+    updatedDate: "2026-09-24",
     readingTime: 18,
     image: "/images/unsplash/photo-1580480055273-228ff5388ef8-1200w.webp",
     imageAlt: "Modern ergonomic office chair in a home office setup",

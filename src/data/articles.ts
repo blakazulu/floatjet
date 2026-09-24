@@ -396,9 +396,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-speakers-home-office",
     section: "gear",
-    title: "Best Speakers for Home Office (2025)",
+    title: "Best Speakers for Home Office (2026)",
     description: "Top-rated desktop speakers for remote work. We tested 8 speaker systems for audio quality, voice clarity on calls, and value for home office setups honestly.",
     pubDate: "2025-08-12",
+    updatedDate: "2026-09-24",
     readingTime: 5,
     image: "/images/unsplash/photo-1545454675-3531b543be5d-1200w.webp",
     imageAlt: "Desktop speakers on a home office desk setup",

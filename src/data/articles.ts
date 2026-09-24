@@ -1204,9 +1204,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-expense-tracking-apps",
     section: "tools",
-    title: "Best Expense Tracking Apps for Digital Nomads in 2025",
+    title: "Best Expense Tracking Apps for Digital Nomads in 2026",
     description: "Compare the top expense tracking apps for freelancers and digital nomads. Track expenses, scan receipts, and maximize tax deductions with the right tool.",
     pubDate: "2025-04-02",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1553729459-efe14ef6055d-1200w.webp",
     imageAlt: "Expense tracking and financial management apps",

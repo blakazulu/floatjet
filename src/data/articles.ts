@@ -1192,9 +1192,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-encrypted-messaging-apps-for-remote-teams",
     section: "tools",
-    title: "Best Encrypted Messaging Apps for Remote Teams (2025)",
+    title: "Best Encrypted Messaging Apps for Remote Teams (2026)",
     description: "Contractor leaked our strategy to a competitor via WhatsApp. Never again. Signal, Element, Telegram, Wire compared for secure team communication.",
     pubDate: "2025-12-08",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1563986768609-322da13575f3-1200w.webp",
     imageAlt: "Secure encrypted messaging on smartphone",

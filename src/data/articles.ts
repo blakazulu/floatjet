@@ -1228,9 +1228,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-note-taking-apps",
     section: "tools",
-    title: "Best Note-Taking Apps for Remote Professionals (2025)",
+    title: "Best Note-Taking Apps for Remote Professionals (2026)",
     description: "We tested 10 note-taking apps to find the best for remote workers. Compare Notion, Obsidian, Evernote & more with pricing, features, and sync capabilities.",
     pubDate: "2025-05-16",
+    updatedDate: "2026-09-24",
     readingTime: 17,
     image: "/images/unsplash/photo-1488190211105-8b0e65b80b4e-1200w.webp",
     imageAlt: "Person taking digital notes on laptop with coffee",

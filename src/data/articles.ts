@@ -1132,9 +1132,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-crm-software-for-freelancers",
     section: "tools",
-    title: "Best CRM Software for Freelancers (2025)",
+    title: "Best CRM Software for Freelancers (2026)",
     description: "Lost a $3,200 client because of a spreadsheet. Never again. I tested nine CRM tools to find the best for freelancers. HubSpot, Pipedrive, Notion compared.",
     pubDate: "2025-12-08",
+    updatedDate: "2026-09-24",
     readingTime: 12,
     image: "/images/unsplash/photo-1556761175-5973dc0f32e7-1200w.webp",
     imageAlt: "Business team discussing client relationship management strategy",

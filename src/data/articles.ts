@@ -657,6 +657,7 @@ export const guidesArticles: Article[] = [
     title: "Do I Need a VPN When Working from Cafes?",
     description: "Short answer: yes. Learn why VPNs are essential for cafe WiFi security, what risks you face on public networks, and how to stay safe while working remotely.",
     pubDate: "2025-07-02",
+    updatedDate: "2026-09-24",
     readingTime: 7,
     image: "/images/unsplash/photo-1521017432531-fbd92d768814-1200w.webp",
     imageAlt: "Remote worker using laptop at coffee shop with VPN protection",

@@ -1484,6 +1484,7 @@ export const toolsArticles: Article[] = [
     title: "Wise vs PayPal vs Payoneer: Best for Remote Workers?",
     description: "Compare Wise, PayPal, and Payoneer for international payments. Fees, exchange rates, speed, and features to help freelancers choose the right platform.",
     pubDate: "2025-07-06",
+    updatedDate: "2026-09-24",
     readingTime: 10,
     image: "/images/unsplash/photo-1580894894513-541e068a3e2b-1200w.webp",
     imageAlt: "International money transfer and payment apps",

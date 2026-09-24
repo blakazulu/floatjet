@@ -324,9 +324,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-laptops-for-video-editing-on-the-go",
     section: "gear",
-    title: "Best Laptops for Video Editing on the Go (2025)",
-    description: "Tested MacBook Pro M4 Pro, ASUS ProArt P16, and Razer Blade 16 for mobile video editing. Real export times, battery life, and honest takes from four months of use.",
+    title: "Best Laptops for Video Editing on the Go (2026)",
+    description: "Tested MacBook Pro M4 Pro, ASUS ProArt P16, and Razer Blade 16 for mobile video editing, now updated with the 2026 M5 Pro, RTX 50 series, and current prices.",
     pubDate: "2025-12-08",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1574717024653-61fd2cf4d44d-1200w.webp",
     imageAlt: "Video editing laptop showing timeline and color grading",

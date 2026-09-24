@@ -1312,9 +1312,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-time-tracking-software",
     section: "tools",
-    title: "Best Time Tracking Software for Freelancers (2025)",
+    title: "Best Time Tracking Software for Freelancers (2026)",
     description: "I tested Toggl, Harvest, Clockify for freelancers. Here's what works for billing, productivity, and keeping clients happy.",
     pubDate: "2025-09-25",
+    updatedDate: "2026-09-24",
     readingTime: 15,
     image: "/images/unsplash/photo-1508962914676-134849a727f0-1200w.webp",
     imageAlt: "Timer and clock concept for time tracking productivity",

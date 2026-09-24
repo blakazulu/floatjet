@@ -268,9 +268,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-footrests-for-desk-workers",
     section: "gear",
-    title: "Best Footrests for Desk Workers (2025)",
-    description: "I tested six footrests over eight months. ErgoFoam, StrongTek, HUANUO compared with honest reviews on comfort, durability, and value for home offices.",
+    title: "Best Footrests for Desk Workers (2026)",
+    description: "I tested six footrests over eight months, with prices rechecked for 2026. ErgoFoam, StrongTek, HUANUO compared on comfort, durability, and value for home offices.",
     pubDate: "2025-12-13",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1598818432717-29f81b9224fd-1200w.webp",
     imageAlt: "Person wearing socks on wooden floor in home office",

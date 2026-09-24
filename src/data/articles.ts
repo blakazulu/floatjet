@@ -38,9 +38,10 @@ export const blogArticles: Article[] = [
   {
     slug: "best-banking-digital-nomads",
     section: "blog",
-    title: "Best Banking for Digital Nomads (2025)",
+    title: "Best Banking for Digital Nomads (2026)",
     description: "Traditional banks weren't built for people who change countries monthly. Here's what actually works for digital nomad banking in 2025.",
     pubDate: "2025-01-18",
+    updatedDate: "2026-09-24",
     readingTime: 4,
     image: "/images/unsplash/photo-1563986768494-4dee2763ff3f-1200w.webp",
     imageAlt: "Mobile banking app on smartphone with credit cards",
@@ -163,9 +164,10 @@ export const blogArticles: Article[] = [
   {
     slug: "vpn-public-wifi-guide",
     section: "blog",
-    title: "VPN for Public WiFi: Complete Guide (2025)",
+    title: "VPN for Public WiFi: Complete Guide (2026)",
     description: "Got hacked at a Lisbon coffee shop using public WiFi. Lost three accounts. Here's how to stay safe.",
     pubDate: "2025-10-12",
+    updatedDate: "2026-09-24",
     readingTime: 4,
     image: "/images/unsplash/photo-1516321497487-e288fb19713f-1200w.webp",
     imageAlt: "Public WiFi security in a cafe setting",

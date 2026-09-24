@@ -373,9 +373,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-podcast-equipment-starter-kits",
     section: "gear",
-    title: "Best Podcast Equipment Starter Kits Under $300 (2025)",
+    title: "Best Podcast Equipment Starter Kits Under $300 (2026)",
     description: "My buddy's $40 Amazon mic sounded like a soup can. After testing 15 setups, here's what actually works for podcast beginners on a budget.",
     pubDate: "2025-12-08",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1598488035139-bdbb2231ce04-1200w.webp",
     imageAlt: "Podcast microphone and audio recording equipment setup",

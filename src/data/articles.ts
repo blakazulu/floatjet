@@ -1287,9 +1287,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-productivity-apps",
     section: "tools",
-    title: "Best Productivity Apps for Remote Workers (2025)",
+    title: "Best Productivity Apps for Remote Workers (2026)",
     description: "Compare the top productivity apps for remote work. We tested Notion, Todoist, Obsidian and more to find the best tools for focus and task management daily.",
     pubDate: "2025-10-27",
+    updatedDate: "2026-09-24",
     readingTime: 16,
     image: "/images/unsplash/photo-1484480974693-6ca0a78fb36b-1200w.webp",
     imageAlt: "Organized workspace with productivity tools on screen",

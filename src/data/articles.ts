@@ -146,9 +146,10 @@ export const blogArticles: Article[] = [
   {
     slug: "top-destinations-digital-nomads",
     section: "blog",
-    title: "Top 10 Destinations for Digital Nomads (2025)",
+    title: "Top 10 Destinations for Digital Nomads (2026)",
     description: "Lived in twelve cities across four continents. Here are the ones with fast internet, affordable rent, and visas that work.",
     pubDate: "2025-09-05",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1528181304800-259b08848526-1200w.webp",
     imageAlt: "Digital nomad working from tropical location",

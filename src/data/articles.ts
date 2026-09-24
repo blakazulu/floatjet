@@ -402,9 +402,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-portable-monitors",
     section: "gear",
-    title: "Best Portable Monitors for Digital Nomads (2025)",
-    description: "Tested eight portable monitors to find the best for travel and remote work. Compare ASUS ZenScreen, Lepow, and more for dual-screen productivity on the go.",
+    title: "Best Portable Monitors for Digital Nomads (2026)",
+    description: "Tested eight portable monitors for travel and remote work, with every price rechecked for 2026. Compare ASUS ZenScreen, Lepow, INNOCN OLED and more.",
     pubDate: "2025-01-12",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1587829741301-dc798b83add3-1200w.webp",
     imageAlt: "Portable monitor setup with laptop for digital nomad work",

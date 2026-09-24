@@ -109,14 +109,6 @@ const fullComparisonRows = [
     chrome: "Full",
   },
   {
-    extension: "<strong>HTTPS Everywhere</strong>",
-    type: "Connection security",
-    price: "Free",
-    openSource: true,
-    firefox: "Full",
-    chrome: "Full",
-  },
-  {
     extension: "<strong>DuckDuckGo Essentials</strong>",
     type: "All-in-one",
     price: "Free",
@@ -273,7 +265,9 @@ const relatedArticles = [
   </p>
   <p>
     uBlock Origin does the heavy lifting for ad and tracker blocking. The code is open source, so security researchers
-    can actually verify nothing weird is happening under the hood. And here's something I didn't expect: my browser
+    can actually verify nothing weird is happening under the hood. One 2026 caveat: Chrome killed the technology the
+    full version relies on, so on Chrome you get uBlock Origin Lite instead. Still good, slightly less capable.
+    Firefox runs the full version with no issues. And here's something I didn't expect: my browser
     runs faster with it installed. All those tracking scripts and video ads consume serious resources.
   </p>
   <p><strong>What I use it for:</strong></p>
@@ -394,9 +388,9 @@ const relatedArticles = [
   <h2 id="other-extensions">Other Extensions Worth Knowing About</h2>
   <p>These aren't in my essential stack but they solve specific problems.</p>
   <p>
-    <strong>HTTPS Everywhere</strong> used to be non-negotiable. It forced websites to use encrypted connections. But
-    most sites default to HTTPS now. This extension matters less than it did in like 2018. Keep it around if you
-    frequent older or sketchier parts of the web.
+    <strong>HTTPS Everywhere</strong> used to be non-negotiable. It forced websites to use encrypted connections. The
+    EFF officially retired it in 2023 because browsers now ship that protection built in. If you still have it
+    installed, you can delete it. Your browser already does the job.
   </p>
   <p>
     <strong>DuckDuckGo Privacy Essentials</strong> combines tracker blocking with their private search. Not bad as an

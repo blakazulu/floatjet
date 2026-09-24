@@ -1156,9 +1156,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-email-hosting-for-small-businesses",
     section: "tools",
-    title: "Best Email Hosting for Small Businesses (2025)",
+    title: "Best Email Hosting for Small Businesses (2026)",
     description: "I tested Google Workspace, Microsoft 365, and Zoho Mail for three months. Here's what actually works for small business email hosting.",
     pubDate: "2025-12-07",
+    updatedDate: "2026-09-24",
     readingTime: 12,
     image: "/images/unsplash/photo-1557200134-90327ee9fafa-1200w.webp",
     imageAlt: "Professional email communication on laptop and smartphone",
@@ -1167,9 +1168,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-email-marketing-tools",
     section: "tools",
-    title: "Best Email Marketing Tools for Creators (2025)",
+    title: "Best Email Marketing Tools for Creators (2026)",
     description: "I tested twelve email marketing platforms for creators and businesses. ConvertKit, Beehiiv, Mailchimp compared with pricing, features, and honest reviews.",
     pubDate: "2025-09-29",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1432888498266-38ffec3eaf0a-1200w.webp",
     imageAlt: "Email marketing automation and campaign tools",

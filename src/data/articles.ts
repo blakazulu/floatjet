@@ -381,9 +381,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-portable-chargers-power-banks",
     section: "gear",
-    title: "Best Portable Chargers & Power Banks for Travel (2025)",
-    description: "Tested ten portable chargers over four months of travel. Here are the ones that deliver on their promises, which died after two months, and what I actually use.",
+    title: "Best Portable Chargers & Power Banks for Travel (2026)",
+    description: "Tested ten portable chargers over four months of travel, rechecked for 2026 with current prices, recalls, and the new airline power bank rules.",
     pubDate: "2025-01-19",
+    updatedDate: "2026-09-24",
     readingTime: 13,
     image: "/images/unsplash/photo-1609091839311-d5365f9ff1c5-1200w.webp",
     imageAlt: "Power bank portable charger with USB cables",

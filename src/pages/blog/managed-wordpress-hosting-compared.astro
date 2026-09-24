@@ -16,6 +16,7 @@ const headings = [
   { text: "Quick Comparison", slug: "quick-comparison", depth: 2 },
   { text: "What You Actually Get", slug: "what-is-managed", depth: 2 },
   { text: "The Hosts", slug: "reviews", depth: 2 },
+  { text: "The Costs Nobody Mentions", slug: "hidden-costs", depth: 2 },
   { text: "Which One?", slug: "how-to-choose", depth: 2 },
   { text: "Quick Answers", slug: "faq", depth: 2 },
   { text: "Bottom Line", slug: "conclusion", depth: 2 },
@@ -33,7 +34,7 @@ const comparisonColumns = [
 const comparisonRows = [
   {
     host: "<strong>WP Engine</strong>",
-    price: "$20/mo",
+    price: "$28/mo",
     sites: "1",
     storage: "10GB",
     bestFor: "Business sites",
@@ -47,16 +48,16 @@ const comparisonRows = [
   },
   {
     host: "<strong>Cloudways</strong>",
-    price: "$14/mo",
+    price: "$11/mo",
     sites: "Unlimited",
-    storage: "25GB",
+    storage: "50GB",
     bestFor: "Value",
   },
   {
     host: "<strong>Flywheel</strong>",
-    price: "$15/mo",
+    price: "$25/mo",
     sites: "1",
-    storage: "5GB",
+    storage: "10GB",
     bestFor: "Designers/Agencies",
   },
   {
@@ -70,6 +71,14 @@ const comparisonRows = [
 
 // FAQ data
 const faqs = [
+  {
+    question: "Why did my renewal bill jump?",
+    answer: "<p>Almost every host here sells the first year cheap. SiteGround's $2.99 plan renews at $17.99 a month. Check the renewal price before you prepay three years.</p>",
+  },
+  {
+    question: "Does Flywheel still exist?",
+    answer: "<p>Yes. WP Engine owns it and it still sells its own plans, starting at $25 a month billed yearly.</p>",
+  },
   {
     question: "Worth the extra cost?",
     answer: "<p>For business sites, yes. For hobby blogs, probably not.</p>",
@@ -190,11 +199,11 @@ const relatedArticles = [
     <strong>What I like:</strong> Never had a single downtime issue. Support knows WordPress deeply.
   </p>
   <p>
-    <strong>What's annoying:</strong> $20/month for one site feels steep. Traffic limits are strict.
+    <strong>What's annoying:</strong> Around $28/month for one site feels steep, and that is the first-year price. The entry plan covers about 25,000 visits and 75GB of bandwidth a month, and every extra site is another $20/month.
   </p>
   <p>
     <a href="/go/wpengine" rel="nofollow sponsored" class="text-teal-ink underline decoration-2 underline-offset-4 hover:text-ink" target="_blank">
-      Try WP Engine (2 months free) &rarr;
+      Try WP Engine &rarr;
     </a>
   </p>
 
@@ -206,7 +215,7 @@ const relatedArticles = [
     <strong>What I like:</strong> Speed is noticeably better. Modern interface.
   </p>
   <p>
-    <strong>What's annoying:</strong> $35/month. Most expensive option. Worth it if speed matters to your business.
+    <strong>What's annoying:</strong> $35/month for a single site. Most expensive option here, though the first month is free if you pay monthly. Worth it if speed matters to your business.
   </p>
   <p>
     <a href="/go/kinsta" rel="nofollow sponsored" class="text-teal-ink underline decoration-2 underline-offset-4 hover:text-ink" target="_blank">
@@ -220,7 +229,7 @@ const relatedArticles = [
     on it. Unlimited sites per server.
   </p>
   <p>
-    <strong>What I like:</strong> Best value by far. $14/month for unlimited sites.
+    <strong>What I like:</strong> Best value by far. $11/month for unlimited sites on a 2GB DigitalOcean server, billed by the hour so you can kill a test server and stop paying.
   </p>
   <p>
     <strong>What's annoying:</strong> Slightly more technical. Not as hand-holdy as others.
@@ -239,7 +248,7 @@ const relatedArticles = [
     <strong>What I like:</strong> Perfect workflow for client work.
   </p>
   <p>
-    <strong>What's annoying:</strong> Lower performance tier. 5K visits on starter plan is tight.
+    <strong>What's annoying:</strong> Lower performance tier. Starter is $25/month billed yearly for one site and 25,000 visits.
   </p>
 
   <h3 id="siteground">SiteGround</h3>
@@ -250,7 +259,26 @@ const relatedArticles = [
     <strong>What I like:</strong> Managed features at almost-shared prices.
   </p>
   <p>
-    <strong>What's annoying:</strong> Renewal rates jump. That $3/month intro price becomes $15.
+    <strong>What's annoying:</strong> Renewal rates jump. That $2.99/month intro price is for a prepaid year, then it renews at $17.99. GrowBig goes from $4.99 to $29.99.
+  </p>
+
+  <h2 id="hidden-costs">The Costs Nobody Mentions</h2>
+  <p>
+    The price on the pricing page is rarely what you pay in year two. Stuff to check before you sign up:
+  </p>
+  <ul>
+    <li><strong>Renewals.</strong> Intro deals are everywhere. SiteGround's jump is the biggest here, roughly six times the
+      first-year price. WP Engine's $28 is also flagged as first-year pricing.</li>
+    <li><strong>Visit caps.</strong> WP Engine, Kinsta and Flywheel all price by monthly visits. Go over and you either pay
+      overages or get pushed to the next plan. Cloudways doesn't count visits. You just need a bigger server.</li>
+    <li><strong>Extra sites.</strong> One site plans stay cheap until you launch a second one. On WP Engine and Flywheel
+      that's $20/month per extra site.</li>
+    <li><strong>Email.</strong> Kinsta and WP Engine don't host email at all. SiteGround does. On the others, budget for
+      Google Workspace or similar on top.</li>
+  </ul>
+  <p>
+    If you're comparing this with plain shared or VPS hosting, our <a
+      href="/tools/shared-vs-vps-vs-dedicated-hosting/">hosting types breakdown</a> covers where managed cloud fits.
   </p>
 
   <!-- How to Choose -->

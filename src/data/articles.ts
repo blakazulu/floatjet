@@ -116,10 +116,11 @@ export const blogArticles: Article[] = [
   {
     slug: "managed-wordpress-hosting-compared",
     section: "blog",
-    title: "Managed WordPress Hosting Compared (2025)",
+    title: "Managed WordPress Hosting Compared (2026)",
     description: "I tested five managed WordPress hosts for remote businesses. Here's what I found.",
     pubDate: "2025-03-18",
-    readingTime: 4,
+    updatedDate: "2026-09-24",
+    readingTime: 6,
     image: "/images/unsplash/photo-1504639725590-34d0984388bd-1200w.webp",
     imageAlt: "WordPress development and hosting concept",
     category: "hosting",

@@ -1108,9 +1108,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-cloud-storage-remote-work",
     section: "tools",
-    title: "Best Cloud Storage for Remote Work (2025)",
+    title: "Best Cloud Storage for Remote Work (2026)",
     description: "I tested eight cloud storage solutions for remote teams. Google Drive, Dropbox, OneDrive compared with pricing, security features, and collaboration tools.",
     pubDate: "2025-08-03",
+    updatedDate: "2026-09-24",
     readingTime: 16,
     image: "/images/unsplash/photo-1573164713988-8665fc963095-1200w.webp",
     imageAlt: "Cloud storage and file synchronization technology",

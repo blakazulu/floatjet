@@ -1240,9 +1240,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-online-course-platforms",
     section: "tools",
-    title: "Best Online Course Platforms for Creators (2025)",
+    title: "Best Online Course Platforms for Creators (2026)",
     description: "We tested 10 course platforms to find the best for creators. Compare Teachable, Thinkific, Kajabi, Podia and more to sell your courses online successfully.",
     pubDate: "2025-02-23",
+    updatedDate: "2026-09-24",
     readingTime: 16,
     image: "/images/unsplash/photo-1501504905252-473c47e087f8-1200w.webp",
     imageAlt: "Online course creation workspace with laptop and notes",

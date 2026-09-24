@@ -1409,9 +1409,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "is-notion-worth-it",
     section: "tools",
-    title: "Is Notion Worth It? Honest Review for Remote Workers (2025)",
+    title: "Is Notion Worth It? Honest Review for Remote Workers (2026)",
     description: "Wondering if Notion is worth the hype? We break down the pros, cons, pricing, and who should actually use it versus other productivity tools for work.",
     pubDate: "2025-03-10",
+    updatedDate: "2026-09-24",
     readingTime: 9,
     image: "/images/unsplash/photo-1517694712202-14dd9538aa97-1200w.webp",
     imageAlt: "Notion app productivity and note-taking",

@@ -666,9 +666,10 @@ export const guidesArticles: Article[] = [
   {
     slug: "digital-nomad-visa-portugal",
     section: "guides",
-    title: "Portugal Digital Nomad Visa 2025: How to Apply",
+    title: "Portugal Digital Nomad Visa 2026: How to Apply",
     description: "Complete guide to Portugal's digital nomad visa. Requirements, application process, costs, and what to expect.",
     pubDate: "2025-09-04",
+    updatedDate: "2026-09-24",
     readingTime: 15,
     image: "/images/unsplash/photo-1555881400-74d7acaacd8b-1200w.webp",
     imageAlt: "Lisbon Portugal cityscape with colorful buildings and tram",
@@ -678,9 +679,10 @@ export const guidesArticles: Article[] = [
   {
     slug: "digital-nomad-visa-spain",
     section: "guides",
-    title: "Spain Digital Nomad Visa 2025: How to Apply",
+    title: "Spain Digital Nomad Visa 2026: How to Apply",
     description: "Complete guide to Spain's digital nomad visa. Requirements, application process, costs, and what to expect.",
     pubDate: "2025-11-24",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1539037116277-4db20889f2d4-1200w.webp",
     imageAlt: "Barcelona Spain cityscape with Sagrada Familia",

@@ -462,9 +462,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-travel-adapters",
     section: "gear",
-    title: "Best Travel Adapters for International Nomads (2025)",
-    description: "I tested 8 universal travel adapters across four continents. Here's what works and what melted.",
+    title: "Best Travel Adapters for International Nomads (2026)",
+    description: "I tested 8 universal travel adapters across four continents, with prices and models rechecked for 2026. Here is what works and what melted.",
     pubDate: "2025-06-21",
+    updatedDate: "2026-09-24",
     readingTime: 10,
     image: "/images/unsplash/photo-1558618666-fcd25c85cd64-1200w.webp",
     imageAlt: "Universal travel adapter for international power outlets",

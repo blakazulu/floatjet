@@ -598,6 +598,7 @@ export const guidesArticles: Article[] = [
     title: "Best Coworking Spaces in Lisbon: Digital Nomad Guide",
     description: "Worked from twelve Lisbon coworking spaces. Here's what's worth your money.",
     pubDate: "2025-11-27",
+    updatedDate: "2026-09-24",
     readingTime: 13,
     image: "/images/unsplash/photo-1497366811353-6870744d04b2-1200w.webp",
     imageAlt: "Modern coworking space in Lisbon",

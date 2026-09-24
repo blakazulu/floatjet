@@ -38,7 +38,7 @@ const comparisonRows = [
   { feature: "<strong>Speed</strong>", free: "Slow (throttled)", paid: "Fast (10-20% drop)" },
   {
     feature: "<strong>Server locations</strong>",
-    free: "3-10 countries",
+    free: "8-10 countries",
     paid: "50-100+ countries",
   },
   { feature: "<strong>Streaming</strong>", free: "❌ Blocked", paid: "✅ Works" },
@@ -64,10 +64,10 @@ const freemiumColumns = [
 const freemiumRows = [
   {
     vpn: "<strong>ProtonVPN</strong>",
-    freeLimit: "Unlimited data",
-    servers: "3 countries",
+    freeLimit: "Unlimited data, 1 device",
+    servers: "10 countries",
     streaming: "❌",
-    upgrade: "$4.99/mo",
+    upgrade: "$4.99/mo (check current)",
   },
   {
     vpn: "<strong>Windscribe</strong>",
@@ -77,11 +77,11 @@ const freemiumRows = [
     upgrade: "$5.75/mo",
   },
   {
-    vpn: "<strong>hide. Me</strong>",
-    freeLimit: "10GB/month",
-    servers: "8 countries",
+    vpn: "<strong>hide.me</strong>",
+    freeLimit: "Unlimited data, limited speed",
+    servers: "8 locations",
     streaming: "❌",
-    upgrade: "$2.59/mo",
+    upgrade: "$2.59/mo (check current)",
   },
   {
     vpn: "<strong>TunnelBear</strong>",
@@ -118,7 +118,7 @@ const budgetRows = [
   },
   {
     vpn: "<strong>PIA</strong>",
-    price: "$2.19/mo",
+    price: "$2.03/mo (3-year)",
     data: "Unlimited",
     devices: "Unlimited",
     streaming: "✅ Most platforms",
@@ -132,7 +132,7 @@ const budgetRows = [
   },
   {
     vpn: "<strong>NordVPN</strong>",
-    price: "$3.39/mo",
+    price: "$3.49/mo (2-year)",
     data: "Unlimited",
     devices: "10",
     streaming: "✅ All platforms",
@@ -178,6 +178,16 @@ const faqs = [
   {
     question: "Freelancers need to pay?",
     answer: "<p>Absolutely. Client data on public WiFi? Get the $3/month protection.</p>",
+  },
+  {
+    question: "Is ProtonVPN free still unlimited?",
+    answer:
+      "<p>Yes. Unlimited data, no ads, 10 countries. The catch is one device and no choice of server.</p>",
+  },
+  {
+    question: "Are the cheap prices the real price?",
+    answer:
+      "<p>Only for the first term. NordVPN's 2-year Basic plan renews at $139.08 a year. Set a reminder before it renews.</p>",
   },
 ];
 
@@ -247,9 +257,7 @@ const relatedArticles = [
     Most common model. The VPN sees everything. Every site, every search, every login. They package that up and sell it
     to advertisers and data brokers.
   </p>
-  <p>
-    A 2022 study found 75% of free VPN apps had tracking libraries baked in. That's not a typo. Three out of four.
-  </p>
+  <p>Researchers at CSIRO looked at 283 Android VPN apps and found 75% had tracking libraries baked in. That was 2016. It hasn't gotten better. In 2025 a team from Arizona State and Citizen Lab found that a bunch of popular free VPN apps, with hundreds of millions of downloads between them, were secretly run by the same few companies. Same code. Same security holes. None of it disclosed.</p>
 
   <h3>Ads Everywhere</h3>
   <p>
@@ -258,10 +266,7 @@ const relatedArticles = [
   </p>
 
   <h3>Your Internet Becomes Their Exit Node</h3>
-  <p>
-    This one's wild. Hola VPN got caught turning user devices into exit nodes for their network. Your IP address, other
-    people's traffic running through it. One guy's internet connection was used for a botnet. Could've been yours.
-  </p>
+  <p>This one's wild. Back in 2015, Hola VPN got caught turning user devices into exit nodes for their network. Your IP address, other people's traffic running through it. One guy's internet connection was used for a botnet. Could've been yours.</p>
 
   <h3>The Legit Model: Freemium</h3>
   <p>
@@ -300,9 +305,7 @@ const relatedArticles = [
     I've tested free VPNs that leaked my real IP address. The whole point of a VPN, defeated. Your "protected"
     connection showing exactly who you are.
   </p>
-  <p>
-    Paid VPNs include kill switches and leak protection. Standard features. Free VPNs? Usually don't.
-  </p>
+  <p>Paid VPNs include kill switches and leak protection. Standard features. Free VPNs? Usually don't. (Not sure what a kill switch does? <a href="/tools/vpn-kill-switch-explained/">Here</a>.)</p>
 
   <h3>No Audits</h3>
   <p>
@@ -329,11 +332,11 @@ const relatedArticles = [
     that.
   </p>
   <p>
-    <strong>Data:</strong> Most cap you at 500MB-10GB per month. One Zoom meeting burns through a gig. One Netflix movie
+    <strong>Data:</strong> Most cap you somewhere between 500MB and 10GB a month. (Proton is the big exception.) One Zoom meeting burns through a gig. One Netflix movie
     uses 3-7GB. You'd hit the limit before lunch.
   </p>
   <p>
-    <strong>Servers:</strong> Free VPNs offer maybe 3-10 locations. Paid ones give you 50-100+ countries. More options,
+    <strong>Servers:</strong> Free VPNs offer maybe 8-10 locations, and you don't get to pick the fast ones. Paid ones give you 50-100+ countries. More options,
     less congestion, better speeds.
   </p>
   <p>
@@ -384,9 +387,7 @@ const relatedArticles = [
     The gold standard. Swiss company. Same people behind ProtonMail. They've been audited. No logs. No ads. Unlimited
     data. The only free VPN without caps.
   </p>
-  <p>
-    Downsides: Only 3 countries, medium speeds, no streaming, one device.
-  </p>
+  <p>Downsides: 10 countries, and the app picks the server for you. One device. Speeds drop at peak hours and streaming isn't really a thing.</p>
   <p>
     For basic public WiFi protection, it actually works.
   </p>
@@ -401,14 +402,10 @@ const relatedArticles = [
   <p>
     10GB/month. Generous. 10 countries available. Sometimes works with Netflix.
   </p>
-  <p>
-    Tweet about them and you get 5GB more. Confirm your email, another 1GB. They're transparent about the hustle.
-  </p>
+  <p>Tweet about them and you get 5GB more. Confirm your email, another 1GB. They're transparent about the hustle. If you're mostly worried about coffee shop WiFi, read <a href="/blog/vpn-public-wifi-guide/">our public WiFi guide</a> first. You might need less than you think.</p>
 
   <h3>hide. Me Free</h3>
-  <p>
-    10GB/month, 8 countries. Clear about their model. No-logs policy.
-  </p>
+  <p>No data cap anymore, but the speed is limited. 8 locations, one device. Clear about their model. No-logs policy.</p>
   <p>
     Solid option if ProtonVPN doesn't work for you.
   </p>
@@ -468,35 +465,34 @@ const relatedArticles = [
   </p>
   <AffiliateButton
       href="/go/surfshark"
-      text="Get Surfshark . $2.49/mo (81% Off)"
+      text="Get Surfshark . $2.49/mo"
       variant="primary"
       program="surfshark"
   />
 
-  <h3>NordVPN . $3.39/mo</h3>
+  <h3>NordVPN . about $3.49/mo</h3>
   <p>
-    What I use. Fast, works everywhere, extra security features. Worth the extra dollar.
+    What I use. Fast, works everywhere, extra security features. Worth the extra dollar. Just know the 2-year Basic
+    plan renews at $139.08 a year after that.
   </p>
   <AffiliateButton
       href="/go/nordvpn"
-      text="Get NordVPN . $3.39/mo (68% Off)"
+      text="Get NordVPN . From $3.49/mo"
       variant="primary"
       program="nordvpn"
   />
 
-  <h3>PIA . $2.19/mo</h3>
+  <h3>PIA . about $2.03/mo</h3>
   <p>
-    Cheapest option that's legit. Not as polished, but solid protection.
+    Cheapest option that's legit, but only on the 3-year plan. Not as polished, but solid protection.
   </p>
   <AffiliateButton
       href="/go/pia"
-      text="Get PIA . $2.19/mo (83% Off)"
+      text="Get PIA . From $2.03/mo"
       variant="secondary"
       program="pia"
   />
-  <p>
-    All of them require 2-year commitments for these prices. Monthly is way more expensive.
-  </p>
+  <p>All of these prices need a 2 or 3 year commitment, and they renew higher. Monthly is way more expensive. For the full breakdown of who to pick, see <a href="/tools/best-vpn-digital-nomads/">best VPNs for digital nomads</a>.</p>
 
   <!-- FAQ Section -->
   <FAQSection faqs={faqs}/>

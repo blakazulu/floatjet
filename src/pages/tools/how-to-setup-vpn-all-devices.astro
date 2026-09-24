@@ -62,6 +62,16 @@ const faqs = [
     question: "Devices without apps?",
     answer: "<p>Router VPN, Smart DNS, or share connection from a device that has VPN.</p>",
   },
+  {
+    question: "Can I put a VPN on Apple TV now?",
+    answer:
+      "<p>Yes, on tvOS 17 or later. Get your VPN's app from the Apple TV App Store. Older models need the router method.</p>",
+  },
+  {
+    question: "VPN keeps breaking Zoom?",
+    answer:
+      "<p>Pick a closer server first. Still bad? Exclude the call app with split tunneling, but only on a network you trust.</p>",
+  },
 ];
 
 // Related articles
@@ -149,7 +159,7 @@ const relatedArticles = [
     Open settings (gear icon) and turn these on:
   </p>
   <ul>
-    <li><strong>Kill switch</strong> . cuts internet if VPN drops. Non-negotiable.</li>
+    <li><strong>Kill switch</strong> . cuts internet if VPN drops. Non-negotiable. (<a href="/tools/vpn-kill-switch-explained/">How kill switches work</a>)</li>
     <li><strong>Auto-connect</strong> . starts VPN when Windows boots or you join <a href="/blog/vpn-public-wifi-guide/">WiFi</a>
     </li>
     <li><strong>Protocol</strong> . set to WireGuard (or NordLynx/Lightway depending on your VPN). Fastest option.</li>
@@ -179,10 +189,7 @@ const relatedArticles = [
   </p>
 
   <h3>Settings</h3>
-  <p>
-    Same as Windows: kill switch on, auto-connect on, WireGuard protocol. Set it to launch at login in System
-    Preferences.
-  </p>
+  <p>Same as Windows: kill switch on, auto-connect on, WireGuard protocol. Set it to launch at login in System Settings > General > Login Items.</p>
 
   <h3>Connect</h3>
   <p>
@@ -295,7 +302,8 @@ nordvpn set autoconnect on</code></pre>
 
   <h3>GUI?</h3>
   <p>
-    NetworkManager handles VPN configs. GNOME and KDE both support it through system settings.
+    NordVPN finally shipped a real Linux app with a window and buttons in 2025, so you don't have to live in the
+    terminal anymore. For everything else, NetworkManager handles VPN configs. GNOME and KDE both support it through system settings.
   </p>
 
   <!-- Router Setup -->
@@ -337,10 +345,7 @@ nordvpn set autoconnect on</code></pre>
     <li>Enter credentials</li>
     <li>Enable</li>
   </ol>
-  <p>
-    Make sure your <a href="/guides/secure-home-wifi-network/">router security settings</a> are properly configured
-    before adding VPN.
-  </p>
+  <p>Make sure your <a href="/guides/secure-home-wifi-network/">router security settings</a> are properly configured before adding VPN. Traveling? A small travel router with the VPN already set up covers the hotel WiFi for every device you carry. More on that in <a href="/blog/vpn-public-wifi-guide/">our public WiFi guide</a>.</p>
   <p>
     Every router is different. Check your VPN's help docs for specific instructions.
   </p>
@@ -389,13 +394,10 @@ nordvpn set autoconnect on</code></pre>
 
   <h3>Apple TV</h3>
   <p>
-    No VPN app support. Options:
+    This one changed. Since tvOS 17, Apple TV runs real VPN apps. NordVPN, Surfshark and a few others have them in the
+    tvOS App Store. Download, log in, connect. On an older Apple TV that can't update, you're back to router VPN or
+    Smart DNS.
   </p>
-  <ul>
-    <li><strong>Router VPN</strong> (protects everything)</li>
-    <li><strong>Smart DNS</strong> (configure in network settings)</li>
-    <li><strong>Share Mac's VPN connection</strong></li>
-  </ul>
 
   <h3>Roku</h3>
   <p>
@@ -442,6 +444,12 @@ nordvpn set autoconnect on</code></pre>
     <li>Contact support if nothing works</li>
   </ul>
 
+  <h3>Video Calls Are Choppy</h3>
+  <p>
+    Zoom and Teams hate a far-away server. Connect to one near you, or put the call app in split tunneling so it skips
+    the VPN. Just don't do that on sketchy public WiFi.
+  </p>
+
   <!-- FAQ Section -->
   <FAQSection faqs={faqs}/>
 
@@ -452,10 +460,7 @@ nordvpn set autoconnect on</code></pre>
   <p>
     I use NordVPN. Works on everything, setup is painless. 30-day money-back if it doesn't work for you.
   </p>
-  <p>
-    Just pick something and do it. Next time you're on <a href="/guides/do-i-need-vpn-cafes/">airport WiFi
-    unprotected</a>, you'll think about this.
-  </p>
+  <p>Just pick something and do it. Still deciding if you even need a paid one? Read <a href="/tools/free-vpn-vs-paid-vpn/">free vs paid VPN</a> first. Next time you're on <a href="/guides/do-i-need-vpn-cafes/">airport WiFi unprotected</a>, you'll think about this.</p>
 
   <AffiliateButton
       href="/go/nordvpn"

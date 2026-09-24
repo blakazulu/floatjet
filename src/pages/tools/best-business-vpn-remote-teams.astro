@@ -18,8 +18,8 @@ const headings = [
   { text: "Quick Comparison", slug: "quick-comparison", depth: 2 },
   { text: "These Actually Work", slug: "top-solutions", depth: 2 },
   { text: "NordLayer", slug: "nordlayer", depth: 3 },
-  { text: "Perimeter 81", slug: "perimeter-81", depth: 3 },
-  { text: "Cisco AnyConnect", slug: "cisco-anyconnect", depth: 3 },
+  { text: "Perimeter 81 (now Check Point Harmony SASE)", slug: "perimeter-81", depth: 3 },
+  { text: "Cisco Secure Client (formerly AnyConnect)", slug: "cisco-anyconnect", depth: 3 },
   { text: "OpenVPN Access Server", slug: "openvpn", depth: 3 },
   { text: "Twingate", slug: "twingate", depth: 3 },
   { text: "GoodAccess", slug: "goodaccess", depth: 3 },
@@ -45,41 +45,41 @@ const quickCompareRows = [
   {
     solution: "<strong>NordLayer</strong>",
     bestFor: "SMBs & startups",
-    price: "$8/user/mo",
+    price: "from $8/user/mo",
     users: "5",
   },
   {
-    solution: "<strong>Perimeter 81</strong>",
+    solution: "<strong>Check Point Harmony SASE (Perimeter 81)</strong>",
     bestFor: "Mid-size enterprises",
-    price: "$8/user/mo",
-    users: "5",
+    price: "Quote",
+    users: "Contact sales",
   },
   {
     solution: "<strong>Twingate</strong>",
     bestFor: "Zero-trust security",
-    price: "$5/user/mo",
+    price: "Free to 5 users, then $5/user/mo",
     users: "1",
   },
   {
     solution: "<strong>Cloudflare Access</strong>",
     bestFor: "Tech teams",
-    price: "$7/user/mo",
+    price: "Free to 50 users, then $7/user/mo",
     users: "1",
   },
   {
     solution: "<strong>OpenVPN</strong>",
     bestFor: "Self-hosted control",
-    price: "$0 (self-hosted)",
+    price: "Free for 2 connections, then $7/connection/mo",
     users: "1",
   },
   {
     solution: "<strong>GoodAccess</strong>",
     bestFor: "Growing startups",
-    price: "$7/user/mo",
-    users: "3",
+    price: "$7/user/mo + $49/gateway",
+    users: "5",
   },
   {
-    solution: "<strong>Cisco AnyConnect</strong>",
+    solution: "<strong>Cisco Secure Client</strong>",
     bestFor: "Large enterprises",
     price: "Contact sales",
     users: "100+",
@@ -174,50 +174,50 @@ const pricingColumns = [
 
 const pricingRows = [
   {
-    solution: "<strong>NordLayer</strong>",
+    solution: "<strong>NordLayer (Lite)</strong>",
     small: "$80",
     medium: "$400",
     large: "$1,600",
-    notes: "Annual discounts",
+    notes: "Yearly billing. +$40/mo dedicated server",
   },
   {
-    solution: "<strong>Perimeter 81</strong>",
-    small: "$80",
-    medium: "$400",
-    large: "$1,600",
-    notes: "Enterprise tiers",
+    solution: "<strong>Harmony SASE</strong>",
+    small: "Quote",
+    medium: "Quote",
+    large: "Quote",
+    notes: "Check Point pricing",
   },
   {
     solution: "<strong>Twingate</strong>",
     small: "$50",
     medium: "$250",
-    large: "$1,000",
-    notes: "Free tier (5 users)",
+    large: "$2,000",
+    notes: "200 users needs Business ($10). Free to 5",
   },
   {
     solution: "<strong>Cloudflare</strong>",
-    small: "$70",
-    medium: "$350",
-    large: "Custom",
-    notes: "Free tier (50 users)",
+    small: "$0",
+    medium: "$0",
+    large: "$1,400",
+    notes: "Free up to 50 users, then $7/user",
   },
   {
-    solution: "<strong>OpenVPN</strong>",
-    small: "$0*",
-    medium: "$0*",
-    large: "$0*",
-    notes: "*Self-hosted costs",
+    solution: "<strong>OpenVPN AS</strong>",
+    small: "$70",
+    medium: "up to $350",
+    large: "Custom",
+    notes: "Per connection, volume discounts. Plus server",
   },
   {
     solution: "<strong>GoodAccess</strong>",
-    small: "$70",
-    medium: "$350",
-    large: "$1,400",
-    notes: "Startup discounts",
+    small: "$119",
+    medium: "$399",
+    large: "$1,449",
+    notes: "Includes one $49 gateway",
   },
   {
     solution: "<strong>Cisco</strong>",
-    small: "N/A",
+    small: "Contact",
     medium: "Contact",
     large: "Contact",
     notes: "Enterprise only",
@@ -249,7 +249,7 @@ const faqs = [
   {
     question: "Best for compliance?",
     answer:
-      "<p>HIPAA: NordLayer, Perimeter 81, Cisco. SOC 2: NordLayer, Perimeter 81, Twingate, Cloudflare. GDPR: everyone. PCI: Perimeter 81, Cisco.</p>",
+      "<p>HIPAA: NordLayer, Check Point (Perimeter 81), Cisco. SOC 2: NordLayer, Check Point, Twingate, Cloudflare. GDPR: everyone. PCI: Check Point and Cisco. Always ask for the current certificates.</p>",
   },
   {
     question: "Deployment time?",
@@ -264,6 +264,16 @@ const faqs = [
   {
     question: "Bandwidth needed?",
     answer: "<p>Light use: 5-10 Mbps per user. Normal work: 15-25 Mbps. Heavy: 50+ Mbps.</p>",
+  },
+  {
+    question: "What happened to Perimeter 81?",
+    answer:
+      "<p>Check Point bought it in 2023. It's sold as Check Point Harmony SASE now, with quote-based pricing instead of a public per-user price.</p>",
+  },
+  {
+    question: "Is Cisco AnyConnect still a thing?",
+    answer:
+      "<p>The name isn't. It's Cisco Secure Client now, and AnyConnect 4.x stopped getting patches in March 2024. Newer versions still use the AnyConnect VPN module inside Secure Client.</p>",
   },
 ];
 
@@ -362,9 +372,9 @@ const relatedArticles = [
   <p>
     Consumer: Solo freelancer, tiny team, no compliance stuff, nothing sensitive to protect.
   </p>
-  <p>
-    Business: Internal tools exist. Auditors ask questions. You'd be in trouble if someone got in.
-  </p>
+  <p>Business: Internal tools exist. Auditors ask questions. You'd be in trouble if someone got in.</p>
+
+  <p>Only need to change your IP for one app? That might be a proxy job, not a VPN. See <a href="/guides/vpn-vs-proxy-remote-work/">VPN vs proxy</a>.</p>
 
   <!-- Quick Comparison -->
   <h2 id="quick-comparison">Business VPN Quick Comparison</h2>
@@ -403,23 +413,22 @@ const relatedArticles = [
     <li>Device checks before connecting</li>
     <li>SOC 2 Type 2 already done</li>
   </ul>
-  <p>
-    $8/user/month. 14-day trial. Minimum 5 users.
-  </p>
+  <p>$8, $11 or $14 per user a month on yearly billing (Lite, Core, Premium). Five-user minimum. The dedicated server with its own IP, which is what makes 'our traffic stays ours' true, costs +$40 a month on Core and up. No free trial anymore, but there's a 14-day money-back guarantee.</p>
   <p>
     For 5-500 people who need real security but don't have a dedicated IT department? This is the one.
   </p>
   <AffiliateButton
       href="/go/nordlayer"
-      text="Try NordLayer Free . 14-Day Trial"
+      text="Try NordLayer . 14-Day Money-Back Guarantee"
       variant="primary"
       program="nordlayer"
   />
 
   <!-- Perimeter 81 -->
-  <h3 id="perimeter-81">Perimeter 81</h3>
+  <h3 id="perimeter-81">Perimeter 81 (now Check Point Harmony SASE)</h3>
   <p>
-    The "we have complex infrastructure" option.
+    The "we have complex infrastructure" option. Check Point bought Perimeter 81 in September 2023, and it's sold as
+    Check Point Harmony SASE now. Same idea, bigger parent company.
   </p>
   <p>
     Multiple offices? AWS and Azure and GCP all at once? Different teams needing access to different things? Perimeter
@@ -438,9 +447,7 @@ const relatedArticles = [
     <li>HIPAA and PCI compliance (they have the paperwork)</li>
     <li>Organizations outgrowing simpler tools</li>
   </ul>
-  <p>
-    $8/user/month starts it. Scales to thousands.
-  </p>
+  <p>Pricing is quote-based now. No public per-user price. Scales to thousands.</p>
   <p>
     The learning curve is steeper. Worth it if you need the depth. Overkill for a 20-person startup.
   </p>
@@ -452,9 +459,10 @@ const relatedArticles = [
   />
 
   <!-- Cisco AnyConnect -->
-  <h3 id="cisco-anyconnect">Cisco AnyConnect</h3>
+  <h3 id="cisco-anyconnect">Cisco Secure Client (formerly AnyConnect)</h3>
   <p>
-    Fortune 500 stuff.
+    Fortune 500 stuff. Heads up on the name: AnyConnect is now part of Cisco Secure Client, and the old 4.x version
+    stopped getting patches back in March 2024. If your company still runs 4.x, that's its own problem.
   </p>
   <p>
     If you're reading this for a large corporation, someone's probably already mentioned AnyConnect. It's the enterprise
@@ -506,9 +514,7 @@ const relatedArticles = [
     <li>Security isn't someone's actual job</li>
     <li>You need it working by Friday</li>
   </ul>
-  <p>
-    Free for 2 connections. $15/connection one-time after that. Plus whatever your server costs.
-  </p>
+  <p>Free forever for 2 simultaneous connections. After that it's a subscription: $7 per connection per month on the Growth plan, cheaper as you add more. Plus whatever your server costs.</p>
   <AffiliateButton
       href="/go/openvpn"
       text="Get OpenVPN Access Server"
@@ -538,9 +544,7 @@ const relatedArticles = [
     <li>Internal stuff never exposed to the internet</li>
     <li>Device trust verification every time</li>
   </ul>
-  <p>
-    Free up to 5 users. $5/user/month after. No minimums.
-  </p>
+  <p>Free up to 5 users. Teams is $5/user/month for up to 100 users, with Google Workspace SSO. Business is $10. Yearly billing takes 15% off.</p>
   <p>
     Tech companies love this. Modern architecture. Security people approve.
   </p>
@@ -562,9 +566,7 @@ const relatedArticles = [
   <p>
     Popular with EU companies because: GDPR, European data centers, they actually care about that stuff.
   </p>
-  <p>
-    $7/user/month. Dedicated IPs included. Startup discounts if you ask.
-  </p>
+  <p>$7/user/month on Essential, five-user minimum, plus $49 a month for each dedicated gateway with its static IP. Full zero-trust plan is $11.</p>
   <p>
     Not as polished as NordLayer. Support isn't 24/7. But the value is real.
   </p>
@@ -617,7 +619,7 @@ const relatedArticles = [
     <strong>Budget conscious:</strong> GoodAccess or Cloudflare free tier.
   </p>
   <p>
-    <strong>Cisco shop:</strong> AnyConnect. It's what you'd expect.
+    <strong>Cisco shop:</strong> Secure Client. It's what you'd expect.
   </p>
   <p>
     <strong>Control freaks:</strong> OpenVPN self-hosted. Nobody touches your data.
@@ -666,7 +668,7 @@ const relatedArticles = [
     <li>Connect SSO (Google Workspace, Okta, whatever)</li>
     <li>Deploy gateways to your cloud stuff</li>
     <li>Create access policies by role</li>
-    <li>Test with admins first</li>
+    <li>Test with admins first. Turn on the kill switch while you're at it (<a href="/tools/vpn-kill-switch-explained/">what a kill switch does</a>)</li>
   </ul>
 
   <h3>Week 3-4: Roll it out</h3>
@@ -683,6 +685,7 @@ const relatedArticles = [
     <li>Watch logs for weird stuff</li>
     <li>Add VPN setup to onboarding</li>
     <li>Revoke access same day when people leave</li>
+    <li>Require MFA on the VPN login. Our <a href="/guides/two-factor-authentication-guide/">2FA guide</a> covers the options</li>
   </ul>
 
   <!-- Security Compliance -->
@@ -691,7 +694,7 @@ const relatedArticles = [
     <strong>SOC 2:</strong> NordLayer, Perimeter 81, Twingate, Cloudflare all certified.
   </p>
   <p>
-    <strong>HIPAA:</strong> NordLayer, Perimeter 81, Cisco offer BAAs.
+    <strong>HIPAA:</strong> NordLayer, Check Point (Perimeter 81) and Cisco have offered BAAs. Ask for the current one.
   </p>
   <p>
     <strong>GDPR:</strong> Everyone supports it. Check where data actually lives.
@@ -724,12 +727,12 @@ const relatedArticles = [
     Big enterprise? You probably already know it's Cisco.
   </p>
   <p>
-    Try the free trials. Actually test them. Your security shouldn't be a guess.
+    Try the free tiers and money-back windows. Actually test them. Your security shouldn't be a guess.
   </p>
 
   <AffiliateButton
       href="/go/nordlayer"
-      text="Start NordLayer Free Trial"
+      text="Try NordLayer Risk-Free"
       variant="primary"
       program="nordlayer"
   />

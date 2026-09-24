@@ -26,33 +26,33 @@ const feeComparisonColumns = [
   { key: "platform", label: "Platform" },
   { key: "fee", label: "Fee" },
   { key: "rate", label: "Exchange Rate" },
-  { key: "receive", label: "You Get (approx)" },
+  { key: "receive", label: "You keep (approx)" },
 ];
 
 const feeComparisonRows = [
   {
     platform: "<strong>Wise</strong>",
-    fee: "~$6",
-    rate: "Mid-market (Real)",
-    receive: "<strong>~$1,085</strong>",
+    fee: "Free to receive EUR locally",
+    rate: "Mid-market, fee about 0.5% or less",
+    receive: "<strong>~99.5%</strong>",
   },
   {
     platform: "<strong>Payoneer</strong>",
-    fee: "~$20",
-    rate: "~2% markup",
-    receive: "~$1,065",
+    fee: "1% to receive EUR (not your local currency)",
+    rate: "0.5% to 4% depending on how you convert/withdraw",
+    receive: "~95-98%",
   },
   {
     platform: "<strong>PayPal</strong>",
-    fee: "~$45",
-    rate: "~3-4% markup",
-    receive: "~$1,020",
+    fee: "3.49% + 1.5% international + fixed fee",
+    rate: "3% conversion spread",
+    receive: "~92%",
   },
   {
     platform: "<strong>Bank Wire</strong>",
-    fee: "$25 + bad rate",
-    rate: "~3-5% markup",
-    receive: "~$1,030",
+    fee: "$15-50 incoming, depends on your bank",
+    rate: "Usually 3-5% markup",
+    receive: "~94-96%",
   },
 ];
 
@@ -76,6 +76,11 @@ const faqData = [
     question: "Is this legal? What about taxes?",
     answer:
       'Yes, it is legal. Income is income. It doesn\'t matter if it lands in PayPal, Wise, or a shoebox. You report the value in your home currency at the time you received it. See our <a href="/blog/tax-tips-remote-workers/">tax guide for remote workers</a> for more details. (I am not an accountant. Please talk to one.)',
+  },
+  {
+    question: "Does my client pay any fees if I use Wise?",
+    answer:
+      "Not if they pay your Wise local bank details with a normal domestic transfer. For them it's just a regular payment. The one exception is on your side: a US client who sends a wire instead of ACH costs you $6.11. Ask for ACH.",
   },
 ];
 
@@ -163,14 +168,9 @@ const relatedArticles = [
   <h2 id="best-ways">The 3 Best Ways to Get Paid (Ranked)</h2>
 
   <h3>1. Wise (Formerly TransferWise)</h3>
-  <p>
-    This is the one I use. It is the only one I actually recommend to friends.
-  </p>
+  <p>This is the one I use. (Want the long version? <a href="/tools/wise-vs-paypal-vs-payoneer/">Wise vs PayPal vs Payoneer</a>, compared head to head.) It is the only one I actually recommend to friends.</p>
   <p>Why? Because they don't lie about the exchange rate.</p>
-  <p>
-    If you Google "USD to GBP", that is the rate Wise gives you. They charge a
-    small, transparent fee (usually around 0.5%) and that's it.
-  </p>
+  <p>If you Google "USD to GBP", that is the rate Wise gives you. They charge a small, upfront conversion fee. It starts at 0.23% and depends on the currency pair. For the big ones you're usually well under 1%, and Wise shows you the exact number before you convert.</p>
 
   <p><strong>How it works:</strong></p>
   <ul>
@@ -183,14 +183,18 @@ const relatedArticles = [
   </ul>
   <p>It is fast, cheap, and honest.</p>
 
+  <p>One small catch. Getting paid by local transfer is free in USD, EUR, GBP, CAD, AUD and a few others. But if a US client sends a wire instead of ACH, Wise charges $6.11 to receive it. So I'd put "ACH preferred" right on the invoice.</p>
+
   <h3>2. Payoneer</h3>
   <p>If you live on Upwork, Fiverr, or Amazon, you probably need Payoneer.</p>
   <p>It is built for platforms. It integrates with everything.</p>
   <p>
     <strong>The good:</strong> It is easy to get a debit card and spend your money.<br
   />
-    <strong>The bad:</strong> The fees are higher than Wise. They usually take about
-    2% on transfers.
+    <strong>The bad:</strong> It's a pile of small fees. Getting paid into a Payoneer receiving account in
+    your own local currency is free. In any other currency it's 1%. Moving money between your Payoneer currency
+    balances costs 0.5%, and withdrawing to a bank in a different currency runs 1.2% to 4% depending on the route. If
+    a client pays by card, up to 3.99% plus 49 cents. It adds up.
   </p>
   <p>
     It is a solid "Plan B" or a necessity if your platform forces you to use it.
@@ -203,15 +207,8 @@ const relatedArticles = [
     If a client says "I only use PayPal," you use PayPal. You don't lose a
     client over a payment method.
   </p>
-  <p>
-    But be aware: You are paying for the privilege. Between the transaction fee
-    (4%+) and the bad exchange rate, it is expensive.
-  </p>
-  <p>
-    <strong>Pro tip:</strong> If a client insists on PayPal, add 5% to your invoice
-    to cover the fees. Call it a "processing fee." See if they suddenly become open
-    to using Wise.
-  </p>
+  <p>But be aware: You are paying for the privilege. PayPal's current US rates are 3.49% plus a fixed fee when a client pays your invoice with PayPal. Then another 1.5% because the client is in another country. Then, if the money changes currency, PayPal's conversion spread is 3%. Stack those up and you're close to 8% on a single international payment.</p>
+  <p><strong>Pro tip:</strong> If a client insists on PayPal, add a processing fee to your invoice. Honestly 5% doesn't even cover it anymore. See if they suddenly become open to a bank transfer.</p>
 
   <h2 id="money-test">The Money Test: What You Actually Keep</h2>
   <p>
@@ -225,8 +222,8 @@ const relatedArticles = [
       highlight={0}
   />
 
-  <p>Look at the difference between Wise and PayPal. $65.</p>
-  <p>Do that once a month, and you are losing $780 a year.</p>
+  <p>Look at the difference between Wise and PayPal. On €1,000 that's roughly €70-75 gone.</p>
+  <p>Do that once a month and it's close to €900 a year.</p>
 
   <h2 id="other-options">Other Options (The Niche Stuff)</h2>
 
@@ -235,9 +232,7 @@ const relatedArticles = [
     Great if you want to look professional and accept credit cards directly on
     your invoices.
   </p>
-  <p>
-    But you pay for it. 2.9% + 30¢ per transaction. Plus a 1% conversion fee.
-  </p>
+  <p>But you pay for it. 2.9% + 30¢ per domestic card payment, plus 1.5% for international cards, plus 1% more if the currency has to be converted.</p>
   <p>
     Use it if you sell digital products or need a "Buy Now" button. Don't use it
     for large freelance invoices.
@@ -248,7 +243,7 @@ const relatedArticles = [
     I have a few tech clients who pay in USDC (a stablecoin pegged to the
     dollar). Check our <a href="/blog/crypto-friendly-banks/">crypto-friendly banks guide</a> if you go this route.
   </p>
-  <p>Fees are near zero. Speed is instant.</p>
+  <p>Fees are near zero. Speed is instant. And if you already use Stripe, it now accepts stablecoin payments for 1.5%, conversion to dollars included. That's actually the easiest way to say yes to a crypto client.</p>
   <p>
     But good luck explaining it to a non-tech client. "So I need to open a
     wallet..." No. They won't do it.
@@ -263,8 +258,12 @@ const relatedArticles = [
   <ol>
     <li>Open a Wise account.</li>
     <li>Get your local bank details for USD, EUR, and GBP.</li>
-    <li>Put those details on your <a href="/tools/best-invoicing-tools/">invoices</a>.</li>
+    <li>Put those details on your <a href="/tools/best-invoicing-tools/">invoices</a>, next to clear <a href="/guides/invoice-payment-terms-guide/">payment terms</a>.</li>
   </ol>
+  <p>
+    Holding money in several currencies long term? That's a separate question, covered in <a
+      href="/guides/multi-currency-banking-nomads/">multi-currency banking</a>.
+  </p>
   <p>
     You will save thousands of dollars over your career. It takes 10 minutes to
     set up. Do it.

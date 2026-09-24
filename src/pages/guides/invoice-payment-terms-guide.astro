@@ -17,6 +17,7 @@ const headings = [
   { text: "When to Use Due on Receipt", slug: "due-on-receipt", depth: 2 },
   { text: "Early Payment Discounts", slug: "early-payment", depth: 2 },
   { text: "Late Payment Fees", slug: "late-fees", depth: 2 },
+  { text: "What the Law Says (2026)", slug: "law", depth: 2 },
   { text: "Choosing Terms by Client", slug: "client-terms", depth: 2 },
   { text: "Communication Tips", slug: "communication", depth: 2 },
   { text: "Handling Late Payments", slug: "late-payments", depth: 2 },
@@ -64,6 +65,16 @@ const faqs = [
     question: "Do payment terms apply to retainers?",
     answer:
       "<p>Retainers typically work differently. Pre-paid retainers mean client pays in advance for hours or services. Monthly retainers are often invoiced first of month and due immediately or Net seven. Post-paid retainers are invoiced after work with standard terms.</p><p>Pre-paid retainers offer the best cash flow. Clearly define what happens to unused hours.</p>",
+  },
+  {
+    question: "Do freelancers have legal protection for late payments?",
+    answer:
+      "<p>Depends where you are. New York requires a written contract and payment within thirty days for jobs of eight hundred dollars or more. The UK and EU let you charge statutory interest and a fixed fee on late B2B invoices.</p>",
+  },
+  {
+    question: "Can I charge interest if my contract doesn't mention it?",
+    answer:
+      "<p>In the UK and EU, yes, for business clients. In the US it mostly depends on your contract and state law, so put it in writing.</p>",
   },
 ];
 
@@ -253,9 +264,10 @@ const relatedArticles = [
 
   <h3>How to Implement</h3>
   <p>
-    State terms clearly on invoices and contracts and statements of work. Get agreement since client should acknowledge
-    terms before work begins. Apply consistently and don't waive for some and not others. Communicate first and send
-    reminder before applying fee.
+    Check what's legal where your client is. Some US states cap late fees, and the UK and EU already give you statutory
+    interest. State terms clearly on invoices and contracts and statements of work. Get agreement since client should
+    acknowledge terms before work begins. Apply consistently and don't waive for some and not others. Communicate first
+    and send reminder before applying fee.
   </p>
 
   <h3>Sample Language</h3>
@@ -269,6 +281,34 @@ const relatedArticles = [
   <p>
     The goal isn't to collect late fees. It's to encourage on-time payment. Many freelancers include late fee language
     but rarely enforce it. The mere presence of the policy improves payment behavior.
+  </p>
+
+  <!-- What the Law Says -->
+  <h2 id="law">What the Law Says (2026)</h2>
+  <p>
+    Payment terms are mostly between you and the client. Mostly. A few places now back freelancers up with actual law.
+  </p>
+  <p>
+    <strong>New York.</strong> The Freelance Isn't Free Act went statewide on August 28, 2024. If a client hires you
+    for eight hundred dollars or more, alone or across several projects in a hundred and twenty days, they owe you a
+    written contract. And they have to pay by the date in it, or within thirty days of you finishing if there's no
+    date. The state has a <a href="https://dol.ny.gov/freelance-isnt-free-act" target="_blank" rel="nofollow">model contract</a> you can use.
+  </p>
+  <p>
+    <strong>UK.</strong> Business clients who pay late owe statutory interest of eight percent plus the Bank of England
+    base rate, unless your contract says something else. You can also claim a fixed forty, seventy or a hundred pounds
+    per invoice depending on its size. Details on <a
+      href="https://www.gov.uk/late-commercial-payments-interest-debt-recovery/charging-interest-commercial-debt"
+      target="_blank" rel="nofollow">GOV.UK</a>.
+  </p>
+  <p>
+    <strong>EU.</strong> Same idea. Late B2B payment means interest from the day after the due date, plus a flat forty
+    euro fee for each late invoice. Rates change twice a year, so check <a
+      href="https://europa.eu/youreurope/business/finance-funding/making-receiving-payments/late-payment/index_en.htm"
+      target="_blank" rel="nofollow">Your Europe</a> for the current one.
+  </p>
+  <p>
+    None of this works on consumers. It's business clients only.
   </p>
 
   <!-- Choosing Terms by Client -->
@@ -302,10 +342,9 @@ const relatedArticles = [
   <h2 id="communication">How to Communicate Terms</h2>
 
   <h3>In Your Contract</h3>
-  <p>
-    Payment terms should appear in every contract. Deposit requirements covering amount and when due. Payment schedule
-    for milestones. Final payment terms. Late fee policy. Accepted payment methods.
-  </p>
+  <p>Payment terms should appear in every contract. Deposit requirements covering amount and when due. Payment schedule for milestones. Final payment terms. Late fee policy. Accepted payment methods. If you take international clients, say which currency and who pays the fees. Our <a href="/tools/wise-vs-paypal-vs-payoneer/">Wise vs PayPal vs Payoneer</a> breakdown shows how fast those fees add up.</p>
+
+  <p>Working with New York clients? The state's free model contract already covers the required parts.</p>
 
   <h3>On Your Invoice</h3>
   <p>
@@ -351,11 +390,7 @@ const relatedArticles = [
   </p>
 
   <h3>Prevention Is Better</h3>
-  <p>
-    <a href="/guides/freelancer-tax-deductions-guide/">Vet clients</a> before accepting work. Require deposits on new
-    relationships. Set up automatic payment reminders.
-    Invoice promptly since delays on your end delay their payment.
-  </p>
+  <p><a href="/guides/freelancer-tax-deductions-guide/">Vet clients</a> before accepting work. Require deposits on new relationships. Set up automatic payment reminders. Most <a href="/tools/best-invoicing-tools/">invoicing tools</a> do this for free now. Invoice promptly since delays on your end delay their payment.</p>
 
   <!-- FAQ Section -->
   <FAQSection faqs={faqs}/>

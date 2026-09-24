@@ -32,18 +32,18 @@ const comparisonColumns = [
 
 const comparisonRows = [
   {
-    bank: "<strong>Revolut</strong>",
-    type: "Digital",
-    crypto: "Built-in",
+    bank: "<strong>Chase</strong>",
+    type: "Traditional",
+    crypto: "Coinbase partner",
     transfers: "Yes",
-    notes: "Buy/sell crypto in-app",
+    notes: "Card funding + points to USDC",
   },
   {
     bank: "<strong>Ally Bank</strong>",
-    type: "Traditional",
+    type: "Online",
     crypto: "Tolerant",
-    transfers: "Yes",
-    notes: "US only, no issues reported",
+    transfers: "Yes (ACH)",
+    notes: "No crypto held at Ally",
   },
   {
     bank: "<strong>Fidelity</strong>",
@@ -54,17 +54,17 @@ const comparisonRows = [
   },
   {
     bank: "<strong>Mercury</strong>",
-    type: "Business",
+    type: "Business (fintech)",
     crypto: "Business OK",
     transfers: "Yes",
-    notes: "Crypto business friendly",
+    notes: "Crypto companies welcome",
   },
   {
-    bank: "<strong>Juno</strong>",
+    bank: "<strong>Revolut</strong>",
     type: "Digital",
-    crypto: "Built-in",
+    crypto: "Built-in (UK/EU only)",
     transfers: "Yes",
-    notes: "Crypto checking account",
+    notes: "No crypto for US customers",
   },
 ];
 
@@ -73,7 +73,7 @@ const faqs = [
   {
     question: "Can they close my account for buying crypto?",
     answer:
-      "<p>Yes. Happens more with large or frequent transfers. Using the right banks and not being sketchy minimizes risk.</p>",
+      "<p>It's less likely than it was. Regulators pulled back their anti-crypto guidance in 2025. But banks still run fraud checks, so big or sudden transfers can still get flagged. Keep it boring.</p>",
   },
   {
     question: "Should I tell my bank?",
@@ -87,12 +87,17 @@ const faqs = [
   {
     question: "Are crypto banks safe?",
     answer:
-      "<p>Be careful with newer ones. Check FDIC insurance. Several have failed. Only keep what you're using.</p>",
+      "<p>Be careful with newer ones. Juno's cash accounts got stuck in the Synapse mess in 2024 and the company shut down in 2025. Check who actually holds your money and whether it's FDIC insured. Only keep what you're using.</p>",
   },
   {
     question: "Do I pay taxes on crypto?",
     answer:
       "<p>Yes. Treated as property in the US. Capital gains when you sell. Keep records. Use Koinly or CoinTracker.</p>",
+  },
+  {
+    question: "Can I use Revolut for crypto in the US?",
+    answer:
+      "<p>Not right now. Revolut stopped crypto for US customers in October 2023. It's still available in the UK and much of Europe.</p>",
   },
 ];
 
@@ -147,20 +152,16 @@ const relatedArticles = [
     Crypto is legal. Banks act like it isn't. Transfer money to an exchange? Flagged. Cash out? Frozen. Do it too often?
     Account closed without explanation.
   </p>
-  <p>
-    That was the $2,400 lesson. Rent I had to scramble to cover with a backup card. Not all banks are like this. Some tolerate
-    crypto. Some embrace it. A few even have it built in. Here's which ones won't leave you stranded.
-  </p>
+  <p>That was the $2,400 lesson. Rent I had to scramble to cover with a backup card. Not all banks are like this. Some tolerate crypto. Some embrace it. A few even have it built in. Here's which ones won't leave you stranded.</p>
+
+  <p>Funny thing. In July 2025 Chase, the same bank, announced a partnership with Coinbase. Chase cards can fund Coinbase accounts now, and Chase points convert to USDC starting in 2026. So yeah. Things change fast.</p>
 
   <!-- Quick Comparison -->
   <h2 id="quick-comparison">Quick Comparison</h2>
 
   <ComparisonTable columns={comparisonColumns} rows={comparisonRows}/>
 
-  <p>
-    <strong>My picks:</strong> Revolut if you want crypto built in. Ally if you want traditional banking that won't
-    hassle you. Mercury if you're running a crypto business.
-  </p>
+  <p><strong>My picks:</strong> US: Ally for plain banking that won't hassle your exchange transfers. Chase if you're already there, since it works with Coinbase directly now. Mercury if you're running a crypto business. Outside the US: Revolut.</p>
 
   <!-- Why Banks Block Crypto -->
   <h2 id="why-banks-block">Why Banks Hate Crypto</h2>
@@ -175,53 +176,52 @@ const relatedArticles = [
     And sudden large transfers look suspicious to automated systems. $50K appearing overnight? Fraud alert.
   </p>
 
-  <h3>Banks That Block Crypto</h3>
-  <ul>
-    <li><strong>Chase:</strong> Has blocked purchases</li>
-    <li><strong>Bank of America:</strong> Restricts some transfers</li>
-    <li><strong>Wells Fargo:</strong> History of problems</li>
-    <li><strong>Citibank:</strong> Declines transactions</li>
-  </ul>
-  <p>
-    Policies change. Your mileage may vary. But these have reputations.
-  </p>
+  <h3>What Changed in 2025</h3>
+
+  <p>The mood flipped. In March 2025 the OCC, which regulates national banks, confirmed that crypto custody and some stablecoin activity are fine for banks, and pulled out of the old warning statements. In August an executive order went after "politicized or unlawful debanking."</p>
+
+  <p>Does that mean no bank will ever flag you again? No. Fraud and anti-money-laundering systems didn't go anywhere. A random $50K showing up overnight still looks weird to a computer. But "we don't do crypto, goodbye" is a lot rarer than it was when I got locked out.</p>
+
+  <p>Bank of America, Wells Fargo and Citi all had reputations for declining or restricting crypto transfers. I'd still keep crypto activity away from your main account there. Policies change. Your mileage may vary.</p>
 
   <!-- Best Options -->
   <h2 id="best-options">The Good Options</h2>
 
   <h3>Banks With Crypto Built In</h3>
 
-  <h4 id="revolut">Revolut</h4>
+  <h4 id="revolut">Revolut (UK and Europe, not the US)</h4>
   <p>
-    Buy and sell 100+ cryptos in the app. No external exchange needed. Withdraw to wallets on paid plans.
+    Big caveat first. Revolut stopped offering crypto to US customers in October 2023. They're working on a US bank,
+    but nothing's back yet.
+  </p>
+  <p>
+    Outside the US it's still the easiest built-in option. Buy and sell in the app, and Revolut X if you want a proper
+    exchange with limit orders.
   </p>
   <p>
     <strong>What I like:</strong> Everything in one place. No suspicious transfers because it's all internal.
   </p>
   <p>
-    <strong>What's annoying:</strong> Premium plan for external withdrawals.
+    <strong>What's annoying:</strong> Useless for crypto if you're in the States. And external wallet withdrawals only
+    work for some coins and plans.
   </p>
   <p>
     <a href="/go/revolut" rel="nofollow sponsored" class="text-teal-ink underline decoration-2 underline-offset-4 hover:text-ink" target="_blank">
-      Open Revolut Account &rarr;
+      Open Revolut Account (UK/EU) &rarr;
     </a>
   </p>
 
-  <h4 id="juno">Juno</h4>
+  <h4 id="juno">What happened to Juno</h4>
   <p>
-    Checking account for crypto people. Earn yield on stablecoins. Easy conversion to USD.
-  </p>
-  <p>
-    <strong>What I like:</strong> FDIC insured (the USD part). Clean bridge between crypto and fiat.
+    It shut down in September 2025. Its cash accounts ran through Synapse, the middleware company whose collapse froze
+    a lot of fintech accounts in 2024. Which is basically the whole argument for keeping your main money at an actual
+    bank.
   </p>
 
   <h3>Traditional Banks That Don't Care</h3>
 
   <h4 id="ally">Ally Bank</h4>
-  <p>
-    Online bank. Consistently positive reports from <a href="/guides/productivity/">crypto users</a>. Coinbase, Kraken
-    transfers. No problems.
-  </p>
+  <p>Online bank. You can't buy crypto at Ally and you can't send crypto to it. Dollars only. But linking it to Coinbase or Kraken by ACH generally just works, which is all most people need.</p>
   <p>
     <strong>What I like:</strong> Traditional bank that just... lets you do crypto stuff.
   </p>
@@ -244,9 +244,7 @@ const relatedArticles = [
     Modern <a href="/guides/freelancer-tax-deductions-guide/">business banking</a> that actually accepts crypto
     companies. Web3 startups, exchanges. They'll work with you.
   </p>
-  <p>
-    <strong>What I like:</strong> One of the few options if your business involves crypto.
-  </p>
+  <p><strong>What I like:</strong> One of the few options if your business involves crypto. Mercury has a whole page for web3 companies. Technically it's a fintech, not a bank. The accounts sit at partner banks with FDIC coverage.</p>
   <p>
     <a href="/go/mercury" rel="nofollow sponsored" class="text-teal-ink underline decoration-2 underline-offset-4 hover:text-ink" target="_blank">
       Open Mercury Account &rarr;
@@ -260,7 +258,7 @@ const relatedArticles = [
   <ul>
     <li><strong>Coinbase Card:</strong> Spend crypto anywhere Visa works</li>
     <li><strong>Crypto.com:</strong> Metal cards, rewards</li>
-    <li><strong>Nexo:</strong> Earn interest, borrow against holdings</li>
+    <li><strong>Nexo:</strong> Earn interest, borrow against holdings. Back in the US since April 2025, after leaving in 2022.</li>
   </ul>
   <p>
     <strong>Warning:</strong> Not FDIC insured. Only keep what you're actively using.
@@ -296,8 +294,9 @@ const relatedArticles = [
   <!-- Conclusion -->
   <h2 id="conclusion">Bottom Line</h2>
   <p>
-    <a href="/go/revolut" rel="nofollow sponsored" target="_blank">Revolut</a> if you want crypto built into your banking.
-    Ally if you want traditional banking that tolerates crypto.
+    <a href="/go/revolut" rel="nofollow sponsored" target="_blank">Revolut</a> if you want crypto built into your banking
+    and you're outside the US. Ally if you want traditional banking that tolerates crypto. Chase if you already bank
+    there, now that it works with Coinbase.
     <a href="/go/mercury" rel="nofollow sponsored" target="_blank">Mercury</a> if you're running a crypto business.
   </p>
   <p>
@@ -306,10 +305,8 @@ const relatedArticles = [
   <p>
     The landscape is improving. More banks are figuring this out. Pick the right ones and you'll be fine.
   </p>
-  <p>
-    For broader nomad banking needs, see our guide to
-    <a href="/blog/best-banking-digital-nomads/">banking for digital nomads</a>.
-  </p>
+  <p>For broader nomad banking needs, see our guide to
+    <a href="/blog/best-banking-digital-nomads/">banking for digital nomads</a>. Getting paid in crypto by clients? Read <a href="/tools/accept-international-payments-freelancer/">how to accept international payments</a> first. And holding several currencies at once is its own thing: <a href="/guides/multi-currency-banking-nomads/">multi-currency banking</a>.</p>
 
   <!-- Related Articles -->
   <Fragment slot="full-width">

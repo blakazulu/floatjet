@@ -1251,9 +1251,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-password-manager-remote-work",
     section: "tools",
-    title: "Best Password Managers for Remote Workers (2025)",
+    title: "Best Password Managers for Remote Workers (2026)",
     description: "I tested ten password managers for remote teams. NordPass, 1Password, Bitwarden compared with real security tests, pricing breakdowns, and honest takes.",
     pubDate: "2025-01-06",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1633265486064-086b219458ec-1200w.webp",
     imageAlt: "Digital security and password protection",

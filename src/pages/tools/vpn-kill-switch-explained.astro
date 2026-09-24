@@ -18,6 +18,8 @@ const headings = [
   { text: "Why You Need This", slug: "why-you-need-it", depth: 2 },
   { text: "Three Types", slug: "types-of-kill-switches", depth: 2 },
   { text: "Best VPNs", slug: "best-vpns", depth: 2 },
+  { text: "Turn It On", slug: "setup-by-device", depth: 2 },
+  { text: "Where It Falls Short", slug: "limits", depth: 2 },
   { text: "Test Yours", slug: "how-to-test", depth: 2 },
   { text: "FAQ", slug: "faq", depth: 2 },
   { text: "Bottom Line", slug: "recommendation", depth: 2 },
@@ -42,7 +44,7 @@ const killSwitchRows = [
   },
   {
     vpn: "<strong>ExpressVPN</strong>",
-    type: "Network Lock",
+    type: "Internet Kill Switch",
     appLevel: "✅",
     systemLevel: "✅",
     reliability: "⭐⭐⭐⭐⭐",
@@ -109,6 +111,18 @@ const faqs = [
     question: "Works on mobile?",
     answer:
       "<p>Android: yes, full support. iOS: limited. Uses quick reconnect instead of true blocking.</p>",
+  },
+  {
+    question: "Does a kill switch stop TunnelVision?",
+    answer: "<p>No. TunnelVision reroutes traffic while the VPN still looks connected, so the kill switch never triggers. On public WiFi, a phone hotspot is safer. Our <a href=\"/blog/vpn-public-wifi-guide/\">public WiFi VPN guide</a> has more tips.</p>",
+  },
+  {
+    question: "Is ExpressVPN Network Lock gone?",
+    answer: "<p>Just renamed. It's called Internet Kill Switch now and works the same way.</p>",
+  },
+  {
+    question: "What about a whole team?",
+    answer: "<p>Business VPNs let admins force the kill switch on for everyone. See our <a href=\"/tools/best-business-vpn-remote-teams/\">business VPN guide</a> for options.</p>",
   },
 ];
 
@@ -252,9 +266,13 @@ const relatedArticles = [
     Calls theirs "Network Lock." System-level, extremely reliable. Caught every simulated drop in
     my testing. Zero leakage.
   </p>
+  <p>
+    Heads up for 2026: ExpressVPN renamed Network Lock to "Internet Kill Switch." Same feature, new label. It's in the
+    Windows, Mac, Linux, router, Android and iOS apps.
+  </p>
   <AffiliateButton
       href="/go/expressvpn"
-      text="Get ExpressVPN . Network Lock"
+      text="Get ExpressVPN . Internet Kill Switch"
       variant="primary"
       program="expressvpn"
   />
@@ -272,6 +290,69 @@ const relatedArticles = [
   />
 
   <!-- How to Test Your Kill Switch -->
+  <h2 id="setup-by-device">Turn It On (Device by Device)</h2>
+  <p>
+    Most VPN apps ship with the kill switch off. Annoying, but that's how it is. Here's where to look.
+  </p>
+
+  <h3>Windows and Mac</h3>
+  <p>
+    Inside the VPN app. NordVPN has it under settings as "Kill Switch," with separate toggles for the Internet Kill Switch
+    and the App Kill Switch. ExpressVPN puts its Internet Kill Switch in the app options. Flip the system-wide one on and
+    forget about it.
+  </p>
+
+  <h3>Android</h3>
+  <p>
+    Android has its own version built in, which is nice. Go to Settings, search "VPN," tap the gear next to your VPN, and
+    turn on Always-on VPN. Then turn on "Block connections without VPN." That second toggle is the real kill switch. Works
+    on Android 7 and up.
+  </p>
+
+  <h3>iPhone and iPad</h3>
+  <p>
+    No system toggle here. You rely on the app. ExpressVPN and NordVPN both have one for iOS. Read the next section
+    before you trust it completely, though.
+  </p>
+
+  <h3>Linux</h3>
+  <p>
+    NordVPN's Linux app is command line. <code>nordvpn set killswitch 1</code> turns it on, <code>0</code> turns it off.
+    If your internet dies after you disconnect, that's the kill switch doing its job. Turn it off first.
+  </p>
+
+  <h2 id="limits">Where Kill Switches Fall Short</h2>
+  <p>
+    A kill switch catches drops. It doesn't catch everything. Two things worth knowing about.
+  </p>
+
+  <h3>TunnelVision</h3>
+  <p>
+    In May 2024, Leviathan Security published an attack called TunnelVision (CVE-2024-3661). Someone on the same network
+    runs a rogue DHCP server and uses option 121 to push routes that pull your traffic outside the VPN tunnel. The VPN
+    looks connected the whole time. So the kill switch never fires. Researchers said there isn't a full fix on every
+    major OS.
+  </p>
+  <p>
+    Proton says its app is broadly resistant on Android and Windows, and elsewhere once you turn on the right settings. On sketchy public
+    WiFi, this is one more reason to use your phone's hotspot instead when it matters.
+  </p>
+
+  <h3>iOS Leaks</h3>
+  <p>
+    iPhones have a long-running problem. Proton reported back in 2020 that iOS keeps some existing connections outside
+    the tunnel. Apple added a kill switch option for developers in iOS 14, but Proton found in 2022 that some Apple
+    service traffic still leaks. IVPN went as far as removing its iOS kill switch in 2023 because of it. As of 2025,
+    security researcher Michael Horowitz was still documenting leaks. The takeaway: on iPhone, a kill switch helps, but
+    it's not airtight.
+  </p>
+
+  <h3>Split Tunneling Conflicts</h3>
+  <p>
+    Using split tunneling so some apps skip the VPN? NordVPN has a whole support page on how the two interact,
+    because they can conflict. Read it before you combine them.
+  </p>
+
   <h2 id="how-to-test">Test Yours. Seriously.</h2>
   <p>Don't assume it works. Test it:</p>
 

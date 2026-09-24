@@ -466,9 +466,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-wireless-earbuds-remote-work",
     section: "gear",
-    title: "Best Wireless Earbuds for Remote Work Calls (2025)",
+    title: "Best Wireless Earbuds for Remote Work Calls (2026)",
     description: "Top wireless earbuds tested for video calls and remote work. We evaluated call quality, comfort for all-day wear, and noise cancellation across 10 models.",
     pubDate: "2025-07-19",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1590658268037-6bf12165a8df-1200w.webp",
     imageAlt: "Wireless earbuds in charging case for remote work",

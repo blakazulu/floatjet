@@ -1035,9 +1035,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-scheduling-tools-for-remote-teams",
     section: "tools",
-    title: "Best Scheduling Tools for Remote Teams (2025)",
-    description: "Spent 47 minutes scheduling one meeting. Never again. Tested seven scheduling tools to find the best. Calendly, Acuity, Cal.com compared.",
+    title: "Best Scheduling Tools for Remote Teams (2026)",
+    description: "Spent 47 minutes scheduling one meeting. Never again. Tested seven scheduling tools, rechecked for 2026. Calendly, Acuity, Cal.com compared with current plans and prices.",
     pubDate: "2025-12-08",
+    updatedDate: "2026-09-24",
     readingTime: 13,
     image: "/images/unsplash/photo-1517430816045-df4b7de11d1d-1200w.webp",
     imageAlt: "Calendar and scheduling workspace for remote team coordination",

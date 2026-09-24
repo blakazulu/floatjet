@@ -739,9 +739,10 @@ export const guidesArticles: Article[] = [
   {
     slug: "freelancer-tax-deductions-guide",
     section: "guides",
-    title: "Freelancer Tax Deductions: Complete Guide (2025)",
+    title: "Freelancer Tax Deductions: Complete Guide (2026)",
     description: "Every tax deduction for freelancers and self-employed folks. Home office, equipment, software, travel - here's what you can write off.",
     pubDate: "2025-04-01",
+    updatedDate: "2026-09-24",
     readingTime: 16,
     image: "/images/unsplash/photo-1460925895917-afdab827c52f-1200w.webp",
     imageAlt: "Financial documents and tax calculations",

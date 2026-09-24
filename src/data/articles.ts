@@ -835,9 +835,10 @@ export const guidesArticles: Article[] = [
   {
     slug: "multi-currency-banking-nomads",
     section: "guides",
-    title: "Multi-Currency Banking for Digital Nomads (2025)",
+    title: "Multi-Currency Banking for Digital Nomads (2026)",
     description: "Hold and manage multiple currencies with one account. Compare Wise, Revolut, Payoneer, and N26 for digital nomads who earn and spend globally without high fees.",
     pubDate: "2025-07-18",
+    updatedDate: "2026-09-24",
     readingTime: 13,
     image: "/images/unsplash/photo-1580519542036-c47de6196ba5-1200w.webp",
     imageAlt: "Multiple currency bills representing multi-currency banking",
@@ -894,9 +895,10 @@ export const guidesArticles: Article[] = [
   {
     slug: "retirement-savings-freelancer",
     section: "guides",
-    title: "How to Set Up Retirement Savings as a Freelancer (2025)",
+    title: "How to Set Up Retirement Savings as a Freelancer (2026)",
     description: "No employer 401(k)? No problem. Learn about Solo 401(k), SEP IRA, and other retirement options for self-employed workers to build wealth and reduce taxes.",
     pubDate: "2025-03-08",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1579621970563-ebec7560ff3e-1200w.webp",
     imageAlt: "Retirement savings jar with coins representing freelancer investing",

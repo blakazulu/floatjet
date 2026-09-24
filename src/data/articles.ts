@@ -190,17 +190,6 @@ export const blogArticles: Article[] = [
     imageAlt: "Public WiFi security in a cafe setting",
     category: "security",
   },
-  {
-    slug: "vpn-speed-comparison",
-    section: "blog",
-    title: "VPN Speed Comparison: Real Test Results (2025)",
-    description: "My wife thought I was crazy running speed tests for a week. Here's what I found.",
-    pubDate: "2025-01-22",
-    readingTime: 4,
-    image: "/images/unsplash/photo-1558494949-ef010cbdcc31-1200w.webp",
-    imageAlt: "Network speed testing visualization with data transfer graphics",
-    category: "security",
-  },
 ];
 
 // =============================================================================
@@ -1282,9 +1271,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-vpn-digital-nomads",
     section: "tools",
-    title: "Best VPNs for Digital Nomads & Remote Workers (2025)",
+    title: "Best VPNs for Digital Nomads & Remote Workers (2026)",
     description: "I tested 12 VPNs across 15 countries to find the best for digital nomads. NordVPN, ExpressVPN, Surfshark compared with real speed tests and honest takes.",
     pubDate: "2025-09-24",
+    updatedDate: "2026-09-24",
     readingTime: 15,
     image: "/images/unsplash/photo-1526374965328-7f61d4dc18c5-1200w.webp",
     imageAlt: "Digital security concept with encrypted data visualization",

@@ -24,6 +24,7 @@ const headings = [
   { text: "ProtonVPN", slug: "protonvpn", depth: 3 },
   { text: "Private Internet Access", slug: "pia", depth: 3 },
   { text: "Which One Should You Get", slug: "how-to-choose", depth: 2 },
+  { text: "Why VPNs Slow You Down", slug: "speed-factors", depth: 2 },
   { text: "Quick Setup Notes", slug: "setup-guide", depth: 2 },
   { text: "FAQ", slug: "faq", depth: 2 },
   { text: "Bottom Line", slug: "conclusion", depth: 2 },
@@ -553,6 +554,22 @@ const relatedArticles = [
   </p>
 
   <!-- Setup Guide -->
+  <h2 id="speed-factors">Why VPNs Slow You Down (and How to Fix It)</h2>
+  <p>
+    Every VPN costs you some speed. Good ones, not much. Here's why it happens.
+  </p>
+  <ul>
+    <li><strong>Extra stop.</strong> Your data goes you, then the VPN server, then wherever it's going. Instead of just going there.</li>
+    <li><strong>Distance.</strong> Server in your city is fast. Server across an ocean is slow. Physics doesn't care about marketing.</li>
+    <li><strong>Crowded servers.</strong> Popular ones get packed. Try a different server in the same city. Usually fixes it.</li>
+    <li><strong>Protocol.</strong> WireGuard is fast. OpenVPN is not. NordVPN calls its version NordLynx, ExpressVPN has Lightway. Same idea.</li>
+  </ul>
+  <p>
+    Making it less slow: use WireGuard, let quick connect pick a nearby server, switch servers when one drags, and plug
+    into ethernet when you can. Speeds also depend a lot on your base connection, so treat any test numbers, mine
+    included, as a rough guide rather than a promise.
+  </p>
+
   <h2 id="setup-guide">Quick Setup Notes</h2>
   <p>
     Download your VPN before traveling to restricted countries. I cannot say this enough. The websites and app stores
@@ -562,13 +579,17 @@ const relatedArticles = [
     Once it's installed, turn on:
   </p>
   <ul>
-    <li><strong>Kill switch</strong> (cuts internet if VPN drops. Prevents accidental exposure)</li>
+    <li><strong>Kill switch</strong> (cuts internet if VPN drops. Prevents accidental exposure. More in our <a href="/tools/vpn-kill-switch-explained/">kill switch guide</a>)</li>
     <li><strong>Auto-connect on public WiFi</strong></li>
     <li><strong>WireGuard or NordLynx protocol</strong> for speed</li>
   </ul>
   <p>
     Daily routine: nearby server for regular work, home country server for banking and streaming. Takes two seconds to
     switch.
+  </p>
+  <p>
+    Running a team, not just yourself? Personal VPNs aren't built for that. Check our
+    <a href="/tools/best-business-vpn-remote-teams/">business VPN guide</a> instead.
   </p>
 
   <!-- FAQ Section -->

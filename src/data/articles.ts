@@ -1268,9 +1268,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-video-conferencing-tools",
     section: "tools",
-    title: "Best Video Conferencing Tools for Remote Teams (2025)",
-    description: "I tested ten video conferencing tools for remote teams. Zoom, Google Meet, Teams compared with real pricing, features that actually matter, and honest takes.",
+    title: "Best Video Conferencing Tools for Remote Teams (2026)",
+    description: "I tested ten video conferencing tools for remote teams, rechecked for 2026. Zoom, Google Meet, Teams compared with current pricing, what changed, and honest takes.",
     pubDate: "2025-08-05",
+    updatedDate: "2026-09-24",
     readingTime: 18,
     image: "/images/unsplash/photo-1588196749597-9ff075ee6b5b-1200w.webp",
     imageAlt: "Remote team video conference call on laptop screen",

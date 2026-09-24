@@ -1263,9 +1263,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-secure-email-providers",
     section: "tools",
-    title: "Best Secure Email Providers for Remote Workers (2025)",
-    description: "I tested encrypted email for four months. Proton Mail, Tutanota, Fastmail compared with real security tests, migration tips, and honest takes.",
+    title: "Best Secure Email Providers for Remote Workers (2026)",
+    description: "I tested encrypted email for four months. Proton Mail, Tuta, Fastmail compared with real security tests, migration tips, and honest takes.",
     pubDate: "2025-12-07",
+    updatedDate: "2026-09-24",
     readingTime: 12,
     image: "/images/unsplash/secure-email-padlock-1200w.webp",
     imageAlt: "Padlock on keyboard representing email security and encryption",

@@ -815,6 +815,7 @@ export const guidesArticles: Article[] = [
     title: "Minimalist Home Office Setup: Less Stuff, More Focus",
     description: "Create a distraction-free workspace with minimal gear. Learn how to build a productive minimalist home office that helps you focus on what matters most.",
     pubDate: "2025-06-16",
+    updatedDate: "2026-09-24",
     readingTime: 12,
     image: "/images/unsplash/photo-1449824913935-59a10b8d2000-1200w.webp",
     imageAlt: "Minimalist home office workspace design",

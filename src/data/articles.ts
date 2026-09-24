@@ -158,9 +158,10 @@ export const blogArticles: Article[] = [
   {
     slug: "ultimate-home-office-setup",
     section: "blog",
-    title: "How to Set Up a Productive Home Office on Any Budget (2025)",
+    title: "How to Set Up a Productive Home Office on Any Budget (2026)",
     description: "Set up your home office right without blowing your budget. Whether you have $300 or $3000.",
     pubDate: "2025-07-02",
+    updatedDate: "2026-09-24",
     readingTime: 11,
     image: "/images/unsplash/photo-1593642632559-0c6d3fc62b89-1200w.webp",
     imageAlt: "Modern home office setup with standing desk and dual monitors",

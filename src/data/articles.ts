@@ -482,9 +482,10 @@ export const gearArticles: Article[] = [
   {
     slug: "ergonomic-desk-setup-guide",
     section: "gear",
-    title: "Ergonomic Desk Setup: Complete Guide (2025)",
+    title: "Ergonomic Desk Setup: Complete Guide (2026)",
     description: "Learn how to set up your home office for maximum comfort and productivity. Step-by-step guide to proper chair, desk, monitor, and keyboard positioning.",
     pubDate: "2025-11-18",
+    updatedDate: "2026-09-24",
     readingTime: 12,
     image: "/images/unsplash/photo-1498050108023-c5249f4df085-1200w.webp",
     imageAlt: "Properly configured ergonomic workstation with monitor at eye level",

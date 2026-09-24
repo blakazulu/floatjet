@@ -47,10 +47,10 @@ const softwareComparisonRows = [
     platform: "Windows",
   },
   {
-    software: "<strong>RTX Voice</strong>",
+    software: "<strong>Mac Voice Isolation</strong>",
     price: "Free",
-    bestFor: "Older NVIDIA cards",
-    platform: "Windows",
+    bestFor: "Mac users, any app",
+    platform: "Mac",
   },
   {
     software: "<strong>Zoom Built-in</strong>",
@@ -67,6 +67,16 @@ const softwareComparisonRows = [
 ];
 
 const faqItems = [
+  {
+    question: "Is Krisp still free?",
+    answer:
+      "Sort of. The pricing page leads with a 7-day trial, and reviews still describe a free plan with 60 minutes a day. Paid is $8 a month billed yearly.",
+  },
+  {
+    question: "Free option on a Mac?",
+    answer:
+      "Voice Isolation. Start a call, click the mic icon in the menu bar, choose it under Mic Mode. Works in every call app.",
+  },
   {
     question: "Everyone hears me typing?",
     answer:
@@ -180,8 +190,10 @@ const relatedArticles = [
 
   <h3>Krisp</h3>
   <p>
-    Krisp is my pick. Eight bucks a month. Filters out my dog, construction next door, typing sounds. Pretty much
-    everything. Free tier gives 60 minutes weekly. Might be enough depending on your call load.
+    Krisp is my pick. Eight bucks a month on yearly billing, $16 if you go monthly. Filters out my dog, construction next door, typing sounds. Pretty much
+    everything. These days the pricing page pushes a 7-day trial of the paid stuff, and 2026 reviews still list a free
+    plan with 60 minutes of noise cancellation a day. Might be enough depending on your call load. Krisp also leans
+    hard into AI meeting notes now. You can ignore all that if you only want the noise part.
   </p>
   <div class="my-6">
     <AffiliateButton href="/go/krisp" text="Try Krisp Free"/>
@@ -206,6 +218,21 @@ const relatedArticles = [
     Tested all three. Zoom's version was... okay. Not great. Krisp still wins.
   </p>
 
+  <h3>Your Computer Might Already Do It</h3>
+  <p>
+    Worth checking before you pay for anything. On a Mac, start a call in any app, click the mic icon in the menu bar,
+    and pick <strong>Voice Isolation</strong> under Mic Mode. Works in Zoom, Meet, Teams, whatever. Not bad at all for
+    free.
+  </p>
+  <p>
+    Newer Windows laptops with an NPU (the Copilot+ ones) have <strong>Windows Studio Effects</strong>, which includes
+    voice focus for the built-in mic. Look for it in quick settings during a call. Older laptops won't have it.
+  </p>
+  <p>
+    If you had RTX Voice from years back, that was NVIDIA's old beta. Broadcast replaced it, and it needs an RTX 2060 or
+    newer.
+  </p>
+
   <h2 id="hardware">Hardware If You Need It</h2>
 
   <p>
@@ -215,7 +242,9 @@ const relatedArticles = [
   <h3>Dynamic Mics</h3>
   <p>
     Dynamic mics work different than condensers. Less sensitive. Pick up what's right in front of them and ignore the
-    rest. The <strong>Shure MV7</strong> is dynamic. So is the <strong>Audio-Technica ATR2100x</strong>. Both good.
+    rest. The <strong>Shure MV7</strong> is dynamic. Shure has since replaced it with the <strong>MV7+</strong>, same idea
+    with better onboard processing. The ATR2100x is discontinued now. Audio-Technica's
+    <strong>AT2040USB</strong> ($159) is the dynamic USB mic they sell in its place.
   </p>
   <div class="my-6">
     <AffiliateButton href="/go/shure-mv7" text="Check Shure MV7 Price"/>
@@ -223,7 +252,8 @@ const relatedArticles = [
 
   <h3>Headphones</h3>
   <p>
-    Noise-canceling headphones with decent mics work too. <strong>Sony XM5s</strong>. <strong>Bose 700s</strong>. Pricey
+    Noise-canceling headphones with decent mics work too. <strong>Sony XM5s</strong>, which are still sold even though the XM6s ($449.99) are out.
+    Bose killed the 700s. The <strong>QuietComfort Ultra</strong> replaced them. Pricey
     but you'll use them for music and flights, so.
   </p>
   <div class="my-6">
@@ -238,7 +268,7 @@ const relatedArticles = [
 
   <h3>Audio Interface</h3>
   <p>
-    For the nerds: Focusrite Scarlett Solo ($110-ish) plus an XLR mic beats any USB mic's noise floor. Overkill for most
+    For the nerds: Focusrite Scarlett Solo ($170 for the 4th gen) plus an XLR mic beats any USB mic's noise floor. Overkill for most
     people though.
   </p>
 

@@ -501,10 +501,11 @@ export const gearArticles: Article[] = [
   {
     slug: "reduce-background-noise-calls",
     section: "gear",
-    title: "How to Reduce Background Noise on Video Calls (2025)",
+    title: "How to Reduce Background Noise on Video Calls (2026)",
     description: "Practical tips and software solutions to eliminate background noise during remote meetings. From free apps to hardware upgrades for professional call quality.",
     pubDate: "2025-05-12",
-    readingTime: 8,
+    updatedDate: "2026-09-24",
+    readingTime: 10,
     image: "/images/unsplash/photo-1587560699334-cc4ff634909a-1200w.webp",
     imageAlt: "Person on video call with noise-canceling setup",
     category: "audio",

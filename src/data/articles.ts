@@ -204,9 +204,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-compact-desks-small-office",
     section: "gear",
-    title: "Best Compact Desks for Small Home Offices (2025)",
+    title: "Best Compact Desks for Small Home Offices (2026)",
     description: "Maximize your small workspace with these space-saving desks. We reviewed 8 compact desks for home offices with limited space without sacrificing quality.",
     pubDate: "2025-01-20",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1593062096033-9a26b09da705-1200w.webp",
     imageAlt: "Compact desk setup in a small home office corner",
@@ -250,9 +251,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-kneeling-chairs-for-better-posture",
     section: "gear",
-    title: "Best Kneeling Chairs for Better Posture (2025)",
+    title: "Best Kneeling Chairs for Better Posture (2026)",
     description: "I tested seven kneeling chairs over four years. Varier, Sleekform, DRAGONN compared with honest reviews on comfort, durability, and posture benefits.",
     pubDate: "2025-12-13",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1688578735997-32626d2babd4-1200w.webp",
     imageAlt: "Woman at ergonomic workspace with proper posture",

@@ -1299,9 +1299,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "best-project-management-software",
     section: "tools",
-    title: "Best Project Management Software for Remote Teams (2025)",
+    title: "Best Project Management Software for Remote Teams (2026)",
     description: "I tested fifteen project management tools for remote teams. Notion, ClickUp, Asana compared with real pricing, features, and honest takes on what works.",
     pubDate: "2025-11-02",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1454165804606-c3d57bc86b40-1200w.webp",
     imageAlt: "Modern workspace with laptop displaying project management dashboard",

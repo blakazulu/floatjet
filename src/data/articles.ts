@@ -245,9 +245,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-desk-converters",
     section: "gear",
-    title: "Best Standing Desk Converters (2025)",
-    description: "Transform your existing desk into a standing desk. We tested 8 desk converters to find the best options for every budget and workspace size without hassle.",
+    title: "Best Standing Desk Converters (2026)",
+    description: "Transform your existing desk into a standing desk. We tested 8 desk converters and rechecked every price for 2026, from budget gas spring models to electric picks.",
     pubDate: "2025-07-25",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1518455027359-f3f8164ba6bd-1200w.webp",
     imageAlt: "Standing desk converter on an office desk with dual monitors",

@@ -22,6 +22,10 @@ interface Props {
   /** Visible page heading */
   heading: string;
   subtitle: string;
+  /** Optional 2-3 sentence intro for category pages */
+  intro?: string;
+  /** Optional "start here" article link */
+  startHere?: { href: string; label: string };
   /** Short handwritten note above the heading */
   note: string;
   articles: Article[];
@@ -38,6 +42,8 @@ const {
   metaDescription,
   heading,
   subtitle,
+  intro,
+  startHere,
   note,
   articles,
   filters,
@@ -67,6 +73,13 @@ const schemaItems = sorted.map((a) => ({ title: a.title, href: getArticlePath(a)
           <p class="eyebrow">{note}</p>
           <h1 class="mt-1 font-display font-bold text-4xl sm:text-5xl md:text-6xl tracking-[-0.04em] leading-[0.95] text-balance">{heading}</h1>
           <p class="mt-4 text-lg text-ink-soft">{subtitle}</p>
+          {intro && <p class="mt-3 text-base text-ink-soft max-w-2xl">{intro}</p>}
+          {startHere && (
+            <p class="mt-3 text-base">
+              <span class="text-ink-soft">New here? Start with</span>{" "}
+              <a href={startHere.href} class="font-bold text-ink underline decoration-sun decoration-2 underline-offset-4 hover:bg-sun">{startHere.label}</a>
+            </p>
+          )}
         </div>
         <div class="absolute right-0 top-0 sm:static sm:self-start lg:self-auto shrink-0 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-sun border-[1.5px] border-ink shadow-[3px_4px_0_0_var(--color-ink)] rotate-[4deg] flex flex-col items-center justify-center text-center">
           <span class="font-display font-bold text-2xl sm:text-3xl md:text-4xl leading-none">{articles.length}</span>

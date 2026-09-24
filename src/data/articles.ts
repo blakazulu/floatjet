@@ -276,9 +276,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-laptops-remote-work",
     section: "gear",
-    title: "Best Laptops for Remote Work & Digital Nomads (2025)",
+    title: "Best Laptops for Remote Work & Digital Nomads (2026)",
     description: "I tested ten laptops to find the best for remote work. MacBook Air M3, ThinkPad X1 Carbon, Dell XPS compared with real battery tests and honest takes.",
     pubDate: "2025-07-24",
+    updatedDate: "2026-09-24",
     readingTime: 8,
     image: "/images/unsplash/photo-1496181133206-80ce9b88a853-1200w.webp",
     imageAlt: "Modern laptop on minimalist desk for remote work",

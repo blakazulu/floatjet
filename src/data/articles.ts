@@ -432,9 +432,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-monitor-arms-and-mounts",
     section: "gear",
-    title: "Best Monitor Arms and Mounts for Home Office (2025)",
+    title: "Best Monitor Arms and Mounts for Home Office (2026)",
     description: "I tested 8 monitor arms over a year. Ergotron LX, VIVO, Humanscale compared with honest reviews on stability, adjustability, and value for home offices.",
     pubDate: "2025-12-08",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1588200908342-23b585c03e26-1200w.webp",
     imageAlt: "Monitor on desk with desk lamp in home office",

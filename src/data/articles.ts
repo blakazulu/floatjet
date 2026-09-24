@@ -945,9 +945,10 @@ export const guidesArticles: Article[] = [
   {
     slug: "two-factor-authentication-guide",
     section: "guides",
-    title: "Two-Factor Authentication Guide for Remote Workers (2025)",
+    title: "Two-Factor Authentication Guide for Remote Workers (2026)",
     description: "Guide to setting up 2FA on all your accounts. Learn about authenticator apps, hardware keys, backup codes, and best practices for remote work security.",
     pubDate: "2025-11-13",
+    updatedDate: "2026-09-24",
     readingTime: 11,
     image: "/images/unsplash/photo-1614064641938-3bbee52942c7-1200w.webp",
     imageAlt: "Smartphone showing two-factor authentication code for secure login",

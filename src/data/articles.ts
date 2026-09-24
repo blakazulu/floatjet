@@ -134,9 +134,10 @@ export const blogArticles: Article[] = [
   {
     slug: "tax-tips-remote-workers",
     section: "blog",
-    title: "Remote Work Taxes: The No-BS Guide (2025)",
+    title: "Remote Work Taxes: The No-BS Guide (2026)",
     description: "Taxes as a nomad are confusing as hell. Tax home, residency, foreign income - here's what you actually need to know.",
     pubDate: "2025-02-09",
+    updatedDate: "2026-09-24",
     readingTime: 4,
     image: "/images/unsplash/photo-1554224155-6726b3ff858f-1200w.webp",
     imageAlt: "Calculator and financial documents for tax planning",

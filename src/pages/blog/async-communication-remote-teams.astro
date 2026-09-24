@@ -18,12 +18,18 @@ const headings = [
   { text: "Tools That Work", slug: "tools", depth: 2 },
   { text: "How to Do It Right", slug: "best-practices", depth: 2 },
   { text: "Quick Templates", slug: "templates", depth: 2 },
+  { text: "Where It Goes Wrong", slug: "pitfalls", depth: 2 },
   { text: "FAQ", slug: "faq", depth: 2 },
   { text: "Getting Started", slug: "conclusion", depth: 2 },
 ];
 
 // FAQ data
 const faqs = [
+  {
+    question: "Is free Slack enough for an async team?",
+    answer:
+      "For chat, sure. For history, no. The free plan only keeps 90 days of messages, so anything you need later belongs in a doc.",
+  },
   {
     question: "How do I convince my boss?",
     answer:
@@ -32,7 +38,7 @@ const faqs = [
   {
     question: "Won't this slow things down?",
     answer:
-      "<p>Counterintuitively, no. People respond with complete info. Work continues while waiting.total time often shorter.</p>",
+      "<p>Counterintuitively, no. People respond with complete info. Work continues while waiting. Total time is often shorter.</p>",
   },
   {
     question: "How do I build relationships remotely?",
@@ -220,6 +226,18 @@ const relatedArticles = [
     <li><strong>Docs:</strong> Notion, Confluence, GitBook</li>
   </ul>
 
+  <p>
+    A few things worth knowing before you pick. Loom's free plan caps you at 25 videos per person and 5 minutes per
+    recording, which is fine for trying it out and annoying once the whole team is hooked. Paid plans start at $18 a
+    month. Twist is still around and still built around threads instead of a live chat stream, which is the whole
+    point if you want people to stop expecting instant replies.
+  </p>
+  <p>
+    Slack's free plan only keeps 90 days of message history. That's a problem for async teams specifically, because
+    the whole idea is that decisions live in writing. If you're on free Slack, put anything that matters in your docs
+    tool, not in a thread that disappears in three months.
+  </p>
+
   <!-- Best Practices -->
   <h2 id="best-practices">How to Do It Right</h2>
 
@@ -267,6 +285,47 @@ const relatedArticles = [
 
   <p>
     <strong>Project update:</strong> Status (green/yellow/red), Summary, Progress, Next up, Risks
+  </p>
+
+  <p>
+    Templates look boring on a page, so here's what a decision request actually looks like filled in:
+  </p>
+  <div class="bg-card border border-ink/15 rounded-lg p-4 my-6 text-sm">
+    <p><strong>Context:</strong> Our onboarding emails go out from three different tools and customers are getting
+      duplicates.</p>
+    <p><strong>Options:</strong> (A) Move everything to the CRM. Cheapest, but we lose the nicer templates. (B) Keep the
+      email tool, kill the other two. Costs a bit more, less migration work.</p>
+    <p><strong>My pick:</strong> B. We can do it in a week.</p>
+    <p><strong>What I need:</strong> A yes or no from Dana on the budget.</p>
+    <p><strong>Deadline:</strong> Thursday 5pm CET, so it's done before the next batch of signups.</p>
+  </div>
+  <p>
+    Notice what's missing. No "thoughts?" No meeting request. Anyone can read it cold and answer in two minutes.
+  </p>
+
+  <h2 id="pitfalls">Where Async Goes Wrong</h2>
+  <p>
+    Async fails in a few predictable ways. Most teams hit at least one.
+  </p>
+  <p>
+    <strong>Everything becomes "urgent."</strong> If people start tagging half their messages as urgent, you've just
+    rebuilt the ping culture with extra steps. Keep one channel for real emergencies and guard it.
+  </p>
+  <p>
+    <strong>Nobody closes the loop.</strong> A thread gets 14 replies and no decision. Someone has to own it, write
+    "Decision: we're going with B," and move on.
+  </p>
+  <p>
+    <strong>Silence gets read as agreement.</strong> Or as rudeness. Neither is fair. If you need a reply, say who
+    and by when.
+  </p>
+  <p>
+    <strong>People feel alone.</strong> Pure async can get lonely. That's why the sync list above includes
+    relationship stuff. A casual video call every week or two does more than any tool.
+  </p>
+  <p>
+    Spread across very different time zones? Our <a href="/guides/work-remotely-different-time-zones/">time zones
+    guide</a> covers overlap hours and how to share out the bad meeting slots.
   </p>
 
   <!-- FAQ Section -->

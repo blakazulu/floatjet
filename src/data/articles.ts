@@ -26,10 +26,11 @@ export const blogArticles: Article[] = [
   {
     slug: "async-communication-remote-teams",
     section: "blog",
-    title: "Async Communication for Remote Teams: The Guide (2025)",
+    title: "Async Communication for Remote Teams: The Guide (2026)",
     description: "Meetings that could be emails, Slack messages that interrupt deep work. Learn async communication strategies that let your team focus while staying connected.",
     pubDate: "2025-03-31",
-    readingTime: 3,
+    updatedDate: "2026-09-24",
+    readingTime: 6,
     image: "/images/unsplash/photo-1522071820081-009f0129c71c-1200w.webp",
     imageAlt: "Remote team collaborating through digital communication tools",
     category: "communication",

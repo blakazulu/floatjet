@@ -1432,9 +1432,10 @@ export const toolsArticles: Article[] = [
   {
     slug: "notion-vs-clickup-vs-monday",
     section: "tools",
-    title: "Notion vs ClickUp vs Monday.com: Ultimate Comparison (2025)",
+    title: "Notion vs ClickUp vs Monday.com: Ultimate Comparison (2026)",
     description: "Tested Notion, ClickUp, and Monday.com side-by-side. Compare features, pricing, ease of use, and performance to find the best project management tool.",
     pubDate: "2025-09-10",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1557804506-669a67965ba0-1200w.webp",
     imageAlt: "Three computer screens showing different project management interfaces",

@@ -545,6 +545,7 @@ export const gearArticles: Article[] = [
     title: "USB vs XLR Microphones: Which Is Better for Remote Work?",
     description: "USB or XLR microphone? We break down the pros and cons of each type to help you choose the right microphone for your remote work setup and budget needs.",
     pubDate: "2025-10-04",
+    updatedDate: "2026-09-24",
     readingTime: 10,
     image: "/images/unsplash/photo-1598653222000-6b7b7a552625-1200w.webp",
     imageAlt: "Professional microphone setup comparing USB and XLR connections",

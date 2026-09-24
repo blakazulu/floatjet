@@ -222,9 +222,10 @@ export const gearArticles: Article[] = [
   {
     slug: "best-budget-laptops-remote-work",
     section: "gear",
-    title: "Best Budget Laptops Under $800 for Remote Work (2025)",
-    description: "Great remote work laptops don't have to cost $1500. Here's what to look for in the $500-800 range.",
+    title: "Best Budget Laptops Under $800 for Remote Work (2026)",
+    description: "Great remote work laptops still don't have to cost $1,500. What to buy in the $400-800 range in 2026, with RAM prices up and a few big name changes.",
     pubDate: "2025-05-10",
+    updatedDate: "2026-09-24",
     readingTime: 14,
     image: "/images/unsplash/photo-1525547719571-a2d4ac8945e2-1200w.webp",
     imageAlt: "Budget laptop on desk for remote work",

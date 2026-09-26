@@ -11,6 +11,8 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import type { AstroIntegration } from "astro";
+import satori from "satori";
+import { Resvg } from "@resvg/resvg-js";
 
 export interface OgPageDetails {
   title: string;
@@ -101,7 +103,6 @@ export async function generateOgImages({
   options: OgImageOptions;
   log?: (message: string) => void;
 }): Promise<number> {
-  const [{ default: satori }, { Resvg }] = await Promise.all([import("satori"), import("@resvg/resvg-js")]);
   const width = options.width ?? 1200;
   const height = options.height ?? 630;
   let count = 0;

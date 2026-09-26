@@ -114,7 +114,7 @@ export default defineConfig({
         },
       },
       JavaScript: true,
-      Image: true,
+      Image: false, // OG PNGs are already encoded by resvg; recompressing them exhausts build memory.
       SVG: true,
     }),
 

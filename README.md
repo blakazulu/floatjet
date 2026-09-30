@@ -83,3 +83,6 @@ Come for the VPN reviews, stay for the chair recommendations. Or whatever.
 ---
 
 Copyright (c) 2025 FloatJet. All rights reserved.
+
+### Optional website analytics
+Public pages use GA4 `G-FWYD66CN1E` and Clarity `yqm0lp8luk` only after an affirmative analytics-and-recordings choice. `public/analytics.js` owns consent, input/form masking, query/referrer cleanup, denied advertising storage and withdrawal. The privacy preferences button reopens the choice. Navigation uses full page loads so privacy state is rechecked on every page; Partytown forwarding is removed because it intercepts the main-thread GA queue. No account IDs, form contents or site search values are sent as analytics events.

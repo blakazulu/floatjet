@@ -7,7 +7,7 @@ import robotsTxt from "astro-robots-txt";
 import tailwindcss from "@tailwindcss/vite";
 import ogImages from "./src/lib/og-images.ts";
 import {floatjetRenderer} from "./src/lib/og-image-renderer";
-import partytown from "@astrojs/partytown";
+
 import compress from "astro-compress";
 import pagefind from "astro-pagefind";
 import * as fs from "fs";
@@ -93,13 +93,6 @@ export default defineConfig({
         ],
       },
       render: floatjetRenderer,
-    }),
-
-    // 5. Partytown - Moves analytics scripts to Web Workers (keeps Lighthouse 100/100)
-    partytown({
-      config: {
-        forward: ["dataLayer.push"], // Forward GA4 dataLayer calls
-      },
     }),
 
     // 6. Compress - Gzip/Brotli compression for HTML, CSS, JS, images, SVG

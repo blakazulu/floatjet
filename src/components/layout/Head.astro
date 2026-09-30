@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import LoadingIndicator from "astro-loading-indicator/component";
 import { getImagePath } from "astro-opengraph-images";
 
@@ -75,7 +74,7 @@ const canonical = canonicalUrl || new URL(Astro.url.pathname, "https://floatjet.
 
   <!-- Resource Hints: Preconnect to critical third-party domains -->
   <link rel="preconnect" href="https://www.googletagmanager.com"/>
-  <link rel="preconnect" href="https://www.google-analytics.com"/>
+
 
   <!-- DNS Prefetch: Affiliate network domains (used on article pages) -->
   <link rel="dns-prefetch" href="https://impact.com"/>
@@ -87,19 +86,8 @@ const canonical = canonicalUrl || new URL(Astro.url.pathname, "https://floatjet.
       content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"}
   />
 
-  <!-- Google Analytics 4 (via Partytown - runs in Web Worker for better performance) -->
-  <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-FWYD66CN1E"></script>
-  <script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-FWYD66CN1E');
-  </script>
-
-  <!-- View Transitions for smooth navigation -->
-  <ViewTransitions/>
+  <!-- Optional public-site analytics, loaded only after consent. -->
+  <script is:inline src="/analytics.js" defer></script>
 
   <!-- Loading indicator for page transitions -->
   <LoadingIndicator color="var(--color-coral)" height="4px"/>

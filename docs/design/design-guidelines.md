@@ -159,3 +159,9 @@ Bricolage file ships the small-optical-size glyph, which looks odd at icon size.
 | `public/icon-maskable-512.png` | 512          | Android maskable icon (artwork inside the safe zone)       |
 | `public/logo.png`              | 512          | Schema.org Organization logo (sticker on paper)            |
 | `public/site.webmanifest`      | -            | Name, colours and icon list                                |
+
+## Website scrollbar and consent rule (2026-10-01)
+
+Every site we build must have native scrollbars styled to its own palette, including nested scroll areas. Use the standard scrollbar-color/scrollbar-width properties plus WebKit pseudo-elements for older Chromium and Safari, preserving native fallback, keyboard/touch scrolling, forced-colors and platform overlay behavior. Do not replace scrolling with JavaScript, force scrollbar visibility on touch devices, or override intentionally hidden carousel/code scrollbars.
+
+The floating privacy-preferences button stays visible until analytics are accepted, then hides after five seconds, including on returning visits. Reopening preferences cancels the hide timer. The privacy policy retains a permanent preferences control, so consent can always be changed or withdrawn. Analytics remain strictly opt-in; desktop apps and private account/document pages keep their existing no-tracking rules.

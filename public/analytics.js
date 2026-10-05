@@ -55,7 +55,7 @@
       clearCookies(); if (started) location.reload();
     }
   });
-  var settings = document.createElement('button'); settings.type='button'; settings.className='ep-consent-settings'; settings.textContent='Privacy preferences'; settings.addEventListener('click', openPreferences); (document.querySelector('footer') || document.body).appendChild(settings);
+  var settings = document.createElement('button'); settings.type='button'; settings.className='ep-consent-settings'; settings.textContent='Privacy preferences'; settings.addEventListener('click', openPreferences); document.body.appendChild(settings);
   var settingsTimer;
   function updateSettings() {
     clearTimeout(settingsTimer);
